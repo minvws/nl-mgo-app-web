@@ -11,3 +11,5 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/app/node_modules
+      - /app/app-ui/node_modules
