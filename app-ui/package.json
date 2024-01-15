@@ -1,25 +1,13 @@
 {
   "name": "@minvws/pgo-app-ui",
   "license": "EUPL-1.2",
-  "packageManager": "pnpm@8.13.1",
-	"engines": {
-		"pnpm": "^8.0.0"
-	},
-
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "dependencies": {
-    "@types/react": "^18.2.48",
-    "classnames": "^2.5.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.8",
@@ -30,6 +18,11 @@
     "@storybook/react": "^7.6.8",
     "@storybook/react-vite": "^7.6.8",
     "@storybook/test": "^7.6.8",
-    "storybook": "^7.6.8"
+    "@types/react": "^18.2.48",
+    "classnames": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.8",
+    "typescript": "^5.3.3"
   }
 }
