@@ -1,11 +1,11 @@
 import 'vitest-dom/extend-expect';
-import { expect, test } from 'vitest'
+import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
 import App from './App';
 
 test('renders Hello World heading', () => {
-  render(<App />);
+    render(<App />);
 
-  expect(screen.getByRole('heading')).toHaveTextContent('Hello World');
+    expect(screen.getByRole('heading')).toHaveTextContent('Hello World');
 });

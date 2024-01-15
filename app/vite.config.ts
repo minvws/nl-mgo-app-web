@@ -15,8 +15,8 @@ export default defineConfig({
     test: {
         environment: 'jsdom',
         coverage: {
-          provider: 'v8',
-          exclude: ['.eslintrc.cjs', '**/*.d.ts', 'src/main.tsx']
-        }
+            provider: 'v8',
+            exclude: ['.eslintrc.cjs', '**/*.d.ts', 'src/main.tsx'],
+        },
     },
 });

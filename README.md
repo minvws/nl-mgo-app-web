@@ -1,4 +1,4 @@
-# Medical Data Review Facility  - web
+# Medical Data Review Facility - web
 
 This repository contains the Medical Data Review Facility (PGO).
 

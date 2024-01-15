@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
-  pgo:
-    container_name: pgo
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - ${PORT:-8000}:8000
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/app/node_modules
-      - /app/app-ui/node_modules
+    pgo:
+        container_name: pgo
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - ${PORT:-8000}:8000
+        volumes:
+            - .:/app
+            - /app/node_modules
+            - /app/app/node_modules
+            - /app/app-ui/node_modules

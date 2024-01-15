@@ -41,9 +41,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      ### Uncomment when #5 is merged
-      #- name: Check formatting
-      #  run: pnpm run format:check
+      - name: Check formatting
+        run: pnpm run format:check
       - name: Lint
         run: pnpm run -r lint
 
