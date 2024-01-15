@@ -6,6 +6,7 @@
 		"pnpm": "^8.0.0"
 	},
   "scripts": {
-    "dev": "pnpm run --dir app dev"
+    "dev": "pnpm run --dir app dev",
+    "storybook": "pnpm run --dir app-ui storybook"
   }
 }
