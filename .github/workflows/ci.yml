@@ -68,27 +68,26 @@ jobs:
       - name: Check types
         run: pnpm run -r check-types
 
-  ### Uncomment when #4 is merged
-  #test:
-  #  runs-on: ubuntu-22.04
-  #  needs: audit
-  #  name: Test
-  #  steps:
-  #    - name: Checkout
-  #      uses: actions/checkout@v4
-  #    - name: Setup pnpm
-  #      uses: pnpm/action-setup@v2.4.0
-  #      with:
-  #        version: 8
-  #    - name: Setup Node.js
-  #      uses: actions/setup-node@v4
-  #      with:
-  #        node-version-file: '.nvmrc'
-  #        cache: 'pnpm'
-  #    - name: Install dependencies
-  #      run: pnpm install
-  #    - name: Test
-  #      run: pnpm run -r test
+  test:
+    runs-on: ubuntu-22.04
+    needs: audit
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
+        with:
+          version: 8
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Test
+        run: pnpm run -r test
 
   build:
     runs-on: ubuntu-22.04
