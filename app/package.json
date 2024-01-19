@@ -4,13 +4,12 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "test": "vitest run",
+        "test": "vitest run --coverage",
         "test:watch": "vitest",
         "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "check-types": "tsc --noEmit",
-        "preview": "vite preview",
-        "coverage": "vitest run --coverage"
+        "preview": "vite preview"
     },
     "dependencies": {
         "@minvws/pgo-app-ui": "workspace:*",
