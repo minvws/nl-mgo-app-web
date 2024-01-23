@@ -1,0 +1,21 @@
+#root > main {
+    width: min(100% - 2rem, 27rem);
+    margin: 0 auto;
+}
+
+#root > main > * + * {
+    margin-top: 1em;
+}
+
+pre {
+    padding: 1rem;
+    background: var(--pgo-clr-grey-3);
+    border-radius: 0.5rem;
+}
+
+pre > code {
+    display: block;
+    padding: 1rem;
+    overflow-x: auto;
+    background: var(--pgo-clr-accent-bg);
+}

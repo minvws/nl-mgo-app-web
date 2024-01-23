@@ -14,9 +14,10 @@ export default defineConfig({
     },
     test: {
         environment: 'jsdom',
+        setupFiles: ['./test/setup.ts'],
         coverage: {
             provider: 'v8',
-            exclude: ['.eslintrc.cjs', '**/*.d.ts', 'src/main.tsx'],
+            exclude: ['.eslintrc.cjs', '**/*.d.ts', 'src/main.tsx', 'src/config.ts', '__mocks__/*'],
             thresholds: {
                 lines: 100,
                 functions: 100,

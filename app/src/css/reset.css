@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+figure {
+    margin: 0;
+}
