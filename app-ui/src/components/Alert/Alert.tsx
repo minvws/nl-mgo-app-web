@@ -6,9 +6,6 @@ export interface AlertProps {
     description?: string;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Alert = ({ label, status, description }: AlertProps) => {
     return (
         <div

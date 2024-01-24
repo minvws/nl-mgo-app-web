@@ -7,7 +7,7 @@ export const Warning = (
         fill="none"
         viewBox="0 0 24 24"
     >
-        <title>Warning</title>
+        <title>Waarschuwing</title>
         <path
             fill="#FFB612"
             d="M23.774 20.699L13.738 1.119C13.29.142 12.166-.233 11.267.142a2.05 2.05 0 00-.974.975L.258 20.7C-.49 22.124.483 24 1.981 24h19.995c1.573 0 2.472-1.8 1.798-3.301z"

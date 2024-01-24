@@ -13,9 +13,6 @@ const typeColors: Record<Variant, string> = {
         'bg-white text-blue-800 border-grey-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white focus:border-4 focus:border-blue-500',
 };
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({ label, variant = 'solid', disabled = false }: ButtonProps) => {
     return (
         <button

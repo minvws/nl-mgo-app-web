@@ -7,7 +7,7 @@ export const Success = (
         fill="none"
         viewBox="0 0 24 24"
     >
-        <title>Success</title>
+        <title>Succes</title>
         <path fill="#fff" d="M18.75 3.751H5.25v17.248h13.5V3.75z"></path>
         <path
             fill="#348834"
