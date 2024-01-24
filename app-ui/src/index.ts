@@ -1,2 +1,2 @@
-export { Alert } from './Components/Alert/Alert';
-export { Button } from './Components/Button/Button';
+export { Alert } from './components/Alert/Alert';
+export { Button } from './components/Button/Button';

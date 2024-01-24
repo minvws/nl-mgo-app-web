@@ -1,8 +1,17 @@
+type Variant = 'solid' | 'light' | 'outline';
+
 export interface ButtonProps {
     label: string;
-    variant?: 'solid' | 'light' | 'outline';
+    variant?: Variant;
     disabled?: boolean;
 }
+
+const typeColors: Record<Variant, string> = {
+    solid: 'bg-blue-600 text-white border-blue-600 hover:bg-blue-800 hover:border-blue-800 focus:border-4 focus:border-blue-400',
+    light: 'bg-blue-200 text-blue-800 border-blue-200 hover:bg-blue-300 hover:border-blue-300 focus:border-4 focus:border-blue-50',
+    outline:
+        'bg-white text-blue-800 border-grey-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white focus:border-4 focus:border-blue-500',
+};
 
 /**
  * Primary UI component for user interaction
@@ -11,25 +20,10 @@ export const Button = ({ label, variant = 'solid', disabled = false }: ButtonPro
     return (
         <button
             type="button"
-            className={`block w-full py-4 px-6 text-base font-bold text-center rounded-lg border-2 outline-none ${getTypeColors(
-                variant
-            )} disabled:bg-[#CCCCCC] disabled:border-[#CCCCCC]`}
+            className={`block bg-primary-600 w-full py-4 px-6 text-base font-bold text-center rounded-lg border-2 outline-none ${typeColors[variant]} disabled:bg-grey-300 disabled:border-grey-300`}
             disabled={disabled}
         >
             {label}
         </button>
     );
 };
-
-function getTypeColors(type: ButtonProps['variant']): string {
-    switch (type) {
-        case 'solid':
-            return 'bg-[#007BC7] text-white border-[#007BC7] hover:bg-[#01689B] hover:border-[#01689B] focus:border-4 focus:border-[#B2D7EE]';
-        case 'light':
-            return 'bg-[#D9EBF7] text-[#01689B] border-[#D9EBF7] hover:bg-[#8FCAE7] hover:border-[#8FCAE7] focus:border-4 focus:border-[#EEF7FB]';
-        case 'outline':
-            return 'bg-white text-[#01689B] border-[#CCCCCC] hover:bg-[#007BC7] hover:border-[#007BC7] hover:text-white focus:border-4 focus:border-[#007BC7]';
-        default:
-            return '';
-    }
-}

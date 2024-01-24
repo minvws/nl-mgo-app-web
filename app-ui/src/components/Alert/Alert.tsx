@@ -1,7 +1,4 @@
-import { ReactElement } from 'react';
-import Success from './Icons/success';
-import Warning from './Icons/warning';
-import Info from './Icons/info';
+import { icons } from './Icons';
 
 export interface AlertProps {
     label: string;
@@ -18,7 +15,7 @@ export const Alert = ({ label, status, description }: AlertProps) => {
             role="alert"
             className={`flex w-full bg-white border-[#E3E3E3] border-2 p-3 gap-3 rounded-lg`}
         >
-            <div className={`w-6 h-6`}>{getStatusIcon(status)}</div>
+            <div className={`w-6 h-6`}>{icons[status]}</div>
             <div className={`flex flex-col gap-1`}>
                 <span className={`text-base font-bold text-black`}>{label}</span>
                 {description ? (
@@ -32,16 +29,3 @@ export const Alert = ({ label, status, description }: AlertProps) => {
         </div>
     );
 };
-
-function getStatusIcon(status: AlertProps['status']): ReactElement | null {
-    switch (status) {
-        case 'success':
-            return <Success />;
-        case 'warning':
-            return <Warning />;
-        case 'info':
-            return <Info />;
-        default:
-            return null;
-    }
-}
