@@ -28,7 +28,6 @@
     "@storybook/react-webpack5": "^7.6.10",
     "@storybook/test": "^7.6.10",
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20.11.5",
     "prop-types": "^15.8.1",
     "storybook": "^7.6.10",
     "webpack": "^5.89.0"
