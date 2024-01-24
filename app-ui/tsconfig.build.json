@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "build",
+        "noEmit": false,
+        "declaration": true,
+        "emitDeclarationOnly": true
+    },
+    "exclude": [
+        "node_modules",
+        "src/**/*.stories.tsx",
+        "src/**/*.test.tsx"
+    ]
+}
