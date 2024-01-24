@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonType } from './Button';
+import { Button } from './Button';
 
 // Default metadata of the story https://storybook.js.org/docs/react/api/csf#default-export
 const meta: Meta<typeof Button> = {
@@ -15,27 +15,27 @@ type Story = StoryObj<typeof Button>;
 export const Solid: Story = {
     args: {
         label: 'Solid',
-        type: ButtonType.SOLID,
+        variant: 'solid',
     },
 };
 
 export const Light: Story = {
     args: {
         label: 'Light',
-        type: ButtonType.LIGHT,
+        variant: 'light',
     },
 };
 
 export const Outline: Story = {
     args: {
         label: 'Outline',
-        type: ButtonType.OUTLINE,
+        variant: 'outline',
     },
 };
 
 export const Disabled: Story = {
     args: {
         label: 'Disabled',
-        disabled: true
-    }
+        disabled: true,
+    },
 };

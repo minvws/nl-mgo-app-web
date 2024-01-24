@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, AlertStatus } from './Alert';
+import { Alert } from './Alert';
 
 // Default metadata of the story https://storybook.js.org/docs/react/api/csf#default-export
 const meta: Meta<typeof Alert> = {
@@ -16,6 +16,22 @@ export const Success: Story = {
     args: {
         label: 'Success',
         description: 'Description',
-        status: AlertStatus.SUCCESS
+        status: 'success',
+    },
+};
+
+export const Warning: Story = {
+    args: {
+        label: 'Warning',
+        description: 'Description',
+        status: 'warning',
+    },
+};
+
+export const Info: Story = {
+    args: {
+        label: 'Info',
+        description: 'Description',
+        status: 'info',
     },
 };

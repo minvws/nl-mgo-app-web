@@ -8,7 +8,6 @@
     "scripts": {
         "dev": "pnpm run --dir app dev",
         "storybook": "pnpm run --dir app-ui dev",
-        "build-ui": "pnpm run --dir app-ui build",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     }
