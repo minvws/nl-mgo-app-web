@@ -17,7 +17,13 @@ export default defineConfig({
         setupFiles: ['./test/setup.ts'],
         coverage: {
             provider: 'v8',
-            exclude: ['.eslintrc.cjs', '**/*.d.ts', 'src/main.tsx', 'src/config.ts', '__mocks__/*'],
+            exclude: [
+                '.eslintrc.cjs',
+                '**/*.d.ts',
+                'src/main.tsx',
+                'public/config.js',
+                '__mocks__/*',
+            ],
             thresholds: {
                 lines: 100,
                 functions: 100,
