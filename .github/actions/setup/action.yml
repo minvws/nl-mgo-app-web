@@ -1,0 +1,25 @@
+name: Setup
+description: 'Setup Node.js and install dependencies'
+
+inputs:
+  install-dependencies:
+    required: false
+    description: 'Install dependencies'
+    default: 'true'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2.4.0
+      with:
+        version: 8
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'pnpm'
+    - name: Install dependencies
+      if: ${{ inputs.install-dependencies == 'true' }}
+      shell: bash
+      run: pnpm install
