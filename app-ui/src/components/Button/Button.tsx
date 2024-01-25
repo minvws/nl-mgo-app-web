@@ -1,48 +1,26 @@
-import React from 'react';
-import classNames from 'classnames';
-import './button.css';
+type Variant = 'solid' | 'light' | 'outline';
 
 export interface ButtonProps {
-    /**
-     * Is this the principal call to action on the page?
-     */
-    type?: 'primary' | 'secondary';
-    /**
-     * What background color to use
-     */
-    textColor?: string;
-    /**
-     * How large should the button be?
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * Button contents
-     */
     label: string;
-    /**
-     * Optional click handler
-     */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    variant?: Variant;
+    disabled?: boolean;
 }
 
-/**
- * Primary UI component for user interaction
- */
-const Button = ({ type = 'primary', textColor, size = 'medium', onClick, label }: ButtonProps) => {
+const typeColors: Record<Variant, string> = {
+    solid: 'bg-blue-600 text-white border-blue-600 hover:bg-blue-800 hover:border-blue-800 focus:border-4 focus:border-blue-400',
+    light: 'bg-blue-200 text-blue-800 border-blue-200 hover:bg-blue-300 hover:border-blue-300 focus:border-4 focus:border-blue-50',
+    outline:
+        'bg-white text-blue-800 border-grey-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white focus:border-4 focus:border-blue-500',
+};
+
+export const Button = ({ label, variant = 'solid', disabled = false }: ButtonProps) => {
     return (
         <button
             type="button"
-            className={classNames(
-                'storybook-button',
-                `storybook-button--${size}`,
-                `storybook-button--${type}`
-            )}
-            style={textColor ? { color: textColor } : {}}
-            onClick={onClick}
+            className={`block bg-primary-600 w-full py-4 px-6 text-base font-bold text-center rounded-lg border-2 outline-none ${typeColors[variant]} disabled:bg-grey-300 disabled:border-grey-300`}
+            disabled={disabled}
         >
             {label}
         </button>
     );
 };
-
-export default Button;
