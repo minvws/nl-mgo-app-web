@@ -10,5 +10,18 @@
         "storybook": "pnpm run --dir app-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^18.5.0",
+        "@commitlint/config-conventional": "^18.5.0",
+        "simple-git-hooks": "^2.9.0"
+    },
+    "simple-git-hooks": {
+        "commit-msg": "pnpm commitlint --edit ${1}"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
 }
