@@ -7,84 +7,52 @@ jobs:
     runs-on: ubuntu-22.04
     name: Audit
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
         with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          install-dependencies: 'false'
       - name: Audit dependencies
         run: pnpm audit
-      - name: Install dependencies
+      - name: Install dependencies to prepare pnpm cache
         run: pnpm install
 
   lint:
-    runs-on: ubuntu-22.04
     needs: audit
+    runs-on: ubuntu-22.04
     name: Lint
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Check formatting
-        run: pnpm run format:check
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
       - name: Lint
         run: pnpm run -r lint
 
-  check-types:
-    runs-on: ubuntu-22.04
+  format:
     needs: audit
+    runs-on: ubuntu-22.04
+    name: Format
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Check formatting
+        run: pnpm run format:check
+
+  check-types:
+    needs: audit
+    runs-on: ubuntu-22.04
     name: Check types
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
       - name: Check types
         run: pnpm run -r check-types
 
   test:
-    runs-on: ubuntu-22.04
     needs: audit
+    runs-on: ubuntu-22.04
     name: Test
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
       - name: Test
         id: test
         run: pnpm run -r test
@@ -96,23 +64,12 @@ jobs:
           path: app/coverage
 
   build:
-    runs-on: ubuntu-22.04
     needs: audit
+    runs-on: ubuntu-22.04
     name: Build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - name: Install dependencies
-        run: pnpm install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
       - name: Build
         working-directory: app
         run: pnpm run build

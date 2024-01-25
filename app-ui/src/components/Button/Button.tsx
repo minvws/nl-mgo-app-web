@@ -17,7 +17,7 @@ export const Button = ({ label, variant = 'solid', disabled = false }: ButtonPro
     return (
         <button
             type="button"
-            className={`block bg-primary-600 w-full py-4 px-6 text-base font-bold text-center rounded-lg border-2 outline-none ${typeColors[variant]} disabled:bg-grey-300 disabled:border-grey-300`}
+            className={`bg-primary-600 block w-full rounded-lg border-2 px-6 py-4 text-center text-base font-bold outline-none ${typeColors[variant]} disabled:bg-grey-300 disabled:border-grey-300`}
             disabled={disabled}
         >
             {label}
