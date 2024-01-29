@@ -12,27 +12,16 @@ jobs:
     steps:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          version: 8
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - name: Install dependencies
-        run: pnpm install
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
       - name: Build
-        working-directory: app
+        working-directory: packages/app
         run: pnpm run build
       - name: Add version.json
         shell: bash
-        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > app/dist/version.json'
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/app/dist/version.json'
       - name: Create release tar
-        run: tar -C app/dist -czf nl-pgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
+        run: tar -C packages/app/dist -czf nl-pgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
       - name: Upload release tar
         uses: actions/upload-artifact@v4
         with:
