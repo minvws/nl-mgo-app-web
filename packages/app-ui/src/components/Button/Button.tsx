@@ -1,4 +1,5 @@
-type Variant = 'solid' | 'light' | 'outline';
+export const variants = ['solid', 'light', 'outline'] as const;
+type Variant = (typeof variants)[number];
 
 export interface ButtonProps {
     label: string;

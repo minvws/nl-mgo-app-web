@@ -19,6 +19,8 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
+
+        "types": ["vitest-dom/extend-expect"],
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }],

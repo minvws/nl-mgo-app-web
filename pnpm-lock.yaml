@@ -124,6 +124,9 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
     devDependencies:
+      '@faker-js/faker':
+        specifier: ^8.4.0
+        version: 8.4.0
       '@storybook/addon-essentials':
         specifier: ^7.6.10
         version: 7.6.10(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -148,6 +151,9 @@ importers:
       '@storybook/test':
         specifier: ^7.6.10
         version: 7.6.10(vitest@1.2.2)
+      '@testing-library/react':
+        specifier: ^14.1.2
+        version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
       '@types/react':
         specifier: ^18.2.48
         version: 18.2.48
@@ -163,6 +169,9 @@ importers:
       vite:
         specifier: ^5.0.12
         version: 5.0.12(@types/node@20.11.5)
+      vitest-dom:
+        specifier: ^0.1.1
+        version: 0.1.1(vitest@1.2.2)
 
 packages:
 
@@ -2133,6 +2142,11 @@ packages:
 
   /@faker-js/faker@8.3.1:
     resolution: {integrity: sha512-FdgpFxY6V6rLZE9mmIBb9hM0xpfvQOSNOLnzolzKwsE1DH+gC7lEKV1p1IbR0lAYyvYd5a4u3qWJzowUkw1bIw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: true
+
+  /@faker-js/faker@8.4.0:
+    resolution: {integrity: sha512-htW87352wzUCdX1jyUQocUcmAaFqcR/w082EC8iP/gtkF0K+aKcBp0hR5Arb7dzR8tQ1TrhE9DNa5EbJELm84w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
     dev: true
 

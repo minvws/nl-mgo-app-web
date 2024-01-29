@@ -1,4 +1,3 @@
-import 'vitest-dom/extend-expect';
 import { test, expect, afterEach } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { authState, resetAuthState, signinRedirectMock, removeUserMock } from '../test/auth';

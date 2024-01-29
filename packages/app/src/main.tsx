@@ -1,3 +1,5 @@
+/* c8 ignore start */
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { AuthProvider } from './auth/index.ts';

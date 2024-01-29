@@ -1,5 +1,3 @@
-// import { useEffect } from 'react';
-import 'vitest-dom/extend-expect';
 import jwt from 'jsonwebtoken';
 import { expect, test, vi } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
