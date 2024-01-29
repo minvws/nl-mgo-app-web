@@ -24,7 +24,7 @@ importers:
         specifier: ^2.9.0
         version: 2.9.0
 
-  app:
+  packages/app:
     dependencies:
       '@minvws/pgo-app-ui':
         specifier: workspace:*
@@ -100,7 +100,7 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(vitest@1.2.1)
 
-  app-ui:
+  packages/app-ui:
     dependencies:
       autoprefixer:
         specifier: ^10.4.17

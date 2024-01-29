@@ -1,4 +1,4 @@
-import { useAuth } from './auth';
+import { useAuth } from './auth/index.ts';
 import Login from './routes/Login.tsx';
 import Busy from './routes/Busy.tsx';
 import Error from './routes/Error.tsx';
