@@ -50,12 +50,18 @@ importers:
 
   packages/app:
     dependencies:
-      '@minvws/pgo-app-ui':
+      '@pgo/app-ui':
         specifier: workspace:*
         version: link:../app-ui
+      autoprefixer:
+        specifier: ^10.4.17
+        version: 10.4.17(postcss@8.4.33)
       oidc-client-ts:
         specifier: ^2.4.0
         version: 2.4.0
+      postcss:
+        specifier: ^8.4.33
+        version: 8.4.33
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -65,6 +71,9 @@ importers:
       react-oidc-context:
         specifier: ^2.3.1
         version: 2.3.1(oidc-client-ts@2.4.0)(react@18.2.0)
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.1
     devDependencies:
       '@faker-js/faker':
         specifier: ^8.3.1
@@ -172,6 +181,9 @@ importers:
       vite:
         specifier: ^5.0.12
         version: 5.0.12(@types/node@20.11.5)
+      vite-plugin-commonjs:
+        specifier: ^0.10.1
+        version: 0.10.1
       vitest-dom:
         specifier: ^0.1.1
         version: 0.1.1(vitest@1.2.2)
@@ -5606,6 +5618,10 @@ packages:
     resolution: {integrity: sha512-1HQ2M2sPtxwnvOvT1ZClHyQDiggdNjURWpY2we6aMKCQiUVxTmVs2UYPLIrD84sS+kMdUwfBSylbJPwNnBrnHQ==}
     dev: true
 
+  /es-module-lexer@1.4.1:
+    resolution: {integrity: sha512-cXLGjP0c4T3flZJKQSuziYoq7MlT+rnvfZjfp7h+I7K9BNX54kP9nyWvdbwjQ4u1iWbOL4u96fgeZLToQlZC7w==}
+    dev: true
+
   /esbuild-plugin-alias@0.2.1:
     resolution: {integrity: sha512-jyfL/pwPqaFXyKnj8lP8iLk6Z0m099uXR45aSN8Av1XD4vhvQutxxPzgA2bTcAwQpa1zCXDcWOlhFgyP3GKqhQ==}
     dev: true
@@ -9643,6 +9659,24 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-commonjs@0.10.1:
+    resolution: {integrity: sha512-taP8R9kYGlCW5OzkVR0UIWRCnG6rSxeWWuA7tnU5b9t5MniibOnDY219NhisTeDhJAeGT8cEnrhVWZ9A5yD+vg==}
+    dependencies:
+      acorn: 8.11.3
+      fast-glob: 3.3.2
+      magic-string: 0.30.5
+      vite-plugin-dynamic-import: 1.5.0
+    dev: true
+
+  /vite-plugin-dynamic-import@1.5.0:
+    resolution: {integrity: sha512-Qp85c+AVJmLa8MLni74U4BDiWpUeFNx7NJqbGZyR2XJOU7mgW0cb7nwlAMucFyM4arEd92Nfxp4j44xPi6Fu7g==}
+    dependencies:
+      acorn: 8.11.3
+      es-module-lexer: 1.4.1
+      fast-glob: 3.3.2
+      magic-string: 0.30.5
     dev: true
 
   /vite@5.0.12(@types/node@20.11.5):

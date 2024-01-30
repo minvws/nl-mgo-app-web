@@ -1,8 +1,13 @@
 {
-    "name": "@minvws/pgo-app-ui",
+    "name": "@pgo/app-ui",
     "license": "EUPL-1.2",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*"
+    },
     "scripts": {
         "dev": "storybook dev -p 6006",
+        "check-types": "tsc --noEmit",
         "storybook-build": "storybook build"
     },
     "dependencies": {
@@ -29,6 +34,7 @@
         "prop-types": "^15.8.1",
         "storybook": "^7.6.10",
         "vite": "^5.0.12",
+        "vite-plugin-commonjs": "^0.10.1",
         "vitest-dom": "^0.1.1"
     }
 }

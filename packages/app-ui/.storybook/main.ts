@@ -1,9 +1,9 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import { mergeConfig } from 'vite';
-import svgr from 'vite-plugin-svgr';
+import { UserConfig, mergeConfig } from 'vite';
+import commonjs from 'vite-plugin-commonjs';
 
 const config: StorybookConfig = {
-    stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+    stories: ['../**/*.stories.@(mdx|ts|tsx)'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -18,5 +18,21 @@ const config: StorybookConfig = {
     docs: {
         autodocs: true,
     },
+    async viteFinal(config) {
+        const overrideConfig: UserConfig = {
+            // css: {
+            //     postcss: path.resolve(__dirname, '../src/postcss.config.js'),
+            // },
+            plugins: [commonjs()],
+            build: {
+                commonjsOptions: {
+                    include: [/node_modules/, /tailwind/],
+                },
+            },
+        };
+
+        return mergeConfig(config, overrideConfig);
+    },
 };
+
 export default config;

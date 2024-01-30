@@ -1,5 +1,8 @@
+@import '@pgo/app-ui/index.css';
+
 @import './css/fonts.css';
 @import './css/reset.css';
 @import './css/base.css';
 @import './css/logo.css';
 @import './css/layout.css';
+
