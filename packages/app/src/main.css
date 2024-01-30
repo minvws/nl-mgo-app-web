@@ -1,4 +1,5 @@
-@import '@pgo/app-ui/index.css';
+@import '@pgo/tailwind/fonts.css';
+@import '@pgo/tailwind/index.css';
 
 @import './css/fonts.css';
 @import './css/reset.css';

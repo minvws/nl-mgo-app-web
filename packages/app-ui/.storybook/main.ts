@@ -18,21 +18,21 @@ const config: StorybookConfig = {
     docs: {
         autodocs: true,
     },
-    async viteFinal(config) {
-        const overrideConfig: UserConfig = {
-            // css: {
-            //     postcss: path.resolve(__dirname, '../src/postcss.config.js'),
-            // },
-            plugins: [commonjs()],
-            build: {
-                commonjsOptions: {
-                    include: [/node_modules/, /tailwind/],
-                },
-            },
-        };
+    // async viteFinal(config) {
+    //     const overrideConfig: UserConfig = {
+    //         // css: {
+    //         //     postcss: path.resolve(__dirname, '../src/postcss.config.js'),
+    //         // },
+    //         // plugins: [commonjs()],
+    //         // build: {
+    //         //     commonjsOptions: {
+    //         //         include: [/node_modules/, /tailwind/],
+    //         //     },
+    //         // },
+    //     };
 
-        return mergeConfig(config, overrideConfig);
-    },
+    //     return mergeConfig(config, overrideConfig);
+    // },
 };
 
 export default config;

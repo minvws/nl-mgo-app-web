@@ -1,18 +1,11 @@
-import { Meta, ColorPalette, ColorItem, Source } from '@storybook/blocks';
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
 import { singleColors, colorSwatches } from './colors';
 
 <Meta title="Styleguide/Colors" />
 
 # Styleguide - Colors
 
-All the available color (palettes). To apply a color to an element you can use the tailwind utility classes. For example:
-
-<Source
-    language="html"
-    code={`
-<div class="bg-white text-grey-900" />
-`}
-/>
+<br />
 
 <ColorPalette style={{ wordBreak: 'break-all' }}>
     {singleColors.map(([name, colors]) => (

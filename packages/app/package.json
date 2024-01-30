@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@pgo/app-ui": "workspace:*",
+        "@pgo/tailwind": "workspace:*",
         "autoprefixer": "^10.4.17",
         "oidc-client-ts": "^2.4.0",
         "postcss": "^8.4.33",

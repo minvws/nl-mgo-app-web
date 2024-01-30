@@ -1,5 +1,5 @@
 // @ts-check
-const colors = {
+export const colors = {
     inherit: 'inherit',
     current: 'currentColor',
     transparent: 'transparent',
@@ -34,5 +34,3 @@ const colors = {
         950: '#363636',
     },
 };
-
-module.exports = { colors };
