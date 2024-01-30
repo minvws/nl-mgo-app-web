@@ -1,8 +1,11 @@
 import { icons } from './Icons';
 
+export const statuses = ['success', 'warning', 'info'] as const;
+type Status = (typeof statuses)[number];
+
 export interface AlertProps {
     label: string;
-    status: 'success' | 'warning' | 'info';
+    status: Status;
     description?: string;
 }
 

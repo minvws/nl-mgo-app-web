@@ -7,6 +7,8 @@
     },
     "scripts": {
         "dev": "pnpm run --dir app dev",
+        "test": "vitest",
+        "test:coverage": "vitest run --coverage",
         "storybook": "pnpm run --dir app-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
@@ -14,9 +16,11 @@
     "devDependencies": {
         "@commitlint/cli": "^18.6.0",
         "@commitlint/config-conventional": "^18.5.0",
+        "@vitest/coverage-v8": "^1.2.2",
         "prettier": "^3.2.4",
         "prettier-plugin-tailwindcss": "^0.5.11",
-        "simple-git-hooks": "^2.9.0"
+        "simple-git-hooks": "^2.9.0",
+        "vitest": "^1.2.2"
     },
     "simple-git-hooks": {
         "commit-msg": "pnpm commitlint --edit ${1}"
