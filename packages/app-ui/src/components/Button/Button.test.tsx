@@ -1,7 +1,8 @@
-import { expect, test, describe } from 'vitest';
+import { expect, test } from 'vitest';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
-import { variants, Button } from './Button';
+import { Button } from './Button';
+import { variants } from './variants';
 
 test('renders a button with a label', async () => {
     const props = {
