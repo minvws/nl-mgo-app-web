@@ -32,6 +32,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.5
         version: 0.4.5(eslint@8.56.0)
+      eslint-plugin-sonarjs:
+        specifier: ^0.23.0
+        version: 0.23.0(eslint@8.56.0)
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
@@ -5722,6 +5725,15 @@ packages:
     resolution: {integrity: sha512-D53FYKJa+fDmZMtriODxvhwrO+IOqrxoEo21gMA0sjHdU6dPVH4OhyFip9ypl8HOF5RV5KdTo+rBQLvnY2cO8w==}
     peerDependencies:
       eslint: '>=7'
+    dependencies:
+      eslint: 8.56.0
+    dev: true
+
+  /eslint-plugin-sonarjs@0.23.0(eslint@8.56.0):
+    resolution: {integrity: sha512-z44T3PBf9W7qQ/aR+NmofOTyg6HLhSEZOPD4zhStqBpLoMp8GYhFksuUBnCxbnf1nfISpKBVkQhiBLFI/F4Wlg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       eslint: 8.56.0
     dev: true

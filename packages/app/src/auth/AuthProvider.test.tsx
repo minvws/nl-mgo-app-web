@@ -58,8 +58,8 @@ test('sign-in', async () => {
      */
 
     /*** PART ONE: the sign-in redirect ***/
-
-    mockLocation('http://localhost:3000');
+    const locationBaseUrl = 'http://localhost:3000';
+    mockLocation(locationBaseUrl);
     fetchMock.mockImplementation(() => createFetchReponse(openidConfigurationMock));
 
     render(<WrappedMockApp />);
@@ -82,7 +82,7 @@ test('sign-in', async () => {
         code_challenge_method: 'S256',
         lang: 'nl',
         nonce: expect.stringMatching(/^[0-9A-Za-z-._]{32}$/),
-        redirect_uri: 'http://localhost:3000',
+        redirect_uri: locationBaseUrl,
         response_mode: 'query',
         response_type: 'code',
         scope: 'openid',
@@ -94,7 +94,7 @@ test('sign-in', async () => {
     vi.resetAllMocks();
 
     const testCode = 'some_unique_string';
-    mockLocation(`http://localhost:3000/?code=${testCode}&state=${searchParams.state}`);
+    mockLocation(`${locationBaseUrl}/?code=${testCode}&state=${searchParams.state}`);
     fetchMock.mockImplementationOnce(() => createFetchReponse(openidConfigurationMock));
     fetchMock.mockImplementationOnce(() =>
         createFetchReponse({
@@ -123,6 +123,6 @@ test('sign-in', async () => {
         code: testCode,
         code_verifier: expect.stringMatching(/[0-9a-f]+/),
         grant_type: 'authorization_code',
-        redirect_uri: 'http://localhost:3000',
+        redirect_uri: locationBaseUrl,
     });
 });
