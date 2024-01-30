@@ -1,7 +1,5 @@
 import { icons } from './Icons';
-
-export const statuses = ['success', 'warning', 'info'] as const;
-type Status = (typeof statuses)[number];
+import { Status } from './statuses';
 
 export interface AlertProps {
     label: string;

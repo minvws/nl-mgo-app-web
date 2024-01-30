@@ -1,7 +1,8 @@
-import { expect, test, describe } from 'vitest';
+import { expect, test } from 'vitest';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
-import { statuses, Alert } from './Alert';
+import { Alert } from './Alert';
+import { statuses } from './statuses';
 
 test('renders an alert with a description', async () => {
     const props = {

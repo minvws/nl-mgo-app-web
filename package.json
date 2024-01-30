@@ -9,6 +9,7 @@
         "dev": "pnpm run --dir app dev",
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "storybook": "pnpm run --dir app-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
@@ -16,7 +17,13 @@
     "devDependencies": {
         "@commitlint/cli": "^18.6.0",
         "@commitlint/config-conventional": "^18.5.0",
+        "@typescript-eslint/eslint-plugin": "^6.20.0",
+        "@typescript-eslint/parser": "^6.20.0",
         "@vitest/coverage-v8": "^1.2.2",
+        "eslint": "^8.56.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "eslint-plugin-sonarjs": "^0.23.0",
         "prettier": "^3.2.4",
         "prettier-plugin-tailwindcss": "^0.5.11",
         "simple-git-hooks": "^2.9.0",
