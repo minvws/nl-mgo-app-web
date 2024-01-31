@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import { useAuth } from '../auth';
-import { Button } from '@pgo/app-ui';
 
 export default function Login() {
     const auth = useAuth();
@@ -10,7 +9,6 @@ export default function Login() {
             <img src="/rijkshuisstijl/logo.svg" alt="Logo Rijksoverheid" className="logo" />
             <main>
                 <h1>Bewijs wie je bent</h1>
-                <Button label="test" />
                 <p>
                     Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
                     veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.

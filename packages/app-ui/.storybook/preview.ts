@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
-import '@pgo/tailwind/fonts.css';
-import '@pgo/tailwind/index.css';
+import '@minvws/pgo-tailwind/fonts.css';
+import '@minvws/pgo-tailwind/index.css';
 
 const preview: Preview = {
     parameters: {

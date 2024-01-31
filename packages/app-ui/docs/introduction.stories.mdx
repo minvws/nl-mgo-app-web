@@ -10,17 +10,17 @@ Here you will find a collection of components and styles to use for your project
 
 ## Prerequisites
 
-The `@pgo/app-ui` uses the `@pgo/tailwind` [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
+The `@minvws/pgo-app-ui` uses the `@minvws/pgo-tailwind` [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
 In order to use these components you will need to:
 
-1. add the `@pgo/tailwind` theme to your project's tailwind config.
-2. add both the `font.css` and `index.css`from `@pgo/tailwind` to your project.
+1. add the `@minvws/pgo-tailwind` theme to your project's tailwind config.
+2. add both the `font.css` and `index.css`from `@minvws/pgo-tailwind` to your project.
 
 <Source
     language="javascript"
     code={`
 // tailwind.config.js
-import theme from "@pgo/tailwind/theme/index.js";
+import theme from "@minvws/pgo-tailwind/theme/index.js";
 \export default {
     theme,
     content: [ ... ],
@@ -40,7 +40,7 @@ All components of the `app-ui` are available through the index.
 <Source
     language="ts"
     code={`
-import { Heading } from '@pgo/app-ui';
+import { Heading } from '@minvws/pgo-app-ui';
 `}
 />
 

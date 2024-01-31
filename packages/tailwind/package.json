@@ -1,5 +1,5 @@
 {
-    "name": "@pgo/tailwind",
+    "name": "@minvws/pgo-tailwind",
     "license": "EUPL-1.2",
     "dependencies": {
         "tailwindcss": "^3.4.1"

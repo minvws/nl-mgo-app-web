@@ -1,6 +1,4 @@
 import type { StorybookConfig } from '@storybook/react-vite';
-import { UserConfig, mergeConfig } from 'vite';
-import commonjs from 'vite-plugin-commonjs';
 
 const config: StorybookConfig = {
     stories: ['../**/*.stories.@(mdx|ts|tsx)'],
@@ -18,21 +16,6 @@ const config: StorybookConfig = {
     docs: {
         autodocs: true,
     },
-    // async viteFinal(config) {
-    //     const overrideConfig: UserConfig = {
-    //         // css: {
-    //         //     postcss: path.resolve(__dirname, '../src/postcss.config.js'),
-    //         // },
-    //         // plugins: [commonjs()],
-    //         // build: {
-    //         //     commonjsOptions: {
-    //         //         include: [/node_modules/, /tailwind/],
-    //         //     },
-    //         // },
-    //     };
-
-    //     return mergeConfig(config, overrideConfig);
-    // },
 };
 
 export default config;
