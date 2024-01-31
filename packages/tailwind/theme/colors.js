@@ -6,31 +6,31 @@ export const colors = {
     black: '#000',
     white: '#fff',
 
-    blue: {
-        50: '#EEF7FB',
-        100: '#e0f1fe',
-        200: '#D9EBF7',
-        300: '#8FCAE7',
-        400: '#B2D7EE',
-        500: '#0c9deb',
-        600: '#007bc7',
-        700: '#0162a3',
-        800: '#01689B',
-        900: '#0b466f',
-        950: '#072c4a',
+    grey: {
+        50: '#F3F3F3', // Grey/1
+        100: '#E6E6E6', // Grey/2
+        200: '#CCCCCC', // Grey/3
+        300: '#B4B4B4', // Grey/4
+        400: '#999999', // Grey/5
+        500: '#696969', // Grey/6
+        600: '#535353', // Grey/7
+        700: '#404040', // Grey/8
+        800: '#262626', // Tailwind neutral
+        900: '#1D1D1D', // Grey/9
+        950: '#0a0a0a', // Tailwind neutral
     },
 
-    grey: {
-        50: '#f7f7f7',
-        100: '#ededed',
-        200: '#dfdfdf',
-        300: '#cccccc',
-        400: '#adadad',
-        500: '#999999',
-        600: '#888888',
-        700: '#7b7b7b',
-        800: '#676767',
-        900: '#545454',
-        950: '#363636',
+    blue: {
+        50: '#EEF7FB', // light blue / tint 2
+        100: '#D9EBF7', // sky blue / tint 2
+        200: '#B2D7EE', // sky blue / tint 1
+        300: '#7ccefd',
+        400: '#36b6fa',
+        500: '#0c9deb',
+        600: '#007bc7', // sky blue
+        700: '#01689B', // dark blue, Link/Default
+        800: '#065486',
+        900: '#004161', // Link/Hover
+        950: '#072c4a',
     },
 };
