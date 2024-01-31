@@ -1,6 +1,7 @@
 {
     "name": "@minvws/pgo-app-ui",
     "license": "EUPL-1.2",
+    "type": "module",
     "exports": {
         ".": "./src/index.ts",
         "./*": "./src/*"

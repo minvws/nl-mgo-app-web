@@ -10,9 +10,9 @@ export const fontSize = {
 };
 
 export const lineHeight = {
-    none: 1,
-    tight: 1.2,
-    normal: 1.5,
+    none: '1',
+    tight: '1.2',
+    normal: '1.5',
 };
 
 export const letterSpacing = {
