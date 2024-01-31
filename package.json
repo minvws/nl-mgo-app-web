@@ -6,11 +6,11 @@
         "pnpm": "^8.0.0"
     },
     "scripts": {
-        "dev": "pnpm run --dir app dev",
+        "dev": "pnpm run --dir packages/app dev",
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "storybook": "pnpm run --dir app-ui dev",
+        "storybook": "pnpm run --dir packages/app-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
