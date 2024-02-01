@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import { variants } from './variants';
+import { Stack } from '../Stack/Stack';
 
 const meta: Meta<typeof Button> = {
-    title: 'Components/Button',
     component: Button,
 };
 
@@ -31,9 +32,27 @@ export const Outline: Story = {
     },
 };
 
-export const Disabled: Story = {
+export const Overview: Story = {
     args: {
-        label: 'Disabled',
-        disabled: true,
+        label: 'Label',
+    },
+    render: ({ ...args }) => {
+        return (
+            <div>
+                <Stack>
+                    {variants.map((variant) => (
+                        <Stack className="flex-row">
+                            <Button {...args} label={variant} variant={variant} />
+                            <Button
+                                {...args}
+                                label={`${variant} disabled`}
+                                variant={variant}
+                                disabled
+                            />
+                        </Stack>
+                    ))}
+                </Stack>
+            </div>
+        );
     },
 };
