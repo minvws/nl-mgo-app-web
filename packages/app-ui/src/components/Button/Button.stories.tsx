@@ -1,58 +1,69 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
-import { variants } from './variants';
 import { Stack } from '../Stack/Stack';
-
-const meta: Meta<typeof Button> = {
-    component: Button,
-};
-
-export default meta;
+import { ChevronLeft, ChevronRight } from '../icons';
+import { Button, ButtonProps } from './Button';
+import { variants } from './variants';
 
 type Story = StoryObj<typeof Button>;
+type StoryMeta = Meta<typeof Button>;
 
-export const Solid: Story = {
+export default {
+    component: Button,
     args: {
-        label: 'Solid',
-        variant: 'solid',
+        children: 'Label',
+        onClick: action('on-click'),
+    },
+    parameters: {
+        controls: {
+            // Normally storybook filters out default HTML props, but it seems to
+            // have trouble with the `oneOf` type of the `ButtonOrLink` component.
+            include: ['variant', 'leftIcon', 'rightIcon', 'isDisabled'] as (keyof ButtonProps)[],
+        },
+    },
+} satisfies StoryMeta;
+
+export const Default: Story = {};
+
+export const FullWidth: Story = {
+    args: {
+        className: 'w-full',
     },
 };
 
-export const Light: Story = {
+export const WithIcon: Story = {
     args: {
-        label: 'Light',
-        variant: 'light',
+        leftIcon: <ChevronLeft />,
+        variant: 'link',
     },
 };
 
-export const Outline: Story = {
+export const AsLink: Story = {
     args: {
-        label: 'Outline',
-        variant: 'outline',
+        href: '#',
     },
 };
 
 export const Overview: Story = {
-    args: {
-        label: 'Label',
-    },
-    render: ({ ...args }) => {
-        return (
-            <div>
-                <Stack>
-                    {variants.map((variant) => (
-                        <Stack className="flex-row">
-                            <Button {...args} label={variant} variant={variant} />
-                            <Button
-                                {...args}
-                                label={`${variant} disabled`}
-                                variant={variant}
-                                disabled
-                            />
-                        </Stack>
-                    ))}
+    args: {},
+    render: ({ ...args }) => (
+        <Stack className="gap-8">
+            {variants.map((variant) => (
+                <Stack className="flex-row">
+                    <Button {...args} variant={variant}>
+                        {variant}
+                    </Button>
+                    <Button {...args} variant={variant} leftIcon={<ChevronLeft />}>
+                        {variant}
+                    </Button>
+                    <Button {...args} variant={variant} rightIcon={<ChevronRight />}>
+                        {variant}
+                    </Button>
+                    <Button {...args} variant={variant} isDisabled>
+                        {`${variant} isDisabled`}
+                    </Button>
                 </Stack>
-            </div>
-        );
-    },
+            ))}
+        </Stack>
+    ),
 };

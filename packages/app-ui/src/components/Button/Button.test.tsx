@@ -6,25 +6,38 @@ import { variants } from './variants';
 
 test('renders a button with a label', async () => {
     const props = {
-        label: faker.lorem.sentence(),
+        children: faker.lorem.sentence(),
         variant: faker.helpers.arrayElement(variants),
     };
 
     render(<Button {...props} />);
 
-    expect(screen.getByRole('button')).toHaveTextContent(props.label);
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
     expect(screen.getByRole('button')).not.toBeDisabled();
 });
 
-test('renders a disabled button with a label', async () => {
+test('renders with a left icon if specified', async () => {
     const props = {
-        label: faker.lorem.sentence(),
+        children: faker.lorem.sentence(),
         variant: faker.helpers.arrayElement(variants),
-        disabled: true,
+        leftIcon: <span data-testid="left-icon" />,
     };
 
     render(<Button {...props} />);
 
-    expect(screen.getByRole('button')).toHaveTextContent(props.label);
-    expect(screen.getByRole('button')).toBeDisabled();
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
+    expect(await screen.findByTestId('left-icon')).toBeVisible();
+});
+
+test('renders with a right icon if specified', async () => {
+    const props = {
+        children: faker.lorem.sentence(),
+        variant: faker.helpers.arrayElement(variants),
+        rightIcon: <span data-testid="right-icon" />,
+    };
+
+    render(<Button {...props} />);
+
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
+    expect(await screen.findByTestId('right-icon')).toBeVisible();
 });
