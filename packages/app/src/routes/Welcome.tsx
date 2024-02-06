@@ -6,7 +6,7 @@ export default function Welcome() {
 
     return (
         <Fragment>
-            <main style={{ paddingTop: '1rem' }}>
+            <main className="pt-4 dark:text-white">
                 <h2>Succesvol ingelogd met DigiD</h2>
                 <pre>
                     <code>{JSON.stringify(auth.user?.profile, null, 2)}</code>

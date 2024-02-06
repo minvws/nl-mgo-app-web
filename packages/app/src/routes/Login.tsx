@@ -7,7 +7,7 @@ export default function Login() {
     return (
         <Fragment>
             <img src="/rijkshuisstijl/logo.svg" alt="Logo Rijksoverheid" className="logo" />
-            <main>
+            <main className="dark: text-white">
                 <h1>Bewijs wie je bent</h1>
                 <p>
                     Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
