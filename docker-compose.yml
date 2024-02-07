@@ -1,15 +1,23 @@
 version: '3.8'
 
+volumes:
+    hapi-data:
+
 services:
-    pgo:
-        container_name: pgo
+    mgo:
+        container_name: mgo
         build:
             context: .
             dockerfile: Dockerfile
         ports:
             - ${PORT:-8000}:8000
         volumes:
-            - .:/app
-            - /app/node_modules
-            - /app/app/node_modules
-            - /app/app-ui/node_modules
+            - ./apps/react:/app/apps/react
+            - ./packages:/app/packages
+    hapi:
+        container_name: hapi
+        image: smartonfhir/hapi-5:r3-smart
+        ports:
+            - 8080:8080
+        volumes:
+            - hapi-data:/usr/local/tomcat/target/database
