@@ -176,8 +176,8 @@ importers:
         specifier: ^7.6.10
         version: 7.6.10(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@5.0.12)
       '@storybook/test':
-        specifier: ^7.6.10
-        version: 7.6.10(vitest@1.2.2)
+        specifier: ^7.6.12
+        version: 7.6.12(vitest@1.2.2)
       '@testing-library/react':
         specifier: ^14.1.2
         version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
@@ -3644,14 +3644,14 @@ packages:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
     dev: true
 
-  /@storybook/instrumenter@7.6.10:
-    resolution: {integrity: sha512-9FYXW1CKXnZ7yYmy2A6U0seqJMe1F7g55J28Vslk3ZLoGATFJ2BR0eoQS+cgfBly6djehjaVeuV3IcUYGnQ/6Q==}
+  /@storybook/instrumenter@7.6.12:
+    resolution: {integrity: sha512-BK+hCz2tuUSDPvN0kACR+Ev7lQj4SLlMdXiJgRGdnKWR7zr1OFEg9MEIwPHNC+Ywny1x7YOwrbNJ9sdISNIh0g==}
     dependencies:
-      '@storybook/channels': 7.6.10
-      '@storybook/client-logger': 7.6.10
-      '@storybook/core-events': 7.6.10
+      '@storybook/channels': 7.6.12
+      '@storybook/client-logger': 7.6.12
+      '@storybook/core-events': 7.6.12
       '@storybook/global': 5.0.0
-      '@storybook/preview-api': 7.6.10
+      '@storybook/preview-api': 7.6.12
       '@vitest/utils': 0.34.7
       util: 0.12.5
     dev: true
@@ -3725,6 +3725,25 @@ packages:
       '@storybook/csf': 0.1.2
       '@storybook/global': 5.0.0
       '@storybook/types': 7.6.10
+      '@types/qs': 6.9.11
+      dequal: 2.0.3
+      lodash: 4.17.21
+      memoizerific: 1.11.3
+      qs: 6.11.2
+      synchronous-promise: 2.0.17
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+    dev: true
+
+  /@storybook/preview-api@7.6.12:
+    resolution: {integrity: sha512-uSzeMSLnCRROjiofJP0F0niLWL+sboQ5ktHW6BAYoPwprumXduPxKBUVEZNxMbVYoAz9v/kEZmaLauh8LRP2Hg==}
+    dependencies:
+      '@storybook/channels': 7.6.12
+      '@storybook/client-logger': 7.6.12
+      '@storybook/core-events': 7.6.12
+      '@storybook/csf': 0.1.2
+      '@storybook/global': 5.0.0
+      '@storybook/types': 7.6.12
       '@types/qs': 6.9.11
       dequal: 2.0.3
       lodash: 4.17.21
@@ -3848,13 +3867,13 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test@7.6.10(vitest@1.2.2):
-    resolution: {integrity: sha512-dn/T+HcWOBlVh3c74BHurp++BaqBoQgNbSIaXlYDpJoZ+DzNIoEQVsWFYm5gCbtKK27iFd4n52RiQI3f6Vblqw==}
+  /@storybook/test@7.6.12(vitest@1.2.2):
+    resolution: {integrity: sha512-kOkgr9EJqeitoN3ubbVRrAysHCqxpAFAyKzWCGuic9ynxvfTOc5prup0e05/GJmbHYqkWsOyaordXgcHvy8JaQ==}
     dependencies:
-      '@storybook/client-logger': 7.6.10
-      '@storybook/core-events': 7.6.10
-      '@storybook/instrumenter': 7.6.10
-      '@storybook/preview-api': 7.6.10
+      '@storybook/client-logger': 7.6.12
+      '@storybook/core-events': 7.6.12
+      '@storybook/instrumenter': 7.6.12
+      '@storybook/preview-api': 7.6.12
       '@testing-library/dom': 9.3.4
       '@testing-library/jest-dom': 6.3.0(vitest@1.2.2)
       '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.4)
