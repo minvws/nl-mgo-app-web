@@ -1,3 +1,7 @@
+/* Copyright Dutch Ministry of General Affairs
+ * SPDX-License-Identifier: LicenseRef-Rijkshuisstijl
+ */
+
 import { HTMLAttributes } from 'react';
 
 export const ChevronRight = (props: HTMLAttributes<SVGElement>) => (

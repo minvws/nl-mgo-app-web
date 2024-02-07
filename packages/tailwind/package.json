@@ -1,6 +1,7 @@
 {
     "name": "@minvws/pgo-tailwind",
-    "license": "EUPL-1.2",
+    "private": true,
+    "license": "UNLICENSED",
     "devDependencies": {
         "tailwindcss": "^3.4.1"
     },

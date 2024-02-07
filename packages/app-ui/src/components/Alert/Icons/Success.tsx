@@ -1,3 +1,7 @@
+/* Copyright Dutch Ministry of General Affairs
+ * SPDX-License-Identifier: LicenseRef-Rijkshuisstijl
+ */
+
 export const Success = (
     <svg
         role="img"

@@ -4,9 +4,10 @@
 !.env.example
 
 # Local files
-node_modules
-dist
-dist-ssr
+node_modules/
+coverage/
+dist/
+dist-ssr/
 *.local
 
 # Logs
@@ -29,5 +30,3 @@ lerna-debug.log*
 *.sln
 *.sw?
 tmp/
-
-coverage/

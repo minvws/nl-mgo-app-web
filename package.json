@@ -1,6 +1,6 @@
 {
     "private": true,
-    "license": "EUPL-1.2",
+    "license": "UNLICENSED",
     "packageManager": "pnpm@8.13.1",
     "engines": {
         "pnpm": "^8.0.0"
