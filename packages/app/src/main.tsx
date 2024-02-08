@@ -1,15 +1,15 @@
 /* c8 ignore start */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { AuthProvider } from './auth/index.ts';
-import { readConfig } from './config.ts';
-import App from './App.tsx';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter } from 'react-router-dom';
+import { App } from './App';
+import { routes } from './routes';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-        <AuthProvider {...readConfig().oidc}>
-            <App />
-        </AuthProvider>
-    </React.StrictMode>
+const root = createRoot(document.getElementById('root')!);
+const router = createBrowserRouter(routes);
+root.render(
+    <StrictMode>
+        <App router={router} />
+    </StrictMode>
 );

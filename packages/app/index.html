@@ -7,8 +7,77 @@
         <link rel="stylesheet" href="/src/main.css" />
         <title>Mijn Zorg</title>
     </head>
-    <body>
-        <div id="root"></div>
+    <body class="bg-[#FAFAFA] dark:bg-[#050505] dark:text-white">
+        <div id="root" class="grid min-h-svh grid-rows-[auto_1fr] px-4 md:px-8">
+            <img
+                src="/rijkshuisstijl/logo.svg"
+                alt="Logo Rijksoverheid"
+                class="mx-auto mb-16 block w-16"
+            />
+            <main class="grid grid-rows-[auto_1fr]">
+                <h1 class="text-center text-5xl font-bold">Mijn Gezond&shy;heids&shy;overzicht</h1>
+                <noscript>
+                    <p class="mx-auto mt-8 max-w-md text-2xl">
+                        Deze applicatie gebruikt JavaScript. Zet JavaScript aan in de instellingen
+                        van je browser, of probeer het in een andere browser.
+                    </p>
+                </noscript>
+                <div
+                    id="js-loading-screen"
+                    class="mb-16 mt-4 hidden content-end text-center lg:mb-32"
+                >
+                    <style>
+                        .loading-spinner-fg {
+                            --_circumference: 21.99px; /* ≈2π×3.5 */
+                            --_spinner-size: calc(var(--_circumference) / 4);
+                            stroke-linecap: round;
+                            stroke-dasharray: var(--_spinner-size)
+                                calc(var(--_circumference) - var(--_spinner-size));
+                            stroke-dashoffset: 0;
+                            animation: loading-spinner 2s steps(4) infinite;
+                        }
+                        @keyframes loading-spinner {
+                            to {
+                                stroke-dashoffset: calc(-1 * var(--_circumference));
+                            }
+                        }
+                        @media (prefers-reduced-motion: no-preference) {
+                            .loading-spinner-fg {
+                                animation: loading-spinner 1s linear infinite;
+                            }
+                        }
+                    </style>
+                    <svg
+                        role="img"
+                        aria-labelledby="loading-label"
+                        class="mx-auto mb-4"
+                        viewBox="0 0 8 8"
+                        width="2rem"
+                        height="2rem"
+                        fill="none"
+                        stroke-width="1"
+                    >
+                        <circle
+                            class="stroke-grey-100 dark:stroke-grey-800"
+                            cx="4"
+                            cy="4"
+                            r="3.5"
+                        />
+                        <circle
+                            class="loading-spinner-fg stroke-blue-600"
+                            cx="4"
+                            cy="4"
+                            r="3.5"
+                            transform="rotate(-90 4 4)"
+                        />
+                    </svg>
+                    <p id="loading-label" class="text-2xl">Aan het laden</p>
+                </div>
+            </main>
+        </div>
+        <script>
+            document.getElementById('js-loading-screen')?.classList.replace('hidden', 'grid');
+        </script>
         <script src="/config.js"></script>
         <script type="module" src="/src/main.tsx"></script>
     </body>

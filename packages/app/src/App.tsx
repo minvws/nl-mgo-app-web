@@ -1,26 +1,16 @@
-import { useAuth } from './auth/index.ts';
-import Login from './routes/Login.tsx';
-import Busy from './routes/Busy.tsx';
-import Error from './routes/Error.tsx';
-import Welcome from './routes/Welcome.tsx';
+import type { ComponentProps } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { AuthProvider } from './lib/auth';
+import { readConfig } from './lib/config';
 
-function App() {
-    const auth = useAuth();
+type Props = {
+    router: ComponentProps<typeof RouterProvider>['router'];
+};
 
-    if (auth.activeNavigator === 'signinSilent') {
-        return <Busy task="inloggen" />;
-    }
-    if (auth.activeNavigator === 'signoutRedirect') {
-        return <Busy task="uitloggen" />;
-    }
-    if (auth.isLoading) {
-        return <Busy task="laden" />;
-    }
-    if (auth.error) {
-        return <Error error={auth.error} />;
-    }
-
-    return auth.isAuthenticated ? <Welcome /> : <Login />;
+export function App({ router }: Props) {
+    return (
+        <AuthProvider {...readConfig().oidc}>
+            <RouterProvider router={router} />
+        </AuthProvider>
+    );
 }
-
-export default App;

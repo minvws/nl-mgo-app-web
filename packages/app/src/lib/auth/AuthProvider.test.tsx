@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { expect, test, vi } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
-import openidConfigurationMock from '../../test/openid-configuration-mock.json';
+import openidConfigurationMock from '../../../test/openid-configuration-mock.json';
 import { AuthProvider, useAuth } from '.';
 
 vi.unmock('react-oidc-context');

@@ -17,20 +17,20 @@ export const colors = {
         700: '#404040', // Grey/8
         800: '#262626', // Tailwind neutral
         900: '#1D1D1D', // Grey/9
-        950: '#0a0a0a', // Tailwind neutral
+        950: '#0A0A0A', // Tailwind neutral
     },
 
     blue: {
         50: '#EEF7FB', // light blue / tint 2
         100: '#D9EBF7', // sky blue / tint 2
         200: '#B2D7EE', // sky blue / tint 1
-        300: '#7ccefd',
-        400: '#36b6fa',
-        500: '#0c9deb',
-        600: '#007bc7', // sky blue
+        300: '#7CCEFD',
+        400: '#36B6FA',
+        500: '#0C9DEB',
+        600: '#007BC7', // sky blue
         700: '#01689B', // dark blue, Link/Default
         800: '#065486',
         900: '#004161', // Link/Hover
-        950: '#072c4a',
+        950: '#072C4A',
     },
 };

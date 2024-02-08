@@ -3,6 +3,8 @@ import { faker } from '@faker-js/faker';
 
 import { readConfig } from './config';
 
+vi.unmock('./config');
+
 afterEach(() => {
     vi.unstubAllGlobals();
 });

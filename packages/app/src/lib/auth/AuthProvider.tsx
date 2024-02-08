@@ -12,7 +12,7 @@ type Props = {
 
 const onSigninCallback = () => window.history.replaceState({}, '', window.location.pathname);
 
-export default function WrappedAuthProvider(props: Props) {
+function WrappedAuthProvider(props: Props) {
     const nonce = useMemo(() => generateNonce(32), []);
     return (
         <OriginalAuthProvider
@@ -25,3 +25,5 @@ export default function WrappedAuthProvider(props: Props) {
         />
     );
 }
+
+export { WrappedAuthProvider as AuthProvider };
