@@ -1,0 +1,46 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'packages/app-ui/**'
+  pull_request:
+    paths:
+      - 'packages/app-ui/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - name: Publish to Chromatic
+        id: chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+          workingDir: packages/app-ui
+      - name: Comment Chromatic results
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: chromatic deployment
+          message: |
+            ## Chromatic deployment results
+            | ID | Value |
+            | -------- | ------- |
+            | Build url | <${{steps.chromatic.outputs.buildUrl}}> |
+            | Storybook url | <${{steps.chromatic.outputs.storybookUrl}}> |
+            | Components | ${{steps.chromatic.outputs.componentCount}} |
+            | Changes | ${{steps.chromatic.outputs.changeCount}} |
+            | Errors | ${{steps.chromatic.outputs.errorCount}} |

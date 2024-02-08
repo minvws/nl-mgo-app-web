@@ -9,7 +9,7 @@
     "scripts": {
         "dev": "storybook dev -p 6006",
         "check-types": "tsc --noEmit",
-        "storybook-build": "storybook build"
+        "build-storybook": "storybook build"
     },
     "dependencies": {
         "@minvws/pgo-tailwind": "workspace:*",
@@ -36,6 +36,7 @@
         "@testing-library/react": "^14.1.2",
         "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
+        "chromatic": "^10.6.0",
         "prop-types": "^15.8.1",
         "storybook": "^7.6.10",
         "vite": "^5.0.12",
