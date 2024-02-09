@@ -1,6 +1,6 @@
 import { Fragment, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@minvws/pgo-app-ui';
+import { Button } from '@minvws/mgo-react-ui';
 
 import { useIntroSeen } from '../lib/introSeen';
 

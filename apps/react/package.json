@@ -9,8 +9,8 @@
         "preview": "vite preview --port=8000"
     },
     "dependencies": {
-        "@minvws/pgo-app-ui": "workspace:*",
-        "@minvws/pgo-tailwind": "workspace:*",
+        "@minvws/mgo-react-ui": "workspace:*",
+        "@minvws/mgo-tailwind": "workspace:*",
         "autoprefixer": "^10.4.17",
         "oidc-client-ts": "^2.4.0",
         "postcss": "^8.4.33",

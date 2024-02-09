@@ -2,7 +2,7 @@ import { Meta, Source } from '@storybook/blocks';
 
 <Meta title="Introduction" />
 
-# Welcome to the App UI
+# Welcome to the React UI
 
 Here you will find a collection of components and styles to use for your project.
 
@@ -10,17 +10,17 @@ Here you will find a collection of components and styles to use for your project
 
 ## Prerequisites
 
-The `@minvws/pgo-app-ui` uses the `@minvws/pgo-tailwind` [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
+The `@minvws/mgo-react-ui` uses the `@minvws/mgo-tailwind` [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
 In order to use these components you will need to:
 
-1. add the `@minvws/pgo-tailwind` theme to your project's tailwind config.
-2. add both the `font.css` and `index.css`from `@minvws/pgo-tailwind` to your project.
+1. add the `@minvws/mgo-tailwind` theme to your project's tailwind config.
+2. add both the `font.css` and `index.css`from `@minvws/mgo-tailwind` to your project.
 
 <Source
     language="javascript"
     code={`
 // tailwind.config.js
-import theme from "@minvws/pgo-tailwind/theme/index.js";
+import theme from "@minvws/mgo-tailwind/theme/index.js";
 \export default {
     theme,
     content: [ ... ],
@@ -35,12 +35,12 @@ You use the styles by simply applying the correcty utility class names to an ele
 
 ## Components
 
-All components of the `app-ui` are available through the index.
+All components of the `react-ui` are available through the index.
 
 <Source
     language="ts"
     code={`
-import { Heading } from '@minvws/pgo-app-ui';
+import { Heading } from '@minvws/mgo-react-ui';
 `}
 />
 
