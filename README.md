@@ -4,7 +4,7 @@ This repository contains the Medical Data Review Facility (PGO).
 
 ## Deployment
 
-The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-pgo-app-web-private/actions/workflows/package.yml).
+The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-mgo-app-web-private/actions/workflows/package.yml).
 
 The contents of the package can be hosted as an SPA, with non-existing routes being served the `index.html`.
 
@@ -26,9 +26,9 @@ window.config = {
 
 ## Development
 
-The main application lives in `packages/app/`.
+The main application lives in `apps/react/`.
 
-The UI components live in `packages/app-ui/` and a storybook environment is available.
+The UI components live in `packages/react-ui/` and a storybook environment is available.
 
 ### Running a local development server
 

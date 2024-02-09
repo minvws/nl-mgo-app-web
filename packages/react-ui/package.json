@@ -1,5 +1,5 @@
 {
-    "name": "@minvws/pgo-app-ui",
+    "name": "@minvws/mgo-react-ui",
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -12,7 +12,7 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@minvws/pgo-tailwind": "workspace:*",
+        "@minvws/mgo-tailwind": "workspace:*",
         "autoprefixer": "^10.4.17",
         "postcss": "^8.4.33",
         "react": "^18.2.0",

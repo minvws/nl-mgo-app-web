@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Button } from '@minvws/pgo-app-ui';
+import { Button } from '@minvws/mgo-react-ui';
 
 import { Busy } from './Busy.tsx';
 import { Error } from './Error.tsx';

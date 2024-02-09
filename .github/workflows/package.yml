@@ -15,15 +15,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Build
-        working-directory: packages/app
+        working-directory: apps/react
         run: pnpm run build
       - name: Add version.json
         shell: bash
-        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/app/dist/version.json'
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > apps/react/dist/version.json'
       - name: Create release tar
-        run: tar -C packages/app/dist -czf nl-pgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
+        run: tar -C apps/react/dist -czf nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
       - name: Upload release tar
         uses: actions/upload-artifact@v4
         with:
-          name: nl-pgo-app-web_${{ env.RELEASE_VERSION }}
-          path: nl-pgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz
+          name: nl-mgo-app-web_${{ env.RELEASE_VERSION }}
+          path: nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz

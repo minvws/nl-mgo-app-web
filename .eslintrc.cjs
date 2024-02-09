@@ -9,8 +9,22 @@ module.exports = {
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
-    plugins: ['react-refresh', 'sonarjs'],
+    plugins: ['import', 'react-refresh', 'sonarjs'],
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
+    overrides: [
+        {
+            files: ['**/*.{ts,tsx}'],
+            excludedFiles: [
+                '*.stories.tsx',
+                'vitest.workspace.ts',
+                'vitest.config.ts',
+                'vite.config.ts',
+            ],
+            rules: {
+                'import/no-default-export': 'error',
+            },
+        },
+    ],
 };

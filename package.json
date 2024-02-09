@@ -6,11 +6,11 @@
         "pnpm": "^8.0.0"
     },
     "scripts": {
-        "dev": "pnpm run --dir packages/app dev",
+        "dev": "pnpm run --dir apps/react dev",
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "storybook": "pnpm run --dir packages/app-ui dev",
+        "storybook": "pnpm run --dir packages/react-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
@@ -21,6 +21,7 @@
         "@typescript-eslint/parser": "^6.20.0",
         "@vitest/coverage-v8": "^1.2.2",
         "eslint": "^8.56.0",
+        "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.5",
         "eslint-plugin-sonarjs": "^0.23.0",

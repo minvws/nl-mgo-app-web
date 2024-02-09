@@ -5,10 +5,10 @@ on:
     branches:
       - develop
     paths:
-      - 'packages/app-ui/**'
+      - 'packages/react-ui/**'
   pull_request:
     paths:
-      - 'packages/app-ui/**'
+      - 'packages/react-ui/**'
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
           exitOnceUploaded: true
-          workingDir: packages/app-ui
+          workingDir: packages/react-ui
       - name: Comment Chromatic results
         uses: marocchino/sticky-pull-request-comment@v2
         with:
