@@ -1,6 +1,6 @@
 import { Fragment, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@minvws/mgo-react-ui';
+import { Button, Heading } from '@minvws/mgo-react-ui';
 
 import { useIntroSeen } from '../lib/introSeen';
 
@@ -25,7 +25,9 @@ export function Intro() {
     if (isPropositionSeen) {
         return (
             <Fragment>
-                <h1 className="mb-8 text-3xl font-bold">Zo gebruikt de app jouw gegevens</h1>
+                <Heading as="h1" size="lg" className="mb-8">
+                    Zo gebruikt de app jouw gegevens
+                </Heading>
                 <div className="mb-16 text-xl">
                     <p className="mb-4">
                         In de privacyverklaring staat hoe Mijn Zorg jouw gegevens gebruikt. Dit zijn
@@ -59,9 +61,9 @@ export function Intro() {
 
     return (
         <Fragment>
-            <h1 className="mb-8 text-3xl font-bold">
+            <Heading as="h1" size="lg" className="mb-8 text-3xl font-bold">
                 Jouw gezond&shy;heids&shy;gegevens op één plek verzameld
-            </h1>
+            </Heading>
             <div className="mb-16 text-xl">
                 <p className="mb-4">
                     Inzien wat je huisarts, ziekenhuis en andere zorg&shy;verleners weten over jou.

@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
+import { Heading } from '@minvws/mgo-react-ui';
 
 export function Busy({ task }: { task: string }) {
     return (
         <Fragment>
             <main className="pt-4 dark:text-white">
-                <h2>Bezig met {task}...</h2>
+                <Heading as="h1">Bezig met {task}...</Heading>
             </main>
         </Fragment>
     );

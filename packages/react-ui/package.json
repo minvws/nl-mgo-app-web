@@ -39,6 +39,7 @@
         "chromatic": "^10.6.0",
         "prop-types": "^15.8.1",
         "storybook": "^7.6.10",
+        "storybook-addon-css-user-preferences": "^0.0.3",
         "vite": "^5.0.12",
         "vitest-dom": "^0.1.1"
     }

@@ -1,0 +1,31 @@
+import { twMerge } from 'tailwind-merge';
+import { Size } from './sizes';
+import { DynamicElement, DynamicElementProps } from '../DynamicElement/DynamicElement';
+import { tw } from '../../utils/tw/tw';
+
+export interface HeadingProps extends DynamicElementProps {
+    size?: Size;
+}
+
+const TextSizes: Record<Size, string> = {
+    sm: tw`text-lg md:text-xl lg:text-2xl`,
+    md: tw`text-xl md:text-2xl lg:text-3xl`,
+    lg: tw`text-2xl md:text-3xl lg:text-4xl`,
+    xl: tw`text-3xl md:text-4xl lg:text-5xl`,
+};
+
+/**
+ * A small utility component that makes it easy to change the rendered element type.
+ */
+export const Heading = ({ size = 'md', className, ...rest }: HeadingProps) => {
+    return (
+        <DynamicElement
+            className={twMerge(
+                'font-sans font-bold leading-tight text-black dark:text-white',
+                TextSizes[size],
+                className
+            )}
+            {...rest}
+        />
+    );
+};

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Button } from '@minvws/mgo-react-ui';
+import { Button, Heading } from '@minvws/mgo-react-ui';
 
 import { Busy } from './Busy.tsx';
 import { Error } from './Error.tsx';
@@ -23,7 +23,9 @@ export function Inloggen() {
 
     return (
         <Fragment>
-            <h1 className="mb-8 text-3xl font-bold">Bewijs wie je bent</h1>
+            <Heading as="h1" size="lg" className="mb-8">
+                Bewijs wie je bent
+            </Heading>
             <p className="mb-8 text-xl">
                 Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
                 veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.

@@ -19,6 +19,7 @@ const config: StorybookConfig = {
         '@storybook/preset-create-react-app',
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
+        'storybook-addon-css-user-preferences',
     ],
     framework: {
         name: '@storybook/react-vite',
