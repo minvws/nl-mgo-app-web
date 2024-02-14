@@ -14,6 +14,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^18.5.0
         version: 18.5.0
+      '@tanstack/eslint-plugin-query':
+        specifier: ^5.20.1
+        version: 5.20.1(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.20.0
         version: 6.20.0(@typescript-eslint/parser@6.20.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -53,12 +56,18 @@ importers:
 
   apps/react:
     dependencies:
+      '@minvws/mgo-fhir':
+        specifier: workspace:*
+        version: link:../../packages/fhir
       '@minvws/mgo-react-ui':
         specifier: workspace:*
         version: link:../../packages/react-ui
       '@minvws/mgo-tailwind':
         specifier: workspace:*
         version: link:../../packages/tailwind
+      '@tanstack/react-query':
+        specifier: ^5.20.5
+        version: 5.20.5(react@18.2.0)
       autoprefixer:
         specifier: ^10.4.17
         version: 10.4.17(postcss@8.4.33)
@@ -129,6 +138,19 @@ importers:
       vitest-dom:
         specifier: ^0.1.1
         version: 0.1.1(vitest@1.2.2)
+
+  packages/fhir:
+    dependencies:
+      ky:
+        specifier: ^1.2.0
+        version: 1.2.0
+    devDependencies:
+      '@faker-js/faker':
+        specifier: ^8.4.0
+        version: 8.4.0
+      '@types/fhir':
+        specifier: ^0.0.41
+        version: 0.0.41
 
   packages/react-ui:
     dependencies:
@@ -223,16 +245,6 @@ importers:
       vitest-dom:
         specifier: ^0.1.1
         version: 0.1.1(vitest@1.2.2)
-
-  packages/fhir-client:
-    dependencies:
-      ky:
-        specifier: ^1.2.0
-        version: 1.2.0
-    devDependencies:
-      '@types/fhir':
-        specifier: ^0.0.41
-        version: 0.0.41
 
   packages/tailwind:
     devDependencies:
@@ -4287,6 +4299,30 @@ packages:
       svg-parser: 2.0.4
     transitivePeerDependencies:
       - supports-color
+  /@tanstack/eslint-plugin-query@5.20.1(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-oIp7Wh90KHOm1FKCvcv87fiD2H96xo/crFrlhbvqBzR2f0tMEGOK/ANKMGNFQprd6BT6lyZhQPlOEkFdezsjIg==}
+    peerDependencies:
+      eslint: ^8.0.0
+    dependencies:
+      '@typescript-eslint/utils': 6.20.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint: 8.56.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
+  /@tanstack/query-core@5.20.5:
+    resolution: {integrity: sha512-T1W28gGgWn0A++tH3lxj3ZuUVZZorsiKcv+R50RwmPYz62YoDEkG4/aXHZELGkRp4DfrW07dyq2K5dvJ4Wl1aA==}
+    dev: false
+
+  /@tanstack/react-query@5.20.5(react@18.2.0):
+    resolution: {integrity: sha512-6MHwJ8G9cnOC/XKrwt56QMc91vN7hLlAQNUA0ubP7h9Jj3a/CmkUwT6ALdFbnVP+PsYdhW3WONa8WQ4VcTaSLQ==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.20.5
+      react: 18.2.0
+    dev: false
 
   /@testing-library/dom@9.3.4:
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}
