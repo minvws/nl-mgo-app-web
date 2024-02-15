@@ -1,52 +1,55 @@
-import { Fragment, useEffect, useState } from 'react';
-import { getResource } from '@/fhir';
-
-type Patient = {
-    name: string;
-};
+import { getResource } from '@/fhir/client';
+import {
+    getHumanName,
+    getEmail,
+    getPhoneNumber,
+} from '@minvws/mgo-fhir-data/resource/patient/index.ts';
+import { Spinner } from '@minvws/mgo-react-ui';
+import { useQuery } from '@tanstack/react-query';
+import { Fragment, ReactNode } from 'react';
 
 export function Playground() {
-    const [patient, setPatient] = useState<Patient>();
+    const patientId = 'smart-1032702';
 
-    async function load({ signal }: { signal: AbortSignal }) {
-        console.log('Playground load');
-        try {
-            const response = await getResource({ resource: 'Patient' }, { signal });
-            console.log({ response });
-            const json = await response.json();
-            console.log({ json });
+    const {
+        isPending,
+        error,
+        data: patient,
+    } = useQuery({
+        queryKey: ['Patient', patientId],
+        queryFn: async () => {
+            return await getResource({
+                resource: 'Patient',
+                id: patientId,
+            }).json();
+        },
+    });
 
-            const firstPatient = json.entry![0];
+    let result: ReactNode = (
+        <div className="grid grid-cols-2 gap-2">
+            <div className="font-bold">patient id</div>
+            <div className="font-bold">{patientId}</div>
+            <div>Naam</div>
+            <div>{getHumanName(patient)}</div>
+            <div>Geboortedatum</div>
+            <div>{patient?.birthDate}</div>
+            <div>Mobiel</div>
+            <div>{getPhoneNumber(patient, 'mobile')}</div>
+            <div>Email</div>
+            <div>{getEmail(patient)}</div>
+            <div>Geslacht</div>
+            <div>{patient?.gender}</div>
+        </div>
+    );
 
-            setPatient({
-                name: firstPatient.resource!.name![0].given![0],
-            });
-        } catch (error: unknown) {
-            if ((error as Error).name === 'AbortError') {
-                console.log('Fetch aborted');
-            } else {
-                console.error('Fetch error:', error);
-            }
-        }
-    }
-
-    useEffect(() => {
-        const controller = new AbortController();
-        const { signal } = controller;
-
-        load({ signal });
-
-        return () => {
-            controller.abort();
-        };
-    }, []);
+    if (error) result = error.message;
+    if (isPending) result = <Spinner className="mx-auto" />;
 
     return (
         <Fragment>
-            <div className="mb-8 rounded-lg bg-gray-200 p-4 dark:stroke-gray-200">
-                <h2 className="">Playground</h2>
-                hello world
-                <div>{patient?.name}</div>
+            <div className="container mx-auto mb-8 rounded-lg bg-gray-200 p-4 dark:stroke-gray-200">
+                <h2>Playground</h2>
+                <div className="max-w-[600px] py-10">{result}</div>
             </div>
         </Fragment>
     );

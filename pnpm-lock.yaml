@@ -56,9 +56,12 @@ importers:
 
   apps/react:
     dependencies:
-      '@minvws/mgo-fhir':
+      '@minvws/mgo-fhir-client':
         specifier: workspace:*
-        version: link:../../packages/fhir
+        version: link:../../packages/fhir-client
+      '@minvws/mgo-fhir-data':
+        specifier: workspace:*
+        version: link:../../packages/fhir-data
       '@minvws/mgo-react-ui':
         specifier: workspace:*
         version: link:../../packages/react-ui
@@ -139,11 +142,20 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(vitest@1.2.2)
 
-  packages/fhir:
+  packages/fhir-client:
     dependencies:
       ky:
         specifier: ^1.2.0
         version: 1.2.0
+    devDependencies:
+      '@faker-js/faker':
+        specifier: ^8.4.0
+        version: 8.4.0
+      '@types/fhir':
+        specifier: ^0.0.41
+        version: 0.0.41
+
+  packages/fhir-data:
     devDependencies:
       '@faker-js/faker':
         specifier: ^8.4.0

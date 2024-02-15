@@ -3,6 +3,7 @@ import { ProtectedRoot } from './ProtectedRoot';
 import { Inloggen } from './Inloggen';
 import { Intro } from './Intro';
 import { Overzicht } from './Overzicht';
+import { Playground } from './Playground';
 
 export const routes = [
     {
@@ -27,5 +28,9 @@ export const routes = [
                 element: <Overzicht />,
             },
         ],
+    },
+    {
+        path: '/playground',
+        element: <Playground />,
     },
 ];

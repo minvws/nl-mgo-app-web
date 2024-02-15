@@ -1,13 +1,10 @@
 {
-    "name": "@minvws/mgo-fhir-client",
+    "name": "@minvws/mgo-fhir-data",
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
         ".": "./src/index.ts",
         "./*": "./src/*"
-    },
-    "dependencies": {
-        "ky": "^1.2.0"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
