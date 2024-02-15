@@ -1,5 +1,5 @@
 import { icons } from './Icons';
-import { Status } from './statuses';
+import { type Status } from './statuses';
 
 export interface AlertProps {
     label: string;

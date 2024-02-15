@@ -1,4 +1,4 @@
-import { SearchParamsOption } from 'ky';
+import type { SearchParamsOption } from 'ky';
 
 type URLSearchParamsArg = ConstructorParameters<typeof URLSearchParams>[0];
 

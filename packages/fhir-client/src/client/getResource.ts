@@ -1,7 +1,7 @@
-import { FhirResource } from '../types';
-import { KyInstance, Options as KyOptions } from 'ky';
-import { FhirClientOptions, ResourceType, TypedKyResponse } from '../types';
-import { ResourcesRequest } from './getResources';
+import type { FhirResource } from '../types';
+import type { KyInstance, Options as KyOptions } from 'ky';
+import type { FhirClientOptions, ResourceType, TypedKyResponse } from '../types';
+import type { ResourcesRequest } from './getResources';
 import { defaultsSearchParams } from '../utils/defaultsSearchParams/defaultsSearchParams';
 
 export interface ResourceRequest<T extends ResourceType = ResourceType>

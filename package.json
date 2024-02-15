@@ -10,6 +10,7 @@
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "lint:fix": "eslint . --ext ts,tsx --fix",
         "storybook": "pnpm run --dir packages/react-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."

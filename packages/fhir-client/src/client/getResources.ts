@@ -1,6 +1,6 @@
-import { Bundle, FhirResource } from '../types';
-import { KyInstance, Options as KyOptions } from 'ky';
-import { FhirClientOptions, ResourceType, TypedKyResponse } from '../types';
+import type { Bundle, FhirResource } from '../types';
+import type { KyInstance, Options as KyOptions } from 'ky';
+import type { FhirClientOptions, ResourceType, TypedKyResponse } from '../types';
 import { defaultsSearchParams } from '../utils/defaultsSearchParams/defaultsSearchParams';
 
 export interface ResourcesRequest<T extends ResourceType = ResourceType> {

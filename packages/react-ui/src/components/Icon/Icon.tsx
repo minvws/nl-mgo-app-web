@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
-import { HTMLAttributes } from 'react';
-import { IconName, icons } from './icons';
+import { type HTMLAttributes } from 'react';
+import { type IconName, icons } from './icons';
 
 export interface IconProps extends HTMLAttributes<SVGElement> {
     name: IconName;

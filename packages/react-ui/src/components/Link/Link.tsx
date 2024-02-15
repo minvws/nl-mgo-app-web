@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { ButtonOrLink, ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
+import { ButtonOrLink, type ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
 
 export type LinkProps = ButtonOrLinkProps;
 

@@ -1,4 +1,4 @@
-import { SafeGetFunc, safeGet } from '../safeGet/safeGet';
+import { type SafeGetFunc, safeGet } from '../safeGet/safeGet';
 
 export type GetBulkConfig<T extends object> = { [key: string]: SafeGetFunc<T> | GetBulkConfig<T> };
 

@@ -1,5 +1,5 @@
-import ky, { KyInstance, Options as KyOptions } from 'ky';
-import { FhirClientOptions } from '../types';
+import ky, { type KyInstance, type Options as KyOptions } from 'ky';
+import type { FhirClientOptions } from '../types';
 import { getResource } from './getResource';
 import { getResources } from './getResources';
 

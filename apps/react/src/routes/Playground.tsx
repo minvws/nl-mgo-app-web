@@ -6,7 +6,7 @@ import {
 } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 
 export function Playground() {
     const patientId = 'smart-1032702';

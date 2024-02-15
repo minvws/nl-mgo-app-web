@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonOrLink, ButtonOrLinkProps } from './ButtonOrLink';
+import { ButtonOrLink, type ButtonOrLinkProps } from './ButtonOrLink';
 
 type Story = StoryObj<typeof ButtonOrLink>;
 type StoryMeta = Meta<typeof ButtonOrLink>;

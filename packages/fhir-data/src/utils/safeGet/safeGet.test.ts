@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
-import { SafeGetFunc, safeGet } from './safeGet';
+import { type SafeGetFunc, safeGet } from './safeGet';
 
 type TestData = {
     foo?: string;

@@ -1,4 +1,4 @@
-import { SearchParamsOption } from 'ky';
+import type { SearchParamsOption } from 'ky';
 import { expect, test } from 'vitest';
 import { defaultsSearchParams } from './defaultsSearchParams';
 

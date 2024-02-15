@@ -1,4 +1,4 @@
-import { Patient } from '../../../fhir';
+import type { Patient } from '../../../fhir';
 import { safeGetBulk } from '../../../utils';
 
 export function getHumanName(fhir?: Patient) {

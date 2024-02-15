@@ -13,6 +13,10 @@ module.exports = {
     plugins: ['import', 'react-refresh', 'sonarjs'],
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+        '@typescript-eslint/consistent-type-imports': [
+            'error',
+            { fixStyle: 'inline-type-imports' },
+        ],
     },
     overrides: [
         {

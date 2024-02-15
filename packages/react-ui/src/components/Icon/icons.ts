@@ -6,7 +6,7 @@ import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safet
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 export const icons = {
     ChevronLeft,

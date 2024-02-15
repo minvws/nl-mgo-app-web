@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { DynamicElement, DynamicElementProps } from '../DynamicElement/DynamicElement';
+import { DynamicElement, type DynamicElementProps } from '../DynamicElement/DynamicElement';
 
 export interface StackProps extends DynamicElementProps {}
 
