@@ -1,9 +1,5 @@
 import { getResource } from '@/fhir/client';
-import {
-    getHumanName,
-    getEmail,
-    getPhoneNumber,
-} from '@minvws/mgo-fhir-data/resource/patient/index.ts';
+import { getHumanName, getEmail } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Fragment, type ReactNode } from 'react';
@@ -33,8 +29,6 @@ export function Playground() {
             <div>{getHumanName(patient)}</div>
             <div>Geboortedatum</div>
             <div>{patient?.birthDate}</div>
-            <div>Mobiel</div>
-            <div>{getPhoneNumber(patient, 'mobile')}</div>
             <div>Email</div>
             <div>{getEmail(patient)}</div>
             <div>Geslacht</div>
