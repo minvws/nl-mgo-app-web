@@ -37,5 +37,15 @@
         "extends": [
             "@commitlint/config-conventional"
         ]
+    },
+    "pnpm": {
+        "auditConfig": {
+            "ignoreCvesComments (non-standard key)": {
+                "CVE-2023-42282": "This vulnerability in the npm package 'ip' doesn't affect us, as the dependency that uses it  (@storybook/core-server) is only used during development and doesn't call into the vulnerable code. See https://github.com/minvws/nl-mgo-app-web-private/pull/53. Can be removed after https://github.com/storybookjs/storybook/issues/26014 is resolved."
+            },
+            "ignoreCves": [
+                "CVE-2023-42282"
+            ]
+        }
     }
 }
