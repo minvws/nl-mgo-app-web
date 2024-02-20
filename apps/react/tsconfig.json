@@ -20,8 +20,8 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
 
-        "types": ["vitest-dom/extend-expect"],
+        "types": ["vitest-dom/extend-expect"]
     },
     "include": ["src"],
-    "references": [{ "path": "./tsconfig.vite.json" }],
+    "references": [{ "path": "./tsconfig.vite.json" }]
 }
