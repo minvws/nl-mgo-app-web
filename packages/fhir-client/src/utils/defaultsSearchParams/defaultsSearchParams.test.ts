@@ -17,13 +17,18 @@ test.each<[SearchParamsOption[], Record<string, string>]>([
     [
         [
             '?foo=loremipsum&bool=true&bah=false',
+            [
+                ['foo', 'boo'],
+                ['baz', '20'],
+                ['bool', 'false'],
+            ],
             new URLSearchParams('?foo=bar&baz=4'),
-            { baz: 10, bool: false, extra: 'lorem' },
+            { baz: 10, extra: 'lorem' },
         ],
         { foo: 'bar', baz: '10', bool: 'false', bah: 'false', extra: 'lorem' },
     ],
 ])(
-    'combineSearchParams combines multiple url params, applying params from left to right',
+    'defaultsSearchParams combines multiple url params, applying params from left to right',
     (params, expected) => {
         const result = defaultsSearchParams(...params);
 

@@ -2,19 +2,19 @@ import type { SearchParamsOption } from 'ky';
 
 type URLSearchParamsArg = ConstructorParameters<typeof URLSearchParams>[0];
 
-export function defaultsSearchParams(...params: SearchParamsOption[]) {
-    const searchParams = new URLSearchParams();
+export function defaultsSearchParams(...searchParams: SearchParamsOption[]) {
+    const result = new URLSearchParams();
 
-    params
+    searchParams
         .map((x) => new URLSearchParams(x as URLSearchParamsArg))
-        .forEach((urlSearchParams) => {
-            for (const [key, val] of urlSearchParams.entries()) {
-                if (searchParams.has(key)) {
-                    searchParams.delete(key);
-                }
-                searchParams.append(key, val);
+        .map((x) => [...x.entries()])
+        .flat()
+        .forEach(([key, val]) => {
+            if (result.has(key)) {
+                result.delete(key);
             }
+            result.append(key, val);
         });
 
-    return searchParams;
+    return result;
 }

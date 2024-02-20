@@ -1,4 +1,4 @@
-import { getResource } from '@/fhir/client';
+import { getResource } from '../fhir/client';
 import { getHumanName, getEmail } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
@@ -22,18 +22,18 @@ export function Playground() {
     });
 
     let result: ReactNode = (
-        <div className="grid grid-cols-2 gap-2">
-            <div className="font-bold">patient id</div>
-            <div className="font-bold">{patientId}</div>
-            <div>Naam</div>
-            <div>{getHumanName(patient)}</div>
-            <div>Geboortedatum</div>
-            <div>{patient?.birthDate}</div>
-            <div>Email</div>
-            <div>{getEmail(patient)}</div>
-            <div>Geslacht</div>
-            <div>{patient?.gender}</div>
-        </div>
+        <ul className="grid grid-cols-2 gap-2">
+            <li className="font-bold">patient id</li>
+            <li className="font-bold">{patientId}</li>
+            <li>Naam</li>
+            <li>{getHumanName(patient)}</li>
+            <li>Geboortedatum</li>
+            <li>{patient?.birthDate}</li>
+            <li>Email</li>
+            <li>{getEmail(patient)}</li>
+            <li>Geslacht</li>
+            <li>{patient?.gender}</li>
+        </ul>
     );
 
     if (error) result = error.message;

@@ -1,7 +1,7 @@
 import ky, { type KyInstance, type Options as KyOptions } from 'ky';
 import type { FhirClientOptions } from '../types';
-import { getResource } from './getResource';
-import { getResources } from './getResources';
+import { getResource } from './getResource/getResource';
+import { getResources } from './getResources/getResources';
 
 function partial<Request, Response>(
     func: (

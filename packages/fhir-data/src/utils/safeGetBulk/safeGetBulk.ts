@@ -28,6 +28,19 @@ type MergedWithDefaults<Result, Defaults> = {
           : Result[key];
 };
 
+/**
+ * Similar idea to the `safeGet` except safeGetBulk can retrieve multiple values from an object at once.
+ *
+ * @example
+ *
+ * type MyType = { a?: { b?: { c?: string }, b2?: { d?:number } } };
+ * const myObject: MyType = { a: { b: { c: 'value' } };
+ *
+ * const { c, d } = safeGetBulk(myObject,
+ *         { c: (x) => x.a!.b!.c, d: (x) => x.a!.b2!.d' },
+ *         { c: :'default', d: 42 }
+ *     ); // returns { c:'value', d: 42 }
+ */
 export function safeGetBulk<
     T extends object,
     Config extends GetBulkConfig<T>,
