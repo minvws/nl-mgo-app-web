@@ -1,7 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stack } from '../Stack/Stack';
-import { ChevronLeft, ChevronRight } from '../icons';
 import { Button, ButtonProps } from './Button';
 import { variants } from './variants';
 
@@ -33,9 +32,22 @@ export const FullWidth: Story = {
 
 export const WithIcon: Story = {
     args: {
-        leftIcon: <ChevronLeft />,
         variant: 'link',
     },
+    render: ({ ...args }) => (
+        <Stack className="flex-row">
+            <Button {...args} variant={args.variant} leftIcon="ChevronLeft">
+                With name
+            </Button>
+            <Button
+                {...args}
+                variant={args.variant}
+                leftIcon={<div className="h-4 w-4 bg-blue-400" />}
+            >
+                With JSX Element
+            </Button>
+        </Stack>
+    ),
 };
 
 export const AsLink: Story = {
@@ -53,10 +65,10 @@ export const Overview: Story = {
                     <Button {...args} variant={variant}>
                         {variant}
                     </Button>
-                    <Button {...args} variant={variant} leftIcon={<ChevronLeft />}>
+                    <Button {...args} variant={variant} leftIcon="ChevronLeft">
                         {variant}
                     </Button>
-                    <Button {...args} variant={variant} rightIcon={<ChevronRight />}>
+                    <Button {...args} variant={variant} rightIcon="ChevronRight">
                         {variant}
                     </Button>
                     <Button {...args} variant={variant} isDisabled>

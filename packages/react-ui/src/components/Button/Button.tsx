@@ -3,11 +3,13 @@ import { tw } from '../../utils/tw/tw';
 import { Variant } from './variants';
 import { ButtonOrLink, ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
 import { ReactNode } from 'react';
+import { IconName, isIconName } from '../Icon/icons';
+import { Icon } from '../Icon/Icon';
 
 export type ButtonProps = {
     variant?: Variant;
-    leftIcon?: ReactNode;
-    rightIcon?: ReactNode;
+    leftIcon?: ReactNode | IconName;
+    rightIcon?: ReactNode | IconName;
 } & ButtonOrLinkProps;
 
 const disabledStyles = tw`aria-disabled:bg-grey-300 aria-disabled:border-grey-300 aria-disabled:focus:border-grey-100 aria-disabled:cursor-default`;
@@ -30,18 +32,24 @@ export const Button = ({
     return (
         <ButtonOrLink
             className={twMerge(
-                `inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-bold outline-none`,
+                `text-md inline-flex items-center justify-center rounded-lg px-6 py-3 font-bold outline-none`,
                 typeColors[variant],
+                !!leftIcon && 'pl-4',
+                !!rightIcon && 'pr-4',
                 className
             )}
             {...rest}
         >
             {!!leftIcon && (
-                <span className="me-2 inline-flex shrink-0 self-center">{leftIcon}</span>
+                <span className="me-2 inline-flex shrink-0 self-center text-[1.5em]">
+                    {isIconName(leftIcon) ? <Icon name={leftIcon} /> : leftIcon}
+                </span>
             )}
             {children}
             {!!rightIcon && (
-                <span className="ms-2 inline-flex shrink-0 self-center">{rightIcon}</span>
+                <span className="ms-2 inline-flex shrink-0 self-center text-[1.5em]">
+                    {isIconName(rightIcon) ? <Icon name={rightIcon} /> : rightIcon}
+                </span>
             )}
         </ButtonOrLink>
     );

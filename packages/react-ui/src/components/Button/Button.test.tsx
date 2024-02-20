@@ -29,6 +29,19 @@ test('renders with a left icon if specified', async () => {
     expect(await screen.findByTestId('left-icon')).toBeVisible();
 });
 
+test('renders with a left icon component', async () => {
+    const props = {
+        children: faker.lorem.sentence(),
+        variant: faker.helpers.arrayElement(variants),
+        leftIcon: 'Encrypted',
+    };
+
+    render(<Button {...props} />);
+
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
+    expect(screen.getByRole('button')).toContainHTML('<svg');
+});
+
 test('renders with a right icon if specified', async () => {
     const props = {
         children: faker.lorem.sentence(),
@@ -40,4 +53,17 @@ test('renders with a right icon if specified', async () => {
 
     expect(screen.getByRole('button')).toHaveTextContent(props.children);
     expect(await screen.findByTestId('right-icon')).toBeVisible();
+});
+
+test('renders with a right icon component', async () => {
+    const props = {
+        children: faker.lorem.sentence(),
+        variant: faker.helpers.arrayElement(variants),
+        rightIcon: 'Encrypted',
+    };
+
+    render(<Button {...props} />);
+
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
+    expect(screen.getByRole('button')).toContainHTML('<svg');
 });
