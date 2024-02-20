@@ -6,12 +6,17 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:react-hooks/recommended',
         'plugin:sonarjs/recommended',
+        'plugin:@tanstack/eslint-plugin-query/recommended',
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
     plugins: ['import', 'react-refresh', 'sonarjs'],
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+        '@typescript-eslint/consistent-type-imports': [
+            'error',
+            { fixStyle: 'inline-type-imports' },
+        ],
     },
     overrides: [
         {

@@ -10,6 +10,7 @@
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "lint:fix": "eslint . --ext ts,tsx --fix",
         "storybook": "pnpm run --dir packages/react-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
@@ -17,6 +18,7 @@
     "devDependencies": {
         "@commitlint/cli": "^18.6.0",
         "@commitlint/config-conventional": "^18.5.0",
+        "@tanstack/eslint-plugin-query": "^5.20.1",
         "@typescript-eslint/eslint-plugin": "^6.20.0",
         "@typescript-eslint/parser": "^6.20.0",
         "@vitest/coverage-v8": "^1.2.2",

@@ -63,7 +63,17 @@ pnpm storybook
 You can start the development server in docker by running:
 
 ```sh
-docker compose up
+docker compose up -d
 ```
 
 By default, the server will be available at [http://localhost:8000](http://localhost:8000). You can change the port via the `PORT` environment variable (e.g. via a `.env` file), but doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
+
+### HAPI / FHIR data test server
+
+The docker-compose also includes a `hapi` service which is a test server that can provide FHIR data responses. When running the react app on local development server you can start this service by itself by running:
+
+```sh
+docker compose up -d hapi
+```
+
+The HAPI fhir server will be available at [http://localhost:8080/hapi-fhir-jpaserver](http://localhost:8080/hapi-fhir-jpaserver). For example: a Patient Bundle resource request would be: [http://localhost:8080/hapi-fhir-jpaserver/fhir/Patient](http://localhost:8080/hapi-fhir-jpaserver/fhir/Patient).

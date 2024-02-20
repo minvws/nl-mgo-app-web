@@ -3,5 +3,7 @@
 export { Alert } from './components/Alert/Alert';
 export { Button } from './components/Button/Button';
 export { Heading } from './components/Heading/Heading';
+export { Spinner } from './components/Spinner/Spinner';
+export { Stack } from './components/Stack/Stack';
 
 export { tw } from './utils/tw/tw';

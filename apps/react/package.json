@@ -9,8 +9,11 @@
         "preview": "vite preview --port=8000"
     },
     "dependencies": {
+        "@minvws/mgo-fhir-client": "workspace:*",
+        "@minvws/mgo-fhir-data": "workspace:*",
         "@minvws/mgo-react-ui": "workspace:*",
         "@minvws/mgo-tailwind": "workspace:*",
+        "@tanstack/react-query": "^5.20.5",
         "autoprefixer": "^10.4.17",
         "oidc-client-ts": "^2.4.0",
         "postcss": "^8.4.33",

@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
-import { Size } from './sizes';
-import { DynamicElement, DynamicElementProps } from '../DynamicElement/DynamicElement';
+import { type Size } from './sizes';
+import { DynamicElement, type DynamicElementProps } from '../DynamicElement/DynamicElement';
 import { tw } from '../../utils/tw/tw';
 
 export interface HeadingProps extends DynamicElementProps {

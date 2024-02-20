@@ -1,8 +1,13 @@
-import { defineProject } from 'vitest/config';
+import { defineProject, mergeConfig } from 'vitest/config';
 
-export default defineProject({
-    test: {
-        environment: 'jsdom',
-        setupFiles: ['./test/setup.ts'],
-    },
-});
+import configShared from './vite.config';
+
+export default mergeConfig(
+    configShared,
+    defineProject({
+        test: {
+            environment: 'jsdom',
+            setupFiles: ['./test/setup.ts'],
+        },
+    })
+);

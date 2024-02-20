@@ -1,4 +1,4 @@
-import { ComponentType, HTMLAttributes } from 'react';
+import type { ComponentType, HTMLAttributes } from 'react';
 
 export interface DynamicElementProps<
     Tag extends keyof HTMLElementTagNameMap = keyof HTMLElementTagNameMap,

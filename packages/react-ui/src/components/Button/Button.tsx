@@ -1,9 +1,9 @@
 import { twMerge } from 'tailwind-merge';
 import { tw } from '../../utils/tw/tw';
-import { Variant } from './variants';
-import { ButtonOrLink, ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
-import { ReactNode } from 'react';
-import { IconName, isIconName } from '../Icon/icons';
+import { type Variant } from './variants';
+import { ButtonOrLink, type ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
+import { type ReactNode } from 'react';
+import { type IconName, isIconName } from '../Icon/icons';
 import { Icon } from '../Icon/Icon';
 
 export type ButtonProps = {

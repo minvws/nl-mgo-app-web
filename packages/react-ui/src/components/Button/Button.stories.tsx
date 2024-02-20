@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stack } from '../Stack/Stack';
-import { Button, ButtonProps } from './Button';
+import { Button, type ButtonProps } from './Button';
 import { variants } from './variants';
 
 type Story = StoryObj<typeof Button>;
