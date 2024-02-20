@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-import { useAuth } from '../lib/auth';
-import { useIntroSeen } from '../lib/introSeen';
+import { useAuth } from '@/lib/auth';
+import { useIntroSeen } from '@/lib/introSeen';
 
 export function PublicRoot() {
     const auth = useAuth();

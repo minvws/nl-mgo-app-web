@@ -2,7 +2,7 @@ import { Fragment, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Heading } from '@minvws/mgo-react-ui';
 
-import { useIntroSeen } from '../lib/introSeen';
+import { useIntroSeen } from '@/lib/introSeen';
 
 export function Intro() {
     const navigate = useNavigate();
