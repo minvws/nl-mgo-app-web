@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { useAuth } from '../lib/auth';
+import { useAuth } from '@/lib/auth';
 import { Heading } from '@minvws/mgo-react-ui';
 
 export function Overzicht() {

@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import { useAuth } from '../lib/auth';
-import { useIntroSeen } from '../lib/introSeen';
+import { useAuth } from '@/lib/auth';
+import { useIntroSeen } from '@/lib/introSeen';
 
 export function ProtectedRoot() {
     const auth = useAuth();

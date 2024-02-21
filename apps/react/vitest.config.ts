@@ -1,9 +1,8 @@
 import { defineProject, mergeConfig } from 'vitest/config';
-
-import configShared from './vite.config';
+import viteConfig from './vite.config';
 
 export default mergeConfig(
-    configShared,
+    viteConfig,
     defineProject({
         test: {
             environment: 'jsdom',

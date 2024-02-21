@@ -3,7 +3,7 @@ import { Button, Heading } from '@minvws/mgo-react-ui';
 
 import { Busy } from './Busy.tsx';
 import { Error } from './Error.tsx';
-import { useAuth } from '../lib/auth';
+import { useAuth } from '@/lib/auth';
 
 export function Inloggen() {
     const auth = useAuth();
