@@ -83,7 +83,6 @@ test('sign-in', async () => {
         lang: 'nl',
         nonce: expect.stringMatching(/^[0-9A-Za-z-._]{32}$/),
         redirect_uri: locationBaseUrl,
-        response_mode: 'query',
         response_type: 'code',
         scope: 'openid',
         state: expect.any(String),

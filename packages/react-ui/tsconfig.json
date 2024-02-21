@@ -16,8 +16,8 @@
         "noEmit": true,
         "jsx": "react-jsx",
 
-        "types": ["vitest-dom/extend-expect"],
+        "types": ["vitest-dom/extend-expect"]
     },
     "include": ["src"],
-    "exclude": ["node_modules", "lib"],
+    "exclude": ["node_modules", "lib"]
 }
