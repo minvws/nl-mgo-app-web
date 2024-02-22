@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 import { Button, Heading } from '@minvws/mgo-react-ui';
 
-import { Busy } from './Busy.tsx';
-import { Error } from './Error.tsx';
+import { Busy } from './Busy.js';
+import { Error } from './Error.js';
 import { useAuth } from '@/lib/auth';
 
-export function Inloggen() {
+export function Login() {
     const auth = useAuth();
 
     if (auth.activeNavigator === 'signinSilent') {

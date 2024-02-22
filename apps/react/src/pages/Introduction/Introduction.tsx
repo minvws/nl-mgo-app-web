@@ -4,7 +4,7 @@ import { Button, Heading } from '@minvws/mgo-react-ui';
 
 import { useIntroSeen } from '@/lib/introSeen';
 
-export function Intro() {
+export function Introduction() {
     const navigate = useNavigate();
     const { setIntroSeen } = useIntroSeen();
     const [isPropositionSeen, setPropositionSeen] = useState(false);

@@ -1,10 +1,9 @@
-import { Fragment } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import { useAuth } from '@/lib/auth';
 import { useIntroSeen } from '@/lib/introSeen';
 
-export function PublicRoot() {
+export function PublicRoute() {
     const auth = useAuth();
     const location = useLocation();
     const { isIntroSeen } = useIntroSeen();
@@ -22,16 +21,5 @@ export function PublicRoot() {
         }
     }
 
-    return (
-        <Fragment>
-            <img
-                src="/rijkshuisstijl/logo.svg"
-                alt="Logo Rijksoverheid"
-                className="mx-auto mb-16 block w-16"
-            />
-            <main className="mx-auto max-w-md">
-                <Outlet />
-            </main>
-        </Fragment>
-    );
+    return <Outlet />;
 }

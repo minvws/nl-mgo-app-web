@@ -1,4 +1,4 @@
-import { getResource } from '../fhir/client';
+import { getResource } from '../../fhir/client';
 import { getHumanName, getEmail } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
