@@ -172,6 +172,9 @@ importers:
       '@minvws/mgo-tailwind':
         specifier: workspace:*
         version: link:../tailwind
+      '@react-hook/media-query':
+        specifier: ^1.1.1
+        version: 1.1.1(react@18.2.0)
       autoprefixer:
         specifier: ^10.4.17
         version: 10.4.17(postcss@8.4.35)
@@ -3030,6 +3033,14 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.9
     dev: true
+
+  /@react-hook/media-query@1.1.1(react@18.2.0):
+    resolution: {integrity: sha512-VM14wDOX5CW5Dn6b2lTiMd79BFMTut9AZj2+vIRT3LCKgMCYmdqruTtzDPSnIVDQdtxdPgtOzvU9oK20LopuOw==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@remix-run/router@1.15.1:
     resolution: {integrity: sha512-zcU0gM3z+3iqj8UX45AmWY810l3oUmXM7uH4dt5xtzvMhRtYVhKGOmgOd1877dOPPepfCjUv57w+syamWIYe7w==}

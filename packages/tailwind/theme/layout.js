@@ -1,5 +1,5 @@
 // @ts-check
-import { pxToRem } from './utils.js';
+import { pxToRem, pxToEm } from './utils.js';
 
 export const maxWidth = {
     xs: pxToRem(433), // 4 columns
@@ -12,10 +12,15 @@ export const maxWidth = {
     prose: '65ch',
 };
 
+/**
+ * We use `em` breakpoints for better a11y support
+ * This will most likely be de default soon for tailwind as well
+ * @see https://github.com/tailwindlabs/tailwindcss/discussions/8378
+ */
 export const screens = {
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    '2xl': '1536px',
+    sm: pxToEm(640),
+    md: pxToEm(768),
+    lg: pxToEm(1024),
+    xl: pxToEm(1280),
+    '2xl': pxToEm(1536),
 };
