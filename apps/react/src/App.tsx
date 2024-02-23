@@ -19,7 +19,7 @@ export function App() {
             <AuthProvider {...readConfig().oidc}>
                 <Routes>
                     <Route path="/" element={<PublicRoute />}>
-                        <Route element={<PageLayout />}>
+                        <Route element={<PageLayout hideMenu />}>
                             <Route path="/intro" element={<Introduction />} />
                             <Route path="/voorwaarden" element={<Terms />} />
                             <Route path="/inloggen" element={<Login />} />

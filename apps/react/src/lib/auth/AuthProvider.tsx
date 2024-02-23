@@ -1,4 +1,4 @@
-import { type ReactNode, useMemo } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { AuthProvider as OriginalAuthProvider } from 'react-oidc-context';
 import { generateNonce } from './generateNonce.ts';
 
@@ -12,16 +12,14 @@ type Props = {
 
 const onSigninCallback = () => window.history.replaceState({}, '', window.location.pathname);
 
-function WrappedAuthProvider(props: Props) {
+function WrappedAuthProvider({ lang, ...rest }: Props) {
     const nonce = useMemo(() => generateNonce(32), []);
+
     return (
         <OriginalAuthProvider
-            authority={props.authority}
-            client_id={props.client_id}
-            redirect_uri={props.redirect_uri}
-            extraQueryParams={{ lang: props.lang || 'nl', nonce }}
+            extraQueryParams={{ lang: lang || 'nl', nonce }}
             onSigninCallback={onSigninCallback}
-            children={props.children}
+            {...rest}
         />
     );
 }

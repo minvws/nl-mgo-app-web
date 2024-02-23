@@ -1,8 +1,8 @@
-import { Fragment, type ReactNode } from 'react';
-import { getHumanName, getEmail } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
-import { Spinner } from '@minvws/mgo-react-ui';
-import { useQuery } from '@tanstack/react-query';
 import { getResource } from '$/fhir/client';
+import { getEmail, getHumanName } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
+import { Spinner, Container } from '@minvws/mgo-react-ui';
+import { useQuery } from '@tanstack/react-query';
+import { type ReactNode } from 'react';
 
 export function Playground() {
     const patientId = 'smart-1032702';
@@ -40,11 +40,11 @@ export function Playground() {
     if (isPending) result = <Spinner className="mx-auto" />;
 
     return (
-        <Fragment>
+        <Container>
             <div className="container mx-auto mb-8 rounded-lg bg-gray-200 p-4 dark:stroke-gray-200">
                 <h2>Playground</h2>
                 <div className="max-w-[600px] py-10">{result}</div>
             </div>
-        </Fragment>
+        </Container>
     );
 }

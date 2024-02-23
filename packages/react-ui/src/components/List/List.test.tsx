@@ -6,11 +6,11 @@ import { faker } from '@faker-js/faker';
 test('renders a default List', async () => {
     const props = {
         children: [
-            <ListItem>
+            <ListItem key="1">
                 <ListIcon name="Encrypted" />
                 {faker.lorem.sentences(3)}
             </ListItem>,
-            <ListItem children={faker.lorem.sentences(3)} />,
+            <ListItem key="2">{faker.lorem.sentences(3)}</ListItem>,
         ],
     };
 

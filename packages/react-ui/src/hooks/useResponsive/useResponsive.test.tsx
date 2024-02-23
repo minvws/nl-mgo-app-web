@@ -35,8 +35,7 @@ test.each<[string[], ResponsiveConfig<string>, string]>([
     }
 );
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-test.each<[string[], ResponsiveConfig<any>, any]>([
+test.each<[string[], ResponsiveConfig<unknown>, unknown]>([
     [[], { base: 1, sm: 2 }, 1],
     [allQueries, { base: 1, md: 2 }, 2],
     [[], { base: true, sm: false }, true],
