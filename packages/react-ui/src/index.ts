@@ -5,5 +5,6 @@ export { Heading } from './components/Heading/Heading';
 export { List, ListItem, ListIcon } from './components/List';
 export { Spinner } from './components/Spinner/Spinner';
 export { Stack } from './components/Stack/Stack';
+export { Container } from './components/Container/Container';
 
 export { tw } from './utils/tw/tw';
