@@ -17,7 +17,7 @@ const renderWithRouter = (options?: MemoryRouterProps) =>
         </MemoryRouter>
     );
 
-const introHeadingOne = 'Jouw gezond\u00ADheids\u00ADgegevens op één plek verzameld';
+const introHeadingOne = 'Je gezond\u00ADheids\u00ADgegevens in één overzicht';
 
 test('redirect to intro from login', () => {
     renderWithRouter({ initialEntries: ['/inloggen'] });

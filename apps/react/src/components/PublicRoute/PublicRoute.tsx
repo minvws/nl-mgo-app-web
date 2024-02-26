@@ -13,7 +13,7 @@ export function PublicRoute() {
     }
 
     if (!auth.isLoading) {
-        if (!isIntroSeen && location.pathname !== '/intro') {
+        if (!isIntroSeen && !['/intro', '/voorwaarden'].includes(location.pathname)) {
             return <Navigate to="/intro" />;
         }
         if (isIntroSeen && location.pathname !== '/inloggen') {

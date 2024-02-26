@@ -14,9 +14,6 @@ const TextSizes: Record<Size, string> = {
     xl: tw`text-3xl md:text-4xl lg:text-5xl`,
 };
 
-/**
- * A small utility component that makes it easy to change the rendered element type.
- */
 export const Heading = ({ size = 'md', className, ...rest }: HeadingProps) => {
     return (
         <DynamicElement

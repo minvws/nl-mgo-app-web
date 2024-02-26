@@ -23,34 +23,36 @@ export function Login() {
 
     return (
         <Fragment>
-            <Heading as="h1" size="lg" className="mb-8">
-                Bewijs wie je bent
-            </Heading>
-            <p className="mb-8 text-xl">
-                Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
-                veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.
-            </p>
-            <ul className="grid gap-4 text-xl">
-                <li>
-                    <Button
-                        onClick={() => void auth.signinRedirect()}
-                        variant="outline"
-                        className="w-full"
-                    >
-                        Inloggen met DigiD
-                    </Button>
-                </li>
-                <li>
-                    <Button isDisabled={true} variant="outline" className="w-full">
-                        Inloggen als gemachtigde
-                    </Button>
-                </li>
-                <li>
-                    <Button isDisabled={true} variant="outline" className="w-full">
-                        European login
-                    </Button>
-                </li>
-            </ul>
+            <section className="mx-auto max-w-2xl">
+                <Heading as="h1" size="lg" className="mb-8">
+                    Bewijs wie je bent
+                </Heading>
+                <p className="mb-8 text-xl">
+                    Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
+                    veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.
+                </p>
+                <ul className="grid gap-4 text-xl">
+                    <li>
+                        <Button
+                            onClick={() => void auth.signinRedirect()}
+                            variant="outline"
+                            className="w-full"
+                        >
+                            Inloggen met DigiD
+                        </Button>
+                    </li>
+                    <li>
+                        <Button isDisabled={true} variant="outline" className="w-full">
+                            Inloggen als gemachtigde
+                        </Button>
+                    </li>
+                    <li>
+                        <Button isDisabled={true} variant="outline" className="w-full">
+                            European login
+                        </Button>
+                    </li>
+                </ul>
+            </section>
         </Fragment>
     );
 }

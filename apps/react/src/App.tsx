@@ -10,6 +10,7 @@ import { Introduction } from './pages/Introduction/Introduction';
 import { Overview } from './pages/Overview/Overview';
 import { Playground } from './pages/Playground/Playground';
 import { PageLayout } from './components/PageLayout/PageLayout';
+import { Terms } from './pages/Introduction/Terms';
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ export function App() {
                     <Route path="/" element={<PublicRoute />}>
                         <Route element={<PageLayout />}>
                             <Route path="/intro" element={<Introduction />} />
+                            <Route path="/voorwaarden" element={<Terms />} />
                             <Route path="/inloggen" element={<Login />} />
                         </Route>
                     </Route>

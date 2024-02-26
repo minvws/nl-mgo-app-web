@@ -1,0 +1,49 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { List, ListIcon, ListItem } from './';
+
+type Story = StoryObj<typeof List>;
+type StoryMeta = Meta<typeof List>;
+
+export default {
+    component: List,
+    args: {
+        children: [
+            <ListItem>
+                Consequuntur ipsa facere eligendi repudiandae possimus nesciunt porro odit in
+                deserunt iure commodi vitae delectus. Dicta repudiandae dolore repudiandae porro
+                numquam harum labore assumenda veritatis fugit quod. Quidem quos animi soluta nemo
+                aperiam iste molestiae qui perspiciatis labore iure. Neque fugit aut nesciunt minus
+                quod quis rerum sit laudantium ex. Cumque deserunt pariatur ipsam aut amet quidem
+                occaecati porro magni quod perferendis vitae.
+            </ListItem>,
+            <ListItem>
+                Excepturi corporis veritatis dolorem laboriosam neque molestias beatae vero minima
+                consectetur quaerat nihil asperiores nisi. Aliquam blanditiis sequi corporis
+                quibusdam esse natus officia officiis. Tenetur itaque ut veritatis incidunt natus
+                distinctio adipisci. Veniam quibusdam eveniet dolorem quasi eaque quod consequatur
+                et praesentium blanditiis. Labore quae nam rerum ipsa dolorum rerum corporis nihil
+                vero quae fuga accusamus nihil.
+            </ListItem>,
+        ],
+    },
+} satisfies StoryMeta;
+
+export const Default: Story = {};
+
+export const WithIcon: Story = {
+    args: {
+        children: [
+            <ListItem className="flex">
+                <ListIcon name="Encrypted" />
+                Corrupti eveniet ipsum odit voluptatibus natus veritatis minima consectetur
+                pariatur. Doloremque hic repellendus inventore repellendus fugit voluptate officiis
+                commodi. Quis harum atque delectus alias quod pariatur nobis nulla dignissimos
+                repellat.
+            </ListItem>,
+            <ListItem className="flex">
+                <ListIcon name="HealthAndSafety" />
+                Nulla expedita ad placeat assumenda facilis officia deleniti.
+            </ListItem>,
+        ],
+    },
+};

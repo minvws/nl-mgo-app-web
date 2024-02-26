@@ -13,7 +13,7 @@ export function PageLayout() {
                 alt="Logo Rijksoverheid"
                 className="mx-auto mb-16 block w-16"
             />
-            <main className="mx-auto max-w-md">
+            <main className="container mx-auto">
                 <Outlet />
             </main>
         </Fragment>

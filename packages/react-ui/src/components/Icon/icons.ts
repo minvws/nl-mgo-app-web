@@ -5,6 +5,7 @@ import Encrypted from '@material-symbols/svg-400/outlined/encrypted-fill.svg?rea
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
+import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
 
 import { type ReactNode } from 'react';
 
@@ -15,6 +16,7 @@ export const icons = {
     HealthAndSafety,
     VerifiedUser,
     GppBad,
+    ProgressActivity,
 };
 
 export type IconName = keyof typeof icons;

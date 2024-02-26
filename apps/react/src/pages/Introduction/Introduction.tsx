@@ -1,82 +1,29 @@
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Heading } from '@minvws/mgo-react-ui';
-
-import { useIntroSeen } from '@/lib/introSeen';
+import IntroSvg from './intro.svg?react';
 
 export function Introduction() {
     const navigate = useNavigate();
-    const { setIntroSeen } = useIntroSeen();
-    const [isPropositionSeen, setPropositionSeen] = useState(false);
-
-    const handleClickNext = useMemo(
-        () => () => {
-            if (isPropositionSeen) {
-                setIntroSeen(true);
-                navigate('/overzicht');
-            } else {
-                setPropositionSeen(true);
-            }
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [isPropositionSeen]
-    );
-
-    if (isPropositionSeen) {
-        return (
-            <Fragment>
-                <Heading as="h1" size="lg" className="mb-8">
-                    Zo gebruikt de app jouw gegevens
-                </Heading>
-                <div className="mb-16 text-xl">
-                    <p className="mb-4">
-                        In de privacyverklaring staat hoe Mijn Zorg jouw gegevens gebruikt. Dit zijn
-                        de belangrijkste punten:
-                    </p>
-                    <ul className="mb-8 list-disc pl-4">
-                        <li className="mb-4">
-                            Je gegevens worden <strong>versleuteld</strong> en via een{' '}
-                            <strong>veilige</strong> verbinding opgehaald.
-                        </li>
-                        <li className="mb-4">
-                            De app haalt je gegevens direct op bij de zorgverleners die jij kiest.{' '}
-                            <strong>Alleen jij hebt toegaang.</strong>
-                        </li>
-                        <li className="mb-4">
-                            <strong>Je kiest zelf</strong> hoe je je gegevens wilt gebruiken en of
-                            je ze wel of niet deelt met anderen.
-                        </li>
-                        <li className="mb-4">
-                            Je kunt de gegevens in je overzicht{' '}
-                            <strong>altijd verwijderen of opnieuw opvragen</strong>.
-                        </li>
-                    </ul>
-                </div>
-                <Button onClick={handleClickNext} className="mb-16 w-full text-xl">
-                    Volgende
-                </Button>
-            </Fragment>
-        );
-    }
+    const handleClickNext = () => {
+        navigate('/voorwaarden');
+    };
 
     return (
         <Fragment>
-            <Heading as="h1" size="lg" className="mb-8 text-3xl font-bold">
-                Jouw gezond&shy;heids&shy;gegevens op één plek verzameld
-            </Heading>
-            <div className="mb-16 text-xl">
-                <p className="mb-4">
-                    Inzien wat je huisarts, ziekenhuis en andere zorg&shy;verleners weten over jou.
-                    Alles in één overzicht. Veilig en over&shy;zichtelijk.
+            <section className="mx-auto max-w-2xl">
+                <IntroSvg className="mb-16 w-full" />
+                <Heading as="h1" size="lg" className="mb-6">
+                    Je gezond&shy;heids&shy;gegevens in één overzicht
+                </Heading>
+                <p className="mb-12 text-lg">
+                    Alle informatie die je huisarts, ziekenhuis en andere zorg&shy;verleners over
+                    jou hebben. Op één plek. Veilig en overzichtelijk.
                 </p>
-                <p className="mb-4">
-                    Mijn Zorg is een eenvoudige versie van een Persoon&shy;lijke
-                    Gezond&shy;heids&shy;omgeving (PGO).
-                </p>
-            </div>
-            <Button onClick={handleClickNext} className="mb-16 w-full text-xl">
-                Volgende
-            </Button>
+                <Button onClick={handleClickNext} className="mb-16">
+                    Volgende
+                </Button>
+            </section>
         </Fragment>
     );
 }

@@ -1,8 +1,8 @@
 /* c8 ignore start */
-
 export { Alert } from './components/Alert/Alert';
 export { Button } from './components/Button/Button';
 export { Heading } from './components/Heading/Heading';
+export { List, ListItem, ListIcon } from './components/List';
 export { Spinner } from './components/Spinner/Spinner';
 export { Stack } from './components/Stack/Stack';
 
