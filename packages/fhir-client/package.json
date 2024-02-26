@@ -7,7 +7,7 @@
         "./*": "./src/*"
     },
     "dependencies": {
-        "ky": "^1.2.0"
+        "ky": "^1.2.1"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
