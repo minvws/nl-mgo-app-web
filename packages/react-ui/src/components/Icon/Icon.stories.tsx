@@ -33,8 +33,8 @@ export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
         <div className="grid auto-cols-auto auto-rows-auto grid-cols-[repeat(auto-fill,minmax(90px,_1fr))] gap-4 text-center">
-            {iconNames.map((name) => (
-                <div>
+            {iconNames.map((name, index) => (
+                <div key={index}>
                     <div className="text-md flex min-h-16 items-center justify-center">
                         <Icon {...args} name={name} />
                     </div>

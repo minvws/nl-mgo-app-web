@@ -18,8 +18,8 @@ export const Heading = ({ size = 'md', className, ...rest }: HeadingProps) => {
     return (
         <DynamicElement
             className={twMerge(
-                'font-sans font-bold leading-tight text-black dark:text-white',
                 TextSizes[size],
+                'font-sans font-bold leading-tight text-black dark:text-white',
                 className
             )}
             {...rest}

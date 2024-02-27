@@ -4,6 +4,7 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:sonarjs/recommended',
         'plugin:@tanstack/eslint-plugin-query/recommended',
@@ -12,6 +13,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['import', 'react-refresh', 'sonarjs'],
     rules: {
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-uses-react': 'off',
+        'react/jsx-boolean-value': ['error', 'never'],
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
         '@typescript-eslint/consistent-type-imports': [
             'error',

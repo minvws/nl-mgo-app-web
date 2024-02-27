@@ -8,7 +8,7 @@ export default {
     component: List,
     args: {
         children: [
-            <ListItem>
+            <ListItem key="1">
                 Consequuntur ipsa facere eligendi repudiandae possimus nesciunt porro odit in
                 deserunt iure commodi vitae delectus. Dicta repudiandae dolore repudiandae porro
                 numquam harum labore assumenda veritatis fugit quod. Quidem quos animi soluta nemo
@@ -16,7 +16,7 @@ export default {
                 quod quis rerum sit laudantium ex. Cumque deserunt pariatur ipsam aut amet quidem
                 occaecati porro magni quod perferendis vitae.
             </ListItem>,
-            <ListItem>
+            <ListItem key="2">
                 Excepturi corporis veritatis dolorem laboriosam neque molestias beatae vero minima
                 consectetur quaerat nihil asperiores nisi. Aliquam blanditiis sequi corporis
                 quibusdam esse natus officia officiis. Tenetur itaque ut veritatis incidunt natus
@@ -33,14 +33,14 @@ export const Default: Story = {};
 export const WithIcon: Story = {
     args: {
         children: [
-            <ListItem className="flex">
+            <ListItem className="flex" key="1">
                 <ListIcon name="Encrypted" />
                 Corrupti eveniet ipsum odit voluptatibus natus veritatis minima consectetur
                 pariatur. Doloremque hic repellendus inventore repellendus fugit voluptate officiis
                 commodi. Quis harum atque delectus alias quod pariatur nobis nulla dignissimos
                 repellat.
             </ListItem>,
-            <ListItem className="flex">
+            <ListItem className="flex" key="2">
                 <ListIcon name="HealthAndSafety" />
                 Nulla expedita ad placeat assumenda facilis officia deleniti.
             </ListItem>,

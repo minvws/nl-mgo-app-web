@@ -1,11 +1,11 @@
-import { Heading } from '@minvws/mgo-react-ui';
 import { useAuth } from '$/lib/auth';
+import { Container, Heading } from '@minvws/mgo-react-ui';
 
 export function Overview() {
     const auth = useAuth();
 
     return (
-        <main className="mx-auto max-w-lg pt-4">
+        <Container className="max-w-md py-10">
             <Heading as="h1" size="lg" className="mb-8">
                 Succesvol ingelogd met DigiD
             </Heading>
@@ -17,6 +17,6 @@ export function Overview() {
             <button onClick={() => void auth.removeUser()} className="mb-8 text-xl font-bold">
                 Uitloggen
             </button>
-        </main>
+        </Container>
     );
 }

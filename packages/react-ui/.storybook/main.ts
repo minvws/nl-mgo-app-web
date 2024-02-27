@@ -9,8 +9,13 @@ const config: StorybookConfig = {
         },
         {
             directory: '../src/components',
-            files: '**/*.stories.tsx',
+            files: '**/*.@(mdx|stories.tsx)',
             titlePrefix: 'Components',
+        },
+        {
+            directory: '../src/hooks',
+            files: '**/*.@(mdx|stories.tsx)',
+            titlePrefix: 'Hooks',
         },
     ],
     addons: [

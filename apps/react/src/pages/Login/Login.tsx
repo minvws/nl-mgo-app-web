@@ -1,5 +1,4 @@
-import { Fragment } from 'react';
-import { Button, Heading } from '@minvws/mgo-react-ui';
+import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
 import { useAuth } from '$/lib/auth';
 import { Busy } from './Busy.js';
 import { Error } from './Error.js';
@@ -7,22 +6,25 @@ import { Error } from './Error.js';
 export function Login() {
     const auth = useAuth();
 
+    let status = null;
+
     if (auth.activeNavigator === 'signinSilent') {
-        return <Busy task="inloggen" />;
+        status = <Busy task="inloggen" />;
+    } else if (auth.activeNavigator === 'signoutRedirect') {
+        status = <Busy task="uitloggen" />;
+    } else if (auth.isLoading) {
+        status = <Busy task="laden" />;
+    } else if (auth.error) {
+        status = <Error error={auth.error} />;
     }
-    if (auth.activeNavigator === 'signoutRedirect') {
-        return <Busy task="uitloggen" />;
-    }
-    if (auth.isLoading) {
-        return <Busy task="laden" />;
-    }
-    if (auth.error) {
-        return <Error error={auth.error} />;
+
+    if (status) {
+        return <Container className="max-w-md py-10">{status}</Container>;
     }
 
     return (
-        <Fragment>
-            <section className="mx-auto max-w-2xl">
+        <Container className="max-w-md py-10">
+            <div className="max-w-sm">
                 <Heading as="h1" size="lg" className="mb-8">
                     Bewijs wie je bent
                 </Heading>
@@ -30,28 +32,29 @@ export function Login() {
                     Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
                     veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.
                 </p>
-                <ul className="grid gap-4 text-xl">
-                    <li>
-                        <Button
-                            onClick={() => void auth.signinRedirect()}
-                            variant="outline"
-                            className="w-full"
-                        >
-                            Inloggen met DigiD
-                        </Button>
-                    </li>
-                    <li>
-                        <Button isDisabled={true} variant="outline" className="w-full">
-                            Inloggen als gemachtigde
-                        </Button>
-                    </li>
-                    <li>
-                        <Button isDisabled={true} variant="outline" className="w-full">
-                            European login
-                        </Button>
-                    </li>
-                </ul>
-            </section>
-        </Fragment>
+            </div>
+
+            <Stack as="ul">
+                <li>
+                    <Button
+                        onClick={() => void auth.signinRedirect()}
+                        variant="outline"
+                        className="w-full"
+                    >
+                        Inloggen met DigiD
+                    </Button>
+                </li>
+                <li>
+                    <Button isDisabled variant="outline" className="w-full">
+                        Inloggen als gemachtigde
+                    </Button>
+                </li>
+                <li>
+                    <Button isDisabled variant="outline" className="w-full">
+                        European login
+                    </Button>
+                </li>
+            </Stack>
+        </Container>
     );
 }

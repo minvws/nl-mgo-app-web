@@ -8,5 +8,5 @@ export interface StackProps extends DynamicElementProps {}
  * It also provides a dynamic element option (see `DynamicElement`) .
  */
 export const Stack = ({ className, ...rest }: StackProps) => (
-    <DynamicElement className={twMerge('flex flex-col gap-2', className)} {...rest} />
+    <DynamicElement className={twMerge('flex flex-col gap-4', className)} {...rest} />
 );
