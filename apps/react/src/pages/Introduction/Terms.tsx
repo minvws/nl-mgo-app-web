@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Heading, List, ListIcon, ListItem } from '@minvws/mgo-react-ui';
-import { useIntroSeen } from '@/lib/introSeen';
+import { useIntroSeen } from '$/lib/introSeen';
 
 export function Terms() {
     const navigate = useNavigate();

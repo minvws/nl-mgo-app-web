@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { authState, signinRedirectMock, removeUserMock } from '../test/auth';
+import { authState, signinRedirectMock, removeUserMock } from '$test/auth';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => children;
 

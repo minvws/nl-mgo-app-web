@@ -1,8 +1,8 @@
-import { getResource } from '../../fhir/client';
+import { Fragment, type ReactNode } from 'react';
 import { getHumanName, getEmail } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
-import { Fragment, type ReactNode } from 'react';
+import { getResource } from '$/fhir/client';
 
 export function Playground() {
     const patientId = 'smart-1032702';

@@ -1,8 +1,8 @@
-import { AuthProvider } from '@/lib/auth';
-import { readConfig } from '@/lib/config';
-import { resetAuthState, signinRedirectMock, authState } from '@test/auth';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, expect, test } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { resetAuthState, signinRedirectMock, authState } from '$test/auth';
+import { AuthProvider } from '$/lib/auth';
+import { readConfig } from '$/lib/config';
 import { Login } from './Login';
 
 afterEach(() => {

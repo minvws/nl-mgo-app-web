@@ -1,8 +1,8 @@
-import { AuthProvider } from '@/lib/auth';
-import { readConfig } from '@/lib/config';
-import { authState, removeUserMock, setAuthStateAuthenticated } from '@test/auth';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { authState, removeUserMock, setAuthStateAuthenticated } from '$test/auth';
+import { AuthProvider } from '$/lib/auth';
+import { readConfig } from '$/lib/config';
 import { Overview } from './Overview';
 
 const renderWithAuthProvider = () => {

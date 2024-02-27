@@ -23,8 +23,8 @@
         "types": ["vitest-dom/extend-expect"],
 
         "paths": {
-            "@/*": ["./src/*"],
-            "@test/*": ["./test/*"]
+            "$/*": ["./src/*"],
+            "$test/*": ["./test/*"]
         }
     },
     "include": ["src"],

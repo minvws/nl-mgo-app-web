@@ -1,7 +1,7 @@
-import { App } from '@/App';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { expect, test } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { App } from '$/App';
 
 const renderWithRouter = () => {
     render(

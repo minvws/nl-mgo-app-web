@@ -1,8 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Route, Routes } from 'react-router';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config';
-
-import { Route, Routes } from 'react-router';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from './components/PublicRoute/PublicRoute';
 import { Login } from './pages/Login/Login';

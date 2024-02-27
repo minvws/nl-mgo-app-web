@@ -1,9 +1,8 @@
 import { Fragment } from 'react';
 import { Button, Heading } from '@minvws/mgo-react-ui';
-
+import { useAuth } from '$/lib/auth';
 import { Busy } from './Busy.js';
 import { Error } from './Error.js';
-import { useAuth } from '@/lib/auth';
 
 export function Login() {
     const auth = useAuth();

@@ -1,8 +1,8 @@
-import { App } from '@/App';
-import { getIntroSeen } from '@/lib/introSeen';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { expect, test } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { getIntroSeen } from '$/lib/introSeen';
+import { App } from '$/App';
 
 test('terms', () => {
     render(

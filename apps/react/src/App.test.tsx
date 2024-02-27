@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, type MemoryRouterProps } from 'react-router-dom';
 import { afterEach, expect, test } from 'vitest';
-import { resetAuthState } from '../test/auth';
+import { resetAuthState } from '$test/auth';
+import { setIntroSeen } from '$/lib/introSeen';
 import { App } from './App';
-import { setIntroSeen } from './lib/introSeen';
 
 afterEach(() => {
     resetAuthState();
