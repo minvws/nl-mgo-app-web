@@ -7,7 +7,7 @@ export function PublicRoute() {
     const location = useLocation();
     const { isIntroSeen } = useIntroSeen();
 
-    if (auth.isAuthenticated) {
+    if (isIntroSeen && auth.isAuthenticated) {
         return <Navigate to="/overzicht" />;
     }
 

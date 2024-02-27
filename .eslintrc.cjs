@@ -29,6 +29,7 @@ module.exports = {
             ],
             rules: {
                 'import/no-default-export': 'error',
+                'sonarjs/no-duplicate-string': 'off',
             },
         },
     ],
