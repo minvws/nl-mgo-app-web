@@ -3,21 +3,7 @@ name: CI
 on: [pull_request]
 
 jobs:
-  audit:
-    runs-on: ubuntu-22.04
-    name: Audit
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-        with:
-          install-dependencies: 'false'
-      - name: Audit dependencies
-        run: pnpm audit
-      - name: Install dependencies to prepare pnpm cache
-        run: pnpm install
-
   lint:
-    needs: audit
     runs-on: ubuntu-22.04
     name: Lint
     steps:
@@ -27,7 +13,6 @@ jobs:
         run: pnpm run lint
 
   format:
-    needs: audit
     runs-on: ubuntu-22.04
     name: Format
     steps:
@@ -37,7 +22,6 @@ jobs:
         run: pnpm run format:check
 
   check-types:
-    needs: audit
     runs-on: ubuntu-22.04
     name: Check types
     steps:
@@ -47,7 +31,6 @@ jobs:
         run: pnpm run -r check-types
 
   test:
-    needs: audit
     runs-on: ubuntu-22.04
     name: Test
     steps:
@@ -64,7 +47,6 @@ jobs:
           path: coverage
 
   build:
-    needs: audit
     runs-on: ubuntu-22.04
     name: Build
     steps:

@@ -1,12 +1,6 @@
 name: Setup
 description: 'Setup Node.js and install dependencies'
 
-inputs:
-  install-dependencies:
-    required: false
-    description: 'Install dependencies'
-    default: 'true'
-
 runs:
   using: 'composite'
   steps:
@@ -19,7 +13,9 @@ runs:
       with:
         node-version-file: '.nvmrc'
         cache: 'pnpm'
+    - name: Audit dependencies
+      shell: bash
+      run: pnpm audit
     - name: Install dependencies
-      if: ${{ inputs.install-dependencies == 'true' }}
       shell: bash
       run: pnpm install
