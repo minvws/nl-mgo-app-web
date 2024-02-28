@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter, type MemoryRouterProps } from 'react-router-dom';
-import { afterEach, expect, test } from 'vitest';
-import { resetAuthState, setAuthStateAuthenticated } from '$test/auth';
 import { setIntroSeen } from '$/lib/introSeen';
+import { resetAuthState, setAuthStateAuthenticated } from '$test/auth';
+import { render, screen } from '@testing-library/react';
+import { createMemoryRouter, type MemoryRouterProps } from 'react-router-dom';
+import { afterEach, expect, test } from 'vitest';
 import { App } from './App';
+import { routes } from './routes';
 
 afterEach(() => {
     resetAuthState();
@@ -11,11 +12,7 @@ afterEach(() => {
 });
 
 const renderWithRouter = (options?: MemoryRouterProps) =>
-    render(
-        <MemoryRouter {...options}>
-            <App />
-        </MemoryRouter>
-    );
+    render(<App router={createMemoryRouter(routes, options)} />);
 
 test('redirect to intro from login', () => {
     renderWithRouter({ initialEntries: ['/inloggen'] });

@@ -1,39 +1,20 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Route, Routes } from 'react-router';
+import { RouterProvider, type RouterProviderProps } from 'react-router';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config';
-import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
-import { PublicRoute } from './components/PublicRoute/PublicRoute';
-import { Login } from './pages/Login/Login';
-import { Introduction } from './pages/Introduction/Introduction';
-import { Overview } from './pages/Overview/Overview';
-import { Playground } from './pages/Playground/Playground';
-import { PageLayout } from './components/PageLayout/PageLayout';
-import { Terms } from './pages/Introduction/Terms';
+import { router as defaultRouter } from './routes';
 
 const queryClient = new QueryClient();
 
-export function App() {
+interface AppProps {
+    router?: RouterProviderProps['router'];
+}
+
+export function App({ router = defaultRouter }: AppProps = {}) {
     return (
         <QueryClientProvider client={queryClient}>
             <AuthProvider {...readConfig().oidc}>
-                <Routes>
-                    <Route path="/" element={<PublicRoute />}>
-                        <Route element={<PageLayout hideMenu />}>
-                            <Route path="/intro" element={<Introduction />} />
-                            <Route path="/voorwaarden" element={<Terms />} />
-                            <Route path="/inloggen" element={<Login />} />
-                        </Route>
-                    </Route>
-
-                    <Route element={<ProtectedRoute />}>
-                        <Route element={<PageLayout />}>
-                            <Route path="/overzicht" element={<Overview />} />
-                        </Route>
-                    </Route>
-
-                    <Route path="/playground" element={<Playground />} />
-                </Routes>
+                <RouterProvider router={router} />
             </AuthProvider>
         </QueryClientProvider>
     );

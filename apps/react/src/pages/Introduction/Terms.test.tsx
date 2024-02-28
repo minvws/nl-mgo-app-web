@@ -1,15 +1,12 @@
-import { MemoryRouter } from 'react-router';
-import { expect, test } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { getIntroSeen } from '$/lib/introSeen';
 import { App } from '$/App';
+import { getIntroSeen } from '$/lib/introSeen';
+import { routes } from '$/routes';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { createMemoryRouter } from 'react-router';
+import { expect, test } from 'vitest';
 
 test('terms', () => {
-    render(
-        <MemoryRouter initialEntries={['/voorwaarden']}>
-            <App />
-        </MemoryRouter>
-    );
+    render(<App router={createMemoryRouter(routes, { initialEntries: ['/voorwaarden'] })} />);
 
     expect(getIntroSeen()).toBe(false);
     expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');

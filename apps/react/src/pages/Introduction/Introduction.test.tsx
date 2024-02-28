@@ -1,18 +1,11 @@
-import { MemoryRouter } from 'react-router';
-import { expect, test } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
 import { App } from '$/App';
-
-const renderWithRouter = () => {
-    render(
-        <MemoryRouter>
-            <App />
-        </MemoryRouter>
-    );
-};
+import { routes } from '$/routes';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { createMemoryRouter } from 'react-router';
+import { expect, test } from 'vitest';
 
 test('introduction', () => {
-    renderWithRouter();
+    render(<App router={createMemoryRouter(routes)} />);
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
