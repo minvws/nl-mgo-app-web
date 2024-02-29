@@ -28,6 +28,7 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: 'main'
           exitZeroOnChanges: true
           exitOnceUploaded: true
           workingDir: packages/react-ui
