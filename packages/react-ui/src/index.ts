@@ -14,5 +14,7 @@ export {
     type ResponsiveConfig,
 } from './hooks/useResponsive/useResponsive';
 
+export { useComposition, type CompositionProps } from './hooks/useComposition/useComposition';
+
 export { tw } from './utils/tw/tw';
 export { twMerge } from 'tailwind-merge';

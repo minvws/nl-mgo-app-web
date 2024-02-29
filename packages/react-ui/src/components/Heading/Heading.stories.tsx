@@ -13,22 +13,32 @@ export default {
         children:
             'Natus sunt et optio cumque architecto nihil iure autem quidem possimus veritatis numquam.',
     },
-    argTypes: {
-        as: {
-            control: { type: 'text' },
-        },
-    },
 } satisfies StoryMeta;
 
-/** renders as `<div>` by default */
 export const Default: Story = {};
 
-export const Overview: Story = {
+/** use the `asChild` to change the rendered html tag, it defaults to `<div>` */
+export const AsChildHeading: Story = {
     args: {},
-    render: ({ ...args }) => (
+    render: ({ children, ...args }) => (
         <Stack className="gap-8">
-            {sizes.map((size) => (
-                <Heading {...args} key={size} size={size} />
+            <Heading {...args} size="sm" asChild>
+                <h1>{children}</h1>
+            </Heading>
+            <Heading {...args} size="md" asChild>
+                <h2>{children}</h2>
+            </Heading>
+        </Stack>
+    ),
+};
+
+export const Overview: Story = {
+    render: ({ children, ...args }) => (
+        <Stack className="gap-8">
+            {[...sizes].reverse().map((size) => (
+                <Heading {...args} key={size} size={size}>
+                    ({size}) {children}
+                </Heading>
             ))}
         </Stack>
     ),

@@ -5,7 +5,9 @@ export function Busy({ task }: { task: string }) {
     return (
         <Fragment>
             <main className="pt-4 dark:text-white">
-                <Heading as="h1">Bezig met {task}...</Heading>
+                <Heading>
+                    <h1>Bezig met {task}...</h1>
+                </Heading>
             </main>
         </Fragment>
     );

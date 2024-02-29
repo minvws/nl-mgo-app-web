@@ -1,20 +1,23 @@
 import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Stack } from '../Stack/Stack';
+import { useComposition } from '../../hooks/useComposition/useComposition';
 
 export interface ListProps extends HTMLAttributes<HTMLElement> {
-    as?: 'ul' | 'ol';
+    asChild?: boolean;
 }
 
-export const List = ({ as = 'ul', className, ...rest }: ListProps) => {
+export const List = ({ className, asChild, children, ...rest }: ListProps) => {
+    const { Comp } = useComposition({ asChild, tag: 'ul' });
+
     return (
-        <Stack
-            as={as}
+        <Comp
             className={twMerge(
-                'gap-6 font-sans text-lg leading-normal text-black dark:text-white',
+                'flex flex-col gap-6 font-sans text-lg leading-normal text-black dark:text-white',
                 className
             )}
             {...rest}
-        />
+        >
+            {children}
+        </Comp>
     );
 };

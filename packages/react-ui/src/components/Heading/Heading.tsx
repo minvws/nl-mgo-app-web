@@ -1,9 +1,10 @@
+import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { type Size } from './sizes';
-import { DynamicElement, type DynamicElementProps } from '../DynamicElement/DynamicElement';
+import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
+import { type Size } from './sizes';
 
-export interface HeadingProps extends DynamicElementProps {
+export interface HeadingProps extends HTMLAttributes<HTMLElement>, CompositionProps {
     size?: Size;
 }
 
@@ -14,9 +15,11 @@ const TextSizes: Record<Size, string> = {
     xl: tw`text-3xl md:text-4xl lg:text-5xl`,
 };
 
-export const Heading = ({ size = 'md', className, ...rest }: HeadingProps) => {
+export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingProps) => {
+    const { Comp } = useComposition({ asChild, tag: 'div' });
+
     return (
-        <DynamicElement
+        <Comp
             className={twMerge(
                 TextSizes[size],
                 'font-sans font-bold leading-tight text-black dark:text-white',

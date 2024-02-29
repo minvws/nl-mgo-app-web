@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stack } from '../Stack/Stack';
-import { Button, type ButtonProps } from './Button';
+import { Button } from './Button';
 import { variants } from './variants';
 
 type Story = StoryObj<typeof Button>;
@@ -12,13 +12,6 @@ export default {
     args: {
         children: 'Label',
         onClick: action('on-click'),
-    },
-    parameters: {
-        controls: {
-            // Normally storybook filters out default HTML props, but it seems to
-            // have trouble with the `oneOf` type of the `ButtonOrLink` component.
-            include: ['variant', 'leftIcon', 'rightIcon', 'isDisabled'] as (keyof ButtonProps)[],
-        },
     },
 } satisfies StoryMeta;
 
@@ -50,10 +43,12 @@ export const WithIcon: Story = {
     ),
 };
 
-export const AsLink: Story = {
-    args: {
-        href: '#',
-    },
+export const AsChildLink: Story = {
+    render: ({ onClick: _onClick, ...args }) => (
+        <Button {...args} variant={args.variant} leftIcon="ChevronLeft" asChild>
+            <a href="#foo">I&apos;m a link</a>
+        </Button>
+    ),
 };
 
 export const Overview: Story = {

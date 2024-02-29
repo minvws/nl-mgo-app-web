@@ -11,7 +11,7 @@ test('terms', () => {
     expect(getIntroSeen()).toBe(false);
     expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 
-    fireEvent.click(screen.getByRole('button', { name: 'Volgende' }));
+    fireEvent.click(screen.getByText(/volgende/i));
 
     expect(getIntroSeen()).toBe(true);
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');

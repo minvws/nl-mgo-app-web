@@ -1,16 +1,18 @@
+import { type HTMLAttributes, type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tw } from '../../utils/tw/tw';
-import { type Variant } from './variants';
-import { ButtonOrLink, type ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
-import { type ReactNode } from 'react';
-import { type IconName, isIconName } from '../Icon/icons';
 import { Icon } from '../Icon/Icon';
+import { isIconName, type IconName } from '../Icon/icons';
+import { type Variant } from './variants';
+import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
-export type ButtonProps = {
+export interface ButtonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
+    isDisabled?: boolean;
     variant?: Variant;
     leftIcon?: ReactNode | IconName;
     rightIcon?: ReactNode | IconName;
-} & ButtonOrLinkProps;
+    'aria-disabled'?: never; // Please use `isDisabled` instead
+}
 
 const disabledStyles = tw`aria-disabled:bg-grey-300 aria-disabled:border-grey-300 aria-disabled:focus:border-grey-100 aria-disabled:cursor-default`;
 
@@ -22,6 +24,9 @@ const typeColors: Record<Variant, string> = {
 };
 
 export const Button = ({
+    asChild,
+    isDisabled,
+    onClick,
     variant = 'solid',
     children,
     className,
@@ -29,8 +34,12 @@ export const Button = ({
     rightIcon,
     ...rest
 }: ButtonProps) => {
+    const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
+
     return (
-        <ButtonOrLink
+        <Comp
+            aria-disabled={isDisabled}
+            onClick={isDisabled ? undefined : onClick}
             className={twMerge(
                 `text-md inline-flex items-center justify-center rounded-lg px-6 py-3 font-bold outline-none`,
                 typeColors[variant],
@@ -45,12 +54,12 @@ export const Button = ({
                     {isIconName(leftIcon) ? <Icon name={leftIcon} /> : leftIcon}
                 </span>
             )}
-            {children}
+            <Slottable>{children}</Slottable>
             {!!rightIcon && (
                 <span className="ms-2 inline-flex shrink-0 self-center text-[1.5em]">
                     {isIconName(rightIcon) ? <Icon name={rightIcon} /> : rightIcon}
                 </span>
             )}
-        </ButtonOrLink>
+        </Comp>
     );
 };

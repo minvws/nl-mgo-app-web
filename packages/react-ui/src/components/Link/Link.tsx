@@ -1,11 +1,16 @@
+import { type AnchorHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { ButtonOrLink, type ButtonOrLinkProps } from '../ButtonOrLink/ButtonOrLink';
+import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
-export type LinkProps = ButtonOrLinkProps;
+export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>, CompositionProps {
+    onClick?: never; // Please use `asChild` instead
+}
 
-export const Link = ({ children, className, ...rest }: LinkProps) => {
+export const Link = ({ asChild, children, className, ...rest }: LinkProps) => {
+    const { Comp } = useComposition({ asChild, tag: 'a' });
+
     return (
-        <ButtonOrLink
+        <Comp
             className={twMerge(
                 `cursor-pointer text-blue-700 underline visited:text-blue-900 hover:no-underline`,
                 className
@@ -13,6 +18,6 @@ export const Link = ({ children, className, ...rest }: LinkProps) => {
             {...rest}
         >
             {children}
-        </ButtonOrLink>
+        </Comp>
     );
 };

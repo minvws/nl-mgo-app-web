@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Link, type LinkProps } from './Link';
+import { Link } from './Link';
 
 type Story = StoryObj<typeof Link>;
 type StoryMeta = Meta<typeof Link>;
@@ -9,26 +9,13 @@ export default {
     component: Link,
     args: {
         children: 'Label',
-    },
-    parameters: {
-        controls: {
-            // Normally storybook filters out default HTML props, but it seems to
-            // have trouble with the `oneOf` type of the `ButtonOrLink` component.
-            include: ['href'] as (keyof LinkProps)[],
-        },
+        href: '#',
     },
 } satisfies StoryMeta;
 
-export const Default: Story = {
-    args: {
-        href: '#',
-    },
-};
+export const Default: Story = {};
 
 export const InlineWithText: Story = {
-    args: {
-        href: '#',
-    },
     render: ({ ...args }) => (
         <p className="gap-8">
             Ad repellat ea iste laudantium cum id eligendi. Nemo quae placeat ab natus dolore{' '}
@@ -39,9 +26,10 @@ export const InlineWithText: Story = {
     ),
 };
 
-/** If no `href` is passed, it will render as a `<button>` */
-export const AsButton: Story = {
-    args: {
-        onClick: action('on-click'),
-    },
+export const AsChildButton: Story = {
+    render: ({ href: _href, ...args }) => (
+        <Link {...args} asChild>
+            <button onClick={action('on-click')}>I&apos;m a button</button>
+        </Link>
+    ),
 };

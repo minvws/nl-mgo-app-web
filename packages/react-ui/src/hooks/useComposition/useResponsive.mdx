@@ -1,0 +1,47 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+
+<Meta title="useComposition" />
+
+# useComposition
+
+`useComposition` is a small utility hook for implementation the [Radix-UI Slot component](https://www.radix-ui.com/primitives/docs/utilities/slot). It ensures that implementation is consistent across the codebase. It returns the `Comp` and `Slottable` to use for your implementation. See [Composition](/docs/docs-composition--docs) or the official [Radix-UI documentation](https://www.radix-ui.com/primitives/docs/guides/composition) for more information.
+
+<Source
+    language="tsx"
+    code={`
+interface ButtonProps { asChild?:boolean, ... }
+ 
+const Button = ({ asChild, ...rest }: ButtonProps) => {
+    const { Comp } = useComposition( { asChild, tag: 'button' });
+    return <Comp {...rest} />;
+}
+
+...
+
+<Button>Click me</Button> // renders Button as <button>
+
+<Button asChild> // renders Button as <a>
+    <a href="#">Click me</a>
+</Button>
+
+`}/>
+
+Use when your component has multiple childrens to pass the props to the correct element:
+
+<Source
+    language="tsx"
+    code={`
+interface ButtonProps { asChild?:boolean, ... }
+ 
+const Button = ({ asChild, children, ...rest }: ButtonProps) => {
+    const { Comp, Slottable } = useComposition( { asChild, tag: 'button' });
+    return (
+        <Comp {...rest}>
+            {leftElement}
+            <Slottable>{children}</Slottable>
+            {rightElement}
+        </Comp>
+    );
+}
+`}
+/>

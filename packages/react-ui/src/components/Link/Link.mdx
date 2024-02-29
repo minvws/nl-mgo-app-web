@@ -1,0 +1,32 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+import { InlineWithText, AsChildButton } from './Link.stories';
+
+<Meta title="Link" />
+
+# Link
+
+Link is an accessible element for navigation.
+
+Link supports the `asChild` property to render a `Link` as its child, such as an `<button>` tag or a react-router `<Link>`. See [Composition](/docs/docs-composition--docs) for more information.
+
+<Source
+    language="tsx"
+    code={`
+<Link asChild>
+    <button onClick={...}>Open modal</button>
+</Link>
+
+...
+
+import { Link as RouterLink } from 'react-router-dom';
+
+<Link asChild>
+    <RouterLink to="/contact">Contact</RouterLink>
+</Link>
+`} />
+
+<Canvas of={AsChildButton} />
+
+## Link inline with text
+
+<Canvas of={InlineWithText} />

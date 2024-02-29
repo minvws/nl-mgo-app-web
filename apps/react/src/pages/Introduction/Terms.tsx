@@ -1,16 +1,11 @@
 import { useIntroSeen } from '$/lib/introSeen';
 import { Button, Heading, List, ListIcon, ListItem } from '@minvws/mgo-react-ui';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Container } from '@minvws/mgo-react-ui';
 
 export function Terms() {
     const navigate = useNavigate();
     const { setIntroSeen } = useIntroSeen();
-
-    const handleClickNext = () => {
-        setIntroSeen(true);
-        navigate('/overzicht');
-    };
 
     return (
         <>
@@ -27,8 +22,8 @@ export function Terms() {
 
             <Container className="max-w-md">
                 <div className="max-w-sm">
-                    <Heading as="h1" size="lg" className="mb-6">
-                        Zo gebruikt de website jouw gegevens
+                    <Heading asChild size="lg" className="mb-6">
+                        <h1>Zo gebruikt de website jouw gegevens</h1>
                     </Heading>
                     <p className="mb-6">
                         In de privacy&shy;verklaring staat hoe Mijn Gezond&shy;heids&shy;overzicht
@@ -64,8 +59,8 @@ export function Terms() {
                             </span>
                         </ListItem>
                     </List>
-                    <Button onClick={handleClickNext} className="mb-16">
-                        Volgende
+                    <Button asChild onClick={() => setIntroSeen(true)} className="mb-16">
+                        <Link to="/overzicht">Volgende</Link>
                     </Button>
                 </div>
             </Container>

@@ -5,7 +5,9 @@ export function Error({ error }: { error?: Error }) {
     return (
         <Fragment>
             <main className="pt-4 dark:text-white">
-                <Heading as="h1">Er is een fout opgetreden</Heading>
+                <Heading asChild>
+                    <h1>Er is een fout opgetreden</h1>
+                </Heading>
                 <pre>
                     <code>{JSON.stringify(error, null, 2)}</code>
                 </pre>

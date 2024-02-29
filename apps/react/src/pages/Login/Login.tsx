@@ -25,8 +25,8 @@ export function Login() {
     return (
         <Container className="max-w-md py-10">
             <div className="max-w-sm">
-                <Heading as="h1" size="lg" className="mb-8">
-                    Bewijs wie je bent
+                <Heading asChild size="lg" className="mb-8">
+                    <h1>Bewijs wie je bent</h1>
                 </Heading>
                 <p className="mb-8 text-xl">
                     Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
@@ -34,26 +34,28 @@ export function Login() {
                 </p>
             </div>
 
-            <Stack as="ul">
-                <li>
-                    <Button
-                        onClick={() => void auth.signinRedirect()}
-                        variant="outline"
-                        className="w-full"
-                    >
-                        Inloggen met DigiD
-                    </Button>
-                </li>
-                <li>
-                    <Button isDisabled variant="outline" className="w-full">
-                        Inloggen als gemachtigde
-                    </Button>
-                </li>
-                <li>
-                    <Button isDisabled variant="outline" className="w-full">
-                        European login
-                    </Button>
-                </li>
+            <Stack asChild>
+                <ul>
+                    <li>
+                        <Button
+                            onClick={() => void auth.signinRedirect()}
+                            variant="outline"
+                            className="w-full"
+                        >
+                            Inloggen met DigiD
+                        </Button>
+                    </li>
+                    <li>
+                        <Button isDisabled variant="outline" className="w-full">
+                            Inloggen als gemachtigde
+                        </Button>
+                    </li>
+                    <li>
+                        <Button isDisabled variant="outline" className="w-full">
+                            European login
+                        </Button>
+                    </li>
+                </ul>
             </Stack>
         </Container>
     );

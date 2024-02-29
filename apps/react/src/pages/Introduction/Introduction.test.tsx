@@ -11,7 +11,7 @@ test('introduction', () => {
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
     );
 
-    fireEvent.click(screen.getByRole('button', { name: 'Volgende' }));
+    fireEvent.click(screen.getByText(/volgende/i));
 
     expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 });

@@ -1,0 +1,20 @@
+import { Slot, Slottable } from '@radix-ui/react-slot';
+
+export interface CompositionProps {
+    asChild?: boolean;
+}
+
+interface CompositionConfig<T extends keyof HTMLElementTagNameMap> extends CompositionProps {
+    tag: T;
+}
+
+/**
+ * A small utility hook to implement a Slot/Slottable composition pattern.
+ * @see https://www.radix-ui.com/primitives/docs/utilities/slot
+ */
+export function useComposition<T extends keyof HTMLElementTagNameMap>({
+    asChild,
+    tag,
+}: CompositionConfig<T>) {
+    return { Comp: asChild ? Slot : tag, Slottable };
+}

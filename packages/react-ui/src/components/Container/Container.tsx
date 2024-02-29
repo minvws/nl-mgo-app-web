@@ -1,8 +1,8 @@
 import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
-export interface ContainerProps extends HTMLAttributes<HTMLElement> {
-    as?: keyof HTMLElementTagNameMap;
+export interface ContainerProps extends HTMLAttributes<HTMLElement>, CompositionProps {
     centeredContent?: boolean;
 }
 /**
@@ -10,20 +10,24 @@ export interface ContainerProps extends HTMLAttributes<HTMLElement> {
  * It also provides padding and automatic margin.
  */
 export const Container = ({
-    as: Component = 'div',
+    asChild,
     className,
     centeredContent,
     children,
     ...rest
-}: ContainerProps) => (
-    <Component
-        className={twMerge(
-            `mx-auto box-content w-[calc(100%-2rem)] max-w-xl px-[1rem] md:w-[calc(100%-3rem)] md:px-[1.5rem]`,
-            centeredContent && 'flex flex-col items-center',
-            className
-        )}
-        {...rest}
-    >
-        {children}
-    </Component>
-);
+}: ContainerProps) => {
+    const { Comp } = useComposition({ asChild, tag: 'div' });
+
+    return (
+        <Comp
+            className={twMerge(
+                `mx-auto box-content w-[calc(100%-2rem)] max-w-xl px-[1rem] md:w-[calc(100%-3rem)] md:px-[1.5rem]`,
+                centeredContent && 'flex flex-col items-center',
+                className
+            )}
+            {...rest}
+        >
+            {children}
+        </Comp>
+    );
+};

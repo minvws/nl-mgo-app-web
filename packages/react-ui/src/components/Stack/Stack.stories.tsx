@@ -6,11 +6,6 @@ type StoryMeta = Meta<typeof Stack>;
 
 export default {
     component: Stack,
-    argTypes: {
-        as: {
-            control: { type: 'text' },
-        },
-    },
 } satisfies StoryMeta;
 
 const Template: Story = {

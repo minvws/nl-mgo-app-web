@@ -42,7 +42,7 @@ const isSmallerThanLarge = useResponsive({
     language="javascript"
     code={`
 // type ResponsiveProp<T> = T | { base: T, [key in BreakpointSize]?: T };
-//
+ 
 const Component = (props: { value: ResponsiveProp<number> }) => {
     const currentValue = useResponsive(props.value);
     ...
