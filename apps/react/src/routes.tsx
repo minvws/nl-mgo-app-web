@@ -8,6 +8,7 @@ import { Terms } from './pages/Introduction/Terms';
 import { Login } from './pages/Login/Login';
 import { Overview } from './pages/Overview/Overview';
 import { Playground } from './pages/Playground/Playground';
+import { HealthcareProviders } from './pages/HealthcareProviders/HealthcareProviders';
 
 export const routes = createRoutesFromElements(
     <Route>
@@ -22,6 +23,7 @@ export const routes = createRoutesFromElements(
         <Route element={<ProtectedRoute />}>
             <Route element={<PageLayout />}>
                 <Route path="/overzicht" element={<Overview />} />
+                <Route path="/zorgverleners" element={<HealthcareProviders />} />
             </Route>
         </Route>
 

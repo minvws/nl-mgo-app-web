@@ -1,10 +1,11 @@
-import { useResponsive } from '@minvws/mgo-react-ui';
+import { Container, twMerge, useResponsive } from '@minvws/mgo-react-ui';
 import { Outlet } from 'react-router';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { Footer } from '../Footer/Footer';
 import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
 import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
+import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 
 export interface LayoutProps {
     hideMenu?: boolean;
@@ -21,14 +22,21 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <div>
             <div className="flex min-h-screen flex-col">
-                <div className={hideMenu ? 'bg-transparent' : `bg-white`}>
+                <div className={hideMenu ? 'bg-transparent' : ''}>
                     {!isMobile && <LogoBanner />}
                     {!hideMenu && <Header />}
                 </div>
-
-                <main className="flex-grow">
-                    <Outlet />
-                </main>
+                <Container
+                    className={twMerge(
+                        'flex flex-grow',
+                        hideMenu ? 'flex-col' : 'gap-8 py-12 md:gap-10 lg:gap-16'
+                    )}
+                >
+                    {!hideMenu && !isMobile && <DesktopMenu />}
+                    <main>
+                        <Outlet />
+                    </main>
+                </Container>
 
                 <RibbonBanner />
             </div>

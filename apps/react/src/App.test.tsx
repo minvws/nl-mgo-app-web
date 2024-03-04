@@ -49,7 +49,7 @@ test('redirect from login to overview if authenticated', () => {
     setAuthStateAuthenticated();
     renderWithRouter({ initialEntries: ['/inloggen'] });
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Succesvol ingelogd met DigiD');
+    expect(screen.getByRole('heading', { name: 'Mijn Gezondheidsoverzicht' })).toBeVisible();
 });
 
 test('redirect from login to intro if authenticated but not intro seen (edge case)', () => {

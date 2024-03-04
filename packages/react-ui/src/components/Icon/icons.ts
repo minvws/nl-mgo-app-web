@@ -6,6 +6,11 @@ import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safet
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
+import Person from '@material-symbols/svg-400/outlined/person-fill.svg?react';
+import ExpandMore from '@material-symbols/svg-400/outlined/expand_more.svg?react';
+import Home from '@material-symbols/svg-400/outlined/home-fill.svg?react';
+import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
+import QuestionMark from '@material-symbols/svg-400/outlined/question_mark.svg?react';
 
 import { type ReactNode } from 'react';
 
@@ -17,6 +22,11 @@ export const icons = {
     VerifiedUser,
     GppBad,
     ProgressActivity,
+    Person,
+    ExpandMore,
+    Home,
+    Favorite,
+    QuestionMark,
 };
 
 export type IconName = keyof typeof icons;

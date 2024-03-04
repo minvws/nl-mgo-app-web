@@ -1,3 +1,3 @@
-export { List } from './List';
-export { ListItem } from './ListItem';
-export { ListIcon } from './ListIcon';
+export { List, type ListProps } from './List';
+export { ListItem, type ListItemProps } from './ListItem';
+export { ListIcon, type ListIconProps } from './ListIcon';

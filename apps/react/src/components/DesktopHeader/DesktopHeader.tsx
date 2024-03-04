@@ -1,14 +1,24 @@
-import { Container } from '@minvws/mgo-react-ui';
+import { Button, Container, Heading } from '@minvws/mgo-react-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
 
 export function DesktopHeader(props: DesktopHeaderProps) {
     return (
-        <div className="border-b-solid border-b-grey-50 border-b " {...props}>
-            <Container {...props} className="py-4">
-                <span className="text-2xl">Mijn Gezondheidsoverzicht</span>
+        <header className="border-b-solid border-b-grey-50 border-b " {...props}>
+            <Container {...props} className="flex items-center justify-between py-4">
+                <Heading asChild size="sm" className="font-normal">
+                    <h1>Mijn Gezondheidsoverzicht</h1>
+                </Heading>
+                <Button
+                    className="text-black dark:text-white"
+                    leftIcon="Person"
+                    rightIcon="ExpandMore"
+                    variant="link"
+                >
+                    Wendy de Bruijn
+                </Button>
             </Container>
-        </div>
+        </header>
     );
 }

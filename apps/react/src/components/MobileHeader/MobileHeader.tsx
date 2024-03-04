@@ -5,10 +5,10 @@ export interface MobileHeaderProps extends HTMLAttributes<HTMLElement> {}
 
 export function MobileHeader(props: MobileHeaderProps) {
     return (
-        <div className="border-b-solid border-b-grey-50 border-b " {...props}>
+        <header className="border-b-solid border-b-grey-50 border-b " {...props}>
             <Container {...props} className="py-4" centeredContent>
-                <span className="text-md font-bold">Mijn zorg</span>
+                <h1 className="text-md font-bold">Mijn zorg</h1>
             </Container>
-        </div>
+        </header>
     );
 }
