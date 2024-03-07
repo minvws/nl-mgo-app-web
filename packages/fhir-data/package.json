@@ -7,6 +7,7 @@
         "./*": "./src/*"
     },
     "devDependencies": {
+        "@minvws/mgo-fhir-client": "workspace:*",
         "@faker-js/faker": "^8.4.0",
         "@types/fhir": "^0.0.41"
     }

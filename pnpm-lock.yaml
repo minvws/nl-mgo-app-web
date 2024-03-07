@@ -147,6 +147,9 @@ importers:
       ky:
         specifier: ^1.2.2
         version: 1.2.2
+      lossless-json:
+        specifier: ^4.0.1
+        version: 4.0.1
     devDependencies:
       '@faker-js/faker':
         specifier: ^8.4.0
@@ -163,6 +166,9 @@ importers:
       '@faker-js/faker':
         specifier: ^8.4.0
         version: 8.4.1
+      '@minvws/mgo-fhir-client':
+        specifier: workspace:*
+        version: link:../fhir-client
       '@types/fhir':
         specifier: ^0.0.41
         version: 0.0.41
@@ -8242,6 +8248,10 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+
+  /lossless-json@4.0.1:
+    resolution: {integrity: sha512-l0L+ppmgPDnb+JGxNLndPtJZGNf6+ZmVaQzoxQm3u6TXmhdnsA+YtdVR8DjzZd/em58686CQhOFDPewfJ4l7MA==}
+    dev: false
 
   /loupe@2.3.7:
     resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}

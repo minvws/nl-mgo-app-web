@@ -1,3 +1,4 @@
+import { type LosslessJson } from '@minvws/mgo-fhir-client';
 import type { Patient } from '../../../../fhir';
 import { findByUse, safeGet } from '../../../../utils';
 
@@ -7,7 +8,7 @@ import { findByUse, safeGet } from '../../../../utils';
  * @see definition: https://hl7.org/fhir/stu3/datatypes.html#contactpoint
  * @see examples: https://hl7.org/fhir/stu3/datatypes-examples.html#ContactPoint
  */
-export function getEmail(fhir?: Patient) {
+export function getEmail(fhir?: LosslessJson<Patient> | Patient) {
     return safeGet(fhir, ({ telecom }) => {
         const emails = telecom!.filter((contact) => contact.system === 'email');
         return findByUse(emails, [undefined, 'home', 'work', 'temp'])!.value;

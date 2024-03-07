@@ -7,7 +7,8 @@
         "./*": "./src/*"
     },
     "dependencies": {
-        "ky": "^1.2.2"
+        "ky": "^1.2.2",
+        "lossless-json": "^4.0.1"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
