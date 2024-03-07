@@ -170,8 +170,8 @@ importers:
   packages/react-ui:
     dependencies:
       '@material-symbols/svg-400':
-        specifier: ^0.15.0
-        version: 0.15.0
+        specifier: ^0.16.0
+        version: 0.16.0
       '@minvws/mgo-tailwind':
         specifier: workspace:*
         version: link:../tailwind
@@ -2402,8 +2402,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: true
 
-  /@material-symbols/svg-400@0.15.0:
-    resolution: {integrity: sha512-tDJvVbJFTkbGFOcoHoOf/Ege3c8fZsG8WenGRQypPLbJTml8mCrXyfSdG4Z0ReTrMXNBPOuvnkdl7k5Hselzdg==}
+  /@material-symbols/svg-400@0.16.0:
+    resolution: {integrity: sha512-DJshu9ieGx6THVEZDn0tvgS3N8mGnqkklIPhN37PXXbMnGSQyTo/xhNMoZTF2dZjkv0TFGc9NH+rCi1GAYUQEA==}
     dev: false
 
   /@mdx-js/react@2.3.0(react@18.2.0):
