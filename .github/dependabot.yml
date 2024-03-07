@@ -12,6 +12,15 @@ updates:
     schedule:
       interval: 'weekly'
     groups:
+      commitlint:
+        patterns:
+          - 'commitlint/*'
+      eslint:
+        patterns:
+          - '@tanstack/eslint-*'
+          - '@typescript-eslint/*'
+          - 'eslint-plugin-*'
+          - 'eslint'
       react:
         patterns:
           - 'react'
