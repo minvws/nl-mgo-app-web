@@ -7,7 +7,7 @@ export function MobileHeader(props: MobileHeaderProps) {
     return (
         <header className="border-b-solid border-b-grey-50 border-b " {...props}>
             <Container {...props} className="py-4" centeredContent>
-                <h1 className="text-md font-bold">Mijn zorg</h1>
+                <h1 className="text-md font-bold">Mijn Gezond&shy;heids&shy;overzicht</h1>
             </Container>
         </header>
     );

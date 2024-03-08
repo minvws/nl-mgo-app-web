@@ -15,7 +15,7 @@ export function PublicRoute() {
         if (!isIntroSeen && !['/intro', '/voorwaarden'].includes(location.pathname)) {
             return <Navigate to="/intro" />;
         }
-        if (isIntroSeen && location.pathname !== '/inloggen') {
+        if (!['/intro', '/voorwaarden', '/inloggen'].includes(location.pathname)) {
             return <Navigate to="/inloggen" />;
         }
     }

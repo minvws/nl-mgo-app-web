@@ -5,7 +5,7 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             extension: ['ts', 'tsx'],
-            include: ['packages/**'],
+            include: ['packages/**', 'apps/*'],
             exclude: [
                 '**/?*.stories.tsx',
                 '**/?*.d.ts',

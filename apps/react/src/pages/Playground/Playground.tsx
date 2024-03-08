@@ -4,6 +4,8 @@ import { Spinner, Container } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
 import { type ReactNode } from 'react';
 
+/* c8 ignore start (TODO) */
+
 export function Playground() {
     const patientId = 'smart-1032702';
 

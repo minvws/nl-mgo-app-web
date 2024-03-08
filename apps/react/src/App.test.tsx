@@ -37,11 +37,34 @@ test('redirect to login from protected route', () => {
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });
 
+test('redirect to login from root if intro seen', () => {
+    setIntroSeen(true);
+    renderWithRouter({ initialEntries: ['/'] });
+
+    expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+});
+
 test('no redirect from login if intro seen', () => {
     setIntroSeen(true);
     renderWithRouter({ initialEntries: ['/inloggen'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+});
+
+test('no redirect from intro even if intro seen', () => {
+    setIntroSeen(true);
+    renderWithRouter({ initialEntries: ['/intro'] });
+
+    expect(screen.getByRole('heading')).toHaveTextContent(
+        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
+    );
+});
+
+test('no redirect from terms even if intro seen', () => {
+    setIntroSeen(true);
+    renderWithRouter({ initialEntries: ['/voorwaarden'] });
+
+    expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 });
 
 test('redirect from login to overview if authenticated', () => {

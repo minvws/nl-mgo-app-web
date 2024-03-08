@@ -17,10 +17,12 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
         sm: false,
     });
 
+    /* c8 ignore start (TODO) */
     const Header = isMobile ? MobileHeader : DesktopHeader;
+    /* c8 ignore stop */
 
     return (
-        <div>
+        <>
             <div className="flex min-h-screen flex-col">
                 <div className={hideMenu ? 'bg-transparent' : ''}>
                     {!isMobile && <LogoBanner />}
@@ -41,6 +43,6 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                 <RibbonBanner />
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
