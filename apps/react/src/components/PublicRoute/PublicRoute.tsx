@@ -8,15 +8,15 @@ export function PublicRoute() {
     const { isIntroSeen } = useIntroSeen();
 
     if (isIntroSeen && auth.isAuthenticated) {
-        return <Navigate to="/overzicht" />;
+        return <Navigate to="/overzicht" replace />;
     }
 
     if (!auth.isLoading) {
         if (!isIntroSeen && !['/intro', '/voorwaarden'].includes(location.pathname)) {
-            return <Navigate to="/intro" />;
+            return <Navigate to="/intro" replace />;
         }
         if (!['/intro', '/voorwaarden', '/inloggen'].includes(location.pathname)) {
-            return <Navigate to="/inloggen" />;
+            return <Navigate to="/inloggen" replace />;
         }
     }
 

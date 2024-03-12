@@ -1,11 +1,13 @@
-import { Heading } from '@minvws/mgo-react-ui';
-import { Stack } from '../../../../../packages/react-ui/src/components/Stack/Stack';
+import { Heading, Stack } from '@minvws/mgo-react-ui';
+import { useNavFocusRef } from '$/lib/useNavFocusRef';
 
 export function HealthcareProviders() {
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+
     return (
         <section className="flex-grow">
             <Heading asChild size="lg" className="mb-8">
-                <h2>Zorgverleners</h2>
+                <h2 ref={navFocusRef}>Zorgverleners</h2>
             </Heading>
             <Stack>
                 <p>

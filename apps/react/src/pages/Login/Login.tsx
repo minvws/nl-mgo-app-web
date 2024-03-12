@@ -1,10 +1,12 @@
 import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
 import { useAuth } from '$/lib/auth';
+import { useNavFocusRef } from '$/lib/useNavFocusRef';
 import { Busy } from './Busy.js';
 import { Error } from './Error.js';
 
 export function Login() {
     const auth = useAuth();
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     let status = null;
 
@@ -26,7 +28,7 @@ export function Login() {
         <Container className="max-w-md py-10">
             <div className="max-w-sm">
                 <Heading asChild size="lg" className="mb-8">
-                    <h1>Bewijs wie je bent</h1>
+                    <h1 ref={navFocusRef}>Bewijs wie je bent</h1>
                 </Heading>
                 <p className="mb-8 text-xl">
                     Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens

@@ -1,4 +1,5 @@
 import { getResource } from '$/fhir/client';
+import { useNavFocusRef } from '$/lib/useNavFocusRef';
 import { getEmail, getHumanName } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner, Container } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
@@ -7,6 +8,7 @@ import { type ReactNode } from 'react';
 /* c8 ignore start (TODO) */
 
 export function Playground() {
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const patientId = 'smart-1032702';
 
     const {
@@ -44,7 +46,7 @@ export function Playground() {
     return (
         <Container>
             <div className="container mx-auto mb-8 rounded-lg bg-gray-200 p-4 dark:stroke-gray-200">
-                <h2>Playground</h2>
+                <h2 ref={navFocusRef}>Playground</h2>
                 <div className="max-w-[600px] py-10">{result}</div>
             </div>
         </Container>

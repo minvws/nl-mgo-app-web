@@ -7,11 +7,11 @@ export function ProtectedRoute() {
     const { isIntroSeen } = useIntroSeen();
 
     if (!isIntroSeen) {
-        return <Navigate to="/intro" />;
+        return <Navigate to="/intro" replace />;
     }
 
     if (!auth.isAuthenticated) {
-        return <Navigate to="/inloggen" />;
+        return <Navigate to="/inloggen" replace />;
     }
 
     return <Outlet />;

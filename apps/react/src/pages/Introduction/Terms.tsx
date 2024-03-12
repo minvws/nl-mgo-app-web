@@ -1,10 +1,12 @@
 import { useIntroSeen } from '$/lib/introSeen';
+import { useNavFocusRef } from '$/lib/useNavFocusRef';
 import { Button, Heading, List, ListIcon, ListItem } from '@minvws/mgo-react-ui';
 import { useNavigate, Link } from 'react-router-dom';
 import { Container } from '@minvws/mgo-react-ui';
 
 export function Terms() {
     const navigate = useNavigate();
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setIntroSeen } = useIntroSeen();
 
     return (
@@ -23,7 +25,7 @@ export function Terms() {
             <Container className="max-w-md">
                 <div className="max-w-sm">
                     <Heading asChild size="lg" className="mb-6">
-                        <h1>Zo gebruikt de website jouw gegevens</h1>
+                        <h1 ref={navFocusRef}>Zo gebruikt de website jouw gegevens</h1>
                     </Heading>
                     <p className="mb-6">
                         In de privacy&shy;verklaring staat hoe Mijn Gezond&shy;heids&shy;overzicht
