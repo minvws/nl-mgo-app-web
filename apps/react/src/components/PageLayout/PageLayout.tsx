@@ -31,11 +31,11 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                 <Container
                     className={twMerge(
                         'flex flex-grow',
-                        hideMenu ? 'flex-col' : 'gap-8 py-12 md:gap-10 lg:gap-16'
+                        hideMenu ? 'flex-col' : 'gap-8 py-6 md:gap-10 md:py-12 lg:gap-16'
                     )}
                 >
                     {!hideMenu && !isMobile && <DesktopMenu />}
-                    <main>
+                    <main className="flex-grow">
                         <Outlet />
                     </main>
                 </Container>

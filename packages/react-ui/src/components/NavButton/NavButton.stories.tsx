@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 import { NavButton } from './NavButton';
 import { Stack } from '../Stack/Stack';
-import { variants } from './variants';
 import { iconNames } from '../Icon/icons';
 
 type Story = StoryObj<typeof NavButton>;
@@ -26,16 +25,12 @@ export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
         <Stack className="gap-8">
-            {variants.map((variant, index) => (
-                <Stack className="flex-row" key={index}>
-                    <NavButton {...args} variant={variant} icon="Home">
-                        {variant}
-                    </NavButton>
-                    <NavButton {...args} variant={variant} icon="Home" aria-current="page">
-                        {variant}
-                    </NavButton>
-                </Stack>
-            ))}
+            <NavButton {...args} icon="Home">
+                Label
+            </NavButton>
+            <NavButton {...args} icon="Home" aria-current="page">
+                Label
+            </NavButton>
         </Stack>
     ),
 };

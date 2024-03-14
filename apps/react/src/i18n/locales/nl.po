@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Overview/Overview.tsx:23
+#: src/pages/Overview/Overview.tsx:53
 msgid "common.logout"
 msgstr "Uitloggen"
 
@@ -106,6 +106,14 @@ msgstr "<0>Je kiest zelf</0> hoe je je gegevens wilt gebruiken en of je ze wel o
 msgid "onboarding.proposition.usp.4"
 msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opvragen.</0>"
 
-#: src/pages/Overview/Overview.tsx:14
+#: src/pages/Overview/Overview.tsx:15
 msgid "overview.heading"
-msgstr "Succesvol ingelogd met DigiD"
+msgstr "Goedemorgen, Wendy"
+
+#: src/pages/Overview/Overview.tsx:47
+msgid "overview.last_refresh"
+msgstr "Je overzicht is <0>vandaag</0> voor het laatst bijgewerkt om <1>09:41</1>"
+
+#: src/pages/Overview/Overview.tsx:19
+msgid "overview.subheading"
+msgstr "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."

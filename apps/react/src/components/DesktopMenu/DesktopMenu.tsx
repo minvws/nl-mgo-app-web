@@ -16,7 +16,7 @@ export function DesktopMenu() {
                     <NavItem to="/zorgverleners" icon="Favorite">
                         <Trans id="menu.healthcare-providers">Zorgverleners</Trans>
                     </NavItem>
-                    <NavItem to="/#over-de-site" icon="QuestionMark" variant="link">
+                    <NavItem to="/#over-de-site" icon="QuestionMark">
                         <Trans id="menu.about">Over de site</Trans>
                     </NavItem>
                 </ul>

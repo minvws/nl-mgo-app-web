@@ -1,8 +1,13 @@
 import { Slot, Slottable } from '@radix-ui/react-slot';
+import { type ReactNode } from 'react';
 
 export interface CompositionProps {
     asChild?: boolean;
 }
+
+export type CompositionPropsWithoutChildren =
+    | { asChild: true; children: ReactNode }
+    | { asChild?: false; children?: never };
 
 interface CompositionConfig<T extends keyof HTMLElementTagNameMap> extends CompositionProps {
     tag: T;

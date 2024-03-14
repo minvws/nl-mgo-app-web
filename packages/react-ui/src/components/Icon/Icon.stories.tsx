@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Icon } from './Icon';
 import { iconNames } from './icons';
-import { faker } from '@faker-js/faker';
 
 type Story = StoryObj<typeof Icon>;
 type StoryMeta = Meta<typeof Icon>;
@@ -25,7 +24,7 @@ export const WithColorAndSizeFromParent: Story = {
 
 export const WithLabel: Story = {
     args: {
-        label: faker.word.sample(),
+        label: 'label',
     },
 };
 
@@ -38,7 +37,7 @@ export const Overview: Story = {
                     <div className="text-md flex min-h-16 items-center justify-center">
                         <Icon {...args} name={name} />
                     </div>
-                    <div className="mt-2 text-sm">{name}</div>
+                    <div className="mt-2 text-sm dark:text-white">{name}</div>
                 </div>
             ))}
         </div>

@@ -8,7 +8,7 @@ test('overview', () => {
     setAuthStateAuthenticated();
     renderWithAppProviders(<Overview />);
 
-    expect(screen.getByText('Succesvol ingelogd met DigiD')).toBeInTheDocument();
+    expect(screen.getByText('Goedemorgen, Wendy')).toBeInTheDocument();
 });
 
 test('can logout', () => {
