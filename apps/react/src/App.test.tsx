@@ -1,20 +1,15 @@
-import { setIntroSeen } from '$/lib/introSeen';
-import { resetAuthState, setAuthStateAuthenticated } from '$test/auth';
+import { setAuthStateAuthenticated } from '$test/auth';
 import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, type MemoryRouterProps } from 'react-router-dom';
-import { afterEach, expect, test } from 'vitest';
+import { expect, test } from 'vitest';
 import { App } from './App';
 import { routes } from './routes';
-
-afterEach(() => {
-    resetAuthState();
-    setIntroSeen(false);
-});
+import { useOnboardingSeen } from './hooks';
 
 const renderWithRouter = (options?: MemoryRouterProps) =>
     render(<App router={createMemoryRouter(routes, options)} />);
 
-test('redirect to intro from login', () => {
+test('redirect to onboarding from login', () => {
     renderWithRouter({ initialEntries: ['/inloggen'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
@@ -22,7 +17,7 @@ test('redirect to intro from login', () => {
     );
 });
 
-test('redirect to intro from protected route', () => {
+test('redirect to onboarding from protected route', () => {
     renderWithRouter({ initialEntries: ['/overzicht'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
@@ -31,51 +26,57 @@ test('redirect to intro from protected route', () => {
 });
 
 test('redirect to login from protected route', () => {
-    setIntroSeen(true);
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
     renderWithRouter({ initialEntries: ['/overzicht'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });
 
-test('redirect to login from root if intro seen', () => {
-    setIntroSeen(true);
+test('redirect to login from root if onboarding seen', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
     renderWithRouter({ initialEntries: ['/'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });
 
-test('no redirect from login if intro seen', () => {
-    setIntroSeen(true);
+test('no redirect from login if onboarding seen', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
     renderWithRouter({ initialEntries: ['/inloggen'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });
 
-test('no redirect from intro even if intro seen', () => {
-    setIntroSeen(true);
-    renderWithRouter({ initialEntries: ['/intro'] });
+test('no redirect from onboarding even if onboarding seen', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
+    renderWithRouter({ initialEntries: ['/welkom'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
     );
 });
 
-test('no redirect from terms even if intro seen', () => {
-    setIntroSeen(true);
-    renderWithRouter({ initialEntries: ['/voorwaarden'] });
+test('no redirect from terms even if onboarding seen', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
+    renderWithRouter({ initialEntries: ['/hoe-werkt-het'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 });
 
 test('redirect from login to overview if authenticated', () => {
-    setIntroSeen(true);
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
     setAuthStateAuthenticated();
     renderWithRouter({ initialEntries: ['/inloggen'] });
 
     expect(screen.getByRole('heading', { name: 'Mijn Gezondheidsoverzicht' })).toBeVisible();
 });
 
-test('redirect from login to intro if authenticated but not intro seen (edge case)', () => {
+test('redirect from login to onboarding if authenticated but not onboarding seen (edge case)', () => {
     setAuthStateAuthenticated();
     renderWithRouter({ initialEntries: ['/inloggen'] });
 

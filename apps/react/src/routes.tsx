@@ -3,8 +3,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import { PageLayout } from './components/PageLayout/PageLayout';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from './components/PublicRoute/PublicRoute';
-import { Introduction } from './pages/Introduction/Introduction';
-import { Terms } from './pages/Introduction/Terms';
+import { OnboardingIntro } from './pages/OnboardingIntro/OnboardingIntro';
+import { OnboardingProposition } from './pages/OnboardingProposition/OnboardingProposition';
 import { Login } from './pages/Login/Login';
 import { Overview } from './pages/Overview/Overview';
 import { Playground } from './pages/Playground/Playground';
@@ -14,8 +14,8 @@ export const routes = createRoutesFromElements(
     <Route>
         <Route path="/" element={<PublicRoute />}>
             <Route element={<PageLayout hideMenu />}>
-                <Route path="/intro" element={<Introduction />} />
-                <Route path="/voorwaarden" element={<Terms />} />
+                <Route path="/welkom" element={<OnboardingIntro />} />
+                <Route path="/hoe-werkt-het" element={<OnboardingProposition />} />
                 <Route path="/inloggen" element={<Login />} />
             </Route>
         </Route>

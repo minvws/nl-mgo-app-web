@@ -7,9 +7,14 @@
         "test": "vitest",
         "build": "tsc && vite build",
         "check-types": "tsc --noEmit",
-        "preview": "vite preview --port=8000"
+        "preview": "vite preview --port=8000",
+        "messages:extract": "lingui extract --clean --overwrite",
+        "messages:compile": "lingui compile"
     },
     "dependencies": {
+        "@lingui/core": "^4.7.1",
+        "@lingui/macro": "^4.7.1",
+        "@lingui/react": "^4.7.1",
         "@minvws/mgo-fhir-client": "workspace:*",
         "@minvws/mgo-fhir-data": "workspace:*",
         "@minvws/mgo-react-ui": "workspace:*",
@@ -27,12 +32,17 @@
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.1",
+        "@lingui/cli": "^4.7.1",
+        "@lingui/conf": "^4.7.1",
+        "@lingui/format-po": "^4.7.1",
+        "@lingui/vite-plugin": "^4.7.1",
         "@testing-library/react": "^14.2.1",
         "@testing-library/user-event": "^14.5.2",
         "@types/jsonwebtoken": "^9.0.6",
         "@types/react": "^18.2.64",
         "@types/react-dom": "^18.2.21",
         "@vitejs/plugin-react": "^4.2.1",
+        "babel-plugin-macros": "^3.1.0",
         "jsdom": "^24.0.0",
         "jsonwebtoken": "^9.0.2",
         "typescript": "^5.4.2",

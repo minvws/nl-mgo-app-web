@@ -1,24 +1,11 @@
-import { afterEach, expect, test } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { resetAuthState, signinRedirectMock, authState } from '$test/auth';
-import { AuthProvider } from '$/lib/auth';
-import { readConfig } from '$/lib/config';
+import { authState, signinRedirectMock } from '$test/auth';
+import { renderWithAppProviders } from '$test/renderApp';
+import { fireEvent, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
 import { Login } from './Login';
 
-afterEach(() => {
-    resetAuthState();
-});
-
-const renderWithAuthProvider = () => {
-    render(
-        <AuthProvider {...readConfig().oidc}>
-            <Login />
-        </AuthProvider>
-    );
-};
-
 test('login', () => {
-    renderWithAuthProvider();
+    renderWithAppProviders(<Login />);
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 
@@ -30,7 +17,7 @@ test('login', () => {
 test('auth loading', () => {
     authState.isLoading = true;
 
-    renderWithAuthProvider();
+    renderWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met laden...')).toBeInTheDocument();
 });
@@ -39,7 +26,7 @@ test('auth logging in', () => {
     authState.isLoading = true;
     authState.activeNavigator = 'signinSilent';
 
-    renderWithAuthProvider();
+    renderWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met inloggen...')).toBeInTheDocument();
 });
@@ -48,7 +35,7 @@ test('auth logging out', () => {
     authState.isLoading = true;
     authState.activeNavigator = 'signoutRedirect';
 
-    renderWithAuthProvider();
+    renderWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met uitloggen...')).toBeInTheDocument();
 });
@@ -56,7 +43,7 @@ test('auth logging out', () => {
 test('auth error', () => {
     authState.error = new Error('Something went wrong');
 
-    renderWithAuthProvider();
+    renderWithAppProviders(<Login />);
 
     expect(screen.getByText('Er is een fout opgetreden')).toBeInTheDocument();
 });

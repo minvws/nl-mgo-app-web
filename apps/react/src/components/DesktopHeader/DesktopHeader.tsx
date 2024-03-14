@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro';
 import { Button, Container, Heading } from '@minvws/mgo-react-ui';
 import { type HTMLAttributes } from 'react';
 
@@ -8,7 +9,9 @@ export function DesktopHeader(props: DesktopHeaderProps) {
         <header className="border-b-solid border-b-grey-50 border-b " {...props}>
             <Container {...props} className="flex items-center justify-between py-4">
                 <Heading asChild size="sm" className="font-normal">
-                    <h1>Mijn Gezondheidsoverzicht</h1>
+                    <h1>
+                        <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
+                    </h1>
                 </Heading>
                 <Button
                     className="text-black dark:text-white"

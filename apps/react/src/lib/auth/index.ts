@@ -1,2 +1,2 @@
-export { AuthProvider } from './AuthProvider.tsx';
+export { AuthProvider } from './AuthProvider/AuthProvider.tsx';
 export { useAuth } from 'react-oidc-context';

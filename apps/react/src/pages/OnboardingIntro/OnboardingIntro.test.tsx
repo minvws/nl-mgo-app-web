@@ -1,11 +1,11 @@
-import { App } from '$/App';
-import { routes } from '$/routes';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { createMemoryRouter } from 'react-router';
+import { renderApp } from '$test/renderApp';
+import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
-test('introduction', () => {
-    render(<App router={createMemoryRouter(routes)} />);
+test('OnboardingIntro', () => {
+    renderApp({
+        initialEntries: ['/welkom'],
+    });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'

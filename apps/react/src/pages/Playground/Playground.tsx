@@ -1,5 +1,5 @@
 import { getResource } from '$/fhir/client';
-import { useNavFocusRef } from '$/lib/useNavFocusRef';
+import { useNavFocusRef } from '$/hooks';
 import { getEmail, getHumanName } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
 import { Spinner, Container } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';

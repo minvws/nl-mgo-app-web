@@ -1,13 +1,13 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '$/lib/auth';
-import { useIntroSeen } from '$/lib/introSeen';
+import { useOnboardingSeen } from '$/hooks';
 
 export function ProtectedRoute() {
     const auth = useAuth();
-    const { isIntroSeen } = useIntroSeen();
+    const { isOnboardingSeen } = useOnboardingSeen();
 
-    if (!isIntroSeen) {
-        return <Navigate to="/intro" replace />;
+    if (!isOnboardingSeen) {
+        return <Navigate to="/welkom" replace />;
     }
 
     if (!auth.isAuthenticated) {

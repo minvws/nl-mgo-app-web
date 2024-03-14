@@ -1,28 +1,19 @@
+import { removeUserMock, setAuthStateAuthenticated } from '$test/auth';
+import { renderWithAppProviders } from '$test/renderApp';
+import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
-import { authState, removeUserMock, setAuthStateAuthenticated } from '$test/auth';
-import { AuthProvider } from '$/lib/auth';
-import { readConfig } from '$/lib/config';
 import { Overview } from './Overview';
-
-const renderWithAuthProvider = () => {
-    render(
-        <AuthProvider {...readConfig().oidc}>
-            <Overview />
-        </AuthProvider>
-    );
-};
 
 test('overview', () => {
     setAuthStateAuthenticated();
-    renderWithAuthProvider();
+    renderWithAppProviders(<Overview />);
 
     expect(screen.getByText('Succesvol ingelogd met DigiD')).toBeInTheDocument();
 });
 
 test('can logout', () => {
-    authState.isAuthenticated = true;
-    renderWithAuthProvider();
+    setAuthStateAuthenticated();
+    renderWithAppProviders(<Overview />);
 
     fireEvent.click(screen.getByRole('button', { name: /uitloggen/i }));
 

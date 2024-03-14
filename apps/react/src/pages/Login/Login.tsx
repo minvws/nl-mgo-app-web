@@ -1,8 +1,9 @@
 import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
 import { useAuth } from '$/lib/auth';
-import { useNavFocusRef } from '$/lib/useNavFocusRef';
+import { useNavFocusRef } from '$/hooks/index.js';
 import { Busy } from './Busy.js';
 import { Error } from './Error.js';
+import { Trans } from '@lingui/macro';
 
 export function Login() {
     const auth = useAuth();
@@ -28,11 +29,16 @@ export function Login() {
         <Container className="max-w-md py-10">
             <div className="max-w-sm">
                 <Heading asChild size="lg" className="mb-8">
-                    <h1 ref={navFocusRef}>Bewijs wie je bent</h1>
+                    <h1 ref={navFocusRef}>
+                        <Trans id="login.heading">Bewijs wie je bent</Trans>
+                    </h1>
                 </Heading>
                 <p className="mb-8 text-xl">
-                    Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens
-                    veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners.
+                    <Trans id="login.description">
+                        Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw
+                        gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere
+                        zorgverleners.
+                    </Trans>
                 </p>
             </div>
 
@@ -44,17 +50,17 @@ export function Login() {
                             variant="outline"
                             className="w-full"
                         >
-                            Inloggen met DigiD
+                            <Trans id="login.digid">Inloggen met DigiD</Trans>
                         </Button>
                     </li>
                     <li>
                         <Button isDisabled variant="outline" className="w-full">
-                            Inloggen als gemachtigde
+                            <Trans id="login.representative">Inloggen als gemachtigde</Trans>
                         </Button>
                     </li>
                     <li>
                         <Button isDisabled variant="outline" className="w-full">
-                            European login
+                            <Trans id="login.european">European login</Trans>
                         </Button>
                     </li>
                 </ul>

@@ -1,5 +1,6 @@
 import { Stack } from '@minvws/mgo-react-ui';
 import { NavItem } from '../NavItem/NavItem';
+import { Trans } from '@lingui/macro';
 
 export function DesktopMenu() {
     return (
@@ -10,13 +11,13 @@ export function DesktopMenu() {
             >
                 <ul>
                     <NavItem to="/overzicht" icon="Home">
-                        Overzicht
+                        <Trans id="menu.overview">Overzicht</Trans>
                     </NavItem>
                     <NavItem to="/zorgverleners" icon="Favorite">
-                        Zorgverleners
+                        <Trans id="menu.healthcare-providers">Zorgverleners</Trans>
                     </NavItem>
                     <NavItem to="/#over-de-site" icon="QuestionMark" variant="link">
-                        Over de site
+                        <Trans id="menu.about">Over de site</Trans>
                     </NavItem>
                 </ul>
             </Stack>

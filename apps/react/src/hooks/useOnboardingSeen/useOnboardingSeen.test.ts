@@ -1,37 +1,37 @@
 import { test, expect, vi, afterEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 
-import { useIntroSeen, LOCAL_STORAGE_KEY } from './introSeen';
+import { useOnboardingSeen, LOCAL_STORAGE_KEY } from './useOnboardingSeen';
 
 afterEach(() => {
     vi.restoreAllMocks();
 });
 
 test.each(['', '1', '0', 'true', 'false', 'null'])(
-    'isIntroSeen: false when localStorage has "%s"',
+    'isOnboardingSeen: false when localStorage has "%s"',
     (value) => {
         vi.spyOn(Storage.prototype, 'getItem').mockReturnValue(value);
-        const { result } = renderHook(() => useIntroSeen());
+        const { result } = renderHook(() => useOnboardingSeen());
 
-        expect(result.current.isIntroSeen).toBe(false);
+        expect(result.current.isOnboardingSeen).toBe(false);
         expect(Storage.prototype.getItem).toHaveBeenCalledWith(LOCAL_STORAGE_KEY);
     }
 );
 
-test('isIntroSeen: true when localStorage has ISO8601 datetime', () => {
+test('isOnboardingSeen: true when localStorage has ISO8601 datetime', () => {
     vi.spyOn(Storage.prototype, 'getItem').mockReturnValue('2024-02-07T12:00:00.000Z');
-    const { result } = renderHook(() => useIntroSeen());
+    const { result } = renderHook(() => useOnboardingSeen());
 
-    expect(result.current.isIntroSeen).toBe(true);
+    expect(result.current.isOnboardingSeen).toBe(true);
     expect(Storage.prototype.getItem).toHaveBeenCalledWith(LOCAL_STORAGE_KEY);
 });
 
-test('setIntroSeen() puts datetime in localStorage', () => {
+test('setOnboardingSeen() puts datetime in localStorage', () => {
     vi.spyOn(Storage.prototype, 'setItem');
-    const { result } = renderHook(() => useIntroSeen());
+    const { result } = renderHook(() => useOnboardingSeen());
 
     act(() => {
-        result.current.setIntroSeen();
+        result.current.setOnboardingSeen();
     });
 
     expect(Storage.prototype.setItem).toHaveBeenCalledWith(
@@ -40,12 +40,12 @@ test('setIntroSeen() puts datetime in localStorage', () => {
     );
 });
 
-test('setIntroSeen(true) puts datetime in localStorage', () => {
+test('setOnboardingSeen(true) puts datetime in localStorage', () => {
     vi.spyOn(Storage.prototype, 'setItem');
-    const { result } = renderHook(() => useIntroSeen());
+    const { result } = renderHook(() => useOnboardingSeen());
 
     act(() => {
-        result.current.setIntroSeen(true);
+        result.current.setOnboardingSeen(true);
     });
 
     expect(Storage.prototype.setItem).toHaveBeenCalledWith(
@@ -54,13 +54,13 @@ test('setIntroSeen(true) puts datetime in localStorage', () => {
     );
 });
 
-test('setIntroSeen(false) removes value from localStorage', () => {
+test('setOnboardingSeen(false) removes value from localStorage', () => {
     vi.spyOn(Storage.prototype, 'setItem');
     vi.spyOn(Storage.prototype, 'removeItem');
-    const { result } = renderHook(() => useIntroSeen());
+    const { result } = renderHook(() => useOnboardingSeen());
 
     act(() => {
-        result.current.setIntroSeen(false);
+        result.current.setOnboardingSeen(false);
     });
 
     expect(Storage.prototype.setItem).not.toHaveBeenCalled();

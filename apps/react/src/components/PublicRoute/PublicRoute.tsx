@@ -1,21 +1,21 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '$/lib/auth';
-import { useIntroSeen } from '$/lib/introSeen';
+import { useOnboardingSeen } from '$/hooks';
 
 export function PublicRoute() {
     const auth = useAuth();
     const location = useLocation();
-    const { isIntroSeen } = useIntroSeen();
+    const { isOnboardingSeen } = useOnboardingSeen();
 
-    if (isIntroSeen && auth.isAuthenticated) {
+    if (isOnboardingSeen && auth.isAuthenticated) {
         return <Navigate to="/overzicht" replace />;
     }
 
     if (!auth.isLoading) {
-        if (!isIntroSeen && !['/intro', '/voorwaarden'].includes(location.pathname)) {
-            return <Navigate to="/intro" replace />;
+        if (!isOnboardingSeen && !['/welkom', '/hoe-werkt-het'].includes(location.pathname)) {
+            return <Navigate to="/welkom" replace />;
         }
-        if (!['/intro', '/voorwaarden', '/inloggen'].includes(location.pathname)) {
+        if (!['/welkom', '/hoe-werkt-het', '/inloggen'].includes(location.pathname)) {
             return <Navigate to="/inloggen" replace />;
         }
     }

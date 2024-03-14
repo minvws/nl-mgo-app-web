@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-03-08 17:55+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: nl\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/pages/Overview/Overview.tsx:23
+msgid "common.logout"
+msgstr "Uitloggen"
+
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:31
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:81
+msgid "common.next"
+msgstr "Volgende"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:21
+msgid "common.previous"
+msgstr "Vorige"
+
+#: src/components/DesktopHeader/DesktopHeader.tsx:13
+msgid "desktop-header.heading"
+msgstr "Mijn Gezondheidsoverzicht"
+
+#: src/pages/HealthcareProviders/HealthcareProviders.tsx:17
+msgid "healthcare-providers.description.p1"
+msgstr "Veritatis culpa vero eligendi reiciendis numquam natus nisi mollitia beatae maiores aperiam in dignissimos. Eum non neque possimus non minus adipisci quis quo quibusdam consectetur labore impedit maxime praesentium."
+
+#: src/pages/HealthcareProviders/HealthcareProviders.tsx:24
+msgid "healthcare-providers.description.p2"
+msgstr "Ipsa beatae molestiae quidem sapiente recusandae illo dolorum dolor itaque impedit culpa fugiat explicabo. Eum mollitia pariatur perspiciatis adipisci eaque consectetur laboriosam culpa ab accusamus blanditiis consequuntur sunt ducimus. Itaque nostrum exercitationem numquam occaecati sapiente laudantium explicabo nesciunt ex exercitationem. Accusantium porro soluta amet unde eos quod rem at. Laudantium eligendi facere tempora corrupti iure facere libero porro tempore."
+
+#: src/pages/HealthcareProviders/HealthcareProviders.tsx:12
+msgid "healthcare-providers.heading"
+msgstr "Zorgverleners"
+
+#: src/pages/Login/Login.tsx:37
+msgid "login.description"
+msgstr "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners."
+
+#: src/pages/Login/Login.tsx:53
+msgid "login.digid"
+msgstr "Inloggen met DigiD"
+
+#: src/pages/Login/Login.tsx:63
+msgid "login.european"
+msgstr "European login"
+
+#: src/pages/Login/Login.tsx:33
+msgid "login.heading"
+msgstr "Bewijs wie je bent"
+
+#: src/pages/Login/Login.tsx:58
+msgid "login.representative"
+msgstr "Inloggen als gemachtigde"
+
+#: src/components/DesktopMenu/DesktopMenu.tsx:20
+msgid "menu.about"
+msgstr "Over de site"
+
+#: src/components/DesktopMenu/DesktopMenu.tsx:17
+msgid "menu.healthcare-providers"
+msgstr "Zorgverleners"
+
+#: src/components/DesktopMenu/DesktopMenu.tsx:14
+msgid "menu.overview"
+msgstr "Overzicht"
+
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:24
+msgid "onboarding.intro.description"
+msgstr "Alle informatie die je huisarts, ziekenhuis en andere zorg­verleners over jou hebben. Op één plek. Veilig en overzichtelijk."
+
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:18
+msgid "onboarding.intro.heading"
+msgstr "Je gezond­heids­gegevens in één overzicht"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:29
+msgid "onboarding.proposition.heading"
+msgstr "Zo gebruikt de website jouw gegevens"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:35
+msgid "onboarding.proposition.list-description"
+msgstr "In de privacy­verklaring staat hoe Mijn Gezond­heids­overzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:45
+msgid "onboarding.proposition.usp.1"
+msgstr "Je gegevens worden <0>versleuteld</0> en via een <1>veilige</1> verbinding opgehaald."
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:54
+msgid "onboarding.proposition.usp.2"
+msgstr "De website haalt je gegevens direct op bij de zorg­verleners die jij kiest. <0>Alleen jij hebt toegang.</0>"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:63
+msgid "onboarding.proposition.usp.3"
+msgstr "<0>Je kiest zelf</0> hoe je je gegevens wilt gebruiken en of je ze wel of niet deelt met anderen."
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx:72
+msgid "onboarding.proposition.usp.4"
+msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opvragen.</0>"
+
+#: src/pages/Overview/Overview.tsx:14
+msgid "overview.heading"
+msgstr "Succesvol ingelogd met DigiD"
