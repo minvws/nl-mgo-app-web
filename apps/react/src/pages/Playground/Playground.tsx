@@ -46,7 +46,7 @@ export function Playground() {
     return (
         <Container>
             <div className="container mx-auto mb-8 rounded-lg bg-gray-200 p-4 dark:stroke-gray-200">
-                <h2 ref={navFocusRef}>Playground</h2>
+                <h1 ref={navFocusRef}>Playground</h1>
                 <div className="max-w-[600px] py-10">{result}</div>
             </div>
         </Container>

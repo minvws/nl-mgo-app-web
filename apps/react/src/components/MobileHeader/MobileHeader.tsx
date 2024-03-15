@@ -10,7 +10,7 @@ export function MobileHeader(props: MobileHeaderProps) {
             {...props}
         >
             <Container {...props} className="py-4" centeredContent>
-                <h1 className="text-md font-bold">Mijn Gezond&shy;heids&shy;overzicht</h1>
+                <h2 className="text-md font-bold">Mijn Gezond&shy;heids&shy;overzicht</h2>
             </Container>
         </header>
     );

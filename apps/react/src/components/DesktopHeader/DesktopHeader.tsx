@@ -9,9 +9,9 @@ export function DesktopHeader(props: DesktopHeaderProps) {
         <header className="border-b-solid border-b-grey-50 border-b " {...props}>
             <Container {...props} className="flex items-center justify-between py-4">
                 <Heading asChild size="sm" className="font-normal">
-                    <h1>
+                    <h2>
                         <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
-                    </h1>
+                    </h2>
                 </Heading>
                 <Button
                     className="text-black dark:text-white"

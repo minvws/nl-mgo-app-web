@@ -11,9 +11,9 @@ export function Overview() {
     return (
         <div className="flex-grow">
             <Heading asChild size="lg" className="mb-2 sm:mb-4 md:mb-6">
-                <h2 ref={navFocusRef}>
+                <h1 ref={navFocusRef}>
                     <Trans id="overview.heading">Goedemorgen, Wendy</Trans>
-                </h2>
+                </h1>
             </Heading>
             <p className="text-grey-700 text-md mb-6 sm:text-lg md:mb-12 md:text-xl lg:text-2xl dark:text-white">
                 <Trans id="overview.subheading">
