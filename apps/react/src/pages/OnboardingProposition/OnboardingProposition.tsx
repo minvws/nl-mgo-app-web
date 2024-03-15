@@ -2,7 +2,7 @@ import { useOnboardingSeen } from '$/hooks';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { Button, Container, Heading, List, ListIcon, ListItem } from '@minvws/mgo-react-ui';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from '$/routing';
 
 export function OnboardingProposition() {
     const navigate = useNavigate();

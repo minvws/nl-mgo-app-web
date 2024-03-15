@@ -1,7 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { Button, Container, Heading } from '@minvws/mgo-react-ui';
-import { Link } from 'react-router-dom';
+import { Link } from '$/routing';
 import IntroSvg from './intro.svg?react';
 
 export function OnboardingIntro() {

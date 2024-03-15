@@ -2,7 +2,7 @@ import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
 import { useAuth } from '$/lib/auth';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
-import { Link } from 'react-router-dom';
+import { Link } from '$/routing';
 
 export function Overview() {
     const auth = useAuth();

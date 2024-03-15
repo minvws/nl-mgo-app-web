@@ -1,5 +1,5 @@
 import { Container, twMerge, useResponsive } from '@minvws/mgo-react-ui';
-import { Outlet } from 'react-router';
+import { Outlet } from '$/routing';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { Footer } from '../Footer/Footer';
 import { LogoBanner } from '../LogoBanner/LogoBanner';

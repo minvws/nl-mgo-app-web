@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from '$/routing';
 import { useAuth } from '$/lib/auth';
 import { useOnboardingSeen } from '$/hooks';
 

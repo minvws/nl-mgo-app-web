@@ -1,5 +1,5 @@
 import { NavButton, type NavButtonProps } from '@minvws/mgo-react-ui';
-import { NavLink, type NavLinkProps } from 'react-router-dom';
+import { NavLink, type NavLinkProps } from '$/routing';
 
 export const NavItem = ({ icon, to, children, ...rest }: NavLinkProps & NavButtonProps) => (
     <li>

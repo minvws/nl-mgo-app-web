@@ -3,7 +3,7 @@ import { RouterProvider, type RouterProviderProps } from 'react-router';
 import { I18nProvider } from './i18n';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config/config';
-import { router as defaultRouter } from './routes';
+import { router as defaultRouter } from './routing';
 import { type ReactNode } from 'react';
 
 const queryClient = new QueryClient();
