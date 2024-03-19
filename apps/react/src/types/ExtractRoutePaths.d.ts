@@ -1,6 +1,7 @@
 import type { DeepReadonly } from './DeepReadonly';
 import type { DeepWriteable } from './DeepWritable';
 import type { ToTuple } from './ToTuple';
+import type { StringReplace } from './StringReplace';
 
 type RouteObject = {
     path?: string;
@@ -36,6 +37,26 @@ type ExtractChildPaths<
         : never
     : never;
 
+type RouteParam<T> = T extends `${string}:${infer Param}/${string}`
+    ? Param
+    : T extends `${string}:${infer Param}`
+      ? Param
+      : never;
+
+/**
+ * A utility type to replace all the route parameters in a path with a string.
+ * It uses a `string & {}` type for params to ensure the autocomplete still works.
+ * @see https://github.com/microsoft/TypeScript/issues/29729
+ *
+ * @example
+ * type RoutePaths = '/posts' | '/posts/:id' | '/posts/:id/details' ;
+ * ReplaceParams<RoutePaths> // '/posts' | '/posts/${string}' | '/posts/${string}/details'
+ */
+type ReplaceParams<T extends string> =
+    RouteParam<T> extends never
+        ? T
+        : T | ReplaceParams<StringReplace<T, `:${RouteParam<T>}`, `${string & {}}`>>; // eslint-disable-line @typescript-eslint/ban-types
+
 /**
  * A utility type to extract all the paths from a route configuration.
  *
@@ -62,9 +83,10 @@ type ExtractChildPaths<
  *      ]
  *  }] as const
  *
- * ExtractRoutePaths<typeof routes> // '/' | '/welcome' | '/posts' | '/posts/:id'
+ * ExtractRoutePaths<typeof routes> // '/' | '/welcome' | '/posts' | '/posts/${string}'
  */
 export type ExtractRoutePaths<
     T extends readonly DeepReadonly<RouteObject>[],
     R = DeepWriteable<T>[number],
-> = ExtractChildPaths<ToTuple<R>>;
+    Paths = ExtractChildPaths<ToTuple<R>>,
+> = ReplaceParams<Paths>;
