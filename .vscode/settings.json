@@ -1,0 +1,4 @@
+{
+    "tailwindCSS.experimental.classRegex": ["tw`([^`]*)"],
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}

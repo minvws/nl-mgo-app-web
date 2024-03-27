@@ -7,6 +7,7 @@ import { config } from './config';
 
 vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
 
+vi.mock('zustand');
 vi.mock('react-oidc-context', () => ({
     AuthProvider: ({ children }: { children: ReactNode }) => children,
     /**

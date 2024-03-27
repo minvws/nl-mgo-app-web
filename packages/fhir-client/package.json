@@ -6,6 +6,9 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
+    "scripts": {
+        "check-types": "tsc --noEmit"
+    },
     "dependencies": {
         "ky": "^1.2.2",
         "lossless-json": "^4.0.1"
@@ -13,6 +16,7 @@
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
         "@types/fhir": "^0.0.41",
-        "msw": "^2.2.3"
+        "msw": "^2.2.3",
+        "typescript": "^5.4.3"
     }
 }

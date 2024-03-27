@@ -10,7 +10,7 @@ export const fontSize = {
     lg: pxToRem(18),
     xl: pxToRem(20),
     '2xl': pxToRem(24),
-    '3xl': pxToRem(36),
+    '3xl': pxToRem(32),
     '4xl': pxToRem(48),
     '5xl': pxToRem(64),
 };

@@ -11,6 +11,12 @@ import ExpandMore from '@material-symbols/svg-400/outlined/expand_more.svg?react
 import Home from '@material-symbols/svg-400/outlined/home-fill.svg?react';
 import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
 import QuestionMark from '@material-symbols/svg-400/outlined/question_mark.svg?react';
+import Call from '@material-symbols/svg-400/outlined/call.svg?react';
+import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
+import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
+import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
+import Description from '@material-symbols/svg-400/outlined/description.svg?react';
+
 import Hospital from './icons/hospital.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
 import Huisarts from './icons/huisarts.svg?react';
@@ -37,6 +43,11 @@ export const icons = {
     Huisarts,
     Tandarts,
     GGZ,
+    Call,
+    Delete,
+    Pill,
+    Diagnosis,
+    Description,
 };
 
 export type IconName = keyof typeof icons;
@@ -52,5 +63,10 @@ export const defaultIconColors: Partial<Record<IconName, string>> = {
     Huisarts: 'bg-[#007BC7] text-white',
     Tandarts: 'bg-[#8FCAE7] text-white',
     GGZ: 'bg-[#42145F] text-white',
+    Call: 'bg-[#007BC7] text-white',
+    Delete: 'bg-[#D52B1E] text-white',
+    Pill: 'bg-[#EE82EE] text-white',
+    Diagnosis: 'bg-[#8FCAE7] text-white',
+    Description: 'bg-[#94710A] text-white',
 };
 export const defaultIconColorIconNames = Object.keys(defaultIconColors) as IconName[];

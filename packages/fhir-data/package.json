@@ -6,9 +6,13 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
+    "scripts": {
+        "check-types": "tsc --noEmit"
+    },
     "devDependencies": {
-        "@minvws/mgo-fhir-client": "workspace:*",
         "@faker-js/faker": "^8.4.0",
-        "@types/fhir": "^0.0.41"
+        "@minvws/mgo-fhir-client": "workspace:*",
+        "@types/fhir": "^0.0.41",
+        "typescript": "^5.4.3"
     }
 }

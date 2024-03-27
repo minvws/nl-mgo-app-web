@@ -47,6 +47,9 @@ type RouteParam<T> = T extends `${string}:${infer Param}/${string}`
  * A utility type to replace all the route parameters in a path with a string.
  * It uses a `string & {}` type for params to ensure the autocomplete still works.
  * @see https://github.com/microsoft/TypeScript/issues/29729
+ * Update: The above workaround for the autocomplete stopped working since TypeScript 5.3.3,
+ * leaving it in for now in case it gets fixed.
+ * @see https://github.com/microsoft/TypeScript/issues/57902
  *
  * @example
  * type RoutePaths = '/posts' | '/posts/:id' | '/posts/:id/details' ;
@@ -90,3 +93,26 @@ export type ExtractRoutePaths<
     R = DeepWriteable<T>[number],
     Paths = ExtractChildPaths<ToTuple<R>>,
 > = ReplaceParams<Paths>;
+
+type ExtractParams<T> = T extends `${string}:${infer Param}/${string}`
+    ? Param | ExtractParams<StringReplace<T, `:${Param}/`, ``>>
+    : T extends `${string}:${infer Param}`
+      ? Param
+      : never;
+
+export type ExtractRouteParams<
+    T extends readonly DeepReadonly<RouteObject>[],
+    R = DeepWriteable<T>[number],
+    Paths = ExtractChildPaths<ToTuple<R>>,
+> = ExtractParamsRecord<Paths>;
+
+/**
+ * A utility type to extract the route params record type from a path.
+ *
+ * @example
+ * type RoutePaths = '/posts/:id' | '/posts/:id/details' | 'foo' | 'foo/:bar/baz/:faz'; ;
+ * ExtractRouteParams<RoutePaths> // { id: string, bar: string, faz: string }
+ */
+type ExtractParamsRecord<T extends string, O = ExtractParams<T>> = {
+    [K in O]: string;
+};

@@ -22,7 +22,7 @@ export const AsChildHeading: Story = {
     args: {},
     render: ({ children, ...args }) => (
         <Stack className="gap-8">
-            <Heading {...args} size="sm" asChild>
+            <Heading {...args} size="lg" asChild>
                 <h1>{children}</h1>
             </Heading>
             <Heading {...args} size="md" asChild>

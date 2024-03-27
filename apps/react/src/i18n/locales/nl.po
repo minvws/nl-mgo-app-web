@@ -13,11 +13,19 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/Overview/Overview.tsx:53
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:83
+msgid "common.dossier"
+msgstr "Dossier"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:31
+msgid "common.general-practicioner"
+msgstr "Huisarts"
+
+#: src/pages/Overview/Overview.tsx:58
 msgid "common.logout"
 msgstr "Uitloggen"
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:31
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:32
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx:81
 msgid "common.next"
 msgstr "Volgende"
@@ -26,21 +34,53 @@ msgstr "Volgende"
 msgid "common.previous"
 msgstr "Vorige"
 
-#: src/components/DesktopHeader/DesktopHeader.tsx:13
+#: src/components/DesktopHeader/DesktopHeader.tsx:12
 msgid "desktop-header.heading"
 msgstr "Mijn Gezondheidsoverzicht"
 
-#: src/pages/HealthcareProviders/HealthcareProviders.tsx:17
-msgid "healthcare-providers.description.p1"
-msgstr "Veritatis culpa vero eligendi reiciendis numquam natus nisi mollitia beatae maiores aperiam in dignissimos. Eum non neque possimus non minus adipisci quis quo quibusdam consectetur labore impedit maxime praesentium."
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:48
+msgid "healthcare-provider.contact.description"
+msgstr "Bekijk de contactmogelijkheden en plan een route naar je huisarts"
 
-#: src/pages/HealthcareProviders/HealthcareProviders.tsx:24
-msgid "healthcare-providers.description.p2"
-msgstr "Ipsa beatae molestiae quidem sapiente recusandae illo dolorum dolor itaque impedit culpa fugiat explicabo. Eum mollitia pariatur perspiciatis adipisci eaque consectetur laboriosam culpa ab accusamus blanditiis consequuntur sunt ducimus. Itaque nostrum exercitationem numquam occaecati sapiente laudantium explicabo nesciunt ex exercitationem. Accusantium porro soluta amet unde eos quod rem at. Laudantium eligendi facere tempora corrupti iure facere libero porro tempore."
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:42
+msgid "healthcare-provider.contact.title"
+msgstr "Contact en route"
 
-#: src/pages/HealthcareProviders/HealthcareProviders.tsx:12
-msgid "healthcare-providers.heading"
-msgstr "Zorgverleners"
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:69
+msgid "healthcare-provider.delete.description"
+msgstr "De zorggegevens van {0} niet meer tonen"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:63
+msgid "healthcare-provider.delete.title"
+msgstr "Verwijder uit overzicht"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:121
+msgid "healthcare-provider.diagnosis.description"
+msgstr "Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:115
+msgid "healthcare-provider.diagnosis.title"
+msgstr "Klachten en diagnoses"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:100
+msgid "healthcare-provider.medicine.description"
+msgstr "Medicijnen die je zorgverleners hebben voorgeschreven"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:94
+msgid "healthcare-provider.medicine.title"
+msgstr "Medicijnen"
+
+#: src/pages/HealthcareProvider/NotFound.tsx:12
+msgid "healthcare-provider.not-found.heading"
+msgstr "Zorgverlener was niet gevonden"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:141
+msgid "healthcare-provider.reports.description"
+msgstr "Rapporten en verslagen die zijn opgesteld door je zorgverleners"
+
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx:135
+msgid "healthcare-provider.reports.title"
+msgstr "Verslagen"
 
 #: src/pages/Login/Login.tsx:37
 msgid "login.description"
@@ -62,23 +102,27 @@ msgstr "Bewijs wie je bent"
 msgid "login.representative"
 msgstr "Inloggen als gemachtigde"
 
-#: src/components/DesktopMenu/DesktopMenu.tsx:20
+#: src/components/DesktopMenu/DesktopMenu.tsx:17
 msgid "menu.about"
 msgstr "Over de site"
-
-#: src/components/DesktopMenu/DesktopMenu.tsx:17
-msgid "menu.healthcare-providers"
-msgstr "Zorgverleners"
 
 #: src/components/DesktopMenu/DesktopMenu.tsx:14
 msgid "menu.overview"
 msgstr "Overzicht"
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:24
+#: src/pages/NotFound/NotFound.tsx:14
+msgid "not-found.description"
+msgstr "Veritatis culpa vero eligendi reiciendis numquam natus nisi mollitia beatae maiores aperiam in dignissimos. Eum non neque possimus non minus adipisci quis quo quibusdam consectetur labore impedit maxime praesentium."
+
+#: src/pages/NotFound/NotFound.tsx:9
+msgid "not-found.heading"
+msgstr "Pagina niet gevonden"
+
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:25
 msgid "onboarding.intro.description"
 msgstr "Alle informatie die je huisarts, ziekenhuis en andere zorg­verleners over jou hebben. Op één plek. Veilig en overzichtelijk."
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:18
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx:19
 msgid "onboarding.intro.heading"
 msgstr "Je gezond­heids­gegevens in één overzicht"
 
@@ -106,14 +150,18 @@ msgstr "<0>Je kiest zelf</0> hoe je je gegevens wilt gebruiken en of je ze wel o
 msgid "onboarding.proposition.usp.4"
 msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opvragen.</0>"
 
-#: src/pages/Overview/Overview.tsx:15
+#: src/pages/Overview/Overview.tsx:18
 msgid "overview.heading"
 msgstr "Goedemorgen, Wendy"
 
-#: src/pages/Overview/Overview.tsx:47
+#: src/pages/Overview/Overview.tsx:51
 msgid "overview.last_refresh"
 msgstr "Je overzicht is <0>vandaag</0> voor het laatst bijgewerkt om <1>09:41</1>"
 
-#: src/pages/Overview/Overview.tsx:19
+#: src/pages/Overview/Overview.tsx:46
+msgid "overview.no-results"
+msgstr "Geen zorgverleners gevonden."
+
+#: src/pages/Overview/Overview.tsx:22
 msgid "overview.subheading"
 msgstr "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."

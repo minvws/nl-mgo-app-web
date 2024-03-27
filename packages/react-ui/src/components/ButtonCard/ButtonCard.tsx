@@ -4,7 +4,6 @@ import {
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
 import { IconAvatar } from '../IconAvatar/IconAvatar';
-import { Heading } from '../Heading/Heading';
 import { Icon } from '../Icon/Icon';
 import { SkeletonCircle, SkeletonText } from '../Skeleton';
 import { type OptionalPropsWhenFlagIsTrue } from '../../types/OptionalPropsWhenFlagIsTrue';
@@ -59,9 +58,7 @@ export const ButtonCard = ({
                 isLoading={isLoading}
             >
                 <Stack className="flex flex-col gap-2">
-                    <Heading asChild size="sm">
-                        <h3>{title}</h3>
-                    </Heading>
+                    <h3 className="text-lg font-bold text-black sm:text-xl md:text-2xl">{title}</h3>
                     <p className="text-grey-500 text-xl font-normal">{description}</p>
                 </Stack>
             </SkeletonText>

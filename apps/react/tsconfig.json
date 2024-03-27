@@ -27,6 +27,6 @@
             "$test/*": ["./test/*"]
         }
     },
-    "include": ["src", "test", "lingui.config.ts"],
+    "include": ["src", "test", "lingui.config.ts", "__mocks__"],
     "references": [{ "path": "./tsconfig.vite.json" }]
 }

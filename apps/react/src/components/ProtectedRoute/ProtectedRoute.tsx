@@ -1,16 +1,10 @@
-import { Navigate, Outlet } from '$/routing';
 import { useAuth } from '$/lib/auth';
-import { useOnboardingSeen } from '$/hooks';
+import { Navigate, Outlet } from '$/routing';
 
 export function ProtectedRoute() {
     const auth = useAuth();
-    const { isOnboardingSeen } = useOnboardingSeen();
 
-    if (!isOnboardingSeen) {
-        return <Navigate to="/welkom" replace />;
-    }
-
-    if (!auth.isAuthenticated) {
+    if (!auth.isLoading && !auth.isAuthenticated) {
         return <Navigate to="/inloggen" replace />;
     }
 

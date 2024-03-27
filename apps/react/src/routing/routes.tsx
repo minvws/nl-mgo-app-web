@@ -1,16 +1,17 @@
-import { type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
+import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
 import { type Path as RouterPath } from 'react-router-dom';
 import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
-import { HealthcareProviders } from '../pages/HealthcareProviders/HealthcareProviders';
+import { HealthcareProvider } from '../pages/HealthcareProvider/HealthcareProvider';
 import { Login } from '../pages/Login/Login';
 import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
+import { NotFound } from '$/pages/NotFound/NotFound';
 
 const routeConfig = [
     {
@@ -32,6 +33,10 @@ const routeConfig = [
                         path: '/inloggen',
                         element: <Login />,
                     },
+                    {
+                        path: '*',
+                        element: <NotFound />,
+                    },
                 ],
             },
         ],
@@ -47,8 +52,8 @@ const routeConfig = [
                         element: <Overview />,
                     },
                     {
-                        path: '/zorgverleners',
-                        element: <HealthcareProviders />,
+                        path: '/overzicht/:healthcareProviderSlug',
+                        element: <HealthcareProvider />,
                     },
                 ],
             },
@@ -60,12 +65,14 @@ const routeConfig = [
     },
 ] as const;
 
-type RouteConfigPaths = ExtractRoutePaths<typeof routeConfig>;
+export type RouteConfigPaths = ExtractRoutePaths<typeof routeConfig>;
+export type RouteParams = ExtractRouteParams<typeof routeConfig>;
 
-export type RoutePath =
+type RoutePath =
     | RouteConfigPaths
     | `${RouteConfigPaths}${'?' | '#'}${string}`
-    | `${'?' | '#' | '..'}${string}`;
+    | `${'?' | '#' | '..'}${string}`
+    | '/niet-gevonden';
 
 export type To = RoutePath | Override<RouterPath, { pathname: RoutePath }>;
 

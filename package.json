@@ -11,6 +11,7 @@
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "lint:fix": "eslint . --ext ts,tsx --fix",
+        "check-types": "pnpm run -r check-types",
         "storybook": "pnpm run --dir packages/react-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
@@ -31,6 +32,7 @@
         "prettier": "^3.2.5",
         "prettier-plugin-tailwindcss": "^0.5.12",
         "simple-git-hooks": "^2.10.0",
+        "typescript": "^5.4.3",
         "vitest": "^1.3.1"
     },
     "simple-git-hooks": {

@@ -4,20 +4,21 @@ import { useOnboardingSeen } from '$/hooks';
 
 export function PublicRoute() {
     const auth = useAuth();
-    const location = useLocation();
+    const { pathname } = useLocation();
     const { isOnboardingSeen } = useOnboardingSeen();
 
-    if (isOnboardingSeen && auth.isAuthenticated) {
-        return <Navigate to="/overzicht" replace />;
-    }
-
-    if (!auth.isLoading) {
-        if (!isOnboardingSeen && !['/welkom', '/hoe-werkt-het'].includes(location.pathname)) {
+    switch (pathname) {
+        case '/':
+            if (isOnboardingSeen) {
+                return <Navigate to="/overzicht" replace />;
+            }
             return <Navigate to="/welkom" replace />;
-        }
-        if (!['/welkom', '/hoe-werkt-het', '/inloggen'].includes(location.pathname)) {
-            return <Navigate to="/inloggen" replace />;
-        }
+
+        case '/inloggen':
+            if (auth.isAuthenticated) {
+                return <Navigate to="/overzicht" replace />;
+            }
+            break;
     }
 
     return <Outlet />;

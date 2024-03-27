@@ -1,0 +1,154 @@
+import { useNavFocusRef } from '$/hooks';
+import { Link, useParams } from '$/routing';
+import { useHealthcareProvidersStore } from '$/store';
+import { Trans, msg } from '@lingui/macro';
+import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
+import { NotFound } from './NotFound';
+import { useLingui } from '@lingui/react';
+
+export function HealthcareProvider() {
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+    const { healthcareProviderSlug } = useParams();
+    const { getHealthcareProvider } = useHealthcareProvidersStore();
+    const { _ } = useLingui();
+
+    const healthcareProvider = getHealthcareProvider(healthcareProviderSlug);
+
+    if (!healthcareProvider) {
+        return <NotFound />;
+    }
+
+    const { organisation } = healthcareProvider;
+
+    return (
+        <section className="flex-grow">
+            <Heading asChild size="lg" className="mb-8">
+                <h1 ref={navFocusRef}>{organisation.display_name}</h1>
+            </Heading>
+
+            <Heading asChild size="md" className="mb-8">
+                <h2>
+                    <Trans id="common.general-practicioner">Huisarts</Trans>
+                </h2>
+            </Heading>
+
+            <Stack asChild className="mb-6 gap-2 md:mb-12">
+                <ul>
+                    <li>
+                        <ButtonCard
+                            asChild
+                            icon="Call"
+                            title={_(
+                                msg({
+                                    id: 'healthcare-provider.contact.title',
+                                    message: 'Contact en route',
+                                })
+                            )}
+                            description={_(
+                                msg({
+                                    id: 'healthcare-provider.contact.description',
+                                    message:
+                                        'Bekijk de contactmogelijkheden en plan een route naar je huisarts',
+                                })
+                            )}
+                        >
+                            <Link to="#contact" />
+                        </ButtonCard>
+                    </li>
+                    <li>
+                        <ButtonCard
+                            asChild
+                            icon="Delete"
+                            title={_(
+                                msg({
+                                    id: 'healthcare-provider.delete.title',
+                                    message: 'Verwijder uit overzicht',
+                                })
+                            )}
+                            description={_(
+                                msg({
+                                    id: 'healthcare-provider.delete.description',
+                                    message: `De zorggegevens van ${organisation.display_name} niet meer tonen`,
+                                })
+                            )}
+                        >
+                            <Link to="#delete" />
+                        </ButtonCard>
+                    </li>
+                </ul>
+            </Stack>
+
+            <Heading asChild size="md" className="mb-8">
+                <h2>
+                    <Trans id="common.dossier">Dossier</Trans>
+                </h2>
+            </Heading>
+
+            <Stack asChild className="mb-6 gap-2 md:mb-12">
+                <ul>
+                    <li>
+                        <ButtonCard
+                            asChild
+                            icon="Pill"
+                            title={_(
+                                msg({
+                                    id: 'healthcare-provider.medicine.title',
+                                    message: 'Medicijnen',
+                                })
+                            )}
+                            description={_(
+                                msg({
+                                    id: 'healthcare-provider.medicine.description',
+                                    message:
+                                        'Medicijnen die je zorgverleners hebben voorgeschreven',
+                                })
+                            )}
+                        >
+                            <Link to="#medicijnen" />
+                        </ButtonCard>
+                    </li>
+                    <li>
+                        <ButtonCard
+                            asChild
+                            icon="Diagnosis"
+                            title={_(
+                                msg({
+                                    id: 'healthcare-provider.diagnosis.title',
+                                    message: 'Klachten en diagnoses',
+                                })
+                            )}
+                            description={_(
+                                msg({
+                                    id: 'healthcare-provider.diagnosis.description',
+                                    message: `Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners`,
+                                })
+                            )}
+                        >
+                            <Link to="#diagnoses" />
+                        </ButtonCard>
+                    </li>
+                    <li>
+                        <ButtonCard
+                            asChild
+                            icon="Description"
+                            title={_(
+                                msg({
+                                    id: 'healthcare-provider.reports.title',
+                                    message: 'Verslagen',
+                                })
+                            )}
+                            description={_(
+                                msg({
+                                    id: 'healthcare-provider.reports.description',
+                                    message: `Rapporten en verslagen die zijn opgesteld door je zorgverleners`,
+                                })
+                            )}
+                        >
+                            <Link to="#verslagen" />
+                        </ButtonCard>
+                    </li>
+                </ul>
+            </Stack>
+        </section>
+    );
+}

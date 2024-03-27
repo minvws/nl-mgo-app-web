@@ -6,6 +6,7 @@ import IntroSvg from './intro.svg?react';
 
 export function OnboardingIntro() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+
     return (
         <>
             <Container className="py-16" centeredContent>

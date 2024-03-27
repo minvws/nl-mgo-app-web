@@ -1,9 +1,9 @@
-import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
-import { useAuth } from '$/lib/auth';
 import { useNavFocusRef } from '$/hooks/index.js';
+import { useAuth } from '$/lib/auth';
+import { Trans } from '@lingui/macro';
+import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
 import { Busy } from './Busy.js';
 import { Error } from './Error.js';
-import { Trans } from '@lingui/macro';
 
 export function Login() {
     const auth = useAuth();
