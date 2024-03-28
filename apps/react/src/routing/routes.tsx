@@ -74,7 +74,7 @@ type RoutePath =
     | `${'?' | '#' | '..'}${string}`
     | '/niet-gevonden';
 
-export type To = RoutePath | Override<RouterPath, { pathname: RoutePath }>;
+export type To = RoutePath | Partial<Override<RouterPath, { pathname: RoutePath }>>;
 
 // Cast routeConfig from the literal type back to the collective type to make it compatible with react-router
 export const routes = routeConfig as LiteralToCollective<typeof routeConfig>;

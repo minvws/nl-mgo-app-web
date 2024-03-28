@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/components/MobileMenu/MobileMenu.tsx:50
+msgid "common.close"
+msgstr "Sluiten"
+
 #: src/pages/HealthcareProvider/HealthcareProvider.tsx:83
 msgid "common.dossier"
 msgstr "Dossier"
@@ -34,7 +38,7 @@ msgstr "Volgende"
 msgid "common.previous"
 msgstr "Vorige"
 
-#: src/components/DesktopHeader/DesktopHeader.tsx:12
+#: src/components/DesktopHeader/DesktopHeader.tsx:18
 msgid "desktop-header.heading"
 msgstr "Mijn Gezondheidsoverzicht"
 
@@ -103,12 +107,34 @@ msgid "login.representative"
 msgstr "Inloggen als gemachtigde"
 
 #: src/components/DesktopMenu/DesktopMenu.tsx:17
+#: src/components/MobileMenu/MobileMenu.tsx:75
 msgid "menu.about"
 msgstr "Over de site"
 
+#: src/components/MobileMenu/MobileMenu.tsx:77
+msgid "menu.about.description"
+msgstr "Uitleg over hoe de site werkt en wat je er allemaal mee kan"
+
 #: src/components/DesktopMenu/DesktopMenu.tsx:14
+#: src/components/MobileMenu/MobileMenu.tsx:59
 msgid "menu.overview"
 msgstr "Overzicht"
+
+#: src/components/MobileMenu/MobileMenu.tsx:61
+msgid "menu.overview.description"
+msgstr "Je medische gegevens van al je zorgverleners in één overzicht"
+
+#: src/components/MobileHeader/MobileHeader.tsx:20
+msgid "mobile-header.heading"
+msgstr "Mijn Gezondheidsoverzicht"
+
+#: src/components/MobileMenu/MobileMenu.tsx:43
+msgid "mobile-menu.dialog.title"
+msgstr "Menu"
+
+#: src/components/MobileMenu/MenuButton.tsx:14
+msgid "mobile-menu.menu"
+msgstr "Menu"
 
 #: src/pages/NotFound/NotFound.tsx:14
 msgid "not-found.description"

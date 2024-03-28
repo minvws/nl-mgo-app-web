@@ -11,6 +11,7 @@ import ExpandMore from '@material-symbols/svg-400/outlined/expand_more.svg?react
 import Home from '@material-symbols/svg-400/outlined/home-fill.svg?react';
 import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
 import QuestionMark from '@material-symbols/svg-400/outlined/question_mark.svg?react';
+import Close from '@material-symbols/svg-400/outlined/close.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
@@ -38,6 +39,7 @@ export const icons = {
     Home,
     Favorite,
     QuestionMark,
+    Close,
     Hospital,
     Esculaap,
     Huisarts,
@@ -63,6 +65,9 @@ export const defaultIconColors: Partial<Record<IconName, string>> = {
     Huisarts: 'bg-[#007BC7] text-white',
     Tandarts: 'bg-[#8FCAE7] text-white',
     GGZ: 'bg-[#42145F] text-white',
+    Home: 'bg-[#01689B] text-white',
+    Favorite: 'bg-[#D52B1E] text-white',
+    QuestionMark: 'bg-[#8FCAE7] text-white',
     Call: 'bg-[#007BC7] text-white',
     Delete: 'bg-[#D52B1E] text-white',
     Pill: 'bg-[#EE82EE] text-white',

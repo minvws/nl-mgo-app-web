@@ -1,0 +1,93 @@
+import { Trans, msg } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { ButtonCard, Heading, IconButton, twMerge } from '@minvws/mgo-react-ui';
+import * as Dialog from '@radix-ui/react-dialog';
+import { useState, type HTMLAttributes, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import { MenuButton } from './MenuButton';
+
+export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
+
+export function MobileMenu({ className, ...rest }: MobileMenuProps) {
+    const { _ } = useLingui();
+    const [open, setOpen] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname]);
+
+    return (
+        <Dialog.Root open={open} onOpenChange={setOpen}>
+            <Dialog.Overlay />
+            <MenuButton asChild>
+                <Dialog.Trigger />
+            </MenuButton>
+            <Dialog.Portal>
+                <Dialog.Content
+                    className={twMerge(
+                        'fixed left-0 top-0 z-50 flex h-screen w-screen flex-col bg-white dark:bg-[#050505]',
+                        className
+                    )}
+                    {...rest}
+                >
+                    <div className="border-grey-100 dark:border-grey-500 flex h-16 items-center justify-end border-b p-4">
+                        <Dialog.Title asChild>
+                            <Heading
+                                asChild
+                                size="md"
+                                className="absolute left-1/2 -translate-x-1/2"
+                            >
+                                <h2>
+                                    <Trans id="mobile-menu.dialog.title">Menu</Trans>
+                                </h2>
+                            </Heading>
+                        </Dialog.Title>
+                        <IconButton
+                            asChild
+                            name="Close"
+                            label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
+                        >
+                            <Dialog.Close />
+                        </IconButton>
+                    </div>
+                    <ul className="overflow-auto">
+                        <li>
+                            <ButtonCard
+                                asChild
+                                title={_(msg({ id: 'menu.overview', message: 'Overzicht' }))}
+                                description={_(
+                                    msg({
+                                        id: 'menu.overview.description',
+                                        message:
+                                            'Je medische gegevens van al je zorgverleners in één overzicht',
+                                    })
+                                )}
+                                icon="Home"
+                            >
+                                <NavLink to="/overzicht" />
+                            </ButtonCard>
+                        </li>
+                        <li>
+                            <ButtonCard
+                                asChild
+                                title={_(msg({ id: 'menu.about', message: 'Over de site' }))}
+                                description={_(
+                                    msg({
+                                        id: 'menu.about.description',
+                                        message:
+                                            'Uitleg over hoe de site werkt en wat je er allemaal mee kan',
+                                    })
+                                )}
+                                icon="QuestionMark"
+                            >
+                                <NavLink to="/#over-de-site" />
+                            </ButtonCard>
+                        </li>
+                    </ul>
+                </Dialog.Content>
+            </Dialog.Portal>
+        </Dialog.Root>
+    );
+}

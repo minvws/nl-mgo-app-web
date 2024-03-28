@@ -41,24 +41,26 @@ export const ButtonCard = ({
     return (
         <Comp
             className={twMerge(
-                'border-grey-100 dark:bg-grey-900 dark:border-grey-500 flex w-full gap-4 border-b bg-white py-4 pl-4 pr-2 text-left',
+                'border-grey-100 dark:bg-grey-900 dark:border-grey-500 aria-[current=page]:bg-grey-50 flex w-full border-b bg-white py-4 pl-4 pr-2 text-left',
                 isLoading && 'cursor-progress',
                 className
             )}
             {...rest}
         >
             <Slottable>{children}</Slottable>
-            <SkeletonCircle isLoading={isLoading}>
+            <SkeletonCircle isLoading={isLoading} className="mr-4">
                 <IconAvatar name={icon} label={iconLabel} />
             </SkeletonCircle>
             <SkeletonText
-                className="flex flex-grow flex-col gap-2"
-                height="h-8"
+                className="flex flex-grow flex-col gap-1 sm:gap-2"
+                height="h-6 sm:h-8"
                 numberOfLines={2}
                 isLoading={isLoading}
             >
-                <Stack className="flex flex-col gap-2">
-                    <h3 className="text-lg font-bold text-black sm:text-xl md:text-2xl">{title}</h3>
+                <Stack className="flex flex-col gap-1 sm:gap-2">
+                    <span className="text-lg font-bold text-black sm:text-xl md:text-2xl">
+                        {title}
+                    </span>
                     <p className="text-grey-500 text-xl font-normal">{description}</p>
                 </Stack>
             </SkeletonText>

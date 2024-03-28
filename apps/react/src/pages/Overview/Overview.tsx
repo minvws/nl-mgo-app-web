@@ -25,7 +25,7 @@ export function Overview() {
             </p>
 
             {healthcareProviders.length ? (
-                <Stack asChild className="mb-6 gap-2 md:mb-12">
+                <Stack asChild className="-mx-4 mb-6 gap-1 sm:mx-0 sm:gap-2 md:mb-12">
                     <ul>
                         {healthcareProviders.map(({ slug, organisation }) => (
                             <li key={slug}>

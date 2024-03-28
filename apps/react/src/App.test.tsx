@@ -1,11 +1,33 @@
-import { setAuthStateAuthenticated } from '$test/auth';
+import { authState, setAuthStateAuthenticated } from '$test/auth';
 import { renderApp } from '$test/renderApp';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { useOnboardingSeen } from './hooks';
+import { type To } from './routing/routes';
 
 test('redirect from root to welkom if onboarding not seen', () => {
     renderApp({ initialEntries: ['/'] });
+
+    expect(screen.getByRole('heading')).toHaveTextContent(
+        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
+    );
+});
+
+test('waits for auth to load if there is a search query', async () => {
+    const initialEntries: To[] = [
+        {
+            pathname: '/',
+            search: '?code=123',
+        },
+    ];
+
+    authState.isLoading = true;
+    renderApp({ initialEntries });
+
+    expect(screen.queryByRole('heading')).toBeNull();
+
+    authState.isLoading = false;
+    renderApp({ initialEntries });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'

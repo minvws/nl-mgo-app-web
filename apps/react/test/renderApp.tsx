@@ -2,22 +2,34 @@ import { App, AppProviders } from '$/App';
 import { routes, type To } from '$/routing/routes';
 import { type Override } from '$/types/Override';
 import { render } from '@testing-library/react';
-import { type ReactNode } from 'react';
-import { MemoryRouter, createMemoryRouter, type MemoryRouterProps } from 'react-router-dom';
+import { isValidElement, type ReactNode } from 'react';
+import { RouterProvider, createMemoryRouter, type RouteObject } from 'react-router-dom';
 
-type TypedMemoryRouterProps = Override<
-    MemoryRouterProps,
+type MemoryOptions = Parameters<typeof createMemoryRouter>[1];
+
+type TypedMemoryRouterOptions = Override<
+    MemoryOptions,
     {
         initialEntries: To[];
     }
 >;
 
-export const renderApp = (options: TypedMemoryRouterProps) =>
+export const renderApp = (options: TypedMemoryRouterOptions) =>
     render(<App router={createMemoryRouter(routes, options)} />);
 
-export const renderWithAppProviders = (component: ReactNode) =>
-    render(
+export const renderWithAppProviders = (
+    rootCompOrRoutes: ReactNode | RouteObject[],
+    options?: MemoryOptions
+) => {
+    const routes = isValidElement(rootCompOrRoutes)
+        ? [{ element: rootCompOrRoutes, path: '/' }]
+        : rootCompOrRoutes;
+
+    const router = createMemoryRouter(routes as RouteObject[], options);
+
+    return render(
         <AppProviders>
-            <MemoryRouter>{component}</MemoryRouter>
+            <RouterProvider router={router} />
         </AppProviders>
     );
+};

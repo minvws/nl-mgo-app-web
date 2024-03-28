@@ -1,18 +1,22 @@
-import { Navigate, Outlet, useLocation } from '$/routing';
-import { useAuth } from '$/lib/auth';
 import { useOnboardingSeen } from '$/hooks';
+import { useAuth } from '$/lib/auth';
+import { Navigate, Outlet, useLocation } from '$/routing';
 
 export function PublicRoute() {
     const auth = useAuth();
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
     const { isOnboardingSeen } = useOnboardingSeen();
+    const waitForAuth = !!search && auth.isLoading;
 
     switch (pathname) {
         case '/':
-            if (isOnboardingSeen) {
-                return <Navigate to="/overzicht" replace />;
+            if (waitForAuth) {
+                return <Outlet />;
             }
-            return <Navigate to="/welkom" replace />;
+            if (!isOnboardingSeen) {
+                return <Navigate to="/welkom" replace />;
+            }
+            return <Navigate to="/overzicht" replace />;
 
         case '/inloggen':
             if (auth.isAuthenticated) {

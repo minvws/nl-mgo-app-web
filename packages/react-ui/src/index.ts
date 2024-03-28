@@ -25,6 +25,7 @@ export {
     type SkeletonTextProps,
 } from './components/Skeleton';
 export { ButtonCard, type ButtonCardProps } from './components/ButtonCard/ButtonCard';
+export { IconButton, type IconButtonProps } from './components/IconButton/IconButton';
 
 export {
     useResponsive,

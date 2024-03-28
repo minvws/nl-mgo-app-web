@@ -24,10 +24,10 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <>
             <div className="flex min-h-screen flex-col">
-                <div className={hideMenu ? 'bg-transparent' : ''}>
-                    {!isMobile && <LogoBanner />}
-                    {!hideMenu && <Header />}
-                </div>
+                <LogoBanner
+                    className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-[#050505]'}
+                />
+                {!hideMenu && <Header />}
                 <Container
                     className={twMerge(
                         'flex flex-grow',
