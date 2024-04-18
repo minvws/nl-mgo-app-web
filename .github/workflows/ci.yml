@@ -42,6 +42,6 @@ jobs:
         working-directory: apps/react
         run: pnpm run build
       - name: SonarCloud
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@v2.1.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
