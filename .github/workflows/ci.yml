@@ -1,54 +1,34 @@
 name: CI
 
-on: [pull_request]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
-  lint:
+  validate:
     runs-on: ubuntu-22.04
-    name: Lint
+    name: Build & validate
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/actions/setup
       - name: Lint
         run: pnpm run lint
-
-  format:
-    runs-on: ubuntu-22.04
-    name: Format
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
       - name: Check formatting
         run: pnpm run format:check
-
-  check-types:
-    runs-on: ubuntu-22.04
-    name: Check types
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
       - name: Check types
         run: pnpm run -r check-types
-
-  check-i18n:
-    runs-on: ubuntu-22.04
-    name: Check i18n
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
       - name: Extract messages
         working-directory: apps/react
         run: pnpm run messages:extract
       - name: Check for changes which should have been in GIT
         run: |
           if [ -z "$(git status -s)" ] ; then echo "no git changes" ; else echo "git changes detected" && git status && git diff && exit 1 ; fi
-
-  test:
-    runs-on: ubuntu-22.04
-    name: Test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
       - name: Test
         id: test
         run: pnpm run test:coverage
@@ -58,13 +38,10 @@ jobs:
         with:
           name: coverage
           path: coverage
-
-  build:
-    runs-on: ubuntu-22.04
-    name: Build
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
       - name: Build
         working-directory: apps/react
         run: pnpm run build
+      - name: SonarCloud
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
