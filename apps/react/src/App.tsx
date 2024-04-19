@@ -29,15 +29,19 @@ export const App = ({ router = defaultRouter }: AppProps = {}) => {
         addHealthcareProvider({
             organisation: {
                 display_name: 'Huisartspraktijk Dierdonk',
-                id_type: 'abg-z',
-                id_value: '01008656',
+                identification_type: 'abg-z',
+                identification_value: '01008656',
+                active: true,
                 addresses: [
                     {
+                        active: true,
                         address: 'Herculesstraat 100',
-                        postal_code: '1812PG',
+                        postalcode: '1812PG',
                         city: 'Alkmaar',
                     },
                 ],
+                names: [],
+                types: [],
             },
             service: {
                 medmij_id: 'huisartsenpuntdierdonk.huisartspraktijk.dierdonk@medmij',

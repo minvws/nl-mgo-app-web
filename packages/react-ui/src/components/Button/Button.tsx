@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
+import { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
@@ -6,7 +6,7 @@ import { isIconName, type IconName } from '../Icon/icons';
 import { type Variant } from './variants';
 import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
-export interface ButtonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
     isDisabled?: boolean;
     variant?: Variant;
     leftIcon?: ReactNode | IconName;
@@ -20,7 +20,7 @@ const typeColors: Record<Variant, string> = {
     solid: tw`${disabledStyles} border-2 border-blue-600 bg-blue-600 text-white hover:border-blue-800 hover:bg-blue-800 focus:border-blue-400`,
     light: tw`${disabledStyles} border-2 border-blue-200 bg-blue-200 text-blue-800 hover:border-blue-300 hover:bg-blue-300 focus:border-blue-50`,
     outline: tw`${disabledStyles} border-grey-300 border-2 bg-white text-blue-800 hover:border-blue-600 hover:bg-blue-600 focus:border-blue-500 [&:not([aria-disabled])]:hover:text-white`,
-    link: tw`aria-disabled:text-grey-500 aria-disabled:focus:border-grey-300 border-2 border-transparent text-blue-700 focus:border-blue-100  aria-disabled:cursor-default dark:text-white [&:not([aria-disabled])]:hover:underline`,
+    link: tw`aria-disabled:text-grey-500 aria-disabled:focus:border-grey-300 border-2 border-transparent text-blue-700 focus:border-blue-100  aria-disabled:cursor-default dark:text-white [&:not([aria-disabled])]:hover:text-blue-300`,
 };
 
 export const Button = ({

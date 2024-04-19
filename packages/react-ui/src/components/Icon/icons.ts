@@ -17,6 +17,11 @@ import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';
+import Cancel from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
+import Add from '@material-symbols/svg-400/outlined/add.svg?react';
+import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
+import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
+import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
 
 import Hospital from './icons/hospital.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
@@ -50,6 +55,11 @@ export const icons = {
     Pill,
     Diagnosis,
     Description,
+    Cancel,
+    Add,
+    Warning,
+    ArrowRightAlt,
+    Autorenew,
 };
 
 export type IconName = keyof typeof icons;

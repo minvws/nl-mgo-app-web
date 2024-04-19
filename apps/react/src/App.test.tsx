@@ -1,12 +1,12 @@
 import { authState, setAuthStateAuthenticated } from '$test/auth';
-import { renderApp } from '$test/renderApp';
+import { setupApp } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { useOnboardingSeen } from './hooks';
 import { type To } from './routing/routes';
 
 test('redirect from root to welkom if onboarding not seen', () => {
-    renderApp({ initialEntries: ['/'] });
+    setupApp({ initialEntries: ['/'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
@@ -22,12 +22,12 @@ test('waits for auth to load if there is a search query', async () => {
     ];
 
     authState.isLoading = true;
-    renderApp({ initialEntries });
+    setupApp({ initialEntries });
 
     expect(screen.queryByRole('heading')).toBeNull();
 
     authState.isLoading = false;
-    renderApp({ initialEntries });
+    setupApp({ initialEntries });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
@@ -37,7 +37,7 @@ test('waits for auth to load if there is a search query', async () => {
 test('redirect from root to login from root if onboarding seen', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
-    renderApp({ initialEntries: ['/'] });
+    setupApp({ initialEntries: ['/'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });
@@ -45,7 +45,7 @@ test('redirect from root to login from root if onboarding seen', () => {
 test('no redirect from root even if onboarding seen', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
-    renderApp({ initialEntries: ['/welkom'] });
+    setupApp({ initialEntries: ['/welkom'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent(
         'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
@@ -56,13 +56,13 @@ test('redirect from login to overview if authenticated', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
     setAuthStateAuthenticated();
-    renderApp({ initialEntries: ['/inloggen'] });
+    setupApp({ initialEntries: ['/inloggen'] });
 
-    expect(screen.getByRole('heading', { name: 'Mijn Gezondheidsoverzicht' })).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'Voeg een zorgverlener toe' })).toBeVisible();
 });
 
 test('redirect to login from protected route', () => {
-    renderApp({ initialEntries: ['/overzicht'] });
+    setupApp({ initialEntries: ['/overzicht'] });
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 });

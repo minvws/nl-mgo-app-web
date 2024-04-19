@@ -1,10 +1,10 @@
 import { useOnboardingSeen } from '$/hooks';
-import { renderApp } from '$test/renderApp';
+import { setupApp } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
 test('terms', () => {
-    renderApp({ initialEntries: ['/hoe-werkt-het'] });
+    setupApp({ initialEntries: ['/hoe-werkt-het'] });
 
     expect(useOnboardingSeen().isOnboardingSeen).toBe(false);
     expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
@@ -16,7 +16,7 @@ test('terms', () => {
 });
 
 test('back button', () => {
-    renderApp({ initialEntries: ['/welkom', '/hoe-werkt-het'] });
+    setupApp({ initialEntries: ['/welkom', '/hoe-werkt-het'] });
 
     fireEvent.click(screen.getByText(/vorige/i));
 

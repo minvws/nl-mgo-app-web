@@ -1,11 +1,11 @@
 import { authState, signinRedirectMock } from '$test/auth';
-import { renderWithAppProviders } from '$test/renderApp';
+import { setupWithAppProviders } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Login } from './Login';
 
 test('login', () => {
-    renderWithAppProviders(<Login />);
+    setupWithAppProviders(<Login />);
 
     expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
 
@@ -17,7 +17,7 @@ test('login', () => {
 test('auth loading', () => {
     authState.isLoading = true;
 
-    renderWithAppProviders(<Login />);
+    setupWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met laden...')).toBeInTheDocument();
 });
@@ -26,7 +26,7 @@ test('auth logging in', () => {
     authState.isLoading = true;
     authState.activeNavigator = 'signinSilent';
 
-    renderWithAppProviders(<Login />);
+    setupWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met inloggen...')).toBeInTheDocument();
 });
@@ -35,7 +35,7 @@ test('auth logging out', () => {
     authState.isLoading = true;
     authState.activeNavigator = 'signoutRedirect';
 
-    renderWithAppProviders(<Login />);
+    setupWithAppProviders(<Login />);
 
     expect(screen.getByText('Bezig met uitloggen...')).toBeInTheDocument();
 });
@@ -43,7 +43,7 @@ test('auth logging out', () => {
 test('auth error', () => {
     authState.error = new Error('Something went wrong');
 
-    renderWithAppProviders(<Login />);
+    setupWithAppProviders(<Login />);
 
     expect(screen.getByText('Er is een fout opgetreden')).toBeInTheDocument();
 });

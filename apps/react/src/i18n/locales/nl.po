@@ -13,181 +13,239 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/MobileMenu/MobileMenu.tsx:50
+#: src/pages/AddHealthcareProvider/SearchResults.tsx
+msgid "add-healthcare-provider.add"
+msgstr "toevoegen"
+
+#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+msgid "add-healthcare-provider.heading"
+msgstr "Voeg een zorgverlener toe"
+
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "add-healthcare-provider.input.city.label"
+msgstr "Plaats"
+
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "add-healthcare-provider.input.city.validation"
+msgstr "Vul een plaats in"
+
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "add-healthcare-provider.input.name.label"
+msgstr "Naam"
+
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "add-healthcare-provider.input.name.validation"
+msgstr "Vul een naam in"
+
+#: src/pages/AddHealthcareProvider/SearchResults.tsx
+msgid "add-healthcare-provider.load_more"
+msgstr "Meer zorgverleners laden"
+
+#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+msgid "add-healthcare-provider.no-results.title"
+msgstr "Geen zorgverleners gevonden."
+
+#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+msgid "add-healthcare-provider.no-results.usp.1"
+msgstr "Controleer de spelling."
+
+#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+msgid "add-healthcare-provider.no-results.usp.2"
+msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgverlener hoe je hun naam schrijft."
+
+#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+msgid "add-healthcare-provider.no-results.usp.3"
+msgstr "Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
+
+#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+msgid "add-healthcare-provider.search_text"
+msgstr "Zorgverleners aan het zoeken..."
+
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "common.close"
 msgstr "Sluiten"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:83
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "common.dossier"
 msgstr "Dossier"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:31
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "common.general-practicioner"
 msgstr "Huisarts"
 
-#: src/pages/Overview/Overview.tsx:58
+#: src/pages/Overview/Overview.tsx
 msgid "common.logout"
 msgstr "Uitloggen"
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:32
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:81
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "common.next"
 msgstr "Volgende"
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:21
+#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "common.previous"
 msgstr "Vorige"
 
-#: src/components/DesktopHeader/DesktopHeader.tsx:18
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "common.required"
+msgstr "(verplicht)"
+
+#: src/pages/AddHealthcareProvider/SearchForm.tsx
+msgid "common.search"
+msgstr "Zoeken"
+
+#: src/components/DesktopHeader/DesktopHeader.tsx
 msgid "desktop-header.heading"
 msgstr "Mijn Gezondheidsoverzicht"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:48
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.contact.description"
 msgstr "Bekijk de contactmogelijkheden en plan een route naar je huisarts"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:42
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.contact.title"
 msgstr "Contact en route"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:69
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.delete.description"
 msgstr "De zorggegevens van {0} niet meer tonen"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:63
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.delete.title"
 msgstr "Verwijder uit overzicht"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:121
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.diagnosis.description"
 msgstr "Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:115
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.diagnosis.title"
 msgstr "Klachten en diagnoses"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:100
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.medicine.description"
 msgstr "Medicijnen die je zorgverleners hebben voorgeschreven"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:94
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.medicine.title"
 msgstr "Medicijnen"
 
-#: src/pages/HealthcareProvider/NotFound.tsx:12
+#: src/pages/HealthcareProvider/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
 msgstr "Zorgverlener was niet gevonden"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:141
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.reports.description"
 msgstr "Rapporten en verslagen die zijn opgesteld door je zorgverleners"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx:135
+#: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.reports.title"
 msgstr "Verslagen"
 
-#: src/pages/Login/Login.tsx:37
+#: src/pages/Login/Login.tsx
 msgid "login.description"
 msgstr "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners."
 
-#: src/pages/Login/Login.tsx:53
+#: src/pages/Login/Login.tsx
 msgid "login.digid"
 msgstr "Inloggen met DigiD"
 
-#: src/pages/Login/Login.tsx:63
+#: src/pages/Login/Login.tsx
 msgid "login.european"
 msgstr "European login"
 
-#: src/pages/Login/Login.tsx:33
+#: src/pages/Login/Login.tsx
 msgid "login.heading"
 msgstr "Bewijs wie je bent"
 
-#: src/pages/Login/Login.tsx:58
+#: src/pages/Login/Login.tsx
 msgid "login.representative"
 msgstr "Inloggen als gemachtigde"
 
-#: src/components/DesktopMenu/DesktopMenu.tsx:17
-#: src/components/MobileMenu/MobileMenu.tsx:75
+#: src/components/DesktopMenu/DesktopMenu.tsx
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "menu.about"
 msgstr "Over de site"
 
-#: src/components/MobileMenu/MobileMenu.tsx:77
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "menu.about.description"
 msgstr "Uitleg over hoe de site werkt en wat je er allemaal mee kan"
 
-#: src/components/DesktopMenu/DesktopMenu.tsx:14
-#: src/components/MobileMenu/MobileMenu.tsx:59
+#: src/components/DesktopMenu/DesktopMenu.tsx
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "menu.overview"
 msgstr "Overzicht"
 
-#: src/components/MobileMenu/MobileMenu.tsx:61
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "menu.overview.description"
 msgstr "Je medische gegevens van al je zorgverleners in één overzicht"
 
-#: src/components/MobileHeader/MobileHeader.tsx:20
+#: src/components/MobileHeader/MobileHeader.tsx
 msgid "mobile-header.heading"
 msgstr "Mijn Gezondheidsoverzicht"
 
-#: src/components/MobileMenu/MobileMenu.tsx:43
+#: src/components/MobileMenu/MobileMenu.tsx
 msgid "mobile-menu.dialog.title"
 msgstr "Menu"
 
-#: src/components/MobileMenu/MenuButton.tsx:14
+#: src/components/MobileMenu/MenuButton.tsx
 msgid "mobile-menu.menu"
 msgstr "Menu"
 
-#: src/pages/NotFound/NotFound.tsx:14
+#: src/pages/NotFound/NotFound.tsx
 msgid "not-found.description"
 msgstr "Veritatis culpa vero eligendi reiciendis numquam natus nisi mollitia beatae maiores aperiam in dignissimos. Eum non neque possimus non minus adipisci quis quo quibusdam consectetur labore impedit maxime praesentium."
 
-#: src/pages/NotFound/NotFound.tsx:9
+#: src/pages/NotFound/NotFound.tsx
 msgid "not-found.heading"
 msgstr "Pagina niet gevonden"
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:25
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx
 msgid "onboarding.intro.description"
 msgstr "Alle informatie die je huisarts, ziekenhuis en andere zorg­verleners over jou hebben. Op één plek. Veilig en overzichtelijk."
 
-#: src/pages/OnboardingIntro/OnboardingIntro.tsx:19
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx
 msgid "onboarding.intro.heading"
 msgstr "Je gezond­heids­gegevens in één overzicht"
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:29
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.heading"
 msgstr "Zo gebruikt de website jouw gegevens"
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:35
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.list-description"
 msgstr "In de privacy­verklaring staat hoe Mijn Gezond­heids­overzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:45
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.usp.1"
 msgstr "Je gegevens worden <0>versleuteld</0> en via een <1>veilige</1> verbinding opgehaald."
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:54
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.usp.2"
 msgstr "De website haalt je gegevens direct op bij de zorg­verleners die jij kiest. <0>Alleen jij hebt toegang.</0>"
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:63
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.usp.3"
 msgstr "<0>Je kiest zelf</0> hoe je je gegevens wilt gebruiken en of je ze wel of niet deelt met anderen."
 
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx:72
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.usp.4"
 msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opvragen.</0>"
 
-#: src/pages/Overview/Overview.tsx:18
+#: src/pages/Overview/Overview.tsx
 msgid "overview.heading"
 msgstr "Goedemorgen, Wendy"
 
-#: src/pages/Overview/Overview.tsx:51
+#: src/pages/Overview/Overview.tsx
 msgid "overview.last_refresh"
 msgstr "Je overzicht is <0>vandaag</0> voor het laatst bijgewerkt om <1>09:41</1>"
 
-#: src/pages/Overview/Overview.tsx:46
+#: src/pages/Overview/Overview.tsx
 msgid "overview.no-results"
 msgstr "Geen zorgverleners gevonden."
 
-#: src/pages/Overview/Overview.tsx:22
+#: src/pages/Overview/Overview.tsx
 msgid "overview.subheading"
 msgstr "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."

@@ -12,6 +12,7 @@ import { OnboardingProposition } from '../pages/OnboardingProposition/Onboarding
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
 import { NotFound } from '$/pages/NotFound/NotFound';
+import { AddHealthcareProvider } from '$/pages/AddHealthcareProvider/AddHealthcareProvider';
 
 const routeConfig = [
     {
@@ -44,6 +45,15 @@ const routeConfig = [
     {
         element: <ProtectedRoute />,
         children: [
+            {
+                element: <PageLayout hideMenu />,
+                children: [
+                    {
+                        path: '/zorgverlener-toevoegen',
+                        element: <AddHealthcareProvider />,
+                    },
+                ],
+            },
             {
                 element: <PageLayout />,
                 children: [

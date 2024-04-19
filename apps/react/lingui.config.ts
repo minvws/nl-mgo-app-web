@@ -10,6 +10,7 @@ const config: LinguiConfig = {
     orderBy: 'messageId',
     format: formatter({
         explicitIdAsDefault: true,
+        lineNumbers: false,
     }),
     rootDir: resolve('.'),
     catalogs: [

@@ -5,18 +5,35 @@ import {
 } from '../../hooks/useComposition/useComposition';
 import { type HTMLAttributes } from 'react';
 import { Slottable } from '@radix-ui/react-slot';
+import { twMerge } from 'tailwind-merge';
 
 export type IconButtonProps = IconProps &
     CompositionPropsWithoutChildren &
-    HTMLAttributes<HTMLElement>;
+    HTMLAttributes<HTMLElement> & {
+        rounded?: boolean;
+    };
 
-export const IconButton = ({ name, label, asChild, children, ...rest }: IconButtonProps) => {
+export const IconButton = ({
+    name,
+    label,
+    rounded = false,
+    asChild,
+    children,
+    className,
+    ...rest
+}: IconButtonProps) => {
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp className="group inline-block rounded-full p-2 outline-none sm:p-0" {...rest}>
+        <Comp className="group inline-block p-2 outline-none sm:p-0" {...rest}>
             <Slottable>{children}</Slottable>
-            <span className="bg-grey-100 group-hover:bg-grey-200 flex h-8 w-8 items-center justify-center rounded-full sm:h-12 sm:w-12">
+            <span
+                className={twMerge(
+                    'group-hover:bg-grey-100 flex h-8 w-8 items-center justify-center bg-inherit',
+                    rounded && 'rounded-full',
+                    className
+                )}
+            >
                 <Icon
                     name={name}
                     label={label}

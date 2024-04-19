@@ -48,6 +48,8 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                             asChild
                             name="Close"
                             label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
+                            rounded
+                            className="bg-grey-100"
                         >
                             <Dialog.Close />
                         </IconButton>

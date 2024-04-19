@@ -1,18 +1,18 @@
 import { Outlet } from '$/routing';
-import { renderWithAppProviders } from '$test/renderApp';
+import { setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
 
 test('render MobileHeader', () => {
-    renderWithAppProviders(<MobileHeader />);
+    setupWithAppProviders(<MobileHeader />);
     expect(screen.getAllByRole('button').at(0)).toHaveTextContent('Menu');
 });
 
 test('check if menu dialog opens', async () => {
     const user = userEvent.setup();
-    renderWithAppProviders(<MobileHeader />);
+    setupWithAppProviders(<MobileHeader />);
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 
@@ -26,7 +26,7 @@ test('check if menu dialog opens', async () => {
 
 test('check if menu dialog closes on close', async () => {
     const user = userEvent.setup();
-    renderWithAppProviders(<MobileHeader />);
+    setupWithAppProviders(<MobileHeader />);
 
     const menuButton = screen.getByRole('button', {
         name: 'Menu',
@@ -42,7 +42,7 @@ test('check if menu dialog closes on close', async () => {
 
 test('check if menu dialog closes on navigation', async () => {
     const user = userEvent.setup();
-    renderWithAppProviders([
+    setupWithAppProviders([
         {
             path: '/',
             element: (

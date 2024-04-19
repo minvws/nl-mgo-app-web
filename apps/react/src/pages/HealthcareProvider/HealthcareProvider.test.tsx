@@ -2,7 +2,7 @@
 
 import { useParams } from '$/routing';
 import { useHealthcareProvidersStore } from '$/store';
-import { renderWithAppProviders } from '$test/renderApp';
+import { setupWithAppProviders } from '$test/helpers';
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
 import { kebabCase } from 'lodash';
@@ -29,9 +29,12 @@ test('healthcare provider shows details about the provider', () => {
     addHealthcareProvider({
         organisation: {
             display_name: organisationName,
-            id_type: 'abg-z',
-            id_value: '01008656',
+            identification_type: 'abg-z',
+            identification_value: '01008656',
+            active: true,
             addresses: [],
+            names: [],
+            types: [],
         },
         service: {
             medmij_id: 'huisartsenpuntdierdonk.huisartspraktijk.dierdonk@medmij',
@@ -42,7 +45,7 @@ test('healthcare provider shows details about the provider', () => {
         },
     });
 
-    renderWithAppProviders(<HealthcareProvider />);
+    setupWithAppProviders(<HealthcareProvider />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(organisationName);
 });
@@ -54,7 +57,7 @@ test('healthcare provider shows a message if the provider could not be found', (
         healthcareProviderSlug: kebabCase(organisationName),
     }));
 
-    renderWithAppProviders(<HealthcareProvider />);
+    setupWithAppProviders(<HealthcareProvider />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
         'Zorgverlener was niet gevonden'

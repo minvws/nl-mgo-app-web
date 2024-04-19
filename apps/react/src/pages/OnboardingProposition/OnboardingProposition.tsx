@@ -77,7 +77,7 @@ export function OnboardingProposition() {
                         </ListItem>
                     </List>
                     <Button asChild onClick={() => setOnboardingSeen(true)} className="mb-16">
-                        <Link to="/overzicht">
+                        <Link to="/zorgverlener-toevoegen">
                             <Trans id="common.next">Volgende</Trans>
                         </Link>
                     </Button>

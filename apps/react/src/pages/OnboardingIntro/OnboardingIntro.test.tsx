@@ -1,9 +1,9 @@
-import { renderApp } from '$test/renderApp';
+import { setupApp } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
 test('OnboardingIntro', () => {
-    renderApp({
+    setupApp({
         initialEntries: ['/welkom'],
     });
 

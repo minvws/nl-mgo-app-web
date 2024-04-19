@@ -11,9 +11,12 @@ test('healthcareProviders returns undefined if slug does not match', async () =>
 
     const organisation = {
         display_name: organisationName,
-        id_type: faker.string.sample(),
-        id_value: faker.string.sample(),
+        active: true,
+        identification_type: faker.string.sample(),
+        identification_value: faker.string.sample(),
         addresses: [],
+        types: [],
+        names: [],
     };
     const service = {
         medmij_id: faker.string.sample(),

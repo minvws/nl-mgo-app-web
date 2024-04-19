@@ -35,7 +35,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                     )}
                 >
                     {!hideMenu && !isMobile && <DesktopMenu />}
-                    <main className="flex-grow">
+                    <main className="flex flex-grow flex-col">
                         <Outlet />
                     </main>
                 </Container>
