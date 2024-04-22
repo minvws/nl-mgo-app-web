@@ -20,7 +20,7 @@ export default defineConfig({
                 branches: 100,
                 statements: 100,
             },
-            reporter: ['text', 'lcov']
+            reporter: ['text', 'lcov'],
         },
     },
 });
