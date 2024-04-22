@@ -68,3 +68,24 @@ jobs:
       - name: Build
         working-directory: apps/react
         run: pnpm run build
+
+  sonar:
+    runs-on: ubuntu-22.04
+    needs: test
+    name: Run SonarCloud scanner
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - name: 'Download artifact: coverage'
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+      - name: Run SonarCloud scanner
+        if: always()
+        uses: SonarSource/sonarcloud-github-action@v2.1.1
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
