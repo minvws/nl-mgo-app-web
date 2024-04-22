@@ -43,7 +43,7 @@ jobs:
       - name: Build
         working-directory: apps/react
         run: pnpm run build
-      - name: SonarCloud
+      - name: Run SonarCloud scanner
         if: always()
         uses: SonarSource/sonarcloud-github-action@v2.1.1
         env:
