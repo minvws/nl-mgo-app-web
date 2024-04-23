@@ -1,11 +1,11 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
-import { isIconName, type IconName } from '../Icon/icons';
-import { Icon } from '../Icon/Icon';
+import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
-import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
+import { Icon } from '../Icon/Icon';
+import { type IconName } from '../Icon/icons';
 export interface NavButtonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
-    icon: ReactNode | IconName;
+    icon: IconName;
 }
 
 const defaultStyles = tw`text-grey-700 hover:border-grey-100 hover:text-grey-700 border-2  border-transparent hover:border-2 hover:bg-white focus:border-blue-100 dark:text-white`;
@@ -26,7 +26,7 @@ export const NavButton = ({ asChild, icon, children, className, ...rest }: NavBu
             {...rest}
         >
             <span className="me-2 inline-flex shrink-0 self-center text-[1.5em]">
-                {isIconName(icon) ? <Icon name={icon} /> : icon}
+                <Icon icon={icon} />
             </span>
             <Slottable>{children}</Slottable>
         </Comp>

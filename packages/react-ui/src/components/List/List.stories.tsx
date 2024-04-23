@@ -34,14 +34,14 @@ export const WithIcon: Story = {
     args: {
         children: [
             <ListItem className="flex" key="1">
-                <ListIcon name="Encrypted" />
+                <ListIcon icon="encrypted" />
                 Corrupti eveniet ipsum odit voluptatibus natus veritatis minima consectetur
                 pariatur. Doloremque hic repellendus inventore repellendus fugit voluptate officiis
                 commodi. Quis harum atque delectus alias quod pariatur nobis nulla dignissimos
                 repellat.
             </ListItem>,
             <ListItem className="flex" key="2">
-                <ListIcon name="HealthAndSafety" />
+                <ListIcon icon="health-and-safety" />
                 Nulla expedita ad placeat assumenda facilis officia deleniti.
             </ListItem>,
         ],

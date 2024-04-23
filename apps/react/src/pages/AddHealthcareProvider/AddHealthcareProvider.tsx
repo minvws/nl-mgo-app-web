@@ -30,7 +30,7 @@ export function AddHealthcareProvider() {
             <Container>
                 <Button
                     variant="link"
-                    leftIcon="ChevronLeft"
+                    leftIcon="chevron-left"
                     className="my-3 pl-0"
                     onClick={() => navigate(-1)}
                 >

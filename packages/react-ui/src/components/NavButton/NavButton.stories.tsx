@@ -10,7 +10,7 @@ export default {
     component: NavButton,
     args: {
         children: 'Label',
-        icon: 'Home',
+        icon: 'home',
     },
     argTypes: {
         icon: {
@@ -25,10 +25,10 @@ export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
         <Stack className="gap-8">
-            <NavButton {...args} icon="Home">
+            <NavButton {...args} icon="home">
                 Label
             </NavButton>
-            <NavButton {...args} icon="Home" aria-current="page">
+            <NavButton {...args} icon="home" aria-current="page">
                 Label
             </NavButton>
         </Stack>

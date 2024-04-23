@@ -20,7 +20,7 @@ export type ButtonCardProps = HTMLAttributes<HTMLElement> &
             title: string;
             description: string;
             icon: IconName;
-            iconLabel?: string;
+            iconAriaLabel?: string;
         },
         'isLoading'
     >;
@@ -30,7 +30,7 @@ export const ButtonCard = ({
     title,
     description,
     icon,
-    iconLabel,
+    iconAriaLabel,
     className,
     asChild,
     children,
@@ -49,7 +49,7 @@ export const ButtonCard = ({
         >
             <Slottable>{children}</Slottable>
             <SkeletonCircle isLoading={isLoading} className="mr-4">
-                <IconAvatar name={icon} label={iconLabel} />
+                <IconAvatar icon={icon} aria-label={iconAriaLabel} />
             </SkeletonCircle>
             <SkeletonText
                 className="flex flex-grow flex-col gap-1 sm:gap-2"
@@ -65,7 +65,7 @@ export const ButtonCard = ({
                 </Stack>
             </SkeletonText>
             {!isLoading && (
-                <Icon name="ChevronRight" className="fill-grey-500 h-8 w-8 flex-shrink-0" />
+                <Icon icon="chevron-right" className="fill-grey-500 h-8 w-8 flex-shrink-0" />
             )}
         </Comp>
     );

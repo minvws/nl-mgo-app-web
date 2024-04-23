@@ -29,15 +29,8 @@ export const WithIcon: Story = {
     },
     render: ({ ...args }) => (
         <Stack className="flex-row">
-            <Button {...args} variant={args.variant} leftIcon="ChevronLeft">
-                With name
-            </Button>
-            <Button
-                {...args}
-                variant={args.variant}
-                leftIcon={<div className="h-4 w-4 bg-blue-400" />}
-            >
-                With JSX Element
+            <Button {...args} variant={args.variant} leftIcon="chevron-left">
+                With icon
             </Button>
         </Stack>
     ),
@@ -45,7 +38,7 @@ export const WithIcon: Story = {
 
 export const AsChildLink: Story = {
     render: ({ onClick: _onClick, ...args }) => (
-        <Button {...args} variant={args.variant} leftIcon="ChevronLeft" asChild>
+        <Button {...args} variant={args.variant} leftIcon="chevron-left" asChild>
             <a href="#foo">I&apos;m a link</a>
         </Button>
     ),
@@ -60,10 +53,10 @@ export const Overview: Story = {
                     <Button {...args} variant={variant}>
                         {variant}
                     </Button>
-                    <Button {...args} variant={variant} leftIcon="ChevronLeft">
+                    <Button {...args} variant={variant} leftIcon="chevron-left">
                         {variant}
                     </Button>
-                    <Button {...args} variant={variant} rightIcon="ChevronRight">
+                    <Button {...args} variant={variant} rightIcon="chevron-right">
                         {variant}
                     </Button>
                     <Button {...args} variant={variant} isDisabled>

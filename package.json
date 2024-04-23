@@ -13,8 +13,10 @@
         "lint:fix": "eslint . --ext ts,tsx --fix",
         "check-types": "pnpm run -r check-types",
         "storybook": "pnpm run --dir packages/react-ui dev",
+        "i18n": "pnpm run --dir apps/react messages:extract",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "pr": "pnpm run format && pnpm run lint:fix && pnpm run check-types && pnpm run i18n && vitest run"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.2.0",

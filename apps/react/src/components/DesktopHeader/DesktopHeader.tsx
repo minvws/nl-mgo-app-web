@@ -19,8 +19,8 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
                 </h2>
                 <Button
                     className="text-black dark:text-white"
-                    leftIcon="Person"
-                    rightIcon="ExpandMore"
+                    leftIcon="person"
+                    rightIcon="expand-more"
                     variant="link"
                 >
                     Wendy de Bruijn

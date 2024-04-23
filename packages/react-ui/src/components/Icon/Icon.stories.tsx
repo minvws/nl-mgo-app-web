@@ -8,7 +8,7 @@ type StoryMeta = Meta<typeof Icon>;
 export default {
     component: Icon,
     args: {
-        name: 'Encrypted',
+        icon: 'encrypted',
     },
 } satisfies StoryMeta;
 
@@ -24,7 +24,7 @@ export const WithColorAndSizeFromParent: Story = {
 
 export const WithLabel: Story = {
     args: {
-        label: 'label',
+        'aria-label': 'label',
     },
 };
 
@@ -35,7 +35,7 @@ export const Overview: Story = {
             {iconNames.map((name, index) => (
                 <div key={index}>
                     <div className="text-md flex min-h-16 items-center justify-center">
-                        <Icon {...args} name={name} />
+                        <Icon {...args} icon={name} />
                     </div>
                     <div className="mt-2 text-sm dark:text-white">{name}</div>
                 </div>

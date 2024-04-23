@@ -46,8 +46,8 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         </Dialog.Title>
                         <IconButton
                             asChild
-                            name="Close"
-                            label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
+                            icon="close"
+                            aria-label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
                             rounded
                             className="bg-grey-100"
                         >
@@ -66,7 +66,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                             'Je medische gegevens van al je zorgverleners in één overzicht',
                                     })
                                 )}
-                                icon="Home"
+                                icon="home"
                             >
                                 <NavLink to="/overzicht" />
                             </ButtonCard>
@@ -82,7 +82,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                             'Uitleg over hoe de site werkt en wat je er allemaal mee kan',
                                     })
                                 )}
-                                icon="QuestionMark"
+                                icon="question-mark"
                             >
                                 <NavLink to="/#over-de-site" />
                             </ButtonCard>

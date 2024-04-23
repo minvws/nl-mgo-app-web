@@ -4,6 +4,6 @@ import { iconNames } from './icons';
 import { Icon } from './Icon';
 
 test.each(iconNames)('renders icon `%s` with attributes', async (name) => {
-    render(<Icon data-testid="test-icon" name={name} />);
+    render(<Icon data-testid="test-icon" icon={name} />);
     expect(await screen.findByTestId('test-icon')).toBeVisible();
 });

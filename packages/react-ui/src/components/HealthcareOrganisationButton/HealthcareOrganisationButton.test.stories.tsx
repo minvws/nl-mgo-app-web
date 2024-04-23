@@ -11,8 +11,8 @@ export default {
         title: 'Deleniti nisi',
         subTitle: 'Occaecati ab porro numquam repellendus',
         meta: 'Blanditiis aut adipisci alias blanditiis sint',
-        iconName: 'Add',
-        iconLabel: 'Add',
+        icon: 'add',
+        iconAriaLabel: 'Add',
     },
 } satisfies StoryMeta;
 
@@ -22,8 +22,8 @@ export const Variants: Story = {
     args: {},
     render: ({ ...args }) => (
         <Stack>
-            <HealthcareOrganisationButton {...args} iconName="Add" iconLabel="Add" />
-            <HealthcareOrganisationButton {...args} iconName="Delete" iconLabel="Add" />
+            <HealthcareOrganisationButton {...args} icon="add" iconAriaLabel="add" />
+            <HealthcareOrganisationButton {...args} icon="delete" iconAriaLabel="delete" />
         </Stack>
     ),
 };

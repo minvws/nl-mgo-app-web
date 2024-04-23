@@ -12,7 +12,7 @@ export const NoSearchResults = () => (
         </h2>
         <List>
             <ListItem className="flex text-lg">
-                <ListIcon name="ArrowRightAlt" className="me-2 h-5 w-5 fill-blue-700" />
+                <ListIcon icon="arrow-right-alt" className="me-2 h-5 w-5 fill-blue-700" />
                 <span>
                     <Trans id="add-healthcare-provider.no-results.usp.1">
                         Controleer de spelling.
@@ -20,7 +20,7 @@ export const NoSearchResults = () => (
                 </span>
             </ListItem>
             <ListItem className="flex text-lg">
-                <ListIcon name="ArrowRightAlt" className="me-2 h-5 w-5 fill-blue-700" />
+                <ListIcon icon="arrow-right-alt" className="me-2 h-5 w-5 fill-blue-700" />
                 <span>
                     <Trans id="add-healthcare-provider.no-results.usp.2">
                         Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de
@@ -29,7 +29,7 @@ export const NoSearchResults = () => (
                 </span>
             </ListItem>
             <ListItem className="flex text-lg">
-                <ListIcon name="ArrowRightAlt" className="me-2 h-5 w-5 fill-blue-700" />
+                <ListIcon icon="arrow-right-alt" className="me-2 h-5 w-5 fill-blue-700" />
                 <span>
                     <Trans id="add-healthcare-provider.no-results.usp.3">
                         Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de

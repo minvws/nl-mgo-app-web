@@ -10,10 +10,10 @@ export function DesktopMenu() {
                 className="max-h-screen w-52 flex-shrink-0 gap-3 self-stretch overflow-auto"
             >
                 <ul>
-                    <NavItem to="/overzicht" icon="Home">
+                    <NavItem to="/overzicht" icon="home">
                         <Trans id="menu.overview">Overzicht</Trans>
                     </NavItem>
-                    <NavItem to="/#over-de-site" icon="QuestionMark">
+                    <NavItem to="/#over-de-site" icon="question-mark">
                         <Trans id="menu.about">Over de site</Trans>
                     </NavItem>
                 </ul>

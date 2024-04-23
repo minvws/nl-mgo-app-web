@@ -7,7 +7,7 @@ test('renders a default List', async () => {
     const props = {
         children: [
             <ListItem key="1">
-                <ListIcon name="Encrypted" />
+                <ListIcon icon="encrypted" />
                 {faker.lorem.sentences(3)}
             </ListItem>,
             <ListItem key="2">{faker.lorem.sentences(3)}</ListItem>,

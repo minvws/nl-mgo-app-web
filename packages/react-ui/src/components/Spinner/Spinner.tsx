@@ -17,10 +17,10 @@ export type IconProps = Omit<HTMLAttributes<SVGElement>, 'aria-label' | 'aria-hi
 export const Spinner = ({ className, ...rest }: SpinnerProps) => {
     return (
         <Icon
-            name="ProgressActivity"
+            icon="progress-activity"
             className={twMerge('animate-spin fill-current', className)}
             role="progressbar"
-            label="Laden..."
+            aria-label="Laden..."
             aria-valuetext="Laden..."
             aria-busy="true"
             aria-live="assertive"

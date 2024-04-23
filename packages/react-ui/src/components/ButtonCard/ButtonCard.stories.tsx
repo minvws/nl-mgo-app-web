@@ -9,7 +9,7 @@ export default {
     args: {
         title: 'title',
         description: 'description',
-        icon: 'Hospital',
+        icon: 'hospital',
     },
 } satisfies StoryMeta;
 

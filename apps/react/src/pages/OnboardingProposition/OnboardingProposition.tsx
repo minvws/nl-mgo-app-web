@@ -14,7 +14,7 @@ export function OnboardingProposition() {
             <Container>
                 <Button
                     variant="link"
-                    leftIcon="ChevronLeft"
+                    leftIcon="chevron-left"
                     className="my-3 pl-0"
                     onClick={() => navigate(-1)}
                 >
@@ -40,7 +40,7 @@ export function OnboardingProposition() {
                     </p>
                     <List className="mb-12">
                         <ListItem className="flex text-lg">
-                            <ListIcon name="Encrypted" className="fill-[#34C759]" />
+                            <ListIcon icon="encrypted" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.1">
                                     Je gegevens worden <b>versleuteld</b> en via een <b>veilige</b>{' '}
@@ -49,7 +49,7 @@ export function OnboardingProposition() {
                             </span>
                         </ListItem>
                         <ListItem className="flex text-lg">
-                            <ListIcon name="HealthAndSafety" className="fill-[#34C759]" />
+                            <ListIcon icon="health-and-safety" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.2">
                                     De website haalt je gegevens direct op bij de zorg&shy;verleners
@@ -58,7 +58,7 @@ export function OnboardingProposition() {
                             </span>
                         </ListItem>
                         <ListItem className="flex text-lg">
-                            <ListIcon name="VerifiedUser" className="fill-[#34C759]" />
+                            <ListIcon icon="verified-user" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.3">
                                     <b>Je kiest zelf</b> hoe je je gegevens wilt gebruiken en of je
@@ -67,7 +67,7 @@ export function OnboardingProposition() {
                             </span>
                         </ListItem>
                         <ListItem className="flex text-lg">
-                            <ListIcon name="GppBad" className="fill-[#34C759]" />
+                            <ListIcon icon="gpp-bad" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.4">
                                     Je kunt de gegevens in je overzicht{' '}

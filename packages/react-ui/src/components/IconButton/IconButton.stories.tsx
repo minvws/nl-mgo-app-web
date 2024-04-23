@@ -7,8 +7,8 @@ type StoryMeta = Meta<typeof IconButton>;
 export default {
     component: IconButton,
     args: {
-        name: 'Close',
-        label: 'Sluiten',
+        icon: 'close',
+        'aria-label': 'Sluiten',
     },
 } satisfies StoryMeta;
 

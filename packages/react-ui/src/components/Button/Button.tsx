@@ -1,16 +1,16 @@
-import { type ButtonHTMLAttributes, type ReactNode } from 'react';
+import { type ButtonHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
-import { isIconName, type IconName } from '../Icon/icons';
+import { type IconName } from '../Icon/icons';
 import { type Variant } from './variants';
-import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
     isDisabled?: boolean;
     variant?: Variant;
-    leftIcon?: ReactNode | IconName;
-    rightIcon?: ReactNode | IconName;
+    leftIcon?: IconName;
+    rightIcon?: IconName;
     'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
@@ -51,13 +51,13 @@ export const Button = ({
         >
             {!!leftIcon && (
                 <span className="me-2 inline-flex shrink-0 self-center text-[1.5em]">
-                    {isIconName(leftIcon) ? <Icon name={leftIcon} /> : leftIcon}
+                    <Icon icon={leftIcon} />
                 </span>
             )}
             <Slottable>{children}</Slottable>
             {!!rightIcon && (
                 <span className="ms-2 inline-flex shrink-0 self-center text-[1.5em]">
-                    {isIconName(rightIcon) ? <Icon name={rightIcon} /> : rightIcon}
+                    <Icon icon={rightIcon} />
                 </span>
             )}
         </Comp>

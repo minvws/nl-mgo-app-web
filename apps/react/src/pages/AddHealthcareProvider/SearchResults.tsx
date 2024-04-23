@@ -39,8 +39,8 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
                                 className="w-full"
                                 title={name}
                                 meta={<span className="whitespace-pre">{address}</span>}
-                                iconName="Add"
-                                iconLabel={_(
+                                icon="add"
+                                iconAriaLabel={_(
                                     msg({ id: 'add-healthcare-provider.add', message: 'toevoegen' })
                                 )}
                             />
@@ -52,7 +52,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
             {showResultsLength < results.length && (
                 <Button
                     variant="link"
-                    rightIcon="Autorenew"
+                    rightIcon="autorenew"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >
                     <Trans id="add-healthcare-provider.load_more">Meer zorgverleners laden</Trans>

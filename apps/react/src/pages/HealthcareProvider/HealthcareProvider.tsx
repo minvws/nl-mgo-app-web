@@ -37,7 +37,7 @@ export function HealthcareProvider() {
                     <li>
                         <ButtonCard
                             asChild
-                            icon="Call"
+                            icon="call"
                             title={_(
                                 msg({
                                     id: 'healthcare-provider.contact.title',
@@ -58,7 +58,7 @@ export function HealthcareProvider() {
                     <li>
                         <ButtonCard
                             asChild
-                            icon="Delete"
+                            icon="delete"
                             title={_(
                                 msg({
                                     id: 'healthcare-provider.delete.title',
@@ -89,7 +89,7 @@ export function HealthcareProvider() {
                     <li>
                         <ButtonCard
                             asChild
-                            icon="Pill"
+                            icon="pill"
                             title={_(
                                 msg({
                                     id: 'healthcare-provider.medicine.title',
@@ -110,7 +110,7 @@ export function HealthcareProvider() {
                     <li>
                         <ButtonCard
                             asChild
-                            icon="Diagnosis"
+                            icon="diagnosis"
                             title={_(
                                 msg({
                                     id: 'healthcare-provider.diagnosis.title',
@@ -130,7 +130,7 @@ export function HealthcareProvider() {
                     <li>
                         <ButtonCard
                             asChild
-                            icon="Description"
+                            icon="description"
                             title={_(
                                 msg({
                                     id: 'healthcare-provider.reports.title',

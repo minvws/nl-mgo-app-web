@@ -6,15 +6,15 @@ import {
     type HealthcareOrganisationButtonProps,
 } from './HealthcareOrganisationButton';
 
-test.each<HealthcareOrganisationButtonProps['iconName']>(['Add', 'Delete'])(
+test.each<HealthcareOrganisationButtonProps['icon']>(['add', 'delete'])(
     'renders variant %s with title',
-    async (iconName) => {
+    async (icon) => {
         const props: HealthcareOrganisationButtonProps = {
             title: faker.lorem.sentence(),
             subTitle: faker.lorem.sentence(),
             meta: faker.lorem.sentence(),
-            iconName,
-            iconLabel: faker.lorem.word(),
+            icon,
+            iconAriaLabel: faker.lorem.word(),
         };
 
         render(<HealthcareOrganisationButton {...props} />);

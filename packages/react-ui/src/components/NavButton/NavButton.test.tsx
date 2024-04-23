@@ -1,29 +1,17 @@
-import { expect, test } from 'vitest';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
+import { iconNames } from '../Icon/icons';
 import { NavButton } from './NavButton';
-import { icons } from '../Icon/icons';
 
 test('renders a navItem with a label and icon', async () => {
     const props = {
         children: faker.lorem.sentence(),
-        icon: faker.helpers.arrayElement(Object.keys(icons)),
+        icon: faker.helpers.arrayElement(iconNames),
     };
 
     render(<NavButton data-testid="navItem" {...props} />);
 
     expect(screen.getByTestId('navItem')).toHaveTextContent(props.children);
     expect(screen.getByTestId('navItem')).toContainHTML('<svg');
-});
-
-test('renders a navItem with a label and icon component', async () => {
-    const props = {
-        children: faker.lorem.sentence(),
-        icon: <span data-testid="icon" />,
-    };
-
-    render(<NavButton data-testid="navItem" {...props} />);
-
-    expect(screen.getByTestId('navItem')).toHaveTextContent(props.children);
-    expect(await screen.findByTestId('icon')).toBeVisible();
 });

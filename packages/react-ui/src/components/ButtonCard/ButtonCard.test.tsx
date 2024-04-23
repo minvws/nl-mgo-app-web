@@ -1,14 +1,14 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
+import { iconNames } from '../Icon/icons';
 import { ButtonCard, type ButtonCardProps } from './ButtonCard';
-import { faker } from '@faker-js/faker';
-import { defaultIconColorIconNames } from '../Icon/icons';
 
 test('renders ButtonCard', async () => {
     const props: ButtonCardProps = {
         title: faker.word.sample(),
         description: faker.word.sample(),
-        icon: faker.helpers.arrayElement(defaultIconColorIconNames),
+        icon: faker.helpers.arrayElement(iconNames),
     };
 
     render(<ButtonCard {...props} />);

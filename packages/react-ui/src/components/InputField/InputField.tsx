@@ -41,7 +41,7 @@ export const InputField = ({
                     className="flex items-center gap-2 text-lg font-bold leading-normal text-[#D52A1E]"
                     id={validationMessageId}
                 >
-                    <Icon name="Cancel" className="h-6 w-6" />
+                    <Icon icon="cancel" className="h-6 w-6" />
                     {error}
                 </span>
             )}

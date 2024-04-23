@@ -33,7 +33,7 @@ export function Overview() {
                                     asChild
                                     title={organisation.display_name}
                                     description="Ziekenhuis"
-                                    icon="Hospital"
+                                    icon="hospital"
                                 >
                                     <Link to={`/overzicht/${slug}`} />
                                 </ButtonCard>

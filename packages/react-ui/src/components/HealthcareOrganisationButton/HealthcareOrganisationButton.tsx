@@ -10,8 +10,8 @@ export interface HealthcareOrganisationButtonProps
     title: ReactNode;
     subTitle?: ReactNode;
     meta?: ReactNode;
-    iconName: Extract<IconName, 'Add' | 'Delete'>;
-    iconLabel: string;
+    icon: Extract<IconName, 'add' | 'delete'>;
+    iconAriaLabel: string;
 }
 
 export const HealthcareOrganisationButton = ({
@@ -19,8 +19,8 @@ export const HealthcareOrganisationButton = ({
     subTitle,
     meta,
     className,
-    iconName,
-    iconLabel,
+    icon,
+    iconAriaLabel,
     ...rest
 }: HealthcareOrganisationButtonProps) => {
     return (
@@ -43,13 +43,21 @@ export const HealthcareOrganisationButton = ({
                     )}
                 </Stack>
 
-                {iconName === 'Add' ? (
+                {icon === 'add' ? (
                     <div className="flex items-center self-stretch">
-                        <Icon name={iconName} className="h-8 w-8 text-blue-600" label={iconLabel} />
+                        <Icon
+                            icon={icon}
+                            className="h-8 w-8 text-blue-600"
+                            aria-label={iconAriaLabel}
+                        />
                     </div>
                 ) : (
                     <div className="flex items-start self-stretch">
-                        <Icon name={iconName} className="text-grey-500 h-8 w-8" label={iconLabel} />
+                        <Icon
+                            icon={icon}
+                            className="text-grey-500 h-8 w-8"
+                            aria-label={iconAriaLabel}
+                        />
                     </div>
                 )}
             </button>

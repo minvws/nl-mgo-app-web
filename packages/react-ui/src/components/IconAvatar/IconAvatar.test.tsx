@@ -1,18 +1,20 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
+import { type IconName, iconColours, iconNames } from '../Icon/icons';
 import { IconAvatar } from './IconAvatar';
-import { defaultIconColorIconNames } from '../Icon/icons';
 
-test.each(defaultIconColorIconNames)('renders icon `%s` with background', async (name) => {
-    render(<IconAvatar data-testid="test-icon" name={name} />);
+const iconsWithColour = Object.keys(iconColours) as IconName[];
+const iconsWithoutColour = iconNames.filter((x) => !iconsWithColour.includes(x));
 
-    const element = await screen.findByTestId('test-icon');
-    expect(element).toBeVisible();
+test('renders icon with coloured background', () => {
+    const icon = faker.helpers.arrayElement(iconsWithColour);
+    render(<IconAvatar data-testid="test" icon={icon} />);
+    expect(screen.getByTestId('test')).toBeVisible();
 });
 
 test('render with name to default background', async () => {
-    render(<IconAvatar data-testid="test" name="Favorite" />);
-
-    const element = await screen.findByTestId('test');
-    expect(element).toBeVisible();
+    const icon = faker.helpers.arrayElement(iconsWithoutColour);
+    render(<IconAvatar data-testid="test" icon={icon} />);
+    expect(screen.getByTestId('test')).toBeVisible();
 });

@@ -11,13 +11,15 @@ export type IconButtonProps = IconProps &
     CompositionPropsWithoutChildren &
     HTMLAttributes<HTMLElement> & {
         rounded?: boolean;
+        'aria-label': string;
     };
 
 export const IconButton = ({
-    name,
-    label,
+    icon,
+    ['aria-label']: ariaLabel,
     rounded = false,
     asChild,
+
     children,
     className,
     ...rest
@@ -35,8 +37,8 @@ export const IconButton = ({
                 )}
             >
                 <Icon
-                    name={name}
-                    label={label}
+                    icon={icon}
+                    aria-label={ariaLabel}
                     className="h-[1.25em] w-[1.25em] sm:h-[1.75em] sm:w-[1.75em]"
                 />
             </span>
