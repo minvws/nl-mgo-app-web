@@ -5,14 +5,14 @@ export const fontFamily = {
 };
 
 export const fontSize = {
-    sm: pxToRem(14),
-    md: pxToRem(16),
-    lg: pxToRem(18),
-    xl: pxToRem(20),
-    '2xl': pxToRem(24),
-    '3xl': pxToRem(32),
-    '4xl': pxToRem(48),
-    '5xl': pxToRem(64),
+    xs: pxToRem(14),
+    sm: pxToRem(17),
+    md: pxToRem(18),
+    lg: pxToRem(20),
+    xl: pxToRem(24),
+    '2xl': pxToRem(28),
+    '3xl': pxToRem(34),
+    '4xl': pxToRem(46),
 };
 
 export const lineHeight = {

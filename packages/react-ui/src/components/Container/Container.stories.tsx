@@ -15,9 +15,9 @@ export default {
 
 export const Default: Story = {
     render: ({ children, ...args }) => (
-        <div className="border-grey-500 flex flex-col gap-2 border border-dashed py-4">
-            <Container {...args} className="bg-blue-100">
-                <div className="inline-block bg-blue-200 p-2">{children}</div>
+        <div className="flex flex-col gap-2 border border-dashed border-gray-500 py-4">
+            <Container {...args} className="bg-sky-blue-100">
+                <div className="bg-sky-blue-200 inline-block p-2">{children}</div>
             </Container>
         </div>
     ),
@@ -28,9 +28,9 @@ export const CenteredContent: Story = {
         centeredContent: true,
     },
     render: ({ children, ...args }) => (
-        <div className="border-grey-500 flex flex-col gap-2 border border-dashed py-4">
-            <Container {...args} className="bg-blue-100">
-                <div className="inline-block bg-blue-200 p-2">{children}</div>
+        <div className="flex flex-col gap-2 border border-dashed border-gray-500 py-4">
+            <Container {...args} className="bg-sky-blue-100">
+                <div className="bg-sky-blue-200 inline-block p-2">{children}</div>
             </Container>
         </div>
     ),
@@ -40,21 +40,21 @@ export const CenteredContent: Story = {
 export const SizesOverview: Story = {
     render: () => {
         return (
-            <div className="border-grey-500 flex flex-col gap-2 border border-dashed py-4">
-                <Container className="max-w-xs bg-blue-100">
-                    <div className="min-h-4 bg-blue-300 px-4">max-w-xs</div>
+            <div className="flex flex-col gap-2 border border-dashed border-gray-500 py-4">
+                <Container className="bg-sky-blue-100 max-w-xs">
+                    <div className="bg-sky-blue-300 min-h-4 px-4">max-w-xs</div>
                 </Container>
-                <Container className="max-w-sm bg-blue-100">
-                    <div className="min-h-4 bg-blue-400 px-4">max-w-sm</div>
+                <Container className="bg-sky-blue-100 max-w-sm">
+                    <div className="bg-sky-blue-500 min-h-4 px-4">max-w-sm</div>
                 </Container>
-                <Container className="max-w-md bg-blue-100">
-                    <div className="min-h-4 bg-blue-500 px-4">max-w-md</div>
+                <Container className="bg-sky-blue-100 max-w-md">
+                    <div className="bg-sky-blue-500 min-h-4 px-4">max-w-md</div>
                 </Container>
-                <Container className="max-w-lg bg-blue-100">
-                    <div className="min-h-4 bg-blue-600 px-4 text-white">max-w-lg</div>
+                <Container className="bg-sky-blue-100 max-w-lg">
+                    <div className="bg-sky-blue-600 min-h-4 px-4 text-white">max-w-lg</div>
                 </Container>
-                <Container className="max-w-xl bg-blue-100">
-                    <div className="min-h-4 bg-blue-700 px-4 text-white">max-w-xl</div>
+                <Container className="bg-sky-blue-100 max-w-xl">
+                    <div className="bg-dark-blue-700 min-h-4 px-4 text-white">max-w-xl</div>
                 </Container>
             </div>
         );

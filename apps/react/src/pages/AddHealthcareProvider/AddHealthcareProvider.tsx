@@ -61,9 +61,9 @@ export function AddHealthcareProvider() {
 
             {isLoading && (
                 <Container className="flex min-h-80 flex-grow flex-col items-center justify-center gap-4">
-                    <Spinner className="h-16 w-16 fill-blue-600" />
+                    <Spinner className="fill-sky-blue-600 h-16 w-16" />
                     <span
-                        className="text-lg leading-normal text-black dark:text-white"
+                        className="text-md leading-normal text-black dark:text-white"
                         aria-live="polite"
                     >
                         <Trans id="add-healthcare-provider.search_text">

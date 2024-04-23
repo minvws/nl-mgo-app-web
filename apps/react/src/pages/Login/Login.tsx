@@ -33,7 +33,7 @@ export function Login() {
                         <Trans id="login.heading">Bewijs wie je bent</Trans>
                     </h1>
                 </Heading>
-                <p className="mb-8 text-xl">
+                <p className="mb-8 text-lg">
                     <Trans id="login.description">
                         Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw
                         gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere

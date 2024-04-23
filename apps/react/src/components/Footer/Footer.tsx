@@ -5,7 +5,7 @@ export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'classNam
 
 export function Footer(props: FooterProps) {
     return (
-        <div className="bg-blue-700 text-white" {...props}>
+        <div className="bg-dark-blue-700 text-white" {...props}>
             <Container>
                 <div className="py-12">Footer</div>
             </Container>

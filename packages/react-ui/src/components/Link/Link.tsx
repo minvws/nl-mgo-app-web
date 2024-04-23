@@ -12,7 +12,7 @@ export const Link = ({ asChild, children, className, ...rest }: LinkProps) => {
     return (
         <Comp
             className={twMerge(
-                `cursor-pointer text-blue-700 underline visited:text-blue-900 hover:no-underline`,
+                `text-dark-blue-700 visited:text-dark-blue-900 cursor-pointer underline hover:no-underline`,
                 className
             )}
             {...rest}

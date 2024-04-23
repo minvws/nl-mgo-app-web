@@ -32,7 +32,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                     )}
                     {...rest}
                 >
-                    <div className="border-grey-100 dark:border-grey-500 flex h-16 items-center justify-end border-b p-4">
+                    <div className="flex h-16 items-center justify-end border-b border-gray-100 p-4 dark:border-gray-500">
                         <Dialog.Title asChild>
                             <Heading
                                 asChild
@@ -49,7 +49,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                             icon="close"
                             aria-label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
                             rounded
-                            className="bg-grey-100"
+                            className="bg-gray-100"
                         >
                             <Dialog.Close />
                         </IconButton>

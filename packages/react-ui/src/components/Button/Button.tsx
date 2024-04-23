@@ -14,13 +14,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Co
     'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
-const disabledStyles = tw`aria-disabled:bg-grey-300 aria-disabled:border-grey-300 aria-disabled:focus:border-grey-100 aria-disabled:cursor-default`;
+const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
 
 const typeColors: Record<Variant, string> = {
-    solid: tw`${disabledStyles} border-2 border-blue-600 bg-blue-600 text-white hover:border-blue-800 hover:bg-blue-800 focus:border-blue-400`,
-    light: tw`${disabledStyles} border-2 border-blue-200 bg-blue-200 text-blue-800 hover:border-blue-300 hover:bg-blue-300 focus:border-blue-50`,
-    outline: tw`${disabledStyles} border-grey-300 border-2 bg-white text-blue-800 hover:border-blue-600 hover:bg-blue-600 focus:border-blue-500 [&:not([aria-disabled])]:hover:text-white`,
-    link: tw`aria-disabled:text-grey-500 aria-disabled:focus:border-grey-300 border-2 border-transparent text-blue-700 focus:border-blue-100  aria-disabled:cursor-default dark:text-white [&:not([aria-disabled])]:hover:text-blue-300`,
+    solid: tw`${disabledStyles} border-sky-blue-600 bg-sky-blue-600 hover:border-sky-blue-800 hover:bg-sky-blue-800 focus:border-sky-blue-500 border-2 text-white`,
+    light: tw`${disabledStyles} border-sky-blue-200 bg-sky-blue-200 text-sky-blue-800 hover:border-sky-blue-300 hover:bg-sky-blue-300 focus:border-sky-blue-50 border-2`,
+    outline: tw`${disabledStyles} text-sky-blue-800 hover:border-sky-blue-600 hover:bg-sky-blue-600 focus:border-sky-blue-500 border-2 border-gray-300 bg-white [&:not([aria-disabled])]:hover:text-white`,
+    link: tw`text-dark-blue-700 focus:border-sky-blue-100 [&:not([aria-disabled])]:hover:text-sky-blue-300 border-2 border-transparent aria-disabled:cursor-default  aria-disabled:text-gray-500 aria-disabled:focus:border-gray-300 dark:text-white`,
 };
 
 export const Button = ({
@@ -41,7 +41,7 @@ export const Button = ({
             aria-disabled={isDisabled}
             onClick={isDisabled ? undefined : onClick}
             className={twMerge(
-                `text-md inline-flex items-center justify-center rounded-lg px-6 py-3 font-bold outline-none`,
+                `inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold outline-none`,
                 typeColors[variant],
                 !!leftIcon && 'pl-4',
                 !!rightIcon && 'pr-4',

@@ -11,9 +11,9 @@ export default {
 const Template: Story = {
     render: (args) => (
         <Stack {...args}>
-            <div className="bg-blue-100 p-4">1</div>
-            <div className="bg-blue-300 p-4">2</div>
-            <div className="bg-blue-500 p-4">3</div>
+            <div className="bg-sky-blue-100 p-4">1</div>
+            <div className="bg-sky-blue-300 p-4">2</div>
+            <div className="bg-sky-blue-500 p-4">3</div>
         </Stack>
     ),
 };

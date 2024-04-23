@@ -10,7 +10,7 @@ export function MenuButton({ asChild, children, ...rest }: MenuButtonProps) {
     return (
         <Comp className="group inline-block p-2 outline-none" {...rest}>
             <Slottable>{children}</Slottable>
-            <span className="block border border-blue-600 p-2 text-sm font-bold leading-none text-blue-600 group-hover:bg-blue-600 group-hover:text-white">
+            <span className="border-sky-blue-600 text-sky-blue-600 group-hover:bg-sky-blue-600 block border p-2 text-xs font-bold leading-none group-hover:text-white">
                 <Trans id="mobile-menu.menu">Menu</Trans>
             </span>
         </Comp>

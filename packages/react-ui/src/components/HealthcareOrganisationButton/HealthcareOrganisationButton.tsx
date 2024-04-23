@@ -26,20 +26,20 @@ export const HealthcareOrganisationButton = ({
     return (
         <Card
             className={twMerge(
-                'hover:bg-grey-50 dark:hover:bg-grey-700 flex cursor-pointer flex-row gap-4',
+                'flex cursor-pointer flex-row gap-4 hover:bg-gray-50 dark:hover:bg-gray-700',
                 className
             )}
             asChild
             {...rest}
         >
             <button>
-                <Stack className="flex-grow items-start gap-0 text-left text-lg">
+                <Stack className="text-md flex-grow items-start gap-0 text-left">
                     <span className="font-bold text-black dark:text-white">{title}</span>
                     {subTitle && (
-                        <span className="text-grey-950 dark:text-grey-100 ">{subTitle}</span>
+                        <span className="text-gray-950 dark:text-gray-100 ">{subTitle}</span>
                     )}
                     {meta && (
-                        <span className="text-grey-600 dark:text-grey-300  italic">{meta}</span>
+                        <span className="italic text-gray-600  dark:text-gray-300">{meta}</span>
                     )}
                 </Stack>
 
@@ -47,7 +47,7 @@ export const HealthcareOrganisationButton = ({
                     <div className="flex items-center self-stretch">
                         <Icon
                             icon={icon}
-                            className="h-8 w-8 text-blue-600"
+                            className="text-sky-blue-600 h-8 w-8"
                             aria-label={iconAriaLabel}
                         />
                     </div>
@@ -55,7 +55,7 @@ export const HealthcareOrganisationButton = ({
                     <div className="flex items-start self-stretch">
                         <Icon
                             icon={icon}
-                            className="text-grey-500 h-8 w-8"
+                            className="h-8 w-8 text-gray-500"
                             aria-label={iconAriaLabel}
                         />
                     </div>

@@ -21,7 +21,7 @@ export function OnboardingIntro() {
                         </Trans>
                     </h1>
                 </Heading>
-                <p className="mb-12 text-lg">
+                <p className="text-md mb-12">
                     <Trans id="onboarding.intro.description">
                         Alle informatie die je huisarts, ziekenhuis en andere zorg&shy;verleners
                         over jou hebben. Op één plek. Veilig en overzichtelijk.

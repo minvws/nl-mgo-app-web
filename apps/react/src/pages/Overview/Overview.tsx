@@ -18,7 +18,7 @@ export function Overview() {
                     <Trans id="overview.heading">Goedemorgen, Wendy</Trans>
                 </h1>
             </Heading>
-            <p className="text-grey-700 text-md mb-6 sm:text-lg md:mb-12 md:text-xl lg:text-2xl dark:text-white">
+            <p className="sm:text-md mb-6 text-sm text-gray-700 md:mb-12 md:text-lg lg:text-xl dark:text-white">
                 <Trans id="overview.subheading">
                     Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens.
                 </Trans>
@@ -47,14 +47,14 @@ export function Overview() {
                 </div>
             )}
 
-            <p className="text-grey-500 text-lg">
+            <p className="text-md text-gray-500">
                 <Trans id="overview.last_refresh">
                     Je overzicht is <strong>vandaag</strong> voor het laatst bijgewerkt om{' '}
                     <strong>09:41</strong>
                 </Trans>
             </p>
 
-            <button onClick={() => void auth.removeUser()} className="mb-8 text-xl font-bold">
+            <button onClick={() => void auth.removeUser()} className="mb-8 text-lg font-bold">
                 <Trans id="common.logout">Uitloggen</Trans>
             </button>
         </div>

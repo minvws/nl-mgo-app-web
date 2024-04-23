@@ -31,7 +31,7 @@ export const IconButton = ({
             <Slottable>{children}</Slottable>
             <span
                 className={twMerge(
-                    'group-hover:bg-grey-100 flex h-8 w-8 items-center justify-center bg-inherit',
+                    'flex h-8 w-8 items-center justify-center bg-inherit group-hover:bg-gray-100',
                     rounded && 'rounded-full',
                     className
                 )}

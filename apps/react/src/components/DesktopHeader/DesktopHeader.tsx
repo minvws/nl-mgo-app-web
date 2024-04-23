@@ -8,13 +8,13 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
     return (
         <header
             className={twMerge(
-                'border-b-solid border-b-grey-50 border-b bg-white dark:bg-[#050505]',
+                'border-b-solid border-b border-b-gray-50 bg-white dark:bg-[#050505]',
                 className
             )}
             {...rest}
         >
             <Container className="flex items-center justify-between py-4">
-                <h2 className="text-2xl font-normal leading-tight text-black">
+                <h2 className="text-xl font-normal leading-tight text-black">
                     <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
                 <Button

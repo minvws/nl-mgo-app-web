@@ -4,7 +4,7 @@ import { useResponsive, type ResponsiveProp } from './useResponsive';
 const ComponentWithResponsiveProp = (props: { value: ResponsiveProp<number> }) => {
     const currentValue = useResponsive(props.value);
     return (
-        <div className="text-lg">
+        <div className="text-md">
             Current value: <strong>{currentValue}</strong>
         </div>
     );
@@ -16,7 +16,7 @@ const ComponentWithHook = () => {
         lg: false,
     });
     return (
-        <div className="text-lg">
+        <div className="text-md">
             Current media width is smaller than <strong>large</strong>:{' '}
             <strong>{isSmallerThanLg.toString()}</strong>
         </div>

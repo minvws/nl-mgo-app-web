@@ -41,7 +41,7 @@ export const ButtonCard = ({
     return (
         <Comp
             className={twMerge(
-                'border-grey-100 dark:bg-grey-900 dark:border-grey-500 aria-[current=page]:bg-grey-50 flex w-full border-b bg-white py-4 pl-4 pr-2 text-left',
+                'flex w-full border-b border-gray-100 bg-white py-4 pl-4 pr-2 text-left aria-[current=page]:bg-gray-50 dark:border-gray-500 dark:bg-gray-900',
                 isLoading && 'cursor-progress',
                 className
             )}
@@ -58,14 +58,14 @@ export const ButtonCard = ({
                 isLoading={isLoading}
             >
                 <Stack className="flex flex-col gap-1 sm:gap-2">
-                    <span className="text-lg font-bold text-black sm:text-xl md:text-2xl">
+                    <span className="text-md font-bold text-black sm:text-lg md:text-xl">
                         {title}
                     </span>
-                    <p className="text-grey-500 text-xl font-normal">{description}</p>
+                    <p className="text-lg font-normal text-gray-500">{description}</p>
                 </Stack>
             </SkeletonText>
             {!isLoading && (
-                <Icon icon="chevron-right" className="fill-grey-500 h-8 w-8 flex-shrink-0" />
+                <Icon icon="chevron-right" className="h-8 w-8 flex-shrink-0 fill-gray-500" />
             )}
         </Comp>
     );

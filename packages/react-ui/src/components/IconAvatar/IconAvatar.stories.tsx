@@ -35,17 +35,17 @@ export const Overview: Story = {
         <div className="grid auto-cols-auto auto-rows-auto grid-cols-[repeat(auto-fill,minmax(90px,_1fr))] gap-4 text-center">
             {iconsWithColors.map((name, index) => (
                 <div key={index}>
-                    <div className="text-md flex min-h-16 items-center justify-center">
+                    <div className="flex min-h-16 items-center justify-center text-sm">
                         <IconAvatar {...args} icon={name} />
                     </div>
-                    <div className="mt-2 text-sm dark:text-white">{name}</div>
+                    <div className="mt-2 text-xs dark:text-white">{name}</div>
                 </div>
             ))}
             <div>
-                <div className="text-md flex min-h-16 items-center justify-center">
+                <div className="flex min-h-16 items-center justify-center text-sm">
                     <IconAvatar icon="encrypted" />
                 </div>
-                <div className="mt-2 text-sm dark:text-white">Default background</div>
+                <div className="mt-2 text-xs dark:text-white">Default background</div>
             </div>
         </div>
     ),

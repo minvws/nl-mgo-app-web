@@ -9,8 +9,8 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement>, CompositionPr
 }
 
 const TextSizes: Record<Size, string> = {
-    md: tw`text-grey-700 dark:text-grey-200 text-lg font-normal md:text-2xl lg:text-3xl`,
-    lg: tw`text-2xl font-bold text-black md:text-3xl lg:text-4xl dark:text-white`,
+    md: tw`text-md font-normal text-gray-700 md:text-xl lg:text-3xl dark:text-gray-200`,
+    lg: tw`text-xl font-bold text-black md:text-3xl lg:text-4xl dark:text-white`,
 };
 
 export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingProps) => {

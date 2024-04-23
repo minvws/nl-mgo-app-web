@@ -39,7 +39,7 @@ export function OnboardingProposition() {
                         </Trans>
                     </p>
                     <List className="mb-12">
-                        <ListItem className="flex text-lg">
+                        <ListItem className="text-md flex">
                             <ListIcon icon="encrypted" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.1">
@@ -48,7 +48,7 @@ export function OnboardingProposition() {
                                 </Trans>
                             </span>
                         </ListItem>
-                        <ListItem className="flex text-lg">
+                        <ListItem className="text-md flex">
                             <ListIcon icon="health-and-safety" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.2">
@@ -57,7 +57,7 @@ export function OnboardingProposition() {
                                 </Trans>
                             </span>
                         </ListItem>
-                        <ListItem className="flex text-lg">
+                        <ListItem className="text-md flex">
                             <ListIcon icon="verified-user" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.3">
@@ -66,7 +66,7 @@ export function OnboardingProposition() {
                                 </Trans>
                             </span>
                         </ListItem>
-                        <ListItem className="flex text-lg">
+                        <ListItem className="text-md flex">
                             <ListIcon icon="gpp-bad" className="fill-[#34C759]" />
                             <span>
                                 <Trans id="onboarding.proposition.usp.4">

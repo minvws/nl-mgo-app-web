@@ -15,7 +15,7 @@ export const Skeleton = ({
     ...rest
 }: SkeletonProps) => {
     const { Comp } = useComposition({ asChild, tag: 'div' });
-    const loadingStyles = tw`bg-grey-100 dark:bg-grey-700 h-full animate-pulse rounded *:invisible`;
+    const loadingStyles = tw`h-full animate-pulse rounded bg-gray-100 *:invisible dark:bg-gray-700`;
 
     return (
         <Comp className={twMerge(isLoading && loadingStyles, className)} {...rest}>
