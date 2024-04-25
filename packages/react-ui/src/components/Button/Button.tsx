@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react';
+import { type ReactElement, type ButtonHTMLAttributes, isValidElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
@@ -9,18 +9,18 @@ import { type Variant } from './variants';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
     isDisabled?: boolean;
     variant?: Variant;
-    leftIcon?: IconName;
-    rightIcon?: IconName;
+    leftIcon?: IconName | ReactElement;
+    rightIcon?: IconName | ReactElement;
     'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
 
 const typeColors: Record<Variant, string> = {
-    solid: tw`${disabledStyles} border-sky-blue-600 bg-sky-blue-600 hover:border-sky-blue-800 hover:bg-sky-blue-800 focus:border-sky-blue-500 border-2 text-white`,
-    light: tw`${disabledStyles} border-sky-blue-200 bg-sky-blue-200 text-sky-blue-800 hover:border-sky-blue-300 hover:bg-sky-blue-300 focus:border-sky-blue-50 border-2`,
-    outline: tw`${disabledStyles} text-sky-blue-800 hover:border-sky-blue-600 hover:bg-sky-blue-600 focus:border-sky-blue-500 border-2 border-gray-300 bg-white [&:not([aria-disabled])]:hover:text-white`,
-    link: tw`text-dark-blue-700 focus:border-sky-blue-100 [&:not([aria-disabled])]:hover:text-sky-blue-300 border-2 border-transparent aria-disabled:cursor-default  aria-disabled:text-gray-500 aria-disabled:focus:border-gray-300 dark:text-white`,
+    solid: tw`${disabledStyles} bg-sky-blue-600 hover:bg-dark-blue-700 text-white focus:border-4 focus:border-black dark:focus:border-white`,
+    light: tw`${disabledStyles} text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500 focus:border-4 focus:border-black dark:focus:border-white`,
+    outline: tw`${disabledStyles} border border-gray-200 bg-white text-black hover:bg-gray-50 focus:border-4 focus:border-black dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700 dark:focus:border-gray-200`,
+    ghost: tw`text-dark-blue-700 hover:text-dark-blue-400`,
 };
 
 export const Button = ({
@@ -39,9 +39,10 @@ export const Button = ({
     return (
         <Comp
             aria-disabled={isDisabled}
+            disabled={isDisabled}
             onClick={isDisabled ? undefined : onClick}
             className={twMerge(
-                `inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold outline-none`,
+                `inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
                 typeColors[variant],
                 !!leftIcon && 'pl-4',
                 !!rightIcon && 'pr-4',
@@ -51,13 +52,13 @@ export const Button = ({
         >
             {!!leftIcon && (
                 <span className="me-2 inline-flex shrink-0 self-center text-[1.5em]">
-                    <Icon icon={leftIcon} />
+                    {isValidElement(leftIcon) ? leftIcon : <Icon icon={leftIcon as IconName} />}
                 </span>
             )}
             <Slottable>{children}</Slottable>
             {!!rightIcon && (
                 <span className="ms-2 inline-flex shrink-0 self-center text-[1.5em]">
-                    <Icon icon={rightIcon} />
+                    {isValidElement(rightIcon) ? rightIcon : <Icon icon={rightIcon as IconName} />}
                 </span>
             )}
         </Comp>

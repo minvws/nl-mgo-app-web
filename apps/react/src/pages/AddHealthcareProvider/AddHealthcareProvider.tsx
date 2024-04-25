@@ -29,7 +29,7 @@ export function AddHealthcareProvider() {
         <div className="flex flex-grow flex-col">
             <Container>
                 <Button
-                    variant="link"
+                    variant="ghost"
                     leftIcon="chevron-left"
                     className="my-3 pl-0"
                     onClick={() => navigate(-1)}

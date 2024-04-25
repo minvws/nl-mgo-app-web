@@ -45,5 +45,5 @@ test('auth error', () => {
 
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByText('Er is een fout opgetreden')).toBeInTheDocument();
+    expect(screen.getByText('Inloggen is niet gelukt')).toBeInTheDocument();
 });

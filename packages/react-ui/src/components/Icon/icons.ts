@@ -15,11 +15,9 @@ import ExpandMore from '@material-symbols/svg-400/outlined/expand_more.svg?react
 import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
-import Home from '@material-symbols/svg-400/outlined/home-fill.svg?react';
 import Person from '@material-symbols/svg-400/outlined/person-fill.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
-import QuestionMark from '@material-symbols/svg-400/outlined/question_mark.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 
@@ -29,6 +27,8 @@ import GGZ from './icons/ggz.svg?react';
 import Hospital from './icons/hospital.svg?react';
 import Huisarts from './icons/huisarts.svg?react';
 import Tandarts from './icons/tandarts.svg?react';
+import Home from './icons/home.svg?react';
+import QuestionMark from './icons/question_mark.svg?react';
 
 export const icons = {
     hospital: Hospital,
@@ -36,6 +36,8 @@ export const icons = {
     'general-practitioner': Huisarts,
     dentist: Tandarts,
     ggz: GGZ,
+    home: Home,
+    'question-mark': QuestionMark,
     'chevron-right-fat': ChevronRightFat,
 
     'chevron-left': ChevronLeft,
@@ -47,9 +49,7 @@ export const icons = {
     'progress-activity': ProgressActivity,
     person: Person,
     'expand-more': ExpandMore,
-    home: Home,
     favorite: Favorite,
-    'question-mark': QuestionMark,
     close: Close,
     call: Call,
     delete: Delete,
@@ -65,6 +65,11 @@ export const icons = {
 
 export type IconName = keyof typeof icons;
 export const iconNames = Object.keys(icons) as IconName[];
+
+export const iconPaddings: Partial<Record<IconName, string>> = {
+    home: 'p-[2px]',
+    'question-mark': 'pl-[2px] py-[2px]',
+};
 
 export const iconColours: Partial<Record<IconName, string>> = {
     hospital: 'bg-[#FF0000] text-white',

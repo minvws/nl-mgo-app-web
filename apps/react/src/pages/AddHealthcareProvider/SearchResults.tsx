@@ -51,7 +51,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
 
             {showResultsLength < results.length && (
                 <Button
-                    variant="link"
+                    variant="ghost"
                     rightIcon="autorenew"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >

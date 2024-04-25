@@ -21,7 +21,7 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
                     className="text-black dark:text-white"
                     leftIcon="person"
                     rightIcon="expand-more"
-                    variant="link"
+                    variant="ghost"
                 >
                     Wendy de Bruijn
                 </Button>

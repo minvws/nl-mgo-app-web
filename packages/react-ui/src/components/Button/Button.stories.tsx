@@ -25,7 +25,7 @@ export const FullWidth: Story = {
 
 export const WithIcon: Story = {
     args: {
-        variant: 'link',
+        variant: 'ghost',
     },
     render: ({ ...args }) => (
         <Stack className="flex-row">

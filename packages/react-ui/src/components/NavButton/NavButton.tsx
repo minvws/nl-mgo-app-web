@@ -8,8 +8,8 @@ export interface NavButtonProps extends HTMLAttributes<HTMLElement>, Composition
     icon: IconName;
 }
 
-const defaultStyles = tw`focus:border-sky-blue-100 border-2 border-transparent text-gray-700  hover:border-2 hover:border-gray-100 hover:bg-white hover:text-gray-700 dark:text-white`;
-const activeStyles = tw`aria-[current=page]:border-dark-blue-700 aria-[current=page]:bg-dark-blue-700 aria-[current=page]:border-2 aria-[current=page]:text-white`;
+const defaultStyles = tw`border-2 border-transparent text-gray-700 hover:border-gray-50 hover:bg-gray-50 hover:text-gray-700 focus:border-blue-100 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white`;
+const activeStyles = tw`aria-[current=page]:border-2 aria-[current=page]:border-gray-700 aria-[current=page]:bg-gray-700 aria-[current=page]:font-bold aria-[current=page]:text-white aria-[current=page]:dark:border-gray-200 aria-[current=page]:dark:bg-gray-200 aria-[current=page]:dark:text-black`;
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:text-gray-500 aria-disabled:focus:border-gray-300`;
 
 export const NavButton = ({ asChild, icon, children, className, ...rest }: NavButtonProps) => {
@@ -17,7 +17,7 @@ export const NavButton = ({ asChild, icon, children, className, ...rest }: NavBu
     return (
         <Comp
             className={twMerge(
-                `inline-flex items-center justify-start rounded-md px-4 py-2 text-sm font-bold outline-none`,
+                `text-md inline-flex items-center justify-start rounded px-4 py-2 outline-none`,
                 defaultStyles,
                 activeStyles,
                 disabledStyles,
@@ -25,7 +25,7 @@ export const NavButton = ({ asChild, icon, children, className, ...rest }: NavBu
             )}
             {...rest}
         >
-            <span className="me-2 inline-flex shrink-0 self-center text-[1.5em]">
+            <span className="me-2 inline-flex shrink-0 self-center text-[1.2em]">
                 <Icon icon={icon} />
             </span>
             <Slottable>{children}</Slottable>

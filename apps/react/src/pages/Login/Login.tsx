@@ -1,11 +1,14 @@
 import { useNavFocusRef } from '$/hooks/index.js';
 import { useAuth } from '$/lib/auth';
-import { Trans } from '@lingui/macro';
-import { Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
+import { Trans, msg } from '@lingui/macro';
+import { Alert, Button, Container, Heading, Stack } from '@minvws/mgo-react-ui';
 import { Busy } from './Busy.js';
-import { Error } from './Error.js';
+import { useLingui } from '@lingui/react';
+import DigiDSvg from './digid.svg?react';
+import EIDASSvg from './eidas.svg?react';
 
 export function Login() {
+    const { _ } = useLingui();
     const auth = useAuth();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
@@ -17,8 +20,6 @@ export function Login() {
         status = <Busy task="uitloggen" />;
     } else if (auth.isLoading) {
         status = <Busy task="laden" />;
-    } else if (auth.error) {
-        status = <Error error={auth.error} />;
     }
 
     if (status) {
@@ -27,20 +28,27 @@ export function Login() {
 
     return (
         <Container className="max-w-md py-10">
-            <div className="max-w-sm">
-                <Heading asChild size="lg" className="mb-8">
-                    <h1 ref={navFocusRef}>
-                        <Trans id="login.heading">Bewijs wie je bent</Trans>
-                    </h1>
-                </Heading>
-                <p className="mb-8 text-lg">
-                    <Trans id="login.description">
-                        Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw
-                        gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere
-                        zorgverleners.
-                    </Trans>
-                </p>
-            </div>
+            {auth.error && (
+                <Alert
+                    status="error"
+                    label={_(msg({ id: 'login.error.label', message: 'Inloggen is niet gelukt' }))}
+                    description={_(
+                        msg({ id: 'login.error.description', message: 'Probeer het nog een keer' })
+                    )}
+                />
+            )}
+            <Heading asChild size="lg" className="mb-8">
+                <h1 ref={navFocusRef}>
+                    <Trans id="login.heading">Bewijs wie je bent</Trans>
+                </h1>
+            </Heading>
+            <p className="mb-12 text-lg">
+                <Trans id="login.description">
+                    Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we{' '}
+                    <b>jouw gegevens veilig opvragen</b> bij je huisarts, ziekenhuis en andere
+                    zorgaanbieders.
+                </Trans>
+            </p>
 
             <Stack asChild>
                 <ul>
@@ -48,19 +56,25 @@ export function Login() {
                         <Button
                             onClick={() => void auth.signinRedirect()}
                             variant="outline"
-                            className="w-full"
+                            className="w-full p-6"
+                            leftIcon={<DigiDSvg className="mr-4 h-12 w-12" />}
+                            rightIcon="chevron-right"
                         >
-                            <Trans id="login.digid">Inloggen met DigiD</Trans>
+                            <span className="flex flex-grow justify-start">
+                                <Trans id="login.digid">Inloggen met DigiD</Trans>
+                            </span>
                         </Button>
                     </li>
                     <li>
-                        <Button isDisabled variant="outline" className="w-full">
-                            <Trans id="login.representative">Inloggen als gemachtigde</Trans>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button isDisabled variant="outline" className="w-full">
-                            <Trans id="login.european">European login</Trans>
+                        <Button
+                            variant="outline"
+                            className="w-full p-6"
+                            leftIcon={<EIDASSvg className="mr-4 h-12 w-12" />}
+                            rightIcon="chevron-right"
+                        >
+                            <span className="flex flex-grow justify-start">
+                                <Trans id="login.european">Inloggen met eIDAS</Trans>
+                            </span>
                         </Button>
                     </li>
                 </ul>

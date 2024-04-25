@@ -182,23 +182,27 @@ msgstr "Verslagen"
 
 #: src/pages/Login/Login.tsx
 msgid "login.description"
-msgstr "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we jouw gegevens veilig opvragen bij je huisarts, ziekenhuizen en andere zorgverleners."
+msgstr "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we <0>jouw gegevens veilig opvragen</0> bij je huisarts, ziekenhuis en andere zorgaanbieders."
 
 #: src/pages/Login/Login.tsx
 msgid "login.digid"
 msgstr "Inloggen met DigiD"
 
 #: src/pages/Login/Login.tsx
+msgid "login.error.description"
+msgstr "Probeer het nog een keer"
+
+#: src/pages/Login/Login.tsx
+msgid "login.error.label"
+msgstr "Inloggen is niet gelukt"
+
+#: src/pages/Login/Login.tsx
 msgid "login.european"
-msgstr "European login"
+msgstr "Inloggen met eIDAS"
 
 #: src/pages/Login/Login.tsx
 msgid "login.heading"
 msgstr "Bewijs wie je bent"
-
-#: src/pages/Login/Login.tsx
-msgid "login.representative"
-msgstr "Inloggen als gemachtigde"
 
 #: src/components/DesktopMenu/DesktopMenu.tsx
 #: src/components/MobileMenu/MobileMenu.tsx
