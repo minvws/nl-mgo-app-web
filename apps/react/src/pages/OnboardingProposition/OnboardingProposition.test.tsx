@@ -7,12 +7,20 @@ test('terms', () => {
     setupApp({ initialEntries: ['/hoe-werkt-het'] });
 
     expect(useOnboardingSeen().isOnboardingSeen).toBe(false);
-    expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 
     fireEvent.click(screen.getByText(/volgende/i));
 
     expect(useOnboardingSeen().isOnboardingSeen).toBe(true);
-    expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Bewijs wie je bent');
 });
 
 test('back button', () => {
@@ -20,7 +28,9 @@ test('back button', () => {
 
     fireEvent.click(screen.getByText(/vorige/i));
 
-    expect(screen.getByRole('heading')).toHaveTextContent(
-        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
-    );
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Je gezond\u00ADheids\u00ADgegevens in één overzicht');
 });

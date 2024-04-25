@@ -74,5 +74,9 @@ test('back button', () => {
 
     fireEvent.click(screen.getByText(/vorige/i));
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
 });

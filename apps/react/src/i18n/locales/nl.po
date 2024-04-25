@@ -100,6 +100,42 @@ msgstr "Zoeken"
 msgid "desktop-header.heading"
 msgstr "Mijn Gezondheidsoverzicht"
 
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.accessibility"
+msgstr "Toegankelijkheid"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.cookies"
+msgstr "Cookies"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.copyright"
+msgstr "Copyright"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.privacy"
+msgstr "Privacy"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.site"
+msgstr "Over mijngezondheidsoverzicht.nl"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.about.title"
+msgstr "Over deze site"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.service.contact"
+msgstr "Contact"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.service.faq"
+msgstr "Veelgestelde vragen"
+
+#: src/components/Footer/Footer.tsx
+msgid "footer.service.title"
+msgstr "Serivce"
+
 #: src/pages/HealthcareProvider/HealthcareProvider.tsx
 msgid "healthcare-provider.contact.description"
 msgstr "Bekijk de contactmogelijkheden en plan een route naar je huisarts"

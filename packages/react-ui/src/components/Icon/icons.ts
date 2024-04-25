@@ -23,6 +23,7 @@ import QuestionMark from '@material-symbols/svg-400/outlined/question_mark.svg?r
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 
+import ChevronRightFat from './icons/chevron-right-fat.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
 import GGZ from './icons/ggz.svg?react';
 import Hospital from './icons/hospital.svg?react';
@@ -35,6 +36,7 @@ export const icons = {
     'general-practitioner': Huisarts,
     dentist: Tandarts,
     ggz: GGZ,
+    'chevron-right-fat': ChevronRightFat,
 
     'chevron-left': ChevronLeft,
     'chevron-right': ChevronRight,

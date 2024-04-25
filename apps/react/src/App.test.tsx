@@ -8,9 +8,11 @@ import { type To } from './routing/routes';
 test('redirect from root to welkom if onboarding not seen', () => {
     setupApp({ initialEntries: ['/'] });
 
-    expect(screen.getByRole('heading')).toHaveTextContent(
-        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
-    );
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Je gezond\u00ADheids\u00ADgegevens in één overzicht');
 });
 
 test('waits for auth to load if there is a search query', async () => {
@@ -24,14 +26,20 @@ test('waits for auth to load if there is a search query', async () => {
     authState.isLoading = true;
     setupApp({ initialEntries });
 
-    expect(screen.queryByRole('heading')).toBeNull();
+    expect(
+        screen.queryByRole('heading', {
+            level: 1,
+        })
+    ).toBeNull();
 
     authState.isLoading = false;
     setupApp({ initialEntries });
 
-    expect(screen.getByRole('heading')).toHaveTextContent(
-        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
-    );
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Je gezond\u00ADheids\u00ADgegevens in één overzicht');
 });
 
 test('redirect from root to login from root if onboarding seen', () => {
@@ -39,7 +47,11 @@ test('redirect from root to login from root if onboarding seen', () => {
     setOnboardingSeen(true);
     setupApp({ initialEntries: ['/'] });
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Bewijs wie je bent');
 });
 
 test('no redirect from root even if onboarding seen', () => {
@@ -47,9 +59,11 @@ test('no redirect from root even if onboarding seen', () => {
     setOnboardingSeen(true);
     setupApp({ initialEntries: ['/welkom'] });
 
-    expect(screen.getByRole('heading')).toHaveTextContent(
-        'Je gezond\u00ADheids\u00ADgegevens in één overzicht'
-    );
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Je gezond\u00ADheids\u00ADgegevens in één overzicht');
 });
 
 test('redirect from login to overview if authenticated', () => {
@@ -64,5 +78,9 @@ test('redirect from login to overview if authenticated', () => {
 test('redirect to login from protected route', () => {
     setupApp({ initialEntries: ['/overzicht'] });
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Bewijs wie je bent');
 });
