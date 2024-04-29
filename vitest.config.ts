@@ -7,6 +7,8 @@ export default defineConfig({
             extension: ['ts', 'tsx'],
             include: ['packages/**', 'apps/*'],
             exclude: [
+                'apps/*/test/*',
+                'packages/*/test/*',
                 '**/?*.config.ts',
                 '**/?*.stories.tsx',
                 '**/?*.d.ts',

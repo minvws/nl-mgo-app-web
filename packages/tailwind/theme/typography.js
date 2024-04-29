@@ -5,7 +5,7 @@ export const fontFamily = {
 };
 
 export const fontSize = {
-    xs: pxToRem(14),
+    xs: pxToRem(15),
     sm: pxToRem(17),
     md: pxToRem(18),
     lg: pxToRem(20),

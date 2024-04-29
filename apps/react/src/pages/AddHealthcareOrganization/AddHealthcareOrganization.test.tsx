@@ -5,7 +5,7 @@ import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { faker } from '@faker-js/faker';
 import { fireEvent, screen } from '@testing-library/react';
 import { afterEach, expect, test, vi } from 'vitest';
-import { AddHealthcareProvider } from './AddHealthcareProvider';
+import { AddHealthcareOrganization } from './AddHealthcareOrganization';
 import { submitSearchForm } from './testHelpers';
 
 vi.mock('$/api/location', () => ({
@@ -27,6 +27,7 @@ vi.mock('$/api/location', () => ({
                     ],
                     names: [],
                     types: [],
+                    data_services: [],
                 },
             ],
         }),
@@ -38,7 +39,7 @@ afterEach(() => {
 
 test('show spinner', async () => {
     vi.spyOn(LocationApi, 'search').mockImplementationOnce(() => new Promise(vi.fn()));
-    const { user } = setupWithAppProviders(<AddHealthcareProvider />);
+    const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
     expect(screen.getByText('Zorgverleners aan het zoeken...')).toBeVisible();
@@ -46,14 +47,14 @@ test('show spinner', async () => {
 
 test('no results found', async () => {
     vi.spyOn(LocationApi, 'search').mockResolvedValueOnce({ organizations: [] });
-    const { user } = setupWithAppProviders(<AddHealthcareProvider />);
+    const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
     expect(screen.getByText('Geen zorgverleners gevonden.')).toBeVisible();
 });
 
 test('results found', async () => {
-    const { user } = setupWithAppProviders(<AddHealthcareProvider />);
+    const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
     const items = screen.getAllByRole('listitem');
@@ -62,7 +63,7 @@ test('results found', async () => {
 
 test('error', async () => {
     vi.spyOn(LocationApi, 'search').mockRejectedValueOnce('error');
-    const { user } = setupWithAppProviders(<AddHealthcareProvider />);
+    const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
     expect(await screen.getByRole('alert')).toBeVisible();

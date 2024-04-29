@@ -13,51 +13,59 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/AddHealthcareProvider/SearchResults.tsx
+#: src/pages/AddHealthcareOrganization/SearchResults.tsx
 msgid "add-healthcare-provider.add"
 msgstr "toevoegen"
 
-#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+#: src/pages/AddHealthcareOrganization/SearchResults.tsx
+msgid "add-healthcare-provider.aria-label-is-added"
+msgstr "naar overzicht"
+
+#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
 msgid "add-healthcare-provider.heading"
 msgstr "Voeg een zorgverlener toe"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "add-healthcare-provider.input.city.label"
 msgstr "Plaats"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "add-healthcare-provider.input.city.validation"
 msgstr "Vul een plaats in"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "add-healthcare-provider.input.name.label"
 msgstr "Naam"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "add-healthcare-provider.input.name.validation"
 msgstr "Vul een naam in"
 
-#: src/pages/AddHealthcareProvider/SearchResults.tsx
+#: src/pages/AddHealthcareOrganization/SearchResults.tsx
+msgid "add-healthcare-provider.is-added"
+msgstr "Deze zorgaanbieder heb je al toegevoegd"
+
+#: src/pages/AddHealthcareOrganization/SearchResults.tsx
 msgid "add-healthcare-provider.load_more"
 msgstr "Meer zorgverleners laden"
 
-#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
 msgid "add-healthcare-provider.no-results.title"
 msgstr "Geen zorgverleners gevonden."
 
-#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
 msgid "add-healthcare-provider.no-results.usp.1"
 msgstr "Controleer de spelling."
 
-#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
 msgid "add-healthcare-provider.no-results.usp.2"
 msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgverlener hoe je hun naam schrijft."
 
-#: src/pages/AddHealthcareProvider/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
 msgid "add-healthcare-provider.no-results.usp.3"
 msgstr "Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
 
-#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
 msgid "add-healthcare-provider.search_text"
 msgstr "Zorgverleners aan het zoeken..."
 
@@ -65,11 +73,11 @@ msgstr "Zorgverleners aan het zoeken..."
 msgid "common.close"
 msgstr "Sluiten"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "common.dossier"
 msgstr "Dossier"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "common.general-practicioner"
 msgstr "Huisarts"
 
@@ -82,17 +90,18 @@ msgstr "Uitloggen"
 msgid "common.next"
 msgstr "Volgende"
 
-#: src/pages/AddHealthcareProvider/AddHealthcareProvider.tsx
+#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "common.previous"
 msgstr "Vorige"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "common.required"
 msgstr "(verplicht)"
 
-#: src/pages/AddHealthcareProvider/SearchForm.tsx
+#: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "common.search"
 msgstr "Zoeken"
 
@@ -134,51 +143,71 @@ msgstr "Veelgestelde vragen"
 
 #: src/components/Footer/Footer.tsx
 msgid "footer.service.title"
-msgstr "Serivce"
+msgstr "Service"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.contact.description"
 msgstr "Bekijk de contactmogelijkheden en plan een route naar je huisarts"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.contact.title"
 msgstr "Contact en route"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.delete.description"
-msgstr "De zorggegevens van {0} niet meer tonen"
+msgstr "De zorggegevens van {display_name} niet meer tonen"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.delete.title"
 msgstr "Verwijder uit overzicht"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.diagnosis.description"
 msgstr "Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.diagnosis.title"
 msgstr "Klachten en diagnoses"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.medicine.description"
 msgstr "Medicijnen die je zorgverleners hebben voorgeschreven"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.medicine.title"
 msgstr "Medicijnen"
 
-#: src/pages/HealthcareProvider/NotFound.tsx
+#: src/pages/HealthcareOrganization/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
 msgstr "Zorgverlener was niet gevonden"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.reports.description"
 msgstr "Rapporten en verslagen die zijn opgesteld door je zorgverleners"
 
-#: src/pages/HealthcareProvider/HealthcareProvider.tsx
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.reports.title"
 msgstr "Verslagen"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.add"
+msgstr "Voeg een zorgaanbieder toe"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.delete"
+msgstr "verwijderen"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.description"
+msgstr "Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.done"
+msgstr "Klaar"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.heading"
+msgstr "Welke zorgaanbieders wil je op je overzicht tonen?"
 
 #: src/pages/Login/Login.tsx
 msgid "login.description"

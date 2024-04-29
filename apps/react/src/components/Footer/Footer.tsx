@@ -6,7 +6,7 @@ export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'classNam
 
 export function Footer(props: FooterProps) {
     return (
-        <footer className="bg-grey-50 dark:bg-grey-900 text-black dark:text-white" {...props}>
+        <footer className="bg-gray-50 text-black dark:bg-gray-900 dark:text-white" {...props}>
             <Container className="flex flex-col justify-end gap-6 py-12 sm:flex-row">
                 <nav aria-labelledby="about_title" className="flex flex-col gap-4">
                     <h3 id="about_title" className="text-2xl font-bold leading-tight">
@@ -16,7 +16,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.about.site">
@@ -27,7 +27,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.about.copyright">Copyright</Trans>
@@ -36,7 +36,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.about.privacy">Privacy</Trans>
@@ -45,7 +45,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.about.cookies">Cookies</Trans>
@@ -54,7 +54,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.about.accessibility">Toegankelijkheid</Trans>
@@ -64,13 +64,13 @@ export function Footer(props: FooterProps) {
                 </nav>
                 <nav aria-labelledby="service_title" className="flex flex-col gap-4">
                     <h3 id="service_title" className="text-2xl font-bold leading-tight">
-                        <Trans id="footer.service.title">Serivce</Trans>
+                        <Trans id="footer.service.title">Service</Trans>
                     </h3>
                     <List className="gap-2">
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.service.faq">Veelgestelde vragen</Trans>
@@ -79,7 +79,7 @@ export function Footer(props: FooterProps) {
                         <ListItem className="flex items-center text-lg">
                             <ListIcon
                                 icon="chevron-right-fat"
-                                className="me-1 h-3 w-3 fill-blue-700"
+                                className="fill-dark-blue-700 me-1 h-3 w-3"
                             />
                             <a href="#">
                                 <Trans id="footer.service.contact">Contact</Trans>

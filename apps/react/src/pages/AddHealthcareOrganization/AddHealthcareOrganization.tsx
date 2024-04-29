@@ -9,7 +9,7 @@ import { SearchForm, type SearchFormData } from './SearchForm';
 import { NoSearchResults } from './NoSearchResults';
 import { SearchResults } from './SearchResults';
 
-export function AddHealthcareProvider() {
+export function AddHealthcareOrganization() {
     const navigate = useNavigate();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();

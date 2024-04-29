@@ -2,14 +2,14 @@ import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import {
-    HealthcareOrganisationButton,
-    type HealthcareOrganisationButtonProps,
-} from './HealthcareOrganisationButton';
+    HealthcareOrganizationButton,
+    type HealthcareOrganizationButtonProps,
+} from './HealthcareOrganizationButton';
 
-test.each<HealthcareOrganisationButtonProps['icon']>(['add', 'delete'])(
+test.each<HealthcareOrganizationButtonProps['icon']>(['add', 'delete', 'chevron-right'])(
     'renders variant %s with title',
     async (icon) => {
-        const props: HealthcareOrganisationButtonProps = {
+        const props: HealthcareOrganizationButtonProps = {
             title: faker.lorem.sentence(),
             subTitle: faker.lorem.sentence(),
             meta: faker.lorem.sentence(),
@@ -17,7 +17,7 @@ test.each<HealthcareOrganisationButtonProps['icon']>(['add', 'delete'])(
             iconAriaLabel: faker.lorem.word(),
         };
 
-        render(<HealthcareOrganisationButton {...props} />);
+        render(<HealthcareOrganizationButton {...props} />);
         expect(screen.getByRole('button').textContent).includes(props.title);
     }
 );

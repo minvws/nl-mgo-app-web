@@ -1,29 +1,29 @@
 import { useNavFocusRef } from '$/hooks';
 import { Link, useParams } from '$/routing';
-import { useHealthcareProvidersStore } from '$/store';
+import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans, msg } from '@lingui/macro';
 import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
 import { NotFound } from './NotFound';
 import { useLingui } from '@lingui/react';
 
-export function HealthcareProvider() {
+export function HealthcareOrganization() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { healthcareProviderSlug } = useParams();
-    const { getHealthcareProvider } = useHealthcareProvidersStore();
+    const { healthcareOrganizationSlug } = useParams();
+    const { getHealthcareOrganization } = useHealthcareOrganizationsStore();
     const { _ } = useLingui();
 
-    const healthcareProvider = getHealthcareProvider(healthcareProviderSlug);
+    const healthcareProvider = getHealthcareOrganization(healthcareOrganizationSlug);
 
     if (!healthcareProvider) {
         return <NotFound />;
     }
 
-    const { organisation } = healthcareProvider;
+    const { display_name } = healthcareProvider;
 
     return (
         <section className="flex-grow">
             <Heading asChild size="lg" className="mb-8">
-                <h1 ref={navFocusRef}>{organisation.display_name}</h1>
+                <h1 ref={navFocusRef}>{display_name}</h1>
             </Heading>
 
             <Heading asChild size="md" className="mb-8">
@@ -68,7 +68,7 @@ export function HealthcareProvider() {
                             description={_(
                                 msg({
                                     id: 'healthcare-provider.delete.description',
-                                    message: `De zorggegevens van ${organisation.display_name} niet meer tonen`,
+                                    message: `De zorggegevens van ${display_name} niet meer tonen`,
                                 })
                             )}
                         >

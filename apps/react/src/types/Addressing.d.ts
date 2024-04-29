@@ -12,7 +12,7 @@ export interface DataService {
 
 export type HealthcareService = {
     medmij_id: string;
-    organisation_type: string;
+    organization_type: string;
     id_type: string;
     id_value: string;
     dataservices: DataService[];

@@ -20,6 +20,7 @@ import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
+import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
@@ -61,6 +62,7 @@ export const icons = {
     warning: Warning,
     'arrow-right-alt': ArrowRightAlt,
     autorenew: Autorenew,
+    check: Check,
 };
 
 export type IconName = keyof typeof icons;

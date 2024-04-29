@@ -1,41 +1,34 @@
-import { expect, test } from 'vitest';
-import { useHealthcareProvidersStore } from './healthcareProviders';
+import { healthcareOrganizationDTO } from '$test/data';
 import { faker } from '@faker-js/faker';
 import { kebabCase } from 'lodash';
+import { expect, test } from 'vitest';
+import { useHealthcareOrganizationsStore } from './healthcareProviders';
 
 test('healthcareProviders returns undefined if slug does not match', async () => {
-    const organisationName = faker.company.name();
-    const expectedSlug = kebabCase(organisationName);
+    const organizationName = faker.company.name();
+    const expectedSlug = kebabCase(organizationName);
 
-    const { addHealthcareProvider, getHealthcareProvider } = useHealthcareProvidersStore.getState();
+    const { addHealthcareOrganization, getHealthcareOrganization } =
+        useHealthcareOrganizationsStore.getState();
 
-    const organisation = {
-        display_name: organisationName,
-        active: true,
-        identification_type: faker.string.sample(),
-        identification_value: faker.string.sample(),
-        addresses: [],
-        types: [],
-        names: [],
-    };
-    const service = {
-        medmij_id: faker.string.sample(),
-        organisation_type: faker.string.sample(),
-        id_type: faker.string.sample(),
-        id_value: faker.string.sample(),
-        dataservices: [],
-    };
+    const organization = healthcareOrganizationDTO({ display_name: organizationName });
 
-    addHealthcareProvider({
-        organisation,
-        service,
-    });
-
-    expect(getHealthcareProvider(expectedSlug)!.organisation).toMatchObject(organisation);
-    expect(getHealthcareProvider(expectedSlug)!.service).toMatchObject(service);
+    addHealthcareOrganization(organization);
+    expect(getHealthcareOrganization(expectedSlug)).toMatchObject(organization);
 });
 
 test('healthcareProviders returns undefined if slug does not match', async () => {
-    const { getHealthcareProvider } = useHealthcareProvidersStore.getState();
-    expect(getHealthcareProvider()).toBe(undefined);
+    const { getHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
+    expect(getHealthcareOrganization()).toBe(undefined);
+});
+
+test('removeHealthcareProvider removes item by slug', async () => {
+    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
+    addHealthcareOrganization(healthcareOrganizationDTO());
+
+    let state = useHealthcareOrganizationsStore.getState();
+    state.removeHealthcareOrganization(state.healthcareOrganizations[0].slug);
+
+    state = useHealthcareOrganizationsStore.getState();
+    expect(state.healthcareOrganizations.length).toBe(0);
 });

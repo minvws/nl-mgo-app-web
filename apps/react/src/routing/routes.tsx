@@ -5,14 +5,15 @@ import { type Path as RouterPath } from 'react-router-dom';
 import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
-import { HealthcareProvider } from '../pages/HealthcareProvider/HealthcareProvider';
+import { HealthcareOrganization } from '../pages/HealthcareOrganization/HealthcareOrganization';
 import { Login } from '../pages/Login/Login';
 import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
 import { NotFound } from '$/pages/NotFound/NotFound';
-import { AddHealthcareProvider } from '$/pages/AddHealthcareProvider/AddHealthcareProvider';
+import { AddHealthcareOrganization } from '$/pages/AddHealthcareOrganization/AddHealthcareOrganization';
+import { AddHealthcareOrganizationList } from '$/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList';
 
 const routeConfig = [
     {
@@ -50,7 +51,11 @@ const routeConfig = [
                 children: [
                     {
                         path: '/zorgverlener-toevoegen',
-                        element: <AddHealthcareProvider />,
+                        element: <AddHealthcareOrganization />,
+                    },
+                    {
+                        path: '/zorgverlener-toevoegen/zorgverleners',
+                        element: <AddHealthcareOrganizationList />,
                     },
                 ],
             },
@@ -62,8 +67,8 @@ const routeConfig = [
                         element: <Overview />,
                     },
                     {
-                        path: '/overzicht/:healthcareProviderSlug',
-                        element: <HealthcareProvider />,
+                        path: '/overzicht/:healthcareOrganizationSlug',
+                        element: <HealthcareOrganization />,
                     },
                 ],
             },

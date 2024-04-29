@@ -1,7 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { useAuth } from '$/lib/auth';
 import { Link } from '$/routing';
-import { useHealthcareProvidersStore } from '$/store';
+import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans } from '@lingui/macro';
 import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
 
@@ -9,7 +9,7 @@ export function Overview() {
     const auth = useAuth();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
-    const { healthcareProviders } = useHealthcareProvidersStore();
+    const { healthcareOrganizations } = useHealthcareOrganizationsStore();
 
     return (
         <div className="flex-grow">
@@ -24,14 +24,14 @@ export function Overview() {
                 </Trans>
             </p>
 
-            {healthcareProviders.length ? (
+            {healthcareOrganizations.length ? (
                 <Stack asChild className="-mx-4 mb-6 gap-1 sm:mx-0 sm:gap-2 md:mb-12">
                     <ul>
-                        {healthcareProviders.map(({ slug, organisation }) => (
+                        {healthcareOrganizations.map(({ slug, display_name }) => (
                             <li key={slug}>
                                 <ButtonCard
                                     asChild
-                                    title={organisation.display_name}
+                                    title={display_name}
                                     description="Ziekenhuis"
                                     icon="hospital"
                                 >

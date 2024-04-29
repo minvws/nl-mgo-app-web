@@ -18,22 +18,23 @@ export type Name = {
     preferred: boolean;
 };
 
-export type Type = {
+export type HealthcareOrganizationType = {
     code: string;
     display_name: string;
     type: string;
 };
 
-export interface HealthcareOrganisation {
+export interface HealthcareOrganizationDTO {
     display_name: string;
     identification_type: string;
     identification_value: string;
     active: boolean;
     addresses: Address[];
     names: Name[];
-    types: Type[];
+    types: HealthcareOrganizationType[];
+    data_services: HealthcareService[];
 }
 
 export interface OrganisationSearchResponse {
-    organizations: HealthcareOrganisation[];
+    organizations: HealthcareOrganizationDTO[];
 }

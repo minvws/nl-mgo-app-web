@@ -1,7 +1,7 @@
 import { App, AppProviders } from '$/App';
 import { routes, type To } from '$/routing/routes';
 import { type Override } from '$/types/Override';
-import { type RenderOptions, render } from '@testing-library/react';
+import { render, type RenderOptions } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { isValidElement, type ReactNode } from 'react';
 import { RouterProvider, createMemoryRouter, type RouteObject } from 'react-router-dom';
@@ -15,7 +15,7 @@ type TypedMemoryRouterOptions = Override<
     }
 >;
 
-export function setup(ui: React.ReactNode, options?: Omit<RenderOptions, 'queries'>) {
+export function setup(ui: ReactNode, options?: Omit<RenderOptions, 'queries'>) {
     return { user: userEvent.setup(), ...render(ui, options) };
 }
 

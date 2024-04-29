@@ -14,12 +14,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Co
     'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
+const focusStyle = tw`before:absolute before:-bottom-[4px] before:-left-[4px] before:-right-[4px] before:-top-[4px] before:rounded-xl before:border-4 before:border-transparent before:focus:border-black before:dark:focus:border-white`;
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
 
 const typeColors: Record<Variant, string> = {
-    solid: tw`${disabledStyles} bg-sky-blue-600 hover:bg-dark-blue-700 text-white focus:border-4 focus:border-black dark:focus:border-white`,
-    light: tw`${disabledStyles} text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500 focus:border-4 focus:border-black dark:focus:border-white`,
-    outline: tw`${disabledStyles} border border-gray-200 bg-white text-black hover:bg-gray-50 focus:border-4 focus:border-black dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700 dark:focus:border-gray-200`,
+    solid: tw`${disabledStyles} bg-sky-blue-600 hover:bg-dark-blue-700 text-white`,
+    light: tw`${disabledStyles} text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500`,
+    outline: tw`${disabledStyles} border border-gray-200 bg-white text-black hover:bg-gray-50 dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700 `,
     ghost: tw`text-dark-blue-700 hover:text-dark-blue-400`,
 };
 
@@ -42,7 +43,8 @@ export const Button = ({
             disabled={isDisabled}
             onClick={isDisabled ? undefined : onClick}
             className={twMerge(
-                `inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
+                `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
+                focusStyle,
                 typeColors[variant],
                 !!leftIcon && 'pl-4',
                 !!rightIcon && 'pr-4',

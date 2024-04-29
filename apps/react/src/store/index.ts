@@ -1,1 +1,4 @@
-export { type HealthcareProvidersState, useHealthcareProvidersStore } from './healthcareProviders';
+export {
+    type HealthcareOrganizationsState,
+    useHealthcareOrganizationsStore,
+} from './healthcareProviders';

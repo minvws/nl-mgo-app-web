@@ -1,38 +1,50 @@
 import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
-import { type HealthcareService } from '$/types/Addressing';
-import { type HealthcareOrganisation } from '$/types/Organisation';
+import { type HealthcareOrganizationDTO } from '$/types/Organisation';
 import { create } from 'zustand';
 
-interface HealthcareProviderData {
-    organisation: HealthcareOrganisation;
-    service: HealthcareService;
-}
-
-interface HealthcareProvider extends HealthcareProviderData {
+interface HealthcareOrganization extends HealthcareOrganizationDTO {
     slug: string;
 }
 
-export interface HealthcareProvidersState {
-    healthcareProviders: HealthcareProvider[];
-    getHealthcareProvider: (slug?: string) => HealthcareProvider | undefined;
-    addHealthcareProvider: (provider: HealthcareProviderData) => void;
+export interface HealthcareOrganizationsState {
+    healthcareOrganizations: HealthcareOrganization[];
+    hasHealthcareOrganization: ({
+        identification_type,
+        identification_value,
+    }: Pick<HealthcareOrganizationDTO, 'identification_type' | 'identification_value'>) => boolean;
+    getHealthcareOrganization: (slug?: string) => HealthcareOrganization | undefined;
+    addHealthcareOrganization: (provider: HealthcareOrganizationDTO) => void;
+    removeHealthcareOrganization: (slug: string) => void;
 }
 
-export const useHealthcareProvidersStore = create<HealthcareProvidersState>()((set, get) => ({
-    healthcareProviders: [],
-    addHealthcareProvider: ({ organisation, service }) => {
-        const slugs = get().healthcareProviders.map((p) => p.slug);
-        const provider = {
-            organisation,
-            service,
-            slug: createUniqueSlug(organisation.display_name, slugs),
-        };
-        set(({ healthcareProviders }) => ({
-            healthcareProviders: [...healthcareProviders, provider],
-        }));
-    },
-    getHealthcareProvider: (slug) => {
-        if (!slug) return;
-        return get().healthcareProviders.find((x) => x.slug === slug);
-    },
-}));
+export const useHealthcareOrganizationsStore = create<HealthcareOrganizationsState>()(
+    (set, get) => ({
+        healthcareOrganizations: [],
+        hasHealthcareOrganization: ({ identification_type, identification_value }) => {
+            return get().healthcareOrganizations.some(
+                (p) =>
+                    p.identification_type === identification_type &&
+                    p.identification_value === identification_value
+            );
+        },
+        addHealthcareOrganization: (organization) => {
+            const slugs = get().healthcareOrganizations.map((p) => p.slug);
+            const provider = {
+                ...organization,
+                slug: createUniqueSlug(organization.display_name, slugs),
+            };
+            set(({ healthcareOrganizations }) => ({
+                healthcareOrganizations: [...healthcareOrganizations, provider],
+            }));
+        },
+        getHealthcareOrganization: (slug) => {
+            if (!slug) return;
+            return get().healthcareOrganizations.find((x) => x.slug === slug);
+        },
+        removeHealthcareOrganization: (slug) => {
+            set(({ healthcareOrganizations }) => ({
+                healthcareOrganizations: healthcareOrganizations.filter((x) => x.slug !== slug),
+            }));
+        },
+    })
+);
