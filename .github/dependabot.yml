@@ -8,6 +8,10 @@ updates:
       interval: 'weekly'
 
   - package-ecosystem: 'npm'
+    # disable package updates to only allow security updates
+    # see: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#open-pull-requests-limit
+    # see: https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates#overriding-the-default-behavior-with-a-configuration-file
+    open-pull-requests-limit: 0
     directory: '/'
     schedule:
       interval: 'weekly'
