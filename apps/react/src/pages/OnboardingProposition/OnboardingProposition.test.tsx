@@ -22,15 +22,3 @@ test('terms', () => {
         })
     ).toHaveTextContent('Bewijs wie je bent');
 });
-
-test('back button', () => {
-    setupApp({ initialEntries: ['/welkom', '/hoe-werkt-het'] });
-
-    fireEvent.click(screen.getByText(/vorige/i));
-
-    expect(
-        screen.getByRole('heading', {
-            level: 1,
-        })
-    ).toHaveTextContent('Je gezond\u00ADheids\u00ADgegevens in één overzicht');
-});

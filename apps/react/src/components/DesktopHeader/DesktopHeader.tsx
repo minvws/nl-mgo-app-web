@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro';
-import { Button, Container, twMerge } from '@minvws/mgo-react-ui';
+import { Button, Container, cn } from '@minvws/mgo-react-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
@@ -7,8 +7,8 @@ export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
 export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
     return (
         <header
-            className={twMerge(
-                'border-b-solid border-b border-b-gray-50 bg-white dark:bg-[#050505]',
+            className={cn(
+                'border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-900 dark:bg-black',
                 className
             )}
             {...rest}

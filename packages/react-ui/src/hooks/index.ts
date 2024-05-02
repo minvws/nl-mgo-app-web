@@ -1,5 +1,3 @@
-/* c8 ignore start */
-
 export {
     useResponsive,
     type BreakpointSize,
@@ -10,3 +8,4 @@ export {
 export { useUniqueId } from './useUniqueId/useUniqueId';
 
 export { useComposition, type CompositionProps } from './useComposition/useComposition';
+export { useOnMount } from './useOnMount/useOnMount';

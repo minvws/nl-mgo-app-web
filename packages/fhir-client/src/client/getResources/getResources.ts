@@ -14,10 +14,15 @@ export interface ResourcesRequest<T extends ResourceType = ResourceType> {
     id?: never;
 }
 
+export type ResourcesResponse<
+    T extends ResourceType,
+    Resource = Extract<FhirResource, { resourceType: T }>,
+    Response = LosslessJson<Bundle<Resource>>,
+> = Response;
+
 export function getResources<
     Request extends ResourcesRequest,
-    Resource = Extract<FhirResource, { resourceType: Request['resource'] }>,
-    Response = LosslessJson<Bundle<Resource>>,
+    Response = ResourcesResponse<Request['resource']>,
 >(
     instance: KyInstance,
     { defaultQueryParams }: FhirClientOptions,

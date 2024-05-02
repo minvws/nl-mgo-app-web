@@ -1,7 +1,7 @@
 import { getResource } from '$/fhir/client';
 import { useNavFocusRef } from '$/hooks';
-import { getEmail, getHumanName } from '@minvws/mgo-fhir-data/resource/patient/index.ts';
-import { Spinner, Container } from '@minvws/mgo-react-ui';
+import { getEmail, getHumanName } from '@minvws/mgo-fhir-data';
+import { Container, Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
 import { type ReactNode } from 'react';
 

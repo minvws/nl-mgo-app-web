@@ -1,6 +1,6 @@
 import { createClient } from '@minvws/mgo-fhir-client';
 
-export const { getResource } = createClient({
-    prefixUrl: 'http://localhost:8080/hapi-fhir-jpaserver/fhir/',
-    timeout: 30000,
+export const { getResource, getResources } = createClient({
+    prefixUrl: 'https://dva.test.mgo.irealisatie.nl/fhir/',
+    timeout: 10000,
 });

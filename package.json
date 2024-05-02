@@ -16,7 +16,7 @@
         "i18n": "pnpm run --dir apps/react messages:extract",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "pr": "pnpm run format && pnpm run lint:fix && pnpm run check-types && pnpm run i18n && vitest run"
+        "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run check-types && pnpm run i18n && vitest run --coverage"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.2.0",

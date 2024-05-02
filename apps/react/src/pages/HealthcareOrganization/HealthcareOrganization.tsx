@@ -28,7 +28,7 @@ export function HealthcareOrganization() {
 
             <Heading asChild size="md" className="mb-8">
                 <h2>
-                    <Trans id="common.general-practicioner">Huisarts</Trans>
+                    <Trans id="common.hospital">Ziekenhuis</Trans>
                 </h2>
             </Heading>
 
@@ -104,7 +104,7 @@ export function HealthcareOrganization() {
                                 })
                             )}
                         >
-                            <Link to="#medicijnen" />
+                            <Link to={`/overzicht/${healthcareOrganizationSlug}/medicijnen`} />
                         </ButtonCard>
                     </li>
                     <li>

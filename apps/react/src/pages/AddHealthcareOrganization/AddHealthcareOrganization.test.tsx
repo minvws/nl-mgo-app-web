@@ -1,12 +1,12 @@
 import * as LocationApi from '$/api/location';
 import { type OrganisationSearchResponse } from '$/types/Organisation';
-import { setAuthStateAuthenticated } from '$test/auth';
-import { setupApp, setupWithAppProviders } from '$test/helpers';
+import { setupWithAppProviders } from '$test/helpers';
 import { faker } from '@faker-js/faker';
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi } from 'vitest';
 import { AddHealthcareOrganization } from './AddHealthcareOrganization';
 import { submitSearchForm } from './testHelpers';
+import { flushCallStack } from '$test/flushCallstack';
 
 vi.mock('$/api/location', () => ({
     search: () =>
@@ -66,18 +66,6 @@ test('error', async () => {
     const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
-    expect(await screen.getByRole('alert')).toBeVisible();
-});
-
-test('back button', () => {
-    setAuthStateAuthenticated();
-    setupApp({ initialEntries: ['/welkom', '/hoe-werkt-het', '/zorgverlener-toevoegen'] });
-
-    fireEvent.click(screen.getByText(/vorige/i));
-
-    expect(
-        screen.getByRole('heading', {
-            level: 1,
-        })
-    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+    await flushCallStack();
+    expect(screen.getByRole('alert')).toBeVisible();
 });

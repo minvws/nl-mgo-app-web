@@ -58,10 +58,12 @@ export const ButtonCard = ({
                 isLoading={isLoading}
             >
                 <Stack className="flex flex-col gap-1 sm:gap-2">
-                    <span className="text-md font-bold text-black sm:text-lg md:text-xl">
+                    <span className="text-md font-bold text-black sm:text-lg md:text-xl dark:text-white">
                         {title}
                     </span>
-                    <p className="text-lg font-normal text-gray-500">{description}</p>
+                    <p className="text-lg font-normal text-gray-600 dark:text-gray-400">
+                        {description}
+                    </p>
                 </Stack>
             </SkeletonText>
             {!isLoading && (

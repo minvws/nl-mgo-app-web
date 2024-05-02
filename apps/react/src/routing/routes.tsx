@@ -1,3 +1,7 @@
+import { AddHealthcareOrganization } from '$/pages/AddHealthcareOrganization/AddHealthcareOrganization';
+import { AddHealthcareOrganizationList } from '$/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList';
+import { Medication } from '$/pages/Medication/Medication';
+import { NotFound } from '$/pages/NotFound/NotFound';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
@@ -11,9 +15,6 @@ import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
-import { NotFound } from '$/pages/NotFound/NotFound';
-import { AddHealthcareOrganization } from '$/pages/AddHealthcareOrganization/AddHealthcareOrganization';
-import { AddHealthcareOrganizationList } from '$/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList';
 
 const routeConfig = [
     {
@@ -69,6 +70,10 @@ const routeConfig = [
                     {
                         path: '/overzicht/:healthcareOrganizationSlug',
                         element: <HealthcareOrganization />,
+                    },
+                    {
+                        path: '/overzicht/:healthcareProviderSlug/medicijnen',
+                        element: <Medication />,
                     },
                 ],
             },

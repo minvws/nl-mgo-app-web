@@ -9,7 +9,6 @@ import { maxWidth, screens } from './layout.js';
  * file://./../node_modules/tailwindcss/stubs/config.full.js
  */
 
-/** @type {import('tailwindcss').Config['theme']} */
 export default {
     extend: {},
 

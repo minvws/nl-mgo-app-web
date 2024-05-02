@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro';
-import { Container, twMerge } from '@minvws/mgo-react-ui';
+import { Container, cn } from '@minvws/mgo-react-ui';
 import { type HTMLAttributes } from 'react';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 
@@ -8,7 +8,7 @@ export interface MobileHeaderProps extends HTMLAttributes<HTMLElement> {}
 export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
     return (
         <header
-            className={twMerge(
+            className={cn(
                 'border-b-solid sticky top-0 h-16 w-full border-b border-b-gray-50 bg-white shadow-sm dark:bg-[#050505]',
                 className
             )}

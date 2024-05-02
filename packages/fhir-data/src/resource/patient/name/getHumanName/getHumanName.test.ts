@@ -6,7 +6,7 @@ import patient3 from '../fixtures/stu3-patient-name-3.json';
 import patient4 from '../fixtures/stu3-patient-name-4.json';
 
 import { expect, test } from 'vitest';
-import { getHumanName } from '..';
+import { getHumanName } from './getHumanName';
 
 test.each<[Patient | undefined, string | undefined]>([
     [patient1 as Patient, 'Jim'],

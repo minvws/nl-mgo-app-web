@@ -1,6 +1,6 @@
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { ButtonCard, Heading, IconButton, twMerge } from '@minvws/mgo-react-ui';
+import { ButtonCard, Heading, IconButton, cn } from '@minvws/mgo-react-ui';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState, type HTMLAttributes, useEffect } from 'react';
 import { useLocation } from 'react-router';
@@ -26,7 +26,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
             </MenuButton>
             <Dialog.Portal>
                 <Dialog.Content
-                    className={twMerge(
+                    className={cn(
                         'fixed left-0 top-0 z-50 flex h-screen w-screen flex-col bg-white dark:bg-[#050505]',
                         className
                     )}

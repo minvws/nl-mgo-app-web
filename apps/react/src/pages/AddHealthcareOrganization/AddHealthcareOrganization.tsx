@@ -1,16 +1,15 @@
 import { search } from '$/api/location';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
-import { Alert, Button, Container, Heading, Spinner } from '@minvws/mgo-react-ui';
+import { Alert, Container, Heading, Spinner } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import { SearchForm, type SearchFormData } from './SearchForm';
+import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResults } from './NoSearchResults';
+import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
 
 export function AddHealthcareOrganization() {
-    const navigate = useNavigate();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
 
@@ -28,14 +27,7 @@ export function AddHealthcareOrganization() {
     return (
         <div className="flex flex-grow flex-col">
             <Container>
-                <Button
-                    variant="ghost"
-                    leftIcon="chevron-left"
-                    className="my-3 pl-0"
-                    onClick={() => navigate(-1)}
-                >
-                    <Trans id="common.previous">Vorige</Trans>
-                </Button>
+                <BackButton />
             </Container>
 
             <Container className="max-w-md">

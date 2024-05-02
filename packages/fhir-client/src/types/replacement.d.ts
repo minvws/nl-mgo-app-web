@@ -9,14 +9,10 @@
  * DeepReplaceType<(number | string)[], number, boolean> // (boolean | string)[]
  */
 export type DeepReplaceType<T, ToReplace, Replacement> = T extends ToReplace
-    ? Exclude<ReplacePossibleObject<T, ToReplace, Replacement>, ToReplace> | Replacement
+    ? Exclude<T, ToReplace> | Replacement
     : T extends object
       ? DeepReplaceTypeInObject<T, ToReplace, Replacement>
       : T;
-
-type ReplacePossibleObject<T, ToReplace, Replacement> = T extends object
-    ? DeepReplaceTypeInObject<T, ToReplace, Replacement>
-    : T;
 
 type DeepReplaceTypeInObject<T extends object, ToReplace, Replacement> = {
     [key in keyof T]: T[key] extends object

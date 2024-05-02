@@ -1,6 +1,5 @@
-/* c8 ignore start */
-
 export { Alert, type AlertProps } from './Alert/Alert';
+export { Accordion, type AccordionProps } from './Accordion/Accordion';
 export { Button, type ButtonProps } from './Button/Button';
 export { Container, type ContainerProps } from './Container/Container';
 export { Heading, type HeadingProps } from './Heading/Heading';
@@ -33,3 +32,4 @@ export {
     HealthcareOrganizationButton,
     type HealthcareOrganizationButtonProps,
 } from './HealthcareOrganizationButton/HealthcareOrganizationButton';
+export { Record, type RecordProps } from './Record/Record';

@@ -6,7 +6,7 @@ import patient3 from '../fixtures/stu3-patient-telecom-3.json';
 import patient4 from '../fixtures/stu3-patient-telecom-4.json';
 
 import { expect, test } from 'vitest';
-import { getEmail } from '..';
+import { getEmail } from './getEmail';
 
 test.each<[Patient | undefined, string | undefined]>([
     [patient1 as Patient, 'current@hotmail.com'],

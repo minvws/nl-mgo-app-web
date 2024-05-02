@@ -1,5 +1,6 @@
+import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
-import { Link, useNavigate } from '$/routing';
+import { Link } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
@@ -13,7 +14,6 @@ import {
 
 export function AddHealthcareOrganizationList() {
     const { _ } = useLingui();
-    const navigate = useNavigate();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     const { healthcareOrganizations, removeHealthcareOrganization } =
@@ -22,14 +22,7 @@ export function AddHealthcareOrganizationList() {
     return (
         <div className="flex flex-grow flex-col">
             <Container>
-                <Button
-                    variant="ghost"
-                    leftIcon="chevron-left"
-                    className="my-3 pl-0"
-                    onClick={() => navigate(-1)}
-                >
-                    <Trans id="common.previous">Vorige</Trans>
-                </Button>
+                <BackButton />
             </Container>
 
             <Container className="max-w-md">

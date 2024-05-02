@@ -1,25 +1,17 @@
-import { useOnboardingSeen } from '$/hooks';
-import { useNavFocusRef } from '$/hooks';
+import { BackButton } from '$/components/BackButton/BackButton';
+import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
+import { Link } from '$/routing';
 import { Trans } from '@lingui/macro';
 import { Button, Container, Heading, List, ListIcon, ListItem } from '@minvws/mgo-react-ui';
-import { Link, useNavigate } from '$/routing';
 
 export function OnboardingProposition() {
-    const navigate = useNavigate();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setOnboardingSeen } = useOnboardingSeen();
 
     return (
         <>
             <Container>
-                <Button
-                    variant="ghost"
-                    leftIcon="chevron-left"
-                    className="my-3 pl-0"
-                    onClick={() => navigate(-1)}
-                >
-                    <Trans id="common.previous">Vorige</Trans>
-                </Button>
+                <BackButton to="/welkom" />
             </Container>
 
             <Container className="max-w-md">

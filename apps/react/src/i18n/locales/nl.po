@@ -78,8 +78,8 @@ msgid "common.dossier"
 msgstr "Dossier"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "common.general-practicioner"
-msgstr "Huisarts"
+msgid "common.hospital"
+msgstr "Ziekenhuis"
 
 #: src/pages/Overview/Overview.tsx
 msgid "common.logout"
@@ -90,9 +90,8 @@ msgstr "Uitloggen"
 msgid "common.next"
 msgstr "Volgende"
 
-#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
-#: src/pages/OnboardingProposition/OnboardingProposition.tsx
+#: src/components/BackButton/BackButton.tsx
+#: src/components/BackButton/BackButton.tsx
 msgid "common.previous"
 msgstr "Vorige"
 
@@ -232,6 +231,22 @@ msgstr "Inloggen met eIDAS"
 #: src/pages/Login/Login.tsx
 msgid "login.heading"
 msgstr "Bewijs wie je bent"
+
+#: src/pages/Medication/Medication.tsx
+msgid "medicine.description"
+msgstr "Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder."
+
+#: src/pages/Medication/MedicationStatements.tsx
+msgid "medicine.dosage"
+msgstr "Dosering"
+
+#: src/pages/Medication/MedicationStatements.tsx
+msgid "medicine.start-date"
+msgstr "Startdatum"
+
+#: src/pages/Medication/Medication.tsx
+msgid "medicine.title"
+msgstr "Medicijnen"
 
 #: src/components/DesktopMenu/DesktopMenu.tsx
 #: src/components/MobileMenu/MobileMenu.tsx
