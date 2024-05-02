@@ -1,14 +1,10 @@
 /* c8 ignore start */
 import type { OrganisationSearchResponse } from '$/types/Organisation';
-import { healthcareOrganizationDTO } from '$test/data';
-import { range } from 'lodash';
+import ky from 'ky';
 
-const searchResponse: OrganisationSearchResponse = {
-    organizations: range(20).map(() => healthcareOrganizationDTO()),
-};
-
-export const search = async (_searchQuery: { name: string; city: string }) => {
-    await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000 + 500));
-
-    return searchResponse;
-};
+export const search = async (searchQuery: { name: string; city: string }) =>
+    ky
+        .post('https://lo-ad.test.mgo.irealisatie.nl/localization/organization/search', {
+            json: searchQuery,
+        })
+        .json<OrganisationSearchResponse>();
