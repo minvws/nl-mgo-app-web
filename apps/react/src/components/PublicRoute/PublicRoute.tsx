@@ -16,11 +16,11 @@ export function PublicRoute() {
             if (!isOnboardingSeen) {
                 return <Navigate to="/welkom" replace />;
             }
-            return <Navigate to="/zorgverlener-toevoegen" replace />;
+            return <Navigate to="/zorgaanbieder-toevoegen" replace />;
 
         case '/inloggen':
             if (auth.isAuthenticated) {
-                return <Navigate to="/zorgverlener-toevoegen" replace />;
+                return <Navigate to="/zorgaanbieder-toevoegen" replace />;
             }
             break;
     }

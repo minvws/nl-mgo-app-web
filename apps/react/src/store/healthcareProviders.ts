@@ -2,7 +2,7 @@ import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
 import { type HealthcareOrganizationDTO } from '$/types/Organisation';
 import { create } from 'zustand';
 
-interface HealthcareOrganization extends HealthcareOrganizationDTO {
+export interface HealthcareOrganization extends HealthcareOrganizationDTO {
     slug: string;
 }
 

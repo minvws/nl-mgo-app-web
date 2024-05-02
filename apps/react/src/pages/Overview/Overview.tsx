@@ -1,9 +1,10 @@
 import { useNavFocusRef } from '$/hooks';
 import { useAuth } from '$/lib/auth';
-import { Link } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans } from '@lingui/macro';
-import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
+import { Heading } from '@minvws/mgo-react-ui';
+import { HealthcareOrganizations } from './HealthcareOrganizations';
+import { NoHealthcareOrganizations } from './NoHealthcareOrganizations';
 
 export function Overview() {
     const auth = useAuth();
@@ -12,51 +13,24 @@ export function Overview() {
     const { healthcareOrganizations } = useHealthcareOrganizationsStore();
 
     return (
-        <div className="flex-grow">
+        <>
             <Heading asChild size="lg" className="mb-2 sm:mb-4 md:mb-6">
                 <h1 ref={navFocusRef}>
                     <Trans id="overview.heading">Goedemorgen, Wendy</Trans>
                 </h1>
             </Heading>
-            <p className="sm:text-md mb-6 text-sm text-gray-700 md:mb-12 md:text-lg lg:text-xl dark:text-white">
-                <Trans id="overview.subheading">
-                    Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens.
-                </Trans>
-            </p>
-
             {healthcareOrganizations.length ? (
-                <Stack asChild className="-mx-4 mb-6 gap-1 sm:mx-0 sm:gap-2 md:mb-12">
-                    <ul>
-                        {healthcareOrganizations.map(({ slug, display_name }) => (
-                            <li key={slug}>
-                                <ButtonCard
-                                    asChild
-                                    title={display_name}
-                                    description="Ziekenhuis"
-                                    icon="hospital"
-                                >
-                                    <Link to={`/overzicht/${slug}`} />
-                                </ButtonCard>
-                            </li>
-                        ))}
-                    </ul>
-                </Stack>
+                <HealthcareOrganizations organizations={healthcareOrganizations} />
             ) : (
-                <div>
-                    <Trans id="overview.no-results">Geen zorgverleners gevonden.</Trans>
-                </div>
+                <NoHealthcareOrganizations />
             )}
 
-            <p className="text-md text-gray-500">
-                <Trans id="overview.last_refresh">
-                    Je overzicht is <strong>vandaag</strong> voor het laatst bijgewerkt om{' '}
-                    <strong>09:41</strong>
-                </Trans>
-            </p>
-
-            <button onClick={() => void auth.removeUser()} className="mb-8 text-lg font-bold">
+            <button
+                onClick={() => void auth.removeUser()}
+                className="mb-8 self-start text-lg font-bold"
+            >
                 <Trans id="common.logout">Uitloggen</Trans>
             </button>
-        </div>
+        </>
     );
 }

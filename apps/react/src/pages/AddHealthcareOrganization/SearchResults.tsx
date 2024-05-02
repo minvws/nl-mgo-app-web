@@ -30,7 +30,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
         );
         if (healthcareOrganisation) {
             addHealthcareOrganization(healthcareOrganisation);
-            navigate('/zorgverlener-toevoegen/zorgverleners');
+            navigate('/zorgaanbieder-toevoegen/zorgaanbieders');
         }
     };
 
@@ -67,7 +67,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
                                     {isAdded ? (
                                         <HealthcareOrganizationButton
                                             onClick={() =>
-                                                navigate('/zorgverlener-toevoegen/zorgverleners')
+                                                navigate('/zorgaanbieder-toevoegen/zorgaanbieders')
                                             }
                                             className="w-full"
                                             title={name}

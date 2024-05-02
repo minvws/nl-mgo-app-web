@@ -12,7 +12,7 @@ export const IconAvatar = ({ icon, iconAriaLabel, className, ...rest }: IconAvat
     <figure
         className={twMerge(
             'flex h-8 w-8 items-center justify-center rounded-full sm:h-12 sm:w-12',
-            iconColours[icon!] || 'bg-gray-100 dark:text-black',
+            iconColours[icon!] || 'bg-gray-50 dark:text-black',
             className
         )}
         {...rest}

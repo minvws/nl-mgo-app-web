@@ -15,7 +15,7 @@ test('render from store', async () => {
     const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
     addHealthcareOrganization(healthcareOrganizationDTO());
 
-    setupApp({ initialEntries: ['/zorgverlener-toevoegen/zorgverleners'] });
+    setupApp({ initialEntries: ['/zorgaanbieder-toevoegen/zorgaanbieders'] });
 
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);
 });

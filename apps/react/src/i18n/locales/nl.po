@@ -322,14 +322,10 @@ msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opv
 msgid "overview.heading"
 msgstr "Goedemorgen, Wendy"
 
-#: src/pages/Overview/Overview.tsx
-msgid "overview.last_refresh"
-msgstr "Je overzicht is <0>vandaag</0> voor het laatst bijgewerkt om <1>09:41</1>"
-
-#: src/pages/Overview/Overview.tsx
+#: src/pages/Overview/NoHealthcareOrganizations.tsx
 msgid "overview.no-results"
-msgstr "Geen zorgverleners gevonden."
+msgstr "Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald."
 
-#: src/pages/Overview/Overview.tsx
+#: src/pages/Overview/HealthcareOrganizations.tsx
 msgid "overview.subheading"
 msgstr "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."

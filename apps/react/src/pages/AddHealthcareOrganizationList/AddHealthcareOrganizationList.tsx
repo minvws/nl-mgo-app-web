@@ -77,7 +77,7 @@ export function AddHealthcareOrganizationList() {
                             </Link>
                         </Button>
                         <Button variant="light" asChild>
-                            <Link to="/zorgverlener-toevoegen">
+                            <Link to="/zorgaanbieder-toevoegen">
                                 <Trans id="healthcare-providers.add">
                                     Voeg een zorgaanbieder toe
                                 </Trans>

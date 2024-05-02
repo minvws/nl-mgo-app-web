@@ -51,11 +51,11 @@ const routeConfig = [
                 element: <PageLayout hideMenu />,
                 children: [
                     {
-                        path: '/zorgverlener-toevoegen',
+                        path: '/zorgaanbieder-toevoegen',
                         element: <AddHealthcareOrganization />,
                     },
                     {
-                        path: '/zorgverlener-toevoegen/zorgverleners',
+                        path: '/zorgaanbieder-toevoegen/zorgaanbieders',
                         element: <AddHealthcareOrganizationList />,
                     },
                 ],

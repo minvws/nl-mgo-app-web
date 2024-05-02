@@ -18,8 +18,8 @@ export type ButtonCardProps = HTMLAttributes<HTMLElement> &
         {
             isLoading?: boolean;
             title: string;
-            description: string;
-            icon: IconName;
+            description?: string;
+            icon?: IconName;
             iconAriaLabel?: string;
         },
         'isLoading'
@@ -52,7 +52,7 @@ export const ButtonCard = ({
                 <IconAvatar icon={icon} aria-label={iconAriaLabel} />
             </SkeletonCircle>
             <SkeletonText
-                className="flex flex-grow flex-col gap-1 sm:gap-2"
+                className="flex flex-grow flex-col justify-center gap-1 sm:gap-2"
                 height="h-6 sm:h-8"
                 numberOfLines={2}
                 isLoading={isLoading}
@@ -61,9 +61,11 @@ export const ButtonCard = ({
                     <span className="text-md font-bold text-black sm:text-lg md:text-xl dark:text-white">
                         {title}
                     </span>
-                    <p className="text-lg font-normal text-gray-600 dark:text-gray-400">
-                        {description}
-                    </p>
+                    {description && (
+                        <p className="text-lg font-normal text-gray-600 dark:text-gray-400">
+                            {description}
+                        </p>
+                    )}
                 </Stack>
             </SkeletonText>
             {!isLoading && (
