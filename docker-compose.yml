@@ -1,8 +1,3 @@
-version: '3.8'
-
-volumes:
-    hapi-data:
-
 services:
     mgo:
         container_name: mgo
@@ -12,12 +7,10 @@ services:
         ports:
             - ${PORT:-8000}:8000
         volumes:
-            - ./apps/react:/app/apps/react
-            - ./packages:/app/packages
-    hapi:
-        container_name: hapi
-        image: smartonfhir/hapi-5:r3-smart
-        ports:
-            - 8080:8080
-        volumes:
-            - hapi-data:/usr/local/tomcat/target/database
+            - .:/app
+            - /app/node_modules
+            - /app/apps/react/node_modules
+            - /app/packages/fhir-client/node_modules
+            - /app/packages/fhir-data/node_modules
+            - /app/packages/react-ui/node_modules
+            - /app/packages/tailwind/node_modules

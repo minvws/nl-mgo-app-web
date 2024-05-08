@@ -1,38 +1,52 @@
-# Medical Data Review Facility - web
+<h1 align="center">Mijn Gezondheidsoverzicht (web) ❤️</h1>
+<br />
 
-This repository contains the Medical Data Review Facility (PGO).
+This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and SDK components. It is a monorepository which contains multiple individual apps and packages.
 
-## Deployment
+## Table of contents
 
-The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-mgo-app-web-private/actions/workflows/package.yml).
+-   📋 [Directory structure](#directory-structure)
+-   💻 [Running locally](#running-locally)
+-   📦 [Development](#development)
+-   🚀 [Deployment](#deployment)
+-   ⚖️ [License](#license)
 
-The contents of the package can be hosted as an SPA, with non-existing routes being served the `index.html`.
+## Directory structure
 
-Configuration can be provided by overwriting the `config.js` file with environment-specific values. The structure of this file is as follows:
+This repository is a monorepository in that all directories under `apps/*` and `packages/*` are condisered their own indivudual package and contain their own dependencies and scripts. A few things are organised at the root level such as formatting and linting.
 
-```js
-window.config = {
-    oidc_authority: '...',
-    oidc_client_id: '...',
-    oidc_redirect_uri: '...',
-};
+    .
+    ├── apps
+    │    └── react              # The main MGO application
+    ├── packages
+    │    ├── fhir-client        # HTTP client for making requests to a FHIR server
+    │    ├── fhir-data          # Helpers for parsing FHIR data structures
+    │    ├── react-ui           # UI library for MGO
+    │    └── tailwind           # MGO Tailwind theme
+    ├── LICENSE
+    └── README.md
+
+## Running locally
+
+To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used for production**. For actual development we recommend you use the [Development](#development) instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed](https://www.docker.com/products/docker-desktop/)
+
+```sh
+# Run a local development server using docker
+docker compose up -d --build
 ```
-
-| Field               | Description                                                                          | Default value                      |
-| ------------------- | ------------------------------------------------------------------------------------ | ---------------------------------- |
-| `oidc_authority`    | URI of the OIDC authority (the root path before `.well-known/openid-configuration`). | `'https://max.acc.coronacheck.nl'` |
-| `oidc_client_id`    | OIDC client ID.                                                                      | `'pgo_dev'`                        |
-| `oidc_redirect_uri` | URI of the application itself, as allowlisted for the given client ID.               | `'http://localhost:8000'`          |
 
 ## Development
 
-The main application lives in `apps/react/`.
+The main MGO application lives in `apps/react/`.
 
 The UI components live in `packages/react-ui/` and a storybook environment is available.
 
-### Running a local development server
+### Prerequisites
 
-This project uses [pnpm](https://pnpm.io/installation).
+-   Ensure you have the [latest NodeJS installed](https://nodejs.org/en).
+-   Ensure you have [pnpm installed](https://pnpm.io/installation).
+
+### Running a local development server
 
 First, install the dependencies by running:
 
@@ -46,34 +60,36 @@ Then, start the development server by running (from the project root):
 pnpm dev
 ```
 
-By default, the server will be available at [http://localhost:8000](http://localhost:8000). While it is possible to change the port by providing a `--port` argument, doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
+> By default, the server will be available at [http://localhost:8000](http://localhost:8000). While it is possible to change the port by providing a `--port` argument, doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
 
-#### Storybook
+### Storybook
 
-The storybook development server can be started by running (from the project root):
+`packages/react-ui/` contains most MGO styled components, the storybook development server can be started by running:
 
 ```sh
 pnpm storybook
 ```
 
-### Running a development server in docker
+## Deployment
 
-**NB**: the dockerfile is only meant for local development, not for deployment.
+The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-mgo-app-web-private/actions/workflows/package.yml).
+The contents of the package can be hosted as an SPA, with non-existing routes being served the `index.html`.
+Configuration can be provided by overwriting the `config.js` file with environment-specific values. The structure of this file is as follows:
 
-You can start the development server in docker by running:
-
-```sh
-docker compose up -d
+```js
+window.config = {
+    oidc_authority: '...',
+    oidc_client_id: '...',
+    oidc_redirect_uri: '...',
+};
 ```
 
-By default, the server will be available at [http://localhost:8000](http://localhost:8000). You can change the port via the `PORT` environment variable (e.g. via a `.env` file), but doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
+| Field               | Description                                                                          | Default value              |
+| ------------------- | ------------------------------------------------------------------------------------ | -------------------------- |
+| `oidc_authority`    | URI of the OIDC authority (the root path before `.well-known/openid-configuration`). | `'https://max.acc.mgo.nl'` |
+| `oidc_client_id`    | OIDC client ID.                                                                      | `'mgo_dev'`                |
+| `oidc_redirect_uri` | URI of the application itself, as allowlisted for the given client ID.               | `'http://localhost:8000'`  |
 
-### HAPI / FHIR data test server
+## License
 
-The docker-compose also includes a `hapi` service which is a test server that can provide FHIR data responses. When running the react app on local development server you can start this service by itself by running:
-
-```sh
-docker compose up -d hapi
-```
-
-The HAPI fhir server will be available at [http://localhost:8080/hapi-fhir-jpaserver](http://localhost:8080/hapi-fhir-jpaserver). For example: a Patient Bundle resource request would be: [http://localhost:8080/hapi-fhir-jpaserver/fhir/Patient](http://localhost:8080/hapi-fhir-jpaserver/fhir/Patient).
+This repository follows the [REUSE Specfication v3.0](https://reuse.software/spec/). Please see [.reuse/dep5](./.reuse/dep5) and the individual `*.license` files for copyright and license information.
