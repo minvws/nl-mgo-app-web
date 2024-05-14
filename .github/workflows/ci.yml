@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Extract messages
-        working-directory: apps/react
+        working-directory: apps/mgo
         run: pnpm run messages:extract
       - name: Check for changes which should have been in GIT
         run: |
@@ -72,7 +72,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Build
-        working-directory: apps/react
+        working-directory: apps/mgo
         run: pnpm run build
 
   sonar:

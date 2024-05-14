@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - 'packages/react-ui/**'
+      - 'packages/mgo-ui/**'
   pull_request:
     paths:
-      - 'packages/react-ui/**'
+      - 'packages/mgo-ui/**'
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
           autoAcceptChanges: 'main'
           exitZeroOnChanges: true
           exitOnceUploaded: true
-          workingDir: packages/react-ui
+          workingDir: packages/mgo-ui
       - name: Comment Chromatic results
         uses: marocchino/sticky-pull-request-comment@v2
         with:

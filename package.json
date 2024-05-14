@@ -6,14 +6,14 @@
         "pnpm": "^8.0.0"
     },
     "scripts": {
-        "dev": "pnpm run --dir apps/react dev",
+        "dev": "pnpm run --dir apps/mgo dev",
         "test": "vitest",
         "test:coverage": "vitest run --coverage",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "lint:fix": "eslint . --ext ts,tsx --fix",
         "check-types": "tsc --version && pnpm run -r check-types",
-        "storybook": "pnpm run --dir packages/react-ui dev",
-        "i18n": "pnpm run --dir apps/react messages:extract",
+        "storybook": "pnpm run --dir packages/mgo-ui dev",
+        "i18n": "pnpm run --dir apps/mgo messages:extract",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run check-types && pnpm run i18n && vitest run --coverage"

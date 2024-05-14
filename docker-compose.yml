@@ -9,8 +9,8 @@ services:
         volumes:
             - .:/app
             - /app/node_modules
-            - /app/apps/react/node_modules
+            - /app/apps/mgo/node_modules
             - /app/packages/fhir-client/node_modules
             - /app/packages/fhir-data/node_modules
-            - /app/packages/react-ui/node_modules
+            - /app/packages/mgo-ui/node_modules
             - /app/packages/tailwind/node_modules

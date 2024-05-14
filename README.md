@@ -17,11 +17,11 @@ This repository is a monorepository in that all directories under `apps/*` and `
 
     .
     ├── apps
-    │    └── react              # The main MGO application
+    │    └── mgo                # The main MGO application
     ├── packages
     │    ├── fhir-client        # HTTP client for making requests to a FHIR server
     │    ├── fhir-data          # Helpers for parsing FHIR data structures
-    │    ├── react-ui           # UI library for MGO
+    │    ├── mgo-ui             # UI library for MGO
     │    └── tailwind           # MGO Tailwind theme
     ├── LICENSE
     └── README.md
@@ -37,9 +37,9 @@ docker compose up -d --build
 
 ## Development
 
-The main MGO application lives in `apps/react/`.
+The main MGO application lives in `apps/mgo/`.
 
-The UI components live in `packages/react-ui/` and a storybook environment is available.
+The UI components live in `packages/mgo-ui/` and a storybook environment is available.
 
 ### Prerequisites
 
@@ -64,7 +64,7 @@ pnpm dev
 
 ### Storybook
 
-`packages/react-ui/` contains most MGO styled components, the storybook development server can be started by running:
+`packages/mgo-ui/` contains most MGO styled components, the storybook development server can be started by running:
 
 ```sh
 pnpm storybook
