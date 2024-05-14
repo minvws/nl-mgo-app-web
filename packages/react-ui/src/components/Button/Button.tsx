@@ -1,4 +1,4 @@
-import { type ReactElement, type ButtonHTMLAttributes, isValidElement } from 'react';
+import { type ReactElement, type ButtonHTMLAttributes, isValidElement, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
@@ -24,21 +24,25 @@ const typeColors: Record<Variant, string> = {
     ghost: tw`text-dark-blue-700 hover:text-dark-blue-400 dark:text-light-blue-500 hover:dark:text-light-blue-200`,
 };
 
-export const Button = ({
-    asChild,
-    isDisabled,
-    onClick,
-    variant = 'solid',
-    children,
-    className,
-    leftIcon,
-    rightIcon,
-    ...rest
-}: ButtonProps) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+    {
+        asChild,
+        isDisabled,
+        onClick,
+        variant = 'solid',
+        children,
+        className,
+        leftIcon,
+        rightIcon,
+        ...rest
+    },
+    ref
+) {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
     return (
         <Comp
+            ref={ref}
             aria-disabled={isDisabled}
             disabled={isDisabled}
             onClick={isDisabled ? undefined : onClick}
@@ -65,4 +69,4 @@ export const Button = ({
             )}
         </Comp>
     );
-};
+});

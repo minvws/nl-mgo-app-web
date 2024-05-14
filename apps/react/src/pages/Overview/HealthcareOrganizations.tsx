@@ -18,12 +18,12 @@ export const HealthcareOrganizations = ({ organizations }: ResultsProps) => {
 
             <Stack asChild className="-mx-4 mb-6 gap-1 sm:mx-0 sm:gap-2 md:mb-12">
                 <ul>
-                    {organizations.map(({ slug, display_name }) => (
+                    {organizations.map(({ slug, display_name, types }) => (
                         <li key={slug}>
                             <ButtonCard
                                 asChild
                                 title={display_name}
-                                description="Ziekenhuis"
+                                description={types[0].display_name}
                                 icon="hospital"
                             >
                                 <Link to={`/overzicht/${slug}`} />

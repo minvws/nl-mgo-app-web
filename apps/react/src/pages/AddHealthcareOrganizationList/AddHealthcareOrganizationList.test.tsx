@@ -33,5 +33,35 @@ test('remove item from store', async () => {
 
     await user.click(listItemButton);
 
+    const dialog = await screen.getByRole('alertdialog');
+    expect(dialog).toBeVisible();
+    const button = await within(dialog).getByRole('button', {
+        name: 'Ja, weglaten',
+    });
+    await user.click(button);
+
     expect(await screen.queryAllByRole('listitem').length).toBe(0);
+});
+
+test('do not remove item from store', async () => {
+    const user = userEvent.setup();
+    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
+    addHealthcareOrganization(healthcareOrganizationDTO());
+    setupWithAppProviders(<AddHealthcareOrganizationList />);
+
+    expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);
+
+    const listItem = await screen.getByRole('listitem');
+    const listItemButton = await within(listItem).getByRole('button');
+
+    await user.click(listItemButton);
+
+    const dialog = await screen.getByRole('alertdialog');
+    expect(dialog).toBeVisible();
+    const button = await within(dialog).getByRole('button', {
+        name: 'Nee, toch tonen',
+    });
+    await user.click(button);
+
+    expect(await screen.queryAllByRole('listitem').length).toBeGreaterThan(0);
 });

@@ -33,6 +33,7 @@ export {
     type HealthcareOrganizationButtonProps,
 } from './HealthcareOrganizationButton/HealthcareOrganizationButton';
 export { Record, type RecordProps } from './Record/Record';
+export { ConfirmDialog, type ConfirmDialogProps } from './ConfirmDialog/ConfirmDialog';
 export { Illustration, type IllustrationProps } from './Illustration/Illustration';
 export { Text, type TextProps } from './Text/Text';
 export { Render, type RenderProps } from './Render/Render';

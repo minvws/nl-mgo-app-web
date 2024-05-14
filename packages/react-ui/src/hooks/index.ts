@@ -9,3 +9,4 @@ export { useUniqueId } from './useUniqueId/useUniqueId';
 
 export { useComposition, type CompositionProps } from './useComposition/useComposition';
 export { useOnMount } from './useOnMount/useOnMount';
+export { useOpenState } from './useOpenState/useOpenState';

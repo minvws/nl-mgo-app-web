@@ -217,6 +217,22 @@ msgid "healthcare-providers.description"
 msgstr "Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
 
 #: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.dialog.cancelButton"
+msgstr "Nee, toch tonen"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.dialog.confirmButton"
+msgstr "Ja, weglaten"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.dialog.description"
+msgstr "We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel."
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-providers.dialog.title"
+msgstr "{0} weglaten?"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
 msgid "healthcare-providers.done"
 msgstr "Klaar"
 

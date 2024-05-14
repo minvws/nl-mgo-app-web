@@ -1,8 +1,8 @@
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { ButtonCard, Heading, IconButton, cn } from '@minvws/mgo-react-ui';
+import { ButtonCard, Heading, IconButton, cn, useOpenState } from '@minvws/mgo-react-ui';
 import * as Dialog from '@radix-ui/react-dialog';
-import { useState, type HTMLAttributes, useEffect } from 'react';
+import { type HTMLAttributes, useEffect } from 'react';
 import { useBlocker } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
@@ -11,7 +11,7 @@ export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
 
 export function MobileMenu({ className, ...rest }: MobileMenuProps) {
     const { _ } = useLingui();
-    const [open, setOpen] = useState(false);
+    const { isOpen, setIsOpen, close } = useOpenState();
 
     const blocker = useBlocker(
         ({ currentLocation, nextLocation }) => currentLocation !== nextLocation
@@ -19,13 +19,13 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
 
     useEffect(() => {
         if (blocker.state === 'blocked') {
-            setOpen(false);
+            close();
             blocker.proceed();
         }
-    }, [blocker]);
+    }, [blocker, close]);
 
     return (
-        <Dialog.Root open={open} onOpenChange={setOpen}>
+        <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
             <Dialog.Overlay />
             <MenuButton asChild>
                 <Dialog.Trigger />

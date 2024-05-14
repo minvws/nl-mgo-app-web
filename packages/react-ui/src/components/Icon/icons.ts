@@ -5,7 +5,6 @@ import Call from '@material-symbols/svg-400/outlined/call.svg?react';
 import Cancel from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/outlined/chevron_left.svg?react';
 import ChevronRight from '@material-symbols/svg-400/outlined/chevron_right.svg?react';
-import Close from '@material-symbols/svg-400/outlined/close.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';
 import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
@@ -29,6 +28,7 @@ import Huisarts from './icons/huisarts.svg?react';
 import Tandarts from './icons/tandarts.svg?react';
 import Home from './icons/home.svg?react';
 import QuestionMark from './icons/question_mark.svg?react';
+import Close from './icons/close.svg?react';
 
 export const icons = {
     hospital: Hospital,
@@ -39,6 +39,7 @@ export const icons = {
     home: Home,
     'question-mark': QuestionMark,
     'chevron-right-fat': ChevronRightFat,
+    close: Close,
 
     'chevron-left': ChevronLeft,
     'chevron-right': ChevronRight,
@@ -50,7 +51,6 @@ export const icons = {
     person: Person,
     'expand-more': ExpandMore,
     favorite: Favorite,
-    close: Close,
     call: Call,
     delete: Delete,
     pill: Pill,
