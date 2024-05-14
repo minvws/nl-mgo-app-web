@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react';
 import { ButtonCard, Heading, IconButton, cn } from '@minvws/mgo-react-ui';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState, type HTMLAttributes, useEffect } from 'react';
-import { useLocation } from 'react-router';
+import { useBlocker } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
 
@@ -12,11 +12,17 @@ export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
 export function MobileMenu({ className, ...rest }: MobileMenuProps) {
     const { _ } = useLingui();
     const [open, setOpen] = useState(false);
-    const { pathname } = useLocation();
+
+    const blocker = useBlocker(
+        ({ currentLocation, nextLocation }) => currentLocation !== nextLocation
+    );
 
     useEffect(() => {
-        setOpen(false);
-    }, [pathname]);
+        if (blocker.state === 'blocked') {
+            setOpen(false);
+            blocker.proceed();
+        }
+    }, [blocker]);
 
     return (
         <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -26,6 +32,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
             </MenuButton>
             <Dialog.Portal>
                 <Dialog.Content
+                    onCloseAutoFocus={(e) => e.preventDefault()}
                     className={cn(
                         'fixed left-0 top-0 z-50 flex h-screen w-screen flex-col bg-white dark:bg-[#050505]',
                         className

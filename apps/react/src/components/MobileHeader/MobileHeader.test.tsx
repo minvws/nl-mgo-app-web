@@ -4,6 +4,7 @@ import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
+import { flushCallStack } from '$test/flushCallstack';
 
 test('render MobileHeader', () => {
     setupWithAppProviders(<MobileHeader />);
@@ -72,5 +73,6 @@ test('check if menu dialog closes on navigation', async () => {
     await user.click(overzichtLink);
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await flushCallStack();
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Overzicht');
 });

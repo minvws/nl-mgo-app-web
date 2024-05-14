@@ -6,6 +6,7 @@ import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
 import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
 import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
+import { ScrollRestoration } from 'react-router-dom';
 
 export interface LayoutProps {
     hideMenu?: boolean;
@@ -24,6 +25,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <>
             <div className="flex min-h-screen flex-col">
+                <ScrollRestoration />
                 <LogoBanner className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-black'} />
                 {!hideMenu && <Header />}
                 <Container

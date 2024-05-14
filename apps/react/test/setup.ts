@@ -23,6 +23,7 @@ vi.mock('react-oidc-context', () => ({
         settings: {},
     }),
 }));
+window.scrollTo = vi.fn;
 
 beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
