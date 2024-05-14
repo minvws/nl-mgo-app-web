@@ -1,29 +1,30 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { type ReactNode } from 'react';
-import { RouterProvider, type RouterProviderProps } from 'react-router';
+import { RouterProvider, type RouterProviderProps } from 'react-router-dom';
 import { I18nProvider } from './i18n';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config/config';
 import { router as defaultRouter } from './routing';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            retry: false,
+        },
+    },
+});
 
 interface AppProps {
     router?: RouterProviderProps['router'];
 }
 
-export const AppProviders = ({ children }: { children: ReactNode }) => (
-    <I18nProvider>
-        <QueryClientProvider client={queryClient}>
-            <AuthProvider {...readConfig().oidc}>{children}</AuthProvider>
-        </QueryClientProvider>
-    </I18nProvider>
-);
-
 export const App = ({ router = defaultRouter }: AppProps = {}) => {
     return (
-        <AppProviders>
-            <RouterProvider router={router} />
-        </AppProviders>
+        <I18nProvider>
+            <QueryClientProvider client={queryClient}>
+                <AuthProvider {...readConfig().oidc}>
+                    <RouterProvider router={router} />
+                </AuthProvider>
+            </QueryClientProvider>
+        </I18nProvider>
     );
 };

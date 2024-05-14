@@ -3,16 +3,16 @@ import { useHealthcareOrganizationsStore } from '$/store';
 import { type HealthcareOrganizationDTO } from '$/types/Organisation';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { Button, HealthcareOrganizationButton, Icon, Stack } from '@minvws/mgo-react-ui';
-import { useState } from 'react';
+import { Button, HealthcareOrganizationButton, Icon, Stack, cn } from '@minvws/mgo-react-ui';
+import { type HTMLAttributes, useState } from 'react';
 
-interface SearchResultsProps {
-    results: HealthcareOrganizationDTO[];
+interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
+    searchResults: HealthcareOrganizationDTO[];
 }
 
 export const RESULTS_PER_PAGE = 15;
 
-export const SearchResults = ({ results }: SearchResultsProps) => {
+export const SearchResults = ({ searchResults, className, ...rest }: SearchResultsProps) => {
     const { _ } = useLingui();
     const navigate = useNavigate();
     const { addHealthcareOrganization, hasHealthcareOrganization } =
@@ -23,7 +23,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
         identification_type,
         identification_value,
     }: Pick<HealthcareOrganizationDTO, 'identification_type' | 'identification_value'>) => {
-        const healthcareOrganisation = results.find(
+        const healthcareOrganisation = searchResults.find(
             (p) =>
                 p.identification_type === identification_type &&
                 p.identification_value === identification_value
@@ -49,10 +49,10 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
         };
     };
 
-    const showResults = results.slice(0, showResultsLength).map(getBasicOrganisationInfo);
+    const showResults = searchResults.slice(0, showResultsLength).map(getBasicOrganisationInfo);
 
     return (
-        <Stack className="my-6 flex-grow gap-12 md:my-12">
+        <Stack className={cn('flex-grow gap-12', className)} {...rest}>
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
                     {showResults.map(
@@ -114,7 +114,7 @@ export const SearchResults = ({ results }: SearchResultsProps) => {
                 </ul>
             </Stack>
 
-            {showResultsLength < results.length && (
+            {showResultsLength < searchResults.length && (
                 <Button
                     variant="ghost"
                     rightIcon="autorenew"

@@ -7,8 +7,8 @@ export function mockMatchMedia(matchingQueries: string[] = []) {
         value: vi.fn((query: string) => {
             return {
                 matches: matchingQueries.includes(query),
-                addListener: vi.fn(),
-                removeListener: vi.fn(),
+                addEventListener: vi.fn(),
+                removeEventListener: vi.fn(),
             };
         }),
     });

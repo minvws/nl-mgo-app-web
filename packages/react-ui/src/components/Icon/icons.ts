@@ -1,4 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
 import Add from '@material-symbols/svg-400/outlined/add.svg?react';
 import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';

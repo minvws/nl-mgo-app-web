@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Icon } from '../Icon/Icon';
+import { LoadingCircle } from './LoadingCircle';
 
 export type SpinnerProps = HTMLAttributes<SVGElement>;
 
@@ -16,8 +16,7 @@ export type IconProps = Omit<HTMLAttributes<SVGElement>, 'aria-label' | 'aria-hi
 
 export const Spinner = ({ className, ...rest }: SpinnerProps) => {
     return (
-        <Icon
-            icon="progress-activity"
+        <LoadingCircle
             className={twMerge('animate-spin fill-current', className)}
             role="progressbar"
             aria-label="Laden..."

@@ -35,7 +35,7 @@ export const HealthcareOrganizationButton = ({
     return (
         <Card
             className={twMerge(
-                'flex cursor-pointer flex-row gap-4 hover:bg-gray-50 dark:hover:bg-gray-700',
+                'flex cursor-pointer flex-row gap-4 border-gray-200 hover:bg-gray-50 dark:border-gray-500 dark:hover:bg-gray-700',
                 className
             )}
             asChild

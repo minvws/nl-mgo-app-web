@@ -1,17 +1,20 @@
 import { type DefaultError as DefaultQueryError, type UseQueryResult } from '@tanstack/react-query';
-import { type ReactNode } from 'react';
-import { DefaultError } from './DefaultError';
-import { DefaultPending } from './DefaultPending';
-import { DefaultNoResult } from './DefaultNoResult';
+import { Fragment, type ReactNode } from 'react';
+import { QueryStateError } from './QueryStateError';
+import { QueryStateLoading } from './QueryStateLoading';
+import { QueryStateNoResult } from './QueryStateNoResult';
+import { Card, Render, type RenderProps } from '@minvws/mgo-react-ui';
 
 export type QueryStateProps<TData = unknown, TError = DefaultQueryError> = Pick<
     UseQueryResult<TData, TError>,
-    'data' | 'error' | 'status'
+    'data' | 'error' | 'status' | 'fetchStatus'
 > & {
-    renderPending?: ReactNode;
+    useCardWrapper?: boolean;
+    useFetchStatus?: boolean;
+    renderLoading?: ReactNode;
     renderNoResult?: ReactNode;
-    renderError?: ReactNode | ((props: { error: TError | null }) => ReactNode);
-    renderResult: ReactNode | ((props: { data: NonNullable<TData> }) => ReactNode);
+    renderError?: RenderProps<{ error: TError | null }>['children'];
+    renderResult: RenderProps<{ data: NonNullable<TData> }>['children'];
 };
 
 const isEmpty = (data: unknown) =>
@@ -21,24 +24,39 @@ export function QueryState<TData = unknown, TError = DefaultQueryError>({
     error,
     data,
     status,
+    fetchStatus,
+    useCardWrapper = false,
+    useFetchStatus = false,
     renderResult,
-    renderNoResult = <DefaultNoResult />,
-    renderPending = <DefaultPending />,
-    renderError = DefaultError,
+    renderNoResult = <QueryStateNoResult />,
+    renderLoading = <QueryStateLoading />,
+    renderError = <QueryStateError />,
 }: QueryStateProps<TData, TError>) {
+    const Wrapper = useCardWrapper ? Card : Fragment;
+
     switch (status) {
         case 'pending':
-            return renderPending;
+            if (useFetchStatus && fetchStatus !== 'fetching') {
+                return null;
+            }
+            return <Wrapper>{renderLoading}</Wrapper>;
         case 'error':
-            return typeof renderError === 'function' ? renderError({ error }) : renderError;
+            return (
+                <Wrapper>
+                    <Render error={error}>{renderError}</Render>
+                </Wrapper>
+            );
         case 'success':
             if (isEmpty(data)) {
-                return renderNoResult;
+                return <Wrapper>{renderNoResult}</Wrapper>;
             }
-            return typeof renderResult === 'function'
-                ? renderResult({ data: data! })
-                : renderResult;
+
+            return <Render data={data!}>{renderResult}</Render>;
         default:
             throw new Error(`Unhandled status: ${status}`);
     }
 }
+
+QueryState.Error = QueryStateError;
+QueryState.Loading = QueryStateLoading;
+QueryState.NoResult = QueryStateNoResult;

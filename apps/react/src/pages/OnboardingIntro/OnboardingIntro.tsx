@@ -1,16 +1,18 @@
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
-import { Button, Container, Heading } from '@minvws/mgo-react-ui';
+import { Button, Container, Heading, Illustration } from '@minvws/mgo-react-ui';
 import { Link } from '$/routing';
-import IntroSvg from './intro.svg?react';
 
 export function OnboardingIntro() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
-            <Container className="py-16" centeredContent>
-                <IntroSvg />
+            <Container className="mb-8 mt-16 md:mb-16" centeredContent>
+                <Illustration
+                    illustration="woman-with-phone"
+                    className="mx-auto max-h-[160px] w-full md:max-h-[280px]"
+                />
             </Container>
 
             <Container className="max-w-md">

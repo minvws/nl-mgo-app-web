@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react';
 import { ButtonCard, Heading, IconButton, cn } from '@minvws/mgo-react-ui';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useState, type HTMLAttributes, useEffect } from 'react';
-import { useBlocker } from 'react-router';
+import { useBlocker } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
 

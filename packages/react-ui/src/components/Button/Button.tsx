@@ -21,7 +21,7 @@ const typeColors: Record<Variant, string> = {
     solid: tw`${disabledStyles} bg-sky-blue-600 hover:bg-dark-blue-700 text-white`,
     light: tw`${disabledStyles} text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500`,
     outline: tw`${disabledStyles} border border-gray-200 bg-white text-black hover:bg-gray-50 dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700 `,
-    ghost: tw`text-dark-blue-700 hover:text-dark-blue-400`,
+    ghost: tw`text-dark-blue-700 hover:text-dark-blue-400 dark:text-light-blue-500 hover:dark:text-light-blue-200`,
 };
 
 export const Button = ({

@@ -14,7 +14,7 @@ vi.mock('$/routing', () => ({
 
 test('test add to store', async () => {
     const user = userEvent.setup();
-    setupWithAppProviders(<SearchResults results={[healthcareOrganizationDTO()]} />);
+    setupWithAppProviders(<SearchResults searchResults={[healthcareOrganizationDTO()]} />);
 
     let state = useHealthcareOrganizationsStore.getState();
     expect(state.healthcareOrganizations.length).toBe(0);
@@ -36,7 +36,7 @@ test('test navigate do not add to store', async () => {
 
     setupWithAppProviders(
         <SearchResults
-            results={useHealthcareOrganizationsStore.getState().healthcareOrganizations}
+            searchResults={useHealthcareOrganizationsStore.getState().healthcareOrganizations}
         />
     );
 
@@ -60,7 +60,7 @@ test('Test pagination', async () => {
     }
 
     const user = userEvent.setup();
-    setupWithAppProviders(<SearchResults results={data} />);
+    setupWithAppProviders(<SearchResults searchResults={data} />);
 
     expect(await screen.getAllByRole('listitem').length).toBe(15);
 

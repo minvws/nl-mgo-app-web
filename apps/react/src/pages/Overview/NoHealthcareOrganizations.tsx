@@ -1,7 +1,6 @@
-import { Trans } from '@lingui/macro';
-import { Button } from '@minvws/mgo-react-ui';
-import NoResultsSvg from './no-results.svg?react';
 import { Link } from '$/routing';
+import { Trans } from '@lingui/macro';
+import { Button, Illustration } from '@minvws/mgo-react-ui';
 
 export const NoHealthcareOrganizations = () => {
     return (
@@ -12,10 +11,13 @@ export const NoHealthcareOrganizations = () => {
                 </Trans>
             </p>
             <Button asChild className="mb-6 self-start md:mb-12">
-                <Link to={'/zorgaanbieder-toevoegen'}>/Zorgaanbieder toevoegen</Link>
+                <Link to={'/zorgaanbieder-toevoegen'}>Zorgaanbieder toevoegen</Link>
             </Button>
             <div className="flex flex-grow flex-col items-center">
-                <NoResultsSvg className="max-w-full" />
+                <Illustration
+                    illustration="woman-on-couch"
+                    className="mx-auto w-full max-w-[230px] md:max-w-[438px]"
+                />
             </div>
         </>
     );

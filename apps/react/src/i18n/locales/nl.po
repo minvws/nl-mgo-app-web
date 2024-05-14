@@ -49,25 +49,21 @@ msgstr "Deze zorgaanbieder heb je al toegevoegd"
 msgid "add-healthcare-provider.load_more"
 msgstr "Meer zorgverleners laden"
 
-#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
 msgid "add-healthcare-provider.no-results.title"
-msgstr "Geen zorgverleners gevonden."
+msgstr "Geen zorgaanbieders gevonden"
 
-#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
 msgid "add-healthcare-provider.no-results.usp.1"
 msgstr "Controleer de spelling."
 
-#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
 msgid "add-healthcare-provider.no-results.usp.2"
 msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgverlener hoe je hun naam schrijft."
 
-#: src/pages/AddHealthcareOrganization/NoSearchResults.tsx
+#: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
 msgid "add-healthcare-provider.no-results.usp.3"
 msgstr "Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
-
-#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
-msgid "add-healthcare-provider.search_text"
-msgstr "Zorgverleners aan het zoeken..."
 
 #: src/components/MobileMenu/MobileMenu.tsx
 msgid "common.close"
@@ -103,6 +99,26 @@ msgstr "(verplicht)"
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "common.search"
 msgstr "Zoeken"
+
+#: src/components/QueryState/QueryStateError.tsx
+msgid "default.state.error.description"
+msgstr "Onze excuses, er lijkt een probleem te zijn met de verbinding met onze server. We werken eraan om het op te lossen. Probeer het later opnieuw."
+
+#: src/components/QueryState/QueryStateError.tsx
+msgid "default.state.error.title"
+msgstr "Er ging iets mis"
+
+#: src/components/QueryState/QueryStateLoading.tsx
+msgid "default.state.loading.description"
+msgstr "Bezig met laden..."
+
+#: src/components/QueryState/QueryStateNoResult.tsx
+msgid "default.state.no_results.description"
+msgstr "We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgverlener voor meer informatie."
+
+#: src/components/QueryState/QueryStateNoResult.tsx
+msgid "default.state.no_results.title"
+msgstr "Geen gegevens gevonden"
 
 #: src/components/DesktopHeader/DesktopHeader.tsx
 msgid "desktop-header.heading"

@@ -1,18 +1,24 @@
 @media (prefers-color-scheme: dark) {
     .docs-story,
-    .storybook-root {
+    body {
         background: #050505;
     }
 }
 
 @media (prefers-color-scheme: light) {
     .docs-story,
-    .storybook-root {
+    body {
         background: #fafafa;
     }
 }
 
-.sbdocs p {
+html,
+body,
+#storybook-root {
+    height: 100%;
+}
+
+.sbdocs > p {
     font-size: 1rem !important;
 }
 

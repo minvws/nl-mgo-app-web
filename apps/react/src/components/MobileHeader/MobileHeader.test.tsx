@@ -1,10 +1,12 @@
 import { Outlet } from '$/routing';
-import { setupWithAppProviders } from '$test/helpers';
+import { setup, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
 import { flushCallStack } from '$test/flushCallstack';
+import { createMemoryRouter } from 'react-router-dom';
+import { App } from '$/App';
 
 test('render MobileHeader', () => {
     setupWithAppProviders(<MobileHeader />);
@@ -43,7 +45,7 @@ test('check if menu dialog closes on close', async () => {
 
 test('check if menu dialog closes on navigation', async () => {
     const user = userEvent.setup();
-    setupWithAppProviders([
+    const routes = [
         {
             path: '/',
             element: (
@@ -59,7 +61,10 @@ test('check if menu dialog closes on navigation', async () => {
                 },
             ],
         },
-    ]);
+    ];
+
+    const router = createMemoryRouter(routes);
+    setup(<App router={router} />);
 
     const menuButton = screen.getByRole('button', {
         name: 'Menu',

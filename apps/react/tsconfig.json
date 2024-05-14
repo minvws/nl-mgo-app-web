@@ -20,7 +20,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
 
-        "types": ["vitest-dom/extend-expect"],
+        "types": ["vitest-dom/extend-expect", "vite/client", "vite-plugin-svgr/client"],
 
         "paths": {
             "$/*": ["./src/*"],

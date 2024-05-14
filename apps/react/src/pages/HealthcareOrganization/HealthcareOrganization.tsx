@@ -2,7 +2,7 @@ import { useNavFocusRef } from '$/hooks';
 import { Link, useParams } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans, msg } from '@lingui/macro';
-import { ButtonCard, Heading, Stack } from '@minvws/mgo-react-ui';
+import { ButtonCard, Heading, Stack, Text } from '@minvws/mgo-react-ui';
 import { NotFound } from './NotFound';
 import { useLingui } from '@lingui/react';
 
@@ -26,11 +26,11 @@ export function HealthcareOrganization() {
                 <h1 ref={navFocusRef}>{display_name}</h1>
             </Heading>
 
-            <Heading asChild size="md" className="mb-8">
+            <Text asChild size="lg" className="mb-8">
                 <h2>
                     <Trans id="common.hospital">Ziekenhuis</Trans>
                 </h2>
-            </Heading>
+            </Text>
 
             <Stack asChild className="mb-6 gap-2 md:mb-12">
                 <ul>

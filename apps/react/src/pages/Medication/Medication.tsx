@@ -4,9 +4,9 @@ import { getResources } from '$/fhir/client';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { getBundleResources } from '@minvws/mgo-fhir-data';
-import { Container, Heading } from '@minvws/mgo-react-ui';
+import { Container, Heading, Text } from '@minvws/mgo-react-ui';
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { MedicationStatements } from './MedicationStatements';
 
 export function Medication() {
@@ -36,19 +36,25 @@ export function Medication() {
         <Container>
             <BackButton to=".." relative="path" />
 
-            <Heading asChild size="lg" className="mb-8">
+            <Heading asChild size="lg" className="mb-4">
                 <h1 ref={navFocusRef}>
                     <Trans id="medicine.title">Medicijnen</Trans>
                 </h1>
             </Heading>
-            <Trans id="medicine.description">
-                Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder.
-            </Trans>
 
-            <QueryState
-                {...query}
-                renderResult={({ data }) => <MedicationStatements statements={data} />}
-            />
+            <Text size="lg">
+                <Trans id="medicine.description">
+                    Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder.
+                </Trans>
+            </Text>
+
+            <div className="py-10">
+                <QueryState
+                    {...query}
+                    useCardWrapper
+                    renderResult={({ data }) => <MedicationStatements statements={data} />}
+                />
+            </div>
         </Container>
     );
 }
