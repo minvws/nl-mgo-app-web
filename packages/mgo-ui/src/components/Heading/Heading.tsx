@@ -9,8 +9,8 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement>, CompositionPr
 }
 
 const HeadingSizes: Record<Size, string> = {
-    md: tw`text-md md:text-xl lg:text-2xl`,
-    lg: tw`text-xl  md:text-3xl lg:text-4xl `,
+    md: tw`text-xl md:text-2xl`,
+    lg: tw`text-2xl  md:text-3xl lg:text-4xl `,
 };
 
 export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingProps) => {
@@ -19,8 +19,8 @@ export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingPro
     return (
         <Comp
             className={twMerge(
-                'font-sans font-bold leading-tight text-black dark:text-white',
                 HeadingSizes[size],
+                'font-sans font-bold leading-tight text-black dark:text-white',
                 className
             )}
             {...rest}

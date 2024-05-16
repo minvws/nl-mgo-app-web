@@ -70,14 +70,10 @@ msgid "common.close"
 msgstr "Sluiten"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "common.dossier"
-msgstr "Dossier"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "common.hospital"
 msgstr "Ziekenhuis"
 
-#: src/pages/Overview/Overview.tsx
+#: src/components/DesktopHeader/DesktopHeader.tsx
 msgid "common.logout"
 msgstr "Uitloggen"
 
@@ -159,22 +155,6 @@ msgstr "Veelgestelde vragen"
 #: src/components/Footer/Footer.tsx
 msgid "footer.service.title"
 msgstr "Service"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.contact.description"
-msgstr "Bekijk de contactmogelijkheden en plan een route naar je huisarts"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.contact.title"
-msgstr "Contact en route"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.delete.description"
-msgstr "De zorggegevens van {display_name} niet meer tonen"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.delete.title"
-msgstr "Verwijder uit overzicht"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.diagnosis.description"

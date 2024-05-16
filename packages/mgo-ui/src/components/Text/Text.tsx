@@ -10,7 +10,7 @@ export interface TextProps extends HTMLAttributes<HTMLElement>, CompositionProps
 
 const TextSizes: Record<Size, string> = {
     md: tw`md:text-md text-sm`,
-    lg: tw`text-lg text-gray-700 md:text-xl dark:text-gray-200`,
+    lg: tw`text-lg text-gray-600 md:text-xl dark:text-gray-200`,
 };
 
 export const Text = ({ asChild, size = 'md', className, ...rest }: TextProps) => {

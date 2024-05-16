@@ -25,7 +25,7 @@ test('renders with with label and date', async () => {
     render(
         <Record>
             <Record.Label data-testid="label">{label}</Record.Label>
-            <Record.Date data-testid="date" value={date} />
+            <Record.Description data-testid="date">{date}</Record.Description>
         </Record>
     );
 

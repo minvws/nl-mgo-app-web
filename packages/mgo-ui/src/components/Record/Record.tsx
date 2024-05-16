@@ -1,9 +1,8 @@
 import { type HTMLAttributes } from 'react';
-import { RecordLabel } from './RecordLabel';
-import { RecordDescription } from './RecordDescription';
-import { RecordDate } from './RecordDate';
-import { Stack } from '../Stack/Stack';
 import { twMerge } from 'tailwind-merge';
+import { Stack } from '../Stack/Stack';
+import { RecordDescription } from './RecordDescription';
+import { RecordLabel } from './RecordLabel';
 
 export interface RecordProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -17,4 +16,3 @@ export const Record = ({ children, className, ...rest }: RecordProps) => {
 
 Record.Label = RecordLabel;
 Record.Description = RecordDescription;
-Record.Date = RecordDate;

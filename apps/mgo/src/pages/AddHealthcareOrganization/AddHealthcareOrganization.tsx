@@ -32,8 +32,8 @@ export function AddHealthcareOrganization() {
                 <BackButton />
             </Container>
 
-            <Container className="max-w-md">
-                <Heading asChild size="lg" className="mb-6">
+            <Container className="mb-4 max-w-md">
+                <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
                         <Trans id="add-healthcare-provider.heading">
                             Voeg een zorgverlener toe
@@ -43,7 +43,7 @@ export function AddHealthcareOrganization() {
                 <SearchForm onSubmit={setSearchQuery} />
             </Container>
 
-            <Container className="flex max-w-md flex-grow py-4">
+            <Container className="flex max-w-md flex-grow pb-12 md:pb-16 lg:pb-24">
                 <QueryState
                     {...query}
                     useFetchStatus
@@ -52,6 +52,7 @@ export function AddHealthcareOrganization() {
                     }
                     renderNoResult={
                         <QueryState.NoResult
+                            illustration="woman-on-couch-exclamation"
                             title={_(
                                 msg({
                                     id: 'add-healthcare-provider.no-results.title',

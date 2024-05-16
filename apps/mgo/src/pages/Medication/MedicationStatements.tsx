@@ -31,9 +31,9 @@ export function MedicationStatements({ statements }: MedicationStatementsProps) 
                                         <Record.Label>
                                             <Trans id="medicine.start-date">Startdatum</Trans>
                                         </Record.Label>
-                                        <Record.Date
-                                            value={statement?.effectivePeriod?.start || ''}
-                                        />
+                                        <Record.Description>
+                                            {statement?.effectivePeriod?.start || ''}
+                                        </Record.Description>
                                     </Record>
                                 </Stack>
                             </Accordion.Panel>

@@ -26,8 +26,10 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
         <>
             <div className="flex min-h-screen flex-col">
                 <ScrollRestoration />
-                <LogoBanner className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-black'} />
-                {!hideMenu && <Header />}
+                <LogoBanner className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'} />
+                {!hideMenu && (
+                    <Header className="border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-700 dark:bg-gray-900" />
+                )}
                 <Container
                     className={cn(
                         'flex flex-grow bg-[#FAFAFA] dark:bg-[#050505]',

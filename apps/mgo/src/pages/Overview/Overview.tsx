@@ -1,5 +1,4 @@
 import { useNavFocusRef } from '$/hooks';
-import { useAuth } from '$/lib/auth';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans } from '@lingui/macro';
 import { Heading } from '@minvws/mgo-mgo-ui';
@@ -7,7 +6,6 @@ import { HealthcareOrganizations } from './HealthcareOrganizations';
 import { NoHealthcareOrganizations } from './NoHealthcareOrganizations';
 
 export function Overview() {
-    const auth = useAuth();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     const { healthcareOrganizations } = useHealthcareOrganizationsStore();
@@ -24,13 +22,6 @@ export function Overview() {
             ) : (
                 <NoHealthcareOrganizations />
             )}
-
-            <button
-                onClick={() => void auth.removeUser()}
-                className="mb-8 self-start text-lg font-bold"
-            >
-                <Trans id="common.logout">Uitloggen</Trans>
-            </button>
         </>
     );
 }

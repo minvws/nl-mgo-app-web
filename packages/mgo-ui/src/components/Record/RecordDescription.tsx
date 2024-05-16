@@ -1,18 +1,7 @@
-import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { Text, type TextProps } from '../Text/Text';
 
-export interface RecordDescriptionProps extends HTMLAttributes<HTMLDivElement> {}
+export interface RecordDescriptionProps extends TextProps {}
 
-export const RecordDescription = ({ children, className, ...rest }: RecordDescriptionProps) => {
-    return (
-        <div
-            {...rest}
-            className={twMerge(
-                'sm:text-md font-sans text-sm font-normal text-black dark:text-white',
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
+export const RecordDescription = ({ children, ...rest }: RecordDescriptionProps) => {
+    return <Text {...rest}>{children}</Text>;
 };

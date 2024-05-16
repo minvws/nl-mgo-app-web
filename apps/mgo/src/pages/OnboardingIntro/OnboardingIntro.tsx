@@ -2,33 +2,34 @@ import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { Link } from '$/routing';
+import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
 
 export function OnboardingIntro() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
-            <Container className="mb-8 mt-16 md:mb-16" centeredContent>
+            <Container className="mb-8 mt-12 md:mb-16 md:mt-16 lg:mt-24" centeredContent>
                 <Illustration
                     illustration="woman-with-phone"
                     className="mx-auto max-h-[160px] w-full md:max-h-[280px]"
                 />
             </Container>
 
-            <Container className="max-w-md">
-                <Heading asChild size="lg" className="mb-6">
+            <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">
+                <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
                         <Trans id="onboarding.intro.heading">
                             Je gezond&shy;heids&shy;gegevens in één overzicht
                         </Trans>
                     </h1>
                 </Heading>
-                <p className="text-md mb-12">
+                <Text className="mb-6 md:mb-12">
                     <Trans id="onboarding.intro.description">
                         Alle informatie die je huisarts, ziekenhuis en andere zorg&shy;verleners
                         over jou hebben. Op één plek. Veilig en overzichtelijk.
                     </Trans>
-                </p>
+                </Text>
                 <Button asChild>
                     <Link to="/hoe-werkt-het">
                         <Trans id="common.next">Volgende</Trans>

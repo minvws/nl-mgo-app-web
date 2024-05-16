@@ -42,13 +42,13 @@ export function Medication() {
                 </h1>
             </Heading>
 
-            <Text size="lg">
+            <Text size="lg" className="text-sm">
                 <Trans id="medicine.description">
                     Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder.
                 </Trans>
             </Text>
 
-            <div className="py-10">
+            <div className="py-6 md:py-10">
                 <QueryState
                     {...query}
                     useCardWrapper

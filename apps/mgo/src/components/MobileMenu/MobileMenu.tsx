@@ -30,6 +30,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
             <MenuButton asChild>
                 <Dialog.Trigger />
             </MenuButton>
+
             <Dialog.Portal>
                 <Dialog.Content
                     onCloseAutoFocus={(e) => e.preventDefault()}

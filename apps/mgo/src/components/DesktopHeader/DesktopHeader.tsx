@@ -1,3 +1,4 @@
+import { useAuth } from '$/lib/auth';
 import { Trans } from '@lingui/macro';
 import { Button, Container, cn } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
@@ -5,25 +6,17 @@ import { type HTMLAttributes } from 'react';
 export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
 
 export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
+    const auth = useAuth();
+
     return (
-        <header
-            className={cn(
-                'border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-900 dark:bg-black',
-                className
-            )}
-            {...rest}
-        >
+        <header className={cn(className)} {...rest}>
             <Container className="flex items-center justify-between py-4">
-                <h2 className="text-xl font-normal leading-tight text-black">
+                <h2 className="text-xl font-normal leading-tight text-black dark:text-white">
                     <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
-                <Button
-                    className="text-black dark:text-white"
-                    leftIcon="person"
-                    rightIcon="expand-more"
-                    variant="ghost"
-                >
-                    Wendy de Bruijn
+
+                <Button onClick={() => void auth.removeUser()} variant="ghost">
+                    <Trans id="common.logout">Uitloggen</Trans>
                 </Button>
             </Container>
         </header>

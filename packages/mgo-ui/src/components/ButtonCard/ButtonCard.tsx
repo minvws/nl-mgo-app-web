@@ -11,6 +11,7 @@ import { type IconName } from '../Icon/icons';
 import { twMerge } from 'tailwind-merge';
 import { Stack } from '../Stack/Stack';
 import { Slottable } from '@radix-ui/react-slot';
+import { Text } from '../Text/Text';
 
 export type ButtonCardProps = HTMLAttributes<HTMLElement> &
     CompositionPropsWithoutChildren &
@@ -41,7 +42,7 @@ export const ButtonCard = ({
     return (
         <Comp
             className={twMerge(
-                'flex w-full border-b border-gray-100 bg-white py-4 pl-4 pr-2 text-left aria-[current=page]:bg-gray-50 dark:border-gray-500 dark:bg-gray-900',
+                'flex w-full border-b border-gray-100 bg-white py-4 pl-4 pr-2 text-left hover:bg-gray-50 aria-[current=page]:bg-gray-50 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700',
                 isLoading && 'cursor-progress',
                 className
             )}
@@ -62,9 +63,7 @@ export const ButtonCard = ({
                         {title}
                     </span>
                     {description && (
-                        <p className="text-lg font-normal text-gray-600 dark:text-gray-400">
-                            {description}
-                        </p>
+                        <Text className="text-gray-600 dark:text-gray-400">{description}</Text>
                     )}
                 </Stack>
             </SkeletonText>

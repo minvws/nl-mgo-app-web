@@ -5,6 +5,7 @@ import { Trans, msg } from '@lingui/macro';
 import { ButtonCard, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
 import { NotFound } from './NotFound';
 import { useLingui } from '@lingui/react';
+import { BackButton } from '$/components/BackButton/BackButton';
 
 export function HealthcareOrganization() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
@@ -22,7 +23,11 @@ export function HealthcareOrganization() {
 
     return (
         <section className="flex-grow">
-            <Heading asChild size="lg" className="mb-8">
+            <div>
+                <BackButton />
+            </div>
+
+            <Heading asChild size="lg" className="mb-2 md:mb-4">
                 <h1 ref={navFocusRef}>{display_name}</h1>
             </Heading>
 
@@ -31,58 +36,6 @@ export function HealthcareOrganization() {
                     <Trans id="common.hospital">Ziekenhuis</Trans>
                 </h2>
             </Text>
-
-            <Stack asChild className="mb-6 gap-2 md:mb-12">
-                <ul>
-                    <li>
-                        <ButtonCard
-                            asChild
-                            icon="call"
-                            title={_(
-                                msg({
-                                    id: 'healthcare-provider.contact.title',
-                                    message: 'Contact en route',
-                                })
-                            )}
-                            description={_(
-                                msg({
-                                    id: 'healthcare-provider.contact.description',
-                                    message:
-                                        'Bekijk de contactmogelijkheden en plan een route naar je huisarts',
-                                })
-                            )}
-                        >
-                            <Link to="#contact" />
-                        </ButtonCard>
-                    </li>
-                    <li>
-                        <ButtonCard
-                            asChild
-                            icon="delete"
-                            title={_(
-                                msg({
-                                    id: 'healthcare-provider.delete.title',
-                                    message: 'Verwijder uit overzicht',
-                                })
-                            )}
-                            description={_(
-                                msg({
-                                    id: 'healthcare-provider.delete.description',
-                                    message: `De zorggegevens van ${display_name} niet meer tonen`,
-                                })
-                            )}
-                        >
-                            <Link to="#delete" />
-                        </ButtonCard>
-                    </li>
-                </ul>
-            </Stack>
-
-            <Heading asChild size="md" className="mb-8">
-                <h2>
-                    <Trans id="common.dossier">Dossier</Trans>
-                </h2>
-            </Heading>
 
             <Stack asChild className="mb-6 gap-2 md:mb-12">
                 <ul>

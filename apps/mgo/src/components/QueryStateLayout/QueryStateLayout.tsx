@@ -8,7 +8,7 @@ export interface QueryStateLayoutProps extends HTMLAttributes<HTMLElement> {
 
 export function QueryStateLayout({ illustration, title, children }: QueryStateLayoutProps) {
     return (
-        <div className="mx-auto max-w-xs py-4 md:py-8 lg:py-10">
+        <div className="mx-auto max-w-xs py-6 md:py-8 lg:py-10">
             {illustration && (
                 <Illustration
                     illustration={illustration}

@@ -3,16 +3,21 @@ import { type HTMLAttributes } from 'react';
 import { QueryStateLayout, type QueryStateLayoutProps } from '../QueryStateLayout/QueryStateLayout';
 import { useLingui } from '@lingui/react';
 
-export interface QueryStateNoResultProps extends HTMLAttributes<HTMLElement> {
-    title?: QueryStateLayoutProps['title'];
-}
+export interface QueryStateNoResultProps
+    extends HTMLAttributes<HTMLElement>,
+        QueryStateLayoutProps {}
 
-export function QueryStateNoResult({ title, children, ...rest }: QueryStateNoResultProps) {
+export function QueryStateNoResult({
+    title,
+    children,
+    illustration = 'woman-on-couch',
+    ...rest
+}: QueryStateNoResultProps) {
     const { _ } = useLingui();
 
     return (
         <QueryStateLayout
-            illustration="woman-on-couch"
+            illustration={illustration}
             title={
                 title ||
                 _(

@@ -7,13 +7,7 @@ export interface MobileHeaderProps extends HTMLAttributes<HTMLElement> {}
 
 export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
     return (
-        <header
-            className={cn(
-                'border-b-solid sticky top-0 h-16 w-full border-b border-b-gray-50 bg-white shadow-sm dark:bg-[#050505]',
-                className
-            )}
-            {...rest}
-        >
+        <header className={cn('sticky top-0 h-16 w-full', className)} {...rest}>
             <Container className="flex h-full items-center justify-between">
                 <MobileMenu />
                 <h2 className="text-xs font-bold leading-none">

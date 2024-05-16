@@ -12,7 +12,7 @@ export const AccordionPanel = ({ ...rest }: AccordionPanelProps) => {
             id={panelId}
             aria-labelledby={buttonId}
             expanded={expanded}
-            className="pt-6"
+            className="pt-4"
             role="region"
             {...rest}
         />
