@@ -2,7 +2,7 @@ import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { ButtonCard, Heading, IconButton, cn, useOpenState } from '@minvws/mgo-mgo-ui';
 import * as Dialog from '@radix-ui/react-dialog';
-import { type HTMLAttributes, useEffect } from 'react';
+import { type HTMLAttributes, useEffect, useCallback, useRef } from 'react';
 import { useBlocker } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
@@ -12,13 +12,26 @@ export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
 export function MobileMenu({ className, ...rest }: MobileMenuProps) {
     const { _ } = useLingui();
     const { isOpen, setIsOpen, close } = useOpenState();
-
+    const navigating = useRef(false);
     const blocker = useBlocker(
         ({ currentLocation, nextLocation }) => currentLocation !== nextLocation
     );
 
+    const handleCloseAutoFocus = useCallback((event: Event) => {
+        if (navigating.current) {
+            event.preventDefault();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (isOpen) {
+            navigating.current = false;
+        }
+    }, [isOpen]);
+
     useEffect(() => {
         if (blocker.state === 'blocked') {
+            navigating.current = true;
             close();
             blocker.proceed();
         }
@@ -33,7 +46,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
 
             <Dialog.Portal>
                 <Dialog.Content
-                    onCloseAutoFocus={(e) => e.preventDefault()}
+                    onCloseAutoFocus={handleCloseAutoFocus}
                     className={cn(
                         'fixed left-0 top-0 z-50 flex h-screen w-screen flex-col bg-white dark:bg-[#050505]',
                         className

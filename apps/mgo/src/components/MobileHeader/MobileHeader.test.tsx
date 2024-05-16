@@ -1,6 +1,7 @@
 import { Outlet } from '$/routing';
 import { setup, setupWithAppProviders } from '$test/helpers';
-import { screen, within } from '@testing-library/react';
+import { useNavFocusRef } from '$/hooks';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
@@ -13,7 +14,7 @@ test('render MobileHeader', () => {
     expect(screen.getAllByRole('button').at(0)).toHaveTextContent('Menu');
 });
 
-test('check if menu dialog opens', async () => {
+test('menu button opens menu dialog', async () => {
     const user = userEvent.setup();
     setupWithAppProviders(<MobileHeader />);
 
@@ -27,7 +28,7 @@ test('check if menu dialog opens', async () => {
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
 });
 
-test('check if menu dialog closes on close', async () => {
+test('close button closes menu dialog', async () => {
     const user = userEvent.setup();
     setupWithAppProviders(<MobileHeader />);
 
@@ -37,14 +38,23 @@ test('check if menu dialog closes on close', async () => {
     await user.click(menuButton);
 
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
-    const closeButton = within(screen.getByRole('dialog')).getByRole('button');
+
+    const closeButton = screen.getByRole('button', { name: 'Sluiten' });
+
+    expect(closeButton).toHaveFocus();
+
     await user.click(closeButton);
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(menuButton).toHaveFocus();
 });
 
-test('check if menu dialog closes on navigation', async () => {
+test('navigating closes menu dialog', async () => {
     const user = userEvent.setup();
+    const Page = () => {
+        const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+        return <h1 ref={navFocusRef}>Overzicht</h1>;
+    };
     const routes = [
         {
             path: '/',
@@ -57,7 +67,7 @@ test('check if menu dialog closes on navigation', async () => {
             children: [
                 {
                     path: '/overzicht',
-                    element: <h1>Overzicht</h1>,
+                    element: <Page />,
                 },
             ],
         },
@@ -66,18 +76,14 @@ test('check if menu dialog closes on navigation', async () => {
     const router = createMemoryRouter(routes);
     setup(<App router={router} />);
 
-    const menuButton = screen.getByRole('button', {
-        name: 'Menu',
-    });
+    const menuButton = screen.getByRole('button', { name: 'Menu' });
     await user.click(menuButton);
 
-    const overzichtLink = within(screen.getByRole('dialog')).getByRole('link', {
-        name: /Overzicht/,
-    });
-
+    const overzichtLink = screen.getByRole('link', { name: /Overzicht/ });
     await user.click(overzichtLink);
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     await flushCallStack();
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Overzicht');
+    const heading = screen.getByRole('heading', { level: 1, name: /Overzicht/ });
+    expect(heading).toHaveFocus();
 });
