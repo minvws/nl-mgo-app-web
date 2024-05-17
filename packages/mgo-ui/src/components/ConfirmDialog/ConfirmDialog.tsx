@@ -2,12 +2,16 @@ import { type UIEvent } from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { Button } from '../Button/Button';
 import { cn } from '../../utils';
+import { IconButton } from '../IconButton/IconButton';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
 
 export interface ConfirmDialogProps extends AlertDialog.AlertDialogProps {
     title: string;
     description: string;
     confirmButtonText: string;
     cancelButtonText: string;
+    closeButtonAriaLabel: string;
     onConfirm: (event: UIEvent) => void;
 }
 
@@ -21,6 +25,7 @@ export const ConfirmDialog = ({
     description,
     confirmButtonText,
     cancelButtonText,
+    closeButtonAriaLabel,
     onConfirm,
     onOpenChange,
     children,
@@ -40,11 +45,18 @@ export const ConfirmDialog = ({
                         'fixed left-1/2 top-1/2 z-50 flex w-[432px] -translate-x-1/2 -translate-y-1/2 flex-col gap-6 rounded-lg bg-white p-6 shadow-sm dark:bg-gray-900'
                     )}
                 >
-                    <AlertDialog.Title asChild>
-                        <h1 className="text-2xl font-bold leading-tight">{title}</h1>
-                    </AlertDialog.Title>
-                    <AlertDialog.Description className="text-md">
-                        {description}
+                    <div className="flex items-start justify-between">
+                        <AlertDialog.Title asChild>
+                            <Heading asChild>
+                                <h1>{title}</h1>
+                            </Heading>
+                        </AlertDialog.Title>
+                        <AlertDialog.Cancel asChild>
+                            <IconButton icon="close" aria-label={closeButtonAriaLabel} rounded />
+                        </AlertDialog.Cancel>
+                    </div>
+                    <AlertDialog.Description asChild>
+                        <Text>{description}</Text>
                     </AlertDialog.Description>
                     <div className="flex gap-6">
                         <AlertDialog.Action asChild>

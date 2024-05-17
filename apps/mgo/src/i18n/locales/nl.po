@@ -66,6 +66,7 @@ msgid "add-healthcare-provider.no-results.usp.3"
 msgstr "Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
 
 #: src/components/MobileMenu/MobileMenu.tsx
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
 msgid "common.close"
 msgstr "Sluiten"
 

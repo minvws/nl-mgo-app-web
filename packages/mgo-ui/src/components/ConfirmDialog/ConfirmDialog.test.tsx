@@ -12,6 +12,7 @@ test('renders confirm dialog', async () => {
             description={faker.lorem.sentence()}
             confirmButtonText={faker.word.sample()}
             cancelButtonText={faker.word.sample()}
+            closeButtonAriaLabel={faker.word.sample()}
             onConfirm={() => {}}
         />
     );
@@ -32,6 +33,7 @@ test('onConfirm is triggered', async () => {
             description={faker.lorem.sentence()}
             confirmButtonText={confirmButtonText}
             cancelButtonText={faker.word.sample()}
+            closeButtonAriaLabel={faker.word.sample()}
             onConfirm={onConfirm}
         />
     );

@@ -78,6 +78,7 @@ export function AddHealthcareOrganizationList() {
                             message: 'Nee, toch tonen',
                         })
                     )}
+                    closeButtonAriaLabel={_(msg({ id: 'common.close', message: 'Sluiten' }))}
                     onConfirm={() => removeHealthcareOrganization(selectedSlug)}
                 />
             )}
