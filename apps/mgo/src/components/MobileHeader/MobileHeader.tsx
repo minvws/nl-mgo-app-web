@@ -14,7 +14,7 @@ export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
                     <Trans id="mobile-header.heading">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
                 <button className="group rounded-full p-2 outline-none">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-xs leading-none group-hover:bg-gray-200">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-xs leading-none group-hover:bg-gray-200 group-focus:outline group-focus:outline-4 group-focus:outline-black">
                         WB
                     </span>
                 </button>
