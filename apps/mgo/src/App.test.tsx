@@ -72,7 +72,7 @@ test('redirect from login to overview if authenticated', () => {
     setAuthStateAuthenticated();
     setupApp({ initialEntries: ['/inloggen'] });
 
-    expect(screen.getByRole('heading', { name: 'Voeg een zorgverlener toe' })).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'Voeg een zorgaanbieder toe' })).toBeVisible();
 });
 
 test('redirect to login from protected route', () => {

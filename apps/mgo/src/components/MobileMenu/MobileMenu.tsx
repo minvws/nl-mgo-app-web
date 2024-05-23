@@ -84,7 +84,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                     msg({
                                         id: 'menu.overview.description',
                                         message:
-                                            'Je medische gegevens van al je zorgverleners in één overzicht',
+                                            'Je medische gegevens van je zorgaanbieders op één plek',
                                     })
                                 )}
                                 icon="home"

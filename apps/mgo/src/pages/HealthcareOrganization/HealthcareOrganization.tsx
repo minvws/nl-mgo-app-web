@@ -52,8 +52,7 @@ export function HealthcareOrganization() {
                             description={_(
                                 msg({
                                     id: 'healthcare-provider.medicine.description',
-                                    message:
-                                        'Medicijnen die je zorgverleners hebben voorgeschreven',
+                                    message: 'Voorgeschreven door je zorgaanbieder',
                                 })
                             )}
                         >
@@ -73,7 +72,7 @@ export function HealthcareOrganization() {
                             description={_(
                                 msg({
                                     id: 'healthcare-provider.diagnosis.description',
-                                    message: `Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners`,
+                                    message: `Vastgesteld door je zorgaanbieder`,
                                 })
                             )}
                         >
@@ -93,7 +92,7 @@ export function HealthcareOrganization() {
                             description={_(
                                 msg({
                                     id: 'healthcare-provider.reports.description',
-                                    message: `Rapporten en verslagen die zijn opgesteld door je zorgverleners`,
+                                    message: `Rapporten en verslagen die zijn opgesteld door je zorgaanbieders`,
                                 })
                             )}
                         >

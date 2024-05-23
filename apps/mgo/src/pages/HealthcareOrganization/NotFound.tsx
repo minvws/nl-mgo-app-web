@@ -10,7 +10,7 @@ export function NotFound() {
             <Heading asChild size="lg" className="mb-8">
                 <h1 ref={navFocusRef}>
                     <Trans id="healthcare-provider.not-found.heading">
-                        Zorgverlener was niet gevonden
+                        Zorgaanbieder was niet gevonden
                     </Trans>
                 </h1>
             </Heading>

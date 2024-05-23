@@ -23,7 +23,7 @@ msgstr "naar overzicht"
 
 #: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
 msgid "add-healthcare-provider.heading"
-msgstr "Voeg een zorgverlener toe"
+msgstr "Voeg een zorgaanbieder toe"
 
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
 msgid "add-healthcare-provider.input.city.label"
@@ -47,7 +47,7 @@ msgstr "Deze zorgaanbieder heb je al toegevoegd"
 
 #: src/pages/AddHealthcareOrganization/SearchResults.tsx
 msgid "add-healthcare-provider.load_more"
-msgstr "Meer zorgverleners laden"
+msgstr "Meer zorgaanbieders laden"
 
 #: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
 msgid "add-healthcare-provider.no-results.title"
@@ -59,11 +59,11 @@ msgstr "Controleer de spelling."
 
 #: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
 msgid "add-healthcare-provider.no-results.usp.2"
-msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgverlener hoe je hun naam schrijft."
+msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgaanbieder hoe je hun naam schrijft."
 
 #: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
 msgid "add-healthcare-provider.no-results.usp.3"
-msgstr "Heeft deze zorgverlener meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
+msgstr "Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
 
 #: src/components/MobileMenu/MobileMenu.tsx
 #: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
@@ -111,7 +111,7 @@ msgstr "Bezig met laden..."
 
 #: src/components/QueryState/QueryStateNoResult.tsx
 msgid "default.state.no_results.description"
-msgstr "We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgverlener voor meer informatie."
+msgstr "We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie."
 
 #: src/components/QueryState/QueryStateNoResult.tsx
 msgid "default.state.no_results.title"
@@ -159,7 +159,7 @@ msgstr "Service"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.diagnosis.description"
-msgstr "Gezondheidsklachten en diagnoses, vastgesteld door je zorgverleners"
+msgstr "Vastgesteld door je zorgaanbieder"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.diagnosis.title"
@@ -167,7 +167,7 @@ msgstr "Klachten en diagnoses"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.medicine.description"
-msgstr "Medicijnen die je zorgverleners hebben voorgeschreven"
+msgstr "Voorgeschreven door je zorgaanbieder"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.medicine.title"
@@ -175,11 +175,11 @@ msgstr "Medicijnen"
 
 #: src/pages/HealthcareOrganization/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
-msgstr "Zorgverlener was niet gevonden"
+msgstr "Zorgaanbieder was niet gevonden"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.reports.description"
-msgstr "Rapporten en verslagen die zijn opgesteld door je zorgverleners"
+msgstr "Rapporten en verslagen die zijn opgesteld door je zorgaanbieders"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.reports.title"
@@ -277,7 +277,7 @@ msgstr "Overzicht"
 
 #: src/components/MobileMenu/MobileMenu.tsx
 msgid "menu.overview.description"
-msgstr "Je medische gegevens van al je zorgverleners in één overzicht"
+msgstr "Je medische gegevens van je zorgaanbieders op één plek"
 
 #: src/components/MobileHeader/MobileHeader.tsx
 msgid "mobile-header.heading"

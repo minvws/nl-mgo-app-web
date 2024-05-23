@@ -25,7 +25,7 @@ test('show loading state', async () => {
     const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
-    expect(screen.getByText('Zorgverleners aan het zoeken...')).toBeVisible();
+    expect(screen.getByText('Zorgaanbieders aan het zoeken...')).toBeVisible();
 });
 
 test('no results found', async () => {

@@ -32,7 +32,7 @@ export function QueryStateNoResult({
             {children || (
                 <Trans id="default.state.no_results.description">
                     We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder.
-                    Klopt dit niet? Vraag het aan je zorgverlener voor meer informatie.
+                    Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie.
                 </Trans>
             )}
         </QueryStateLayout>

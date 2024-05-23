@@ -36,7 +36,7 @@ export function AddHealthcareOrganization() {
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
                         <Trans id="add-healthcare-provider.heading">
-                            Voeg een zorgverlener toe
+                            Voeg een zorgaanbieder toe
                         </Trans>
                     </h1>
                 </Heading>
@@ -48,7 +48,7 @@ export function AddHealthcareOrganization() {
                     {...query}
                     useFetchStatus
                     renderLoading={
-                        <QueryState.Loading>Zorgverleners aan het zoeken...</QueryState.Loading>
+                        <QueryState.Loading>Zorgaanbieders aan het zoeken...</QueryState.Loading>
                     }
                     renderNoResult={
                         <QueryState.NoResult

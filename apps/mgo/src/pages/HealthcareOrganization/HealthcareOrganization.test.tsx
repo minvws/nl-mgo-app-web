@@ -43,6 +43,6 @@ test('healthcare provider shows a message if the provider could not be found', (
     setupWithAppProviders(<HealthcareOrganization />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-        'Zorgverlener was niet gevonden'
+        'Zorgaanbieder was niet gevonden'
     );
 });

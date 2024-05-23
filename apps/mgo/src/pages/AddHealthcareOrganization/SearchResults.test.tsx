@@ -65,7 +65,7 @@ test('Test pagination', async () => {
     expect(await screen.getAllByRole('listitem').length).toBe(15);
 
     const button = await screen.getByRole('button', {
-        name: 'Meer zorgverleners laden',
+        name: 'Meer zorgaanbieders laden',
     });
     expect(button).toBeVisible();
     await user.click(button);
@@ -73,7 +73,7 @@ test('Test pagination', async () => {
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(15);
     expect(
         await screen.queryByRole('button', {
-            name: 'Meer zorgverleners laden',
+            name: 'Meer zorgaanbieders laden',
         })
     ).not.toBeInTheDocument();
 });

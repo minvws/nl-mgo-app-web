@@ -120,7 +120,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                     rightIcon="autorenew"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >
-                    <Trans id="add-healthcare-provider.load_more">Meer zorgverleners laden</Trans>
+                    <Trans id="add-healthcare-provider.load_more">Meer zorgaanbieders laden</Trans>
                 </Button>
             )}
         </Stack>
