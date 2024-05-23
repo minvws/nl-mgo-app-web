@@ -1,5 +1,6 @@
 import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
 import { type HealthcareOrganizationDTO } from '$/types/Organisation';
+import { isEmpty } from 'lodash';
 import { create } from 'zustand';
 
 export interface HealthcareOrganization extends HealthcareOrganizationDTO {
@@ -15,6 +16,7 @@ export interface HealthcareOrganizationsState {
     getHealthcareOrganization: (slug?: string) => HealthcareOrganization | undefined;
     addHealthcareOrganization: (provider: HealthcareOrganizationDTO) => void;
     removeHealthcareOrganization: (slug: string) => void;
+    hasHealthcareOrganizations: () => boolean;
 }
 
 export const useHealthcareOrganizationsStore = create<HealthcareOrganizationsState>()(
@@ -45,6 +47,9 @@ export const useHealthcareOrganizationsStore = create<HealthcareOrganizationsSta
             set(({ healthcareOrganizations }) => ({
                 healthcareOrganizations: healthcareOrganizations.filter((x) => x.slug !== slug),
             }));
+        },
+        hasHealthcareOrganizations: () => {
+            return !isEmpty(get().healthcareOrganizations);
         },
     })
 );

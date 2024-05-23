@@ -1,0 +1,41 @@
+import { QueryStateLayout } from '$/components/QueryStateLayout/QueryStateLayout';
+import { Link } from '$/routing';
+import { Trans, msg } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { Button, Card, Stack } from '@minvws/mgo-mgo-ui';
+
+export function NoHealthcareOrganizations() {
+    const { _ } = useLingui();
+    return (
+        <Stack className="my-6 flex-grow gap-12">
+            <Card className="mt-6">
+                <QueryStateLayout
+                    illustration="woman-on-couch"
+                    title={_(
+                        msg({
+                            id: 'healthcare-provider.no-results.title',
+                            message: `Deze lijst is nog leeg`,
+                        })
+                    )}
+                >
+                    <Trans id="healthcare-provider.no-results.description">
+                        Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu
+                        doen, of later via je profiel.
+                    </Trans>
+                </QueryStateLayout>
+            </Card>
+            <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
+                <Button asChild>
+                    <Link to="/zorgaanbieder-toevoegen">
+                        <Trans id="healthcare-providers.add">Voeg een zorgaanbieder toe</Trans>
+                    </Link>
+                </Button>
+                <Button variant="light" asChild>
+                    <Link to="/overzicht">
+                        <Trans id="healthcare-providers.done">Ga naar het overzicht</Trans>
+                    </Link>
+                </Button>
+            </div>
+        </Stack>
+    );
+}

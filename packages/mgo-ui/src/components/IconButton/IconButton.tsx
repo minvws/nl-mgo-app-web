@@ -3,7 +3,7 @@ import {
     useComposition,
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
-import { type HTMLAttributes } from 'react';
+import { forwardRef, type HTMLAttributes } from 'react';
 import { Slottable } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
 
@@ -14,20 +14,23 @@ export type IconButtonProps = IconProps &
         'aria-label': string;
     };
 
-export const IconButton = ({
-    icon,
-    ['aria-label']: ariaLabel,
-    rounded = false,
-    asChild,
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
+    {
+        icon,
+        ['aria-label']: ariaLabel,
+        rounded = false,
+        asChild,
 
-    children,
-    className,
-    ...rest
-}: IconButtonProps) => {
+        children,
+        className,
+        ...rest
+    },
+    ref
+) {
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp className="group inline-block p-2 outline-none sm:p-0" {...rest}>
+        <Comp ref={ref} className="group inline-block p-2 outline-none sm:p-0" {...rest}>
             <Slottable>{children}</Slottable>
             <span
                 className={twMerge(
@@ -40,4 +43,4 @@ export const IconButton = ({
             </span>
         </Comp>
     );
-};
+});

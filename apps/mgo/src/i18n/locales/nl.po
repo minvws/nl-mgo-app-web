@@ -66,7 +66,7 @@ msgid "add-healthcare-provider.no-results.usp.3"
 msgstr "Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
 
 #: src/components/MobileMenu/MobileMenu.tsx
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "common.close"
 msgstr "Sluiten"
 
@@ -173,6 +173,14 @@ msgstr "Voorgeschreven door je zorgaanbieder"
 msgid "healthcare-provider.medicine.title"
 msgstr "Medicijnen"
 
+#: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
+msgid "healthcare-provider.no-results.description"
+msgstr "Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu doen, of later via je profiel."
+
+#: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
+msgid "healthcare-provider.no-results.title"
+msgstr "Deze lijst is nog leeg"
+
 #: src/pages/HealthcareOrganization/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
 msgstr "Zorgaanbieder was niet gevonden"
@@ -185,37 +193,39 @@ msgstr "Rapporten en verslagen die zijn opgesteld door je zorgaanbieders"
 msgid "healthcare-provider.reports.title"
 msgstr "Verslagen"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
+#: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
 msgid "healthcare-providers.add"
 msgstr "Voeg een zorgaanbieder toe"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.delete"
 msgstr "verwijderen"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.description"
 msgstr "Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.dialog.cancelButton"
 msgstr "Nee, toch tonen"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.dialog.confirmButton"
 msgstr "Ja, weglaten"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.dialog.description"
 msgstr "We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel."
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 msgid "healthcare-providers.dialog.title"
 msgstr "{0} weglaten?"
 
-#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+#: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
+#: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
 msgid "healthcare-providers.done"
-msgstr "Klaar"
+msgstr "Ga naar het overzicht"
 
 #: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
 msgid "healthcare-providers.heading"
