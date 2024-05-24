@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
 import { FHIR_API_URL } from '../../../test/server';
-import { createClient } from '../client';
+import { createClient } from '..';
 import { resourceTypes } from '../fixtures/resourceTypes';
 
 test('getResource returns a resource', async () => {

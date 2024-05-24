@@ -6,10 +6,12 @@ import { Medication } from './Medication';
 import { flushCallStack } from '$test/flushCallstack';
 import fhirMedicationStatements from './fixtures/fhir-medication-statements.json';
 
-vi.mock('$/fhir/client', () => ({
-    getResources: vi.fn(() => ({
-        json: () => Promise.resolve(fhirMedicationStatements),
-    })),
+vi.mock('$/api/bgz', () => ({
+    bgz: {
+        getMedicationUse: vi.fn(() => ({
+            json: () => Promise.resolve(fhirMedicationStatements),
+        })),
+    },
 }));
 
 test('shows medication list', async () => {

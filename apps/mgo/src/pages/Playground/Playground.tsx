@@ -1,4 +1,4 @@
-import { getResource } from '$/fhir/client';
+import { fhir } from '$/api/fhir';
 import { useNavFocusRef } from '$/hooks';
 import { getEmail, getHumanName } from '@minvws/mgo-fhir-data';
 import { Container, Spinner } from '@minvws/mgo-mgo-ui';
@@ -18,10 +18,12 @@ export function Playground() {
     } = useQuery({
         queryKey: ['Patient', patientId],
         queryFn: async () => {
-            return await getResource({
-                resource: 'Patient',
-                id: patientId,
-            }).json();
+            return await fhir
+                .getResource({
+                    resource: 'Patient',
+                    id: patientId,
+                })
+                .json();
         },
     });
 

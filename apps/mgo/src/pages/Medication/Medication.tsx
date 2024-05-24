@@ -1,6 +1,6 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { getResources } from '$/fhir/client';
+import { bgz } from '$/api/bgz';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { getBundleResources } from '@minvws/mgo-fhir-data';
@@ -16,18 +16,7 @@ export function Medication() {
     const query = useQuery({
         queryKey: ['MedicationStatement', healthcareProviderSlug],
         queryFn: async () => {
-            const medicationBundle = await getResources(
-                {
-                    resource: 'MedicationStatement',
-                },
-                {
-                    searchParams: {
-                        category: 'urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3|6',
-                        _include: 'MedicationStatement:medication',
-                    },
-                }
-            ).json();
-
+            const medicationBundle = await bgz.getMedicationUse().json();
             return getBundleResources(medicationBundle);
         },
     });

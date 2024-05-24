@@ -9,9 +9,21 @@ import type {
 import { defaultsSearchParams } from '../../utils/defaultsSearchParams/defaultsSearchParams';
 import { type LosslessJson } from '../json/json';
 
-export interface ResourcesRequest<T extends ResourceType = ResourceType> {
+export interface GenericResourcesRequest<T extends ResourceType = ResourceType> {
     resource: T;
     id?: never;
+    $lastn?: never;
+}
+
+export interface ObservationResourcesRequest
+    extends Omit<GenericResourcesRequest<'Observation'>, '$lastn'> {
+    $lastn: boolean;
+}
+
+export type ResourcesRequest = GenericResourcesRequest | ObservationResourcesRequest;
+
+function isObservationRequest(request: ResourcesRequest): request is ObservationResourcesRequest {
+    return request.resource === 'Observation';
 }
 
 export type ResourcesResponse<
@@ -25,10 +37,16 @@ export function getResources<
     Response = ResourcesResponse<Request['resource']>,
 >(
     instance: KyInstance,
-    { defaultQueryParams }: FhirClientOptions,
-    { resource }: Request,
+    { searchParams }: FhirClientOptions,
+    request: Request,
     options: KyOptions = {}
 ): TypedKyResponse<Response> {
-    options.searchParams = defaultsSearchParams(defaultQueryParams, options.searchParams);
-    return instance.get(resource, options);
+    options.searchParams = defaultsSearchParams(searchParams, options.searchParams);
+    let path: string = request.resource;
+
+    if (isObservationRequest(request) && request.$lastn) {
+        path += '/$lastn';
+    }
+
+    return instance.get(path, options);
 }

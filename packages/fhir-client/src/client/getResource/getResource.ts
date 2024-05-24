@@ -18,10 +18,10 @@ export function getResource<
     Response = ResourceResponse<Request['resource']>,
 >(
     instance: KyInstance,
-    { defaultQueryParams }: FhirClientOptions,
+    { searchParams }: FhirClientOptions,
     { resource, id }: Request,
     options: KyOptions = {}
 ): TypedKyResponse<Response> {
-    options.searchParams = defaultsSearchParams(defaultQueryParams, options.searchParams);
+    options.searchParams = defaultsSearchParams(searchParams, options.searchParams);
     return instance.get(`${resource}/${id}`, options);
 }
