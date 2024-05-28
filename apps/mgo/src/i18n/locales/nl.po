@@ -182,8 +182,16 @@ msgid "healthcare-provider.no-results.title"
 msgstr "Deze lijst is nog leeg"
 
 #: src/pages/HealthcareOrganization/NotFound.tsx
+msgid "healthcare-provider.not-found.button"
+msgstr "Ga naar het overzicht"
+
+#: src/pages/HealthcareOrganization/NotFound.tsx
+msgid "healthcare-provider.not-found.description"
+msgstr "Sorry, we kunnen de zorgaanbieder die je zocht niet vinden. Misschien is deze verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+
+#: src/pages/HealthcareOrganization/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
-msgstr "Zorgaanbieder was niet gevonden"
+msgstr "Zorgaanbieder niet gevonden"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.reports.description"
@@ -302,8 +310,12 @@ msgid "mobile-menu.menu"
 msgstr "Menu"
 
 #: src/pages/NotFound/NotFound.tsx
+msgid "not-found.button"
+msgstr "Ga naar het overzicht"
+
+#: src/pages/NotFound/NotFound.tsx
 msgid "not-found.description"
-msgstr "Veritatis culpa vero eligendi reiciendis numquam natus nisi mollitia beatae maiores aperiam in dignissimos. Eum non neque possimus non minus adipisci quis quo quibusdam consectetur labore impedit maxime praesentium."
+msgstr "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
 
 #: src/pages/NotFound/NotFound.tsx
 msgid "not-found.heading"

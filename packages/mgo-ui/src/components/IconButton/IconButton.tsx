@@ -10,7 +10,6 @@ import { twMerge } from 'tailwind-merge';
 export type IconButtonProps = IconProps &
     CompositionPropsWithoutChildren &
     HTMLAttributes<HTMLElement> & {
-        rounded?: boolean;
         'aria-label': string;
     };
 
@@ -18,7 +17,6 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     {
         icon,
         ['aria-label']: ariaLabel,
-        rounded = false,
         asChild,
 
         children,
@@ -34,8 +32,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
             <Slottable>{children}</Slottable>
             <span
                 className={twMerge(
-                    'flex h-8 w-8 items-center justify-center bg-gray-100 text-gray-500 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-900',
-                    rounded && 'rounded-full',
+                    'flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-900',
                     className
                 )}
             >

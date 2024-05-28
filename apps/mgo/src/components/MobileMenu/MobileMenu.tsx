@@ -69,7 +69,6 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                             asChild
                             icon="close"
                             aria-label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
-                            rounded
                             className="bg-gray-100"
                         >
                             <Dialog.Close />

@@ -52,7 +52,7 @@ export const ConfirmDialog = ({
                             </Heading>
                         </AlertDialog.Title>
                         <AlertDialog.Cancel asChild>
-                            <IconButton icon="close" aria-label={closeButtonAriaLabel} rounded />
+                            <IconButton icon="close" aria-label={closeButtonAriaLabel} />
                         </AlertDialog.Cancel>
                     </div>
                     <AlertDialog.Description asChild>
