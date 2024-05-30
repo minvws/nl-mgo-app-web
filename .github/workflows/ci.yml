@@ -90,7 +90,6 @@ jobs:
           name: coverage
           path: coverage
       - name: Run SonarCloud scanner
-        if: always()
-        uses: SonarSource/sonarcloud-github-action@v2.1.1
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        uses: minvws/nl-irealisatie-generic-pipelines/.github/actions/sonarcloud@main
+        with:
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
