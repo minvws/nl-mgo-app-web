@@ -12,7 +12,7 @@ export function Overview() {
 
     return (
         <>
-            <Heading asChild size="lg" className="mb-2 sm:mb-4 md:mb-6">
+            <Heading asChild size="lg" className="mb-2 md:mb-4">
                 <h1 ref={navFocusRef}>
                     <Trans id="overview.heading">Goedemorgen, Wendy</Trans>
                 </h1>

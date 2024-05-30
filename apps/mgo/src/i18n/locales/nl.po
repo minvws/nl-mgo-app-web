@@ -401,6 +401,11 @@ msgstr "<0>Je kiest zelf</0> hoe je je gegevens wilt gebruiken en of je ze wel o
 msgid "onboarding.proposition.usp.4"
 msgstr "Je kunt de gegevens in je overzicht <0>altijd verwijderen of opnieuw opvragen.</0>"
 
+#: src/pages/Overview/HealthcareOrganizations.tsx
+#: src/pages/Overview/NoHealthcareOrganizations.tsx
+msgid "overview.add"
+msgstr "Voeg een zorgaanbieder toe"
+
 #: src/pages/Overview/Overview.tsx
 msgid "overview.heading"
 msgstr "Goedemorgen, Wendy"

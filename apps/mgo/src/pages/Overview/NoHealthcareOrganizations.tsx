@@ -11,7 +11,9 @@ export const NoHealthcareOrganizations = () => {
                 </Trans>
             </p>
             <Button asChild className="mb-6 self-start md:mb-12">
-                <Link to={'/zorgaanbieder-toevoegen'}>Zorgaanbieder toevoegen</Link>
+                <Link to="/zorgaanbieder-toevoegen">
+                    <Trans id="overview.add">Voeg een zorgaanbieder toe</Trans>
+                </Link>
             </Button>
             <div className="flex flex-grow flex-col items-center">
                 <Illustration
