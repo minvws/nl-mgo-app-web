@@ -6,7 +6,7 @@ type SafeGetObjectResult<T extends object, Config extends GetBulkConfig<T>> = {
     [key in keyof Config]: Config[key] extends SafeGetFunc<T>
         ? ReturnType<Config[key]> | undefined
         : Config[key] extends GetBulkConfig<T>
-          ? SafeGetObjectResult<T, Config[key]>
+          ? SafeGetObjectResult<T, Config[key]> | undefined
           : never;
 };
 
@@ -44,10 +44,23 @@ type MergedWithDefaults<Result, Defaults> = {
 export function safeGetBulk<
     T extends object,
     Config extends GetBulkConfig<T>,
+    Result = SafeGetObjectResult<T, Config>,
+>(object: T | undefined, config: Config): Result;
+export function safeGetBulk<
+    T extends object,
+    Config extends GetBulkConfig<T>,
     DefaultsConfig extends Defaults<Config>,
     Result = SafeGetObjectResult<T, Config>,
     ResultWithDefaults = MergedWithDefaults<Result, DefaultsConfig>,
->(object: T | undefined, config: Config, defaultValues?: DefaultsConfig) {
+>(object: T | undefined, config: Config, defaultValues?: DefaultsConfig): ResultWithDefaults;
+export function safeGetBulk<
+    T extends object,
+    Config extends GetBulkConfig<T>,
+    DefaultsConfig extends Defaults<Config>,
+    Result = SafeGetObjectResult<T, Config>,
+    ResultWithDefaults = MergedWithDefaults<Result, DefaultsConfig>,
+    FinalResult = DefaultsConfig extends undefined ? Result : ResultWithDefaults,
+>(object: T | undefined, config: Config, defaultValues?: DefaultsConfig): FinalResult {
     const result: Partial<Result> = {};
 
     for (const [key, value] of Object.entries(config)) {
@@ -66,5 +79,5 @@ export function safeGetBulk<
         }
     }
 
-    return result as ResultWithDefaults;
+    return result as FinalResult;
 }

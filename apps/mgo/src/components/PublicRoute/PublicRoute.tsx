@@ -23,6 +23,8 @@ export function PublicRoute() {
                 return <Navigate to="/zorgaanbieder-toevoegen" replace />;
             }
             break;
+        default:
+        // do nothing
     }
 
     return <Outlet />;

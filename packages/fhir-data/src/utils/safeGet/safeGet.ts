@@ -1,4 +1,6 @@
-export type SafeGetFunc<T, R = any> = (obj: T) => R; // eslint-disable-line @typescript-eslint/no-explicit-any
+import type { RequiredDeep } from 'type-fest';
+
+export type SafeGetFunc<T, R = any> = (obj: RequiredDeep<T>) => R | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 /**
  * Safely get a value from an object, returning a default value if the value is undefined or the object is undefined.
@@ -23,9 +25,10 @@ export function safeGet<T, R>(
     object: T | undefined,
     getFunction: SafeGetFunc<T, R>,
     defaultValue?: R
-) {
+): R | undefined {
     try {
-        const result: R = getFunction(object!);
+        // const result: R = getFunction(object as RequiredDeep<T>);
+        const result = getFunction(object as RequiredDeep<T>);
         return result === undefined ? defaultValue : result;
     } catch (error) {
         if (error instanceof TypeError) {

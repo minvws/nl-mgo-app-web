@@ -220,6 +220,9 @@ importers:
       '@types/fhir':
         specifier: ^0.0.41
         version: 0.0.41
+      type-fest:
+        specifier: ^4.18.3
+        version: 4.18.3
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -11464,6 +11467,11 @@ packages:
 
   /type-fest@4.10.2:
     resolution: {integrity: sha512-anpAG63wSpdEbLwOqH8L84urkL6PiVIov3EMmgIhhThevh9aiMQov+6Btx0wldNcvm4wV+e2/Rt1QdDwKHFbHw==}
+    engines: {node: '>=16'}
+    dev: true
+
+  /type-fest@4.18.3:
+    resolution: {integrity: sha512-Q08/0IrpvM+NMY9PA2rti9Jb+JejTddwmwmVQGskAlhtcrw1wsRzoR6ode6mR+OAabNa75w/dxedSUY2mlphaQ==}
     engines: {node: '>=16'}
     dev: true
 

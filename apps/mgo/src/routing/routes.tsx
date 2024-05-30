@@ -15,6 +15,7 @@ import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
+import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
 
 const routeConfig = [
     {
@@ -74,6 +75,10 @@ const routeConfig = [
                     {
                         path: '/overzicht/:healthcareProviderSlug/medicijnen',
                         element: <Medication />,
+                    },
+                    {
+                        path: '/overzicht/:healthcareProviderSlug/uitslagen',
+                        element: <LaboratoryResults />,
                     },
                 ],
             },

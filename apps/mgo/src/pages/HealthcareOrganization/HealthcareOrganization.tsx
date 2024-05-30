@@ -85,18 +85,18 @@ export function HealthcareOrganization() {
                             icon="description"
                             title={_(
                                 msg({
-                                    id: 'healthcare-provider.reports.title',
-                                    message: 'Verslagen',
+                                    id: 'healthcare-provider.laboratory-results.title',
+                                    message: 'Uitslagen',
                                 })
                             )}
                             description={_(
                                 msg({
-                                    id: 'healthcare-provider.reports.description',
-                                    message: `Rapporten en verslagen die zijn opgesteld door je zorgaanbieders`,
+                                    id: 'healthcare-provider.laboratory-results.description',
+                                    message: `Resultaten van jouw onderzoeken, (röntgen)foto's en scans`,
                                 })
                             )}
                         >
-                            <Link to="#verslagen" />
+                            <Link to={`/overzicht/${healthcareOrganizationSlug}/uitslagen`} />
                         </ButtonCard>
                     </li>
                 </ul>

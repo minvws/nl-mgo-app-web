@@ -3,21 +3,21 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
-import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
+import { getMgoObservations } from '@minvws/mgo-fhir-data';
 import { Container, Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import { MedicationList } from './MedicationList';
+import { LaboratoryResultsList } from './LaboratoryResultsList';
 
-export function Medication() {
+export function LaboratoryResults() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { healthcareProviderSlug } = useParams();
 
     const query = useQuery({
-        queryKey: ['MedicationStatement', healthcareProviderSlug],
+        queryKey: ['LaboratoryResults', healthcareProviderSlug],
         queryFn: async () => {
-            const medicationBundle = await bgz.getMedicationUse().json();
-            return getMgoMedicationStatements(medicationBundle);
+            const observationBundle = await bgz.getLastLaboratoryResultsPerType().json();
+            return getMgoObservations(observationBundle);
         },
     });
 
@@ -27,13 +27,13 @@ export function Medication() {
 
             <Heading asChild size="lg" className="mb-4">
                 <h1 ref={navFocusRef}>
-                    <Trans id="medicine.title">Medicijnen</Trans>
+                    <Trans id="laboratory-results.title">Uitslagen</Trans>
                 </h1>
             </Heading>
 
             <Text size="lg" className="text-sm">
-                <Trans id="medicine.description">
-                    Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder.
+                <Trans id="laboratory-results.description">
+                    Resultaten van jouw onderzoeken, (r&ouml;ntgen)foto&apos;s en scans.
                 </Trans>
             </Text>
 
@@ -41,7 +41,7 @@ export function Medication() {
                 <QueryState
                     {...query}
                     useCardWrapper
-                    renderResult={({ data }) => <MedicationList statements={data} />}
+                    renderResult={({ data }) => <LaboratoryResultsList observations={data} />}
                 />
             </div>
         </Container>

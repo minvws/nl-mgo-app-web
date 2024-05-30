@@ -30,7 +30,7 @@ export const Accordion = ({
     );
 
     return (
-        <Card>
+        <Card className="p-4 md:p-6">
             <AccordionContext.Provider value={contextValue}>
                 <div className={twMerge(`relative`, className)} {...rest}>
                     {children}

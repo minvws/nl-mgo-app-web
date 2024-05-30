@@ -166,6 +166,14 @@ msgid "healthcare-provider.diagnosis.title"
 msgstr "Klachten en diagnoses"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
+msgid "healthcare-provider.laboratory-results.description"
+msgstr "Resultaten van jouw onderzoeken, (röntgen)foto's en scans"
+
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
+msgid "healthcare-provider.laboratory-results.title"
+msgstr "Uitslagen"
+
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
 msgid "healthcare-provider.medicine.description"
 msgstr "Voorgeschreven door je zorgaanbieder"
 
@@ -192,14 +200,6 @@ msgstr "Sorry, we kunnen de zorgaanbieder die je zocht niet vinden. Misschien is
 #: src/pages/HealthcareOrganization/NotFound.tsx
 msgid "healthcare-provider.not-found.heading"
 msgstr "Zorgaanbieder niet gevonden"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.reports.description"
-msgstr "Rapporten en verslagen die zijn opgesteld door je zorgaanbieders"
-
-#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.reports.title"
-msgstr "Verslagen"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 #: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
@@ -239,6 +239,50 @@ msgstr "Ga naar het overzicht"
 msgid "healthcare-providers.heading"
 msgstr "Welke zorgaanbieders wil je op je overzicht tonen?"
 
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "lab-results.results.collectionDateTime"
+msgstr "Afnamedatum"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "lab-results.results.specimen"
+msgstr "Monstermateriaal"
+
+#: src/pages/LaboratoryResults/LaboratoryResults.tsx
+msgid "laboratory-results.description"
+msgstr "Resultaten van jouw onderzoeken, (röntgen)foto's en scans."
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.dateTime"
+msgstr "Testdatum"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.interpretation"
+msgstr "Interpretatie vlaggen"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.rangeHigh"
+msgstr "Referentie bovengrens"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.rangeLow"
+msgstr "Referentie ondergrens"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.result"
+msgstr "Testuitslag"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.specimen"
+msgstr "Testcode"
+
+#: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
+msgid "laboratory-results.results.status"
+msgstr "Test status"
+
+#: src/pages/LaboratoryResults/LaboratoryResults.tsx
+msgid "laboratory-results.title"
+msgstr "Uitslagen"
+
 #: src/pages/Login/Login.tsx
 msgid "login.description"
 msgstr "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we <0>jouw gegevens veilig opvragen</0> bij je huisarts, ziekenhuis en andere zorgaanbieders."
@@ -267,12 +311,16 @@ msgstr "Bewijs wie je bent"
 msgid "medicine.description"
 msgstr "Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder."
 
-#: src/pages/Medication/MedicationStatements.tsx
-msgid "medicine.dosage"
+#: src/pages/Medication/MedicationList.tsx
+msgid "medicine.instructions"
 msgstr "Dosering"
 
-#: src/pages/Medication/MedicationStatements.tsx
-msgid "medicine.start-date"
+#: src/pages/Medication/MedicationList.tsx
+msgid "medicine.prescribedBy"
+msgstr "Voorgeschreven door"
+
+#: src/pages/Medication/MedicationList.tsx
+msgid "medicine.startDate"
 msgstr "Startdatum"
 
 #: src/pages/Medication/Medication.tsx

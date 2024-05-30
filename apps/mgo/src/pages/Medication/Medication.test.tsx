@@ -18,6 +18,9 @@ test('shows medication list', async () => {
     setupWithAppProviders(<Medication />);
     await flushCallStack(2);
 
-    screen.getByText('PARACETAMOL TABLET 500MG');
-    screen.getByText('Metoclopramide zetpil 20mg');
+    screen.getByRole('heading', {
+        name: 'Zestril tablet 10mg',
+    });
+
+    screen.getByText('1 maal per dag 1 tablet, oraal');
 });

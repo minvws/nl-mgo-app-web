@@ -1,5 +1,5 @@
 import type { FhirResource, ResourceType } from '../types';
-import { type LosslessJson } from './json/json';
+import { type LosslessJson, type LosslessNumber } from './json/json';
 import { type ResourceRequest, type ResourceResponse } from './getResource/getResource';
 import { type ResourcesRequest, type ResourcesResponse } from './getResources/getResources';
 
@@ -11,6 +11,7 @@ export type {
     ResourcesRequest,
     ResourcesResponse,
     LosslessJson,
+    LosslessNumber,
 };
 
 export type LosslessFhirResource<

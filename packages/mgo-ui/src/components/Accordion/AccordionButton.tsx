@@ -10,20 +10,17 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
 
     return (
         <button
-            className={twMerge(
-                `relative flex w-full flex-row items-center justify-between gap-4`,
-                className
-            )}
+            className={twMerge(`relative flex w-full flex-row justify-between gap-4`, className)}
             {...rest}
             onClick={toggle}
             id={buttonId}
             aria-expanded={expanded}
             aria-controls={panelId}
         >
-            <span className="text-sm font-bold md:text-xl">{children}</span>
+            <span className="text-left text-sm font-bold md:text-xl">{children}</span>
             <Icon
                 icon="chevron-right"
-                className={`ease-[cubic-bezier(0.4, 0, 0.2, 1)] text-grey-500 h-8  w-8 transform transition-[transform] duration-300 ${expanded ? '-rotate-90' : 'rotate-90'}`}
+                className={`ease-[cubic-bezier(0.4, 0, 0.2, 1)] text-grey-500 h-8 w-8 transform transition-[transform] duration-300 ${expanded ? '-rotate-90' : 'rotate-90'} relative top-[3px]`}
             />
         </button>
     );

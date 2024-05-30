@@ -13,6 +13,7 @@
         "@faker-js/faker": "^8.4.0",
         "@minvws/mgo-fhir-client": "workspace:*",
         "@types/fhir": "^0.0.41",
+        "type-fest": "^4.18.3",
         "typescript": "^5.4.3"
     }
 }

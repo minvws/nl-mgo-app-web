@@ -1,3 +1,6 @@
+volumes:
+    hapi-data:
+
 services:
     mgo:
         container_name: mgo
@@ -14,3 +17,9 @@ services:
             - /app/packages/fhir-data/node_modules
             - /app/packages/mgo-ui/node_modules
             - /app/packages/tailwind/node_modules
+
+    hapi:
+        container_name: hapi
+        image: smartonfhir/hapi-5:r3-smart
+        ports:
+            - 8080:8080

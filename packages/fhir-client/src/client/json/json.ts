@@ -2,6 +2,7 @@ import { type LosslessNumber, parse } from 'lossless-json';
 import { type DeepReplaceType } from '../../types/replacement';
 
 export type LosslessJson<T> = DeepReplaceType<T, number, LosslessNumber>;
+export type { LosslessNumber };
 
 /**
  * Prevent loss of precision when parsing JSON numbers.

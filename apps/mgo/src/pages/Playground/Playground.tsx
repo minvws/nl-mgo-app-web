@@ -1,6 +1,5 @@
 import { fhir } from '$/api/fhir';
 import { useNavFocusRef } from '$/hooks';
-import { getEmail, getHumanName } from '@minvws/mgo-fhir-data';
 import { Container, Spinner } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { type ReactNode } from 'react';
@@ -32,13 +31,9 @@ export function Playground() {
             <li className="font-bold">patient id</li>
             <li className="font-bold">{patientId}</li>
             <li>Naam</li>
-            <li>{getHumanName(patient)}</li>
+            <li>{patient?.name![0].text}</li>
             <li>Geboortedatum</li>
             <li>{patient?.birthDate}</li>
-            <li>Email</li>
-            <li>{getEmail(patient)}</li>
-            <li>Geslacht</li>
-            <li>{patient?.gender}</li>
         </ul>
     );
 

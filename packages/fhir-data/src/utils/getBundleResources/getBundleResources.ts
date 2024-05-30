@@ -1,16 +1,37 @@
-import { type LosslessJson } from '@minvws/mgo-fhir-client';
-import { type Bundle } from '../../fhir';
+import {
+    type Bundle,
+    type BundleResource,
+    type FhirResource,
+    type InputFhir,
+    type OutputFhir,
+    type ResourceType,
+} from '../../fhir';
 
-export type BundleResource<T extends Bundle | LosslessJson<Bundle>> = NonNullable<
-    NonNullable<T['entry']>[number]['resource']
->;
-
+export function getBundleResources<T extends InputFhir<Bundle>, Resource = BundleResource<T>>(
+    bundle: T
+): Resource[];
 export function getBundleResources<
-    T extends Bundle | LosslessJson<Bundle>,
+    T extends InputFhir<Bundle>,
+    Filter extends ResourceType,
+    FilterResource = Extract<FhirResource, { resourceType: Filter }>,
+    ReturnFilterResource = OutputFhir<T, FilterResource>,
+>(bundle: T, resourceTypeFilter: Filter): ReturnFilterResource[];
+export function getBundleResources<
+    T extends InputFhir<Bundle>,
+    Filter extends ResourceType,
     Resource = BundleResource<T>,
->(bundle: T): Resource[] {
+    FilterResource = Extract<FhirResource, { resourceType: Filter }>,
+    ReturnFilterResource = OutputFhir<T, FilterResource>,
+>(bundle: T, resourceTypeFilter?: Filter): Resource[] | ReturnFilterResource[] {
     if (!bundle.entry?.length) return [];
 
     const resources = bundle.entry.map((entry) => entry.resource);
+
+    if (resourceTypeFilter) {
+        return resources.filter(
+            (x) => x?.resourceType === resourceTypeFilter
+        ) as ReturnFilterResource[];
+    }
+
     return resources.filter((x) => x !== undefined) as Resource[];
 }
