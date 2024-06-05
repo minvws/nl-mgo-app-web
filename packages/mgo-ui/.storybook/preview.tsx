@@ -20,6 +20,8 @@ const preview: Preview = {
             disable: true,
         },
     },
+
+    tags: ['autodocs'],
 };
 
 export default preview;

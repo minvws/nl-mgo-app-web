@@ -24,6 +24,7 @@ const ComponentWithHook = () => {
 };
 
 export default {
+    tags: ['!autodocs'],
     component: ComponentWithResponsiveProp,
     args: {
         value: {

@@ -21,18 +21,15 @@ const config: StorybookConfig = {
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
-        '@storybook/preset-create-react-app',
-        '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
-        'storybook-addon-css-user-preferences',
+        '@chromatic-com/storybook',
+        'storybook-addon-render-modes',
     ],
     framework: {
         name: '@storybook/react-vite',
         options: {},
     },
-    docs: {
-        autodocs: true,
-    },
+    docs: {},
 };
 
 export default config;

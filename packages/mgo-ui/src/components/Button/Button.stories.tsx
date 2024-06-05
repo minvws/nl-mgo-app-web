@@ -8,6 +8,7 @@ type Story = StoryObj<typeof Button>;
 type StoryMeta = Meta<typeof Button>;
 
 export default {
+    tags: ['!autodocs'],
     component: Button,
     args: {
         children: 'Label',

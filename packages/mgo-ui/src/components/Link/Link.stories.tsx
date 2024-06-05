@@ -6,6 +6,7 @@ type Story = StoryObj<typeof Link>;
 type StoryMeta = Meta<typeof Link>;
 
 export default {
+    tags: ['!autodocs'],
     component: Link,
     args: {
         children: 'Label',
