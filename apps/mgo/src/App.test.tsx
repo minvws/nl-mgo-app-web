@@ -75,6 +75,23 @@ test('redirect from login to overview if authenticated', () => {
     expect(screen.getByRole('heading', { name: 'Voeg een zorgaanbieder toe' })).toBeVisible();
 });
 
+test('redirect to logout when logging out', () => {
+    const initialEntries: To[] = [
+        {
+            pathname: '/overzicht',
+        },
+    ];
+
+    authState.activeNavigator = 'signoutRedirect';
+    setupApp({ initialEntries });
+
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Je bent uitgelogd');
+});
+
 test('redirect to login from protected route', () => {
     setupApp({ initialEntries: ['/overzicht'] });
 

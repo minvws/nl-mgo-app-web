@@ -8,6 +8,11 @@ export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
 export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
     const auth = useAuth();
 
+    const handleLogout = () => {
+        auth.removeUser();
+        auth.signoutRedirect();
+    };
+
     return (
         <header className={cn(className)} {...rest}>
             <Container className="flex items-center justify-between py-4">
@@ -15,7 +20,7 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
                     <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
 
-                <Button onClick={() => void auth.removeUser()} variant="ghost">
+                <Button onClick={handleLogout} variant="ghost">
                     <Trans id="common.logout">Uitloggen</Trans>
                 </Button>
             </Container>

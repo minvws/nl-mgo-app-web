@@ -18,8 +18,8 @@ export const resetAuthState = () => {
 };
 
 export const signinRedirectMock = vi.fn();
-
 export const removeUserMock = vi.fn();
+export const signoutRedirectMock = vi.fn();
 
 export const setAuthStateAuthenticated = () => {
     authState.isAuthenticated = true;

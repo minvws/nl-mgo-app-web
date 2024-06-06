@@ -307,6 +307,18 @@ msgstr "Inloggen met eIDAS"
 msgid "login.heading"
 msgstr "Bewijs wie je bent"
 
+#: src/pages/Logout/Logout.tsx
+msgid "logout.button"
+msgstr "Log opnieuw in"
+
+#: src/pages/Logout/Logout.tsx
+msgid "logout.description"
+msgstr "Wel zo fijn, zo weet je zeker dat je gegevens veilig achter slot en grendel blijven."
+
+#: src/pages/Logout/Logout.tsx
+msgid "logout.heading"
+msgstr "Je bent uitgelogd"
+
 #: src/pages/Medication/Medication.tsx
 msgid "medicine.description"
 msgstr "Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder."

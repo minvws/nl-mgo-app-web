@@ -4,6 +4,10 @@ import { Navigate, Outlet } from '$/routing';
 export function ProtectedRoute() {
     const auth = useAuth();
 
+    if (auth.activeNavigator === 'signoutRedirect') {
+        return <Navigate to="/uitgelogd" replace />;
+    }
+
     if (!auth.isLoading && !auth.isAuthenticated) {
         return <Navigate to="/inloggen" replace />;
     }

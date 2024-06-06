@@ -2,7 +2,13 @@ import { cleanup } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { afterEach, beforeAll, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
-import { authState, removeUserMock, resetAuthState, signinRedirectMock } from './auth';
+import {
+    authState,
+    removeUserMock,
+    resetAuthState,
+    signinRedirectMock,
+    signoutRedirectMock,
+} from './auth';
 import { config } from './config';
 
 vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
@@ -20,6 +26,7 @@ vi.mock('react-oidc-context', () => ({
         ...authState,
         signinRedirect: signinRedirectMock,
         removeUser: removeUserMock,
+        signoutRedirect: signoutRedirectMock,
         settings: {},
     }),
 }));

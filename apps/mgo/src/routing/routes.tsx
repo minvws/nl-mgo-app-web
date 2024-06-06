@@ -16,6 +16,7 @@ import { OnboardingProposition } from '../pages/OnboardingProposition/Onboarding
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
 import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
+import { Logout } from '$/pages/Logout/Logout';
 
 const routeConfig = [
     {
@@ -36,6 +37,10 @@ const routeConfig = [
                     {
                         path: '/inloggen',
                         element: <Login />,
+                    },
+                    {
+                        path: '/uitgelogd',
+                        element: <Logout />,
                     },
                     {
                         path: '*',
