@@ -1,7 +1,7 @@
 import { useContext, type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { AccordionContext } from './AccordionContext';
 import { Icon } from '../Icon/Icon';
+import { cn, focusStyle } from '../../utils';
 
 export interface AccordionButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 
@@ -10,7 +10,11 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
 
     return (
         <button
-            className={twMerge(`relative flex w-full flex-row justify-between gap-4`, className)}
+            className={cn(
+                `relative flex w-full flex-row justify-between gap-4`,
+                focusStyle,
+                className
+            )}
             {...rest}
             onClick={toggle}
             id={buttonId}

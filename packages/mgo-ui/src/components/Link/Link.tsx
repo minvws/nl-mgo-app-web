@@ -1,6 +1,6 @@
 import { type AnchorHTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
+import { cn, focusStyle } from '../../utils';
 
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>, CompositionProps {
     onClick?: never; // Please use `asChild` instead
@@ -11,8 +11,9 @@ export const Link = ({ asChild, children, className, ...rest }: LinkProps) => {
 
     return (
         <Comp
-            className={twMerge(
+            className={cn(
                 `text-dark-blue-700 visited:text-dark-blue-900 cursor-pointer underline hover:no-underline`,
+                focusStyle,
                 className
             )}
             {...rest}

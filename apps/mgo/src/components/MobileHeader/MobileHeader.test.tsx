@@ -1,17 +1,27 @@
 import { Outlet } from '$/routing';
 import { setup, setupWithAppProviders } from '$test/helpers';
 import { useNavFocusRef } from '$/hooks';
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
 import { flushCallStack } from '$test/flushCallstack';
 import { createMemoryRouter } from 'react-router-dom';
 import { App } from '$/App';
+import { removeUserMock, setAuthStateAuthenticated } from '$test/auth';
 
 test('render MobileHeader', () => {
     setupWithAppProviders(<MobileHeader />);
     expect(screen.getAllByRole('button').at(0)).toHaveTextContent('Menu');
+});
+
+test('can logout', () => {
+    setAuthStateAuthenticated();
+    setupWithAppProviders(<MobileHeader />);
+
+    fireEvent.click(screen.getByRole('button', { name: /uitloggen/i }));
+
+    expect(removeUserMock).toHaveBeenCalled();
 });
 
 test('menu button opens menu dialog', async () => {

@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro';
-import { Container, List, ListIcon, ListItem } from '@minvws/mgo-mgo-ui';
+import { Container, List, ListIcon, ListItem, focusStyle } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { Heading } from '../../../../../packages/mgo-ui/src/components/Heading/Heading';
 
@@ -22,7 +22,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.about.site">
                                     Over mijngezondheidsoverzicht.nl
                                 </Trans>
@@ -33,7 +33,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.about.copyright">Copyright</Trans>
                             </a>
                         </ListItem>
@@ -42,7 +42,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.about.privacy">Privacy</Trans>
                             </a>
                         </ListItem>
@@ -51,7 +51,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.about.cookies">Cookies</Trans>
                             </a>
                         </ListItem>
@@ -60,7 +60,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.about.accessibility">Toegankelijkheid</Trans>
                             </a>
                         </ListItem>
@@ -78,7 +78,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.service.faq">Veelgestelde vragen</Trans>
                             </a>
                         </ListItem>
@@ -87,7 +87,7 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#">
+                            <a href="#" className={focusStyle}>
                                 <Trans id="footer.service.contact">Contact</Trans>
                             </a>
                         </ListItem>

@@ -8,10 +8,10 @@ import { Icon } from '../Icon/Icon';
 import { SkeletonCircle, SkeletonText } from '../Skeleton';
 import { type OptionalPropsWhenFlagIsTrue } from '../../types/OptionalPropsWhenFlagIsTrue';
 import { type IconName } from '../Icon/icons';
-import { twMerge } from 'tailwind-merge';
 import { Stack } from '../Stack/Stack';
 import { Slottable } from '@radix-ui/react-slot';
 import { Text } from '../Text/Text';
+import { cn, focusStyle } from '../../utils';
 
 export type ButtonCardProps = HTMLAttributes<HTMLElement> &
     CompositionPropsWithoutChildren &
@@ -41,9 +41,10 @@ export const ButtonCard = ({
 
     return (
         <Comp
-            className={twMerge(
+            className={cn(
                 'flex w-full border-b border-gray-100 bg-white p-4 text-left hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700',
                 isLoading && 'cursor-progress',
+                focusStyle,
                 className
             )}
             {...rest}

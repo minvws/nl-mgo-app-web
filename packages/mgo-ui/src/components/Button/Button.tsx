@@ -5,6 +5,7 @@ import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { type Variant } from './variants';
+import { focusStyle } from '../../utils';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
     isDisabled?: boolean;
@@ -14,7 +15,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Co
     'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
-const focusStyle = tw`before:absolute before:-bottom-[4px] before:-left-[4px] before:-right-[4px] before:-top-[4px] before:rounded-xl before:border-4 before:border-transparent before:focus:border-black before:dark:focus:border-white`;
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
 
 const typeColors: Record<Variant, string> = {

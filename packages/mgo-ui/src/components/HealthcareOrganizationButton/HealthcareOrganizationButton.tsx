@@ -4,6 +4,7 @@ import { Card, type CardProps } from '../Card/Card';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { Stack } from '../Stack/Stack';
+import { cn, focusStyle } from '../../utils';
 
 export interface HealthcareOrganizationButtonProps extends Omit<CardProps, 'title' | 'asChild'> {
     title: ReactNode;
@@ -34,8 +35,9 @@ export const HealthcareOrganizationButton = ({
 
     return (
         <Card
-            className={twMerge(
+            className={cn(
                 'flex cursor-pointer flex-row gap-4 border-gray-200 hover:bg-gray-50 dark:border-gray-500 dark:hover:bg-gray-700',
+                focusStyle,
                 className
             )}
             asChild

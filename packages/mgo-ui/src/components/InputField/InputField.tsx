@@ -38,7 +38,7 @@ export const InputField = ({
             />
             {error && (
                 <span
-                    className="text-md flex items-center gap-2 font-bold leading-normal text-red-600"
+                    className="text-md flex items-center gap-2 font-bold leading-normal text-red-600 dark:text-red-400"
                     id={validationMessageId}
                 >
                     <Icon icon="cancel" className="h-6 w-6" />

@@ -5,10 +5,7 @@ import { Trans } from '@lingui/macro';
 export function DesktopMenu() {
     return (
         <nav>
-            <Stack
-                asChild
-                className="max-h-screen w-52 flex-shrink-0 gap-3 self-stretch overflow-auto"
-            >
+            <Stack asChild className="max-h-screen w-52 flex-shrink-0 gap-3 self-stretch">
                 <ul>
                     <NavItem to="/overzicht" icon="home">
                         <Trans id="menu.overview">Overzicht</Trans>
