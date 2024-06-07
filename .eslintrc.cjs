@@ -12,6 +12,11 @@ module.exports = {
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
     plugins: ['import', 'react-refresh', 'sonarjs'],
+    settings: {
+        react: {
+            version: '18',
+        },
+    },
     rules: {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-uses-react': 'off',

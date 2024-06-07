@@ -8,7 +8,7 @@ test('returns the same string its given', () => {
 });
 
 test('constructs className string conditionally and merges tailwind classes', () => {
-    expect(cn({ foo: true, bar: false }, ['text-white', 0, false], 1 && 'text-black')).toBe(
+    expect(cn({ foo: true, bar: false }, ['text-white', 0, false], 'text-black')).toBe(
         'foo text-black'
     );
 });

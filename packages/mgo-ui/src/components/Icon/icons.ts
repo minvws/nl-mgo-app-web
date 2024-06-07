@@ -9,7 +9,7 @@ import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';
 import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
 import Encrypted from '@material-symbols/svg-400/outlined/encrypted-fill.svg?react';
-import ExpandMore from '@material-symbols/svg-400/outlined/expand_more.svg?react';
+import KeyboardArrowDown from '@material-symbols/svg-400/outlined/keyboard_arrow_down.svg?react';
 import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
@@ -49,7 +49,7 @@ export const icons = {
     'gpp-bad': GppBad,
     'progress-activity': ProgressActivity,
     person: Person,
-    'expand-more': ExpandMore,
+    'keyboard-arrow-down': KeyboardArrowDown,
     favorite: Favorite,
     call: Call,
     delete: Delete,

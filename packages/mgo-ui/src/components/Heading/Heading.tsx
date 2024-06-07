@@ -10,7 +10,7 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement>, CompositionPr
 
 const HeadingSizes: Record<Size, string> = {
     md: tw`text-xl md:text-2xl`,
-    lg: tw`text-2xl  md:text-3xl lg:text-4xl `,
+    lg: tw`text-2xl md:text-3xl lg:text-4xl`,
 };
 
 export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingProps) => {

@@ -14,7 +14,7 @@ export function NotFound() {
             </div>
 
             <Card className="p-4 md:p-12">
-                <div className="m-0 w-full max-w-full p-0 md:mx-auto  md:max-w-sm">
+                <div className="m-0 w-full max-w-full p-0 md:mx-auto md:max-w-sm">
                     <Illustration
                         className="mx-auto w-3/4 md:w-1/2"
                         illustration="woman-with-umbrella"

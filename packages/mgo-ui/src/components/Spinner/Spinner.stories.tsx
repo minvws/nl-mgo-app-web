@@ -10,7 +10,7 @@ export default {
 
 export const Default: Story = {
     render: () => (
-        <div className="text-[2rem]  text-gray-800">
+        <div className="text-[2rem] text-gray-800">
             <Spinner />
         </div>
     ),

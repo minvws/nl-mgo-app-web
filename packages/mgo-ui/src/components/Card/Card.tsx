@@ -10,7 +10,7 @@ export const Card = ({ className, asChild, children, ...rest }: CardProps) => {
     return (
         <Comp
             className={twMerge(
-                'w-full rounded-lg border border-gray-100  bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-white',
+                'w-full rounded-lg border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900 dark:text-white',
                 className
             )}
             {...rest}

@@ -47,10 +47,10 @@ export const HealthcareOrganizationButton = ({
                 <Stack className="text-md flex-grow items-start gap-0 text-left">
                     <span className="mb-1 font-bold text-black dark:text-white">{title}</span>
                     {subTitle && (
-                        <span className="text-gray-950 dark:text-gray-100 ">{subTitle}</span>
+                        <span className="text-gray-950 dark:text-gray-100">{subTitle}</span>
                     )}
                     {meta && (
-                        <span className="italic text-gray-600  dark:text-gray-300">{meta}</span>
+                        <span className="italic text-gray-600 dark:text-gray-300">{meta}</span>
                     )}
                     {children}
                 </Stack>
