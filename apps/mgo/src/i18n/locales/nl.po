@@ -14,56 +14,60 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/AddHealthcareOrganization/SearchResults.tsx
-msgid "add-healthcare-provider.add"
+msgid "add-healthcare-organisation.add"
 msgstr "toevoegen"
 
 #: src/pages/AddHealthcareOrganization/SearchResults.tsx
-msgid "add-healthcare-provider.aria-label-is-added"
+msgid "add-healthcare-organisation.aria-label-is-added"
 msgstr "naar overzicht"
 
 #: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
-msgid "add-healthcare-provider.heading"
+msgid "add-healthcare-organisation.heading"
 msgstr "Voeg een zorgaanbieder toe"
 
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
-msgid "add-healthcare-provider.input.city.label"
+msgid "add-healthcare-organisation.input.city.label"
 msgstr "Plaats"
 
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
-msgid "add-healthcare-provider.input.city.validation"
+msgid "add-healthcare-organisation.input.city.validation"
 msgstr "Vul een plaats in"
 
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
-msgid "add-healthcare-provider.input.name.label"
+msgid "add-healthcare-organisation.input.name.label"
 msgstr "Naam"
 
 #: src/pages/AddHealthcareOrganization/SearchForm.tsx
-msgid "add-healthcare-provider.input.name.validation"
+msgid "add-healthcare-organisation.input.name.validation"
 msgstr "Vul een naam in"
 
 #: src/pages/AddHealthcareOrganization/SearchResults.tsx
-msgid "add-healthcare-provider.is-added"
+msgid "add-healthcare-organisation.is-added"
 msgstr "Deze zorgaanbieder heb je al toegevoegd"
 
 #: src/pages/AddHealthcareOrganization/SearchResults.tsx
-msgid "add-healthcare-provider.load_more"
+msgid "add-healthcare-organisation.load_more"
 msgstr "Meer zorgaanbieders laden"
 
 #: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
-msgid "add-healthcare-provider.no-results.title"
+msgid "add-healthcare-organisation.no-results.title"
 msgstr "Geen zorgaanbieders gevonden"
 
 #: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
-msgid "add-healthcare-provider.no-results.usp.1"
+msgid "add-healthcare-organisation.no-results.usp.1"
 msgstr "Controleer de spelling."
 
 #: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
-msgid "add-healthcare-provider.no-results.usp.2"
+msgid "add-healthcare-organisation.no-results.usp.2"
 msgstr "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgaanbieder hoe je hun naam schrijft."
 
 #: src/pages/AddHealthcareOrganization/NoSearchResultsTips.tsx
-msgid "add-healthcare-provider.no-results.usp.3"
+msgid "add-healthcare-organisation.no-results.usp.3"
 msgstr "Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
+
+#: src/pages/AddHealthcareOrganization/AddHealthcareOrganization.tsx
+msgid "add-healthcare-organisation.title"
+msgstr "Voeg een zorgaanbieder toe"
 
 #: src/components/MobileMenu/MobileMenu.tsx
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
@@ -159,85 +163,97 @@ msgid "footer.service.title"
 msgstr "Service"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.diagnosis.description"
+msgid "healthcare-organisation.diagnosis.description"
 msgstr "Vastgesteld door je zorgaanbieder"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.diagnosis.title"
+msgid "healthcare-organisation.diagnosis.heading"
 msgstr "Klachten en diagnoses"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.laboratory-results.description"
+msgid "healthcare-organisation.laboratory-results.description"
 msgstr "Resultaten van jouw onderzoeken, (röntgen)foto's en scans"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.laboratory-results.title"
+msgid "healthcare-organisation.laboratory-results.heading"
 msgstr "Uitslagen"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.medicine.description"
+msgid "healthcare-organisation.medicine.description"
 msgstr "Voorgeschreven door je zorgaanbieder"
 
 #: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
-msgid "healthcare-provider.medicine.title"
+msgid "healthcare-organisation.medicine.heading"
 msgstr "Medicijnen"
 
 #: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
-msgid "healthcare-provider.no-results.description"
+msgid "healthcare-organisation.no-results.description"
 msgstr "Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu doen, of later via je profiel."
 
 #: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
-msgid "healthcare-provider.no-results.title"
+msgid "healthcare-organisation.no-results.title"
 msgstr "Deze lijst is nog leeg"
 
 #: src/pages/HealthcareOrganization/NotFound.tsx
-msgid "healthcare-provider.not-found.button"
+msgid "healthcare-organisation.not-found.button"
 msgstr "Ga naar het overzicht"
 
 #: src/pages/HealthcareOrganization/NotFound.tsx
-msgid "healthcare-provider.not-found.description"
+msgid "healthcare-organisation.not-found.description"
 msgstr "Sorry, we kunnen de zorgaanbieder die je zocht niet vinden. Misschien is deze verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
 
 #: src/pages/HealthcareOrganization/NotFound.tsx
-msgid "healthcare-provider.not-found.heading"
+msgid "healthcare-organisation.not-found.heading"
 msgstr "Zorgaanbieder niet gevonden"
+
+#: src/pages/HealthcareOrganization/NotFound.tsx
+msgid "healthcare-organisation.not-found.title"
+msgstr "Zorgaanbieder niet gevonden"
+
+#: src/pages/HealthcareOrganization/HealthcareOrganization.tsx
+msgid "healthcare-organisation.title"
+msgstr "{healthcareOrganisationName}"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 #: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
-msgid "healthcare-providers.add"
+msgid "healthcare-organisations.add"
 msgstr "Voeg een zorgaanbieder toe"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.delete"
+msgid "healthcare-organisations.delete"
 msgstr "verwijderen"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.description"
+msgid "healthcare-organisations.description"
 msgstr "Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.dialog.cancelButton"
+msgid "healthcare-organisations.dialog.cancelButton"
 msgstr "Nee, toch tonen"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.dialog.confirmButton"
+msgid "healthcare-organisations.dialog.confirmButton"
 msgstr "Ja, weglaten"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.dialog.description"
+msgid "healthcare-organisations.dialog.description"
 msgstr "We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel."
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
-msgid "healthcare-providers.dialog.title"
+msgid "healthcare-organisations.dialog.title"
 msgstr "{0} weglaten?"
 
 #: src/pages/AddHealthcareOrganizationList/HealthcareOrganizations.tsx
 #: src/pages/AddHealthcareOrganizationList/NoHealtcareOrganizations.tsx
-msgid "healthcare-providers.done"
+msgid "healthcare-organisations.done"
 msgstr "Ga naar het overzicht"
 
 #: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
-msgid "healthcare-providers.heading"
+msgid "healthcare-organisations.heading"
+msgstr "Welke zorgaanbieders wil je op je overzicht tonen?"
+
+#: src/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList.tsx
+msgid "healthcare-organisations.title"
 msgstr "Welke zorgaanbieders wil je op je overzicht tonen?"
 
 #: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
@@ -251,6 +267,10 @@ msgstr "Monstermateriaal"
 #: src/pages/LaboratoryResults/LaboratoryResults.tsx
 msgid "laboratory-results.description"
 msgstr "Resultaten van jouw onderzoeken, (röntgen)foto's en scans."
+
+#: src/pages/LaboratoryResults/LaboratoryResults.tsx
+msgid "laboratory-results.heading"
+msgstr "Uitslagen"
 
 #: src/pages/LaboratoryResults/LaboratoryResultsList.tsx
 msgid "laboratory-results.results.dateTime"
@@ -282,7 +302,7 @@ msgstr "Test status"
 
 #: src/pages/LaboratoryResults/LaboratoryResults.tsx
 msgid "laboratory-results.title"
-msgstr "Uitslagen"
+msgstr "Uitslagen | {healthcareOrganisationName}"
 
 #: src/pages/Login/Login.tsx
 msgid "login.description"
@@ -308,6 +328,10 @@ msgstr "Inloggen met eIDAS"
 msgid "login.heading"
 msgstr "Bewijs wie je bent"
 
+#: src/pages/Login/Login.tsx
+msgid "login.title"
+msgstr "Bewijs wie je bent"
+
 #: src/pages/Logout/Logout.tsx
 msgid "logout.button"
 msgstr "Log opnieuw in"
@@ -324,6 +348,10 @@ msgstr "Je bent uitgelogd"
 msgid "medicine.description"
 msgstr "Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder."
 
+#: src/pages/Medication/Medication.tsx
+msgid "medicine.heading"
+msgstr "Medicijnen"
+
 #: src/pages/Medication/MedicationList.tsx
 msgid "medicine.instructions"
 msgstr "Dosering"
@@ -338,7 +366,7 @@ msgstr "Startdatum"
 
 #: src/pages/Medication/Medication.tsx
 msgid "medicine.title"
-msgstr "Medicijnen"
+msgstr "Medicijnen | {healthcareOrganisationName}"
 
 #: src/components/DesktopMenu/DesktopMenu.tsx
 #: src/components/MobileMenu/MobileMenu.tsx
@@ -382,6 +410,10 @@ msgstr "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze v
 msgid "not-found.heading"
 msgstr "Pagina niet gevonden"
 
+#: src/pages/NotFound/NotFound.tsx
+msgid "not-found.title"
+msgstr "Pagina niet gevonden"
+
 #: src/pages/OnboardingIntro/OnboardingIntro.tsx
 msgid "onboarding.intro.description"
 msgstr "Alle informatie die je huisarts, ziekenhuis en andere zorg­verleners over jou hebben. Op één plek. Veilig en overzichtelijk."
@@ -390,6 +422,10 @@ msgstr "Alle informatie die je huisarts, ziekenhuis en andere zorg­verleners ov
 msgid "onboarding.intro.heading"
 msgstr "Je gezond­heids­gegevens in één overzicht"
 
+#: src/pages/OnboardingIntro/OnboardingIntro.tsx
+msgid "onboarding.intro.title"
+msgstr "Je gezondheidsgegevens in één overzicht"
+
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.heading"
 msgstr "Zo gebruikt de website jouw gegevens"
@@ -397,6 +433,10 @@ msgstr "Zo gebruikt de website jouw gegevens"
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.list-description"
 msgstr "In de privacy­verklaring staat hoe Mijn Gezond­heids­overzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
+
+#: src/pages/OnboardingProposition/OnboardingProposition.tsx
+msgid "onboarding.proposition.title"
+msgstr "Zo gebruikt de website jouw gegevens"
 
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.usp.1"

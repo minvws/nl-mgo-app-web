@@ -1,15 +1,27 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
 import { Link } from '$/routing';
-import { Trans } from '@lingui/macro';
+import { Trans, msg } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
+import { Helmet } from 'react-helmet';
 
 export function OnboardingProposition() {
+    const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setOnboardingSeen } = useOnboardingSeen();
 
     return (
         <>
+            <Helmet
+                title={_(
+                    msg({
+                        id: 'onboarding.proposition.title',
+                        message: 'Zo gebruikt de website jouw gegevens',
+                    })
+                )}
+            />
+
             <Container>
                 <BackButton to="/welkom" />
             </Container>

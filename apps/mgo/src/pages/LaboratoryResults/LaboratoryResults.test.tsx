@@ -1,10 +1,15 @@
 import { setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
-import { test, vi } from 'vitest';
+import { type MockedFunction, test, vi, beforeEach } from 'vitest';
 import { LaboratoryResults } from './LaboratoryResults';
 
 import { flushCallStack } from '$test/flushCallstack';
 import observations from './fixtures/fhir-observations.json';
+import { useHealthcareOrganizationsStore } from '$/store';
+import { useParams } from '$/routing';
+import { kebabCase } from 'lodash';
+import { faker } from '@faker-js/faker';
+import { healthcareOrganizationDTO } from '$test/data';
 
 vi.mock('$/api/bgz', () => ({
     bgz: {
@@ -13,6 +18,26 @@ vi.mock('$/api/bgz', () => ({
         })),
     },
 }));
+
+vi.mock(
+    '$/routing/useParams',
+    () =>
+        ({
+            useParams: vi.fn(),
+            // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+        }) as typeof import('$/routing/useParams')
+);
+
+beforeEach(() => {
+    const organizationName = faker.company.name();
+    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
+
+    (useParams as MockedFunction<typeof useParams>).mockImplementation(() => ({
+        healthcareOrganizationSlug: kebabCase(organizationName),
+    }));
+
+    addHealthcareOrganization(healthcareOrganizationDTO({ display_name: organizationName }));
+});
 
 test('shows laboratory results list', async () => {
     setupWithAppProviders(<LaboratoryResults />);

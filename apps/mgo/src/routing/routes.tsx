@@ -78,11 +78,11 @@ const routeConfig = [
                         element: <HealthcareOrganization />,
                     },
                     {
-                        path: '/overzicht/:healthcareProviderSlug/medicijnen',
+                        path: '/overzicht/:healthcareOrganizationSlug/medicijnen',
                         element: <Medication />,
                     },
                     {
-                        path: '/overzicht/:healthcareProviderSlug/uitslagen',
+                        path: '/overzicht/:healthcareOrganizationSlug/uitslagen',
                         element: <LaboratoryResults />,
                     },
                 ],

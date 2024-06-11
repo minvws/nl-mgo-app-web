@@ -75,14 +75,14 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                             icon="chevron-right"
                                             iconAriaLabel={_(
                                                 msg({
-                                                    id: 'add-healthcare-provider.aria-label-is-added',
+                                                    id: 'add-healthcare-organisation.aria-label-is-added',
                                                     message: 'naar overzicht',
                                                 })
                                             )}
                                         >
                                             <div className="text-sky-blue-600 mt-2 flex items-center gap-2">
                                                 <Icon icon="check" className="h-7 w-9" />
-                                                <Trans id="add-healthcare-provider.is-added">
+                                                <Trans id="add-healthcare-organisation.is-added">
                                                     Deze zorgaanbieder heb je al toegevoegd
                                                 </Trans>
                                             </div>
@@ -101,7 +101,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                             icon="add"
                                             iconAriaLabel={_(
                                                 msg({
-                                                    id: 'add-healthcare-provider.add',
+                                                    id: 'add-healthcare-organisation.add',
                                                     message: 'toevoegen',
                                                 })
                                             )}
@@ -120,7 +120,9 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                     rightIcon="autorenew"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >
-                    <Trans id="add-healthcare-provider.load_more">Meer zorgaanbieders laden</Trans>
+                    <Trans id="add-healthcare-organisation.load_more">
+                        Meer zorgaanbieders laden
+                    </Trans>
                 </Button>
             )}
         </Stack>

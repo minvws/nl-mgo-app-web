@@ -31,26 +31,26 @@ export function HealthcareOrganizations() {
                     onOpenChange={setIsOpen}
                     title={_(
                         msg({
-                            id: 'healthcare-providers.dialog.title',
+                            id: 'healthcare-organisations.dialog.title',
                             message: `${getHealthcareOrganization(selectedSlug)?.display_name} weglaten?`,
                         })
                     )}
                     description={_(
                         msg({
-                            id: 'healthcare-providers.dialog.description',
+                            id: 'healthcare-organisations.dialog.description',
                             message:
                                 'We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel.',
                         })
                     )}
                     confirmButtonText={_(
                         msg({
-                            id: 'healthcare-providers.dialog.confirmButton',
+                            id: 'healthcare-organisations.dialog.confirmButton',
                             message: 'Ja, weglaten',
                         })
                     )}
                     cancelButtonText={_(
                         msg({
-                            id: 'healthcare-providers.dialog.cancelButton',
+                            id: 'healthcare-organisations.dialog.cancelButton',
                             message: 'Nee, toch tonen',
                         })
                     )}
@@ -59,7 +59,7 @@ export function HealthcareOrganizations() {
                 />
             )}
             <p className="text-md">
-                <Trans id="healthcare-providers.description">
+                <Trans id="healthcare-organisations.description">
                     Je kunt deze lijst nu aanpassen of dit later in je profiel doen.
                 </Trans>
             </p>
@@ -81,7 +81,7 @@ export function HealthcareOrganizations() {
                                 icon="delete"
                                 iconAriaLabel={_(
                                     msg({
-                                        id: 'healthcare-providers.delete',
+                                        id: 'healthcare-organisations.delete',
                                         message: 'verwijderen',
                                     })
                                 )}
@@ -93,12 +93,12 @@ export function HealthcareOrganizations() {
             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
                 <Button asChild>
                     <Link to="/overzicht">
-                        <Trans id="healthcare-providers.done">Ga naar het overzicht</Trans>
+                        <Trans id="healthcare-organisations.done">Ga naar het overzicht</Trans>
                     </Link>
                 </Button>
                 <Button variant="light" asChild>
                     <Link to="/zorgaanbieder-toevoegen">
-                        <Trans id="healthcare-providers.add">Voeg een zorgaanbieder toe</Trans>
+                        <Trans id="healthcare-organisations.add">Voeg een zorgaanbieder toe</Trans>
                     </Link>
                 </Button>
             </div>

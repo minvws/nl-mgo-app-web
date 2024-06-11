@@ -10,6 +10,7 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResultsTips } from './NoSearchResultsTips';
 import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
+import { Helmet } from 'react-helmet';
 
 export function AddHealthcareOrganization() {
     const { _ } = useLingui();
@@ -28,6 +29,15 @@ export function AddHealthcareOrganization() {
 
     return (
         <div className="flex flex-grow flex-col">
+            <Helmet
+                title={_(
+                    msg({
+                        id: 'add-healthcare-organisation.title',
+                        message: 'Voeg een zorgaanbieder toe',
+                    })
+                )}
+            />
+
             <Container>
                 <BackButton />
             </Container>
@@ -35,7 +45,7 @@ export function AddHealthcareOrganization() {
             <Container className="mb-4 max-w-md">
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
-                        <Trans id="add-healthcare-provider.heading">
+                        <Trans id="add-healthcare-organisation.heading">
                             Voeg een zorgaanbieder toe
                         </Trans>
                     </h1>
@@ -55,7 +65,7 @@ export function AddHealthcareOrganization() {
                             illustration="woman-on-couch-exclamation"
                             title={_(
                                 msg({
-                                    id: 'add-healthcare-provider.no-results.title',
+                                    id: 'add-healthcare-organisation.no-results.title',
                                     message: `Geen zorgaanbieders gevonden`,
                                 })
                             )}

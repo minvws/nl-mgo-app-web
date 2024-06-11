@@ -7,6 +7,7 @@ import { useLingui } from '@lingui/react';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
 import { BackButton } from '$/components/BackButton/BackButton';
+import { Helmet } from 'react-helmet';
 
 export function Login() {
     const { _ } = useLingui();
@@ -29,6 +30,14 @@ export function Login() {
 
     return (
         <>
+            <Helmet
+                title={_(
+                    msg({
+                        id: 'login.title',
+                        message: 'Bewijs wie je bent',
+                    })
+                )}
+            />
             <Container>
                 <BackButton />
             </Container>

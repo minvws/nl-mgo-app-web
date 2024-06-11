@@ -6,13 +6,15 @@ export const NoSearchResultsTips = () => (
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add-healthcare-provider.no-results.usp.1">Controleer de spelling.</Trans>
+                <Trans id="add-healthcare-organisation.no-results.usp.1">
+                    Controleer de spelling.
+                </Trans>
             </span>
         </ListItem>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add-healthcare-provider.no-results.usp.2">
+                <Trans id="add-healthcare-organisation.no-results.usp.2">
                     Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de
                     zorgaanbieder hoe je hun naam schrijft.
                 </Trans>
@@ -21,7 +23,7 @@ export const NoSearchResultsTips = () => (
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add-healthcare-provider.no-results.usp.3">
+                <Trans id="add-healthcare-organisation.no-results.usp.3">
                     Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de
                     hoofdvestiging in.
                 </Trans>

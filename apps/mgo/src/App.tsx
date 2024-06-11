@@ -4,6 +4,7 @@ import { I18nProvider } from './i18n';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config/config';
 import { router as defaultRouter } from './routing';
+import { Helmet } from 'react-helmet';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -19,12 +20,18 @@ interface AppProps {
 
 export const App = ({ router = defaultRouter }: AppProps = {}) => {
     return (
-        <I18nProvider>
-            <QueryClientProvider client={queryClient}>
-                <AuthProvider {...readConfig().oidc}>
-                    <RouterProvider router={router} />
-                </AuthProvider>
-            </QueryClientProvider>
-        </I18nProvider>
+        <>
+            <Helmet
+                titleTemplate="%s | Mijn Gezondheidsoverzicht"
+                defaultTitle="Mijn Gezondheidsoverzicht"
+            />
+            <I18nProvider>
+                <QueryClientProvider client={queryClient}>
+                    <AuthProvider {...readConfig().oidc}>
+                        <RouterProvider router={router} />
+                    </AuthProvider>
+                </QueryClientProvider>
+            </I18nProvider>
+        </>
     );
 };

@@ -13,12 +13,12 @@ export function NoHealthcareOrganizations() {
                     illustration="woman-on-couch"
                     title={_(
                         msg({
-                            id: 'healthcare-provider.no-results.title',
+                            id: 'healthcare-organisation.no-results.title',
                             message: `Deze lijst is nog leeg`,
                         })
                     )}
                 >
-                    <Trans id="healthcare-provider.no-results.description">
+                    <Trans id="healthcare-organisation.no-results.description">
                         Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu
                         doen, of later via je profiel.
                     </Trans>
@@ -27,12 +27,12 @@ export function NoHealthcareOrganizations() {
             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
                 <Button asChild>
                     <Link to="/zorgaanbieder-toevoegen">
-                        <Trans id="healthcare-providers.add">Voeg een zorgaanbieder toe</Trans>
+                        <Trans id="healthcare-organisations.add">Voeg een zorgaanbieder toe</Trans>
                     </Link>
                 </Button>
                 <Button variant="light" asChild>
                     <Link to="/overzicht">
-                        <Trans id="healthcare-providers.done">Ga naar het overzicht</Trans>
+                        <Trans id="healthcare-organisations.done">Ga naar het overzicht</Trans>
                     </Link>
                 </Button>
             </div>

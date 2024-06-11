@@ -29,7 +29,7 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
         if (name.length === 0) {
             errorMessages.name = _(
                 msg({
-                    id: 'add-healthcare-provider.input.name.validation',
+                    id: 'add-healthcare-organisation.input.name.validation',
                     message: 'Vul een naam in',
                 })
             );
@@ -38,7 +38,7 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
         if (city.length === 0) {
             errorMessages.city = _(
                 msg({
-                    id: 'add-healthcare-provider.input.city.validation',
+                    id: 'add-healthcare-organisation.input.city.validation',
                     message: 'Vul een plaats in',
                 })
             );
@@ -76,7 +76,7 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
                 name="name"
                 label={
                     <>
-                        <Trans id="add-healthcare-provider.input.name.label">Naam</Trans>
+                        <Trans id="add-healthcare-organisation.input.name.label">Naam</Trans>
                         <span className="ml-1" aria-hidden="true">
                             <Trans id="common.required">(verplicht)</Trans>
                         </span>
@@ -91,7 +91,7 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
                 name="city"
                 label={
                     <>
-                        <Trans id="add-healthcare-provider.input.city.label">Plaats</Trans>
+                        <Trans id="add-healthcare-organisation.input.city.label">Plaats</Trans>
                         <span className="ml-1" aria-hidden="true">
                             <Trans id="common.required">(verplicht)</Trans>
                         </span>

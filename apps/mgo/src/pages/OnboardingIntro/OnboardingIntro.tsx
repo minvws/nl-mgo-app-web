@@ -1,14 +1,25 @@
 import { useNavFocusRef } from '$/hooks';
-import { Trans } from '@lingui/macro';
+import { Trans, msg } from '@lingui/macro';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { Link } from '$/routing';
 import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
+import { Helmet } from 'react-helmet';
+import { useLingui } from '@lingui/react';
 
 export function OnboardingIntro() {
+    const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
+            <Helmet
+                title={_(
+                    msg({
+                        id: 'onboarding.intro.title',
+                        message: 'Je gezondheidsgegevens in één overzicht',
+                    })
+                )}
+            />
             <Container className="mb-8 mt-12 md:mb-16 md:mt-16 lg:mt-24" centeredContent>
                 <Illustration
                     illustration="woman-with-phone"
