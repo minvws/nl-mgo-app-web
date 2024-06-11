@@ -15,8 +15,9 @@ import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
 import { Playground } from '../pages/Playground/Playground';
+import { Problems } from '../pages/Problems/Problems';
 import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
-import { Logout } from '$/pages/Logout/Logout';
+import { Logout } from '../pages/Logout/Logout';
 
 const routeConfig = [
     {
@@ -80,6 +81,10 @@ const routeConfig = [
                     {
                         path: '/overzicht/:healthcareOrganizationSlug/medicijnen',
                         element: <Medication />,
+                    },
+                    {
+                        path: '/overzicht/:healthcareOrganizationSlug/klachten',
+                        element: <Problems />,
                     },
                     {
                         path: '/overzicht/:healthcareOrganizationSlug/uitslagen',

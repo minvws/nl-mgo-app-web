@@ -470,3 +470,35 @@ msgstr "Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald."
 #: src/pages/Overview/HealthcareOrganizations.tsx
 msgid "overview.subheading"
 msgstr "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.bodySite"
+msgstr "Anatomische locatie"
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.category"
+msgstr "Categorie"
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.clinicalStatus"
+msgstr "Status"
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.commment"
+msgstr "Notitie"
+
+#: src/pages/Problems/Problems.tsx
+msgid "problems.description"
+msgstr "Je diagnoses en gezondheidsklachten, vastgesteld door je zorgaanbieder."
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.endDate"
+msgstr "Einddatum"
+
+#: src/pages/Problems/ProblemsList.tsx
+msgid "problems.startDate"
+msgstr "Startdatum"
+
+#: src/pages/Problems/Problems.tsx
+msgid "problems.title"
+msgstr "Klachten en diagnoses"

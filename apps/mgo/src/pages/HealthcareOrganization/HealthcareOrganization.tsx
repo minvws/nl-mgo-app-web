@@ -86,7 +86,7 @@ export function HealthcareOrganization() {
                                     })
                                 )}
                             >
-                                <Link to="#diagnoses" />
+                                <Link to={`/overzicht/${healthcareOrganizationSlug}/klachten`} />
                             </ButtonCard>
                         </li>
                         <li>
