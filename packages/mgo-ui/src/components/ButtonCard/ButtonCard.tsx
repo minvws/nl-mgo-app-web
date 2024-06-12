@@ -42,7 +42,7 @@ export const ButtonCard = ({
     return (
         <Comp
             className={cn(
-                'flex w-full border-b border-gray-100 bg-white p-4 text-left hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700',
+                'flex w-full border-b border-gray-100 bg-white p-4 text-left hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
                 isLoading && 'cursor-progress',
                 focusStyle,
                 className
