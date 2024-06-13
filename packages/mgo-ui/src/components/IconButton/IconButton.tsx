@@ -28,7 +28,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp ref={ref} className="group inline-block p-2 outline-none sm:p-0" {...rest}>
+        <Comp ref={ref} className="group inline-block outline-none" {...rest}>
             <Slottable>{children}</Slottable>
             <span
                 className={cn(

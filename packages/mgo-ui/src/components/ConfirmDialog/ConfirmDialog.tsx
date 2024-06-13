@@ -1,9 +1,8 @@
-import { type UIEvent } from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { type UIEvent } from 'react';
 import { Button } from '../Button/Button';
-import { cn } from '../../utils';
-import { IconButton } from '../IconButton/IconButton';
 import { Heading } from '../Heading/Heading';
+import { IconButton } from '../IconButton/IconButton';
 import { Text } from '../Text/Text';
 
 export interface ConfirmDialogProps extends AlertDialog.AlertDialogProps {
@@ -38,37 +37,46 @@ export const ConfirmDialog = ({
     return (
         <AlertDialog.Root onOpenChange={onOpenChange} {...rest}>
             {children}
+
             <AlertDialog.Portal>
                 <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-75 dark:bg-gray-700" />
-                <AlertDialog.Content
-                    className={cn(
-                        'fixed left-1/2 top-1/2 z-50 flex w-[432px] -translate-x-1/2 -translate-y-1/2 flex-col gap-6 rounded-lg bg-white p-6 shadow-sm dark:bg-gray-900'
-                    )}
-                >
-                    <div className="flex items-start justify-between">
-                        <AlertDialog.Title asChild>
-                            <Heading asChild>
-                                <h1>{title}</h1>
-                            </Heading>
-                        </AlertDialog.Title>
-                        <AlertDialog.Cancel asChild>
-                            <IconButton icon="close" aria-label={closeButtonAriaLabel} />
-                        </AlertDialog.Cancel>
-                    </div>
-                    <AlertDialog.Description asChild>
-                        <Text>{description}</Text>
-                    </AlertDialog.Description>
-                    <div className="flex gap-6">
-                        <AlertDialog.Action asChild>
-                            <Button className="flex-grow" onClick={handleConfirm}>
-                                {confirmButtonText}
-                            </Button>
-                        </AlertDialog.Action>
-                        <AlertDialog.Cancel asChild>
-                            <Button variant="light" className="flex-grow">
-                                {cancelButtonText}
-                            </Button>
-                        </AlertDialog.Cancel>
+
+                <AlertDialog.Content className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-6">
+                    <div className="flex min-h-full items-center justify-center">
+                        <div className="flex w-full max-w-[432px] flex-col gap-4 rounded-lg bg-white p-4 shadow-sm sm:gap-6 sm:p-6 dark:bg-gray-900">
+                            <div className="flex items-start justify-between">
+                                <AlertDialog.Title asChild>
+                                    <Heading asChild>
+                                        <h1>{title}</h1>
+                                    </Heading>
+                                </AlertDialog.Title>
+
+                                <AlertDialog.Cancel asChild>
+                                    <IconButton
+                                        icon="close"
+                                        aria-label={closeButtonAriaLabel}
+                                        className="h-7 w-7 text-xs sm:h-8 sm:w-8"
+                                    />
+                                </AlertDialog.Cancel>
+                            </div>
+
+                            <AlertDialog.Description asChild>
+                                <Text>{description}</Text>
+                            </AlertDialog.Description>
+
+                            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+                                <AlertDialog.Action asChild>
+                                    <Button className="flex-grow" onClick={handleConfirm}>
+                                        {confirmButtonText}
+                                    </Button>
+                                </AlertDialog.Action>
+                                <AlertDialog.Cancel asChild>
+                                    <Button variant="light" className="flex-grow">
+                                        {cancelButtonText}
+                                    </Button>
+                                </AlertDialog.Cancel>
+                            </div>
+                        </div>
                     </div>
                 </AlertDialog.Content>
             </AlertDialog.Portal>
