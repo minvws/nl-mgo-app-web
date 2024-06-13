@@ -1,6 +1,6 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, Card, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
@@ -46,11 +46,11 @@ export function NotFound() {
                             </Trans>
                         </Text>
                         <Button asChild className="mt-4 md:mt-6">
-                            <Link to={'/overzicht'}>
+                            <RouterLink to={'/overzicht'}>
                                 <Trans id="healthcare-organisation.not-found.button">
                                     Ga naar het overzicht
                                 </Trans>
-                            </Link>
+                            </RouterLink>
                         </Button>
                     </div>
                 </Card>

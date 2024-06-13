@@ -1,7 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
 
 export function Logout() {
@@ -22,9 +22,9 @@ export function Logout() {
                 </Trans>
             </Text>
             <Button asChild className="mt-6 md:mt-12">
-                <Link to={'/inloggen'}>
+                <RouterLink to={'/inloggen'}>
                     <Trans id="logout.button">Log opnieuw in</Trans>
-                </Link>
+                </RouterLink>
             </Button>
         </Container>
     );

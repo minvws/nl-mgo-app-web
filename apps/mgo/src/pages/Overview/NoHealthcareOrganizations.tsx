@@ -1,4 +1,4 @@
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { Trans } from '@lingui/macro';
 import { Button, Illustration } from '@minvws/mgo-mgo-ui';
 
@@ -11,9 +11,9 @@ export const NoHealthcareOrganizations = () => {
                 </Trans>
             </p>
             <Button asChild className="mb-6 self-start md:mb-12">
-                <Link to="/zorgaanbieder-toevoegen">
+                <RouterLink to="/zorgaanbieder-toevoegen">
                     <Trans id="overview.add">Voeg een zorgaanbieder toe</Trans>
-                </Link>
+                </RouterLink>
             </Button>
             <div className="flex flex-grow flex-col items-center">
                 <Illustration

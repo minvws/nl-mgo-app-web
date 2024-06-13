@@ -1,6 +1,7 @@
 export { Alert, type AlertProps } from './Alert/Alert';
 export { Accordion, type AccordionProps } from './Accordion/Accordion';
 export { Button, type ButtonProps } from './Button/Button';
+export { Link, type LinkProps } from './Link/Link';
 export { Container, type ContainerProps } from './Container/Container';
 export { Heading, type HeadingProps } from './Heading/Heading';
 export {
@@ -41,3 +42,4 @@ export { ConfirmDialog, type ConfirmDialogProps } from './ConfirmDialog/ConfirmD
 export { Illustration, type IllustrationProps } from './Illustration/Illustration';
 export { Text, type TextProps } from './Text/Text';
 export { Render, type RenderProps } from './Render/Render';
+export { MarkdownContent, type MarkdownContentProps } from './MarkdownContent/MarkdownContent';

@@ -432,7 +432,7 @@ msgstr "Zo gebruikt de website jouw gegevens"
 
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.list-description"
-msgstr "In de privacy­verklaring staat hoe Mijn Gezond­heids­overzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
+msgstr "In de <0>privacy­verklaring</0> staat hoe Mijn Gezond­heids­overzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten"
 
 #: src/pages/OnboardingProposition/OnboardingProposition.tsx
 msgid "onboarding.proposition.title"

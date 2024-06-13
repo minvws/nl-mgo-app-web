@@ -1,5 +1,5 @@
 import { useNavFocusRef } from '$/hooks';
-import { Link, useParams } from '$/routing';
+import { RouterLink, useParams } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { Trans, msg } from '@lingui/macro';
 import { ButtonCard, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
@@ -66,7 +66,9 @@ export function HealthcareOrganization() {
                                     })
                                 )}
                             >
-                                <Link to={`/overzicht/${healthcareOrganizationSlug}/medicijnen`} />
+                                <RouterLink
+                                    to={`/overzicht/${healthcareOrganizationSlug}/medicijnen`}
+                                />
                             </ButtonCard>
                         </li>
                         <li>
@@ -86,7 +88,9 @@ export function HealthcareOrganization() {
                                     })
                                 )}
                             >
-                                <Link to={`/overzicht/${healthcareOrganizationSlug}/klachten`} />
+                                <RouterLink
+                                    to={`/overzicht/${healthcareOrganizationSlug}/klachten`}
+                                />
                             </ButtonCard>
                         </li>
                         <li>
@@ -106,7 +110,9 @@ export function HealthcareOrganization() {
                                     })
                                 )}
                             >
-                                <Link to={`/overzicht/${healthcareOrganizationSlug}/uitslagen`} />
+                                <RouterLink
+                                    to={`/overzicht/${healthcareOrganizationSlug}/uitslagen`}
+                                />
                             </ButtonCard>
                         </li>
                     </ul>

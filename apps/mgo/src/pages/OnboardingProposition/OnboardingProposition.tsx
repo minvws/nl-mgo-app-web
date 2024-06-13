@@ -1,6 +1,6 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
-import { Link } from '$/routing';
+import { Link, RouterLink } from '$/routing';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
@@ -38,9 +38,9 @@ export function OnboardingProposition() {
 
                     <Text className="mb-6 md:mb-12">
                         <Trans id="onboarding.proposition.list-description">
-                            In de privacy&shy;verklaring staat hoe Mijn
+                            In de <Link to="/privacy">privacy&shy;verklaring</Link> staat hoe Mijn
                             Gezond&shy;heids&shy;overzicht jouw gegevens gebruikt. Dit zijn de
-                            belangrijkste punten:
+                            belangrijkste punten
                         </Trans>
                     </Text>
 
@@ -87,9 +87,9 @@ export function OnboardingProposition() {
                     </Text>
 
                     <Button asChild onClick={() => setOnboardingSeen(true)}>
-                        <Link to="/zorgaanbieder-toevoegen">
+                        <RouterLink to="/zorgaanbieder-toevoegen">
                             <Trans id="common.next">Volgende</Trans>
-                        </Link>
+                        </RouterLink>
                     </Button>
                 </div>
             </Container>

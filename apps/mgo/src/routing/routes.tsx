@@ -18,6 +18,7 @@ import { Playground } from '../pages/Playground/Playground';
 import { Problems } from '../pages/Problems/Problems';
 import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
 import { Logout } from '../pages/Logout/Logout';
+import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
 
 const routeConfig = [
     {
@@ -42,6 +43,10 @@ const routeConfig = [
                     {
                         path: '/uitgelogd',
                         element: <Logout />,
+                    },
+                    {
+                        path: '/privacy',
+                        element: <PrivacyStatement />,
                     },
                     {
                         path: '*',

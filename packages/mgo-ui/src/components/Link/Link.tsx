@@ -1,10 +1,20 @@
 import { type AnchorHTMLAttributes } from 'react';
-import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
+import { useComposition } from '../../hooks/useComposition/useComposition';
 import { cn, focusStyle } from '../../utils';
 
-export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement>, CompositionProps {
+type AnchorOrCompositionProps =
+    | {
+          href?: never; // Please don't combine Anchor attributes with `asChild`, pass the props to the child instead.
+          asChild: true;
+      }
+    | {
+          href: string;
+          asChild?: never;
+      };
+
+export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
     onClick?: never; // Please use `asChild` instead
-}
+} & AnchorOrCompositionProps;
 
 export const Link = ({ asChild, children, className, ...rest }: LinkProps) => {
     const { Comp } = useComposition({ asChild, tag: 'a' });

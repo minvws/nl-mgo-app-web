@@ -1,7 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { Trans, msg } from '@lingui/macro';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
 import { Helmet } from 'react-helmet';
 import { useLingui } from '@lingui/react';
@@ -42,9 +42,9 @@ export function OnboardingIntro() {
                     </Trans>
                 </Text>
                 <Button asChild>
-                    <Link to="/hoe-werkt-het">
+                    <RouterLink to="/hoe-werkt-het">
                         <Trans id="common.next">Volgende</Trans>
-                    </Link>
+                    </RouterLink>
                 </Button>
             </Container>
         </>

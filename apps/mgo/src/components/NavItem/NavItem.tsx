@@ -1,12 +1,12 @@
 import { NavButton, type NavButtonProps } from '@minvws/mgo-mgo-ui';
-import { NavLink, type NavLinkProps } from '$/routing';
+import { RouterNavLink, type RouterNavLinkProps } from '$/routing';
 
-export const NavItem = ({ icon, to, children, ...rest }: NavLinkProps & NavButtonProps) => (
+export const NavItem = ({ icon, to, children, ...rest }: RouterNavLinkProps & NavButtonProps) => (
     <li>
         <NavButton asChild className="w-full" icon={icon}>
-            <NavLink to={to} {...rest}>
+            <RouterNavLink to={to} {...rest}>
                 {children}
-            </NavLink>
+            </RouterNavLink>
         </NavButton>
     </li>
 );

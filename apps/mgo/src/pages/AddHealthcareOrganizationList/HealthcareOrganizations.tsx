@@ -1,4 +1,4 @@
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store/healthcareProviders';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
@@ -92,14 +92,14 @@ export function HealthcareOrganizations() {
             </Stack>
             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
                 <Button asChild>
-                    <Link to="/overzicht">
+                    <RouterLink to="/overzicht">
                         <Trans id="healthcare-organisations.done">Ga naar het overzicht</Trans>
-                    </Link>
+                    </RouterLink>
                 </Button>
                 <Button variant="light" asChild>
-                    <Link to="/zorgaanbieder-toevoegen">
+                    <RouterLink to="/zorgaanbieder-toevoegen">
                         <Trans id="healthcare-organisations.add">Voeg een zorgaanbieder toe</Trans>
-                    </Link>
+                    </RouterLink>
                 </Button>
             </div>
         </Stack>

@@ -1,4 +1,4 @@
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
@@ -34,9 +34,9 @@ export function NotFound() {
                     </Trans>
                 </Text>
                 <Button asChild className="mt-6 md:mt-12">
-                    <Link to={'/overzicht'}>
+                    <RouterLink to={'/overzicht'}>
                         <Trans id="not-found.button">Ga naar het overzicht</Trans>
-                    </Link>
+                    </RouterLink>
                 </Button>
             </Container>
         </>

@@ -1,11 +1,11 @@
-import { useNavigate, type LinkProps } from '$/routing';
+import { useNavigate, type RouterLinkProps } from '$/routing';
 import { Trans } from '@lingui/macro';
 import { Button, cn, type ButtonProps } from '@minvws/mgo-mgo-ui';
-import { Link } from '../../routing/Link';
+import { RouterLink } from '../../routing/RouterLink';
 
 export type BackButtonProps = ButtonProps & {
-    to?: LinkProps['to'];
-    relative?: LinkProps['relative'];
+    to?: RouterLinkProps['to'];
+    relative?: RouterLinkProps['relative'];
 };
 
 export function BackButton({ to, relative, className, ...rest }: BackButtonProps) {
@@ -21,9 +21,9 @@ export function BackButton({ to, relative, className, ...rest }: BackButtonProps
     if (to) {
         return (
             <Button asChild className={cn(buttonProps.className, className)} {...buttonProps}>
-                <Link to={to} relative={relative}>
+                <RouterLink to={to} relative={relative}>
                     <Trans id="common.previous">Vorige</Trans>
-                </Link>
+                </RouterLink>
             </Button>
         );
     }

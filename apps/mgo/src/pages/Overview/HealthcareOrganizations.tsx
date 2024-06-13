@@ -1,4 +1,4 @@
-import { Link } from '$/routing';
+import { RouterLink } from '$/routing';
 import { type HealthcareOrganization } from '$/store/healthcareProviders';
 import { Trans } from '@lingui/macro';
 import { Button, ButtonCard, Stack } from '@minvws/mgo-mgo-ui';
@@ -25,7 +25,7 @@ export const HealthcareOrganizations = ({ organizations }: ResultsProps) => {
                                 title={display_name}
                                 description={types[0].display_name}
                             >
-                                <Link to={`/overzicht/${slug}`} />
+                                <RouterLink to={`/overzicht/${slug}`} />
                             </ButtonCard>
                         </li>
                     ))}
@@ -33,9 +33,9 @@ export const HealthcareOrganizations = ({ organizations }: ResultsProps) => {
             </Stack>
 
             <Button asChild className="self-start">
-                <Link to="/zorgaanbieder-toevoegen">
+                <RouterLink to="/zorgaanbieder-toevoegen">
                     <Trans id="overview.add">Voeg een zorgaanbieder toe</Trans>
-                </Link>
+                </RouterLink>
             </Button>
         </>
     );

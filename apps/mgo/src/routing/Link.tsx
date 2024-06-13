@@ -1,13 +1,13 @@
-import { type Override } from '$/types/Override';
-import { type FC } from 'react';
-import { Link as RouterLink, type LinkProps as RouterLinkProps } from 'react-router-dom';
-import { type To } from './routes';
+import { Link as UiLink } from '@minvws/mgo-mgo-ui';
+import { RouterLink, type RouterLinkProps } from './RouterLink';
 
-export type LinkProps = Override<
-    RouterLinkProps,
-    {
-        to: To;
-    }
->;
+export type LinkProps = RouterLinkProps;
 
-export const Link = RouterLink as FC<LinkProps>;
+/**
+ * This `Link` component combines the RouterLink functionality with the visual styles from the MGO-UI library
+ */
+export const Link = (props: LinkProps) => (
+    <UiLink asChild>
+        <RouterLink {...props} />
+    </UiLink>
+);

@@ -11,6 +11,8 @@ export const router = createBrowserRouter(routes);
 export { useNavigate } from './useNavigate';
 export { useParams } from './useParams';
 export { useLocation } from './useLocation';
-export { Link, type LinkProps } from './Link';
-export { NavLink, type NavLinkProps } from './NavLink';
+export { RouterLink, type RouterLinkProps } from './RouterLink';
+export { RouterNavLink, type RouterNavLinkProps } from './RouterNavLink';
 export { Navigate, type NavigateProps } from './Navigate';
+
+export { Link, type LinkProps } from './Link';
