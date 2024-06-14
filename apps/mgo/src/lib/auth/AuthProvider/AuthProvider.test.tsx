@@ -16,9 +16,11 @@ function createFetchReponse(
 }
 
 const locationAssignMock = vi.fn();
+const locationReplaceMock = vi.fn();
 function mockLocation(href?: string) {
     const locationMock = new URL(href || window.location.href);
     Object.defineProperty(locationMock, 'assign', { value: locationAssignMock, writable: false });
+    Object.defineProperty(locationMock, 'replace', { value: locationReplaceMock, writable: false });
     vi.stubGlobal('location', locationMock);
 }
 
@@ -49,7 +51,7 @@ function WrappedMockApp() {
     );
 }
 
-test('sign-in', async () => {
+test('sign-in and sign-out', async () => {
     /*
      * This test is made up of two parts: the sign-in redirect and the sign-in
      * callback. It's in one long test because the OIDC client needs to
@@ -124,4 +126,10 @@ test('sign-in', async () => {
         grant_type: 'authorization_code',
         redirect_uri: locationBaseUrl,
     });
+
+    /** PART THREE: the logout redirect */
+    vi.resetAllMocks();
+    await fireEvent.click(await screen.findByRole('button', { name: /log out/i }));
+    await vi.waitFor(() => expect(locationReplaceMock).toHaveBeenCalled());
+    expect(locationReplaceMock).toHaveBeenCalledWith('/uitgelogd');
 });
