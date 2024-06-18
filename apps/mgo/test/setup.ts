@@ -1,15 +1,24 @@
+import type { Config } from '$/lib/config/config';
 import { cleanup } from '@testing-library/react';
 import type { ReactNode } from 'react';
-import { afterEach, beforeAll, vi } from 'vitest';
+import { afterEach, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
+
 import {
     authState,
     removeUserMock,
     resetAuthState,
     signinRedirectMock,
     signoutRedirectMock,
-} from './auth';
-import { config } from './config';
+} from './helpers/auth';
+
+export const config: Config = {
+    oidc: {
+        authority: 'http://localhost:5000',
+        client_id: 'client_id',
+        redirect_uri: 'http://localhost:3000',
+    },
+};
 
 vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
 
@@ -30,11 +39,12 @@ vi.mock('react-oidc-context', () => ({
         settings: {},
     }),
 }));
+
 window.scrollTo = vi.fn;
 
-beforeAll(() => {
+beforeEach(() => {
     Object.defineProperty(window, 'matchMedia', {
-        value: vi.fn(() => ({ matches: true, addListener: vi.fn(), removeListener: vi.fn() })),
+        value: vi.fn(() => ({ matches: false, addListener: vi.fn(), removeListener: vi.fn() })),
     });
 });
 

@@ -1,5 +1,3 @@
-/* c8 ignore start */
-
 import theme from '@minvws/mgo-tailwind/theme/index.js';
 
 export const singleColors = Object.entries(theme.colors)

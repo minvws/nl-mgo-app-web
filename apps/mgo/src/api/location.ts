@@ -1,4 +1,4 @@
-/* c8 ignore start */
+/* c8 ignore start - this will be moved to another pacakge soon */
 import type { OrganisationSearchResponse } from '$/types/Organisation';
 import ky from 'ky';
 

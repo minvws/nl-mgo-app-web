@@ -9,6 +9,7 @@ export default defineConfig({
             exclude: [
                 'apps/*/test/*',
                 'packages/*/test/*',
+                'packages/*/docs/*',
                 '**/?*.config.ts',
                 '**/?*.stories.tsx',
                 '**/?*.d.ts',

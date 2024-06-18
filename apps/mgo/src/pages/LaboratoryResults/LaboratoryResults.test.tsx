@@ -1,9 +1,7 @@
-import { setupWithAppProviders } from '$test/helpers';
+import { setupWithAppProviders, flushCallStack } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { type MockedFunction, test, vi, beforeEach } from 'vitest';
 import { LaboratoryResults } from './LaboratoryResults';
-
-import { flushCallStack } from '$test/flushCallstack';
 import observations from './fixtures/fhir-observations.json';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { useParams } from '$/routing';

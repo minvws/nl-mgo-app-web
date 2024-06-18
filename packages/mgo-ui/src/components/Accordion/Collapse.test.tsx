@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { config } from 'react-transition-group';
 import { type TransitionProps } from 'react-transition-group/Transition';
 import { afterAll, beforeAll, expect, test, vi } from 'vitest';
-import { flushCallStack } from '../../../test/flushCallstack';
+import { flushCallStack } from '../../../test/helpers';
 import { Collapse } from './Collapse';
 
 beforeAll(() => {

@@ -1,4 +1,4 @@
-import { authState, signinRedirectMock } from '$test/auth';
+import { authState, signinRedirectMock } from '$test/helpers';
 import { setupWithAppProviders } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';

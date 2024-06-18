@@ -1,6 +1,6 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useHealthcareOrganizationsStore } from '$/store';
-import { setAuthStateAuthenticated } from '$test/auth';
+import { setAuthStateAuthenticated } from '$test/helpers';
 import { healthcareOrganizationDTO } from '$test/data';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';

@@ -1,10 +1,8 @@
-import { setupWithAppProviders } from '$test/helpers';
+import { flushCallStack, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
-
-import { flushCallStack } from '$test/flushCallstack';
-import fhirProblems from './fixtures/fhir-problem-statements.json';
 import { Problems } from './Problems';
+import fhirProblems from './fixtures/fhir-problem-statements.json';
 
 vi.mock('$/api/bgz', () => ({
     bgz: {

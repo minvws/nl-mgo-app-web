@@ -1,5 +1,3 @@
-/* c8 ignore start */
-
 import { setupServer } from 'msw/node';
 
 import { HttpResponse, http, type RequestHandler } from 'msw';

@@ -10,7 +10,11 @@ export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
     const auth = useAuth();
 
     return (
-        <header className={cn('sticky top-0 z-10 h-16 w-full', className)} {...rest}>
+        <header
+            data-testid="header-mobile"
+            className={cn('sticky top-0 z-10 h-16 w-full', className)}
+            {...rest}
+        >
             <Container className="flex h-full items-center justify-between">
                 <MobileMenu />
                 <h2 className="text-xs font-bold leading-none">

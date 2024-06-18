@@ -1,12 +1,11 @@
 import * as LocationApi from '$/api/location';
 import { type OrganisationSearchResponse } from '$/types/Organisation';
-import { setupWithAppProviders } from '$test/helpers';
+import { setupWithAppProviders, flushCallStack } from '$test/helpers';
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi } from 'vitest';
 import { AddHealthcareOrganization } from './AddHealthcareOrganization';
 import { submitSearchForm } from './testHelpers';
-import { flushCallStack } from '$test/flushCallstack';
 import { healthcareOrganizationDTO } from '$test/data';
 
 vi.mock('$/api/location', () => ({

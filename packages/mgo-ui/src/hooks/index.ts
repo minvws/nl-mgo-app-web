@@ -1,5 +1,6 @@
 export {
     useResponsive,
+    breakpointQueries,
     type BreakpointSize,
     type ResponsiveConfig,
     type ResponsiveProp,

@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { useDarkMode } from './useDarkMode';
-import { flushCallStack } from '../../../test/flushCallstack';
+import { flushCallStack } from '../../../test/helpers';
 
 export function mockMatchMedia(match: Partial<MediaQueryList>) {
     Object.defineProperty(window, 'matchMedia', {

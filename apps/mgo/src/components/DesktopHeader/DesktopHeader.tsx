@@ -9,7 +9,7 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
     const auth = useAuth();
 
     return (
-        <header className={cn(className)} {...rest}>
+        <header data-testid="header-desktop" className={cn(className)} {...rest}>
             <Container className="flex items-center justify-between py-4">
                 <h2 className="text-xl font-normal leading-tight text-black dark:text-white">
                     <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>

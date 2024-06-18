@@ -1,14 +1,13 @@
 import { Outlet } from '$/routing';
-import { setup, setupWithAppProviders } from '$test/helpers';
+import { setup, setupWithAppProviders, flushCallStack } from '$test/helpers';
 import { useNavFocusRef } from '$/hooks';
 import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
-import { flushCallStack } from '$test/flushCallstack';
 import { createMemoryRouter } from 'react-router-dom';
 import { App } from '$/App';
-import { removeUserMock, setAuthStateAuthenticated } from '$test/auth';
+import { removeUserMock, setAuthStateAuthenticated } from '$test/helpers';
 
 test('render MobileHeader', () => {
     setupWithAppProviders(<MobileHeader />);

@@ -1,18 +1,7 @@
 import { renderHook } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
+import { expect, test } from 'vitest';
 import { breakpointQueries, useResponsive, type ResponsiveConfig } from './useResponsive';
-
-export function mockMatchMedia(matchingQueries: string[] = []) {
-    Object.defineProperty(window, 'matchMedia', {
-        value: vi.fn((query: string) => {
-            return {
-                matches: matchingQueries.includes(query),
-                addEventListener: vi.fn(),
-                removeEventListener: vi.fn(),
-            };
-        }),
-    });
-}
+import { mockMatchMedia } from '../../../test/helpers';
 
 const { sm, md, lg, xl, '2xl': xxl } = breakpointQueries;
 const allQueries = [sm, md, lg, xl, xxl];

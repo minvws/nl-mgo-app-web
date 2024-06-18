@@ -1,5 +1,4 @@
-import { authState, setAuthStateAuthenticated } from '$test/auth';
-import { setupApp } from '$test/helpers';
+import { setupApp, authState, setAuthStateAuthenticated } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { useOnboardingSeen } from './hooks';

@@ -2,11 +2,11 @@ import { vi, type MockInstance } from 'vitest';
 
 type TestFunction = () => void | Promise<void>;
 
-export const mockConsoleError = () => {
+const mockConsoleError = () => {
     vi.spyOn(console, 'error').mockImplementation(() => {});
 };
 
-export const restoreConsoleError = () => {
+const restoreConsoleError = () => {
     const error = console.error as unknown as MockInstance;
     if (typeof error.mockRestore === 'function') {
         error.mockRestore();

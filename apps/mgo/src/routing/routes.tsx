@@ -2,6 +2,7 @@ import { AddHealthcareOrganization } from '$/pages/AddHealthcareOrganization/Add
 import { AddHealthcareOrganizationList } from '$/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList';
 import { Medication } from '$/pages/Medication/Medication';
 import { NotFound } from '$/pages/NotFound/NotFound';
+import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
@@ -10,15 +11,13 @@ import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
 import { HealthcareOrganization } from '../pages/HealthcareOrganization/HealthcareOrganization';
+import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
 import { Login } from '../pages/Login/Login';
+import { Logout } from '../pages/Logout/Logout';
 import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
 import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
 import { Overview } from '../pages/Overview/Overview';
-import { Playground } from '../pages/Playground/Playground';
 import { Problems } from '../pages/Problems/Problems';
-import { LaboratoryResults } from '../pages/LaboratoryResults/LaboratoryResults';
-import { Logout } from '../pages/Logout/Logout';
-import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
 
 const routeConfig = [
     {
@@ -98,10 +97,6 @@ const routeConfig = [
                 ],
             },
         ],
-    },
-    {
-        path: '/playground',
-        element: <Playground />,
     },
 ] as const;
 

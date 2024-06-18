@@ -1,5 +1,5 @@
 import { setupWithAppProviders } from '$test/helpers';
-import { supressError } from '$test/supressError';
+import { supressError } from '$test/helpers/supressError';
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';

@@ -18,9 +18,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
         sm: false,
     });
 
-    /* c8 ignore start (TODO) */
     const Header = isMobile ? MobileHeader : DesktopHeader;
-    /* c8 ignore stop */
 
     return (
         <>
