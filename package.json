@@ -54,9 +54,15 @@
         ]
     },
     "pnpm": {
+        "overrides comments (non-standard-key)": {
+            "ws": "Fixes security issue: CVE-2024-37890 / https://github.com/advisories/GHSA-3h5v-q93c-6h6q"
+        },
+        "overrides": {
+            "ws": "^8.17.1"
+        },
         "auditConfig": {
-            "non-standard-ignore-cves-comments": {
-                "CVE-2024-29415": "Only affeccts devDependency storybook, waiting for the fix to be released. https://github.com/storybookjs/storybook/pull/27529"
+            "ignoreCves comments (non-standard-key)": {
+                "CVE-2024-29415": "Only affects devDependency storybook, waiting for the fix to be released. https://github.com/storybookjs/storybook/pull/27529"
             },
             "ignoreCves": [
                 "CVE-2024-29415"
