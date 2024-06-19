@@ -1,12 +1,12 @@
+import { bgz } from '$/api/bgz';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
 import { Trans } from '@lingui/macro';
-import { Container, Heading, Text } from '@minvws/mgo-mgo-ui';
+import { getMgoProblems } from '@minvws/mgo-fhir-data';
+import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import { bgz } from '$/api/bgz';
-import { getMgoProblems } from '@minvws/mgo-fhir-data';
 import { ProblemsList } from './ProblemsList';
 
 export function Problems() {
@@ -22,8 +22,8 @@ export function Problems() {
     });
 
     return (
-        <Container>
-            <BackButton to=".." relative="path" />
+        <section className="flex-grow">
+            <BackButton />
 
             <Heading asChild size="lg" className="mb-4">
                 <h1 ref={navFocusRef}>
@@ -44,6 +44,6 @@ export function Problems() {
                     renderResult={({ data }) => <ProblemsList conditions={data} />}
                 />
             </div>
-        </Container>
+        </section>
     );
 }

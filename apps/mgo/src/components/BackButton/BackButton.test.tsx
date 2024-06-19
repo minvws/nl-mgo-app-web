@@ -39,10 +39,3 @@ test('BackButton navigates back when clicked', async () => {
     await user.click(backButton);
     expect(mockNavigate).toHaveBeenCalledWith(-1);
 });
-
-test('BackButton renders as link when fixed to is given', async () => {
-    setupWithAppProviders(<BackButton to="/welkom" />);
-    const backButton = screen.getByRole('link', { name: 'Vorige' });
-    expect(backButton.className).not.includes('hidden');
-    expect(backButton.getAttribute('href')).toBe('/welkom');
-});

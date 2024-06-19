@@ -2,15 +2,15 @@ import { bgz } from '$/api/bgz';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
-import { Container, Heading, Text } from '@minvws/mgo-mgo-ui';
-import { useQuery } from '@tanstack/react-query';
-import { MedicationList } from './MedicationList';
-import { Helmet } from 'react-helmet';
-import { useLingui } from '@lingui/react';
-import { useHealthcareOrganizationsStore } from '$/store';
 import { useParams } from '$/routing';
+import { useHealthcareOrganizationsStore } from '$/store';
+import { Trans, msg } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
+import { Heading, Text } from '@minvws/mgo-mgo-ui';
+import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet';
+import { MedicationList } from './MedicationList';
 
 export function Medication() {
     const { _ } = useLingui();
@@ -40,8 +40,8 @@ export function Medication() {
                     })
                 )}
             />
-            <Container>
-                <BackButton to=".." relative="path" />
+            <section className="flex-grow">
+                <BackButton />
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
@@ -63,7 +63,7 @@ export function Medication() {
                         renderResult={({ data }) => <MedicationList statements={data} />}
                     />
                 </div>
-            </Container>
+            </section>
         </>
     );
 }

@@ -89,7 +89,6 @@ msgid "common.next"
 msgstr "Volgende"
 
 #: src/components/BackButton/BackButton.tsx
-#: src/components/BackButton/BackButton.tsx
 msgid "common.previous"
 msgstr "Vorige"
 

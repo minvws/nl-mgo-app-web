@@ -2,15 +2,15 @@ import { bgz } from '$/api/bgz';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { getMgoObservations } from '@minvws/mgo-fhir-data';
-import { Container, Heading, Text } from '@minvws/mgo-mgo-ui';
-import { useQuery } from '@tanstack/react-query';
-import { LaboratoryResultsList } from './LaboratoryResultsList';
-import { useLingui } from '@lingui/react';
-import { Helmet } from 'react-helmet';
-import { useHealthcareOrganizationsStore } from '$/store';
 import { useParams } from '$/routing';
+import { useHealthcareOrganizationsStore } from '$/store';
+import { Trans, msg } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { getMgoObservations } from '@minvws/mgo-fhir-data';
+import { Heading, Text } from '@minvws/mgo-mgo-ui';
+import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet';
+import { LaboratoryResultsList } from './LaboratoryResultsList';
 
 export function LaboratoryResults() {
     const { _ } = useLingui();
@@ -40,8 +40,8 @@ export function LaboratoryResults() {
                     })
                 )}
             />
-            <Container>
-                <BackButton to=".." relative="path" />
+            <section className="flex-grow">
+                <BackButton />
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
@@ -62,7 +62,7 @@ export function LaboratoryResults() {
                         renderResult={({ data }) => <LaboratoryResultsList observations={data} />}
                     />
                 </div>
-            </Container>
+            </section>
         </>
     );
 }

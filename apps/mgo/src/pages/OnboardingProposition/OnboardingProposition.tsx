@@ -23,7 +23,7 @@ export function OnboardingProposition() {
             />
 
             <Container>
-                <BackButton to="/welkom" />
+                <BackButton />
             </Container>
 
             <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">

@@ -5,7 +5,7 @@ export function PrivacyStatement() {
     return (
         <>
             <Container>
-                <BackButton to=".." relative="path" />
+                <BackButton />
             </Container>
 
             <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">
