@@ -4,7 +4,7 @@ import { RouterLink } from '$/routing';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, Card, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function NotFound() {
     const { _ } = useLingui();

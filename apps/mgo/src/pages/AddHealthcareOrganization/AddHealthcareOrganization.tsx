@@ -10,7 +10,7 @@ import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResultsTips } from './NoSearchResultsTips';
 import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function AddHealthcareOrganization() {
     const { _ } = useLingui();

@@ -4,7 +4,7 @@ import { I18nProvider } from './i18n';
 import { AuthProvider } from './lib/auth';
 import { readConfig } from './lib/config/config';
 import { router as defaultRouter } from './routing';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -20,7 +20,7 @@ interface AppProps {
 
 export const App = ({ router = defaultRouter }: AppProps = {}) => {
     return (
-        <>
+        <HelmetProvider>
             <Helmet
                 titleTemplate="%s | Mijn Gezondheidsoverzicht"
                 defaultTitle="Mijn Gezondheidsoverzicht"
@@ -32,6 +32,6 @@ export const App = ({ router = defaultRouter }: AppProps = {}) => {
                     </AuthProvider>
                 </QueryClientProvider>
             </I18nProvider>
-        </>
+        </HelmetProvider>
     );
 };

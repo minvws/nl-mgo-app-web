@@ -5,7 +5,7 @@ import { Trans, msg } from '@lingui/macro';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
 import { HealthcareOrganizations } from './HealthcareOrganizations';
 import { NoHealthcareOrganizations } from './NoHealtcareOrganizations';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useLingui } from '@lingui/react';
 
 export function AddHealthcareOrganizationList() {

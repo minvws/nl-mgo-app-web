@@ -3,7 +3,7 @@ import { Trans, msg } from '@lingui/macro';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { RouterLink } from '$/routing';
 import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useLingui } from '@lingui/react';
 
 export function OnboardingIntro() {

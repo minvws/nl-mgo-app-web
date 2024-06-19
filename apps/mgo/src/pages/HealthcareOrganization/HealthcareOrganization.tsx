@@ -6,7 +6,7 @@ import { ButtonCard, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
 import { NotFound } from './NotFound';
 import { useLingui } from '@lingui/react';
 import { BackButton } from '$/components/BackButton/BackButton';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function HealthcareOrganization() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();

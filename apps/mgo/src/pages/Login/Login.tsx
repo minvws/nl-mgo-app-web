@@ -7,7 +7,7 @@ import { useLingui } from '@lingui/react';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
 import { BackButton } from '$/components/BackButton/BackButton';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function Login() {
     const { _ } = useLingui();

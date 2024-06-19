@@ -9,7 +9,7 @@ import { useLingui } from '@lingui/react';
 import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
 import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { MedicationList } from './MedicationList';
 
 export function Medication() {

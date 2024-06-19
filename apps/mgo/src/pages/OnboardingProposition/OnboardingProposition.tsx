@@ -4,7 +4,7 @@ import { Link, RouterLink } from '$/routing';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function OnboardingProposition() {
     const { _ } = useLingui();
