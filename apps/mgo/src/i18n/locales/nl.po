@@ -102,6 +102,10 @@ msgstr "(verplicht)"
 msgid "common.search"
 msgstr "Zoeken"
 
+#: src/hooks/useTranslateDescriptions/useTranslateDescriptions.ts
+msgid "common.unknown"
+msgstr "Niet bekend"
+
 #: src/components/QueryState/QueryStateError.tsx
 msgid "default.state.error.description"
 msgstr "Onze excuses, er lijkt een probleem te zijn met de verbinding met onze server. We werken eraan om het op te lossen. Probeer het later opnieuw."

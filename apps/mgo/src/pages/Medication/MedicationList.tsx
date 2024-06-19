@@ -1,5 +1,5 @@
+import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
 import { msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { type MgoMedicationStatement } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
@@ -34,7 +34,7 @@ function getDescriptions({ instructions, prescribedBy, startDate }: MgoMedicatio
 }
 
 export function MedicationList({ statements }: MedicationListProps) {
-    const { _ } = useLingui();
+    const { translateDescriptions } = useTranslateDescriptions();
 
     return (
         <Stack asChild>
@@ -48,10 +48,7 @@ export function MedicationList({ statements }: MedicationListProps) {
 
                             <Accordion.Panel>
                                 <DescriptionList
-                                    list={getDescriptions(statement).map(({ term, details }) => ({
-                                        term: _(term),
-                                        details,
-                                    }))}
+                                    list={translateDescriptions(getDescriptions(statement))}
                                 />
                             </Accordion.Panel>
                         </Accordion>

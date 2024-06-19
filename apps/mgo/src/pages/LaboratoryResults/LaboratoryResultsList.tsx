@@ -1,5 +1,5 @@
+import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
 import { msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { type MgoObservation } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
@@ -86,7 +86,7 @@ function getDescriptions({
 }
 
 export function LaboratoryResultsList({ observations }: LaboratoryResultsListProps) {
-    const { _ } = useLingui();
+    const { translateDescriptions } = useTranslateDescriptions();
 
     return (
         <Stack asChild>
@@ -100,10 +100,7 @@ export function LaboratoryResultsList({ observations }: LaboratoryResultsListPro
 
                             <Accordion.Panel>
                                 <DescriptionList
-                                    list={getDescriptions(observation).map(({ term, details }) => ({
-                                        term: _(term),
-                                        details,
-                                    }))}
+                                    list={translateDescriptions(getDescriptions(observation))}
                                 />
                             </Accordion.Panel>
                         </Accordion>

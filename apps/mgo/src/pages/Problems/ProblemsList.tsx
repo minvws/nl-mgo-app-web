@@ -1,5 +1,5 @@
+import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
 import { msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { type MgoProblem } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
@@ -62,7 +62,7 @@ function getDescriptions({
 }
 
 export function ProblemsList({ conditions }: ProblemsListProps) {
-    const { _ } = useLingui();
+    const { translateDescriptions } = useTranslateDescriptions();
 
     return (
         <Stack asChild>
@@ -76,10 +76,7 @@ export function ProblemsList({ conditions }: ProblemsListProps) {
 
                             <Accordion.Panel>
                                 <DescriptionList
-                                    list={getDescriptions(condition).map(({ term, details }) => ({
-                                        term: _(term),
-                                        details,
-                                    }))}
+                                    list={translateDescriptions(getDescriptions(condition))}
                                 />
                             </Accordion.Panel>
                         </Accordion>
