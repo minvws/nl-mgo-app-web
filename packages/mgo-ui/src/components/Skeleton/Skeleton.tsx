@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import { tw } from '../../utils/tw/tw';
 
 export interface SkeletonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
-    isLoading?: boolean;
+    readonly isLoading?: boolean;
 }
 
 export const Skeleton = ({

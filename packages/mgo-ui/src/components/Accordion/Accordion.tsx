@@ -7,7 +7,7 @@ import { AccordionContext, type AccordionContextState } from './AccordionContext
 import { AccordionPanel } from './AccordionPanel';
 
 export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
-    defaultExpanded?: boolean;
+    readonly defaultExpanded?: boolean;
 }
 
 export const Accordion = ({

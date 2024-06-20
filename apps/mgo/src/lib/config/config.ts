@@ -26,7 +26,7 @@ const getConfig = (): Record<string, unknown> => {
 const readString = (obj: Record<string, unknown>, key: string): string => {
     const value = obj[key];
     if (typeof value !== 'string') throw new Error(`window["${key}"] is not a string`);
-    return value as string;
+    return value;
 };
 
 const readUrl = (obj: Record<string, unknown>, key: string): UrlString => {

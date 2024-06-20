@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import { Button, ButtonCard, Stack } from '@minvws/mgo-mgo-ui';
 
 interface ResultsProps {
-    organizations: HealthcareOrganization[];
+    readonly organizations: HealthcareOrganization[];
 }
 
 export const HealthcareOrganizations = ({ organizations }: ResultsProps) => {

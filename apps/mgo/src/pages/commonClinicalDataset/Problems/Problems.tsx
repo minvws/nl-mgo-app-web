@@ -8,6 +8,7 @@ import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { ProblemsList } from './ProblemsList';
+import { assignId } from '$/lib/assignId/assignId';
 
 export function Problems() {
     const { _ } = useLingui();
@@ -23,7 +24,7 @@ export function Problems() {
             }
 
             const problemBundle = await commonClinicalDataset.getProblems().json();
-            return getMgoProblems(problemBundle);
+            return getMgoProblems(problemBundle).map(assignId);
         },
     });
 

@@ -2,9 +2,9 @@ import { icons } from './Icons';
 import { type Status } from './statuses';
 
 export interface AlertProps {
-    label: string;
-    status: Status;
-    description?: string;
+    readonly label: string;
+    readonly status: Status;
+    readonly description?: string;
 }
 
 export const Alert = ({ label, status, description }: AlertProps) => {

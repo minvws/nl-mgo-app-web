@@ -22,7 +22,7 @@ test('healthcare provider shows details about the provider', () => {
 
     setupWithAppProviders(<HealthcareOrganization />);
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(organization.name!);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(organization.name);
 });
 
 test('healthcare provider shows a message if the provider could not be found', () => {

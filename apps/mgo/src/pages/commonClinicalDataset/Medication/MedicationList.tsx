@@ -1,10 +1,11 @@
 import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
+import { type WithId } from '$/lib/assignId/assignId';
 import { msg } from '@lingui/macro';
 import { type MgoMedicationStatement } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
 export interface MedicationListProps {
-    statements: MgoMedicationStatement[];
+    readonly statements: WithId<MgoMedicationStatement>[];
 }
 
 function getDescriptions({ instructions, prescribedBy, startDate }: MgoMedicationStatement) {
@@ -40,7 +41,7 @@ export function MedicationList({ statements }: MedicationListProps) {
         <Stack asChild>
             <ul>
                 {statements.map((statement, i) => (
-                    <li key={i}>
+                    <li key={statement.id}>
                         <Accordion defaultExpanded={i === 0}>
                             <h2>
                                 <Accordion.Button>{statement.title}</Accordion.Button>

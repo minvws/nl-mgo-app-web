@@ -1,10 +1,11 @@
 import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
+import { type WithId } from '$/lib/assignId/assignId';
 import { msg } from '@lingui/macro';
 import { type MgoProblem } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
 export interface ProblemsListProps {
-    conditions: MgoProblem[];
+    readonly conditions: WithId<MgoProblem>[];
 }
 
 function getDescriptions({
@@ -68,7 +69,7 @@ export function ProblemsList({ conditions }: ProblemsListProps) {
         <Stack asChild>
             <ul>
                 {conditions.map((condition, i) => (
-                    <li key={i}>
+                    <li key={condition.id}>
                         <Accordion defaultExpanded={i === 0}>
                             <h2>
                                 <Accordion.Button>{condition.title}</Accordion.Button>

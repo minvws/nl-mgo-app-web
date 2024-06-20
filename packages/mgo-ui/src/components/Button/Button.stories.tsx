@@ -49,8 +49,8 @@ export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
         <Stack className="gap-8">
-            {variants.map((variant, index) => (
-                <Stack className="flex-row" key={index}>
+            {variants.map((variant) => (
+                <Stack className="flex-row" key={variant}>
                     <Button {...args} variant={variant}>
                         {variant}
                     </Button>

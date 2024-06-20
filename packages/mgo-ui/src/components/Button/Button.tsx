@@ -8,11 +8,11 @@ import { type Variant } from './variants';
 import { focusStyle } from '../../utils';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
-    isDisabled?: boolean;
-    variant?: Variant;
-    leftIcon?: IconName | ReactElement;
-    rightIcon?: IconName | ReactElement;
-    'aria-disabled'?: never; // Please use `isDisabled` instead
+    readonly isDisabled?: boolean;
+    readonly variant?: Variant;
+    readonly leftIcon?: IconName | ReactElement;
+    readonly rightIcon?: IconName | ReactElement;
+    readonly 'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;

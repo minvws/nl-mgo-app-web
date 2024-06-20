@@ -1,7 +1,6 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useHealthcareOrganizationsStore } from '$/store';
-import { setAuthStateAuthenticated } from '$test/helpers';
-import { setupApp, setupWithAppProviders } from '$test/helpers';
+import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';

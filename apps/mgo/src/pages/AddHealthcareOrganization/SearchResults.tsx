@@ -7,7 +7,7 @@ import { Button, HealthcareOrganizationButton, Icon, Stack, cn } from '@minvws/m
 import { useState, type HTMLAttributes } from 'react';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
-    searchResults: ParsedHealthcareOrganization[];
+    readonly searchResults: ParsedHealthcareOrganization[];
 }
 
 export const RESULTS_PER_PAGE = 15;

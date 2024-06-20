@@ -1,10 +1,11 @@
 import { useTranslateDescriptions } from '$/hooks/useTranslateDescriptions/useTranslateDescriptions';
+import { type WithId } from '$/lib/assignId/assignId';
 import { msg } from '@lingui/macro';
 import { type MgoObservation } from '@minvws/mgo-fhir-data';
 import { Accordion, DescriptionList, Stack } from '@minvws/mgo-mgo-ui';
 
 export interface LaboratoryResultsListProps {
-    observations: MgoObservation[];
+    readonly observations: WithId<MgoObservation>[];
 }
 
 function getDescriptions({
@@ -92,7 +93,7 @@ export function LaboratoryResultsList({ observations }: LaboratoryResultsListPro
         <Stack asChild>
             <ul>
                 {observations.map((observation, i) => (
-                    <li key={i}>
+                    <li key={observation.id}>
                         <Accordion defaultExpanded={i === 0}>
                             <h2>
                                 <Accordion.Button>{observation.title}</Accordion.Button>

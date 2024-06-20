@@ -4,11 +4,11 @@ import { generateNonce } from './generateNonce.ts';
 import { type RouteConfigPaths } from '$/routing/routes.tsx';
 
 type Props = {
-    authority: string;
-    client_id: string;
-    redirect_uri: string;
-    lang?: 'nl' | 'en';
-    children: ReactNode;
+    readonly authority: string;
+    readonly client_id: string;
+    readonly redirect_uri: string;
+    readonly lang?: 'nl' | 'en';
+    readonly children: ReactNode;
 };
 
 const onSigninCallback = () => window.history.replaceState({}, '', window.location.pathname);
@@ -23,7 +23,7 @@ function WrappedAuthProvider({ lang, ...rest }: Props) {
 
     return (
         <OriginalAuthProvider
-            extraQueryParams={{ lang: lang || 'nl', nonce }}
+            extraQueryParams={{ lang: lang ?? 'nl', nonce }}
             onSigninCallback={onSigninCallback}
             onRemoveUser={onRemoveUser}
             {...rest}

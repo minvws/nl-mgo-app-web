@@ -1,5 +1,4 @@
-import { removeUserMock, setAuthStateAuthenticated } from '$test/helpers';
-import { setupWithAppProviders } from '$test/helpers';
+import { removeUserMock, setAuthStateAuthenticated, setupWithAppProviders } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { DesktopHeader } from './DesktopHeader';

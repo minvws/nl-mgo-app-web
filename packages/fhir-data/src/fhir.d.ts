@@ -1,7 +1,6 @@
+import { type FhirResource, type Bundle } from 'fhir/r3';
 import { type LosslessJson } from '@minvws/mgo-fhir-client';
 
-import type { FhirResource } from 'fhir/r3';
-import type { Bundle } from 'fhir/r3';
 export type * from 'fhir/r3';
 
 export type ResourceType = FhirResource['resourceType'];

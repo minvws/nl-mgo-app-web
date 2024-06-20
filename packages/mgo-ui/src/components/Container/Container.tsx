@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 
 export interface ContainerProps extends HTMLAttributes<HTMLElement>, CompositionProps {
-    centeredContent?: boolean;
+    readonly centeredContent?: boolean;
 }
 /**
  * Containers are used to constrain a content's width to a set maximum, while keeping it fluid.

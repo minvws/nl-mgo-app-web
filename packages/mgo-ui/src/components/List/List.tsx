@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { useComposition } from '../../hooks/useComposition/useComposition';
 
 export interface ListProps extends HTMLAttributes<HTMLElement> {
-    asChild?: boolean;
+    readonly asChild?: boolean;
 }
 
 export const List = ({ className, asChild, children, ...rest }: ListProps) => {

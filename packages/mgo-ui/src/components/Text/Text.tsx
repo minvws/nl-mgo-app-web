@@ -5,7 +5,7 @@ import { tw } from '../../utils/tw/tw';
 import { type Size } from './sizes';
 
 export interface TextProps extends HTMLAttributes<HTMLElement>, CompositionProps {
-    size?: Size;
+    readonly size?: Size;
 }
 
 const TextSizes: Record<Size, string> = {

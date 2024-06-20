@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useResponsive, type ResponsiveProp } from './useResponsive';
 
-const ComponentWithResponsiveProp = (props: { value: ResponsiveProp<number> }) => {
+const ComponentWithResponsiveProp = (props: { readonly value: ResponsiveProp<number> }) => {
     const currentValue = useResponsive(props.value);
     return (
         <div className="text-md">

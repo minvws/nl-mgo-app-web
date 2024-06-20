@@ -4,7 +4,7 @@ import { type HTMLAttributes } from 'react';
 import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 
 export interface QueryStateErrorProps extends HTMLAttributes<HTMLElement> {
-    title?: string;
+    readonly title?: string;
 }
 
 export function QueryStateError({ title, children, ...rest }: QueryStateErrorProps) {

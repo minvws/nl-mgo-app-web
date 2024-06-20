@@ -10,7 +10,7 @@ import { cn, groupFocusStyle } from '../../utils';
 export type IconButtonProps = IconProps &
     CompositionPropsWithoutChildren &
     HTMLAttributes<HTMLElement> & {
-        'aria-label': string;
+        readonly 'aria-label': string;
     };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(

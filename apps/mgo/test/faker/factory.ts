@@ -2,9 +2,7 @@ import { defaultsDeep } from 'lodash';
 
 type MockData<T> = GenericObject | Array<T>;
 
-export type MockDataFactory<T extends MockData<T>> = {
-    (partialData?: DeepPartial<T>): T;
-};
+export type MockDataFactory<T extends MockData<T>> = (partialData?: DeepPartial<T>) => T;
 
 /**
  * Returns a function that can be used for creating test data.

@@ -6,12 +6,12 @@ import { IconButton } from '../IconButton/IconButton';
 import { Text } from '../Text/Text';
 
 export interface ConfirmDialogProps extends AlertDialog.AlertDialogProps {
-    title: string;
-    description: string;
-    confirmButtonText: string;
-    cancelButtonText: string;
-    closeButtonAriaLabel: string;
-    onConfirm: (event: UIEvent) => void;
+    readonly title: string;
+    readonly description: string;
+    readonly confirmButtonText: string;
+    readonly cancelButtonText: string;
+    readonly closeButtonAriaLabel: string;
+    readonly onConfirm: (event: UIEvent) => void;
 }
 
 /**

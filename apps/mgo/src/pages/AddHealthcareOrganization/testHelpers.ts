@@ -13,7 +13,7 @@ export const submitSearchForm = async (
 
     if (city) {
         const cityInput = screen.getByRole('textbox', { name: 'Plaats' });
-        await user.type(cityInput, city!);
+        await user.type(cityInput, city);
     }
 
     const submit = screen.getByRole('button', {

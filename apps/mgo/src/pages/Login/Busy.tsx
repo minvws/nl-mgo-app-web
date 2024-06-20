@@ -1,14 +1,11 @@
-import { Fragment } from 'react';
 import { Heading } from '@minvws/mgo-mgo-ui';
 
-export function Busy({ task }: { task: string }) {
+export function Busy({ task }: { readonly task: string }) {
     return (
-        <Fragment>
-            <main className="pt-4 dark:text-white">
-                <Heading>
-                    <h1>Bezig met {task}...</h1>
-                </Heading>
-            </main>
-        </Fragment>
+        <main className="pt-4 dark:text-white">
+            <Heading>
+                <h1>Bezig met {task}...</h1>
+            </Heading>
+        </main>
     );
 }

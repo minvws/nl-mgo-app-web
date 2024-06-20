@@ -4,7 +4,7 @@ import { QueryStateLayout, type QueryStateLayoutProps } from '../QueryStateLayou
 import { useLingui } from '@lingui/react';
 
 export interface QueryStateNoResultProps
-    extends HTMLAttributes<HTMLElement>,
+    extends Omit<HTMLAttributes<HTMLElement>, 'title'>,
         QueryStateLayoutProps {}
 
 export function QueryStateNoResult({

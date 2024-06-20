@@ -21,7 +21,7 @@ export function useTranslateDescriptions() {
         translateDescriptions: (items: DescriptionItem[]) =>
             items.map(({ term, details }) => ({
                 term: _(term),
-                details: details === undefined || details === null ? unknownLabel : details,
+                details: details ?? unknownLabel,
             })),
     };
 }

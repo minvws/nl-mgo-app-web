@@ -2,8 +2,8 @@ import { Heading, Illustration, type IllustrationProps, Text } from '@minvws/mgo
 import { type HTMLAttributes } from 'react';
 
 export interface QueryStateLayoutProps extends HTMLAttributes<HTMLElement> {
-    illustration?: IllustrationProps['illustration'];
-    title?: string;
+    readonly illustration?: IllustrationProps['illustration'];
+    readonly title?: string;
 }
 
 export function QueryStateLayout({ illustration, title, children }: QueryStateLayoutProps) {

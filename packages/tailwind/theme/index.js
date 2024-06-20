@@ -9,6 +9,7 @@ import { maxWidth, screens } from './layout.js';
  * file://./../node_modules/tailwindcss/stubs/config.full.js
  */
 
+// eslint-disable-next-line import/no-default-export
 export default {
     extend: {},
 

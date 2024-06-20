@@ -28,9 +28,9 @@ test('safeGetBulk safely retrieves available data and ignores any TypeErrors', (
             } as TestData,
             {
                 fooString: (x) => x.foo,
-                bazNumber: (x) => x.bar!.baz,
-                qux0: (x) => x.bar!.qux![0].quxBar,
-                qux1: (x) => x.bar!.qux![1].quxBar,
+                bazNumber: (x) => x.bar.baz,
+                qux0: (x) => x.bar.qux[0].quxBar,
+                qux1: (x) => x.bar.qux[1].quxBar,
             }
         )
     ).toEqual({
@@ -55,10 +55,10 @@ test('safeGetBulk safely retrieves available data even with deeply nested config
             {
                 deep: {
                     nest: {
-                        bar0: (x) => x.bar!.qux![0].quxBar,
-                        bar1: (x) => x.bar!.qux![1].quxBar,
+                        bar0: (x) => x.bar.qux[0].quxBar,
+                        bar1: (x) => x.bar.qux[1].quxBar,
                         baz: {
-                            arr: (x) => x.arr![0].arrFoo,
+                            arr: (x) => x.arr[0].arrFoo,
                         },
                     },
                 },
@@ -95,8 +95,8 @@ test('safeGetBulk safely retrieves available data even with inline TypeError ind
                 ],
             } as TestData,
             {
-                arrFooTrue: (x) => x.arr!.find((x) => x.arrBool)!.arrFoo,
-                arrFooJoin: (x) => x.arr!.map((x) => x.arrFoo).join(', '),
+                arrFooTrue: (x) => x.arr.find((x) => x.arrBool)!.arrFoo,
+                arrFooJoin: (x) => x.arr.map((x) => x.arrFoo).join(', '),
                 throwTypeError: () => {
                     throw new TypeError();
                 },
@@ -121,9 +121,9 @@ test('safeGetBulk safely retrieves available data and combines this with any def
             } as TestData,
             {
                 fooString: (x) => x.foo,
-                bazNumber: (x) => x.bar!.baz,
-                qux0: (x) => x.bar!.qux![0].quxBar,
-                qux1: (x) => x.bar!.qux![1].quxBar,
+                bazNumber: (x) => x.bar.baz,
+                qux0: (x) => x.bar.qux[0].quxBar,
+                qux1: (x) => x.bar.qux[1].quxBar,
             },
             {
                 fooString: faker.lorem.sentence(),
@@ -153,9 +153,9 @@ test('safeGetBulk safely retrieves available data and combines this with any def
             } as TestData,
             {
                 fooString: (x) => x.foo,
-                bazNumber: (x) => x.bar!.baz,
-                qux0: (x) => x.bar!.qux![0].quxBar,
-                qux1: (x) => x.bar!.qux![1].quxBar,
+                bazNumber: (x) => x.bar.baz,
+                qux0: (x) => x.bar.qux[0].quxBar,
+                qux1: (x) => x.bar.qux[1].quxBar,
             },
             {
                 fooString: faker.lorem.sentence(),
@@ -189,10 +189,10 @@ test('safeGetBulk safely retrieves available data and combines this with any dee
             {
                 deep: {
                     nest: {
-                        bar0: (x) => x.bar!.qux![0].quxBar,
-                        bar1: (x) => x.bar!.qux![1].quxBar,
+                        bar0: (x) => x.bar.qux[0].quxBar,
+                        bar1: (x) => x.bar.qux[1].quxBar,
                         baz: {
-                            arr: (x) => x.arr![0].arrFoo,
+                            arr: (x) => x.arr[0].arrFoo,
                         },
                     },
                 },
@@ -226,9 +226,9 @@ test('safeGetBulk can handle undefined values', () => {
     expect(
         safeGetBulk(undefined as TestData | undefined, {
             fooString: (x) => x.foo,
-            bazNumber: (x) => x.bar!.baz,
-            qux0: (x) => x.bar!.qux![0].quxBar,
-            qux1: (x) => x.bar!.qux![1].quxBar,
+            bazNumber: (x) => x.bar.baz,
+            qux0: (x) => x.bar.qux[0].quxBar,
+            qux1: (x) => x.bar.qux[1].quxBar,
         })
     ).toEqual({
         fooString: undefined,
@@ -246,9 +246,9 @@ test('safeGetBulk can handle undefined values in combination with default values
             undefined as TestData | undefined,
             {
                 fooString: (x) => x.foo,
-                bazNumber: (x) => x.bar!.baz,
-                qux0: (x) => x.bar!.qux![0].quxBar,
-                qux1: (x) => x.bar!.qux![1].quxBar,
+                bazNumber: (x) => x.bar.baz,
+                qux0: (x) => x.bar.qux[0].quxBar,
+                qux1: (x) => x.bar.qux[1].quxBar,
             },
             {
                 bazNumber: randomInt1,

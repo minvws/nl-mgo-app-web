@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { iconPaddings, icons, type IconName } from './icons';
 
 export interface IconProps extends HTMLAttributes<SVGElement> {
-    icon: IconName;
+    readonly icon: IconName;
 }
 
 export const Icon = ({ icon, ['aria-label']: ariaLabel, className, ...rest }: IconProps) => {

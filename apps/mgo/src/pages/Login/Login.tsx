@@ -75,7 +75,7 @@ export function Login() {
                     <ul>
                         <li>
                             <Button
-                                onClick={() => void auth.signinRedirect()}
+                                onClick={() => auth.signinRedirect()}
                                 variant="outline"
                                 className="w-full p-4 sm:p-6"
                                 leftIcon={

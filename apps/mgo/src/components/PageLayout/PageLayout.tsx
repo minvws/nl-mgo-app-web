@@ -9,7 +9,7 @@ import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 import { ScrollRestoration } from 'react-router-dom';
 
 export interface LayoutProps {
-    hideMenu?: boolean;
+    readonly hideMenu?: boolean;
 }
 
 export function PageLayout({ hideMenu }: LayoutProps = {}) {

@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import { useOnMount } from '../../hooks/useOnMount/useOnMount';
 
 export interface CollapseProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
-    expanded: boolean;
+    readonly expanded: boolean;
 }
 
 export const Collapse = ({ className, children, expanded, ...rest }: CollapseProps) => {

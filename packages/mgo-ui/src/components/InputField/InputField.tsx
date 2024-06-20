@@ -4,8 +4,8 @@ import { useUniqueId } from '../../hooks/useUniqueId/useUniqueId';
 import { Icon } from '../Icon/Icon';
 
 export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: ReactNode;
-    error?: string;
+    readonly label: ReactNode;
+    readonly error?: string;
 }
 
 export const InputField = ({

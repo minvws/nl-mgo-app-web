@@ -15,7 +15,7 @@ const queryClient = new QueryClient({
 });
 
 interface AppProps {
-    router?: RouterProviderProps['router'];
+    readonly router?: RouterProviderProps['router'];
 }
 
 export const App = ({ router = defaultRouter }: AppProps = {}) => {

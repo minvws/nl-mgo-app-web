@@ -8,7 +8,7 @@ export function getMgoPatients<T extends FhirResource>(bundle: InputFhir<Bundle<
         return {
             ...safeGetBulk(patient, {
                 name: ({ name }) => {
-                    const preferredName = findByUse(name, ['usual', 'official'], name![0]);
+                    const preferredName = findByUse(name, ['usual', 'official'], name[0]);
                     const { text, prefix = [], given = [], family, suffix = [] } = preferredName!;
                     if (text) return text;
                     return [...prefix, ...given, family, ...suffix].filter((x) => !!x).join(' ');

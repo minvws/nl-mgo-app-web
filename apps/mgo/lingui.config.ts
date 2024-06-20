@@ -21,4 +21,4 @@ const config: LinguiConfig = {
     ],
 };
 
-export default config; // eslint-disable-line import/no-default-export
+export default config;

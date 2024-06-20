@@ -5,7 +5,7 @@ import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { cn, focusStyle } from '../../utils';
 export interface NavButtonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
-    icon: IconName;
+    readonly icon: IconName;
 }
 
 const defaultStyles = tw`border-2 border-transparent text-gray-700 hover:border-gray-50 hover:bg-gray-50 hover:text-gray-700 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white`;

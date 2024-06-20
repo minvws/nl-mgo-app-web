@@ -1,5 +1,4 @@
-import type { EffectCallback } from 'react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type EffectCallback } from 'react';
 
 export function useOnMount(effect: EffectCallback) {
     const mounted = useRef(false);

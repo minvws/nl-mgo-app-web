@@ -3,7 +3,7 @@ import { illustrations, type IllustrationName } from './illustrations';
 import { twMerge } from 'tailwind-merge';
 
 export interface IllustrationProps extends HTMLAttributes<HTMLElement> {
-    illustration: IllustrationName;
+    readonly illustration: IllustrationName;
 }
 
 export const Illustration = ({ illustration, className, ...rest }: IllustrationProps) => {

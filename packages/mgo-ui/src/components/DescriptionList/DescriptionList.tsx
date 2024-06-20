@@ -20,7 +20,7 @@ export type DescriptionListProps = Omit<HTMLAttributes<HTMLElement>, 'children'>
     );
 
 export const DescriptionList = ({ list, children, ...rest }: DescriptionListProps) => {
-    if (list && list.length) {
+    if (list?.length) {
         return (
             <dl {...rest}>
                 {list.map(({ term, details }) => (

@@ -9,7 +9,7 @@ i18n.load(DEFAULT_LOCALE, messages);
 i18n.activate(DEFAULT_LOCALE);
 
 interface I18nProviderProps {
-    children: ReactNode;
+    readonly children: ReactNode;
 }
 
 export const I18nProvider = ({ children }: I18nProviderProps) => (

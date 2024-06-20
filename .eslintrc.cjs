@@ -1,3 +1,5 @@
+const configFiles = ['vitest.workspace.ts', '*.config.ts', '*.config.js', 'packages/mgo-ui/docs/*'];
+
 module.exports = {
     root: true,
     env: { browser: true, es2020: true },
@@ -11,46 +13,53 @@ module.exports = {
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
-    plugins: ['import', 'react-refresh', 'sonarjs'],
+    plugins: ['@typescript-eslint', 'import', 'react-refresh', 'sonarjs'],
     settings: {
-        react: {
-            version: '18',
-        },
+        react: { version: '18' },
     },
     rules: {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-uses-react': 'off',
+        'react/prefer-read-only-props': 'error',
+        'react/no-array-index-key': 'error',
         'react/jsx-boolean-value': ['error', 'never'],
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-        '@typescript-eslint/consistent-type-imports': [
-            'error',
-            { fixStyle: 'inline-type-imports' },
-        ],
-        '@typescript-eslint/no-unused-vars': [
-            'error',
-            {
-                args: 'all',
-                argsIgnorePattern: '^_',
-                caughtErrors: 'all',
-                caughtErrorsIgnorePattern: '^_',
-                destructuredArrayIgnorePattern: '^_',
-                varsIgnorePattern: '^_',
-                ignoreRestSiblings: false,
-            },
-        ],
+        'no-duplicate-imports': 'error',
+        'sonarjs/no-duplicate-string': 'off',
+        'import/no-default-export': 'error',
+        'no-void': 'error',
     },
     overrides: [
         {
             files: ['**/*.{ts,tsx}'],
-            excludedFiles: [
-                '*.stories.tsx',
-                'vitest.workspace.ts',
-                'vitest.config.ts',
-                'vite.config.ts',
-            ],
+            excludedFiles: configFiles,
+            parserOptions: { project: true },
             rules: {
-                'import/no-default-export': 'error',
-                'sonarjs/no-duplicate-string': 'off',
+                '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+                '@typescript-eslint/prefer-function-type': 'error',
+                '@typescript-eslint/prefer-optional-chain': 'error',
+                '@typescript-eslint/consistent-type-imports': [
+                    'error',
+                    { fixStyle: 'inline-type-imports' },
+                ],
+                '@typescript-eslint/no-unused-vars': [
+                    'error',
+                    {
+                        args: 'all',
+                        argsIgnorePattern: '^_',
+                        caughtErrors: 'all',
+                        caughtErrorsIgnorePattern: '^_',
+                        destructuredArrayIgnorePattern: '^_',
+                        varsIgnorePattern: '^_',
+                        ignoreRestSiblings: false,
+                    },
+                ],
+            },
+        },
+        {
+            files: ['*.stories.tsx', ...configFiles],
+            rules: {
+                'import/no-default-export': 'off',
             },
         },
     ],

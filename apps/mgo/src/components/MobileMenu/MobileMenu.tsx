@@ -3,8 +3,7 @@ import { useLingui } from '@lingui/react';
 import { ButtonCard, Heading, IconButton, cn, useOpenState } from '@minvws/mgo-mgo-ui';
 import * as Dialog from '@radix-ui/react-dialog';
 import { type HTMLAttributes, useEffect, useCallback, useRef } from 'react';
-import { useBlocker } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { useBlocker, NavLink } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
 
 export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}

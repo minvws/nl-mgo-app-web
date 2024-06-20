@@ -13,7 +13,7 @@ type AnchorOrCompositionProps =
       };
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    onClick?: never; // Please use `asChild` instead
+    readonly onClick?: never; // Please use `asChild` instead
 } & AnchorOrCompositionProps;
 
 export const Link = ({ asChild, children, className, ...rest }: LinkProps) => {

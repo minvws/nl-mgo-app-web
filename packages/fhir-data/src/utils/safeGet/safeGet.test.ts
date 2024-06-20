@@ -33,12 +33,12 @@ const testData: TestData = {
 test.each<[SafeGetFunc<TestData>, unknown]>([
     [(x) => x.foo, fooString],
     [(x) => x.faa, null],
-    [(x) => x.bar!.baz, undefined],
-    [(x) => x.bar!.qux![0].quxBar, quxBarNumber],
-    [(x) => x.bar!.qux![1].quxBar, undefined],
-    [(x) => x.bar!.qux, [{ quxBar: quxBarNumber }]],
+    [(x) => x.bar.baz, undefined],
+    [(x) => x.bar.qux[0].quxBar, quxBarNumber],
+    [(x) => x.bar.qux[1].quxBar, undefined],
+    [(x) => x.bar.qux, [{ quxBar: quxBarNumber }]],
     [(x) => x.arr, undefined],
-    [(x) => x.arr![0].arrBool, undefined],
+    [(x) => x.arr[0].arrBool, undefined],
     [
         () => {
             throw new TypeError();
@@ -52,12 +52,12 @@ test.each<[SafeGetFunc<TestData>, unknown]>([
 test.each<[SafeGetFunc<TestData>, unknown, unknown]>([
     [(x) => x.foo, faker.lorem.word(), fooString],
     [(x) => x.faa, randomString, null],
-    [(x) => x.bar!.baz, randomNumber, randomNumber],
-    [(x) => x.bar!.qux![0].quxBar, faker.number.int(), quxBarNumber],
-    [(x) => x.bar!.qux![1].quxBar, randomNumber, randomNumber],
-    [(x) => x.bar!.qux, [], [{ quxBar: quxBarNumber }]],
+    [(x) => x.bar.baz, randomNumber, randomNumber],
+    [(x) => x.bar.qux[0].quxBar, faker.number.int(), quxBarNumber],
+    [(x) => x.bar.qux[1].quxBar, randomNumber, randomNumber],
+    [(x) => x.bar.qux, [], [{ quxBar: quxBarNumber }]],
     [(x) => x.arr, [{ arrFoo: randomString }], [{ arrFoo: randomString }]],
-    [(x) => x.arr![0].arrBool, randomBool, randomBool],
+    [(x) => x.arr[0].arrBool, randomBool, randomBool],
     [
         () => {
             throw new TypeError();

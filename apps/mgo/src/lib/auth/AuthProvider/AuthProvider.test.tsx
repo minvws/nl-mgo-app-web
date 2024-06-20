@@ -33,9 +33,9 @@ function MockApp() {
     if (auth.isLoading) return 'loading';
     if (auth.error) return 'error';
     return auth.isAuthenticated ? (
-        <button onClick={() => void auth.removeUser()}>log out</button>
+        <button onClick={() => auth.removeUser()}>log out</button>
     ) : (
-        <button onClick={() => void auth.signinRedirect()}>log in</button>
+        <button onClick={() => auth.signinRedirect()}>log in</button>
     );
 }
 

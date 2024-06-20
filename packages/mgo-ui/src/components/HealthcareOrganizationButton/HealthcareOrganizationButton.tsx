@@ -7,12 +7,12 @@ import { Stack } from '../Stack/Stack';
 import { cn, focusStyle } from '../../utils';
 
 export interface HealthcareOrganizationButtonProps extends Omit<CardProps, 'title' | 'asChild'> {
-    title: ReactNode;
-    subTitle?: ReactNode;
-    meta?: ReactNode;
-    icon: Extract<IconName, 'add' | 'chevron-right' | 'delete'>;
-    iconAriaLabel: string;
-    isAdded?: boolean;
+    readonly title: ReactNode;
+    readonly subTitle?: ReactNode;
+    readonly meta?: ReactNode;
+    readonly icon: Extract<IconName, 'add' | 'chevron-right' | 'delete'>;
+    readonly iconAriaLabel: string;
+    readonly isAdded?: boolean;
 }
 
 export const HealthcareOrganizationButton = ({

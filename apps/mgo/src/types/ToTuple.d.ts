@@ -1,6 +1,6 @@
 type UnionToParm<U> = U extends unknown ? (k: U) => void : never;
 type UnionToSect<U> = UnionToParm<U> extends (k: infer I) => void ? I : never;
-type ExtractParm<F> = F extends { (a: infer A): void } ? A : never;
+type ExtractParm<F> = F extends (a: infer A) => void ? A : never;
 
 type SpliceOne<Union> = Exclude<Union, ExtractOne<Union>>;
 type ExtractOne<Union> = ExtractParm<UnionToSect<UnionToParm<Union>>>;

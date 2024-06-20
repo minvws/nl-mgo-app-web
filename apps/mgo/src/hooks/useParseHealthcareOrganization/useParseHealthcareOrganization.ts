@@ -10,7 +10,7 @@ const DOCUMENTS_SERVICE_ID = 51;
 function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: number) {
     return safeGet(organizationDTO, ({ data_services }) => {
         const service = data_services.find((x) => x.id === id);
-        return service!.roles![0].resource_endpoint;
+        return service!.roles[0].resource_endpoint;
     });
 }
 

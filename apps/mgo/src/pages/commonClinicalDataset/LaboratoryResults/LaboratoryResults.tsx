@@ -8,6 +8,7 @@ import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { LaboratoryResultsList } from './LaboratoryResultsList';
+import { assignId } from '$/lib/assignId/assignId';
 
 export function LaboratoryResults() {
     const { _ } = useLingui();
@@ -25,7 +26,7 @@ export function LaboratoryResults() {
             const observationBundle = await commonClinicalDataset
                 .getLastLaboratoryResultsPerType()
                 .json();
-            return getMgoObservations(observationBundle);
+            return getMgoObservations(observationBundle).map(assignId);
         },
     });
 

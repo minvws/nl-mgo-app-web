@@ -4,8 +4,8 @@ import { range } from 'lodash';
 import { useComposition } from '../../hooks/useComposition/useComposition';
 
 export interface SkeletonTextProps extends SkeletonProps {
-    numberOfLines: number;
-    height?: string;
+    readonly numberOfLines: number;
+    readonly height?: string;
 }
 
 export const SkeletonText = ({

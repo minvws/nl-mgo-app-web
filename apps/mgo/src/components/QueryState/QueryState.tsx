@@ -9,12 +9,12 @@ export type QueryStateProps<TData = unknown, TError = DefaultQueryError> = Pick<
     UseQueryResult<TData, TError>,
     'data' | 'error' | 'status' | 'fetchStatus'
 > & {
-    useCardWrapper?: boolean;
-    useFetchStatus?: boolean;
-    renderLoading?: ReactNode;
-    renderNoResult?: ReactNode;
-    renderError?: RenderProps<{ error: TError | null }>['children'];
-    renderResult: RenderProps<{ data: NonNullable<TData> }>['children'];
+    readonly useCardWrapper?: boolean;
+    readonly useFetchStatus?: boolean;
+    readonly renderLoading?: ReactNode;
+    readonly renderNoResult?: ReactNode;
+    readonly renderError?: RenderProps<{ error: TError | null }>['children'];
+    readonly renderResult: RenderProps<{ data: NonNullable<TData> }>['children'];
 };
 
 const isEmpty = (data: unknown) =>

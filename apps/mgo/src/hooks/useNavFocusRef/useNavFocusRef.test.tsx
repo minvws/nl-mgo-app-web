@@ -23,9 +23,9 @@ function TestApp({
     A = TestPageA,
     B = TestPageB,
 }: {
-    overrideView?: 'a' | 'b';
-    A?: TestPage;
-    B?: TestPage;
+    readonly overrideView?: 'a' | 'b';
+    readonly A?: TestPage;
+    readonly B?: TestPage;
 }) {
     const [stateView, toggleView] = useView();
     const view = overrideView || stateView;
@@ -192,8 +192,8 @@ function KeyedTestApp({
     overrideView,
     useKey = true,
 }: {
-    overrideView?: 'a' | 'b';
-    useKey?: boolean;
+    readonly overrideView?: 'a' | 'b';
+    readonly useKey?: boolean;
 }) {
     const [stateView, toggleView] = useView();
     const [count, setCount] = useState(0);
@@ -242,7 +242,7 @@ test('does not move focus when target element is reused and `key` is not used', 
 function makeTestPage<T extends Element>(
     fn: (ref: RefObject<T>, label: string) => ReactNode
 ): TestPage {
-    return function TestPageComp({ label }: { label: string }) {
+    return function TestPageComp({ label }: { readonly label: string }) {
         const ref = useNavFocusRef<T>();
         return (
             <section>

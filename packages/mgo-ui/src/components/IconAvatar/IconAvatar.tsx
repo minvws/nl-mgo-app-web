@@ -4,15 +4,15 @@ import { iconColours, type IconName } from '../Icon/icons';
 import { Icon } from '../Icon/Icon';
 
 export interface IconAvatarProps extends HTMLAttributes<HTMLElement> {
-    icon?: IconName;
-    iconAriaLabel?: string;
+    readonly icon?: IconName;
+    readonly iconAriaLabel?: string;
 }
 
 export const IconAvatar = ({ icon, iconAriaLabel, className, ...rest }: IconAvatarProps) => (
     <figure
         className={twMerge(
             'flex h-8 w-8 items-center justify-center rounded-full sm:h-12 sm:w-12',
-            iconColours[icon!] || 'bg-gray-50 dark:text-black',
+            iconColours[icon!] ?? 'bg-gray-50 dark:text-black',
             className
         )}
         {...rest}
