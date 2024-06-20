@@ -11,14 +11,14 @@ import { useLingui } from '@lingui/react';
 export function AddHealthcareOrganizationList() {
     const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { hasHealthcareOrganizations } = useHealthcareOrganizationsStore();
+    const { hasOrganizations } = useHealthcareOrganizationsStore();
 
     return (
         <div className="flex flex-grow flex-col">
             <Helmet
                 title={_(
                     msg({
-                        id: 'healthcare-organisations.title',
+                        id: 'healthcare-organizations.title',
                         message: 'Welke zorgaanbieders wil je op je overzicht tonen?',
                     })
                 )}
@@ -31,7 +31,7 @@ export function AddHealthcareOrganizationList() {
             <Container className="max-w-md">
                 <Heading asChild size="lg">
                     <h1 ref={navFocusRef}>
-                        <Trans id="healthcare-organisations.heading">
+                        <Trans id="healthcare-organizations.heading">
                             Welke zorgaanbieders wil je op je overzicht tonen?
                         </Trans>
                     </h1>
@@ -39,11 +39,7 @@ export function AddHealthcareOrganizationList() {
             </Container>
 
             <Container className="flex max-w-md flex-grow">
-                {hasHealthcareOrganizations() ? (
-                    <HealthcareOrganizations />
-                ) : (
-                    <NoHealthcareOrganizations />
-                )}
+                {hasOrganizations() ? <HealthcareOrganizations /> : <NoHealthcareOrganizations />}
             </Container>
         </div>
     );

@@ -9,14 +9,6 @@ services:
             dockerfile: Dockerfile
         ports:
             - ${PORT:-8000}:8000
-        volumes:
-            - .:/app
-            - /app/node_modules
-            - /app/apps/mgo/node_modules
-            - /app/packages/fhir-client/node_modules
-            - /app/packages/fhir-data/node_modules
-            - /app/packages/mgo-ui/node_modules
-            - /app/packages/tailwind/node_modules
 
     hapi:
         container_name: hapi

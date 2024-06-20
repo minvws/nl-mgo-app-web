@@ -1,9 +1,6 @@
-import { bgz } from '$/api/bgz';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useNavFocusRef } from '$/hooks';
-import { useParams } from '$/routing';
-import { useHealthcareOrganizationsStore } from '$/store';
+import { useHealthcareOrganization, useNavFocusRef } from '$/hooks/index.ts';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
@@ -15,17 +12,17 @@ import { MedicationList } from './MedicationList';
 export function Medication() {
     const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { healthcareOrganizationSlug } = useParams();
-    const { getHealthcareOrganization } = useHealthcareOrganizationsStore();
-
-    const { display_name: healthcareOrganisationName } = getHealthcareOrganization(
-        healthcareOrganizationSlug
-    )!;
+    const { organization, getCommonClinicalDataset } = useHealthcareOrganization();
 
     const query = useQuery({
-        queryKey: ['MedicationStatement', healthcareOrganizationSlug],
+        queryKey: ['MedicationStatement', organization?.slug],
         queryFn: async () => {
-            const medicationBundle = await bgz.getMedicationUse().json();
+            const commonClinicalDataset = getCommonClinicalDataset();
+            if (!commonClinicalDataset) {
+                return [];
+            }
+
+            const medicationBundle = await commonClinicalDataset.getMedicationUse().json();
             return getMgoMedicationStatements(medicationBundle);
         },
     });
@@ -36,7 +33,7 @@ export function Medication() {
                 title={_(
                     msg({
                         id: 'medicine.title',
-                        message: `Medicijnen | ${healthcareOrganisationName}`,
+                        message: `Medicijnen | ${organization?.name}`,
                     })
                 )}
             />

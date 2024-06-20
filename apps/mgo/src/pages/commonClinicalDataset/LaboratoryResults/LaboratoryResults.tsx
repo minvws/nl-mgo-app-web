@@ -1,9 +1,6 @@
-import { bgz } from '$/api/bgz';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useNavFocusRef } from '$/hooks';
-import { useParams } from '$/routing';
-import { useHealthcareOrganizationsStore } from '$/store';
+import { useHealthcareOrganization, useNavFocusRef } from '$/hooks';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { getMgoObservations } from '@minvws/mgo-fhir-data';
@@ -15,17 +12,19 @@ import { LaboratoryResultsList } from './LaboratoryResultsList';
 export function LaboratoryResults() {
     const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { healthcareOrganizationSlug } = useParams();
-    const { getHealthcareOrganization } = useHealthcareOrganizationsStore();
-
-    const { display_name: healthcareOrganisationName } = getHealthcareOrganization(
-        healthcareOrganizationSlug
-    )!;
+    const { organization, getCommonClinicalDataset } = useHealthcareOrganization();
 
     const query = useQuery({
-        queryKey: ['LaboratoryResults', healthcareOrganizationSlug],
+        queryKey: ['LaboratoryResults', organization?.slug],
         queryFn: async () => {
-            const observationBundle = await bgz.getLastLaboratoryResultsPerType().json();
+            const commonClinicalDataset = getCommonClinicalDataset();
+            if (!commonClinicalDataset) {
+                return [];
+            }
+
+            const observationBundle = await commonClinicalDataset
+                .getLastLaboratoryResultsPerType()
+                .json();
             return getMgoObservations(observationBundle);
         },
     });
@@ -36,7 +35,7 @@ export function LaboratoryResults() {
                 title={_(
                     msg({
                         id: 'laboratory-results.title',
-                        message: `Uitslagen | ${healthcareOrganisationName}`,
+                        message: `Uitslagen | ${organization?.name}`,
                     })
                 )}
             />

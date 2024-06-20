@@ -15,7 +15,7 @@ export function NotFound() {
             <Helmet
                 title={_(
                     msg({
-                        id: 'healthcare-organisation.not-found.title',
+                        id: 'healthcare-organization.not-found.title',
                         message: 'Zorgaanbieder niet gevonden',
                     })
                 )}
@@ -33,13 +33,13 @@ export function NotFound() {
                         />
                         <Heading asChild className="mt-6 md:mt-12">
                             <h1 ref={navFocusRef}>
-                                <Trans id="healthcare-organisation.not-found.heading">
+                                <Trans id="healthcare-organization.not-found.heading">
                                     Zorgaanbieder niet gevonden
                                 </Trans>
                             </h1>
                         </Heading>
                         <Text className="mt-2 md:mt-6">
-                            <Trans id="healthcare-organisation.not-found.description">
+                            <Trans id="healthcare-organization.not-found.description">
                                 Sorry, we kunnen de zorgaanbieder die je zocht niet vinden.
                                 Misschien is deze verwijderd. Klik op de knop hieronder om terug te
                                 gaan naar het overzicht.
@@ -47,7 +47,7 @@ export function NotFound() {
                         </Text>
                         <Button asChild className="mt-4 md:mt-6">
                             <RouterLink to={'/overzicht'}>
-                                <Trans id="healthcare-organisation.not-found.button">
+                                <Trans id="healthcare-organization.not-found.button">
                                     Ga naar het overzicht
                                 </Trans>
                             </RouterLink>

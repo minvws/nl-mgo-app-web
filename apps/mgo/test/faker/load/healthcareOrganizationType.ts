@@ -1,6 +1,6 @@
-import { type HealthcareOrganizationType } from '$/types/Organisation';
+import { type HealthcareOrganizationType } from '$/api/load/types';
 import { faker } from '@faker-js/faker';
-import { createMockDataFactory } from './factory';
+import { createMockDataFactory } from '../factory';
 
 const vektisCodes = {
     '0100': 'Huisartspraktijk',

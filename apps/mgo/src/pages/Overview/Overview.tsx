@@ -8,7 +8,7 @@ import { NoHealthcareOrganizations } from './NoHealthcareOrganizations';
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
-    const { healthcareOrganizations } = useHealthcareOrganizationsStore();
+    const { organizations } = useHealthcareOrganizationsStore();
 
     return (
         <>
@@ -17,8 +17,8 @@ export function Overview() {
                     <Trans id="overview.heading">Goedemorgen, Wendy</Trans>
                 </h1>
             </Heading>
-            {healthcareOrganizations.length ? (
-                <HealthcareOrganizations organizations={healthcareOrganizations} />
+            {organizations.length ? (
+                <HealthcareOrganizations organizations={organizations} />
             ) : (
                 <NoHealthcareOrganizations />
             )}

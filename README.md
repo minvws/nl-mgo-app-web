@@ -32,7 +32,7 @@ To run the MGO app locally there is a `docker-compose` configuration available. 
 
 ```sh
 # Run a local development server using docker
-docker compose up -d --build
+docker compose build --no-cache && docker compose up mgo -d
 ```
 
 ## Development

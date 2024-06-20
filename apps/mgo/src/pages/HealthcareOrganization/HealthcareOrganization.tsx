@@ -11,24 +11,22 @@ import { Helmet } from 'react-helmet-async';
 export function HealthcareOrganization() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { healthcareOrganizationSlug } = useParams();
-    const { getHealthcareOrganization } = useHealthcareOrganizationsStore();
+    const { getOrganizationBySlug } = useHealthcareOrganizationsStore();
     const { _ } = useLingui();
 
-    const healthcareProvider = getHealthcareOrganization(healthcareOrganizationSlug);
+    const healthcareOrganization = getOrganizationBySlug(healthcareOrganizationSlug);
 
-    if (!healthcareProvider) {
+    if (!healthcareOrganization) {
         return <NotFound />;
     }
-
-    const { display_name: healthcareOrganisationName } = healthcareProvider;
 
     return (
         <>
             <Helmet
                 title={_(
                     msg({
-                        id: 'healthcare-organisation.title',
-                        message: `${healthcareOrganisationName}`,
+                        id: 'healthcare-organization.title',
+                        message: `${healthcareOrganization.name}`,
                     })
                 )}
             />
@@ -38,7 +36,7 @@ export function HealthcareOrganization() {
                 </div>
 
                 <Heading asChild size="lg" className="mb-2 md:mb-4">
-                    <h1 ref={navFocusRef}>{healthcareOrganisationName}</h1>
+                    <h1 ref={navFocusRef}>{healthcareOrganization.name}</h1>
                 </Heading>
 
                 <Text asChild size="lg" className="mb-8">
@@ -55,13 +53,13 @@ export function HealthcareOrganization() {
                                 icon="pill"
                                 title={_(
                                     msg({
-                                        id: 'healthcare-organisation.medicine.heading',
+                                        id: 'healthcare-organization.medicine.heading',
                                         message: 'Medicijnen',
                                     })
                                 )}
                                 description={_(
                                     msg({
-                                        id: 'healthcare-organisation.medicine.description',
+                                        id: 'healthcare-organization.medicine.description',
                                         message: 'Voorgeschreven door je zorgaanbieder',
                                     })
                                 )}
@@ -77,13 +75,13 @@ export function HealthcareOrganization() {
                                 icon="diagnosis"
                                 title={_(
                                     msg({
-                                        id: 'healthcare-organisation.diagnosis.heading',
+                                        id: 'healthcare-organization.diagnosis.heading',
                                         message: 'Klachten en diagnoses',
                                     })
                                 )}
                                 description={_(
                                     msg({
-                                        id: 'healthcare-organisation.diagnosis.description',
+                                        id: 'healthcare-organization.diagnosis.description',
                                         message: `Vastgesteld door je zorgaanbieder`,
                                     })
                                 )}
@@ -99,13 +97,13 @@ export function HealthcareOrganization() {
                                 icon="description"
                                 title={_(
                                     msg({
-                                        id: 'healthcare-organisation.laboratory-results.heading',
+                                        id: 'healthcare-organization.laboratory-results.heading',
                                         message: 'Uitslagen',
                                     })
                                 )}
                                 description={_(
                                     msg({
-                                        id: 'healthcare-organisation.laboratory-results.description',
+                                        id: 'healthcare-organization.laboratory-results.description',
                                         message: `Resultaten van jouw onderzoeken, (röntgen)foto's en scans`,
                                     })
                                 )}

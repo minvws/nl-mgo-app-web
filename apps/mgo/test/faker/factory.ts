@@ -8,6 +8,18 @@ export type MockDataFactory<T extends MockData<T>> = {
 
 /**
  * Returns a function that can be used for creating test data.
+ * The returned function will merge the default data with any partial data that is passed.
+ * @example
+ *
+ * type Foo = {bar :string, baz: number};
+ *
+ * const foo = createMockDataFactory<Foo>(() => ({
+ *   bar: faker.string.sample()
+ *   bar: faker.number.int()
+ * }));
+ *
+ * const testFoo = foo(); // { bar: 'Zo!.:*e>wR', baz: 2900970162509863 }
+ * const testFoo2 = foo({bar: 'foobar'}); // { bar: 'foobar', baz: 95235991 }
  */
 export function createMockDataFactory<T extends MockData<T>>(
     defaultData: () => T

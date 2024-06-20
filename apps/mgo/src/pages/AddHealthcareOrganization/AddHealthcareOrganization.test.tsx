@@ -1,26 +1,21 @@
-import * as LocationApi from '$/api/location';
-import { type OrganisationSearchResponse } from '$/types/Organisation';
-import { setupWithAppProviders, flushCallStack } from '$test/helpers';
-import { faker } from '@faker-js/faker';
+import { search } from '$/api/load';
+import { faker } from '$test/faker';
+import { flushCallStack, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
-import { afterEach, expect, test, vi } from 'vitest';
+import { type MockedFunction, afterEach, expect, test, vi } from 'vitest';
 import { AddHealthcareOrganization } from './AddHealthcareOrganization';
 import { submitSearchForm } from './testHelpers';
-import { healthcareOrganizationDTO } from '$test/data';
 
-vi.mock('$/api/location', () => ({
-    search: () =>
-        Promise.resolve<OrganisationSearchResponse>({
-            organizations: [healthcareOrganizationDTO()],
-        }),
-}));
+const mockSearch = search as MockedFunction<typeof search>;
+
+vi.mock('$/api/load', () => ({ search: vi.fn() }));
 
 afterEach(() => {
     vi.restoreAllMocks();
 });
 
 test('show loading state', async () => {
-    vi.spyOn(LocationApi, 'search').mockImplementationOnce(() => new Promise(vi.fn()));
+    mockSearch.mockImplementationOnce(() => new Promise(vi.fn()));
     const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
@@ -28,7 +23,7 @@ test('show loading state', async () => {
 });
 
 test('no results found', async () => {
-    vi.spyOn(LocationApi, 'search').mockResolvedValueOnce({ organizations: [] });
+    mockSearch.mockResolvedValueOnce({ organizations: [] });
     const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
     await flushCallStack();
@@ -40,6 +35,7 @@ test('no results found', async () => {
 });
 
 test('results found', async () => {
+    mockSearch.mockResolvedValueOnce({ organizations: [faker.custom.healthcareOrganizationDTO()] });
     const { user } = setupWithAppProviders(<AddHealthcareOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 

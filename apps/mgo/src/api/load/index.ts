@@ -1,6 +1,10 @@
-/* c8 ignore start - this will be moved to another pacakge soon */
-import type { OrganisationSearchResponse } from '$/types/Organisation';
+/* c8 ignore start - this will be moved to another package soon */
 import ky from 'ky';
+import type {
+    OrganisationSearchResponse,
+    HealthcareOrganizationDTO,
+    HealthcareServiceDTO,
+} from './types';
 
 export const search = async (searchQuery: { name: string; city: string }) =>
     ky
@@ -8,3 +12,5 @@ export const search = async (searchQuery: { name: string; city: string }) =>
             json: searchQuery,
         })
         .json<OrganisationSearchResponse>();
+
+export type { OrganisationSearchResponse, HealthcareOrganizationDTO, HealthcareServiceDTO };

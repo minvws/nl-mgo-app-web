@@ -6,8 +6,8 @@ export type LinkProps = RouterLinkProps;
 /**
  * This `Link` component combines the RouterLink functionality with the visual styles from the MGO-UI library
  */
-export const Link = (props: LinkProps) => (
-    <UiLink asChild>
-        <RouterLink {...props} />
+export const Link = ({ className, ...rest }: LinkProps) => (
+    <UiLink asChild className={className}>
+        <RouterLink {...rest} />
     </UiLink>
 );

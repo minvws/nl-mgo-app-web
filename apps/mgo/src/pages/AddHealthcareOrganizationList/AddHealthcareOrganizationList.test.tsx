@@ -1,19 +1,19 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useHealthcareOrganizationsStore } from '$/store';
 import { setAuthStateAuthenticated } from '$test/helpers';
-import { healthcareOrganizationDTO } from '$test/data';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { AddHealthcareOrganizationList } from './AddHealthcareOrganizationList';
+import { faker } from '$test/faker';
 
 test('render from store', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
     setAuthStateAuthenticated();
-    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
-    addHealthcareOrganization(healthcareOrganizationDTO());
+    const { addOrganization } = useHealthcareOrganizationsStore.getState();
+    addOrganization(faker.custom.healthcareOrganization());
 
     setupApp({ initialEntries: ['/zorgaanbieder-toevoegen/zorgaanbieders'] });
 
@@ -22,8 +22,8 @@ test('render from store', async () => {
 
 test('remove item from store', async () => {
     const user = userEvent.setup();
-    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
-    addHealthcareOrganization(healthcareOrganizationDTO());
+    const { addOrganization } = useHealthcareOrganizationsStore.getState();
+    addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddHealthcareOrganizationList />);
 
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);
@@ -45,8 +45,8 @@ test('remove item from store', async () => {
 
 test('do not remove item from store', async () => {
     const user = userEvent.setup();
-    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
-    addHealthcareOrganization(healthcareOrganizationDTO());
+    const { addOrganization } = useHealthcareOrganizationsStore.getState();
+    addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddHealthcareOrganizationList />);
 
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);

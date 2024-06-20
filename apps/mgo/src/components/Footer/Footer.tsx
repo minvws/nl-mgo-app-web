@@ -1,7 +1,7 @@
+import { Link } from '$/routing';
 import { Trans } from '@lingui/macro';
-import { Container, List, ListIcon, ListItem, focusStyle } from '@minvws/mgo-mgo-ui';
+import { Container, List, ListIcon, ListItem, focusStyle, Heading } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
-import { Heading } from '../../../../../packages/mgo-ui/src/components/Heading/Heading';
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {}
 
@@ -42,9 +42,12 @@ export function Footer(props: FooterProps) {
                                 icon="chevron-right-fat"
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
-                            <a href="#" className={focusStyle}>
+                            <Link
+                                to="/privacy"
+                                className="no-underline visited:text-black dark:visited:text-white"
+                            >
                                 <Trans id="footer.about.privacy">Privacy</Trans>
-                            </a>
+                            </Link>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
                             <ListIcon

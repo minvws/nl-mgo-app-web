@@ -1,5 +1,5 @@
 import { RouterLink } from '$/routing';
-import { useHealthcareOrganizationsStore } from '$/store/healthcareProviders';
+import { useHealthcareOrganizationsStore } from '$/store/healthcareOrganizations';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import {
@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 export function HealthcareOrganizations() {
     const { _ } = useLingui();
-    const { healthcareOrganizations, getHealthcareOrganization, removeHealthcareOrganization } =
+    const { organizations, getOrganizationBySlug, removeOrganizationBySlug } =
         useHealthcareOrganizationsStore();
 
     const [selectedSlug, setSelectedSlug] = useState<string>();
@@ -31,41 +31,41 @@ export function HealthcareOrganizations() {
                     onOpenChange={setIsOpen}
                     title={_(
                         msg({
-                            id: 'healthcare-organisations.dialog.title',
-                            message: `${getHealthcareOrganization(selectedSlug)?.display_name} weglaten?`,
+                            id: 'healthcare-organizations.dialog.title',
+                            message: `${getOrganizationBySlug(selectedSlug)?.name} weglaten?`,
                         })
                     )}
                     description={_(
                         msg({
-                            id: 'healthcare-organisations.dialog.description',
+                            id: 'healthcare-organizations.dialog.description',
                             message:
                                 'We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel.',
                         })
                     )}
                     confirmButtonText={_(
                         msg({
-                            id: 'healthcare-organisations.dialog.confirmButton',
+                            id: 'healthcare-organizations.dialog.confirmButton',
                             message: 'Ja, weglaten',
                         })
                     )}
                     cancelButtonText={_(
                         msg({
-                            id: 'healthcare-organisations.dialog.cancelButton',
+                            id: 'healthcare-organizations.dialog.cancelButton',
                             message: 'Nee, toch tonen',
                         })
                     )}
                     closeButtonAriaLabel={_(msg({ id: 'common.close', message: 'Sluiten' }))}
-                    onConfirm={() => removeHealthcareOrganization(selectedSlug)}
+                    onConfirm={() => removeOrganizationBySlug(selectedSlug)}
                 />
             )}
             <p className="text-md">
-                <Trans id="healthcare-organisations.description">
+                <Trans id="healthcare-organizations.description">
                     Je kunt deze lijst nu aanpassen of dit later in je profiel doen.
                 </Trans>
             </p>
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
-                    {healthcareOrganizations.map(({ slug, display_name, types, addresses }) => (
+                    {organizations.map(({ slug, name, category, address }) => (
                         <li key={slug}>
                             <HealthcareOrganizationButton
                                 onClick={() => {
@@ -73,15 +73,13 @@ export function HealthcareOrganizations() {
                                     open();
                                 }}
                                 className="w-full"
-                                title={types[0].display_name}
-                                subTitle={display_name}
-                                meta={
-                                    <span className="whitespace-pre">{addresses[0].address}</span>
-                                }
+                                title={category}
+                                subTitle={name}
+                                meta={<span className="whitespace-pre">{address}</span>}
                                 icon="delete"
                                 iconAriaLabel={_(
                                     msg({
-                                        id: 'healthcare-organisations.delete',
+                                        id: 'healthcare-organizations.delete',
                                         message: 'verwijderen',
                                     })
                                 )}
@@ -93,12 +91,12 @@ export function HealthcareOrganizations() {
             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
                 <Button asChild>
                     <RouterLink to="/overzicht">
-                        <Trans id="healthcare-organisations.done">Ga naar het overzicht</Trans>
+                        <Trans id="healthcare-organizations.done">Ga naar het overzicht</Trans>
                     </RouterLink>
                 </Button>
                 <Button variant="light" asChild>
                     <RouterLink to="/zorgaanbieder-toevoegen">
-                        <Trans id="healthcare-organisations.add">Voeg een zorgaanbieder toe</Trans>
+                        <Trans id="healthcare-organizations.add">Voeg een zorgaanbieder toe</Trans>
                     </RouterLink>
                 </Button>
             </div>

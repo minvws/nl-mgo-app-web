@@ -1,13 +1,13 @@
+import { type ParsedHealthcareOrganization } from '$/hooks';
 import { useNavigate } from '$/routing';
 import { useHealthcareOrganizationsStore } from '$/store';
-import { type HealthcareOrganizationDTO } from '$/types/Organisation';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Button, HealthcareOrganizationButton, Icon, Stack, cn } from '@minvws/mgo-mgo-ui';
-import { type HTMLAttributes, useState } from 'react';
+import { useState, type HTMLAttributes } from 'react';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
-    searchResults: HealthcareOrganizationDTO[];
+    searchResults: ParsedHealthcareOrganization[];
 }
 
 export const RESULTS_PER_PAGE = 15;
@@ -15,102 +15,69 @@ export const RESULTS_PER_PAGE = 15;
 export const SearchResults = ({ searchResults, className, ...rest }: SearchResultsProps) => {
     const { _ } = useLingui();
     const navigate = useNavigate();
-    const { addHealthcareOrganization, hasHealthcareOrganization } =
-        useHealthcareOrganizationsStore();
+    const { addOrganization, hasOrganizationById } = useHealthcareOrganizationsStore();
     const [showResultsLength, setShowResultsLength] = useState(RESULTS_PER_PAGE);
 
-    const handleHealthcareOrganisationClick = ({
-        identification_type,
-        identification_value,
-    }: Pick<HealthcareOrganizationDTO, 'identification_type' | 'identification_value'>) => {
-        const healthcareOrganisation = searchResults.find(
-            (p) =>
-                p.identification_type === identification_type &&
-                p.identification_value === identification_value
-        );
+    const handleHealthcareOrganisationClick = (id: string) => {
+        const healthcareOrganisation = searchResults.find((p) => p.id === id);
         if (healthcareOrganisation) {
-            addHealthcareOrganization(healthcareOrganisation);
+            addOrganization(healthcareOrganisation);
             navigate('/zorgaanbieder-toevoegen/zorgaanbieders');
         }
     };
 
-    const getBasicOrganisationInfo = ({
-        identification_value,
-        identification_type,
-        display_name,
-        addresses,
-    }: HealthcareOrganizationDTO) => {
-        return {
-            id: `${identification_type}_${identification_value}`,
-            name: display_name,
-            address: addresses[0].address,
-            identification_type,
-            identification_value,
-        };
-    };
-
-    const showResults = searchResults.slice(0, showResultsLength).map(getBasicOrganisationInfo);
+    const showResults = searchResults.slice(0, showResultsLength);
 
     return (
         <Stack className={cn('flex-grow gap-12', className)} {...rest}>
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
-                    {showResults.map(
-                        ({ id, name, address, identification_type, identification_value }) => {
-                            const isAdded = hasHealthcareOrganization({
-                                identification_type,
-                                identification_value,
-                            });
+                    {showResults.map(({ id, name, address }) => {
+                        const isAdded = hasOrganizationById(id);
 
-                            return (
-                                <li key={id}>
-                                    {isAdded ? (
-                                        <HealthcareOrganizationButton
-                                            onClick={() =>
-                                                navigate('/zorgaanbieder-toevoegen/zorgaanbieders')
-                                            }
-                                            className="w-full"
-                                            title={name}
-                                            meta={<span className="whitespace-pre">{address}</span>}
-                                            icon="chevron-right"
-                                            iconAriaLabel={_(
-                                                msg({
-                                                    id: 'add-healthcare-organisation.aria-label-is-added',
-                                                    message: 'naar overzicht',
-                                                })
-                                            )}
-                                        >
-                                            <div className="text-sky-blue-600 mt-2 flex items-center gap-2">
-                                                <Icon icon="check" className="h-7 w-9" />
-                                                <Trans id="add-healthcare-organisation.is-added">
-                                                    Deze zorgaanbieder heb je al toegevoegd
-                                                </Trans>
-                                            </div>
-                                        </HealthcareOrganizationButton>
-                                    ) : (
-                                        <HealthcareOrganizationButton
-                                            onClick={() =>
-                                                handleHealthcareOrganisationClick({
-                                                    identification_type,
-                                                    identification_value,
-                                                })
-                                            }
-                                            className="w-full"
-                                            title={name}
-                                            meta={<span className="whitespace-pre">{address}</span>}
-                                            icon="add"
-                                            iconAriaLabel={_(
-                                                msg({
-                                                    id: 'add-healthcare-organisation.add',
-                                                    message: 'toevoegen',
-                                                })
-                                            )}
-                                        />
-                                    )}
-                                </li>
-                            );
-                        }
-                    )}
+                        return (
+                            <li key={id}>
+                                {isAdded ? (
+                                    <HealthcareOrganizationButton
+                                        onClick={() =>
+                                            navigate('/zorgaanbieder-toevoegen/zorgaanbieders')
+                                        }
+                                        className="w-full"
+                                        title={name}
+                                        meta={<span className="whitespace-pre">{address}</span>}
+                                        icon="chevron-right"
+                                        iconAriaLabel={_(
+                                            msg({
+                                                id: 'add-healthcare-organization.aria-label-is-added',
+                                                message: 'naar overzicht',
+                                            })
+                                        )}
+                                    >
+                                        <div className="text-sky-blue-600 mt-2 flex items-center gap-2">
+                                            <Icon icon="check" className="h-7 w-9" />
+                                            <Trans id="add-healthcare-organization.is-added">
+                                                Deze zorgaanbieder heb je al toegevoegd
+                                            </Trans>
+                                        </div>
+                                    </HealthcareOrganizationButton>
+                                ) : (
+                                    <HealthcareOrganizationButton
+                                        onClick={() => handleHealthcareOrganisationClick(id)}
+                                        className="w-full"
+                                        title={name}
+                                        meta={<span className="whitespace-pre">{address}</span>}
+                                        icon="add"
+                                        iconAriaLabel={_(
+                                            msg({
+                                                id: 'add-healthcare-organization.add',
+                                                message: 'toevoegen',
+                                            })
+                                        )}
+                                    />
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
             </Stack>
 
@@ -120,7 +87,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                     rightIcon="autorenew"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >
-                    <Trans id="add-healthcare-organisation.load_more">
+                    <Trans id="add-healthcare-organization.load_more">
                         Meer zorgaanbieders laden
                     </Trans>
                 </Button>

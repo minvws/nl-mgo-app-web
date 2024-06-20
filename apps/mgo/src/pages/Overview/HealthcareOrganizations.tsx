@@ -1,5 +1,5 @@
 import { RouterLink } from '$/routing';
-import { type HealthcareOrganization } from '$/store/healthcareProviders';
+import { type HealthcareOrganization } from '$/store/healthcareOrganizations';
 import { Trans } from '@lingui/macro';
 import { Button, ButtonCard, Stack } from '@minvws/mgo-mgo-ui';
 
@@ -18,13 +18,9 @@ export const HealthcareOrganizations = ({ organizations }: ResultsProps) => {
 
             <Stack asChild className="-mx-4 my-6 gap-1 sm:mx-0 sm:gap-2 md:my-12">
                 <ul>
-                    {organizations.map(({ slug, display_name, types }) => (
+                    {organizations.map(({ slug, name, category }) => (
                         <li key={slug}>
-                            <ButtonCard
-                                asChild
-                                title={display_name}
-                                description={types[0].display_name}
-                            >
+                            <ButtonCard asChild title={name} description={category}>
                                 <RouterLink to={`/overzicht/${slug}`} />
                             </ButtonCard>
                         </li>

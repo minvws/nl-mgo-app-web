@@ -1,6 +1,6 @@
-import { type Address } from '$/types/Organisation';
+import { type Address } from '$/api/load/types';
 import { faker } from '@faker-js/faker';
-import { createMockDataFactory } from './factory';
+import { createMockDataFactory } from '../factory';
 
 export const address = createMockDataFactory<Address>(() => {
     const streetAddress = `${faker.location.streetAddress()} ${faker.location.buildingNumber()}`;
@@ -12,6 +12,7 @@ export const address = createMockDataFactory<Address>(() => {
         address: `${streetAddress}\r\n${postalcode} ${city}`,
         city,
         country: faker.location.country(),
+        state: faker.location.state(),
         postalcode,
         type: faker.helpers.arrayElement(['physical', 'postal']),
         lines: [streetAddress],

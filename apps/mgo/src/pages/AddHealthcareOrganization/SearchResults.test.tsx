@@ -1,9 +1,9 @@
 import { useHealthcareOrganizationsStore } from '$/store';
-import { type HealthcareOrganizationDTO } from '$/types/Organisation';
-import { healthcareOrganizationDTO } from '$test/data';
+import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { times } from 'lodash';
 import { expect, test, vi } from 'vitest';
 import { RESULTS_PER_PAGE, SearchResults } from './SearchResults';
 
@@ -12,36 +12,14 @@ vi.mock('$/routing', () => ({
     useNavigate: () => mockNavigate,
 }));
 
-test('test add to store', async () => {
+test('adds organization to store on click', async () => {
     const user = userEvent.setup();
-    setupWithAppProviders(<SearchResults searchResults={[healthcareOrganizationDTO()]} />);
-
-    let state = useHealthcareOrganizationsStore.getState();
-    expect(state.healthcareOrganizations.length).toBe(0);
-
-    const listItem = await screen.getByRole('listitem');
-    const listItemButton = within(listItem).getByRole('button');
-
-    await user.click(listItemButton);
-
-    state = useHealthcareOrganizationsStore.getState();
-    expect(state.healthcareOrganizations.length).toBe(1);
-    expect(mockNavigate).toBeCalled();
-});
-
-test('test navigate do not add to store', async () => {
-    const user = userEvent.setup();
-    const { addHealthcareOrganization } = useHealthcareOrganizationsStore.getState();
-    addHealthcareOrganization(healthcareOrganizationDTO());
-
     setupWithAppProviders(
-        <SearchResults
-            searchResults={useHealthcareOrganizationsStore.getState().healthcareOrganizations}
-        />
+        <SearchResults searchResults={[faker.custom.healthcareOrganization()]} />
     );
 
     let state = useHealthcareOrganizationsStore.getState();
-    expect(state.healthcareOrganizations.length).toBe(1);
+    expect(state.organizations.length).toBe(0);
 
     const listItem = await screen.getByRole('listitem');
     const listItemButton = within(listItem).getByRole('button');
@@ -49,15 +27,33 @@ test('test navigate do not add to store', async () => {
     await user.click(listItemButton);
 
     state = useHealthcareOrganizationsStore.getState();
-    expect(state.healthcareOrganizations.length).toBe(1);
+    expect(state.organizations.length).toBe(1);
     expect(mockNavigate).toBeCalled();
 });
 
-test('Test pagination', async () => {
-    const data: HealthcareOrganizationDTO[] = [];
-    for (let index = 0; index < RESULTS_PER_PAGE + 1; index++) {
-        data.push(healthcareOrganizationDTO());
-    }
+test('clicking an already added organization does not change the state, but does navigate', async () => {
+    const user = userEvent.setup();
+    const { addOrganization } = useHealthcareOrganizationsStore.getState();
+    const organization = faker.custom.healthcareOrganization();
+    addOrganization(organization);
+
+    setupWithAppProviders(<SearchResults searchResults={[organization]} />);
+
+    let state = useHealthcareOrganizationsStore.getState();
+    expect(state.organizations.length).toBe(1);
+
+    const listItem = await screen.getByRole('listitem');
+    const listItemButton = within(listItem).getByRole('button');
+
+    await user.click(listItemButton);
+
+    state = useHealthcareOrganizationsStore.getState();
+    expect(state.organizations.length).toBe(1);
+    expect(mockNavigate).toBeCalled();
+});
+
+test('pagination adds extra items and dissappears when there are not items left', async () => {
+    const data = times(RESULTS_PER_PAGE + 1, () => faker.custom.healthcareOrganization());
 
     const user = userEvent.setup();
     setupWithAppProviders(<SearchResults searchResults={data} />);

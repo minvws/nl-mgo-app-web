@@ -1,27 +1,28 @@
-import { search } from '$/api/location';
+import { search } from '$/api/load';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useNavFocusRef } from '$/hooks';
+import { useNavFocusRef, useParseHealthcareOrganization } from '$/hooks';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResultsTips } from './NoSearchResultsTips';
 import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
-import { Helmet } from 'react-helmet-async';
 
 export function AddHealthcareOrganization() {
     const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
+    const { parseHealthcareOrganization } = useParseHealthcareOrganization();
 
     const query = useQuery({
-        queryKey: ['search', searchQuery],
+        queryKey: ['search', searchQuery], // eslint-disable-line @tanstack/query/exhaustive-deps
         queryFn: async () => {
             const searchResults = await search(searchQuery!);
-            return searchResults.organizations;
+            return searchResults.organizations.map(parseHealthcareOrganization);
         },
         enabled: !!searchQuery,
         retry: 0,
@@ -32,7 +33,7 @@ export function AddHealthcareOrganization() {
             <Helmet
                 title={_(
                     msg({
-                        id: 'add-healthcare-organisation.title',
+                        id: 'add-healthcare-organization.title',
                         message: 'Voeg een zorgaanbieder toe',
                     })
                 )}
@@ -45,7 +46,7 @@ export function AddHealthcareOrganization() {
             <Container className="mb-4 max-w-md">
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
-                        <Trans id="add-healthcare-organisation.heading">
+                        <Trans id="add-healthcare-organization.heading">
                             Voeg een zorgaanbieder toe
                         </Trans>
                     </h1>
@@ -65,7 +66,7 @@ export function AddHealthcareOrganization() {
                             illustration="woman-on-couch-exclamation"
                             title={_(
                                 msg({
-                                    id: 'add-healthcare-organisation.no-results.title',
+                                    id: 'add-healthcare-organization.no-results.title',
                                     message: `Geen zorgaanbieders gevonden`,
                                 })
                             )}

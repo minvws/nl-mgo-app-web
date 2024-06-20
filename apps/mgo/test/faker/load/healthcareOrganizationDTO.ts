@@ -1,8 +1,8 @@
-import { type HealthcareOrganizationDTO } from '$/types/Organisation';
+import { type HealthcareOrganizationDTO } from '$/api/load/types';
 import { faker } from '@faker-js/faker';
-import { createMockDataFactory } from './factory';
+import { createMockDataFactory } from '../factory';
 import { address } from './address';
-import { healthcareService } from './healthcareService';
+import { healthcareServiceDTO } from './healthcareServiceDTO';
 import { healthcareOrganizationType } from './healthcareOrganizationType';
 
 export const healthcareOrganizationDTO = createMockDataFactory<HealthcareOrganizationDTO>(() => ({
@@ -13,5 +13,5 @@ export const healthcareOrganizationDTO = createMockDataFactory<HealthcareOrganiz
     addresses: [address()],
     types: [healthcareOrganizationType()],
     names: [],
-    data_services: [healthcareService()],
+    data_services: [healthcareServiceDTO()],
 }));
