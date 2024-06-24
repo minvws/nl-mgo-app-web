@@ -7,31 +7,55 @@
         <link rel="stylesheet" href="./src/main.css" />
         <title>Mijn Zorg</title>
     </head>
+
     <body class="bg-[#FAFAFA] dark:bg-[#050505] dark:text-white">
         <div id="root">
-            <div class="min-h-vh grid grid-rows-[auto_1fr] px-4 md:px-8">
+            <div class="flex min-h-screen flex-col px-4 md:px-8">
                 <img
                     src="/rijkshuisstijl/logo.svg"
                     alt="Logo Rijksoverheid"
-                    class="mx-auto mb-16 block w-16"
+                    class="mx-auto block h-[75px] sm:h-[100px]"
                 />
-                <main class="grid grid-rows-[auto_1fr]">
-                    <h1 class="text-center text-4xl font-bold">
-                        Mijn Gezond&shy;heids&shy;overzicht
-                    </h1>
+                <main class="flex-grow">
                     <noscript>
-                        <p class="mx-auto mt-8 max-w-md text-xl">
-                            Deze applicatie gebruikt JavaScript. Zet JavaScript aan in de
-                            instellingen van je browser, of probeer het in een andere browser.
-                        </p>
+                        <div
+                            class="mx-auto box-content w-[calc(100%-2rem)] max-w-md px-[1rem] pt-12 md:w-[calc(100%-3rem)] md:px-[1.5rem] md:pt-24"
+                        >
+                            <picture class="mx-auto flex w-3/4 md:mb-2 md:w-3/5">
+                                <source
+                                    srcset="/images/woman-on-couch-exclamation-dark.svg"
+                                    media="(prefers-color-scheme: dark)"
+                                />
+                                <img
+                                    src="/images/woman-on-couch-exclamation.svg"
+                                    class="w-full max-w-full object-contain"
+                                    alt=""
+                                />
+                            </picture>
+                            <h1
+                                class="mt-5 font-sans text-2xl font-bold leading-tight text-black md:mt-16 md:text-3xl lg:text-4xl dark:text-white"
+                            >
+                                Mijn Gezond&shy;heids&shy;overzicht gebruikt JavaScript
+                            </h1>
+                            <p
+                                class="md:text-md mt-4 font-sans text-sm font-normal text-black md:mt-6 dark:text-white"
+                            >
+                                Het lijkt erop dat JavaScript in je browser is uitschakeld. Schakel
+                                JavaScript in via de instellingen van je browser. Probeer het daarna
+                                opnieuw.
+                            </p>
+                        </div>
                     </noscript>
                     <div
                         id="js-loading-screen"
                         class="mb-16 mt-4 hidden content-end text-center lg:mb-32"
                     >
+                        <h1 class="text-center text-4xl font-bold">
+                            Mijn Gezond&shy;heids&shy;overzicht
+                        </h1>
                         <style>
                             .loading-spinner-fg {
-                                --_circumference: 21.99px; /* ≈2π×3.5 */
+                                --_circumference: 21.99px;
                                 --_spinner-size: calc(var(--_circumference) / 4);
                                 stroke-linecap: round;
                                 stroke-dasharray: var(--_spinner-size)
@@ -39,11 +63,13 @@
                                 stroke-dashoffset: 0;
                                 animation: loading-spinner 2s steps(4) infinite;
                             }
+
                             @keyframes loading-spinner {
                                 to {
                                     stroke-dashoffset: calc(-1 * var(--_circumference));
                                 }
                             }
+
                             @media (prefers-reduced-motion: no-preference) {
                                 .loading-spinner-fg {
                                     animation: loading-spinner 1s linear infinite;
