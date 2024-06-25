@@ -16,7 +16,7 @@ export function MenuButton({ asChild, children, ...rest }: MenuButtonProps) {
                     groupFocusStyle
                 )}
             >
-                <Trans id="mobile-menu.menu">Menu</Trans>
+                <Trans id="menu.menu">Menu</Trans>
             </span>
         </Comp>
     );

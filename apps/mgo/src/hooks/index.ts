@@ -1,6 +1,6 @@
 export { useNavFocusRef } from './useNavFocusRef/useNavFocusRef';
 export { useOnboardingSeen } from './useOnboardingSeen/useOnboardingSeen';
-export { useHealthcareOrganization } from './useHealthcareOrganization/useHealthcareOrganization';
+export { useOrganization } from './useOrganization/useOrganization';
 export {
     useParseHealthcareOrganization,
     type ParsedHealthcareOrganization,

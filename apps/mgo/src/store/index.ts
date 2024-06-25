@@ -1,4 +1,1 @@
-export {
-    type HealthcareOrganizationsState,
-    useHealthcareOrganizationsStore,
-} from './healthcareOrganizations';
+export { type OrganizationsState, useOrganizationsStore } from './organizations';

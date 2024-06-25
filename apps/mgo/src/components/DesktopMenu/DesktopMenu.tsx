@@ -8,10 +8,10 @@ export function DesktopMenu() {
             <Stack asChild className="max-h-screen w-52 flex-shrink-0 gap-3 self-stretch">
                 <ul>
                     <NavItem to="/overzicht" icon="home">
-                        <Trans id="menu.overview">Overzicht</Trans>
+                        <Trans id="menu.overview_heading">Overzicht</Trans>
                     </NavItem>
                     <NavItem to="/#over-de-site" icon="question-mark">
-                        <Trans id="menu.about">Over de site</Trans>
+                        <Trans id="menu.about_heading">Over de site</Trans>
                     </NavItem>
                 </ul>
             </Stack>

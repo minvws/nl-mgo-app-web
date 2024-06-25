@@ -20,7 +20,7 @@ test.each([undefined, null])('translateDescriptions: returns unknown when input 
         },
     ]);
 
-    expect(descriptions[0].details).toEqual('common.unknown');
+    expect(descriptions[0].details).toEqual('fhir.unknown');
 });
 
 test.each([faker.lorem.word(), 'true', 'false', faker.number.int()])(

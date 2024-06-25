@@ -11,9 +11,7 @@ export function QueryStateLoading({ children, ...rest }: QueryStateLoadingProps)
             <div className="py-8 text-center md:py-16">
                 <Spinner className="mx-auto mb-4" />
                 <div aria-live="polite">
-                    {children || (
-                        <Trans id="default.state.loading.description">Bezig met laden...</Trans>
-                    )}
+                    {children || <Trans id="common.loading_subheading">Bezig met laden...</Trans>}
                 </div>
             </div>
         </QueryStateLayout>

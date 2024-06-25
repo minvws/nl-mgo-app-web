@@ -1,30 +1,32 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useOrganization, useNavFocusRef } from '$/hooks/index.ts';
+import { useOrganization, useNavFocusRef } from '$/hooks';
 import { Trans, msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
+import { getMgoObservations } from '@minvws/mgo-fhir-data';
 import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
-import { MedicationList } from './MedicationList';
+import { LabResultsList } from './LabResultsList';
 import { assignId } from '$/lib/assignId/assignId';
 
-export function Medication() {
+export function LabResults() {
     const { _ } = useLingui();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { organization, getCommonClinicalDataset } = useOrganization();
 
     const query = useQuery({
-        queryKey: ['MedicationStatement', organization?.slug],
+        queryKey: ['LabResults', organization?.slug],
         queryFn: async () => {
             const commonClinicalDataset = getCommonClinicalDataset();
             if (!commonClinicalDataset) {
                 return [];
             }
 
-            const medicationBundle = await commonClinicalDataset.getMedicationUse().json();
-            return getMgoMedicationStatements(medicationBundle).map(assignId);
+            const observationBundle = await commonClinicalDataset
+                .getLastLaboratoryResultsPerType()
+                .json();
+            return getMgoObservations(observationBundle).map(assignId);
         },
     });
 
@@ -34,8 +36,8 @@ export function Medication() {
                 title={
                     _(
                         msg({
-                            id: 'medication_use.heading',
-                            message: `Medicijnen`,
+                            id: 'lab_results.heading',
+                            message: `Uitslagen`,
                         })
                     ) + ` | ${organization?.name}`
                 }
@@ -45,14 +47,13 @@ export function Medication() {
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
-                        <Trans id="medication_use.heading">Medicijnen</Trans>
+                        <Trans id="lab_results.heading">Uitslagen</Trans>
                     </h1>
                 </Heading>
 
                 <Text size="lg" className="text-sm">
-                    <Trans id="medication_use.subheading">
-                        Een overzicht van de medicijnen die zijn voorgeschreven door je
-                        zorgaanbieder.
+                    <Trans id="lab_results.subheading">
+                        Resultaten van jouw onderzoeken, (r&ouml;ntgen)foto&apos;s en scans.
                     </Trans>
                 </Text>
 
@@ -60,7 +61,7 @@ export function Medication() {
                     <QueryState
                         {...query}
                         useCardWrapper
-                        renderResult={({ data }) => <MedicationList statements={data} />}
+                        renderResult={({ data }) => <LabResultsList observations={data} />}
                     />
                 </div>
             </section>

@@ -2,31 +2,31 @@ import * as hooks from '$/hooks';
 import { flushCallStack, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
-import { Problems } from './Problems';
-import fhirProblems from './fixtures/fhir-problem-statements.json';
+import { LabResults } from './LabResults';
+import observations from './fixtures/fhir-observations.json';
 import { faker } from '$test/faker';
 
 const useOrganizationMock = vi.spyOn(hooks, 'useOrganization');
 
-test('shows problems list', async () => {
+test('shows laboratory results list', async () => {
     const organization = faker.custom.healthcareOrganization();
     useOrganizationMock.mockImplementation(() => ({
         organization,
         getCommonClinicalDataset: () =>
             ({
-                getProblems: () => ({
-                    json: vi.fn(() => Promise.resolve(fhirProblems)),
+                getLastLaboratoryResultsPerType: () => ({
+                    json: vi.fn(() => Promise.resolve(observations)),
                 }),
             }) as any, // eslint-disable-line @typescript-eslint/no-explicit-any
     }));
 
-    setupWithAppProviders(<Problems />);
+    setupWithAppProviders(<LabResults />);
     await flushCallStack(2);
 
     screen.getByRole('heading', {
-        name: 'Amyotrofe laterale sclerose',
+        name: 'Bevinding betreffende laboratoriumonderzoek (bevinding)',
     });
-    screen.getByText('Fractuur van pols (aandoening)');
+    screen.getByText('Chloride [mol/volume] in bloed');
 });
 
 test('shows no results when there is no data service available', async () => {
@@ -36,7 +36,7 @@ test('shows no results when there is no data service available', async () => {
         getCommonClinicalDataset: () => null,
     }));
 
-    setupWithAppProviders(<Problems />);
+    setupWithAppProviders(<LabResults />);
     await flushCallStack(2);
 
     screen.getByRole('heading', {

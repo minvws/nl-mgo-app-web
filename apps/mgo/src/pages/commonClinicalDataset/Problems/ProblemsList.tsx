@@ -19,42 +19,42 @@ function getDescriptions({
     return [
         {
             term: msg({
-                id: 'problems.clinicalStatus',
+                id: 'fhir.clinicalStatus',
                 message: 'Status',
             }),
             details: clinicalStatus,
         },
         {
             term: msg({
-                id: 'problems.category',
+                id: 'fhir.category',
                 message: 'Categorie',
             }),
             details: category,
         },
         {
             term: msg({
-                id: 'problems.startDate',
+                id: 'fhir.startDate',
                 message: 'Startdatum',
             }),
             details: startDate,
         },
         {
             term: msg({
-                id: 'problems.endDate',
+                id: 'fhir.endDate',
                 message: 'Einddatum',
             }),
             details: endDate,
         },
         {
             term: msg({
-                id: 'problems.bodySite',
+                id: 'fhir.bodyLocation',
                 message: 'Anatomische locatie',
             }),
             details: bodyLocation,
         },
         {
             term: msg({
-                id: 'problems.commment',
+                id: 'fhir.comment',
                 message: 'Notitie',
             }),
             details: comment,

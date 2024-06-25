@@ -12,21 +12,21 @@ function getDescriptions({ instructions, prescribedBy, startDate }: MgoMedicatio
     return [
         {
             term: msg({
-                id: 'medicine.instructions',
+                id: 'fhir.instructions',
                 message: 'Dosering',
             }),
             details: instructions,
         },
         {
             term: msg({
-                id: 'medicine.startDate',
+                id: 'fhir.startDate',
                 message: 'Startdatum',
             }),
             details: startDate,
         },
         {
             term: msg({
-                id: 'medicine.prescribedBy',
+                id: 'fhir.prescribedBy',
                 message: 'Voorgeschreven door',
             }),
             details: prescribedBy,

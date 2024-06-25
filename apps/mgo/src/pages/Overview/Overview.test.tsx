@@ -1,5 +1,5 @@
 import { useOnboardingSeen } from '$/hooks';
-import { useHealthcareOrganizationsStore } from '$/store';
+import { useOrganizationsStore } from '$/store';
 import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
@@ -13,12 +13,12 @@ test('overview', () => {
 
     setupApp({ initialEntries: ['/overzicht'] });
 
-    expect(screen.getByText('Goedemorgen, Wendy')).toBeInTheDocument();
+    expect(screen.getByText('Goedemorgen')).toBeInTheDocument();
 });
 
 test('should show the healthcare organizations', () => {
     const organizationName = faker.company.name();
-    const { addOrganization } = useHealthcareOrganizationsStore.getState();
+    const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
 
     setAuthStateAuthenticated();

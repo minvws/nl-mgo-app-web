@@ -12,7 +12,7 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
         <header data-testid="header-desktop" className={cn(className)} {...rest}>
             <Container className="flex items-center justify-between py-4">
                 <h2 className="text-xl font-normal leading-tight text-black dark:text-white">
-                    <Trans id="desktop-header.heading">Mijn Gezondheidsoverzicht</Trans>
+                    <Trans id="common.app_name">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
 
                 <Button onClick={auth.removeUser} variant="ghost">

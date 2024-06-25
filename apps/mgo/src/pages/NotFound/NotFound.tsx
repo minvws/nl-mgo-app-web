@@ -11,7 +11,7 @@ export function NotFound() {
             <Helmet
                 title={_(
                     msg({
-                        id: 'not-found.title',
+                        id: 'not_found.heading',
                         message: 'Pagina niet gevonden',
                     })
                 )}
@@ -23,11 +23,11 @@ export function NotFound() {
                 />
                 <Heading asChild size="lg" className="mt-6 md:mt-16">
                     <h1>
-                        <Trans id="not-found.heading">Pagina niet gevonden</Trans>
+                        <Trans id="not_found.heading">Pagina niet gevonden</Trans>
                     </h1>
                 </Heading>
                 <Text className="mt-4 md:mt-6">
-                    <Trans id="not-found.description">
+                    <Trans id="not_found.subheading">
                         Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze
                         verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar
                         het overzicht.
@@ -35,7 +35,7 @@ export function NotFound() {
                 </Text>
                 <Button asChild className="mt-6 md:mt-12">
                     <RouterLink to={'/overzicht'}>
-                        <Trans id="not-found.button">Ga naar het overzicht</Trans>
+                        <Trans id="not_found.to_overview">Ga naar het overzicht</Trans>
                     </RouterLink>
                 </Button>
             </Container>

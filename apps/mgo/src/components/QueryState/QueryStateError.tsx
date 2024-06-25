@@ -17,7 +17,7 @@ export function QueryStateError({ title, children, ...rest }: QueryStateErrorPro
                 title ||
                 _(
                     msg({
-                        id: 'default.state.error.title',
+                        id: 'common.error_heading',
                         message: `Er ging iets mis`,
                     })
                 )
@@ -25,7 +25,7 @@ export function QueryStateError({ title, children, ...rest }: QueryStateErrorPro
             {...rest}
         >
             {children || (
-                <Trans id="default.state.error.description">
+                <Trans id="common.error_subheading">
                     Onze excuses, er lijkt een probleem te zijn met de verbinding met onze server.
                     We werken eraan om het op te lossen. Probeer het later opnieuw.
                 </Trans>

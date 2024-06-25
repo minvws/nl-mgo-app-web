@@ -16,14 +16,14 @@ export function Logout() {
                 </h1>
             </Heading>
             <Text className="mt-4 md:mt-6">
-                <Trans id="logout.description">
+                <Trans id="logout.subheading">
                     Wel zo fijn, zo weet je zeker dat je gegevens veilig achter slot en grendel
                     blijven.
                 </Trans>
             </Text>
             <Button asChild className="mt-6 md:mt-12">
                 <RouterLink to={'/inloggen'}>
-                    <Trans id="logout.button">Log opnieuw in</Trans>
+                    <Trans id="logout.login">Log opnieuw in</Trans>
                 </RouterLink>
             </Button>
         </Container>

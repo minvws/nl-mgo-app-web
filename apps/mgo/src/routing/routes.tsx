@@ -1,7 +1,8 @@
-import { AddHealthcareOrganization } from '$/pages/AddHealthcareOrganization/AddHealthcareOrganization';
-import { AddHealthcareOrganizationList } from '$/pages/AddHealthcareOrganizationList/AddHealthcareOrganizationList';
+import { AddOrganization } from '$/pages/AddOrganization/AddOrganization';
 import { NotFound } from '$/pages/NotFound/NotFound';
+import { OrganizationList } from '$/pages/OrganizationList/OrganizationList';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
+import { LabResults, Medication, Problems } from '$/pages/commonClinicalDataset';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
@@ -9,13 +10,12 @@ import { type Path as RouterPath } from 'react-router-dom';
 import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
-import { HealthcareOrganization } from '../pages/HealthcareOrganization/HealthcareOrganization';
+import { Introduction } from '../pages/Introduction/Introduction';
 import { Login } from '../pages/Login/Login';
 import { Logout } from '../pages/Logout/Logout';
-import { OnboardingIntro } from '../pages/OnboardingIntro/OnboardingIntro';
-import { OnboardingProposition } from '../pages/OnboardingProposition/OnboardingProposition';
+import { Organization } from '../pages/Organization/Organization';
 import { Overview } from '../pages/Overview/Overview';
-import { Medication, LaboratoryResults, Problems } from '$/pages/commonClinicalDataset';
+import { Proposition } from '../pages/Proposition/Proposition';
 
 const routeConfig = [
     {
@@ -27,11 +27,11 @@ const routeConfig = [
                 children: [
                     {
                         path: '/welkom',
-                        element: <OnboardingIntro />,
+                        element: <Introduction />,
                     },
                     {
                         path: '/hoe-werkt-het',
-                        element: <OnboardingProposition />,
+                        element: <Proposition />,
                     },
                     {
                         path: '/inloggen',
@@ -61,11 +61,11 @@ const routeConfig = [
                 children: [
                     {
                         path: '/zorgaanbieder-toevoegen',
-                        element: <AddHealthcareOrganization />,
+                        element: <AddOrganization />,
                     },
                     {
                         path: '/zorgaanbieder-toevoegen/zorgaanbieders',
-                        element: <AddHealthcareOrganizationList />,
+                        element: <OrganizationList />,
                     },
                 ],
             },
@@ -77,20 +77,20 @@ const routeConfig = [
                         element: <Overview />,
                     },
                     {
-                        path: '/overzicht/:healthcareOrganizationSlug',
-                        element: <HealthcareOrganization />,
+                        path: '/overzicht/:organizationSlug',
+                        element: <Organization />,
                     },
                     {
-                        path: '/overzicht/:healthcareOrganizationSlug/medicijnen',
+                        path: '/overzicht/:organizationSlug/medicijnen',
                         element: <Medication />,
                     },
                     {
-                        path: '/overzicht/:healthcareOrganizationSlug/klachten',
+                        path: '/overzicht/:organizationSlug/klachten',
                         element: <Problems />,
                     },
                     {
-                        path: '/overzicht/:healthcareOrganizationSlug/uitslagen',
-                        element: <LaboratoryResults />,
+                        path: '/overzicht/:organizationSlug/uitslagen',
+                        element: <LabResults />,
                     },
                 ],
             },

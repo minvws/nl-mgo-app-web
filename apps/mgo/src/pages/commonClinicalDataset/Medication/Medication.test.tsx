@@ -6,11 +6,11 @@ import { test, vi } from 'vitest';
 import { Medication } from './Medication';
 import fhirMedicationStatements from './fixtures/fhir-medication-statements.json';
 
-const useHealthcareOrganizationMock = vi.spyOn(hooks, 'useHealthcareOrganization');
+const useOrganizationMock = vi.spyOn(hooks, 'useOrganization');
 
 test('shows medication list', async () => {
     const organization = faker.custom.healthcareOrganization();
-    useHealthcareOrganizationMock.mockImplementation(() => ({
+    useOrganizationMock.mockImplementation(() => ({
         organization,
         getCommonClinicalDataset: () =>
             ({
@@ -31,7 +31,7 @@ test('shows medication list', async () => {
 
 test('shows no results when there is no data service available', async () => {
     const organization = faker.custom.healthcareOrganization();
-    useHealthcareOrganizationMock.mockImplementation(() => ({
+    useOrganizationMock.mockImplementation(() => ({
         organization,
         getCommonClinicalDataset: () => null,
     }));

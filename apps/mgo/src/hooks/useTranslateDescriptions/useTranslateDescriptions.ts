@@ -12,7 +12,7 @@ export function useTranslateDescriptions() {
     const { _ } = useLingui();
     const unknownLabel = _(
         msg({
-            id: 'common.unknown',
+            id: 'fhir.unknown',
             message: 'Niet bekend',
         })
     );

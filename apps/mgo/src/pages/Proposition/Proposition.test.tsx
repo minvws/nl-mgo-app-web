@@ -1,0 +1,24 @@
+import { useOnboardingSeen } from '$/hooks';
+import { setupApp } from '$test/helpers';
+import { fireEvent, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
+
+test('shows content and navigates to the login page', () => {
+    setupApp({ initialEntries: ['/hoe-werkt-het'] });
+
+    expect(useOnboardingSeen().isOnboardingSeen).toBe(false);
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+
+    fireEvent.click(screen.getByText(/volgende/i));
+
+    expect(useOnboardingSeen().isOnboardingSeen).toBe(true);
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Bewijs wie je bent');
+});

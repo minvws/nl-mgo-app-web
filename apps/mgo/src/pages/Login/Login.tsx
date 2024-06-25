@@ -33,7 +33,7 @@ export function Login() {
             <Helmet
                 title={_(
                     msg({
-                        id: 'login.title',
+                        id: 'login.heading',
                         message: 'Bewijs wie je bent',
                     })
                 )}
@@ -47,11 +47,11 @@ export function Login() {
                     <Alert
                         status="error"
                         label={_(
-                            msg({ id: 'login.error.label', message: 'Inloggen is niet gelukt' })
+                            msg({ id: 'login.error_heading', message: 'Inloggen is niet gelukt' })
                         )}
                         description={_(
                             msg({
-                                id: 'login.error.description',
+                                id: 'login.error_subheading',
                                 message: 'Probeer het nog een keer',
                             })
                         )}
@@ -64,7 +64,7 @@ export function Login() {
                 </Heading>
 
                 <Text className="mb-6 md:mb-12">
-                    <Trans id="login.description">
+                    <Trans id="login_subheading">
                         Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we{' '}
                         <b>jouw gegevens veilig opvragen</b> bij je huisarts, ziekenhuis en andere
                         zorgaanbieders.

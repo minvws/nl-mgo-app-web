@@ -1,3 +1,3 @@
 export { Medication } from './Medication/Medication';
-export { LaboratoryResults } from './LaboratoryResults/LaboratoryResults';
+export { LabResults } from './LabResults/LabResults';
 export { Problems } from './Problems/Problems';

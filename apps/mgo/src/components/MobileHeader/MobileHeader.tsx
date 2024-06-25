@@ -18,7 +18,7 @@ export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
             <Container className="flex h-full items-center justify-between">
                 <MobileMenu />
                 <h2 className="text-xs font-bold leading-none">
-                    <Trans id="mobile-header.heading">Mijn Gezondheidsoverzicht</Trans>
+                    <Trans id="common.app_name">Mijn Gezondheidsoverzicht</Trans>
                 </h2>
                 <Button onClick={() => auth.removeUser()} variant="ghost">
                     <Trans id="common.logout">Uitloggen</Trans>

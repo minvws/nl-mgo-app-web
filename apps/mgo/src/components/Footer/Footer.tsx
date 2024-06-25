@@ -9,10 +9,10 @@ export function Footer(props: FooterProps) {
     return (
         <footer className="bg-white text-black dark:bg-gray-900 dark:text-white" {...props}>
             <Container className="flex flex-col justify-end gap-6 py-12 sm:flex-row">
-                <nav aria-labelledby="about_title" className="flex flex-col gap-4">
-                    <Heading id="about_title" asChild>
+                <nav aria-labelledby="about_heading" className="flex flex-col gap-4">
+                    <Heading id="about_heading" asChild>
                         <h2>
-                            <Trans id="footer.about.title">Over deze site</Trans>
+                            <Trans id="footer.about_heading">Over deze site</Trans>
                         </h2>
                     </Heading>
 
@@ -23,7 +23,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.about.site">
+                                <Trans id="footer.about_site">
                                     Over mijngezondheidsoverzicht.nl
                                 </Trans>
                             </a>
@@ -34,7 +34,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.about.copyright">Copyright</Trans>
+                                <Trans id="footer.copyright">Copyright</Trans>
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -46,7 +46,7 @@ export function Footer(props: FooterProps) {
                                 to="/privacy"
                                 className="no-underline visited:text-black dark:visited:text-white"
                             >
-                                <Trans id="footer.about.privacy">Privacy</Trans>
+                                <Trans id="footer.privacy">Privacy</Trans>
                             </Link>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -55,7 +55,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.about.cookies">Cookies</Trans>
+                                <Trans id="footer.cookies">Cookies</Trans>
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -64,15 +64,16 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.about.accessibility">Toegankelijkheid</Trans>
+                                <Trans id="footer.accessibility">Toegankelijkheid</Trans>
                             </a>
                         </ListItem>
                     </List>
                 </nav>
-                <nav aria-labelledby="service_title" className="flex flex-col gap-4">
-                    <Heading id="service_title" asChild>
+
+                <nav aria-labelledby="service_heading" className="flex flex-col gap-4">
+                    <Heading id="service_heading" asChild>
                         <h2>
-                            <Trans id="footer.service.title">Service</Trans>
+                            <Trans id="footer.service_heading">Service</Trans>
                         </h2>
                     </Heading>
                     <List className="gap-2">
@@ -82,7 +83,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.service.faq">Veelgestelde vragen</Trans>
+                                <Trans id="footer.faq">Veelgestelde vragen</Trans>
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -91,7 +92,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.service.contact">Contact</Trans>
+                                <Trans id="footer.contact">Contact</Trans>
                             </a>
                         </ListItem>
                     </List>

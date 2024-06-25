@@ -22,7 +22,7 @@ export function QueryStateNoResult({
                 title ||
                 _(
                     msg({
-                        id: 'default.state.no_results.title',
+                        id: 'common.no_results_heading',
                         message: `Geen gegevens gevonden`,
                     })
                 )
@@ -30,7 +30,7 @@ export function QueryStateNoResult({
             {...rest}
         >
             {children || (
-                <Trans id="default.state.no_results.description">
+                <Trans id="common.no_results_subheading">
                     We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder.
                     Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie.
                 </Trans>

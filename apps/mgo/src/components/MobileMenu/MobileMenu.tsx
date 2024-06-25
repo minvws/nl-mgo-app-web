@@ -60,14 +60,16 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                 className="absolute left-1/2 -translate-x-1/2"
                             >
                                 <h2>
-                                    <Trans id="mobile-menu.dialog.title">Menu</Trans>
+                                    <Trans id="menu.menu">Menu</Trans>
                                 </h2>
                             </Heading>
                         </Dialog.Title>
                         <IconButton
                             asChild
                             icon="close"
-                            aria-label={_(msg({ id: 'common.close', message: 'Sluiten' }))}
+                            aria-label={_(
+                                msg({ id: 'common.voice_over_close', message: 'Sluiten' })
+                            )}
                             className="bg-gray-100"
                         >
                             <Dialog.Close />
@@ -77,10 +79,12 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         <li>
                             <ButtonCard
                                 asChild
-                                title={_(msg({ id: 'menu.overview', message: 'Overzicht' }))}
+                                title={_(
+                                    msg({ id: 'menu.overview_heading', message: 'Overzicht' })
+                                )}
                                 description={_(
                                     msg({
-                                        id: 'menu.overview.description',
+                                        id: 'menu.overview_subheading',
                                         message:
                                             'Je medische gegevens van je zorgaanbieders op één plek',
                                     })
@@ -93,10 +97,12 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         <li>
                             <ButtonCard
                                 asChild
-                                title={_(msg({ id: 'menu.about', message: 'Over de site' }))}
+                                title={_(
+                                    msg({ id: 'menu.about_heading', message: 'Over de site' })
+                                )}
                                 description={_(
                                     msg({
-                                        id: 'menu.about.description',
+                                        id: 'menu.about_subheading',
                                         message:
                                             'Uitleg over hoe de site werkt en wat je er allemaal mee kan',
                                     })
