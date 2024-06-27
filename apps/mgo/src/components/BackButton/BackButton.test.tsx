@@ -12,30 +12,43 @@ vi.mock('$/routing', () => ({
 const oldWindowHistory = window.history;
 
 beforeAll(() => {
-    window.history = { length: 1 } as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    window.history = {
+        state: {
+            idx: 0,
+        },
+    } as History;
 });
 
 beforeEach(() => {
-    (window.history as any).length = 1; // eslint-disable-line @typescript-eslint/no-explicit-any
+    window.history.state.idx = 0;
 });
 
 afterAll(() => {
     window.history = oldWindowHistory;
 });
 
-test('BackButton is hidden when there is no history', async () => {
+test('BackButton is invisible when there is no history', async () => {
     setupWithAppProviders(<BackButton />);
     const backButton = screen.getByRole('button', { name: 'Vorige' });
-    expect(backButton.className).includes('hidden');
+    expect(backButton.className).includes('invisible');
 });
 
 test('BackButton navigates back when clicked', async () => {
-    (window.history as any).length = 2; // eslint-disable-line @typescript-eslint/no-explicit-any
+    window.history.state.idx = 1;
 
     const { user } = setupWithAppProviders(<BackButton />);
     const backButton = screen.getByRole('button', { name: 'Vorige' });
-    expect(backButton.className).not.includes('hidden');
+    expect(backButton.className).not.includes('invisible');
 
     await user.click(backButton);
     expect(mockNavigate).toHaveBeenCalledWith(-1);
+});
+
+test('BackButton is invisible when state is null', async () => {
+    window.history = {
+        state: null,
+    } as History;
+    setupWithAppProviders(<BackButton />);
+    const backButton = screen.getByRole('button', { name: 'Vorige' });
+    expect(backButton.className).includes('invisible');
 });

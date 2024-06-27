@@ -12,11 +12,15 @@ export function BackButton({ className, ...rest }: ButtonProps) {
         ...rest,
     };
 
+    const { idx } = window.history.state ?? {};
+
     return (
         <Button
             onClick={() => navigate(-1)}
             {...buttonProps}
-            className={cn(buttonProps.className, className, { hidden: window.history.length <= 1 })}
+            className={cn(buttonProps.className, className, {
+                invisible: idx === 0 || idx === undefined,
+            })}
         >
             <Trans id="common.previous">Vorige</Trans>
         </Button>
