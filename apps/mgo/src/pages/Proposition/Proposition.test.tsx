@@ -1,5 +1,5 @@
 import { useOnboardingSeen } from '$/hooks';
-import { setupApp } from '$test/helpers';
+import { message, setupApp } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
@@ -11,14 +11,14 @@ test('shows content and navigates to the login page', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+    ).toHaveTextContent(message('proposition.heading'));
 
-    fireEvent.click(screen.getByText(/volgende/i));
+    fireEvent.click(screen.getByText(message('common.next')));
 
     expect(useOnboardingSeen().isOnboardingSeen).toBe(true);
     expect(
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Bewijs wie je bent');
+    ).toHaveTextContent(message('login.heading'));
 });

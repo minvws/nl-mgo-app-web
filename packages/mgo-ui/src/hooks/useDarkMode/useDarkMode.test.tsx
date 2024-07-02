@@ -1,18 +1,24 @@
 import { renderHook } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
+import { beforeAll, expect, test, vi } from 'vitest';
 import { useDarkMode } from './useDarkMode';
 import { flushCallStack } from '../../../test/helpers';
 
-export function mockMatchMedia(match: Partial<MediaQueryList>) {
+const matchMedia = vi.fn();
+
+beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
-        value: vi.fn((_query: string) => {
-            return {
-                matches: false,
-                addEventListener: vi.fn(),
-                removeEventListener: vi.fn(),
-                ...match,
-            };
-        }),
+        value: matchMedia,
+    });
+});
+
+export function mockMatchMedia(match: Partial<MediaQueryList>) {
+    matchMedia.mockImplementation((_query: string) => {
+        return {
+            matches: false,
+            addEventListener: vi.fn(),
+            removeEventListener: vi.fn(),
+            ...match,
+        };
     });
 }
 

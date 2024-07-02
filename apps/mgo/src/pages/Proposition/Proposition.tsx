@@ -1,26 +1,18 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
 import { Link, RouterLink } from '$/routing';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Proposition() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setOnboardingSeen } = useOnboardingSeen();
 
     return (
         <>
-            <Helmet
-                title={_(
-                    msg({
-                        id: 'proposition.heading',
-                        message: 'Zo gebruikt de website jouw gegevens',
-                    })
-                )}
-            />
+            <Helmet title={intl.formatMessage({ id: 'proposition.heading' })} />
 
             <Container>
                 <BackButton />
@@ -30,18 +22,22 @@ export function Proposition() {
                 <div className="max-w-sm">
                     <Heading asChild size="lg" className="mb-4 md:mb-6">
                         <h1 ref={navFocusRef}>
-                            <Trans id="proposition.heading">
-                                Zo gebruikt de website jouw gegevens
-                            </Trans>
+                            <FormattedMessage
+                                id="proposition.heading"
+                                description="Zo gebruikt de website jouw gegevens"
+                            />
                         </h1>
                     </Heading>
 
                     <Text className="mb-6 md:mb-12">
-                        <Trans id="proposition.subheading">
-                            In de <Link to="/privacy">privacy&shy;verklaring</Link> staat hoe Mijn
-                            Gezond&shy;heids&shy;overzicht jouw gegevens gebruikt. Dit zijn de
-                            belangrijkste punten
-                        </Trans>
+                        <FormattedMessage
+                            id="proposition.subheading"
+                            description="In de <a>privacyverklaring</a> staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten"
+                            values={{
+                                /* c8 ignore next, values may not be used in the actual copy */
+                                a: (chunks) => <Link to="/privacy">{chunks}</Link>,
+                            }}
+                        />
                     </Text>
 
                     <Text asChild>
@@ -49,38 +45,25 @@ export function Proposition() {
                             <ListItem className="flex">
                                 <ListIcon icon="encrypted" className="fill-[#34C759]" />
                                 <span>
-                                    <Trans id="proposition.statement_1">
-                                        Je gegevens worden <b>versleuteld</b> en via een{' '}
-                                        <b>veilige</b> verbinding opgehaald.
-                                    </Trans>
+                                    <FormattedMessage id="proposition.statement_1" />
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
                                 <ListIcon icon="health-and-safety" className="fill-[#34C759]" />
                                 <span>
-                                    <Trans id="proposition.statement_2">
-                                        De website haalt je gegevens direct op bij de
-                                        zorg&shy;verleners die jij kiest.{' '}
-                                        <b>Alleen jij hebt toegang.</b>
-                                    </Trans>
+                                    <FormattedMessage id="proposition.statement_2" />
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
                                 <ListIcon icon="verified-user" className="fill-[#34C759]" />
                                 <span>
-                                    <Trans id="proposition.statement_3">
-                                        <b>Je kiest zelf</b> hoe je je gegevens wilt gebruiken en of
-                                        je ze wel of niet deelt met anderen.
-                                    </Trans>
+                                    <FormattedMessage id="proposition.statement_3" />
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
                                 <ListIcon icon="gpp-bad" className="fill-[#34C759]" />
                                 <span>
-                                    <Trans id="proposition.statement_4">
-                                        Je kunt de gegevens in je overzicht{' '}
-                                        <b>altijd verwijderen of opnieuw opvragen.</b>
-                                    </Trans>
+                                    <FormattedMessage id="proposition.statement_4" />
                                 </span>
                             </ListItem>
                         </List>
@@ -88,7 +71,7 @@ export function Proposition() {
 
                     <Button asChild onClick={() => setOnboardingSeen(true)}>
                         <RouterLink to="/zorgaanbieder-toevoegen">
-                            <Trans id="common.next">Volgende</Trans>
+                            <FormattedMessage id="common.next" description="Volgende" />
                         </RouterLink>
                     </Button>
                 </div>

@@ -1,4 +1,4 @@
-import { setupWithAppProviders } from '$test/helpers';
+import { message, setupWithAppProviders } from '$test/helpers';
 import { supressError } from '$test/helpers/supressError';
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
@@ -72,7 +72,7 @@ test.each([undefined, null, []])(
         expect(screen.queryByTestId('result')).toBeNull();
 
         screen.getByRole('heading', {
-            name: 'Geen gegevens gevonden',
+            name: message('common.no_results_heading'),
         });
     }
 );
@@ -141,7 +141,7 @@ test('Default error is shown', () => {
     expect(screen.queryByRole('progressbar')).toBeNull();
 
     screen.getByRole('heading', {
-        name: 'Er ging iets mis',
+        name: message('common.error_heading'),
     });
 });
 

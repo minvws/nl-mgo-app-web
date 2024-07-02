@@ -1,8 +1,9 @@
 import type { Config } from '$/lib/config/config';
-import { cleanup } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { afterEach, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
+import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
 import {
     authState,
@@ -11,6 +12,17 @@ import {
     signinRedirectMock,
     signoutRedirectMock,
 } from './helpers/auth';
+
+configure({
+    // Remove the huge error output from `testing-library`
+    getElementError(message) {
+        // Only print the error message, not the full stack trace (and matching suggestions)
+        const error = new Error(message!.split('\n')[0]);
+        delete error.stack;
+        error.name = 'TestingLibraryElementError';
+        return error;
+    },
+});
 
 export const config: Config = {
     oidc: {
@@ -21,7 +33,6 @@ export const config: Config = {
 };
 
 vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
-
 vi.mock('zustand');
 vi.mock('react-oidc-context', () => ({
     AuthProvider: ({ children }: { children: ReactNode }) => children,
@@ -39,6 +50,10 @@ vi.mock('react-oidc-context', () => ({
         settings: {},
     }),
 }));
+
+throwOnConsoleLog({
+    logMethods: ['warn', 'error'],
+});
 
 window.scrollTo = vi.fn;
 

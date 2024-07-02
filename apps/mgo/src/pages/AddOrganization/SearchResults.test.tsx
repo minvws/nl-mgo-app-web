@@ -1,6 +1,6 @@
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setupWithAppProviders } from '$test/helpers';
+import { message, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { times } from 'lodash';
@@ -61,7 +61,7 @@ test('pagination adds extra items and dissappears when there are not items left'
     expect(await screen.getAllByRole('listitem').length).toBe(15);
 
     const button = await screen.getByRole('button', {
-        name: 'Meer zorgaanbieders laden',
+        name: message('add_organization.load_more'),
     });
     expect(button).toBeVisible();
     await user.click(button);
@@ -69,7 +69,7 @@ test('pagination adds extra items and dissappears when there are not items left'
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(15);
     expect(
         await screen.queryByRole('button', {
-            name: 'Meer zorgaanbieders laden',
+            name: message('add_organization.load_more'),
         })
     ).not.toBeInTheDocument();
 });

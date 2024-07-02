@@ -1,30 +1,24 @@
-import { Trans } from '@lingui/macro';
 import { List, ListIcon, ListItem } from '@minvws/mgo-mgo-ui';
+import { FormattedMessage } from 'react-intl';
 
 export const NoSearchResultsTips = () => (
     <List>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add_organization.search_hint_1">Controleer de spelling.</Trans>
+                <FormattedMessage id="add_organization.search_hint_1" />
             </span>
         </ListItem>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add_organization.search_hint_2">
-                    Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de
-                    zorgaanbieder hoe je hun naam schrijft.
-                </Trans>
+                <FormattedMessage id="add_organization.search_hint_2" />
             </span>
         </ListItem>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <Trans id="add_organization.search_hint_3">
-                    Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de
-                    hoofdvestiging in.
-                </Trans>
+                <FormattedMessage id="add_organization.search_hint_3" />
             </span>
         </ListItem>
     </List>

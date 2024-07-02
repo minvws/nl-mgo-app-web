@@ -1,17 +1,16 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useOrganization, useNavFocusRef } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
+import { useNavFocusRef, useOrganization } from '$/hooks';
+import { assignId } from '$/lib/assignId/assignId';
 import { getMgoObservations } from '@minvws/mgo-fhir-data';
 import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { LabResultsList } from './LabResultsList';
-import { assignId } from '$/lib/assignId/assignId';
 
 export function LabResults() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { organization, getCommonClinicalDataset } = useOrganization();
 
@@ -26,6 +25,7 @@ export function LabResults() {
             const observationBundle = await commonClinicalDataset
                 .getLastLaboratoryResultsPerType()
                 .json();
+
             return getMgoObservations(observationBundle).map(assignId);
         },
     });
@@ -34,12 +34,7 @@ export function LabResults() {
         <>
             <Helmet
                 title={
-                    _(
-                        msg({
-                            id: 'lab_results.heading',
-                            message: `Uitslagen`,
-                        })
-                    ) + ` | ${organization?.name}`
+                    intl.formatMessage({ id: 'lab_results.heading' }) + ` | ${organization?.name}`
                 }
             />
             <section className="flex-grow">
@@ -47,14 +42,15 @@ export function LabResults() {
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
-                        <Trans id="lab_results.heading">Uitslagen</Trans>
+                        <FormattedMessage id="lab_results.heading" description="Uitslagen" />
                     </h1>
                 </Heading>
 
                 <Text size="lg" className="text-sm">
-                    <Trans id="lab_results.subheading">
-                        Resultaten van jouw onderzoeken, (r&ouml;ntgen)foto&apos;s en scans.
-                    </Trans>
+                    <FormattedMessage
+                        id="lab_results.subheading"
+                        description="Resultaten van jouw onderzoeken, (r&ouml;ntgen)foto's en scans."
+                    />
                 </Text>
 
                 <div className="py-6 md:py-10">

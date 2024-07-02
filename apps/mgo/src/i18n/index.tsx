@@ -1,17 +1,36 @@
-import { i18n } from '@lingui/core';
-import { I18nProvider as LinguiI18nProvider } from '@lingui/react';
 import { type ReactNode } from 'react';
-import { messages } from './locales/nl.po';
-
-const DEFAULT_LOCALE = 'nl';
-
-i18n.load(DEFAULT_LOCALE, messages);
-i18n.activate(DEFAULT_LOCALE);
+import { IntlProvider, type IntlConfig } from 'react-intl';
+import messagesNL from './locales/nl.json';
 
 interface I18nProviderProps {
     readonly children: ReactNode;
+    readonly locale: 'nl';
 }
 
-export const I18nProvider = ({ children }: I18nProviderProps) => (
-    <LinguiI18nProvider i18n={i18n}>{children}</LinguiI18nProvider>
+const config: Partial<IntlConfig> = {
+    defaultLocale: 'nl',
+    messages: messagesNL,
+    /* c8 ignore start, text elements may not be used in the actual copy */
+    defaultRichTextElements: {
+        b: (chunks) => <b className="font-bold">{chunks}</b>,
+        i: (chunks) => <i className="italic">{chunks}</i>,
+    },
+    /* c8 ignore end */
+};
+
+export const I18nProvider = ({ children, locale }: I18nProviderProps) => (
+    <IntlProvider locale={locale} {...config}>
+        {children}
+    </IntlProvider>
 );
+
+// Configure message ids for type safety
+// @see: https://formatjs.io/docs/react-intl/#typing-message-ids-and-locale
+declare global {
+    // eslint-disable-next-line @typescript-eslint/no-namespace
+    namespace FormatjsIntl {
+        interface Message {
+            ids: keyof typeof messagesNL;
+        }
+    }
+}

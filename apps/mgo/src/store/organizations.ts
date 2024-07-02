@@ -2,6 +2,7 @@ import { type ParsedHealthcareOrganization } from '$/hooks';
 import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
 import { isEmpty } from 'lodash';
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 export type HealthcareOrganization = ParsedHealthcareOrganization & {
     slug: string;
@@ -18,39 +19,43 @@ export interface OrganizationsState {
     removeOrganizationBySlug: (slug: string) => void;
 }
 
-export const useOrganizationsStore = create<OrganizationsState>()((set, get) => ({
-    organizations: [],
+export const useOrganizationsStore = create<OrganizationsState>()(
+    persist(
+        (set, get) => ({
+            organizations: [],
 
-    addOrganization: (healthcareOrganizationDetails) => {
-        const slugs = get().organizations.map((x) => x.slug);
-        const healthcareOrganisation = {
-            ...healthcareOrganizationDetails,
-            slug: createUniqueSlug(healthcareOrganizationDetails.name, slugs),
-        };
+            addOrganization: (healthcareOrganizationDetails) => {
+                const slugs = get().organizations.map((x) => x.slug);
+                const healthcareOrganisation = {
+                    ...healthcareOrganizationDetails,
+                    slug: createUniqueSlug(healthcareOrganizationDetails.name, slugs),
+                };
 
-        set(({ organizations }) => ({
-            organizations: [...organizations, healthcareOrganisation],
-        }));
+                set(({ organizations }) => ({
+                    organizations: [...organizations, healthcareOrganisation],
+                }));
 
-        return healthcareOrganisation;
-    },
+                return healthcareOrganisation;
+            },
 
-    hasOrganizations: () => {
-        return !isEmpty(get().organizations);
-    },
+            hasOrganizations: () => !isEmpty(get().organizations),
 
-    hasOrganizationById: (id) => {
-        return get().organizations.some((x) => x.id === id);
-    },
+            hasOrganizationById: (id) => get().organizations.some((x) => x.id === id),
 
-    getOrganizationBySlug: (slug) => {
-        if (!slug) return;
-        return get().organizations.find((x) => x.slug === slug);
-    },
+            getOrganizationBySlug: (slug) => {
+                if (!slug) return;
+                return get().organizations.find((x) => x.slug === slug);
+            },
 
-    removeOrganizationBySlug: (slug) => {
-        set(({ organizations }) => ({
-            organizations: organizations.filter((x) => x.slug !== slug),
-        }));
-    },
-}));
+            removeOrganizationBySlug: (slug) => {
+                set(({ organizations }) => ({
+                    organizations: organizations.filter((x) => x.slug !== slug),
+                }));
+            },
+        }),
+        {
+            name: 'mgo-organizations',
+            storage: createJSONStorage(() => sessionStorage),
+        }
+    )
+);

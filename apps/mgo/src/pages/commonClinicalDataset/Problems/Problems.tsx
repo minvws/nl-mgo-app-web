@@ -1,17 +1,16 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useOrganization, useNavFocusRef } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
+import { useNavFocusRef, useOrganization } from '$/hooks';
+import { assignId } from '$/lib/assignId/assignId';
 import { getMgoProblems } from '@minvws/mgo-fhir-data';
 import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { ProblemsList } from './ProblemsList';
-import { assignId } from '$/lib/assignId/assignId';
 
 export function Problems() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { organization, getCommonClinicalDataset } = useOrganization();
 
@@ -31,14 +30,7 @@ export function Problems() {
     return (
         <>
             <Helmet
-                title={
-                    _(
-                        msg({
-                            id: 'problems.heading',
-                            message: `Klachten en diagnoses`,
-                        })
-                    ) + ` | ${organization?.name}`
-                }
+                title={intl.formatMessage({ id: 'problems.heading' }) + ` | ${organization?.name}`}
             />
 
             <section className="flex-grow">
@@ -46,14 +38,18 @@ export function Problems() {
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
-                        <Trans id="problems.heading">Klachten en diagnoses</Trans>
+                        <FormattedMessage
+                            id="problems.heading"
+                            description="Klachten en diagnoses"
+                        />
                     </h1>
                 </Heading>
 
                 <Text size="lg" className="text-sm">
-                    <Trans id="problems.subheading">
-                        Je diagnoses en gezondheidsklachten, vastgesteld door je zorgaanbieder.
-                    </Trans>
+                    <FormattedMessage
+                        id="problems.subheading"
+                        description="Je diagnoses en gezondheidsklachten, vastgesteld door je zorgaanbieder."
+                    />
                 </Text>
 
                 <div className="py-6 md:py-10">

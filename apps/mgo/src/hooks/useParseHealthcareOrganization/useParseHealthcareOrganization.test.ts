@@ -2,11 +2,7 @@ import { faker } from '$test/faker';
 import { expect, test, vi } from 'vitest';
 import { useParseHealthcareOrganization } from './useParseHealthcareOrganization';
 
-vi.mock('@lingui/react', () => ({
-    useLingui: vi.fn(() => ({
-        _: vi.fn((x) => x.id),
-    })),
-}));
+vi.mock('react-intl');
 
 test('parses healthcare organization dto', () => {
     const { parseHealthcareOrganization } = useParseHealthcareOrganization();

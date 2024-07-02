@@ -1,17 +1,16 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useOrganization, useNavFocusRef } from '$/hooks/index.ts';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
+import { useNavFocusRef, useOrganization } from '$/hooks/index.ts';
+import { assignId } from '$/lib/assignId/assignId';
 import { getMgoMedicationStatements } from '@minvws/mgo-fhir-data';
 import { Heading, Text } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { MedicationList } from './MedicationList';
-import { assignId } from '$/lib/assignId/assignId';
 
 export function Medication() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { organization, getCommonClinicalDataset } = useOrganization();
 
@@ -32,12 +31,8 @@ export function Medication() {
         <>
             <Helmet
                 title={
-                    _(
-                        msg({
-                            id: 'medication_use.heading',
-                            message: `Medicijnen`,
-                        })
-                    ) + ` | ${organization?.name}`
+                    intl.formatMessage({ id: 'medication_use.heading' }) +
+                    ` | ${organization?.name}`
                 }
             />
             <section className="flex-grow">
@@ -45,15 +40,16 @@ export function Medication() {
 
                 <Heading asChild size="lg" className="mb-4">
                     <h1 ref={navFocusRef}>
-                        <Trans id="medication_use.heading">Medicijnen</Trans>
+                        <FormattedMessage id="medication_use.heading" description="Medicijnen" />
                     </h1>
                 </Heading>
 
                 <Text size="lg" className="text-sm">
-                    <Trans id="medication_use.subheading">
-                        Een overzicht van de medicijnen die zijn voorgeschreven door je
-                        zorgaanbieder.
-                    </Trans>
+                    <FormattedMessage
+                        id="medication_use.subheading"
+                        description="Een overzicht van de medicijnen die zijn voorgeschreven door je
+                        zorgaanbieder."
+                    />
                 </Text>
 
                 <div className="py-6 md:py-10">

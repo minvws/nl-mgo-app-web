@@ -1,5 +1,5 @@
 import * as hooks from '$/hooks';
-import { flushCallStack, setupWithAppProviders } from '$test/helpers';
+import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
 import { Problems } from './Problems';
@@ -40,6 +40,6 @@ test('shows no results when there is no data service available', async () => {
     await flushCallStack(2);
 
     screen.getByRole('heading', {
-        name: 'Geen gegevens gevonden',
+        name: message('common.no_results_heading'),
     });
 });

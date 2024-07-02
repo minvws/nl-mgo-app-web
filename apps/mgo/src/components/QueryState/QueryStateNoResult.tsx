@@ -1,7 +1,6 @@
-import { Trans, msg } from '@lingui/macro';
 import { type HTMLAttributes } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { QueryStateLayout, type QueryStateLayoutProps } from '../QueryStateLayout/QueryStateLayout';
-import { useLingui } from '@lingui/react';
 
 export interface QueryStateNoResultProps
     extends Omit<HTMLAttributes<HTMLElement>, 'title'>,
@@ -13,27 +12,19 @@ export function QueryStateNoResult({
     illustration = 'woman-on-couch',
     ...rest
 }: QueryStateNoResultProps) {
-    const { _ } = useLingui();
+    const intl = useIntl();
 
     return (
         <QueryStateLayout
             illustration={illustration}
-            title={
-                title ||
-                _(
-                    msg({
-                        id: 'common.no_results_heading',
-                        message: `Geen gegevens gevonden`,
-                    })
-                )
-            }
+            title={title || intl.formatMessage({ id: 'common.no_results_heading' })}
             {...rest}
         >
             {children || (
-                <Trans id="common.no_results_subheading">
-                    We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder.
-                    Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie.
-                </Trans>
+                <FormattedMessage
+                    id="common.no_results_subheading"
+                    description="We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie."
+                />
             )}
         </QueryStateLayout>
     );

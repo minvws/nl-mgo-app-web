@@ -1,6 +1,6 @@
 import { useNavigate } from '$/routing';
-import { Trans } from '@lingui/macro';
 import { Button, cn, type ButtonProps } from '@minvws/mgo-mgo-ui';
+import { FormattedMessage } from 'react-intl';
 
 export function BackButton({ className, ...rest }: ButtonProps) {
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ export function BackButton({ className, ...rest }: ButtonProps) {
                 invisible: idx === 0 || idx === undefined,
             })}
         >
-            <Trans id="common.previous">Vorige</Trans>
+            <FormattedMessage id="common.previous" description="Vorige" />
         </Button>
     );
 }

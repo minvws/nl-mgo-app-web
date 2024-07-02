@@ -1,7 +1,7 @@
 import { Link } from '$/routing';
-import { Trans } from '@lingui/macro';
-import { Container, List, ListIcon, ListItem, focusStyle, Heading } from '@minvws/mgo-mgo-ui';
+import { Container, Heading, List, ListIcon, ListItem, focusStyle } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {}
 
@@ -12,7 +12,10 @@ export function Footer(props: FooterProps) {
                 <nav aria-labelledby="about_heading" className="flex flex-col gap-4">
                     <Heading id="about_heading" asChild>
                         <h2>
-                            <Trans id="footer.about_heading">Over deze site</Trans>
+                            <FormattedMessage
+                                id="footer.about_heading"
+                                description="Over deze site"
+                            />
                         </h2>
                     </Heading>
 
@@ -23,9 +26,10 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.about_site">
-                                    Over mijngezondheidsoverzicht.nl
-                                </Trans>
+                                <FormattedMessage
+                                    id="footer.about_site"
+                                    description="Over mijngezondheidsoverzicht.nl"
+                                />
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -34,7 +38,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.copyright">Copyright</Trans>
+                                <FormattedMessage id="footer.copyright" description="Copyright" />
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -46,7 +50,7 @@ export function Footer(props: FooterProps) {
                                 to="/privacy"
                                 className="no-underline visited:text-black dark:visited:text-white"
                             >
-                                <Trans id="footer.privacy">Privacy</Trans>
+                                <FormattedMessage id="footer.privacy" description="Privacy" />
                             </Link>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -55,7 +59,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.cookies">Cookies</Trans>
+                                <FormattedMessage id="footer.cookies" description="Cookies" />
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -64,7 +68,10 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.accessibility">Toegankelijkheid</Trans>
+                                <FormattedMessage
+                                    id="footer.accessibility"
+                                    description="Toegankelijkheid"
+                                />
                             </a>
                         </ListItem>
                     </List>
@@ -73,7 +80,7 @@ export function Footer(props: FooterProps) {
                 <nav aria-labelledby="service_heading" className="flex flex-col gap-4">
                     <Heading id="service_heading" asChild>
                         <h2>
-                            <Trans id="footer.service_heading">Service</Trans>
+                            <FormattedMessage id="footer.service_heading" description="Service" />
                         </h2>
                     </Heading>
                     <List className="gap-2">
@@ -83,7 +90,10 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.faq">Veelgestelde vragen</Trans>
+                                <FormattedMessage
+                                    id="footer.faq"
+                                    description="Veelgestelde vragen"
+                                />
                             </a>
                         </ListItem>
                         <ListItem className="text-md flex items-center">
@@ -92,7 +102,7 @@ export function Footer(props: FooterProps) {
                                 className="fill-dark-blue-700 me-2 h-3 w-3"
                             />
                             <a href="#" className={focusStyle}>
-                                <Trans id="footer.contact">Contact</Trans>
+                                <FormattedMessage id="footer.contact" description="Contact" />
                             </a>
                         </ListItem>
                     </List>

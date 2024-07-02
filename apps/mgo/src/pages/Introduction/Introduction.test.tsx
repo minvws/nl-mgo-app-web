@@ -1,4 +1,4 @@
-import { setupApp } from '$test/helpers';
+import { message, setupApp } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
@@ -11,13 +11,13 @@ test('shows heading and navigates to the next page', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Je gezondheidsgegevens in één overzicht');
+    ).toHaveTextContent(message('introduction.heading'));
 
-    fireEvent.click(screen.getByText(/volgende/i));
+    fireEvent.click(screen.getByText(message('common.next')));
 
     expect(
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Zo gebruikt de website jouw gegevens');
+    ).toHaveTextContent(message('proposition.heading'));
 });

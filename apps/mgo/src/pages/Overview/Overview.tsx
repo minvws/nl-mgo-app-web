@@ -1,9 +1,9 @@
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
-import { Trans } from '@lingui/macro';
 import { Heading } from '@minvws/mgo-mgo-ui';
-import { Organizations } from './Organizations';
+import { FormattedMessage } from 'react-intl';
 import { NoOrganizations } from './NoOrganizations';
+import { Organizations } from './Organizations';
 
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
@@ -14,7 +14,7 @@ export function Overview() {
         <>
             <Heading asChild size="lg" className="mb-2 md:mb-4">
                 <h1 ref={navFocusRef}>
-                    <Trans id="overview.heading">Goedemorgen</Trans>
+                    <FormattedMessage id="overview.heading" description="Goedemorgen" />
                 </h1>
             </Heading>
 

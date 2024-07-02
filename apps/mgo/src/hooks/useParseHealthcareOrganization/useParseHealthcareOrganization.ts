@@ -1,7 +1,6 @@
 import { type HealthcareOrganizationDTO } from '$/api/load';
-import { msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { safeGet } from '@minvws/mgo-fhir-data';
+import { useIntl } from 'react-intl';
 
 const COMMON_CLINICAL_DATASET_SERVICE_ID = 48;
 const GENERAL_PRACTITIONER_SERVICE_ID = 49;
@@ -15,13 +14,8 @@ function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: num
 }
 
 export function useParseHealthcareOrganization() {
-    const { _ } = useLingui();
-    const unknownLabel = _(
-        msg({
-            id: 'common.unknown',
-            message: 'Niet bekend',
-        })
-    );
+    const intl = useIntl();
+    const unknownLabel = intl.formatMessage({ id: 'common.unknown' });
 
     function parseHealthcareOrganization(organizationDTO: HealthcareOrganizationDTO) {
         const { identification_type, identification_value, display_name } = organizationDTO;

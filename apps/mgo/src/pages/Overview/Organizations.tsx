@@ -1,7 +1,7 @@
 import { RouterLink } from '$/routing';
 import { type HealthcareOrganization } from '$/store/organizations';
-import { Trans } from '@lingui/macro';
 import { Button, ButtonCard, Stack } from '@minvws/mgo-mgo-ui';
+import { FormattedMessage } from 'react-intl';
 
 interface ResultsProps {
     readonly organizations: HealthcareOrganization[];
@@ -11,9 +11,10 @@ export const Organizations = ({ organizations }: ResultsProps) => {
     return (
         <>
             <p className="sm:text-md text-sm text-gray-700 md:text-lg lg:text-xl dark:text-white">
-                <Trans id="overview.subheading">
-                    Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens.
-                </Trans>
+                <FormattedMessage
+                    id="overview.subheading"
+                    description="Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+                />
             </p>
 
             <Stack asChild className="-mx-4 my-6 gap-1 sm:mx-0 sm:gap-2 md:my-12">
@@ -30,7 +31,10 @@ export const Organizations = ({ organizations }: ResultsProps) => {
 
             <Button asChild className="self-start">
                 <RouterLink to="/zorgaanbieder-toevoegen">
-                    <Trans id="overview.add_organization">Voeg een zorgaanbieder toe</Trans>
+                    <FormattedMessage
+                        id="overview.add_organization"
+                        description="Voeg een zorgaanbieder toe"
+                    />
                 </RouterLink>
             </Button>
         </>

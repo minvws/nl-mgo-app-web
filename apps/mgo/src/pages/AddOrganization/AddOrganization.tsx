@@ -1,19 +1,18 @@
 import { search } from '$/api/load';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef, useParseHealthcareOrganization } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResultsTips } from './NoSearchResultsTips';
 import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
 
 export function AddOrganization() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
     const { parseHealthcareOrganization } = useParseHealthcareOrganization();
@@ -30,14 +29,7 @@ export function AddOrganization() {
 
     return (
         <div className="flex flex-grow flex-col">
-            <Helmet
-                title={_(
-                    msg({
-                        id: 'add_organization.heading',
-                        message: 'Voeg een zorgaanbieder toe',
-                    })
-                )}
-            />
+            <Helmet title={intl.formatMessage({ id: 'add_organization.heading' })} />
 
             <Container>
                 <BackButton />
@@ -46,7 +38,10 @@ export function AddOrganization() {
             <Container className="mb-4 max-w-md">
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
-                        <Trans id="add_organization.heading">Voeg een zorgaanbieder toe</Trans>
+                        <FormattedMessage
+                            id="add_organization.heading"
+                            description="Voeg een zorgaanbieder toe"
+                        />
                     </h1>
                 </Heading>
                 <SearchForm onSubmit={setSearchQuery} />
@@ -58,20 +53,16 @@ export function AddOrganization() {
                     useFetchStatus
                     renderLoading={
                         <QueryState.Loading>
-                            <Trans id="add_organization.searching">
-                                Zorgaanbieders aan het zoeken...
-                            </Trans>
+                            <FormattedMessage
+                                id="add_organization.searching"
+                                description="Zorgaanbieders aan het zoeken..."
+                            />
                         </QueryState.Loading>
                     }
                     renderNoResult={
                         <QueryState.NoResult
                             illustration="woman-on-couch-exclamation"
-                            title={_(
-                                msg({
-                                    id: 'add_organization.no_results_found',
-                                    message: `Geen zorgaanbieders gevonden`,
-                                })
-                            )}
+                            title={intl.formatMessage({ id: 'add_organization.no_results_found' })}
                         >
                             <NoSearchResultsTips />
                         </QueryState.NoResult>

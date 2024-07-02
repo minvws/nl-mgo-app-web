@@ -1,18 +1,22 @@
 import { RouterLink } from '$/routing';
-import { Trans } from '@lingui/macro';
 import { Button, Illustration } from '@minvws/mgo-mgo-ui';
+import { FormattedMessage } from 'react-intl';
 
 export const NoOrganizations = () => {
     return (
         <>
             <p className="sm:text-md mb-6 text-sm text-gray-700 md:mb-12 md:text-lg lg:text-xl dark:text-white">
-                <Trans id="overview.no_organizations_found">
-                    Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald.
-                </Trans>
+                <FormattedMessage
+                    id="overview.no_organizations_found"
+                    description="Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald."
+                />
             </p>
             <Button asChild className="mb-6 self-start md:mb-12">
                 <RouterLink to="/zorgaanbieder-toevoegen">
-                    <Trans id="overview.add_organization">Voeg een zorgaanbieder toe</Trans>
+                    <FormattedMessage
+                        id="overview.add_organization"
+                        description="Voeg een zorgaanbieder toe"
+                    />
                 </RouterLink>
             </Button>
             <div className="flex flex-grow flex-col items-center">

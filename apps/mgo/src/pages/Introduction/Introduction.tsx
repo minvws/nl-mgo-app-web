@@ -1,25 +1,17 @@
 import { useNavFocusRef } from '$/hooks';
-import { Trans, msg } from '@lingui/macro';
-import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { RouterLink } from '$/routing';
+import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { Text } from '@minvws/mgo-mgo-ui/components/Text/Text.js';
 import { Helmet } from 'react-helmet-async';
-import { useLingui } from '@lingui/react';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Introduction() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
-            <Helmet
-                title={_(
-                    msg({
-                        id: 'introduction.heading',
-                        message: 'Je gezondheidsgegevens in één overzicht',
-                    })
-                )}
-            />
+            <Helmet title={intl.formatMessage({ id: 'introduction.heading' })} />
             <Container className="mb-8 mt-12 md:mb-16 md:mt-16 lg:mt-24" centeredContent>
                 <Illustration
                     illustration="woman-with-phone"
@@ -30,20 +22,22 @@ export function Introduction() {
             <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
-                        <Trans id="introduction.heading">
-                            Je gezondheidsgegevens in één overzicht
-                        </Trans>
+                        <FormattedMessage
+                            id="introduction.heading"
+                            description="Je gezondheidsgegevens in één overzicht"
+                        />
                     </h1>
                 </Heading>
                 <Text className="mb-6 md:mb-12">
-                    <Trans id="introduction.subheading">
-                        Alle informatie die je huisarts, ziekenhuis en andere zorg&shy;verleners
-                        over jou hebben. Op één plek. Veilig en overzichtelijk.
-                    </Trans>
+                    <FormattedMessage
+                        id="introduction.subheading"
+                        description="Alle informatie die je huisarts, ziekenhuis en andere zorgverleners
+                        over jou hebben. Op één plek. Veilig en overzichtelijk."
+                    />
                 </Text>
                 <Button asChild>
                     <RouterLink to="/hoe-werkt-het">
-                        <Trans id="common.next">Volgende</Trans>
+                        <FormattedMessage id="common.next" />
                     </RouterLink>
                 </Button>
             </Container>

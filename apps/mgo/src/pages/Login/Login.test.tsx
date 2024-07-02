@@ -1,4 +1,4 @@
-import { authState, signinRedirectMock, setupWithAppProviders } from '$test/helpers';
+import { authState, signinRedirectMock, setupWithAppProviders, message } from '$test/helpers';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Login } from './Login';
@@ -6,9 +6,9 @@ import { Login } from './Login';
 test('login', () => {
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Bewijs wie je bent');
+    expect(screen.getByRole('heading')).toHaveTextContent(message('login.heading'));
 
-    fireEvent.click(screen.getByRole('button', { name: 'Inloggen met DigiD' }));
+    fireEvent.click(screen.getByRole('button', { name: message('login.digid') }));
 
     expect(signinRedirectMock).toHaveBeenCalled();
 });
@@ -44,5 +44,5 @@ test('auth error', () => {
 
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByText('Inloggen is niet gelukt')).toBeInTheDocument();
+    expect(screen.getByText(message('login.error_heading'))).toBeInTheDocument();
 });

@@ -1,6 +1,6 @@
-import { Trans } from '@lingui/macro';
 import { Spinner } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 
 export interface QueryStateLoadingProps extends HTMLAttributes<HTMLElement> {}
@@ -11,7 +11,12 @@ export function QueryStateLoading({ children, ...rest }: QueryStateLoadingProps)
             <div className="py-8 text-center md:py-16">
                 <Spinner className="mx-auto mb-4" />
                 <div aria-live="polite">
-                    {children || <Trans id="common.loading_subheading">Bezig met laden...</Trans>}
+                    {children || (
+                        <FormattedMessage
+                            id="common.loading_subheading"
+                            description="Bezig met laden..."
+                        />
+                    )}
                 </div>
             </div>
         </QueryStateLayout>

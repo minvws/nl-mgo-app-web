@@ -1,4 +1,4 @@
-import { setupWithAppProviders } from '$test/helpers';
+import { message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { SearchForm } from './SearchForm';
@@ -9,6 +9,6 @@ test('Form shows error when submitting empty', async () => {
 
     submitSearchForm(user, { name: ' ', city: '' });
 
-    expect(await screen.findByText('Vul een naam in')).toBeVisible();
-    expect(await screen.findByText('Vul een plaats in')).toBeVisible();
+    expect(await screen.findByText(message('add_organization.error_missing_name'))).toBeVisible();
+    expect(await screen.findByText(message('add_organization.error_missing_city'))).toBeVisible();
 });

@@ -1,7 +1,5 @@
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore } from '$/store/organizations';
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import {
     Button,
     ConfirmDialog,
@@ -10,9 +8,10 @@ import {
     useOpenState,
 } from '@minvws/mgo-mgo-ui';
 import { useState } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Organizations() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const { organizations, getOrganizationBySlug, removeOrganizationBySlug } =
         useOrganizationsStore();
     const [selectedSlug, setSelectedSlug] = useState<string>();
@@ -22,7 +21,9 @@ export function Organizations() {
         },
     });
 
-    const selectedOrganizationName = getOrganizationBySlug(selectedSlug)?.name;
+    const i18nValues = {
+        organizationName: getOrganizationBySlug(selectedSlug)?.name,
+    };
 
     return (
         <Stack className="my-6 flex-grow gap-12">
@@ -30,42 +31,26 @@ export function Organizations() {
                 <ConfirmDialog
                     open={isOpen}
                     onOpenChange={setIsOpen}
-                    title={_(
-                        msg({
-                            id: 'dialog.remove_organization_heading',
-                            message: `${selectedOrganizationName} weglaten?`,
-                        })
+                    title={intl.formatMessage(
+                        { id: 'dialog.remove_organization_heading' },
+                        i18nValues
                     )}
-                    description={_(
-                        msg({
-                            id: 'dialog.remove_organization_subheading',
-                            message:
-                                'We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel.',
-                        })
+                    description={intl.formatMessage(
+                        { id: 'dialog.remove_organization_subheading' },
+                        i18nValues
                     )}
-                    confirmButtonText={_(
-                        msg({
-                            id: 'dialog.remove_organization_yes',
-                            message: 'Ja, weglaten',
-                        })
-                    )}
-                    cancelButtonText={_(
-                        msg({
-                            id: 'dialog.remove_organization_no',
-                            message: 'Nee, toch tonen',
-                        })
-                    )}
-                    closeButtonAriaLabel={_(
-                        msg({ id: 'common.voice_over_close', message: 'Sluiten' })
-                    )}
+                    confirmButtonText={intl.formatMessage({ id: 'dialog.remove_organization_yes' })}
+                    cancelButtonText={intl.formatMessage({ id: 'dialog.remove_organization_no' })}
+                    closeButtonAriaLabel={intl.formatMessage({ id: 'common.voice_over_close' })}
                     onConfirm={() => removeOrganizationBySlug(selectedSlug)}
                 />
             )}
 
             <p className="text-md">
-                <Trans id="organization_list.subheading">
-                    Je kunt deze lijst nu aanpassen of dit later in je profiel doen.
-                </Trans>
+                <FormattedMessage
+                    id="organization_list.subheading"
+                    description="Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
+                />
             </p>
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
@@ -81,12 +66,7 @@ export function Organizations() {
                                 subTitle={name}
                                 meta={<span className="whitespace-pre">{address}</span>}
                                 icon="delete"
-                                iconAriaLabel={_(
-                                    msg({
-                                        id: 'common.delete',
-                                        message: 'verwijderen',
-                                    })
-                                )}
+                                iconAriaLabel={intl.formatMessage({ id: 'common.delete' })}
                             />
                         </li>
                     ))}
@@ -95,14 +75,18 @@ export function Organizations() {
             <div className="flex flex-col-reverse gap-4 sm:flex-row sm:gap-6">
                 <Button asChild>
                     <RouterLink to="/overzicht">
-                        <Trans id="organization_list.to_overview">Ga naar het overzicht</Trans>
+                        <FormattedMessage
+                            id="organization_list.to_overview"
+                            description="Ga naar het overzicht"
+                        />
                     </RouterLink>
                 </Button>
                 <Button variant="light" asChild>
                     <RouterLink to="/zorgaanbieder-toevoegen">
-                        <Trans id="organization_list.add_organization">
-                            Voeg een zorgaanbieder toe
-                        </Trans>
+                        <FormattedMessage
+                            id="organization_list.add_organization"
+                            description="Voeg een zorgaanbieder toe"
+                        />
                     </RouterLink>
                 </Button>
             </div>

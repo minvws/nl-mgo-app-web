@@ -1,16 +1,15 @@
+import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks/index.js';
 import { useAuth } from '$/lib/auth';
-import { Trans, msg } from '@lingui/macro';
 import { Alert, Button, Container, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
+import { Helmet } from 'react-helmet-async';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { Busy } from './Busy.js';
-import { useLingui } from '@lingui/react';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
-import { BackButton } from '$/components/BackButton/BackButton';
-import { Helmet } from 'react-helmet-async';
 
 export function Login() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const auth = useAuth();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
@@ -30,14 +29,7 @@ export function Login() {
 
     return (
         <>
-            <Helmet
-                title={_(
-                    msg({
-                        id: 'login.heading',
-                        message: 'Bewijs wie je bent',
-                    })
-                )}
-            />
+            <Helmet title={intl.formatMessage({ id: 'login.heading' })} />
             <Container>
                 <BackButton />
             </Container>
@@ -46,29 +38,23 @@ export function Login() {
                 {auth.error && (
                     <Alert
                         status="error"
-                        label={_(
-                            msg({ id: 'login.error_heading', message: 'Inloggen is niet gelukt' })
-                        )}
-                        description={_(
-                            msg({
-                                id: 'login.error_subheading',
-                                message: 'Probeer het nog een keer',
-                            })
-                        )}
+                        label={intl.formatMessage({ id: 'login.error_heading' })}
+                        description={intl.formatMessage({ id: 'login.error_subheading' })}
                     />
                 )}
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
-                        <Trans id="login.heading">Bewijs wie je bent</Trans>
+                        <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
                     </h1>
                 </Heading>
 
                 <Text className="mb-6 md:mb-12">
-                    <Trans id="login_subheading">
-                        Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we{' '}
+                    <FormattedMessage
+                        id="login_subheading"
+                        description="Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we{' '}
                         <b>jouw gegevens veilig opvragen</b> bij je huisarts, ziekenhuis en andere
-                        zorgaanbieders.
-                    </Trans>
+                        zorgaanbieders."
+                    />
                 </Text>
 
                 <Stack asChild>
@@ -84,7 +70,10 @@ export function Login() {
                                 rightIcon="chevron-right"
                             >
                                 <span className="flex flex-grow justify-start">
-                                    <Trans id="login.digid">Inloggen met DigiD</Trans>
+                                    <FormattedMessage
+                                        id="login.digid"
+                                        description="Inloggen met DigiD"
+                                    />
                                 </span>
                             </Button>
                         </li>
@@ -98,7 +87,10 @@ export function Login() {
                                 rightIcon="chevron-right"
                             >
                                 <span className="flex flex-grow justify-start">
-                                    <Trans id="login.european">Inloggen met eIDAS</Trans>
+                                    <FormattedMessage
+                                        id="login.european"
+                                        description="Inloggen met eIDAS"
+                                    />
                                 </span>
                             </Button>
                         </li>

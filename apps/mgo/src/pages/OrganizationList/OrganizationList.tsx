@@ -1,28 +1,20 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
-import { Trans, msg } from '@lingui/macro';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
-import { Organizations } from './Organizations';
-import { NoOrganizations } from './NoOrganizations';
 import { Helmet } from 'react-helmet-async';
-import { useLingui } from '@lingui/react';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { NoOrganizations } from './NoOrganizations';
+import { Organizations } from './Organizations';
 
 export function OrganizationList() {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { hasOrganizations } = useOrganizationsStore();
 
     return (
         <div className="flex flex-grow flex-col">
-            <Helmet
-                title={_(
-                    msg({
-                        id: 'organization_list.heading',
-                        message: 'Welke zorgaanbieders wil je op je overzicht tonen?',
-                    })
-                )}
-            />
+            <Helmet title={intl.formatMessage({ id: 'organization_list.heading' })} />
 
             <Container>
                 <BackButton />
@@ -31,9 +23,10 @@ export function OrganizationList() {
             <Container className="max-w-md">
                 <Heading asChild size="lg">
                     <h1 ref={navFocusRef}>
-                        <Trans id="organization_list.heading">
-                            Welke zorgaanbieders wil je op je overzicht tonen?
-                        </Trans>
+                        <FormattedMessage
+                            id="organization_list.heading"
+                            description="Welke zorgaanbieders wil je op je overzicht tonen?"
+                        />
                     </h1>
                 </Heading>
             </Container>

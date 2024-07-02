@@ -1,4 +1,10 @@
-const configFiles = ['vitest.workspace.ts', '*.config.ts', '*.config.js', 'packages/mgo-ui/docs/*'];
+const configFiles = [
+    'vitest.workspace.mts',
+    '*.config.mts',
+    '*.config.ts',
+    '*.config.js',
+    'packages/mgo-ui/docs/*',
+];
 
 module.exports = {
     root: true,

@@ -1,7 +1,6 @@
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { Button, InputField } from '@minvws/mgo-mgo-ui';
 import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useDebounceCallback } from 'usehooks-ts';
 
 export interface SearchFormData {
@@ -14,7 +13,7 @@ export interface SearchFormProps {
 }
 
 export const SearchForm = ({ onSubmit }: SearchFormProps) => {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const [dirty, setDirty] = useState(false);
     const [formData, setFormData] = useState<SearchFormData>({
         name: '',
@@ -27,26 +26,16 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
         const { name, city } = formData;
         const errorMessages: Partial<SearchFormData> = {};
         if (name.length === 0) {
-            errorMessages.name = _(
-                msg({
-                    id: 'add_organization.error_missing_name',
-                    message: 'Vul een naam in',
-                })
-            );
+            errorMessages.name = intl.formatMessage({ id: 'add_organization.error_missing_name' });
         }
 
         if (city.length === 0) {
-            errorMessages.city = _(
-                msg({
-                    id: 'add_organization.error_missing_city',
-                    message: 'Vul een plaats in',
-                })
-            );
+            errorMessages.city = intl.formatMessage({ id: 'add_organization.error_missing_city' });
         }
 
         setErrorState(errorMessages);
         return Object.keys(errorMessages).length === 0;
-    }, [formData, _]);
+    }, [formData, intl]);
 
     const debouncedValidate = useDebounceCallback(validate, 100);
 
@@ -76,9 +65,9 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
                 name="name"
                 label={
                     <>
-                        <Trans id="add_organization.name">Naam</Trans>
+                        <FormattedMessage id="add_organization.name" description="Naam" />
                         <span className="ml-1" aria-hidden="true">
-                            <Trans id="common.required">(verplicht)</Trans>
+                            <FormattedMessage id="common.required" description="(verplicht)" />
                         </span>
                     </>
                 }
@@ -91,9 +80,9 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
                 name="city"
                 label={
                     <>
-                        <Trans id="add_organization.city">Plaats</Trans>
+                        <FormattedMessage id="add_organization.city" description="Plaats" />
                         <span className="ml-1" aria-hidden="true">
-                            <Trans id="common.required">(verplicht)</Trans>
+                            <FormattedMessage id="common.required" description="(verplicht)" />
                         </span>
                     </>
                 }
@@ -103,7 +92,7 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
                 onChange={handleChange}
             />
             <Button type="submit" className="h-16 px-12 md:mt-10">
-                <Trans id="common.search">Zoeken</Trans>
+                <FormattedMessage id="common.search" description="Zoeken" />
             </Button>
         </form>
     );

@@ -1,10 +1,10 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
+import { faker } from '$test/faker';
+import { setAuthStateAuthenticated, setupApp, setupWithAppProviders, message } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Overview } from './Overview';
-import { faker } from '$test/faker';
 
 test('overview', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
@@ -13,7 +13,7 @@ test('overview', () => {
 
     setupApp({ initialEntries: ['/overzicht'] });
 
-    expect(screen.getByText('Goedemorgen')).toBeInTheDocument();
+    expect(screen.getByText(message('overview.heading'))).toBeInTheDocument();
 });
 
 test('should show the healthcare organizations', () => {

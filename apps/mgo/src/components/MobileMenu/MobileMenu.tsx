@@ -1,15 +1,14 @@
-import { Trans, msg } from '@lingui/macro';
-import { useLingui } from '@lingui/react';
 import { ButtonCard, Heading, IconButton, cn, useOpenState } from '@minvws/mgo-mgo-ui';
 import * as Dialog from '@radix-ui/react-dialog';
-import { type HTMLAttributes, useEffect, useCallback, useRef } from 'react';
-import { useBlocker, NavLink } from 'react-router-dom';
+import { useCallback, useEffect, useRef, type HTMLAttributes } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { NavLink, useBlocker } from 'react-router-dom';
 import { MenuButton } from './MenuButton';
 
 export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
 
 export function MobileMenu({ className, ...rest }: MobileMenuProps) {
-    const { _ } = useLingui();
+    const intl = useIntl();
     const { isOpen, setIsOpen, close } = useOpenState();
     const navigating = useRef(false);
     const blocker = useBlocker(
@@ -60,16 +59,14 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                 className="absolute left-1/2 -translate-x-1/2"
                             >
                                 <h2>
-                                    <Trans id="menu.menu">Menu</Trans>
+                                    <FormattedMessage id="menu.menu" description="Menu" />
                                 </h2>
                             </Heading>
                         </Dialog.Title>
                         <IconButton
                             asChild
                             icon="close"
-                            aria-label={_(
-                                msg({ id: 'common.voice_over_close', message: 'Sluiten' })
-                            )}
+                            aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
                             className="bg-gray-100"
                         >
                             <Dialog.Close />
@@ -79,16 +76,8 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         <li>
                             <ButtonCard
                                 asChild
-                                title={_(
-                                    msg({ id: 'menu.overview_heading', message: 'Overzicht' })
-                                )}
-                                description={_(
-                                    msg({
-                                        id: 'menu.overview_subheading',
-                                        message:
-                                            'Je medische gegevens van je zorgaanbieders op één plek',
-                                    })
-                                )}
+                                title={intl.formatMessage({ id: 'menu.overview_heading' })}
+                                description={intl.formatMessage({ id: 'menu.overview_subheading' })}
                                 icon="home"
                             >
                                 <NavLink to="/overzicht" />
@@ -97,16 +86,8 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         <li>
                             <ButtonCard
                                 asChild
-                                title={_(
-                                    msg({ id: 'menu.about_heading', message: 'Over de site' })
-                                )}
-                                description={_(
-                                    msg({
-                                        id: 'menu.about_subheading',
-                                        message:
-                                            'Uitleg over hoe de site werkt en wat je er allemaal mee kan',
-                                    })
-                                )}
+                                title={intl.formatMessage({ id: 'menu.about_heading' })}
+                                description={intl.formatMessage({ id: 'menu.about_subheading' })}
                                 icon="question-mark"
                             >
                                 <NavLink to="/#over-de-site" />

@@ -1,6 +1,6 @@
-import { Trans } from '@lingui/macro';
-import { type CompositionProps, useComposition, cn, groupFocusStyle } from '@minvws/mgo-mgo-ui';
+import { cn, groupFocusStyle, useComposition, type CompositionProps } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export type MenuButtonProps = HTMLAttributes<HTMLElement> & CompositionProps;
 
@@ -16,7 +16,7 @@ export function MenuButton({ asChild, children, ...rest }: MenuButtonProps) {
                     groupFocusStyle
                 )}
             >
-                <Trans id="menu.menu">Menu</Trans>
+                <FormattedMessage id="menu.menu" description="Menu" />
             </span>
         </Comp>
     );

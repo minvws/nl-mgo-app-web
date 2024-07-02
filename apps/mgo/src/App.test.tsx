@@ -1,4 +1,4 @@
-import { setupApp, authState, setAuthStateAuthenticated } from '$test/helpers';
+import { setupApp, authState, setAuthStateAuthenticated, message } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { useOnboardingSeen } from './hooks';
@@ -11,7 +11,7 @@ test('redirect from root to welkom if onboarding not seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Je gezondheidsgegevens in één overzicht');
+    ).toHaveTextContent(message('introduction.heading'));
 });
 
 test('waits for auth to load if there is a search query', async () => {
@@ -38,7 +38,7 @@ test('waits for auth to load if there is a search query', async () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Je gezondheidsgegevens in één overzicht');
+    ).toHaveTextContent(message('introduction.heading'));
 });
 
 test('redirect from root to login from root if onboarding seen', () => {
@@ -50,7 +50,7 @@ test('redirect from root to login from root if onboarding seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Bewijs wie je bent');
+    ).toHaveTextContent(message('login.heading'));
 });
 
 test('no redirect from root even if onboarding seen', () => {
@@ -62,16 +62,18 @@ test('no redirect from root even if onboarding seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Je gezondheidsgegevens in één overzicht');
+    ).toHaveTextContent(message('introduction.heading'));
 });
 
-test('redirect from login to overview if authenticated', () => {
+test('redirect from login to add organization if authenticated', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
     setAuthStateAuthenticated();
     setupApp({ initialEntries: ['/inloggen'] });
 
-    expect(screen.getByRole('heading', { name: 'Voeg een zorgaanbieder toe' })).toBeVisible();
+    expect(
+        screen.getByRole('heading', { name: message('add_organization.heading') })
+    ).toBeVisible();
 });
 
 test('redirect to login from protected route', () => {
@@ -81,5 +83,5 @@ test('redirect to login from protected route', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent('Bewijs wie je bent');
+    ).toHaveTextContent(message('login.heading'));
 });

@@ -16,6 +16,7 @@ const onSigninCallback = () => window.history.replaceState({}, '', window.locati
 const loggedOuthPath: RouteConfigPaths = '/uitgelogd';
 const onRemoveUser = (): void => {
     window.location.replace(loggedOuthPath);
+    sessionStorage.clear();
 };
 
 function WrappedAuthProvider({ lang, ...rest }: Props) {

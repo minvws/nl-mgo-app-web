@@ -1,6 +1,6 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
+import { message, setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
@@ -35,7 +35,7 @@ test('remove item from store', async () => {
     const dialog = await screen.getByRole('alertdialog');
     expect(dialog).toBeVisible();
     const button = await within(dialog).getByRole('button', {
-        name: 'Ja, weglaten',
+        name: message('dialog.remove_organization_yes'),
     });
     await user.click(button);
 
@@ -58,7 +58,7 @@ test('do not remove item from store', async () => {
     const dialog = await screen.getByRole('alertdialog');
     expect(dialog).toBeVisible();
     const button = await within(dialog).getByRole('button', {
-        name: 'Nee, toch tonen',
+        name: message('dialog.remove_organization_no'),
     });
     await user.click(button);
 

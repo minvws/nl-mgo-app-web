@@ -36,19 +36,6 @@ jobs:
       - name: Check types
         run: pnpm run check-types
 
-  check-i18n:
-    runs-on: ubuntu-22.04
-    name: Check i18n
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-      - name: Extract messages
-        working-directory: apps/mgo
-        run: pnpm run messages:extract
-      - name: Check for changes which should have been in GIT
-        run: |
-          if [ -z "$(git status -s)" ] ; then echo "no git changes" ; else echo "git changes detected" && git status && git diff && exit 1 ; fi
-
   test:
     runs-on: ubuntu-22.04
     name: Test

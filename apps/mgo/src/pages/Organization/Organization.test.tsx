@@ -1,10 +1,10 @@
 import { useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
-import { setupWithAppProviders } from '$test/helpers';
+import { faker } from '$test/faker';
+import { message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { Organization } from './Organization';
-import { faker } from '$test/faker';
 
 const mockUseParams = useParams as MockedFunction<typeof useParams>;
 
@@ -22,10 +22,12 @@ test('healthcare provider shows details about the provider', () => {
 
     setupWithAppProviders(<Organization />);
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(organization.name);
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
+        message('organization.heading', { organizationName: organization.name })
+    );
 });
 
-test('healthcare provider shows a message if the provider could not be found', () => {
+test('healthcare provider shows a message if the provider could not be found', async () => {
     mockUseParams.mockImplementationOnce(() => ({
         organizationSlug: faker.word.sample(),
     }));
@@ -33,6 +35,6 @@ test('healthcare provider shows a message if the provider could not be found', (
     setupWithAppProviders(<Organization />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-        'Zorgaanbieder niet gevonden'
+        message('organization.not_found_heading')
     );
 });
