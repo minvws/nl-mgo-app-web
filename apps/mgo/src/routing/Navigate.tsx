@@ -5,11 +5,13 @@ import {
     type NavigateProps as RouterNavigateProps,
 } from 'react-router-dom';
 import { type To } from './routes';
+import { type LocationState } from './useLocation';
 
 export type NavigateProps = Override<
     RouterNavigateProps,
     {
         to: To;
+        state?: LocationState;
     }
 >;
 

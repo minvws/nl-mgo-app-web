@@ -384,21 +384,7 @@
     "login.subheading": [
         {
             "type": 0,
-            "value": "Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we "
-        },
-        {
-            "children": [
-                {
-                    "type": 0,
-                    "value": "jouw gegevens veilig opvragen"
-                }
-            ],
-            "type": 8,
-            "value": "b"
-        },
-        {
-            "type": 0,
-            "value": " bij je huisarts, ziekenhuis en andere zorgaanbieders."
+            "value": "Kies de manier waarop je wilt inloggen. Zo kunnen we jouw gegevens veilig ophalen bij je huisarts, ziekenhuis en andere zorgaanbieders."
         }
     ],
     "logout.heading": [

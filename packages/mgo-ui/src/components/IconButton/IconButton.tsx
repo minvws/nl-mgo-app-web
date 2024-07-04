@@ -28,11 +28,11 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp ref={ref} className="group inline-block outline-none" {...rest}>
+        <Comp ref={ref} className="group flex outline-none" {...rest}>
             <Slottable>{children}</Slottable>
             <span
                 className={cn(
-                    'flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-900',
+                    'flex h-8 w-8 items-center justify-center self-center rounded-full bg-gray-100 text-gray-500 group-hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:group-hover:bg-gray-900',
                     groupFocusStyle,
                     className
                 )}

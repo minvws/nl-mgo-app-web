@@ -85,3 +85,15 @@ test('redirect to login from protected route', () => {
         })
     ).toHaveTextContent(message('login.heading'));
 });
+
+test('redirect to login with errors if authentication failed', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen(true);
+    setupApp({ initialEntries: ['/?error=test&error_description=test'] });
+
+    expect(
+        screen.getByRole('heading', {
+            level: 1,
+        })
+    ).toHaveTextContent('Bewijs wie je bent');
+});

@@ -9,6 +9,7 @@ test('renders an alert with a description', async () => {
         label: faker.lorem.sentence(),
         description: faker.lorem.sentence(),
         status: faker.helpers.arrayElement(statuses),
+        'aria-label': faker.word.sample(),
     };
 
     render(<Alert {...props} />);
@@ -20,6 +21,7 @@ test('renders an alert without a description', async () => {
     const props = {
         label: faker.lorem.sentence(),
         status: faker.helpers.arrayElement(statuses),
+        'aria-label': faker.word.sample(),
     };
 
     render(<Alert {...props} />);
