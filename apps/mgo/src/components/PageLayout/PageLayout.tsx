@@ -23,26 +23,32 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <>
             <div className="flex min-h-screen flex-col">
-                <ScrollRestoration />
-                <LogoBanner className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'} />
-                {!hideMenu && (
-                    <Header className="border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-700 dark:bg-gray-900" />
-                )}
-                <Container
-                    className={cn(
-                        'flex flex-grow bg-[#FAFAFA] dark:bg-[#050505]',
-                        hideMenu ? 'flex-col' : 'gap-8 py-6 md:gap-10 md:py-12 lg:gap-16'
+                <header>
+                    <LogoBanner
+                        className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'}
+                    />
+                    {!hideMenu && (
+                        <Header className="border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-700 dark:bg-gray-900" />
                     )}
-                >
-                    {!hideMenu && !isMobile && <DesktopMenu />}
-                    <main className="flex flex-grow flex-col">
-                        <Outlet />
-                    </main>
-                </Container>
+                </header>
+                <main className="flex flex-grow flex-col">
+                    <Container
+                        className={cn(
+                            'flex flex-grow bg-[#FAFAFA] dark:bg-[#050505]',
+                            hideMenu ? 'flex-col' : 'gap-8 py-6 md:gap-10 md:py-12 lg:gap-16'
+                        )}
+                    >
+                        {!hideMenu && !isMobile && <DesktopMenu />}
+                        <div className="flex flex-grow flex-col">
+                            <Outlet />
+                        </div>
+                    </Container>
 
-                <RibbonBanner />
+                    <RibbonBanner />
+                </main>
+                <Footer />
             </div>
-            <Footer />
+            <ScrollRestoration />
         </>
     );
 }

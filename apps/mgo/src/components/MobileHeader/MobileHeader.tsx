@@ -10,7 +10,7 @@ export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
     const auth = useAuth();
 
     return (
-        <header
+        <div
             data-testid="header-mobile"
             className={cn('sticky top-0 z-10 h-16 w-full', className)}
             {...rest}
@@ -27,6 +27,6 @@ export function MobileHeader({ className, ...rest }: MobileHeaderProps) {
                     <FormattedMessage id="common.logout" description="Uitloggen" />
                 </Button>
             </Container>
-        </header>
+        </div>
     );
 }
