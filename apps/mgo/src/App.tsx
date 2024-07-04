@@ -27,15 +27,15 @@ const DefaultHelmet = () => {
 
 export const App = ({ router = defaultRouter }: AppProps = {}) => {
     return (
-        <I18nProvider locale="nl">
-            <HelmetProvider>
-                <DefaultHelmet />
-                <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
+            <I18nProvider>
+                <HelmetProvider>
+                    <DefaultHelmet />
                     <AuthProvider {...readConfig().oidc}>
                         <RouterProvider router={router} />
                     </AuthProvider>
-                </QueryClientProvider>
-            </HelmetProvider>
-        </I18nProvider>
+                </HelmetProvider>
+            </I18nProvider>
+        </QueryClientProvider>
     );
 };

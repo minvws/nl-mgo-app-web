@@ -6,19 +6,19 @@ export const NoSearchResultsTips = () => (
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <FormattedMessage id="add_organization.search_hint_1" />
+                <FormattedMessage id="organization_search.search_hint_1" />
             </span>
         </ListItem>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <FormattedMessage id="add_organization.search_hint_2" />
+                <FormattedMessage id="organization_search.search_hint_2" />
             </span>
         </ListItem>
         <ListItem className="text-md flex">
             <ListIcon icon="arrow-right-alt" className="fill-dark-blue-700 me-2 h-5 w-5" />
             <span>
-                <FormattedMessage id="add_organization.search_hint_3" />
+                <FormattedMessage id="organization_search.search_hint_3" />
             </span>
         </ListItem>
     </List>

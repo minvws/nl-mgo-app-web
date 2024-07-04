@@ -54,7 +54,7 @@ export function AddOrganization() {
                     renderLoading={
                         <QueryState.Loading>
                             <FormattedMessage
-                                id="add_organization.searching"
+                                id="organization_search.searching"
                                 description="Zorgaanbieders aan het zoeken..."
                             />
                         </QueryState.Loading>
@@ -62,7 +62,9 @@ export function AddOrganization() {
                     renderNoResult={
                         <QueryState.NoResult
                             illustration="woman-on-couch-exclamation"
-                            title={intl.formatMessage({ id: 'add_organization.no_results_found' })}
+                            title={intl.formatMessage({
+                                id: 'organization_search.no_results_found_heading',
+                            })}
                         >
                             <NoSearchResultsTips />
                         </QueryState.NoResult>

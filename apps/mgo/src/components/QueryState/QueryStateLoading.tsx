@@ -12,10 +12,7 @@ export function QueryStateLoading({ children, ...rest }: QueryStateLoadingProps)
                 <Spinner className="mx-auto mb-4" />
                 <div aria-live="polite">
                     {children || (
-                        <FormattedMessage
-                            id="common.loading_subheading"
-                            description="Bezig met laden..."
-                        />
+                        <FormattedMessage id="common.loading" description="Bezig met laden..." />
                     )}
                 </div>
             </div>

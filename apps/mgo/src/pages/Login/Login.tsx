@@ -50,7 +50,7 @@ export function Login() {
 
                 <Text className="mb-6 md:mb-12">
                     <FormattedMessage
-                        id="login_subheading"
+                        id="login.subheading"
                         description="Kies de manier waarop je wilt bewijzen wie je bent. Zo kunnen we{' '}
                         <b>jouw gegevens veilig opvragen</b> bij je huisarts, ziekenhuis en andere
                         zorgaanbieders."

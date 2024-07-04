@@ -19,7 +19,7 @@ test('show loading state', async () => {
     const { user } = setupWithAppProviders(<AddOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 
-    expect(screen.getByText(message('add_organization.searching'))).toBeVisible();
+    expect(screen.getByText(message('organization_search.searching'))).toBeVisible();
 });
 
 test('no results found', async () => {
@@ -29,7 +29,7 @@ test('no results found', async () => {
     await flushCallStack();
     expect(
         screen.getByRole('heading', {
-            name: message('add_organization.no_results_found'),
+            name: message('organization_search.no_results_found_heading'),
         })
     ).toBeVisible();
 });
