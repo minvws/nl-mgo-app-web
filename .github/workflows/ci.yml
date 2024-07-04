@@ -58,6 +58,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+      - name: Update i18n files and re-check the types
+        working-directory: apps/mgo
+        env:
+          LOKALISE_API_TOKEN: ${{ secrets.LOKALISE_API_TOKEN }}
+          LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+        run: |
+          pnpm run messages:update
+          pnpm run check-types
       - name: Build
         working-directory: apps/mgo
         run: pnpm run build

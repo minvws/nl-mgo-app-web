@@ -21,7 +21,7 @@ assertDockerRunning
 
 cd $OUTPUT_DIR_PATH
 
-rm ./*.json
+rm *.json
 
 # See CLI options here: https://github.com/lokalise/lokalise-cli-2-go/blob/main/docs/lokalise2_file_download.md
 # File format options: https://developers.lokalise.com/reference/api-file-formats
@@ -43,7 +43,15 @@ docker run \
 if [ $(docker inspect $DOCKER_CONTAINER_NAME --format='{{.State.ExitCode}}') -ne 0 ]; then
     fatal "🚨 Failed to download files from Lokalise";
 fi
+
 safeRemoveDockerContainer $DOCKER_CONTAINER_NAME
+
+# Ensures the correct owner is set for the CI runner
+for filename in *.json; do
+    if [ ! -O "$filename" ]; then
+        sudo chown $USER $filename
+    fi
+done
 
 echo "✨ Done! ✨"
 
