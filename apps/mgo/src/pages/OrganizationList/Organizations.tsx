@@ -3,7 +3,7 @@ import { useOrganizationsStore } from '$/store/organizations';
 import {
     Button,
     ConfirmDialog,
-    HealthcareOrganizationButton,
+    HealthcareOrganizationCard,
     Stack,
     useOpenState,
 } from '@minvws/mgo-mgo-ui';
@@ -49,15 +49,15 @@ export function Organizations() {
             <p className="text-md">
                 <FormattedMessage
                     id="organization_list.subheading"
-                    description="Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
+                    description="Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
                 />
             </p>
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
                     {organizations.map(({ slug, name, category, address }) => (
                         <li key={slug}>
-                            <HealthcareOrganizationButton
-                                onClick={() => {
+                            <HealthcareOrganizationCard
+                                onActionClick={() => {
                                     setSelectedSlug(slug);
                                     open();
                                 }}

@@ -30,9 +30,9 @@ export { IconButton, type IconButtonProps } from './IconButton/IconButton';
 export { InputField, type InputFieldProps } from './InputField/InputField';
 export { Card, type CardProps } from './Card/Card';
 export {
-    HealthcareOrganizationButton,
-    type HealthcareOrganizationButtonProps,
-} from './HealthcareOrganizationButton/HealthcareOrganizationButton';
+    HealthcareOrganizationCard,
+    type HealthcareOrganizationCardProps,
+} from './HealthcareOrganizationCard/HealthcareOrganizationCard';
 export {
     DescriptionList,
     type DescriptionListProps,

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Stack } from '../Stack/Stack';
-import { HealthcareOrganizationButton } from './HealthcareOrganizationButton';
+import { HealthcareOrganizationCard } from './HealthcareOrganizationCard';
 import { Icon } from '../Icon/Icon';
 
-type Story = StoryObj<typeof HealthcareOrganizationButton>;
-type StoryMeta = Meta<typeof HealthcareOrganizationButton>;
+type Story = StoryObj<typeof HealthcareOrganizationCard>;
+type StoryMeta = Meta<typeof HealthcareOrganizationCard>;
 
 export default {
-    component: HealthcareOrganizationButton,
+    component: HealthcareOrganizationCard,
     args: {
         title: 'Deleniti nisi',
         subTitle: 'Occaecati ab porro numquam repellendus',
@@ -34,13 +34,13 @@ export const Variants: Story = {
     args: {},
     render: ({ ...args }) => (
         <Stack>
-            <HealthcareOrganizationButton {...args} icon="add" iconAriaLabel="add" />
-            <HealthcareOrganizationButton
+            <HealthcareOrganizationCard {...args} icon="add" iconAriaLabel="add" />
+            <HealthcareOrganizationCard
                 {...args}
                 icon="chevron-right"
                 iconAriaLabel="chevron-right"
             />
-            <HealthcareOrganizationButton {...args} icon="delete" iconAriaLabel="delete" />
+            <HealthcareOrganizationCard {...args} icon="delete" iconAriaLabel="delete" />
         </Stack>
     ),
 };

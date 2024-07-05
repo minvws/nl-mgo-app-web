@@ -1,7 +1,7 @@
 import { type ParsedHealthcareOrganization } from '$/hooks';
 import { useNavigate } from '$/routing';
 import { useOrganizationsStore } from '$/store';
-import { Button, HealthcareOrganizationButton, Icon, Stack, cn } from '@minvws/mgo-mgo-ui';
+import { Button, HealthcareOrganizationCard, Icon, Stack, cn } from '@minvws/mgo-mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -37,8 +37,8 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                         return (
                             <li key={id}>
                                 {isAdded ? (
-                                    <HealthcareOrganizationButton
-                                        onClick={() =>
+                                    <HealthcareOrganizationCard
+                                        onActionClick={() =>
                                             navigate('/zorgaanbieder-toevoegen/zorgaanbieders')
                                         }
                                         className="w-full"
@@ -56,10 +56,10 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                                 description="Deze zorgaanbieder heb je al toegevoegd"
                                             />
                                         </div>
-                                    </HealthcareOrganizationButton>
+                                    </HealthcareOrganizationCard>
                                 ) : (
-                                    <HealthcareOrganizationButton
-                                        onClick={() => handleHealthcareOrganisationClick(id)}
+                                    <HealthcareOrganizationCard
+                                        onActionClick={() => handleHealthcareOrganisationClick(id)}
                                         className="w-full"
                                         title={name}
                                         meta={<span className="whitespace-pre">{address}</span>}

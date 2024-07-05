@@ -1,4 +1,3 @@
-import Add from '@material-symbols/svg-400/outlined/add.svg?react';
 import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
@@ -20,6 +19,7 @@ import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 
+import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
 import GGZ from './icons/ggz.svg?react';

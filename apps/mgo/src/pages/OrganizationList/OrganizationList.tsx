@@ -25,7 +25,7 @@ export function OrganizationList() {
                     <h1 ref={navFocusRef}>
                         <FormattedMessage
                             id="organization_list.heading"
-                            description="Welke zorgaanbieders wil je op je overzicht tonen?"
+                            description="Welke zorgaanbieders wil je in je overzicht tonen?"
                         />
                     </h1>
                 </Heading>

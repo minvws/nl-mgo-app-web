@@ -510,7 +510,7 @@
     "organization.not-found_subheading": [
         {
             "type": 0,
-            "value": "Sorry, we kunnen de zorgaanbieder die je zocht niet vinden. Misschien is deze verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+            "value": "Misschien is de zorgaanbieder die je zoekt verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
         }
     ],
     "organization.not_found_heading": [
@@ -540,7 +540,7 @@
     "organization_list.heading": [
         {
             "type": 0,
-            "value": "Welke zorgaanbieders wil je op je overzicht tonen?"
+            "value": "Welke zorgaanbieders wil je in je overzicht tonen?"
         }
     ],
     "organization_list.no_results_heading": [
@@ -558,7 +558,7 @@
     "organization_list.subheading": [
         {
             "type": 0,
-            "value": "Je kunt deze lijst nu aanpassen of dit later in je profiel doen."
+            "value": "Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
         }
     ],
     "organization_list.to_overview": [

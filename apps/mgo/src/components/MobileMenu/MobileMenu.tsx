@@ -63,14 +63,13 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                                 </h2>
                             </Heading>
                         </Dialog.Title>
-                        <IconButton
-                            asChild
-                            icon="close"
-                            aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
-                            className="bg-gray-100"
-                        >
-                            <Dialog.Close />
-                        </IconButton>
+                        <Dialog.Close asChild>
+                            <IconButton
+                                icon="close"
+                                size="sm"
+                                aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
+                            />
+                        </Dialog.Close>
                     </div>
                     <ul className="overflow-auto">
                         <li>

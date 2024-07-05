@@ -50,6 +50,7 @@ export const Alert = ({
                 <IconButton
                     className="self-start"
                     icon="close"
+                    size="sm"
                     aria-label={ariaLabel}
                     onClick={close}
                 />
