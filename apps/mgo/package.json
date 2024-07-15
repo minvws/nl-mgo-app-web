@@ -8,7 +8,8 @@
         "build": "tsc && vite build",
         "check-types": "tsc --noEmit",
         "preview": "vite preview --port=8000",
-        "messages:update": "pnpm run messages:download && pnpm run messages:compile && pnpm run messages:format",
+        "messages:disabled": "echo \"Error: Updating messages using the Lokalise API is temporarily disabled, awaiting the Lokalise subscription... \" && exit 1",
+        "messages:update": "pnpm run messages:disabled && pnpm run messages:download && pnpm run messages:compile && pnpm run messages:format",
         "messages:download": "./bin/lokalise.sh",
         "messages:compile": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales src/i18n/locales",
         "messages:format": "prettier --write ./src/i18n/locales"
