@@ -71,9 +71,10 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                             />
                         </Dialog.Close>
                     </div>
-                    <ul className="overflow-auto">
+                    <ul className="overflow-y-auto">
                         <li>
                             <ButtonCard
+                                className="outline-offset-[-2px]"
                                 asChild
                                 title={intl.formatMessage({ id: 'menu.overview_heading' })}
                                 description={intl.formatMessage({ id: 'menu.overview_subheading' })}
@@ -84,6 +85,7 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                         </li>
                         <li>
                             <ButtonCard
+                                className="outline-offset-[-2px]"
                                 asChild
                                 title={intl.formatMessage({ id: 'menu.about_heading' })}
                                 description={intl.formatMessage({ id: 'menu.about_subheading' })}

@@ -58,7 +58,7 @@
     }
 
     a {
-        @apply text-dark-blue-700 visited:text-dark-blue-900 cursor-pointer underline hover:no-underline;
+        @apply text-dark-blue-700 visited:text-dark-blue-900 cursor-pointer underline hover:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-black focus-visible:dark:outline-white;
     }
 
     blockquote {

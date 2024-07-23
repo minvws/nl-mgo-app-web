@@ -5,24 +5,20 @@ import { Icon } from '../Icon/Icon';
 
 export interface IconAvatarProps extends HTMLAttributes<HTMLElement> {
     readonly icon?: IconName;
-    readonly iconAriaLabel?: string;
+    readonly ariaLabel?: string;
 }
 
-export const IconAvatar = ({ icon, iconAriaLabel, className, ...rest }: IconAvatarProps) => (
+export const IconAvatar = ({ icon, ariaLabel, className, ...rest }: IconAvatarProps) => (
     <figure
         className={twMerge(
             'flex h-8 w-8 items-center justify-center rounded-full sm:h-12 sm:w-12',
             iconColours[icon!] ?? 'bg-gray-50 dark:text-black',
             className
         )}
+        aria-label={ariaLabel}
+        aria-hidden={!ariaLabel}
         {...rest}
     >
-        {icon && (
-            <Icon
-                icon={icon}
-                aria-label={iconAriaLabel}
-                className="h-[1.25em] w-[1.25em] sm:h-[1.75em] sm:w-[1.75em]"
-            />
-        )}
+        {icon && <Icon icon={icon} className="h-[1.25em] w-[1.25em] sm:h-[1.75em] sm:w-[1.75em]" />}
     </figure>
 );

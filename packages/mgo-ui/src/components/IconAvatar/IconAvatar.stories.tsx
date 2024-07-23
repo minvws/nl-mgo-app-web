@@ -12,7 +12,7 @@ export default {
     component: IconAvatar,
     args: {
         icon: 'hospital',
-        iconAriaLabel: 'Maiores voluptas rerum',
+        ariaLabel: 'Maiores voluptas rerum',
     },
     argTypes: {
         icon: {
