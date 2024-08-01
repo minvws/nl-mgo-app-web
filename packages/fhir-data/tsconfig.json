@@ -13,7 +13,12 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "allowImportingTsExtensions": true
+        "allowImportingTsExtensions": true,
+
+        "paths": {
+            "$test": ["./test/index.ts"],
+            "$test/*": ["./test/*"]
+        }
     },
-    "include": ["src"]
+    "include": ["src", "test"]
 }

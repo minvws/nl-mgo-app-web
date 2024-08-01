@@ -1,0 +1,35 @@
+{
+    "resourceType": "Medication",
+    "id": "zib-product-01",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-Product"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tbody><tr><th>Code</th><td><span title=\"PRIMPERAN ZETPIL 20MG (14983265 - G-Standaard ZI_nummer)\">PRIMPERAN ZETPIL 20MG</span></td></tr></tbody></table></div>"
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.8",
+                "code": "14983265",
+                "display": "PRIMPERAN ZETPIL 20MG",
+                "userSelected": true
+            },
+            {
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.7",
+                "code": "229709",
+                "display": "PRIMPERAN ZETPIL 20MG"
+            },
+            {
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.10",
+                "code": "6939",
+                "display": "METOCLOPRAMIDE ZETPIL 20MG"
+            },
+            {
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1",
+                "code": "63630",
+                "display": "METOCLOPRAMIDE ZETPIL 20MG"
+            }
+        ],
+        "text": "PRIMPERAN ZETPIL 20MG"
+    }
+}
