@@ -7,13 +7,15 @@ import {
     type Identifier,
     type Period,
     type Quantity,
+    type Range,
     type Ratio,
+    type Timing,
+    type TimingRepeat,
 } from '../../../../src/fhir';
 import { createMockDataFactory } from '../../factory';
-import { collection } from '../../helpers';
-import { mockOptionalFields } from '../helpers/mockOptionalFields';
-import * as special from './special';
+import { collection, mockOptionalFields } from '../../helpers';
 import { dateTime } from './primitive';
+import * as special from './special';
 
 export function code<T extends string>(
     values: T[] = ['usual', 'official', 'temp', 'secondary'] as T[]
@@ -30,7 +32,7 @@ export const coding = createMockDataFactory<Coding>(() => {
     });
 });
 
-export const codableConcept = createMockDataFactory<CodeableConcept>(() => {
+export const codeableConcept = createMockDataFactory<CodeableConcept>(() => {
     return mockOptionalFields({
         coding: collection({ max: 5, factory: coding }),
         text: faker.lorem.sentence(),
@@ -59,7 +61,7 @@ export const duration = createMockDataFactory<Duration>(quantity);
 export const identifier = createMockDataFactory<Identifier>(() => {
     return mockOptionalFields({
         use: code(['usual', 'official', 'temp', 'secondary']),
-        type: codableConcept(),
+        type: codeableConcept(),
         system: faker.internet.url(),
         value: faker.lorem.word(),
         period: period(),
@@ -84,4 +86,48 @@ export const annotation = createMockDataFactory<Annotation>(() => {
         },
         ['text']
     );
+});
+
+export const range = createMockDataFactory<Range>(() => {
+    return mockOptionalFields({
+        low: quantity(),
+        high: quantity(),
+    });
+});
+
+export const timingRepeat = createMockDataFactory<TimingRepeat>(() => {
+    return mockOptionalFields({
+        boundsDuration: duration(),
+        boundsRange: range(),
+        boundsPeriod: period(),
+        count: faker.number.int(),
+        countMax: faker.number.int(),
+        duration: faker.number.int(),
+        durationMax: faker.number.int(),
+        durationUnit: code(['s', 'min', 'h', 'd', 'wk', 'mo', 'a']),
+        frequency: faker.number.int(),
+        frequencyMax: faker.number.int(),
+        period: faker.number.int(),
+        periodMax: faker.number.int(),
+        periodUnit: code(['s', 'min', 'h', 'd', 'wk', 'mo', 'a']),
+        timeOfDay: collection({
+            factory: dateTime,
+            max: 5,
+        }),
+        when: collection({
+            factory: faker.lorem.word,
+            max: 5,
+        }),
+    });
+});
+
+export const timing = createMockDataFactory<Timing>(() => {
+    return mockOptionalFields({
+        code: codeableConcept(),
+        event: collection({
+            factory: faker.lorem.word,
+            max: 5,
+        }),
+        repeat: timingRepeat(),
+    });
 });

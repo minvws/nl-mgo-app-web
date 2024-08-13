@@ -3,3 +3,5 @@ pnpm-workspace.yaml
 LICENSE
 LICENSE.*
 LICENSES.*
+packages/fhir-data/fhir-definitions
+*.snap.json

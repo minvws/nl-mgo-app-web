@@ -17,7 +17,8 @@ function createTestSet<T extends (...args: any) => any>(factory: T): ReturnType<
 export function testSet<T>(
     description: string,
     factory: FactoryFunction<T>,
-    testFunc: TestFunction<T>
+    testFunc: TestFunction<T>,
+    logValue: boolean = true
 ) {
-    test.each(createTestSet(factory))(`%#: ${description} - %j`, testFunc);
+    test.each(createTestSet(factory))(`%#: ${description}${logValue ? ' - %j' : ''}`, testFunc);
 }

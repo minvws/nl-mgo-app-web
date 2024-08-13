@@ -4,3 +4,5 @@ export { isResource } from './isResource/isResource';
 export { findByUse } from './findByUse/findByUse';
 export { safeGet } from './safeGet/safeGet';
 export { safeGetBulk } from './safeGetBulk/safeGetBulk';
+export { isNullish } from './isNullish/isNullish';
+export { map } from './map/map';
