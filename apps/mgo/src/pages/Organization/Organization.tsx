@@ -89,6 +89,20 @@ export function Organization() {
                                 <RouterLink to={`/overzicht/${organization.slug}/uitslagen`} />
                             </ButtonCard>
                         </li>
+                        <li>
+                            <ButtonCard
+                                asChild
+                                icon="folder"
+                                title={intl.formatMessage({
+                                    id: 'organization.documents_heading',
+                                })}
+                                description={intl.formatMessage({
+                                    id: 'organization.documents_subheading',
+                                })}
+                            >
+                                <RouterLink to={`/overzicht/${organization.slug}/documenten`} />
+                            </ButtonCard>
+                        </li>
                     </ul>
                 </Stack>
             </section>

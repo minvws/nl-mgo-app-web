@@ -18,6 +18,7 @@ import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activi
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
+import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
@@ -62,6 +63,7 @@ export const icons = {
     'arrow-right-alt': ArrowRightAlt,
     autorenew: Autorenew,
     check: Check,
+    folder: Folder,
 };
 
 export type IconName = keyof typeof icons;

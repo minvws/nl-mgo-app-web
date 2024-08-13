@@ -18,6 +18,7 @@ test('shows problems list', async () => {
                     json: vi.fn(() => Promise.resolve(fhirProblems)),
                 }),
             }) as any, // eslint-disable-line @typescript-eslint/no-explicit-any
+        getDocumentDataset: () => null,
     }));
 
     setupWithAppProviders(<Problems />);
@@ -34,6 +35,7 @@ test('shows no results when there is no data service available', async () => {
     useOrganizationMock.mockImplementation(() => ({
         organization,
         getCommonClinicalDataset: () => null,
+        getDocumentDataset: () => null,
     }));
 
     setupWithAppProviders(<Problems />);

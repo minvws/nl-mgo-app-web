@@ -48,3 +48,16 @@ test('returns common clinical dataset for the organization', () => {
     const commonClinicalDataset = result.current.getCommonClinicalDataset();
     expect(commonClinicalDataset).toBeTruthy();
 });
+
+test('returns document dataset for the organization', () => {
+    const { addOrganization } = useOrganizationsStore.getState();
+    const organization = addOrganization(faker.custom.healthcareOrganization());
+
+    mockUseParams.mockImplementationOnce(() => ({
+        organizationSlug: organization.slug,
+    }));
+
+    const { result } = renderHook(() => useOrganization());
+    const documentDataset = result.current.getDocumentDataset();
+    expect(documentDataset).toBeTruthy();
+});

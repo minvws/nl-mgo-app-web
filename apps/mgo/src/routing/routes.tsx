@@ -16,6 +16,7 @@ import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
 import { Overview } from '../pages/Overview/Overview';
 import { Proposition } from '../pages/Proposition/Proposition';
+import { Document, Documents } from '$/pages/documentDataset';
 
 const routeConfig = [
     {
@@ -91,6 +92,14 @@ const routeConfig = [
                     {
                         path: '/overzicht/:organizationSlug/uitslagen',
                         element: <LabResults />,
+                    },
+                    {
+                        path: '/overzicht/:organizationSlug/documenten',
+                        element: <Documents />,
+                    },
+                    {
+                        path: '/overzicht/:organizationSlug/documenten/:documentId',
+                        element: <Document />,
                     },
                 ],
             },

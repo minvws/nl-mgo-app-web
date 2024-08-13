@@ -1,33 +1,32 @@
 import * as hooks from '$/hooks';
+import { faker } from '$test/faker';
 import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
-import { LabResults } from './LabResults';
-import observations from './fixtures/fhir-observations.json';
-import { faker } from '$test/faker';
+import { Document } from './Document';
+import fhirDocumentReference from './fixtures/fhir-document-reference.json';
 
 const useOrganizationMock = vi.spyOn(hooks, 'useOrganization');
 
-test('shows laboratory results list', async () => {
+test('shows document detail page', async () => {
     const organization = faker.custom.healthcareOrganization();
     useOrganizationMock.mockImplementation(() => ({
         organization,
-        getCommonClinicalDataset: () =>
+        getCommonClinicalDataset: () => null,
+        getDocumentDataset: () =>
             ({
-                getLastLaboratoryResultsPerType: () => ({
-                    json: vi.fn(() => Promise.resolve(observations)),
+                getDocumentReference: () => ({
+                    json: vi.fn(() => Promise.resolve(fhirDocumentReference)),
                 }),
-            }) as any, // eslint-disable-line @typescript-eslint/no-explicit-any
-        getDocumentDataset: () => null,
+            }) as any, // eslint-disable-line @typescript-eslint/no-explicit-any,
     }));
 
-    setupWithAppProviders(<LabResults />);
+    setupWithAppProviders(<Document />);
     await flushCallStack(2);
 
     screen.getByRole('heading', {
-        name: 'Bevinding betreffende laboratoriumonderzoek (bevinding)',
+        name: 'Discharge summary',
     });
-    screen.getByText('Chloride [mol/volume] in bloed');
 });
 
 test('shows no results when there is no data service available', async () => {
@@ -38,10 +37,10 @@ test('shows no results when there is no data service available', async () => {
         getDocumentDataset: () => null,
     }));
 
-    setupWithAppProviders(<LabResults />);
-    await flushCallStack(2);
+    setupWithAppProviders(<Document />);
+    await flushCallStack();
 
     screen.getByRole('heading', {
-        name: message('common.no_results_heading'),
+        name: message('not_found.heading'),
     });
 });
