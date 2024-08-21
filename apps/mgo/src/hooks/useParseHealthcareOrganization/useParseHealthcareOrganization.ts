@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 const COMMON_CLINICAL_DATASET_SERVICE_ID = 48;
 const GENERAL_PRACTITIONER_SERVICE_ID = 49;
 const DOCUMENTS_SERVICE_ID = 51;
+const VACCINATIONS_SERVICE_ID = 63;
 
 function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: number) {
     return safeGet(organizationDTO, ({ data_services }) => {
@@ -35,6 +36,7 @@ export function useParseHealthcareOrganization() {
                     GENERAL_PRACTITIONER_SERVICE_ID
                 ),
                 documents: getResourceEndpoint(organizationDTO, DOCUMENTS_SERVICE_ID),
+                vaccinations: getResourceEndpoint(organizationDTO, VACCINATIONS_SERVICE_ID),
             },
         };
     }

@@ -30,6 +30,7 @@ export const healthcareOrganization = createMockDataFactory<HealthcareOrganizati
             commonClinicalDataset: faker.internet.url(),
             generalPractitioner: faker.internet.url(),
             documents: faker.internet.url(),
+            vaccinations: faker.internet.url(),
         },
     };
 });
