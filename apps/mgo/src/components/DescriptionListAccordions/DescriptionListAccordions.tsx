@@ -1,10 +1,10 @@
-import { Accordion, DescriptionList, type DescriptionListItem, Stack } from '@minvws/mgo-mgo-ui';
+import { Accordion, DescriptionList, type DescriptionItemProps, Stack } from '@minvws/mgo-mgo-ui';
 import { type ReactNode } from 'react';
 
 export interface AccordionProps {
     readonly id: string;
     readonly title: ReactNode;
-    readonly descriptions: DescriptionListItem[];
+    readonly descriptions: DescriptionItemProps[];
 }
 
 export interface DescriptionListAccordionsProps {

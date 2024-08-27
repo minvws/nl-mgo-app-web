@@ -61,10 +61,12 @@
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
-                "CVE-2024-29415": "Only affects devDependency storybook, waiting for the fix to be released. https://github.com/storybookjs/storybook/pull/27529"
+                "CVE-2024-29415": "Only affects devDependency storybook, waiting for the fix to be released. https://github.com/storybookjs/storybook/pull/27529",
+                "CVE-2024-4067": "Affects devDependency  eslint-plugin-query waiting for fix to be released https://github.com/micromatch/micromatch/issues/264"
             },
             "ignoreCves": [
-                "CVE-2024-29415"
+                "CVE-2024-29415",
+                "CVE-2024-4067"
             ]
         }
     }

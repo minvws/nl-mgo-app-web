@@ -1,11 +1,7 @@
-import { Fragment, type HTMLAttributes } from 'react';
-import { DescriptionListDetails } from './DescriptionListDetails';
-import { DescriptionListTerm } from './DescriptionListTerm';
-
-export type DescriptionListItem = {
-    term: NonNullable<React.ReactNode>;
-    details: React.ReactNode;
-};
+import { type HTMLAttributes } from 'react';
+import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
+import { cn } from '../../utils';
+import { type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 
 export type DescriptionListProps = Omit<HTMLAttributes<HTMLElement>, 'children'> &
     (
@@ -15,28 +11,24 @@ export type DescriptionListProps = Omit<HTMLAttributes<HTMLElement>, 'children'>
           }
         | {
               children?: never;
-              list: DescriptionListItem[];
+              list: DescriptionItemProps[];
           }
     );
 
-export const DescriptionList = ({ list, children, ...rest }: DescriptionListProps) => {
+export const DescriptionList = ({ list, children, className, ...rest }: DescriptionListProps) => {
     if (list?.length) {
         return (
-            <dl {...rest}>
+            <dl className={cn('flex flex-col gap-[1px]', className)} {...rest}>
                 {list.map(({ term, details }) => (
-                    <Fragment key={`${term}-${details}`}>
-                        <DescriptionListTerm>{term}</DescriptionListTerm>
-                        <DescriptionListDetails>
-                            {details === undefined ? '-' : details}
-                        </DescriptionListDetails>
-                    </Fragment>
+                    <DescriptionCard key={`${term}-${details}`} term={term} details={details} />
                 ))}
             </dl>
         );
     }
 
-    return <dl {...rest}>{children}</dl>;
+    return (
+        <dl className={cn('flex flex-col gap-[1px]', className)} {...rest}>
+            {children}
+        </dl>
+    );
 };
-
-DescriptionList.Term = DescriptionListTerm;
-DescriptionList.Details = DescriptionListDetails;

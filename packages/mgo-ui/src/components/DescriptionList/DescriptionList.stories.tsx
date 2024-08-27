@@ -1,5 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 import { DescriptionList } from './DescriptionList';
+import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
+import { DescriptionButton } from '../DescriptionButton/DescriptionButton';
 
 type StoryArgs = { label: string; description: string; date: string };
 type Story = StoryObj<StoryArgs>;
@@ -15,8 +17,7 @@ export default {
 export const Default: Story = {
     render: ({ label, description }) => (
         <DescriptionList>
-            <DescriptionList.Term>{label}</DescriptionList.Term>
-            <DescriptionList.Details>{description}</DescriptionList.Details>
+            <DescriptionCard term={label} details={description} />
         </DescriptionList>
     ),
 };
@@ -24,19 +25,19 @@ export const Default: Story = {
 export const MultipleChildren: Story = {
     render: ({ label, description }) => (
         <DescriptionList>
-            <DescriptionList.Term>{label}</DescriptionList.Term>
-            <DescriptionList.Details>{description}</DescriptionList.Details>
-
-            <DescriptionList.Term>Repellat</DescriptionList.Term>
-            <DescriptionList.Details>Distinctio</DescriptionList.Details>
-
-            <DescriptionList.Term>Nobis</DescriptionList.Term>
-            <DescriptionList.Details>Dolore quis</DescriptionList.Details>
-
-            <DescriptionList.Term>Nesciunt modi</DescriptionList.Term>
-            <DescriptionList.Details>
-                Nemo nisi autem temporibus odio unde repudiandae sunt magnam
-            </DescriptionList.Details>
+            <DescriptionCard term={label} details={description} />
+            <DescriptionCard term="Repellat" details="Distinctio" />
+            <DescriptionCard term="Nobis" details="Dolore quis" />
+            <DescriptionCard
+                term="Nesciunt modi"
+                details="Nemo nisi autem temporibus odio unde repudiandae sunt magnam
+"
+            />
+            <DescriptionButton
+                term="mattis"
+                details="Et dapibus dolor pharetra sed"
+                icon="chevron-right"
+            />
         </DescriptionList>
     ),
 };

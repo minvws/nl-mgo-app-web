@@ -2,6 +2,7 @@ import { expect, test } from 'vitest';
 import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 import { DescriptionList } from './DescriptionList';
+import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
 
 test('renders with with term and details as children', async () => {
     const label = faker.lorem.sentence();
@@ -9,8 +10,7 @@ test('renders with with term and details as children', async () => {
 
     render(
         <DescriptionList>
-            <DescriptionList.Term>{label}</DescriptionList.Term>
-            <DescriptionList.Details>{description}</DescriptionList.Details>
+            <DescriptionCard term={label} details={description} />
         </DescriptionList>
     );
 
@@ -35,22 +35,4 @@ test('renders with with term and details as list', async () => {
 
     expect(screen.getByRole('term').textContent).toBe(label);
     expect(screen.getByRole('definition').textContent).toBe(description);
-});
-
-test('renders with with details with a dash if undefined', async () => {
-    const label = faker.lorem.sentence();
-
-    render(
-        <DescriptionList
-            list={[
-                {
-                    term: label,
-                    details: undefined,
-                },
-            ]}
-        />
-    );
-
-    expect(screen.getByRole('term').textContent).toBe(label);
-    expect(screen.getByRole('definition').textContent).toBe('-');
 });
