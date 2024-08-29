@@ -1,16 +1,9 @@
-import { type DateString, type DateTimeString } from '../../../fhir';
-import { isNullish } from '../../../utils';
+import { type MgoDate } from '../../../parse/type';
 import { type Nullable } from '../../../types/Nullable';
+import { isNullish } from '../../../utils';
 
-export function dateTime(value: Nullable<DateTimeString>) {
-    if (isNullish(value)) return null;
-
-    return `${value}`;
-}
-
-// eslint-disable-next-line sonarjs/no-identical-functions
-export function date(value: Nullable<DateString>) {
-    if (isNullish(value)) return null;
+export function date(value: Nullable<MgoDate>) {
+    if (isNullish(value)) return;
 
     return `${value}`;
 }

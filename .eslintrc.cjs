@@ -4,6 +4,7 @@ const configFiles = [
     '*.config.ts',
     '*.config.js',
     'packages/mgo-ui/docs/*',
+    'packages/fhir-data/schema-generator/*',
 ];
 
 module.exports = {
@@ -44,6 +45,16 @@ module.exports = {
                 '@typescript-eslint/no-unnecessary-type-assertion': 'error',
                 '@typescript-eslint/prefer-function-type': 'error',
                 '@typescript-eslint/prefer-optional-chain': 'error',
+                '@typescript-eslint/prefer-nullish-coalescing': [
+                    'error',
+                    {
+                        ignoreConditionalTests: true,
+                        ignoreMixedLogicalExpressions: true,
+                        ignorePrimitives: {
+                            boolean: true,
+                        },
+                    },
+                ],
                 '@typescript-eslint/consistent-type-imports': [
                     'error',
                     { fixStyle: 'inline-type-imports' },

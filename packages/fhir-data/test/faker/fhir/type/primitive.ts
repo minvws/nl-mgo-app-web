@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { type DateTimeString, type DateString } from '../../../../src/fhir';
 
 export const date = (date?: Date) => {
-    const dateString = (date || faker.date.anytime()).toISOString();
+    const dateString = (date ?? faker.date.anytime()).toISOString();
     const options = [
         dateString.slice(0, 4),
         dateString.slice(0, 7),
@@ -12,5 +12,5 @@ export const date = (date?: Date) => {
 };
 
 export const dateTime = (date?: Date) => {
-    return (date || faker.date.anytime()).toISOString() as DateTimeString;
+    return (date ?? faker.date.anytime()).toISOString() as DateTimeString;
 };

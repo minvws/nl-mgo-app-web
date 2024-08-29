@@ -59,6 +59,6 @@ export function throwOnConsoleLog({ logMethods, ignoreMessages }: ThrowLogConfig
     }
 
     isConfigured = true;
-    ignoreLogMessages = ignoreMessages || [];
+    ignoreLogMessages = ignoreMessages ?? [];
     logMethods.forEach(patchConsoleMethod);
 }

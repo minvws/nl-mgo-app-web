@@ -29,6 +29,7 @@ export function safeGet<T, R>(
     try {
         // const result: R = getFunction(object as RequiredDeep<T>);
         const result = getFunction(object as RequiredDeep<T>);
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         return result === undefined ? defaultValue : result;
     } catch (error) {
         if (error instanceof TypeError) {

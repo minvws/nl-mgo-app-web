@@ -1,7 +1,8 @@
 /* Deprecated code, no need to test anymore, will be removed soon */
 /* c8 ignore start */
-import { type LosslessNumber } from '@minvws/mgo-fhir-client';
-import type { Bundle, FhirResource, InputFhir, Quantity } from '../../fhir';
+import { type LosslessNumber } from 'lossless-json';
+import type { Bundle, FhirResource, Quantity } from '../../fhir';
+import { type Lossless } from '../../types/Lossless';
 import { getBundleResources, getReference, safeGet, safeGetBulk } from '../../utils';
 
 function numberToString(value: number | LosslessNumber | undefined) {
@@ -9,13 +10,13 @@ function numberToString(value: number | LosslessNumber | undefined) {
     return value.toString();
 }
 
-export function quantityToString(quantity: InputFhir<Quantity> | undefined) {
+export function quantityToString(quantity: Lossless<Quantity> | undefined) {
     if (!quantity) return '';
     const { value, unit } = quantity;
     return numberToString(value) + (unit ? ` ${unit}` : '');
 }
 
-export function getMgoObservations<T extends FhirResource>(bundle: InputFhir<Bundle<T>>) {
+export function getMgoObservations<T extends FhirResource>(bundle: Lossless<Bundle<T>>) {
     const observations = getBundleResources(bundle, 'Observation');
 
     return observations.map((observation) => {

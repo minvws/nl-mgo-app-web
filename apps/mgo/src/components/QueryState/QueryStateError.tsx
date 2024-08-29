@@ -12,7 +12,7 @@ export function QueryStateError({ title, children, ...rest }: QueryStateErrorPro
     return (
         <QueryStateLayout
             illustration="woman-on-couch-exclamation"
-            title={title || intl.formatMessage({ id: 'common.error_heading' })}
+            title={title ?? intl.formatMessage({ id: 'common.error_heading' })}
             {...rest}
         >
             {children || (

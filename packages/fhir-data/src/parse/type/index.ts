@@ -1,30 +1,20 @@
-import * as general from './general/general';
-import * as primitive from './primitive/primitive';
-import * as special from './special/special';
-
-/**
- * Functions for parsing FHIR data types,
- * @see: https://build.fhir.org/datatypes.html
- */
-export const parse = {
-    ...primitive,
-    ...general,
-    ...special,
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type MgoParsedType<T extends (arg: any) => any> = NonNullable<ReturnType<T>>;
-export type MgoAnnotation = MgoParsedType<typeof parse.annotation>;
-export type MgoBoolean = MgoParsedType<typeof parse.boolean>;
-export type MgoCodeableConcept = MgoParsedType<typeof parse.codeableConcept>;
-export type MgoCode = MgoParsedType<typeof parse.code>;
-export type MgoCoding = MgoParsedType<typeof parse.coding>;
-export type MgoDate = MgoParsedType<typeof parse.date>;
-export type MgoDateTime = MgoParsedType<typeof parse.dateTime>;
-export type MgoDuration = MgoParsedType<typeof parse.duration>;
-export type MgoIdentifier = MgoParsedType<typeof parse.identifier>;
-export type MgoPeriod = MgoParsedType<typeof parse.period>;
-export type MgoQuantity = MgoParsedType<typeof parse.quantity>;
-export type MgoRatio = MgoParsedType<typeof parse.ratio>;
-export type MgoReference = MgoParsedType<typeof parse.reference>;
-export type MgoRange = MgoParsedType<typeof parse.range>;
+export { quantity, type MgoQuantity } from './quantity/quantity';
+export * from './annotation/annotation';
+export * from './boolean/boolean';
+export * from './code/code';
+export * from './codeableConcept/codeableConcept';
+export * from './coding/coding';
+export * from './date/date';
+export * from './dateTime/dateTime';
+export * from './duration/duration';
+export * from './identifier/identifier';
+export * from './period/period';
+export * from './range/range';
+export * from './ratio/ratio';
+export * from './reference/reference';
+export * from './string/string';
+export * from './decimal/decimal';
+export * from './unsignedInt/unsignedInt';
+export * from './integer/integer';
+export * from './integer64/integer64';
+export * from './positiveInt/positiveInt';

@@ -1,13 +1,13 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type ValueDescription } from '../../types';
+import { type SingleValue } from '../../types';
 import { changeDescriptionType } from './changeDescriptionType';
 
 test('changes the type of the description value', () => {
     const type = faker.lorem.word();
-    const valueDescription: ValueDescription = {
+    const valueDescription: SingleValue = {
         label: '',
-        display: null,
+        display: undefined,
         type,
     };
     const newType = faker.lorem.word();
@@ -17,9 +17,9 @@ test('changes the type of the description value', () => {
 
 test('does not change and sub paths', () => {
     const type = faker.lorem.word();
-    const valueDescription: ValueDescription = {
+    const valueDescription: SingleValue = {
         label: '',
-        display: null,
+        display: undefined,
         type: `${type}.foo.bar`,
     };
     const newType = faker.lorem.word();

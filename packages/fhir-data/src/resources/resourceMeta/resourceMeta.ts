@@ -1,22 +1,20 @@
-import { type Resource } from '../../fhir';
-import { deepReplaceUndefined } from '../../parse/helpers';
-import { parse, type MgoParsedType } from '../../parse/type';
+import { type NictizNlProfile, type Resource } from '../../fhir';
+import * as parse from '../../parse/type';
 
-export function parseResourceMeta(statement: Resource) {
+export function parseResourceMeta(statement: Resource, profile: NictizNlProfile) {
     const { resourceType, id, meta } = statement;
-    const profiles = meta?.profile;
 
-    if ((profiles?.length || 0) > 1) {
-        // There are no known cases where a resource has more than one profile
-        // But if it happens, it could be useful to log this
-        console.warn('Multiple profiles found for resource', resourceType, profiles);
+    if (!meta?.profile?.includes(profile)) {
+        throw new Error(
+            `Resource does not have the expected profile: "${profile}". Got: ${meta?.profile}`
+        );
     }
 
-    return deepReplaceUndefined({
+    return {
         id: parse.string(id),
         resourceType: parse.string(resourceType),
-        profile: profiles?.[0],
-    });
+        profile,
+    };
 }
 
-export type ResourceMeta = MgoParsedType<typeof parseResourceMeta>;
+export type MgoResourceMeta = ReturnType<typeof parseResourceMeta>;

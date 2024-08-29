@@ -13,7 +13,7 @@ test('format codeWithSystem without code', () => {
     const code = null;
     const system = faker.internet.url();
     const result = format.codeWithSystem(code, system);
-    expect(result).toEqual(null);
+    expect(result).toBeUndefined();
 });
 
 test('format codeWithSystem without system', () => {

@@ -15,9 +15,9 @@ export function uiSchemaGroup(resource: ZibInstructionsForUse): UiSchemaGroup {
             multipleValue(
                 `${i18n}.additional_instruction`,
                 resource.additionalInstruction,
-                ui.codableConcept
+                ui.codeableConcept
             ),
-            ui.codableConcept(`${i18n}.as_needed`, resource.asNeeded),
+            ui.codeableConcept(`${i18n}.as_needed`, resource.asNeeded),
             ...ui.quantity(`${i18n}.dose_quantity`, resource.doseQuantity),
             ...ui.range(`${i18n}.dose_range`, resource.doseRange),
             ...ui.ratio(`${i18n}.max_dose_per_period`, resource.maxDosePerPeriod),

@@ -4,6 +4,7 @@ import { type ZibAdministrationSchedule } from './zibAdministrationSchedule';
 
 export function uiSchemaGroup(resource: ZibAdministrationSchedule): UiSchemaGroup {
     const i18n = 'zib_administration_schedule';
+
     return {
         label: `${i18n}.group`,
         children: [

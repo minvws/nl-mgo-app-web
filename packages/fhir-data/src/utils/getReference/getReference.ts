@@ -1,18 +1,13 @@
-import {
-    type Bundle,
-    type InputFhir,
-    type Reference,
-    type ResourceByType,
-    type ResourceType,
-} from '../../fhir';
+import { type Bundle, type Reference, type ResourceByType, type ResourceType } from '../../fhir';
+import { type Lossless } from '../../types/Lossless';
 
-export type BundleResource<T extends InputFhir<Bundle>> = NonNullable<
+export type BundleResource<T extends Lossless<Bundle>> = NonNullable<
     NonNullable<T['entry']>[number]['resource']
 >;
 
-export function getReference<T extends ResourceType, Resource = InputFhir<ResourceByType<T>>>(
-    bundle?: InputFhir<Bundle>,
-    { reference }: InputFhir<Reference> = {}
+export function getReference<T extends ResourceType, Resource = Lossless<ResourceByType<T>>>(
+    bundle?: Lossless<Bundle>,
+    { reference }: Lossless<Reference> = {}
 ) {
     if (!bundle?.entry?.length || !reference) return;
 

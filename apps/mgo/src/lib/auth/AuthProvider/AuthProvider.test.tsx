@@ -18,7 +18,7 @@ function createFetchReponse(
 const locationAssignMock = vi.fn();
 const locationReplaceMock = vi.fn();
 function mockLocation(href?: string) {
-    const locationMock = new URL(href || window.location.href);
+    const locationMock = new URL(href ?? window.location.href);
     Object.defineProperty(locationMock, 'assign', { value: locationAssignMock, writable: false });
     Object.defineProperty(locationMock, 'replace', { value: locationReplaceMock, writable: false });
     vi.stubGlobal('location', locationMock);

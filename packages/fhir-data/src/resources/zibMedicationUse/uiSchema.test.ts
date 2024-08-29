@@ -1,33 +1,34 @@
-import input from './fixtures/zib-MedicationUse-01-output.snap.json';
+import { expectJson } from '$test';
 import { expect, test } from 'vitest';
+import { type MedicationStatement } from '../../fhir';
+import inputFhirData from './fixtures/zib-MedicationUse-01.json';
 import { uiSchema } from './uiSchema';
-import { type ZibMedicationUse } from './zibMedicationUse';
+import { zibMedicationUse } from './zibMedicationUse';
+
+const zibMedicationUseData = zibMedicationUse.parse(inputFhirData as MedicationStatement);
 
 test('uiSchema returns the expected output', () => {
-    const zibMedicationUse = input as ZibMedicationUse;
-    const zibMedicationUseUiSchema = uiSchema(zibMedicationUse);
-    const json = JSON.stringify(zibMedicationUseUiSchema, null, 4);
-    expect(json).toMatchFileSnapshot('./fixtures/zib-MedicationUse-01-uiSchema.snap.json');
+    const zibMedicationUseUiSchema = uiSchema(zibMedicationUseData);
+    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+        './fixtures/zib-MedicationUse-01-uiSchema.snap.json'
+    );
 });
 
 test('uiSchema doesnt include instruction for use if there are none', () => {
-    const zibMedicationUse = input as ZibMedicationUse;
-    let schema = uiSchema(zibMedicationUse);
+    let schema = uiSchema(zibMedicationUseData);
     let instructionsGroup = schema.children.find(
         ({ label }) => label === 'zib_instructions_for_use.group'
     );
     expect(instructionsGroup).toBeDefined();
 
-    schema = uiSchema({ ...zibMedicationUse, dosage: null });
+    schema = uiSchema({ ...zibMedicationUseData, dosage: undefined });
     instructionsGroup = schema.children.find(
         ({ label }) => label === 'zib_instructions_for_use.group'
     );
     expect(instructionsGroup).toBeUndefined();
 });
 
-test('uiSchema has an empty label if there is nog medication.display', () => {
-    const zibMedicationUse = input as ZibMedicationUse;
-
-    const schema = uiSchema({ ...zibMedicationUse, medication: null });
-    expect(schema.label).toBe('');
+test('uiSchema has an undefined label if there is nog medication.display', () => {
+    const schema = uiSchema({ ...zibMedicationUseData, medication: undefined });
+    expect(schema.label).toBeUndefined();
 });

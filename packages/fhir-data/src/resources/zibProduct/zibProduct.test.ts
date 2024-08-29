@@ -1,12 +1,11 @@
-import expectedOutput01 from './fixtures/zib-Product-01-output.json';
 import inputMedication01 from './fixtures/zib-Product-01.json';
 
-import { expect, test } from 'vitest';
+import { expectJson } from '$test';
+import { test } from 'vitest';
 import { type Medication } from '../../fhir';
-import { parseZibProduct } from './zibProduct';
-import { deepReplaceUndefined } from '../../parse/helpers';
+import { zibProduct } from './zibProduct';
 
 test('parseZibProduct returns the expected output 01', () => {
-    const zibProduct = deepReplaceUndefined(parseZibProduct(inputMedication01 as Medication));
-    expect(zibProduct).toEqual(expectedOutput01);
+    const output = zibProduct.parse(inputMedication01 as Medication);
+    expectJson(output).toMatchFileSnapshot('./fixtures/zib-Product-01-output.snap.json');
 });

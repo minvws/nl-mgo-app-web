@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { numberToString } from './numberToString';
-import { type LosslessNumber } from '@minvws/mgo-fhir-client';
+import { type LosslessNumber } from 'lossless-json';
 
 class LosslessNumberMock {
     constructor(private value: string) {}
@@ -9,8 +9,8 @@ class LosslessNumberMock {
     }
 }
 
-test.each([null, undefined])('returns null for %j', (value) => {
-    expect(numberToString(value)).toBe(null);
+test.each([null, undefined])('returns undefined for %j', (value) => {
+    expect(numberToString(value)).toBe(undefined);
 });
 
 test.each([

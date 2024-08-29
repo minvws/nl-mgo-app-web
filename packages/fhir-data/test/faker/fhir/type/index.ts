@@ -1,11 +1,16 @@
-import * as primitive from './primitive';
-import * as general from './general';
-import * as special from './special';
-import * as extra from './extra';
-
-export const type = {
-    ...primitive,
-    ...general,
-    ...special,
-    ...extra,
-};
+export * from './annotation';
+export * from './code';
+export * from './codeableConcept';
+export * from './coding';
+export * from './dosage';
+export * from './duration';
+export * from './identifier';
+export * from './index';
+export * from './period';
+export * from './primitive';
+export * from './quantity';
+export * from './range';
+export * from './ratio';
+export * from './reference';
+export * from './timing';
+export * from './timingRepeat';

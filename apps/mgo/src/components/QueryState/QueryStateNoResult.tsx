@@ -17,7 +17,7 @@ export function QueryStateNoResult({
     return (
         <QueryStateLayout
             illustration={illustration}
-            title={title || intl.formatMessage({ id: 'common.no_results_heading' })}
+            title={title ?? intl.formatMessage({ id: 'common.no_results_heading' })}
             {...rest}
         >
             {children || (

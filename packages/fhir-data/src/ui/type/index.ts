@@ -1,9 +1,15 @@
-import * as general from './general/general';
-import * as primitive from './primitive/primitive';
-import * as special from './special/special';
-
-export const ui = {
-    ...primitive,
-    ...general,
-    ...special,
-};
+export * from './annotation/annotation';
+export * from './boolean/boolean';
+export * from './code/code';
+export * from './codeableConcept/codeableConcept';
+export * from './coding/coding';
+export * from './date/date';
+export * from './dateTime/dateTime';
+export * from './duration/duration';
+export * from './identifier/identifier';
+export * from './period/period';
+export * from './quantity/quantity';
+export * from './range/range';
+export * from './ratio/ratio';
+export * from './reference/reference';
+export * from './string/string';

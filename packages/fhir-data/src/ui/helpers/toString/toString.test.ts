@@ -1,8 +1,8 @@
 import { expect, test } from 'vitest';
 import { toString } from './toString';
 
-test.each([null, undefined])('returns null for %j', (value) => {
-    expect(toString(value)).toBe(null);
+test.each([null, undefined])('returns undefined for %j', (value) => {
+    expect(toString(value)).toBe(undefined);
 });
 
 test.each([

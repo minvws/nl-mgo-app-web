@@ -28,7 +28,7 @@ function TestApp({
     readonly B?: TestPage;
 }) {
     const [stateView, toggleView] = useView();
-    const view = overrideView || stateView;
+    const view = overrideView ?? stateView;
     return (
         <>
             {view === 'a' ? <A label="view a" /> : <B label="view b" />}
@@ -103,7 +103,7 @@ test.each<[string, TestPage]>([
 
     await user.click(screen.getByText('toggle view'));
 
-    const element = screen.queryByLabelText('view b') || screen.queryByText('view b');
+    const element = screen.queryByLabelText('view b') ?? screen.queryByText('view b');
     expect(element).toBeInTheDocument();
     expect(document.activeElement).toBe(element);
 });
@@ -198,7 +198,7 @@ function KeyedTestApp({
     const [stateView, toggleView] = useView();
     const [count, setCount] = useState(0);
     const increment = () => setCount((val) => val + 1);
-    const view = overrideView || stateView;
+    const view = overrideView ?? stateView;
     const ref = useNavFocusRef<HTMLHeadingElement>(useKey ? view : undefined);
     return (
         <>

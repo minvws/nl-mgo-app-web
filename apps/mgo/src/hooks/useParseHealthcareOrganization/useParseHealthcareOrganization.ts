@@ -23,7 +23,7 @@ export function useParseHealthcareOrganization() {
 
         return {
             id: `${identification_type}-${identification_value}`,
-            name: display_name || unknownLabel,
+            name: display_name ?? unknownLabel,
             category: safeGet(organizationDTO, (x) => x.types[0].display_name, unknownLabel),
             address: safeGet(organizationDTO, (x) => x.addresses[0].address, unknownLabel),
             resourceEndpoints: {

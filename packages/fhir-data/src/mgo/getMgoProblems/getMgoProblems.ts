@@ -1,7 +1,8 @@
-import type { Bundle, FhirResource, InputFhir } from '../../fhir';
+import type { Bundle, FhirResource } from '../../fhir';
+import { type Lossless } from '../../types/Lossless';
 import { getBundleResources, safeGetBulk } from '../../utils';
 
-export function getMgoProblems<T extends FhirResource>(bundle: InputFhir<Bundle<T>>) {
+export function getMgoProblems<T extends FhirResource>(bundle: Lossless<Bundle<T>>) {
     const conditions = getBundleResources(bundle, 'Condition');
 
     return conditions.map((condition) => {

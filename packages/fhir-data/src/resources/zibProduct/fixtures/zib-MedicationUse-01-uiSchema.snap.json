@@ -1,0 +1,35 @@
+{
+    "label": null,
+    "children": [
+        {
+            "label": "zib_product.group_general_information",
+            "children": [
+                {
+                    "label": "zib_product.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "PRIMPERAN ZETPIL 20MG (14983265 in code systeem urn:oid:2.16.840.1.113883.2.4.4.8)",
+                        "PRIMPERAN ZETPIL 20MG (229709 in code systeem urn:oid:2.16.840.1.113883.2.4.4.7)",
+                        "METOCLOPRAMIDE ZETPIL 20MG (6939 in code systeem urn:oid:2.16.840.1.113883.2.4.4.10)",
+                        "METOCLOPRAMIDE ZETPIL 20MG (63630 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1)"
+                    ],
+                    "summary": true
+                },
+                {
+                    "label": "zib_product.form",
+                    "type": "codable_concept",
+                    "display": null,
+                    "summary": true
+                }
+            ]
+        },
+        {
+            "label": "zib_product.group_ingredients",
+            "children": []
+        },
+        {
+            "label": "zib_product_package.group",
+            "children": []
+        }
+    ]
+}

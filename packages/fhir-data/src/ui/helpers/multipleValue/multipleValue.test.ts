@@ -1,21 +1,20 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type ValueOptions, type ValueDescription } from '../../types';
+import { type SingleValue, type UiFunction } from '../../types';
 import { multipleValue } from './multipleValue';
-import { type Nullable } from '../../../types/Nullable';
 
 type TestData = {
     foo: string;
 };
 
-function ui(label: string, value: Nullable<TestData>, options?: ValueOptions) {
+export const ui: UiFunction<TestData, SingleValue> = (label, value, options) => {
     return {
         label,
         type: 'ui',
-        display: value?.foo || null,
+        display: value?.foo,
         ...options,
-    } satisfies ValueDescription;
-}
+    };
+};
 
 test('combines multiple display values for a single ValueDescription', () => {
     const value1 = faker.lorem.word();

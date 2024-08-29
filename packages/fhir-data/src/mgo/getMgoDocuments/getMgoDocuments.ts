@@ -1,9 +1,10 @@
-import { type LosslessNumber } from '@minvws/mgo-fhir-client';
-import { type DeepReplaceTypeInObject } from '@minvws/mgo-fhir-client/types/replacement.js';
-import type { Bundle, DocumentReference, FhirResource, InputFhir } from '../../fhir';
+import { type LosslessNumber } from 'lossless-json';
+import type { Bundle, DocumentReference, FhirResource } from '../../fhir';
+import { type DeepReplaceTypeInObject } from '../../types/DeepReplaceType';
 import { getBundleResources, safeGetBulk } from '../../utils';
+import { type Lossless } from '../../types/Lossless';
 
-export function getMgoDocuments<T extends FhirResource>(bundle: InputFhir<Bundle<T>>) {
+export function getMgoDocuments<T extends FhirResource>(bundle: Lossless<Bundle<T>>) {
     const manifest = getBundleResources(bundle, 'DocumentReference');
 
     return manifest.map(getMgoDocument);

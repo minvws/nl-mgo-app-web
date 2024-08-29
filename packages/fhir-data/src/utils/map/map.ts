@@ -12,10 +12,10 @@ import { isNonNullish } from '../isNonNullish/isNonNullish';
  * map(['foo', 'bar'], iteratee); // => ['foo', 'bar']
  * map(['foo', undefined, 'bar', null, undefined], iteratee); // => ['foo', 'bar']
  */
-export function map<ItemType, Iteratee extends (arg: ItemType) => unknown>(
-    value: Nullable<ItemType[]>,
+export function map<Items extends unknown[], Iteratee extends (arg: Items[number]) => unknown>(
+    items: Nullable<Items>,
     iteratee: Iteratee
 ) {
-    if (!value?.length) return null;
-    return (value.map(iteratee) as ReturnType<Iteratee>[]).filter(isNonNullish);
+    if (!items?.length) return;
+    return (items.map(iteratee) as ReturnType<Iteratee>[]).filter(isNonNullish);
 }
