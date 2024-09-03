@@ -1,47 +1,40 @@
-import { type ReactNode, type ButtonHTMLAttributes, useContext } from 'react';
+import { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { type CompositionProps, useComposition } from '../../hooks';
-import { cn } from '../../utils';
-import { Icon } from '../Icon/Icon';
-import { type IconName } from '../Icon/icons';
+import { cn, focusStyle } from '../../utils';
 import { Card } from '../Card/Card';
-import { type Gap } from './gap';
-import { DetailListContext } from './DetailListContext';
+import { Icon } from '../Icon/Icon';
 
-export type DetailListButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+export type DetailButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     CompositionProps & {
         readonly title: ReactNode;
         readonly description: ReactNode;
         readonly date?: ReactNode;
-        readonly icon: IconName;
     };
 
-export const DetailListButton = ({
+export const DetailButton = ({
     title,
     description,
     date,
-    icon,
     className,
     asChild,
     children,
     ...rest
-}: DetailListButtonProps) => {
-    const { gap } = useContext(DetailListContext);
+}: DetailButtonProps) => {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
-
-    const cardGapMap: Record<Gap, string> = {
-        normal: '',
-        line: 'rounded-none first:rounded-t-lg last:rounded-b-lg',
-    };
 
     return (
         <Card
             className={cn(
-                'overflow-hidden border-none p-0 shadow-none hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]',
-                cardGapMap[gap]
+                'border-0 p-0 shadow-none hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]'
             )}
+            asChild
         >
             <Comp
-                className={cn('flex w-full items-center gap-1 p-4 text-left', className)}
+                className={cn(
+                    'flex w-full items-center gap-1 p-4 text-left',
+                    focusStyle,
+                    className
+                )}
                 {...rest}
             >
                 <Slottable>{children}</Slottable>
@@ -56,7 +49,7 @@ export const DetailListButton = ({
                             {date}
                         </span>
                     )}
-                    <Icon icon={icon} className={cn('h-8 w-8 text-gray-400')} />
+                    <Icon icon="chevron-right" className={cn('h-8 w-8 text-gray-400')} />
                 </div>
             </Comp>
         </Card>

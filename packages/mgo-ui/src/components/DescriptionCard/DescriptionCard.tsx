@@ -8,7 +8,7 @@ export const DescriptionCard = ({ term, details, className, ...rest }: Descripti
     return (
         <Card
             className={cn(
-                'overflow-hidden rounded-none border-none shadow-none first:rounded-t-lg last:rounded-b-lg',
+                'rounded-none border-0 shadow-none first:rounded-t-lg last:rounded-b-lg',
                 className
             )}
             {...rest}

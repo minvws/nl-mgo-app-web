@@ -40,10 +40,12 @@ export { Spinner, type SpinnerProps } from './Spinner/Spinner';
 export { Stack, type StackProps } from './Stack/Stack';
 export { Text, type TextProps } from './Text/Text';
 
-export { DetailList, type DetailListProps } from './DetailList/DetailList';
+export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
 export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
 export {
     DescriptionButton,
     type DescriptionButtonProps,
 } from './DescriptionButton/DescriptionButton';
+export { CategoryButton, type CategoryButtonProps } from './CategoryButton/CategoryButton';
+export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';

@@ -20,6 +20,7 @@ import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 import Download from '@material-symbols/svg-400/outlined/download.svg?react';
+import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
 
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
@@ -31,6 +32,7 @@ import Tandarts from './icons/tandarts.svg?react';
 import Home from './icons/home.svg?react';
 import QuestionMark from './icons/question_mark.svg?react';
 import Close from './icons/close.svg?react';
+import Spinner from './icons/spinner.svg?react';
 
 export const icons = {
     hospital: Hospital,
@@ -42,6 +44,7 @@ export const icons = {
     'question-mark': QuestionMark,
     'chevron-right-fat': ChevronRightFat,
     close: Close,
+    spinner: Spinner,
 
     'chevron-left': ChevronLeft,
     'chevron-right': ChevronRight,
@@ -66,6 +69,7 @@ export const icons = {
     check: Check,
     folder: Folder,
     download: Download,
+    labs: Labs,
 };
 
 export type IconName = keyof typeof icons;
@@ -75,6 +79,7 @@ export const iconPaddings: Partial<Record<IconName, string>> = {
     home: 'p-[2px]',
     'question-mark': 'pl-[2px] py-[2px]',
     download: 'p-[2px]',
+    spinner: 'p-[4px]',
 };
 
 export const iconColours: Partial<Record<IconName, string>> = {

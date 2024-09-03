@@ -45,7 +45,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         <Comp
             ref={ref}
             aria-disabled={isDisabled}
-            disabled={isDisabled}
             onClick={isDisabled ? undefined : onClick}
             className={twMerge(
                 `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,

@@ -26,7 +26,7 @@ test('renders a disabled button', async () => {
     render(<Button {...props} />);
 
     expect(screen.getByRole('button')).toHaveTextContent(props.children as string);
-    expect(screen.getByRole('button')).toBeDisabled();
+    expect(screen.getByRole('button')).toHaveAttribute('aria-disabled');
 });
 
 test('renders with a left icon component', async () => {

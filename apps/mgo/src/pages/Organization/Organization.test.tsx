@@ -14,7 +14,7 @@ vi.mock(
     () => ({ useParams: vi.fn() }) as typeof import('$/routing/useParams')
 );
 
-test('healthcare provider shows details about the provider', () => {
+test('healthcare organization shows details about the organization', () => {
     const { addOrganization } = useOrganizationsStore.getState();
     const organization = addOrganization(faker.custom.healthcareOrganization());
 
@@ -27,7 +27,7 @@ test('healthcare provider shows details about the provider', () => {
     );
 });
 
-test('healthcare provider shows a message if the provider could not be found', async () => {
+test('healthcare organization shows a message if the organization could not be found', async () => {
     mockUseParams.mockImplementationOnce(() => ({
         organizationSlug: faker.word.sample(),
     }));

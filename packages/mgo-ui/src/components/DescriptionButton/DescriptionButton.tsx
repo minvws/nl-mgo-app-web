@@ -1,6 +1,6 @@
 import { useComposition } from '../../hooks';
 import { type CompositionPropsWithoutChildren } from '../../hooks/useComposition/useComposition';
-import { cn } from '../../utils';
+import { cn, focusStyle } from '../../utils';
 import { Card } from '../Card/Card';
 import { DescriptionItem, type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 import { Icon, type IconProps } from '../Icon/Icon';
@@ -21,10 +21,11 @@ export const DescriptionButton = ({
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Card className="overflow-hidden rounded-none border-none p-0 shadow-none first:rounded-t-lg last:rounded-b-lg hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]">
+        <Card className="rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]">
             <Comp
                 className={cn(
                     'flex w-full items-center justify-between gap-1 p-4 text-left',
+                    focusStyle,
                     className
                 )}
                 {...rest}

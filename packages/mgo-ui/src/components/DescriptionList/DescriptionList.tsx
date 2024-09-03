@@ -2,6 +2,7 @@ import { type HTMLAttributes } from 'react';
 import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
 import { cn } from '../../utils';
 import { type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
+import { ListWrapper } from '../ListWrapper/ListWrapper';
 
 export type DescriptionListProps = Omit<HTMLAttributes<HTMLElement>, 'children'> &
     (
@@ -18,17 +19,21 @@ export type DescriptionListProps = Omit<HTMLAttributes<HTMLElement>, 'children'>
 export const DescriptionList = ({ list, children, className, ...rest }: DescriptionListProps) => {
     if (list?.length) {
         return (
-            <dl className={cn('flex flex-col gap-[1px]', className)} {...rest}>
-                {list.map(({ term, details }) => (
-                    <DescriptionCard key={`${term}-${details}`} term={term} details={details} />
-                ))}
-            </dl>
+            <ListWrapper asChild gap="line">
+                <dl className={cn(className)} {...rest}>
+                    {list.map(({ term, details }) => (
+                        <DescriptionCard key={`${term}-${details}`} term={term} details={details} />
+                    ))}
+                </dl>
+            </ListWrapper>
         );
     }
 
     return (
-        <dl className={cn('flex flex-col gap-[1px]', className)} {...rest}>
-            {children}
-        </dl>
+        <ListWrapper asChild gap="line">
+            <dl className={cn(className)} {...rest}>
+                {children}
+            </dl>
+        </ListWrapper>
     );
 };
