@@ -61,3 +61,16 @@ test('returns document dataset for the organization', () => {
     const documentDataset = result.current.getDocumentDataset();
     expect(documentDataset).toBeTruthy();
 });
+
+test('returns general practitioner dataset for the organization', () => {
+    const { addOrganization } = useOrganizationsStore.getState();
+    const organization = addOrganization(faker.custom.healthcareOrganization());
+
+    mockUseParams.mockImplementationOnce(() => ({
+        organizationSlug: organization.slug,
+    }));
+
+    const { result } = renderHook(() => useOrganization());
+    const gpDataset = result.current.getGeneralPractitionerDataset();
+    expect(gpDataset).toBeTruthy();
+});

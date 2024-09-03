@@ -1,7 +1,8 @@
 import { useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store/organizations';
-import { getCommonClinicalDataset } from './commonClinicalDataset';
-import { getDocumentDataset } from './documentDataset';
+import { getCommonClinicalDataset } from './commonClinicalDataset/commonClinicalDataset';
+import { getDocumentDataset } from './documentDataset/documentDataset';
+import { getGeneralPractitionerDataset } from './generalPractitionerDataset/generalPractitionerDataset';
 
 export function useOrganization() {
     const { organizationSlug } = useParams();
@@ -11,6 +12,7 @@ export function useOrganization() {
     return {
         organization,
         getCommonClinicalDataset: () => getCommonClinicalDataset(organization),
+        getGeneralPractitionerDataset: () => getGeneralPractitionerDataset(organization),
         getDocumentDataset: () => getDocumentDataset(organization),
     };
 }

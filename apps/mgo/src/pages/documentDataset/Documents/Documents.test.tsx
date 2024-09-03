@@ -1,25 +1,20 @@
-import * as hooks from '$/hooks';
-import { faker } from '$test/faker';
+import { useOrganization } from '$/hooks';
 import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
-import { test, vi } from 'vitest';
+import { type Mock, test, vi } from 'vitest';
 import { Documents } from './Documents';
 import fhirDocumentReferences from './fixtures/fhir-document-references.json';
 
-const useOrganizationMock = vi.spyOn(hooks, 'useOrganization');
-
+vi.mock('$/hooks/useOrganization/useOrganization');
 test('shows documents list', async () => {
-    const organization = faker.custom.healthcareOrganization();
-    useOrganizationMock.mockImplementation(() => ({
-        organization,
-        getCommonClinicalDataset: () => null,
-        getDocumentDataset: () =>
+    (useOrganization().getDocumentDataset as Mock).mockImplementationOnce(
+        () =>
             ({
                 getDocumentReferences: () => ({
                     json: vi.fn(() => Promise.resolve(fhirDocumentReferences)),
                 }),
-            }) as any, // eslint-disable-line @typescript-eslint/no-explicit-any,
-    }));
+            }) as any // eslint-disable-line @typescript-eslint/no-explicit-any,
+    );
 
     setupWithAppProviders(<Documents />);
     await flushCallStack(2);
@@ -30,13 +25,6 @@ test('shows documents list', async () => {
 });
 
 test('shows no results when there is no data service available', async () => {
-    const organization = faker.custom.healthcareOrganization();
-    useOrganizationMock.mockImplementation(() => ({
-        organization,
-        getCommonClinicalDataset: () => null,
-        getDocumentDataset: () => null,
-    }));
-
     setupWithAppProviders(<Documents />);
     await flushCallStack(2);
 

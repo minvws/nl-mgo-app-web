@@ -18,10 +18,18 @@ export async function testRequestHandler<Response extends TypedKyResponse>(
     server.use(
         http.get(`${FHIR_API_URL}/${expectedPath}`, ({ request }) => {
             const url = new URL(request.url);
-            const urlParams = toArray(url.searchParams);
-            const expectedParams = toArray(new URLSearchParams(expectedSearchParams));
 
-            expect(urlParams).toEqual(expect.arrayContaining(expectedParams));
+            // Remove default search param from urlParams check
+            const searchParams = url.searchParams;
+            searchParams.delete('_format');
+            const urlParams = toArray(searchParams);
+
+            const expectedParams = toArray(new URLSearchParams(expectedSearchParams));
+            expect(urlParams).toEqual(
+                expectedParams.length === 0
+                    ? expectedParams
+                    : expect.arrayContaining(expectedParams)
+            );
 
             return HttpResponse.json(response);
         })
