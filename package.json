@@ -54,18 +54,16 @@
     },
     "pnpm": {
         "overrides comments (non-standard-key)": {
-            "ws": "Fixes security issue: CVE-2024-37890 / https://github.com/advisories/GHSA-3h5v-q93c-6h6q"
+            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j   "
         },
         "overrides": {
-            "ws": "^8.17.1"
+            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0"
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
-                "CVE-2024-29415": "Only affects devDependency storybook, waiting for the fix to be released. https://github.com/storybookjs/storybook/pull/27529",
                 "CVE-2024-4067": "Affects devDependency  eslint-plugin-query waiting for fix to be released https://github.com/micromatch/micromatch/issues/264"
             },
             "ignoreCves": [
-                "CVE-2024-29415",
                 "CVE-2024-4067"
             ]
         }
