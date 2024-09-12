@@ -10,7 +10,7 @@ export function uiSchema(resource: ZibProduct): UiSchema {
     const i18n = 'zib_product';
 
     const productPackage = zibProductPackage.uiSchemaGroup(resource.package);
-    const ingredients = map(resource.ingredient, zibProductIngredient.uiSchemaGroup);
+    const ingredients = map(resource.ingredient, zibProductIngredient.uiSchemaGroup, true);
 
     return {
         label: resource.description,
@@ -24,7 +24,7 @@ export function uiSchema(resource: ZibProduct): UiSchema {
             },
             {
                 label: `${i18n}.group_ingredients`,
-                children: (ingredients ?? []).map((x) => x.children).flat(),
+                children: ui.helpers.getChildren(ingredients),
             },
             productPackage,
         ],

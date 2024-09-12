@@ -1,7 +1,7 @@
 import { type Period } from '../../../../src/fhir';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
-import { dateTime } from './primitive';
+import { dateTime } from './dateTime';
 
 export const period = createMockDataFactory<Period>(() => {
     return mockOptionalFields({

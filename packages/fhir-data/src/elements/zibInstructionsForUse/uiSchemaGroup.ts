@@ -1,5 +1,4 @@
 import { ui } from '../../ui';
-import { multipleValue } from '../../ui/helpers';
 import { type UiSchemaGroup } from '../../ui/types';
 import { uiSchemaGroup as scheduleUiSchemaGroup } from '../zibAdministrationSchedule/uiSchemaGroup';
 import { type ZibInstructionsForUse } from './zibInstructionsForUse';
@@ -10,9 +9,9 @@ export function uiSchemaGroup(resource: ZibInstructionsForUse): UiSchemaGroup {
     const administrationSchedule = scheduleUiSchemaGroup(resource.timing).children;
 
     return {
-        label: `${i18n}.group`,
+        label: i18n,
         children: [
-            multipleValue(
+            ui.multipleValue(
                 `${i18n}.additional_instruction`,
                 resource.additionalInstruction,
                 ui.codeableConcept

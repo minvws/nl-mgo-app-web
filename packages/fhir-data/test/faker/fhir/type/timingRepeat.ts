@@ -5,7 +5,7 @@ import { collection, mockOptionalFields } from '../../helpers';
 import { code } from './code';
 import { duration } from './duration';
 import { period } from './period';
-import { dateTime } from './primitive';
+import { dateTime } from './dateTime';
 import { range } from './range';
 
 export const timingRepeat = createMockDataFactory<TimingRepeat>(() => {

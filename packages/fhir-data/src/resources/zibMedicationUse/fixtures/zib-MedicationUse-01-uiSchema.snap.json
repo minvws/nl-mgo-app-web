@@ -136,7 +136,7 @@
             ]
         },
         {
-            "label": "zib_instructions_for_use.group",
+            "label": "zib_instructions_for_use",
             "children": [
                 {
                     "label": "zib_instructions_for_use.additional_instruction",
@@ -252,22 +252,22 @@
                 },
                 {
                     "label": "zib_administration_schedule.duration",
-                    "type": "duration",
-                    "display": null
+                    "display": null,
+                    "type": "valueWithUnit"
                 },
                 {
                     "label": "zib_administration_schedule.frequency",
-                    "type": "frequency",
-                    "display": null
+                    "display": null,
+                    "type": "valueWithMax"
                 },
                 {
                     "label": "zib_administration_schedule.period",
-                    "type": "period",
-                    "display": "1 d"
+                    "display": "1 d",
+                    "type": "valueWithUnit"
                 },
                 {
                     "label": "zib_administration_schedule.day_of_week",
-                    "type": "day_of_week",
+                    "type": "string",
                     "display": null
                 },
                 {
@@ -277,7 +277,7 @@
                 },
                 {
                     "label": "zib_administration_schedule.when",
-                    "type": "when",
+                    "type": "string",
                     "display": null
                 }
             ]

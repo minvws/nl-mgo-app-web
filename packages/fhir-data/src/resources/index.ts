@@ -6,3 +6,6 @@
 
 export * from './zibMedicationUse/zibMedicationUse';
 export * from './zibProduct/zibProduct';
+export * from './nlCorePatient/nlCorePatient';
+export * from './zibTreatmentDirective/zibTreatmentDirective';
+export * from './zibPayer/zibPayer';

@@ -7,6 +7,10 @@ test('collection returns undefined if there is no collection', () => {
     expect(map(undefined as string[] | undefined, parserFunction)).toBeUndefined();
 });
 
+test('collection returns an empty array if returnEmpty is set to true and there is no collection', () => {
+    expect(map(undefined as string[] | undefined, parserFunction, true)).toEqual([]);
+});
+
 test('collection returns undefined if the collection is empty', () => {
     expect(map([], parserFunction)).toBeUndefined();
 });

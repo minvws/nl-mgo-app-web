@@ -1,6 +1,6 @@
 import { type FhirResource } from '../fhir/index';
+import { type MgoResourceMeta } from '../parse/helpers/resourceMeta/resourceMeta';
 import { type UiSchema } from '../ui';
-import { type MgoResourceMeta } from './resourceMeta/resourceMeta';
 
 type ParserFunction<T extends FhirResource, ParsedResource extends MgoResourceMeta> = (
     resource: T

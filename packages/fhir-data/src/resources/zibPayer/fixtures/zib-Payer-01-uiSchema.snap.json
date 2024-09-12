@@ -1,0 +1,134 @@
+{
+    "label": "1c7ad0eb-8fdf-11ec-2921-020000000000",
+    "children": [
+        {
+            "label": "zib_payer.group_details",
+            "children": [
+                {
+                    "label": "zib_payer.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1c7ad0eb-8fdf-11ec-2921-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_payer.status",
+                    "type": "code",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.type",
+                    "type": "codable_concept",
+                    "display": [
+                        "Basis verzekerd (B in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)"
+                    ]
+                },
+                {
+                    "label": "zib_payer.policy_holder",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_payer.subscriber",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_payer.subscriber_id",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.beneficiary",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_payer.relationship",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.period.start",
+                    "type": "period.start",
+                    "display": "2018-01-01"
+                },
+                {
+                    "label": "zib_payer.period.end",
+                    "type": "period.end",
+                    "display": "2019-01-31"
+                },
+                {
+                    "label": "zib_payer.payor",
+                    "type": "reference",
+                    "display": [
+                        "Menzis Zorgverzekeraar N.V."
+                    ]
+                },
+                {
+                    "label": "zib_payer.dependent",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.sequence",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.order",
+                    "type": "positiveInt",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.network",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.contract",
+                    "type": "reference",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "zib_payer.grouping",
+            "children": [
+                {
+                    "label": "zib_payer.grouping.group",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.grouping.sub_group",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.grouping.plan",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.grouping.sub_plan",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.grouping.class",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_payer.grouping.sub_class",
+                    "type": "string",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

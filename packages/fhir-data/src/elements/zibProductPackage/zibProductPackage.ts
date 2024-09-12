@@ -1,17 +1,17 @@
 import { type MedicationPackage } from '../../fhir';
-import * as parse from '../../parse/type';
+import { parse } from '../../parse';
 import { type Nullable } from '../../types/Nullable';
 import { map } from '../../utils';
 import { type ResourceElementConfig } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
+interface ZibProductPackageContent {
+    item: parse.MgoCodeableConcept | undefined;
+    reference: parse.MgoReference | undefined;
+}
+
 export interface ZibProductPackage {
-    content:
-        | Array<{
-              item: parse.MgoCodeableConcept | undefined;
-              reference: parse.MgoReference | undefined;
-          }>
-        | undefined;
+    content: ZibProductPackageContent[] | undefined;
 }
 
 /**

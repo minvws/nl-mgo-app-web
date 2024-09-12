@@ -1,5 +1,5 @@
 import { type MedicationIngredient } from '../../fhir';
-import * as parse from '../../parse/type';
+import { parse } from '../../parse';
 import { type Nullable } from '../../types/Nullable';
 import { type ResourceElementConfig } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';

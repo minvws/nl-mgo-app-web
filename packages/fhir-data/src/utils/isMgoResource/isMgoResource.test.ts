@@ -1,11 +1,12 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type MgoResourceMeta } from '../../resources/resourceMeta/resourceMeta';
 import { isMgoResource } from './isMgoResource';
+import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 
 test('returns true for MgoResourceMeta', () => {
     const data: MgoResourceMeta = {
         id: faker.lorem.word(),
+        referenceId: `${faker.lorem.word()}/${faker.lorem.word()}`,
         resourceType: faker.lorem.word(),
         profile: faker.fhir.nictizNlProfile(),
     };

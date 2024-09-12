@@ -1,6 +1,7 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { changeDescriptionType, multipleValue } from '../../helpers';
 import { type MultipleValue, type UiFunction } from '../../types';
+import { changeDescriptionType } from '../../helpers';
+import { multipleValue } from '../../special';
 import { coding } from '../coding/coding';
 
 export const codeableConcept: UiFunction<MgoCodeableConcept, MultipleValue> = (

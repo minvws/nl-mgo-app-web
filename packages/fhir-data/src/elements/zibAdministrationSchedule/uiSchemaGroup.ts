@@ -1,39 +1,18 @@
-import { format, ui, type UiSchemaGroup } from '../../ui';
-import { multipleValue } from '../../ui/helpers';
+import { ui, type UiSchemaGroup } from '../../ui';
 import { type ZibAdministrationSchedule } from './zibAdministrationSchedule';
 
 export function uiSchemaGroup(resource: ZibAdministrationSchedule): UiSchemaGroup {
     const i18n = 'zib_administration_schedule';
 
     return {
-        label: `${i18n}.group`,
+        label: i18n,
         children: [
-            {
-                label: `${i18n}.duration`,
-                type: 'duration',
-                display: format.valueWithUnit(resource?.duration, resource?.durationUnit),
-            },
-            {
-                label: `${i18n}.frequency`,
-                type: 'frequency',
-                display: format.valueWithMaxValue(resource?.frequency, resource?.frequencyMax),
-            },
-            {
-                label: `${i18n}.period`,
-                type: 'period',
-                display: format.valueWithUnit(resource?.period, resource?.periodUnit),
-            },
-            {
-                label: `${i18n}.day_of_week`,
-                type: 'day_of_week',
-                display: resource?.dayOfWeek,
-            },
-            multipleValue(`${i18n}.time_of_day`, resource?.timeOfDay, ui.dateTime),
-            {
-                label: `${i18n}.when`,
-                type: 'when',
-                display: resource?.when,
-            },
+            ui.valueWithUnit(`${i18n}.duration`, resource?.duration, resource?.durationUnit),
+            ui.valueWithMax(`${i18n}.frequency`, resource?.frequency, resource?.frequencyMax),
+            ui.valueWithUnit(`${i18n}.period`, resource?.period, resource?.periodUnit),
+            ui.multipleValue(`${i18n}.day_of_week`, resource?.dayOfWeek, ui.string),
+            ui.multipleValue(`${i18n}.time_of_day`, resource?.timeOfDay, ui.dateTime),
+            ui.multipleValue(`${i18n}.when`, resource?.when, ui.string),
         ],
     };
 }

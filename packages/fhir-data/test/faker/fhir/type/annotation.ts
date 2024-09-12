@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { type Annotation } from '../../../../src/fhir';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
-import { dateTime } from './primitive';
+import { dateTime } from './dateTime';
 import * as special from './reference';
 
 export const annotation = createMockDataFactory<Annotation>(() => {

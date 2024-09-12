@@ -1,0 +1,221 @@
+{
+    "label": "1ebf6227-8fdf-11ec-1682-020000000000",
+    "children": [
+        {
+            "label": "zib_treatment_directive.group_details",
+            "children": [
+                {
+                    "label": "zib_treatment_directive.identifier",
+                    "type": "identifier",
+                    "display": "1ebf6227-8fdf-11ec-1682-020000000000"
+                },
+                {
+                    "label": "zib_treatment_directive.status",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_treatment_directive.category",
+                    "type": "codable_concept",
+                    "display": [
+                        [
+                            "Treatment instructions (record artifact) (11291000146105 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "zib_treatment_directive.patient",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_treatment_directive.period.start",
+                    "type": "period.start",
+                    "display": "2018-04-09"
+                },
+                {
+                    "label": "zib_treatment_directive.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.date_time",
+                    "type": "date_time",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.consenting_party",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.action",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.organization",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.source_identifier",
+                    "type": "identifier",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.source_reference",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_treatment_directive.policy_rule",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.security_label",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.purpose",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.data_period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.data_period.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "attachment",
+            "children": [
+                {
+                    "label": "attachment.contentType",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.language",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.data",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.url",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.size",
+                    "type": "unsignedInt",
+                    "display": null
+                },
+                {
+                    "label": "attachment.hash",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.title",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.creation",
+                    "type": "date_time",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "zib_treatment_directive.except",
+            "children": [
+                {
+                    "label": "zib_treatment_directive.except.type",
+                    "type": "code",
+                    "display": "deny"
+                },
+                {
+                    "label": "zib_treatment_directive.except.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.action",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.security_label",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.purpose",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.class",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.code",
+                    "type": "coding",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.plan.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.plan.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "zib_treatment_directive.policy",
+            "children": [
+                {
+                    "label": "zib_treatment_directive.policy.id",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.policy.authority",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.policy.uri",
+                    "type": "string",
+                    "display": "http://wetten.overheid.nl/"
+                }
+            ]
+        }
+    ]
+}

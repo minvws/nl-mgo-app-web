@@ -1,0 +1,17 @@
+import { faker } from '@faker-js/faker';
+import { type HumanName } from '../../../../src/fhir';
+import { createMockDataFactory } from '../../factory';
+import { collection, mockOptionalFields } from '../../helpers';
+import { code, period } from '../type';
+
+export const humanName = createMockDataFactory<HumanName>(() => {
+    return mockOptionalFields({
+        family: faker.lorem.word(),
+        given: collection({ max: 5, factory: faker.lorem.word }),
+        period: period(),
+        prefix: collection({ max: 5, factory: faker.lorem.word }),
+        suffix: collection({ max: 5, factory: faker.lorem.word }),
+        text: faker.lorem.word(),
+        use: code(['usual', 'official', 'temp', 'nickname', 'anonymous', 'old', 'maiden']),
+    });
+});

@@ -41,3 +41,10 @@ export type UiFunction<Input, Output extends UiEntry | UiEntry[]> = (
     value: Nullable<Lossless<Input>>,
     options?: ValueOptions
 ) => Output;
+
+export type CombinedUiFunction<Input1, Input2, Output extends UiEntry | UiEntry[]> = (
+    label: string,
+    value1: Nullable<Lossless<Input1>>,
+    value2: Nullable<Lossless<Input2>>,
+    options?: ValueOptions
+) => Output;

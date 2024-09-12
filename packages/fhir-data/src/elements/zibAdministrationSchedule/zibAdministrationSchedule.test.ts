@@ -39,7 +39,7 @@ testSet(
     },
     (data) => {
         const schema = zibAdministrationSchedule.uiSchemaGroup(data);
-        expect(schema.label).toBe('zib_administration_schedule.group');
+        expect(schema.label).toBe('zib_administration_schedule');
     },
     false
 );

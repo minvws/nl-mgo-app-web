@@ -1,7 +1,7 @@
 import { faker, testSet } from '$test';
 import { expect } from 'vitest';
-import * as parse from '../../parse/type';
 import { zibProductIngredient } from './zibProductIngredient';
+import { parse } from '../../parse';
 
 testSet('zibProductIngredient', faker.fhir.medicationIngredient, (data) => {
     const { itemCodeableConcept, amount } = data;
@@ -19,7 +19,7 @@ testSet(
     },
     (data) => {
         const schema = zibProductIngredient.uiSchemaGroup(data);
-        expect(schema.label).toBe('zib_product_ingredient.group');
+        expect(schema.label).toBe('zib_product_ingredient');
     },
     false
 );

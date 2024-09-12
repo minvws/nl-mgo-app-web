@@ -13,3 +13,8 @@ export * from './range/range';
 export * from './ratio/ratio';
 export * from './reference/reference';
 export * from './string/string';
+export * from './decimal/decimal';
+export * from './integer/integer';
+export * from './integer64/integer64';
+export * from './unsignedInt/unsignedInt';
+export * from './positiveInt/positiveInt';

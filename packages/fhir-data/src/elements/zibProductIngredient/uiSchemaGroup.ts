@@ -6,7 +6,7 @@ export function uiSchemaGroup(resource: ZibProductIngredient): UiSchemaGroup {
     const i18n = 'zib_product_ingredient';
 
     return {
-        label: `${i18n}.group`,
+        label: i18n,
         children: [
             ui.codeableConcept(`${i18n}.item`, resource.item),
             ...ui.ratio(`${i18n}.amount`, resource.amount),

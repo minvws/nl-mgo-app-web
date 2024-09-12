@@ -1,7 +1,7 @@
 import { faker, testSet } from '$test';
 import { expect } from 'vitest';
 import { zibInstructionsForUse } from './zibInstructionsForUse';
-import * as parse from '../../parse/type';
+import { parse } from '../../parse';
 
 testSet(
     'zibInstructionsForUse parses successfully',
@@ -25,7 +25,7 @@ testSet(
     },
     (data) => {
         const schema = zibInstructionsForUse.uiSchemaGroup(data);
-        expect(schema.label).toBe('zib_instructions_for_use.group');
+        expect(schema.label).toBe('zib_instructions_for_use');
     },
     false
 );

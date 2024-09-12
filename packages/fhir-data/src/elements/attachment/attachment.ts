@@ -1,0 +1,37 @@
+import { type Attachment } from 'fhir/r3';
+import { type Nullable } from '../../types/Nullable';
+import { type ResourceElementConfig } from '../config';
+import { uiSchemaGroup } from './uiSchemaGroup';
+import { parse } from '../../parse';
+
+export type MgoAttachment = {
+    contentType: parse.MgoString | undefined;
+    language: parse.MgoString | undefined;
+    data: parse.MgoString | undefined;
+    url: parse.MgoString | undefined;
+    size: parse.MgoUnsignedInt | undefined;
+    hash: parse.MgoString | undefined;
+    title: parse.MgoString | undefined;
+    creation: parse.MgoDateTime | undefined;
+};
+
+/**
+ * @see https://simplifier.net/packages/hl7.fhir.r3.core/3.0.2/files/62003
+ */
+function parseAttachment(value: Nullable<Attachment>): MgoAttachment {
+    return {
+        contentType: parse.code(value?.contentType),
+        language: parse.code(value?.language),
+        data: parse.string(value?.data),
+        url: parse.string(value?.url),
+        size: parse.unsignedInt(value?.size),
+        hash: parse.string(value?.hash),
+        title: parse.string(value?.title),
+        creation: parse.dateTime(value?.creation),
+    };
+}
+
+export const attachment = {
+    parse: parseAttachment,
+    uiSchemaGroup,
+} satisfies ResourceElementConfig<Attachment, MgoAttachment>;

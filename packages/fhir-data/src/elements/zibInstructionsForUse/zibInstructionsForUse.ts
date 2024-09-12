@@ -1,5 +1,5 @@
 import { type Dosage } from '../../fhir';
-import * as parse from '../../parse/type';
+import { parse } from '../../parse';
 import { type Nullable } from '../../types/Nullable';
 import { map } from '../../utils';
 import { type ResourceElementConfig } from '../config';

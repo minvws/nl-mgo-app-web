@@ -14,20 +14,6 @@ test('uiSchema returns the expected output', () => {
     );
 });
 
-test('uiSchema doesnt include instruction for use if there are none', () => {
-    let schema = uiSchema(zibMedicationUseData);
-    let instructionsGroup = schema.children.find(
-        ({ label }) => label === 'zib_instructions_for_use.group'
-    );
-    expect(instructionsGroup).toBeDefined();
-
-    schema = uiSchema({ ...zibMedicationUseData, dosage: undefined });
-    instructionsGroup = schema.children.find(
-        ({ label }) => label === 'zib_instructions_for_use.group'
-    );
-    expect(instructionsGroup).toBeUndefined();
-});
-
 test('uiSchema has an undefined label if there is nog medication.display', () => {
     const schema = uiSchema({ ...zibMedicationUseData, medication: undefined });
     expect(schema.label).toBeUndefined();

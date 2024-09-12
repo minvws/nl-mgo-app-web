@@ -1,0 +1,437 @@
+{
+    "label": "Johan XXX_Helleman",
+    "children": [
+        {
+            "label": "nl_core_patient.group_details",
+            "children": [
+                {
+                    "label": "nl_core_patient.active",
+                    "type": "boolean",
+                    "display": "true"
+                },
+                {
+                    "label": "nl_core_patient.birth_date",
+                    "type": "date",
+                    "display": "1964-07-25"
+                },
+                {
+                    "label": "nl_core_patient.deceased",
+                    "type": "boolean",
+                    "display": "false"
+                },
+                {
+                    "label": "nl_core_patient.deceased_date_time",
+                    "type": "date_time",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.gender",
+                    "type": "code",
+                    "display": "male"
+                },
+                {
+                    "label": "nl_core_patient.general_practitioner",
+                    "type": "reference",
+                    "display": [
+                        "Maatschap Vaste Huisarts"
+                    ]
+                },
+                {
+                    "label": "nl_core_patient.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "999911120",
+                        "1683aefb-8fdf-11ec-1800-020000000000"
+                    ]
+                },
+                {
+                    "label": "nl_core_patient.managing_organization",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "nl_core_patient.marital_status",
+                    "type": "codable_concept",
+                    "display": [
+                        "Married (M in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
+                    ]
+                },
+                {
+                    "label": "nl_core_patient.multiple_birth",
+                    "type": "boolean",
+                    "display": "false"
+                },
+                {
+                    "label": "nl_core_patient.multiple_birth_integer",
+                    "type": "integer",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_address",
+            "children": [
+                {
+                    "label": "nl_core_address.use",
+                    "type": "string",
+                    "display": "home"
+                },
+                {
+                    "label": "nl_core_address.type",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.text",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.line",
+                    "type": "string",
+                    "display": [
+                        "Knolweg 1000"
+                    ]
+                },
+                {
+                    "label": "nl_core_address.city",
+                    "type": "string",
+                    "display": "Stitswerd"
+                },
+                {
+                    "label": "nl_core_address.district",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.state",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.postalCode",
+                    "type": "string",
+                    "display": "9999XA"
+                },
+                {
+                    "label": "nl_core_address.country",
+                    "type": "string",
+                    "display": "NLD"
+                },
+                {
+                    "label": "nl_core_address.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.period.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_patient.contact",
+            "children": [
+                {
+                    "label": "nl_core_humanname.family",
+                    "type": "string",
+                    "display": "van Putten XXX_Helleman"
+                },
+                {
+                    "label": "nl_core_humanname.given",
+                    "type": "string",
+                    "display": [
+                        "Jannie"
+                    ]
+                },
+                {
+                    "label": "nl_core_humanname.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.prefix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.suffix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.use",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.text",
+                    "type": "string",
+                    "display": "Jannie van Putten XXX_Helleman"
+                },
+                {
+                    "label": "nl_core_contact_point.system",
+                    "type": "string",
+                    "display": "phone"
+                },
+                {
+                    "label": "nl_core_contact_point.value",
+                    "type": "string",
+                    "display": "+31611234567"
+                },
+                {
+                    "label": "nl_core_contact_point.use",
+                    "type": "string",
+                    "display": "work"
+                },
+                {
+                    "label": "nl_core_contact_point.rank",
+                    "type": "positiveInt",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.system",
+                    "type": "string",
+                    "display": "email"
+                },
+                {
+                    "label": "nl_core_contact_point.value",
+                    "type": "string",
+                    "display": "info@nictiz.nl"
+                },
+                {
+                    "label": "nl_core_contact_point.use",
+                    "type": "string",
+                    "display": "work"
+                },
+                {
+                    "label": "nl_core_contact_point.rank",
+                    "type": "positiveInt",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.use",
+                    "type": "string",
+                    "display": "home"
+                },
+                {
+                    "label": "nl_core_address.type",
+                    "type": "string",
+                    "display": "physical"
+                },
+                {
+                    "label": "nl_core_address.text",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.line",
+                    "type": "string",
+                    "display": [
+                        "Knolweg 1000"
+                    ]
+                },
+                {
+                    "label": "nl_core_address.city",
+                    "type": "string",
+                    "display": "Stitswerd"
+                },
+                {
+                    "label": "nl_core_address.district",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.state",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.postalCode",
+                    "type": "string",
+                    "display": "9999XA"
+                },
+                {
+                    "label": "nl_core_address.country",
+                    "type": "string",
+                    "display": "Nederland"
+                },
+                {
+                    "label": "nl_core_address.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.contact.gender",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.contact.organization",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "nl_core_patient.contact.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.contact.period.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_humanname",
+            "children": [
+                {
+                    "label": "nl_core_humanname.family",
+                    "type": "string",
+                    "display": "XXX_Helleman"
+                },
+                {
+                    "label": "nl_core_humanname.given",
+                    "type": "string",
+                    "display": [
+                        "Johan"
+                    ]
+                },
+                {
+                    "label": "nl_core_humanname.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.prefix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.suffix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.use",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.text",
+                    "type": "string",
+                    "display": "Johan XXX_Helleman"
+                }
+            ]
+        },
+        {
+            "label": "nl_core_contact_point",
+            "children": [
+                {
+                    "label": "nl_core_contact_point.system",
+                    "type": "string",
+                    "display": "phone"
+                },
+                {
+                    "label": "nl_core_contact_point.value",
+                    "type": "string",
+                    "display": "06-12345645"
+                },
+                {
+                    "label": "nl_core_contact_point.use",
+                    "type": "string",
+                    "display": "home"
+                },
+                {
+                    "label": "nl_core_contact_point.rank",
+                    "type": "positiveInt",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_contact_point",
+            "children": [
+                {
+                    "label": "nl_core_contact_point.system",
+                    "type": "string",
+                    "display": "email"
+                },
+                {
+                    "label": "nl_core_contact_point.value",
+                    "type": "string",
+                    "display": "XXX_Helleman@hotmail.com"
+                },
+                {
+                    "label": "nl_core_contact_point.use",
+                    "type": "string",
+                    "display": "home"
+                },
+                {
+                    "label": "nl_core_contact_point.rank",
+                    "type": "positiveInt",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_point.period.end",
+                    "type": "period.end",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

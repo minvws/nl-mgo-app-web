@@ -1,5 +1,6 @@
 {
   "id": "zib-medicationuse-01",
+  "referenceId": "MedicationStatement/zib-medicationuse-01",
   "resourceType": "MedicationStatement",
   "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
   "asAgreedIndicator": true,

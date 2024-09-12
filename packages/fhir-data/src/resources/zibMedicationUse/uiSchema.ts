@@ -1,7 +1,6 @@
-import { ui, type UiSchema } from '../../ui';
-import { multipleValue } from '../../ui/helpers';
-import { map } from '../../utils';
 import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
+import { ui, type UiSchema } from '../../ui';
+import { map } from '../../utils';
 import { type ZibMedicationUse } from './zibMedicationUse';
 
 /**
@@ -9,7 +8,7 @@ import { type ZibMedicationUse } from './zibMedicationUse';
  */
 export function uiSchema(resource: ZibMedicationUse): UiSchema {
     const i18n = 'zib_medication_use';
-    const instructionsForUse = map(resource.dosage, zibInstructionsForUseUiSchema) ?? [];
+    const instructionsForUse = map(resource.dosage, zibInstructionsForUseUiSchema, true);
 
     return {
         label: resource.medication?.display,
@@ -44,7 +43,7 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
             {
                 label: `${i18n}.group_medication`,
                 children: [
-                    multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.reference(`${i18n}.medication`, resource.medication),
                     ui.identifier(`${i18n}.medication_treatment`, resource.medicationTreatment),
                 ],
@@ -55,8 +54,12 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
                     ui.reference(`${i18n}.information_source`, resource.informationSource),
                     ui.reference(`${i18n}.subject`, resource.subject),
                     ui.code(`${i18n}.taken`, resource.taken),
-                    multipleValue(`${i18n}.reason_code`, resource.reasonCode, ui.codeableConcept),
-                    multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValue(
+                        `${i18n}.reason_code`,
+                        resource.reasonCode,
+                        ui.codeableConcept
+                    ),
+                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
                 ],
             },
             ...instructionsForUse,

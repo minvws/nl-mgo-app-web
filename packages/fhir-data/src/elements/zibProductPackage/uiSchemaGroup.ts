@@ -8,15 +8,19 @@ export function uiSchemaGroup(resource: ZibProductPackage): UiSchemaGroup {
 
     type ProductContent = NonNullable<ZibProductPackage['content']>[0];
 
-    const contents = map(resource.content, (content: ProductContent) => {
-        return [
-            ui.codeableConcept(`${i18n}.content_item`, content.item),
-            ui.reference(`${i18n}.content_reference`, content.reference),
-        ];
-    });
+    const contents = map(
+        resource.content,
+        (content: ProductContent) => {
+            return [
+                ui.codeableConcept(`${i18n}.content_item`, content.item),
+                ui.reference(`${i18n}.content_reference`, content.reference),
+            ];
+        },
+        true
+    );
 
     return {
-        label: `${i18n}.group`,
-        children: [...(contents ?? []).flat()],
+        label: i18n,
+        children: [...contents.flat()],
     };
 }
