@@ -6,8 +6,9 @@ import observations from './fixtures/fhir-observations.json';
 import { useOrganization } from '$/hooks';
 
 vi.mock('$/hooks/useOrganization/useOrganization');
+
 test('shows laboratory results list', async () => {
-    (useOrganization().getCommonClinicalDataset as Mock).mockImplementationOnce(
+    (useOrganization().getCommonClinicalDatasetService as Mock).mockImplementationOnce(
         () =>
             ({
                 getLastLaboratoryResultsPerType: () => ({

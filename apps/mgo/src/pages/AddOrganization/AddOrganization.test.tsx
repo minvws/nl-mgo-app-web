@@ -1,14 +1,14 @@
-import { search } from '$/api/load';
+import { getLoadService, type LoadService } from '$/services/load/load';
 import { faker } from '$test/faker';
 import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
-import { type MockedFunction, afterEach, expect, test, vi } from 'vitest';
+import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { AddOrganization } from './AddOrganization';
 import { submitSearchForm } from './testHelpers';
 
-const mockSearch = search as MockedFunction<typeof search>;
+vi.mock('$/services/load/load');
 
-vi.mock('$/api/load', () => ({ search: vi.fn() }));
+const mockSearch = getLoadService().search as MockedFunction<LoadService['search']>;
 
 afterEach(() => {
     vi.restoreAllMocks();

@@ -1,12 +1,12 @@
 import {
     type MultipleGroupValue,
     type MultipleValue,
-    type Reference,
+    type ReferenceValue,
     type SingleValue,
 } from '../../types';
 
 export function changeDescriptionType<
-    T extends SingleValue | MultipleValue | MultipleGroupValue | Reference,
+    T extends SingleValue | MultipleValue | MultipleGroupValue | ReferenceValue,
 >(value: T, oldType: string, newType: string) {
     const regexp = new RegExp(`^${oldType}`);
     return {

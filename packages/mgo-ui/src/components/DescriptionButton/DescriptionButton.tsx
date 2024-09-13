@@ -21,9 +21,10 @@ export const DescriptionButton = ({
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Card className="rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]">
+        <Card asChild>
             <Comp
                 className={cn(
+                    'rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]',
                     'flex w-full items-center justify-between gap-1 p-4 text-left',
                     focusStyle,
                     className

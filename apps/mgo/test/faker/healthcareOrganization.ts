@@ -1,4 +1,4 @@
-import { type HealthcareOrganization } from '$/store/organizations';
+import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import { faker } from '@faker-js/faker';
 import { kebabCase } from 'lodash';
 import { createMockDataFactory } from './factory';

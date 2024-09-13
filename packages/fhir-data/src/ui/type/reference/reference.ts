@@ -1,7 +1,7 @@
 import { type MgoReference } from '../../../parse/type';
-import { type Reference, type UiFunction } from '../../types';
+import { type ReferenceValue, type UiFunction } from '../../types';
 
-export const reference: UiFunction<MgoReference, Reference> = (label, value, options) => {
+export const reference: UiFunction<MgoReference, ReferenceValue> = (label, value, options) => {
     return {
         label,
         type: 'reference',

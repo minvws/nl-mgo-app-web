@@ -23,7 +23,7 @@ afterEach(() => {
 test('shows document detail page', async () => {
     const documentId = faker.string.uuid();
     mockUseParams.mockImplementation(() => ({ documentId: documentId }));
-    (useOrganization().getDocumentDataset as Mock).mockImplementation(
+    (useOrganization().getDocumentsService as Mock).mockImplementation(
         () =>
             ({
                 getDocumentReference: () => ({

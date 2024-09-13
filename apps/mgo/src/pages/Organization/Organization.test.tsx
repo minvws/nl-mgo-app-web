@@ -8,11 +8,7 @@ import { Organization } from './Organization';
 
 const mockUseParams = useParams as MockedFunction<typeof useParams>;
 
-vi.mock(
-    '$/routing/useParams',
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-    () => ({ useParams: vi.fn() }) as typeof import('$/routing/useParams')
-);
+vi.mock('$/routing/useParams');
 
 test('healthcare organization shows details about the organization', () => {
     const { addOrganization } = useOrganizationsStore.getState();

@@ -1,0 +1,146 @@
+{
+    "zib_medication_use.as_agreed_indicator": [
+        {
+            "type": 0,
+            "value": "Volgens afspraak indicator"
+        }
+    ],
+    "zib_medication_use.category": [
+        {
+            "type": 0,
+            "value": "Categorie"
+        }
+    ],
+    "zib_medication_use.date_asserted": [
+        {
+            "type": 0,
+            "value": "Registratiedatum"
+        }
+    ],
+    "zib_medication_use.effective_duration.code": [
+        {
+            "type": 0,
+            "value": "Code"
+        }
+    ],
+    "zib_medication_use.effective_duration.value": [
+        {
+            "type": 0,
+            "value": "Duur"
+        }
+    ],
+    "zib_medication_use.effective_period.end": [
+        {
+            "type": 0,
+            "value": "Eind datum"
+        }
+    ],
+    "zib_medication_use.effective_period.start": [
+        {
+            "type": 0,
+            "value": "Start datum"
+        }
+    ],
+    "zib_medication_use.group_effective_period": [
+        {
+            "type": 0,
+            "value": "Gebruiksperiode"
+        }
+    ],
+    "zib_medication_use.group_general_information": [
+        {
+            "type": 0,
+            "value": "Algemene informatie"
+        }
+    ],
+    "zib_medication_use.group_medication": [
+        {
+            "type": 0,
+            "value": "Gebruiksproduct"
+        }
+    ],
+    "zib_medication_use.group_other": [
+        {
+            "type": 0,
+            "value": "Overig"
+        }
+    ],
+    "zib_medication_use.identifier": [
+        {
+            "type": 0,
+            "value": "Identificatie nummer"
+        }
+    ],
+    "zib_medication_use.information_source": [
+        {
+            "type": 0,
+            "value": "Informatiebron"
+        }
+    ],
+    "zib_medication_use.medication": [
+        {
+            "type": 0,
+            "value": "Gebruiksproduct"
+        }
+    ],
+    "zib_medication_use.medication_treatment": [
+        {
+            "type": 0,
+            "value": "Medicamenteuze Behandeling"
+        }
+    ],
+    "zib_medication_use.note": [
+        {
+            "type": 0,
+            "value": "Toelichting"
+        }
+    ],
+    "zib_medication_use.prescriber": [
+        {
+            "type": 0,
+            "value": "Voorschrijver"
+        }
+    ],
+    "zib_medication_use.reason_code": [
+        {
+            "type": 0,
+            "value": "Reden gebruik"
+        }
+    ],
+    "zib_medication_use.reason_for_change_or_discontinuation_of_use": [
+        {
+            "type": 0,
+            "value": "Reden wijzigen of stoppen gebruik"
+        }
+    ],
+    "zib_medication_use.repeat_period_cyclical_schedule.code": [
+        {
+            "type": 0,
+            "value": "Herhaalperiode cyclisch schema (code)"
+        }
+    ],
+    "zib_medication_use.repeat_period_cyclical_schedule.value": [
+        {
+            "type": 0,
+            "value": "Herhaalperiode cyclisch schema"
+        }
+    ],
+    "zib_medication_use.status": [
+        {
+            "type": 0,
+            "value": "Status"
+        }
+    ],
+    "zib_medication_use.subject": [
+        {
+            "type": 0,
+            "value": "Patient"
+        }
+    ],
+    "zib_medication_use.taken": [
+        {
+            "type": 0,
+            "value": "Gebruik indicator"
+        }
+    ]
+}

@@ -12,12 +12,12 @@ import { ProblemsList } from './ProblemsList';
 export function Problems() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { organization, getCommonClinicalDataset } = useOrganization();
+    const { organization, getCommonClinicalDatasetService } = useOrganization();
 
     const query = useQuery({
         queryKey: ['Problems', organization?.slug],
         queryFn: async () => {
-            const commonClinicalDataset = getCommonClinicalDataset();
+            const commonClinicalDataset = getCommonClinicalDatasetService();
             if (!commonClinicalDataset) {
                 return [];
             }

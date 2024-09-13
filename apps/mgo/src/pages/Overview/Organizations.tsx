@@ -1,5 +1,5 @@
 import { RouterLink } from '$/routing';
-import { type HealthcareOrganization } from '$/store/organizations';
+import { type HealthcareOrganization } from '$/store';
 import { Button, ButtonCard, Stack } from '@minvws/mgo-mgo-ui';
 import { FormattedMessage } from 'react-intl';
 

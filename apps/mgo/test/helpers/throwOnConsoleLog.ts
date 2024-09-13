@@ -36,7 +36,10 @@ afterEach(async () => {
 
 function patchConsoleMethod(method: ConsoleLogMethod) {
     window.console[method] = (message?: unknown) => {
-        const logMessage = typeof message === 'string' ? message : '';
+        const logMessage =
+            typeof message === 'string'
+                ? message
+                : (message as Error)?.message ?? 'unknown error message';
 
         if (!!logMessage && ignoreLogMessages.includes(logMessage)) {
             return;

@@ -20,12 +20,12 @@ export interface SingleValue extends BaseEntry<string> {}
 export interface MultipleValue extends BaseEntry<string[]> {}
 export interface MultipleGroupValue extends BaseEntry<string[][]> {}
 
-export interface Reference extends SingleValue {
+export interface ReferenceValue extends BaseEntry<string> {
     reference: string | undefined;
 }
 
 // We don't export this union as we want to enforce the use of a more specific type
-type UiEntry = SingleValue | MultipleValue | MultipleGroupValue | Reference;
+type UiEntry = SingleValue | MultipleValue | MultipleGroupValue | ReferenceValue;
 
 export interface UiSchemaGroup extends UiSchemaElement {
     children: UiEntry[];

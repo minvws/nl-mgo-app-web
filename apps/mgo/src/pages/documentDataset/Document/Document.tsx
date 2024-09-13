@@ -10,15 +10,15 @@ import { Helmet } from 'react-helmet-async';
 
 export function Document() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { organization, getDocumentDataset } = useOrganization();
+    const { organization, getDocumentsService } = useOrganization();
     const { documentId } = useParams();
-    const documentDataset = getDocumentDataset();
+    const documentsService = getDocumentsService();
 
     const query = useQuery({
-        queryKey: ['DocumentReference', organization?.slug, documentId, documentDataset],
-        enabled: !!documentDataset,
+        queryKey: ['DocumentReference', organization?.slug, documentId, documentsService],
+        enabled: !!documentsService,
         queryFn: async () => {
-            const documentBundle = await documentDataset!.getDocumentReference(documentId!).json();
+            const documentBundle = await documentsService!.getDocumentReference(documentId!).json();
             return getMgoDocument(documentBundle);
         },
     });
@@ -28,7 +28,7 @@ export function Document() {
             <Helmet title={query.data?.title} />
             <section className="flex-grow">
                 <BackButton />
-                {!documentDataset ? (
+                {!documentsService ? (
                     <NotFound />
                 ) : (
                     <QueryState

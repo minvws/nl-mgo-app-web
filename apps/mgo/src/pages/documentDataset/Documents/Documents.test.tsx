@@ -7,7 +7,7 @@ import fhirDocumentReferences from './fixtures/fhir-document-references.json';
 
 vi.mock('$/hooks/useOrganization/useOrganization');
 test('shows documents list', async () => {
-    (useOrganization().getDocumentDataset as Mock).mockImplementationOnce(
+    (useOrganization().getDocumentsService as Mock).mockImplementationOnce(
         () =>
             ({
                 getDocumentReferences: () => ({

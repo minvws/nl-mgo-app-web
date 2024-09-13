@@ -1,4 +1,4 @@
-import { type HealthcareServiceDTO } from '$/api/load/types';
+import { type HealthcareServiceDTO } from '$/services/load/types';
 import { faker } from '@faker-js/faker';
 import { createMockDataFactory } from '../factory';
 

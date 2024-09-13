@@ -1,6 +1,12 @@
 import { type MessageDescriptor, createIntl, createIntlCache } from '@formatjs/intl';
 import escapeStringRegexp from 'escape-string-regexp';
-import messagesNL from '../../src/i18n/locales/nl.json';
+import appMessages from '../../src/i18n/locales/compiled/nl/app.json';
+import zibMedicationUse from '../../src/i18n/locales/compiled/nl/zib_medication_use.json';
+
+const messagesNL = {
+    ...appMessages,
+    ...zibMedicationUse,
+};
 
 const cache = createIntlCache();
 

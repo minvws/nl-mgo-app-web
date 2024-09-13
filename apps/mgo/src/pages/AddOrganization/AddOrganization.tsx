@@ -1,6 +1,6 @@
-import { search } from '$/api/load';
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef, useParseHealthcareOrganization } from '$/hooks';
+import { getLoadService } from '$/services';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
@@ -16,11 +16,12 @@ export function AddOrganization() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
     const { parseHealthcareOrganization } = useParseHealthcareOrganization();
+    const loadService = getLoadService();
 
     const query = useQuery({
         queryKey: ['search', searchQuery], // eslint-disable-line @tanstack/query/exhaustive-deps
         queryFn: async () => {
-            const searchResults = await search(searchQuery!);
+            const searchResults = await loadService.search(searchQuery!);
             return searchResults.organizations.map(parseHealthcareOrganization);
         },
         enabled: !!searchQuery,

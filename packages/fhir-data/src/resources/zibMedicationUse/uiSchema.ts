@@ -25,7 +25,7 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
                     ),
                     ui.codeableConcept(`${i18n}.category`, resource.category, { summary: true }),
                     ...ui.duration(
-                        `${i18n}.reason_for_change_or_discontinuation_of_use`,
+                        `${i18n}.repeat_period_cyclical_schedule`,
                         resource.repeatPeriodCyclicalSchedule
                     ),
                     ui.boolean(`${i18n}.as_agreed_indicator`, resource.asAgreedIndicator, {
@@ -49,7 +49,7 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
                 ],
             },
             {
-                label: `${i18n}.group_details`,
+                label: `${i18n}.group_other`,
                 children: [
                     ui.reference(`${i18n}.information_source`, resource.informationSource),
                     ui.reference(`${i18n}.subject`, resource.subject),

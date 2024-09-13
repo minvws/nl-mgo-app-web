@@ -1,4 +1,4 @@
-import { type Address } from '$/api/load/types';
+import { type Address } from '$/services/load/types';
 import { faker } from '@faker-js/faker';
 import { createMockDataFactory } from '../factory';
 

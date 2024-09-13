@@ -12,12 +12,12 @@ import { LabResultsList } from './LabResultsList';
 export function LabResults() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { organization, getCommonClinicalDataset } = useOrganization();
+    const { organization, getCommonClinicalDatasetService } = useOrganization();
 
     const query = useQuery({
         queryKey: ['LabResults', organization?.slug],
         queryFn: async () => {
-            const commonClinicalDataset = getCommonClinicalDataset();
+            const commonClinicalDataset = getCommonClinicalDatasetService();
             if (!commonClinicalDataset) {
                 return [];
             }

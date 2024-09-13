@@ -17,7 +17,7 @@ configure({
     // Remove the huge error output from `testing-library`
     getElementError(message) {
         // Only print the error message, not the full stack trace (and matching suggestions)
-        const error = new Error(message!.split('\n')[0]);
+        const error = new Error(message ? message.split('\n')[0] : 'no message');
         delete error.stack;
         error.name = 'TestingLibraryElementError';
         return error;

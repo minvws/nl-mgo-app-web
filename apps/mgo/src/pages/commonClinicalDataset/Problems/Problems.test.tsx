@@ -7,7 +7,7 @@ import { useOrganization } from '$/hooks';
 
 vi.mock('$/hooks/useOrganization/useOrganization');
 test('shows problems list', async () => {
-    (useOrganization().getCommonClinicalDataset as Mock).mockImplementationOnce(
+    (useOrganization().getCommonClinicalDatasetService as Mock).mockImplementationOnce(
         () =>
             ({
                 getProblems: () => ({

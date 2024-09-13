@@ -6,8 +6,16 @@ vi.mock('lodash', () => ({
     uniqueId: vi.fn(() => 1),
 }));
 
+test.each<[string, string]>([
+    ['foo', 'foo-1'],
+    ['bar', 'bar-1'],
+])('can create a single id %#', async (input, expected) => {
+    const { result } = renderHook(() => useUniqueId(input));
+
+    expect(result.current).toEqual(expected);
+});
+
 test.each<[string[], string[]]>([
-    [['foo'], ['foo-1-0']],
     [
         ['foo', 'bar'],
         ['foo-1-0', 'bar-1-1'],
@@ -16,8 +24,7 @@ test.each<[string[], string[]]>([
         ['foo', 'foo'],
         ['foo-1-0', 'foo-1-1'],
     ],
-])('always returns a unique set of ids %#', async (input, expected) => {
+])('can create a set of ids %#', async (input, expected) => {
     const { result } = renderHook(() => useUniqueId(...input));
-
     expect(result.current).toEqual(expected);
 });

@@ -1,5 +1,5 @@
 import { RouterLink } from '$/routing';
-import { useOrganizationsStore } from '$/store/organizations';
+import { useOrganizationsStore } from '$/store';
 import {
     Button,
     ConfirmDialog,

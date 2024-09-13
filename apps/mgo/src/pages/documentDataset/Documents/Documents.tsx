@@ -11,12 +11,12 @@ import { DocumentsList } from './DocumentsList';
 export function Documents() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const { organization, getDocumentDataset } = useOrganization();
+    const { organization, getDocumentsService } = useOrganization();
 
     const query = useQuery({
         queryKey: ['DocumentReference', organization?.slug],
         queryFn: async () => {
-            const documentDataset = getDocumentDataset();
+            const documentDataset = getDocumentsService();
             if (!documentDataset) {
                 return [];
             }

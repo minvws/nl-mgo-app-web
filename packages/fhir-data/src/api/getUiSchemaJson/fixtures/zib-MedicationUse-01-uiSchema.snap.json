@@ -34,11 +34,11 @@
           "summary": true
         },
         {
-          "label": "zib_medication_use.reason_for_change_or_discontinuation_of_use.value",
+          "label": "zib_medication_use.repeat_period_cyclical_schedule.value",
           "type": "duration.value"
         },
         {
-          "label": "zib_medication_use.reason_for_change_or_discontinuation_of_use.code",
+          "label": "zib_medication_use.repeat_period_cyclical_schedule.code",
           "type": "duration.code"
         },
         {
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "label": "zib_medication_use.group_details",
+      "label": "zib_medication_use.group_other",
       "children": [
         {
           "label": "zib_medication_use.information_source",

@@ -5,11 +5,16 @@ import { ListWrapper, Heading, Stack, CategoryButton } from '@minvws/mgo-mgo-ui'
 import { Helmet } from 'react-helmet-async';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NotFound } from './NotFound';
+import { HealthCategory, healthCategorySlugs, useHealthCategoryQuery } from '$/healthCategory';
 
 export function Organization() {
     const { organization } = useOrganization();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const intl = useIntl();
+
+    const { isLoading: medicationIsLoading } = useHealthCategoryQuery(HealthCategory.Medication, [
+        organization?.id,
+    ]);
 
     const i18nValues = {
         organizationName: organization?.name,
@@ -22,7 +27,7 @@ export function Organization() {
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'organization.heading' }, i18nValues)} />
+            <Helmet title={intl.formatMessage({ id: 'organization.title' })} />
 
             <section className="flex-grow">
                 <div>
@@ -41,8 +46,15 @@ export function Organization() {
 
                 <Stack className="mb-6 gap-6 md:mb-12">
                     <ListWrapper gap="line">
-                        <CategoryButton icon="pill" asChild>
-                            <RouterLink to={`/overzicht/${organization.slug}/medicijnen`}>
+                        <CategoryButton
+                            icon="pill"
+                            asChild
+                            loadingText="Laden"
+                            isLoading={medicationIsLoading}
+                        >
+                            <RouterLink
+                                to={`/overzicht/${organization.slug}/${healthCategorySlugs[HealthCategory.Medication]}`}
+                            >
                                 <FormattedMessage id="organization.medicine_heading" />
                             </RouterLink>
                         </CategoryButton>

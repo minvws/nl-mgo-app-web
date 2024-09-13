@@ -1,4 +1,4 @@
-import { type HealthcareOrganizationDTO } from '$/api/load';
+import { type HealthcareOrganizationDTO } from '$/services/load/load';
 import { safeGet } from '@minvws/mgo-fhir-data';
 import { useIntl } from 'react-intl';
 

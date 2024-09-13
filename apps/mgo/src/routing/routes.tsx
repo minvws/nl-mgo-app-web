@@ -2,11 +2,14 @@ import { AddOrganization } from '$/pages/AddOrganization/AddOrganization';
 import { NotFound } from '$/pages/NotFound/NotFound';
 import { OrganizationList } from '$/pages/OrganizationList/OrganizationList';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
-import { LabResults, Medication, Problems } from '$/pages/commonClinicalDataset';
+import { LabResults, Problems } from '$/pages/commonClinicalDataset';
+import { Document, Documents } from '$/pages/documentDataset';
+import { HealthCategory } from '$/pages/HealthCategory/HealthCategory';
+import { UiSchemaDetail } from '$/pages/UiSchemaDetail/UiSchemaDetail';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
-import { type Path as RouterPath } from 'react-router-dom';
+import { type RouteObject, type Path as RouterPath } from 'react-router-dom';
 import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
@@ -16,7 +19,6 @@ import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
 import { Overview } from '../pages/Overview/Overview';
 import { Proposition } from '../pages/Proposition/Proposition';
-import { Document, Documents } from '$/pages/documentDataset';
 
 const routeConfig = [
     {
@@ -82,8 +84,12 @@ const routeConfig = [
                         element: <Organization />,
                     },
                     {
-                        path: '/overzicht/:organizationSlug/medicijnen',
-                        element: <Medication />,
+                        path: `/overzicht/:organizationSlug/:healthCategorySlug`,
+                        element: <HealthCategory />,
+                    },
+                    {
+                        path: '/overzicht/:organizationSlug/:healthCategorySlug/:resourceSlug',
+                        element: <UiSchemaDetail />,
                     },
                     {
                         path: '/overzicht/:organizationSlug/klachten',
@@ -105,7 +111,7 @@ const routeConfig = [
             },
         ],
     },
-] as const;
+] as const satisfies RouteObject[];
 
 export type RouteConfigPaths = ExtractRoutePaths<typeof routeConfig>;
 export type RouteParams = ExtractRouteParams<typeof routeConfig>;
@@ -114,7 +120,8 @@ type RoutePath =
     | RouteConfigPaths
     | `${RouteConfigPaths}${'?' | '#'}${string}`
     | `${'?' | '#' | '..'}${string}`
-    | '/niet-gevonden';
+    | '/niet-gevonden'
+    | `./${string}`;
 
 export type To = RoutePath | Partial<Override<RouterPath, { pathname: RoutePath }>>;
 

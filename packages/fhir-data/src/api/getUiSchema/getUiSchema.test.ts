@@ -21,7 +21,7 @@ test('throws if no config could be found', () => {
         faker.fhir.medicationStatement({ meta: { profile: [zibMedicationUse.profile] } })
     );
 
-    mgoResource.profile = faker.lorem.word() as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    (mgoResource as any).profile = faker.lorem.word() as any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
     expect(() => {
         getUiSchema(mgoResource);

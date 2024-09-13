@@ -16,11 +16,13 @@ import { setupResults } from '../sections/results/setupResults';
 import { setupProcedures } from '../sections/procedures/setupProcedures';
 import { setupEncounters } from '../sections/encounters/setupEncounters';
 import { setupPlannedCare } from '../sections/plannedCare/setupPlannedCare';
+import { type DataService, DataServiceId } from '../../DataService';
 
 export function createBgzClient(options: FhirClientOptions) {
     const client = createClient(options);
 
     return {
+        dataServiceId: DataServiceId.CommonClinicalDataset,
         ...client,
         ...setupPatientInformation(client),
         ...setupPaymentDetails(client),
@@ -38,5 +40,5 @@ export function createBgzClient(options: FhirClientOptions) {
         ...setupProcedures(client),
         ...setupEncounters(client),
         ...setupPlannedCare(client),
-    };
+    } satisfies DataService;
 }
