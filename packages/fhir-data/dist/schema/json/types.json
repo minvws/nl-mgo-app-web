@@ -894,6 +894,122 @@
       ],
       "additionalProperties": false
     },
+    "ZibProblem": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "clinicalStatus": {
+          "type": "string"
+        },
+        "verificationStatus": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "severity": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "bodySite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "onsetDateTime": {
+          "type": "string"
+        },
+        "abatementDateTime": {
+          "type": "string"
+        },
+        "assertedDate": {
+          "type": "string"
+        },
+        "asserter": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "stage": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            },
+            "assessment": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                }
+              },
+              "detail": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoReference"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Problem"
+        }
+      },
+      "required": [
+        "stage",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibProduct": {
       "type": "object",
       "properties": {
