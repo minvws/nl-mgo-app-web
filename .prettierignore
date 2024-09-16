@@ -4,4 +4,5 @@ LICENSE
 LICENSE.*
 LICENSES.*
 packages/fhir-data/fhir-definitions
+packages/fhir-data/dist
 *.snap.json

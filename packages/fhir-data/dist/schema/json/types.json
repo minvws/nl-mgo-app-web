@@ -1,0 +1,1238 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "MgoAnnotation": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "author": {
+          "$ref": "#/definitions/MgoReference"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoReference": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoBoolean": {
+      "type": "boolean"
+    },
+    "MgoCode": {
+      "type": "string"
+    },
+    "MgoCodeableConcept": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MgoCoding"
+      }
+    },
+    "MgoCoding": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoDate": {
+      "type": [
+        "string"
+      ]
+    },
+    "MgoDateTime": {
+      "type": [
+        "string"
+      ]
+    },
+    "MgoDecimal": {
+      "type": "number"
+    },
+    "MgoDuration": {
+      "$ref": "#/definitions/MgoQuantity"
+    },
+    "MgoQuantity": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "comparator": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoIdentifier": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoInteger": {
+      "type": "number"
+    },
+    "MgoInteger64": {
+      "type": "number"
+    },
+    "MgoPeriod": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoPositiveInt": {
+      "type": "number"
+    },
+    "MgoRange": {
+      "type": "object",
+      "properties": {
+        "low": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "high": {
+          "$ref": "#/definitions/MgoQuantity"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoRatio": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "denominator": {
+          "$ref": "#/definitions/MgoQuantity"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MgoString": {
+      "type": "string"
+    },
+    "MgoUnsignedInt": {
+      "type": "number"
+    },
+    "MultipleGroupValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "display": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "type"
+      ]
+    },
+    "ValueOptions": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MultipleValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "display": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "type"
+      ]
+    },
+    "NlCoreAddress": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "type": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "text": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "line": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoString"
+          }
+        },
+        "city": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "district": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "state": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "postalCode": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "country": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NlCoreContactpoint": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "value": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "use": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "rank": {
+          "$ref": "#/definitions/MgoPositiveInt"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NlCoreHumanname": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "given": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoString"
+          }
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "prefix": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoString"
+          }
+        },
+        "suffix": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoString"
+          }
+        },
+        "text": {
+          "$ref": "#/definitions/MgoString"
+        },
+        "use": {
+          "$ref": "#/definitions/MgoString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NlCorePatient": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreAddress"
+          }
+        },
+        "birthDate": {
+          "type": "string"
+        },
+        "communication": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "$ref": "#/definitions/MgoCodeableConcept"
+              },
+              "preferred": {
+                "$ref": "#/definitions/MgoBoolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relationship": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                }
+              },
+              "name": {
+                "$ref": "#/definitions/NlCoreHumanname"
+              },
+              "telecom": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/NlCoreContactpoint"
+                }
+              },
+              "address": {
+                "$ref": "#/definitions/NlCoreAddress"
+              },
+              "gender": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "organization": {
+                "$ref": "#/definitions/MgoReference"
+              },
+              "period": {
+                "$ref": "#/definitions/MgoPeriod"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "deceased": {
+          "type": "boolean"
+        },
+        "deceasedDateTime": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "generalPractitioner": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "link": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "other": {
+                "$ref": "#/definitions/MgoReference"
+              },
+              "type": {
+                "$ref": "#/definitions/MgoCode"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "managingOrganization": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "maritalStatus": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "multipleBirth": {
+          "type": "boolean"
+        },
+        "multipleBirthInteger": {
+          "$ref": "#/definitions/MgoInteger"
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreHumanname"
+          }
+        },
+        "photo": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "contentType": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "language": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "data": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "url": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "size": {
+                "$ref": "#/definitions/MgoUnsignedInt"
+              },
+              "hash": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "title": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "creation": {
+                "$ref": "#/definitions/MgoDateTime"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "telecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreContactpoint"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://fhir.nl/fhir/StructureDefinition/nl-core-patient"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ReferenceValue": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "type"
+      ]
+    },
+    "SingleValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "type"
+      ]
+    },
+    "UiSchema": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UiSchemaGroup"
+          }
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "additionalProperties": false
+    },
+    "UiSchemaGroup": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/SingleValue"
+              },
+              {
+                "$ref": "#/definitions/MultipleValue"
+              },
+              {
+                "$ref": "#/definitions/MultipleGroupValue"
+              },
+              {
+                "$ref": "#/definitions/ReferenceValue"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "children",
+        "label"
+      ],
+      "additionalProperties": false
+    },
+    "ZibAdministrationSchedule": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "$ref": "#/definitions/MgoDecimal"
+        },
+        "durationUnit": {
+          "$ref": "#/definitions/MgoCode"
+        },
+        "frequency": {
+          "$ref": "#/definitions/MgoInteger"
+        },
+        "frequencyMax": {
+          "$ref": "#/definitions/MgoInteger"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoDecimal"
+        },
+        "periodUnit": {
+          "$ref": "#/definitions/MgoCode"
+        },
+        "dayOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCode"
+          }
+        },
+        "timeOfDay": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoDateTime"
+          }
+        },
+        "when": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCode"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ZibInstructionsForUse": {
+      "type": "object",
+      "properties": {
+        "additionalInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "asNeeded": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "doseQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "doseRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "maxDosePerPeriod": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRatio": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "rateQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "timing": {
+          "$ref": "#/definitions/ZibAdministrationSchedule"
+        }
+      },
+      "required": [
+        "timing"
+      ],
+      "additionalProperties": false
+    },
+    "ZibMedicationUse": {
+      "type": "object",
+      "properties": {
+        "asAgreedIndicator": {
+          "type": "boolean"
+        },
+        "prescriber": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "author": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "medicationTreatment": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "reasonForChangeOrDiscontinuationOfUse": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "repeatPeriodCyclicalSchedule": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "medication": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectiveDuration": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dateAsserted": {
+          "type": "string"
+        },
+        "informationSource": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "taken": {
+          "type": "string"
+        },
+        "reasonCode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "dosage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibInstructionsForUse"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibPayer": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "policyHolder": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "subscriber": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "subscriberId": {
+          "type": "string"
+        },
+        "beneficiary": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "relationship": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "payor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "grouping": {
+          "type": "object",
+          "properties": {
+            "group": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "groupDisplay": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subGroup": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subGroupDisplay": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "plan": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "planDisplay": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subPlan": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subPlanDisplay": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "class": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "classDisplay": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subClass": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "subClassDisplay": {
+              "$ref": "#/definitions/MgoString"
+            }
+          },
+          "additionalProperties": false
+        },
+        "dependent": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "string"
+        },
+        "order": {
+          "$ref": "#/definitions/MgoPositiveInt"
+        },
+        "network": {
+          "type": "string"
+        },
+        "contract": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Payer"
+        }
+      },
+      "required": [
+        "grouping",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibProduct": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "form": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "ingredient": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibProductIngredient"
+          }
+        },
+        "package": {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "item": {
+                    "$ref": "#/definitions/MgoCodeableConcept"
+                  },
+                  "reference": {
+                    "$ref": "#/definitions/MgoReference"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Product"
+        }
+      },
+      "required": [
+        "package",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibProductIngredient": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "amount": {
+          "$ref": "#/definitions/MgoRatio"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ZibProductPackage": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "item": {
+                "$ref": "#/definitions/MgoCodeableConcept"
+              },
+              "reference": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ZibTreatmentDirective": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dateTime": {
+          "type": "string"
+        },
+        "consentingParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "actor": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "$ref": "#/definitions/MgoCodeableConcept"
+              },
+              "reference": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "action": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "organization": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "sourceAttachment": {
+          "type": "object",
+          "properties": {
+            "contentType": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "language": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "data": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "url": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "size": {
+              "$ref": "#/definitions/MgoUnsignedInt"
+            },
+            "hash": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "title": {
+              "$ref": "#/definitions/MgoString"
+            },
+            "creation": {
+              "$ref": "#/definitions/MgoDateTime"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sourceIdentifier": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "sourceReference": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "policy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "authority": {
+                "$ref": "#/definitions/MgoString"
+              },
+              "uri": {
+                "$ref": "#/definitions/MgoString"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "policyRule": {
+          "type": "string"
+        },
+        "securityLabel": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCoding"
+          }
+        },
+        "purpose": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCoding"
+          }
+        },
+        "dataPeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "meaning": {
+                "$ref": "#/definitions/MgoCode"
+              },
+              "reference": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "except": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/definitions/MgoCode"
+              },
+              "period": {
+                "$ref": "#/definitions/MgoPeriod"
+              },
+              "actor": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "$ref": "#/definitions/MgoCodeableConcept"
+                    },
+                    "reference": {
+                      "$ref": "#/definitions/MgoReference"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "action": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                }
+              },
+              "securityLabel": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCoding"
+                }
+              },
+              "purpose": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCoding"
+                }
+              },
+              "class": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCoding"
+                }
+              },
+              "code": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCoding"
+                }
+              },
+              "dataPeriod": {
+                "$ref": "#/definitions/MgoPeriod"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "meaning": {
+                      "$ref": "#/definitions/MgoCode"
+                    },
+                    "reference": {
+                      "$ref": "#/definitions/MgoReference"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective"
+        }
+      },
+      "required": [
+        "sourceAttachment",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

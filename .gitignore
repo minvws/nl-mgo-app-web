@@ -6,7 +6,6 @@
 # Local files
 node_modules/
 coverage/
-dist/
 dist-ssr/
 *.local
 
