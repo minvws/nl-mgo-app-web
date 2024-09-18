@@ -7,6 +7,7 @@
         "./*": "./src/*"
     },
     "scripts": {
+        "test": "vitest",
         "check-types": "tsc --noEmit",
         "build": "pnpm run build:js && pnpm run build:schemas",
         "build:js": "tsc && vite build --config vite.mobile.config.ts",

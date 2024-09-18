@@ -639,6 +639,58 @@
       },
       "additionalProperties": false
     },
+    "ZibAlert": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "encounter": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "author": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Alert"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibInstructionsForUse": {
       "type": "object",
       "properties": {
