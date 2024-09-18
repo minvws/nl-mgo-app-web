@@ -1,0 +1,82 @@
+{
+    "id": "zib-administrationagreement-01",
+    "referenceId": "MedicationDispense/zib-administrationagreement-01",
+    "resourceType": "MedicationDispense",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement",
+    "authoredOn": "2020-06-08T10:54:12+02:00",
+    "agreementReason": null,
+    "usageDuration": null,
+    "additionalInformation": [
+        {
+            "code": "1",
+            "display": "Niet leverbaar",
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
+        }
+    ],
+    "medicationTreatment": {
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    },
+    "stopType": null,
+    "repeatPeriodCyclicalSchedule": null,
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.422037009.1",
+            "value": "1546339-f6753t65r",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "189ef867-8fdf-11ec-6427-020000000000",
+            "type": null
+        }
+    ],
+    "status": null,
+    "category": [
+        {
+            "code": "422037009",
+            "display": "Provider medication administration instructions (procedure)",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "medicationReference": {
+        "reference": "Medication/zib-Product-01",
+        "display": "PRIMPERAN ZETPIL 20MG"
+    },
+    "quantity": null,
+    "daysSupply": null,
+    "note": [
+        {
+            "time": null,
+            "text": "Tekstuele toelichting bij deze toedieningsafspraak",
+            "author": null
+        }
+    ],
+    "dossageInstruction": [
+        {
+            "additionalInstruction": null,
+            "asNeeded": null,
+            "doseQuantity": null,
+            "doseRange": null,
+            "maxDosePerPeriod": null,
+            "rateRatio": null,
+            "rateRange": null,
+            "rateQuantity": null,
+            "timing": {
+                "duration": null,
+                "durationUnit": null,
+                "frequency": 1,
+                "frequencyMax": null,
+                "period": 1,
+                "periodUnit": "d",
+                "dayOfWeek": null,
+                "timeOfDay": null,
+                "when": null
+            }
+        }
+    ]
+}

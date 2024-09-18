@@ -597,6 +597,124 @@
       ],
       "additionalProperties": false
     },
+    "ZibAdministrationAgreement": {
+      "type": "object",
+      "properties": {
+        "authoredOn": {
+          "type": "string"
+        },
+        "agreementReason": {
+          "type": "string"
+        },
+        "usageDuration": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "additionalInformation": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "medicationTreatment": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "stopType": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "repeatPeriodCyclicalSchedule": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "medicationReference": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "quantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "daysSupply": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "dossageInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibInstructionsForUse"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibInstructionsForUse": {
+      "type": "object",
+      "properties": {
+        "additionalInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "asNeeded": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "doseQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "doseRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "maxDosePerPeriod": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRatio": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "rateQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "timing": {
+          "$ref": "#/definitions/ZibAdministrationSchedule"
+        }
+      },
+      "required": [
+        "timing"
+      ],
+      "additionalProperties": false
+    },
     "ZibAdministrationSchedule": {
       "type": "object",
       "properties": {
@@ -746,42 +864,91 @@
       ],
       "additionalProperties": false
     },
-    "ZibInstructionsForUse": {
+    "ZibMedicationAgreement": {
       "type": "object",
       "properties": {
-        "additionalInstruction": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MgoCodeableConcept"
-          }
+        "periodOfUse": {
+          "$ref": "#/definitions/MgoPeriod"
         },
-        "asNeeded": {
+        "usageDuration": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "medicationTreatment": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "stopType": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "doseQuantity": {
+        "repeatPeriodCyclicalSchedule": {
           "$ref": "#/definitions/MgoQuantity"
         },
-        "doseRange": {
-          "$ref": "#/definitions/MgoRange"
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
         },
-        "maxDosePerPeriod": {
-          "$ref": "#/definitions/MgoRatio"
+        "definition": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
         },
-        "rateRatio": {
-          "$ref": "#/definitions/MgoRatio"
+        "basedOn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
         },
-        "rateRange": {
-          "$ref": "#/definitions/MgoRange"
+        "groupIdentifier": {
+          "$ref": "#/definitions/MgoIdentifier"
         },
-        "rateQuantity": {
-          "$ref": "#/definitions/MgoQuantity"
+        "status": {
+          "type": "string"
         },
-        "timing": {
-          "$ref": "#/definitions/ZibAdministrationSchedule"
+        "intent": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "medicationReference": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "dossageInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibInstructionsForUse"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement"
         }
       },
       "required": [
-        "timing"
+        "referenceId",
+        "profile"
       ],
       "additionalProperties": false
     },

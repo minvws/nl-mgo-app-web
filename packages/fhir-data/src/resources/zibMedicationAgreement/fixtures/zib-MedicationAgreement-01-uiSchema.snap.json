@@ -1,0 +1,253 @@
+{
+    "label": "Metoclopramide zetpil 20mg",
+    "children": [
+        {
+            "label": "zib_medication_agreement.group_general_information",
+            "children": [
+                {
+                    "label": "zib_medication_agreement.period_of_use.start",
+                    "type": "period.start",
+                    "display": "2020-06-08"
+                },
+                {
+                    "label": "zib_medication_agreement.period_of_use.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.usage_duration.value",
+                    "type": "duration.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.usage_duration.code",
+                    "type": "duration.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.medication_treatment",
+                    "type": "identifier",
+                    "display": "#MB_01h"
+                },
+                {
+                    "label": "zib_medication_agreement.stop_type",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule.value",
+                    "type": "duration.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule.code",
+                    "type": "duration.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "#MB_01h#MA_01",
+                        "1bed45b9-8fdf-11ec-1339-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_medication_agreement.definition",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.basedOn",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.group_identifier",
+                    "type": "identifier",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.status",
+                    "type": "code",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.intent",
+                    "type": "code",
+                    "display": "order"
+                },
+                {
+                    "label": "zib_medication_agreement.category",
+                    "type": "codable_concept",
+                    "display": [
+                        "Prescription (procedure) (16076005 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_medication_agreement.priority",
+                    "type": "code",
+                    "display": null
+                },
+                {
+                    "label": "zib_medication_agreement.medication_reference",
+                    "type": "reference",
+                    "display": "Metoclopramide zetpil 20mg",
+                    "reference": "Medication/zib-Product-03"
+                },
+                {
+                    "label": "zib_medication_agreement.note",
+                    "type": "annotation",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "zib_instructions_for_use",
+            "children": [
+                {
+                    "label": "zib_instructions_for_use.additional_instruction",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.as_needed",
+                    "type": "codable_concept",
+                    "display": [
+                        "zo nodig (1137 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
+                    ]
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_quantity.value",
+                    "type": "quantity.value",
+                    "display": "1 stuk"
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_quantity.code",
+                    "type": "quantity.code",
+                    "display": "245 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1.900.2"
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_range.low.value",
+                    "type": "range.low.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_range.low.code",
+                    "type": "range.low.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_range.high.value",
+                    "type": "range.high.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.dose_range.high.code",
+                    "type": "range.high.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.max_dose_per_period.numerator.value",
+                    "type": "ratio.numerator.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.max_dose_per_period.numerator.code",
+                    "type": "ratio.numerator.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.max_dose_per_period.denominator.value",
+                    "type": "ratio.denominator.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.max_dose_per_period.denominator.code",
+                    "type": "ratio.denominator.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_ratio.numerator.value",
+                    "type": "ratio.numerator.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_ratio.numerator.code",
+                    "type": "ratio.numerator.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_ratio.denominator.value",
+                    "type": "ratio.denominator.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_ratio.denominator.code",
+                    "type": "ratio.denominator.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_range.low.value",
+                    "type": "range.low.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_range.low.code",
+                    "type": "range.low.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_range.high.value",
+                    "type": "range.high.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_range.high.code",
+                    "type": "range.high.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_quantity.value",
+                    "type": "quantity.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.rate_quantity.code",
+                    "type": "quantity.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_schedule.duration",
+                    "display": null,
+                    "type": "valueWithUnit"
+                },
+                {
+                    "label": "zib_administration_schedule.frequency",
+                    "display": "1",
+                    "type": "valueWithMax"
+                },
+                {
+                    "label": "zib_administration_schedule.period",
+                    "display": "1 d",
+                    "type": "valueWithUnit"
+                },
+                {
+                    "label": "zib_administration_schedule.day_of_week",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_schedule.time_of_day",
+                    "type": "date_time",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_schedule.when",
+                    "type": "string",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}
