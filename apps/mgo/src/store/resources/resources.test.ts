@@ -26,21 +26,25 @@ test('addResources adds a resource', async () => {
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
 
     expect(resource.id).toEqual(`${organizationId}-${dataServiceId}-${mgoResource.referenceId}`);
-
     state = useResourcesStore.getState();
     expect(state.resources).toEqual([resource]);
 });
 
-test('addResources throws if there is already a resource with the same id', async () => {
-    const state = useResourcesStore.getState();
+test('addResources logs error if there is already a resource with the same id', async () => {
+    let state = useResourcesStore.getState();
 
     const resourceDto = mockResourceDto();
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
-    expect(() => {
-        state.addResources([resourceDto, resourceDto]);
-    }).toThrowError(
+
+    const mockErrorLog = vi.spyOn(console, 'error');
+    mockErrorLog.mockImplementationOnce(() => {});
+    state.addResources([resourceDto, resourceDto]);
+    state = useResourcesStore.getState();
+
+    expect(mockErrorLog).toBeCalledWith(
         `Resource with id "${organizationId}-${dataServiceId}-${mgoResource.referenceId}" already exists`
     );
+    expect(state.resources.length).toBe(1);
 });
 
 test('getResourcesByProfile returns resource', async () => {
