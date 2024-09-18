@@ -691,6 +691,61 @@
       ],
       "additionalProperties": false
     },
+    "ZibAllergyIntolerance": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "clinicalStatus": {
+          "type": "string"
+        },
+        "verificationStatus": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "criticality": {
+          "type": "string"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibInstructionsForUse": {
       "type": "object",
       "properties": {

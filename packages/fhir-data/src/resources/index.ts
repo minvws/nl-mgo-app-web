@@ -11,6 +11,7 @@
 export * from './nlCorePatient/nlCorePatient';
 
 export * from './zibAlert/zibAlert';
+export * from './zibAllergyIntolerance/zibAllergyIntolerance';
 export * from './zibMedicationUse/zibMedicationUse';
 export * from './zibPayer/zibPayer';
 export * from './zibProblem/zibProblem';

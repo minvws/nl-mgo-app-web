@@ -1,0 +1,57 @@
+{
+    "label": "18e3c749-8fdf-11ec-2022-020000000000",
+    "children": [
+        {
+            "label": "zib_allergy_intolerance.group_details",
+            "children": [
+                {
+                    "label": "zib_allergy_intolerance.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "18e3c749-8fdf-11ec-2022-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_allergy_intolerance.clinical_status",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_allergy_intolerance.verification_status",
+                    "type": "code",
+                    "display": "confirmed"
+                },
+                {
+                    "label": "zib_allergy_intolerance.type",
+                    "type": "code",
+                    "display": null
+                },
+                {
+                    "label": "zib_allergy_intolerance.category",
+                    "type": "code",
+                    "display": [
+                        "biologic"
+                    ]
+                },
+                {
+                    "label": "zib_allergy_intolerance.criticality",
+                    "type": "code",
+                    "display": "high"
+                },
+                {
+                    "label": "zib_allergy_intolerance.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "Bee venom (288328004 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_allergy_intolerance.patient",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        }
+    ]
+}
