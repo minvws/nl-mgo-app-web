@@ -2,17 +2,21 @@ import { useOrganizationsStore, type HealthcareOrganization } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { HealthCategory } from '../HealthCategory';
 import { getMedicationQueries } from './medication';
+import { getPersonalInformationQueries } from './personalInformation';
+import { getPayer } from './payer';
 
 const healthCategoryQueries = {
-    [HealthCategory.Medication]: getMedicationQueries,
-    [HealthCategory.Allergies]: () => [],
-    [HealthCategory.Complaints]: () => [],
-    [HealthCategory.Documents]: () => [],
-    [HealthCategory.LabResults]: () => [],
-    [HealthCategory.Measurements]: () => [],
-    [HealthCategory.Reports]: () => [],
-    [HealthCategory.Treatments]: () => [],
-    [HealthCategory.Vaccinations]: () => [],
+    [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
+    [HealthCategory.Payer]: getPayer
+    // [HealthCategory.Medication]: getMedicationQueries,
+    // [HealthCategory.Allergies]: () => [],
+    // [HealthCategory.Complaints]: () => [],
+    // [HealthCategory.Documents]: () => [],
+    // [HealthCategory.LabResults]: () => [],
+    // [HealthCategory.Measurements]: () => [],
+    // [HealthCategory.Reports]: () => [],
+    // [HealthCategory.Treatments]: () => [],
+    // [HealthCategory.Vaccinations]: () => [],
 } satisfies Record<HealthCategory, (organization: HealthcareOrganization) => UseQueryOptions[]>;
 
 export function useHealthCategoryQueries<T extends HealthCategory>(

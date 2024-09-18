@@ -7,11 +7,13 @@ import { setupMedicationIntolerance } from '../sections/medicationIntolerance/se
 import { setupObservations } from '../sections/observations/setupObservations';
 import { setupCompositions } from '../sections/compositions/setupCompositions';
 import { setupEncounters } from '../sections/encounters/setupEncounters';
+import { type DataService, DataServiceId } from '../../DataService';
 
 export function createGpClient(options: FhirClientOptions) {
     const client = createClient(options);
 
     return {
+        dataServiceId: DataServiceId.GeneralPractitioner,
         ...client,
         ...setupPatient(client),
         ...setupEpisodeOfCare(client),
@@ -20,5 +22,5 @@ export function createGpClient(options: FhirClientOptions) {
         ...setupObservations(client),
         ...setupCompositions(client),
         ...setupEncounters(client),
-    };
+    } satisfies DataService;
 }

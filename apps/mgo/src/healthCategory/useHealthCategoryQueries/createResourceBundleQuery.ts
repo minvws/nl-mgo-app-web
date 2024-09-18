@@ -2,7 +2,6 @@ import { useResourcesStore, type HealthcareOrganization } from '$/store';
 import { type DataService } from '@minvws/mgo-fhir-client';
 import { getBundleMgoResources, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
 import { type UseQueryOptions } from '@tanstack/react-query';
-import { HealthCategory } from '../HealthCategory';
 
 type FetchResponse = { json: () => Promise<unknown> };
 type SafeReturnType<T> = T extends (...args: any) => any ? ReturnType<T> : unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -27,7 +26,7 @@ export function createResourceBundleQuery<T extends DataService>({
         staleTime: Infinity,
 
         // eslint-disable-next-line @tanstack/query/exhaustive-deps
-        queryKey: [organization.id, service.dataServiceId, HealthCategory.Medication, method],
+        queryKey: [organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
             const bundle = await (service[method] as () => FetchResponse)().json();

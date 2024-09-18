@@ -1,25 +1,29 @@
 export enum HealthCategory {
-    Medication = 'medication',
-    Allergies = 'allergies',
-    Complaints = 'complaints',
-    Documents = 'documents',
-    LabResults = 'lab_results',
-    Measurements = 'measurements',
-    Reports = 'reports',
-    Treatments = 'treatments',
-    Vaccinations = 'vaccinations',
+    PersonalInformation = 'personal_information',
+    Payer = 'payer'
+    // Medication = 'medication',
+    // Allergies = 'allergies',
+    // Complaints = 'complaints',
+    // Documents = 'documents',
+    // LabResults = 'lab_results',
+    // Measurements = 'measurements',
+    // Reports = 'reports',
+    // Treatments = 'treatments',
+    // Vaccinations = 'vaccinations',
 }
 
 export const healthCategorySlugs = {
-    [HealthCategory.Medication]: 'medicijnen',
-    [HealthCategory.Allergies]: 'allergieën',
-    [HealthCategory.Complaints]: 'klachten',
-    [HealthCategory.Documents]: 'documenten',
-    [HealthCategory.LabResults]: 'resultaten',
-    [HealthCategory.Measurements]: 'metingen',
-    [HealthCategory.Reports]: 'verslagen',
-    [HealthCategory.Treatments]: 'behandelingen',
-    [HealthCategory.Vaccinations]: 'intentingen',
+    [HealthCategory.PersonalInformation]: 'persoonlijke_gegevens',
+    [HealthCategory.Payer]: 'Betaler_en_zorgaanbieder',
+    // [HealthCategory.Medication]: 'medicijnen',
+    // [HealthCategory.Allergies]: 'allergieën',
+    // [HealthCategory.Complaints]: 'klachten',
+    // [HealthCategory.Documents]: 'documenten',
+    // [HealthCategory.LabResults]: 'resultaten',
+    // [HealthCategory.Measurements]: 'metingen',
+    // [HealthCategory.Reports]: 'verslagen',
+    // [HealthCategory.Treatments]: 'behandelingen',
+    // [HealthCategory.Vaccinations]: 'intentingen',
 } as const satisfies Record<HealthCategory, string>;
 
 export function getHealthCategoryBySlug(slug: string) {
