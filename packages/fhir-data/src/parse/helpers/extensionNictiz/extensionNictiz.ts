@@ -11,6 +11,11 @@ const nictizIdValueXMap = {
     'zib-Medication-RepeatPeriodCyclicalSchedule': 'duration',
     'zib-MedicationUse-Duration': 'duration',
     'zib-Product-Description': 'string',
+    'zib-Medication-PeriodOfUse': 'period',
+    'zib-Medication-AdditionalInformation': 'codeableConcept',
+    'zib-Medication-StopType': 'codeableConcept',
+    'zib-AdministrationAgreement-AuthoredOn': 'dateTime',
+    'zib-AdministrationAgreement-AgreementReason': 'string',
 } satisfies Record<string, ParserKey>;
 
 type NictizId = keyof typeof nictizIdValueXMap;

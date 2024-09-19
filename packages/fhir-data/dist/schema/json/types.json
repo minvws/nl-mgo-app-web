@@ -597,6 +597,124 @@
       ],
       "additionalProperties": false
     },
+    "ZibAdministrationAgreement": {
+      "type": "object",
+      "properties": {
+        "authoredOn": {
+          "type": "string"
+        },
+        "agreementReason": {
+          "type": "string"
+        },
+        "usageDuration": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "additionalInformation": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "medicationTreatment": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "stopType": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "repeatPeriodCyclicalSchedule": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "medicationReference": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "quantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "daysSupply": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "dossageInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibInstructionsForUse"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibInstructionsForUse": {
+      "type": "object",
+      "properties": {
+        "additionalInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "asNeeded": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "doseQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "doseRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "maxDosePerPeriod": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRatio": {
+          "$ref": "#/definitions/MgoRatio"
+        },
+        "rateRange": {
+          "$ref": "#/definitions/MgoRange"
+        },
+        "rateQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "timing": {
+          "$ref": "#/definitions/ZibAdministrationSchedule"
+        }
+      },
+      "required": [
+        "timing"
+      ],
+      "additionalProperties": false
+    },
     "ZibAdministrationSchedule": {
       "type": "object",
       "properties": {
@@ -639,42 +757,198 @@
       },
       "additionalProperties": false
     },
-    "ZibInstructionsForUse": {
+    "ZibAlert": {
       "type": "object",
       "properties": {
-        "additionalInstruction": {
+        "identifier": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MgoCodeableConcept"
+            "$ref": "#/definitions/MgoIdentifier"
           }
         },
-        "asNeeded": {
+        "status": {
+          "type": "string"
+        },
+        "category": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "doseQuantity": {
-          "$ref": "#/definitions/MgoQuantity"
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "doseRange": {
-          "$ref": "#/definitions/MgoRange"
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
         },
-        "maxDosePerPeriod": {
-          "$ref": "#/definitions/MgoRatio"
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
         },
-        "rateRatio": {
-          "$ref": "#/definitions/MgoRatio"
+        "encounter": {
+          "$ref": "#/definitions/MgoReference"
         },
-        "rateRange": {
-          "$ref": "#/definitions/MgoRange"
+        "author": {
+          "$ref": "#/definitions/MgoReference"
         },
-        "rateQuantity": {
-          "$ref": "#/definitions/MgoQuantity"
+        "id": {
+          "type": "string"
         },
-        "timing": {
-          "$ref": "#/definitions/ZibAdministrationSchedule"
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Alert"
         }
       },
       "required": [
-        "timing"
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibAllergyIntolerance": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "clinicalStatus": {
+          "type": "string"
+        },
+        "verificationStatus": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "criticality": {
+          "type": "string"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibMedicationAgreement": {
+      "type": "object",
+      "properties": {
+        "periodOfUse": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "usageDuration": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "medicationTreatment": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "stopType": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "repeatPeriodCyclicalSchedule": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "definition": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "basedOn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "groupIdentifier": {
+          "$ref": "#/definitions/MgoIdentifier"
+        },
+        "status": {
+          "type": "string"
+        },
+        "intent": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "medicationReference": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "dossageInstruction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZibInstructionsForUse"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
       ],
       "additionalProperties": false
     },
@@ -889,6 +1163,122 @@
       },
       "required": [
         "grouping",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibProblem": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "clinicalStatus": {
+          "type": "string"
+        },
+        "verificationStatus": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "severity": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "bodySite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "onsetDateTime": {
+          "type": "string"
+        },
+        "abatementDateTime": {
+          "type": "string"
+        },
+        "assertedDate": {
+          "type": "string"
+        },
+        "asserter": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "stage": {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            },
+            "assessment": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                }
+              },
+              "detail": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoReference"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Problem"
+        }
+      },
+      "required": [
+        "stage",
         "referenceId",
         "profile"
       ],

@@ -1,0 +1,113 @@
+{
+    "label": "Fracture of wrist (disorder)",
+    "children": [
+        {
+            "label": "zib_problem.group_general_information",
+            "children": [
+                {
+                    "label": "zib_problem.clinicalStatus",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_problem.category",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_problem.onsetDateTime",
+                    "type": "date_time",
+                    "display": "2001"
+                },
+                {
+                    "label": "zib_problem.abatementDateTime",
+                    "type": "date_time",
+                    "display": "2002"
+                },
+                {
+                    "label": "zib_problem.bodySite",
+                    "type": "codable_concept",
+                    "display": [
+                        [
+                            "Entire wrist region (361289009 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "zib_problem.note",
+                    "type": "annotation",
+                    "display": [
+                        "Gevallen op de kunstijsbaan"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "zib_problem.group_others",
+            "children": [
+                {
+                    "label": "zib_problem.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1d1451f3-8fdf-11ec-5384-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_problem.verificationStatus",
+                    "type": "code",
+                    "display": "unknown"
+                },
+                {
+                    "label": "zib_problem.severity",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_problem.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "Fracture of wrist (disorder) (31641000146105 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_problem.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_problem.context",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_problem.assertedDate",
+                    "type": "date_time",
+                    "display": null
+                },
+                {
+                    "label": "zib_problem.asserter",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                }
+            ]
+        },
+        {
+            "label": "stage",
+            "children": [
+                {
+                    "label": "stage.summary",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "stage.assessment",
+                    "type": "reference",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

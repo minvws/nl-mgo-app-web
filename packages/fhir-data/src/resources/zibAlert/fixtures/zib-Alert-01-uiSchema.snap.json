@@ -1,0 +1,64 @@
+{
+    "label": "zib_alert",
+    "children": [
+        {
+            "label": "zib_alert.group_general_information",
+            "children": [
+                {
+                    "label": "zib_alert.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "18d78911-8fdf-11ec-3053-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_alert.status",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_alert.category",
+                    "type": "codable_concept",
+                    "display": [
+                        "condition (75323-6 in code systeem http://loinc.org)"
+                    ]
+                },
+                {
+                    "label": "zib_alert.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "Methicillin resistant staphylococcus aureus carrier (432415000 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_alert.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_alert.period.start",
+                    "type": "period.start",
+                    "display": "2010-06-01"
+                },
+                {
+                    "label": "zib_alert.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_alert.encounter",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_alert.author",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                }
+            ]
+        }
+    ]
+}
