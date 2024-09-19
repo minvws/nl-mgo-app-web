@@ -1,6 +1,7 @@
 export enum HealthCategory {
     PersonalInformation = 'personal_information',
-    Payer = 'payer'
+    Payer = 'payer',
+    TreatmentPlan = 'treatment_plan',
     // Medication = 'medication',
     // Allergies = 'allergies',
     // Complaints = 'complaints',
@@ -14,7 +15,8 @@ export enum HealthCategory {
 
 export const healthCategorySlugs = {
     [HealthCategory.PersonalInformation]: 'persoonlijke_gegevens',
-    [HealthCategory.Payer]: 'Betaler_en_zorgaanbieder',
+    [HealthCategory.Payer]: 'betaler_en_zorgaanbieder',
+    [HealthCategory.TreatmentPlan]: 'behandelwensen_en_plan'
     // [HealthCategory.Medication]: 'medicijnen',
     // [HealthCategory.Allergies]: 'allergieën',
     // [HealthCategory.Complaints]: 'klachten',

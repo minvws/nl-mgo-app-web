@@ -5,7 +5,7 @@ export function getPersonalInformationData(
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
-        getPatientInformation: resources.getResourcesByProfile(
+        patientInformation: resources.getResourcesByProfile(
             'http://fhir.nl/fhir/StructureDefinition/nl-core-patient',
             organizationIdFilter
         ),

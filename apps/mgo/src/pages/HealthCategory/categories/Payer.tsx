@@ -1,27 +1,26 @@
 import { type HealthCategory } from '$/healthCategory';
 import { RouterLink } from '$/routing';
-import { DetailButton, ListWrapper } from '@minvws/mgo-mgo-ui';
-import { type CategoryContentProps } from './categoryContent';
+import { DetailButton, ListWrapper, Text } from '@minvws/mgo-mgo-ui';
+import { type CategoryContentProps } from '../categoryContent';
 import { useOrganizationsStore } from '$/store';
-import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
 import { FormattedMessage } from 'react-intl';
 
-export function PersonalInformation({
+export function Payer({
     data,
-}: CategoryContentProps<HealthCategory.PersonalInformation>) {
-    const { getPatientInformation } = data;
+}: CategoryContentProps<HealthCategory.Payer>) {
+    const { getInsuranceInformation } = data;
     const organisationStore = useOrganizationsStore();
 
     return (
         <>
             <Text asChild>
                 <h2 className="mb-2">
-                    <FormattedMessage id="health_category.personal_information.patient" />
+                    <FormattedMessage id="health_category.payer.payer" />
                 </h2>
             </Text>
 
             <ListWrapper gap="line">
-                {getPatientInformation.map(({ id, slug, uiSchema, organizationId }) => {
+                {getInsuranceInformation.map(({ id, slug, uiSchema, organizationId }) => {
                     const organization = organisationStore.getOrganizationById(organizationId);
                     return (
                         <DetailButton

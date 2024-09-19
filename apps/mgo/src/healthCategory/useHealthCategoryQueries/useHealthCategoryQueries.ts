@@ -1,13 +1,12 @@
 import { useOrganizationsStore, type HealthcareOrganization } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { HealthCategory } from '../HealthCategory';
-import { getMedicationQueries } from './medication';
-import { getPersonalInformationQueries } from './personalInformation';
-import { getPayer } from './payer';
+import { getTreatmentPlanQueries, getPersonalInformationQueries, getPayerQueries } from './categories';
 
 const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
-    [HealthCategory.Payer]: getPayer
+    [HealthCategory.Payer]: getPayerQueries,
+    [HealthCategory.TreatmentPlan]: getTreatmentPlanQueries,
     // [HealthCategory.Medication]: getMedicationQueries,
     // [HealthCategory.Allergies]: () => [],
     // [HealthCategory.Complaints]: () => [],

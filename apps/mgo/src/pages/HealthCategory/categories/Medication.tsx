@@ -1,9 +1,8 @@
 import { type HealthCategory } from '$/healthCategory';
 import { RouterLink } from '$/routing';
-import { DetailButton } from '@minvws/mgo-mgo-ui';
-import { type CategoryContentProps } from './categoryContent';
+import { DetailButton, Text } from '@minvws/mgo-mgo-ui';
+import { type CategoryContentProps } from '../categoryContent';
 import { useOrganizationsStore } from '$/store';
-import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
 import { FormattedMessage } from 'react-intl';
 
 export function Medication({ data }: CategoryContentProps<HealthCategory.Medication>) {

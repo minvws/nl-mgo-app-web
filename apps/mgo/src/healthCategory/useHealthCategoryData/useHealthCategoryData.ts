@@ -1,8 +1,6 @@
 import { useResourcesStore, type ResourcesState } from '$/store';
 import { HealthCategory } from '../HealthCategory';
-import { getMedicationData } from './medication';
-import { getPayerData } from './payer';
-import { getPersonalInformationData } from './personalInformation';
+import { getPersonalInformationData, getPayerData, getTreatmentPlanData } from './categories';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -12,6 +10,7 @@ type HealthCategoryResources = (
 export const healthCategoryData = {
     [HealthCategory.PersonalInformation]: getPersonalInformationData,
     [HealthCategory.Payer]: getPayerData,
+    [HealthCategory.TreatmentPlan]: getTreatmentPlanData,
     // [HealthCategory.Medication]: getMedicationData,
     // [HealthCategory.Allergies]: () => ({}),
     // [HealthCategory.Complaints]: () => ({}),

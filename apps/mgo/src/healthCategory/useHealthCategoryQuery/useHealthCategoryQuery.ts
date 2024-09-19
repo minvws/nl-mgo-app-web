@@ -6,12 +6,14 @@ import {
     useHealthCategoryData,
 } from '../useHealthCategoryData/useHealthCategoryData';
 
-type QueryResult<T extends HealthCategory> =
+export type QueryResult<T extends HealthCategory> =
     | {
+          category: T;
           isLoading: true;
           data: null;
       }
     | {
+          category: T;
           isLoading: false;
           data: HealthCategoryData<T>;
       };
@@ -27,6 +29,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
 
     return {
         isLoading,
+        category,
         data: isLoading ? null : data,
     } as QueryResult<T>;
 }
