@@ -9,12 +9,20 @@ import { FormattedMessage } from 'react-intl';
 export interface CategoryListProps {
     readonly organization?: HealthcareOrganization;
 }
-    
+
 export function CategoryList({ organization }: CategoryListProps) {
-    const categories: Record<HealthCategory, QueryResult<HealthCategory>> = {
-        [HealthCategory.PersonalInformation]: useHealthCategoryQuery(HealthCategory.PersonalInformation, [organization?.id]),
-        [HealthCategory.Payer]: useHealthCategoryQuery(HealthCategory.Payer, [organization?.id]),
-        [HealthCategory.TreatmentPlan]: useHealthCategoryQuery(HealthCategory.TreatmentPlan, [organization?.id]),
+    const categories: Partial<Record<HealthCategory, QueryResult<HealthCategory>>> = {
+        [HealthCategory.PersonalInformation]: useHealthCategoryQuery(
+            HealthCategory.PersonalInformation,
+            [organization?.id]
+        ),
+        [HealthCategory.PayerAndOrganization]: useHealthCategoryQuery(
+            HealthCategory.PayerAndOrganization,
+            [organization?.id]
+        ),
+        [HealthCategory.TreatmentPlan]: useHealthCategoryQuery(HealthCategory.TreatmentPlan, [
+            organization?.id,
+        ]),
     };
 
     function getUrl(category: HealthCategory): To {
@@ -36,7 +44,9 @@ export function CategoryList({ organization }: CategoryListProps) {
                                 isLoading={query.isLoading}
                             >
                                 <RouterLink to={getUrl(query.category)}>
-                                    <FormattedMessage id={`organization.${query.category}_heading`} />
+                                    <FormattedMessage
+                                        id={`organization.${query.category}_heading`}
+                                    />
                                 </RouterLink>
                             </CategoryButton>
                         );

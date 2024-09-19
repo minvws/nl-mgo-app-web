@@ -5,9 +5,7 @@ import { type CategoryContentProps } from '../categoryContent';
 import { useOrganizationsStore } from '$/store';
 import { FormattedMessage } from 'react-intl';
 
-export function Payer({
-    data,
-}: CategoryContentProps<HealthCategory.Payer>) {
+export function Payer({ data }: CategoryContentProps<HealthCategory.PayerAndOrganization>) {
     const { getInsuranceInformation } = data;
     const organisationStore = useOrganizationsStore();
 

@@ -60,14 +60,20 @@ test('returns queries for specific organisations if specified', () => {
 });
 
 test.each([
-    HealthCategory.Allergies,
-    HealthCategory.Complaints,
-    HealthCategory.Documents,
-    HealthCategory.LabResults,
-    HealthCategory.Measurements,
-    HealthCategory.Reports,
-    HealthCategory.Treatments,
+    HealthCategory.PersonalInformation,
+    HealthCategory.PayerAndOrganization,
+    HealthCategory.TreatmentPlan,
+    HealthCategory.FunctionalOrMentalStatus,
+    HealthCategory.Problems,
+    HealthCategory.Lifestyle,
+    HealthCategory.Warning,
+    HealthCategory.AllergiesAndIntolerances,
+    HealthCategory.MedicalDevices,
     HealthCategory.Vaccinations,
+    HealthCategory.LaboratoryResults,
+    HealthCategory.Procedures,
+    HealthCategory.ContactsAndAppointments,
+    HealthCategory.Vitals,
 ])('returns NO queries for categories that have not yet been implemented: %s', (category) => {
     const organizations = [faker.custom.healthcareOrganization()];
     const store = useOrganizationsStore.getState();

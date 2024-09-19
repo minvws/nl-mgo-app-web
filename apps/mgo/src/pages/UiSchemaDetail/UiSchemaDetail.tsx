@@ -17,7 +17,7 @@ export function UiSchemaDetail() {
 
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const resource = getResourceBySlug(resourceSlug);
-    const i18nHeading: MessagesIds = `detail_${healthCategory}.heading`;
+    const i18nHeading: MessagesIds = `detail_${healthCategory}.heading` as MessagesIds; // TODO: remove this cast when i18n content is updated
     const heading = intl.formatMessage({ id: i18nHeading });
 
     if (!resource) {

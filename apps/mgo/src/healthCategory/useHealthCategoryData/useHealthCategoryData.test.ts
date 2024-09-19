@@ -12,14 +12,20 @@ test('returns medication data', () => {
 });
 
 test.each([
-    HealthCategory.Allergies,
-    HealthCategory.Complaints,
-    HealthCategory.Documents,
-    HealthCategory.LabResults,
-    HealthCategory.Measurements,
-    HealthCategory.Reports,
-    HealthCategory.Treatments,
+    HealthCategory.PersonalInformation,
+    HealthCategory.PayerAndOrganization,
+    HealthCategory.TreatmentPlan,
+    HealthCategory.FunctionalOrMentalStatus,
+    HealthCategory.Problems,
+    HealthCategory.Lifestyle,
+    HealthCategory.Warning,
+    HealthCategory.AllergiesAndIntolerances,
+    HealthCategory.MedicalDevices,
     HealthCategory.Vaccinations,
+    HealthCategory.LaboratoryResults,
+    HealthCategory.Procedures,
+    HealthCategory.ContactsAndAppointments,
+    HealthCategory.Vitals,
 ])('returns empty data for category %s', (category) => {
     const { result } = renderHook(() => useHealthCategoryData(category));
 

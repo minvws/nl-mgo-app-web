@@ -50,6 +50,7 @@ beforeEach(() => {
 
 test('loads and shows category content', async () => {
     mockUseHealthCategoryQuery.mockImplementation(() => ({
+        category: HealthCategoryEnum.Medication,
         isLoading: true,
         data: null,
     }));
@@ -64,6 +65,7 @@ test('loads and shows category content', async () => {
     expect(screen.getByRole('progressbar')).toBeVisible();
 
     mockUseHealthCategoryQuery.mockImplementation(() => ({
+        category: HealthCategoryEnum.Medication,
         isLoading: false,
         data: {
             medicationUse: [],

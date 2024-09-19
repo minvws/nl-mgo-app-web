@@ -64,10 +64,9 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
                 currentResources.some(({ id }) => id === newResource.id) ||
                 newResources.some(({ id }) => id === newResource.id)
             ) {
-                console.error(`Resource with id "${newResource.id}" already exists`);
-            } else {
-                newResources.push(newResource);
+                throw new Error(`Resource with id "${newResource.id}" already exists`);
             }
+            newResources.push(newResource);
         }
 
         set(({ resources }) => ({

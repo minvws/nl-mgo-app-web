@@ -5,7 +5,7 @@ import { messageRegexp } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
 import { Medication } from './Medication';
-import { type CategoryContentProps } from './categoryContent';
+import { type CategoryContentProps } from '../categoryContent';
 import { useOrganizationsStore } from '$/store';
 
 test('shows a list of resources', async () => {
