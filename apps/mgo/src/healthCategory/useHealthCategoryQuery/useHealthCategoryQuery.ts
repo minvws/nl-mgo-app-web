@@ -1,4 +1,4 @@
-import { useQueries } from '@tanstack/react-query';
+import { type UseQueryOptions, useQueries } from '@tanstack/react-query';
 import { type HealthCategory } from '..';
 import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
 import {
@@ -6,6 +6,10 @@ import {
     useHealthCategoryData,
 } from '../useHealthCategoryData/useHealthCategoryData';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
+import { type FhirResource, isFhirResource, getBundleMgoResources } from '@minvws/mgo-fhir-data';
+import { useResourcesStore } from '$/store';
+import { useEffect } from 'react';
+import { type DataServiceId } from '@minvws/mgo-fhir-client';
 
 export type QueryResult<T extends HealthCategory> = {
     id: string;
@@ -33,11 +37,43 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
 ) {
     const id = useUniqueId(`health-category-query-${category}`);
     const queries = useHealthCategoryQueries(category, organizationIdFilter);
-    console.log('useHealthCategoryQuery id:', id);
     const queryResults = useQueries({ queries });
+    const resourceStore = useResourcesStore.getState();
+    const queryData = queryResults.map((query) => query.data);
     const isLoading = queryResults.some((query) => query.isLoading);
     const isError = queryResults.some((query) => query.isError);
     const data = useHealthCategoryData(category, organizationIdFilter);
+
+    useEffect(() => {
+        if (isLoading) return;
+
+        for (let i = 0; i < queries.length; i++) {
+            const query = queries[i] as UseQueryOptions & {
+                organizationId: string;
+                dataServiceId: DataServiceId;
+                method: string;
+            };
+            const queryResult = queryResults[i];
+            const bundle = queryResult.data;
+
+            if (!isFhirResource(bundle, 'Bundle')) {
+                throw new Error(
+                    `Response does not seem to contain a Fhir Bundle. Received resourceType: "${(bundle as FhirResource)?.resourceType}"`
+                );
+            }
+
+            const mgoResources = getBundleMgoResources(bundle);
+
+            if (mgoResources?.length) {
+                const mgoResourcesDtos = mgoResources.map((mgoResource) => ({
+                    dataServiceId: query.dataServiceId,
+                    organizationId: query.organizationId,
+                    mgoResource,
+                }));
+                resourceStore.addResources(mgoResourcesDtos);
+            }
+        }
+    }, [isLoading, ...queryData]);
 
     return {
         id,

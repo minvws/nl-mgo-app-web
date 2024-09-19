@@ -32,12 +32,10 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
         .map((query) => <HealthCategoryButton key={query.id} query={query} />);
 
     return (
-        <>
-            <Stack className="gap-6">
-                <ListWrapper gap="line">{completed}</ListWrapper>
-                <ListWrapper gap="line">{loading}</ListWrapper>
-                <ListWrapper gap="line">{empty}</ListWrapper>
-            </Stack>
-        </>
+        <Stack className="gap-6">
+            <ListWrapper gap="line">{completed}</ListWrapper>
+            <ListWrapper gap="line">{loading}</ListWrapper>
+            <ListWrapper gap="line">{empty}</ListWrapper>
+        </Stack>
     );
 }

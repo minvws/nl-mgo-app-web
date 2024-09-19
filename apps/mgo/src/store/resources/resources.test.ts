@@ -30,18 +30,18 @@ test('addResources adds a resource', async () => {
     expect(state.resources).toEqual([resource]);
 });
 
-test('addResources logs error if there is already a resource with the same id', async () => {
+test('addResources logs warning if there is already a resource with the same id', async () => {
     let state = useResourcesStore.getState();
 
     const resourceDto = mockResourceDto();
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
 
-    const mockErrorLog = vi.spyOn(console, 'error');
-    mockErrorLog.mockImplementationOnce(() => {});
+    const mockWarningLog = vi.spyOn(console, 'warn');
+    mockWarningLog.mockImplementationOnce(() => {});
     state.addResources([resourceDto, resourceDto]);
     state = useResourcesStore.getState();
 
-    expect(mockErrorLog).toBeCalledWith(
+    expect(mockWarningLog).toBeCalledWith(
         `Resource with id "${organizationId}-${dataServiceId}-${mgoResource.referenceId}" already exists`
     );
     expect(state.resources.length).toBe(1);
