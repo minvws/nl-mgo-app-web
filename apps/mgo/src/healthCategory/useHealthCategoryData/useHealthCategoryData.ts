@@ -2,7 +2,7 @@ import { useResourcesStore } from '$/store';
 import { type HealthCategory } from '../HealthCategory';
 import { healthCategoryData } from './categories';
 
-export type HealthCategoryData<T extends HealthCategory> = ReturnType<
+export type HealthCategoryData<T extends HealthCategory = HealthCategory> = ReturnType<
     (typeof healthCategoryData)[T]
 >;
 

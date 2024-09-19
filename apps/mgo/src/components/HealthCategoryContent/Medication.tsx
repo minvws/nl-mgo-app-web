@@ -1,7 +1,7 @@
 import { type HealthCategory } from '$/healthCategory';
 import { RouterLink } from '$/routing';
 import { DetailButton, Text } from '@minvws/mgo-mgo-ui';
-import { type CategoryContentProps } from '../categoryContent';
+import { type CategoryContentProps } from './HealthCategoryContent';
 import { useOrganizationsStore } from '$/store';
 import { FormattedMessage } from 'react-intl';
 

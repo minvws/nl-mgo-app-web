@@ -1,7 +1,9 @@
 import { HealthCategory } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { type FunctionComponent } from 'react';
-import { Payer, PersonalInformation, TreatmentPlan } from './categories';
+import { PersonalInformation } from './PersonalInformation';
+import { Payer } from './PayerAndOrganization';
+import { TreatmentPlan } from './TreatmentPlan';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -15,7 +17,7 @@ type CategoryContentMap = {
     [key in HealthCategory]: HealthCategoryContentComponent<key> | null;
 };
 
-export const categoryContent = {
+const categoryContent = {
     [HealthCategory.PersonalInformation]: PersonalInformation,
     [HealthCategory.PayerAndOrganization]: Payer,
     [HealthCategory.TreatmentPlan]: TreatmentPlan,
@@ -32,3 +34,19 @@ export const categoryContent = {
     [HealthCategory.ContactsAndAppointments]: null,
     [HealthCategory.Vitals]: null,
 } satisfies CategoryContentMap;
+
+export interface HealthCategoryContentProps<T extends HealthCategory> {
+    readonly category: T;
+    readonly data: HealthCategoryData<T>;
+}
+
+export function HealthCategoryContent<T extends HealthCategory>({
+    category,
+    data,
+}: HealthCategoryContentProps<T>) {
+    const CategoryContent = categoryContent[category] as HealthCategoryContentComponent<
+        typeof category
+    > | null;
+
+    return CategoryContent ? <CategoryContent data={data} /> : null;
+}

@@ -6,8 +6,8 @@ import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { Heading } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { useIntl, FormattedMessage } from 'react-intl';
-import { categoryContent, type HealthCategoryContentComponent } from './categoryContent';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { HealthCategoryContent } from '../../components/HealthCategoryContent/HealthCategoryContent';
 
 export function HealthCategory() {
     const intl = useIntl();
@@ -21,11 +21,7 @@ export function HealthCategory() {
     const { isLoading, data } = useHealthCategoryQuery(healthCategory, [organization?.id]);
     const heading = intl.formatMessage({ id: `health_category.${healthCategory}` });
 
-    const CategoryContent = categoryContent[healthCategory] as HealthCategoryContentComponent<
-        typeof healthCategory
-    > | null;
-
-    if (!CategoryContent || !organization) {
+    if (!organization) {
         return <Navigate to={`/overzicht`} />;
     }
 
@@ -48,7 +44,7 @@ export function HealthCategory() {
                             </LoadingSpinner>
                         </div>
                     ) : (
-                        <CategoryContent data={data} />
+                        <HealthCategoryContent category={healthCategory} data={data} />
                     )}
                 </div>
             </section>

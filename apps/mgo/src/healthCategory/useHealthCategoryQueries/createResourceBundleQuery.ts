@@ -29,7 +29,10 @@ export function createResourceBundleQuery<T extends DataService>({
         queryKey: [organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
+            console.log('fire query', [organization.id, service.dataServiceId, method]);
             const bundle = await (service[method] as () => FetchResponse)().json();
+
+            await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));
 
             if (!isFhirResource(bundle, 'Bundle')) {
                 throw new Error(
@@ -46,8 +49,9 @@ export function createResourceBundleQuery<T extends DataService>({
                     organizationId: organization.id,
                     mgoResource,
                 }));
-                resourceStore.addResources(mgoResourcesDtos);
+                return resourceStore.addResources(mgoResourcesDtos);
             }
+            return [];
         },
     };
 }
