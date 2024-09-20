@@ -5,6 +5,7 @@ import { getTreatmentPlanData } from './treatmentPlan';
 import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { type ResourcesState } from '$/store';
 import { getFunctionalOrMentalStatusData } from './functionalOrMentalStatus';
+import { getProblemData } from './problem';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -16,7 +17,7 @@ export const healthCategoryData = {
     [HealthCategory.PayerAndOrganization]: getPayerData,
     [HealthCategory.TreatmentPlan]: getTreatmentPlanData,
     [HealthCategory.FunctionalOrMentalStatus]: getFunctionalOrMentalStatusData,
-    [HealthCategory.Problems]: () => ({}),
+    [HealthCategory.Problems]: getProblemData,
     [HealthCategory.Lifestyle]: () => ({}),
     [HealthCategory.Warning]: () => ({}),
     [HealthCategory.AllergiesAndIntolerances]: () => ({}),
