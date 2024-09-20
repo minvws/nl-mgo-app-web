@@ -19,14 +19,14 @@ export function HealthCategoryDetailList({
     const organisationStore = useOrganizationsStore();
 
     return (
-        <>
+        <div>
             <Text asChild>
                 <h2 className="mb-2">
                     <FormattedMessage id={`health_category.${category}.${heading}`} />
                 </h2>
             </Text>
 
-            <ListWrapper gap="line">
+            <ListWrapper>
                 {resources.map(({ id, slug, uiSchema, organizationId }) => {
                     const organization = organisationStore.getOrganizationById(organizationId);
                     return (
@@ -41,6 +41,6 @@ export function HealthCategoryDetailList({
                     );
                 })}
             </ListWrapper>
-        </>
+        </div>
     );
 }
