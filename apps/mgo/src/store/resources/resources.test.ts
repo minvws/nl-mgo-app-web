@@ -30,6 +30,25 @@ test('addResources adds a resource', async () => {
     expect(state.resources).toEqual([resource]);
 });
 
+test('addResources can add multiple resources and generates unique slugs', async () => {
+    let state = useResourcesStore.getState();
+    expect(state.resources).toEqual([]);
+
+    state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
+    state = useResourcesStore.getState();
+
+    const newResourceDto = mockResourceDto();
+    const newResourceDto2 = mockResourceDto();
+    const newResourceDto3 = mockResourceDto();
+
+    state.addResources([newResourceDto, newResourceDto2, newResourceDto3]);
+    state = useResourcesStore.getState();
+    const slugs = state.resources.map((resource) => resource.slug);
+
+    expect(state.resources.length).toBe(6);
+    expect(new Set(slugs).size).toBe(6);
+});
+
 test('addResources logs warning if there is already a resource with the same id', async () => {
     let state = useResourcesStore.getState();
 

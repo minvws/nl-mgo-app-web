@@ -13,7 +13,7 @@ export function UiSchemaDetail() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { resourceSlug, organizationSlug, healthCategorySlug } = useParams();
-    const { getResourceBySlug } = useResourcesStore();
+    const getResourceBySlug = useResourcesStore((x) => x.getResourceBySlug);
 
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const resource = getResourceBySlug(resourceSlug);
@@ -23,8 +23,6 @@ export function UiSchemaDetail() {
     if (!resource) {
         return <Navigate to={`/overzicht/${organizationSlug}/${healthCategorySlug}`} />;
     }
-
-    const { uiSchema } = resource;
 
     return (
         <>
@@ -37,7 +35,7 @@ export function UiSchemaDetail() {
                     <h1 ref={navFocusRef}>{heading}</h1>
                 </Heading>
 
-                <UiSchemaDisplay uiSchema={uiSchema} />
+                <UiSchemaDisplay uiSchema={resource.uiSchema} />
             </section>
         </>
     );
