@@ -1,0 +1,43 @@
+{
+    "label": "1c2bf38b-8fdf-11ec-1435-020000000000",
+    "children": [
+        {
+            "label": "zib_nutrition_advice.group_details",
+            "children": [
+                {
+                    "label": "zib_nutrition_advice.comment",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_nutrition_advice.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1c2bf38b-8fdf-11ec-1435-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_nutrition_advice.status",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_nutrition_advice.patient",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_nutrition_advice.dateTime",
+                    "type": "date_time",
+                    "display": "2018-01-01"
+                },
+                {
+                    "label": "zib_nutrition_advice.food_preference_modifier",
+                    "type": "codable_concept",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

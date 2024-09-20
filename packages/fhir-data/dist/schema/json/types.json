@@ -319,6 +319,67 @@
       },
       "additionalProperties": false
     },
+    "NlCoreObservation": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://fhir.nl/fhir/StructureDefinition/nl-core-observation"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "NlCorePatient": {
       "type": "object",
       "properties": {
@@ -757,6 +818,64 @@
       },
       "additionalProperties": false
     },
+    "ZibAlcoholUse": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibAlert": {
       "type": "object",
       "properties": {
@@ -856,6 +975,183 @@
         "profile": {
           "type": "string",
           "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibDrugUse": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-DrugUse"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibFunctionalOrMentalStatus": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibLivingSituation": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation"
         }
       },
       "required": [
@@ -1038,6 +1334,55 @@
         "profile": {
           "type": "string",
           "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibNutritionAdvice": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "dateTime": {
+          "type": "string"
+        },
+        "foodPreferenceModifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice"
         }
       },
       "required": [
@@ -1377,6 +1722,64 @@
           }
         }
       },
+      "additionalProperties": false
+    },
+    "ZibTobaccoUse": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-TobaccoUse"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
       "additionalProperties": false
     },
     "ZibTreatmentDirective": {

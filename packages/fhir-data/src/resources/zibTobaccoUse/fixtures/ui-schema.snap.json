@@ -1,0 +1,64 @@
+{
+    "label": "1eb10781-8fdf-11ec-7373-020000000000",
+    "children": [
+        {
+            "label": "nl_core_observation.group_details",
+            "children": [
+                {
+                    "label": "nl_core_observation.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1eb10781-8fdf-11ec-7373-020000000000"
+                    ]
+                },
+                {
+                    "label": "nl_core_observation.status",
+                    "type": "code",
+                    "display": "final"
+                },
+                {
+                    "label": "nl_core_observation.category",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_observation.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "nl_core_observation.context",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "nl_core_observation.effective_period.start",
+                    "type": "period.start",
+                    "display": "1980"
+                },
+                {
+                    "label": "nl_core_observation.effective_period.end",
+                    "type": "period.end",
+                    "display": "1983"
+                },
+                {
+                    "label": "nl_core_observation.data_absent_reason",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_observation.comment",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_observation.body_site",
+                    "type": "codable_concept",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

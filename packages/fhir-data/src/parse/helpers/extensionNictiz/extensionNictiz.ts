@@ -11,6 +11,7 @@ const nictizIdValueXMap = {
     'zib-Medication-RepeatPeriodCyclicalSchedule': 'duration',
     'zib-MedicationUse-Duration': 'duration',
     'zib-Product-Description': 'string',
+    'zib-NutritionAdvice-Explanation': 'string',
     'zib-Medication-PeriodOfUse': 'period',
     'zib-Medication-AdditionalInformation': 'codeableConcept',
     'zib-Medication-StopType': 'codeableConcept',
