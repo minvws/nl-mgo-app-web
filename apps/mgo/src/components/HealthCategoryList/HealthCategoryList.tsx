@@ -14,6 +14,7 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
     const categoryQueries: QueryResult<HealthCategory>[] = [
         useHealthCategoryQuery(HealthCategory.PersonalInformation, organizationFilter),
         useHealthCategoryQuery(HealthCategory.PayerAndOrganization, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
         useHealthCategoryQuery(HealthCategory.TreatmentPlan, organizationFilter),
         useHealthCategoryQuery(HealthCategory.FunctionalOrMentalStatus, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Problems, organizationFilter),

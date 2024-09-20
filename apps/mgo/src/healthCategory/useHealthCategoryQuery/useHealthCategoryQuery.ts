@@ -1,15 +1,19 @@
-import { type UseQueryOptions, useQueries } from '@tanstack/react-query';
-import { type HealthCategory } from '..';
-import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
-import {
-    type HealthCategoryData,
-    useHealthCategoryData,
-} from '../useHealthCategoryData/useHealthCategoryData';
-import { useUniqueId } from '@minvws/mgo-mgo-ui';
-import { type FhirResource, isFhirResource, getBundleMgoResources } from '@minvws/mgo-fhir-data';
 import { useResourcesStore } from '$/store';
+import { getBundleMgoResources, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
+import { useUniqueId } from '@minvws/mgo-mgo-ui';
+import { useQueries } from '@tanstack/react-query';
 import { useEffect } from 'react';
-import { type DataServiceId } from '@minvws/mgo-fhir-client';
+import { type HealthCategory } from '..';
+import {
+    useHealthCategoryData,
+    type HealthCategoryData,
+} from '../useHealthCategoryData/useHealthCategoryData';
+import {
+    isResourceQueryMeta,
+    type ResourceQueryMeta,
+} from '../useHealthCategoryQueries/resourceQueryMeta';
+import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
+import { isEmpty } from './isEmpty';
 
 export type QueryResult<T extends HealthCategory> = {
     id: string;
@@ -27,60 +31,68 @@ export type QueryResult<T extends HealthCategory> = {
       }
 );
 
-function isEmpty(data: HealthCategoryData) {
-    return !Object.values(data).some((x) => x?.length > 0);
-}
-
 export function useHealthCategoryQuery<T extends HealthCategory>(
     category: T,
     organizationIdFilter?: (string | undefined)[]
 ) {
-    const id = useUniqueId(`health-category-query-${category}`);
+    const addResources = useResourcesStore((x) => x.addResources);
     const queries = useHealthCategoryQueries(category, organizationIdFilter);
-    const queryResults = useQueries({ queries });
-    const resourceStore = useResourcesStore.getState();
-    const queryData = queryResults.map((query) => query.data);
-    const isLoading = queryResults.some((query) => query.isLoading);
-    const isError = queryResults.some((query) => query.isError);
-    const data = useHealthCategoryData(category, organizationIdFilter);
+
+    const { data, meta, isLoading, isError } = useQueries({
+        queries,
+        combine: (results) => {
+            return {
+                meta: queries.map((result) => {
+                    if (!isResourceQueryMeta(result.meta)) {
+                        throw new Error('meta data needs to be of type ResourceQueryMeta');
+                    }
+                    return result.meta as ResourceQueryMeta;
+                }),
+                data: results.map((result) => result.data),
+                isLoading: results.some((result) => result.isLoading),
+                isError: results.some((result) => result.isError),
+            };
+        },
+    });
+
+    const categoryData = useHealthCategoryData(category, organizationIdFilter);
 
     useEffect(() => {
         if (isLoading) return;
 
-        for (let i = 0; i < queries.length; i++) {
-            const query = queries[i] as UseQueryOptions & {
-                organizationId: string;
-                dataServiceId: DataServiceId;
-                method: string;
-            };
-            const queryResult = queryResults[i];
-            const bundle = queryResult.data;
+        for (let i = 0; i < data.length; i++) {
+            const { dataServiceId, method, organizationId } = meta[i];
+            const responseData = data[i];
 
-            if (!isFhirResource(bundle, 'Bundle')) {
+            if (!responseData) continue;
+
+            if (!isFhirResource(responseData, 'Bundle')) {
                 throw new Error(
-                    `Response does not seem to contain a Fhir Bundle. Received resourceType: "${(bundle as FhirResource)?.resourceType}"`
+                    `Response for service: ${dataServiceId}: ${method} - does not seem to contain a Fhir Bundle.` +
+                        `Received resourceType: "${(responseData as FhirResource)?.resourceType}"`
                 );
             }
 
-            const mgoResources = getBundleMgoResources(bundle);
+            const mgoResources = getBundleMgoResources(responseData);
 
             if (mgoResources?.length) {
-                const mgoResourcesDtos = mgoResources.map((mgoResource) => ({
-                    dataServiceId: query.dataServiceId,
-                    organizationId: query.organizationId,
-                    mgoResource,
-                }));
-                resourceStore.addResources(mgoResourcesDtos);
+                addResources(
+                    mgoResources.map((mgoResource) => ({
+                        dataServiceId,
+                        organizationId,
+                        mgoResource,
+                    }))
+                );
             }
         }
-    }, [isLoading, ...queryData]);
+    }, [isLoading, data, meta, addResources]);
 
     return {
-        id,
+        id: useUniqueId(`health-category-query-${category}`),
+        category,
         isLoading,
         isError,
-        isEmpty: isError ? false : isEmpty(data),
-        data: isLoading ? null : data,
-        category,
+        isEmpty: isError ? false : isEmpty(categoryData),
+        data: isLoading ? null : categoryData,
     } as QueryResult<T>;
 }

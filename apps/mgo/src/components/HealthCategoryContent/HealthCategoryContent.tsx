@@ -1,14 +1,15 @@
 import { HealthCategory } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { type FunctionComponent } from 'react';
-import { PersonalInformation } from './PersonalInformation';
-import { Payer } from './PayerAndOrganization';
-import { TreatmentPlan } from './TreatmentPlan';
-import { FunctionalOrMentalStatus } from './FunctionalOrMentalStatus';
-import { Problem } from './Problem';
-import { Lifestyle } from './Lifestyle';
-import { Warning } from './Warning';
 import { Allergy } from './Allergy';
+import { FunctionalOrMentalStatus } from './FunctionalOrMentalStatus';
+import { Lifestyle } from './Lifestyle';
+import { Medication } from './Medication';
+import { Payer } from './PayerAndOrganization';
+import { PersonalInformation } from './PersonalInformation';
+import { Problem } from './Problem';
+import { TreatmentPlan } from './TreatmentPlan';
+import { Warning } from './Warning';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -31,7 +32,7 @@ const categoryContent = {
     [HealthCategory.Lifestyle]: Lifestyle,
     [HealthCategory.Warning]: Warning,
     [HealthCategory.AllergiesAndIntolerances]: Allergy,
-    [HealthCategory.Medication]: null,
+    [HealthCategory.Medication]: Medication,
     [HealthCategory.MedicalDevices]: null,
     [HealthCategory.Vaccinations]: null,
     [HealthCategory.LaboratoryResults]: null,
