@@ -4,6 +4,7 @@ import { type FunctionComponent } from 'react';
 import { PersonalInformation } from './PersonalInformation';
 import { Payer } from './PayerAndOrganization';
 import { TreatmentPlan } from './TreatmentPlan';
+import { FunctionalOrMentalStatus } from './FunctionalOrMentalStatus';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -21,7 +22,7 @@ const categoryContent = {
     [HealthCategory.PersonalInformation]: PersonalInformation,
     [HealthCategory.PayerAndOrganization]: Payer,
     [HealthCategory.TreatmentPlan]: TreatmentPlan,
-    [HealthCategory.FunctionalOrMentalStatus]: null,
+    [HealthCategory.FunctionalOrMentalStatus]: FunctionalOrMentalStatus,
     [HealthCategory.Problems]: null,
     [HealthCategory.Lifestyle]: null,
     [HealthCategory.Warning]: null,
