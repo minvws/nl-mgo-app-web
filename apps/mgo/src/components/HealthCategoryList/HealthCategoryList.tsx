@@ -21,13 +21,13 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
         useHealthCategoryQuery(HealthCategory.Lifestyle, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Warning, organizationFilter),
         useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.Vaccinations, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.LaboratoryResults, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.Procedures, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.ContactsAndAppointments, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.Vitals, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Vaccinations, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.LaboratoryResults, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Procedures, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.ContactsAndAppointments, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Vitals, organizationFilter),
     ];
 
     const completed = categoryQueries

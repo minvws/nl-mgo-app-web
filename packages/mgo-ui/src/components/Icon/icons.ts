@@ -30,6 +30,9 @@ import DateRange from '@material-symbols/svg-400/outlined/date_range.svg?react';
 import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react';
 import Allergy from '@material-symbols/svg-400/outlined/allergy.svg?react';
 import MoreHoriz from '@material-symbols/svg-400/outlined/more_horiz.svg?react';
+import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
+import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
+
 
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
@@ -89,6 +92,8 @@ export const icons = {
     'vital-signs': VitalSigns,
     allergy: Allergy,
     'more-horiz': MoreHoriz,
+    'medical-services': MedicalServices,
+    'sentiment-satisfied': SentimentSatisfied
 };
 
 export type IconName = keyof typeof icons;

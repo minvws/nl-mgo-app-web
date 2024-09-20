@@ -17,23 +17,23 @@ export function HealthCategoryButton<T extends HealthCategory>({
         [HealthCategory.PersonalInformation]: 'person',
         [HealthCategory.PayerAndOrganization]: 'stethoscope',
         [HealthCategory.TreatmentPlan]: 'event-note',
-        [HealthCategory.FunctionalOrMentalStatus]: 'more-horiz',
+        [HealthCategory.FunctionalOrMentalStatus]: 'sentiment-satisfied',
         [HealthCategory.Problems]: 'diagnosis',
         [HealthCategory.Lifestyle]: 'nutrition',
         [HealthCategory.Warning]: 'emergency-home',
         [HealthCategory.AllergiesAndIntolerances]: 'allergy',
         [HealthCategory.Medication]: 'pill',
-        [HealthCategory.MedicalDevices]: 'more-horiz',
+        [HealthCategory.MedicalDevices]: 'health-and-safety',
         [HealthCategory.Vaccinations]: 'syringe',
         [HealthCategory.LaboratoryResults]: 'labs',
-        [HealthCategory.Procedures]: 'more-horiz',
+        [HealthCategory.Procedures]: 'medical-services',
         [HealthCategory.ContactsAndAppointments]: 'date-range',
         [HealthCategory.Vitals]: 'vital-signs',
     };
 
     if (!query.isLoading && query.isEmpty) {
         return (
-            <CategoryButton icon={iconMap[query.category]} isDisabled label={intl.formatMessage({ id: 'common.no-results' })}>
+            <CategoryButton icon={iconMap[query.category] ?? 'more-horiz'} isDisabled label={intl.formatMessage({ id: 'common.no-results' })}>
                 <FormattedMessage id={`${query.category}_heading`} />
             </CategoryButton>
         );
