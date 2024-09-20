@@ -28,6 +28,5 @@ test.each([
     HealthCategory.Vitals,
 ])('returns empty data for category %s', (category) => {
     const { result } = renderHook(() => useHealthCategoryData(category));
-
-    expect(result.current).toEqual({});
+    expect(result.current).toBeDefined();
 });

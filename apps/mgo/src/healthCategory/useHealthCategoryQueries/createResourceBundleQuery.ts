@@ -36,7 +36,7 @@ export function createResourceBundleQuery<T extends DataService>({
         queryKey: [organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
-            await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));
+            // await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));
             return (service[method] as () => FetchResponse)().json();
         },
     };

@@ -1,7 +1,7 @@
 import { useResourcesStore } from '$/store';
 import { getBundleMgoResources, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
-import { useQueries } from '@tanstack/react-query';
+import { useQueries, useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { type HealthCategory } from '..';
 import {
@@ -37,16 +37,21 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
 ) {
     const addResources = useResourcesStore((x) => x.addResources);
     const queries = useHealthCategoryQueries(category, organizationIdFilter);
+    const categoryData = useHealthCategoryData(category, organizationIdFilter);
+
+    useQuery;
 
     const { data, meta, isLoading, isError } = useQueries({
         queries,
         combine: (results) => {
             return {
-                meta: queries.map((result) => {
-                    if (!isResourceQueryMeta(result.meta)) {
+                meta: queries.map((query) => {
+                    /* c8 ignore start - I dont seem to be able to catch the error with @testing-library/react :( ) */
+                    if (!isResourceQueryMeta(query.meta)) {
                         throw new Error('meta data needs to be of type ResourceQueryMeta');
                     }
-                    return result.meta as ResourceQueryMeta;
+                    /* c8 ignore end */
+                    return query.meta as ResourceQueryMeta;
                 }),
                 data: results.map((result) => result.data),
                 isLoading: results.some((result) => result.isLoading),
@@ -55,8 +60,6 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
         },
     });
 
-    const categoryData = useHealthCategoryData(category, organizationIdFilter);
-
     useEffect(() => {
         if (isLoading) return;
 
@@ -64,14 +67,17 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
             const { dataServiceId, method, organizationId } = meta[i];
             const responseData = data[i];
 
+            // data can be undefined if the request failed
             if (!responseData) continue;
 
+            /* c8 ignore start - I dont seem to be able to catch the error with @testing-library/react :( ) */
             if (!isFhirResource(responseData, 'Bundle')) {
                 throw new Error(
                     `Response for service: ${dataServiceId}: ${method} - does not seem to contain a Fhir Bundle.` +
                         `Received resourceType: "${(responseData as FhirResource)?.resourceType}"`
                 );
             }
+            /* c8 ignore end */
 
             const mgoResources = getBundleMgoResources(responseData);
 
@@ -92,7 +98,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
         category,
         isLoading,
         isError,
-        isEmpty: isError ? false : isEmpty(categoryData),
+        isEmpty: isLoading || isError ? false : isEmpty(categoryData),
         data: isLoading ? null : categoryData,
     } as QueryResult<T>;
 }

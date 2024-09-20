@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { getMgoResource } from './getMgoResource';
 import { zibMedicationUse } from '../../resources/zibMedicationUse/zibMedicationUse';
 
@@ -15,16 +15,19 @@ test('returns the expected output', () => {
 });
 
 test.each([{ profile: [faker.lorem.word()] }, { profile: undefined }])(
-    'throws if no config could be found',
+    'logs error if no config could be found',
     (meta) => {
         const fhirResource = faker.fhir.medicationStatement({
             meta,
         });
 
-        expect(() => {
-            getMgoResource(fhirResource);
-        }).toThrowError(
+        const mockErrorLog = vi.spyOn(console, 'error');
+        mockErrorLog.mockImplementationOnce(() => {});
+        const result = getMgoResource(fhirResource);
+
+        expect(mockErrorLog).toBeCalledWith(
             `No config found for fhir resourceType: "${fhirResource.resourceType}" with profile: "${meta.profile}"`
         );
+        expect(result).toBeUndefined();
     }
 );

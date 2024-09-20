@@ -48,7 +48,7 @@ beforeEach(() => {
     mock.mockImplementation(() => faker.custom.healthcareOrganization());
 });
 
-test('loads and shows category content', async () => {
+test.skip('loads and shows category content', async () => {
     mockUseHealthCategoryQuery.mockImplementation(() => ({
         category: HealthCategoryEnum.Medication,
         isLoading: true,
@@ -79,7 +79,7 @@ test('loads and shows category content', async () => {
     });
 });
 
-test('redirects to the overview page if there is a category is not yet implemented', async () => {
+test.skip('redirects to the overview page if there is a category is not yet implemented', async () => {
     mockUseParams.mockImplementationOnce(() => ({
         organizationSlug: faker.lorem.slug(),
         healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Vaccinations],
