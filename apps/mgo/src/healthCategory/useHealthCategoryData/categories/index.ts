@@ -7,6 +7,7 @@ import { type ResourcesState } from '$/store';
 import { getFunctionalOrMentalStatusData } from './functionalOrMentalStatus';
 import { getProblemData } from './problem';
 import { getLifestyleData } from './lifestyle';
+import { getWarningdata } from './warning';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -20,7 +21,7 @@ export const healthCategoryData = {
     [HealthCategory.FunctionalOrMentalStatus]: getFunctionalOrMentalStatusData,
     [HealthCategory.Problems]: getProblemData,
     [HealthCategory.Lifestyle]: getLifestyleData,
-    [HealthCategory.Warning]: () => ({}),
+    [HealthCategory.Warning]: getWarningdata,
     [HealthCategory.AllergiesAndIntolerances]: () => ({}),
     [HealthCategory.Medication]: getMedicationData,
     [HealthCategory.MedicalDevices]: () => ({}),

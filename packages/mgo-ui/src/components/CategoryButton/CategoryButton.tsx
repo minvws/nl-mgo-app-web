@@ -6,13 +6,37 @@ import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { Text } from '../Text/Text';
 
-type CategoryIcon = Extract<IconName, 'pill' | 'diagnosis' | 'labs' | 'folder'>;
+type CategoryIcon = Extract<
+    IconName,
+    | 'person'
+    | 'stethoscope'
+    | 'event-note'
+    | 'diagnosis'
+    | 'nutrition'
+    | 'emergency-home'
+    | 'allergy'
+    | 'pill'
+    | 'syringe'
+    | 'labs'
+    | 'date-range'
+    | 'vital-signs'
+    | 'more-horiz'
+>;
 
 const iconColors: Record<CategoryIcon, string> = {
-    pill: 'text-dark-blue-500',
-    diagnosis: 'text-ruby-500',
-    labs: 'text-pink-500',
-    folder: 'text-brown-700',
+    person: 'text-gray-400',
+    stethoscope: 'text-violet-800',
+    'event-note': 'text-mint-500',
+    diagnosis: 'text-pink-500',
+    nutrition: 'text-[#34C759]',
+    'emergency-home': 'text-yellow-500',
+    allergy: 'text-orange-600',
+    pill: 'text-dark-blue-700',
+    syringe: 'text-light-blue-500',
+    labs: 'text-ruby-700',
+    'date-range': 'text-dark-brown-800',
+    'vital-signs': 'text-dark-green-700',
+    'more-horiz': 'text-gray-700'
 };
 
 export interface CategoryButtonProps

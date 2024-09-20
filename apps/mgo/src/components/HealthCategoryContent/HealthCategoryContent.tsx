@@ -7,6 +7,7 @@ import { TreatmentPlan } from './TreatmentPlan';
 import { FunctionalOrMentalStatus } from './FunctionalOrMentalStatus';
 import { Problem } from './Problem';
 import { Lifestyle } from './Lifestyle';
+import { Warning } from './Warning';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -27,7 +28,7 @@ const categoryContent = {
     [HealthCategory.FunctionalOrMentalStatus]: FunctionalOrMentalStatus,
     [HealthCategory.Problems]: Problem,
     [HealthCategory.Lifestyle]: Lifestyle,
-    [HealthCategory.Warning]: null,
+    [HealthCategory.Warning]: Warning,
     [HealthCategory.AllergiesAndIntolerances]: null,
     [HealthCategory.Medication]: null,
     [HealthCategory.MedicalDevices]: null,

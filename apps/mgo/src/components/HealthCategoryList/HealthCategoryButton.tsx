@@ -1,7 +1,7 @@
-import { healthCategorySlugs, type HealthCategory } from '$/healthCategory';
+import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { RouterLink } from '$/routing';
-import { CategoryButton } from '@minvws/mgo-mgo-ui';
+import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-mgo-ui';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 export interface HealthCategoryButtonProps<T extends HealthCategory> {
@@ -13,9 +13,27 @@ export function HealthCategoryButton<T extends HealthCategory>({
 }: HealthCategoryButtonProps<T>) {
     const intl = useIntl();
 
+    const iconMap: Record<HealthCategory, CategoryButtonProps['icon']> = {
+        [HealthCategory.PersonalInformation]: 'person',
+        [HealthCategory.PayerAndOrganization]: 'stethoscope',
+        [HealthCategory.TreatmentPlan]: 'event-note',
+        [HealthCategory.FunctionalOrMentalStatus]: 'more-horiz',
+        [HealthCategory.Problems]: 'diagnosis',
+        [HealthCategory.Lifestyle]: 'nutrition',
+        [HealthCategory.Warning]: 'emergency-home',
+        [HealthCategory.AllergiesAndIntolerances]: 'allergy',
+        [HealthCategory.Medication]: 'pill',
+        [HealthCategory.MedicalDevices]: 'more-horiz',
+        [HealthCategory.Vaccinations]: 'syringe',
+        [HealthCategory.LaboratoryResults]: 'labs',
+        [HealthCategory.Procedures]: 'more-horiz',
+        [HealthCategory.ContactsAndAppointments]: 'date-range',
+        [HealthCategory.Vitals]: 'vital-signs',
+    };
+
     if (!query.isLoading && query.isEmpty) {
         return (
-            <CategoryButton isDisabled label={intl.formatMessage({ id: 'common.no-results' })}>
+            <CategoryButton icon={iconMap[query.category]} isDisabled label={intl.formatMessage({ id: 'common.no-results' })}>
                 <FormattedMessage id={`${query.category}_heading`} />
             </CategoryButton>
         );
@@ -24,6 +42,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
     return (
         <CategoryButton
             asChild
+            icon={iconMap[query.category] ?? undefined}
             loadingText={intl.formatMessage({ id: 'common.loading' })}
             isLoading={query.isLoading}
         >
