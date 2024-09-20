@@ -10,6 +10,7 @@ import { getFunctionalOrMentalStatusQueries } from './functionalOrMentalStatus';
 import { getProblemQueries } from './problem';
 import { getLifestyleQueries } from './lifestyle';
 import { getWarningQueries } from './warning';
+import { getAllergyQueries } from './allergy';
 
 export const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
@@ -19,7 +20,7 @@ export const healthCategoryQueries = {
     [HealthCategory.Problems]: getProblemQueries,
     [HealthCategory.Lifestyle]: getLifestyleQueries,
     [HealthCategory.Warning]: getWarningQueries,
-    [HealthCategory.AllergiesAndIntolerances]: () => [],
+    [HealthCategory.AllergiesAndIntolerances]: getAllergyQueries,
     [HealthCategory.Medication]: getMedicationQueries,
     [HealthCategory.MedicalDevices]: () => [],
     [HealthCategory.Vaccinations]: () => [],

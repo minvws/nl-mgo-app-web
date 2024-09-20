@@ -19,7 +19,7 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
         useHealthCategoryQuery(HealthCategory.Problems, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Lifestyle, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Warning, organizationFilter),
-        // useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
         // useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
         // useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),
         // useHealthCategoryQuery(HealthCategory.Vaccinations, organizationFilter),

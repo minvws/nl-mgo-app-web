@@ -8,6 +8,7 @@ import { getFunctionalOrMentalStatusData } from './functionalOrMentalStatus';
 import { getProblemData } from './problem';
 import { getLifestyleData } from './lifestyle';
 import { getWarningdata } from './warning';
+import { getAllergyData } from './allergy';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -22,7 +23,7 @@ export const healthCategoryData = {
     [HealthCategory.Problems]: getProblemData,
     [HealthCategory.Lifestyle]: getLifestyleData,
     [HealthCategory.Warning]: getWarningdata,
-    [HealthCategory.AllergiesAndIntolerances]: () => ({}),
+    [HealthCategory.AllergiesAndIntolerances]: getAllergyData,
     [HealthCategory.Medication]: getMedicationData,
     [HealthCategory.MedicalDevices]: () => ({}),
     [HealthCategory.Vaccinations]: () => ({}),
