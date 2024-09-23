@@ -10,6 +10,7 @@ import { PersonalInformation } from './PersonalInformation';
 import { Problem } from './Problem';
 import { TreatmentPlan } from './TreatmentPlan';
 import { Warning } from './Warning';
+import { MedicalDevices } from './MedicalDevices';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -33,7 +34,7 @@ const categoryContent = {
     [HealthCategory.Warning]: Warning,
     [HealthCategory.AllergiesAndIntolerances]: Allergy,
     [HealthCategory.Medication]: Medication,
-    [HealthCategory.MedicalDevices]: null,
+    [HealthCategory.MedicalDevices]: MedicalDevices,
     [HealthCategory.Vaccinations]: null,
     [HealthCategory.LaboratoryResults]: null,
     [HealthCategory.Procedures]: null,
