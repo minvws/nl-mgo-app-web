@@ -15,6 +15,7 @@ export * from './zibAdministrationAgreement/zibAdministrationAgreement';
 export * from './zibMedicationAgreement/zibMedicationAgreement';
 export * from './zibAllergyIntolerance/zibAllergyIntolerance';
 export * from './zibMedicationUse/zibMedicationUse';
+export * from './zibMedicalDevice/zibMedicalDevice';
 export * from './zibPayer/zibPayer';
 export * from './zibProblem/zibProblem';
 export * from './zibProduct/zibProduct';

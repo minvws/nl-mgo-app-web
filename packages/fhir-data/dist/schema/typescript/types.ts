@@ -7,6 +7,7 @@ import { Condition } from 'fhir/r3';
 import { Consent } from 'fhir/r3';
 import { ContactPoint } from 'fhir/r3';
 import { Coverage } from 'fhir/r3';
+import { DeviceUseStatement } from 'fhir/r3';
 import { DomainResource } from 'fhir/r3';
 import { Dosage } from 'fhir/r3';
 import { Duration } from 'fhir/r3';
@@ -291,6 +292,10 @@ export declare interface MultipleValue extends BaseEntry<string[]> {
 declare type NictizId = keyof typeof nictizIdValueXMap;
 
 declare const nictizIdValueXMap: {
+    'BodySite-Qualifier': "codeableConcept";
+    'deviceUseStatement-reasonReferenceSTU3': "reference";
+    'zib-MedicalDevice-Organization': "reference";
+    'zib-MedicalDevice-Practitioner': "reference";
     'zib-MedicationUse-AsAgreedIndicator': "boolean";
     'zib-MedicationUse-Prescriber': "reference";
     'zib-MedicationUse-Author': "reference";
@@ -705,6 +710,29 @@ declare const parseZibLivingSituation: (resource: Observation) => {
 };
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317253
+ */
+declare function parseZibMedicalDevice(resource: DeviceUseStatement): {
+    identifier: parse.MgoIdentifier[] | undefined;
+    organization: parse.MgoReference | undefined;
+    practitioner: parse.MgoReference | undefined;
+    reason: parse.MgoReference | undefined;
+    status: string | undefined;
+    patient: parse.MgoReference | undefined;
+    whenUsed: parse.MgoPeriod | undefined;
+    recordedOn: DateTimeString | undefined;
+    source: parse.MgoReference | undefined;
+    device: parse.MgoReference | undefined;
+    bodySite: parse.MgoCodeableConcept | undefined;
+    laterality: parse.MgoCodeableConcept | undefined;
+    note: parse.MgoAnnotation[] | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice";
+};
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317273
  */
 declare function parseZibMedicationAgreement(resource: MedicationRequest): {
@@ -971,44 +999,49 @@ export declare interface UiSchema {
 declare function uiSchema(resource: NlCoreObservation | ZibAlcoholUse | ZibDrugUse | ZibLivingSituation | ZibFunctionalOrMentalStatus | ZibTobaccoUse): UiSchema;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317327
+ */
+declare function uiSchema_10(resource: ZibProblem): UiSchema;
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
-declare function uiSchema_10(resource: ZibProduct): UiSchema;
+declare function uiSchema_11(resource: ZibProduct): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317378
  */
-declare function uiSchema_11(resource: ZibTreatmentDirective): UiSchema;
+declare function uiSchema_12(resource: ZibTreatmentDirective): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-declare function uiSchema_12(resource: ZibLivingSituation): UiSchema;
+declare function uiSchema_13(resource: ZibLivingSituation): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-declare function uiSchema_13(resource: ZibAlcoholUse): UiSchema;
+declare function uiSchema_14(resource: ZibAlcoholUse): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-declare function uiSchema_14(resource: ZibDrugUse): UiSchema;
+declare function uiSchema_15(resource: ZibDrugUse): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-declare function uiSchema_15(resource: ZibFunctionalOrMentalStatus): UiSchema;
+declare function uiSchema_16(resource: ZibFunctionalOrMentalStatus): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-declare function uiSchema_16(resource: ZibTobaccoUse): UiSchema;
+declare function uiSchema_17(resource: ZibTobaccoUse): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317294
  */
-declare function uiSchema_17(resource: ZibNutritionAdvice): UiSchema;
+declare function uiSchema_18(resource: ZibNutritionAdvice): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
@@ -1041,14 +1074,14 @@ declare function uiSchema_6(resource: ZibAllergyIntolerance): UiSchema;
 declare function uiSchema_7(resource: ZibMedicationUse): UiSchema;
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317307
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317253
  */
-declare function uiSchema_8(resource: ZibPayer): UiSchema;
+declare function uiSchema_8(resource: ZibMedicalDevice): UiSchema;
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317327
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317307
  */
-declare function uiSchema_9(resource: ZibProblem): UiSchema;
+declare function uiSchema_9(resource: ZibPayer): UiSchema;
 
 declare interface UiSchemaElement {
     label: string;
@@ -1110,7 +1143,7 @@ export declare type ZibAlcoholUse = ReturnType<typeof parseZibAlcoholUse>;
 export declare const zibAlcoholUse: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse";
     parse: typeof parseZibAlcoholUse;
-    uiSchema: typeof uiSchema_13;
+    uiSchema: typeof uiSchema_14;
 };
 
 export declare type ZibAlert = ReturnType<typeof parseZibAlert>;
@@ -1134,7 +1167,7 @@ export declare type ZibDrugUse = ReturnType<typeof parseZibDrugUse>;
 export declare const zibDrugUse: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-DrugUse";
     parse: typeof parseZibDrugUse;
-    uiSchema: typeof uiSchema_14;
+    uiSchema: typeof uiSchema_15;
 };
 
 export declare type ZibFunctionalOrMentalStatus = ReturnType<typeof parseZibFunctionalOrMentalStatus>;
@@ -1142,7 +1175,7 @@ export declare type ZibFunctionalOrMentalStatus = ReturnType<typeof parseZibFunc
 export declare const zibFunctionalOrMentalStatus: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus";
     parse: typeof parseZibFunctionalOrMentalStatus;
-    uiSchema: typeof uiSchema_15;
+    uiSchema: typeof uiSchema_16;
 };
 
 export declare interface ZibInstructionsForUse {
@@ -1182,7 +1215,15 @@ export declare const zibLivingSituation: {
         resourceType: string | undefined;
         profile: "http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation";
     };
-    uiSchema: typeof uiSchema_12;
+    uiSchema: typeof uiSchema_13;
+};
+
+export declare type ZibMedicalDevice = ReturnType<typeof parseZibMedicalDevice>;
+
+export declare const zibMedicalDevice: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice";
+    parse: typeof parseZibMedicalDevice;
+    uiSchema: typeof uiSchema_8;
 };
 
 export declare type ZibMedicationAgreement = ReturnType<typeof parseZibMedicationAgreement>;
@@ -1206,7 +1247,7 @@ export declare type ZibNutritionAdvice = ReturnType<typeof parseZibNutritionAdvi
 export declare const zibNutritionAdvice: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice";
     parse: typeof parseZibNutritionAdvice;
-    uiSchema: typeof uiSchema_17;
+    uiSchema: typeof uiSchema_18;
 };
 
 export declare type ZibPayer = ReturnType<typeof parseZibPayer>;
@@ -1214,7 +1255,7 @@ export declare type ZibPayer = ReturnType<typeof parseZibPayer>;
 export declare const zibPayer: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Payer";
     parse: typeof parseZibPayer;
-    uiSchema: typeof uiSchema_8;
+    uiSchema: typeof uiSchema_9;
 };
 
 export declare type ZibProblem = ReturnType<typeof parseZibProblem>;
@@ -1222,7 +1263,7 @@ export declare type ZibProblem = ReturnType<typeof parseZibProblem>;
 export declare const zibProblem: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Problem";
     parse: typeof parseZibProblem;
-    uiSchema: typeof uiSchema_9;
+    uiSchema: typeof uiSchema_10;
 };
 
 export declare type ZibProduct = ReturnType<typeof parseZibProduct>;
@@ -1230,7 +1271,7 @@ export declare type ZibProduct = ReturnType<typeof parseZibProduct>;
 export declare const zibProduct: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Product";
     parse: typeof parseZibProduct;
-    uiSchema: typeof uiSchema_10;
+    uiSchema: typeof uiSchema_11;
 };
 
 export declare interface ZibProductIngredient {
@@ -1262,7 +1303,7 @@ export declare type ZibTobaccoUse = ReturnType<typeof parseZibTobaccoUse>;
 export declare const zibTobaccoUse: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-TobaccoUse";
     parse: typeof parseZibTobaccoUse;
-    uiSchema: typeof uiSchema_16;
+    uiSchema: typeof uiSchema_17;
 };
 
 export declare type ZibTreatmentDirective = ReturnType<typeof parseZibTreatmentDirective>;
@@ -1270,7 +1311,7 @@ export declare type ZibTreatmentDirective = ReturnType<typeof parseZibTreatmentD
 export declare const zibTreatmentDirective: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective";
     parse: typeof parseZibTreatmentDirective;
-    uiSchema: typeof uiSchema_11;
+    uiSchema: typeof uiSchema_12;
 };
 
 export { }

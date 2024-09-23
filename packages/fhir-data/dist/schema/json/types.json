@@ -1160,6 +1160,76 @@
       ],
       "additionalProperties": false
     },
+    "ZibMedicalDevice": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "organization": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "practitioner": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "reason": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "status": {
+          "type": "string"
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "whenUsed": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "recordedOn": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "device": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "laterality": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibMedicationAgreement": {
       "type": "object",
       "properties": {
