@@ -1,0 +1,104 @@
+{
+    "label": "Gehoorapparaat",
+    "children": [
+        {
+            "label": "zib_medical_device.group_product",
+            "children": [
+                {
+                    "label": "zib_medical_device.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1b7c5449-8fdf-11ec-2143-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_medical_device.clinical_status",
+                    "type": "code",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_medical_device.device",
+                    "type": "reference",
+                    "display": "Gehoorapparaat",
+                    "reference": "Device/zib-MedicalDeviceProduct-03"
+                },
+                {
+                    "label": "zib_medical_device.whenUsed.start",
+                    "type": "period.start",
+                    "display": "2007"
+                },
+                {
+                    "label": "zib_medical_device.whenUsed.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_medical_device.recordedOn",
+                    "type": "date_time",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "zib_medical_device.group_indication",
+            "children": [
+                {
+                    "label": "zib_medical_device.note",
+                    "type": "annotation",
+                    "display": [
+                        "Apparaat niet zichtbaar (diep in de gehooringang)"
+                    ]
+                },
+                {
+                    "label": "zib_medical_device.bodySite",
+                    "type": "codable_concept",
+                    "display": [
+                        "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_medical_device.laterality",
+                    "type": "codable_concept",
+                    "display": [
+                        "Right (24028007 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_medical_device.reason",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                }
+            ]
+        },
+        {
+            "label": "zib_medical_device.group_general",
+            "children": [
+                {
+                    "label": "zib_medical_device.patient",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_medical_device.source",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_medical_device.organization",
+                    "type": "reference",
+                    "display": "Test Medisch Centrum",
+                    "reference": "Organization/nl-core-organization-03"
+                },
+                {
+                    "label": "zib_medical_device.practitioner",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                }
+            ]
+        }
+    ]
+}

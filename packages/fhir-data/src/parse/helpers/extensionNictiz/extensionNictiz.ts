@@ -3,6 +3,10 @@ import { extension } from '../extension/extension';
 import { type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 
 const nictizIdValueXMap = {
+    'BodySite-Qualifier': 'codeableConcept',
+    'deviceUseStatement-reasonReferenceSTU3': 'reference',
+    'zib-MedicalDevice-Organization': 'reference',
+    'zib-MedicalDevice-Practitioner': 'reference',
     'zib-MedicationUse-AsAgreedIndicator': 'boolean',
     'zib-MedicationUse-Prescriber': 'reference',
     'zib-MedicationUse-Author': 'reference',
