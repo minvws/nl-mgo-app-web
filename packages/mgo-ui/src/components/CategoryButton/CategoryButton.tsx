@@ -42,7 +42,7 @@ const iconColors: Record<CategoryIcon, string> = {
     'more-horiz': 'text-gray-700',
     'medical-services': 'text-purple-800',
     'health-and-safety': 'text-logo-blue-700',
-    'sentiment-satisfied': 'text-sky-blue-600'
+    'sentiment-satisfied': 'text-sky-blue-600',
 };
 
 export interface CategoryButtonProps

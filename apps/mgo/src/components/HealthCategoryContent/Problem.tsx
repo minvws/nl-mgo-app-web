@@ -3,7 +3,7 @@ import { HealthCategoryDetailList } from '../HealthCategoryDetailList/HealthCate
 import { type CategoryContentProps } from './HealthCategoryContent';
 
 export function Problem({ data }: CategoryContentProps<HealthCategory.Problems>) {
-    const {problems } = data;
+    const { problems } = data;
 
     return (
         <>

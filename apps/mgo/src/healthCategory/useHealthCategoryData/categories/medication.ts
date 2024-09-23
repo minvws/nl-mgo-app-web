@@ -9,5 +9,11 @@ export function getMedicationData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
             organizationIdFilter
         ),
+        medicationAgreements: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement'
+        ),
+        administrationAgreements: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement'
+        ),
     };
 }

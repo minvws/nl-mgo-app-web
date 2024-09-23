@@ -19,12 +19,12 @@ export function setupMedication({ getResources }: FhirClient) {
         getMedicationAgreements: partialRequest(
             getResources,
             {
-                resource: 'MedicationStatement',
+                resource: 'MedicationRequest',
             } as const,
             {
                 searchParams: {
                     category: 'http://snomed.info/sct|16076005',
-                    _include: 'MedicationStatement:medication',
+                    _include: 'MedicationRequest:medication',
                 },
             }
         ),
@@ -32,7 +32,7 @@ export function setupMedication({ getResources }: FhirClient) {
         getAdministrationAgreements: partialRequest(
             getResources,
             {
-                resource: 'MedicationStatement',
+                resource: 'MedicationDispense',
             } as const,
             {
                 searchParams: {

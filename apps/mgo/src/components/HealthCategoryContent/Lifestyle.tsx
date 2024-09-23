@@ -7,7 +7,7 @@ export function Lifestyle({ data }: CategoryContentProps<HealthCategory.Lifestyl
     const { currentLivingSituation, drugUse, alchoholuse, tabaccoUse, nutritionAdvice } = data;
 
     return (
-        <Stack className='gap-4 md:gap-6'>
+        <Stack className="gap-4 md:gap-6">
             <HealthCategoryDetailList
                 category={HealthCategory.Lifestyle}
                 heading="living_situation"

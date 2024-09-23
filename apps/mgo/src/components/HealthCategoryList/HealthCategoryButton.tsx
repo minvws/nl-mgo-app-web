@@ -33,7 +33,11 @@ export function HealthCategoryButton<T extends HealthCategory>({
 
     if (!query.isLoading && query.isEmpty) {
         return (
-            <CategoryButton icon={iconMap[query.category] ?? 'more-horiz'} isDisabled label={intl.formatMessage({ id: 'common.no-results' })}>
+            <CategoryButton
+                icon={iconMap[query.category] ?? 'more-horiz'}
+                isDisabled
+                label={intl.formatMessage({ id: 'common.no-results' })}
+            >
                 <FormattedMessage id={`${query.category}_heading`} />
             </CategoryButton>
         );

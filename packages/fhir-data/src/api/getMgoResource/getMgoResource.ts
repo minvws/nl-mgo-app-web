@@ -14,7 +14,9 @@ function getResourceConfig<T extends FhirResource>(resource: Lossless<T>) {
         if (config) return config as ResourceConfig<T>;
     }
 
-    console.error(`No config found for fhir resourceType: "${resource.resourceType}" with profile: "${resource.meta?.profile}"`);
+    console.error(
+        `No config found for fhir resourceType: "${resource.resourceType}" with profile: "${resource.meta?.profile}"`
+    );
 }
 
 export function getMgoResource<T extends FhirResource>(resource: Lossless<T>) {

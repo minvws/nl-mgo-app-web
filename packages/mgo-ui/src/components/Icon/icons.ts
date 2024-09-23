@@ -33,7 +33,6 @@ import MoreHoriz from '@material-symbols/svg-400/outlined/more_horiz.svg?react';
 import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
 import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
 
-
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
 import Esculaap from './icons/esculaap.svg?react';
@@ -45,7 +44,6 @@ import Home from './icons/home.svg?react';
 import QuestionMark from './icons/question_mark.svg?react';
 import Close from './icons/close.svg?react';
 import Spinner from './icons/spinner.svg?react';
-
 
 export const icons = {
     hospital: Hospital,
@@ -93,7 +91,7 @@ export const icons = {
     allergy: Allergy,
     'more-horiz': MoreHoriz,
     'medical-services': MedicalServices,
-    'sentiment-satisfied': SentimentSatisfied
+    'sentiment-satisfied': SentimentSatisfied,
 };
 
 export type IconName = keyof typeof icons;

@@ -7,7 +7,7 @@ export function TreatmentPlan({ data }: CategoryContentProps<HealthCategory.Trea
     const { getTreatmentDirectives, getAdvanceDirectives } = data;
 
     return (
-        <Stack className='gap-4 md:gap-6'>
+        <Stack className="gap-4 md:gap-6">
             <HealthCategoryDetailList
                 category={HealthCategory.TreatmentPlan}
                 heading="treatment_directives_heading"

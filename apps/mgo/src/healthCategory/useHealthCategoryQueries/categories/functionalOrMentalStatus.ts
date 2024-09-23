@@ -4,7 +4,9 @@ import { type UseQueryOptions } from '@tanstack/react-query';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { isNonNullish } from '$/utils';
 
-export function getFunctionalOrMentalStatusQueries(organization: HealthcareOrganization): UseQueryOptions[] {
+export function getFunctionalOrMentalStatusQueries(
+    organization: HealthcareOrganization
+): UseQueryOptions[] {
     const commonClinicalDataset = getCommonClinicalDatasetService(organization);
 
     return [

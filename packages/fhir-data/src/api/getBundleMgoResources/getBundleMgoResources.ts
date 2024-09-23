@@ -9,5 +9,4 @@ export function getBundleMgoResources(bundle: Lossless<Bundle>) {
     const resources = getBundleResources(bundle);
     if (!resources?.length) return;
     return resources.map(getMgoResource).filter(isNonNullish) as Lossless<MgoResource>[];
-
 }
