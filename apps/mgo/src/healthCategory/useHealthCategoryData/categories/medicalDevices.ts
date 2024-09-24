@@ -9,5 +9,9 @@ export function getMedicalDevicesData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice',
             organizationIdFilter
         ),
+        medicalDeviceProducts: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct',
+            organizationIdFilter
+        )
     };
 }

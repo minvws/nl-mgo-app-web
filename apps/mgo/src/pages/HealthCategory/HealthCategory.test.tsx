@@ -7,7 +7,7 @@ import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { flushCallStack, setupWithAppProviders } from '$test/helpers';
+import { setupWithAppProviders } from '$test/helpers';
 import { messageRegexp } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
