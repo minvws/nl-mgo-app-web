@@ -38,9 +38,10 @@ export function Login() {
                         className="mb-4 md:mb-6"
                         status="error"
                         label={intl.formatMessage({ id: 'login.error_heading' })}
-                        description={intl.formatMessage({ id: 'login.error_subheading' })}
                         aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
-                    />
+                    >
+                        <FormattedMessage id="login.error_subheading" />
+                    </Alert>
                 )}
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>

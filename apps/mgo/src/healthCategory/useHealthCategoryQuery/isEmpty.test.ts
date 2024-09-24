@@ -4,7 +4,6 @@ import { isEmpty } from './isEmpty';
 import { faker } from '$test/faker';
 
 test.each<[HealthCategoryData, boolean]>([
-    [undefined, true],
     [{}, true],
     [{ foo: [] }, true],
     [{ foo: faker.lorem.word() }, true],

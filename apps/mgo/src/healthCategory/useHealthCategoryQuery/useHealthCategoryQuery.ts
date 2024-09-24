@@ -98,7 +98,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
         category,
         isLoading,
         isError,
-        isEmpty: isLoading || isError ? false : isEmpty(categoryData),
+        isEmpty: isLoading ? false : isEmpty(categoryData),
         data: isLoading ? null : categoryData,
     } as QueryResult<T>;
 }

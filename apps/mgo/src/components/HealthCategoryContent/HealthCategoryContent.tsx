@@ -4,13 +4,13 @@ import { type FunctionComponent } from 'react';
 import { Allergy } from './Allergy';
 import { FunctionalOrMentalStatus } from './FunctionalOrMentalStatus';
 import { Lifestyle } from './Lifestyle';
+import { MedicalDevices } from './MedicalDevices';
 import { Medication } from './Medication';
 import { Payer } from './PayerAndOrganization';
 import { PersonalInformation } from './PersonalInformation';
 import { Problem } from './Problem';
 import { TreatmentPlan } from './TreatmentPlan';
 import { Warning } from './Warning';
-import { MedicalDevices } from './MedicalDevices';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;

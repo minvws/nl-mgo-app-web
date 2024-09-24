@@ -14,13 +14,13 @@ test('getMedicationUse', () =>
     }));
 
 test('getMedicationAgreements', () =>
-    testRequestHandler(getMedicationAgreements, 'MedicationStatement', {
+    testRequestHandler(getMedicationAgreements, 'MedicationRequest', {
         category: 'http://snomed.info/sct|16076005',
-        _include: 'MedicationStatement:medication',
+        _include: 'MedicationRequest:medication',
     }));
 
 test('getAdministrationAgreements', () =>
-    testRequestHandler(getAdministrationAgreements, 'MedicationStatement', {
+    testRequestHandler(getAdministrationAgreements, 'MedicationDispense', {
         category: 'http://snomed.info/sct|422037009',
         _include: 'MedicationDispense:medication',
     }));

@@ -31,27 +31,20 @@ export function HealthCategoryButton<T extends HealthCategory>({
         [HealthCategory.Vitals]: 'vital-signs',
     };
 
-    if (!query.isLoading && query.isEmpty) {
-        return (
-            <CategoryButton
-                icon={iconMap[query.category] ?? 'more-horiz'}
-                isDisabled
-                label={intl.formatMessage({ id: 'common.no-results' })}
-            >
-                <FormattedMessage id={`${query.category}_heading`} />
-            </CategoryButton>
-        );
-    }
-
     return (
         <CategoryButton
             asChild
-            icon={iconMap[query.category] ?? undefined}
+            icon={iconMap[query.category] ?? 'more-horiz'}
             loadingText={intl.formatMessage({ id: 'common.loading' })}
             isLoading={query.isLoading}
+            label={
+                !query.isLoading && query.isEmpty
+                    ? intl.formatMessage({ id: 'common.no-results' })
+                    : undefined
+            }
         >
             <RouterLink to={`./${healthCategorySlugs[query.category]}`}>
-                <FormattedMessage id={`${query.category}_heading`} />
+                <FormattedMessage id={`health_category.${query.category}`} />
             </RouterLink>
         </CategoryButton>
     );

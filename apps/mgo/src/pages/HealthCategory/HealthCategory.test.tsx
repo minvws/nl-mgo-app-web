@@ -7,7 +7,7 @@ import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setupWithAppProviders } from '$test/helpers';
+import { flushCallStack, setupWithAppProviders } from '$test/helpers';
 import { messageRegexp } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
@@ -48,10 +48,13 @@ beforeEach(() => {
     mock.mockImplementation(() => faker.custom.healthcareOrganization());
 });
 
-test.skip('loads and shows category content', async () => {
+test('loads and shows category content', async () => {
     mockUseHealthCategoryQuery.mockImplementation(() => ({
+        id: faker.string.uuid(),
         category: HealthCategoryEnum.Medication,
         isLoading: true,
+        isError: false,
+        isEmpty: false,
         data: null,
     }));
 
@@ -65,10 +68,15 @@ test.skip('loads and shows category content', async () => {
     expect(screen.getByRole('progressbar')).toBeVisible();
 
     mockUseHealthCategoryQuery.mockImplementation(() => ({
+        id: faker.string.uuid(),
         category: HealthCategoryEnum.Medication,
         isLoading: false,
+        isError: false,
+        isEmpty: false,
         data: {
             medicationUse: [],
+            medicationAgreements: [],
+            administrationAgreements: [],
         } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 
@@ -79,17 +87,54 @@ test.skip('loads and shows category content', async () => {
     });
 });
 
-test.skip('redirects to the overview page if there is a category is not yet implemented', async () => {
-    mockUseParams.mockImplementationOnce(() => ({
-        organizationSlug: faker.lorem.slug(),
-        healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Vaccinations],
-        resourceSlug: faker.lorem.slug(),
+test('loads and receives error from category query', async () => {
+    mockUseHealthCategoryQuery.mockImplementation(() => ({
+        id: faker.string.uuid(),
+        category: HealthCategoryEnum.Medication,
+        isLoading: false,
+        isError: true,
+        isEmpty: false,
+        data: {
+            medicationUse: [],
+            medicationAgreements: [],
+            administrationAgreements: [],
+        } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 
     setupWithAppProviders(<HealthCategory />);
 
-    expect(mockNavigate.mock.calls[0][0]).toEqual({
-        to: `/overzicht`,
+    screen.getByRole('heading', {
+        name: messageRegexp(`health_category.${HealthCategoryEnum.Medication}`),
+        level: 1,
+    });
+
+    expect(screen.getByRole('alert')).toBeVisible();
+});
+
+test('loads and receives no data from category query', async () => {
+    mockUseHealthCategoryQuery.mockImplementation(() => ({
+        id: faker.string.uuid(),
+        category: HealthCategoryEnum.Medication,
+        isLoading: false,
+        isError: false,
+        isEmpty: true,
+        data: {
+            medicationUse: [],
+            medicationAgreements: [],
+            administrationAgreements: [],
+        } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
+    }));
+
+    setupWithAppProviders(<HealthCategory />);
+
+    screen.getByRole('heading', {
+        name: messageRegexp(`health_category.${HealthCategoryEnum.Medication}`),
+        level: 1,
+    });
+
+    screen.getByRole('heading', {
+        name: messageRegexp('health_category.empty.heading'),
+        level: 2,
     });
 });
 

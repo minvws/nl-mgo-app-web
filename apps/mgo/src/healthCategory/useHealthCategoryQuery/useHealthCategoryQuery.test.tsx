@@ -106,6 +106,8 @@ test('returns query state and related store data for medication ', async () => {
         isError: false,
         isEmpty: false,
         data: {
+            administrationAgreements: [],
+            medicationAgreements: [],
             medicationUse: [resource],
         },
     });
@@ -138,8 +140,10 @@ test('can handle errors', async () => {
         category: HealthCategory.Medication,
         isLoading: false,
         isError: true,
-        isEmpty: false,
+        isEmpty: true,
         data: {
+            administrationAgreements: [],
+            medicationAgreements: [],
             medicationUse: [],
         },
     });

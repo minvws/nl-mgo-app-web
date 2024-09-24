@@ -29,6 +29,8 @@ test('shows a list of resources', async () => {
                     mgoResource: {} as any, // eslint-disable-line @typescript-eslint/no-explicit-any
                 },
             ],
+            medicationAgreements: [],
+            administrationAgreements: [],
         },
     };
 

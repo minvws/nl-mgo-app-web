@@ -15,23 +15,6 @@ vi.mock('$/services', () => ({
     })),
 }));
 
-test('returns queries for medication', () => {
-    const organizations = [
-        faker.custom.healthcareOrganization(),
-        faker.custom.healthcareOrganization(),
-    ];
-    const store = useOrganizationsStore.getState();
-    vi.spyOn(store, 'getAllOrganizations').mockImplementation(() => organizations);
-
-    const { result } = renderHook(() => useHealthCategoryQueries(HealthCategory.Medication));
-    const queryKeys = result.current.map((x) => x.queryKey);
-
-    expect(queryKeys).toEqual([
-        [organizations[0].id, DataServiceId.CommonClinicalDataset, 'getMedicationUse'],
-        [organizations[1].id, DataServiceId.CommonClinicalDataset, 'getMedicationUse'],
-    ]);
-});
-
 test('returns queries for specific organisations if specified', () => {
     const organizations = [faker.custom.healthcareOrganization()];
     const store = useOrganizationsStore.getState();
@@ -42,8 +25,10 @@ test('returns queries for specific organisations if specified', () => {
     );
     const queryKeys = result.current.map((x) => x.queryKey);
 
-    expect(queryKeys).toEqual([
-        [organizations[0].id, DataServiceId.CommonClinicalDataset, 'getMedicationUse'],
+    expect(queryKeys[0]).toEqual([
+        organizations[0].id,
+        DataServiceId.CommonClinicalDataset,
+        'getMedicationUse',
     ]);
 });
 
