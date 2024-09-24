@@ -54,10 +54,12 @@
     },
     "pnpm": {
         "overrides comments (non-standard-key)": {
-            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j   "
+            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j",
+            "rollup": "app/mgo > vite-plugin-svgr@4.2.0 > '@rollup/pluginutils@5.1.0 > rollup:4.21.3 / https://github.com/advisories/GHSA-gcx4-mw62-g8wm"
         },
         "overrides": {
-            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0"
+            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0",
+            "rollup": "^4.22.4"
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {

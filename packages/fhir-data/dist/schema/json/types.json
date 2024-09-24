@@ -1230,6 +1230,43 @@
       ],
       "additionalProperties": false
     },
+    "ZibMedicalDeviceProduct": {
+      "type": "object",
+      "properties": {
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "expirationDate": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibMedicationAgreement": {
       "type": "object",
       "properties": {

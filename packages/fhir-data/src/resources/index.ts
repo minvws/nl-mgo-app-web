@@ -27,3 +27,4 @@ export * from './zibDrugUse/zibDrugUse';
 export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';
 export * from './zibTobaccoUse/zibTobaccoUse';
 export * from './zibNutritionAdvice/zibNutritionAdvice';
+export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct';

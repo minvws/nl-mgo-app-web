@@ -7,6 +7,7 @@ import { Condition } from 'fhir/r3';
 import { Consent } from 'fhir/r3';
 import { ContactPoint } from 'fhir/r3';
 import { Coverage } from 'fhir/r3';
+import { Device } from 'fhir/r3';
 import { DeviceUseStatement } from 'fhir/r3';
 import { DomainResource } from 'fhir/r3';
 import { Dosage } from 'fhir/r3';
@@ -733,6 +734,19 @@ declare function parseZibMedicalDevice(resource: DeviceUseStatement): {
 };
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317259
+ */
+declare function parseZibMedicalDeviceProduct(resource: Device): {
+    note: parse.MgoAnnotation[] | undefined;
+    patient: parse.MgoReference | undefined;
+    expirationDate: DateTimeString | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct";
+};
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317273
  */
 declare function parseZibMedicationAgreement(resource: MedicationRequest): {
@@ -1044,6 +1058,11 @@ declare function uiSchema_17(resource: ZibTobaccoUse): UiSchema;
 declare function uiSchema_18(resource: ZibNutritionAdvice): UiSchema;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
+ */
+declare function uiSchema_19(resource: ZibMedicalDeviceProduct): UiSchema;
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
 declare function uiSchema_2(resource: NlCorePatient): UiSchema;
@@ -1224,6 +1243,14 @@ export declare const zibMedicalDevice: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice";
     parse: typeof parseZibMedicalDevice;
     uiSchema: typeof uiSchema_8;
+};
+
+export declare type ZibMedicalDeviceProduct = ReturnType<typeof parseZibMedicalDeviceProduct>;
+
+export declare const zibMedicalDeviceProduct: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct";
+    parse: typeof parseZibMedicalDeviceProduct;
+    uiSchema: typeof uiSchema_19;
 };
 
 export declare type ZibMedicationAgreement = ReturnType<typeof parseZibMedicationAgreement>;
