@@ -1,10 +1,11 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOrganization } from '$/hooks';
-import { Heading } from '@minvws/mgo-mgo-ui';
+import { CategoryButton, Heading } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NotFound } from './NotFound';
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
+import { RouterLink } from '$/routing';
 
 export function Organization() {
     const { organization } = useOrganization();
@@ -39,6 +40,11 @@ export function Organization() {
                     </h1>
                 </Heading>
 
+                <CategoryButton icon="folder" asChild>
+                    <RouterLink to={`/overzicht/${organization.slug}/documenten`}>
+                        <FormattedMessage id="organization.documents_heading" />
+                    </RouterLink>
+                </CategoryButton>
                 <HealthCategoryList organization={organization} />
             </section>
         </>
