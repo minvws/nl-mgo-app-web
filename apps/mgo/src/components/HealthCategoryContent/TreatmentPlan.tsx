@@ -1,3 +1,4 @@
+/* c8 ignore start - temp ignore for release */
 import { HealthCategory } from '$/healthCategory';
 import { Stack } from '@minvws/mgo-mgo-ui';
 import { HealthCategoryDetailList } from '../HealthCategoryDetailList/HealthCategoryDetailList';

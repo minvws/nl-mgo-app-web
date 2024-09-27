@@ -12,6 +12,6 @@ export function getMedicalDevicesData(
         medicalDeviceProducts: resources.getResourcesByProfile(
             'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct',
             organizationIdFilter
-        )
+        ),
     };
 }

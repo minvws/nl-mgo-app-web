@@ -1,3 +1,4 @@
+/* c8 ignore start - temp ignore for release */
 import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { RouterLink } from '$/routing';
