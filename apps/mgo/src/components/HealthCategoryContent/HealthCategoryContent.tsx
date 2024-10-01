@@ -1,4 +1,3 @@
-/* c8 ignore start - temp ignore for release */
 import { HealthCategory } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { type FunctionComponent } from 'react';

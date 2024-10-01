@@ -1,4 +1,3 @@
-/* c8 ignore start - temp ignore for release */
 import { HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { type HealthcareOrganization } from '$/store';
