@@ -39,7 +39,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
             isLoading={query.isLoading}
             label={
                 !query.isLoading && query.isEmpty
-                    ? intl.formatMessage({ id: 'common.no-results' })
+                    ? intl.formatMessage({ id: 'common.no_data' })
                     : undefined
             }
         >
