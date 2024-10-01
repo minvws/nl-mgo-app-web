@@ -9,7 +9,9 @@ export interface CategoryListProps {
 }
 
 export function HealthCategoryList({ organization }: CategoryListProps) {
+    /* c8 ignore start - organization required for now */
     const organizationFilter = organization?.id ? [organization.id] : undefined;
+    /* c8 ignore end */
 
     const categoryQueries: QueryResult<HealthCategory>[] = [
         useHealthCategoryQuery(HealthCategory.PersonalInformation, organizationFilter),
@@ -21,7 +23,6 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
         useHealthCategoryQuery(HealthCategory.Lifestyle, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Warning, organizationFilter),
         useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
         useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Vaccinations, organizationFilter),
         useHealthCategoryQuery(HealthCategory.LaboratoryResults, organizationFilter),

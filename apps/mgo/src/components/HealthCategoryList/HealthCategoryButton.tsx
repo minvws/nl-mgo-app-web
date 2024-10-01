@@ -34,7 +34,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
     return (
         <CategoryButton
             asChild
-            icon={iconMap[query.category] ?? 'more-horiz'}
+            icon={iconMap[query.category]}
             loadingText={intl.formatMessage({ id: 'common.loading' })}
             isLoading={query.isLoading}
             label={

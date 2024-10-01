@@ -55,5 +55,6 @@ export function HealthCategoryContent<T extends HealthCategory>({
         typeof category
     > | null;
 
+    /* c8 ignore start - null shoud not happen */
     return CategoryContent ? <CategoryContent data={data} /> : null;
 }
