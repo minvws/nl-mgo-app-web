@@ -9,7 +9,7 @@ const VACCINATIONS_SERVICE_ID = 63;
 
 function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: number) {
     return safeGet(organizationDTO, ({ data_services }) => {
-        const service = data_services.find((x) => x.id === id);
+        const service = data_services.find((x) => x.id == id);
         return service!.roles[0].resource_endpoint;
     });
 }
@@ -19,10 +19,12 @@ export function useParseHealthcareOrganization() {
     const unknownLabel = intl.formatMessage({ id: 'common.unknown' });
 
     function parseHealthcareOrganization(organizationDTO: HealthcareOrganizationDTO) {
-        const { identification_type, identification_value, display_name } = organizationDTO;
+        const { identification, /** identification_type, identification_value, */ display_name } =
+            organizationDTO;
 
         return {
-            id: `${identification_type}-${identification_value}`,
+            // id: `${identification_type}-${identification_value}`,
+            id: identification,
             name: display_name ?? unknownLabel,
             category: safeGet(organizationDTO, (x) => x.types[0].display_name, unknownLabel),
             address: safeGet(organizationDTO, (x) => x.addresses[0].address, unknownLabel),

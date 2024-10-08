@@ -40,6 +40,7 @@ export type HealthcareServiceDTO = {
 
 export type HealthcareOrganizationDTO = {
     display_name?: string;
+    identification: string;
     identification_type?: string;
     identification_value?: string;
     active?: boolean;
