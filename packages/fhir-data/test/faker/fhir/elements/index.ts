@@ -18,3 +18,5 @@ export * from './consentPolicy';
 
 export * from './conditionStage';
 export * from './conditionEvidence';
+
+export * from './immunizationPractitioner';

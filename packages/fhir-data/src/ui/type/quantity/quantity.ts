@@ -20,3 +20,14 @@ export const quantity: UiFunction<MgoQuantity, SingleValue[]> = (label, value, o
         },
     ];
 };
+
+export const simpleQuantity: UiFunction<MgoQuantity, SingleValue> = (label, value, options) => {
+    const { value: quantityValue, unit } = value ?? {};
+
+    return {
+        label: label,
+        type: `quantity.value`,
+        display: format.valueWithUnit(quantityValue, unit),
+        ...options,
+    };
+};
