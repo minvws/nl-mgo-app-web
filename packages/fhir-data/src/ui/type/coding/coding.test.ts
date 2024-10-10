@@ -20,3 +20,20 @@ test('coding', () => {
         ...options,
     });
 });
+
+test('codingWithoutSystem', () => {
+    const label = faker.lorem.word();
+    const options = faker.uiSchema.valueOptions();
+    const mgoCoding: MgoCoding = {
+        code: faker.fhir.code(),
+        system: faker.internet.url(),
+        display: faker.lorem.sentence(),
+    };
+    const result = general.codingWithoutSystem(label, mgoCoding, options);
+    expect(result).toEqual({
+        label,
+        type: 'coding',
+        display: `${mgoCoding.display}`,
+        ...options,
+    });
+});

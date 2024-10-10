@@ -2,7 +2,7 @@ import { faker } from '$test';
 import { expect, test } from 'vitest';
 import { type MgoQuantity } from '../../../parse/type';
 import { format } from '../../format';
-import { quantity } from './quantity';
+import { quantity, simpleQuantity } from './quantity';
 
 export function mockQuantity(): MgoQuantity {
     const comparator = faker.fhir.code(['<', '<=', '>=', '>']);
@@ -34,4 +34,29 @@ test('quantity', () => {
             ...options,
         },
     ]);
+});
+
+test('simpleQuantity', () => {
+    const label = faker.lorem.word();
+    const options = faker.uiSchema.valueOptions();
+    const mgoQuantity = mockQuantity();
+    const result = simpleQuantity(label, mgoQuantity, options);
+    expect(result).toEqual({
+        label: label,
+        type: `quantity.value`,
+        display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
+        ...options,
+    });
+});
+
+test('simpleQuantity with undefined fields', () => {
+    const label = faker.lorem.word();
+    const options = faker.uiSchema.valueOptions();
+    const result = simpleQuantity(label, undefined, options);
+    expect(result).toEqual({
+        label: label,
+        type: `quantity.value`,
+        display: undefined,
+        ...options,
+    });
 });

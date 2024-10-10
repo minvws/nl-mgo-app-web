@@ -16,3 +16,16 @@ export const coding: UiFunction<MgoCoding, SingleValue> = (label, value, options
         ...options,
     };
 };
+
+export const codingWithoutSystem: UiFunction<MgoCoding, SingleValue> = (label, value, options) => {
+    const { display } = value ?? {};
+
+    const displayString = display ?? '';
+
+    return {
+        label,
+        type: 'coding',
+        display: displayString === '' ? undefined : displayString,
+        ...options,
+    };
+};

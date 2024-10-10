@@ -2133,6 +2133,71 @@
         "profile"
       ],
       "additionalProperties": false
+    },
+    "ZibVaccination": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "patient": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "vaccineCode": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "dose": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "vaccinationDate": {
+          "type": "string"
+        },
+        "repeatDate": {
+          "type": "null"
+        },
+        "practitioner": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "actor": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination"
+        }
+      },
+      "required": [
+        "repeatDate",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
     }
   }
 }

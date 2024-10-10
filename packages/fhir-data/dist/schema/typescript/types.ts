@@ -16,6 +16,7 @@ import { Element as Element_2 } from 'fhir/r3';
 import { Flag } from 'fhir/r3';
 import { HumanName } from 'fhir/r3';
 import { Identifier } from 'fhir/r3';
+import { Immunization } from 'fhir/r3';
 import { LosslessNumber } from 'lossless-json';
 import { Medication } from 'fhir/r3';
 import { MedicationDispense } from 'fhir/r3';
@@ -37,6 +38,10 @@ import { Timing } from 'fhir/r3';
 declare interface Actor {
     role: parse.MgoCodeableConcept | undefined;
     reference: parse.MgoReference | undefined;
+}
+
+declare interface Actor_2 {
+    actor: parse.MgoReference | undefined;
 }
 
 export declare const annotation: (value: Nullable<Annotation>) => MgoAnnotation | undefined;
@@ -957,6 +962,24 @@ declare function parseZibTreatmentDirective(resource: Consent): {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective";
 };
 
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
+ */
+declare function parseZibVaccination(resource: Immunization): {
+    identifier: parse.MgoIdentifier[] | undefined;
+    patient: parse.MgoReference | undefined;
+    vaccineCode: parse.MgoCodeableConcept | undefined;
+    dose: parse.MgoQuantity | undefined;
+    vaccinationDate: DateString | undefined;
+    repeatDate: null;
+    practitioner: Actor_2[] | undefined;
+    note: parse.MgoAnnotation[] | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination";
+};
+
 export declare const period: (value: Nullable<Period>) => MgoPeriod | undefined;
 
 declare interface Policy {
@@ -1066,6 +1089,11 @@ declare function uiSchema_19(resource: ZibMedicalDeviceProduct): UiSchema;
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
 declare function uiSchema_2(resource: NlCorePatient): UiSchema;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
+ */
+declare function uiSchema_20(resource: ZibVaccination): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
@@ -1339,6 +1367,14 @@ export declare const zibTreatmentDirective: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective";
     parse: typeof parseZibTreatmentDirective;
     uiSchema: typeof uiSchema_12;
+};
+
+export declare type ZibVaccination = ReturnType<typeof parseZibVaccination>;
+
+export declare const zibVaccination: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination";
+    parse: typeof parseZibVaccination;
+    uiSchema: typeof uiSchema_20;
 };
 
 export { }
