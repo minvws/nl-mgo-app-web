@@ -29,3 +29,4 @@ export * from './zibTobaccoUse/zibTobaccoUse';
 export * from './zibNutritionAdvice/zibNutritionAdvice';
 export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct';
 export * from './zibVaccination/zibVaccination';
+export * from './zibEncounter/zibEncounter';

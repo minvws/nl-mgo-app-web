@@ -1,0 +1,58 @@
+{
+    "resourceType": "Encounter",
+    "id": "zib-encounter-01",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Contact. Subject: Johan XXX_Helleman. Id: 19adad57-8fdf-11ec-1860-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: voltooid</caption><tbody><tr><th>Type contact</th><td><div><span title=\"inpatient encounter (IMP - v3/ActCode)\">inpatient encounter</span></div></td></tr><tr><th>Periode</th><td>16 augustus 2012 - 19 augustus 2012</td></tr><tr><th>Probleem</th><td><ul><li>Fracture of lower limb (disorder)</li><li>Surgical reduction of fracture (procedure)</li></ul></td></tr><tr><th>Participant</th><td><div>G.Z.M. de Wit<div>Zorgverlenerrol: Medisch specialisten, dermatologie</div></div></td></tr><tr><th>Zorgaanbieder</th><td>UMCG - Afdeling Orthopedie</td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19adad57-8fdf-11ec-1860-020000000000"
+        }
+    ],
+    "status": "finished",
+    "class": {
+        "system": "http://hl7.org/fhir/v3/ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+    },
+    "subject": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
+    "participant": [
+        {
+            "individual": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-03",
+                            "display": "Medisch specialisten, dermatologie"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-03",
+                "display": "G.Z.M. de Wit"
+            }
+        }
+    ],
+    "period": { "start": "2012-08-16", "end": "2012-08-19" },
+    "diagnosis": [
+        {
+            "condition": {
+                "reference": "Condition/zib-problem-05",
+                "display": "Fracture of lower limb (disorder)"
+            }
+        },
+        {
+            "condition": {
+                "reference": "Procedure/zib-procedure-02",
+                "display": "Surgical reduction of fracture (procedure)"
+            }
+        }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-02",
+        "display": "UMCG - Afdeling Orthopedie"
+    }
+}

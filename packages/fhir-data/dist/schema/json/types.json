@@ -1041,6 +1041,89 @@
       ],
       "additionalProperties": false
     },
+    "ZibEncounter": {
+      "type": "object",
+      "properties": {
+        "class": {
+          "$ref": "#/definitions/MgoCoding"
+        },
+        "participant": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "individual": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "serviceProvider": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "period": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "diagnosis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": {
+                "$ref": "#/definitions/MgoReference"
+              },
+              "role": {
+                "$ref": "#/definitions/MgoCodeableConcept"
+              },
+              "rank": {
+                "$ref": "#/definitions/MgoPositiveInt"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "reason": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "hospitalization": {
+          "type": "object",
+          "properties": {
+            "admitSource": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            },
+            "dischargeDisposition": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"
+        }
+      },
+      "required": [
+        "hospitalization",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibFunctionalOrMentalStatus": {
       "type": "object",
       "properties": {
@@ -2155,9 +2238,6 @@
         "vaccinationDate": {
           "type": "string"
         },
-        "repeatDate": {
-          "type": "null"
-        },
         "practitioner": {
           "type": "array",
           "items": {
@@ -2193,7 +2273,6 @@
         }
       },
       "required": [
-        "repeatDate",
         "referenceId",
         "profile"
       ],

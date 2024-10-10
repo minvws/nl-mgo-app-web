@@ -24,7 +24,6 @@
         "code": "ml"
     },
     "vaccinationDate": "1999-03-09",
-    "repeatDate": null,
     "practitioner": [
         {
             "actor": {

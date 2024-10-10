@@ -18,7 +18,6 @@ function parseZibVaccination(resource: Immunization) {
         vaccineCode: parse.codeableConcept(resource.vaccineCode),
         dose: parse.quantity(resource.doseQuantity),
         vaccinationDate: parse.date(resource.date),
-        repeatDate: null, // Can't find any mapping to an Immunization field.
         practitioner: map(resource.practitioner, actor.parse),
         note: map(resource.note, parse.annotation),
     };

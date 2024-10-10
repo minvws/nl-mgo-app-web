@@ -20,11 +20,6 @@
                     "display": "1999-03-09"
                 },
                 {
-                    "label": "Immunization.repeatDate",
-                    "type": "date_time",
-                    "display": null
-                },
-                {
                     "label": "Immunization.note.text",
                     "type": "annotation",
                     "display": [

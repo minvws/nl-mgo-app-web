@@ -20,3 +20,5 @@ export * from './conditionStage';
 export * from './conditionEvidence';
 
 export * from './immunizationPractitioner';
+
+export * from './encounterHospitalization';
