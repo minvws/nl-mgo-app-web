@@ -22,7 +22,6 @@ export function uiSchema(resource: ZibVaccination): UiSchema {
                     ),
                     ui.simpleQuantity('Immunization.doseQuantity', resource.dose),
                     ui.dateTime('Immunization.date', resource.vaccinationDate),
-                    ui.dateTime('Immunization.repeatDate', resource.repeatDate),
                     ui.multipleValue(`Immunization.note.text`, resource.note, ui.annotation),
 
                     ...ui.helpers.getChildren(practitioners),

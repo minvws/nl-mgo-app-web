@@ -1,0 +1,59 @@
+{
+    "label": "Universitair Medisch Centrum Groningen",
+    "children": [
+        {
+            "label": "Encounter",
+            "children": [
+                {
+                    "label": "Encounter.class",
+                    "type": "coding",
+                    "display": "emergency (EMER in code systeem http://hl7.org/fhir/v3/ActCode)"
+                },
+                {
+                    "label": "Encounter.participant.individual",
+                    "type": "reference",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
+                },
+                {
+                    "label": "Encounter.serviceProvider",
+                    "type": "reference",
+                    "display": "Universitair Medisch Centrum Groningen",
+                    "reference": "Organization/nl-core-organization-02"
+                },
+                {
+                    "label": "Encounter.period.start",
+                    "type": "period.start",
+                    "display": "2012-08-16"
+                },
+                {
+                    "label": "Encounter.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "Encounter.diagnosis.condition",
+                    "type": "reference",
+                    "display": "Broken leg",
+                    "reference": "Condition/zib-problem-05",
+                    "summary": true
+                },
+                {
+                    "label": "Encounter.reason",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "Encounter.hospitalization.admitSource",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "Encounter.hospitalization.dischargeDisposition",
+                    "type": "codable_concept",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}
