@@ -12,6 +12,7 @@ import { Problem } from './Problem';
 import { TreatmentPlan } from './TreatmentPlan';
 import { Warning } from './Warning';
 import { Vaccination } from './Vaccination';
+import { Encounter } from './Encounter';
 
 export interface CategoryContentProps<T extends HealthCategory> {
     readonly data: HealthCategoryData<T>;
@@ -39,7 +40,7 @@ const categoryContent = {
     [HealthCategory.Vaccinations]: Vaccination,
     [HealthCategory.LaboratoryResults]: null,
     [HealthCategory.Procedures]: null,
-    [HealthCategory.ContactsAndAppointments]: null,
+    [HealthCategory.ContactsAndAppointments]: Encounter,
     [HealthCategory.Vitals]: null,
 } satisfies CategoryContentMap;
 

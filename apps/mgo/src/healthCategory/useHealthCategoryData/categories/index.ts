@@ -11,6 +11,7 @@ import { getWarningdata } from './warning';
 import { getAllergyData } from './allergy';
 import { getMedicalDevicesData } from './medicalDevices';
 import { getVaccinationData } from './vaccination';
+import { getEncounterData } from './encounter';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -31,6 +32,6 @@ export const healthCategoryData = {
     [HealthCategory.Vaccinations]: getVaccinationData,
     [HealthCategory.LaboratoryResults]: () => ({}),
     [HealthCategory.Procedures]: () => ({}),
-    [HealthCategory.ContactsAndAppointments]: () => ({}),
+    [HealthCategory.ContactsAndAppointments]: getEncounterData,
     [HealthCategory.Vitals]: () => ({}),
 } satisfies Record<HealthCategory, HealthCategoryResources>;

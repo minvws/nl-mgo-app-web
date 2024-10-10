@@ -21,6 +21,7 @@ test.each([
     [HealthCategory.AllergiesAndIntolerances, ['allergies']],
     [HealthCategory.MedicalDevices, ['medicalDevices', 'medicalDeviceProducts']],
     [HealthCategory.Vaccinations, ['vaccinations']],
+    [HealthCategory.ContactsAndAppointments, ['encounters']],
 ])('shows a list of resources for: %s', (category, keys) => {
     const store = useOrganizationsStore.getState();
     const mock = vi.spyOn(store, 'getOrganizationById');
