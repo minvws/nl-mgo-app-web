@@ -12,6 +12,7 @@ import { getLifestyleQueries } from './lifestyle';
 import { getWarningQueries } from './warning';
 import { getAllergyQueries } from './allergy';
 import { getMedicalDevicesQueries } from './medicalDevices';
+import { getVaccinationQueries } from './vaccination';
 
 export const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
@@ -24,7 +25,7 @@ export const healthCategoryQueries = {
     [HealthCategory.AllergiesAndIntolerances]: getAllergyQueries,
     [HealthCategory.Medication]: getMedicationQueries,
     [HealthCategory.MedicalDevices]: getMedicalDevicesQueries,
-    [HealthCategory.Vaccinations]: () => [],
+    [HealthCategory.Vaccinations]: getVaccinationQueries,
     [HealthCategory.LaboratoryResults]: () => [],
     [HealthCategory.Procedures]: () => [],
     [HealthCategory.ContactsAndAppointments]: () => [],

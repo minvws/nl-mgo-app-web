@@ -13,6 +13,9 @@ vi.mock('$/services', () => ({
     getGeneralPractitionerService: vi.fn(() => ({
         dataServiceId: DataServiceId.GeneralPractitioner,
     })),
+    getVaccinationsService: vi.fn(() => ({
+        dataServiceId: DataServiceId.Vaccinations,
+    })),
 }));
 
 test('returns queries for specific organisations if specified', () => {
