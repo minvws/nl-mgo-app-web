@@ -14,7 +14,12 @@ export function createClient({ parseJson = safeParse, searchParams, ...rest }: F
      * Note that we do not pass any default searchParams to the instance.
      * Ky does not manage merging the searchParams properly. Therefore, we will manage it ourselves.
      */
-    const instance = ky.create({ parseJson, ...rest });
+    const token = btoa(`mgo:healthyoverzicht`);
+    const instance = ky.create({ parseJson, ...rest }).extend({
+        headers: {
+            Authorization: `Basic ${token}`,
+        },
+    });
 
     return {
         instance,

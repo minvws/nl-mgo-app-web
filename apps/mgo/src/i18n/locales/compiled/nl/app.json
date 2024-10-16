@@ -92,7 +92,7 @@
     "common.loading_data": [
         {
             "type": 0,
-            "value": "Ophalen..."
+            "value": "Laden"
         }
     ],
     "common.logout": [
@@ -435,10 +435,22 @@
             "value": "Verwijder zorgaanbieder"
         }
     ],
+    "health_category.alerts": [
+        {
+            "type": 0,
+            "value": "Waarschuwingen"
+        }
+    ],
     "health_category.allergies": [
         {
             "type": 0,
             "value": "Allergieën"
+        }
+    ],
+    "health_category.appointments": [
+        {
+            "type": 0,
+            "value": "Afspraken"
         }
     ],
     "health_category.complaints": [
@@ -447,16 +459,82 @@
             "value": "Klachten"
         }
     ],
+    "health_category.complaints.details_heading": [
+        {
+            "type": 0,
+            "value": "Alle klachtgegevens"
+        }
+    ],
+    "health_category.complaints.no_search_results": [
+        {
+            "type": 0,
+            "value": "Geen klachten gevonden"
+        }
+    ],
+    "health_category.complaints.search": [
+        {
+            "type": 0,
+            "value": "Zoek een klacht"
+        }
+    ],
+    "health_category.devices": [
+        {
+            "type": 0,
+            "value": "Medische hulpmiddelen"
+        }
+    ],
     "health_category.documents": [
         {
             "type": 0,
             "value": "Documenten"
         }
     ],
-    "health_category.labresults": [
+    "health_category.empty.heading": [
+        {
+            "type": 0,
+            "value": "Geen gegevens gevonden"
+        }
+    ],
+    "health_category.empty.subheading": [
+        {
+            "type": 0,
+            "value": "Er is hier niets opgeslagen."
+        }
+    ],
+    "health_category.error.banner.heading": [
+        {
+            "type": 0,
+            "value": "Gegevens ophalen mislukt"
+        }
+    ],
+    "health_category.error.banner.subheading": [
+        {
+            "type": 0,
+            "value": "Er ging iets mis in ons systeem."
+        }
+    ],
+    "health_category.error.banner.try_again": [
+        {
+            "type": 0,
+            "value": "Probeer opnieuw"
+        }
+    ],
+    "health_category.lab_results": [
         {
             "type": 0,
             "value": "Uitslagen"
+        }
+    ],
+    "health_category.lifestyle": [
+        {
+            "type": 0,
+            "value": "Leefstijl"
+        }
+    ],
+    "health_category.loading.heading": [
+        {
+            "type": 0,
+            "value": "Aan het laden…"
         }
     ],
     "health_category.measurements": [
@@ -474,13 +552,55 @@
     "health_category.medication.medication_use": [
         {
             "type": 0,
-            "value": "Huidige medicatie gebruik"
+            "value": "Medicijnen"
+        }
+    ],
+    "health_category.medication.no_search_results": [
+        {
+            "type": 0,
+            "value": "Geen medicijnen gevonden"
+        }
+    ],
+    "health_category.medication.search": [
+        {
+            "type": 0,
+            "value": "Zoek een medicijn"
+        }
+    ],
+    "health_category.mental": [
+        {
+            "type": 0,
+            "value": "Mentaal welzijn"
+        }
+    ],
+    "health_category.patient": [
+        {
+            "type": 0,
+            "value": "Persoonlijke gegevens"
+        }
+    ],
+    "health_category.payment": [
+        {
+            "type": 0,
+            "value": "Betaalgegevens"
+        }
+    ],
+    "health_category.plans": [
+        {
+            "type": 0,
+            "value": "Behandelwensen- en plan"
         }
     ],
     "health_category.reports": [
         {
             "type": 0,
             "value": "Verslagen"
+        }
+    ],
+    "health_category.search_again": [
+        {
+            "type": 0,
+            "value": "Probeer opnieuw te zoeken."
         }
     ],
     "health_category.treatments": [
@@ -577,6 +697,12 @@
         {
             "type": 0,
             "value": "De volgende keer dat je inlogt kun je je gegevens opnieuw ophalen."
+        }
+    ],
+    "medication_details.heading": [
+        {
+            "type": 0,
+            "value": "Alle medicijngegevens"
         }
     ],
     "medication_use.heading": [
@@ -790,16 +916,22 @@
             "value": "Voeg een zorgaanbieder toe"
         }
     ],
+    "overview.empty.action": [
+        {
+            "type": 0,
+            "value": "Voeg zorgaanbieders toe"
+        }
+    ],
     "overview.empty.heading": [
         {
             "type": 0,
-            "value": "Je overzicht is nog leeg"
+            "value": "Je hebt nog geen zorgaanbieders toegevoegd"
         }
     ],
     "overview.empty.subheading": [
         {
             "type": 0,
-            "value": "Voeg zorgaanbieders toe om hier gegevens over je gezondheid te zien."
+            "value": "Voeg zorgaanbieders toe om gegevens over je gezondheid te zien."
         }
     ],
     "overview.heading": [
@@ -812,6 +944,12 @@
         {
             "type": 0,
             "value": "Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald."
+        }
+    ],
+    "overview.no_results_action": [
+        {
+            "type": 0,
+            "value": "Voeg zorgaanbieders toe"
         }
     ],
     "overview.subheading": [
@@ -875,7 +1013,7 @@
         },
         {
             "type": 0,
-            "value": "  opgehaald."
+            "value": " opgehaald."
         }
     ],
     "proposition.statement_2": [
@@ -913,13 +1051,13 @@
     "proposition.statement_4": [
         {
             "type": 0,
-            "value": "Je kunt de gegevens in je overzicht altijd"
+            "value": "Je kunt de gegevens in je overzicht altijd "
         },
         {
             "children": [
                 {
                     "type": 0,
-                    "value": " verwijderen of opnieuw ophalen"
+                    "value": "verwijderen of opnieuw ophalen"
                 }
             ],
             "type": 8,

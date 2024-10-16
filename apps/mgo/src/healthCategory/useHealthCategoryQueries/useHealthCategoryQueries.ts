@@ -1,35 +1,28 @@
-import { useOrganizationsStore, type HealthcareOrganization } from '$/store';
+import { useOrganizationsStore } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
-import { HealthCategory } from '../HealthCategory';
-import { getMedicationQueries } from './medication';
-
-const healthCategoryQueries = {
-    [HealthCategory.Medication]: getMedicationQueries,
-    [HealthCategory.Allergies]: () => [],
-    [HealthCategory.Complaints]: () => [],
-    [HealthCategory.Documents]: () => [],
-    [HealthCategory.LabResults]: () => [],
-    [HealthCategory.Measurements]: () => [],
-    [HealthCategory.Reports]: () => [],
-    [HealthCategory.Treatments]: () => [],
-    [HealthCategory.Vaccinations]: () => [],
-} satisfies Record<HealthCategory, (organization: HealthcareOrganization) => UseQueryOptions[]>;
+import { useMemo } from 'react';
+import { type HealthCategory } from '../HealthCategory';
+import { healthCategoryQueries } from './categories';
 
 export function useHealthCategoryQueries<T extends HealthCategory>(
     category: T,
     organizationIdFilter?: (string | undefined)[]
 ): UseQueryOptions[] {
-    const organizationsStore = useOrganizationsStore();
-    const organizations = organizationIdFilter
-        ? organizationsStore.getOrganizationsById(organizationIdFilter)
-        : organizationsStore.getAllOrganizations();
+    const getOrganizationsById = useOrganizationsStore((x) => x.getOrganizationsById);
+    const getAllOrganizations = useOrganizationsStore((x) => x.getAllOrganizations);
 
-    const getOrganizationQueries = healthCategoryQueries[category];
+    return useMemo(() => {
+        const organizations = organizationIdFilter
+            ? getOrganizationsById(organizationIdFilter)
+            : getAllOrganizations();
 
-    const categoryQueries: UseQueryOptions[] = [];
-    for (const organization of organizations) {
-        categoryQueries.push(...getOrganizationQueries(organization));
-    }
+        const getOrganizationQueries = healthCategoryQueries[category];
+        const categoryQueries: UseQueryOptions[] = [];
+        for (const organization of organizations) {
+            categoryQueries.push(...getOrganizationQueries(organization));
+        }
 
-    return categoryQueries;
+        return categoryQueries;
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- organizationIdFilter can change referentially
+    }, [category, JSON.stringify(organizationIdFilter), getOrganizationsById, getAllOrganizations]);
 }

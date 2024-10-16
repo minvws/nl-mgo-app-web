@@ -1,12 +1,12 @@
 import { type ResourcesState } from '$/store';
 
-export function getMedicationData(
+export function getAllergyData(
     resources: ResourcesState,
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
-        medicationUse: resources.getResourcesByProfile(
-            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
+        allergies: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance',
             organizationIdFilter
         ),
     };

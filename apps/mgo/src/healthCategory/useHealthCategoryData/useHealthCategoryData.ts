@@ -1,25 +1,8 @@
-import { useResourcesStore, type ResourcesState } from '$/store';
-import { HealthCategory } from '../HealthCategory';
-import { getMedicationData } from './medication';
+import { useResourcesStore } from '$/store';
+import { type HealthCategory } from '../HealthCategory';
+import { healthCategoryData } from './categories';
 
-type HealthCategoryResources = (
-    resources: ResourcesState,
-    organizationIds?: (string | undefined)[]
-) => Record<string, unknown>;
-
-export const healthCategoryData = {
-    [HealthCategory.Medication]: getMedicationData,
-    [HealthCategory.Allergies]: () => ({}),
-    [HealthCategory.Complaints]: () => ({}),
-    [HealthCategory.Documents]: () => ({}),
-    [HealthCategory.LabResults]: () => ({}),
-    [HealthCategory.Measurements]: () => ({}),
-    [HealthCategory.Reports]: () => ({}),
-    [HealthCategory.Treatments]: () => ({}),
-    [HealthCategory.Vaccinations]: () => ({}),
-} satisfies Record<HealthCategory, HealthCategoryResources>;
-
-export type HealthCategoryData<T extends HealthCategory> = ReturnType<
+export type HealthCategoryData<T extends HealthCategory = HealthCategory> = ReturnType<
     (typeof healthCategoryData)[T]
 >;
 

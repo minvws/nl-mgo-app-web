@@ -30,7 +30,7 @@ type HealthcareServiceDTORole = {
 };
 
 export type HealthcareServiceDTO = {
-    id?: number;
+    id?: string;
     name?: string;
     interface_version?: number;
     auth_endpoint?: string;
@@ -40,8 +40,7 @@ export type HealthcareServiceDTO = {
 
 export type HealthcareOrganizationDTO = {
     display_name?: string;
-    identification_type?: string;
-    identification_value?: string;
+    identification: string;
     active?: boolean;
     addresses?: Address[];
     names?: Name[];

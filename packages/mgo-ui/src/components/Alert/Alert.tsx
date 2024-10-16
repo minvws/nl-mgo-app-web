@@ -8,16 +8,15 @@ import { IconButton } from '../IconButton/IconButton';
 export interface AlertProps extends HTMLAttributes<HTMLElement> {
     readonly label: string;
     readonly status: Status;
-    readonly description?: string;
     readonly 'aria-label': string;
 }
 
 export const Alert = ({
     label,
     status,
-    description,
     ['aria-label']: ariaLabel,
     className,
+    children,
     ...rest
 }: AlertProps) => {
     const { isOpen, close } = useOpenState({
@@ -39,13 +38,9 @@ export const Alert = ({
                     <span className={`text-base font-bold text-black dark:text-white`}>
                         {label}
                     </span>
-                    {description ? (
-                        <span className={`text-base font-normal text-gray-600 dark:text-gray-300`}>
-                            {description}
-                        </span>
-                    ) : (
-                        ''
-                    )}
+                    <span className={`text-base font-normal text-gray-600 dark:text-gray-300`}>
+                        {children}
+                    </span>
                 </div>
                 <IconButton
                     className="self-start"

@@ -7,14 +7,15 @@ import { statuses } from './statuses';
 test('renders an alert with a description', async () => {
     const props = {
         label: faker.lorem.sentence(),
-        description: faker.lorem.sentence(),
         status: faker.helpers.arrayElement(statuses),
         'aria-label': faker.word.sample(),
     };
 
-    render(<Alert {...props} />);
+    const description = faker.lorem.sentence();
 
-    expect(screen.getByRole('alert')).toHaveTextContent(props.description);
+    render(<Alert {...props}>{description}</Alert>);
+
+    expect(screen.getByRole('alert')).toHaveTextContent(description);
 });
 
 test('renders an alert without a description', async () => {

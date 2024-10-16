@@ -35,15 +35,14 @@ export interface ResourcesState {
     getResourceBySlug: (slug: string | undefined) => Resource | undefined;
 }
 
-function createResource(dto: ResourceDTO, resources: Resource[]): Resource {
-    const slugs = resources.map((resource) => resource.slug);
+function createResource(dto: ResourceDTO, existingSlugs: string[]): Resource {
     const { organizationId, dataServiceId, mgoResource } = dto;
     const uiSchema = getUiSchema(mgoResource as Lossless<MgoResource>);
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {
         id,
-        slug: createUniqueSlug('detail', slugs),
+        slug: createUniqueSlug('detail', existingSlugs),
         organizationId,
         dataServiceId,
         mgoResource,
@@ -56,17 +55,20 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
 
     addResources: (dtos) => {
         const currentResources = get().resources;
+        const currentSlugs = get().resources.map((resource) => resource.slug);
         const newResources: Resource[] = [];
 
         for (const dto of dtos) {
-            const newResource = createResource(dto, currentResources);
+            const newResourceSlugs = newResources.map((x) => x.slug);
+            const newResource = createResource(dto, [...currentSlugs, ...newResourceSlugs]);
             if (
                 currentResources.some(({ id }) => id === newResource.id) ||
                 newResources.some(({ id }) => id === newResource.id)
             ) {
-                throw new Error(`Resource with id "${newResource.id}" already exists`);
+                console.warn(`Resource with id "${newResource.id}" already exists`);
+            } else {
+                newResources.push(newResource);
             }
-            newResources.push(newResource);
         }
 
         set(({ resources }) => ({

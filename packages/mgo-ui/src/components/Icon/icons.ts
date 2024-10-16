@@ -12,7 +12,7 @@ import KeyboardArrowDown from '@material-symbols/svg-400/outlined/keyboard_arrow
 import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
-import Person from '@material-symbols/svg-400/outlined/person-fill.svg?react';
+import Person from '@material-symbols/svg-400/outlined/person.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
@@ -21,6 +21,17 @@ import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 import Download from '@material-symbols/svg-400/outlined/download.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
+import EventNote from '@material-symbols/svg-400/outlined/event_note.svg?react';
+import Stethoscope from '@material-symbols/svg-400/outlined/stethoscope.svg?react';
+import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
+import EmergencyHome from '@material-symbols/svg-400/outlined/emergency_home.svg?react';
+import Syringe from '@material-symbols/svg-400/outlined/syringe.svg?react';
+import DateRange from '@material-symbols/svg-400/outlined/date_range.svg?react';
+import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react';
+import Allergy from '@material-symbols/svg-400/outlined/allergy.svg?react';
+import MoreHoriz from '@material-symbols/svg-400/outlined/more_horiz.svg?react';
+import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
+import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
 
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
@@ -70,6 +81,17 @@ export const icons = {
     folder: Folder,
     download: Download,
     labs: Labs,
+    'event-note': EventNote,
+    nutrition: Nutrition,
+    'emergency-home': EmergencyHome,
+    stethoscope: Stethoscope,
+    syringe: Syringe,
+    'date-range': DateRange,
+    'vital-signs': VitalSigns,
+    allergy: Allergy,
+    'more-horiz': MoreHoriz,
+    'medical-services': MedicalServices,
+    'sentiment-satisfied': SentimentSatisfied,
 };
 
 export type IconName = keyof typeof icons;

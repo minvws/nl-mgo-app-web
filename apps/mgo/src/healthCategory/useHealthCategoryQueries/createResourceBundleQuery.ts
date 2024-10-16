@@ -1,8 +1,7 @@
-import { useResourcesStore, type HealthcareOrganization } from '$/store';
+import { type HealthcareOrganization } from '$/store';
 import { type DataService } from '@minvws/mgo-fhir-client';
-import { getBundleMgoResources, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
 import { type UseQueryOptions } from '@tanstack/react-query';
-import { HealthCategory } from '../HealthCategory';
+import { type ResourceQueryMeta } from './isResourceQueryMeta';
 
 type FetchResponse = { json: () => Promise<unknown> };
 type SafeReturnType<T> = T extends (...args: any) => any ? ReturnType<T> : unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -24,31 +23,21 @@ export function createResourceBundleQuery<T extends DataService>({
     if (!service) return;
 
     return {
+        retry: false,
         staleTime: Infinity,
 
-        // eslint-disable-next-line @tanstack/query/exhaustive-deps
-        queryKey: [organization.id, service.dataServiceId, HealthCategory.Medication, method],
+        meta: {
+            organizationId: organization.id,
+            dataServiceId: service.dataServiceId,
+            method: method as string,
+        } satisfies ResourceQueryMeta,
+
+        // eslint-disable-next-line @tanstack/query/exhaustive-deps -- service[method] is not properly serializable, this combination of dataServiceId and method is enough
+        queryKey: [organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
-            const bundle = await (service[method] as () => FetchResponse)().json();
-
-            if (!isFhirResource(bundle, 'Bundle')) {
-                throw new Error(
-                    `Response for service: ${service.dataServiceId}: ${String(method)} - does not seem to contain a Fhir Bundle. Received resourceType: "${(bundle as FhirResource)?.resourceType}"`
-                );
-            }
-
-            const mgoResources = getBundleMgoResources(bundle);
-
-            if (mgoResources?.length) {
-                const resourceStore = useResourcesStore.getState();
-                const mgoResourcesDtos = mgoResources.map((mgoResource) => ({
-                    dataServiceId: service.dataServiceId,
-                    organizationId: organization.id,
-                    mgoResource,
-                }));
-                resourceStore.addResources(mgoResourcesDtos);
-            }
+            // await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));
+            return (service[method] as () => FetchResponse)().json();
         },
     };
 }

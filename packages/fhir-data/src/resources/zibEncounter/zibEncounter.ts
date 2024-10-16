@@ -20,7 +20,6 @@ function parseZibEncounter(resource: Encounter) {
         serviceProvider: parse.reference(resource.serviceProvider),
         period: parse.period(resource.period),
         diagnosis: map(resource.diagnosis, diagnosis.parse),
-        // TODO: verrichting?
         reason: map(resource.reason, parse.codeableConcept),
         hospitalization: hospitalization.parse(resource.hospitalization),
     };

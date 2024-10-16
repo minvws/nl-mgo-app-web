@@ -8,8 +8,7 @@ import { healthcareOrganizationType } from './healthcareOrganizationType';
 export const healthcareOrganizationDTO = createMockDataFactory<HealthcareOrganizationDTO>(() => ({
     display_name: faker.company.name(),
     active: faker.datatype.boolean(),
-    identification_type: faker.string.sample(),
-    identification_value: faker.string.sample(),
+    identification: faker.string.sample(),
     addresses: [address()],
     types: [healthcareOrganizationType()],
     names: [],

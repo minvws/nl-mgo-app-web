@@ -12,23 +12,23 @@ type Story = StoryObj<typeof Alert>;
 export const Success: Story = {
     args: {
         label: 'Success',
-        description: 'Description',
         status: 'success',
+        children: 'Description',
     },
 };
 
 export const Warning: Story = {
     args: {
         label: 'Warning',
-        description: 'Description',
         status: 'warning',
+        children: 'Description',
     },
 };
 
 export const Info: Story = {
     args: {
         label: 'Info',
-        description: 'Description',
         status: 'info',
+        children: 'Description',
     },
 };

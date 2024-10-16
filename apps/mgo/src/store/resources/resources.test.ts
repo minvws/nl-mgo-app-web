@@ -26,21 +26,44 @@ test('addResources adds a resource', async () => {
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
 
     expect(resource.id).toEqual(`${organizationId}-${dataServiceId}-${mgoResource.referenceId}`);
-
     state = useResourcesStore.getState();
     expect(state.resources).toEqual([resource]);
 });
 
-test('addResources throws if there is already a resource with the same id', async () => {
-    const state = useResourcesStore.getState();
+test('addResources can add multiple resources and generates unique slugs', async () => {
+    let state = useResourcesStore.getState();
+    expect(state.resources).toEqual([]);
+
+    state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
+    state = useResourcesStore.getState();
+
+    const newResourceDto = mockResourceDto();
+    const newResourceDto2 = mockResourceDto();
+    const newResourceDto3 = mockResourceDto();
+
+    state.addResources([newResourceDto, newResourceDto2, newResourceDto3]);
+    state = useResourcesStore.getState();
+    const slugs = state.resources.map((resource) => resource.slug);
+
+    expect(state.resources.length).toBe(6);
+    expect(new Set(slugs).size).toBe(6);
+});
+
+test('addResources logs warning if there is already a resource with the same id', async () => {
+    let state = useResourcesStore.getState();
 
     const resourceDto = mockResourceDto();
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
-    expect(() => {
-        state.addResources([resourceDto, resourceDto]);
-    }).toThrowError(
+
+    const mockWarningLog = vi.spyOn(console, 'warn');
+    mockWarningLog.mockImplementationOnce(() => {});
+    state.addResources([resourceDto, resourceDto]);
+    state = useResourcesStore.getState();
+
+    expect(mockWarningLog).toBeCalledWith(
         `Resource with id "${organizationId}-${dataServiceId}-${mgoResource.referenceId}" already exists`
     );
+    expect(state.resources.length).toBe(1);
 });
 
 test('getResourcesByProfile returns resource', async () => {
