@@ -1,7 +1,7 @@
 import { type FhirResource, type ResourceByType, type ResourceType } from '../../fhir';
-import { type Lossless, type LosslessOutput } from '../../types/Lossless';
-import { resourceTypes } from './resourceTypes';
+import { type LosslessOutput, type Lossless } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
+import { resourceTypes } from './resourceTypes';
 
 export function isFhirResource<Type extends ResourceType>(
     value: unknown,

@@ -244,6 +244,9 @@ importers:
       '@types/node':
         specifier: ^22.5.0
         version: 22.5.0
+      glob:
+        specifier: ^11.0.0
+        version: 11.0.0
       quicktype:
         specifier: ^23.0.170
         version: 23.0.170

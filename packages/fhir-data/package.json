@@ -18,13 +18,16 @@
         "schema:json": "tsx ./schema-generator/index.ts",
         "schema:swift:clean": "rimraf ./dist/schema/swift/* --glob",
         "schema:swift": "pnpm run schema:swift:clean && quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --access-level public --protocol hashable --sendable --density dense --multi-file-output --out ./dist/schema/swift/Types.swift",
-        "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework jackson --out ./dist/schema/kotlin/Types.kt"
+        "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework jackson --out ./dist/schema/kotlin/Types.kt",
+        "download:definitions": "./bin/download-fhir-definitions.sh",
+        "extract:labels": "tsx ./definition-labels/index.ts"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
         "@types/fhir": "^0.0.41",
         "@types/lodash": "^4.17.4",
         "@types/node": "^22.5.0",
+        "glob": "^11.0.0",
         "quicktype": "^23.0.170",
         "rimraf": "^6.0.1",
         "ts-json-schema-generator": "^2.3.0",
