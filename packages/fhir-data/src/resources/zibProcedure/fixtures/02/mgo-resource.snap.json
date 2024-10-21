@@ -1,0 +1,32 @@
+{
+    "id": "zib-procedure-02",
+    "referenceId": "Procedure/zib-procedure-02",
+    "resourceType": "Procedure",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure",
+    "performedPeriod": null,
+    "bodySite": null,
+    "bodySiteQualifier": null,
+    "reasonReference": null,
+    "code": [
+        {
+            "code": "274051007",
+            "display": "Surgical reduction of fracture (procedure)",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "procedureMethod": null,
+    "focalDevice": null,
+    "location": null,
+    "performer": [
+        {
+            "actor": {
+                "reference": "Organization/nl-core-organization-02",
+                "display": "UMCG - Afdeling Orthopedie"
+            }
+        }
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    }
+}

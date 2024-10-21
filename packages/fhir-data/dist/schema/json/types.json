@@ -1819,6 +1819,88 @@
       ],
       "additionalProperties": false
     },
+    "ZibProcedure": {
+      "type": "object",
+      "properties": {
+        "performedPeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "bodySite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "bodySiteQualifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "reasonReference": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "procedureMethod": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "focalDevice": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "manipulated": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "location": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "performer": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "actor": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibProduct": {
       "type": "object",
       "properties": {

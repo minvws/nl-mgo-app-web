@@ -1,0 +1,83 @@
+{
+    "label": "Implantation of Swanson prosthesis of knee (procedure)",
+    "children": [
+        {
+            "label": "zib_procedure",
+            "children": [
+                {
+                    "label": "zib_procedure.performed_period.start",
+                    "type": "period.start",
+                    "display": "2012-06-05"
+                },
+                {
+                    "label": "zib_procedure.performed_period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.body_site",
+                    "type": "codable_concept",
+                    "display": [
+                        [
+                            "Knee region structure (body structure) (72696002 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "zib_procedure.bodySite.extension:ProcedureLaterality",
+                    "type": "codable_concept",
+                    "display": [
+                        [
+                            "Left (7771000 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "zib_procedure.reason_reference",
+                    "type": "reference",
+                    "display": [
+                        "Arthropathy (disorder)"
+                    ]
+                },
+                {
+                    "label": "zib_procedure.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "Implantation of Swanson prosthesis of knee (procedure) (60159002 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_procedure.procedure_method",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.focal_device.manipulated",
+                    "type": "reference",
+                    "display": "Knee joint prosthesis, device (physical object)",
+                    "reference": "Device/zib-medicaldeviceproduct-01",
+                    "summary": true
+                },
+                {
+                    "label": "zib_procedure.location",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_procedure.performer",
+                    "type": "reference",
+                    "display": "UMCG - Afdeling Orthopedie",
+                    "reference": "Organization/nl-core-organization-02",
+                    "summary": true
+                },
+                {
+                    "label": "zib_procedure.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        }
+    ]
+}

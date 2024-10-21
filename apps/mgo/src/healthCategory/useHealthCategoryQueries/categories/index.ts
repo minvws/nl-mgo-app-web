@@ -14,6 +14,7 @@ import { getAllergyQueries } from './allergy';
 import { getMedicalDevicesQueries } from './medicalDevices';
 import { getVaccinationQueries } from './vaccination';
 import { getEncounterQueries } from './encounter';
+import { getProcedureQueries } from './procedure';
 
 export const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
@@ -28,7 +29,7 @@ export const healthCategoryQueries = {
     [HealthCategory.MedicalDevices]: getMedicalDevicesQueries,
     [HealthCategory.Vaccinations]: getVaccinationQueries,
     [HealthCategory.LaboratoryResults]: () => [],
-    [HealthCategory.Procedures]: () => [],
+    [HealthCategory.Procedures]: getProcedureQueries,
     [HealthCategory.ContactsAndAppointments]: getEncounterQueries,
     [HealthCategory.Vitals]: () => [],
 } satisfies Record<HealthCategory, (organization: HealthcareOrganization) => UseQueryOptions[]>;

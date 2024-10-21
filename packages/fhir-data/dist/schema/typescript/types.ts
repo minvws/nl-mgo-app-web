@@ -29,6 +29,7 @@ import { NutritionOrder } from 'fhir/r3';
 import { Observation } from 'fhir/r3';
 import { Patient } from 'fhir/r3';
 import { Period } from 'fhir/r3';
+import { Procedure } from 'fhir/r3';
 import { Quantity } from 'fhir/r3';
 import { Range as Range_2 } from 'fhir/r3';
 import { Ratio } from 'fhir/r3';
@@ -169,6 +170,10 @@ declare interface Except {
 declare function extension<T extends DomainResource | Element_2, ValueType extends ParserKey, ParsedType = ReturnTypeParser<ValueType>>(resource: T | undefined, url: string, valueType: ValueType): ParsedType;
 
 declare function extensionNictiz<T extends DomainResource | Element_2, Id extends NictizId, ValueType = (typeof nictizIdValueXMap)[Id], R = ReturnTypeParser<ValueType>>(resource: T | undefined, zibId: Id): R;
+
+declare interface FocalDevice {
+    manipulated: parse.MgoReference | undefined;
+}
 
 declare interface Grouping {
     group: parse.MgoString | undefined;
@@ -904,6 +909,26 @@ declare function parseZibProblem(resource: Condition): {
 };
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317337
+ */
+declare function parseZibProcedure(resource: Procedure): {
+    performedPeriod: parse.MgoPeriod | undefined;
+    bodySite: parse.MgoCodeableConcept[] | undefined;
+    bodySiteQualifier: parse.MgoCodeableConcept[] | undefined;
+    reasonReference: parse.MgoReference[] | undefined;
+    code: parse.MgoCodeableConcept | undefined;
+    procedureMethod: parse.MgoCodeableConcept | undefined;
+    focalDevice: FocalDevice[] | undefined;
+    location: parse.MgoReference | undefined;
+    performer: Performer[] | undefined;
+    subject: parse.MgoReference | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure";
+};
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
 declare function parseZibProduct(resource: Medication): {
@@ -1010,6 +1035,10 @@ declare function parseZibVaccination(resource: Immunization): {
 
 declare interface Participant {
     individual: parse.MgoReference | undefined;
+}
+
+declare interface Performer {
+    actor: parse.MgoReference | undefined;
 }
 
 export declare const period: (value: Nullable<Period>) => MgoPeriod | undefined;
@@ -1131,6 +1160,11 @@ declare function uiSchema_20(resource: ZibVaccination): UiSchema;
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
  */
 declare function uiSchema_21(resource: ZibEncounter): UiSchema;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
+ */
+declare function uiSchema_22(resource: ZibProcedure): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
@@ -1364,6 +1398,14 @@ export declare const zibProblem: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Problem";
     parse: typeof parseZibProblem;
     uiSchema: typeof uiSchema_10;
+};
+
+export declare type ZibProcedure = ReturnType<typeof parseZibProcedure>;
+
+export declare const zibProcedure: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure";
+    parse: typeof parseZibProcedure;
+    uiSchema: typeof uiSchema_22;
 };
 
 export declare type ZibProduct = ReturnType<typeof parseZibProduct>;

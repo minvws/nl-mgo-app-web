@@ -1,0 +1,66 @@
+{
+    "label": "Surgical reduction of fracture (procedure)",
+    "children": [
+        {
+            "label": "zib_procedure",
+            "children": [
+                {
+                    "label": "zib_procedure.performed_period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.performed_period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.body_site",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.bodySite.extension:ProcedureLaterality",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.reason_reference",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.code",
+                    "type": "codable_concept",
+                    "display": [
+                        "Surgical reduction of fracture (procedure) (274051007 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_procedure.procedure_method",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure.location",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_procedure.performer",
+                    "type": "reference",
+                    "display": "UMCG - Afdeling Orthopedie",
+                    "reference": "Organization/nl-core-organization-02",
+                    "summary": true
+                },
+                {
+                    "label": "zib_procedure.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        }
+    ]
+}

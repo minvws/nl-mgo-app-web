@@ -30,3 +30,4 @@ export * from './zibNutritionAdvice/zibNutritionAdvice';
 export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct';
 export * from './zibVaccination/zibVaccination';
 export * from './zibEncounter/zibEncounter';
+export * from './zibProcedure/zibProcedure';
