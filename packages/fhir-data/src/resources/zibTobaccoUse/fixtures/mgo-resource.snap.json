@@ -18,11 +18,13 @@
         "display": "Johan XXX_Helleman"
     },
     "context": null,
+    "valueQuantity": null,
     "effectivePeriod": {
         "start": "1980",
         "end": "1983"
     },
     "dataAbsentReason": null,
-    "comment": null,
-    "bodySite": null
+    "method": null,
+    "bodySite": null,
+    "comment": null
 }

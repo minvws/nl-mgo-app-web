@@ -7,3 +7,4 @@ export * from './extension/extension';
 export * from './extensionNictiz/extensionNictiz';
 export * from './createTypeParser/createTypeParser';
 export * from './passThrough/passThrough';
+export * from './componentSlice/componentSlice';

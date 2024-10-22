@@ -1,0 +1,30 @@
+{
+    "label": "2013-02-08",
+    "children": [
+        {
+            "label": "zib_body_height",
+            "children": [
+                {
+                    "label": "zib_body_height.value",
+                    "type": "quantity.value",
+                    "display": "183 cm"
+                },
+                {
+                    "label": "zib_body_height.code",
+                    "type": "quantity.code",
+                    "display": "cm in code systeem http://unitsofmeasure.org"
+                },
+                {
+                    "label": "zib_body_height.effective",
+                    "type": "date_time",
+                    "display": "2013-02-08"
+                },
+                {
+                    "label": "zib_body_height.comment",
+                    "type": "string",
+                    "display": "met schoenen aan"
+                }
+            ]
+        }
+    ]
+}

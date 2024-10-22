@@ -31,5 +31,6 @@ export function map<Items extends unknown[], Iteratee extends (arg: Items[number
     if (!items?.length) {
         return returnEmpty ? [] : undefined;
     }
+
     return items.map(iteratee).filter(isNonNullish);
 }

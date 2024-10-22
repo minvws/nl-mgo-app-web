@@ -396,11 +396,13 @@ export declare const nlCoreObservation: {
         category: parse.MgoCodeableConcept[] | undefined;
         subject: parse.MgoReference | undefined;
         context: parse.MgoReference | undefined;
-        effectiveDateTime: DateTimeString | undefined;
+        valueQuantity: parse.MgoQuantity | undefined;
         effectivePeriod: parse.MgoPeriod | undefined;
         dataAbsentReason: parse.MgoCodeableConcept | undefined;
-        comment: string | undefined;
+        method: parse.MgoCodeableConcept | undefined;
         bodySite: parse.MgoCodeableConcept | undefined;
+        effectiveDateTime: DateTimeString | undefined;
+        comment: string | undefined;
         id: string | undefined;
         referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
         resourceType: string | undefined;
@@ -539,11 +541,13 @@ declare const parseNlCoreObservation: (resource: Observation) => {
     category: parse.MgoCodeableConcept[] | undefined;
     subject: parse.MgoReference | undefined;
     context: parse.MgoReference | undefined;
-    effectiveDateTime: DateTimeString | undefined;
+    valueQuantity: parse.MgoQuantity | undefined;
     effectivePeriod: parse.MgoPeriod | undefined;
     dataAbsentReason: parse.MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: parse.MgoCodeableConcept | undefined;
     bodySite: parse.MgoCodeableConcept | undefined;
+    effectiveDateTime: DateTimeString | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -621,10 +625,12 @@ declare function parseZibAlcoholUse(resource: Observation): {
     category: MgoCodeableConcept[] | undefined;
     subject: MgoReference | undefined;
     context: MgoReference | undefined;
+    valueQuantity: MgoQuantity | undefined;
     effectivePeriod: MgoPeriod | undefined;
     dataAbsentReason: MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: MgoCodeableConcept | undefined;
     bodySite: MgoCodeableConcept | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -668,6 +674,102 @@ declare function parseZibAllergyIntolerance(resource: AllergyIntolerance): {
 };
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
+ */
+declare function parseZibBloodPressure(resource: Observation): {
+    cuffTypeLOINC: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    cuffTypeSNOMED: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    diastolicEndpoint: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    systolicBP: {
+        valueQuantity: parse.MgoQuantity | undefined;
+    };
+    diastolicBP: {
+        valueQuantity: parse.MgoQuantity | undefined;
+    };
+    averageBloodPressureLOINC: {
+        valueQuantity: parse.MgoQuantity | undefined;
+    };
+    averageBloodPressureSNOMED: {
+        valueQuantity: parse.MgoQuantity | undefined;
+    };
+    positionSNOMED: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    positionLOINC: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    identifier: parse.MgoIdentifier[] | undefined;
+    status: string | undefined;
+    category: parse.MgoCodeableConcept[] | undefined;
+    subject: parse.MgoReference | undefined;
+    context: parse.MgoReference | undefined;
+    valueQuantity: parse.MgoQuantity | undefined;
+    effectivePeriod: parse.MgoPeriod | undefined;
+    dataAbsentReason: parse.MgoCodeableConcept | undefined;
+    method: parse.MgoCodeableConcept | undefined;
+    bodySite: parse.MgoCodeableConcept | undefined;
+    effectiveDateTime: DateTimeString | undefined;
+    comment: string | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure";
+};
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317149
+ */
+declare function parseZibBodyHeight(resource: Observation): {
+    identifier: MgoIdentifier[] | undefined;
+    status: string | undefined;
+    category: MgoCodeableConcept[] | undefined;
+    subject: MgoReference | undefined;
+    context: MgoReference | undefined;
+    valueQuantity: MgoQuantity | undefined;
+    effectivePeriod: MgoPeriod | undefined;
+    dataAbsentReason: MgoCodeableConcept | undefined;
+    method: MgoCodeableConcept | undefined;
+    bodySite: MgoCodeableConcept | undefined;
+    effectiveDateTime: DateTimeString | undefined;
+    comment: string | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight";
+};
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317153
+ */
+declare function parseZibBodyWeight(resource: Observation): {
+    clothing: {
+        valueCodeableConcept: parse.MgoCodeableConcept | undefined;
+    };
+    identifier: parse.MgoIdentifier[] | undefined;
+    status: string | undefined;
+    category: parse.MgoCodeableConcept[] | undefined;
+    subject: parse.MgoReference | undefined;
+    context: parse.MgoReference | undefined;
+    valueQuantity: parse.MgoQuantity | undefined;
+    effectivePeriod: parse.MgoPeriod | undefined;
+    dataAbsentReason: parse.MgoCodeableConcept | undefined;
+    method: parse.MgoCodeableConcept | undefined;
+    bodySite: parse.MgoCodeableConcept | undefined;
+    effectiveDateTime: DateTimeString | undefined;
+    comment: string | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight";
+};
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317175
  */
 declare function parseZibDrugUse(resource: Observation): {
@@ -676,10 +778,12 @@ declare function parseZibDrugUse(resource: Observation): {
     category: MgoCodeableConcept[] | undefined;
     subject: MgoReference | undefined;
     context: MgoReference | undefined;
+    valueQuantity: MgoQuantity | undefined;
     effectivePeriod: MgoPeriod | undefined;
     dataAbsentReason: MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: MgoCodeableConcept | undefined;
     bodySite: MgoCodeableConcept | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -712,10 +816,12 @@ declare function parseZibFunctionalOrMentalStatus(resource: Observation): {
     category: MgoCodeableConcept[] | undefined;
     subject: MgoReference | undefined;
     context: MgoReference | undefined;
+    valueQuantity: MgoQuantity | undefined;
     effectivePeriod: MgoPeriod | undefined;
     dataAbsentReason: MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: MgoCodeableConcept | undefined;
     bodySite: MgoCodeableConcept | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -738,11 +844,13 @@ declare const parseZibLivingSituation: (resource: Observation) => {
     category: MgoCodeableConcept[] | undefined;
     subject: MgoReference | undefined;
     context: MgoReference | undefined;
-    effectiveDateTime: DateTimeString | undefined;
+    valueQuantity: MgoQuantity | undefined;
     effectivePeriod: MgoPeriod | undefined;
     dataAbsentReason: MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: MgoCodeableConcept | undefined;
     bodySite: MgoCodeableConcept | undefined;
+    effectiveDateTime: DateTimeString | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -976,10 +1084,12 @@ declare function parseZibTobaccoUse(resource: Observation): {
     category: MgoCodeableConcept[] | undefined;
     subject: MgoReference | undefined;
     context: MgoReference | undefined;
+    valueQuantity: MgoQuantity | undefined;
     effectivePeriod: MgoPeriod | undefined;
     dataAbsentReason: MgoCodeableConcept | undefined;
-    comment: string | undefined;
+    method: MgoCodeableConcept | undefined;
     bodySite: MgoCodeableConcept | undefined;
+    comment: string | undefined;
     id: string | undefined;
     referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
     resourceType: string | undefined;
@@ -1162,9 +1272,24 @@ declare function uiSchema_20(resource: ZibVaccination): UiSchema;
 declare function uiSchema_21(resource: ZibEncounter): UiSchema;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
+ */
+declare function uiSchema_22(resource: ZibBloodPressure): UiSchema;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
+ */
+declare function uiSchema_23(resource: ZibBodyWeight): UiSchema;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
+ */
+declare function uiSchema_24(resource: ZibBodyHeight): UiSchema;
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
  */
-declare function uiSchema_22(resource: ZibProcedure): UiSchema;
+declare function uiSchema_25(resource: ZibProcedure): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
@@ -1280,6 +1405,30 @@ export declare const zibAllergyIntolerance: {
     uiSchema: typeof uiSchema_6;
 };
 
+export declare type ZibBloodPressure = ReturnType<typeof parseZibBloodPressure>;
+
+export declare const zibBloodPressure: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure";
+    parse: typeof parseZibBloodPressure;
+    uiSchema: typeof uiSchema_22;
+};
+
+export declare type ZibBodyHeight = ReturnType<typeof parseZibBodyHeight>;
+
+export declare const zibBodyHeight: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight";
+    parse: typeof parseZibBodyHeight;
+    uiSchema: typeof uiSchema_24;
+};
+
+export declare type ZibBodyWeight = ReturnType<typeof parseZibBodyWeight>;
+
+export declare const zibBodyWeight: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight";
+    parse: typeof parseZibBodyWeight;
+    uiSchema: typeof uiSchema_23;
+};
+
 export declare type ZibDrugUse = ReturnType<typeof parseZibDrugUse>;
 
 export declare const zibDrugUse: {
@@ -1331,11 +1480,13 @@ export declare const zibLivingSituation: {
         category: MgoCodeableConcept[] | undefined;
         subject: MgoReference | undefined;
         context: MgoReference | undefined;
-        effectiveDateTime: DateTimeString | undefined;
+        valueQuantity: MgoQuantity | undefined;
         effectivePeriod: MgoPeriod | undefined;
         dataAbsentReason: MgoCodeableConcept | undefined;
-        comment: string | undefined;
+        method: MgoCodeableConcept | undefined;
         bodySite: MgoCodeableConcept | undefined;
+        effectiveDateTime: DateTimeString | undefined;
+        comment: string | undefined;
         id: string | undefined;
         referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
         resourceType: string | undefined;
@@ -1405,7 +1556,7 @@ export declare type ZibProcedure = ReturnType<typeof parseZibProcedure>;
 export declare const zibProcedure: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure";
     parse: typeof parseZibProcedure;
-    uiSchema: typeof uiSchema_22;
+    uiSchema: typeof uiSchema_25;
 };
 
 export declare type ZibProduct = ReturnType<typeof parseZibProduct>;

@@ -18,11 +18,13 @@
         "display": "Johan XXX_Helleman"
     },
     "context": null,
+    "valueQuantity": null,
     "effectivePeriod": {
         "start": "1981",
         "end": "1983"
     },
     "dataAbsentReason": null,
-    "comment": "Op feestjes en in uitgaanscircuit.",
-    "bodySite": null
+    "method": null,
+    "bodySite": null,
+    "comment": "Op feestjes en in uitgaanscircuit."
 }

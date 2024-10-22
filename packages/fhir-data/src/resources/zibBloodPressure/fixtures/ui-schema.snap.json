@@ -1,0 +1,103 @@
+{
+    "label": "2013-02-01T08:53:00+01:00",
+    "children": [
+        {
+            "label": "zib_blood_pressure",
+            "children": [
+                {
+                    "label": "zib_blood_pressure.method",
+                    "type": "codable_concept",
+                    "display": [
+                        "Non-invasive (22762002 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_blood_pressure.cuff_type_loinc",
+                    "type": "codable_concept",
+                    "display": [
+                        "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
+                    ]
+                },
+                {
+                    "label": "zib_blood_pressure.cuff_type_snomed",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.bodySite",
+                    "type": "codable_concept",
+                    "display": [
+                        "Left upper arm structure (368208006 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_blood_pressure.diastolic_endpoint",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.systolic_bp.value",
+                    "type": "quantity.value",
+                    "display": "108 mmHg"
+                },
+                {
+                    "label": "zib_blood_pressure.systolic_bp.code",
+                    "type": "quantity.code",
+                    "display": "mm[Hg] in code systeem http://unitsofmeasure.org"
+                },
+                {
+                    "label": "zib_blood_pressure.diastolic_bp.code.value",
+                    "type": "quantity.value",
+                    "display": "108 mmHg"
+                },
+                {
+                    "label": "zib_blood_pressure.diastolic_bp.code.code",
+                    "type": "quantity.code",
+                    "display": "mm[Hg] in code systeem http://unitsofmeasure.org"
+                },
+                {
+                    "label": "zib_blood_pressure.average_blood_pressure_loinc.value",
+                    "type": "quantity.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.average_blood_pressure_loinc.code",
+                    "type": "quantity.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.average_blood_pressure_snomed.value",
+                    "type": "quantity.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.average_blood_pressure_snomed.code",
+                    "type": "quantity.code",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.effective",
+                    "type": "date_time",
+                    "display": "2013-02-01T08:53:00+01:00"
+                },
+                {
+                    "label": "zib_blood_pressure.comment",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.position_snomed",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_blood_pressure.position_loinc",
+                    "type": "codable_concept",
+                    "display": [
+                        "Sitting position (33586001 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -30,4 +30,7 @@ export * from './zibNutritionAdvice/zibNutritionAdvice';
 export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct';
 export * from './zibVaccination/zibVaccination';
 export * from './zibEncounter/zibEncounter';
+export * from './zibBloodPressure/zibBloodPressure';
+export * from './zibBodyWeight/zibBodyWeight';
+export * from './zibBodyHeight/zibBodyHeight';
 export * from './zibProcedure/zibProcedure';

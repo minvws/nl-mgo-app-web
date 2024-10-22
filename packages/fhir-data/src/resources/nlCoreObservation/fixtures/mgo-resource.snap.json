@@ -18,9 +18,11 @@
         "display": "Johan XXX_Helleman"
     },
     "context": null,
-    "effectiveDateTime": null,
+    "valueQuantity": null,
     "effectivePeriod": null,
     "dataAbsentReason": null,
-    "comment": null,
-    "bodySite": null
+    "method": null,
+    "bodySite": null,
+    "effectiveDateTime": null,
+    "comment": null
 }

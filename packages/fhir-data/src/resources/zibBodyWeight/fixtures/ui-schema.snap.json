@@ -1,0 +1,37 @@
+{
+    "label": "2013-02-03",
+    "children": [
+        {
+            "label": "zib_body_weight",
+            "children": [
+                {
+                    "label": "zib_body_weight.value",
+                    "type": "quantity.value",
+                    "display": "72 kg"
+                },
+                {
+                    "label": "zib_body_weight.code",
+                    "type": "quantity.code",
+                    "display": "kg in code systeem http://unitsofmeasure.org"
+                },
+                {
+                    "label": "zib_body_weight.comment",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_body_weight.effective",
+                    "type": "date_time",
+                    "display": "2013-02-03"
+                },
+                {
+                    "label": "zib_body_weight.clothing",
+                    "type": "codable_concept",
+                    "display": [
+                        "Minimal dressed (MINIMAL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

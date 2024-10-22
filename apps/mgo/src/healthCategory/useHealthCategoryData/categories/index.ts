@@ -12,6 +12,7 @@ import { getAllergyData } from './allergy';
 import { getMedicalDevicesData } from './medicalDevices';
 import { getVaccinationData } from './vaccination';
 import { getEncounterData } from './encounter';
+import { getVitalsData } from './vitals';
 import { getProcedureData } from './procedure';
 
 type HealthCategoryResources = (
@@ -34,5 +35,5 @@ export const healthCategoryData = {
     [HealthCategory.LaboratoryResults]: () => ({}),
     [HealthCategory.Procedures]: getProcedureData,
     [HealthCategory.ContactsAndAppointments]: getEncounterData,
-    [HealthCategory.Vitals]: () => ({}),
+    [HealthCategory.Vitals]: getVitalsData,
 } satisfies Record<HealthCategory, HealthCategoryResources>;

@@ -21,11 +21,13 @@ export function parseNlCoreObservationBase<T extends NictizNlProfile = typeof pr
         category: map(resource.category, parse.codeableConcept),
         subject: parse.reference(resource.subject),
         context: parse.reference(resource.context),
-        effectiveDateTime: parse.dateTime(resource.effectiveDateTime),
+        valueQuantity: parse.quantity(resource.valueQuantity),
         effectivePeriod: parse.period(resource.effectivePeriod),
         dataAbsentReason: parse.codeableConcept(resource.dataAbsentReason),
-        comment: parse.string(resource.comment),
+        method: parse.codeableConcept(resource.method),
         bodySite: parse.codeableConcept(resource.bodySite),
+        effectiveDateTime: parse.dateTime(resource.effectiveDateTime),
+        comment: parse.string(resource.comment),
     };
 }
 

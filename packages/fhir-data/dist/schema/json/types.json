@@ -343,8 +343,8 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
-        "effectiveDateTime": {
-          "type": "string"
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
         },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
@@ -352,11 +352,17 @@
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"
@@ -842,17 +848,23 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
         },
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"
@@ -983,6 +995,307 @@
       ],
       "additionalProperties": false
     },
+    "ZibBloodPressure": {
+      "type": "object",
+      "properties": {
+        "cuffTypeLOINC": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "cuffTypeSNOMED": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "diastolicEndpoint": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "systolicBP": {
+          "type": "object",
+          "properties": {
+            "valueQuantity": {
+              "$ref": "#/definitions/MgoQuantity"
+            }
+          },
+          "additionalProperties": false
+        },
+        "diastolicBP": {
+          "type": "object",
+          "properties": {
+            "valueQuantity": {
+              "$ref": "#/definitions/MgoQuantity"
+            }
+          },
+          "additionalProperties": false
+        },
+        "averageBloodPressureLOINC": {
+          "type": "object",
+          "properties": {
+            "valueQuantity": {
+              "$ref": "#/definitions/MgoQuantity"
+            }
+          },
+          "additionalProperties": false
+        },
+        "averageBloodPressureSNOMED": {
+          "type": "object",
+          "properties": {
+            "valueQuantity": {
+              "$ref": "#/definitions/MgoQuantity"
+            }
+          },
+          "additionalProperties": false
+        },
+        "positionSNOMED": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "positionLOINC": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure"
+        }
+      },
+      "required": [
+        "cuffTypeLOINC",
+        "cuffTypeSNOMED",
+        "diastolicEndpoint",
+        "systolicBP",
+        "diastolicBP",
+        "averageBloodPressureLOINC",
+        "averageBloodPressureSNOMED",
+        "positionSNOMED",
+        "positionLOINC",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibBodyHeight": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibBodyWeight": {
+      "type": "object",
+      "properties": {
+        "clothing": {
+          "type": "object",
+          "properties": {
+            "valueCodeableConcept": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            }
+          },
+          "additionalProperties": false
+        },
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "status": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "context": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "effectivePeriod": {
+          "$ref": "#/definitions/MgoPeriod"
+        },
+        "dataAbsentReason": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "bodySite": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight"
+        }
+      },
+      "required": [
+        "clothing",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibDrugUse": {
       "type": "object",
       "properties": {
@@ -1007,17 +1320,23 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
         },
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"
@@ -1148,17 +1467,23 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
         },
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"
@@ -1206,8 +1531,8 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
-        "effectiveDateTime": {
-          "type": "string"
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
         },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
@@ -1215,11 +1540,17 @@
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effectiveDateTime": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"
@@ -2020,17 +2351,23 @@
         "context": {
           "$ref": "#/definitions/MgoReference"
         },
+        "valueQuantity": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
         "effectivePeriod": {
           "$ref": "#/definitions/MgoPeriod"
         },
         "dataAbsentReason": {
           "$ref": "#/definitions/MgoCodeableConcept"
         },
-        "comment": {
-          "type": "string"
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
         },
         "bodySite": {
           "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "comment": {
+          "type": "string"
         },
         "id": {
           "type": "string"

@@ -1,0 +1,99 @@
+{
+    "id": "zib-bloodpressure-01",
+    "referenceId": "Observation/zib-bloodpressure-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "191e51d9-8fdf-11ec-1102-020000000000",
+            "type": null
+        }
+    ],
+    "status": "final",
+    "category": [
+        [
+            {
+                "code": "vital-signs",
+                "display": "Vital Signs",
+                "system": "http://hl7.org/fhir/observation-category"
+            }
+        ]
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "context": null,
+    "valueQuantity": null,
+    "effectivePeriod": null,
+    "dataAbsentReason": null,
+    "method": [
+        {
+            "code": "22762002",
+            "display": "Non-invasive",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "bodySite": [
+        {
+            "code": "368208006",
+            "display": "Left upper arm structure",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "effectiveDateTime": "2013-02-01T08:53:00+01:00",
+    "comment": null,
+    "cuffTypeLOINC": {
+        "valueCodeableConcept": [
+            {
+                "code": "L",
+                "display": "Groot",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+            }
+        ]
+    },
+    "cuffTypeSNOMED": {
+        "valueCodeableConcept": null
+    },
+    "diastolicEndpoint": {
+        "valueCodeableConcept": null
+    },
+    "systolicBP": {
+        "valueQuantity": {
+            "value": 108,
+            "comparator": null,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        }
+    },
+    "diastolicBP": {
+        "valueQuantity": {
+            "value": 108,
+            "comparator": null,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        }
+    },
+    "averageBloodPressureLOINC": {
+        "valueQuantity": null
+    },
+    "averageBloodPressureSNOMED": {
+        "valueQuantity": null
+    },
+    "positionSNOMED": {
+        "valueCodeableConcept": null
+    },
+    "positionLOINC": {
+        "valueCodeableConcept": [
+            {
+                "code": "33586001",
+                "display": "Sitting position",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    }
+}

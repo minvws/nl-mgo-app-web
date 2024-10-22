@@ -26,11 +26,13 @@
         "display": "Johan XXX_Helleman"
     },
     "context": null,
+    "valueQuantity": null,
     "effectivePeriod": {
         "start": "2001",
         "end": null
     },
     "dataAbsentReason": null,
-    "comment": null,
-    "bodySite": null
+    "method": null,
+    "bodySite": null,
+    "comment": null
 }
