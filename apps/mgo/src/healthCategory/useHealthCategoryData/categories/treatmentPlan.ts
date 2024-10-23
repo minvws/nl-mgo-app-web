@@ -10,8 +10,7 @@ export function getTreatmentPlanData(
             organizationIdFilter
         ),
         getAdvanceDirectives: resources.getResourcesByProfile(
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            'http://nictiz.nl/fhir/StructureDefinition/zib-AdvancedDirective' as any,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective',
             organizationIdFilter
         ),
     };

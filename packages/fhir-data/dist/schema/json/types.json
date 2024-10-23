@@ -824,6 +824,98 @@
       },
       "additionalProperties": false
     },
+    "ZibAdvanceDirective": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "dateTime": {
+          "type": "string"
+        },
+        "disorder": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "consentingParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "attachment": {
+              "type": "object",
+              "properties": {
+                "contentType": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "language": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "data": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "url": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "size": {
+                  "$ref": "#/definitions/MgoUnsignedInt"
+                },
+                "hash": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "title": {
+                  "$ref": "#/definitions/MgoString"
+                },
+                "creation": {
+                  "$ref": "#/definitions/MgoDateTime"
+                }
+              },
+              "additionalProperties": false
+            },
+            "identifier": {
+              "$ref": "#/definitions/MgoIdentifier"
+            },
+            "reference": {
+              "$ref": "#/definitions/MgoReference"
+            }
+          },
+          "required": [
+            "attachment"
+          ],
+          "additionalProperties": false
+        },
+        "comment": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective"
+        }
+      },
+      "required": [
+        "source",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibAlcoholUse": {
       "type": "object",
       "properties": {

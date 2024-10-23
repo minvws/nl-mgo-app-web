@@ -1,0 +1,88 @@
+{
+    "label": "2018-04-09",
+    "children": [
+        {
+            "label": "zib_advance_directive.group_details",
+            "children": [
+                {
+                    "label": "zib_advance_directive.type_of_living_will",
+                    "type": "codable_concept",
+                    "display": [
+                        [
+                            "Living will and advance directive record (record artifact) (11341000146107 in code systeem http://snomed.info/sct)"
+                        ],
+                        [
+                            "Mondelinge afspraak (MON in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "zib_advance_directive.date_time",
+                    "type": "date_time",
+                    "display": "2018-04-09"
+                },
+                {
+                    "label": "zib_advance_directive.disorder",
+                    "type": "reference",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "zib_advance_directive.consenting_party",
+                    "type": "reference",
+                    "display": null
+                },
+                {
+                    "label": "zib_advance_directive.comment",
+                    "type": "string",
+                    "display": "Mondelinge afspraak"
+                }
+            ]
+        },
+        {
+            "label": "attachment",
+            "children": [
+                {
+                    "label": "attachment.contentType",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.language",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.data",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.url",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.size",
+                    "type": "unsignedInt",
+                    "display": null
+                },
+                {
+                    "label": "attachment.hash",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.title",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "attachment.creation",
+                    "type": "date_time",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

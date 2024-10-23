@@ -333,6 +333,8 @@ declare const nictizIdValueXMap: {
     'zib-Medication-StopType': "codeableConcept";
     'zib-AdministrationAgreement-AuthoredOn': "dateTime";
     'zib-AdministrationAgreement-AgreementReason': "string";
+    'zib-AdvanceDirective-Disorder': "reference";
+    Comment: "string";
 };
 
 declare type NictizNlProfile =
@@ -615,6 +617,26 @@ declare function parseZibAdministrationAgreement(resource: MedicationDispense): 
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317128
  */
 declare function parseZibAdministrationSchedule(value: Nullable<Timing>): ZibAdministrationSchedule;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
+ */
+declare function parseZibAdvanceDirective(resource: Consent): {
+    category: parse.MgoCodeableConcept[] | undefined;
+    dateTime: DateTimeString | undefined;
+    disorder: parse.MgoReference | undefined;
+    consentingParty: parse.MgoReference[] | undefined;
+    source: {
+        attachment: MgoAttachment;
+        identifier: parse.MgoIdentifier | undefined;
+        reference: parse.MgoReference | undefined;
+    };
+    comment: string | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective";
+};
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317134
@@ -1292,6 +1314,11 @@ declare function uiSchema_24(resource: ZibBodyHeight): UiSchema;
 declare function uiSchema_25(resource: ZibProcedure): UiSchema;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
+ */
+declare function uiSchema_26(resource: ZibAdvanceDirective): UiSchema;
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
  */
 declare function uiSchema_3(resource: ZibAlert): UiSchema;
@@ -1380,6 +1407,14 @@ export declare const zibAdministrationSchedule: {
 };
 
 export declare const zibAdministrationScheduleUiSchema: typeof uiSchemaGroup;
+
+export declare type ZibAdvanceDirective = ReturnType<typeof parseZibAdvanceDirective>;
+
+export declare const zibAdvanceDirective: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective";
+    parse: typeof parseZibAdvanceDirective;
+    uiSchema: typeof uiSchema_26;
+};
 
 export declare type ZibAlcoholUse = ReturnType<typeof parseZibAlcoholUse>;
 

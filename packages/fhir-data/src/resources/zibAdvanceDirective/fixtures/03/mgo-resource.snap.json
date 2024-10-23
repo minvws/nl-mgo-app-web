@@ -1,0 +1,40 @@
+{
+    "id": "zib-advancedirective-03",
+    "referenceId": "Consent/zib-advancedirective-03",
+    "resourceType": "Consent",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective",
+    "category": [
+        [
+            {
+                "code": "11341000146107",
+                "display": "Living will and advance directive record (record artifact)",
+                "system": "http://snomed.info/sct"
+            }
+        ],
+        [
+            {
+                "code": "MON",
+                "display": "Mondelinge afspraak",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
+            }
+        ]
+    ],
+    "dateTime": "2018-04-09",
+    "disorder": null,
+    "consentingParty": null,
+    "source": {
+        "attachment": {
+            "contentType": null,
+            "language": null,
+            "data": null,
+            "url": null,
+            "size": null,
+            "hash": null,
+            "title": null,
+            "creation": null
+        },
+        "identifier": null,
+        "reference": null
+    },
+    "comment": "Mondelinge afspraak"
+}

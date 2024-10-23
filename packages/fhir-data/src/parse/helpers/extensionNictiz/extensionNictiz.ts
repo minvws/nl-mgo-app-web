@@ -21,6 +21,8 @@ const nictizIdValueXMap = {
     'zib-Medication-StopType': 'codeableConcept',
     'zib-AdministrationAgreement-AuthoredOn': 'dateTime',
     'zib-AdministrationAgreement-AgreementReason': 'string',
+    'zib-AdvanceDirective-Disorder': 'reference',
+    Comment: 'string',
 } satisfies Record<string, ParserKey>;
 
 type NictizId = keyof typeof nictizIdValueXMap;

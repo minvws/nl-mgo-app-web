@@ -34,3 +34,4 @@ export * from './zibBloodPressure/zibBloodPressure';
 export * from './zibBodyWeight/zibBodyWeight';
 export * from './zibBodyHeight/zibBodyHeight';
 export * from './zibProcedure/zibProcedure';
+export * from './zibAdvanceDirective/zibAdvanceDirective';
