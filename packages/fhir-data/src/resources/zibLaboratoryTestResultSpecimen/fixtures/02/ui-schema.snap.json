@@ -1,0 +1,78 @@
+{
+    "label": "zib_laboratory_test_result_specimen",
+    "children": [
+        {
+            "label": "zib_laboratory_test_result_specimen",
+            "children": [
+                {
+                    "label": "zib_laboratory_test_result_specimen.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "1b3b213b-8fdf-11ec-5198-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.type",
+                    "type": "codable_concept",
+                    "display": []
+                },
+                {
+                    "label": "zib_laboratory_test_result_substance.code",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.quantity",
+                    "type": "quantity.value",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.collection.collected_period.start",
+                    "type": "period.start",
+                    "display": "2010-06-01"
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.collection.collected_period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.received_time",
+                    "type": "date_time",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.collection.method",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.body_site",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.body_site.laterality",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.body_site.morphology",
+                    "type": "codable_concept",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.subject",
+                    "type": "reference",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen.note",
+                    "type": "annotation",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

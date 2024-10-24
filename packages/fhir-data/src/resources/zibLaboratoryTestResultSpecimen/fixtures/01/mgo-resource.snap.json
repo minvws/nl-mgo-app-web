@@ -1,0 +1,39 @@
+{
+    "id": "zib-laboratorytestresult-specimen-01",
+    "referenceId": "Specimen/zib-laboratorytestresult-specimen-01",
+    "resourceType": "Specimen",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b3b213b-8fdf-11ec-5198-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "container": null,
+    "type": [
+        {
+            "code": "87612001",
+            "display": "Blood (substance)",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "substance": null,
+    "receivedTime": null,
+    "collection": {
+        "quantity": null,
+        "collected": "2012-05-23T08:08:00+01:00",
+        "method": null,
+        "bodySite": {
+            "value": null,
+            "laterality": null,
+            "morphology": null
+        }
+    },
+    "note": null
+}

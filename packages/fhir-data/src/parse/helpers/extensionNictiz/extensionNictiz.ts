@@ -4,6 +4,7 @@ import { type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 
 const nictizIdValueXMap = {
     'BodySite-Qualifier': 'codeableConcept',
+    'BodySite-Morphology': 'codeableConcept',
     'deviceUseStatement-reasonReferenceSTU3': 'reference',
     'zib-MedicalDevice-Organization': 'reference',
     'zib-MedicalDevice-Practitioner': 'reference',

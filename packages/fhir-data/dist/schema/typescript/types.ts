@@ -35,6 +35,7 @@ import { Range as Range_2 } from 'fhir/r3';
 import { Ratio } from 'fhir/r3';
 import { Reference } from 'fhir/r3';
 import { Resource } from 'fhir/r3';
+import { Specimen } from 'fhir/r3';
 import { Timing } from 'fhir/r3';
 
 declare interface Actor {
@@ -76,6 +77,11 @@ declare interface Contact {
     gender: parse.MgoString | undefined;
     organization: parse.MgoReference | undefined;
     period: parse.MgoPeriod | undefined;
+}
+
+declare interface Container {
+    identifier: parse.MgoIdentifier[] | undefined;
+    type: parse.MgoCodeableConcept | undefined;
 }
 
 declare interface Data {
@@ -316,6 +322,7 @@ declare type NictizId = keyof typeof nictizIdValueXMap;
 
 declare const nictizIdValueXMap: {
     'BodySite-Qualifier': "codeableConcept";
+    'BodySite-Morphology': "codeableConcept";
     'deviceUseStatement-reasonReferenceSTU3': "reference";
     'zib-MedicalDevice-Organization': "reference";
     'zib-MedicalDevice-Practitioner': "reference";
@@ -858,6 +865,57 @@ declare function parseZibFunctionalOrMentalStatus(resource: Observation): {
 declare function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsForUse;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
+ */
+declare function parseZibLaboratoryTestResultObservation(resource: Observation): {
+    identifier: parse.MgoIdentifier[] | undefined;
+    subject: parse.MgoReference | undefined;
+    code: parse.MgoCodeableConcept | undefined;
+    method: parse.MgoCodeableConcept | undefined;
+    effective: DateTimeString | parse.MgoPeriod | undefined;
+    result: parse.MgoQuantity | undefined;
+    status: string | undefined;
+    referenceRange: ReferenceRange[] | undefined;
+    interpretation: parse.MgoCodeableConcept | undefined;
+    specimen: parse.MgoReference | undefined;
+    comment: string | undefined;
+    category: parse.MgoCodeableConcept[] | undefined;
+    related: Related[] | undefined;
+    basedOn: parse.MgoReference[] | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation";
+};
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317241
+ */
+declare function parseZibLaboratoryTestResultSpecimen(resource: Specimen): {
+    identifier: parse.MgoIdentifier[] | undefined;
+    subject: parse.MgoReference | undefined;
+    container: Container[] | undefined;
+    type: parse.MgoCodeableConcept | undefined;
+    substance: string | undefined;
+    receivedTime: DateTimeString | undefined;
+    collection: {
+        quantity: parse.MgoQuantity | undefined;
+        collected: DateTimeString | parse.MgoPeriod | undefined;
+        method: parse.MgoCodeableConcept | undefined;
+        bodySite: {
+            value: parse.MgoCodeableConcept | undefined;
+            laterality: parse.MgoCodeableConcept | undefined;
+            morphology: parse.MgoCodeableConcept | undefined;
+        };
+    };
+    note: parse.MgoAnnotation[] | undefined;
+    id: string | undefined;
+    referenceId: `undefined/${string}` | `${string}/undefined` | `${string}/${string}`;
+    resourceType: string | undefined;
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen";
+};
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317251
  */
 declare const parseZibLivingSituation: (resource: Observation) => {
@@ -1191,8 +1249,17 @@ export declare const ratio: (value: Nullable<Ratio>) => MgoRatio | undefined;
 
 export declare const reference: (value: Nullable<Reference>) => MgoReference | undefined;
 
+declare interface ReferenceRange {
+    low: parse.MgoQuantity | undefined;
+    high: parse.MgoQuantity | undefined;
+}
+
 export declare interface ReferenceValue extends BaseEntry<string> {
     reference: string | undefined;
+}
+
+declare interface Related {
+    target: parse.MgoReference | undefined;
 }
 
 declare function resourceMeta<T extends NictizNlProfile>(resource: Resource, profile: T): {
@@ -1314,9 +1381,19 @@ declare function uiSchema_24(resource: ZibBodyHeight): UiSchema;
 declare function uiSchema_25(resource: ZibProcedure): UiSchema;
 
 /**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
+ */
+declare function uiSchema_26(resource: ZibLaboratoryTestResultObservation): UiSchema;
+
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317241
+ */
+declare function uiSchema_27(resource: ZibLaboratoryTestResultSpecimen): UiSchema;
+
+/**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
  */
-declare function uiSchema_26(resource: ZibAdvanceDirective): UiSchema;
+declare function uiSchema_28(resource: ZibAdvanceDirective): UiSchema;
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
@@ -1413,7 +1490,7 @@ export declare type ZibAdvanceDirective = ReturnType<typeof parseZibAdvanceDirec
 export declare const zibAdvanceDirective: {
     profile: "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective";
     parse: typeof parseZibAdvanceDirective;
-    uiSchema: typeof uiSchema_26;
+    uiSchema: typeof uiSchema_28;
 };
 
 export declare type ZibAlcoholUse = ReturnType<typeof parseZibAlcoholUse>;
@@ -1503,6 +1580,22 @@ export declare interface ZibInstructionsForUse {
 export declare const zibInstructionsForUse: {
     parse: typeof parseZibInstructionsForUse;
     uiSchemaGroup: typeof uiSchemaGroup_2;
+};
+
+export declare type ZibLaboratoryTestResultObservation = ReturnType<typeof parseZibLaboratoryTestResultObservation>;
+
+export declare const zibLaboratoryTestResultObservation: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation";
+    parse: typeof parseZibLaboratoryTestResultObservation;
+    uiSchema: typeof uiSchema_26;
+};
+
+export declare type ZibLaboratoryTestResultSpecimen = ReturnType<typeof parseZibLaboratoryTestResultSpecimen>;
+
+export declare const zibLaboratoryTestResultSpecimen: {
+    profile: "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen";
+    parse: typeof parseZibLaboratoryTestResultSpecimen;
+    uiSchema: typeof uiSchema_27;
 };
 
 export declare type ZibLivingSituation = ReturnType<typeof parseZibLivingSituation>;

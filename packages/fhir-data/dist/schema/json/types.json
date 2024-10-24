@@ -1599,6 +1599,218 @@
       ],
       "additionalProperties": false
     },
+    "ZibLaboratoryTestResultObservation": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "code": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "method": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "effective": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MgoPeriod"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "result": {
+          "$ref": "#/definitions/MgoQuantity"
+        },
+        "status": {
+          "type": "string"
+        },
+        "referenceRange": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "low": {
+                "$ref": "#/definitions/MgoQuantity"
+              },
+              "high": {
+                "$ref": "#/definitions/MgoQuantity"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "interpretation": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "specimen": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "$ref": "#/definitions/MgoReference"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "basedOn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoReference"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "ZibLaboratoryTestResultSpecimen": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "subject": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "container": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "identifier": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MgoIdentifier"
+                }
+              },
+              "type": {
+                "$ref": "#/definitions/MgoCodeableConcept"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "type": {
+          "$ref": "#/definitions/MgoCodeableConcept"
+        },
+        "substance": {
+          "type": "string"
+        },
+        "receivedTime": {
+          "type": "string"
+        },
+        "collection": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "$ref": "#/definitions/MgoQuantity"
+            },
+            "collected": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/MgoPeriod"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "method": {
+              "$ref": "#/definitions/MgoCodeableConcept"
+            },
+            "bodySite": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                },
+                "laterality": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                },
+                "morphology": {
+                  "$ref": "#/definitions/MgoCodeableConcept"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "bodySite"
+          ],
+          "additionalProperties": false
+        },
+        "note": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoAnnotation"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen"
+        }
+      },
+      "required": [
+        "collection",
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ZibLivingSituation": {
       "type": "object",
       "properties": {

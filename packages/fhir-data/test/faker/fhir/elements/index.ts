@@ -22,3 +22,6 @@ export * from './conditionEvidence';
 export * from './immunizationPractitioner';
 
 export * from './encounterHospitalization';
+
+export * from './observationRelated';
+export * from './specimenContainer';
