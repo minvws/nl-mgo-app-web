@@ -3,11 +3,14 @@ import { map } from '../../utils';
 import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
 import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
 import { uiSchemaGroup as referenceRangetUiSchema } from './elements/referenceRange/uiSchemaGroup';
+import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
  */
-export function uiSchema(resource: ZibLaboratoryTestResultObservation): UiSchema {
+export function uiSchema(
+    resource: ZibLaboratoryTestResultObservation | GpLaboratoryResult
+): UiSchema {
     const i18n = 'zib_laboratory_test_result_observation';
 
     const related = map(resource.related, relatedUiSchema, true);

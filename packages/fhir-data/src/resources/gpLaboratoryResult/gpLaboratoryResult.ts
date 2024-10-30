@@ -1,17 +1,18 @@
 import { type Observation } from '../../fhir/index';
 import { parse } from '../../parse';
-import { type ResourceConfig } from '../config';
-import { uiSchema } from './uiSchema';
 import { map } from '../../utils';
-import { related } from './elements/related/related';
-import { referenceRange } from './elements/referenceRange/referenceRange';
+import { type ResourceConfig } from '../config';
+import { referenceRange } from '../zibLaboratoryTestResultObservation/elements/referenceRange/referenceRange';
+import { related } from '../zibLaboratoryTestResultObservation/elements/related/related';
+import { uiSchema } from './uiSchema';
 
-const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation';
+const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult';
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316997
  */
-function parseZibLaboratoryTestResultObservation(resource: Observation) {
+
+function parseGpLaboratoryResult(resource: Observation) {
     return {
         ...parse.resourceMeta(resource, profile),
         identifier: map(resource.identifier, parse.identifier),
@@ -32,12 +33,10 @@ function parseZibLaboratoryTestResultObservation(resource: Observation) {
     };
 }
 
-export type ZibLaboratoryTestResultObservation = ReturnType<
-    typeof parseZibLaboratoryTestResultObservation
->;
+export type GpLaboratoryResult = ReturnType<typeof parseGpLaboratoryResult>;
 
-export const zibLaboratoryTestResultObservation = {
+export const gpLaboratoryResult = {
     profile,
-    parse: parseZibLaboratoryTestResultObservation,
+    parse: parseGpLaboratoryResult,
     uiSchema,
-} satisfies ResourceConfig<Observation, ZibLaboratoryTestResultObservation>;
+} satisfies ResourceConfig<Observation, GpLaboratoryResult>;

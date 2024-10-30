@@ -8,6 +8,8 @@
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18
  */
 
+export * from './gpLaboratoryResult/gpLaboratoryResult';
+
 export * from './nlCorePatient/nlCorePatient';
 
 export * from './zibAlert/zibAlert';
