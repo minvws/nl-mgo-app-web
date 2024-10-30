@@ -1,0 +1,65 @@
+{
+    "label": null,
+    "children": [
+        {
+            "label": "nl_core_practitioner.group_details",
+            "children": [
+                {
+                    "label": "nl_core_practitioner.identifier",
+                    "type": "identifier",
+                    "display": [
+                        "000432123",
+                        "16fa74e1-8fdf-11ec-1810-020000000000"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "nl_core_humanname",
+            "children": [
+                {
+                    "label": "nl_core_humanname.family",
+                    "type": "string",
+                    "display": "de Vries"
+                },
+                {
+                    "label": "nl_core_humanname.given",
+                    "type": "string",
+                    "display": [
+                        "Dirk"
+                    ]
+                },
+                {
+                    "label": "nl_core_humanname.period.start",
+                    "type": "period.start",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.period.end",
+                    "type": "period.end",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.prefix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.suffix",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.use",
+                    "type": "string",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_humanname.text",
+                    "type": "string",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

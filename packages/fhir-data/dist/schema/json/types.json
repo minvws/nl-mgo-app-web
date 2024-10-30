@@ -671,6 +671,101 @@
       ],
       "additionalProperties": false
     },
+    "NlCorePractitioner": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreHumanname"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreAddress"
+          }
+        },
+        "telecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreContactpoint"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
+    "NlCorePractitionerRole": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoIdentifier"
+          }
+        },
+        "organization": {
+          "$ref": "#/definitions/MgoReference"
+        },
+        "specialty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MgoCodeableConcept"
+          }
+        },
+        "telecom": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NlCoreContactpoint"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": [
+            "string"
+          ]
+        },
+        "resourceType": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "string",
+          "const": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole"
+        }
+      },
+      "required": [
+        "referenceId",
+        "profile"
+      ],
+      "additionalProperties": false
+    },
     "ReferenceValue": {
       "type": "object",
       "properties": {

@@ -11,6 +11,8 @@
 export * from './gpLaboratoryResult/gpLaboratoryResult';
 
 export * from './nlCorePatient/nlCorePatient';
+export * from './nlCorePractitioner/nlCorePractitioner';
+export * from './nlCorePractitionerRole/nlCorePractitionerRole';
 
 export * from './zibAlert/zibAlert';
 export * from './zibAdministrationAgreement/zibAdministrationAgreement';

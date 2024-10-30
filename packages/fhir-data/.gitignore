@@ -1,7 +1,4 @@
 fhir-definitions/
 
 # Dont include the generated build files
-# DO include the json and typescript schema files so they can easily be inspected during PRs.
-dist/*/*
-!dist/schema/typescript/
-!dist/schema/json/
+dist/

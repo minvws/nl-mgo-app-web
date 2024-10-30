@@ -1,0 +1,91 @@
+{
+    "resourceType": "Practitioner",
+    "id": "nl-core-practitioner-02",
+    "meta": { "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Id 16e29a33-8fdf-11ec-6379-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Vaste Huisarts 1</div><div><a href=\"tel:+31434073576\">+31434073576</a> (Tel Werk), <a href=\"mailto:huisarts@huisarts.nl\">huisarts@huisarts.nl</a> (E-mail Werk)</div><div>Valkendael 45, 6245HK Maastricht, Nederland (WP)</div></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16e29a33-8fdf-11ec-6379-020000000000"
+        }
+    ],
+    "name": [{ "family": "Vaste Huisarts 1" }],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
+                                "code": "LL",
+                                "display": "Vast telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "+31434073576",
+            "use": "work"
+        },
+        { "system": "email", "value": "huisarts@huisarts.nl", "use": "work" }
+    ],
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "WP",
+                                "display": "Werkadres"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "use": "work",
+            "line": ["Valkendael 45"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Valkendael"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "45"
+                        }
+                    ]
+                }
+            ],
+            "city": "Maastricht",
+            "postalCode": "6245HK",
+            "country": "Nederland",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

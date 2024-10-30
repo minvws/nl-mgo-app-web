@@ -9,5 +9,9 @@ export function getPersonalInformationData(
             'http://fhir.nl/fhir/StructureDefinition/nl-core-patient',
             organizationIdFilter
         ),
+        practitionerInformation: resources.getResourcesByProfile(
+            'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner',
+            organizationIdFilter
+        ),
     };
 }

@@ -1,0 +1,35 @@
+{
+    "id": "nl-core-practitioner-04",
+    "referenceId": "Practitioner/nl-core-practitioner-04",
+    "resourceType": "Practitioner",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
+    "identifier": [
+        {
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
+            "value": "000432123",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16fa74e1-8fdf-11ec-1810-020000000000",
+            "type": null
+        }
+    ],
+    "name": [
+        {
+            "family": "de Vries",
+            "given": [
+                "Dirk"
+            ],
+            "period": null,
+            "prefix": null,
+            "suffix": null,
+            "text": null,
+            "use": null
+        }
+    ],
+    "address": null,
+    "telecom": null
+}
