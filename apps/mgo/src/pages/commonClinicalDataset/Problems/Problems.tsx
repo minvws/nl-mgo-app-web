@@ -45,7 +45,7 @@ export function Problems() {
                     </h1>
                 </Heading>
 
-                <Text size="lg" className="text-sm">
+                <Text size="lg" variant="light" className="text-sm">
                     <FormattedMessage
                         id="problems.subheading"
                         description="Je diagnoses en gezondheidsklachten, vastgesteld door je zorgaanbieder."

@@ -7,9 +7,9 @@ import { Heading } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { useIntl } from 'react-intl';
 import { UiSchemaDisplay } from '../../components/UiSchemaDisplay/UiSchemaDisplay';
-import { type MessagesIds } from '$/i18n/I18nProvider';
+import { type MessagesIds } from '$/i18n';
 
-export function UiSchemaDetail() {
+export function HealthDataDetail() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { resourceSlug, organizationSlug, healthCategorySlug } = useParams();

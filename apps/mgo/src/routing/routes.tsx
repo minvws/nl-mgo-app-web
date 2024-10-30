@@ -1,11 +1,10 @@
 import { AddOrganization } from '$/pages/AddOrganization/AddOrganization';
-import { NotFound } from '$/pages/NotFound/NotFound';
-import { OrganizationList } from '$/pages/OrganizationList/OrganizationList';
-import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
-import { LabResults, Problems } from '$/pages/commonClinicalDataset';
-import { Document, Documents } from '$/pages/documentDataset';
+import { AddOrganizationList } from '$/pages/AddOrganizationList/AddOrganizationList';
 import { HealthCategory } from '$/pages/HealthCategory/HealthCategory';
-import { UiSchemaDetail } from '$/pages/UiSchemaDetail/UiSchemaDetail';
+import { NotFound } from '$/pages/NotFound/NotFound';
+import { Overview } from '$/pages/Overview/Overview';
+import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
+import { HealthDataDetail } from '$/pages/HealthDataDetail/HealthDataDetail';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
@@ -17,8 +16,10 @@ import { Introduction } from '../pages/Introduction/Introduction';
 import { Login } from '../pages/Login/Login';
 import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
-import { Overview } from '../pages/Overview/Overview';
+import { Organizations } from '../pages/Organizations/Organizations';
 import { Proposition } from '../pages/Proposition/Proposition';
+import { Document, Documents } from '$/pages/documentDataset';
+import { LabResults, Problems } from '$/pages/commonClinicalDataset';
 
 const routeConfig = [
     {
@@ -68,7 +69,7 @@ const routeConfig = [
                     },
                     {
                         path: '/zorgaanbieder-toevoegen/zorgaanbieders',
-                        element: <OrganizationList />,
+                        element: <AddOrganizationList />,
                     },
                 ],
             },
@@ -80,16 +81,28 @@ const routeConfig = [
                         element: <Overview />,
                     },
                     {
-                        path: '/overzicht/:organizationSlug',
-                        element: <Organization />,
-                    },
-                    {
-                        path: `/overzicht/:organizationSlug/:healthCategorySlug`,
+                        path: `/overzicht/:healthCategorySlug`,
                         element: <HealthCategory />,
                     },
                     {
-                        path: '/overzicht/:organizationSlug/:healthCategorySlug/:resourceSlug',
-                        element: <UiSchemaDetail />,
+                        path: '/overzicht/:healthCategorySlug/:resourceSlug',
+                        element: <HealthDataDetail />,
+                    },
+                    {
+                        path: '/organisaties',
+                        element: <Organizations />,
+                    },
+                    {
+                        path: '/organisaties/:organizationSlug',
+                        element: <Organization />,
+                    },
+                    {
+                        path: `/organisaties/:organizationSlug/:healthCategorySlug`,
+                        element: <HealthCategory />,
+                    },
+                    {
+                        path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug',
+                        element: <HealthDataDetail />,
                     },
                     {
                         path: '/overzicht/:organizationSlug/klachten',

@@ -87,6 +87,21 @@ export function MobileMenu({ className, ...rest }: MobileMenuProps) {
                             <ButtonCard
                                 className="outline-offset-[-2px]"
                                 asChild
+                                title={intl.formatMessage({
+                                    id: 'menu.organizations_heading',
+                                })}
+                                description={intl.formatMessage({
+                                    id: 'menu.organizations_subheading',
+                                })}
+                                icon="favorite"
+                            >
+                                <NavLink to="/organisaties" />
+                            </ButtonCard>
+                        </li>
+                        <li>
+                            <ButtonCard
+                                className="outline-offset-[-2px]"
+                                asChild
                                 title={intl.formatMessage({ id: 'menu.about_heading' })}
                                 description={intl.formatMessage({ id: 'menu.about_subheading' })}
                                 icon="question-mark"

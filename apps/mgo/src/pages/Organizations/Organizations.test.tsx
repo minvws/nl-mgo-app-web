@@ -1,29 +1,38 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders, message } from '$test/helpers';
+import {
+    setAuthStateAuthenticated,
+    setupApp,
+    setupWithAppProviders,
+    message,
+    flushCallStack,
+} from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { Overview } from './Overview';
+import { Organizations } from './Organizations';
 
-test('overview should show empty state', () => {
+test('overview should show empty state', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
     setAuthStateAuthenticated();
 
-    setupApp({ initialEntries: ['/overzicht'] });
+    setupApp({ initialEntries: ['/organisaties'] });
 
-    expect(screen.getByText(message('overview.heading'))).toBeInTheDocument();
+    await flushCallStack();
+    expect(screen.getByText(message('organizations.heading'))).toBeInTheDocument();
     expect(screen.getByText(message('common.no_organizations_heading'))).toBeInTheDocument();
 });
 
-test('should show the health categories if there are organizations', () => {
+test('should show the healthcare organizations', () => {
     const organizationName = faker.company.name();
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
 
     setAuthStateAuthenticated();
-    setupWithAppProviders(<Overview />);
+    setupWithAppProviders(<Organizations />);
 
-    expect(screen.getByText(message('hc_medication.heading'))).toBeInTheDocument();
+    screen.getByRole('link', {
+        name: new RegExp(organizationName),
+    });
 });

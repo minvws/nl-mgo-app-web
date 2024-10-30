@@ -6,7 +6,8 @@ import { setupWithAppProviders } from '$test/helpers';
 import { messageRegexp } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { UiSchemaDetail } from './UiSchemaDetail';
+import { HealthDataDetail } from './HealthDataDetail';
+import { type MessagesIds } from '$/i18n';
 
 vi.mock('$/routing/useParams');
 vi.mock('$/routing/Navigate');
@@ -38,14 +39,14 @@ test('shows ui schema', async () => {
             }) as Pick<Resource, 'uiSchema'> as any // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
-    setupWithAppProviders(<UiSchemaDetail />);
+    setupWithAppProviders(<HealthDataDetail />);
 
     screen.getByRole('heading', {
-        name: messageRegexp('detail_medication.heading'),
+        name: messageRegexp('detail_medication.heading' as MessagesIds),
         level: 1,
     });
     screen.getByRole('heading', {
-        name: messageRegexp('zib_medication_use.group_general_information'),
+        name: messageRegexp('zib_medication_use.group_general_information' as MessagesIds),
         level: 2,
     });
 });
@@ -62,7 +63,7 @@ test('redirects to the healtCategory page if there is no resource found', async 
     const mock = vi.spyOn(store, 'getResourceBySlug');
     mock.mockImplementationOnce(() => undefined);
 
-    setupWithAppProviders(<UiSchemaDetail />);
+    setupWithAppProviders(<HealthDataDetail />);
 
     expect(mockNavigate.mock.calls[0][0]).toEqual({
         to: `/overzicht/${params.organizationSlug}/${params.healthCategorySlug}`,

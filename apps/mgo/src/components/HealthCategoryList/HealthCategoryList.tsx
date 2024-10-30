@@ -9,7 +9,7 @@ export interface CategoryListProps {
 }
 
 export function HealthCategoryList({ organization }: CategoryListProps) {
-    const organizationFilter = organization?.id ? [organization.id] : undefined;
+    const organizationFilter = organization ? [organization.id] : undefined;
 
     const categoryQueries: QueryResult<HealthCategory>[] = [
         useHealthCategoryQuery(HealthCategory.PersonalInformation, organizationFilter),

@@ -10,10 +10,10 @@ export function NoOrganizations() {
             <Card className="mt-6">
                 <QueryStateLayout
                     illustration="woman-on-couch"
-                    title={intl.formatMessage({ id: 'organization_list.no_results_heading' })}
+                    title={intl.formatMessage({ id: 'add_organization_list.no_results_heading' })}
                 >
                     <FormattedMessage
-                        id="organization_list.no_results_subheading"
+                        id="add_organization_list.no_results_subheading"
                         description="Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu
                         doen, of later via je profiel."
                     />
@@ -23,7 +23,7 @@ export function NoOrganizations() {
                 <Button asChild>
                     <RouterLink to="/zorgaanbieder-toevoegen">
                         <FormattedMessage
-                            id="organization_list.add_organization"
+                            id="add_organization_list.add_organization"
                             description="Voeg een zorgaanbieder toe"
                         />
                     </RouterLink>
@@ -31,7 +31,7 @@ export function NoOrganizations() {
                 <Button variant="light" asChild>
                     <RouterLink to="/overzicht">
                         <FormattedMessage
-                            id="organization_list.to_overview"
+                            id="add_organization_list.to_overview"
                             description="Ga naar het overzicht"
                         />
                     </RouterLink>

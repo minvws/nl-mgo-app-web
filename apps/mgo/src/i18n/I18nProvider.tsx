@@ -1,15 +1,6 @@
 import { type ReactNode } from 'react';
-import { IntlProvider, type MessageFormatElement, type IntlConfig } from 'react-intl';
-import appMessages from './locales/compiled/nl/app.json';
-import zibMedicationUse from './locales/compiled/nl/zib_medication_use.json';
-
-const messagesNL = {
-    ...appMessages,
-    ...zibMedicationUse,
-};
-
-export type MessagesIds = keyof typeof messagesNL;
-export type Messages = Record<MessagesIds, MessageFormatElement[]>;
+import { IntlProvider, type IntlConfig } from 'react-intl';
+import { messagesNL, type Messages } from './messages';
 
 const locale = 'nl';
 const messages: Messages = messagesNL;

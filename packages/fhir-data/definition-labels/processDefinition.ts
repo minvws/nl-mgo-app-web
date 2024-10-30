@@ -13,7 +13,7 @@ export function processDefinition(definition: StructureDefinition) {
     const labels: Record<string, string> = {};
 
     diffElements.forEach(({ id, path, alias }) => {
-        if (path === type) return;
+        // if (path === type) return;
         if (!path || !alias) return;
         if (alias.length > 1) {
             console.warn(`More than 1 aliases found for path: ${path}, alias: ${alias}`);
@@ -23,7 +23,7 @@ export function processDefinition(definition: StructureDefinition) {
         // Drop unneccesary details from the id path and transform to snake_case
         key = key.replace(/extension:/g, '');
         key = key.replace(/.[\w]+(\[x\])?:/g, '.');
-        key = key.replace(/.value[\w]+$/, '');
+        key = key.replace(/.value[\w]+$/, '.value');
         key = key.replace(/\[x\]$/, '');
         key = key.replace(/[^.]+/g, (match) => _.snakeCase(match));
 

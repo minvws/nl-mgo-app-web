@@ -4,11 +4,12 @@ import {
     useHealthCategoryQuery,
 } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
+import { type MessagesIds } from '$/i18n/messages';
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { messageRegexp } from '$test/helpers/i18n';
+import { message } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
@@ -61,7 +62,7 @@ test('loads and shows category content', async () => {
     const { rerender } = setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: messageRegexp(`health_category.${HealthCategoryEnum.Medication}`),
+        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
@@ -82,9 +83,21 @@ test('loads and shows category content', async () => {
 
     rerender(<HealthCategory />);
     screen.getByRole('heading', {
-        name: messageRegexp('health_category.medication.medication_use'),
+        name: message('health_category.medication.medication_use' as MessagesIds),
         level: 2,
     });
+});
+
+test('does not apply an organization filter if there is no organisation slug', async () => {
+    mockUseParams.mockImplementation(() => ({
+        organizationSlug: undefined,
+        healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Medication],
+        resourceSlug: faker.lorem.slug(),
+    }));
+
+    setupWithAppProviders(<HealthCategory />);
+
+    expect(mockUseHealthCategoryQuery).toHaveBeenCalledWith('medication', undefined);
 });
 
 test('loads and receives error from category query', async () => {
@@ -104,7 +117,7 @@ test('loads and receives error from category query', async () => {
     setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: messageRegexp(`health_category.${HealthCategoryEnum.Medication}`),
+        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
@@ -128,12 +141,12 @@ test('loads and receives no data from category query', async () => {
     setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: messageRegexp(`health_category.${HealthCategoryEnum.Medication}`),
+        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
     screen.getByRole('heading', {
-        name: messageRegexp('health_category.empty.heading'),
+        name: message('health_category.empty.heading'),
         level: 2,
     });
 });

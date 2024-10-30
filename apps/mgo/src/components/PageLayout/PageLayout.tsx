@@ -34,12 +34,14 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                 <main className="flex flex-grow flex-col">
                     <Container
                         className={cn(
-                            'flex flex-grow bg-[#FAFAFA] dark:bg-[#050505]',
-                            hideMenu ? 'flex-col' : 'gap-8 py-6 md:gap-10 md:py-12 lg:gap-16'
+                            'flex flex-grow overflow-x-hidden break-words bg-[#FAFAFA] dark:bg-[#050505]',
+                            hideMenu
+                                ? 'flex-col'
+                                : 'gap-8 pb-8 pt-8 md:gap-10 md:pb-16 md:pt-10 lg:gap-16 lg:pb-24 lg:pt-12'
                         )}
                     >
                         {!hideMenu && !isMobile && <DesktopMenu />}
-                        <div className="flex flex-grow flex-col">
+                        <div className="flex min-w-0 flex-grow flex-col">
                             <Outlet />
                         </div>
                     </Container>

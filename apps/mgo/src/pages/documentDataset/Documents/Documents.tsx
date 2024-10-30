@@ -29,14 +29,16 @@ export function Documents() {
     return (
         <>
             <Helmet
-                title={intl.formatMessage({ id: 'documents.heading' }) + ` | ${organization?.name}`}
+                title={
+                    intl.formatMessage({ id: 'hc_documents.heading' }) + ` | ${organization?.name}`
+                }
             />
             <section className="flex-grow">
                 <BackButton />
 
                 <Heading asChild size="lg">
                     <h1 ref={navFocusRef}>
-                        <FormattedMessage id="documents.heading" description="Documenten" />
+                        <FormattedMessage id="hc_documents.heading" description="Documenten" />
                     </h1>
                 </Heading>
 

@@ -46,7 +46,7 @@ export function LabResults() {
                     </h1>
                 </Heading>
 
-                <Text size="lg" className="text-sm">
+                <Text size="lg" variant="light" className="text-sm">
                     <FormattedMessage
                         id="lab_results.subheading"
                         description="Resultaten van jouw onderzoeken, (r&ouml;ntgen)foto's en scans."

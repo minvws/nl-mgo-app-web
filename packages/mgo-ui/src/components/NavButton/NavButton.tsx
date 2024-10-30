@@ -17,7 +17,7 @@ export const NavButton = ({ asChild, icon, children, className, ...rest }: NavBu
     return (
         <Comp
             className={cn(
-                `text-md inline-flex items-center justify-start rounded px-4 py-2 outline-none`,
+                `text-md block max-w-full overflow-hidden text-ellipsis whitespace-nowrap rounded px-4 py-2 outline-none`,
                 defaultStyles,
                 activeStyles,
                 disabledStyles,
@@ -26,7 +26,7 @@ export const NavButton = ({ asChild, icon, children, className, ...rest }: NavBu
             )}
             {...rest}
         >
-            <span className="me-2 inline-flex shrink-0 self-center text-[1.2em]">
+            <span className="relative top-[-2px] me-2 inline-block align-middle text-[1.2em]">
                 <Icon icon={icon} />
             </span>
             <Slottable>{children}</Slottable>

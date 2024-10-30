@@ -11,7 +11,7 @@ test('HealthCategoryList with organization', () => {
     setupWithAppProviders(<HealthCategoryList organization={organization} />);
 
     Object.values(HealthCategory).forEach((category) => {
-        const name = messageRegexp(`health_category.${category}`);
+        const name = messageRegexp(`hc_${category}.heading`);
         expect(
             screen.getByRole('link', {
                 name: name,
@@ -24,7 +24,7 @@ test('HealthCategoryList without organization', () => {
     setupWithAppProviders(<HealthCategoryList />);
 
     Object.values(HealthCategory).forEach((category) => {
-        const name = messageRegexp(`health_category.${category}`);
+        const name = messageRegexp(`hc_${category}.heading`);
         expect(
             screen.getByRole('link', {
                 name: name,

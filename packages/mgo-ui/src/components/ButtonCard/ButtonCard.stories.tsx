@@ -15,6 +15,17 @@ export default {
 
 export const Default: Story = {};
 
+export const Overflow: Story = {
+    render: () => (
+        <div>
+            <ButtonCard
+                title="Suntexplicabodoloresimpeditquoerroreaporrotemporibus."
+                description="Pariaturaliquidquoquasvoluptatibusipsamsitasperioresautem."
+                icon="add"
+            />
+        </div>
+    ),
+};
 export const LoadingState: Story = {
     args: {
         isLoading: true,

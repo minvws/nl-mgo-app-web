@@ -7,14 +7,14 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { NoOrganizations } from './NoOrganizations';
 import { Organizations } from './Organizations';
 
-export function OrganizationList() {
+export function AddOrganizationList() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { hasOrganizations } = useOrganizationsStore();
 
     return (
         <div className="flex flex-grow flex-col">
-            <Helmet title={intl.formatMessage({ id: 'organization_list.heading' })} />
+            <Helmet title={intl.formatMessage({ id: 'add_organization_list.heading' })} />
 
             <Container>
                 <BackButton />
@@ -24,7 +24,7 @@ export function OrganizationList() {
                 <Heading asChild size="lg">
                     <h1 ref={navFocusRef}>
                         <FormattedMessage
-                            id="organization_list.heading"
+                            id="add_organization_list.heading"
                             description="Welke zorgaanbieders wil je in je overzicht tonen?"
                         />
                     </h1>

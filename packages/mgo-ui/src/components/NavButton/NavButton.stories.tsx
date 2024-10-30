@@ -34,3 +34,13 @@ export const Overview: Story = {
         </Stack>
     ),
 };
+export const Overflow: Story = {
+    args: {},
+    render: ({ ...args }) => (
+        <div className="max-w-[250px] border border-dashed py-6">
+            <NavButton {...args} icon="home">
+                Quaeratperspiciatisharumreprehenderitfugiatducimusnumquamporroreprehenderitquiundereprehenderitdistinctiovoluptasrecusandae.
+            </NavButton>
+        </div>
+    ),
+};

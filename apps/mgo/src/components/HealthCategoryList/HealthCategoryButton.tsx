@@ -44,7 +44,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
             }
         >
             <RouterLink to={`./${healthCategorySlugs[query.category]}`}>
-                <FormattedMessage id={`health_category.${query.category}`} />
+                <FormattedMessage id={`hc_${query.category}.heading`} />
             </RouterLink>
         </CategoryButton>
     );

@@ -4,7 +4,7 @@ import { message, setAuthStateAuthenticated, setupApp, setupWithAppProviders } f
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
-import { OrganizationList } from './OrganizationList';
+import { AddOrganizationList } from './AddOrganizationList';
 import { faker } from '$test/faker';
 
 test('render from store', async () => {
@@ -23,7 +23,7 @@ test('remove item from store', async () => {
     const user = userEvent.setup();
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
-    setupWithAppProviders(<OrganizationList />);
+    setupWithAppProviders(<AddOrganizationList />);
 
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);
 
@@ -46,7 +46,7 @@ test('do not remove item from store', async () => {
     const user = userEvent.setup();
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
-    setupWithAppProviders(<OrganizationList />);
+    setupWithAppProviders(<AddOrganizationList />);
 
     expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(0);
 

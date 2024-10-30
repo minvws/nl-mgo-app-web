@@ -38,7 +38,7 @@ npmDownload $FHIR_NPM_ID $FHIR_NPM_VERSION
 npmDownload $ZIBS_NPM_ID $ZIBS_NPM_VERSION
 
 # Uncomment to remove all files except StructureDefinition and ZIB files
-# find ./$FHIR_NPM_ID -type f ! \( -name "StructureDefinition-*" \) -delete
-# find ./$ZIBS_NPM_ID -type f ! \( -name "zib-*" -o -name "gp-*" -o -name "nl-core-*" \) -delete
+find ./$FHIR_NPM_ID -type f ! \( -name "StructureDefinition-*" \) -delete
+find ./$ZIBS_NPM_ID -type f ! \( -name "zib-*" -o -name "gp-*" -o -name "nl-core-*" \) -delete
 
 echo "✨ Done! ✨"

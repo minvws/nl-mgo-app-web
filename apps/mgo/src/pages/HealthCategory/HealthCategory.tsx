@@ -19,12 +19,14 @@ export function HealthCategory() {
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const organization = getOrganizationBySlug(organizationSlug);
 
-    const { isLoading, isEmpty, isError, data } = useHealthCategoryQuery(healthCategory, [
-        organization?.id,
-    ]);
-    const heading = intl.formatMessage({ id: `health_category.${healthCategory}` });
+    const { isLoading, isEmpty, isError, data } = useHealthCategoryQuery(
+        healthCategory,
+        organizationSlug ? [organization?.id] : undefined
+    );
 
-    if (!organization) {
+    const heading = intl.formatMessage({ id: `hc_${healthCategory}.heading` });
+
+    if (organizationSlug && !organization) {
         return <Navigate to={`/overzicht`} />;
     }
 
@@ -35,16 +37,16 @@ export function HealthCategory() {
             <section className="flex-grow">
                 {isError && (
                     <Alert
-                        label={intl.formatMessage({ id: 'health_category.error.banner.heading' })}
+                        label={intl.formatMessage({ id: 'common.failed_to_load_data' })}
                         aria-label={intl.formatMessage({
-                            id: 'health_category.error.banner.heading',
+                            id: 'common.failed_to_load_data',
                         })}
                         status="warning"
                     >
                         <Stack className="items-start gap-1">
-                            <FormattedMessage id="health_category.error.banner.subheading" />
+                            <FormattedMessage id="common.error_in_system" />
                             <Button variant="ghost" className="p-0 md:p-0">
-                                <FormattedMessage id="health_category.error.banner.try_again" />
+                                <FormattedMessage id="common.try_again" />
                             </Button>
                         </Stack>
                     </Alert>

@@ -20,9 +20,9 @@ export const Overview: Story = {
     render: ({ ...args }) => (
         <Stack className="gap-10">
             {illustrationNames.map((illustration) => (
-                <div key={illustration}>
+                <div key={illustration} className="max-w-[300px]">
                     <Illustration {...args} illustration={illustration} />
-                    <div className="mt-2 text-xs dark:text-white">{illustration}</div>
+                    <div className="mt-2 text-center text-xs dark:text-white">{illustration}</div>
                 </div>
             ))}
         </Stack>

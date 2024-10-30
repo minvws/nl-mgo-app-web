@@ -3,6 +3,6 @@ import { useIntl } from 'react-intl';
 
 export function useUnknownLabel<T>(value: T) {
     const intl = useIntl();
-    const unknownLabel = intl.formatMessage({ id: 'fhir.unknown' });
+    const unknownLabel = intl.formatMessage({ id: 'common.unknown' });
     return isNullish(value) ? unknownLabel : (value as NonNullable<T>);
 }

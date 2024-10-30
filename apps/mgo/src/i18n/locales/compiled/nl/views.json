@@ -41,6 +41,12 @@
             "value": "Naam (verplicht)"
         }
     ],
+    "add_organization.not_implemented": [
+        {
+            "type": 0,
+            "value": "Deze zorgaanbieder ondersteunen we nog niet"
+        }
+    ],
     "add_organization.not_participating": [
         {
             "type": 0,
@@ -53,166 +59,40 @@
             "value": "naar overzicht"
         }
     ],
-    "common.add": [
+    "add_organization_list.add_organization": [
         {
             "type": 0,
-            "value": "toevoegen"
+            "value": "Voeg een zorgaanbieder toe"
         }
     ],
-    "common.app_name": [
+    "add_organization_list.heading": [
         {
             "type": 0,
-            "value": "Mijn Gezondheidsoverzicht"
+            "value": "Welke zorgaanbieders wil je in je overzicht tonen?"
         }
     ],
-    "common.delete": [
+    "add_organization_list.no_results_heading": [
         {
             "type": 0,
-            "value": "verwijderen"
+            "value": "Deze lijst is nog leeg"
         }
     ],
-    "common.error_heading": [
+    "add_organization_list.no_results_subheading": [
         {
             "type": 0,
-            "value": "Er ging iets mis"
+            "value": "Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu doen, of later via je profiel."
         }
     ],
-    "common.error_subheading": [
+    "add_organization_list.subheading": [
         {
             "type": 0,
-            "value": "Onze excuses, er lijkt een probleem te zijn met de verbinding met onze server. We werken eraan om het op te lossen. Probeer het later opnieuw."
+            "value": "Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
         }
     ],
-    "common.loading": [
+    "add_organization_list.to_overview": [
         {
             "type": 0,
-            "value": "Bezig met laden..."
-        }
-    ],
-    "common.loading_data": [
-        {
-            "type": 0,
-            "value": "Laden"
-        }
-    ],
-    "common.logout": [
-        {
-            "type": 0,
-            "value": "Uitloggen"
-        }
-    ],
-    "common.next": [
-        {
-            "type": 0,
-            "value": "Volgende"
-        }
-    ],
-    "common.no_data": [
-        {
-            "type": 0,
-            "value": "Geen gegevens"
-        }
-    ],
-    "common.no_results_heading": [
-        {
-            "type": 0,
-            "value": "Geen gegevens gevonden"
-        }
-    ],
-    "common.no_results_subheading": [
-        {
-            "type": 0,
-            "value": "We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie."
-        }
-    ],
-    "common.not_available": [
-        {
-            "type": 0,
-            "value": "Nog niet beschikbaar"
-        }
-    ],
-    "common.previous": [
-        {
-            "type": 0,
-            "value": "Vorige"
-        }
-    ],
-    "common.required": [
-        {
-            "type": 0,
-            "value": "(verplicht)"
-        }
-    ],
-    "common.search": [
-        {
-            "type": 0,
-            "value": "Zoeken"
-        }
-    ],
-    "common.unknown": [
-        {
-            "type": 0,
-            "value": "Niet bekend"
-        }
-    ],
-    "common.voice_over_close": [
-        {
-            "type": 0,
-            "value": "Sluiten"
-        }
-    ],
-    "detail_allergies.heading": [
-        {
-            "type": 0,
-            "value": "Alle allergie gegevens"
-        }
-    ],
-    "detail_complaints.heading": [
-        {
-            "type": 0,
-            "value": "Alle klacht gegevens"
-        }
-    ],
-    "detail_documents.heading": [
-        {
-            "type": 0,
-            "value": "Alle document gegevens"
-        }
-    ],
-    "detail_lab_results.heading": [
-        {
-            "type": 0,
-            "value": "Alle resultaat gegevens"
-        }
-    ],
-    "detail_measurements.heading": [
-        {
-            "type": 0,
-            "value": "Alle meetgegevens"
-        }
-    ],
-    "detail_medication.heading": [
-        {
-            "type": 0,
-            "value": "Alle medicijngegevens"
-        }
-    ],
-    "detail_reports.heading": [
-        {
-            "type": 0,
-            "value": "Alle verslag gegevens"
-        }
-    ],
-    "detail_treatments.heading": [
-        {
-            "type": 0,
-            "value": "Alle behandelgegevens"
-        }
-    ],
-    "detail_vaccinations.heading": [
-        {
-            "type": 0,
-            "value": "Alle inenting gegevens"
+            "value": "Ga naar het overzicht"
         }
     ],
     "dialog.remove_organization_heading": [
@@ -241,132 +121,6 @@
         {
             "type": 0,
             "value": "Ja, weglaten"
-        }
-    ],
-    "documents.heading": [
-        {
-            "type": 0,
-            "value": "Documenten"
-        }
-    ],
-    "fhir.author": [
-        {
-            "type": 0,
-            "value": "Auteur"
-        }
-    ],
-    "fhir.bodyLocation": [
-        {
-            "type": 0,
-            "value": "Anatomische locatie"
-        }
-    ],
-    "fhir.category": [
-        {
-            "type": 0,
-            "value": "Categorie"
-        }
-    ],
-    "fhir.clinicalStatus": [
-        {
-            "type": 0,
-            "value": "Status"
-        }
-    ],
-    "fhir.code": [
-        {
-            "type": 0,
-            "value": "Testcode"
-        }
-    ],
-    "fhir.collectionDateTime": [
-        {
-            "type": 0,
-            "value": "Afnamedatum"
-        }
-    ],
-    "fhir.comment": [
-        {
-            "type": 0,
-            "value": "Notitie"
-        }
-    ],
-    "fhir.dateTime": [
-        {
-            "type": 0,
-            "value": "Testdatum"
-        }
-    ],
-    "fhir.endDate": [
-        {
-            "type": 0,
-            "value": "Einddatum"
-        }
-    ],
-    "fhir.instructions": [
-        {
-            "type": 0,
-            "value": "Dosering"
-        }
-    ],
-    "fhir.interpretation": [
-        {
-            "type": 0,
-            "value": "Interpretatie vlaggen"
-        }
-    ],
-    "fhir.prescribedBy": [
-        {
-            "type": 0,
-            "value": "Voorgeschreven door"
-        }
-    ],
-    "fhir.referenceRangeHigh": [
-        {
-            "type": 0,
-            "value": "Referentie bovengrens"
-        }
-    ],
-    "fhir.referenceRangeLow": [
-        {
-            "type": 0,
-            "value": "Referentie ondergrens"
-        }
-    ],
-    "fhir.result": [
-        {
-            "type": 0,
-            "value": "Testuitslag"
-        }
-    ],
-    "fhir.specimen": [
-        {
-            "type": 0,
-            "value": "Monstermateriaal"
-        }
-    ],
-    "fhir.startDate": [
-        {
-            "type": 0,
-            "value": "Startdatum"
-        }
-    ],
-    "fhir.status": [
-        {
-            "type": 0,
-            "value": "Test status"
-        }
-    ],
-    "fhir.title": [
-        {
-            "type": 0,
-            "value": "Titel"
-        }
-    ],
-    "fhir.unknown": [
-        {
-            "type": 0,
-            "value": "Niet bekend"
         }
     ],
     "footer.about_heading": [
@@ -423,202 +177,16 @@
             "value": "Service"
         }
     ],
-    "health_categories.heading": [
-        {
-            "type": 0,
-            "value": "Overzicht"
-        }
-    ],
-    "health_categories.remove_organization": [
-        {
-            "type": 0,
-            "value": "Verwijder zorgaanbieder"
-        }
-    ],
-    "health_category.alerts": [
-        {
-            "type": 0,
-            "value": "Waarschuwingen"
-        }
-    ],
-    "health_category.allergies": [
-        {
-            "type": 0,
-            "value": "Allergieën"
-        }
-    ],
-    "health_category.appointments": [
-        {
-            "type": 0,
-            "value": "Afspraken"
-        }
-    ],
-    "health_category.complaints": [
-        {
-            "type": 0,
-            "value": "Klachten"
-        }
-    ],
-    "health_category.complaints.details_heading": [
-        {
-            "type": 0,
-            "value": "Alle klachtgegevens"
-        }
-    ],
-    "health_category.complaints.no_search_results": [
-        {
-            "type": 0,
-            "value": "Geen klachten gevonden"
-        }
-    ],
-    "health_category.complaints.search": [
-        {
-            "type": 0,
-            "value": "Zoek een klacht"
-        }
-    ],
-    "health_category.devices": [
-        {
-            "type": 0,
-            "value": "Medische hulpmiddelen"
-        }
-    ],
-    "health_category.documents": [
-        {
-            "type": 0,
-            "value": "Documenten"
-        }
-    ],
     "health_category.empty.heading": [
         {
             "type": 0,
-            "value": "Geen gegevens gevonden"
+            "value": "Geen gegevens gevonden "
         }
     ],
     "health_category.empty.subheading": [
         {
             "type": 0,
             "value": "Er is hier niets opgeslagen."
-        }
-    ],
-    "health_category.error.banner.heading": [
-        {
-            "type": 0,
-            "value": "Gegevens ophalen mislukt"
-        }
-    ],
-    "health_category.error.banner.subheading": [
-        {
-            "type": 0,
-            "value": "Er ging iets mis in ons systeem."
-        }
-    ],
-    "health_category.error.banner.try_again": [
-        {
-            "type": 0,
-            "value": "Probeer opnieuw"
-        }
-    ],
-    "health_category.lab_results": [
-        {
-            "type": 0,
-            "value": "Uitslagen"
-        }
-    ],
-    "health_category.lifestyle": [
-        {
-            "type": 0,
-            "value": "Leefstijl"
-        }
-    ],
-    "health_category.loading.heading": [
-        {
-            "type": 0,
-            "value": "Aan het laden…"
-        }
-    ],
-    "health_category.measurements": [
-        {
-            "type": 0,
-            "value": "Metingen"
-        }
-    ],
-    "health_category.medication": [
-        {
-            "type": 0,
-            "value": "Medicijnen"
-        }
-    ],
-    "health_category.medication.medication_use": [
-        {
-            "type": 0,
-            "value": "Medicijnen"
-        }
-    ],
-    "health_category.medication.no_search_results": [
-        {
-            "type": 0,
-            "value": "Geen medicijnen gevonden"
-        }
-    ],
-    "health_category.medication.search": [
-        {
-            "type": 0,
-            "value": "Zoek een medicijn"
-        }
-    ],
-    "health_category.mental": [
-        {
-            "type": 0,
-            "value": "Mentaal welzijn"
-        }
-    ],
-    "health_category.patient": [
-        {
-            "type": 0,
-            "value": "Persoonlijke gegevens"
-        }
-    ],
-    "health_category.payment": [
-        {
-            "type": 0,
-            "value": "Betaalgegevens"
-        }
-    ],
-    "health_category.plans": [
-        {
-            "type": 0,
-            "value": "Behandelwensen- en plan"
-        }
-    ],
-    "health_category.reports": [
-        {
-            "type": 0,
-            "value": "Verslagen"
-        }
-    ],
-    "health_category.search_again": [
-        {
-            "type": 0,
-            "value": "Probeer opnieuw te zoeken."
-        }
-    ],
-    "health_category.treatments": [
-        {
-            "type": 0,
-            "value": "Behandelingen"
-        }
-    ],
-    "health_category.vaccinations": [
-        {
-            "type": 0,
-            "value": "Intentingen"
-        }
-    ],
-    "healthcare_organizations.heading": [
-        {
-            "type": 0,
-            "value": "Zorgaanbieders"
         }
     ],
     "introduction.heading": [
@@ -630,7 +198,7 @@
     "introduction.subheading": [
         {
             "type": 0,
-            "value": "Alle informatie die je huisarts, ziekenhuis en andere zorgverleners over jou hebben. Op één plek. Veilig en overzichtelijk."
+            "value": "Eén app met alle gegevens die je huisarts, ziekenhuis en andere zorgaanbieders over jou hebben. Veilig en overzichtelijk."
         }
     ],
     "lab_results.heading": [
@@ -699,12 +267,6 @@
             "value": "De volgende keer dat je inlogt kun je je gegevens opnieuw ophalen."
         }
     ],
-    "medication_details.heading": [
-        {
-            "type": 0,
-            "value": "Alle medicijngegevens"
-        }
-    ],
     "medication_use.heading": [
         {
             "type": 0,
@@ -733,6 +295,18 @@
         {
             "type": 0,
             "value": "Menu"
+        }
+    ],
+    "menu.organizations_heading": [
+        {
+            "type": 0,
+            "value": "Zorgaanbieders"
+        }
+    ],
+    "menu.organizations_subheading": [
+        {
+            "type": 0,
+            "value": "Je medische gegevens van je zorgaanbieders op één plek"
         }
     ],
     "menu.overview_heading": [
@@ -777,13 +351,6 @@
             "value": "Vastgesteld door je zorgaanbieder"
         }
     ],
-    "organization.documents_heading": [
-        {
-            "type": 0,
-            "value": "Documenten"
-        }
-    ],
-    "organization.documents_subheading": [],
     "organization.heading": [
         {
             "type": 1,
@@ -832,43 +399,13 @@
             "value": "organizationCategory"
         }
     ],
+    "organization.title": [
+        {
+            "type": 0,
+            "value": "Zorgaanbieder"
+        }
+    ],
     "organization.to_overview": [
-        {
-            "type": 0,
-            "value": "Ga naar het overzicht"
-        }
-    ],
-    "organization_list.add_organization": [
-        {
-            "type": 0,
-            "value": "Voeg een zorgaanbieder toe"
-        }
-    ],
-    "organization_list.heading": [
-        {
-            "type": 0,
-            "value": "Welke zorgaanbieders wil je in je overzicht tonen?"
-        }
-    ],
-    "organization_list.no_results_heading": [
-        {
-            "type": 0,
-            "value": "Deze lijst is nog leeg"
-        }
-    ],
-    "organization_list.no_results_subheading": [
-        {
-            "type": 0,
-            "value": "Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu doen, of later via je profiel."
-        }
-    ],
-    "organization_list.subheading": [
-        {
-            "type": 0,
-            "value": "Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
-        }
-    ],
-    "organization_list.to_overview": [
         {
             "type": 0,
             "value": "Ga naar het overzicht"
@@ -908,6 +445,18 @@
         {
             "type": 0,
             "value": "Zorgaanbieders aan het zoeken..."
+        }
+    ],
+    "organizations.heading": [
+        {
+            "type": 0,
+            "value": "Zorgaanbieders"
+        }
+    ],
+    "organizations.remove_organization": [
+        {
+            "type": 0,
+            "value": "Verwijder zorgaanbieder"
         }
     ],
     "overview.add_organization": [
@@ -1019,7 +568,7 @@
     "proposition.statement_2": [
         {
             "type": 0,
-            "value": "De website haalt je gegevens direct op bij de zorgverleners die jij kiest. "
+            "value": "Je gegevens komen direct van de zorgaanbieder die je kiest. "
         },
         {
             "children": [

@@ -1,0 +1,194 @@
+{
+    "hc_alerts.heading": [
+        {
+            "type": 0,
+            "value": "Waarschuwingen"
+        }
+    ],
+    "hc_alerts.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle waarschuwing gegevens"
+        }
+    ],
+    "hc_allergies.heading": [
+        {
+            "type": 0,
+            "value": "Allergieën"
+        }
+    ],
+    "hc_allergies.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle allergiegegevens"
+        }
+    ],
+    "hc_appointments.heading": [
+        {
+            "type": 0,
+            "value": "Afspraken"
+        }
+    ],
+    "hc_appointments.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle afspraakgegevens"
+        }
+    ],
+    "hc_complaints.heading": [
+        {
+            "type": 0,
+            "value": "Klachten"
+        }
+    ],
+    "hc_complaints.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle klachtgegevens"
+        }
+    ],
+    "hc_devices.heading": [
+        {
+            "type": 0,
+            "value": "Medische hulpmiddelen"
+        }
+    ],
+    "hc_devices.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle medische hulpmiddel gegevens"
+        }
+    ],
+    "hc_documents.heading": [
+        {
+            "type": 0,
+            "value": "Documenten"
+        }
+    ],
+    "hc_documents.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle documentgegevens"
+        }
+    ],
+    "hc_lab_results.heading": [
+        {
+            "type": 0,
+            "value": "Uitslagen"
+        }
+    ],
+    "hc_lab_results.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle uitslaggegevens"
+        }
+    ],
+    "hc_lifestyle.heading": [
+        {
+            "type": 0,
+            "value": "Leefstijl"
+        }
+    ],
+    "hc_lifestyle.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle leefstijlgegevens"
+        }
+    ],
+    "hc_measurements.heading": [
+        {
+            "type": 0,
+            "value": "Metingen"
+        }
+    ],
+    "hc_measurements.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle meetgegevens"
+        }
+    ],
+    "hc_medication.heading": [
+        {
+            "type": 0,
+            "value": "Medicijnen"
+        }
+    ],
+    "hc_medication.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle medicijngegevens"
+        }
+    ],
+    "hc_mental.heading": [
+        {
+            "type": 0,
+            "value": "Mentaal welzijn"
+        }
+    ],
+    "hc_mental.heading_details": [
+        {
+            "type": 0,
+            "value": "All mentaal welzijngegevens"
+        }
+    ],
+    "hc_patient.heading": [
+        {
+            "type": 0,
+            "value": "Persoonlijke gegevens"
+        }
+    ],
+    "hc_patient.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle persoonlijke gegevens"
+        }
+    ],
+    "hc_payment.heading": [
+        {
+            "type": 0,
+            "value": "Betaalgegevens"
+        }
+    ],
+    "hc_payment.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle betaalgegevens"
+        }
+    ],
+    "hc_plans.heading": [
+        {
+            "type": 0,
+            "value": "Behandelwensen- en plan"
+        }
+    ],
+    "hc_plans.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle behandelwens/plan gegevens"
+        }
+    ],
+    "hc_treatments.heading": [
+        {
+            "type": 0,
+            "value": "Behandelingen"
+        }
+    ],
+    "hc_treatments.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle behandelgegevens"
+        }
+    ],
+    "hc_vaccinations.heading": [
+        {
+            "type": 0,
+            "value": "Vaccinaties"
+        }
+    ],
+    "hc_vaccinations.heading_detail": [
+        {
+            "type": 0,
+            "value": "Alle vaccinatiegegevens"
+        }
+    ]
+}

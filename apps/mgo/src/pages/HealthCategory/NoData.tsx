@@ -13,7 +13,7 @@ export function NoData() {
                     />
                 </h2>
             </Heading>
-            <Text className="mt-2 text-gray-600 dark:text-white">
+            <Text className="mt-2" variant="light">
                 <FormattedMessage
                     id="health_category.empty.subheading"
                     description="Er is hier niets opgeslagen."

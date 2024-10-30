@@ -45,13 +45,13 @@ test('returns descriptions, with "unknown" details if value was null or undefine
             key: 'key2',
             value: undefined,
             term: 'fhir.key2',
-            details: 'fhir.unknown',
+            details: 'common.unknown',
         },
         {
             key: 'key3',
             value: null,
             term: 'fhir.key3',
-            details: 'fhir.unknown',
+            details: 'common.unknown',
         },
         {
             key: 'key1',

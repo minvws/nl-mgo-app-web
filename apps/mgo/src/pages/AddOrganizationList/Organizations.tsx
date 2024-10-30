@@ -48,7 +48,7 @@ export function Organizations() {
 
             <p className="text-md">
                 <FormattedMessage
-                    id="organization_list.subheading"
+                    id="add_organization_list.subheading"
                     description="Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
                 />
             </p>
@@ -76,7 +76,7 @@ export function Organizations() {
                 <Button asChild>
                     <RouterLink to="/overzicht">
                         <FormattedMessage
-                            id="organization_list.to_overview"
+                            id="add_organization_list.to_overview"
                             description="Ga naar het overzicht"
                         />
                     </RouterLink>
@@ -84,7 +84,7 @@ export function Organizations() {
                 <Button variant="light" asChild>
                     <RouterLink to="/zorgaanbieder-toevoegen">
                         <FormattedMessage
-                            id="organization_list.add_organization"
+                            id="add_organization_list.add_organization"
                             description="Voeg een zorgaanbieder toe"
                         />
                     </RouterLink>

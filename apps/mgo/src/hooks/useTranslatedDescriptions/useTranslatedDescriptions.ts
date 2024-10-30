@@ -9,7 +9,7 @@ export function useTranslatedDescriptions<T extends object>(values: T[], order: 
     const translateDescription = useCallback(
         ({ term, details, ...rest }: Description) => ({
             term: intl.formatMessage(term),
-            details: details ?? intl.formatMessage({ id: 'fhir.unknown' }),
+            details: details ?? intl.formatMessage({ id: 'common.unknown' }),
             ...rest,
         }),
         [intl]

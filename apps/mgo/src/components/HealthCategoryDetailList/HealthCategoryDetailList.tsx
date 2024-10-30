@@ -1,4 +1,5 @@
 import { type HealthCategory } from '$/healthCategory';
+import { type MessagesIds } from '$/i18n/messages';
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore, type Resource } from '$/store';
 import { DetailButton, ListWrapper, Text } from '@minvws/mgo-mgo-ui';
@@ -22,7 +23,9 @@ export function HealthCategoryDetailList({
         <div>
             <Text asChild>
                 <h2 className="mb-2">
-                    <FormattedMessage id={`health_category.${category}.${heading}`} />
+                    <FormattedMessage
+                        id={`health_category.${category}.${heading}` as MessagesIds}
+                    />
                 </h2>
             </Text>
 
