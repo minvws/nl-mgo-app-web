@@ -1,0 +1,71 @@
+import { faker } from '$test';
+import { expect, test } from 'vitest';
+import { type MultipleValues, type SingleValue, type UiFunction } from '../../types';
+import { multipleValues } from './multipleValues';
+import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
+
+type TestData = {
+    foo: string;
+};
+
+export const uiSingeValue: UiFunction<TestData, SingleValue> = (label, value, options) => {
+    return {
+        label,
+        type: 'SINGLE_VALUE',
+        display: value?.foo,
+        ...options,
+    };
+};
+
+export const uiMultipleValues: UiFunction<TestData, MultipleValues> = (label, value, options) => {
+    return {
+        label,
+        type: 'MULTIPLE_VALUES',
+        display: [value?.foo].filter(isNonNullish),
+        ...options,
+    };
+};
+
+test('combines multiple display values for a single ValueDescription', () => {
+    const value1 = faker.lorem.word();
+    const value2 = faker.lorem.word();
+    const data: TestData[] = [
+        {
+            foo: value1,
+        },
+        {
+            foo: value2,
+        },
+    ];
+
+    const label = faker.lorem.word();
+    const result = multipleValues(label, data, uiSingeValue);
+
+    expect(result).toEqual({
+        label,
+        display: [value1, value2],
+        type: 'MULTIPLE_VALUES',
+    });
+});
+
+test('combines multiple - multiple values for a single multiple grouped values', () => {
+    const value1 = faker.lorem.word();
+    const value2 = faker.lorem.word();
+    const data: TestData[] = [
+        {
+            foo: value1,
+        },
+        {
+            foo: value2,
+        },
+    ];
+
+    const label = faker.lorem.word();
+    const result = multipleValues(label, data, uiMultipleValues);
+
+    expect(result).toEqual({
+        label,
+        display: [[value1], [value2]],
+        type: 'MULTIPLE_GROUPED_VALUES',
+    });
+});

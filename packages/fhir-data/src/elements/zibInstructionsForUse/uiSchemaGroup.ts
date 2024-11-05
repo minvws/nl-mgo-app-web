@@ -11,7 +11,7 @@ export function uiSchemaGroup(resource: ZibInstructionsForUse): UiSchemaGroup {
     return {
         label: i18n,
         children: [
-            ui.multipleValue(
+            ui.multipleValues(
                 `${i18n}.additional_instruction`,
                 resource.additionalInstruction,
                 ui.codeableConcept

@@ -19,17 +19,17 @@ export function uiSchema(resource: ZibProblem): UiSchema {
                 label: `${i18n}.group_general_information`,
                 children: [
                     ui.code(`${i18n}.clinicalStatus`, resource.clinicalStatus),
-                    ui.multipleValue(`${i18n}.category`, resource.category, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.category`, resource.category, ui.codeableConcept),
                     ui.dateTime(`${i18n}.onsetDateTime`, resource.onsetDateTime),
                     ui.dateTime(`${i18n}.abatementDateTime`, resource.abatementDateTime),
-                    ui.multipleValue(`${i18n}.bodySite`, resource.bodySite, ui.codeableConcept),
-                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValues(`${i18n}.bodySite`, resource.bodySite, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
                 ],
             },
             {
                 label: `${i18n}.group_others`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.verificationStatus`, resource.verificationStatus),
                     ui.codeableConcept(`${i18n}.severity`, resource.severity),
                     ui.codeableConcept(`${i18n}.code`, resource.code),

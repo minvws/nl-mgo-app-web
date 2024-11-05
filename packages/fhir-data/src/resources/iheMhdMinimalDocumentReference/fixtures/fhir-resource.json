@@ -1,0 +1,49 @@
+{
+    "resourceType": "DocumentReference",
+    "id": "pdfa-documentreference-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>DocumentReference. Subject: Paul XXX_Mesker. Set‑Id: urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898 (urn:ietf:rfc:3986), Id: 678909902 (http://xis.org/fhir/NamingSystem/DocumentReferenceID), 17ba1c1f-8fdf-11ec-1892-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: actueel<span style=\"display: block;\">Auteur: De Hoed</span></caption><tbody><tr><th>Type</th><td><span title=\"ontslagbrief (11071000146104 - SNOMED CT)\">ontslagbrief</span></td></tr><tr><th>Geïndexeerd</th><td>11:13:21, 10 juni 2019</td></tr><tr><th>Omschrijving</th><td>Kopie van ontslagbrief</td></tr><tr><th>Content</th><td><img src=\"Binary/pdfa-binary-01\" alt=\"\" title=\"Kopie van ontslagbrief\" /></td></tr></tbody></table></div>"
+    },
+    "contained": [
+        { "resourceType": "Practitioner", "id": "p1", "name": [{ "family": "De Hoed" }] }
+    ],
+    "identifier": [
+        { "system": "http://xis.org/fhir/NamingSystem/DocumentReferenceID", "value": "678909902" },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "17ba1c1f-8fdf-11ec-1892-020000000000"
+        }
+    ],
+    "masterIdentifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
+    },
+    "status": "current",
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "11071000146104",
+                "display": "ontslagbrief"
+            }
+        ]
+    },
+    "subject": { "reference": "Patient/nl-core-patient-02", "display": "Paul XXX_Mesker" },
+    "indexed": "2019-06-10T11:13:21Z",
+    "author": [{ "reference": "#p1", "display": "De Hoed" }],
+    "description": "Kopie van ontslagbrief",
+    "content": [
+        {
+            "attachment": {
+                "contentType": "application/pdf",
+                "language": "nl",
+                "url": "Binary/pdfa-binary-01",
+                "title": "Kopie van ontslagbrief"
+            }
+        }
+    ]
+}

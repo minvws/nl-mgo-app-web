@@ -24,7 +24,7 @@ export function uiSchema(resource: ZibEncounter): UiSchema {
                     ui.reference(`${profile}.serviceProvider`, resource.serviceProvider),
                     ...ui.period(`${profile}.period`, resource.period),
                     ...ui.helpers.getChildren(diagnosis),
-                    ui.multipleValue(`${profile}.reason`, resource.reason, ui.codeableConcept),
+                    ui.multipleValues(`${profile}.reason`, resource.reason, ui.codeableConcept),
                     ...ui.helpers.getChildren(hospitalizationUiSchema(resource.hospitalization)),
                 ],
             },

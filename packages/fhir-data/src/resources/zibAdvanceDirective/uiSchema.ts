@@ -16,14 +16,14 @@ export function uiSchema(resource: ZibAdvanceDirective): UiSchema {
             {
                 label: `${profile}.group_details`,
                 children: [
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${profile}.type_of_living_will`,
                         resource.category,
                         ui.codeableConcept
                     ),
                     ui.dateTime(`${profile}.date_time`, resource.dateTime),
                     ui.reference(`${profile}.disorder`, resource.disorder),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${profile}.consenting_party`,
                         resource.consentingParty,
                         ui.reference

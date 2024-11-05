@@ -11,7 +11,7 @@ test('decimal', () => {
     const result = decimal(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'decimal',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     });

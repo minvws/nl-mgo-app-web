@@ -5,7 +5,7 @@ import { type SingleValue, type UiFunction } from '../../types';
 export const string: UiFunction<MgoString, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'string',
+        type: 'SINGLE_VALUE',
         display: toString(value),
         ...options,
     };

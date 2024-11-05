@@ -6,7 +6,7 @@
             "children": [
                 {
                     "label": "zib_product.code",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "PRIMPERAN ZETPIL 20MG (14983265 in code systeem urn:oid:2.16.840.1.113883.2.4.4.8)",
                         "PRIMPERAN ZETPIL 20MG (229709 in code systeem urn:oid:2.16.840.1.113883.2.4.4.7)",
@@ -17,7 +17,7 @@
                 },
                 {
                     "label": "zib_product.form",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null,
                     "summary": true
                 }

@@ -22,7 +22,7 @@ export function uiSchema(resource: ZibLaboratoryTestResultSpecimen): UiSchema {
             {
                 label: `${i18n}`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ...ui.helpers.getChildren(container),
                     ui.codeableConcept(`${i18n}.type`, resource.type),
                     ui.string('zib_laboratory_test_result_substance.code', resource.substance),
@@ -40,7 +40,7 @@ export function uiSchema(resource: ZibLaboratoryTestResultSpecimen): UiSchema {
                         resource.collection.bodySite.morphology
                     ),
                     ui.reference(`${i18n}.subject`, resource.subject),
-                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
                 ],
             },
         ],

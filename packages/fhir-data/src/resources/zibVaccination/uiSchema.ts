@@ -15,14 +15,10 @@ export function uiSchema(resource: ZibVaccination): UiSchema {
             {
                 label: `Immunization`,
                 children: [
-                    ui.multipleValue(
-                        'Immunization.vaccineCode',
-                        resource.vaccineCode,
-                        ui.codingWithoutSystem
-                    ),
+                    ui.multipleValues('Immunization.vaccineCode', resource.vaccineCode, ui.coding),
                     ui.simpleQuantity('Immunization.doseQuantity', resource.dose),
                     ui.dateTime('Immunization.date', resource.vaccinationDate),
-                    ui.multipleValue(`Immunization.note.text`, resource.note, ui.annotation),
+                    ui.multipleValues(`Immunization.note.text`, resource.note, ui.annotation),
 
                     ...ui.helpers.getChildren(practitioners),
                 ],

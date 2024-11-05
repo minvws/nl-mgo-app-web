@@ -6,29 +6,29 @@
             "children": [
                 {
                     "label": "Immunization.vaccineCode",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
                     "label": "Immunization.doseQuantity",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": "30 ml"
                 },
                 {
                     "label": "Immunization.date",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": "1999-03-09"
                 },
                 {
                     "label": "Immunization.note.text",
-                    "type": "annotation",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Bezoek aan Guatemala"
                     ]
                 },
                 {
                     "label": "Immunization.practitioner.actor",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
                 }

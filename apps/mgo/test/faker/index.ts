@@ -1,10 +1,12 @@
 import { faker as originalFaker } from '@faker-js/faker';
 import { healthcareOrganizationDTO } from './load';
 import { healthcareOrganization } from './healthcareOrganization';
+import { dataServiceId } from './dataServiceId';
 
 const custom = {
     healthcareOrganizationDTO,
     healthcareOrganization,
+    dataServiceId,
 };
 
 const faker = {

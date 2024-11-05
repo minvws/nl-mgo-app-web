@@ -6,42 +6,42 @@
             "children": [
                 {
                     "label": "zib_laboratory_test_result_observation.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b2d4dbd-8fdf-11ec-8670-020000000000"
                     ]
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.specimen",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Blood (substance)",
                     "reference": "Specimen/zib-laboratorytestresult-specimen-01"
                 },
                 {
                     "label": "zib_laboratory_test_result_diagnostic_report.code",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
                     ]
                 },
                 {
                     "label": "zib_laboratory_test_result_diagnostic_report.status",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.comment",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.result_type",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.based_on",
-                    "type": "reference",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]
@@ -51,49 +51,49 @@
             "children": [
                 {
                     "label": "zib_laboratory_test_result_observation.code",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
                     ]
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.method",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.effective.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2010-06-01"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.effective.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": "109 mmol/l"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.status",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.reference_range.low",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": "99 mmol/l"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.reference_range.high",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": "108 mmol/l"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.interpretation.interpretatie_vlaggen_codelijst",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Hoog (H in code systeem http://hl7.org/fhir/v2/0078)",
                         "Above reference range (281302008 in code systeem http://snomed.info/sct)"
@@ -101,7 +101,7 @@
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.comment",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]

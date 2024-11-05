@@ -16,11 +16,13 @@ import { getVaccinationQueries } from './vaccination';
 import { getEncounterQueries } from './encounter';
 import { getVitalQueries } from './vitals';
 import { getProcedureQueries } from './procedure';
+import { getDocumentsQueries } from './documents';
 
 export const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
     [HealthCategory.PayerAndOrganization]: getPayerQueries,
     [HealthCategory.TreatmentPlan]: getTreatmentPlanQueries,
+    [HealthCategory.Documents]: getDocumentsQueries,
     [HealthCategory.FunctionalOrMentalStatus]: getFunctionalOrMentalStatusQueries,
     [HealthCategory.Problems]: getProblemQueries,
     [HealthCategory.Lifestyle]: getLifestyleQueries,

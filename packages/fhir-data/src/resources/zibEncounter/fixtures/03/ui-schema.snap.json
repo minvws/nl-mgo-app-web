@@ -6,51 +6,51 @@
             "children": [
                 {
                     "label": "Encounter.class",
-                    "type": "coding",
+                    "type": "SINGLE_VALUE",
                     "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
                 },
                 {
                     "label": "Encounter.participant.individual",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "G.Z.M. de Wit",
                     "reference": "Practitioner/nl-core-practitioner-03"
                 },
                 {
                     "label": "Encounter.serviceProvider",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
                     "label": "Encounter.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2012-08-16"
                 },
                 {
                     "label": "Encounter.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": "2012-08-19"
                 },
                 {
                     "label": "Encounter.diagnosis.condition",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Surgical reduction of fracture (procedure)",
                     "reference": "Procedure/zib-procedure-02",
                     "summary": true
                 },
                 {
                     "label": "Encounter.reason",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "Encounter.hospitalization.admitSource",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "Encounter.hospitalization.dischargeDisposition",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]

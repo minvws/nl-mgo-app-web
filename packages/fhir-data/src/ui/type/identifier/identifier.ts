@@ -4,7 +4,7 @@ import { type UiFunction, type SingleValue } from '../../types';
 export const identifier: UiFunction<MgoIdentifier, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'identifier',
+        type: 'SINGLE_VALUE',
         display: value?.value,
         ...options,
     };

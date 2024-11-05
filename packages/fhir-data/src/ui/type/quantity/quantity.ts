@@ -8,13 +8,13 @@ export const quantity: UiFunction<MgoQuantity, SingleValue[]> = (label, value, o
     return [
         {
             label: `${label}.value`,
-            type: `quantity.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(quantityValue, unit),
             ...options,
         },
         {
             label: `${label}.code`,
-            type: `quantity.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(code, system),
             ...options,
         },
@@ -26,7 +26,7 @@ export const simpleQuantity: UiFunction<MgoQuantity, SingleValue> = (label, valu
 
     return {
         label: label,
-        type: `quantity.value`,
+        type: `SINGLE_VALUE`,
         display: format.valueWithUnit(quantityValue, unit),
         ...options,
     };

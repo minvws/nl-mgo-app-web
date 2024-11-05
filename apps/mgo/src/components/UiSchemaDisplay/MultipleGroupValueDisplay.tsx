@@ -1,14 +1,14 @@
-import { type MultipleGroupValue, type MultipleValue } from '@minvws/mgo-fhir-data';
+import { type MultipleGroupedValues, type MultipleValues } from '@minvws/mgo-fhir-data';
 import { MultipleValueDisplay } from './MultipleValueDisplay';
 
 export interface MultipleGroupValueDisplayProps {
-    readonly value: MultipleGroupValue;
+    readonly value: MultipleGroupedValues;
 }
 
 export function MultipleGroupValueDisplay({ value }: MultipleGroupValueDisplayProps) {
-    const multipleValues: MultipleValue[] = (value.display ?? [undefined]).map((display) => ({
+    const multipleValues: MultipleValues[] = (value.display ?? [undefined]).map((display) => ({
         label: value.label,
-        type: value.type,
+        type: 'MULTIPLE_VALUES',
         display,
     }));
 

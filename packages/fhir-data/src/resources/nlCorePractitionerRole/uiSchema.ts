@@ -17,9 +17,9 @@ export function uiSchema(resource: NlCorePractitionerRole): UiSchema {
             {
                 label: `${profile}.group_details`,
                 children: [
-                    ui.multipleValue(`${profile}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${profile}.identifier`, resource.identifier, ui.identifier),
                     ui.reference(`${profile}.organization`, resource.organization),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${profile}.specialty`,
                         resource.specialty,
                         ui.codeableConcept

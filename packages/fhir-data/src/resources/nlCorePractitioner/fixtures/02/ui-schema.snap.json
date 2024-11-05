@@ -6,7 +6,7 @@
             "children": [
                 {
                     "label": "nl_core_practitioner.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "16e29a33-8fdf-11ec-6379-020000000000"
                     ]
@@ -18,59 +18,59 @@
             "children": [
                 {
                     "label": "nl_core_address.use",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
                     "label": "nl_core_address.type",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_address.text",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_address.line",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Valkendael 45"
                     ]
                 },
                 {
                     "label": "nl_core_address.city",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "Maastricht"
                 },
                 {
                     "label": "nl_core_address.district",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_address.state",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_address.postalCode",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "6245HK"
                 },
                 {
                     "label": "nl_core_address.country",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "Nederland"
                 },
                 {
                     "label": "nl_core_address.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_address.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -80,42 +80,42 @@
             "children": [
                 {
                     "label": "nl_core_humanname.family",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "Vaste Huisarts 1"
                 },
                 {
                     "label": "nl_core_humanname.given",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.use",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.text",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -125,32 +125,32 @@
             "children": [
                 {
                     "label": "nl_core_contact_point.system",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "phone"
                 },
                 {
                     "label": "nl_core_contact_point.value",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "+31434073576"
                 },
                 {
                     "label": "nl_core_contact_point.use",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
                     "label": "nl_core_contact_point.rank",
-                    "type": "positiveInt",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_contact_point.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_contact_point.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -160,32 +160,32 @@
             "children": [
                 {
                     "label": "nl_core_contact_point.system",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "email"
                 },
                 {
                     "label": "nl_core_contact_point.value",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "huisarts@huisarts.nl"
                 },
                 {
                     "label": "nl_core_contact_point.use",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
                     "label": "nl_core_contact_point.rank",
-                    "type": "positiveInt",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_contact_point.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_contact_point.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]

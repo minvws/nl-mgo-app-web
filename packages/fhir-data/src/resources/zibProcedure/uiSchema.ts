@@ -19,13 +19,17 @@ export function uiSchema(resource: ZibProcedure): UiSchema {
                 label: `${profile}`,
                 children: [
                     ...ui.period(`${profile}.performed_period`, resource.performedPeriod),
-                    ui.multipleValue(`${profile}.body_site`, resource.bodySite, ui.codeableConcept),
-                    ui.multipleValue(
+                    ui.multipleValues(
+                        `${profile}.body_site`,
+                        resource.bodySite,
+                        ui.codeableConcept
+                    ),
+                    ui.multipleValues(
                         `${profile}.bodySite.extension:ProcedureLaterality`,
                         resource.bodySiteQualifier,
                         ui.codeableConcept
                     ),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${profile}.reason_reference`,
                         resource.reasonReference,
                         ui.reference

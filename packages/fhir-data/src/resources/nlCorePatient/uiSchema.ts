@@ -34,12 +34,12 @@ export function uiSchema(resource: NlCorePatient): UiSchema {
                     ui.boolean(`${i18n}.deceased`, resource.deceased),
                     ui.dateTime(`${i18n}.deceased_date_time`, resource.deceasedDateTime),
                     ui.code(`${i18n}.gender`, resource.gender),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${i18n}.general_practitioner`,
                         resource.generalPractitioner,
                         ui.reference
                     ),
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.reference(`${i18n}.managing_organization`, resource.managingOrganization),
                     ui.codeableConcept(`${i18n}.marital_status`, resource.maritalStatus),
                     ui.boolean(`${i18n}.multiple_birth`, resource.multipleBirth),

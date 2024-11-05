@@ -14,7 +14,7 @@ export function uiSchema(resource: ZibMedicalDeviceProduct): UiSchema {
                 label: `${i18n}.group_general_information`,
                 children: [
                     ui.reference(`${i18n}.patient`, resource.patient),
-                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
                     ui.dateTime(`${i18n}.expiration_date`, resource.expirationDate),
                 ],
             },

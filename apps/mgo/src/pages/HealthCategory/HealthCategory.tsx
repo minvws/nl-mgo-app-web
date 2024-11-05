@@ -24,11 +24,11 @@ export function HealthCategory() {
         organizationSlug ? [organization?.id] : undefined
     );
 
-    const heading = intl.formatMessage({ id: `hc_${healthCategory}.heading` });
-
     if (organizationSlug && !organization) {
         return <Navigate to={`/overzicht`} />;
     }
+
+    const heading = intl.formatMessage({ id: `hc_${healthCategory}.heading` });
 
     return (
         <>

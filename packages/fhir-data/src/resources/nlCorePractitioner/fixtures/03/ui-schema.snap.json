@@ -6,7 +6,7 @@
             "children": [
                 {
                     "label": "nl_core_practitioner.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "16efa4a3-8fdf-11ec-1655-020000000000"
                     ]
@@ -18,44 +18,44 @@
             "children": [
                 {
                     "label": "nl_core_humanname.family",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "de Wit"
                 },
                 {
                     "label": "nl_core_humanname.given",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "G.Z.M."
                     ]
                 },
                 {
                     "label": "nl_core_humanname.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.use",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.text",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]

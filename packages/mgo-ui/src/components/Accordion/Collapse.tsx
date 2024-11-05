@@ -20,6 +20,7 @@ export const Collapse = ({ className, children, expanded, ...rest }: CollapsePro
         }
     });
 
+    /* c8 ignore next, in practice `contentRef.current` is always available and can't be unset in a test */
     const getWrapperSize = () => `${contentRef.current ? contentRef.current.clientHeight : 0}px`;
 
     const transitionStyles: Partial<Record<TransitionStatus, string>> = {

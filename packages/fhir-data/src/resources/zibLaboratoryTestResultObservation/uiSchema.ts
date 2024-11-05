@@ -27,7 +27,7 @@ export function uiSchema(
             {
                 label: `${i18n}`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.reference(`${i18n}.specimen`, resource.specimen),
                     ui.codeableConcept(
                         'zib_laboratory_test_result_diagnostic_report.code',
@@ -38,9 +38,9 @@ export function uiSchema(
                         resource.status
                     ),
                     ui.string(`${i18n}.comment`, resource.comment),
-                    ui.multipleValue(`${i18n}.result_type`, resource.category, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.result_type`, resource.category, ui.codeableConcept),
                     ...ui.helpers.getChildren(related),
-                    ui.multipleValue(`${i18n}.based_on`, resource.basedOn, ui.reference),
+                    ui.multipleValues(`${i18n}.based_on`, resource.basedOn, ui.reference),
                 ],
             },
             {

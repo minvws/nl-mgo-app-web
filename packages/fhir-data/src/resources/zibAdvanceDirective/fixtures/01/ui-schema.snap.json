@@ -6,7 +6,7 @@
             "children": [
                 {
                     "label": "zib_advance_directive.type_of_living_will",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
                             "Living will and advance directive record (record artifact) (11341000146107 in code systeem http://snomed.info/sct)"
@@ -18,25 +18,25 @@
                 },
                 {
                     "label": "zib_advance_directive.date_time",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": "2018-04-09"
                 },
                 {
                     "label": "zib_advance_directive.disorder",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Amyotrofe laterale sclerose",
                     "reference": "Condition/zib-problem-01"
                 },
                 {
                     "label": "zib_advance_directive.consenting_party",
-                    "type": "reference",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Janni van Putten-van der Giessen"
                     ]
                 },
                 {
                     "label": "zib_advance_directive.comment",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet-reanimerenpenning"
                 }
             ]
@@ -46,42 +46,42 @@
             "children": [
                 {
                     "label": "attachment.contentType",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.language",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.data",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.url",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.size",
-                    "type": "unsignedInt",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.hash",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.title",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.creation",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]

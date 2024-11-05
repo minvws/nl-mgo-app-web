@@ -16,25 +16,25 @@ test('ratio', () => {
     expect(result).toEqual([
         {
             label: `${label}.numerator.value`,
-            type: `ratio.numerator.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(numerator.value, numerator.unit),
             ...options,
         },
         {
             label: `${label}.numerator.code`,
-            type: `ratio.numerator.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(numerator.code, numerator.system),
             ...options,
         },
         {
             label: `${label}.denominator.value`,
-            type: `ratio.denominator.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(denominator.value, denominator.unit),
             ...options,
         },
         {
             label: `${label}.denominator.code`,
-            type: `ratio.denominator.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(denominator.code, denominator.system),
             ...options,
         },

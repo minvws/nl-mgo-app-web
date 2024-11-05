@@ -1,12 +1,16 @@
-import { getCommonClinicalDatasetService, getGeneralPractitionerService } from '$/services';
+import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
+import { isNonNullish } from '$/utils';
+import { DataServiceId } from '@minvws/mgo-fhir-client';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
-import { isNonNullish } from '$/utils';
 
 export function getAllergyQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getCommonClinicalDatasetService(organization);
-    const generalPracticionerService = getGeneralPractitionerService(organization);
+    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
+    const generalPracticionerService = getDataService(
+        organization,
+        DataServiceId.GeneralPractitioner
+    );
 
     return [
         createResourceBundleQuery({

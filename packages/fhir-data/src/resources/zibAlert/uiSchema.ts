@@ -13,7 +13,7 @@ export function uiSchema(resource: ZibAlert): UiSchema {
             {
                 label: `${i18n}.group_general_information`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.status`, resource.status),
                     ui.codeableConcept(`${i18n}.category`, resource.category),
                     ui.codeableConcept(`${i18n}.code`, resource.code),

@@ -11,7 +11,7 @@ test('date', () => {
     const result = primitive.date(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'date',
+        type: 'SINGLE_VALUE',
         display: format.date(value),
         ...options,
     });

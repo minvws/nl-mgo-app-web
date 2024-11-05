@@ -5,7 +5,7 @@ export const annotation: UiFunction<MgoAnnotation, SingleValue> = (label, value,
     return {
         label,
         display: value?.text,
-        type: 'annotation',
+        type: 'SINGLE_VALUE',
         ...options,
     };
 };

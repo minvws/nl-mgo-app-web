@@ -11,7 +11,7 @@ test('positiveInt', () => {
     const result = positiveInt(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'positiveInt',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     });

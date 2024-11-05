@@ -8,7 +8,7 @@ export function uiSchemaGroup(resource: Container): UiSchemaGroup {
     return {
         label: `${i18n}.container`,
         children: [
-            ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+            ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
             ui.codeableConcept(`${i18n}.type`, resource.type),
         ],
     };

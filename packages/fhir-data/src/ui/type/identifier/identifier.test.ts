@@ -21,7 +21,7 @@ test('identifier', () => {
     const result = identifier(label, mgoIdentifier, options);
     expect(result).toEqual({
         label,
-        type: 'identifier',
+        type: 'SINGLE_VALUE',
         display: mgoIdentifier.value,
         ...options,
     });

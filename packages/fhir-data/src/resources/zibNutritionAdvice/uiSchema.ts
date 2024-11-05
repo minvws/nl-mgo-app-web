@@ -14,11 +14,11 @@ export function uiSchema(resource: ZibNutritionAdvice): UiSchema {
                 label: `${i18n}.group_details`,
                 children: [
                     ui.string(`${i18n}.comment`, resource.comment),
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.status`, resource.status),
                     ui.reference(`${i18n}.patient`, resource.patient),
                     ui.dateTime(`${i18n}.dateTime`, resource.dateTime),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${i18n}.food_preference_modifier`,
                         resource.foodPreferenceModifier,
                         ui.codeableConcept

@@ -1,5 +1,2 @@
-export { getGeneralPractitionerService } from './generalPractitioner/generalPractitioner';
+export { getDataService } from './dataService/dataService';
 export { getLoadService } from './load/load';
-export { getCommonClinicalDatasetService } from './commonClinicalDataset/commonClinicalDataset';
-export { getDocumentsService } from './documents/documents';
-export { getVaccinationsService } from './vaccinations/vaccinations';

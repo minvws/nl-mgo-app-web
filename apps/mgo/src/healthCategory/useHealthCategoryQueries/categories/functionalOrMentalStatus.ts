@@ -1,13 +1,14 @@
-import { getCommonClinicalDatasetService } from '$/services';
+import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { isNonNullish } from '$/utils';
+import { DataServiceId } from '@minvws/mgo-fhir-client';
 
 export function getFunctionalOrMentalStatusQueries(
     organization: HealthcareOrganization
 ): UseQueryOptions[] {
-    const commonClinicalDataset = getCommonClinicalDatasetService(organization);
+    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
 
     return [
         createResourceBundleQuery({

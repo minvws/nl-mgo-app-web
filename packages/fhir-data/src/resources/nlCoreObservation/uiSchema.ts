@@ -27,9 +27,9 @@ export function uiSchema(
             {
                 label: `${i18n}.group_details`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.status`, resource.status),
-                    ui.multipleValue(`${i18n}.category`, resource.category, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.category`, resource.category, ui.codeableConcept),
                     ui.reference(`${i18n}.subject`, resource.subject),
                     ui.reference(`${i18n}.context`, resource.context),
                     Object.prototype.hasOwnProperty.call(resource, 'effectiveDateTime')

@@ -14,6 +14,7 @@ import { getVaccinationData } from './vaccination';
 import { getEncounterData } from './encounter';
 import { getVitalsData } from './vitals';
 import { getProcedureData } from './procedure';
+import { getDocumentsData } from './documents';
 
 type HealthCategoryResources = (
     resources: ResourcesState,
@@ -24,6 +25,7 @@ export const healthCategoryData = {
     [HealthCategory.PersonalInformation]: getPersonalInformationData,
     [HealthCategory.PayerAndOrganization]: getPayerData,
     [HealthCategory.TreatmentPlan]: getTreatmentPlanData,
+    [HealthCategory.Documents]: getDocumentsData,
     [HealthCategory.FunctionalOrMentalStatus]: getFunctionalOrMentalStatusData,
     [HealthCategory.Problems]: getProblemData,
     [HealthCategory.Lifestyle]: getLifestyleData,

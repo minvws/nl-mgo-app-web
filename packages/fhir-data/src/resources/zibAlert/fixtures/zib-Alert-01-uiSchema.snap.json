@@ -6,55 +6,55 @@
             "children": [
                 {
                     "label": "zib_alert.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "18d78911-8fdf-11ec-3053-020000000000"
                     ]
                 },
                 {
                     "label": "zib_alert.status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
                     "label": "zib_alert.category",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "condition (75323-6 in code systeem http://loinc.org)"
                     ]
                 },
                 {
                     "label": "zib_alert.code",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Methicillin resistant staphylococcus aureus carrier (432415000 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "zib_alert.subject",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "zib_alert.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2010-06-01"
                 },
                 {
                     "label": "zib_alert.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_alert.encounter",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "zib_alert.author",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 }

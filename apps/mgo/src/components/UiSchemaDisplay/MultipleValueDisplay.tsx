@@ -1,10 +1,10 @@
 import { DescriptionCard } from '@minvws/mgo-mgo-ui';
-import { type MultipleValue } from '@minvws/mgo-fhir-data';
+import { type MultipleValues } from '@minvws/mgo-fhir-data';
 import { useFhirLabel } from './useFhirLabel';
 import { useUnknownLabel } from './useUnknownLabel';
 
 export interface MultipleValueDisplayProps {
-    readonly value: MultipleValue;
+    readonly value: MultipleValues;
 }
 
 export function MultipleValueDisplay({ value }: MultipleValueDisplayProps) {

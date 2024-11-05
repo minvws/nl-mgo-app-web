@@ -12,9 +12,9 @@ test('returns all children for a UiGroup', () => {
     const group: UiSchemaGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
         ],
     };
 
@@ -26,16 +26,16 @@ test('returns all children for multiple UiGroups', () => {
     const group1: UiSchemaGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
         ],
     };
 
     const group2: UiSchemaGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: faker.lorem.word(), label: faker.lorem.word(), display: faker.lorem.word() },
+            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
         ],
     };
 

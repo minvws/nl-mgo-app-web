@@ -41,3 +41,4 @@ export * from './zibProcedure/zibProcedure';
 export * from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 export * from './zibLaboratoryTestResultSpecimen/zibLaboratoryTestResultSpecimen';
 export * from './zibAdvanceDirective/zibAdvanceDirective';
+export * from './iheMhdMinimalDocumentReference/iheMhdMinimalDocumentReference';

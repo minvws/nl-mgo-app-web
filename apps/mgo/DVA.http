@@ -1,0 +1,19 @@
+###
+#
+# This file is not used for actual testing of the DVA service. 
+# But rather a handy tool to perform some sanity checks when needed.
+# You will need VSCode and the REST Client extension to use this file.
+# @see: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
+### 
+
+
+GET https://dva.test.mgo.irealisatie.nl/fhir/Patient
+Authorization: Basic {{$dotenv DVA_AUTH_USER}}:{{$dotenv DVA_AUTH_PASSWORD}}
+X-MGO-DVA-TARGET: https://dva-mock.test.mgo.prolocation.net/49?mgo_signature=MEYCIQDBtN35mqNaKJu2GfUSq1HIfTYxJCB0srZ-aSTcMTMqKwIhAMfysGEYT-dw_2RBDk9P226lWwok_efTxCj-QARijx-i
+
+###
+
+GET https://dva.test.mgo.irealisatie.nl/fhir/Binary/pdfa-binary2
+Authorization: Basic {{$dotenv DVA_AUTH_USER}}:{{$dotenv DVA_AUTH_PASSWORD}}
+X-MGO-DVA-TARGET: https://dva-mock.test.mgo.prolocation.net/51?mgo_signature=MEUCIFt_lzsFQ3uOx_MKlMSGMhlV2I-hZLvQuXuih2Xwi-daAiEA_QQYBHjdBHH2083-FcWujlvRJcJRPflqvbgLBoujQWk=

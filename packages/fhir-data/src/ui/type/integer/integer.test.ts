@@ -11,7 +11,7 @@ test('integer', () => {
     const result = integer(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'integer',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     });

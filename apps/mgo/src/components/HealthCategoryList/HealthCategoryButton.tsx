@@ -18,6 +18,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
         [HealthCategory.PayerAndOrganization]: 'stethoscope',
         [HealthCategory.TreatmentPlan]: 'event-note',
         [HealthCategory.FunctionalOrMentalStatus]: 'sentiment-satisfied',
+        [HealthCategory.Documents]: 'folder',
         [HealthCategory.Problems]: 'diagnosis',
         [HealthCategory.Lifestyle]: 'nutrition',
         [HealthCategory.Warning]: 'emergency-home',

@@ -14,7 +14,7 @@ test('codeableConcept', () => {
     const result = codeableConcept(label, [concept1, concept2], options);
     expect(result).toEqual({
         label,
-        type: 'codable_concept',
+        type: 'MULTIPLE_VALUES',
         display: [coding('', concept1).display, coding('', concept2).display],
         ...options,
     });

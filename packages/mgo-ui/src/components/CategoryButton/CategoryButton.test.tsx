@@ -23,9 +23,7 @@ test('render loading state', async () => {
     );
 
     const element = screen.getByRole('button');
-    const spinner = within(element).getByRole('img', {
-        hidden: true,
-    });
+    const spinner = within(element).getByTestId('spinner');
     expect(spinner).toBeVisible();
 });
 

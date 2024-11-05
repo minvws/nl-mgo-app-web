@@ -11,7 +11,7 @@ test('integer64', () => {
     const result = integer64(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'integer64',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     });

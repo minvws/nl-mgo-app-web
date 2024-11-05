@@ -13,7 +13,7 @@ export function uiSchema(resource: ZibMedicalDevice): UiSchema {
             {
                 label: `${i18n}.group_product`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.clinical_status`, resource.status),
                     ui.reference(`${i18n}.device`, resource.device),
                     ...ui.period(`${i18n}.whenUsed`, resource.whenUsed),
@@ -23,7 +23,7 @@ export function uiSchema(resource: ZibMedicalDevice): UiSchema {
             {
                 label: `${i18n}.group_indication`,
                 children: [
-                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
                     ui.codeableConcept(`${i18n}.bodySite`, resource.bodySite),
                     ui.codeableConcept(`${i18n}.laterality`, resource.laterality),
                     ui.reference(`${i18n}.reason`, resource.reason),

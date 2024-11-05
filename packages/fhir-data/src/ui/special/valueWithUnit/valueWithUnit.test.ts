@@ -12,7 +12,7 @@ test('valueWithUnit', () => {
     const result = valueWithUnit(label, value, unit, options);
     expect(result).toEqual({
         label,
-        type: 'valueWithUnit',
+        type: 'SINGLE_VALUE',
         display: format.valueWithUnit(value, unit),
         ...options,
     });

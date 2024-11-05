@@ -26,22 +26,22 @@ export function uiSchema(resource: ZibTreatmentDirective): UiSchema {
                 children: [
                     ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ui.code(`${i18n}.status`, resource.status),
-                    ui.multipleValue(`${i18n}.category`, resource.category, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.category`, resource.category, ui.codeableConcept),
                     ui.reference(`${i18n}.patient`, resource.patient),
                     ...ui.period(`${i18n}.period`, resource.period),
                     ui.dateTime(`${i18n}.date_time`, resource.dateTime),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${i18n}.consenting_party`,
                         resource.consentingParty,
                         ui.reference
                     ),
-                    ui.multipleValue(`${i18n}.action`, resource.action, ui.codeableConcept),
-                    ui.multipleValue(`${i18n}.organization`, resource.organization, ui.reference),
+                    ui.multipleValues(`${i18n}.action`, resource.action, ui.codeableConcept),
+                    ui.multipleValues(`${i18n}.organization`, resource.organization, ui.reference),
                     ui.identifier(`${i18n}.source_identifier`, resource.sourceIdentifier),
                     ui.reference(`${i18n}.source_reference`, resource.sourceReference),
                     ui.string(`${i18n}.policy_rule`, resource.policyRule),
-                    ui.multipleValue(`${i18n}.security_label`, resource.securityLabel, ui.coding),
-                    ui.multipleValue(`${i18n}.purpose`, resource.purpose, ui.coding),
+                    ui.multipleValues(`${i18n}.security_label`, resource.securityLabel, ui.coding),
+                    ui.multipleValues(`${i18n}.purpose`, resource.purpose, ui.coding),
                     ...ui.period(`${i18n}.data_period`, resource.dataPeriod),
                 ],
             },

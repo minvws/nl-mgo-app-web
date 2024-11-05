@@ -10,7 +10,7 @@ export const valueWithUnit: CombinedUiFunction<number, string, SingleValue> = (
     return {
         label,
         display: format.valueWithUnit(value, unit),
-        type: 'valueWithUnit',
+        type: 'SINGLE_VALUE',
         ...options,
     };
 };

@@ -6,31 +6,31 @@
             "children": [
                 {
                     "label": "zib_medication_use.date_asserted",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": "2020-07-21",
                     "summary": true
                 },
                 {
                     "label": "zib_medication_use.prescriber",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null,
                     "summary": true
                 },
                 {
                     "label": "zib_medication_use.status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "completed",
                     "summary": true
                 },
                 {
                     "label": "zib_medication_use.reason_for_change_or_discontinuation_of_use",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_medication_use.category",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Medicatiegebruik (6 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3)"
                     ],
@@ -38,17 +38,17 @@
                 },
                 {
                     "label": "zib_medication_use.repeat_period_cyclical_schedule.value",
-                    "type": "duration.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_medication_use.repeat_period_cyclical_schedule.code",
-                    "type": "duration.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_medication_use.as_agreed_indicator",
-                    "type": "boolean",
+                    "type": "SINGLE_VALUE",
                     "display": "true",
                     "summary": true
                 }
@@ -59,22 +59,22 @@
             "children": [
                 {
                     "label": "zib_medication_use.effective_period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2020-07-21"
                 },
                 {
                     "label": "zib_medication_use.effective_period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_medication_use.effective_duration.value",
-                    "type": "duration.value",
+                    "type": "SINGLE_VALUE",
                     "display": "30 dag"
                 },
                 {
                     "label": "zib_medication_use.effective_duration.code",
-                    "type": "duration.code",
+                    "type": "SINGLE_VALUE",
                     "display": "d in code systeem http://unitsofmeasure.org"
                 }
             ]
@@ -84,7 +84,7 @@
             "children": [
                 {
                     "label": "zib_medication_use.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "#MB_01i1#GE_01",
                         "1bfa2275-8fdf-11ec-2032-020000000000"
@@ -92,13 +92,13 @@
                 },
                 {
                     "label": "zib_medication_use.medication",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "PARACETAMOL TABLET 500MG",
                     "reference": "Medication/zib-Product-02"
                 },
                 {
                     "label": "zib_medication_use.medication_treatment",
-                    "type": "identifier",
+                    "type": "SINGLE_VALUE",
                     "display": "#MB_01i1"
                 }
             ]
@@ -108,29 +108,29 @@
             "children": [
                 {
                     "label": "zib_medication_use.information_source",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "zib_medication_use.subject",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "zib_medication_use.taken",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "y"
                 },
                 {
                     "label": "zib_medication_use.reason_code",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_medication_use.note",
-                    "type": "annotation",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]
@@ -140,144 +140,144 @@
             "children": [
                 {
                     "label": "zib_instructions_for_use.additional_instruction",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.as_needed",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "zo nodig (1137 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
                     ]
                 },
                 {
                     "label": "zib_instructions_for_use.dose_quantity.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_quantity.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.low.value",
-                    "type": "range.low.value",
+                    "type": "SINGLE_VALUE",
                     "display": "1 Stuk"
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.low.code",
-                    "type": "range.low.code",
+                    "type": "SINGLE_VALUE",
                     "display": "245 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1.900.2"
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.high.value",
-                    "type": "range.high.value",
+                    "type": "SINGLE_VALUE",
                     "display": "2 Stuk"
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.high.code",
-                    "type": "range.high.code",
+                    "type": "SINGLE_VALUE",
                     "display": "245 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1.900.2"
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.numerator.value",
-                    "type": "ratio.numerator.value",
+                    "type": "SINGLE_VALUE",
                     "display": "6 Stuk"
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.numerator.code",
-                    "type": "ratio.numerator.code",
+                    "type": "SINGLE_VALUE",
                     "display": "245 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1.900.2"
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.denominator.value",
-                    "type": "ratio.denominator.value",
+                    "type": "SINGLE_VALUE",
                     "display": "1 dag"
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.denominator.code",
-                    "type": "ratio.denominator.code",
+                    "type": "SINGLE_VALUE",
                     "display": "d in code systeem http://unitsofmeasure.org"
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.numerator.value",
-                    "type": "ratio.numerator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.numerator.code",
-                    "type": "ratio.numerator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.denominator.value",
-                    "type": "ratio.denominator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.denominator.code",
-                    "type": "ratio.denominator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.low.value",
-                    "type": "range.low.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.low.code",
-                    "type": "range.low.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.high.value",
-                    "type": "range.high.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.high.code",
-                    "type": "range.high.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_quantity.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_quantity.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.duration",
                     "display": null,
-                    "type": "valueWithUnit"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.frequency",
                     "display": null,
-                    "type": "valueWithMax"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.period",
                     "display": "1 d",
-                    "type": "valueWithUnit"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.day_of_week",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.time_of_day",
-                    "type": "date_time",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.when",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]

@@ -1,5 +1,5 @@
 import { type FhirResource, type ResourceByType, type ResourceType } from '../../fhir';
-import { type LosslessOutput, type Lossless } from '../../types/Lossless';
+import { type Lossless, type LosslessOutput } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
 import { resourceTypes } from './resourceTypes';
 

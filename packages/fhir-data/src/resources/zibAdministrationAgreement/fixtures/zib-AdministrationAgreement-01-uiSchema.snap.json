@@ -6,54 +6,54 @@
             "children": [
                 {
                     "label": "zib_administration_agreement.authored_on",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": "2020-06-08T10:54:12+02:00"
                 },
                 {
                     "label": "zib_administration_agreement.agreement_reason",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.usage_duration.value",
-                    "type": "duration.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.usage_duration.code",
-                    "type": "duration.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.additional_information",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Niet leverbaar (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)"
                     ]
                 },
                 {
                     "label": "zib_administration_agreement.medication_treatment",
-                    "type": "identifier",
+                    "type": "SINGLE_VALUE",
                     "display": "#MB_01h"
                 },
                 {
                     "label": "zib_administration_agreement.stop_type",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.repeat_period_cyclical_schedule.value",
-                    "type": "duration.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.repeat_period_cyclical_schedule.code",
-                    "type": "duration.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "1546339-f6753t65r",
                         "189ef867-8fdf-11ec-6427-020000000000"
@@ -61,39 +61,39 @@
                 },
                 {
                     "label": "zib_administration_agreement.status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.category",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Provider medication administration instructions (procedure) (422037009 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "zib_administration_agreement.quantity.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.quantity.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.days_supply.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.days_supply.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_agreement.note",
-                    "type": "annotation",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Tekstuele toelichting bij deze toedieningsafspraak"
                     ]
@@ -105,142 +105,142 @@
             "children": [
                 {
                     "label": "zib_instructions_for_use.additional_instruction",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.as_needed",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_quantity.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_quantity.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.low.value",
-                    "type": "range.low.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.low.code",
-                    "type": "range.low.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.high.value",
-                    "type": "range.high.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.dose_range.high.code",
-                    "type": "range.high.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.numerator.value",
-                    "type": "ratio.numerator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.numerator.code",
-                    "type": "ratio.numerator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.denominator.value",
-                    "type": "ratio.denominator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.max_dose_per_period.denominator.code",
-                    "type": "ratio.denominator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.numerator.value",
-                    "type": "ratio.numerator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.numerator.code",
-                    "type": "ratio.numerator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.denominator.value",
-                    "type": "ratio.denominator.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_ratio.denominator.code",
-                    "type": "ratio.denominator.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.low.value",
-                    "type": "range.low.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.low.code",
-                    "type": "range.low.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.high.value",
-                    "type": "range.high.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_range.high.code",
-                    "type": "range.high.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_quantity.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_instructions_for_use.rate_quantity.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.duration",
                     "display": null,
-                    "type": "valueWithUnit"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.frequency",
                     "display": "1",
-                    "type": "valueWithMax"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.period",
                     "display": "1 d",
-                    "type": "valueWithUnit"
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_administration_schedule.day_of_week",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.time_of_day",
-                    "type": "date_time",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_administration_schedule.when",
-                    "type": "string",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]

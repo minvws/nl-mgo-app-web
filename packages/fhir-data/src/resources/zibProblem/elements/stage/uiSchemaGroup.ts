@@ -9,7 +9,7 @@ export function uiSchemaGroup(resource: Stage): UiSchemaGroup {
         label: i18n,
         children: [
             ui.codeableConcept(`${i18n}.summary`, resource.summary),
-            ui.multipleValue(`${i18n}.assessment`, resource.assessment, ui.reference),
+            ui.multipleValues(`${i18n}.assessment`, resource.assessment, ui.reference),
         ],
     };
 }

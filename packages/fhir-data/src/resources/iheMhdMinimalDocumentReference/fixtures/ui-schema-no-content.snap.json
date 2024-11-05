@@ -1,0 +1,42 @@
+{
+    "label": "Kopie van ontslagbrief",
+    "children": [
+        {
+            "label": "ihe_mhd_minimal_document_reference",
+            "children": [
+                {
+                    "label": "ihe_mhd_minimal_document_reference.indexed",
+                    "type": "SINGLE_VALUE",
+                    "display": "2019-06-10T11:13:21Z"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.status",
+                    "type": "SINGLE_VALUE",
+                    "display": "current"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "ontslagbrief (11071000146104 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "ihe_mhd_minimal_document_reference.author_group",
+            "children": [
+                {
+                    "label": "ihe_mhd_minimal_document_reference.author",
+                    "type": "REFERENCE_VALUE",
+                    "display": "De Hoed",
+                    "reference": "#p1"
+                }
+            ]
+        },
+        {
+            "label": "ihe_mhd_minimal_document_reference.options",
+            "children": []
+        }
+    ]
+}

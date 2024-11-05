@@ -4,12 +4,6 @@ import { expect, test, vi } from 'vitest';
 import { createResourceBundleQuery } from './createResourceBundleQuery';
 import { type QueryFunction } from '@tanstack/react-query';
 
-vi.mock('$/services', () => ({
-    getCommonClinicalDatasetService: vi.fn(() => ({
-        dataServiceId: DataServiceId.CommonClinicalDataset,
-    })),
-}));
-
 function createMockService() {
     return {
         dataServiceId: DataServiceId.CommonClinicalDataset,

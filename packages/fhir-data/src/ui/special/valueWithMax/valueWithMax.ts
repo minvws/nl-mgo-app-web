@@ -10,7 +10,7 @@ export const valueWithMax: CombinedUiFunction<number, number, SingleValue> = (
     return {
         label,
         display: format.valueWithMaxValue(value, max),
-        type: 'valueWithMax',
+        type: 'SINGLE_VALUE',
         ...options,
     };
 };

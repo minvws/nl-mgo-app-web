@@ -17,7 +17,7 @@ test('annotation', () => {
     const result = annotation(label, data, options);
     expect(result).toEqual({
         label,
-        type: 'annotation',
+        type: 'SINGLE_VALUE',
         display: data.text,
         ...options,
     });

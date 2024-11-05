@@ -6,20 +6,20 @@
             "children": [
                 {
                     "label": "nl_core_practitionerrole.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "170fed17-8fdf-11ec-1686-020000000000"
                     ]
                 },
                 {
                     "label": "nl_core_practitionerrole.organization",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Maatschap Vaste Huisarts",
                     "reference": "Organization/nl-core-organization-01"
                 },
                 {
                     "label": "nl_core_practitionerrole.specialty",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
                             "Huisartsen, niet nader gespecificeerd (0100 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"

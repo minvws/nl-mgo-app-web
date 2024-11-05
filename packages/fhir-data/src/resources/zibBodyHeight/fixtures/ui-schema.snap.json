@@ -6,22 +6,22 @@
             "children": [
                 {
                     "label": "zib_body_height.value",
-                    "type": "quantity.value",
+                    "type": "SINGLE_VALUE",
                     "display": "183 cm"
                 },
                 {
                     "label": "zib_body_height.code",
-                    "type": "quantity.code",
+                    "type": "SINGLE_VALUE",
                     "display": "cm in code systeem http://unitsofmeasure.org"
                 },
                 {
                     "label": "zib_body_height.effective",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": "2013-02-08"
                 },
                 {
                     "label": "zib_body_height.comment",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "met schoenen aan"
                 }
             ]

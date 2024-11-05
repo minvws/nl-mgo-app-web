@@ -12,7 +12,7 @@ test('valueWithMax', () => {
     const result = valueWithMax(label, value, max, options);
     expect(result).toEqual({
         label,
-        type: 'valueWithMax',
+        type: 'SINGLE_VALUE',
         display: format.valueWithMaxValue(value, max),
         ...options,
     });

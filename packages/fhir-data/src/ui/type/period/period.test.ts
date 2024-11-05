@@ -15,13 +15,13 @@ test('period', () => {
     expect(result).toEqual([
         {
             label: `${label}.start`,
-            type: `period.start`,
+            type: `SINGLE_VALUE`,
             display: format.dateTime(mgoPeriod.start),
             ...options,
         },
         {
             label: `${label}.end`,
-            type: `period.end`,
+            type: `SINGLE_VALUE`,
             display: format.dateTime(mgoPeriod.end),
             ...options,
         },

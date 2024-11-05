@@ -43,7 +43,7 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
             {
                 label: `${i18n}.group_medication`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.reference(`${i18n}.medication`, resource.medication),
                     ui.identifier(`${i18n}.medication_treatment`, resource.medicationTreatment),
                 ],
@@ -54,12 +54,12 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
                     ui.reference(`${i18n}.information_source`, resource.informationSource),
                     ui.reference(`${i18n}.subject`, resource.subject),
                     ui.code(`${i18n}.taken`, resource.taken),
-                    ui.multipleValue(
+                    ui.multipleValues(
                         `${i18n}.reason_code`,
                         resource.reasonCode,
                         ui.codeableConcept
                     ),
-                    ui.multipleValue(`${i18n}.note`, resource.note, ui.annotation),
+                    ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
                 ],
             },
             ...instructionsForUse,

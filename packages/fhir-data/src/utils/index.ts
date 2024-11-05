@@ -1,5 +1,4 @@
 export { deepReplaceUndefined } from './deepReplaceUndefined/deepReplaceUndefined';
-export { getBundleResources } from './getBundleResources/getBundleResources';
 export { getReference } from './getReference/getReference';
 export { isFhirResource } from './isResource/isResource';
 export { findByUse } from './findByUse/findByUse';

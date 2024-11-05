@@ -1,21 +1,17 @@
+import { useOrganizationsStore, type HealthcareOrganization } from '$/store';
+import { faker } from '$test/faker';
+import { DataServiceId } from '@minvws/mgo-fhir-client';
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';
 import { useHealthCategoryQueries } from './useHealthCategoryQueries';
-import { useOrganizationsStore } from '$/store';
-import { faker } from '$test/faker';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
 
 vi.mock('$/services', () => ({
-    getCommonClinicalDatasetService: vi.fn(() => ({
-        dataServiceId: DataServiceId.CommonClinicalDataset,
-    })),
-    getGeneralPractitionerService: vi.fn(() => ({
-        dataServiceId: DataServiceId.GeneralPractitioner,
-    })),
-    getVaccinationsService: vi.fn(() => ({
-        dataServiceId: DataServiceId.Vaccinations,
-    })),
+    getDataService: vi.fn(
+        (_organization: HealthcareOrganization, dataServiceId: DataServiceId) => ({
+            dataServiceId,
+        })
+    ),
 }));
 
 test('returns queries for specific organisations if specified', () => {

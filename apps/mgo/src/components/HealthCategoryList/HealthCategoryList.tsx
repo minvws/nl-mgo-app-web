@@ -19,6 +19,7 @@ export function HealthCategoryList({ organization }: CategoryListProps) {
         useHealthCategoryQuery(HealthCategory.FunctionalOrMentalStatus, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Problems, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Lifestyle, organizationFilter),
+        useHealthCategoryQuery(HealthCategory.Documents, organizationFilter),
         useHealthCategoryQuery(HealthCategory.Warning, organizationFilter),
         useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
         useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),

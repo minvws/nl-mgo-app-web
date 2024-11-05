@@ -5,7 +5,7 @@ import { type SingleValue, type UiFunction } from '../../types';
 export const date: UiFunction<MgoDate, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'date',
+        type: 'SINGLE_VALUE',
         display: format.date(value),
         ...options,
     };

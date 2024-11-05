@@ -23,13 +23,13 @@ test('quantity', () => {
     expect(result).toEqual([
         {
             label: `${label}.value`,
-            type: `quantity.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
             ...options,
         },
         {
             label: `${label}.code`,
-            type: `quantity.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(mgoQuantity.code, mgoQuantity.system),
             ...options,
         },
@@ -43,7 +43,7 @@ test('simpleQuantity', () => {
     const result = simpleQuantity(label, mgoQuantity, options);
     expect(result).toEqual({
         label: label,
-        type: `quantity.value`,
+        type: `SINGLE_VALUE`,
         display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
         ...options,
     });
@@ -55,7 +55,7 @@ test('simpleQuantity with undefined fields', () => {
     const result = simpleQuantity(label, undefined, options);
     expect(result).toEqual({
         label: label,
-        type: `quantity.value`,
+        type: `SINGLE_VALUE`,
         display: undefined,
         ...options,
     });

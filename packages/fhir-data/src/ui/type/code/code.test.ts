@@ -11,7 +11,7 @@ test('code', () => {
     const result = code(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'code',
+        type: 'SINGLE_VALUE',
         display: toString(value),
         ...options,
     });

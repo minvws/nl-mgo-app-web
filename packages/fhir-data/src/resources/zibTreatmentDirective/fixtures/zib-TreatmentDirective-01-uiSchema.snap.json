@@ -6,17 +6,17 @@
             "children": [
                 {
                     "label": "zib_treatment_directive.identifier",
-                    "type": "identifier",
+                    "type": "SINGLE_VALUE",
                     "display": "1ebf6227-8fdf-11ec-1682-020000000000"
                 },
                 {
                     "label": "zib_treatment_directive.status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
                     "label": "zib_treatment_directive.category",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
                             "Treatment instructions (record artifact) (11291000146105 in code systeem http://snomed.info/sct)"
@@ -25,74 +25,74 @@
                 },
                 {
                     "label": "zib_treatment_directive.patient",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "zib_treatment_directive.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2018-04-09"
                 },
                 {
                     "label": "zib_treatment_directive.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.date_time",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.consenting_party",
-                    "type": "reference",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.action",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.organization",
-                    "type": "reference",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.source_identifier",
-                    "type": "identifier",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.source_reference",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "zib_treatment_directive.policy_rule",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.security_label",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.purpose",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.data_period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.data_period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -102,42 +102,42 @@
             "children": [
                 {
                     "label": "attachment.contentType",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.language",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.data",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.url",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.size",
-                    "type": "unsignedInt",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.hash",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.title",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "attachment.creation",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -147,52 +147,52 @@
             "children": [
                 {
                     "label": "zib_treatment_directive.except.type",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "deny"
                 },
                 {
                     "label": "zib_treatment_directive.except.period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.action",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.security_label",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.purpose",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.class",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.code",
-                    "type": "coding",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.plan.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.plan.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -202,17 +202,17 @@
             "children": [
                 {
                     "label": "zib_treatment_directive.policy.id",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.policy.authority",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.policy.uri",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": "http://wetten.overheid.nl/"
                 }
             ]

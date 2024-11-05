@@ -5,27 +5,36 @@ interface UiSchemaElement {
     label: string;
 }
 
-export interface ValueOptions {
+export interface UiEntryOptions {
     summary?: boolean;
 }
 
-interface BaseEntry<T extends string | string[] | string[][]>
-    extends UiSchemaElement,
-        ValueOptions {
-    display: T | undefined;
-    type: string;
+interface BaseUiEntry<T extends string> extends UiSchemaElement, UiEntryOptions {
+    type: T;
 }
 
-export interface SingleValue extends BaseEntry<string> {}
-export interface MultipleValue extends BaseEntry<string[]> {}
-export interface MultipleGroupValue extends BaseEntry<string[][]> {}
+export interface UiEntryValue<T extends string, D> extends BaseUiEntry<T> {
+    display: D | undefined;
+}
 
-export interface ReferenceValue extends BaseEntry<string> {
+export interface SingleValue extends UiEntryValue<'SINGLE_VALUE', string> {}
+export interface MultipleValues extends UiEntryValue<'MULTIPLE_VALUES', string[]> {}
+export interface MultipleGroupedValues
+    extends UiEntryValue<'MULTIPLE_GROUPED_VALUES', string[][]> {}
+export interface ReferenceValue extends UiEntryValue<'REFERENCE_VALUE', string> {
     reference: string | undefined;
 }
 
-// We don't export this union as we want to enforce the use of a more specific type
-type UiEntry = SingleValue | MultipleValue | MultipleGroupValue | ReferenceValue;
+export interface DownloadLink extends BaseUiEntry<'DOWNLOAD_LINK'> {
+    url: string;
+}
+
+export type UiEntry =
+    | SingleValue
+    | MultipleValues
+    | MultipleGroupedValues
+    | ReferenceValue
+    | DownloadLink;
 
 export interface UiSchemaGroup extends UiSchemaElement {
     children: UiEntry[];
@@ -39,12 +48,12 @@ export interface UiSchema {
 export type UiFunction<Input, Output extends UiEntry | UiEntry[]> = (
     label: string,
     value: Nullable<Lossless<Input>>,
-    options?: ValueOptions
+    options?: UiEntryOptions
 ) => Output;
 
 export type CombinedUiFunction<Input1, Input2, Output extends UiEntry | UiEntry[]> = (
     label: string,
     value1: Nullable<Lossless<Input1>>,
     value2: Nullable<Lossless<Input2>>,
-    options?: ValueOptions
+    options?: UiEntryOptions
 ) => Output;

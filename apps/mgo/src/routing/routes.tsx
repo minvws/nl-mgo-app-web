@@ -1,10 +1,10 @@
 import { AddOrganization } from '$/pages/AddOrganization/AddOrganization';
 import { AddOrganizationList } from '$/pages/AddOrganizationList/AddOrganizationList';
 import { HealthCategory } from '$/pages/HealthCategory/HealthCategory';
+import { HealthDataDetail } from '$/pages/HealthDataDetail/HealthDataDetail';
 import { NotFound } from '$/pages/NotFound/NotFound';
 import { Overview } from '$/pages/Overview/Overview';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
-import { HealthDataDetail } from '$/pages/HealthDataDetail/HealthDataDetail';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
 import { type LiteralToCollective } from '$/types/LiteralToCollective';
 import { type Override } from '$/types/Override';
@@ -18,8 +18,6 @@ import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
 import { Organizations } from '../pages/Organizations/Organizations';
 import { Proposition } from '../pages/Proposition/Proposition';
-import { Document, Documents } from '$/pages/documentDataset';
-import { LabResults, Problems } from '$/pages/commonClinicalDataset';
 
 const routeConfig = [
     {
@@ -103,22 +101,6 @@ const routeConfig = [
                     {
                         path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug',
                         element: <HealthDataDetail />,
-                    },
-                    {
-                        path: '/overzicht/:organizationSlug/klachten',
-                        element: <Problems />,
-                    },
-                    {
-                        path: '/overzicht/:organizationSlug/uitslagen',
-                        element: <LabResults />,
-                    },
-                    {
-                        path: '/overzicht/:organizationSlug/documenten',
-                        element: <Documents />,
-                    },
-                    {
-                        path: '/overzicht/:organizationSlug/documenten/:documentId',
-                        element: <Document />,
                     },
                 ],
             },

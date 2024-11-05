@@ -6,20 +6,20 @@
             "children": [
                 {
                     "label": "nl_core_practitionerrole.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "172613a3-8fdf-11ec-2630-020000000000"
                     ]
                 },
                 {
                     "label": "nl_core_practitionerrole.organization",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "nl_core_practitionerrole.specialty",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
                             "Medisch specialisten, geriatrie (0335 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"

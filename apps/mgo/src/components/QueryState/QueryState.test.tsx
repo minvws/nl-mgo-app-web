@@ -20,6 +20,22 @@ test('Default loading state is shown when status is pending', () => {
     expect(screen.queryByTestId('result')).toBeNull();
 });
 
+test('Can be wrapped with a Card component', () => {
+    const query: QueryStateProps = {
+        fetchStatus: 'idle',
+        data: undefined,
+        error: null,
+        status: 'pending',
+        renderResult: <span data-testid="result" />,
+        useCardWrapper: true,
+    };
+
+    setupWithAppProviders(<QueryState {...query} />);
+
+    expect(screen.getByRole('progressbar')).toBeVisible();
+    expect(screen.queryByTestId('result')).toBeNull();
+});
+
 test('Custom loading state is shown', () => {
     const query: QueryStateProps = {
         fetchStatus: 'idle',

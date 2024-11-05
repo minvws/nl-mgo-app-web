@@ -6,13 +6,13 @@ export const period: UiFunction<MgoPeriod, SingleValue[]> = (label, value, optio
     return [
         {
             label: `${label}.start`,
-            type: `period.start`,
+            type: `SINGLE_VALUE`,
             display: format.dateTime(value?.start),
             ...options,
         },
         {
             label: `${label}.end`,
-            type: `period.end`,
+            type: `SINGLE_VALUE`,
             display: format.dateTime(value?.end),
             ...options,
         },

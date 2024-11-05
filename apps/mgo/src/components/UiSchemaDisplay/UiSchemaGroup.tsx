@@ -1,13 +1,8 @@
 /* eslint-disable react/no-array-index-key */
-import {
-    isMultipleGroupValue,
-    isMultipleValue,
-    isReferenceValue,
-    isSingleValue,
-    type UiSchema,
-} from '@minvws/mgo-fhir-data';
+import { type UiEntry, type UiSchema } from '@minvws/mgo-fhir-data';
 import { DescriptionList, Heading } from '@minvws/mgo-mgo-ui';
-import { type HTMLAttributes } from 'react';
+import { type FunctionComponent, type HTMLAttributes } from 'react';
+import { DownloadLink } from './DownloadLink';
 import { MultipleGroupValueDisplay } from './MultipleGroupValueDisplay';
 import { MultipleValueDisplay } from './MultipleValueDisplay';
 import { ReferenceValueDisplay } from './ReferenceValueDisplay';
@@ -18,6 +13,20 @@ export interface UiSchemaGroupProps extends HTMLAttributes<HTMLDivElement> {
     readonly group: UiSchema['children'][number];
 }
 
+type UiEntryMap = {
+    [K in UiEntry['type']]: FunctionComponent<{
+        readonly value: Extract<UiEntry, { type: K }>;
+    }>;
+};
+
+const uiEntryMap: UiEntryMap = {
+    SINGLE_VALUE: SingleValueDisplay,
+    REFERENCE_VALUE: ReferenceValueDisplay,
+    MULTIPLE_VALUES: MultipleValueDisplay,
+    MULTIPLE_GROUPED_VALUES: MultipleGroupValueDisplay,
+    DOWNLOAD_LINK: DownloadLink,
+};
+
 export function UiSchemaGroup({ group: { label, children }, ...rest }: UiSchemaGroupProps) {
     return (
         <div {...rest}>
@@ -27,20 +36,15 @@ export function UiSchemaGroup({ group: { label, children }, ...rest }: UiSchemaG
 
             <DescriptionList>
                 {children.map((value, index) => {
-                    if (isSingleValue(value)) {
-                        return <SingleValueDisplay key={`single-${index}`} value={value} />;
-                    } else if (isReferenceValue(value)) {
-                        return <ReferenceValueDisplay key={`reference-${index}`} value={value} />;
-                    } else if (isMultipleValue(value)) {
-                        return <MultipleValueDisplay key={`multiple-${index}`} value={value} />;
-                    } else if (isMultipleGroupValue(value)) {
-                        return (
-                            <MultipleGroupValueDisplay
-                                key={`multiple-group-${index}`}
-                                value={value}
-                            />
-                        );
+                    const UiEntry = uiEntryMap[value.type] as FunctionComponent<{
+                        readonly value: typeof value;
+                    }>;
+
+                    if (!UiEntry) {
+                        throw new Error(`Unknown UiEntry type: ${value.type}`);
                     }
+
+                    return <UiEntry key={`${value.type}-${index}`} value={value} />;
                 })}
             </DescriptionList>
         </div>

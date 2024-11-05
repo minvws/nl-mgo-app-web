@@ -13,7 +13,7 @@ test('reference', () => {
     const result = special.reference(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'reference',
+        type: 'REFERENCE_VALUE',
         display: value.display,
         reference: value.reference,
         ...options,

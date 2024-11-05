@@ -22,13 +22,13 @@ test('duration', () => {
     expect(result).toEqual([
         {
             label: `${label}.value`,
-            type: `duration.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(mgoDuration.value, mgoDuration.unit),
             ...options,
         },
         {
             label: `${label}.code`,
-            type: `duration.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(mgoDuration.code, mgoDuration.system),
             ...options,
         },

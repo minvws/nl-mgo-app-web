@@ -11,7 +11,6 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrol
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317053
  */
 function parseNlCorePractitionerRole(resource: PractitionerRole) {
-    console.log(resource);
     return {
         ...parse.resourceMeta(resource, profile),
         identifier: map(resource.identifier, parse.identifier),

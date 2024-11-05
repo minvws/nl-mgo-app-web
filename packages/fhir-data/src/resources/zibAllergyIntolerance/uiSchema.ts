@@ -13,11 +13,11 @@ export function uiSchema(resource: ZibAllergyIntolerance): UiSchema {
             {
                 label: `${i18n}.group_details`,
                 children: [
-                    ui.multipleValue(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.code(`${i18n}.clinical_status`, resource.clinicalStatus),
                     ui.code(`${i18n}.verification_status`, resource.verificationStatus),
                     ui.code(`${i18n}.type`, resource.type),
-                    ui.multipleValue(`${i18n}.category`, resource.category, ui.code),
+                    ui.multipleValues(`${i18n}.category`, resource.category, ui.code),
                     ui.code(`${i18n}.criticality`, resource.criticality),
                     ui.codeableConcept(`${i18n}.code`, resource.code),
                     ui.reference(`${i18n}.patient`, resource.patient),

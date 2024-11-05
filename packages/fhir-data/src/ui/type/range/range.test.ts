@@ -25,25 +25,25 @@ test('range', () => {
     expect(result).toEqual([
         {
             label: `${label}.low.value`,
-            type: `range.low.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(low.value, low.unit),
             ...options,
         },
         {
             label: `${label}.low.code`,
-            type: `range.low.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(low.code, low.system),
             ...options,
         },
         {
             label: `${label}.high.value`,
-            type: `range.high.value`,
+            type: `SINGLE_VALUE`,
             display: format.valueWithUnit(high.value, high.unit),
             ...options,
         },
         {
             label: `${label}.high.code`,
-            type: `range.high.code`,
+            type: `SINGLE_VALUE`,
             display: format.codeWithSystem(high.code, high.system),
             ...options,
         },

@@ -5,7 +5,7 @@ import { type SingleValue, type UiFunction } from '../../types';
 export const positiveInt: UiFunction<MgoPositiveInt, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'positiveInt',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     };

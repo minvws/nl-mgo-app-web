@@ -5,7 +5,7 @@ import { type SingleValue, type UiFunction } from '../../types';
 export const integer64: UiFunction<MgoInteger64, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'integer64',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     };

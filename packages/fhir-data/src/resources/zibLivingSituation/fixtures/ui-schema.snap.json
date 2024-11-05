@@ -6,61 +6,61 @@
             "children": [
                 {
                     "label": "nl_core_observation.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b6fe23b-8fdf-11ec-1802-020000000000"
                     ]
                 },
                 {
                     "label": "nl_core_observation.status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
                     "label": "nl_core_observation.category",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.subject",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "nl_core_observation.context",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "nl_core_observation.effective_date_time",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.effective_period.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.effective_period.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.data_absent_reason",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.comment",
-                    "type": "string",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.body_site",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": null
                 }
             ]

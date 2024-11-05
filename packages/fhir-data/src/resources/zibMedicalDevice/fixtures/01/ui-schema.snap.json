@@ -6,35 +6,35 @@
             "children": [
                 {
                     "label": "zib_medical_device.identifier",
-                    "type": "identifier",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b7c5449-8fdf-11ec-2143-020000000000"
                     ]
                 },
                 {
                     "label": "zib_medical_device.clinical_status",
-                    "type": "code",
+                    "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
                     "label": "zib_medical_device.device",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Gehoorapparaat",
                     "reference": "Device/zib-MedicalDeviceProduct-03"
                 },
                 {
                     "label": "zib_medical_device.whenUsed.start",
-                    "type": "period.start",
+                    "type": "SINGLE_VALUE",
                     "display": "2007"
                 },
                 {
                     "label": "zib_medical_device.whenUsed.end",
-                    "type": "period.end",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_medical_device.recordedOn",
-                    "type": "date_time",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -44,28 +44,28 @@
             "children": [
                 {
                     "label": "zib_medical_device.note",
-                    "type": "annotation",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Apparaat niet zichtbaar (diep in de gehooringang)"
                     ]
                 },
                 {
                     "label": "zib_medical_device.bodySite",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "zib_medical_device.laterality",
-                    "type": "codable_concept",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
                         "Right (24028007 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "zib_medical_device.reason",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 }
@@ -76,25 +76,25 @@
             "children": [
                 {
                     "label": "zib_medical_device.patient",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "zib_medical_device.source",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
                     "label": "zib_medical_device.organization",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
                     "label": "zib_medical_device.practitioner",
-                    "type": "reference",
+                    "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 }

@@ -5,7 +5,7 @@ import { type SingleValue, type UiFunction } from '../../types';
 export const boolean: UiFunction<MgoBoolean, SingleValue> = (label, value, options) => {
     return {
         label,
-        type: 'boolean',
+        type: 'SINGLE_VALUE',
         display: toString(value),
         ...options,
     };

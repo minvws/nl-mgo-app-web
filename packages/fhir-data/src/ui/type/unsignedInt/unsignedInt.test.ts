@@ -11,7 +11,7 @@ test('unsignedInt', () => {
     const result = unsignedInt(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'unsignedInt',
+        type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,
     });

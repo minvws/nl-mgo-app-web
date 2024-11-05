@@ -21,7 +21,7 @@ export function uiSchema(resource: NlCorePractitioner): UiSchema {
             {
                 label: `${profile}.group_details`,
                 children: [
-                    ui.multipleValue(`${profile}.identifier`, resource.identifier, ui.identifier),
+                    ui.multipleValues(`${profile}.identifier`, resource.identifier, ui.identifier),
                 ],
             },
             ...address,

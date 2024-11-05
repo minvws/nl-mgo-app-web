@@ -11,7 +11,7 @@ test('boolean', () => {
     const result = boolean(label, value, options);
     expect(result).toEqual({
         label,
-        type: 'boolean',
+        type: 'SINGLE_VALUE',
         display: toString(value),
         ...options,
     });

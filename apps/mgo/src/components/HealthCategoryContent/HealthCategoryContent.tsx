@@ -1,8 +1,8 @@
 import { type HealthCategory } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { Stack } from '@minvws/mgo-mgo-ui';
-import { HealthCategoryDetailList } from '../HealthCategoryDetailList/HealthCategoryDetailList';
 import _ from 'lodash';
+import { HealthCategoryDetailList } from '../HealthCategoryDetailList/HealthCategoryDetailList';
 
 export interface HealthCategoryContentProps<T extends HealthCategory> {
     readonly category: T;

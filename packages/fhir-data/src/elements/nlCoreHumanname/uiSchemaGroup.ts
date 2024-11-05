@@ -10,10 +10,10 @@ export function uiSchemaGroup(resource: Nullable<NlCoreHumanname>): UiSchemaGrou
         label: i18n,
         children: [
             ui.string(`${i18n}.family`, resource?.family),
-            ui.multipleValue(`${i18n}.given`, resource?.given, ui.string),
+            ui.multipleValues(`${i18n}.given`, resource?.given, ui.string),
             ...ui.period(`${i18n}.period`, resource?.period),
-            ui.multipleValue(`${i18n}.prefix`, resource?.prefix, ui.string),
-            ui.multipleValue(`${i18n}.suffix`, resource?.suffix, ui.string),
+            ui.multipleValues(`${i18n}.prefix`, resource?.prefix, ui.string),
+            ui.multipleValues(`${i18n}.suffix`, resource?.suffix, ui.string),
             ui.string(`${i18n}.use`, resource?.use),
             ui.string(`${i18n}.text`, resource?.text),
         ],

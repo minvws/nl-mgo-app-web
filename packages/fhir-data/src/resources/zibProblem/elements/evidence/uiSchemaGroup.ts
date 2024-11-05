@@ -8,8 +8,8 @@ export function uiSchemaGroup(resource: Evidence): UiSchemaGroup {
     return {
         label: i18n,
         children: [
-            ui.multipleValue(`${i18n}.code`, resource.code, ui.codeableConcept),
-            ui.multipleValue(`${i18n}.detail`, resource.detail, ui.reference),
+            ui.multipleValues(`${i18n}.code`, resource.code, ui.codeableConcept),
+            ui.multipleValues(`${i18n}.detail`, resource.detail, ui.reference),
         ],
     };
 }

@@ -3,9 +3,9 @@ import { useParams, Navigate } from '$/routing';
 import { useResourcesStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { messageRegexp } from '$test/helpers/i18n';
+import { message, messageRegexp } from '$test/helpers/i18n';
 import { screen } from '@testing-library/react';
-import { expect, test, vi, type MockedFunction } from 'vitest';
+import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthDataDetail } from './HealthDataDetail';
 import { type MessagesIds } from '$/i18n';
 
@@ -14,6 +14,11 @@ vi.mock('$/routing/Navigate');
 
 const mockUseParams = useParams as MockedFunction<typeof useParams>;
 const mockNavigate = Navigate as MockedFunction<typeof Navigate>;
+
+beforeEach(() => {
+    mockUseParams.mockReset();
+    mockNavigate.mockReset();
+});
 
 test('shows ui schema', async () => {
     mockUseParams.mockImplementationOnce(() => ({
@@ -40,9 +45,8 @@ test('shows ui schema', async () => {
     );
 
     setupWithAppProviders(<HealthDataDetail />);
-
     screen.getByRole('heading', {
-        name: messageRegexp('detail_medication.heading' as MessagesIds),
+        name: message('hc_medication.heading_detail'),
         level: 1,
     });
     screen.getByRole('heading', {
@@ -51,7 +55,7 @@ test('shows ui schema', async () => {
     });
 });
 
-test('redirects to the healtCategory page if there is no resource found', async () => {
+test('redirects to the organization / health category page if there is no resource found', async () => {
     const params = {
         organizationSlug: faker.lorem.slug(),
         healthCategorySlug: healthCategorySlugs[HealthCategory.Medication],
@@ -66,6 +70,24 @@ test('redirects to the healtCategory page if there is no resource found', async 
     setupWithAppProviders(<HealthDataDetail />);
 
     expect(mockNavigate.mock.calls[0][0]).toEqual({
-        to: `/overzicht/${params.organizationSlug}/${params.healthCategorySlug}`,
+        to: `/organisaties/${params.organizationSlug}/${params.healthCategorySlug}`,
+    });
+});
+
+test('redirects to the overview / health category page if there is no resource found', async () => {
+    const params = {
+        healthCategorySlug: healthCategorySlugs[HealthCategory.Medication],
+        resourceSlug: faker.lorem.slug(),
+    };
+    mockUseParams.mockImplementationOnce(() => params);
+
+    const store = useResourcesStore.getState();
+    const mock = vi.spyOn(store, 'getResourceBySlug');
+    mock.mockImplementationOnce(() => undefined);
+
+    setupWithAppProviders(<HealthDataDetail />);
+
+    expect(mockNavigate.mock.calls[0][0]).toEqual({
+        to: `/overzicht/${params.healthCategorySlug}`,
     });
 });

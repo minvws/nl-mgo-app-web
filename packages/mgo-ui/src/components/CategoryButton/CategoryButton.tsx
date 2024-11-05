@@ -5,6 +5,7 @@ import { Card } from '../Card/Card';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { Text } from '../Text/Text';
+import { Spinner } from '../Spinner/Spinner';
 
 type CategoryIcon = Extract<
     IconName,
@@ -16,6 +17,7 @@ type CategoryIcon = Extract<
     | 'emergency-home'
     | 'allergy'
     | 'pill'
+    | 'folder'
     | 'syringe'
     | 'labs'
     | 'date-range'
@@ -31,6 +33,7 @@ const iconColors: Record<CategoryIcon, string> = {
     stethoscope: 'text-violet-800',
     'event-note': 'text-mint-500',
     diagnosis: 'text-pink-500',
+    folder: 'text-[#94710A]',
     nutrition: 'text-[#34C759]',
     'emergency-home': 'text-yellow-500',
     allergy: 'text-orange-600',
@@ -107,10 +110,7 @@ export const CategoryButton = ({
                             <Text className="text-nowrap text-gray-600 dark:text-gray-200">
                                 {loadingText}
                             </Text>
-                            <Icon
-                                icon="spinner"
-                                className={cn('h-8 w-8 animate-spin fill-transparent')}
-                            />
+                            <Spinner className="size-6" variant="gray" />
                         </div>
                     ) : (
                         <div className="ml-auto flex items-center gap-2">

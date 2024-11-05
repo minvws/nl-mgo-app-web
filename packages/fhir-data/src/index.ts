@@ -6,19 +6,9 @@ export { getBundleMgoResources } from './api/getBundleMgoResources/getBundleMgoR
 export { getUiSchema } from './api/getUiSchema/getUiSchema';
 export { type MgoResource } from './api/resources/resources';
 export * from './ui/types';
-export {
-    isSingleValue,
-    isReferenceValue,
-    isMultipleValue,
-    isMultipleGroupValue,
-} from './ui/helpers';
+export { isUiEntry } from './ui/helpers';
 export { type Lossless } from './types/Lossless';
 
 export { type FhirResource } from './fhir';
 
 export * from './utils';
-
-export * from './mgo/getMgoProblems/getMgoProblems';
-export * from './mgo/getMgoMedicationStatements/getMgoMedicationStatements';
-export * from './mgo/getMgoObservations/getMgoObservations';
-export * from './mgo/getMgoDocuments/getMgoDocuments';
