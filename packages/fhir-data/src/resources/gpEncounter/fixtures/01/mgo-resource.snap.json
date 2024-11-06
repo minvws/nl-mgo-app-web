@@ -1,0 +1,28 @@
+{
+    "id": "gp-encounter-01",
+    "referenceId": "Encounter/gp-encounter-01",
+    "resourceType": "Encounter",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-Encounter",
+    "class": {
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "system": "http://hl7.org/fhir/v3/ActCode"
+    },
+    "participant": [
+        {
+            "individual": {
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            }
+        }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-01",
+        "display": "Huisartspraktijk (zelfstandig of groepspraktijk)"
+    },
+    "period": {
+        "start": "2013-02-08",
+        "end": "2013-02-08"
+    },
+    "reason": null
+}

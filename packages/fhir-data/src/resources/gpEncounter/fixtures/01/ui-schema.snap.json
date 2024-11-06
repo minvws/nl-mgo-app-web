@@ -1,0 +1,42 @@
+{
+    "label": "Huisartspraktijk (zelfstandig of groepspraktijk)",
+    "children": [
+        {
+            "label": "Encounter",
+            "children": [
+                {
+                    "label": "Encounter.class",
+                    "type": "SINGLE_VALUE",
+                    "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
+                },
+                {
+                    "label": "Encounter.participant.individual",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
+                },
+                {
+                    "label": "Encounter.serviceProvider",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
+                    "reference": "Organization/nl-core-organization-01"
+                },
+                {
+                    "label": "Encounter.period.start",
+                    "type": "SINGLE_VALUE",
+                    "display": "2013-02-08"
+                },
+                {
+                    "label": "Encounter.period.end",
+                    "type": "SINGLE_VALUE",
+                    "display": "2013-02-08"
+                },
+                {
+                    "label": "Encounter.reason",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

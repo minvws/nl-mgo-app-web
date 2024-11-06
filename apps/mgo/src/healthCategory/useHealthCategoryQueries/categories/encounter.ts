@@ -7,12 +7,21 @@ import { DataServiceId } from '@minvws/mgo-fhir-client';
 
 export function getEncounterQueries(organization: HealthcareOrganization): UseQueryOptions[] {
     const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
+    const generalPracticionerService = getDataService(
+        organization,
+        DataServiceId.GeneralPractitioner
+    );
 
     return [
         createResourceBundleQuery({
             organization,
             service: commonClinicalDataset,
             method: 'getHospitalAdmissions',
+        }),
+        createResourceBundleQuery({
+            organization,
+            service: generalPracticionerService,
+            method: 'getEncounters',
         }),
     ].filter(isNonNullish);
 }

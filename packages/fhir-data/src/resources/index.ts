@@ -9,6 +9,7 @@
  */
 
 export * from './gpLaboratoryResult/gpLaboratoryResult';
+export * from './gpEncounter/gpEncounter';
 
 export * from './nlCorePatient/nlCorePatient';
 export * from './nlCoreOrganization/nlCoreOrganization';

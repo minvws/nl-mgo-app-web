@@ -5,8 +5,12 @@ export function getEncounterData(
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
-        encounters: resources.getResourcesByProfile(
+        hospitalAdmissions: resources.getResourcesByProfile(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter',
+            organizationIdFilter
+        ),
+        encounters: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter',
             organizationIdFilter
         ),
     };

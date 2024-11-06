@@ -1,6 +1,6 @@
-import { ui } from '../../../../ui';
-import { type UiSchemaGroup } from '../../../../ui/types';
-import { type Participant } from './participant';
+import { ui } from '../../ui';
+import { type UiSchemaGroup } from '../../ui/types';
+import { type Participant } from './encounterParticipant';
 
 export function uiSchemaGroup(resource: Participant): UiSchemaGroup {
     return {
