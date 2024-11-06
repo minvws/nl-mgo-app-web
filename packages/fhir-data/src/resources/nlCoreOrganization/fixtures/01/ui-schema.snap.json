@@ -1,0 +1,36 @@
+{
+    "label": "Maatschap Vaste Huisarts",
+    "children": [
+        {
+            "label": "nl_core_organization.group_details",
+            "children": [
+                {
+                    "label": "nl_core_organization.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "162abc65-8fdf-11ec-1585-020000000000"
+                    ]
+                },
+                {
+                    "label": "nl_core_organization.name",
+                    "type": "SINGLE_VALUE",
+                    "display": "Maatschap Vaste Huisarts"
+                },
+                {
+                    "label": "nl_core_organization.department_specialty",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_organization.organization_type",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

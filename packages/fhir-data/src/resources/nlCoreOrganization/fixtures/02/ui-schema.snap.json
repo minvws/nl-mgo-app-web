@@ -1,0 +1,36 @@
+{
+    "label": "Orthopedie - UMCG",
+    "children": [
+        {
+            "label": "nl_core_organization.group_details",
+            "children": [
+                {
+                    "label": "nl_core_organization.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "16369fdf-8fdf-11ec-1349-020000000000"
+                    ]
+                },
+                {
+                    "label": "nl_core_organization.name",
+                    "type": "SINGLE_VALUE",
+                    "display": "Orthopedie - UMCG"
+                },
+                {
+                    "label": "nl_core_organization.department_specialty",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Medisch specialisten, orthopedie (0305 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "nl_core_organization.organization_type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

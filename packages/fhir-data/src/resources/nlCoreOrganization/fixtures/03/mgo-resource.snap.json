@@ -1,0 +1,19 @@
+{
+    "id": "nl-core-organization-03",
+    "referenceId": "Organization/nl-core-organization-03",
+    "resourceType": "Organization",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-organization",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1642a7d5-8fdf-11ec-4396-020000000000",
+            "type": null
+        }
+    ],
+    "name": "Test Medisch Centrum",
+    "departmentSpecialty": null,
+    "telecom": null,
+    "address": null,
+    "organizationType": null
+}

@@ -1,0 +1,32 @@
+{
+    "label": "Test Medisch Centrum",
+    "children": [
+        {
+            "label": "nl_core_organization.group_details",
+            "children": [
+                {
+                    "label": "nl_core_organization.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1642a7d5-8fdf-11ec-4396-020000000000"
+                    ]
+                },
+                {
+                    "label": "nl_core_organization.name",
+                    "type": "SINGLE_VALUE",
+                    "display": "Test Medisch Centrum"
+                },
+                {
+                    "label": "nl_core_organization.department_specialty",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_organization.organization_type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

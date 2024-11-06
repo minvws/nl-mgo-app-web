@@ -9,5 +9,9 @@ export function getPayerData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Payer',
             organizationIdFilter
         ),
+        getOrganizationInformation: resources.getResourcesByProfile(
+            'http://fhir.nl/fhir/StructureDefinition/nl-core-organization',
+            organizationIdFilter
+        ),
     };
 }
