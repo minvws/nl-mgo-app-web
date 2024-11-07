@@ -28,19 +28,20 @@ export type ReturnTypeParser<
  * };
  * ValidXTypes<Test>; // 'codeableConcept' | 'boolean'
  */
-export type ExtractValueTypes<T extends object> =
+export type ExtractValueTypes<T extends object, Prefix extends string> =
     Extract<
         StringKeys<NonNullable<T>>,
-        `value${Capitalize<ParserKey>}`
-    > extends `value${infer ValueType}`
+        `${Prefix}${Capitalize<ParserKey>}`
+    > extends `${Prefix}${infer ValueType}`
         ? Uncapitalize<ValueType> extends ParserKey
             ? Uncapitalize<ValueType>
             : never
         : never;
 
-export function valueX<T extends object>(
+export function valueX<T extends object, Prefix extends string = 'value'>(
     value: Nullable<T>,
-    valueXType: ExtractValueTypes<NonNullable<T>>
+    valueXType: ExtractValueTypes<NonNullable<T>, Prefix>,
+    valuePrefix: Prefix = 'value' as Prefix
 ) {
     if (isNullish(value)) return;
 
@@ -48,6 +49,6 @@ export function valueX<T extends object>(
         arg: unknown
     ) => ReturnTypeParser<typeof valueXType>;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const valueX = (value as any)[`value${upperFirst(valueXType)}`];
+    const valueX = (value as any)[`${valuePrefix}${upperFirst(valueXType)}`];
     return parser(valueX);
 }

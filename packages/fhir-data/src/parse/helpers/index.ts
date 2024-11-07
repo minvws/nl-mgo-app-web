@@ -8,4 +8,5 @@ export * from './extensionNictiz/extensionNictiz';
 export * from './createTypeParser/createTypeParser';
 export * from './passThrough/passThrough';
 export * from './componentSlice/componentSlice';
+export * from './oneOfValueX/oneOfValueX';
 export * from './filterCodeableConceptByCoding/filterCodeableConceptByCoding';

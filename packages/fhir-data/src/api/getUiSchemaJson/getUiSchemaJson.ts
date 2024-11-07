@@ -12,6 +12,9 @@ export function getUiSchemaJson(mgoResourceJson: string, formatResponse: boolean
         );
     }
 
-    const uiSchema = getUiSchema(mgoResource);
+    // There seems to be a problem with the Lossless type defintion.
+    // For now we cast the resource in this case to any to be able to build the bundle.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const uiSchema = getUiSchema(mgoResource as any);
     return losslessStringify(uiSchema, formatResponse);
 }

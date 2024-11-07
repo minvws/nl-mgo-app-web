@@ -22,3 +22,9 @@ test('returns the parsed value for valueCodeableConcept', () => {
     const value = valueX(element, 'codeableConcept');
     expect(value).toEqual(codeableConcept(element.valueCodeableConcept));
 });
+
+test('returns the parsed value for fooBoolean with custom prefix', () => {
+    const element = { fooBoolean: faker.datatype.boolean() };
+    const value = valueX(element, 'boolean', 'foo');
+    expect(value).toEqual(boolean(element.fooBoolean));
+});

@@ -1,0 +1,80 @@
+{
+    "resourceType": "Observation",
+    "id": "ont-ver-gpdata-observation-contact01-pulseremarks",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#61df9989d37313a2"
+            }
+        ],
+        "versionId": "2",
+        "lastUpdated": "2024-06-06T12:21:38.773+00:00",
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <caption>Observatie/bepaling. Subject: Jacqueline XXX_Cevat. Id: bb6ad96b-041c-11ec-1170-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Categorie: <span title=\"Vital Signs (vital-signs - observation-category)\">Vital Signs</span>, Status: definitief<span style=\"display: block;\">Uitvoerende: Dokter Bernard</span>\n        </caption>\n        <tbody>\n          <tr>\n            <th>Context</th>\n            <td>\n              <ul>\n                <li>Boezemfibrilleren/-fladderen</li>\n                <li>Consult voor Boezemfibrilleren/-fladderen met Dokter Bernard</li>\n              </ul>\n            </td>\n          </tr>\n          <tr>\n            <th>Bepalingdatum/tijd</th>\n            <td>2023-05-03</td>\n          </tr>\n          <tr>\n            <th>Code</th>\n            <th>Waarde</th>\n          </tr>\n          <tr>\n            <td>\n              <span title=\"polsopmerkingen (2126 - nhg-tabel-45-diagnostische-bepalingen)\">polsopmerkingen</span>\n            </td>\n            <td>linker pols</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+    },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/extension-context-nl-core-episodeofcare",
+            "valueReference": {
+                "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-k78",
+                "display": "Boezemfibrilleren/-fladderen"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "bb6ad96b-041c-11ec-1170-020000000000"
+        }
+    ],
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen",
+                "code": "2126",
+                "display": "polsopmerkingen"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
+        "display": "Jacqueline XXX_Cevat"
+    },
+    "context": {
+        "reference": "Encounter/ont-ver-gpdata-encounter-contact01",
+        "display": "Consult voor Boezemfibrilleren/-fladderen met Dokter Bernard"
+    },
+    "effectiveDateTime": "2023-05-03",
+    "performer": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/ont-ver-gpdata-practitionerrole-kwalificatie1",
+                        "display": "Dokter Bernard"
+                    }
+                }
+            ],
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "valueString": "linker pols"
+}
