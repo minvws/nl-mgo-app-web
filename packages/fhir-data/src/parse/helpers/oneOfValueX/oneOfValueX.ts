@@ -1,6 +1,5 @@
-import { capitalize } from 'lodash';
 import { type Nullable } from '../../../types/Nullable';
-import { isNullish } from '../../../utils';
+import { capitalizeFirstLetter, isNullish } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import {
     type ExtractValueTypes,
@@ -42,7 +41,7 @@ export function oneOfValueX<
 
         if (isNonNullish(parsedValue)) {
             return {
-                [`${valuePrefix}${capitalize(valueKey)}`]: parsedValue,
+                [`${valuePrefix}${capitalizeFirstLetter(valueKey)}`]: parsedValue,
             } as ValueTypeObject<Prefix, Types>;
         }
     }

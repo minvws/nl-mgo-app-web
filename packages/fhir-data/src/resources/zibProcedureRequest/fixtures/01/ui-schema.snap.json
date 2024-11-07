@@ -1,0 +1,38 @@
+{
+    "label": "Biopsy of skin (procedure)",
+    "children": [
+        {
+            "label": "zib_procedure_request",
+            "children": [
+                {
+                    "label": "zib_procedure_request.status.order_status",
+                    "type": "SINGLE_VALUE",
+                    "display": "active"
+                },
+                {
+                    "label": "zib_procedure_request.occurrence_period.start",
+                    "type": "SINGLE_VALUE",
+                    "display": "2012-03-13"
+                },
+                {
+                    "label": "zib_procedure_request.occurrence_period.end",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_procedure_request.code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Biopsy of skin (procedure) (240977001 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_procedure_request.perfomer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Test Medisch Centrum",
+                    "reference": "Organization/nl-core-organization-03"
+                }
+            ]
+        }
+    ]
+}

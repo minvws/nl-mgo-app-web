@@ -9,5 +9,9 @@ export function getProcedureData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure',
             organizationIdFilter
         ),
+        procedureRequests: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest',
+            organizationIdFilter
+        ),
     };
 }

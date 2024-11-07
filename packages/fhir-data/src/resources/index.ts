@@ -44,5 +44,9 @@ export * from './zibProcedure/zibProcedure';
 export * from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 export * from './zibLaboratoryTestResultSpecimen/zibLaboratoryTestResultSpecimen';
 export * from './zibAdvanceDirective/zibAdvanceDirective';
+export * from './zibProcedureRequest/zibProcedureRequest';
+export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest';
+export * from './zibVaccinationRecommendation/zibVaccinationRecommendation';
+export * from './eAfspraakAppointment/eAfspraakAppointment';
 
 export * from './iheMhdMinimalDocumentReference/iheMhdMinimalDocumentReference';

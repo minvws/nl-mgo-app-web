@@ -9,5 +9,9 @@ export function getVaccinationData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination',
             organizationIdFilter
         ),
+        vaccinationRecommendations: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation',
+            organizationIdFilter
+        ),
     };
 }

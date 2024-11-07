@@ -9,6 +9,10 @@ export function getEncounterData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter',
             organizationIdFilter
         ),
+        appointments: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment',
+            organizationIdFilter
+        ),
         encounters: resources.getResourcesByProfile(
             'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter',
             organizationIdFilter

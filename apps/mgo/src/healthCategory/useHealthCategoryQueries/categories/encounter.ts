@@ -20,6 +20,11 @@ export function getEncounterQueries(organization: HealthcareOrganization): UseQu
         }),
         createResourceBundleQuery({
             organization,
+            service: commonClinicalDataset,
+            method: 'getPlannedEncounters',
+        }),
+        createResourceBundleQuery({
+            organization,
             service: generalPracticionerService,
             method: 'getEncounters',
         }),

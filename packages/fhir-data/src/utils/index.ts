@@ -6,3 +6,4 @@ export { safeGet } from './safeGet/safeGet';
 export { safeGetBulk } from './safeGetBulk/safeGetBulk';
 export { isNullish } from './isNullish/isNullish';
 export { map } from './map/map';
+export { capitalizeFirstLetter } from './capitalizeFirstLetter/capitalizeFirstLetter';

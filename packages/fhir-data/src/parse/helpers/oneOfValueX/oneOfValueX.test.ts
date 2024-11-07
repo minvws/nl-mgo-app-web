@@ -29,7 +29,7 @@ test('returns the parsed value for valueCodeableConcept', () => {
     };
     const value = oneOfValueX(element, ['codeableConcept', 'string']);
     expect(value).toEqual({
-        valueCodeableconcept: codeableConcept(element.valueCodeableConcept),
+        valueCodeableConcept: codeableConcept(element.valueCodeableConcept),
     });
 });
 

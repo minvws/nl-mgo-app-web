@@ -1,12 +1,12 @@
-import { capitalize } from 'lodash';
 import { type ParserKey } from '../../../parse/helpers/valueX/valueX';
 import { type Lossless } from '../../../types/Lossless';
 import { type Nullable } from '../../../types/Nullable';
-import { isNullish } from '../../../utils';
+import { capitalizeFirstLetter, isNullish } from '../../../utils';
+import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
+import { codeableConcept } from '../../type/codeableConcept/codeableConcept';
 import { annotation } from '../../type/annotation/annotation';
 import { boolean } from '../../type/boolean/boolean';
 import { code } from '../../type/code/code';
-import { codeableConcept } from '../../type/codeableConcept/codeableConcept';
 import { coding } from '../../type/coding/coding';
 import { date } from '../../type/date/date';
 import { dateTime } from '../../type/dateTime/dateTime';
@@ -26,26 +26,26 @@ import { unsignedInt } from '../../type/unsignedInt/unsignedInt';
 import { type UiEntry, type UiEntryOptions, type UiFunction } from '../../types';
 
 const valueTypeMap = {
-    quantity: quantity,
-    codeableConcept: codeableConcept,
-    string: string,
-    boolean: boolean,
-    range: range,
-    dateTime: dateTime,
-    period: period,
-    annotation: annotation,
-    code: code,
-    coding: coding,
-    date: date,
-    duration: duration,
-    identifier: identifier,
-    ratio: ratio,
-    reference: reference,
-    decimal: decimal,
-    integer: integer,
-    integer64: integer64,
-    unsignedInt: unsignedInt,
-    positiveInt: positiveInt,
+    quantity,
+    codeableConcept,
+    string,
+    boolean,
+    range,
+    dateTime,
+    period,
+    annotation,
+    code,
+    coding,
+    date,
+    duration,
+    identifier,
+    ratio,
+    reference,
+    decimal,
+    integer,
+    integer64,
+    unsignedInt,
+    positiveInt,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } satisfies Record<ParserKey, UiFunction<any, UiEntry | UiEntry[]>>;
 
@@ -60,9 +60,8 @@ export function valueX<T extends object>(
     }
 
     for (const valueType in valueTypeMap) {
-        const key = `${prefix}${capitalize(valueType)}` as keyof Nullable<Lossless<T>>;
-
-        if (key in value) {
+        const key = `${prefix}${capitalizeFirstLetter(valueType)}` as keyof Nullable<Lossless<T>>;
+        if (key in value && isNonNullish(value[key])) {
             const uiValue = valueTypeMap[valueType as ParserKey](label, value[key], options);
             return Array.isArray(uiValue) ? uiValue : [uiValue];
         }

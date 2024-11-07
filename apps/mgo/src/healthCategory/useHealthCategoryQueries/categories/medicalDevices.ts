@@ -13,5 +13,10 @@ export function getMedicalDevicesQueries(organization: HealthcareOrganization): 
             service: commonClinicalDataset,
             method: 'getMedicalAids',
         }),
+        createResourceBundleQuery({
+            organization,
+            service: commonClinicalDataset,
+            method: 'getPlannedMedicalDevices',
+        }),
     ].filter(isNonNullish);
 }

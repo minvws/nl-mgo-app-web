@@ -1,7 +1,6 @@
 import { zibInstructionsForUse } from '../../elements';
 import { type MedicationStatement } from '../../fhir/index';
 import { parse } from '../../parse';
-import { codeableConcept } from '../../parse/type/codeableConcept/codeableConcept';
 import { map } from '../../utils';
 import { type ResourceConfig } from '../config';
 import { uiSchema } from './uiSchema';
@@ -39,7 +38,7 @@ function parseZibMedicationUse(resource: MedicationStatement) {
         informationSource: parse.reference(resource.informationSource),
         subject: parse.reference(resource.subject),
         taken: parse.code(resource.taken),
-        reasonCode: map(resource.reasonCode, codeableConcept),
+        reasonCode: map(resource.reasonCode, parse.codeableConcept),
         note: map(resource.note, parse.annotation),
         dosage: map(resource.dosage, zibInstructionsForUse.parse),
     };

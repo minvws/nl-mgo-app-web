@@ -23,6 +23,7 @@ const nictizIdValueXMap = {
     'zib-AdministrationAgreement-AuthoredOn': 'dateTime',
     'zib-AdministrationAgreement-AgreementReason': 'string',
     'zib-AdvanceDirective-Disorder': 'reference',
+    'zib-VaccinationRecommendation-OrderStatus': 'codeableConcept',
     Comment: 'string',
 } satisfies Record<string, ParserKey>;
 

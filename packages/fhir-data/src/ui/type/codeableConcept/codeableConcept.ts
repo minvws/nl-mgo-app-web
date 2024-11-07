@@ -1,5 +1,5 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { multipleValues } from '../../special';
+import { multipleValues } from '../../special/multipleValues/multipleValues';
 import { type MultipleValues, type UiFunction } from '../../types';
 import { coding } from '../coding/coding';
 

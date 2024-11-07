@@ -1,0 +1,28 @@
+{
+    "id": "zib-vaccinationrecommendation-01",
+    "referenceId": "ImmunizationRecommendation/zib-vaccinationrecommendation-01",
+    "resourceType": "ImmunizationRecommendation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation",
+    "orderStatus": [
+        {
+            "code": "new",
+            "display": "Ordered",
+            "system": "http://hl7.org/fhir/v3/ActStatus"
+        }
+    ],
+    "recommendation": [
+        {
+            "date": "2019",
+            "code": [
+                {
+                    "code": "J06BB11",
+                    "display": "hepatitis A immunoglobulin",
+                    "system": "http://www.whocc.no/atc"
+                }
+            ],
+            "dateCriterion": [
+                "2018"
+            ]
+        }
+    ]
+}

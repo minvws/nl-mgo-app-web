@@ -14,5 +14,10 @@ export function getProcedureQueries(organization: HealthcareOrganization): UseQu
             service: commonClinicalDataset,
             method: 'getSurgicalProcedures',
         }),
+        createResourceBundleQuery({
+            organization,
+            service: commonClinicalDataset,
+            method: 'getPlannedProcedures',
+        }),
     ].filter(isNonNullish);
 }

@@ -1,0 +1,56 @@
+{
+    "resourceType": "DeviceRequest",
+    "id": "zib-medicaldevicerequest-01",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>DeviceRequest. Subject: Johan XXX_Helleman. Id: 1bbb2101-8fdf-11ec-1269-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: actief<span style=\"display: block;\">Intentie: aanvraag</span><span style=\"display: block;\">Aangevraagd door: Vaste Huisarts 1<span style=\"display: block;\">Zorgverlenerrol: Huisartsen, niet nader gespecificeerd</span></span></caption><tbody><tr><th>Code</th><td><span title=\"Procedure device (405815000 - SNOMED CT)\">Procedure device</span></td></tr><tr><th>Wanneer</th><td>Vanaf 13 maart 2012</td></tr><tr><th>Beoogde uitvoerende</th><td><div>UMCG - Afdeling Orthopedie<div>Zorgverlenerrol: Medisch specialisten, orthopedie</div></div></td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bbb2101-8fdf-11ec-1269-020000000000"
+        }
+    ],
+    "status": "active",
+    "intent": { "coding": [{ "system": "http://hl7.org/fhir/request-intent", "code": "order" }] },
+    "codeCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "405815000",
+                "display": "Procedure device"
+            }
+        ]
+    },
+    "subject": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
+    "occurrencePeriod": { "start": "2012-03-13" },
+    "requester": {
+        "agent": {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/nl-core-practitionerrole-02",
+                        "display": "Huisartsen, niet nader gespecificeerd"
+                    }
+                }
+            ],
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    },
+    "performer": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                "valueReference": {
+                    "reference": "PractitionerRole/nl-core-practitionerrole-01",
+                    "display": "Medisch specialisten, orthopedie"
+                }
+            }
+        ],
+        "reference": "Organization/nl-core-organization-02",
+        "display": "UMCG - Afdeling Orthopedie"
+    }
+}

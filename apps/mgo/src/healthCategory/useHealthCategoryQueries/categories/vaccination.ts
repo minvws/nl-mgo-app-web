@@ -20,5 +20,10 @@ export function getVaccinationQueries(organization: HealthcareOrganization): Use
             service: vaccinationsDataset,
             method: 'getVaccinations',
         }),
+        createResourceBundleQuery({
+            organization,
+            service: commonClinicalDataset,
+            method: 'getPlannedImmunizations',
+        }),
     ].filter(isNonNullish);
 }
