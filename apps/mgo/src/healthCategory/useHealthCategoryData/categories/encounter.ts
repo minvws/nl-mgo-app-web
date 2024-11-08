@@ -17,5 +17,9 @@ export function getEncounterData(
             'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter',
             organizationIdFilter
         ),
+        compositions: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport',
+            organizationIdFilter
+        ),
     };
 }

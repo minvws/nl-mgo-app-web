@@ -1,0 +1,53 @@
+{
+    "id": "gp-EncounterReport-gpdata-encounter-contact04",
+    "referenceId": "Composition/gp-EncounterReport-gpdata-encounter-contact04",
+    "resourceType": "Composition",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport",
+    "identifier": {
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+        "value": "1529b7df-8fdf-11ec-1458-020000000000",
+        "type": null
+    },
+    "status": "final",
+    "type": [
+        {
+            "code": "67781-5",
+            "display": "Summarization of encounter note Narrative",
+            "system": "http://loinc.org"
+        }
+    ],
+    "encounter": {
+        "reference": "Encounter/gpdata-encounter-contact04",
+        "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1"
+    },
+    "date": "2020-03-15",
+    "author": [
+        {
+            "reference": "Practitioner/gpdata-practitioner-01",
+            "display": "Dr. V. Huisarts 1"
+        }
+    ],
+    "title": "Contactverslag dd. 2020-03-15",
+    "section": [
+        {
+            "code": [
+                {
+                    "code": "E",
+                    "display": "Evaluatie",
+                    "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+                }
+            ],
+            "entry": [
+                {
+                    "reference": "Observation/gpdata-observation-contact04-e",
+                    "display": "lage rugpijn"
+                },
+                {
+                    "reference": "EpisodeOfCare/gpdata-episodeofcare-icpc-l8601",
+                    "display": "Condition HNP (thoracaal/lumbaal)"
+                }
+            ]
+        }
+    ]
+}

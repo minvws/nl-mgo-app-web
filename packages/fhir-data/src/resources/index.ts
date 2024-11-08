@@ -11,6 +11,7 @@
 export * from './gpLaboratoryResult/gpLaboratoryResult';
 export * from './gpDiagnosticResult/gpDiagnosticResult';
 export * from './gpEncounter/gpEncounter';
+export * from './gpEncounterReport/gpEncounterReport';
 
 export * from './nlCorePatient/nlCorePatient';
 export * from './nlCoreOrganization/nlCoreOrganization';

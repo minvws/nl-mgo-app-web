@@ -28,5 +28,10 @@ export function getEncounterQueries(organization: HealthcareOrganization): UseQu
             service: generalPracticionerService,
             method: 'getEncounters',
         }),
+        createResourceBundleQuery({
+            organization,
+            service: generalPracticionerService,
+            method: 'getCompositions',
+        }),
     ].filter(isNonNullish);
 }

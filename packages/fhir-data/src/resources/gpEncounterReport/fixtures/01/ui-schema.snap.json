@@ -1,0 +1,69 @@
+{
+    "label": "Contactverslag dd. 2020-03-15",
+    "children": [
+        {
+            "label": "EncounterReport",
+            "children": [
+                {
+                    "label": "EncounterReport.title",
+                    "type": "SINGLE_VALUE",
+                    "display": "Contactverslag dd. 2020-03-15"
+                },
+                {
+                    "label": "EncounterReport.status",
+                    "type": "SINGLE_VALUE",
+                    "display": "final"
+                },
+                {
+                    "label": "EncounterReport.type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Summarization of encounter note Narrative (67781-5 in code systeem http://loinc.org)"
+                    ]
+                },
+                {
+                    "label": "EncounterReport.encounter",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1",
+                    "reference": "Encounter/gpdata-encounter-contact04"
+                },
+                {
+                    "label": "EncounterReport.date",
+                    "type": "SINGLE_VALUE",
+                    "display": "2020-03-15"
+                },
+                {
+                    "label": "EncounterReport.author",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dr. V. Huisarts 1"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "EncounterReport.Section",
+            "children": [
+                {
+                    "label": "EncounterReport.Section.code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Evaluatie (E in code systeem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
+                    ]
+                },
+                {
+                    "label": "EncounterReport.Section.entry",
+                    "type": "REFERENCE_VALUE",
+                    "display": "lage rugpijn",
+                    "reference": "Observation/gpdata-observation-contact04-e"
+                },
+                {
+                    "label": "EncounterReport.Section.entry",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Condition HNP (thoracaal/lumbaal)",
+                    "reference": "EpisodeOfCare/gpdata-episodeofcare-icpc-l8601"
+                }
+            ]
+        }
+    ]
+}
