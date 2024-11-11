@@ -1,22 +1,22 @@
 import { faker } from '$test';
 import { test, expect } from 'vitest';
-import { componentSlice } from './componentSlice';
+import { findComponentByCode } from './findComponentByCode';
 import { type ObservationComponent } from 'fhir/r3';
 
-test('componentSlice matched by code and returns the component', () => {
+test('findComponentByCode matched by code and returns the component', () => {
     const code = faker.number.int(100).toString();
     const component = createComponent(code);
     const input = [component, createComponent()];
 
-    const value = componentSlice(input, code);
+    const value = findComponentByCode(input, code);
     expect(value).toBe(component);
 });
 
-test('componentSlice does not match by code and returns the undefined', () => {
+test('findComponentByCode does not match by code and returns the undefined', () => {
     const code = faker.number.int(100).toString();
     const input = [createComponent(), createComponent()];
 
-    const value = componentSlice(input, code);
+    const value = findComponentByCode(input, code);
     expect(value).toBeUndefined();
 });
 

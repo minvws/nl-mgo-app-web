@@ -3,7 +3,7 @@ import { type ResourceConfig } from '../config';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 import { uiSchema } from './uiSchema';
 import { parse } from '../../parse';
-import { componentSlice } from '../../parse/helpers';
+import { findComponentByCode } from '../../parse/helpers';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure';
 
@@ -11,15 +11,15 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure';
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
  */
 function parseZibBloodPressure(resource: Observation) {
-    const cuffTypeLOINC = componentSlice(resource.component, '8358-4');
-    const cuffTypeSNOMED = componentSlice(resource.component, '70665002');
-    const diastolicEndpoint = componentSlice(resource.component, '85549003');
-    const systolicBP = componentSlice(resource.component, '8480-6');
-    const diastolicBP = componentSlice(resource.component, '8462-4');
-    const averageBloodPressureLOINC = componentSlice(resource.component, '8478-0');
-    const averageBloodPressureSNOMED = componentSlice(resource.component, '6797001');
-    const positionSNOMED = componentSlice(resource.component, '424724000');
-    const positionLOINC = componentSlice(resource.component, '8361-8');
+    const cuffTypeLOINC = findComponentByCode(resource.component, '8358-4');
+    const cuffTypeSNOMED = findComponentByCode(resource.component, '70665002');
+    const diastolicEndpoint = findComponentByCode(resource.component, '85549003');
+    const systolicBP = findComponentByCode(resource.component, '8480-6');
+    const diastolicBP = findComponentByCode(resource.component, '8462-4');
+    const averageBloodPressureLOINC = findComponentByCode(resource.component, '8478-0');
+    const averageBloodPressureSNOMED = findComponentByCode(resource.component, '6797001');
+    const positionSNOMED = findComponentByCode(resource.component, '424724000');
+    const positionLOINC = findComponentByCode(resource.component, '8361-8');
 
     return {
         ...parseNlCoreObservationBase(resource, profile),

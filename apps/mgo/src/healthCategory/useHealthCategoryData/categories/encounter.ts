@@ -17,6 +17,10 @@ export function getEncounterData(
             'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter',
             organizationIdFilter
         ),
+        journalEntries: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry',
+            organizationIdFilter
+        ),
         compositions: resources.getResourcesByProfile(
             'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport',
             organizationIdFilter

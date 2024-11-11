@@ -1,7 +1,7 @@
 import { type ObservationComponent } from 'fhir/r3';
 import { type Nullable } from '../../../types/Nullable';
 
-export function componentSlice(
+export function findComponentByCode(
     components: Nullable<ObservationComponent[]>,
     code: string
 ): ObservationComponent | undefined {
