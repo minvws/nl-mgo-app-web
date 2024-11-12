@@ -1,0 +1,47 @@
+{
+    "id": "gp-JournalEntry-01",
+    "referenceId": "Observation/gp-JournalEntry-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15390bbd-8fdf-11ec-8940-020000000000",
+            "type": null
+        }
+    ],
+    "status": "final",
+    "code": [
+        {
+            "code": "S",
+            "display": "Subjectief",
+            "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+        }
+    ],
+    "context": {
+        "reference": "Encounter/gp-encounter-01",
+        "display": "Visite bij Huisartspraktijk 2013-02-06"
+    },
+    "effectiveDateTime": "2013-02-06T03:17:00+00:00",
+    "performer": [
+        {
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "valueString": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS.",
+    "ICPC_S": {
+        "valueCodeableConcept": [
+            {
+                "code": "R02",
+                "display": "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02]",
+                "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+            }
+        ]
+    },
+    "ICPC_E": {
+        "valueCodeableConcept": null
+    }
+}

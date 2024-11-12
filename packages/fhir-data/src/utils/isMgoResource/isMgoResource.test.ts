@@ -9,6 +9,7 @@ test('returns true for MgoResourceMeta', () => {
         referenceId: `${faker.lorem.word()}/${faker.lorem.word()}`,
         resourceType: faker.lorem.word(),
         profile: faker.fhir.nictizNlProfile(),
+        fhirVersion: faker.fhir.fhirVersion(),
     };
 
     expect(isMgoResource(data)).toBe(true);

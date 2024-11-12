@@ -1,4 +1,4 @@
-import type { DomainResource, Element } from '../../../fhir';
+import { type DomainResource, type Element } from '../../../types/FhirRX';
 import { extension } from '../extension/extension';
 import { type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 

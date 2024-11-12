@@ -1,0 +1,64 @@
+{
+    "label": null,
+    "children": [
+        {
+            "label": "nl_core_practitioner.group_details",
+            "children": [
+                {
+                    "label": "nl_core_practitioner.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "16efa4a3-8fdf-11ec-1655-020000000000"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "human_name",
+            "children": [
+                {
+                    "label": "human_name.family",
+                    "type": "SINGLE_VALUE",
+                    "display": "de Wit"
+                },
+                {
+                    "label": "human_name.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "G.Z.M."
+                    ]
+                },
+                {
+                    "label": "human_name.period.start",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.period.end",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.prefix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.suffix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.use",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.text",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

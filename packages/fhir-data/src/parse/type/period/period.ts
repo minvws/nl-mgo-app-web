@@ -1,4 +1,5 @@
-import { type DateTimeString, type Period } from '../../../fhir';
+import { type Period } from '../../../types/FhirRX';
+import { type DateTimeString } from '../../../types/Fhir';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { dateTime } from '../dateTime/dateTime';
 

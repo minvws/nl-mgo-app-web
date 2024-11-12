@@ -1,5 +1,5 @@
 import { collection } from '$test/faker/helpers';
-import { type ConditionEvidence } from '../../../../src/fhir';
+import { type ConditionEvidence } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept, reference } from '../type';
 

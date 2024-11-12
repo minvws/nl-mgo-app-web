@@ -1,0 +1,34 @@
+{
+    "id": "zib-procedurerequest-02",
+    "referenceId": "ProcedureRequest/zib-procedurerequest-02",
+    "resourceType": "ProcedureRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest",
+    "fhirVersion": "R3",
+    "status": "active",
+    "occurrence": {
+        "start": "2012-03-13",
+        "end": null
+    },
+    "code": [
+        {
+            "code": "168537006",
+            "display": "Röntgenfoto",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "intent": "plan",
+    "subject": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "perfomer": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "reason": [
+        {
+            "reference": "Condition/zib-problem-09",
+            "display": "Open fractuur van femur (aandoening)"
+        }
+    ]
+}

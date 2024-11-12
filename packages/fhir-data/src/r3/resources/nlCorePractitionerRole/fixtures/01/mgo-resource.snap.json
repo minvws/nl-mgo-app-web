@@ -1,0 +1,29 @@
+{
+    "id": "nl-core-practitionerrole-01",
+    "referenceId": "PractitionerRole/nl-core-practitionerrole-01",
+    "resourceType": "PractitionerRole",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "17056b5d-8fdf-11ec-1149-020000000000",
+            "type": null
+        }
+    ],
+    "organization": {
+        "reference": "Organization/nl-core-organization-02",
+        "display": "Orthopedie - UMCG"
+    },
+    "specialty": [
+        [
+            {
+                "code": "0305",
+                "display": "Medisch specialisten, Orthopedie",
+                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+            }
+        ]
+    ],
+    "telecom": null
+}

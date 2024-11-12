@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type ContactPoint } from '../../../../src/fhir';
+import { type ContactPoint } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { code, period } from '../type';

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type TimingRepeat } from '../../../../src/fhir';
+import { type TimingRepeat } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { collection, mockOptionalFields } from '../../helpers';
 import { code } from './code';

@@ -1,4 +1,4 @@
-import type { DomainResource, Element } from '../../../fhir';
+import { type DomainResource, type Element } from '../../../types/FhirRX';
 import { valueX, type ReturnTypeParser, type ParserKey } from '../valueX/valueX';
 
 function getExtension<T extends DomainResource | Element>(resource: T | undefined, url: string) {

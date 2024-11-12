@@ -1,0 +1,87 @@
+{
+    "id": "zib-MedicationAgreement-01",
+    "referenceId": "MedicationRequest/zib-MedicationAgreement-01",
+    "resourceType": "MedicationRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement",
+    "fhirVersion": "R3",
+    "periodOfUse": {
+        "start": "2020-06-08",
+        "end": null
+    },
+    "usageDuration": null,
+    "medicationTreatment": {
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    },
+    "stopType": null,
+    "repeatPeriodCyclicalSchedule": null,
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.16076005.1",
+            "value": "#MB_01h#MA_01",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bed45b9-8fdf-11ec-1339-020000000000",
+            "type": null
+        }
+    ],
+    "definition": null,
+    "basedOn": null,
+    "groupIdentifier": null,
+    "status": null,
+    "intent": "order",
+    "category": [
+        {
+            "code": "16076005",
+            "display": "Prescription (procedure)",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "priority": null,
+    "medicationReference": {
+        "reference": "Medication/zib-Product-03",
+        "display": "Metoclopramide zetpil 20mg"
+    },
+    "note": null,
+    "dossageInstruction": [
+        {
+            "additionalInstruction": null,
+            "asNeeded": [
+                {
+                    "code": "1137",
+                    "display": "zo nodig",
+                    "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                }
+            ],
+            "doseQuantity": {
+                "value": 1,
+                "comparator": null,
+                "unit": "stuk",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+                "code": "245"
+            },
+            "doseRange": null,
+            "maxDosePerPeriod": null,
+            "rateRatio": null,
+            "rateRange": null,
+            "rateQuantity": null,
+            "timing": {
+                "duration": null,
+                "durationUnit": null,
+                "frequency": 1,
+                "frequencyMax": null,
+                "period": 1,
+                "periodUnit": "d",
+                "dayOfWeek": null,
+                "timeOfDay": null,
+                "when": null
+            }
+        }
+    ]
+}

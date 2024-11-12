@@ -1,4 +1,4 @@
-import { type Ratio } from '../../../../src/fhir';
+import { type Ratio } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { quantity } from './quantity';

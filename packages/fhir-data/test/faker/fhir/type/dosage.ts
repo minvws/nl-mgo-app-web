@@ -1,6 +1,6 @@
 import { collection, mockOptionalFields } from '$test/faker/helpers';
 import { faker } from '@faker-js/faker';
-import { type Dosage } from '../../../../src/fhir';
+import { type Dosage } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept } from './codeableConcept';
 import { range } from './range';

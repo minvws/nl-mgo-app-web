@@ -1,0 +1,64 @@
+{
+    "id": "zib-procedure-01",
+    "referenceId": "Procedure/zib-procedure-01",
+    "resourceType": "Procedure",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure",
+    "fhirVersion": "R3",
+    "performedPeriod": {
+        "start": "2012-06-05",
+        "end": null
+    },
+    "bodySite": [
+        [
+            {
+                "code": "72696002",
+                "display": "Knee region structure (body structure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    ],
+    "bodySiteQualifier": [
+        [
+            {
+                "code": "7771000",
+                "display": "Left",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    ],
+    "reasonReference": [
+        {
+            "reference": "Condition/zib-problem-02",
+            "display": "Arthropathy (disorder)"
+        }
+    ],
+    "code": [
+        {
+            "code": "60159002",
+            "display": "Implantation of Swanson prosthesis of knee (procedure)",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "procedureMethod": null,
+    "focalDevice": [
+        {
+            "manipulated": {
+                "reference": "Device/zib-medicaldeviceproduct-01",
+                "display": "Knee joint prosthesis, device (physical object)"
+            }
+        }
+    ],
+    "location": null,
+    "performer": [
+        {
+            "actor": {
+                "reference": "Organization/nl-core-organization-02",
+                "display": "UMCG - Afdeling Orthopedie"
+            }
+        }
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    }
+}

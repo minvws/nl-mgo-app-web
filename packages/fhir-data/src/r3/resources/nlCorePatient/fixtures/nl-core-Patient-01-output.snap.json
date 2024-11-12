@@ -1,0 +1,154 @@
+{
+    "id": "nl-core-patient-01",
+    "referenceId": "Patient/nl-core-patient-01",
+    "resourceType": "Patient",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-patient",
+    "fhirVersion": "R3",
+    "active": true,
+    "address": [
+        {
+            "use": "home",
+            "type": null,
+            "text": null,
+            "line": [
+                "Knolweg 1000"
+            ],
+            "city": "Stitswerd",
+            "district": null,
+            "state": null,
+            "postalCode": "9999XA",
+            "country": "NLD",
+            "period": null
+        }
+    ],
+    "birthDate": "1964-07-25",
+    "communication": null,
+    "contact": [
+        {
+            "relationship": [
+                [
+                    {
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+                    }
+                ],
+                [
+                    {
+                        "code": "WIFE",
+                        "display": "Wife",
+                        "system": "http://hl7.org/fhir/v3/RoleCode"
+                    }
+                ]
+            ],
+            "name": {
+                "family": "van Putten XXX_Helleman",
+                "given": [
+                    "Jannie"
+                ],
+                "period": null,
+                "prefix": null,
+                "suffix": null,
+                "text": "Jannie van Putten XXX_Helleman",
+                "use": null
+            },
+            "telecom": [
+                {
+                    "system": "phone",
+                    "value": "+31611234567",
+                    "use": "work",
+                    "rank": null,
+                    "period": null
+                },
+                {
+                    "system": "email",
+                    "value": "info@nictiz.nl",
+                    "use": "work",
+                    "rank": null,
+                    "period": null
+                }
+            ],
+            "address": {
+                "use": "home",
+                "type": "physical",
+                "text": null,
+                "line": [
+                    "Knolweg 1000"
+                ],
+                "city": "Stitswerd",
+                "district": null,
+                "state": null,
+                "postalCode": "9999XA",
+                "country": "Nederland",
+                "period": null
+            },
+            "gender": null,
+            "organization": null,
+            "period": null
+        }
+    ],
+    "deceased": false,
+    "deceasedDateTime": null,
+    "gender": "male",
+    "generalPractitioner": [
+        {
+            "reference": "Organization/nl-core-organization-01",
+            "display": "Maatschap Vaste Huisarts"
+        }
+    ],
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "999911120",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1683aefb-8fdf-11ec-1800-020000000000",
+            "type": null
+        }
+    ],
+    "link": null,
+    "managingOrganization": null,
+    "maritalStatus": [
+        {
+            "code": "M",
+            "display": "Married",
+            "system": "http://hl7.org/fhir/v3/MaritalStatus"
+        }
+    ],
+    "multipleBirth": false,
+    "multipleBirthInteger": null,
+    "name": [
+        {
+            "family": "XXX_Helleman",
+            "given": [
+                "Johan"
+            ],
+            "period": null,
+            "prefix": null,
+            "suffix": null,
+            "text": "Johan XXX_Helleman",
+            "use": null
+        }
+    ],
+    "photo": null,
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "06-12345645",
+            "use": "home",
+            "rank": null,
+            "period": null
+        },
+        {
+            "system": "email",
+            "value": "XXX_Helleman@hotmail.com",
+            "use": "home",
+            "rank": null,
+            "period": null
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type Identifier } from '../../../../src/fhir';
+import { type Identifier } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import * as special from './reference';

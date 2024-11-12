@@ -1,4 +1,4 @@
-import { type MedicationPackageContent } from '../../../../src/fhir';
+import { type MedicationPackageContent } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { codeableConcept, quantity, reference } from '../type';

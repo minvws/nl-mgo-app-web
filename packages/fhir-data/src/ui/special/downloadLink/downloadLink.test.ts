@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { attachment } from '../../../elements';
+import { attachment } from '../../../r3/elements';
 import { downloadLink } from './downloadLink';
 
 test('downloadLink', () => {

@@ -1,4 +1,4 @@
-import { type MgoAttachment } from '../../../elements';
+import { type MgoAttachment } from '../../../r3/elements';
 import { type Lossless } from '../../../types/Lossless';
 import { type DownloadLink, type UiEntryOptions } from '../../types';
 

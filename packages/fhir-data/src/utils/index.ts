@@ -1,5 +1,4 @@
 export { deepReplaceUndefined } from './deepReplaceUndefined/deepReplaceUndefined';
-export { getReference } from './getReference/getReference';
 export { isFhirResource } from './isResource/isResource';
 export { findByUse } from './findByUse/findByUse';
 export { safeGet } from './safeGet/safeGet';

@@ -1,4 +1,4 @@
-import { type ConsentData } from '../../../../src/fhir';
+import { type ConsentData } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { code, reference } from '../type';
 

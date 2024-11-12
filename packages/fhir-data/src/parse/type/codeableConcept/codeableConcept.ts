@@ -1,4 +1,4 @@
-import { type CodeableConcept } from '../../../fhir';
+import { type CodeableConcept } from '../../../types/FhirRX';
 import { map } from '../../../utils';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { coding, type MgoCoding } from '../coding/coding';

@@ -1,15 +1,13 @@
-import { type FhirResource, type ResourceByType, type ResourceType } from '../../fhir';
-import { type Lossless, type LosslessOutput } from '../../types/Lossless';
+import { type FhirResource, type ResourceByType, type ResourceType } from '../../types/FhirRX';
 import { type Nullable } from '../../types/Nullable';
-import { resourceTypes } from './resourceTypes';
 
 export function isFhirResource<Type extends ResourceType>(
     value: unknown,
     type?: Type
-): value is LosslessOutput<typeof value, ResourceByType<Type>> {
-    const resource = value as Nullable<Lossless<FhirResource>>;
+): value is ResourceByType<Type> {
+    const resource = value as Nullable<FhirResource>;
     if (!type) {
-        return resourceTypes.includes(resource?.resourceType as ResourceType);
+        return typeof resource?.resourceType === 'string' && !!resource?.resourceType.length;
     }
     return resource?.resourceType === type;
 }

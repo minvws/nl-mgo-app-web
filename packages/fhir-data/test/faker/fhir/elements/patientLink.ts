@@ -1,4 +1,4 @@
-import { type PatientLink } from '../../../../src/fhir';
+import { type PatientLink } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { code, reference } from '../type';
 

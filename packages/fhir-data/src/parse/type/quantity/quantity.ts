@@ -1,4 +1,4 @@
-import { type Quantity } from '../../../fhir';
+import { type Quantity } from '../../../types/FhirRX';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 
 export interface MgoQuantity {

@@ -1,0 +1,81 @@
+{
+    "id": "nl-core-practitioner-01",
+    "referenceId": "Practitioner/nl-core-practitioner-01",
+    "resourceType": "Practitioner",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
+            "value": "129854656",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
+            "value": "01069857",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/big",
+            "value": "12345678912",
+            "type": null
+        },
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16d6f97b-8fdf-11ec-2007-020000000000",
+            "type": null
+        }
+    ],
+    "name": [
+        {
+            "family": "de Vries",
+            "given": [
+                "Henk"
+            ],
+            "period": null,
+            "prefix": null,
+            "suffix": null,
+            "text": null,
+            "use": null
+        }
+    ],
+    "address": [
+        {
+            "use": "home",
+            "type": null,
+            "text": null,
+            "line": [
+                "Straatweg 12bII"
+            ],
+            "city": "Weesp",
+            "district": "Amsterdam",
+            "state": null,
+            "postalCode": "1012AB",
+            "country": "NLD",
+            "period": {
+                "start": "2015-04",
+                "end": null
+            }
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "0612345990",
+            "use": "work",
+            "rank": null,
+            "period": null
+        },
+        {
+            "system": "email",
+            "value": "devries@work.com",
+            "use": "work",
+            "rank": null,
+            "period": null
+        }
+    ]
+}

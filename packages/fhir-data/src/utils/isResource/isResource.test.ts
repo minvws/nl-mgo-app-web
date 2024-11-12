@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
-import { type FhirResource, type ResourceType } from '../../fhir';
 import { isFhirResource } from './isResource';
 import { type Lossless } from '../../types/Lossless';
+import { type FhirResource, type ResourceType } from '../../types/FhirRX';
 
 test.each<[Lossless<FhirResource>, ResourceType, boolean]>([
     [{ resourceType: 'Bundle', type: 'searchset' }, 'Bundle', true],
@@ -14,11 +14,11 @@ test.each<[Lossless<FhirResource>, ResourceType, boolean]>([
 test.each<[unknown, boolean]>([
     [{ resourceType: 'Bundle', type: 'searchset' }, true],
     [{ resourceType: 'Patient' }, true],
-    [{ resourceType: 'NonExistingType' }, false],
+    [{ resourceType: 'FooBar' }, true],
     [{}, false],
     ['', false],
 ])(
-    'isResource correctly returns whether resource %j is a valid FhirResource ',
+    'isResource correctly returns whether resource %j is probably a FhirResource ',
     (resource, expected) => {
         expect(isFhirResource(resource as Lossless<FhirResource>)).toEqual(expected);
     }

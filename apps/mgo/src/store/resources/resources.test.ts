@@ -1,5 +1,5 @@
 import { faker } from '$test/faker';
-import { type MgoResource } from '@minvws/mgo-fhir-data';
+import { type MgoResourceR3 } from '@minvws/mgo-fhir-data';
 import { uniqueId } from 'lodash';
 import { expect, test, vi } from 'vitest';
 import { useResourcesStore } from './resources';
@@ -13,7 +13,7 @@ function mockResourceDto() {
         mgoResource: {
             profile: uniqueId(faker.lorem.word()),
             referenceId: faker.lorem.word(),
-        } as MgoResource,
+        } as MgoResourceR3,
     };
 }
 

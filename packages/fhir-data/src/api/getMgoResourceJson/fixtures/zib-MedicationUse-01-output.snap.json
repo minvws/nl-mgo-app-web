@@ -3,6 +3,7 @@
   "referenceId": "MedicationStatement/zib-medicationuse-01",
   "resourceType": "MedicationStatement",
   "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
+  "fhirVersion": "R3",
   "asAgreedIndicator": true,
   "author": {
     "reference": "PractitionerRole/nl-core-practitionerrole-02",

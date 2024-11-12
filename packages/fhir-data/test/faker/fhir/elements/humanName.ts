@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type HumanName } from '../../../../src/fhir';
+import { type HumanName } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { collection, mockOptionalFields } from '../../helpers';
 import { code, period } from '../type';

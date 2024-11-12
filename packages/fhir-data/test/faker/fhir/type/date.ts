@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type DateString } from '../../../../src/fhir';
+import { type DateString } from '../../../../src/types/Fhir';
 
 export const date = (date?: Date) => {
     const dateString = (date ?? faker.date.anytime()).toISOString();

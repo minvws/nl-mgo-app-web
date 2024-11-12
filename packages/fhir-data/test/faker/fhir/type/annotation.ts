@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type Annotation } from '../../../../src/fhir';
+import { type Annotation } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { dateTime } from './dateTime';

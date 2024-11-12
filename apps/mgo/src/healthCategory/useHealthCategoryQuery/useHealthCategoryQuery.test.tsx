@@ -2,7 +2,7 @@ import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { flushCallStack } from '$test/helpers';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { getBundleMgoResources, type Lossless, type MgoResource } from '@minvws/mgo-fhir-data';
+import { getMgoResource, type MgoResourceR3, type ResourceByTypeR3 } from '@minvws/mgo-fhir-data';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
 import { type ReactNode } from 'react';
@@ -18,7 +18,7 @@ vi.mock('@minvws/mgo-fhir-data', async (importActual) => {
 
     return {
         ...actual,
-        getBundleMgoResources: vi.fn(() => []),
+        getMgoResource: vi.fn(() => undefined),
         getUiSchema: vi.fn(() => {}),
     };
 });
@@ -30,9 +30,7 @@ vi.mock('../useHealthCategoryQueries/useHealthCategoryQueries', () => {
 const mockUseHealthCategoryQueries = useHealthCategoryQueries as MockedFunction<
     typeof useHealthCategoryQueries
 >;
-const mockGetBundleMgoResources = getBundleMgoResources as MockedFunction<
-    typeof getBundleMgoResources
->;
+const mockGetMgoResource = getMgoResource as MockedFunction<typeof getMgoResource>;
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -55,7 +53,7 @@ test('returns query state and related store data for medication ', async () => {
     const mgoResource = {
         profile: 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
         referenceId: faker.lorem.word(),
-    } as Lossless<MgoResource>;
+    } as MgoResourceR3;
 
     mockUseHealthCategoryQueries.mockImplementation(() => [
         {
@@ -64,11 +62,19 @@ test('returns query state and related store data for medication ', async () => {
             queryFn: () =>
                 Promise.resolve({
                     resourceType: 'Bundle',
-                }),
+                    entry: [
+                        {
+                            resource: {
+                                resourceType: 'Patient',
+                            },
+                        },
+                    ],
+                    type: 'batch',
+                } satisfies ResourceByTypeR3<'Bundle'>),
         },
     ]);
 
-    mockGetBundleMgoResources.mockImplementation(() => [mgoResource]);
+    mockGetMgoResource.mockImplementation(() => mgoResource);
 
     const store = useResourcesStore.getState();
     expect(store.resources.length).toBe(0);

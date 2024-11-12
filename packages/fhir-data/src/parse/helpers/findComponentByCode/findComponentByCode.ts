@@ -1,4 +1,4 @@
-import { type ObservationComponent } from 'fhir/r3';
+import { type ObservationComponent } from '../../../types/FhirRX';
 import { type Nullable } from '../../../types/Nullable';
 
 export function findComponentByCode(

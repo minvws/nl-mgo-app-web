@@ -1,4 +1,4 @@
-import { type Period } from '../../../../src/fhir';
+import { type Period } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { dateTime } from './dateTime';

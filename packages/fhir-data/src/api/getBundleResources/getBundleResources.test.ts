@@ -19,5 +19,5 @@ test('returns undefined if there are no resources', () => {
     });
 
     const results = getBundleResources(bundle);
-    expect(results).toBeUndefined();
+    expect(results).toEqual([]);
 });

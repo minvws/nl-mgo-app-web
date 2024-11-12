@@ -1,9 +1,13 @@
-import { type FhirResource, type Bundle } from '../../fhir';
-import { type Lossless } from '../../types/Lossless';
+import { type Bundle as BundleR3 } from 'fhir/r3';
+import { type Bundle as BundleR4 } from 'fhir/r4';
 import { isNonNullish } from '../../utils/isNonNullish/isNonNullish';
 
-export function getBundleResources(bundle: Lossless<Bundle>) {
+type BundleResource<T extends BundleR3 | BundleR4> = NonNullable<
+    NonNullable<T['entry']>[number]['resource']
+>;
+
+export function getBundleResources<T extends BundleR3 | BundleR4>(bundle: T): BundleResource<T>[] {
     const resources = bundle.entry?.map((entry) => entry.resource).filter(isNonNullish);
-    if (!resources?.length) return;
-    return resources as Lossless<FhirResource>[];
+    if (!resources?.length) return [];
+    return resources;
 }

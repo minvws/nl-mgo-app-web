@@ -1,4 +1,4 @@
-import { type ObservationRelated } from '../../../../src/fhir';
+import { type ObservationRelated } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { reference } from '../type';
 

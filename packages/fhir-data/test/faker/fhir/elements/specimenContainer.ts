@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type SpecimenContainer } from '../../../../src/fhir';
+import { type SpecimenContainer } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept, identifier, quantity, reference } from '../type';
 import { collection } from '$test/faker/helpers';

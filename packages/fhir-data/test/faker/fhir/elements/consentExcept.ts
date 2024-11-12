@@ -1,5 +1,5 @@
 import { collection } from '$test/faker/helpers';
-import { type ConsentExcept } from '../../../../src/fhir';
+import { type ConsentExcept } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { code, codeableConcept, coding, period } from '../type';
 import { consentActor } from './consentActor';

@@ -3,16 +3,16 @@ import { type DataServiceId } from '@minvws/mgo-fhir-client';
 import {
     getUiSchema,
     type Lossless,
-    type MgoResource,
+    type MgoResourceR3,
     type NictizNlProfile,
     type UiSchema,
 } from '@minvws/mgo-fhir-data';
 import { create } from 'zustand';
 
-type MgoResourceProfile = MgoResource['profile'];
-type MgoResourceByProfile<T extends NictizNlProfile> = Extract<MgoResource, { profile: T }>;
+type MgoResourceR3Profile = MgoResourceR3['profile'];
+type MgoResourceR3ByProfile<T extends NictizNlProfile> = Extract<MgoResourceR3, { profile: T }>;
 
-export type Resource<T extends MgoResource = MgoResource> = {
+export type Resource<T extends MgoResourceR3 = MgoResourceR3> = {
     id: string;
     slug: string;
     organizationId: string;
@@ -28,16 +28,16 @@ export type ResourceDTO = Pick<Resource, 'organizationId' | 'dataServiceId' | 'm
 export interface ResourcesState {
     resources: Resource[];
     addResources: (resourceData: ResourceDTO[]) => Resource[];
-    getResourcesByProfile: <T extends MgoResourceProfile>(
+    getResourcesByProfile: <T extends MgoResourceR3Profile>(
         profile: T,
         organizationIdFilter?: (string | undefined)[]
-    ) => Resource<MgoResourceByProfile<T>>[];
+    ) => Resource<MgoResourceR3ByProfile<T>>[];
     getResourceBySlug: (slug: string | undefined) => Resource | undefined;
 }
 
 function createResource(dto: ResourceDTO, existingSlugs: string[]): Resource {
     const { organizationId, dataServiceId, mgoResource } = dto;
-    const uiSchema = getUiSchema(mgoResource as Lossless<MgoResource>);
+    const uiSchema = getUiSchema(mgoResource as MgoResourceR3);
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {
@@ -86,7 +86,7 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
                     !organizationIdFilter || organizationIdFilter.includes(organizationId)
             )
             .filter(({ mgoResource }) => mgoResource.profile === profile) as Resource<
-            MgoResourceByProfile<typeof profile>
+            MgoResourceR3ByProfile<typeof profile>
         >[];
     },
 

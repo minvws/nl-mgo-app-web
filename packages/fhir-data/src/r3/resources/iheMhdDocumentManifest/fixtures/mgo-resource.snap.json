@@ -1,0 +1,44 @@
+{
+    "id": "pdfa-documentmanifest-01",
+    "referenceId": "DocumentManifest/pdfa-documentmanifest-01",
+    "resourceType": "DocumentManifest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManifest",
+    "fhirVersion": "R3",
+    "description": null,
+    "created": "2020-03-10",
+    "subject": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "status": "superseded",
+    "type": [
+        {
+            "code": "18842-5",
+            "display": "Discharge summary",
+            "system": "http://loinc.org"
+        }
+    ],
+    "author": [
+        {
+            "reference": "#p1",
+            "display": "B. Kneder"
+        }
+    ],
+    "recipient": null,
+    "content": [
+        {
+            "attachment": null,
+            "reference": {
+                "reference": "DocumentReference/pdfa-documentreference-01",
+                "display": null
+            }
+        },
+        {
+            "attachment": null,
+            "reference": {
+                "reference": "DocumentReference/pdfa-documentreference-02",
+                "display": null
+            }
+        }
+    ]
+}

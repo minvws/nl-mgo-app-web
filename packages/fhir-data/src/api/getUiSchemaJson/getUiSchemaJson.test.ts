@@ -1,8 +1,8 @@
 import { expect, test } from 'vitest';
-import { type MedicationStatement } from '../../fhir';
-import { zibMedicationUse } from '../../resources';
+import { zibMedicationUse } from '../../r3/resources';
 import { getUiSchemaJson } from './getUiSchemaJson';
 import medicationUse from './fixtures/zib-MedicationUse-01.json';
+import { type MedicationStatement } from 'fhir/r3';
 
 test('getUiSchemaJson returns the expected output', async () => {
     const zibMedicationUseData = zibMedicationUse.parse(medicationUse as MedicationStatement);

@@ -1,4 +1,4 @@
-import { type ImmunizationPractitioner } from '../../../../src/fhir';
+import { type ImmunizationPractitioner } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { reference } from '../type';
 

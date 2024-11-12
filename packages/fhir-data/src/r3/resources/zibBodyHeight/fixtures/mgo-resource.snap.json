@@ -1,0 +1,43 @@
+{
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "192a097f-8fdf-11ec-1258-020000000000",
+            "type": null
+        }
+    ],
+    "status": "final",
+    "category": [
+        [
+            {
+                "code": "vital-signs",
+                "display": "Vital Signs",
+                "system": "http://hl7.org/fhir/observation-category"
+            }
+        ]
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "context": null,
+    "valueQuantity": {
+        "value": 183,
+        "comparator": null,
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+    },
+    "effectivePeriod": null,
+    "dataAbsentReason": null,
+    "method": null,
+    "bodySite": null,
+    "effectiveDateTime": "2013-02-08",
+    "comment": "met schoenen aan",
+    "id": "zib-bodyheight-01",
+    "referenceId": "Observation/zib-bodyheight-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight",
+    "fhirVersion": "R3"
+}

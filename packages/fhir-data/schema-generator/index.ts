@@ -1,13 +1,13 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { dirname, resolve } from 'path';
 import {
-    type ChainNodeParser,
-    type CompletedConfig,
     DEFAULT_CONFIG,
     SchemaGenerator,
     createFormatter,
     createParser,
     createProgram,
+    type ChainNodeParser,
+    type CompletedConfig,
 } from 'ts-json-schema-generator';
 import { URL, fileURLToPath } from 'url';
 import { GenericTypeAliasParser } from './GenericTypeAliasParser';

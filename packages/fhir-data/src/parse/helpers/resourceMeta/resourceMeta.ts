@@ -1,7 +1,25 @@
-import { type NictizNlProfile, type Resource } from '../../../fhir';
+import { type Resource } from '../../../types/FhirRX';
+import { type FhirVersion, type NictizNlProfile } from '../../../types/Fhir';
 import { string } from '../../type/string/string';
 
-export function resourceMeta<T extends NictizNlProfile>(resource: Resource, profile: T) {
+export type MgoResourceMeta<
+    T extends NictizNlProfile = NictizNlProfile,
+    V extends FhirVersion = FhirVersion,
+> = {
+    id: string | undefined;
+    referenceId: `${string | undefined}/${string | undefined}`;
+    resourceType: string | undefined;
+    profile: T;
+    // We use `${V}` to get the string value of the enum.
+    // We do this because the enum reference itself does not translate well into the JSON schema types.
+    fhirVersion: `${V}`;
+};
+
+export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
+    resource: Resource,
+    profile: T,
+    fhirVersion: V
+) {
     const { resourceType: fhirResourceType, id, meta } = resource;
 
     if (!meta?.profile?.includes(profile)) {
@@ -18,7 +36,6 @@ export function resourceMeta<T extends NictizNlProfile>(resource: Resource, prof
         referenceId: `${resourceType}/${resourceId}`,
         resourceType,
         profile,
-    } as const;
+        fhirVersion: `${fhirVersion}`,
+    } as const satisfies MgoResourceMeta<T, V>;
 }
-
-export type MgoResourceMeta = ReturnType<typeof resourceMeta>;

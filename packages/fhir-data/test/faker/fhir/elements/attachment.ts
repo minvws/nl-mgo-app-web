@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type Attachment } from '../../../../src/fhir';
+import { type Attachment } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { code, dateTime } from '../type';

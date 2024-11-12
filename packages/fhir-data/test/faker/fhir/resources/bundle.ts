@@ -1,4 +1,4 @@
-import { type Bundle } from '../../../../src/fhir';
+import { type Bundle } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { code } from '../type';

@@ -1,9 +1,11 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
 import { getUiSchema } from './getUiSchema';
-import { zibMedicationUse } from '../../resources/zibMedicationUse/zibMedicationUse';
+import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
+import { nlCorePatientR4 } from '../../r4/resources/nlCorePatient/nlCorePatient';
+import { type Patient } from 'fhir/r4';
 
-test('returns the expected output', () => {
+test('returns the expected output for a R3 resource', () => {
     const mgoResource = zibMedicationUse.parse(
         faker.fhir.medicationStatement({
             meta: {
@@ -12,6 +14,17 @@ test('returns the expected output', () => {
         })
     );
     const expectedResult = zibMedicationUse.uiSchema(mgoResource);
+    const result = getUiSchema(mgoResource);
+    expect(result).toEqual(expectedResult);
+});
+
+test('returns the expected output for a R4 resource', () => {
+    const mgoResource = nlCorePatientR4.parse({
+        meta: {
+            profile: [nlCorePatientR4.profile],
+        },
+    } as Patient);
+    const expectedResult = nlCorePatientR4.uiSchema(mgoResource);
     const result = getUiSchema(mgoResource);
     expect(result).toEqual(expectedResult);
 });

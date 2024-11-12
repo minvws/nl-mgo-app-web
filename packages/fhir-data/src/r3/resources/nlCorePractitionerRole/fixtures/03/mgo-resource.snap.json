@@ -1,0 +1,29 @@
+{
+    "id": "nl-core-practitionerrole-03",
+    "referenceId": "PractitionerRole/nl-core-practitionerrole-03",
+    "resourceType": "PractitionerRole",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "171b988d-8fdf-11ec-1629-020000000000",
+            "type": null
+        }
+    ],
+    "organization": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "specialty": [
+        [
+            {
+                "code": "0310",
+                "display": "Medisch specialisten, dermatologie",
+                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+            }
+        ]
+    ],
+    "telecom": null
+}

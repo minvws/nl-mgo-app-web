@@ -1,4 +1,4 @@
-import { type Ratio } from '../../../fhir';
+import { type Ratio } from '../../../types/FhirRX';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { quantity, type MgoQuantity } from '../quantity/quantity';
 

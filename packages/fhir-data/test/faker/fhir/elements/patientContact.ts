@@ -1,5 +1,5 @@
 import { collection } from '$test/faker/helpers';
-import { type PatientContact } from '../../../../src/fhir';
+import { type PatientContact } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept, period, reference } from '../type';
 import { address } from './address';

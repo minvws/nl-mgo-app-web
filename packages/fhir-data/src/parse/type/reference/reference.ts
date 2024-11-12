@@ -1,4 +1,4 @@
-import { type Reference } from '../../../fhir';
+import { type Reference } from '../../../types/FhirRX';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 
 export interface MgoReference {

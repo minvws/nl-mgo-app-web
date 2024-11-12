@@ -1,0 +1,43 @@
+{
+    "id": "zib-encounter-03",
+    "referenceId": "Encounter/zib-encounter-03",
+    "resourceType": "Encounter",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter",
+    "fhirVersion": "R3",
+    "class": {
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "system": "http://hl7.org/fhir/v3/ActCode"
+    },
+    "participant": [
+        {
+            "individual": {
+                "reference": "Practitioner/nl-core-practitioner-03",
+                "display": "G.Z.M. de Wit"
+            }
+        }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "period": {
+        "start": "2012-08-16",
+        "end": "2012-08-19"
+    },
+    "diagnosis": [
+        {
+            "condition": {
+                "reference": "Procedure/zib-procedure-02",
+                "display": "Surgical reduction of fracture (procedure)"
+            },
+            "role": null,
+            "rank": null
+        }
+    ],
+    "reason": null,
+    "hospitalization": {
+        "admitSource": null,
+        "dischargeDisposition": null
+    }
+}

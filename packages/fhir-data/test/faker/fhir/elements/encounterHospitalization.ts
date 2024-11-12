@@ -1,4 +1,4 @@
-import { type EncounterHospitalization } from '../../../../src/fhir';
+import { type EncounterHospitalization } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept } from '../type';
 

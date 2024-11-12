@@ -1,4 +1,4 @@
-import { type Range } from '../../../fhir';
+import { type Range } from '../../../types/FhirRX';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type MgoQuantity, quantity } from '../quantity/quantity';
 

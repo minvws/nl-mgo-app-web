@@ -5,6 +5,7 @@ import * as resources from './fhir/resources';
 import * as helpers from './helpers';
 import * as uiSchema from './uiSchema';
 import * as nictizNlProfile from './fhir/nictizNlProfile';
+import * as fhirVersion from './fhir/fhirVersion';
 import { nullish } from './nullish';
 
 const fhir = {
@@ -12,6 +13,7 @@ const fhir = {
     ...elements,
     ...resources,
     ...nictizNlProfile,
+    ...fhirVersion,
 };
 
 const custom = {

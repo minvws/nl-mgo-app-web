@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type PatientCommunication } from '../../../../src/fhir';
+import { type PatientCommunication } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept, coding } from '../type';
 import { collection } from '$test/faker/helpers';

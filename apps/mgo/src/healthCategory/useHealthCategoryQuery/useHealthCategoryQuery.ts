@@ -1,5 +1,12 @@
 import { useResourcesStore } from '$/store';
-import { getBundleMgoResources, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
+import {
+    FhirVersion,
+    type ResourceByTypeR3,
+    getMgoResource,
+    isFhirResource,
+    type FhirResource,
+} from '@minvws/mgo-fhir-data';
+import { getBundleResources } from '@minvws/mgo-fhir-data/api/getBundleResources/getBundleResources.js';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
 import { useQueries } from '@tanstack/react-query';
 import { useEffect } from 'react';
@@ -14,6 +21,7 @@ import {
 } from '../useHealthCategoryQueries/isResourceQueryMeta';
 import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
 import { isEmpty } from './isEmpty';
+import { isNonNullish } from '$/utils';
 
 export type QueryResult<T extends HealthCategory> = {
     id: string;
@@ -77,7 +85,10 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
             }
             /* c8 ignore end */
 
-            const mgoResources = getBundleMgoResources(responseData);
+            const fhirResources = getBundleResources(responseData as ResourceByTypeR3<'Bundle'>);
+            const mgoResources = fhirResources
+                .map((x) => getMgoResource(x, FhirVersion.R3))
+                .filter(isNonNullish);
 
             if (mgoResources?.length) {
                 addResources(

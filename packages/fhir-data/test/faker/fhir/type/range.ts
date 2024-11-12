@@ -1,4 +1,4 @@
-import { type Range } from '../../../../src/fhir';
+import { type Range } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { mockOptionalFields } from '../../helpers';
 import { quantity } from './quantity';

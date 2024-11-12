@@ -1,0 +1,166 @@
+{
+    "label": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+    "children": [
+        {
+            "label": "nl_core_patient.group_details",
+            "children": [
+                {
+                    "label": "nl_core_patient.active",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.birth_date",
+                    "type": "SINGLE_VALUE",
+                    "display": "1934-04-28"
+                },
+                {
+                    "label": "nl_core_patient.deceased",
+                    "type": "SINGLE_VALUE",
+                    "display": "false"
+                },
+                {
+                    "label": "nl_core_patient.deceased_date_time",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.gender",
+                    "type": "SINGLE_VALUE",
+                    "display": "female"
+                },
+                {
+                    "label": "nl_core_patient.general_practitioner",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_patient.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "111222333"
+                    ]
+                },
+                {
+                    "label": "nl_core_patient.managing_organization",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "nl_core_patient.marital_status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Divorced (D in code systeem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)"
+                    ]
+                },
+                {
+                    "label": "nl_core_patient.multiple_birth",
+                    "type": "SINGLE_VALUE",
+                    "display": "true"
+                },
+                {
+                    "label": "nl_core_patient.multiple_birth_integer",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "human_name",
+            "children": [
+                {
+                    "label": "human_name.family",
+                    "type": "SINGLE_VALUE",
+                    "display": "van Putten-van der Giessen"
+                },
+                {
+                    "label": "human_name.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Johanna",
+                        "Petronella",
+                        "Maria"
+                    ]
+                },
+                {
+                    "label": "human_name.period.start",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.period.end",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.prefix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.suffix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.use",
+                    "type": "SINGLE_VALUE",
+                    "display": "official"
+                },
+                {
+                    "label": "human_name.text",
+                    "type": "SINGLE_VALUE",
+                    "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+                }
+            ]
+        },
+        {
+            "label": "human_name",
+            "children": [
+                {
+                    "label": "human_name.family",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Jo"
+                    ]
+                },
+                {
+                    "label": "human_name.period.start",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.period.end",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "human_name.prefix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.suffix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "human_name.use",
+                    "type": "SINGLE_VALUE",
+                    "display": "usual"
+                },
+                {
+                    "label": "human_name.text",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

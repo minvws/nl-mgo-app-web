@@ -1,4 +1,4 @@
-import { type Coding, type CodeableConcept } from 'fhir/r3';
+import { type Coding, type CodeableConcept } from '../../../types/FhirRX';
 import { type Nullable } from '../../../types/Nullable';
 
 export function filterCodeableConceptByCoding<Iteratee extends (arg: Coding) => unknown>(
