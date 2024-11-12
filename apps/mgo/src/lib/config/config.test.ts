@@ -62,6 +62,8 @@ test('readConfig returns object when all window.config properties are valid', ()
         oidc_authority: faker.internet.url(),
         oidc_client_id: faker.lorem.word(),
         oidc_redirect_uri: faker.internet.url(),
+        load_url: faker.internet.url(),
+        dva_url: faker.internet.url(),
     };
     vi.stubGlobal('config', config);
     expect(readConfig()).toEqual({
@@ -70,5 +72,7 @@ test('readConfig returns object when all window.config properties are valid', ()
             client_id: config.oidc_client_id,
             redirect_uri: config.oidc_redirect_uri,
         },
+        load_url: config.load_url,
+        dva_url: config.dva_url,
     });
 });

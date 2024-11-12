@@ -12,6 +12,8 @@ export const readConfig = () => {
             client_id: readString(config, 'oidc_client_id'),
             redirect_uri: readUrl(config, 'oidc_redirect_uri'),
         },
+        load_url: readUrl(config, 'load_url'),
+        dva_url: readUrl(config, 'dva_url'),
     };
 };
 

@@ -5,17 +5,15 @@ import type {
     HealthcareOrganizationDTO,
     HealthcareServiceDTO,
 } from './types';
+import { readConfig } from '$/lib/config/config';
 
-const token = btoa(`mgo:healthyoverzicht`);
 const client = ky.extend({
-    headers: {
-        Authorization: `Basic ${token}`,
-    },
+    prefixUrl: readConfig().load_url,
 });
 
 const search = async (searchQuery: { name: string; city: string }) =>
     client
-        .post('https://lo-ad.test.mgo.irealisatie.nl/localization/organization/search', {
+        .post('localization/organization/search', {
             json: searchQuery,
         })
         .json<OrganisationSearchResponse>();

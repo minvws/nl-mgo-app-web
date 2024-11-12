@@ -81,6 +81,8 @@ window.config = {
     oidc_authority: '...',
     oidc_client_id: '...',
     oidc_redirect_uri: '...',
+    load_url: '...',
+    dva_url: '...',
 };
 ```
 

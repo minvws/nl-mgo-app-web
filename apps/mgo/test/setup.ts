@@ -30,6 +30,8 @@ export const config: Config = {
         client_id: 'client_id',
         redirect_uri: 'http://localhost:3000',
     },
+    load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
+    dva_url: 'https://dva.test.mgo.irealisatie.nl/fhir',
 };
 
 vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
