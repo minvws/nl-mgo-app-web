@@ -18,7 +18,7 @@
         "schema:json": "tsx ./schema-generator/index.ts",
         "schema:swift:clean": "rimraf ./dist/schema/swift/* --glob",
         "schema:swift": "pnpm run schema:swift:clean && quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --access-level public --protocol hashable --sendable --density dense --multi-file-output --out ./dist/schema/swift/Types.swift",
-        "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework jackson --out ./dist/schema/kotlin/Types.kt",
+        "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework kotlinx --out ./dist/schema/kotlin/Types.kt",
         "download:definitions": "./bin/download-fhir-definitions.sh",
         "extract:labels": "tsx ./definition-labels/index.ts"
     },
