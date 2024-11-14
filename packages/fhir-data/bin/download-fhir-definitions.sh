@@ -16,36 +16,36 @@ npmDownload() {
     tar --strip-components=1 --extract --file $npm_id-$npm_version.tgz -C ./$npm_id package
 }
 
-# paths are relative to this file
-ZIBS_DIR_PATH="../fhir-definitions"
+filterDefinitions() {
+    directory=$1
+    find ./$directory -type f ! \( -name "zib-*" -o -name "gp-*" -o -name "nl-core-*" -name "StructureDefinition-*" \) -delete
+}
 
-ZIBS_STU3_NPM_ID="nictiz.fhir.nl.stu3.zib2017"
-ZIBS_STU3_NPM_VERSION="2.2.18"
+# path is relative to this file
+DIR_FHIR_DEFINITIONS="../fhir-definitions"
 
-ZIBS_R4_NPM_ID="nictiz.fhir.nl.r4.nl-core"
-ZIBS_R4_NPM_VERSION="0.8.0-beta.1"
-
-FHIR_NPM_ID="hl7.fhir.r3.core"
-FHIR_NPM_VERSION="3.0.2"
+NPM_ID_ZIBS_STU3="nictiz.fhir.nl.stu3.zib2017"
+NPM_ID_NL_CORE_R4="nictiz.fhir.nl.r4.nl-core"
+NPM_ID_ZIBS_R4="nictiz.fhir.nl.r4.zib2020"
 
 echo "Download fhir structure definition files from Simplifier 🌍"
 
 setCwdToFileLocation
 
-mkdir -p $ZIBS_DIR_PATH
-cd $ZIBS_DIR_PATH
+mkdir -p $DIR_FHIR_DEFINITIONS
+cd $DIR_FHIR_DEFINITIONS
 
 echo "Deleting old files..."
 rm -rf ./*
 
-npmDownload $FHIR_NPM_ID $FHIR_NPM_VERSION
-npmDownload $ZIBS_STU3_NPM_ID $ZIBS_STU3_NPM_VERSION
-npmDownload $ZIBS_R4_NPM_ID $ZIBS_R4_NPM_VERSION
+npmDownload $NPM_ID_ZIBS_STU3 "2.2.18"
+npmDownload $NPM_ID_NL_CORE_R4 "0.11.0-beta.1"
+npmDownload $NPM_ID_ZIBS_R4 "0.11.0-beta.1"
 
-# Uncomment to remove all files except StructureDefinition and ZIB files
-# find ./$FHIR_NPM_ID -type f ! \( -name "StructureDefinition-*" \) -delete
-# find ./$ZIBS_NPM_ID -type f ! \( -name "zib-*" -o -name "gp-*" -o -name "nl-core-*" \) -delete
-# find ./$ZIBS_R4_NPM_ID -type f ! \( -name "zib-*" -o -name "gp-*" -o -name "nl-core-*" \) -delete\
+# Uncomment to remove all files except StructureDefinitions
+# filterDefinitions $NPM_ID_ZIBS_STU3
+# filterDefinitions $NPM_ID_NL_CORE_R4
+# filterDefinitions $NPM_ID_ZIBS_R4
 
 rm -rf ./*.tgz
 
