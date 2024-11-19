@@ -1,0 +1,79 @@
+{
+    "label": "Hepatitis A-vaccin",
+    "children": [
+        {
+            "label": "nl_core_vaccination_event.group_details",
+            "children": [
+                {
+                    "label": "nl_core_vaccination_event.pharmaceutical_product",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "nl_core_vaccination_event.status",
+                    "type": "SINGLE_VALUE",
+                    "display": "completed"
+                },
+                {
+                    "label": "nl_core_vaccination_event.vaccine_code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
+                },
+                {
+                    "label": "nl_core_vaccination_event.patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+                    "reference": "Patient/nl-core-Patient-01",
+                    "summary": true
+                },
+                {
+                    "label": "nl_core_vaccination_event.occurrence_date_time",
+                    "type": "SINGLE_VALUE",
+                    "display": "2012-06-03"
+                },
+                {
+                    "label": "nl_core_vaccination_event.site",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_vaccination_event.route",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_vaccination_event.dose_quantity",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_vaccination_event.administrator",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Healthcare professional (role)"
+                    ]
+                },
+                {
+                    "label": "nl_core_vaccination_event.note",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                },
+                {
+                    "label": "nl_core_vaccination_event.vaccination_indication",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_vaccination_event.vaccination_motive",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

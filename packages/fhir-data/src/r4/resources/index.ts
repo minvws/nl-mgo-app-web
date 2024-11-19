@@ -9,3 +9,4 @@
  */
 
 export * from './nlCorePatient/nlCorePatient';
+export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';
