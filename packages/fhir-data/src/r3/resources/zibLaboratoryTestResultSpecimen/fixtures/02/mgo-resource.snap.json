@@ -18,11 +18,10 @@
     },
     "container": null,
     "type": [],
-    "substance": null,
     "receivedTime": null,
     "collection": {
         "quantity": null,
-        "collected": {
+        "collectedPeriod": {
             "start": "2010-06-01",
             "end": null
         },

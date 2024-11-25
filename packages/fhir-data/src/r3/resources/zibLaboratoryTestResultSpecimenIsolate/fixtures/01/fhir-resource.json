@@ -1,0 +1,68 @@
+{
+    "resourceType": "Specimen",
+    "id": "zib-laboratorytestresult-specimen-isolate-01",
+    "meta": {
+        "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen-Isolate"
+        ]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Specimen. Subject: J. XXX_Helleman (Johan). Id: 1b4904db-8fdf-11ec-1469-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: beschikbaar</caption><tfoot><tr><td colspan=\"2\">(22:03:00, 1 maart 2020) <div>het monster toont afwijkingen</div></td></tr></tfoot><tbody><tr><th>Type</th><td><span title=\"Revision status (246513007 - SNOMED CT)\">Revision status</span></td></tr><tr><th>Received</th><td>22:03:00, 1 maart 2020</td></tr><tr><th>Inzameling</th><td>22:03:00, 1 maart 2020</td></tr><tr><th>Container</th><td><div>Type: <span title=\"Specimen substance (370133003 - SNOMED CT)\">Specimen substance</span></div></td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b4904db-8fdf-11ec-1469-020000000000"
+        }
+    ],
+    "status": "available",
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "246513007",
+                "display": "Revision status"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "J. XXX_Helleman (Johan)"
+    },
+    "receivedTime": "2020-03-01T22:03:00+00:00",
+    "parent": [
+        {
+            "reference": "Specimen/zib-laboratorytestresult-specimen-01",
+            "display": "Blood (substance)"
+        }
+    ],
+    "request": [
+        {
+            "reference": "ProcedureRequest/zib-procedurerequest-01",
+            "display": "Pigmented nevus, no International             Classification of Diseases for Oncology subtype (morphologic             abnormality)"
+        }
+    ],
+    "collection": {
+        "collectedDateTime": "2020-03-01T22:03:00+01:00"
+    },
+    "container": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "370133003",
+                        "display": "Specimen substance"
+                    }
+                ]
+            }
+        }
+    ],
+    "note": [
+        {
+            "time": "2020-03-01T22:03:00+00:00",
+            "text": "het monster toont afwijkingen"
+        }
+    ]
+}

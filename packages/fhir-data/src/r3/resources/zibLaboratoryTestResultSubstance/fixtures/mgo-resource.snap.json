@@ -1,0 +1,33 @@
+{
+    "id": "zib-laboratorytestresult-specimen-isolate-01",
+    "referenceId": "Substance/zib-laboratorytestresult-specimen-isolate-01",
+    "resourceType": "Substance",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Substance",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b55ba69-8fdf-11ec-4275-020000000000",
+            "type": null
+        }
+    ],
+    "status": "active",
+    "category": [
+        [
+            {
+                "code": "chemical",
+                "display": "Chemical",
+                "system": "http://hl7.org/fhir/substance-category"
+            }
+        ]
+    ],
+    "code": [
+        {
+            "code": "127489000",
+            "display": "Has active ingredient",
+            "system": "http://snomed.info/sct"
+        }
+    ],
+    "description": "Luchtwegproblemen/ ademhalingdedeficiëntie en/of extreem lage bloeddruk (anafylactische shock)"
+}

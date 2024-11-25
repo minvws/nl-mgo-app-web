@@ -1,13 +1,13 @@
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
-import { type ZibLaboratoryTestResultSpecimen } from './zibLaboratoryTestResultSpecimen';
+import { type ZibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate';
 import { uiSchemaGroup as containerUiSchema } from './elements/container/uiSchemaGroup';
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317241
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317243
  */
-export function uiSchema(resource: ZibLaboratoryTestResultSpecimen): UiSchema {
-    const profile = 'zib_laboratory_test_result_specimen';
+export function uiSchema(resource: ZibLaboratoryTestResultSpecimenIsolate): UiSchema {
+    const profile = 'zib_laboratory_test_result_specimen_isolate';
 
     const container = map(resource.container, containerUiSchema, true);
 

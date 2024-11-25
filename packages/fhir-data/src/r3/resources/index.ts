@@ -45,6 +45,8 @@ export * from './zibBodyHeight/zibBodyHeight';
 export * from './zibProcedure/zibProcedure';
 export * from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 export * from './zibLaboratoryTestResultSpecimen/zibLaboratoryTestResultSpecimen';
+export * from './zibLaboratoryTestResultSpecimenIsolate/zibLaboratoryTestResultSpecimenIsolate';
+export * from './zibLaboratoryTestResultSubstance/zibLaboratoryTestResultSubstance';
 export * from './zibAdvanceDirective/zibAdvanceDirective';
 export * from './zibProcedureRequest/zibProcedureRequest';
 export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest';

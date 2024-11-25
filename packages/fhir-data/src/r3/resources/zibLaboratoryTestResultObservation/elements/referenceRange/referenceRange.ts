@@ -5,8 +5,8 @@ import { type Nullable } from '../../../../../types/Nullable';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ReferenceRange {
-    low: parse.MgoQuantity | undefined;
-    high: parse.MgoQuantity | undefined;
+    low: parse.MgoQuantity | undefined; // NL-CM:13.1.12
+    high: parse.MgoQuantity | undefined; // NL-CM:13.1.11
 }
 
 function parseReferenceRange(value: Nullable<ObservationReferenceRange>): ReferenceRange {

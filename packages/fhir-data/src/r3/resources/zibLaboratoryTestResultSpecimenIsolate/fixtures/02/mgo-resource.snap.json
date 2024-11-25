@@ -1,20 +1,20 @@
 {
-    "id": "zib-laboratorytestresult-specimen-01",
-    "referenceId": "Specimen/zib-laboratorytestresult-specimen-01",
+    "id": "zib-laboratorytestresult-specimen-isolate-01",
+    "referenceId": "Specimen/zib-laboratorytestresult-specimen-isolate-01",
     "resourceType": "Specimen",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen-Isolate",
     "fhirVersion": "R3",
     "identifier": [
         {
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "1b3b213b-8fdf-11ec-5198-020000000000",
+            "value": "1b4904db-8fdf-11ec-1469-020000000000",
             "type": null
         }
     ],
     "subject": {
         "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
+        "display": "J. XXX_Helleman (Johan)"
     },
     "container": [
         {
@@ -28,17 +28,14 @@
             ]
         }
     ],
-    "type": [
-        {
-            "code": "87612001",
-            "display": "Blood (substance)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "receivedTime": null,
+    "type": [],
+    "receivedTime": "2020-03-01T22:03:00+00:00",
     "collection": {
         "quantity": null,
-        "collectedDateTime": "2012-05-23T08:08:00+01:00",
+        "collectedPeriod": {
+            "start": "2010-06-01",
+            "end": null
+        },
         "method": null,
         "bodySite": {
             "value": null,
@@ -46,5 +43,11 @@
             "morphology": null
         }
     },
-    "note": null
+    "note": [
+        {
+            "time": "2020-03-01T22:03:00+00:00",
+            "text": "het monster toont afwijkingen",
+            "author": null
+        }
+    ]
 }

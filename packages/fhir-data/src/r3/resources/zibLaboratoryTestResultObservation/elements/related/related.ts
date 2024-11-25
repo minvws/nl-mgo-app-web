@@ -5,7 +5,7 @@ import { type Nullable } from '../../../../../types/Nullable';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Related {
-    target: parse.MgoReference | undefined;
+    target: parse.MgoReference | undefined; // NL-CM:13.1.33 or NL-CM:13.1.3
 }
 
 function parseRelated(value: Nullable<ObservationRelated>): Related {

@@ -17,22 +17,17 @@
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_substance.code",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "zib_laboratory_test_result_specimen.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collection.collected_period.start",
+                    "label": "zib_laboratory_test_result_specimen.collected.start",
                     "type": "SINGLE_VALUE",
                     "display": "2010-06-01"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collection.collected_period.end",
+                    "label": "zib_laboratory_test_result_specimen.collected.end",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

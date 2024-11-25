@@ -1,0 +1,87 @@
+{
+    "label": "zib_laboratory_test_result_specimen_isolate",
+    "children": [
+        {
+            "label": "zib_laboratory_test_result_specimen_isolate",
+            "children": [
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1b4904db-8fdf-11ec-1469-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.container.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.container.type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.quantity",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.collected.start",
+                    "type": "SINGLE_VALUE",
+                    "display": "2010-06-01"
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.collected.end",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.received_time",
+                    "type": "SINGLE_VALUE",
+                    "display": "2020-03-01T22:03:00+00:00"
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.collection.method",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.laterality",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.morphology",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.subject",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J. XXX_Helleman (Johan)",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "zib_laboratory_test_result_specimen_isolate.note",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "het monster toont afwijkingen"
+                    ]
+                }
+            ]
+        }
+    ]
+}

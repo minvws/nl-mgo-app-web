@@ -29,5 +29,18 @@
     },
     "collection": {
         "collectedDateTime": "2012-05-23T08:08:00+01:00"
-    }
+    },
+    "container": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "370133003",
+                        "display": "Specimen substance"
+                    }
+                ]
+            }
+        }
+    ]
 }

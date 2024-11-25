@@ -1,0 +1,17 @@
+{
+    "label": "zib_laboratory_test_result_substance",
+    "children": [
+        {
+            "label": "zib_laboratory_test_result_substance",
+            "children": [
+                {
+                    "label": "zib_laboratory_test_result_substance.code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Has active ingredient (127489000 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

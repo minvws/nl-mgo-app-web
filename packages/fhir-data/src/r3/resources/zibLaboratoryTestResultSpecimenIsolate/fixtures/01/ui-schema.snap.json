@@ -1,80 +1,82 @@
 {
-    "label": "Blood (substance)",
+    "label": "Revision status",
     "children": [
         {
-            "label": "zib_laboratory_test_result_specimen",
+            "label": "zib_laboratory_test_result_specimen_isolate",
             "children": [
                 {
-                    "label": "zib_laboratory_test_result_specimen.identifier",
+                    "label": "zib_laboratory_test_result_specimen_isolate.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "1b3b213b-8fdf-11ec-5198-020000000000"
+                        "1b4904db-8fdf-11ec-1469-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.container.identifier",
+                    "label": "zib_laboratory_test_result_specimen_isolate.container.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.container.type",
+                    "label": "zib_laboratory_test_result_specimen_isolate.container.type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.type",
+                    "label": "zib_laboratory_test_result_specimen_isolate.type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Blood (substance) (87612001 in code systeem http://snomed.info/sct)"
+                        "Revision status (246513007 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.quantity",
+                    "label": "zib_laboratory_test_result_specimen_isolate.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collected",
+                    "label": "zib_laboratory_test_result_specimen_isolate.collected",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-05-23T08:08:00+01:00"
+                    "display": "2020-03-01T22:03:00+01:00"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.received_time",
+                    "label": "zib_laboratory_test_result_specimen_isolate.received_time",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "2020-03-01T22:03:00+00:00"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collection.method",
+                    "label": "zib_laboratory_test_result_specimen_isolate.collection.method",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site",
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site.laterality",
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site.morphology",
+                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.subject",
+                    "label": "zib_laboratory_test_result_specimen_isolate.subject",
                     "type": "REFERENCE_VALUE",
-                    "display": "Johan XXX_Helleman",
+                    "display": "J. XXX_Helleman (Johan)",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.note",
+                    "label": "zib_laboratory_test_result_specimen_isolate.note",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": [
+                        "het monster toont afwijkingen"
+                    ]
                 }
             ]
         }

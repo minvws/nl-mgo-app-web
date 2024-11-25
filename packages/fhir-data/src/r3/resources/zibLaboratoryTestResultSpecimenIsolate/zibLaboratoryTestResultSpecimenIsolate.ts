@@ -7,12 +7,13 @@ import { map } from '../../../utils';
 import { container } from './elements/container/container';
 import { oneOfValueX } from '../../../parse/helpers';
 
-const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen'; // NOSONAR
+const profile =
+    'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen-Isolate'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317241
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317243
  */
-function parseZibLaboratoryTestResultSpecimen(resource: Specimen) {
+function parseZibLaboratoryTestResultSpecimenIsolate(resource: Specimen) {
     const collection = resource.collection;
 
     return {
@@ -20,7 +21,7 @@ function parseZibLaboratoryTestResultSpecimen(resource: Specimen) {
         identifier: map(resource.identifier, parse.identifier), // NL-CM:13.1.15
         subject: parse.reference(resource.subject), // NL-CM:13.1.29
         container: map(resource.container, container.parse), // NL-CM:13.1.20 & NL-CM:13.1.21
-        type: parse.codeableConcept(resource.type), // NL-CM:13.1.16
+        type: parse.codeableConcept(resource.type), // NL-CM:13.1.22
         receivedTime: parse.dateTime(resource.receivedTime), // NL-CM:13.1.25
         collection: {
             quantity: parse.quantity(collection?.quantity), // NL-CM:13.1.23
@@ -36,12 +37,12 @@ function parseZibLaboratoryTestResultSpecimen(resource: Specimen) {
     };
 }
 
-export type ZibLaboratoryTestResultSpecimen = ReturnType<
-    typeof parseZibLaboratoryTestResultSpecimen
+export type ZibLaboratoryTestResultSpecimenIsolate = ReturnType<
+    typeof parseZibLaboratoryTestResultSpecimenIsolate
 >;
 
-export const zibLaboratoryTestResultSpecimen = {
+export const zibLaboratoryTestResultSpecimenIsolate = {
     profile,
-    parse: parseZibLaboratoryTestResultSpecimen,
+    parse: parseZibLaboratoryTestResultSpecimenIsolate,
     uiSchema,
-} satisfies ResourceConfigR3<Specimen, ZibLaboratoryTestResultSpecimen>;
+} satisfies ResourceConfigR3<Specimen, ZibLaboratoryTestResultSpecimenIsolate>;

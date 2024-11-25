@@ -3,7 +3,7 @@ import { type UiSchemaGroup } from '../../../../../ui/types';
 import { type Container } from './container';
 
 export function uiSchemaGroup(resource: Container): UiSchemaGroup {
-    const i18n = 'zib_laboratory_test_result_specimen.container';
+    const i18n = 'zib_laboratory_test_result_specimen_isolate.container';
 
     return {
         label: `${i18n}`,
