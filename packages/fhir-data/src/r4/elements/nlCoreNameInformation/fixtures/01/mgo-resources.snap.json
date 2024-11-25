@@ -1,0 +1,32 @@
+[
+    {
+        "nameUsage": "NL3",
+        "family": "van der Giessen-van Putten",
+        "given": [
+            "Johanna",
+            "Petronella",
+            "Maria"
+        ],
+        "givenNames": [
+            "Johanna",
+            "Petronella",
+            "Maria"
+        ],
+        "givenInitials": null,
+        "period": null,
+        "prefix": [
+            "PhD"
+        ],
+        "suffix": null,
+        "text": "Johanna Petronella Maria van der Giessen-van Putten",
+        "use": "official"
+    },
+    {
+        "use": "usual",
+        "given": [
+            "Jo"
+        ],
+        "period": null,
+        "text": null
+    }
+]

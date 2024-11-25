@@ -4,12 +4,36 @@
     "resourceType": "Patient",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient",
     "fhirVersion": "R4",
-    "active": null,
-    "birthDate": "1934-04-28",
-    "deceased": false,
-    "deceasedDateTime": null,
-    "gender": "female",
-    "generalPractitioner": null,
+    "name": [
+        {
+            "nameUsage": null,
+            "family": "van Putten-van der Giessen",
+            "given": [
+                "Johanna",
+                "Petronella",
+                "Maria"
+            ],
+            "givenNames": [
+                "Johanna",
+                "Petronella",
+                "Maria"
+            ],
+            "givenInitials": null,
+            "period": null,
+            "prefix": null,
+            "suffix": null,
+            "text": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+            "use": "official"
+        },
+        {
+            "use": "usual",
+            "given": [
+                "Jo"
+            ],
+            "period": null,
+            "text": null
+        }
+    ],
     "identifier": [
         {
             "use": null,
@@ -18,40 +42,47 @@
             "type": null
         }
     ],
+    "birthDate": "1934-04-28",
+    "gender": "female",
+    "multipleBirth": true,
+    "deceased": false,
+    "deceasedDateTime": null,
+    "address": [
+        {
+            "line": "1e Jacob van Campenstr 15",
+            "streetName": "1e Jacob van Campenstr",
+            "houseNumber": "15",
+            "houseNumberAddition": null,
+            "houseNumberIndication": null,
+            "additionalInformation": null,
+            "city": "Hoogmade",
+            "district": "Kaag en Braassem",
+            "postalCode": "1012 NX",
+            "country": "Nederland",
+            "countryCode": [
+                {
+                    "code": "NL",
+                    "display": "Nederland",
+                    "system": "urn:iso:std:iso:3166"
+                }
+            ],
+            "addressType": [
+                {
+                    "code": "HP",
+                    "display": "Primary Home",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                }
+            ],
+            "period": null
+        }
+    ],
+    "generalPractitioner": null,
     "managingOrganization": null,
     "maritalStatus": [
         {
             "code": "D",
             "display": "Divorced",
             "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
-        }
-    ],
-    "multipleBirth": true,
-    "multipleBirthInteger": null,
-    "name": [
-        {
-            "family": "van Putten-van der Giessen",
-            "given": [
-                "Johanna",
-                "Petronella",
-                "Maria"
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
-            "text": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
-            "use": "official"
-        },
-        {
-            "family": null,
-            "given": [
-                "Jo"
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
-            "text": null,
-            "use": "usual"
         }
     ]
 }

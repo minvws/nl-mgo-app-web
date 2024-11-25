@@ -1,14 +1,14 @@
 import { type MedicationPackage } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
-import { collection, mockOptionalFields } from '../../helpers';
+import { collection } from '../../helpers';
 import { codeableConcept } from '../type';
 import { medicationPackageBatch } from './medicationPackageBatch';
 import { medicationPackageContent } from './medicationPackageContent';
 
 export const medicationPackage = createMockDataFactory<MedicationPackage>(() => {
-    return mockOptionalFields({
-        batch: collection({ max: 5, factory: medicationPackageBatch }),
+    return {
+        batch: collection({ min: 1, max: 5, factory: medicationPackageBatch }),
         container: codeableConcept(),
-        content: collection({ max: 5, factory: medicationPackageContent }),
-    });
+        content: collection({ min: 1, max: 5, factory: medicationPackageContent }),
+    };
 });

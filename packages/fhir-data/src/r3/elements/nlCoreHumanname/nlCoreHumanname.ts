@@ -1,11 +1,11 @@
+import { type HumanName } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type HumanName } from '../../../types/FhirRX';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type RxResourceElementConfig } from '../config';
+import { type ResourceElementConfigR3 } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
-export type MgoHumanname = {
+export type NlCoreHumanname = {
     family: parse.MgoString | undefined;
     given: parse.MgoString[] | undefined;
     period: parse.MgoPeriod | undefined;
@@ -18,7 +18,7 @@ export type MgoHumanname = {
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317028
  */
-function parseHumanName(value: Nullable<HumanName>): MgoHumanname {
+function parseNlCoreHumanname(value: Nullable<HumanName>): NlCoreHumanname {
     return {
         family: parse.string(value?.family),
         given: map(value?.given, parse.string),
@@ -30,7 +30,7 @@ function parseHumanName(value: Nullable<HumanName>): MgoHumanname {
     };
 }
 
-export const humanName = {
-    parse: parseHumanName,
+export const nlCoreHumanname = {
+    parse: parseNlCoreHumanname,
     uiSchemaGroup,
-} satisfies RxResourceElementConfig<HumanName, MgoHumanname>;
+} satisfies ResourceElementConfigR3<HumanName, NlCoreHumanname>;

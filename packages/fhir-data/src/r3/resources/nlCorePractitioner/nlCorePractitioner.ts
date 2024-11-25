@@ -2,8 +2,7 @@ import { parse } from '../../../parse';
 import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
-import { humanName } from '../../../rX/elements';
+import { nlCoreAddress, nlCoreHumanname, nlCoreContactpoint } from '../../elements';
 import { type Practitioner } from 'fhir/r3';
 import { FhirVersion } from '../../../types/Fhir';
 
@@ -16,7 +15,7 @@ function parseNlCorePractitioner(resource: Practitioner) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
-        name: map(resource.name, humanName.parse),
+        name: map(resource.name, nlCoreHumanname.parse),
         address: map(resource.address, nlCoreAddress.parse),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
     };

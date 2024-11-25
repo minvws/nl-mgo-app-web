@@ -1,10 +1,10 @@
 import { type Patient } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { humanName } from '../../../rX/elements';
 import { map } from '../../../utils';
 import { type ResourceConfigR4 } from '../config';
 import { uiSchema } from './uiSchema';
 import { FhirVersion } from '../../../types/Fhir';
+import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // NOSONAR
 
@@ -14,18 +14,17 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // 
 function parseNlCorePatient(resource: Patient) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        active: parse.boolean(resource.active),
-        birthDate: parse.date(resource.birthDate),
-        deceased: parse.boolean(resource.deceasedBoolean),
-        deceasedDateTime: parse.dateTime(resource.deceasedDateTime),
-        gender: parse.code(resource.gender),
+        name: map(resource.name, nlCoreNameInformation.parse),
+        identifier: map(resource.identifier, parse.identifier), // NL-CM:0.1.7
+        birthDate: parse.date(resource.birthDate), // NL-CM:0.1.10
+        gender: parse.code(resource.gender), // NL-CM:0.1.9
+        multipleBirth: parse.boolean(resource.multipleBirthBoolean), // NL-CM:0.1.31
+        deceased: parse.boolean(resource.deceasedBoolean), // NL-CM:0.1.32
+        deceasedDateTime: parse.dateTime(resource.deceasedDateTime), // NL-CM:0.1.33
+        address: map(resource?.address, nlCoreAddressInformation.parse),
         generalPractitioner: map(resource.generalPractitioner, parse.reference),
-        identifier: map(resource.identifier, parse.identifier),
         managingOrganization: parse.reference(resource.managingOrganization),
         maritalStatus: parse.codeableConcept(resource.maritalStatus),
-        multipleBirth: parse.boolean(resource.multipleBirthBoolean),
-        multipleBirthInteger: parse.integer(resource.multipleBirthInteger),
-        name: map(resource.name, humanName.parse),
     };
 }
 

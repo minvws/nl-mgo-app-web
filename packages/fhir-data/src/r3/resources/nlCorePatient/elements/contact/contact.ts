@@ -4,8 +4,9 @@ import {
     type NlCoreAddress,
     nlCoreContactpoint,
     nlCoreAddress,
+    nlCoreHumanname,
+    type NlCoreHumanname,
 } from '../../../../elements';
-import { type MgoHumanname, humanName } from '../../../../../rX/elements';
 import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type Nullable } from '../../../../../types/Nullable';
 import { uiSchemaGroup } from './uiSchemaGroup';
@@ -14,7 +15,7 @@ import { parse } from '../../../../../parse';
 
 export interface Contact {
     relationship: parse.MgoCodeableConcept[] | undefined;
-    name: MgoHumanname | undefined;
+    name: NlCoreHumanname | undefined;
     telecom: NlCoreContactpoint[] | undefined;
     address: NlCoreAddress | undefined;
     gender: parse.MgoString | undefined;
@@ -25,7 +26,7 @@ export interface Contact {
 function parseContact(value: Nullable<PatientContact>): Contact {
     return {
         relationship: map(value?.relationship, parse.codeableConcept),
-        name: humanName.parse(value?.name),
+        name: nlCoreHumanname.parse(value?.name),
         telecom: map(value?.telecom, nlCoreContactpoint.parse),
         address: nlCoreAddress.parse(value?.address),
         gender: parse.code(value?.gender),

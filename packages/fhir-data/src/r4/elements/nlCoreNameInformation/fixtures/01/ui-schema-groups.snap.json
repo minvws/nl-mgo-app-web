@@ -1,0 +1,55 @@
+[
+    {
+        "label": "nl_name_information",
+        "children": [
+            {
+                "label": "nl_name_information.text",
+                "type": "SINGLE_VALUE",
+                "display": "Johanna Petronella Maria van der Giessen-van Putten"
+            },
+            {
+                "label": "nl_name_information.family",
+                "type": "SINGLE_VALUE",
+                "display": "van der Giessen-van Putten"
+            },
+            {
+                "label": "nl_name_information.given",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    "Johanna",
+                    "Petronella",
+                    "Maria"
+                ]
+            },
+            {
+                "label": "nl_name_information.name_usage",
+                "type": "SINGLE_VALUE",
+                "display": "NL3"
+            },
+            {
+                "label": "nl_name_information.prefix",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    "PhD"
+                ]
+            },
+            {
+                "label": "nl_name_information.suffix",
+                "type": "MULTIPLE_VALUES",
+                "display": null
+            }
+        ]
+    },
+    {
+        "label": "nl_name_information_given_name",
+        "children": [
+            {
+                "label": "nl_name_information_given_name.given",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    "Jo"
+                ]
+            }
+        ]
+    }
+]

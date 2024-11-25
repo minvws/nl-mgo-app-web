@@ -1,0 +1,48 @@
+[
+    {
+        "nameUsage": null,
+        "family": "Schemer",
+        "given": [
+            "Hendrik",
+            "Willem"
+        ],
+        "givenNames": [
+            "Hendrik",
+            "Willem"
+        ],
+        "givenInitials": null,
+        "period": null,
+        "prefix": null,
+        "suffix": null,
+        "text": "Hendrik Willem Schemer",
+        "use": "official"
+    },
+    {
+        "nameUsage": null,
+        "family": null,
+        "given": [
+            "H.",
+            "J.",
+            "W."
+        ],
+        "givenNames": null,
+        "givenInitials": [
+            "H.",
+            "J.",
+            "W."
+        ],
+        "period": null,
+        "prefix": null,
+        "suffix": null,
+        "text": null,
+        "use": "official"
+    },
+    {
+        "use": "usual",
+        "given": [
+            "Henk"
+        ],
+        "period": null,
+        "text": null
+    }
+]

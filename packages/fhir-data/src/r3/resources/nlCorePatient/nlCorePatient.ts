@@ -2,9 +2,8 @@ import { type Patient } from 'fhir/r3';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
-import { humanName } from '../../../rX/elements';
 import { map } from '../../../utils';
-import { nlCoreAddress } from '../../elements';
+import { nlCoreAddress, nlCoreHumanname } from '../../elements';
 import { attachment } from '../../elements/attachment/attachment';
 import { nlCoreContactpoint } from '../../elements/nlCoreContactpoint/nlCoreContactpoint';
 import { type ResourceConfigR3 } from '../config';
@@ -36,7 +35,7 @@ function parseNlCorePatient(resource: Patient) {
         maritalStatus: parse.codeableConcept(resource.maritalStatus),
         multipleBirth: parse.boolean(resource.multipleBirthBoolean),
         multipleBirthInteger: parse.integer(resource.multipleBirthInteger),
-        name: map(resource.name, humanName.parse),
+        name: map(resource.name, nlCoreHumanname.parse),
         photo: map(resource.photo, attachment.parse),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
     };

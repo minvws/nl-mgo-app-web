@@ -1,6 +1,6 @@
-import { humanName } from '../../../rX/elements';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
+import { nlCoreHumanname } from '../../elements';
 import { uiSchemaGroup as photoUiSchema } from '../../elements/attachment/uiSchemaGroup';
 import { uiSchemaGroup as nlCoreAddressUiSchema } from '../../elements/nlCoreAddress/uiSchemaGroup';
 import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
@@ -19,7 +19,7 @@ export function uiSchema(resource: NlCorePatient): UiSchema {
     const communication = map(resource.communication, communicationUiSchema, true);
     const contact = map(resource.contact, contactUiSchema, true);
     const link = map(resource.link, linkUiSchema, true);
-    const name = map(resource.name, humanName.uiSchemaGroup, true);
+    const name = map(resource.name, nlCoreHumanname.uiSchemaGroup, true);
     const photo = map(resource.photo, photoUiSchema, true);
     const telecom = map(resource.telecom, nlCoreContactPointUiSchema, true);
 

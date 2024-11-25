@@ -1,0 +1,57 @@
+{
+    "label": "nl_core_address_information",
+    "children": [
+        {
+            "label": "nl_core_address_information.streetName",
+            "type": "SINGLE_VALUE",
+            "display": "1e Jacob van Campenstr"
+        },
+        {
+            "label": "nl_core_address_information.houseNumber",
+            "type": "SINGLE_VALUE",
+            "display": "15"
+        },
+        {
+            "label": "nl_core_address_information.houseNumberAddition",
+            "type": "SINGLE_VALUE",
+            "display": "A 2e"
+        },
+        {
+            "label": "nl_core_address_information.houseNumberIndication",
+            "type": "SINGLE_VALUE",
+            "display": "to"
+        },
+        {
+            "label": "nl_core_address_information.additionalInformation",
+            "type": "SINGLE_VALUE",
+            "display": "test info"
+        },
+        {
+            "label": "nl_core_address_information.city",
+            "type": "SINGLE_VALUE",
+            "display": "Hoogmade"
+        },
+        {
+            "label": "nl_core_address_information.district",
+            "type": "SINGLE_VALUE",
+            "display": "Kaag en Braassem"
+        },
+        {
+            "label": "nl_core_address_information.postalCode",
+            "type": "SINGLE_VALUE",
+            "display": "1012 NX"
+        },
+        {
+            "label": "nl_core_address_information.country",
+            "type": "SINGLE_VALUE",
+            "display": "Nederland"
+        },
+        {
+            "label": "nl_core_address_information.addressType",
+            "type": "MULTIPLE_VALUES",
+            "display": [
+                "Primary Home (HP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+            ]
+        }
+    ]
+}

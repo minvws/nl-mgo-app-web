@@ -2,12 +2,65 @@
     "label": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
     "children": [
         {
+            "label": "nl_name_information",
+            "children": [
+                {
+                    "label": "nl_name_information.text",
+                    "type": "SINGLE_VALUE",
+                    "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+                },
+                {
+                    "label": "nl_name_information.family",
+                    "type": "SINGLE_VALUE",
+                    "display": "van Putten-van der Giessen"
+                },
+                {
+                    "label": "nl_name_information.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Johanna",
+                        "Petronella",
+                        "Maria"
+                    ]
+                },
+                {
+                    "label": "nl_name_information.name_usage",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_name_information.prefix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_name_information.suffix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_name_information_given_name",
+            "children": [
+                {
+                    "label": "nl_name_information_given_name.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Jo"
+                    ]
+                }
+            ]
+        },
+        {
             "label": "nl_core_patient.group_details",
             "children": [
                 {
-                    "label": "nl_core_patient.active",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "nl_core_patient.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "111222333"
+                    ]
                 },
                 {
                     "label": "nl_core_patient.birth_date",
@@ -35,13 +88,6 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.identifier",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "111222333"
-                    ]
-                },
-                {
                     "label": "nl_core_patient.managing_organization",
                     "type": "REFERENCE_VALUE",
                     "display": null,
@@ -58,107 +104,63 @@
                     "label": "nl_core_patient.multiple_birth",
                     "type": "SINGLE_VALUE",
                     "display": "true"
-                },
-                {
-                    "label": "nl_core_patient.multiple_birth_integer",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         },
         {
-            "label": "human_name",
+            "label": "nl_core_address_information",
             "children": [
                 {
-                    "label": "human_name.family",
+                    "label": "nl_core_address_information.streetName",
                     "type": "SINGLE_VALUE",
-                    "display": "van Putten-van der Giessen"
+                    "display": "1e Jacob van Campenstr"
                 },
                 {
-                    "label": "human_name.given",
+                    "label": "nl_core_address_information.houseNumber",
+                    "type": "SINGLE_VALUE",
+                    "display": "15"
+                },
+                {
+                    "label": "nl_core_address_information.houseNumberAddition",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.houseNumberIndication",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.additionalInformation",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.city",
+                    "type": "SINGLE_VALUE",
+                    "display": "Hoogmade"
+                },
+                {
+                    "label": "nl_core_address_information.district",
+                    "type": "SINGLE_VALUE",
+                    "display": "Kaag en Braassem"
+                },
+                {
+                    "label": "nl_core_address_information.postalCode",
+                    "type": "SINGLE_VALUE",
+                    "display": "1012 NX"
+                },
+                {
+                    "label": "nl_core_address_information.country",
+                    "type": "SINGLE_VALUE",
+                    "display": "Nederland"
+                },
+                {
+                    "label": "nl_core_address_information.addressType",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Johanna",
-                        "Petronella",
-                        "Maria"
+                        "Primary Home (HP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
                     ]
-                },
-                {
-                    "label": "human_name.period.start",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "human_name.period.end",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "human_name.prefix",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "human_name.suffix",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "human_name.use",
-                    "type": "SINGLE_VALUE",
-                    "display": "official"
-                },
-                {
-                    "label": "human_name.text",
-                    "type": "SINGLE_VALUE",
-                    "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
-                }
-            ]
-        },
-        {
-            "label": "human_name",
-            "children": [
-                {
-                    "label": "human_name.family",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "human_name.given",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Jo"
-                    ]
-                },
-                {
-                    "label": "human_name.period.start",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "human_name.period.end",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "human_name.prefix",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "human_name.suffix",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "human_name.use",
-                    "type": "SINGLE_VALUE",
-                    "display": "usual"
-                },
-                {
-                    "label": "human_name.text",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         }

@@ -1,6 +1,6 @@
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
-import { humanName } from '../../../rX/elements';
+import { nlCoreNameInformation, nlCoreAddressInformation } from '../../elements';
 import { type NlCorePatientR4 } from './nlCorePatient';
 
 /**
@@ -8,15 +8,18 @@ import { type NlCorePatientR4 } from './nlCorePatient';
  */
 export function uiSchema(resource: NlCorePatientR4): UiSchema {
     const i18n = 'nl_core_patient';
-    const name = map(resource.name, humanName.uiSchemaGroup, true);
+
+    const name = map(resource.name, nlCoreNameInformation.uiSchemaGroup, true);
+    const addresses = map(resource.address, nlCoreAddressInformation.uiSchemaGroup, true);
 
     return {
         label: resource.name?.at(0)?.text,
         children: [
+            ...name,
             {
                 label: `${i18n}.group_details`,
                 children: [
-                    ui.boolean(`${i18n}.active`, resource.active),
+                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
                     ui.date(`${i18n}.birth_date`, resource.birthDate),
                     ui.boolean(`${i18n}.deceased`, resource.deceased),
                     ui.dateTime(`${i18n}.deceased_date_time`, resource.deceasedDateTime),
@@ -26,14 +29,13 @@ export function uiSchema(resource: NlCorePatientR4): UiSchema {
                         resource.generalPractitioner,
                         ui.reference
                     ),
-                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+
                     ui.reference(`${i18n}.managing_organization`, resource.managingOrganization),
                     ui.codeableConcept(`${i18n}.marital_status`, resource.maritalStatus),
                     ui.boolean(`${i18n}.multiple_birth`, resource.multipleBirth),
-                    ui.integer(`${i18n}.multiple_birth_integer`, resource.multipleBirthInteger),
                 ],
             },
-            ...name,
+            ...addresses,
         ],
     };
 }

@@ -1,7 +1,7 @@
 import { ui } from '../../../../../ui';
 import { type UiSchemaGroup } from '../../../../../ui/types';
 import { type Contact } from './contact';
-import { uiSchemaGroup as nameUiSchema } from '../../../../../rX/elements/humanName/uiSchemaGroup';
+import { uiSchemaGroup as nameUiSchema } from '../../../../elements/nlCoreHumanname/uiSchemaGroup';
 import { uiSchemaGroup as zibCoreContactPointUiSchema } from '../../../../elements/nlCoreContactpoint/uiSchemaGroup';
 import { uiSchemaGroup as zibCoreAddressUiSchema } from '../../../../elements/nlCoreAddress/uiSchemaGroup';
 import { map } from '../../../../../utils';

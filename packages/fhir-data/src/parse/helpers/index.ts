@@ -10,3 +10,5 @@ export * from './passThrough/passThrough';
 export * from './findComponentByCode/findComponentByCode';
 export * from './oneOfValueX/oneOfValueX';
 export * from './filterCodeableConceptByCoding/filterCodeableConceptByCoding';
+export * from './filterPrimitiveByExtension/filterPrimitiveByExtension';
+export * from './filterPrimitive/filterPrimitive';

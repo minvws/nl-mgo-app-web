@@ -1,10 +1,10 @@
 import { type Nullable } from '../../../types/Nullable';
 import { ui } from '../../../ui';
 import { type UiSchemaGroup } from '../../../ui/types';
-import { type MgoHumanname } from './humanName';
+import { type NlCoreHumanname } from './nlCoreHumanname';
 
-export function uiSchemaGroup(resource: Nullable<MgoHumanname>): UiSchemaGroup {
-    const i18n = 'human_name';
+export function uiSchemaGroup(resource: Nullable<NlCoreHumanname>): UiSchemaGroup {
+    const i18n = 'nl_core_humanname';
 
     return {
         label: i18n,

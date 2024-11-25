@@ -1,6 +1,6 @@
 import { uiSchemaGroup as nlCoreAddressUiSchema } from '../../elements/nlCoreAddress/uiSchemaGroup';
 import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
-import { uiSchemaGroup as humanNameUiSchema } from '../../../rX/elements/humanName/uiSchemaGroup';
+import { uiSchemaGroup as humanNameUiSchema } from '../../elements/nlCoreHumanname/uiSchemaGroup';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
 import { type NlCorePractitioner } from './nlCorePractitioner';

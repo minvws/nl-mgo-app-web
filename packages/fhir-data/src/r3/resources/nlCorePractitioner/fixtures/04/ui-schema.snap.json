@@ -15,47 +15,47 @@
             ]
         },
         {
-            "label": "human_name",
+            "label": "nl_core_humanname",
             "children": [
                 {
-                    "label": "human_name.family",
+                    "label": "nl_core_humanname.family",
                     "type": "SINGLE_VALUE",
                     "display": "de Vries"
                 },
                 {
-                    "label": "human_name.given",
+                    "label": "nl_core_humanname.given",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Dirk"
                     ]
                 },
                 {
-                    "label": "human_name.period.start",
+                    "label": "nl_core_humanname.period.start",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "human_name.period.end",
+                    "label": "nl_core_humanname.period.end",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "human_name.prefix",
+                    "label": "nl_core_humanname.prefix",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "human_name.suffix",
+                    "label": "nl_core_humanname.suffix",
                     "type": "MULTIPLE_VALUES",
                     "display": null
                 },
                 {
-                    "label": "human_name.use",
+                    "label": "nl_core_humanname.use",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "human_name.text",
+                    "label": "nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
