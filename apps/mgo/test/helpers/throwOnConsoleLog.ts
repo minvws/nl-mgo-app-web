@@ -39,7 +39,7 @@ function patchConsoleMethod(method: ConsoleLogMethod) {
         const logMessage =
             typeof message === 'string'
                 ? message
-                : (message as Error)?.message ?? 'unknown error message';
+                : ((message as Error)?.message ?? 'unknown error message');
 
         if (!!logMessage && ignoreLogMessages.includes(logMessage)) {
             return;

@@ -13,7 +13,7 @@ This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and
 
 ## Directory structure
 
-This repository is a monorepository in that all directories under `apps/*` and `packages/*` are condisered their own indivudual package and contain their own dependencies and scripts. A few things are organised at the root level such as formatting and linting.
+This repository is a monorepository in that all directories under `apps/*` and `packages/*` are condisered their own individual package and contain their own dependencies and scripts. A few things are organised at the root level, such as formatting and linting.
 
     .
     ├── apps
@@ -28,7 +28,7 @@ This repository is a monorepository in that all directories under `apps/*` and `
 
 ## Running locally
 
-To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used for production**. For actual development we recommend you use the [Development](#development) instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed](https://www.docker.com/products/docker-desktop/)
+To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development](#development) instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed](https://www.docker.com/products/docker-desktop/)
 
 ```sh
 # Run a local development server using docker
@@ -43,8 +43,18 @@ The UI components live in `packages/mgo-ui/` and a storybook environment is avai
 
 ### Prerequisites
 
--   Ensure you have the [latest NodeJS installed](https://nodejs.org/en).
--   Ensure you have [pnpm installed](https://pnpm.io/installation).
+In this repository we are using [asdf](https://asdf-vm.com/guide/introduction.html) as a tool version manager.
+All tool version definitions are contained within one file, the `.tool-versions` and this enables our team to use the exact same version of tools.
+
+To install all the tools defined in the `.tool-versions` file run
+
+```sh
+asdf install
+```
+
+with no other arguments in the root directory of this project, where the `.tool-versions` file is located.
+
+It's handy to add the asdf plugin for your terminal shell. See the [installation instructions](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) for details.
 
 ### Running a local development server
 
