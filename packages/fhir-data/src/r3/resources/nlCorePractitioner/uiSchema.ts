@@ -1,8 +1,6 @@
-import { uiSchemaGroup as nlCoreAddressUiSchema } from '../../elements/nlCoreAddress/uiSchemaGroup';
-import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
-import { uiSchemaGroup as humanNameUiSchema } from '../../elements/nlCoreHumanname/uiSchemaGroup';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
+import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { type NlCorePractitioner } from './nlCorePractitioner';
 
 /**
@@ -11,9 +9,9 @@ import { type NlCorePractitioner } from './nlCorePractitioner';
 export function uiSchema(resource: NlCorePractitioner): UiSchema {
     const profile = 'nl_core_practitioner';
 
-    const address = map(resource.address, nlCoreAddressUiSchema, true);
-    const name = map(resource.name, humanNameUiSchema, true);
-    const telecom = map(resource.telecom, nlCoreContactPointUiSchema, true);
+    const address = map(resource.address, nlCoreAddress.uiSchemaGroup, true);
+    const name = map(resource.name, nlCoreHumanname.uiSchemaGroup, true);
+    const telecom = map(resource.telecom, nlCoreContactpoint.uiSchemaGroup, true);
 
     return {
         label: resource.name?.at(0)?.text,

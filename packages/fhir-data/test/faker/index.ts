@@ -1,20 +1,9 @@
 import { faker } from '@faker-js/faker';
-import * as type from './fhir/type';
-import * as elements from './fhir/elements';
-import * as resources from './fhir/resources';
 import * as helpers from './helpers';
 import * as uiSchema from './uiSchema';
-import * as nictizNlProfile from './fhir/nictizNlProfile';
-import * as fhirVersion from './fhir/fhirVersion';
 import { nullish } from './nullish';
-
-const fhir = {
-    ...type,
-    ...elements,
-    ...resources,
-    ...nictizNlProfile,
-    ...fhirVersion,
-};
+import { fhir } from './fhir';
+import { fhirR4 } from './fhirR4';
 
 const custom = {
     ...helpers,
@@ -23,6 +12,7 @@ const custom = {
 
 type CustomizedFaker = typeof faker & {
     fhir: typeof fhir;
+    fhirR4: typeof fhirR4;
     custom: typeof custom;
     uiSchema: typeof uiSchema;
 };
@@ -30,6 +20,7 @@ type CustomizedFaker = typeof faker & {
 const customizedFaker = faker as CustomizedFaker;
 
 customizedFaker.fhir = fhir;
+customizedFaker.fhirR4 = fhirR4;
 customizedFaker.custom = custom;
 customizedFaker.uiSchema = uiSchema;
 

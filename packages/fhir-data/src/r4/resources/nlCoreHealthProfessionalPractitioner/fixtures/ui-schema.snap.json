@@ -1,0 +1,168 @@
+{
+    "label": "J.H.R. Peters",
+    "children": [
+        {
+            "label": "nl_core_health_professional_practitioner.group_details",
+            "children": [
+                {
+                    "label": "nl_core_health_professional_practitioner.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "21870932"
+                    ]
+                },
+                {
+                    "label": "nl_core_health_professional_practitioner.gender",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_health_professional_practitioner.birth_date",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_health_professional_practitioner.communication",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_name_information",
+            "children": [
+                {
+                    "label": "nl_name_information.text",
+                    "type": "SINGLE_VALUE",
+                    "display": "J.H.R. Peters"
+                },
+                {
+                    "label": "nl_name_information.family",
+                    "type": "SINGLE_VALUE",
+                    "display": "Peters"
+                },
+                {
+                    "label": "nl_name_information.given",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "J.",
+                        "H.",
+                        "R."
+                    ]
+                },
+                {
+                    "label": "nl_name_information.name_usage",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_name_information.prefix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "nl_name_information.suffix",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_contact_information_email_addresses",
+            "children": [
+                {
+                    "label": "nl_core_contact_information_email_addresses.value",
+                    "type": "SINGLE_VALUE",
+                    "display": "j.peters@hospital.nl"
+                },
+                {
+                    "label": "nl_core_contact_information_email_addresses.use",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                }
+            ]
+        },
+        {
+            "label": "nl_core_contact_information_telephone_numbers",
+            "children": [
+                {
+                    "label": "nl_core_contact_information_telephone_numbers.value",
+                    "type": "SINGLE_VALUE",
+                    "display": "+3715828282"
+                },
+                {
+                    "label": "nl_core_contact_information_telephone_numbers.use",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "nl_core_contact_information_telephone_numbers.comment",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_contact_information_telephone_numbers.telecomType",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "nl_core_address_information",
+            "children": [
+                {
+                    "label": "nl_core_address_information.streetName",
+                    "type": "SINGLE_VALUE",
+                    "display": "Simon Smitweg"
+                },
+                {
+                    "label": "nl_core_address_information.houseNumber",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "nl_core_address_information.houseNumberAddition",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.houseNumberIndication",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.additionalInformation",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.city",
+                    "type": "SINGLE_VALUE",
+                    "display": "Leiderdorp"
+                },
+                {
+                    "label": "nl_core_address_information.district",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "nl_core_address_information.postalCode",
+                    "type": "SINGLE_VALUE",
+                    "display": "2353 GA"
+                },
+                {
+                    "label": "nl_core_address_information.country",
+                    "type": "SINGLE_VALUE",
+                    "display": "Nederland"
+                },
+                {
+                    "label": "nl_core_address_information.addressType",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Work Place (WP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

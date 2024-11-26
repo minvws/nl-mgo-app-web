@@ -1,10 +1,10 @@
-import { nlCoreContactpoint } from '../../elements';
 import { type PractitionerRole } from 'fhir/r3';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
 import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
+import { nlCoreContactpoint } from '../../elements';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole'; // NOSONAR
 

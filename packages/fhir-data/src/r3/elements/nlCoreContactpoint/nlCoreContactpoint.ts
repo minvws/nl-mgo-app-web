@@ -1,8 +1,8 @@
-import { type ContactPoint } from 'fhir/r3';
 import { type Nullable } from '../../../types/Nullable';
-import { type ResourceElementConfigR3 } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../parse';
+import { type ResourceElementConfigR3 } from '../config';
+import { type ContactPoint } from 'fhir/r3';
 
 export interface NlCoreContactpoint {
     system: parse.MgoString | undefined;

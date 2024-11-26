@@ -1,4 +1,4 @@
-import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
+import { nlCoreContactpoint } from '../../elements';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
 import { type NlCorePractitionerRole } from './nlCorePractitionerRole';
@@ -9,7 +9,7 @@ import { type NlCorePractitionerRole } from './nlCorePractitionerRole';
 export function uiSchema(resource: NlCorePractitionerRole): UiSchema {
     const profile = 'nl_core_practitionerrole';
 
-    const telecom = map(resource.telecom, nlCoreContactPointUiSchema, true);
+    const telecom = map(resource.telecom, nlCoreContactpoint.uiSchemaGroup, true);
 
     return {
         label: resource.identifier?.at(0)?.value,

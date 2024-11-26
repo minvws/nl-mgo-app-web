@@ -1,9 +1,9 @@
-import { type Address } from 'fhir/r3';
 import { type Nullable } from '../../../types/Nullable';
-import { type ResourceElementConfigR3 } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';
 import { map } from '../../../utils';
 import { parse } from '../../../parse';
+import { type ResourceElementConfigR3 } from '../config';
+import { type Address } from 'fhir/r3';
 
 export interface NlCoreAddress {
     use: parse.MgoString | undefined;

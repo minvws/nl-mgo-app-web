@@ -1,32 +1,28 @@
 import { expectJson } from '$test';
-import { type RelatedPerson } from 'fhir/r4';
+import { type Address } from 'fhir/r4';
 import { test } from 'vitest';
-import inputContactPerson01 from './fixtures/01/fhir-resource-contact-person.json';
-import inputContactPerson02 from './fixtures/02/fhir-resource-contact-person.json';
+import input01 from './fixtures/01/fhir-resource.json';
+import input02 from './fixtures/02/fhir-resource.json';
 import { nlCoreAddressInformation } from './nlCoreAddressInformation';
 
 test('returns the expected output 01', () => {
-    const address = (inputContactPerson01 as RelatedPerson).address![0];
-    const output = nlCoreAddressInformation.parse(address);
+    const output = nlCoreAddressInformation.parse(input01 as Address);
     expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const address = (inputContactPerson01 as RelatedPerson).address![0];
-    const output = nlCoreAddressInformation.parse(address);
+    const output = nlCoreAddressInformation.parse(input01 as Address);
     const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(output);
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });
 
 test('returns the expected output 02', () => {
-    const address = (inputContactPerson02 as RelatedPerson).address![0];
-    const output = nlCoreAddressInformation.parse(address);
+    const output = nlCoreAddressInformation.parse(input02 as Address);
     expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
-    const address = (inputContactPerson02 as RelatedPerson).address![0];
-    const output = nlCoreAddressInformation.parse(address);
+    const output = nlCoreAddressInformation.parse(input02 as Address);
     const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(output);
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/02/ui-schema-group.snap.json');
 });

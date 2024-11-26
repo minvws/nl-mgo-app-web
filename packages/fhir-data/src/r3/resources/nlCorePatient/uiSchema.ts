@@ -1,9 +1,7 @@
+import { nlCoreHumanname, nlCoreAddress, nlCoreContactpoint } from '../../elements';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
-import { nlCoreHumanname } from '../../elements';
 import { uiSchemaGroup as photoUiSchema } from '../../elements/attachment/uiSchemaGroup';
-import { uiSchemaGroup as nlCoreAddressUiSchema } from '../../elements/nlCoreAddress/uiSchemaGroup';
-import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
 import { uiSchemaGroup as communicationUiSchema } from './elements/communication/uiSchemaGroup';
 import { uiSchemaGroup as contactUiSchema } from './elements/contact/uiSchemaGroup';
 import { uiSchemaGroup as linkUiSchema } from './elements/link/uiSchemaGroup';
@@ -15,13 +13,13 @@ import { type NlCorePatient } from './nlCorePatient';
 export function uiSchema(resource: NlCorePatient): UiSchema {
     const i18n = 'nl_core_patient';
 
-    const address = map(resource.address, nlCoreAddressUiSchema, true);
+    const address = map(resource.address, nlCoreAddress.uiSchemaGroup, true);
     const communication = map(resource.communication, communicationUiSchema, true);
     const contact = map(resource.contact, contactUiSchema, true);
     const link = map(resource.link, linkUiSchema, true);
     const name = map(resource.name, nlCoreHumanname.uiSchemaGroup, true);
     const photo = map(resource.photo, photoUiSchema, true);
-    const telecom = map(resource.telecom, nlCoreContactPointUiSchema, true);
+    const telecom = map(resource.telecom, nlCoreContactpoint.uiSchemaGroup, true);
 
     return {
         label: resource.name?.at(0)?.text,

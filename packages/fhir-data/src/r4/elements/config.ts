@@ -4,7 +4,7 @@ import { type UiSchemaGroup } from '../../ui';
 
 type ElementParserFunction<T extends BackboneElement, ParsedResource extends object> = (
     resource: Nullable<T>
-) => ParsedResource;
+) => ParsedResource | undefined;
 
 type UiSchemaGroupFunction<ParsedResource extends object> = (
     parsedResource: ParsedResource

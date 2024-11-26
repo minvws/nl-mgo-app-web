@@ -1,4 +1,3 @@
-import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
 import { type Organization } from 'fhir/r3';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
@@ -6,6 +5,7 @@ import { filterCodeableConceptByCoding } from '../../../parse/helpers';
 import { map } from '../../../utils';
 import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
+import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-organization'; // NOSONAR
 

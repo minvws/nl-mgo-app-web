@@ -1,0 +1,27 @@
+{
+    "label": "nl_core_contact_information_telephone_numbers",
+    "children": [
+        {
+            "label": "nl_core_contact_information_telephone_numbers.value",
+            "type": "SINGLE_VALUE",
+            "display": "+31611234567"
+        },
+        {
+            "label": "nl_core_contact_information_telephone_numbers.use",
+            "type": "SINGLE_VALUE",
+            "display": "work"
+        },
+        {
+            "label": "nl_core_contact_information_telephone_numbers.comment",
+            "type": "SINGLE_VALUE",
+            "display": "Tussen 9 en 17"
+        },
+        {
+            "label": "nl_core_contact_information_telephone_numbers.telecomType",
+            "type": "MULTIPLE_VALUES",
+            "display": [
+                "Mobile Phone (MC in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+            ]
+        }
+    ]
+}

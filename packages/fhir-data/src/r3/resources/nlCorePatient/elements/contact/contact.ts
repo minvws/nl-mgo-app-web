@@ -1,8 +1,8 @@
 import { type PatientContact } from 'fhir/r3';
 import {
     type NlCoreContactpoint,
-    type NlCoreAddress,
     nlCoreContactpoint,
+    type NlCoreAddress,
     nlCoreAddress,
     nlCoreHumanname,
     type NlCoreHumanname,

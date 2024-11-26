@@ -1,5 +1,4 @@
-import { uiSchemaGroup as nlCoreAddressUiSchema } from '../../elements/nlCoreAddress/uiSchemaGroup';
-import { uiSchemaGroup as nlCoreContactPointUiSchema } from '../../elements/nlCoreContactpoint/uiSchemaGroup';
+import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
 import { ui, type UiSchema } from '../../../ui';
 import { map } from '../../../utils';
 import { type NlCoreOrganization } from './nlCoreOrganization';
@@ -10,8 +9,8 @@ import { type NlCoreOrganization } from './nlCoreOrganization';
 export function uiSchema(resource: NlCoreOrganization): UiSchema {
     const profile = 'nl_core_organization';
 
-    const address = map(resource.address, nlCoreAddressUiSchema, true);
-    const telecom = map(resource.telecom, nlCoreContactPointUiSchema, true);
+    const address = map(resource.address, nlCoreAddress.uiSchemaGroup, true);
+    const telecom = map(resource.telecom, nlCoreContactpoint.uiSchemaGroup, true);
 
     return {
         label: resource.name,

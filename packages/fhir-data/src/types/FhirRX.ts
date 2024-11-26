@@ -1,9 +1,11 @@
 import type {
+    Address as AddressR3,
     Annotation as AnnotationR3,
     BackboneElement as BackboneElementR3,
     Bundle as BundleR3,
     CodeableConcept as CodeableConceptR3,
     Coding as CodingR3,
+    ContactPoint as ContactPointR3,
     DomainResource as DomainResourceR3,
     Duration as DurationR3,
     Element as ElementR3,
@@ -20,11 +22,13 @@ import type {
 } from 'fhir/r3';
 
 import type {
+    Address as AddressR4,
     Annotation as AnnotationR4,
     BackboneElement as BackboneElementR4,
     Bundle as BundleR4,
     CodeableConcept as CodeableConceptR4,
     Coding as CodingR4,
+    ContactPoint as ContactPointR4,
     DomainResource as DomainResourceR4,
     Duration as DurationR4,
     Element as ElementR4,
@@ -46,6 +50,7 @@ import type {
  */
 
 export type Quantity = QuantityR3 | QuantityR4;
+export type Address = AddressR3 | AddressR4;
 export type Annotation = AnnotationR3 | AnnotationR4;
 export type CodeableConcept = CodeableConceptR3 | CodeableConceptR4;
 export type Coding = CodingR3 | CodingR4;
@@ -55,6 +60,7 @@ export type Period = PeriodR3 | PeriodR4;
 export type Range = RangeR3 | RangeR4;
 export type Ratio = RatioR3 | RatioR4;
 export type HumanName = HumanNameR3 | HumanNameR4;
+export type ContactPoint = ContactPointR3 | ContactPointR4;
 export type BackboneElement = BackboneElementR3 | BackboneElementR4;
 export type Reference = ReferenceR3 | ReferenceR4;
 

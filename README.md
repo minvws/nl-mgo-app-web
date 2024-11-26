@@ -43,18 +43,23 @@ The UI components live in `packages/mgo-ui/` and a storybook environment is avai
 
 ### Prerequisites
 
-In this repository we are using [asdf](https://asdf-vm.com/guide/introduction.html) as a tool version manager.
-All tool version definitions are contained within one file, the `.tool-versions` and this enables our team to use the exact same version of tools.
+In this repository we are using [asdf](https://asdf-vm.com/guide/introduction.html) to manage the `node`/`pnpm` version for the local development environment.
+The versions are set in the `.tool-versions` file.
 
-To install all the tools defined in the `.tool-versions` file run
+To install [asdf](https://asdf-vm.com/guide/introduction.html) please see the [official installation instructions](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf).
+
+After having installed asdf you will need to add the required plugins, followed by the install command to install the specified version.
 
 ```sh
+# add plugins
+asdf plugin-add nodejs
+asdf plugin-add pnpm
+
+# install specified versions
 asdf install
 ```
 
-with no other arguments in the root directory of this project, where the `.tool-versions` file is located.
-
-It's handy to add the asdf plugin for your terminal shell. See the [installation instructions](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) for details.
+When this is set up, asdf will ensure you will always have the correct (node) version in any teminal that is opened within this project directory.
 
 ### Running a local development server
 

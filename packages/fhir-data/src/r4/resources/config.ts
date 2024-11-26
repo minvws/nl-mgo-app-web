@@ -4,7 +4,7 @@ import { type UiSchema } from '../../ui';
 
 type ParserFunction<T extends FhirResource, ParsedResource extends MgoResourceMeta> = (
     resource: T
-) => ParsedResource;
+) => ParsedResource | undefined;
 
 type UiSchemaFunction<ParsedResource extends MgoResourceMeta> = (
     parsedResource: ParsedResource
