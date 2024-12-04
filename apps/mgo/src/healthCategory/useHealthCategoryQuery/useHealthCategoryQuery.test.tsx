@@ -2,7 +2,12 @@ import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { flushCallStack } from '$test/helpers';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { getMgoResource, type MgoResourceR3, type ResourceByTypeR3 } from '@minvws/mgo-fhir-data';
+import {
+    FhirVersion,
+    getMgoResource,
+    type MgoResourceR3,
+    type ResourceByTypeR3,
+} from '@minvws/mgo-fhir-data';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
 import { type ReactNode } from 'react';
@@ -49,6 +54,7 @@ test('returns query state and related store data for medication ', async () => {
         organizationId: 'organization.id',
         dataServiceId: DataServiceId.CommonClinicalDataset,
         method: 'method',
+        fhirVersion: FhirVersion.R3,
     };
     const mgoResource = {
         profile: 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
@@ -127,6 +133,7 @@ test('can handle errors', async () => {
                 organizationId: 'organization.id',
                 dataServiceId: DataServiceId.CommonClinicalDataset,
                 method: 'method',
+                fhirVersion: FhirVersion.R3,
             },
             queryKey: [queryKey],
             queryFn: () => Promise.reject(),

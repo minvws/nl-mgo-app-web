@@ -1,10 +1,10 @@
-import { type KyOptions } from 'ky/distribution/types/options';
+import { type Options } from 'ky';
 import { HttpResponse, http } from 'msw';
 import { expect } from 'vitest';
 import { type TypedKyResponse } from '../src/types';
 import { FHIR_API_URL, server } from './server';
 
-export type RequestHandler<Response extends TypedKyResponse> = (options?: KyOptions) => Response;
+export type RequestHandler<Response extends TypedKyResponse> = (options?: Options) => Response;
 
 const toArray = (searchParams: URLSearchParams) => Array.from(searchParams.entries());
 

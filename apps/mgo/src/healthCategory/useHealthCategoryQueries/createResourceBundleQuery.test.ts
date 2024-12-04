@@ -3,10 +3,12 @@ import { DataServiceId } from '@minvws/mgo-fhir-client';
 import { expect, test, vi } from 'vitest';
 import { createResourceBundleQuery } from './createResourceBundleQuery';
 import { type QueryFunction } from '@tanstack/react-query';
+import { FhirVersion } from '@minvws/mgo-fhir-data';
 
 function createMockService() {
     return {
         dataServiceId: DataServiceId.CommonClinicalDataset,
+        fhirVersion: FhirVersion.R3,
         foobar: vi.fn(() => ({
             json: () => Promise.resolve({}),
         })),

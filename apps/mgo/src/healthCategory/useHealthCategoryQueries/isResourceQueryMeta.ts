@@ -1,9 +1,11 @@
 import { type DataServiceId } from '@minvws/mgo-fhir-client';
+import { type FhirVersion } from '@minvws/mgo-fhir-data';
 
 export interface ResourceQueryMeta {
     organizationId: string;
     method: string;
     dataServiceId: DataServiceId;
+    fhirVersion: FhirVersion;
 }
 
 declare module '@tanstack/react-query' {
@@ -16,6 +18,7 @@ export function isResourceQueryMeta(value: unknown): value is ResourceQueryMeta 
         value !== null &&
         'method' in value &&
         'organizationId' in value &&
-        'dataServiceId' in value
+        'dataServiceId' in value &&
+        'fhirVersion' in value
     );
 }

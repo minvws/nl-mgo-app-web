@@ -1,5 +1,5 @@
 import { createClient } from '../../client';
-import type { FhirClientOptions } from '../../types';
+import { type FhirClientOptions } from '../../types';
 import { setupEpisodeOfCare } from '../sections/episodeOfCare/setupEpisodeOfCare';
 import { setupMedicationRequest } from '../sections/medicationRequest/setupMedicationRequest';
 import { setupPatient } from '../sections/patient/setupPatient';
@@ -8,12 +8,14 @@ import { setupObservations } from '../sections/observations/setupObservations';
 import { setupCompositions } from '../sections/compositions/setupCompositions';
 import { setupEncounters } from '../sections/encounters/setupEncounters';
 import { type DataService, DataServiceId } from '../../DataService';
+import { FhirVersion } from '@minvws/mgo-fhir-data';
 
 export function createGpClient(options: FhirClientOptions) {
     const client = createClient(options);
 
     return {
         dataServiceId: DataServiceId.GeneralPractitioner,
+        fhirVersion: FhirVersion.R3,
         ...client,
         ...setupPatient(client),
         ...setupEpisodeOfCare(client),

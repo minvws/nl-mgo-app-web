@@ -2,6 +2,7 @@ import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
 import { type DataServiceId } from '@minvws/mgo-fhir-client';
 import {
     getUiSchema,
+    type MgoResourceR4,
     type Lossless,
     type MgoResourceR3,
     type NictizNlProfile,
@@ -10,9 +11,11 @@ import {
 import { create } from 'zustand';
 
 type MgoResourceR3Profile = MgoResourceR3['profile'];
+type MgoResourceR4Profile = MgoResourceR4['profile'];
 type MgoResourceR3ByProfile<T extends NictizNlProfile> = Extract<MgoResourceR3, { profile: T }>;
+type MgoResourceR4ByProfile<T extends NictizNlProfile> = Extract<MgoResourceR4, { profile: T }>;
 
-export type Resource<T extends MgoResourceR3 = MgoResourceR3> = {
+export type Resource<T extends MgoResourceR3 | MgoResourceR4 = MgoResourceR3 | MgoResourceR4> = {
     id: string;
     slug: string;
     organizationId: string;
@@ -28,10 +31,10 @@ export type ResourceDTO = Pick<Resource, 'organizationId' | 'dataServiceId' | 'm
 export interface ResourcesState {
     resources: Resource[];
     addResources: (resourceData: ResourceDTO[]) => Resource[];
-    getResourcesByProfile: <T extends MgoResourceR3Profile>(
+    getResourcesByProfile: <T extends MgoResourceR3Profile | MgoResourceR4Profile>(
         profile: T,
         organizationIdFilter?: (string | undefined)[]
-    ) => Resource<MgoResourceR3ByProfile<T>>[];
+    ) => Resource<MgoResourceR3ByProfile<T> | MgoResourceR4ByProfile<T>>[];
     getResourceBySlug: (slug: string | undefined) => Resource | undefined;
 }
 
@@ -86,7 +89,7 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
                     !organizationIdFilter || organizationIdFilter.includes(organizationId)
             )
             .filter(({ mgoResource }) => mgoResource.profile === profile) as Resource<
-            MgoResourceR3ByProfile<typeof profile>
+            MgoResourceR3ByProfile<typeof profile> | MgoResourceR4ByProfile<typeof profile>
         >[];
     },
 

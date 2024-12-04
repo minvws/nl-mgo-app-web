@@ -1,5 +1,5 @@
 import { createClient } from '../../client';
-import type { FhirClientOptions } from '../../types';
+import { type FhirClientOptions } from '../../types';
 import { setupPatientInformation } from '../sections/patientInformation/setupPatientInformation';
 import { setupPaymentDetails } from '../sections/paymentDetails/setupPaymentDetails';
 import { setupTreatmentDirectives } from '../sections/treatmentDirectives/setupTreatmentDirectives';
@@ -17,12 +17,14 @@ import { setupProcedures } from '../sections/procedures/setupProcedures';
 import { setupEncounters } from '../sections/encounters/setupEncounters';
 import { setupPlannedCare } from '../sections/plannedCare/setupPlannedCare';
 import { type DataService, DataServiceId } from '../../DataService';
+import { FhirVersion } from '@minvws/mgo-fhir-data';
 
 export function createBgzClient(options: FhirClientOptions) {
     const client = createClient(options);
 
     return {
         dataServiceId: DataServiceId.CommonClinicalDataset,
+        fhirVersion: FhirVersion.R3,
         ...client,
         ...setupPatientInformation(client),
         ...setupPaymentDetails(client),

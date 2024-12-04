@@ -10,6 +10,7 @@
         "check-types": "tsc --noEmit"
     },
     "dependencies": {
+        "@minvws/mgo-fhir-data": "workspace:*",
         "ky": "^1.3.0",
         "lossless-json": "^4.0.1"
     },

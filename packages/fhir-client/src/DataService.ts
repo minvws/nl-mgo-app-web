@@ -1,3 +1,5 @@
+import { type FhirVersion } from '@minvws/mgo-fhir-data';
+
 export enum DataServiceId {
     CommonClinicalDataset = 48,
     GeneralPractitioner = 49,
@@ -7,4 +9,5 @@ export enum DataServiceId {
 
 export interface DataService {
     dataServiceId: DataServiceId;
+    fhirVersion: FhirVersion;
 }

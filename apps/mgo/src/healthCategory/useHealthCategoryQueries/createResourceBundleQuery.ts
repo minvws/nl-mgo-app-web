@@ -30,6 +30,7 @@ export function createResourceBundleQuery<T extends DataService>({
             organizationId: organization.id,
             dataServiceId: service.dataServiceId,
             method: method as string,
+            fhirVersion: service.fhirVersion,
         } satisfies ResourceQueryMeta,
 
         // eslint-disable-next-line @tanstack/query/exhaustive-deps -- service[method] is not properly serializable, this combination of dataServiceId and method is enough

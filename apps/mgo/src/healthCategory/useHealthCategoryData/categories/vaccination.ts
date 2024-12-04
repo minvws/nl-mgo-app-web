@@ -9,6 +9,10 @@ export function getVaccinationData(
             'http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination',
             organizationIdFilter
         ),
+        vaccinationEvents: resources.getResourcesByProfile(
+            'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event', // NOSONAR
+            organizationIdFilter
+        ),
         vaccinationRecommendations: resources.getResourcesByProfile(
             'http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation',
             organizationIdFilter
