@@ -12,13 +12,16 @@
     },
     "status": "active",
     "category": [
-        [
-            {
-                "code": "11291000146105",
-                "display": "Treatment instructions (record artifact)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "11291000146105",
+                    "display": "Treatment instructions (record artifact)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "patient": {
         "reference": "Patient/nl-core-patient-01",

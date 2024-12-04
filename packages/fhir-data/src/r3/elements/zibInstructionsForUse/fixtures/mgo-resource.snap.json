@@ -1,0 +1,28 @@
+{
+    "sequence": 1,
+    "text": "Vanaf 8 jun 2020, 1 maal per dag, rectaal",
+    "additionalInstruction": null,
+    "asNeeded": null,
+    "route": {
+        "text": null,
+        "coding": [
+            {
+                "code": "12",
+                "display": "rectaal",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+            }
+        ]
+    },
+    "maxDosePerPeriod": null,
+    "timing": {
+        "duration": null,
+        "durationUnit": null,
+        "frequency": 1,
+        "frequencyMax": null,
+        "period": 1,
+        "periodUnit": "d",
+        "dayOfWeek": null,
+        "timeOfDay": null,
+        "when": null
+    }
+}

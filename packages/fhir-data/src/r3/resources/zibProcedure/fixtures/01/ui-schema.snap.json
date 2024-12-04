@@ -7,7 +7,7 @@
                 {
                     "label": "zib_procedure.performed_period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-06-05"
+                    "display": "5 juni 2012"
                 },
                 {
                     "label": "zib_procedure.performed_period.end",
@@ -55,8 +55,7 @@
                     "label": "zib_procedure.focal_device.manipulated",
                     "type": "REFERENCE_VALUE",
                     "display": "Knee joint prosthesis, device (physical object)",
-                    "reference": "Device/zib-medicaldeviceproduct-01",
-                    "summary": true
+                    "reference": "Device/zib-medicaldeviceproduct-01"
                 },
                 {
                     "label": "zib_procedure.location",
@@ -68,8 +67,7 @@
                     "label": "zib_procedure.performer",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
-                    "reference": "Organization/nl-core-organization-02",
-                    "summary": true
+                    "reference": "Organization/nl-core-organization-02"
                 },
                 {
                     "label": "zib_procedure.subject",

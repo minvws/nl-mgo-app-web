@@ -8,17 +8,21 @@ import {
     zibAdministrationSchedule,
 } from '../zibAdministrationSchedule/zibAdministrationSchedule';
 import { uiSchemaGroup } from './uiSchemaGroup';
+import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 
 export interface ZibInstructionsForUse {
+    sequence: parse.MgoInteger | undefined;
+    text: parse.MgoString | undefined;
     additionalInstruction: parse.MgoCodeableConcept[] | undefined;
     asNeeded: parse.MgoCodeableConcept | undefined;
-    doseQuantity: parse.MgoQuantity | undefined;
-    doseRange: parse.MgoRange | undefined;
+    route: parse.MgoCodeableConcept | undefined;
+    doseQuantity?: parse.MgoQuantity;
+    doseRange?: parse.MgoRange;
     maxDosePerPeriod: parse.MgoRatio | undefined;
-    rateRatio: parse.MgoRatio | undefined;
-    rateRange: parse.MgoRange | undefined;
-    rateQuantity: parse.MgoQuantity | undefined;
     timing: ZibAdministrationSchedule;
+    rateRatio?: parse.MgoRatio;
+    rateRange?: parse.MgoRange;
+    rateQuantity?: parse.MgoQuantity;
 }
 
 /**
@@ -28,14 +32,14 @@ export interface ZibInstructionsForUse {
  */
 function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsForUse {
     return {
-        additionalInstruction: map(value?.additionalInstruction, parse.codeableConcept),
-        asNeeded: parse.codeableConcept(value?.asNeededCodeableConcept),
-        doseQuantity: parse.quantity(value?.doseQuantity),
-        doseRange: parse.range(value?.doseRange),
-        maxDosePerPeriod: parse.ratio(value?.maxDosePerPeriod),
-        rateRatio: parse.ratio(value?.rateRatio),
-        rateRange: parse.range(value?.rateRange),
-        rateQuantity: parse.quantity(value?.rateQuantity),
+        sequence: parse.integer(value?.sequence), // NL-CM:9.12.22503
+        text: parse.string(value?.text), // NL-CM:9.12.9581
+        additionalInstruction: map(value?.additionalInstruction, parse.codeableConcept), // NL-CM:9.12.19944
+        asNeeded: parse.codeableConcept(value?.asNeededCodeableConcept), // NL-CM:9.12.22512 | NL-CM:9.12.19945
+        route: parse.codeableConcept(value?.route), // NL-CM:9.12.19941
+        ...oneOfValueX(value, ['range', 'quantity'], 'dose'), // NL-CM:9.12.19940
+        maxDosePerPeriod: parse.ratio(value?.maxDosePerPeriod), // NL-CM:9.12.19946
+        ...oneOfValueX(value, ['ratio', 'range', 'quantity'], 'rate'), // NL-CM:9.12.19942
         timing: zibAdministrationSchedule.parse(value?.timing),
     };
 }

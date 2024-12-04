@@ -12,7 +12,7 @@ export function uiSchema(resource: NlCoreVaccinationEvent): UiSchema {
     const protocolApplied = map(resource.protocolApplied, protocolAppliedUiSchema, true);
 
     return {
-        label: resource.vaccineCode?.at(0)?.display,
+        label: resource.vaccineCode?.coding?.at(0)?.display,
         children: [
             {
                 label: `${profile}.group_details`,
@@ -23,7 +23,7 @@ export function uiSchema(resource: NlCoreVaccinationEvent): UiSchema {
                     ),
                     ui.string(`${profile}.status`, resource.status),
                     ui.codeableConcept(`${profile}.vaccine_code`, resource.vaccineCode),
-                    ui.reference(`${profile}.patient`, resource.patient, { summary: true }),
+                    ui.reference(`${profile}.patient`, resource.patient),
                     ui.dateTime(`${profile}.occurrence_date_time`, resource.occurrenceDateTime),
                     ui.codeableConcept(`${profile}.site`, resource.site),
                     ui.codeableConcept(`${profile}.route`, resource.route),

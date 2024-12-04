@@ -15,7 +15,7 @@ export function uiSchema(resource: ZibMedicalDeviceRequest): UiSchema {
                 children: [
                     ui.string(`${profile}.status.order_status`, resource.status),
                     ...ui.period(`${profile}.occurrence_period`, resource.occurrence),
-                    ...ui.valueX(`${profile}.code`, resource, 'code'),
+                    ...ui.oneOfValueX(`${profile}.code`, resource, 'code'),
                     ui.reference(`${profile}.perfomer`, resource.perfomer),
                 ],
             },

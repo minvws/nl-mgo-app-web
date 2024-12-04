@@ -13,13 +13,16 @@
         }
     ],
     "status": null,
-    "type": [
-        {
-            "code": "B",
-            "display": "Basis verzekerd",
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1"
-        }
-    ],
+    "type": {
+        "text": null,
+        "coding": [
+            {
+                "code": "B",
+                "display": "Basis verzekerd",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1"
+            }
+        ]
+    },
     "policyHolder": null,
     "subscriber": {
         "reference": "Patient/nl-core-patient-01",

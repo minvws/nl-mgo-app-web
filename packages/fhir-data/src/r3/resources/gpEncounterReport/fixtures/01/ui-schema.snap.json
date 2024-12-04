@@ -30,7 +30,7 @@
                 {
                     "label": "EncounterReport.date",
                     "type": "SINGLE_VALUE",
-                    "display": "2020-03-15"
+                    "display": "15 maart 2020"
                 },
                 {
                     "label": "EncounterReport.author",

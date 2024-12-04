@@ -20,7 +20,7 @@
                 {
                     "label": "zib_medical_device_product.expiration_date",
                     "type": "SINGLE_VALUE",
-                    "display": "2016-01-31"
+                    "display": "31 januari 2016"
                 }
             ]
         }

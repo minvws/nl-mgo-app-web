@@ -6,13 +6,16 @@
     "fhirVersion": "R4",
     "pharmaceuticalProduct": null,
     "status": "completed",
-    "vaccineCode": [
-        {
-            "code": "J07BC02",
-            "display": "Hepatitis A-vaccin",
-            "system": "http://www.whocc.no/atc"
-        }
-    ],
+    "vaccineCode": {
+        "text": null,
+        "coding": [
+            {
+                "code": "J07BC02",
+                "display": "Hepatitis A-vaccin",
+                "system": "http://www.whocc.no/atc"
+            }
+        ]
+    },
     "patient": {
         "reference": "Patient/nl-core-Patient-01",
         "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"

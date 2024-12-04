@@ -24,12 +24,12 @@
                 {
                     "label": "Encounter.period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2013-02-08"
+                    "display": "8 februari 2013"
                 },
                 {
                     "label": "Encounter.period.end",
                     "type": "SINGLE_VALUE",
-                    "display": "2013-02-08"
+                    "display": "8 februari 2013"
                 },
                 {
                     "label": "Encounter.reason",

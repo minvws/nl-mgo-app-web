@@ -16,13 +16,16 @@
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
-    "code": [
-        {
-            "code": "3208",
-            "display": "glucose nuchter, art/cap (lab)",
-            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "3208",
+                "display": "glucose nuchter, art/cap (lab)",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+            }
+        ]
+    },
     "method": null,
     "effective": {
         "start": "2024-03-18",
@@ -58,13 +61,16 @@
     "specimen": null,
     "comment": null,
     "category": [
-        [
-            {
-                "code": "49581000146104",
-                "display": "bevinding betreffende laboratoriumonderzoek",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "49581000146104",
+                    "display": "bevinding betreffende laboratoriumonderzoek",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "related": null,
     "basedOn": null

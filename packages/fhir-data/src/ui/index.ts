@@ -10,4 +10,6 @@ export const ui = {
     },
 };
 
+export { dropEmptyEntries } from './helpers';
+
 export type { UiSchema, UiSchemaGroup } from './types';

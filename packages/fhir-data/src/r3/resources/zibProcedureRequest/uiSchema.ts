@@ -8,7 +8,7 @@ export function uiSchema(resource: ZibProcedureRequest): UiSchema {
     const profile = 'zib_procedure_request';
 
     return {
-        label: resource.code?.at(0)?.display,
+        label: resource.code?.coding?.at(0)?.display,
         children: [
             {
                 label: `${profile}`,

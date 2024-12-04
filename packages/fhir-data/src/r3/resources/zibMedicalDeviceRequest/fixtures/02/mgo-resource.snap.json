@@ -13,13 +13,16 @@
         "reference": "Device/zib-MedicalDeviceProduct-03",
         "display": "Gehoorapparaat"
     },
-    "intent": [
-        {
-            "code": "order",
-            "display": null,
-            "system": "http://hl7.org/fhir/request-intent"
-        }
-    ],
+    "intent": {
+        "text": null,
+        "coding": [
+            {
+                "code": "order",
+                "display": null,
+                "system": "http://hl7.org/fhir/request-intent"
+            }
+        ]
+    },
     "subject": {
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"

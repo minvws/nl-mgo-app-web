@@ -51,8 +51,7 @@
                     "label": "zib_procedure.performer",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
-                    "reference": "Organization/nl-core-organization-02",
-                    "summary": true
+                    "reference": "Organization/nl-core-organization-02"
                 },
                 {
                     "label": "zib_procedure.subject",

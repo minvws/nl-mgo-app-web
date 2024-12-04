@@ -13,7 +13,7 @@ export function uiSchema(resource: ZibProcedure): UiSchema {
     const performers = map(resource.performer, performerUiSchema, true);
 
     return {
-        label: resource.code?.at(0)?.display,
+        label: resource.code?.coding?.at(0)?.display,
         children: [
             {
                 label: `${profile}`,

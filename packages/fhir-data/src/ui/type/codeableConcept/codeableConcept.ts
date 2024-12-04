@@ -8,5 +8,14 @@ export const codeableConcept: UiFunction<MgoCodeableConcept, MultipleValues> = (
     value,
     options
 ) => {
-    return multipleValues(label, value, coding, options);
+    if (value?.text?.length) {
+        return {
+            label,
+            type: 'MULTIPLE_VALUES',
+            display: [value.text],
+            ...options,
+        };
+    }
+
+    return multipleValues(label, value?.coding, coding, options);
 };

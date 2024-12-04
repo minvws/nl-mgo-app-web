@@ -16,21 +16,27 @@
     "verificationStatus": "unknown",
     "category": null,
     "severity": null,
-    "code": [
-        {
-            "code": "31641000146105",
-            "display": "Fracture of wrist (disorder)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "bodySite": [
-        [
+    "code": {
+        "text": null,
+        "coding": [
             {
-                "code": "361289009",
-                "display": "Entire wrist region",
+                "code": "31641000146105",
+                "display": "Fracture of wrist (disorder)",
                 "system": "http://snomed.info/sct"
             }
         ]
+    },
+    "bodySite": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "361289009",
+                    "display": "Entire wrist region",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "subject": {
         "reference": "Patient/nl-core-patient-01",

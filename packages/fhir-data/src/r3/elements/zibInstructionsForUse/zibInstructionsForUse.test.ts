@@ -1,31 +1,30 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
-import { zibInstructionsForUse } from './zibInstructionsForUse';
+import { expectJson, faker } from '$test';
+import { type Dosage } from 'fhir/r3';
+import { expect, test } from 'vitest';
 import { parse } from '../../../parse';
+import inputFhirData from './fixtures/fhir-resource.json';
+import { uiSchemaGroup } from './uiSchemaGroup';
+import { zibInstructionsForUse } from './zibInstructionsForUse';
 
-testSet(
-    'zibInstructionsForUse parses successfully',
-    faker.fhir.dosage,
-    (data) => {
-        const schema = zibInstructionsForUse.parse(data);
-        expect(schema).toEqual(
-            expect.objectContaining({
-                asNeeded: parse.codeableConcept(data.asNeededCodeableConcept),
-            })
-        );
-    },
-    false
-);
+test('zibInstructionsForUse returns the expected output', () => {
+    const output = zibInstructionsForUse.parse(inputFhirData as Dosage);
+    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+});
 
-testSet(
-    'zibInstructionsForUse schema group is created successfully',
-    () => {
-        const data = faker.fhir.dosage();
-        return zibInstructionsForUse.parse(data);
-    },
-    (data) => {
-        const schema = zibInstructionsForUse.uiSchemaGroup(data);
-        expect(schema.label).toBe('zib_instructions_for_use');
-    },
-    false
-);
+test('uiSchema returns the expected output', () => {
+    const zibData = zibInstructionsForUse.parse(inputFhirData as Dosage);
+    const zibMedicationUseUiSchema = uiSchemaGroup(zibData);
+    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema-group.snap.json'
+    );
+});
+
+test('zibInstructionsForUse parses successfully', () => {
+    const data = faker.fhir.dosage();
+    const schema = zibInstructionsForUse.parse(data);
+    expect(schema).toEqual(
+        expect.objectContaining({
+            asNeeded: parse.codeableConcept(data.asNeededCodeableConcept),
+        })
+    );
+});

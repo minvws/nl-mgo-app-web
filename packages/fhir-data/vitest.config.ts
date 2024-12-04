@@ -10,4 +10,7 @@ export default () =>
                 $test: resolvePath('./test'),
             },
         },
+        test: {
+            globalSetup: ['./test/globals.ts'],
+        },
     });

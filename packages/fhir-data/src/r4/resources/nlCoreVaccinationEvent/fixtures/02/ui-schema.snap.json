@@ -26,13 +26,12 @@
                     "label": "nl_core_vaccination_event.patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
-                    "reference": "Patient/nl-core-Patient-01",
-                    "summary": true
+                    "reference": "Patient/nl-core-Patient-01"
                 },
                 {
                     "label": "nl_core_vaccination_event.occurrence_date_time",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-06-03"
+                    "display": "3 juni 2012"
                 },
                 {
                     "label": "nl_core_vaccination_event.site",

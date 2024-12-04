@@ -1,15 +1,21 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
-import * as format from './date';
+import { type MockedFunction, expect, test, vi } from 'vitest';
+import { date } from './date';
+import { dateTime } from '../dateTime/dateTime';
 
-test('format date returns undefined for nullish', () => {
-    const value = faker.custom.nullish();
-    const result = format.date(value);
-    expect(result).toBeUndefined();
-});
+const dateTimeMock = dateTime as MockedFunction<typeof dateTime>;
 
-test('format date', () => {
+vi.mock('../dateTime/dateTime', () => ({
+    dateTime: vi.fn(),
+}));
+
+test('format date uses the dateTime formatter', () => {
+    const mockResult = faker.lorem.word();
+    dateTimeMock.mockImplementationOnce(() => mockResult);
+
     const value = faker.fhir.date();
-    const result = format.date(value);
-    expect(result).toEqual(`${value}`);
+    const result = date(value);
+
+    expect(dateTimeMock).toHaveBeenCalledWith(value);
+    expect(result).toBe(mockResult);
 });

@@ -54,12 +54,12 @@
                 {
                     "label": "zib_payer.period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2018-01-01"
+                    "display": "1 januari 2018"
                 },
                 {
                     "label": "zib_payer.period.end",
                     "type": "SINGLE_VALUE",
-                    "display": "2019-01-31"
+                    "display": "31 januari 2019"
                 },
                 {
                     "label": "zib_payer.payor",

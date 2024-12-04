@@ -24,7 +24,7 @@
                 {
                     "label": "Encounter.period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-08-16"
+                    "display": "16 augustus 2012"
                 },
                 {
                     "label": "Encounter.period.end",
@@ -35,8 +35,7 @@
                     "label": "Encounter.diagnosis.condition",
                     "type": "REFERENCE_VALUE",
                     "display": "Broken leg",
-                    "reference": "Condition/zib-problem-05",
-                    "summary": true
+                    "reference": "Condition/zib-problem-05"
                 },
                 {
                     "label": "Encounter.reason",

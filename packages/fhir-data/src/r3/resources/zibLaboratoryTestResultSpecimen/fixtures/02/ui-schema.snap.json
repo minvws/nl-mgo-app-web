@@ -24,7 +24,7 @@
                 {
                     "label": "zib_laboratory_test_result_specimen.collected.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2010-06-01"
+                    "display": "1 juni 2010"
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen.collected.end",

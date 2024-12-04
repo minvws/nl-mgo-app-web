@@ -12,7 +12,7 @@
                 {
                     "label": "zib_medical_device_request.occurrence_period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-03-13"
+                    "display": "13 maart 2012"
                 },
                 {
                     "label": "zib_medical_device_request.occurrence_period.end",

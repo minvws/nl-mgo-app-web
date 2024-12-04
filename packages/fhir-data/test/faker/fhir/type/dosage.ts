@@ -1,15 +1,15 @@
-import { collection, mockOptionalFields } from '$test/faker/helpers';
+import { collection } from '$test/faker/helpers';
 import { faker } from '@faker-js/faker';
 import { type Dosage } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
 import { codeableConcept } from './codeableConcept';
-import { range } from './range';
 import { quantity } from './quantity';
+import { range } from './range';
 import { ratio } from './ratio';
 import { timing } from './timing';
 
 export const dosage = createMockDataFactory<Dosage>(() => {
-    return mockOptionalFields({
+    return {
         additionalInstruction: collection({ factory: codeableConcept, max: 3 }),
         asNeededBoolean: faker.datatype.boolean(),
         asNeededCodeableConcept: codeableConcept(),
@@ -25,5 +25,5 @@ export const dosage = createMockDataFactory<Dosage>(() => {
         site: codeableConcept(),
         test: faker.lorem.sentence(),
         timing: timing(),
-    });
+    };
 });

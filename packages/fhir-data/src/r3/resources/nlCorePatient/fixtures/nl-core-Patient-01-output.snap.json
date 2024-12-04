@@ -26,20 +26,26 @@
     "contact": [
         {
             "relationship": [
-                [
-                    {
-                        "code": "1",
-                        "display": "Eerste relatie/contactpersoon",
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
-                    }
-                ],
-                [
-                    {
-                        "code": "WIFE",
-                        "display": "Wife",
-                        "system": "http://hl7.org/fhir/v3/RoleCode"
-                    }
-                ]
+                {
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "1",
+                            "display": "Eerste relatie/contactpersoon",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+                        }
+                    ]
+                },
+                {
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "WIFE",
+                            "display": "Wife",
+                            "system": "http://hl7.org/fhir/v3/RoleCode"
+                        }
+                    ]
+                }
             ],
             "name": {
                 "family": "van Putten XXX_Helleman",
@@ -112,13 +118,16 @@
     ],
     "link": null,
     "managingOrganization": null,
-    "maritalStatus": [
-        {
-            "code": "M",
-            "display": "Married",
-            "system": "http://hl7.org/fhir/v3/MaritalStatus"
-        }
-    ],
+    "maritalStatus": {
+        "text": null,
+        "coding": [
+            {
+                "code": "M",
+                "display": "Married",
+                "system": "http://hl7.org/fhir/v3/MaritalStatus"
+            }
+        ]
+    },
     "multipleBirth": false,
     "multipleBirthInteger": null,
     "name": [

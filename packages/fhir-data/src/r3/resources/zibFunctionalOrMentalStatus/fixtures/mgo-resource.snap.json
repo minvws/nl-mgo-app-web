@@ -9,13 +9,16 @@
     ],
     "status": "final",
     "category": [
-        [
-            {
-                "code": "118228005",
-                "display": "Functional finding (finding)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "118228005",
+                    "display": "Functional finding (finding)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "subject": {
         "reference": "Patient/nl-core-patient-01",

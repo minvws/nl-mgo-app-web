@@ -39,7 +39,7 @@
                 {
                     "label": "zib_alert.period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2010-06-01"
+                    "display": "1 juni 2010"
                 },
                 {
                     "label": "zib_alert.period.end",

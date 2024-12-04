@@ -26,12 +26,12 @@
                 {
                     "label": "e_afspraak_appointment.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2018-01-01T09:00:00+01:00"
+                    "display": "1 januari 2018 om 09:00:00 GMT+1"
                 },
                 {
                     "label": "e_afspraak_appointment.end",
                     "type": "SINGLE_VALUE",
-                    "display": "2018-01-01T09:45:00+01:00"
+                    "display": "1 januari 2018 om 09:45:00 GMT+1"
                 },
                 {
                     "label": "e_afspraak_appointment.participant",

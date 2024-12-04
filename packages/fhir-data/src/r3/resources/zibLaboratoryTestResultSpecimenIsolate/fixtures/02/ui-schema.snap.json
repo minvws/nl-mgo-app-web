@@ -36,7 +36,7 @@
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.collected.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2010-06-01"
+                    "display": "1 juni 2010"
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.collected.end",
@@ -46,7 +46,7 @@
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.received_time",
                     "type": "SINGLE_VALUE",
-                    "display": "2020-03-01T22:03:00+00:00"
+                    "display": "1 maart 2020 om 23:03:00 GMT+1"
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.collection.method",

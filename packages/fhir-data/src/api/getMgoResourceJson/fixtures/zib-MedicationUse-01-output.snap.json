@@ -24,25 +24,28 @@
     }
   ],
   "status": "completed",
-  "category": [
-    {
-      "code": "6",
-      "display": "Medicatiegebruik",
-      "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3"
-    }
-  ],
-  "medication": {
+  "category": {
+    "text": "Medicatiegebruik",
+    "coding": [
+      {
+        "code": "6",
+        "display": "Medicatiegebruik",
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3"
+      }
+    ]
+  },
+  "medicationReference": {
     "reference": "Medication/zib-Product-02",
     "display": "PARACETAMOL TABLET 500MG"
+  },
+  "effectivePeriod": {
+    "start": "2020-07-21"
   },
   "effectiveDuration": {
     "value": 30,
     "unit": "dag",
     "system": "http://unitsofmeasure.org",
     "code": "d"
-  },
-  "effectivePeriod": {
-    "start": "2020-07-21"
   },
   "dateAsserted": "2020-07-21",
   "subject": {
@@ -52,13 +55,26 @@
   "taken": "y",
   "dosage": [
     {
-      "asNeeded": [
-        {
-          "code": "1137",
-          "display": "zo nodig",
-          "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
-        }
-      ],
+      "sequence": 1,
+      "text": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL",
+      "asNeeded": {
+        "coding": [
+          {
+            "code": "1137",
+            "display": "zo nodig",
+            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+          }
+        ]
+      },
+      "route": {
+        "coding": [
+          {
+            "code": "9",
+            "display": "ORAAL",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+          }
+        ]
+      },
       "doseRange": {
         "low": {
           "value": 1,

@@ -1,28 +1,35 @@
-import { faker, testSet } from '$test';
+import { expectJson, faker } from '$test';
+import { type Timing } from 'fhir/r3';
 import { expect, test } from 'vitest';
+import inputFhirData from './fixtures/fhir-resource.json';
+import { uiSchemaGroup } from './uiSchemaGroup';
 import { zibAdministrationSchedule } from './zibAdministrationSchedule';
 
-testSet(
-    'zibAdministrationSchedule parses successfully',
-    faker.fhir.timing,
-    (data) => {
-        const schema = zibAdministrationSchedule.parse(data);
-        expect(schema).toEqual(
-            expect.objectContaining({
-                duration: data.repeat?.duration,
-            })
-        );
-    },
-    false
-);
+test('zibInstructionsForUse returns the expected output', () => {
+    const output = zibAdministrationSchedule.parse(inputFhirData as Timing);
+    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+});
 
-test.each([
-    {
-        ...faker.fhir.timing(),
-        repeat: undefined,
-    },
-    undefined,
-])('zibAdministrationSchedule parses successfully when there data is undefined', (data) => {
+test('uiSchema returns the expected output', () => {
+    const zibData = zibAdministrationSchedule.parse(inputFhirData as Timing);
+    const zibMedicationUseUiSchema = uiSchemaGroup(zibData);
+    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema-group.snap.json'
+    );
+});
+
+test('zibAdministrationSchedule parses successfully', () => {
+    const data = faker.fhir.timing();
+    const schema = zibAdministrationSchedule.parse(data);
+    expect(schema).toEqual(
+        expect.objectContaining({
+            duration: data.repeat?.duration,
+        })
+    );
+});
+
+test('zibAdministrationSchedule parses successfully when there data is undefined', () => {
+    const data = undefined;
     const zibData = zibAdministrationSchedule.parse(data);
     expect(zibData).toEqual(
         expect.objectContaining({
@@ -30,16 +37,3 @@ test.each([
         })
     );
 });
-
-testSet(
-    'zibAdministrationSchedule UI schema group is created successfully',
-    () => {
-        const data = faker.fhir.timing();
-        return zibAdministrationSchedule.parse(data);
-    },
-    (data) => {
-        const schema = zibAdministrationSchedule.uiSchemaGroup(data);
-        expect(schema.label).toBe('zib_administration_schedule');
-    },
-    false
-);

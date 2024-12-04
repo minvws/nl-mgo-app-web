@@ -10,12 +10,12 @@ export function uiSchema(resource: ZibVaccination): UiSchema {
     const practitioners = map(resource.practitioner, actorUiSchema, true);
 
     return {
-        label: resource.vaccineCode?.[0]?.display ?? '',
+        label: resource.vaccineCode?.coding?.[0]?.display ?? '',
         children: [
             {
                 label: `Immunization`,
                 children: [
-                    ui.multipleValues('Immunization.vaccineCode', resource.vaccineCode, ui.coding),
+                    ui.codeableConcept('Immunization.vaccineCode', resource.vaccineCode),
                     ui.simpleQuantity('Immunization.doseQuantity', resource.dose),
                     ui.dateTime('Immunization.date', resource.vaccinationDate),
                     ui.multipleValues(`Immunization.note.text`, resource.note, ui.annotation),

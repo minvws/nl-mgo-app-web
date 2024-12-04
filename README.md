@@ -5,11 +5,11 @@ This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and
 
 ## Table of contents
 
-- 📋 [Directory structure](#directory-structure)
-- 💻 [Running locally](#running-locally)
-- 📦 [Development](#development)
-- 🚀 [Deployment](#deployment)
-- ⚖️ [License](#license)
+-   📋 [Directory structure](#directory-structure)
+-   💻 [Running locally](#running-locally)
+-   📦 [Development](#development)
+-   🚀 [Deployment](#deployment)
+-   ⚖️ [License](#license)
 
 ## Directory structure
 

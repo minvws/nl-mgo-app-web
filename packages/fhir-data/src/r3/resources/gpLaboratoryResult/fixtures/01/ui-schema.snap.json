@@ -68,7 +68,7 @@
                 {
                     "label": "zib_laboratory_test_result_observation.effective",
                     "type": "SINGLE_VALUE",
-                    "display": "2024-03-18"
+                    "display": "18 maart 2024"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.value",

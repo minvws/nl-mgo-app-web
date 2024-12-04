@@ -19,16 +19,22 @@
     "container": [
         {
             "identifier": null,
-            "type": [
-                {
-                    "code": "370133003",
-                    "display": "Specimen substance",
-                    "system": "http://snomed.info/sct"
-                }
-            ]
+            "type": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "370133003",
+                        "display": "Specimen substance",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
         }
     ],
-    "type": [],
+    "type": {
+        "text": null,
+        "coding": []
+    },
     "receivedTime": "2020-03-01T22:03:00+00:00",
     "collection": {
         "quantity": null,

@@ -14,13 +14,16 @@
     ],
     "organization": null,
     "specialty": [
-        [
-            {
-                "code": "0335",
-                "display": "Medisch specialisten, geriatrie",
-                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0335",
+                    "display": "Medisch specialisten, geriatrie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
     ],
     "telecom": null
 }

@@ -30,7 +30,7 @@
                 {
                     "label": "zib_nutrition_advice.dateTime",
                     "type": "SINGLE_VALUE",
-                    "display": "2018-01-01"
+                    "display": "1 januari 2018"
                 },
                 {
                     "label": "zib_nutrition_advice.food_preference_modifier",

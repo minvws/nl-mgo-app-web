@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { valueX } from './valueX';
+import { oneOfValueX } from './oneOfValueX';
 import { mockQuantity } from '../../type/quantity/quantity.test';
 import { format } from '../../format';
 
@@ -12,7 +12,7 @@ test('valueX with string', () => {
     };
     const options = faker.uiSchema.valueOptions();
 
-    const result = valueX(label, input, undefined, options);
+    const result = oneOfValueX(label, input, undefined, options);
     expect(result).toEqual([
         {
             label,
@@ -31,7 +31,7 @@ test('valueX with quantity', () => {
     };
     const options = faker.uiSchema.valueOptions();
 
-    const result = valueX(label, input, undefined, options);
+    const result = oneOfValueX(label, input, undefined, options);
     expect(result).toEqual([
         {
             label: `${label}.value`,
@@ -57,7 +57,7 @@ test('valueX with custom prefix', () => {
     };
     const options = faker.uiSchema.valueOptions();
 
-    const result = valueX(label, input, prefix, options);
+    const result = oneOfValueX(label, input, prefix, options);
     expect(result).toEqual([
         {
             label,
@@ -72,7 +72,7 @@ test('valueX with null value', () => {
     const label = faker.lorem.word();
     const options = faker.uiSchema.valueOptions();
 
-    const result = valueX(label, null, undefined, options);
+    const result = oneOfValueX(label, null, undefined, options);
     expect(result).toEqual([]);
 });
 
@@ -85,6 +85,6 @@ test('valueX where prefixed value not found', () => {
     };
     const options = faker.uiSchema.valueOptions();
 
-    const result = valueX(label, input, prefix, options);
+    const result = oneOfValueX(label, input, prefix, options);
     expect(result).toEqual([]);
 });

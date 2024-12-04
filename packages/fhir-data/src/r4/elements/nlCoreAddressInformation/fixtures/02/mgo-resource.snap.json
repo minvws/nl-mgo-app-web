@@ -9,19 +9,25 @@
     "district": "Kaag en Braassem",
     "postalCode": "1012 NX",
     "country": "Nederland",
-    "countryCode": [
-        {
-            "code": "NL",
-            "display": "Nederland",
-            "system": "urn:iso:std:iso:3166"
-        }
-    ],
-    "addressType": [
-        {
-            "code": "HP",
-            "display": "Primary Home",
-            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
-        }
-    ],
+    "countryCode": {
+        "text": null,
+        "coding": [
+            {
+                "code": "NL",
+                "display": "Nederland",
+                "system": "urn:iso:std:iso:3166"
+            }
+        ]
+    },
+    "addressType": {
+        "text": null,
+        "coding": [
+            {
+                "code": "HP",
+                "display": "Primary Home",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+            }
+        ]
+    },
     "period": null
 }

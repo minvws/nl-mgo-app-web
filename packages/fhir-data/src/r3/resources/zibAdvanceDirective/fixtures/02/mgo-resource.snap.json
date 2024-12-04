@@ -5,20 +5,26 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective",
     "fhirVersion": "R3",
     "category": [
-        [
-            {
-                "code": "11341000146107",
-                "display": "Living will and advance directive record (record artifact)",
-                "system": "http://snomed.info/sct"
-            }
-        ],
-        [
-            {
-                "code": "NR",
-                "display": "Niet reanimeren verklaring",
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "11341000146107",
+                    "display": "Living will and advance directive record (record artifact)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        },
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "NR",
+                    "display": "Niet reanimeren verklaring",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
+                }
+            ]
+        }
     ],
     "dateTime": "2011-08-15",
     "disorder": {

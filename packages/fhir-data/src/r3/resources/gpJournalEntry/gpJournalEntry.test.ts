@@ -38,6 +38,9 @@ test('returns ICPC_E in parser', () => {
 
     const output = gpJournalEntry.parse(input);
     expect(output.ICPC_E).toEqual({
-        valueCodeableConcept: map(valueCodeableConcept, coding),
+        valueCodeableConcept: {
+            text: undefined,
+            coding: map(valueCodeableConcept, coding),
+        },
     });
 });

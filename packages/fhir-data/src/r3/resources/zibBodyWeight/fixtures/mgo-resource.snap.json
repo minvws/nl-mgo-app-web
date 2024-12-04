@@ -9,13 +9,16 @@
     ],
     "status": "final",
     "category": [
-        [
-            {
-                "code": "vital-signs",
-                "display": "Vital Signs",
-                "system": "http://hl7.org/fhir/observation-category"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "vital-signs",
+                    "display": "Vital Signs",
+                    "system": "http://hl7.org/fhir/observation-category"
+                }
+            ]
+        }
     ],
     "subject": {
         "reference": "Patient/nl-core-patient-01",
@@ -41,12 +44,15 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight",
     "fhirVersion": "R3",
     "clothing": {
-        "valueCodeableConcept": [
-            {
-                "code": "MINIMAL",
-                "display": "Minimal dressed",
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
-            }
-        ]
+        "valueCodeableConcept": {
+            "text": null,
+            "coding": [
+                {
+                    "code": "MINIMAL",
+                    "display": "Minimal dressed",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
+                }
+            ]
+        }
     }
 }

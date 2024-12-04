@@ -9,20 +9,26 @@
         "start": "2012-03-13",
         "end": null
     },
-    "codeCodeableConcept": [
-        {
-            "code": "405815000",
-            "display": "Procedure device",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "intent": [
-        {
-            "code": "order",
-            "display": null,
-            "system": "http://hl7.org/fhir/request-intent"
-        }
-    ],
+    "codeCodeableConcept": {
+        "text": null,
+        "coding": [
+            {
+                "code": "405815000",
+                "display": "Procedure device",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "intent": {
+        "text": null,
+        "coding": [
+            {
+                "code": "order",
+                "display": null,
+                "system": "http://hl7.org/fhir/request-intent"
+            }
+        ]
+    },
     "subject": {
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"

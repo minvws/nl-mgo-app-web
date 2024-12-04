@@ -65,7 +65,7 @@
                 {
                     "label": "nl_core_patient.birth_date",
                     "type": "SINGLE_VALUE",
-                    "display": "1934-04-28"
+                    "display": "28 april 1934"
                 },
                 {
                     "label": "nl_core_patient.deceased",

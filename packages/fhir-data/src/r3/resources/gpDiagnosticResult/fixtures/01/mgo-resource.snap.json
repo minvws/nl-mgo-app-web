@@ -28,13 +28,16 @@
         }
     ],
     "status": "final",
-    "code": [
-        {
-            "code": "2126",
-            "display": "polsopmerkingen",
-            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "2126",
+                "display": "polsopmerkingen",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+            }
+        ]
+    },
     "valueString": "linker pols",
     "comment": null,
     "method": null

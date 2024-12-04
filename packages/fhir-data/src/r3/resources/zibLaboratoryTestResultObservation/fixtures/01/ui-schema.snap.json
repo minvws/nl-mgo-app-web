@@ -71,7 +71,7 @@
                 {
                     "label": "zib_laboratory_test_result_observation.effective",
                     "type": "SINGLE_VALUE",
-                    "display": "2012-05-23T12:00:00+02:00"
+                    "display": "23 mei 2012 om 12:00:00 GMT+2"
                 },
                 {
                     "label": "zib_laboratory_test_result_observation.value",

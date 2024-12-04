@@ -36,13 +36,16 @@
     "groupIdentifier": null,
     "status": null,
     "intent": "order",
-    "category": [
-        {
-            "code": "16076005",
-            "display": "Prescription (procedure)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "category": {
+        "text": "Medicatieafspraak",
+        "coding": [
+            {
+                "code": "16076005",
+                "display": "Prescription (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "priority": null,
     "medicationReference": {
         "reference": "Medication/zib-Product-03",
@@ -51,14 +54,29 @@
     "note": null,
     "dossageInstruction": [
         {
+            "sequence": 1,
+            "text": null,
             "additionalInstruction": null,
-            "asNeeded": [
-                {
-                    "code": "1137",
-                    "display": "zo nodig",
-                    "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
-                }
-            ],
+            "asNeeded": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "1137",
+                        "display": "zo nodig",
+                        "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                    }
+                ]
+            },
+            "route": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "12",
+                        "display": "rectaal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
             "doseQuantity": {
                 "value": 1,
                 "comparator": null,
@@ -66,11 +84,7 @@
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
                 "code": "245"
             },
-            "doseRange": null,
             "maxDosePerPeriod": null,
-            "rateRatio": null,
-            "rateRange": null,
-            "rateQuantity": null,
             "timing": {
                 "duration": null,
                 "durationUnit": null,

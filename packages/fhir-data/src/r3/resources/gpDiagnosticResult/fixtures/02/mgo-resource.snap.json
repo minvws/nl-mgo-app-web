@@ -28,18 +28,21 @@
         }
     ],
     "status": "final",
-    "code": [
-        {
-            "code": "1875",
-            "display": "polsfrequentie",
-            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
-        },
-        {
-            "code": "8893-0",
-            "display": "Heart rate Peripheral artery by Palpation",
-            "system": "http://loinc.org"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "1875",
+                "display": "polsfrequentie",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+            },
+            {
+                "code": "8893-0",
+                "display": "Heart rate Peripheral artery by Palpation",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
     "valueQuantity": {
         "value": 120,
         "comparator": null,

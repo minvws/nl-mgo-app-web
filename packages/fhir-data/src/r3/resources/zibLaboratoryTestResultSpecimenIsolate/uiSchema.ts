@@ -12,7 +12,7 @@ export function uiSchema(resource: ZibLaboratoryTestResultSpecimenIsolate): UiSc
     const container = map(resource.container, containerUiSchema, true);
 
     return {
-        label: resource.type?.[0]?.display ?? `${profile}`,
+        label: resource.type?.coding?.[0]?.display ?? `${profile}`,
         children: [
             {
                 label: `${profile}`,
@@ -21,7 +21,7 @@ export function uiSchema(resource: ZibLaboratoryTestResultSpecimenIsolate): UiSc
                     ...ui.helpers.getChildren(container),
                     ui.codeableConcept(`${profile}.type`, resource.type),
                     ui.simpleQuantity(`${profile}.quantity`, resource.collection.quantity),
-                    ...ui.valueX(`${profile}.collected`, resource.collection, 'collected'),
+                    ...ui.oneOfValueX(`${profile}.collected`, resource.collection, 'collected'),
                     ui.dateTime(`${profile}.received_time`, resource.receivedTime),
                     ui.codeableConcept(`${profile}.collection.method`, resource.collection.method),
                     ui.codeableConcept(`${profile}.body_site`, resource.collection.bodySite.value),

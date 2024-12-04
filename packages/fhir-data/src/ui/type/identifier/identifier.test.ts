@@ -10,13 +10,16 @@ test('identifier', () => {
         use: undefined,
         system: faker.internet.url(),
         value: faker.lorem.sentence(),
-        type: [
-            {
-                code: faker.fhir.code(),
-                system: faker.internet.url(),
-                display: faker.lorem.sentence(),
-            },
-        ],
+        type: {
+            text: undefined,
+            coding: [
+                {
+                    code: faker.fhir.code(),
+                    system: faker.internet.url(),
+                    display: faker.lorem.sentence(),
+                },
+            ],
+        },
     };
     const result = identifier(label, mgoIdentifier, options);
     expect(result).toEqual({

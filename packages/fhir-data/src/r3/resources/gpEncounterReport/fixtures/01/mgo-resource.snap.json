@@ -32,13 +32,16 @@
     "title": "Contactverslag dd. 2020-03-15",
     "section": [
         {
-            "code": [
-                {
-                    "code": "E",
-                    "display": "Evaluatie",
-                    "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
-                }
-            ],
+            "code": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "E",
+                        "display": "Evaluatie",
+                        "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+                    }
+                ]
+            },
             "entry": [
                 {
                     "reference": "Observation/gpdata-observation-contact04-e",

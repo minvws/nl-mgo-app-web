@@ -38,12 +38,12 @@
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.collected",
                     "type": "SINGLE_VALUE",
-                    "display": "2020-03-01T22:03:00+01:00"
+                    "display": "1 maart 2020 om 22:03:00 GMT+1"
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.received_time",
                     "type": "SINGLE_VALUE",
-                    "display": "2020-03-01T22:03:00+00:00"
+                    "display": "1 maart 2020 om 23:03:00 GMT+1"
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.collection.method",

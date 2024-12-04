@@ -1,0 +1,141 @@
+{
+    "label": "PRIMPERAN ZETPIL 20MG",
+    "children": [
+        {
+            "label": "zib_administration_agreement.group_general_information",
+            "children": [
+                {
+                    "label": "zib_administration_agreement.authored_on",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 juni 2020 om 10:54:12 GMT+2"
+                },
+                {
+                    "label": "zib_administration_agreement.agreement_reason",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.usage_duration.value",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.usage_duration.code",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.additional_information",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Niet leverbaar (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)"
+                    ]
+                },
+                {
+                    "label": "zib_administration_agreement.medication_treatment",
+                    "type": "SINGLE_VALUE",
+                    "display": "#MB_01h"
+                },
+                {
+                    "label": "zib_administration_agreement.stop_type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule.value",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule.code",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1546339-f6753t65r",
+                        "189ef867-8fdf-11ec-6427-020000000000"
+                    ]
+                },
+                {
+                    "label": "zib_administration_agreement.status",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.category",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Toedieningsafspraak"
+                    ]
+                },
+                {
+                    "label": "zib_administration_agreement.quantity.value",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.quantity.code",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.days_supply.value",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.days_supply.code",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_administration_agreement.note",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Tekstuele toelichting bij deze toedieningsafspraak"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "zib_instructions_for_use",
+            "children": [
+                {
+                    "label": "zib_instructions_for_use.additional_instruction",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "zib_instructions_for_use.text",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+                },
+                {
+                    "label": "zib_instructions_for_use.route",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                    ]
+                },
+                {
+                    "label": "zib_instructions_for_use.sequence",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "zib_administration_schedule.frequency",
+                    "display": "1",
+                    "type": "SINGLE_VALUE"
+                },
+                {
+                    "label": "zib_administration_schedule.period",
+                    "display": "1 d",
+                    "type": "SINGLE_VALUE"
+                }
+            ]
+        }
+    ]
+}

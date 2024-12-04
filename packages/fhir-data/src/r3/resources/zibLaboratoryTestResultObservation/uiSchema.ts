@@ -15,7 +15,7 @@ export function uiSchema(
 
     const related = map(resource.related, relatedUiSchema, true);
     const referenceRange = map(resource.referenceRange, referenceRangetUiSchema, true);
-    const title = resource.category?.[0]?.[0]?.display ?? `${i18n}`;
+    const title = resource.category?.[0]?.coding?.[0]?.display ?? `${i18n}`;
     const effective =
         typeof resource.effective === 'string'
             ? [ui.dateTime(`${i18n}.effective`, resource.effective)]

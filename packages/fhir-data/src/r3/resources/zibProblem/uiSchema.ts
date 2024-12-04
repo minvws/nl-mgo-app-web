@@ -13,7 +13,7 @@ export function uiSchema(resource: ZibProblem): UiSchema {
     const stage = stageUiSchema(resource.stage);
     const evidence = map(resource.evidence, evidenceUiSchema) ?? [];
     return {
-        label: resource.code?.at(0)?.display,
+        label: resource.code?.coding?.at(0)?.display,
         children: [
             {
                 label: `${i18n}.group_general_information`,

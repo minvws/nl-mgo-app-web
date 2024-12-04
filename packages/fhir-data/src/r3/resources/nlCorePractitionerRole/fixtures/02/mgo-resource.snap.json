@@ -17,13 +17,16 @@
         "display": "Maatschap Vaste Huisarts"
     },
     "specialty": [
-        [
-            {
-                "code": "0100",
-                "display": "Huisartsen, niet nader gespecificeerd",
-                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0100",
+                    "display": "Huisartsen, niet nader gespecificeerd",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
     ],
     "telecom": null
 }

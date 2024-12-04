@@ -9,22 +9,28 @@
         "end": null
     },
     "bodySite": [
-        [
-            {
-                "code": "72696002",
-                "display": "Knee region structure (body structure)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "72696002",
+                    "display": "Knee region structure (body structure)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "bodySiteQualifier": [
-        [
-            {
-                "code": "7771000",
-                "display": "Left",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "7771000",
+                    "display": "Left",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     ],
     "reasonReference": [
         {
@@ -32,13 +38,16 @@
             "display": "Arthropathy (disorder)"
         }
     ],
-    "code": [
-        {
-            "code": "60159002",
-            "display": "Implantation of Swanson prosthesis of knee (procedure)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "60159002",
+                "display": "Implantation of Swanson prosthesis of knee (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "procedureMethod": null,
     "focalDevice": [
         {

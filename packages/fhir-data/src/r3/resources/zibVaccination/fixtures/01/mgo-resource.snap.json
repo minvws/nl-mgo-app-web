@@ -16,13 +16,16 @@
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "vaccineCode": [
-        {
-            "code": "J06BB11",
-            "display": "hepatitis A immunoglobulin",
-            "system": "http://www.whocc.no/atc"
-        }
-    ],
+    "vaccineCode": {
+        "text": null,
+        "coding": [
+            {
+                "code": "J06BB11",
+                "display": "hepatitis A immunoglobulin",
+                "system": "http://www.whocc.no/atc"
+            }
+        ]
+    },
     "dose": {
         "value": 30,
         "comparator": null,

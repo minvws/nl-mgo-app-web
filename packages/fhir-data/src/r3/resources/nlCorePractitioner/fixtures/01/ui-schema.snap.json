@@ -69,7 +69,7 @@
                 {
                     "label": "nl_core_address.period.start",
                     "type": "SINGLE_VALUE",
-                    "display": "2015-04"
+                    "display": "april 2015"
                 },
                 {
                     "label": "nl_core_address.period.end",

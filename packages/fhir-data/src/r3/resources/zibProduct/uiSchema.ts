@@ -18,8 +18,8 @@ export function uiSchema(resource: ZibProduct): UiSchema {
             {
                 label: `${i18n}.group_general_information`,
                 children: [
-                    ui.codeableConcept(`${i18n}.code`, resource.code, { summary: true }),
-                    ui.codeableConcept(`${i18n}.form`, resource.form, { summary: true }),
+                    ui.codeableConcept(`${i18n}.code`, resource.code),
+                    ui.codeableConcept(`${i18n}.form`, resource.form),
                 ],
             },
             {

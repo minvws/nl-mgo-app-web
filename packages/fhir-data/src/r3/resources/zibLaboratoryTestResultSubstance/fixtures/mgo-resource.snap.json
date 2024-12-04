@@ -14,20 +14,26 @@
     ],
     "status": "active",
     "category": [
-        [
-            {
-                "code": "chemical",
-                "display": "Chemical",
-                "system": "http://hl7.org/fhir/substance-category"
-            }
-        ]
-    ],
-    "code": [
         {
-            "code": "127489000",
-            "display": "Has active ingredient",
-            "system": "http://snomed.info/sct"
+            "text": null,
+            "coding": [
+                {
+                    "code": "chemical",
+                    "display": "Chemical",
+                    "system": "http://hl7.org/fhir/substance-category"
+                }
+            ]
         }
     ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "127489000",
+                "display": "Has active ingredient",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "description": "Luchtwegproblemen/ ademhalingdedeficiëntie en/of extreem lage bloeddruk (anafylactische shock)"
 }

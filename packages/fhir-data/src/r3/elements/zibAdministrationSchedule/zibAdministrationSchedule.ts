@@ -4,8 +4,13 @@ import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
 import { type ResourceElementConfigR3 } from '../config';
 import { uiSchemaGroup } from './uiSchemaGroup';
+import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 
 export interface ZibAdministrationSchedule {
+    boundsDuration?: parse.MgoDuration;
+    boundsPeriod?: parse.MgoPeriod;
+    boundsRange?: parse.MgoRange;
+
     duration: parse.MgoDecimal | undefined;
     durationUnit: parse.MgoCode | undefined;
     frequency: parse.MgoInteger | undefined;
@@ -26,6 +31,7 @@ function parseZibAdministrationSchedule(value: Nullable<Timing>): ZibAdministrat
     const { repeat } = value ?? {};
 
     return {
+        ...oneOfValueX(repeat, ['duration', 'range', 'period'], 'bounds'),
         duration: parse.decimal(repeat?.duration),
         durationUnit: parse.code(repeat?.durationUnit),
         frequency: parse.integer(repeat?.frequency),

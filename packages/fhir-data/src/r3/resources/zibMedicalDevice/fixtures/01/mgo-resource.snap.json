@@ -33,20 +33,26 @@
         "reference": "Device/zib-MedicalDeviceProduct-03",
         "display": "Gehoorapparaat"
     },
-    "bodySite": [
-        {
-            "code": "117590005",
-            "display": "Ear Structure",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "laterality": [
-        {
-            "code": "24028007",
-            "display": "Right",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "bodySite": {
+        "text": null,
+        "coding": [
+            {
+                "code": "117590005",
+                "display": "Ear Structure",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "laterality": {
+        "text": null,
+        "coding": [
+            {
+                "code": "24028007",
+                "display": "Right",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "note": [
         {
             "time": null,

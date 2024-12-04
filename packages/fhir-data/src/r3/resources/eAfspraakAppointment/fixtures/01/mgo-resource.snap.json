@@ -6,13 +6,16 @@
     "fhirVersion": "R3",
     "status": "fulfilled",
     "specialty": [
-        [
-            {
-                "code": "0303",
-                "display": "Medisch specialisten, chirurgie",
-                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0303",
+                    "display": "Medisch specialisten, chirurgie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
     ],
     "description": "Poliklinische Controle Chirurgie",
     "start": "2018-01-01T09:00:00+01:00",

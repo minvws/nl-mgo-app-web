@@ -17,13 +17,16 @@
         "display": "Test Medisch Centrum"
     },
     "specialty": [
-        [
-            {
-                "code": "0310",
-                "display": "Medisch specialisten, dermatologie",
-                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0310",
+                    "display": "Medisch specialisten, dermatologie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
     ],
     "telecom": null
 }

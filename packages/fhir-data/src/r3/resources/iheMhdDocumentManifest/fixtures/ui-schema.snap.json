@@ -7,7 +7,7 @@
                 {
                     "label": "ihe_mhd_document_manifest.created",
                     "type": "SINGLE_VALUE",
-                    "display": "2020-03-10"
+                    "display": "10 maart 2020"
                 },
                 {
                     "label": "ihe_mhd_document_manifest.status",

@@ -21,7 +21,7 @@ export function uiSchema(resource: GpDiagnosticResult): UiSchema {
                     ui.codeableConcept(`${profile}.code`, resource.code),
                     ui.string(`${profile}.comment`, resource.comment),
                     ui.codeableConcept(`${profile}.method`, resource.method),
-                    ...ui.valueX(`${profile}.value`, resource, 'value'),
+                    ...ui.oneOfValueX(`${profile}.value`, resource, 'value'),
                 ],
             },
         ],

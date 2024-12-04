@@ -9,13 +9,16 @@
         "start": "2012-03-13",
         "end": null
     },
-    "code": [
-        {
-            "code": "168537006",
-            "display": "Röntgenfoto",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "168537006",
+                "display": "Röntgenfoto",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "intent": "plan",
     "subject": {
         "reference": "Patient/nl-core-patient-02",

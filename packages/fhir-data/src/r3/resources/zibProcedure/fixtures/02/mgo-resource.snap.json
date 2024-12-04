@@ -8,13 +8,16 @@
     "bodySite": null,
     "bodySiteQualifier": null,
     "reasonReference": null,
-    "code": [
-        {
-            "code": "274051007",
-            "display": "Surgical reduction of fracture (procedure)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "274051007",
+                "display": "Surgical reduction of fracture (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "procedureMethod": null,
     "focalDevice": null,
     "location": null,

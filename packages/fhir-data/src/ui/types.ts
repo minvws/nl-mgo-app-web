@@ -6,7 +6,7 @@ interface UiSchemaElement {
 }
 
 export interface UiEntryOptions {
-    summary?: boolean;
+    showEmpty?: boolean;
 }
 
 interface BaseUiEntry<T extends string> extends UiSchemaElement, UiEntryOptions {

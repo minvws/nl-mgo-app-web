@@ -12,7 +12,7 @@ export function uiSchema(resource: ZibVaccinationRecommendation): UiSchema {
     const recommendation = map(resource.recommendation, RecommendationUiSchema, true);
 
     return {
-        label: resource.recommendation?.at(0)?.code?.at(0)?.display,
+        label: resource.recommendation?.at(0)?.code?.coding?.at(0)?.display,
         children: [
             {
                 label: `${profile}`,

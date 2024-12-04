@@ -17,7 +17,7 @@
                 {
                     "label": "Immunization.date",
                     "type": "SINGLE_VALUE",
-                    "display": "1999-03-09"
+                    "display": "9 maart 1999"
                 },
                 {
                     "label": "Immunization.note.text",

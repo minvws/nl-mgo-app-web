@@ -16,7 +16,10 @@
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "vaccineCode": [],
+    "vaccineCode": {
+        "text": null,
+        "coding": []
+    },
     "dose": {
         "value": 30,
         "comparator": null,

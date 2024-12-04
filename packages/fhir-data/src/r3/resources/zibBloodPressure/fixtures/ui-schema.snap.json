@@ -78,7 +78,7 @@
                 {
                     "label": "zib_blood_pressure.effective",
                     "type": "SINGLE_VALUE",
-                    "display": "2013-02-01T08:53:00+01:00"
+                    "display": "1 februari 2013 om 08:53:00 GMT+1"
                 },
                 {
                     "label": "zib_blood_pressure.comment",

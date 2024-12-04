@@ -1,5 +1,5 @@
 import { ui, type UiSchema } from '../../../ui';
-import { valueX } from '../../../ui/special';
+import { oneOfValueX } from '../../../ui/special';
 import { type GpJournalEntry } from './gpJournalEntry';
 
 /**
@@ -17,7 +17,7 @@ export function uiSchema(resource: GpJournalEntry): UiSchema {
                     ui.string(`${profile}.status`, resource.status),
                     ui.codeableConcept(`${profile}.code`, resource.code),
                     ui.reference(`${profile}.context`, resource.context),
-                    ...valueX(`${profile}.effective`, resource, 'effective'),
+                    ...oneOfValueX(`${profile}.effective`, resource, 'effective'),
                     ui.multipleValues(`${profile}.performer`, resource.performer, ui.reference),
                     ui.string(`${profile}.valueString`, resource.valueString),
                     ui.codeableConcept(`${profile}.ICPC_S`, resource.ICPC_S.valueCodeableConcept),

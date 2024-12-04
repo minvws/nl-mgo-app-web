@@ -29,12 +29,13 @@ function parseZibMedicationUse(resource: MedicationStatement) {
         identifier: map(resource.identifier, parse.identifier),
         status: parse.code(resource.status),
         category: parse.codeableConcept(resource.category),
-        medication: parse.reference(resource.medicationReference),
+        medicationReference: parse.reference(resource.medicationReference),
+        effectivePeriod: parse.period(resource.effectivePeriod),
+
         effectiveDuration: parse.extensionNictiz(
             resource.effectivePeriod,
             'zib-MedicationUse-Duration'
         ),
-        effectivePeriod: parse.period(resource.effectivePeriod),
         dateAsserted: parse.dateTime(resource.dateAsserted),
         informationSource: parse.reference(resource.informationSource),
         subject: parse.reference(resource.subject),

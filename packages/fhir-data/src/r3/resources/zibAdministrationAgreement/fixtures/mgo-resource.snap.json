@@ -7,13 +7,16 @@
     "authoredOn": "2020-06-08T10:54:12+02:00",
     "agreementReason": null,
     "usageDuration": null,
-    "additionalInformation": [
-        {
-            "code": "1",
-            "display": "Niet leverbaar",
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
-        }
-    ],
+    "additionalInformation": {
+        "text": null,
+        "coding": [
+            {
+                "code": "1",
+                "display": "Niet leverbaar",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
+            }
+        ]
+    },
     "medicationTreatment": {
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
@@ -37,13 +40,16 @@
         }
     ],
     "status": null,
-    "category": [
-        {
-            "code": "422037009",
-            "display": "Provider medication administration instructions (procedure)",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "category": {
+        "text": "Toedieningsafspraak",
+        "coding": [
+            {
+                "code": "422037009",
+                "display": "Provider medication administration instructions (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "medicationReference": {
         "reference": "Medication/zib-Product-01",
         "display": "PRIMPERAN ZETPIL 20MG"
@@ -59,14 +65,21 @@
     ],
     "dossageInstruction": [
         {
+            "sequence": 1,
+            "text": "Vanaf 8 jun 2020, 1 maal per dag, rectaal",
             "additionalInstruction": null,
             "asNeeded": null,
-            "doseQuantity": null,
-            "doseRange": null,
+            "route": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "12",
+                        "display": "rectaal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
             "maxDosePerPeriod": null,
-            "rateRatio": null,
-            "rateRange": null,
-            "rateQuantity": null,
             "timing": {
                 "duration": null,
                 "durationUnit": null,

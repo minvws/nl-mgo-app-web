@@ -9,33 +9,42 @@
         "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
     },
     "status": "completed",
-    "vaccineCode": [
-        {
-            "code": "J07BC02",
-            "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
-            "system": "http://www.whocc.no/atc"
-        }
-    ],
+    "vaccineCode": {
+        "text": null,
+        "coding": [
+            {
+                "code": "J07BC02",
+                "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
+                "system": "http://www.whocc.no/atc"
+            }
+        ]
+    },
     "patient": {
         "reference": "Patient/nl-core-Patient-01",
         "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
     },
     "occurrenceDateTime": "2012-06-03",
     "location": null,
-    "site": [
-        {
-            "code": "59126009",
-            "display": "gehele rechter bovenarm",
-            "system": "http://snomed.info/sct"
-        }
-    ],
-    "route": [
-        {
-            "code": "2",
-            "display": "INTRAMUSCULAIR",
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2"
-        }
-    ],
+    "site": {
+        "text": null,
+        "coding": [
+            {
+                "code": "59126009",
+                "display": "gehele rechter bovenarm",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "route": {
+        "text": null,
+        "coding": [
+            {
+                "code": "2",
+                "display": "INTRAMUSCULAIR",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2"
+            }
+        ]
+    },
     "doseQuantity": {
         "value": 1,
         "comparator": null,
@@ -62,13 +71,16 @@
         {
             "authority": null,
             "targetDisease": [
-                [
-                    {
-                        "code": "128241005",
-                        "display": "hepatitis",
-                        "system": "http://snomed.info/sct"
-                    }
-                ]
+                {
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "128241005",
+                            "display": "hepatitis",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
             ],
             "doseNumberString": "n/a"
         }

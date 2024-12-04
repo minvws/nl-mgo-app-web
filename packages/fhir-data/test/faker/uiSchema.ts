@@ -5,6 +5,6 @@ import { mockOptionalFields } from './helpers';
 
 export const valueOptions = createMockDataFactory<UiEntryOptions>(() => {
     return mockOptionalFields({
-        summary: faker.datatype.boolean(),
+        showEmpty: faker.datatype.boolean(),
     });
 });

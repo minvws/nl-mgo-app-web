@@ -9,13 +9,16 @@
     ],
     "status": "final",
     "category": [
-        [
-            {
-                "code": "vital-signs",
-                "display": "Vital Signs",
-                "system": "http://hl7.org/fhir/observation-category"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "vital-signs",
+                    "display": "Vital Signs",
+                    "system": "http://hl7.org/fhir/observation-category"
+                }
+            ]
+        }
     ],
     "subject": {
         "reference": "Patient/nl-core-patient-01",

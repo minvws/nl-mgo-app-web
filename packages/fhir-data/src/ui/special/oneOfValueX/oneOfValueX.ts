@@ -49,7 +49,7 @@ const valueTypeMap = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } satisfies Record<ParserKey, UiFunction<any, UiEntry | UiEntry[]>>;
 
-export function valueX<T extends object>(
+export function oneOfValueX<T extends object>(
     label: string,
     value: Nullable<Lossless<T>>,
     prefix: string = 'value',

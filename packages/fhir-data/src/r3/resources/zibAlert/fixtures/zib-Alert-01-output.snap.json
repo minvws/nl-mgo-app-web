@@ -13,20 +13,26 @@
         }
     ],
     "status": "active",
-    "category": [
-        {
-            "code": "75323-6",
-            "display": "condition",
-            "system": "http://loinc.org"
-        }
-    ],
-    "code": [
-        {
-            "code": "432415000",
-            "display": "Methicillin resistant staphylococcus aureus carrier",
-            "system": "http://snomed.info/sct"
-        }
-    ],
+    "category": {
+        "text": null,
+        "coding": [
+            {
+                "code": "75323-6",
+                "display": "condition",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "code": {
+        "text": null,
+        "coding": [
+            {
+                "code": "432415000",
+                "display": "Methicillin resistant staphylococcus aureus carrier",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "subject": {
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"

@@ -12,7 +12,7 @@
                 {
                     "label": "nl_core_patient.birth_date",
                     "type": "SINGLE_VALUE",
-                    "display": "1964-07-25"
+                    "display": "25 juli 1964"
                 },
                 {
                     "label": "nl_core_patient.deceased",

@@ -14,13 +14,16 @@
     ],
     "name": "Orthopedie - UMCG",
     "departmentSpecialty": [
-        [
-            {
-                "code": "0305",
-                "display": "Medisch specialisten, orthopedie",
-                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
-            }
-        ]
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0305",
+                    "display": "Medisch specialisten, orthopedie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
     ],
     "telecom": null,
     "address": null,
