@@ -14,13 +14,16 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.Docum
 function parseIheMhdMinimalDocumentReference(resource: DocumentReference) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        description: parse.string(resource.description),
+        masterIdentifier: parse.identifier(resource.masterIdentifier),
         status: parse.code(resource.status),
         type: parse.codeableConcept(resource.type),
+        class: parse.codeableConcept(resource.class),
+        subject: parse.reference(resource.subject),
         indexed: parse.string(resource.indexed),
-        securityLabel: map(resource.securityLabel, parse.codeableConcept),
+        created: parse.string(resource.created),
         author: map(resource.author, parse.reference),
         content: parseContent(resource.content[0]),
+        securityLabel: map(resource.securityLabel, parse.codeableConcept),
     };
 }
 

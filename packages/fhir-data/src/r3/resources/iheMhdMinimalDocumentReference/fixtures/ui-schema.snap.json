@@ -2,7 +2,7 @@
     "label": "Kopie van ontslagbrief",
     "children": [
         {
-            "label": "ihe_mhd_minimal_document_reference",
+            "label": "ihe_mhd_minimal_document_reference.group_general_information",
             "children": [
                 {
                     "label": "ihe_mhd_minimal_document_reference.indexed",
@@ -10,9 +10,46 @@
                     "display": "2019-06-10T11:13:21Z"
                 },
                 {
+                    "label": "ihe_mhd_minimal_document_reference.created",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.author",
+                    "type": "REFERENCE_VALUE",
+                    "display": "De Hoed",
+                    "reference": "#p1"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.subject",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.master_identifier",
+                    "type": "SINGLE_VALUE",
+                    "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
+                },
+                {
                     "label": "ihe_mhd_minimal_document_reference.status",
                     "type": "SINGLE_VALUE",
                     "display": "current"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.security_label",
+                    "type": "MULTIPLE_VALUES",
+                    "display": null
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.content.attachment.content_type",
+                    "type": "SINGLE_VALUE",
+                    "display": "application/pdf"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.content.attachment.language",
+                    "type": "SINGLE_VALUE",
+                    "display": "nl"
                 },
                 {
                     "label": "ihe_mhd_minimal_document_reference.type",
@@ -24,19 +61,18 @@
             ]
         },
         {
-            "label": "ihe_mhd_minimal_document_reference.author_group",
+            "label": "ihe_mhd_minimal_document_reference.document",
             "children": [
                 {
-                    "label": "ihe_mhd_minimal_document_reference.author",
-                    "type": "REFERENCE_VALUE",
-                    "display": "De Hoed",
-                    "reference": "#p1"
-                }
-            ]
-        },
-        {
-            "label": "ihe_mhd_minimal_document_reference.options",
-            "children": [
+                    "label": "ihe_mhd_minimal_document_reference.content.attachment.url",
+                    "type": "SINGLE_VALUE",
+                    "display": "Binary/pdfa-binary-01"
+                },
+                {
+                    "label": "ihe_mhd_minimal_document_reference.content.attachment.date_time",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
                 {
                     "type": "DOWNLOAD_LINK",
                     "label": "Kopie van ontslagbrief",

@@ -4,7 +4,12 @@
     "resourceType": "DocumentReference",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
     "fhirVersion": "R3",
-    "description": "Kopie van ontslagbrief",
+    "masterIdentifier": {
+        "use": null,
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898",
+        "type": null
+    },
     "status": "current",
     "type": {
         "text": null,
@@ -16,8 +21,13 @@
             }
         ]
     },
+    "class": null,
+    "subject": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
     "indexed": "2019-06-10T11:13:21Z",
-    "securityLabel": null,
+    "created": null,
     "author": [
         {
             "reference": "#p1",
@@ -35,5 +45,6 @@
             "title": "Kopie van ontslagbrief",
             "creation": null
         }
-    }
+    },
+    "securityLabel": null
 }
