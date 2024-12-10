@@ -3,9 +3,11 @@ import { FhirVersion } from '../../types/Fhir';
 import { type FhirResource } from '../../types/FhirRX';
 import { isFhirResource } from '../../utils';
 import { getMgoResource } from '../getMgoResource/getMgoResource';
-import { type FhirResource as FhirResourceR3 } from 'fhir/r3';
 
-export function getMgoResourceJson(fhirResourceJson: string, formatResponse: boolean = false) {
+export function getMgoResourceJson(
+    fhirResourceJson: string,
+    fhirVersion: FhirVersion = FhirVersion.R3
+) {
     const fhirResource = losslessParse<FhirResource>(fhirResourceJson);
 
     if (!isFhirResource(fhirResource)) {
@@ -14,6 +16,6 @@ export function getMgoResourceJson(fhirResourceJson: string, formatResponse: boo
         );
     }
 
-    const result = getMgoResource(fhirResource as FhirResourceR3, FhirVersion.R3);
-    return losslessStringify(result, formatResponse);
+    const result = getMgoResource(fhirResource, fhirVersion);
+    return losslessStringify(result);
 }
