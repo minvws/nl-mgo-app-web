@@ -1,10 +1,9 @@
-import { type Nullable } from '../../../types/Nullable';
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import { type NlCoreAddress } from './nlCoreAddress';
 
-export function uiSchemaGroup(resource: Nullable<NlCoreAddress>): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreAddress> = (resource, context) => {
     const i18n = 'nl_core_address';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,7 +11,6 @@ export function uiSchemaGroup(resource: Nullable<NlCoreAddress>): UiSchemaGroup 
             ui.string(`${i18n}.use`, resource?.use),
             ui.string(`${i18n}.type`, resource?.type),
             ui.string(`${i18n}.text`, resource?.text),
-            ui.multipleValues(`${i18n}.line`, resource?.line, ui.string),
             ui.string(`${i18n}.city`, resource?.city),
             ui.string(`${i18n}.district`, resource?.district),
             ui.string(`${i18n}.state`, resource?.state),
@@ -21,4 +19,4 @@ export function uiSchemaGroup(resource: Nullable<NlCoreAddress>): UiSchemaGroup 
             ...ui.period(`${i18n}.period`, resource?.period),
         ],
     };
-}
+};

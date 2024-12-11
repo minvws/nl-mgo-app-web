@@ -12,13 +12,13 @@
                     ]
                 },
                 {
-                    "label": "nl_core_practitionerrole.organization",
+                    "label": "Zorgaanbieder",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "nl_core_practitionerrole.specialty",
+                    "label": "Specialisme",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [

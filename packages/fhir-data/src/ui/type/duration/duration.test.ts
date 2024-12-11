@@ -15,22 +15,14 @@ function mockQuantity() {
 }
 
 test('duration', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const mgoDuration: MgoDuration = mockQuantity();
-    const result = duration(label, mgoDuration, options);
-    expect(result).toEqual([
-        {
-            label: `${label}.value`,
-            type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(mgoDuration.value, mgoDuration.unit),
-            ...options,
-        },
-        {
-            label: `${label}.code`,
-            type: `SINGLE_VALUE`,
-            display: format.codeWithSystem(mgoDuration.code, mgoDuration.system),
-            ...options,
-        },
-    ]);
+    const result = duration(faker.custom.uiContext())(label, mgoDuration, options);
+    expect(result).toEqual({
+        label: `intl(${label})`,
+        type: `SINGLE_VALUE`,
+        display: format.valueWithUnit(mgoDuration.value, mgoDuration.unit),
+        ...options,
+    });
 });

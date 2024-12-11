@@ -30,12 +30,12 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_treatment_directive.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "9 april 2018"
                 },
                 {
-                    "label": "zib_treatment_directive.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -46,18 +46,20 @@
                 },
                 {
                     "label": "zib_treatment_directive.consenting_party",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 },
                 {
                     "label": "zib_treatment_directive.action",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_treatment_directive.organization",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 },
                 {
                     "label": "zib_treatment_directive.source_identifier",
@@ -77,21 +79,21 @@
                 },
                 {
                     "label": "zib_treatment_directive.security_label",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.purpose",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.data_period.start",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.data_period.end",
+                    "label": "zib_treatment_directive.purpose",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -151,47 +153,47 @@
                     "display": "deny"
                 },
                 {
-                    "label": "zib_treatment_directive.except.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_treatment_directive.except.action",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_treatment_directive.except.security_label",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.except.purpose",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.except.class",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.except.code",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "zib_treatment_directive.except.plan.start",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.plan.end",
+                    "label": "zib_treatment_directive.except.purpose",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.class",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "zib_treatment_directive.except.code",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

@@ -1,12 +1,15 @@
 import { type MgoBoolean } from '../../../parse/type';
-import { toString } from '../../helpers';
-import { type SingleValue, type UiFunction } from '../../types';
+import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
 
-export const boolean: UiFunction<MgoBoolean, SingleValue> = (label, value, options) => {
-    return {
-        label,
-        type: 'SINGLE_VALUE',
-        display: toString(value),
-        ...options,
+export const boolean: WithUiContext<UiFunction<MgoBoolean, SingleValue>> =
+    ({ formatMessage }) =>
+    (label, value, options) => {
+        return {
+            label: formatMessage(label),
+            type: 'SINGLE_VALUE',
+            display: value
+                ? formatMessage('fhir.boolean.true')
+                : formatMessage('fhir.boolean.false'),
+            ...options,
+        };
     };
-};

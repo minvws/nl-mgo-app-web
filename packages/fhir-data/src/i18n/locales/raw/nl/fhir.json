@@ -1,0 +1,14 @@
+{
+    "zib_medication_use.repeat_period_cyclical_schedule": "Herhaalperiode cyclisch schema",
+    "fhir.group_general_info": "Algemeen",
+    "fhir.duration_days": "{count, plural, one {één dag} other {{count, number} dagen}}",
+    "fhir.period.start": "Begin datum",
+    "fhir.period.end": "Eind datum",
+    "fhir.range.low": "Ondergrens",
+    "fhir.range.high": "Bovengrens",
+    "fhir.ratio.numerator": "Teller",
+    "fhir.ratio.denominator": "Noemer",
+    "fhir.boolean.true": "Ja",
+    "fhir.boolean.false": "Nee",
+    "fhir.unknown": "Onbekend"
+}

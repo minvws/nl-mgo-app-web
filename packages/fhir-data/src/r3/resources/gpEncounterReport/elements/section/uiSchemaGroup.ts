@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { map } from '../../../../../utils';
 import { type Section } from './section';
 
-export function uiSchemaGroup(resource: Section): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Section> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const profile = 'EncounterReport.Section';
 
     return {
@@ -13,4 +13,4 @@ export function uiSchemaGroup(resource: Section): UiSchemaGroup {
             ...map(resource.entry, (entry) => ui.reference(`${profile}.entry`, entry), true),
         ],
     };
-}
+};

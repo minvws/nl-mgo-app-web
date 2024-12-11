@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { createMockDataFactory } from '$test/faker/factory';
 import { mockOptionalFields } from '$test/faker/helpers';
 import { type CoverageGrouping } from 'fhir/r3';
@@ -44,7 +44,12 @@ testSet(
         return grouping.parse(data);
     },
     (data) => {
-        const schema = grouping.uiSchemaGroup(data);
+        const schema = grouping.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('zib_payer.grouping');
     },
     false

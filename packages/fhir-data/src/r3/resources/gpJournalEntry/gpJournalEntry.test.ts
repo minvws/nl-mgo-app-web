@@ -1,6 +1,6 @@
 import input01 from './fixtures/fhir-resource.json';
 
-import { expectJson, faker } from '$test';
+import { expectJson, faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
 import { coding } from '../../../parse/type';
 import { map } from '../../../utils';
@@ -14,7 +14,12 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = gpJournalEntry.parse(input01 as Observation);
-    const uiSchema = gpJournalEntry.uiSchema(output);
+    const uiSchema = gpJournalEntry.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 

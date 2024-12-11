@@ -5,12 +5,12 @@ import { numberToString } from '../../helpers';
 import { unsignedInt } from './unsignedInt';
 
 test('unsignedInt', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value = faker.fhir.unsignedInt() as MgoUnsignedInt;
-    const result = unsignedInt(label, value, options);
+    const result = unsignedInt(faker.custom.uiContext())(label, value, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,

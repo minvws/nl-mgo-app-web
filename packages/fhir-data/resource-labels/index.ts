@@ -15,7 +15,7 @@ export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.
 
 const nictizDefinitionsDir = resolvePath('../fhir-definitions/nictiz.fhir.nl.stu3.zib2017');
 const nictizFiles = globSync(`${nictizDefinitionsDir}/{zib,gp,nl-core}-*.json`);
-const outputFile = resolvePath('../dist/i18n/definition-labels.json');
+const outputFile = resolvePath('../dist/i18n/resource-labels.json');
 
 const labels: Record<string, string> = {};
 

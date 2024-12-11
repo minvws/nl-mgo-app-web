@@ -1,10 +1,12 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { type ZibLaboratoryTestResultSubstance } from './zibLaboratoryTestResultSubstance';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317246/
  */
-export function uiSchema(resource: ZibLaboratoryTestResultSubstance): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSubstance> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'zib_laboratory_test_result_substance';
 
     return {
@@ -16,4 +18,4 @@ export function uiSchema(resource: ZibLaboratoryTestResultSubstance): UiSchema {
             },
         ],
     };
-}
+};

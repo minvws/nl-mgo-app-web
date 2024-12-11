@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Practitioner } from 'fhir/r4';
 import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
@@ -11,6 +11,11 @@ test('returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const output = nlCoreHealthProfessionalPractitioner.parse(input as Practitioner);
-    const uiSchema = nlCoreHealthProfessionalPractitioner.uiSchema(output);
+    const uiSchema = nlCoreHealthProfessionalPractitioner.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

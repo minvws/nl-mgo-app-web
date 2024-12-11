@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { expect } from 'vitest';
 import { related } from './related';
 
@@ -9,7 +9,12 @@ testSet(
         return related.parse(data);
     },
     (data) => {
-        const schema = related.uiSchemaGroup(data);
+        const schema = related.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('zib_laboratory_test_result_observation.related');
     },
     false

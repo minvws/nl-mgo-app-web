@@ -22,12 +22,12 @@
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
-                    "label": "Encounter.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "16 augustus 2012"
                 },
                 {
-                    "label": "Encounter.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": "19 augustus 2012"
                 },
@@ -40,17 +40,17 @@
                 {
                     "label": "Encounter.reason",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "Encounter.hospitalization.admitSource",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "Encounter.hospitalization.dischargeDisposition",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         }

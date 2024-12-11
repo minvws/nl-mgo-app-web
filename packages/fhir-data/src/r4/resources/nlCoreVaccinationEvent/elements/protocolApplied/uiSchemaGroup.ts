@@ -1,22 +1,17 @@
-import { ui } from '../../../../../ui';
-import { oneOfValueX } from '../../../../../ui/special';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type ProtocolApplied } from './protocolApplied';
 
-export function uiSchemaGroup(resource: ProtocolApplied): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<ProtocolApplied> = (resource, context) => {
     const profile = 'nl_core_vaccination_event.protocol_applied';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: profile,
         children: [
             ui.reference(`${profile}.authority`, resource.authority),
-            ui.multipleValues(
-                `${profile}.targetDisease`,
-                resource.targetDisease,
-                ui.codeableConcept
-            ),
-            ...oneOfValueX(`${profile}.doseNumber`, resource, 'doseNumber'),
-            ...oneOfValueX(`${profile}.seriesDoses`, resource, 'seriesDoses'),
+            ui.codeableConcept(`${profile}.targetDisease`, resource.targetDisease),
+            ...ui.oneOfValueX(`${profile}.doseNumber`, resource, 'doseNumber'),
+            ...ui.oneOfValueX(`${profile}.seriesDoses`, resource, 'seriesDoses'),
         ],
     };
-}
+};

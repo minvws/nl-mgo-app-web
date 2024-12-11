@@ -1,33 +1,46 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import {
-    nlCoreNameInformation,
     nlCoreAddressInformation,
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
+    nlCoreNameInformation,
 } from '../..//elements';
-import { type NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualification/uiSchemaGroup';
+import { type NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946120
  */
-export function uiSchema(resource: NlCoreHealthProfessionalPractitioner): UiSchema {
+export const uiSchema: UiSchemaFunction<NlCoreHealthProfessionalPractitioner> = (
+    resource,
+    context
+) => {
     const profile = 'nl_core_health_professional_practitioner';
+    const ui = context.ui as NonStrictUi;
 
-    const address = map(resource.address, nlCoreAddressInformation.uiSchemaGroup, true);
-    const name = map(resource.name, nlCoreNameInformation.uiSchemaGroup, true);
+    const address = map(
+        resource.address,
+        (x) => nlCoreAddressInformation.uiSchemaGroup(x, context),
+        true
+    );
+    const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);
     const emailAddresses = map(
         resource.emailAddresses,
-        nlCoreContactInformationEmailAddresses.uiSchemaGroup,
+        (x) => nlCoreContactInformationEmailAddresses.uiSchemaGroup(x, context),
         true
     );
     const telephoneNumbers = map(
         resource.telephoneNumbers,
-        nlCoreContactInformationTelephoneNumbers.uiSchemaGroup,
+        (x) => nlCoreContactInformationTelephoneNumbers.uiSchemaGroup(x, context),
         true
     );
-    const qualification = map(resource.qualification, qualificationUiSchemaGroup, true);
+    const qualification = map(
+        resource.qualification,
+        (x) => qualificationUiSchemaGroup(x, context),
+        true
+    );
 
     return {
         label: resource.name?.at(0)?.text,
@@ -35,14 +48,10 @@ export function uiSchema(resource: NlCoreHealthProfessionalPractitioner): UiSche
             {
                 label: `${profile}.group_details`,
                 children: [
-                    ui.multipleValues(`${profile}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${profile}.identifier`, resource.identifier),
                     ui.code(`${profile}.gender`, resource.gender),
                     ui.date(`${profile}.birth_date`, resource.birthDate),
-                    ui.multipleValues(
-                        `${profile}.communication`,
-                        resource.communication,
-                        ui.codeableConcept
-                    ),
+                    ui.codeableConcept(`${profile}.communication`, resource.communication),
                 ],
             },
             ...name,
@@ -52,4 +61,4 @@ export function uiSchema(resource: NlCoreHealthProfessionalPractitioner): UiSche
             ...qualification,
         ],
     };
-}
+};

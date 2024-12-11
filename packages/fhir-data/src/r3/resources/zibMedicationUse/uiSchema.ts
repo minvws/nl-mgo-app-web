@@ -1,13 +1,14 @@
-import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
+import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
 import { type ZibMedicationUse } from './zibMedicationUse';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
-export function uiSchema(resource: ZibMedicationUse): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
     const i18n = 'zib_medication_use';
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317279/~mappings
@@ -20,21 +21,24 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
             resource.reasonForChangeOrDiscontinuationOfUse
         ),
         MedicationUseStopType: ui.code(`${i18n}.status`, resource.status),
-        ProductUsed: ui.reference(`${i18n}.medication`, resource.medicationReference),
+        ProductUsed: ui.reference(`${i18n}.medication_reference`, resource.medicationReference),
         PeriodOfUsePeriod: ui.period(`${i18n}.effective_period`, resource.effectivePeriod),
-        PeriodOfUseDuration: ui.duration(`${i18n}.effective_duration`, resource.effectiveDuration),
-        MedicationUseDateTime: ui.dateTime(`${i18n}.date_asserted`, resource.dateAsserted),
-        UseIndicator: ui.code(`${i18n}.taken`, resource.taken),
-        ReasonForUse: ui.multipleValues(
-            `${i18n}.reason_code`,
-            resource.reasonCode,
-            ui.codeableConcept
+        PeriodOfUseDuration: ui.duration(
+            `${i18n}.effective_period.duration`,
+            resource.effectiveDuration
         ),
-        Comment: ui.multipleValues(`${i18n}.note`, resource.note, ui.annotation),
+        MedicationUseDateTime: ui.dateTime(`${i18n}.date_asserted`, resource.dateAsserted),
+        UseIndicator: ui.boolean(`${i18n}.taken`, resource.taken === 'y'),
+        ReasonForUse: ui.codeableConcept(`${i18n}.reason_code.text`, resource.reasonCode),
+        Comment: ui.annotation(`${i18n}.note`, resource.note),
     };
 
     const hcimInstructionsForUse = {
-        InstructionsForUse: map(resource.dosage, zibInstructionsForUseUiSchema, true),
+        InstructionsForUse: map(
+            resource.dosage,
+            (x) => zibInstructionsForUseUiSchema(x, context),
+            true
+        ).flat(),
         RepeatPeriodCyclicalSchedule: ui.duration(
             `${i18n}.repeat_period_cyclical_schedule`,
             resource.repeatPeriodCyclicalSchedule
@@ -45,11 +49,11 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
         label: resource.medicationReference?.display,
         children: [
             {
-                label: `${i18n}.group_general_information`,
+                label: formatMessage(`fhir.group_general_info`),
                 children: [
                     hcimMedicationUse2.MedicationUseDateTime,
                     ...hcimMedicationUse2.PeriodOfUsePeriod,
-                    ...hcimMedicationUse2.PeriodOfUseDuration,
+                    hcimMedicationUse2.PeriodOfUseDuration,
                     hcimMedicationUse2.Prescriber,
                     hcimMedicationUse2.ReasonForUse,
                     hcimMedicationUse2.AsAgreedIndicator,
@@ -59,13 +63,12 @@ export function uiSchema(resource: ZibMedicationUse): UiSchema {
                     hcimMedicationUse2.ProductUsed,
                     hcimMedicationUse2.MedicationUseStopType,
                     hcimMedicationUse2.ReasonForChangeOrDiscontinuationOfUse,
-                    ...hcimInstructionsForUse.RepeatPeriodCyclicalSchedule,
+                    hcimInstructionsForUse.RepeatPeriodCyclicalSchedule,
 
-                    ui.codeableConcept(`${i18n}.category`, resource.category),
                     ui.identifier(`${i18n}.medication_treatment`, resource.medicationTreatment),
                 ],
             },
-            ...hcimInstructionsForUse.InstructionsForUse,
+            ...hcimInstructionsForUse.InstructionsForUse.flat(),
         ],
     };
-}
+};

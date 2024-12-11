@@ -1,8 +1,8 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Hospitalization } from './hospitalization';
 
-export function uiSchemaGroup(resource: Hospitalization): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Hospitalization> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     return {
         label: 'Encounter.hospitalization',
         children: [
@@ -13,4 +13,4 @@ export function uiSchemaGroup(resource: Hospitalization): UiSchemaGroup {
             ),
         ],
     };
-}
+};

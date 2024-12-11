@@ -5,22 +5,17 @@
             "label": "zib_body_height",
             "children": [
                 {
-                    "label": "zib_body_height.value",
+                    "label": "Lichaamslengte",
                     "type": "SINGLE_VALUE",
                     "display": "183 cm"
                 },
                 {
-                    "label": "zib_body_height.code",
-                    "type": "SINGLE_VALUE",
-                    "display": "cm in code systeem http://unitsofmeasure.org"
-                },
-                {
-                    "label": "zib_body_height.effective",
+                    "label": "Lengte datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "8 februari 2013"
                 },
                 {
-                    "label": "zib_body_height.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": "met schoenen aan"
                 }

@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type DocumentManifest } from 'fhir/r3';
 import input from './fixtures/fhir-resource.json';
@@ -11,6 +11,11 @@ test('returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const output = iheMhdDocumentManifest.parse(input as DocumentManifest);
-    const uiSchema = iheMhdDocumentManifest.uiSchema(output);
+    const uiSchema = iheMhdDocumentManifest.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

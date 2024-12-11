@@ -5,49 +5,39 @@
             "label": "zib_administration_agreement.group_general_information",
             "children": [
                 {
-                    "label": "zib_administration_agreement.authored_on",
+                    "label": "Toedieningsafspraak datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "8 juni 2020 om 10:54:12 GMT+2"
                 },
                 {
-                    "label": "zib_administration_agreement.agreement_reason",
+                    "label": "Reden afspraak",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.usage_duration.value",
+                    "label": "Gebruiksduur",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.usage_duration.code",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_administration_agreement.additional_information",
+                    "label": "Toedieningsafspraak aanvullende informatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Niet leverbaar (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)"
                     ]
                 },
                 {
-                    "label": "zib_administration_agreement.medication_treatment",
+                    "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
                     "display": "#MB_01h"
                 },
                 {
                     "label": "zib_administration_agreement.stop_type",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule.value",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule.code",
+                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -60,7 +50,7 @@
                     ]
                 },
                 {
-                    "label": "zib_administration_agreement.status",
+                    "label": "Geannuleerd indicator",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -72,27 +62,17 @@
                     ]
                 },
                 {
-                    "label": "zib_administration_agreement.quantity.value",
+                    "label": "zib_administration_agreement.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.quantity.code",
+                    "label": "zib_administration_agreement.days_supply",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.days_supply.value",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_administration_agreement.days_supply.code",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_administration_agreement.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Tekstuele toelichting bij deze toedieningsafspraak"
@@ -101,39 +81,44 @@
             ]
         },
         {
-            "label": "zib_instructions_for_use",
+            "label": "Toedieningsschema",
             "children": [
                 {
-                    "label": "zib_instructions_for_use.additional_instruction",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
                 },
                 {
-                    "label": "zib_instructions_for_use.text",
+                    "label": "Interval",
+                    "display": "1 d",
+                    "type": "SINGLE_VALUE"
+                }
+            ]
+        },
+        {
+            "label": "Gebruiksinstructie",
+            "children": [
+                {
+                    "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
                 },
                 {
-                    "label": "zib_instructions_for_use.route",
+                    "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
                     ]
                 },
                 {
-                    "label": "zib_instructions_for_use.sequence",
+                    "label": "Aanvullende instructie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
+                },
+                {
+                    "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
-                },
-                {
-                    "label": "zib_administration_schedule.frequency",
-                    "display": "1",
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "label": "zib_administration_schedule.period",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
                 }
             ]
         }

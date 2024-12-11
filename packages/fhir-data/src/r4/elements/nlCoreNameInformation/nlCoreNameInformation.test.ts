@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Patient } from 'fhir/r4';
 import { test } from 'vitest';
 import { nlCoreNameInformation } from './nlCoreNameInformation';
@@ -16,7 +16,14 @@ test('returns the expected output 01', () => {
 test('uiSchema returns the expected output 01', () => {
     const names = (input01 as Patient).name;
     const output = map(names, nlCoreNameInformation.parse, true);
-    const uiSchemaGroups = map(output, nlCoreNameInformation.uiSchemaGroup);
+    const uiSchemaGroups = map(output, (x) =>
+        nlCoreNameInformation.uiSchemaGroup(
+            x,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        )
+    );
     expectJson(uiSchemaGroups).toMatchFileSnapshot('./fixtures/01/ui-schema-groups.snap.json');
 });
 
@@ -29,6 +36,13 @@ test('returns the expected output 02', () => {
 test('uiSchema returns the expected output 02', () => {
     const names = (input02 as Patient).name;
     const output = map(names, nlCoreNameInformation.parse, true);
-    const uiSchemaGroups = map(output, nlCoreNameInformation.uiSchemaGroup);
+    const uiSchemaGroups = map(output, (x) =>
+        nlCoreNameInformation.uiSchemaGroup(
+            x,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        )
+    );
     expectJson(uiSchemaGroups).toMatchFileSnapshot('./fixtures/02/ui-schema-groups.snap.json');
 });

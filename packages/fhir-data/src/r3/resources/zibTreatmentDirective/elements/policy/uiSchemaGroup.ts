@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Policy } from './policy';
 
-export function uiSchemaGroup(resource: Policy): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Policy> = (resource, context) => {
     const i18n = 'zib_treatment_directive.policy';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -13,4 +13,4 @@ export function uiSchemaGroup(resource: Policy): UiSchemaGroup {
             ui.string(`${i18n}.uri`, resource.uri),
         ],
     };
-}
+};

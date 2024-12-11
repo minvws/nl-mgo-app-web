@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { expect } from 'vitest';
 import { evidence } from './evidence';
 
@@ -19,7 +19,12 @@ testSet(
         return evidence.parse(data);
     },
     (data) => {
-        const schema = evidence.uiSchemaGroup(data);
+        const schema = evidence.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('evidence');
     },
     false

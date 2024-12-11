@@ -1,20 +1,16 @@
-import { faker, testSet } from '$test';
+import { faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
 import { nlCoreHumanname } from './nlCoreHumanname';
 
-testSet(
-    'humanName parses successfully',
-    faker.fhir.humanName,
-    (data) => {
-        const schema = nlCoreHumanname.parse(data);
-        expect(schema).toEqual(
-            expect.objectContaining({
-                text: data.text,
-            })
-        );
-    },
-    false
-);
+test('humanName parses successfully', () => {
+    const data = faker.fhir.humanName();
+    const schema = nlCoreHumanname.parse(data);
+    expect(schema).toEqual(
+        expect.objectContaining({
+            text: data.text,
+        })
+    );
+});
 
 test.each([
     {
@@ -31,15 +27,14 @@ test.each([
     );
 });
 
-testSet(
-    'humanName UI schema group is created successfully',
-    () => {
-        const data = faker.fhir.humanName();
-        return nlCoreHumanname.parse(data);
-    },
-    (data) => {
-        const schema = nlCoreHumanname.uiSchemaGroup(data);
-        expect(schema.label).toBe('nl_core_humanname');
-    },
-    false
-);
+test('humanName UI schema group is created successfully', () => {
+    const data = nlCoreHumanname.parse(faker.fhir.humanName());
+    const schema = nlCoreHumanname.uiSchemaGroup(
+        data,
+        testUiSchemaContext({
+            useMock: true,
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(schema.label).toBe('nl_core_humanname');
+});

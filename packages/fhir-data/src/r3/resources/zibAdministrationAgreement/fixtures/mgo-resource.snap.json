@@ -81,15 +81,17 @@
             },
             "maxDosePerPeriod": null,
             "timing": {
-                "duration": null,
-                "durationUnit": null,
-                "frequency": 1,
-                "frequencyMax": null,
-                "period": 1,
-                "periodUnit": "d",
-                "dayOfWeek": null,
-                "timeOfDay": null,
-                "when": null
+                "repeat": {
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": 1,
+                    "frequencyMax": null,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
             }
         }
     ]

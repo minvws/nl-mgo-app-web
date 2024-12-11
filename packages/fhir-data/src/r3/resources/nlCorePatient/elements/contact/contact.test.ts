@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { expect } from 'vitest';
 import { contact } from './contact';
 
@@ -23,7 +23,12 @@ testSet(
         return contact.parse(data);
     },
     (data) => {
-        const schema = contact.uiSchemaGroup(data);
+        const schema = contact.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('nl_core_patient.contact');
     },
     false

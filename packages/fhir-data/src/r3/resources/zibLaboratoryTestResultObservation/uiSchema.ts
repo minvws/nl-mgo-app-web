@@ -1,4 +1,5 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
 import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
@@ -8,13 +9,19 @@ import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResul
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
  */
-export function uiSchema(
-    resource: ZibLaboratoryTestResultObservation | GpLaboratoryResult
-): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpLaboratoryResult> = (
+    resource,
+    context
+) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'zib_laboratory_test_result_observation';
 
-    const related = map(resource.related, relatedUiSchema, true);
-    const referenceRange = map(resource.referenceRange, referenceRangetUiSchema, true);
+    const related = map(resource.related, (x) => relatedUiSchema(x, context), true);
+    const referenceRange = map(
+        resource.referenceRange,
+        (x) => referenceRangetUiSchema(x, context),
+        true
+    );
     const title = resource.category?.[0]?.coding?.[0]?.display ?? `${i18n}`;
     const effective =
         typeof resource.effective === 'string'
@@ -27,7 +34,7 @@ export function uiSchema(
             {
                 label: `${i18n}`,
                 children: [
-                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ui.reference(`${i18n}.specimen`, resource.specimen),
                     ui.codeableConcept(
                         'zib_laboratory_test_result_diagnostic_report.code',
@@ -38,9 +45,9 @@ export function uiSchema(
                         resource.status
                     ),
                     ui.string(`${i18n}.comment`, resource.comment),
-                    ui.multipleValues(`${i18n}.result_type`, resource.category, ui.codeableConcept),
+                    ui.codeableConcept(`${i18n}.result_type`, resource.category),
                     ...ui.helpers.getChildren(related),
-                    ui.multipleValues(`${i18n}.based_on`, resource.basedOn, ui.reference),
+                    ui.reference(`${i18n}.based_on`, resource.basedOn),
                 ],
             },
             {
@@ -49,7 +56,7 @@ export function uiSchema(
                     ui.codeableConcept(`${i18n}.code`, resource.code),
                     ui.codeableConcept(`${i18n}.method`, resource.method),
                     ...effective,
-                    ui.simpleQuantity(`${i18n}.value`, resource.result),
+                    ui.quantity(`${i18n}.value`, resource.result),
                     ui.string(`${i18n}.status`, resource.status),
                     ...ui.helpers.getChildren(referenceRange),
                     ui.codeableConcept(
@@ -61,4 +68,4 @@ export function uiSchema(
             },
         ],
     };
-}
+};

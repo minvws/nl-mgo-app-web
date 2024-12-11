@@ -1,10 +1,12 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { type ZibBloodPressure } from './zibBloodPressure';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
  */
-export function uiSchema(resource: ZibBloodPressure): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibBloodPressure> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const profile = 'zib_blood_pressure';
 
     return {
@@ -27,16 +29,13 @@ export function uiSchema(resource: ZibBloodPressure): UiSchema {
                         `${profile}.diastolic_endpoint`,
                         resource.diastolicEndpoint.valueCodeableConcept
                     ),
-                    ...ui.quantity(`${profile}.systolic_bp`, resource.systolicBP.valueQuantity),
-                    ...ui.quantity(
-                        `${profile}.diastolic_bp.code`,
-                        resource.diastolicBP.valueQuantity
-                    ),
-                    ...ui.quantity(
+                    ui.quantity(`${profile}.systolic_bp`, resource.systolicBP.valueQuantity),
+                    ui.quantity(`${profile}.diastolic_bp.code`, resource.diastolicBP.valueQuantity),
+                    ui.quantity(
                         `${profile}.average_blood_pressure_loinc`,
                         resource.averageBloodPressureLOINC.valueQuantity
                     ),
-                    ...ui.quantity(
+                    ui.quantity(
                         `${profile}.average_blood_pressure_snomed`,
                         resource.averageBloodPressureSNOMED.valueQuantity
                     ),
@@ -54,4 +53,4 @@ export function uiSchema(resource: ZibBloodPressure): UiSchema {
             },
         ],
     };
-}
+};

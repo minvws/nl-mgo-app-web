@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type Organization } from 'fhir/r3';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -23,18 +23,33 @@ test('returns the expected output 03', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = nlCoreOrganization.parse(input01 as Organization);
-    const uiSchema = nlCoreOrganization.uiSchema(output);
+    const uiSchema = nlCoreOrganization.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
     const output = nlCoreOrganization.parse(input02 as Organization);
-    const uiSchema = nlCoreOrganization.uiSchema(output);
+    const uiSchema = nlCoreOrganization.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 03', () => {
     const output = nlCoreOrganization.parse(input03 as Organization);
-    const uiSchema = nlCoreOrganization.uiSchema(output);
+    const uiSchema = nlCoreOrganization.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
 });

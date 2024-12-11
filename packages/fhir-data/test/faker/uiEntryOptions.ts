@@ -3,7 +3,7 @@ import { type UiEntryOptions } from '../../src/ui/types';
 import { createMockDataFactory } from './factory';
 import { mockOptionalFields } from './helpers';
 
-export const valueOptions = createMockDataFactory<UiEntryOptions>(() => {
+export const uiEntryOptions = createMockDataFactory<UiEntryOptions>(() => {
     return mockOptionalFields({
         showEmpty: faker.datatype.boolean(),
     });

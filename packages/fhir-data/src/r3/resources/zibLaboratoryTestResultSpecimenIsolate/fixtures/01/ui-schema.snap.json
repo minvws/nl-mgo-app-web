@@ -5,26 +5,26 @@
             "label": "zib_laboratory_test_result_specimen_isolate",
             "children": [
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.identifier",
+                    "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b4904db-8fdf-11ec-1469-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.container.identifier",
-                    "type": "MULTIPLE_VALUES",
+                    "label": "Monstervolgnummer",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.container.type",
+                    "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.type",
+                    "label": "Microorganisme",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Revision status (246513007 in code systeem http://snomed.info/sct)"
@@ -41,38 +41,38 @@
                     "display": "1 maart 2020 om 22:03:00 GMT+1"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.received_time",
+                    "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 maart 2020 om 23:03:00 GMT+1"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.collection.method",
+                    "label": "Afnameprocedure",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.body_site",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen_isolate.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.subject",
+                    "label": "Bron monster",
                     "type": "REFERENCE_VALUE",
                     "display": "J. XXX_Helleman (Johan)",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "het monster toont afwijkingen"

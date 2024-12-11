@@ -1,4 +1,5 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type ZibAlcoholUse } from '../zibAlcoholUse/zibAlcoholUse';
 import { type ZibDrugUse } from '../zibDrugUse/zibDrugUse';
@@ -7,18 +8,16 @@ import { type ZibLivingSituation } from '../zibLivingSituation/zibLivingSituatio
 import { type ZibTobaccoUse } from '../zibTobaccoUse/zibTobaccoUse';
 import { type NlCoreObservation } from './nlCoreObservation';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
- */
-export function uiSchema(
-    resource:
-        | NlCoreObservation
-        | ZibAlcoholUse
-        | ZibDrugUse
-        | ZibLivingSituation
-        | ZibFunctionalOrMentalStatus
-        | ZibTobaccoUse
-): UiSchema {
+type ObservationLikeResource =
+    | NlCoreObservation
+    | ZibAlcoholUse
+    | ZibDrugUse
+    | ZibLivingSituation
+    | ZibFunctionalOrMentalStatus
+    | ZibTobaccoUse;
+
+export const uiSchema: UiSchemaFunction<ObservationLikeResource> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'nl_core_observation';
 
     return {
@@ -27,9 +26,9 @@ export function uiSchema(
             {
                 label: `${i18n}.group_details`,
                 children: [
-                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ui.code(`${i18n}.status`, resource.status),
-                    ui.multipleValues(`${i18n}.category`, resource.category, ui.codeableConcept),
+                    ui.codeableConcept(`${i18n}.category`, resource.category),
                     ui.reference(`${i18n}.subject`, resource.subject),
                     ui.reference(`${i18n}.context`, resource.context),
                     Object.prototype.hasOwnProperty.call(resource, 'effectiveDateTime')
@@ -46,4 +45,4 @@ export function uiSchema(
             },
         ],
     };
-}
+};

@@ -12,9 +12,9 @@
                     ]
                 },
                 {
-                    "label": "zib_product.form",
+                    "label": "Farmaceutische vorm",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         },

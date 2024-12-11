@@ -5,14 +5,14 @@
             "label": "zib_laboratory_test_result_specimen",
             "children": [
                 {
-                    "label": "zib_laboratory_test_result_specimen.identifier",
+                    "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b3b213b-8fdf-11ec-5198-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.type",
+                    "label": "Monstermateriaal",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
@@ -22,50 +22,50 @@
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collected.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "1 juni 2010"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collected.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.received_time",
+                    "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collection.method",
+                    "label": "Afnameprocedure",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen.body_site",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_laboratory_test_result_specimen.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.subject",
+                    "label": "Bron monster",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.note",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Toelichting",
+                    "display": null,
+                    "type": "SINGLE_VALUE"
                 }
             ]
         }

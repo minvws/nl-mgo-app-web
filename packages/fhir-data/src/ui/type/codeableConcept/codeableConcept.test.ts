@@ -5,8 +5,8 @@ import { codeableConcept } from './codeableConcept';
 import { coding } from '../coding/coding';
 
 test('codeableConcept prefers text value', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const concept: MgoCodeableConcept = {
         text: faker.lorem.sentence(),
         coding: [
@@ -23,10 +23,10 @@ test('codeableConcept prefers text value', () => {
         ],
     };
 
-    const result = codeableConcept(label, concept, options);
+    const result = codeableConcept(faker.custom.uiContext())(label, concept, options);
 
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'MULTIPLE_VALUES',
         display: [concept.text],
         ...options,
@@ -34,8 +34,8 @@ test('codeableConcept prefers text value', () => {
 });
 
 test('codeableConcept uses conding values as fallback', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const concept: MgoCodeableConcept = {
         text: undefined,
         coding: [
@@ -52,16 +52,17 @@ test('codeableConcept uses conding values as fallback', () => {
         ],
     };
 
-    const result = codeableConcept(label, concept, options);
+    const result = codeableConcept(faker.custom.uiContext())(label, concept, options);
+    const codingEntries = coding(faker.custom.uiContext());
 
     const {
         coding: [coding1, coding2],
     } = concept;
 
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'MULTIPLE_VALUES',
-        display: [coding('', coding1).display, coding('', coding2).display],
+        display: [codingEntries(label, coding1).display, codingEntries(label, coding2).display],
         ...options,
     });
 });

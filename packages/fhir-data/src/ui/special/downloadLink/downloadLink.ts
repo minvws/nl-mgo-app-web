@@ -1,15 +1,12 @@
 import { type MgoAttachment } from '../../../r3/elements';
-import { type Lossless } from '../../../types/Lossless';
-import { type DownloadLink, type UiEntryOptions } from '../../types';
+import { type WithUiContext, type DownloadLink, type UiFunctionWithoutLabel } from '../../types';
 
-export function downloadLink(
-    value: Lossless<MgoAttachment>,
-    options?: UiEntryOptions
-): DownloadLink {
-    return {
-        type: 'DOWNLOAD_LINK',
-        label: value.title ?? '',
-        url: value.url ?? '',
-        ...options,
+export const downloadLink: WithUiContext<UiFunctionWithoutLabel<MgoAttachment, DownloadLink>> =
+    (_context) => (value, options) => {
+        return {
+            type: 'DOWNLOAD_LINK',
+            label: value?.title ?? '',
+            url: value?.url ?? '',
+            ...options,
+        } as DownloadLink;
     };
-}

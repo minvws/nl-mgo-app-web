@@ -1,9 +1,9 @@
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import { type MgoAttachment } from './attachment';
 
-export function uiSchemaGroup(resource: MgoAttachment): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<MgoAttachment> = (resource, context) => {
     const i18n = 'attachment';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -18,4 +18,4 @@ export function uiSchemaGroup(resource: MgoAttachment): UiSchemaGroup {
             ui.dateTime(`${i18n}.creation`, resource.creation),
         ],
     };
-}
+};

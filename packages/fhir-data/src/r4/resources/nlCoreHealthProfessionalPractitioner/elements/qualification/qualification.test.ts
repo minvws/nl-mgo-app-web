@@ -1,4 +1,4 @@
-import { faker } from '$test';
+import { faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
 import { qualification } from './qualification';
 
@@ -16,7 +16,12 @@ test('qualification parses successfully', () => {
 test('qualification UI schema group is created successfully', () => {
     const input = faker.fhirR4.practitionerQualification();
     const data = qualification.parse(input);
-    const schema = qualification.uiSchemaGroup(data);
+    const schema = qualification.uiSchemaGroup(
+        data,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expect(schema.label).toBe(
         'nl_core_health_professional_practitioner.qualification.group_details'
     );

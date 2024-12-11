@@ -1,5 +1,7 @@
+import { Locale } from '../../i18n';
 import { FhirVersion } from '../../types/Fhir';
-import { type UiSchema } from '../../ui';
+import { createUiSchemaContext, type UiSchema, type UiSchemaOptions } from '../../ui';
+import { type UiSchemaContext } from '../../ui/types';
 import {
     resourcesMapR3,
     resourcesMapR4,
@@ -8,7 +10,7 @@ import {
 } from '../resources/resources';
 
 export type ResourceConfig<T extends MgoResourceR3 | MgoResourceR4> = {
-    uiSchema: (arg: T) => UiSchema;
+    uiSchema: (arg: T, context: UiSchemaContext) => UiSchema;
 };
 
 function getResourceConfig<T extends MgoResourceR3 | MgoResourceR4>(resource: T) {
@@ -30,7 +32,15 @@ function getResourceConfig<T extends MgoResourceR3 | MgoResourceR4>(resource: T)
     return config as ResourceConfig<T>;
 }
 
-export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(resource: T) {
+export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(
+    resource: T,
+    options?: UiSchemaOptions
+) {
     const config = getResourceConfig(resource);
-    return config.uiSchema(resource);
+
+    const uiSchemaContext = createUiSchemaContext({
+        locale: options?.locale ?? Locale.NL_NL,
+    });
+
+    return config.uiSchema(resource, uiSchemaContext);
 }

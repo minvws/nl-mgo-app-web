@@ -38,19 +38,19 @@
                     "reference": null
                 },
                 {
-                    "label": "nl_core_observation.effective_period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "2001"
                 },
                 {
-                    "label": "nl_core_observation.effective_period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_observation.data_absent_reason",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_observation.comment",
@@ -60,7 +60,7 @@
                 {
                     "label": "nl_core_observation.body_site",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         }

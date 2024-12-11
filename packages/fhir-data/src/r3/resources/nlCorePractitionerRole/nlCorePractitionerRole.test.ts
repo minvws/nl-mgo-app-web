@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type PractitionerRole } from 'fhir/r3';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -34,30 +34,55 @@ test('returns the expected output 05', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = nlCorePractitionerRole.parse(input01 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(output);
+    const uiSchema = nlCorePractitionerRole.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
     const output = nlCorePractitionerRole.parse(input02 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(output);
+    const uiSchema = nlCorePractitionerRole.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 03', () => {
     const output = nlCorePractitionerRole.parse(input03 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(output);
+    const uiSchema = nlCorePractitionerRole.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 04', () => {
     const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(output);
+    const uiSchema = nlCorePractitionerRole.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/04/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 05', () => {
     const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(output);
+    const uiSchema = nlCorePractitionerRole.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/05/ui-schema.snap.json');
 });

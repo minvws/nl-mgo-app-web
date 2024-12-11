@@ -1,11 +1,34 @@
 import { type MgoAnnotation } from '../../../parse/type';
-import { type SingleValue, type UiFunction } from '../../types';
+import { type Nullable } from '../../../types/Nullable';
+import {
+    type MultipleValues,
+    type SingleValue,
+    type UiFunction,
+    type WithUiContext,
+} from '../../types';
 
-export const annotation: UiFunction<MgoAnnotation, SingleValue> = (label, value, options) => {
-    return {
-        label,
-        display: value?.text,
-        type: 'SINGLE_VALUE',
-        ...options,
-    };
+export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
+    return value?.text;
 };
+
+export const annotation: WithUiContext<
+    UiFunction<MgoAnnotation | MgoAnnotation[], SingleValue | MultipleValues>
+> =
+    ({ intl }) =>
+    (label, value, options) => {
+        if (Array.isArray(value)) {
+            return {
+                label: intl.formatMessage({ id: label }),
+                type: 'MULTIPLE_VALUES',
+                display: value.map(annotationDisplay),
+                ...options,
+            };
+        }
+
+        return {
+            label: intl.formatMessage({ id: label }),
+            display: annotationDisplay(value),
+            type: 'SINGLE_VALUE',
+            ...options,
+        };
+    };

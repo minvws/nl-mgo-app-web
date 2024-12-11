@@ -1,15 +1,15 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type ReferenceRange } from './referenceRange';
 
-export function uiSchemaGroup(resource: ReferenceRange): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<ReferenceRange> = (resource, context) => {
     const i18n = 'zib_laboratory_test_result_observation.reference_range';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: `${i18n}`,
         children: [
-            ui.simpleQuantity(`${i18n}.low`, resource.low),
-            ui.simpleQuantity(`${i18n}.high`, resource.high),
+            ui.quantity(`${i18n}.low`, resource.low),
+            ui.quantity(`${i18n}.high`, resource.high),
         ],
     };
-}
+};

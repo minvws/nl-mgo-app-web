@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
@@ -17,12 +17,22 @@ test('returns the expected output 02', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = nlCoreVaccinationEvent.parse(input01 as Immunization);
-    const uiSchema = nlCoreVaccinationEvent.uiSchema(output);
+    const uiSchema = nlCoreVaccinationEvent.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
     const output = nlCoreVaccinationEvent.parse(input02 as Immunization);
-    const uiSchema = nlCoreVaccinationEvent.uiSchema(output);
+    const uiSchema = nlCoreVaccinationEvent.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });

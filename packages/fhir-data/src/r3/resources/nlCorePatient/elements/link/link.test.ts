@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { expect } from 'vitest';
 import { link } from './link';
 
@@ -23,7 +23,12 @@ testSet(
         return link.parse(data);
     },
     (data) => {
-        const schema = link.uiSchemaGroup(data);
+        const schema = link.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('nl_core_patient.link');
     },
     false

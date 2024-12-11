@@ -1,4 +1,4 @@
-import { faker, testSet } from '$test';
+import { faker, testSet, testUiSchemaContext } from '$test';
 import { expect } from 'vitest';
 import { actor } from './actor';
 
@@ -23,7 +23,12 @@ testSet(
         return actor.parse(data);
     },
     (data) => {
-        const schema = actor.uiSchemaGroup(data);
+        const schema = actor.uiSchemaGroup(
+            data,
+            testUiSchemaContext({
+                ignoreMissingTranslations: true,
+            })
+        );
         expect(schema.label).toBe('Immunization.practitioner.actor');
     },
     false

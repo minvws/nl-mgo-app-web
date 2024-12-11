@@ -1,6 +1,6 @@
 import input from './fixtures/fhir-resource.json';
 
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type Observation } from 'fhir/r3';
 import { zibLivingSituation } from './zibLivingSituation';
@@ -12,6 +12,11 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output', () => {
     const output = zibLivingSituation.parse(input as Observation);
-    const uiSchema = zibLivingSituation.uiSchema(output);
+    const uiSchema = zibLivingSituation.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

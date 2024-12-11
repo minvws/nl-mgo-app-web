@@ -5,22 +5,17 @@
             "label": "zib_body_weight",
             "children": [
                 {
-                    "label": "zib_body_weight.value",
+                    "label": "Lichaamsgewicht",
                     "type": "SINGLE_VALUE",
                     "display": "72 kg"
                 },
                 {
-                    "label": "zib_body_weight.code",
-                    "type": "SINGLE_VALUE",
-                    "display": "kg in code systeem http://unitsofmeasure.org"
-                },
-                {
-                    "label": "zib_body_weight.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_body_weight.effective",
+                    "label": "Gewicht datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "3 februari 2013"
                 },

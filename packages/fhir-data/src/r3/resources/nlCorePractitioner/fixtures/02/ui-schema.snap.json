@@ -5,7 +5,7 @@
             "label": "nl_core_practitioner.group_details",
             "children": [
                 {
-                    "label": "nl_core_practitioner.identifier",
+                    "label": "Zorgverlener identificatie nummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "16e29a33-8fdf-11ec-6379-020000000000"
@@ -32,24 +32,17 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.line",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Valkendael 45"
-                    ]
-                },
-                {
-                    "label": "nl_core_address.city",
+                    "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Maastricht"
                 },
                 {
-                    "label": "nl_core_address.district",
+                    "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.state",
+                    "label": "Provincie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -59,17 +52,17 @@
                     "display": "6245HK"
                 },
                 {
-                    "label": "nl_core_address.country",
+                    "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "Nederland"
                 },
                 {
-                    "label": "nl_core_address.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -79,33 +72,33 @@
             "label": "nl_core_humanname",
             "children": [
                 {
-                    "label": "nl_core_humanname.family",
+                    "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "display": "Vaste Huisarts 1"
                 },
                 {
-                    "label": "nl_core_humanname.given",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
-                },
-                {
-                    "label": "nl_core_humanname.period.start",
+                    "label": "Voornamen",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.period.end",
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
@@ -144,12 +137,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -179,12 +172,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

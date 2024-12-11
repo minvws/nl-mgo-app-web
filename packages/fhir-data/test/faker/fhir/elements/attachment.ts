@@ -1,11 +1,10 @@
 import { faker } from '@faker-js/faker';
 import { type Attachment } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
-import { mockOptionalFields } from '../../helpers';
 import { code, dateTime } from '../type';
 
 export const attachment = createMockDataFactory<Attachment>(() => {
-    return mockOptionalFields({
+    return {
         contentType: code(),
         language: code(),
         data: faker.lorem.word(),
@@ -14,5 +13,5 @@ export const attachment = createMockDataFactory<Attachment>(() => {
         hash: faker.lorem.word(),
         title: faker.lorem.word(),
         creation: dateTime(),
-    });
+    };
 });

@@ -1,9 +1,9 @@
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type UiSchemaGroupFunction, type NonStrictUi } from '../../../ui/types';
 import { type ZibProductIngredient } from './zibProductIngredient';
 
-export function uiSchemaGroup(resource: ZibProductIngredient): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<ZibProductIngredient> = (resource, context) => {
     const i18n = 'zib_product_ingredient';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,4 +12,4 @@ export function uiSchemaGroup(resource: ZibProductIngredient): UiSchemaGroup {
             ...ui.ratio(`${i18n}.amount`, resource.amount),
         ],
     };
-}
+};

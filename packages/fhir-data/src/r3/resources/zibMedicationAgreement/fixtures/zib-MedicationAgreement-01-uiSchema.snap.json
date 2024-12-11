@@ -5,42 +5,32 @@
             "label": "zib_medication_agreement.group_general_information",
             "children": [
                 {
-                    "label": "zib_medication_agreement.period_of_use.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "8 juni 2020"
                 },
                 {
-                    "label": "zib_medication_agreement.period_of_use.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.usage_duration.value",
+                    "label": "Duur",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.usage_duration.code",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_medication_agreement.medication_treatment",
+                    "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
                     "display": "#MB_01h"
                 },
                 {
                     "label": "zib_medication_agreement.stop_type",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule.value",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule.code",
+                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -54,13 +44,15 @@
                 },
                 {
                     "label": "zib_medication_agreement.definition",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 },
                 {
                     "label": "zib_medication_agreement.basedOn",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 },
                 {
                     "label": "zib_medication_agreement.group_identifier",
@@ -90,52 +82,57 @@
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.medication_reference",
+                    "label": "Afgesprokengeneesmiddel",
                     "type": "REFERENCE_VALUE",
                     "display": "Metoclopramide zetpil 20mg",
                     "reference": "Medication/zib-Product-03"
                 },
                 {
-                    "label": "zib_medication_agreement.note",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Toelichting",
+                    "display": null,
+                    "type": "SINGLE_VALUE"
                 }
             ]
         },
         {
-            "label": "zib_instructions_for_use",
+            "label": "Toedieningsschema",
             "children": [
                 {
-                    "label": "zib_instructions_for_use.additional_instruction",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
                 },
                 {
-                    "label": "zib_instructions_for_use.text",
+                    "label": "Interval",
+                    "display": "1 d",
+                    "type": "SINGLE_VALUE"
+                }
+            ]
+        },
+        {
+            "label": "Gebruiksinstructie",
+            "children": [
+                {
+                    "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_instructions_for_use.route",
+                    "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
                     ]
                 },
                 {
-                    "label": "zib_instructions_for_use.sequence",
+                    "label": "Aanvullende instructie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
+                },
+                {
+                    "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
-                },
-                {
-                    "label": "zib_administration_schedule.frequency",
-                    "display": "1",
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "label": "zib_administration_schedule.period",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
                 }
             ]
         }

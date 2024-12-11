@@ -8,7 +8,7 @@ type TestData = {
     foo: string;
 };
 
-export const uiSingeValue: UiFunction<TestData, SingleValue> = (label, value, options) => {
+export const singleValueEntry: UiFunction<TestData, SingleValue> = (label, value, options) => {
     return {
         label,
         type: 'SINGLE_VALUE',
@@ -17,7 +17,11 @@ export const uiSingeValue: UiFunction<TestData, SingleValue> = (label, value, op
     };
 };
 
-export const uiMultipleValues: UiFunction<TestData, MultipleValues> = (label, value, options) => {
+export const multipleValuesEntry: UiFunction<TestData, MultipleValues> = (
+    label,
+    value,
+    options
+) => {
     return {
         label,
         type: 'MULTIPLE_VALUES',
@@ -38,11 +42,12 @@ test('combines multiple display values for a single ValueDescription', () => {
         },
     ];
 
-    const label = faker.lorem.word();
-    const result = multipleValues(label, data, uiSingeValue);
+    const label = faker.custom.messageId();
+    const uiMultipleValues = multipleValues(faker.custom.uiContext());
+    const result = uiMultipleValues(label, data, singleValueEntry);
 
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         display: [value1, value2],
         type: 'MULTIPLE_VALUES',
     });
@@ -60,11 +65,12 @@ test('combines multiple - multiple values for a single multiple grouped values',
         },
     ];
 
-    const label = faker.lorem.word();
-    const result = multipleValues(label, data, uiMultipleValues);
+    const label = faker.custom.messageId();
+    const uiMultipleValues = multipleValues(faker.custom.uiContext());
+    const result = uiMultipleValues(label, data, multipleValuesEntry);
 
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         display: [[value1], [value2]],
         type: 'MULTIPLE_GROUPED_VALUES',
     });

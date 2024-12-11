@@ -5,37 +5,37 @@
             "label": "zib_laboratory_test_result_observation",
             "children": [
                 {
-                    "label": "zib_laboratory_test_result_observation.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b2d4dbd-8fdf-11ec-8670-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.specimen",
+                    "label": "Monster",
                     "type": "REFERENCE_VALUE",
                     "display": "Blood (substance)",
                     "reference": "Specimen/zib-laboratorytestresult-specimen-01"
                 },
                 {
-                    "label": "zib_laboratory_test_result_diagnostic_report.code",
+                    "label": "Onderzoek",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_diagnostic_report.status",
+                    "label": "Resultaat status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.result_type",
+                    "label": "Resultaat type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -47,9 +47,10 @@
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.based_on",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Aanvrager",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 }
             ]
         },
@@ -57,44 +58,44 @@
             "label": "zib_laboratory_test_result_observation.test",
             "children": [
                 {
-                    "label": "zib_laboratory_test_result_observation.code",
+                    "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.method",
+                    "label": "Testmethode",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.effective",
+                    "label": "Test datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "23 mei 2012 om 12:00:00 GMT+2"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.value",
+                    "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
                     "display": "109 mmol/l"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.status",
+                    "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.reference_range.low",
+                    "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
                     "display": "99 mmol/l"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.reference_range.high",
+                    "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmol/l"
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.interpretation.interpretatie_vlaggen_codelijst",
+                    "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Hoog (H in code systeem http://hl7.org/fhir/v2/0078)",
@@ -102,7 +103,7 @@
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_observation.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

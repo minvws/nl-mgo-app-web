@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { nlCoreContactInformationEmailAddresses } from './nlCoreContactInformationEmailAddresses';
-import { expectJson, faker } from '$test';
+import { expectJson, faker, testUiSchemaContext } from '$test';
 import { type ContactPoint } from 'fhir/r4';
 import inputContactPoint01 from './fixtures/01/fhir-resource.json';
 
@@ -27,6 +27,11 @@ test('returns the expected output 01', () => {
 test('uiSchema returns the expected output 01', () => {
     const address = inputContactPoint01 as ContactPoint;
     const output = nlCoreContactInformationEmailAddresses.parse(address);
-    const uiSchemaGroup = nlCoreContactInformationEmailAddresses.uiSchemaGroup(output!);
+    const uiSchemaGroup = nlCoreContactInformationEmailAddresses.uiSchemaGroup(
+        output!,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });

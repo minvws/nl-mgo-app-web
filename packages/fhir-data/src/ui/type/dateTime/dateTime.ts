@@ -1,12 +1,31 @@
 import { type MgoDateTime } from '../../../parse/type';
+import { isNonNullish } from '../../../utils';
 import { format } from '../../format';
-import { type SingleValue, type UiFunction } from '../../types';
+import {
+    type MultipleValues,
+    type SingleValue,
+    type UiFunction,
+    type WithUiContext,
+} from '../../types';
 
-export const dateTime: UiFunction<MgoDateTime, SingleValue> = (label, value, options) => {
-    return {
-        label,
-        type: 'SINGLE_VALUE',
-        display: format.dateTime(value),
-        ...options,
+export const dateTime: WithUiContext<
+    UiFunction<MgoDateTime | MgoDateTime[], SingleValue | MultipleValues>
+> =
+    ({ intl }) =>
+    (label, value, options) => {
+        if (Array.isArray(value)) {
+            return {
+                label: intl.formatMessage({ id: label }),
+                type: 'MULTIPLE_VALUES',
+                display: value.map(format.dateTime).filter(isNonNullish),
+                ...options,
+            };
+        }
+
+        return {
+            label: intl.formatMessage({ id: label }),
+            type: 'SINGLE_VALUE',
+            display: format.dateTime(value),
+            ...options,
+        };
     };
-};

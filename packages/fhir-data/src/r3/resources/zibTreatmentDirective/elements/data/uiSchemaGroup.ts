@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Data } from './data';
 
-export function uiSchemaGroup(resource: Data): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Data> = (resource, context) => {
     const i18n = 'zib_treatment_directive.data';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,4 +12,4 @@ export function uiSchemaGroup(resource: Data): UiSchemaGroup {
             ui.reference(`${i18n}.reference`, resource.reference),
         ],
     };
-}
+};

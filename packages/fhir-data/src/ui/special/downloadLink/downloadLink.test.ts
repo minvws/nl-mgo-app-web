@@ -7,9 +7,10 @@ test('downloadLink', () => {
     const value = attachment.parse(faker.fhir.attachment());
     value.title = faker.lorem.word();
     value.url = faker.internet.url();
-    const options = faker.uiSchema.valueOptions();
+    const options = faker.custom.uiEntryOptions();
 
-    const result = downloadLink(value, options);
+    const uiDownloadLink = downloadLink(faker.custom.uiContext());
+    const result = uiDownloadLink(value, options);
     expect(result).toEqual({
         type: 'DOWNLOAD_LINK',
         label: value.title,
@@ -22,9 +23,10 @@ test('downloadLink values default to empty string', () => {
     const value = attachment.parse(faker.fhir.attachment());
     value.title = undefined;
     value.url = undefined;
-    const options = faker.uiSchema.valueOptions();
+    const options = faker.custom.uiEntryOptions();
 
-    const result = downloadLink(value, options);
+    const uiDownloadLink = downloadLink(faker.custom.uiContext());
+    const result = uiDownloadLink(value, options);
     expect(result).toEqual({
         type: 'DOWNLOAD_LINK',
         label: '',

@@ -1,9 +1,12 @@
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import { type NlCoreContactInformationEmailAddresses } from './nlCoreContactInformationEmailAddresses';
 
-export function uiSchemaGroup(resource: NlCoreContactInformationEmailAddresses): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreContactInformationEmailAddresses> = (
+    resource,
+    context
+) => {
     const i18n = 'nl_core_contact_information_email_addresses';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,4 +15,4 @@ export function uiSchemaGroup(resource: NlCoreContactInformationEmailAddresses):
             ui.string(`${i18n}.use`, resource?.use),
         ],
     };
-}
+};

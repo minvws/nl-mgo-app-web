@@ -1,6 +1,6 @@
 import input from './fixtures/fhir-resource.json';
 
-import { expectJson, faker } from '$test';
+import { expectJson, faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
 import { type Observation } from 'fhir/r3';
 import { zibBloodPressure } from './zibBloodPressure';
@@ -13,7 +13,12 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output', () => {
     const output = zibBloodPressure.parse(input as Observation);
-    const uiSchema = zibBloodPressure.uiSchema(output);
+    const uiSchema = zibBloodPressure.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 

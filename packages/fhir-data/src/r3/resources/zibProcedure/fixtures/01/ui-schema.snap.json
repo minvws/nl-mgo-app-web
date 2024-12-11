@@ -5,17 +5,17 @@
             "label": "zib_procedure",
             "children": [
                 {
-                    "label": "zib_procedure.performed_period.start",
+                    "label": "Verrichting start datum",
                     "type": "SINGLE_VALUE",
                     "display": "5 juni 2012"
                 },
                 {
-                    "label": "zib_procedure.performed_period.end",
+                    "label": "Verrichting eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_procedure.body_site",
+                    "label": "Verrichting anatomische locatie",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -33,14 +33,14 @@
                     ]
                 },
                 {
-                    "label": "zib_procedure.reason_reference",
+                    "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Arthropathy (disorder)"
                     ]
                 },
                 {
-                    "label": "zib_procedure.code",
+                    "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Implantation of Swanson prosthesis of knee (procedure) (60159002 in code systeem http://snomed.info/sct)"
@@ -49,10 +49,10 @@
                 {
                     "label": "zib_procedure.procedure_method",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_procedure.focal_device.manipulated",
+                    "label": "Medisch hulpmiddel",
                     "type": "REFERENCE_VALUE",
                     "display": "Knee joint prosthesis, device (physical object)",
                     "reference": "Device/zib-medicaldeviceproduct-01"
@@ -64,7 +64,7 @@
                     "reference": null
                 },
                 {
-                    "label": "zib_procedure.performer",
+                    "label": "Uitgevoerd door",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
                     "reference": "Organization/nl-core-organization-02"

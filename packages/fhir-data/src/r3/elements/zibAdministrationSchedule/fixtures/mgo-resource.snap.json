@@ -1,14 +1,16 @@
 {
-    "duration": null,
-    "durationUnit": null,
-    "frequency": null,
-    "frequencyMax": null,
-    "period": null,
-    "periodUnit": null,
-    "dayOfWeek": null,
-    "timeOfDay": [
-        "08:00:00",
-        "18:00:00"
-    ],
-    "when": null
+    "repeat": {
+        "duration": null,
+        "durationUnit": null,
+        "frequency": null,
+        "frequencyMax": null,
+        "period": null,
+        "periodUnit": null,
+        "dayOfWeek": null,
+        "timeOfDay": [
+            "08:00:00",
+            "18:00:00"
+        ],
+        "when": null
+    }
 }

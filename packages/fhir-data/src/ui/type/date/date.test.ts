@@ -5,12 +5,12 @@ import { format } from '../../format';
 import * as primitive from './date';
 
 test('date', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value: MgoDate = faker.fhir.date();
-    const result = primitive.date(label, value, options);
+    const result = primitive.date(faker.custom.uiContext())(label, value, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: format.date(value),
         ...options,

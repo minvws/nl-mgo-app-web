@@ -20,10 +20,14 @@
         "schema:swift": "pnpm run schema:swift:clean && quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --access-level public --protocol hashable --sendable --density dense --multi-file-output --out ./dist/schema/swift/Types.swift",
         "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework kotlinx --out ./dist/schema/kotlin/Types.kt",
         "download:definitions": "./bin/download-fhir-definitions.sh",
-        "extract:labels": "tsx ./definition-labels/index.ts"
+        "extract:labels": "tsx ./resource-labels/index.ts",
+        "messages:compile": "pnpm messages:compile:nl",
+        "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
+        "messages:format": "prettier --write ./src/i18n/locales"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
+        "@formatjs/cli": "^6.3.11",
         "@types/fhir": "^0.0.41",
         "@types/lodash": "^4.17.4",
         "@types/node": "^22.5.0",
@@ -38,6 +42,7 @@
         "vite-plugin-dts": "^4.2.1"
     },
     "dependencies": {
+        "@formatjs/intl": "^3.0.1",
         "lodash": "^4.17.21",
         "lossless-json": "^4.0.1"
     }

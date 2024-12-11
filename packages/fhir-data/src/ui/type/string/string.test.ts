@@ -5,12 +5,12 @@ import { toString } from '../../helpers';
 import { string } from './string';
 
 test('string', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value: MgoCode = faker.fhir.code();
-    const result = string(label, value, options);
+    const result = string(faker.custom.uiContext())(label, value, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: toString(value),
         ...options,

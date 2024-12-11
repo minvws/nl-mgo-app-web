@@ -1,10 +1,12 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAlert } from './zibAlert';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
  */
-export function uiSchema(resource: ZibAlert): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibAlert> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'zib_alert';
 
     return {
@@ -13,7 +15,7 @@ export function uiSchema(resource: ZibAlert): UiSchema {
             {
                 label: `${i18n}.group_general_information`,
                 children: [
-                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ui.code(`${i18n}.status`, resource.status),
                     ui.codeableConcept(`${i18n}.category`, resource.category),
                     ui.codeableConcept(`${i18n}.code`, resource.code),
@@ -25,4 +27,4 @@ export function uiSchema(resource: ZibAlert): UiSchema {
             },
         ],
     };
-}
+};

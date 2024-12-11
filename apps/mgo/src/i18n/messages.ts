@@ -11,13 +11,3 @@ export const messagesNL = {
 
 export type MessagesIds = keyof typeof messagesNL;
 export type Messages = Record<MessagesIds, MessageFormatElement[]>;
-
-/** This enables strict type checks on message id's */
-declare global {
-    // eslint-disable-next-line @typescript-eslint/no-namespace
-    namespace FormatjsIntl {
-        interface Message {
-            ids: MessagesIds;
-        }
-    }
-}

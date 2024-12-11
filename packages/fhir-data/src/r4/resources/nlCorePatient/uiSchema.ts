@@ -1,16 +1,22 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { nlCoreNameInformation, nlCoreAddressInformation } from '../../elements';
+import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
 import { type NlCorePatientR4 } from './nlCorePatient';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-export function uiSchema(resource: NlCorePatientR4): UiSchema {
+export const uiSchema: UiSchemaFunction<NlCorePatientR4> = (resource, context) => {
     const i18n = 'nl_core_patient';
+    const ui = context.ui as NonStrictUi;
 
-    const name = map(resource.name, nlCoreNameInformation.uiSchemaGroup, true);
-    const addresses = map(resource.address, nlCoreAddressInformation.uiSchemaGroup, true);
+    const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);
+    const addresses = map(
+        resource.address,
+        (x) => nlCoreAddressInformation.uiSchemaGroup(x, context),
+        true
+    );
 
     return {
         label: resource.name?.at(0)?.text,
@@ -19,17 +25,12 @@ export function uiSchema(resource: NlCorePatientR4): UiSchema {
             {
                 label: `${i18n}.group_details`,
                 children: [
-                    ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ui.date(`${i18n}.birth_date`, resource.birthDate),
                     ui.boolean(`${i18n}.deceased`, resource.deceased),
                     ui.dateTime(`${i18n}.deceased_date_time`, resource.deceasedDateTime),
                     ui.code(`${i18n}.gender`, resource.gender),
-                    ui.multipleValues(
-                        `${i18n}.general_practitioner`,
-                        resource.generalPractitioner,
-                        ui.reference
-                    ),
-
+                    ui.reference(`${i18n}.general_practitioner`, resource.generalPractitioner),
                     ui.reference(`${i18n}.managing_organization`, resource.managingOrganization),
                     ui.codeableConcept(`${i18n}.marital_status`, resource.maritalStatus),
                     ui.boolean(`${i18n}.multiple_birth`, resource.multipleBirth),
@@ -38,4 +39,4 @@ export function uiSchema(resource: NlCorePatientR4): UiSchema {
             ...addresses,
         ],
     };
-}
+};

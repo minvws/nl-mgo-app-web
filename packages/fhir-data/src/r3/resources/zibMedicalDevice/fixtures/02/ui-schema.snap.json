@@ -23,12 +23,12 @@
                     "reference": "Device/zib-medicaldeviceproduct-02"
                 },
                 {
-                    "label": "zib_medical_device.whenUsed.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medical_device.whenUsed.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -44,18 +44,18 @@
             "children": [
                 {
                     "label": "zib_medical_device.note",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": null,
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "zib_medical_device.bodySite",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_medical_device.laterality",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_medical_device.reason",

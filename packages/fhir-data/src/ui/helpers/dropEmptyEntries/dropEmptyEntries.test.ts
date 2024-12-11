@@ -137,6 +137,45 @@ test('drops groups that are empty', () => {
     expect(dropEmptyEntries(uiSchema)).toEqual(expected);
 });
 
+test('drops groups that are empty for a group collection', () => {
+    const entry2: UiEntry = {
+        type: 'SINGLE_VALUE',
+        label: faker.lorem.word(),
+        display: undefined,
+        showEmpty: true,
+    };
+    const entry3: UiEntry = {
+        type: 'REFERENCE_VALUE',
+        label: faker.lorem.word(),
+        display: faker.lorem.word(),
+        reference: undefined,
+    };
+
+    const uiSchemaGroups: UiSchemaGroup[] = [
+        {
+            label: faker.lorem.word(),
+            children: [],
+        },
+        {
+            label: faker.lorem.word(),
+            children: [entry2],
+        },
+        {
+            label: faker.lorem.word(),
+            children: [entry3],
+        },
+    ];
+
+    const expected = [
+        {
+            label: uiSchemaGroups[1].label,
+            children: [entry2],
+        },
+    ];
+
+    expect(dropEmptyEntries(uiSchemaGroups)).toEqual(expected);
+});
+
 test('can drops empty entries for a single group but does not mutate the original', () => {
     const entry1: UiEntry = {
         type: 'SINGLE_VALUE',

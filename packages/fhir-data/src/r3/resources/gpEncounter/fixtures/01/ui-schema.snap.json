@@ -22,19 +22,19 @@
                     "reference": "Organization/nl-core-organization-01"
                 },
                 {
-                    "label": "Encounter.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "8 februari 2013"
                 },
                 {
-                    "label": "Encounter.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": "8 februari 2013"
                 },
                 {
                     "label": "Encounter.reason",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         }

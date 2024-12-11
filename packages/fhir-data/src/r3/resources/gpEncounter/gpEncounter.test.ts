@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Encounter } from 'fhir/r3';
 import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -11,6 +11,11 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = gpEncounter.parse(input01 as Encounter);
-    const uiSchema = gpEncounter.uiSchema(output);
+    const uiSchema = gpEncounter.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });

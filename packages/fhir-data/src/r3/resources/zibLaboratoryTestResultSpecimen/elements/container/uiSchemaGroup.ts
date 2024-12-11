@@ -1,15 +1,15 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Container } from './container';
 
-export function uiSchemaGroup(resource: Container): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Container> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'zib_laboratory_test_result_specimen.container';
 
     return {
         label: `${i18n}`,
         children: [
-            ui.multipleValues(`${i18n}.identifier`, resource.identifier, ui.identifier),
+            ui.identifier(`${i18n}.identifier`, resource.identifier),
             ui.codeableConcept(`${i18n}.type`, resource.type),
         ],
     };
-}
+};

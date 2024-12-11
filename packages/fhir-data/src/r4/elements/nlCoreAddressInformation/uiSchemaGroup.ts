@@ -1,10 +1,10 @@
-import { type Nullable } from '../../../types/Nullable';
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import { type NlCoreAddress } from './nlCoreAddressInformation';
 
-export function uiSchemaGroup(resource: Nullable<NlCoreAddress>): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreAddress> = (resource, context) => {
     const i18n = 'nl_core_address_information';
+    const ui = context.ui as NonStrictUi;
+
     return {
         label: i18n,
         children: [
@@ -20,4 +20,4 @@ export function uiSchemaGroup(resource: Nullable<NlCoreAddress>): UiSchemaGroup 
             ui.codeableConcept(`${i18n}.addressType`, resource?.addressType),
         ],
     };
-}
+};

@@ -1,5 +1,5 @@
 {
-    "label": null,
+    "label": "Onbekend",
     "children": [
         {
             "label": "ihe_mhd_minimal_document_reference.group_general_information",
@@ -39,7 +39,7 @@
                 {
                     "label": "ihe_mhd_minimal_document_reference.security_label",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "ihe_mhd_minimal_document_reference.content.attachment.content_type",

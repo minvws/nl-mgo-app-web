@@ -4,15 +4,15 @@ import { type MgoReference } from '../../../parse/type';
 import * as special from './reference';
 
 test('reference', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value: MgoReference = {
         display: faker.lorem.word(),
         reference: faker.lorem.word(),
     };
-    const result = special.reference(label, value, options);
+    const result = special.reference(faker.custom.uiContext())(label, value, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'REFERENCE_VALUE',
         display: value.display,
         reference: value.reference,

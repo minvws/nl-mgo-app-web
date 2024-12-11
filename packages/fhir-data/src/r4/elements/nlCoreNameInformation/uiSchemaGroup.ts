@@ -1,19 +1,18 @@
-import { type Nullable } from '../../../types/Nullable';
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import {
     type NlCoreNameInformation,
     type NlCoreNameInformationGiven,
 } from './nlCoreNameInformation';
 
-export function uiSchemaGroup(
-    resource: Nullable<NlCoreNameInformation | NlCoreNameInformationGiven>
-): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<
+    NlCoreNameInformation | NlCoreNameInformationGiven
+> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     if (resource?.use === 'usual') {
         const i18n = 'nl_name_information_given_name';
         return {
             label: i18n,
-            children: [ui.multipleValues(`${i18n}.given`, resource?.given, ui.string)],
+            children: [ui.string(`${i18n}.given`, resource.given)],
         };
     }
 
@@ -23,10 +22,10 @@ export function uiSchemaGroup(
         children: [
             ui.string(`${i18n}.text`, resource?.text),
             ui.string(`${i18n}.family`, resource?.family),
-            ui.multipleValues(`${i18n}.given`, resource?.given, ui.string),
+            ui.string(`${i18n}.given`, resource?.given),
             ui.string(`${i18n}.name_usage`, resource?.nameUsage),
-            ui.multipleValues(`${i18n}.prefix`, resource?.prefix, ui.string),
-            ui.multipleValues(`${i18n}.suffix`, resource?.suffix, ui.string),
+            ui.string(`${i18n}.prefix`, resource?.prefix),
+            ui.string(`${i18n}.suffix`, resource?.suffix),
         ],
     };
-}
+};

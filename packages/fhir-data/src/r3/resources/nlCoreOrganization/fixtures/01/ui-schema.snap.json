@@ -12,17 +12,17 @@
                     ]
                 },
                 {
-                    "label": "nl_core_organization.name",
+                    "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
                     "display": "Maatschap Vaste Huisarts"
                 },
                 {
-                    "label": "nl_core_organization.department_specialty",
+                    "label": "Afdeling specialisme",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "nl_core_organization.organization_type",
+                    "label": "Organisatie type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [

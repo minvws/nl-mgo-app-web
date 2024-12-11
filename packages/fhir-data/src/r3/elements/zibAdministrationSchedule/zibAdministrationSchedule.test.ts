@@ -1,4 +1,4 @@
-import { expectJson, faker } from '$test';
+import { expectJson, faker, testUiSchemaContext } from '$test';
 import { type Timing } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import inputFhirData from './fixtures/fhir-resource.json';
@@ -12,16 +12,20 @@ test('zibInstructionsForUse returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const zibData = zibAdministrationSchedule.parse(inputFhirData as Timing);
-    const zibMedicationUseUiSchema = uiSchemaGroup(zibData);
-    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
-        './fixtures/ui-schema-group.snap.json'
+    const schema = uiSchemaGroup(
+        zibData,
+        testUiSchemaContext({
+            useMock: true,
+            ignoreMissingTranslations: true,
+        })
     );
+    expectJson(schema).toMatchFileSnapshot('./fixtures/ui-schema-group.snap.json');
 });
 
 test('zibAdministrationSchedule parses successfully', () => {
     const data = faker.fhir.timing();
-    const schema = zibAdministrationSchedule.parse(data);
-    expect(schema).toEqual(
+    const zibData = zibAdministrationSchedule.parse(data);
+    expect(zibData.repeat).toEqual(
         expect.objectContaining({
             duration: data.repeat?.duration,
         })
@@ -31,7 +35,7 @@ test('zibAdministrationSchedule parses successfully', () => {
 test('zibAdministrationSchedule parses successfully when there data is undefined', () => {
     const data = undefined;
     const zibData = zibAdministrationSchedule.parse(data);
-    expect(zibData).toEqual(
+    expect(zibData.repeat).toEqual(
         expect.objectContaining({
             duration: undefined,
         })

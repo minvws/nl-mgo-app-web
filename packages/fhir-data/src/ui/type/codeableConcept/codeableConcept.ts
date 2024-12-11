@@ -1,21 +1,39 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { multipleValues } from '../../special/multipleValues/multipleValues';
-import { type MultipleValues, type UiFunction } from '../../types';
-import { coding } from '../coding/coding';
+import { type Nullable } from '../../../types/Nullable';
+import {
+    type MultipleGroupedValues,
+    type MultipleValues,
+    type UiFunction,
+    type WithUiContext,
+} from '../../types';
+import { codingDisplay } from '../coding/coding';
 
-export const codeableConcept: UiFunction<MgoCodeableConcept, MultipleValues> = (
-    label,
-    value,
-    options
-) => {
+function codeableDisplay(value: Nullable<MgoCodeableConcept>) {
     if (value?.text?.length) {
-        return {
-            label,
-            type: 'MULTIPLE_VALUES',
-            display: [value.text],
-            ...options,
-        };
+        return [value.text];
     }
 
-    return multipleValues(label, value?.coding, coding, options);
-};
+    return value?.coding.map(codingDisplay) ?? [];
+}
+
+export const codeableConcept: WithUiContext<
+    UiFunction<MgoCodeableConcept | MgoCodeableConcept[], MultipleValues | MultipleGroupedValues>
+> =
+    ({ intl }) =>
+    (label, value, options) => {
+        if (Array.isArray(value)) {
+            return {
+                label: intl.formatMessage({ id: label }),
+                type: 'MULTIPLE_GROUPED_VALUES',
+                display: value.map(codeableDisplay),
+                ...options,
+            };
+        }
+
+        return {
+            label: intl.formatMessage({ id: label }),
+            type: 'MULTIPLE_VALUES',
+            display: codeableDisplay(value),
+            ...options,
+        };
+    };

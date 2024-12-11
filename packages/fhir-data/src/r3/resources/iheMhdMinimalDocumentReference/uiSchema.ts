@@ -1,4 +1,5 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
@@ -6,7 +7,8 @@ import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentRefe
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
  */
-export function uiSchema(resource: IheMhdMinimalDocumentReference): UiSchema {
+export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const i18n = 'ihe_mhd_minimal_document_reference';
 
     const generalInformation = {
@@ -18,11 +20,7 @@ export function uiSchema(resource: IheMhdMinimalDocumentReference): UiSchema {
         Indexed: ui.string(`${i18n}.indexed`, resource.indexed),
         Created: ui.string(`${i18n}.created`, resource.created),
         Author: map(resource.author, (x) => ui.reference(`${i18n}.author`, x), true),
-        SecurityLabel: ui.multipleValues(
-            `${i18n}.security_label`,
-            resource.securityLabel,
-            ui.codeableConcept
-        ),
+        SecurityLabel: ui.codeableConcept(`${i18n}.security_label`, resource.securityLabel),
     };
 
     const content = {
@@ -44,7 +42,7 @@ export function uiSchema(resource: IheMhdMinimalDocumentReference): UiSchema {
     };
 
     return {
-        label: content.Title.display,
+        label: (content.Title.display as string) ?? context.formatMessage('fhir.unknown'),
         children: [
             {
                 label: `${i18n}.group_general_information`,
@@ -67,4 +65,4 @@ export function uiSchema(resource: IheMhdMinimalDocumentReference): UiSchema {
             },
         ],
     };
-}
+};

@@ -5,22 +5,22 @@
             "label": "zib_procedure_request",
             "children": [
                 {
-                    "label": "zib_procedure_request.status.order_status",
+                    "label": "Order status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
-                    "label": "zib_procedure_request.occurrence_period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "13 maart 2012"
                 },
                 {
-                    "label": "zib_procedure_request.occurrence_period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_procedure_request.code",
+                    "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Röntgenfoto (168537006 in code systeem http://snomed.info/sct)"

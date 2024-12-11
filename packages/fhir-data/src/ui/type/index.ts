@@ -1,20 +1,46 @@
-export * from './annotation/annotation';
-export * from './boolean/boolean';
-export * from './code/code';
-export * from './codeableConcept/codeableConcept';
-export * from './coding/coding';
-export * from './date/date';
-export * from './dateTime/dateTime';
-export * from './duration/duration';
-export * from './identifier/identifier';
-export * from './period/period';
-export * from './quantity/quantity';
-export * from './range/range';
-export * from './ratio/ratio';
-export * from './reference/reference';
-export * from './string/string';
-export * from './decimal/decimal';
-export * from './integer/integer';
-export * from './integer64/integer64';
-export * from './unsignedInt/unsignedInt';
-export * from './positiveInt/positiveInt';
+import { annotation } from './annotation/annotation';
+import { boolean } from './boolean/boolean';
+import { code } from './code/code';
+import { codeableConcept } from './codeableConcept/codeableConcept';
+import { coding } from './coding/coding';
+import { date } from './date/date';
+import { dateTime } from './dateTime/dateTime';
+import { duration } from './duration/duration';
+import { identifier } from './identifier/identifier';
+import { period } from './period/period';
+import { quantity } from './quantity/quantity';
+import { range } from './range/range';
+import { ratio } from './ratio/ratio';
+import { reference } from './reference/reference';
+import { string } from './string/string';
+import { decimal } from './decimal/decimal';
+import { integer } from './integer/integer';
+import { integer64 } from './integer64/integer64';
+import { unsignedInt } from './unsignedInt/unsignedInt';
+import { positiveInt } from './positiveInt/positiveInt';
+import { type UiHelperContext } from '../types';
+
+export function getTypes(context: UiHelperContext) {
+    return {
+        annotation: annotation(context),
+        boolean: boolean(context),
+        code: code(context),
+        codeableConcept: codeableConcept(context),
+        coding: coding(context),
+        date: date(context),
+        dateTime: dateTime(context),
+        duration: duration(context),
+        identifier: identifier(context),
+        period: period(context),
+        quantity: quantity(context),
+        range: range(context),
+        ratio: ratio(context),
+        reference: reference(context),
+        string: string(context),
+        decimal: decimal(context),
+        integer: integer(context),
+        integer64: integer64(context),
+        unsignedInt: unsignedInt(context),
+        positiveInt: positiveInt(context),
+    };
+}

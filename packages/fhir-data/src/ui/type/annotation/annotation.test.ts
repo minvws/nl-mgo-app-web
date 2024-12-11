@@ -4,8 +4,8 @@ import { type MgoAnnotation } from '../../../parse/type';
 import { annotation } from './annotation';
 
 test('annotation', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const data: MgoAnnotation = {
         time: faker.fhir.dateTime(),
         text: faker.lorem.sentence(),
@@ -14,9 +14,9 @@ test('annotation', () => {
             display: faker.lorem.sentence(),
         },
     };
-    const result = annotation(label, data, options);
+    const result = annotation(faker.custom.uiContext())(label, data, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: data.text,
         ...options,

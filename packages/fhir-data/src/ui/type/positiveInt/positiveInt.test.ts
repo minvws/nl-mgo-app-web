@@ -5,12 +5,12 @@ import { numberToString } from '../../helpers';
 import { positiveInt } from './positiveInt';
 
 test('positiveInt', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value = faker.fhir.unsignedInt() as MgoPositiveInt;
-    const result = positiveInt(label, value, options);
+    const result = positiveInt(faker.custom.uiContext())(label, value, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
         ...options,

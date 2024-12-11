@@ -56,17 +56,12 @@
                 {
                     "label": "gp_diagnostic_result.method",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "gp_diagnostic_result.value.value",
+                    "label": "gp_diagnostic_result.value",
                     "type": "SINGLE_VALUE",
                     "display": "120 /min"
-                },
-                {
-                    "label": "gp_diagnostic_result.value.code",
-                    "type": "SINGLE_VALUE",
-                    "display": "/min in code systeem http://unitsofmeasure.org"
                 }
             ]
         }

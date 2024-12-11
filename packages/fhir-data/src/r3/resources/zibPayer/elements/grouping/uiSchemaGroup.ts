@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Grouping } from './grouping';
 
-export function uiSchemaGroup(resource: Grouping): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Grouping> = (resource, context) => {
     const i18n = 'zib_payer.grouping';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -16,4 +16,4 @@ export function uiSchemaGroup(resource: Grouping): UiSchemaGroup {
             ui.string(`${i18n}.sub_class`, resource.subClassDisplay),
         ],
     };
-}
+};

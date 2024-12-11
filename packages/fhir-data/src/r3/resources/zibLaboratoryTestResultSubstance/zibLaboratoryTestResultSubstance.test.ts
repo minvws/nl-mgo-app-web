@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type Substance } from 'fhir/r3';
 import { zibLaboratoryTestResultSubstance } from './zibLaboratoryTestResultSubstance';
@@ -11,6 +11,11 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = zibLaboratoryTestResultSubstance.parse(input as Substance);
-    const uiSchema = zibLaboratoryTestResultSubstance.uiSchema(output);
+    const uiSchema = zibLaboratoryTestResultSubstance.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

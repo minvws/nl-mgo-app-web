@@ -10,7 +10,7 @@ export default defineConfig({
                 'apps/*/test/*',
                 'packages/*/test/*',
                 'packages/*/docs/*',
-                'packages/fhir-data/definition-labels/*',
+                'packages/fhir-data/resource-labels/*',
                 'packages/fhir-data/schema-generator/*',
                 '**/?*.config.ts',
                 '**/?*.stories.tsx',

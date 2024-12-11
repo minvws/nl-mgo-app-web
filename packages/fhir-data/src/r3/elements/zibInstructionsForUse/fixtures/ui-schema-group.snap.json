@@ -1,37 +1,44 @@
-{
-    "label": "zib_instructions_for_use",
-    "children": [
-        {
-            "label": "zib_instructions_for_use.additional_instruction",
-            "type": "MULTIPLE_VALUES",
-            "display": null
-        },
-        {
-            "label": "zib_instructions_for_use.text",
-            "type": "SINGLE_VALUE",
-            "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
-        },
-        {
-            "label": "zib_instructions_for_use.route",
-            "type": "MULTIPLE_VALUES",
-            "display": [
-                "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
-            ]
-        },
-        {
-            "label": "zib_instructions_for_use.sequence",
-            "type": "SINGLE_VALUE",
-            "display": "1"
-        },
-        {
-            "label": "zib_administration_schedule.frequency",
-            "display": "1",
-            "type": "SINGLE_VALUE"
-        },
-        {
-            "label": "zib_administration_schedule.period",
-            "display": "1 d",
-            "type": "SINGLE_VALUE"
-        }
-    ]
-}
+[
+    {
+        "label": "intl(zib_administration_schedule)",
+        "children": [
+            {
+                "label": "intl(zib_administration_schedule.repeat.frequency)",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            },
+            {
+                "label": "intl(zib_administration_schedule.repeat.period)",
+                "display": "1 d",
+                "type": "SINGLE_VALUE"
+            }
+        ]
+    },
+    {
+        "label": "intl(zib_instructions_for_use)",
+        "children": [
+            {
+                "label": "intl(zib_instructions_for_use.text)",
+                "type": "SINGLE_VALUE",
+                "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+            },
+            {
+                "label": "intl(zib_instructions_for_use.route)",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                ]
+            },
+            {
+                "label": "intl(zib_instructions_for_use.additional_instruction)",
+                "type": "MULTIPLE_VALUES",
+                "display": []
+            },
+            {
+                "label": "intl(zib_instructions_for_use.sequence)",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            }
+        ]
+    }
+]

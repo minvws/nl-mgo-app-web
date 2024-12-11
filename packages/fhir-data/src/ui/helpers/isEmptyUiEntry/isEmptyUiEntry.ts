@@ -8,7 +8,7 @@ export function isEmptyUiEntry<T extends UiEntry>(uiField: T) {
         case 'SINGLE_VALUE':
         case 'MULTIPLE_VALUES':
         case 'MULTIPLE_GROUPED_VALUES':
-            return isNullish(uiField.display);
+            return isNullish(uiField.display) || !uiField.display.length;
         case 'DOWNLOAD_LINK':
             return isNullish(uiField.url);
         default:

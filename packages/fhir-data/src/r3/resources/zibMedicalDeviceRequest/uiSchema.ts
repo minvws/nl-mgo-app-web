@@ -1,10 +1,12 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { type ZibMedicalDeviceRequest } from './zibMedicalDeviceRequest';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317263
  */
-export function uiSchema(resource: ZibMedicalDeviceRequest): UiSchema {
+export const uiSchema: UiSchemaFunction<ZibMedicalDeviceRequest> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const profile = 'zib_medical_device_request';
 
     return {
@@ -21,4 +23,4 @@ export function uiSchema(resource: ZibMedicalDeviceRequest): UiSchema {
             },
         ],
     };
-}
+};

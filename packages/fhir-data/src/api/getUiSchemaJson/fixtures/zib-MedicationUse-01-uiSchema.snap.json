@@ -2,119 +2,116 @@
   "label": "PARACETAMOL TABLET 500MG",
   "children": [
     {
-      "label": "zib_medication_use.group_general_information",
+      "label": "Algemeen",
       "children": [
         {
-          "label": "zib_medication_use.date_asserted",
+          "label": "Registratiedatum",
           "type": "SINGLE_VALUE",
           "display": "21 juli 2020"
         },
         {
-          "label": "zib_medication_use.effective_period.start",
+          "label": "Ingangsdatum",
           "type": "SINGLE_VALUE",
           "display": "21 juli 2020"
         },
         {
-          "label": "zib_medication_use.effective_period.end",
+          "label": "Einddatum",
           "type": "SINGLE_VALUE"
         },
         {
-          "label": "zib_medication_use.effective_duration.value",
+          "label": "Tijds duur",
           "type": "SINGLE_VALUE",
-          "display": "30 dag"
+          "display": "30 dagen"
         },
         {
-          "label": "zib_medication_use.effective_duration.code",
-          "type": "SINGLE_VALUE",
-          "display": "d in code systeem http://unitsofmeasure.org"
-        },
-        {
-          "label": "zib_medication_use.prescriber",
+          "label": "Voorschrijver",
           "type": "REFERENCE_VALUE"
         },
         {
-          "label": "zib_medication_use.reason_code",
-          "type": "MULTIPLE_VALUES"
+          "label": "Reden gebruik",
+          "type": "MULTIPLE_VALUES",
+          "display": []
         },
         {
-          "label": "zib_medication_use.as_agreed_indicator",
+          "label": "Volgens afspraak indicator",
           "type": "SINGLE_VALUE",
-          "display": "true"
+          "display": "Ja"
         },
         {
-          "label": "zib_medication_use.taken",
+          "label": "Gebruik indicator",
           "type": "SINGLE_VALUE",
-          "display": "y"
+          "display": "Ja"
         },
         {
-          "label": "zib_medication_use.note",
-          "type": "MULTIPLE_VALUES"
+          "label": "Toelichting",
+          "type": "SINGLE_VALUE"
         },
         {
-          "label": "zib_medication_use.medication",
+          "label": "Gebruiksproduct",
           "type": "REFERENCE_VALUE",
           "display": "PARACETAMOL TABLET 500MG",
           "reference": "Medication/zib-Product-02"
         },
         {
-          "label": "zib_medication_use.status",
+          "label": "Medicatie gebruik stop type",
           "type": "SINGLE_VALUE",
           "display": "completed"
         },
         {
-          "label": "zib_medication_use.reason_for_change_or_discontinuation_of_use",
-          "type": "MULTIPLE_VALUES"
-        },
-        {
-          "label": "zib_medication_use.repeat_period_cyclical_schedule.value",
-          "type": "SINGLE_VALUE"
-        },
-        {
-          "label": "zib_medication_use.repeat_period_cyclical_schedule.code",
-          "type": "SINGLE_VALUE"
-        },
-        {
-          "label": "zib_medication_use.category",
+          "label": "Reden wijzigen of stoppen gebruik",
           "type": "MULTIPLE_VALUES",
-          "display": [
-            "Medicatiegebruik"
-          ]
+          "display": []
         },
         {
-          "label": "zib_medication_use.medication_treatment",
+          "label": "Herhaalperiode cyclisch schema",
+          "type": "SINGLE_VALUE"
+        },
+        {
+          "label": "Medicamenteuze behandeling",
           "type": "SINGLE_VALUE",
           "display": "#MB_01i1"
         }
       ]
     },
     {
-      "label": "zib_instructions_for_use",
+      "label": "Toedieningsschema",
       "children": [
         {
-          "label": "zib_instructions_for_use.additional_instruction",
-          "type": "MULTIPLE_VALUES"
+          "label": "Maximum waarde",
+          "type": "SINGLE_VALUE",
+          "display": "4"
         },
         {
-          "label": "zib_instructions_for_use.text",
+          "label": "Interval",
+          "display": "1 d",
+          "type": "SINGLE_VALUE"
+        }
+      ]
+    },
+    {
+      "label": "Gebruiksinstructie",
+      "children": [
+        {
+          "label": "Omschrijving",
           "type": "SINGLE_VALUE",
           "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
         },
         {
-          "label": "zib_instructions_for_use.route",
+          "label": "Toedieningsweg",
           "type": "MULTIPLE_VALUES",
           "display": [
             "ORAAL (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
           ]
         },
         {
-          "label": "zib_instructions_for_use.sequence",
-          "type": "SINGLE_VALUE",
-          "display": "1"
+          "label": "Aanvullende instructie",
+          "type": "MULTIPLE_VALUES",
+          "display": []
         },
         {
-          "label": "zib_administration_schedule.period",
-          "display": "1 d",
-          "type": "SINGLE_VALUE"
+          "label": "Volgnummer",
+          "type": "SINGLE_VALUE",
+          "display": "1"
         }
       ]
     }

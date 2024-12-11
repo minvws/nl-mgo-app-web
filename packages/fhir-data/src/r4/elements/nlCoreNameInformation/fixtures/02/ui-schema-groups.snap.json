@@ -27,12 +27,12 @@
             },
             {
                 "label": "nl_name_information.prefix",
-                "type": "MULTIPLE_VALUES",
+                "type": "SINGLE_VALUE",
                 "display": null
             },
             {
                 "label": "nl_name_information.suffix",
-                "type": "MULTIPLE_VALUES",
+                "type": "SINGLE_VALUE",
                 "display": null
             }
         ]
@@ -66,12 +66,12 @@
             },
             {
                 "label": "nl_name_information.prefix",
-                "type": "MULTIPLE_VALUES",
+                "type": "SINGLE_VALUE",
                 "display": null
             },
             {
                 "label": "nl_name_information.suffix",
-                "type": "MULTIPLE_VALUES",
+                "type": "SINGLE_VALUE",
                 "display": null
             }
         ]

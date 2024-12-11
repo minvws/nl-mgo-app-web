@@ -69,12 +69,12 @@
                 {
                     "label": "nl_core_vaccination_event.vaccination_indication",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_vaccination_event.vaccination_motive",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_vaccination_event.protocol_applied.authority",

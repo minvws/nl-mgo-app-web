@@ -4,8 +4,8 @@ import { type MgoIdentifier } from '../../../parse/type';
 import { identifier } from './identifier';
 
 test('identifier', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const mgoIdentifier: MgoIdentifier = {
         use: undefined,
         system: faker.internet.url(),
@@ -21,9 +21,9 @@ test('identifier', () => {
             ],
         },
     };
-    const result = identifier(label, mgoIdentifier, options);
+    const result = identifier(faker.custom.uiContext())(label, mgoIdentifier, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: mgoIdentifier.value,
         ...options,

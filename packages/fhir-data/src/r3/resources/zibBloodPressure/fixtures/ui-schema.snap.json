@@ -5,7 +5,7 @@
             "label": "zib_blood_pressure",
             "children": [
                 {
-                    "label": "zib_blood_pressure.method",
+                    "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Non-invasive (22762002 in code systeem http://snomed.info/sct)"
@@ -21,7 +21,7 @@
                 {
                     "label": "zib_blood_pressure.cuff_type_snomed",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_blood_pressure.bodySite",
@@ -33,62 +33,42 @@
                 {
                     "label": "zib_blood_pressure.diastolic_endpoint",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_blood_pressure.systolic_bp.value",
+                    "label": "zib_blood_pressure.systolic_bp",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmHg"
                 },
                 {
-                    "label": "zib_blood_pressure.systolic_bp.code",
-                    "type": "SINGLE_VALUE",
-                    "display": "mm[Hg] in code systeem http://unitsofmeasure.org"
-                },
-                {
-                    "label": "zib_blood_pressure.diastolic_bp.code.value",
+                    "label": "Diastolische bloeddruk",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmHg"
                 },
                 {
-                    "label": "zib_blood_pressure.diastolic_bp.code.code",
-                    "type": "SINGLE_VALUE",
-                    "display": "mm[Hg] in code systeem http://unitsofmeasure.org"
-                },
-                {
-                    "label": "zib_blood_pressure.average_blood_pressure_loinc.value",
+                    "label": "zib_blood_pressure.average_blood_pressure_loinc",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_blood_pressure.average_blood_pressure_loinc.code",
+                    "label": "zib_blood_pressure.average_blood_pressure_snomed",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_blood_pressure.average_blood_pressure_snomed.value",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_blood_pressure.average_blood_pressure_snomed.code",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "zib_blood_pressure.effective",
+                    "label": "Bloeddruk datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 februari 2013 om 08:53:00 GMT+1"
                 },
                 {
-                    "label": "zib_blood_pressure.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "zib_blood_pressure.position_snomed",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_blood_pressure.position_loinc",

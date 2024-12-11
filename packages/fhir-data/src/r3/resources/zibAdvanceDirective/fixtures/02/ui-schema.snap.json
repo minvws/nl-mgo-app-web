@@ -5,7 +5,7 @@
             "label": "zib_advance_directive.group_details",
             "children": [
                 {
-                    "label": "zib_advance_directive.type_of_living_will",
+                    "label": "Wilsverklaring type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -17,18 +17,18 @@
                     ]
                 },
                 {
-                    "label": "zib_advance_directive.date_time",
+                    "label": "Wilsverklaring datum",
                     "type": "SINGLE_VALUE",
                     "display": "15 augustus 2011"
                 },
                 {
-                    "label": "zib_advance_directive.disorder",
+                    "label": "Aandoening",
                     "type": "REFERENCE_VALUE",
                     "display": "ALS",
                     "reference": "Condition/zib-problem-01"
                 },
                 {
-                    "label": "zib_advance_directive.consenting_party",
+                    "label": "Vertegenwoordiger",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "J.P.M. van Putten-van der Giessen"

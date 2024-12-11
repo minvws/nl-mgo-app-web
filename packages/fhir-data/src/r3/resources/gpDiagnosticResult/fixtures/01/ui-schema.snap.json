@@ -55,7 +55,7 @@
                 {
                     "label": "gp_diagnostic_result.method",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "gp_diagnostic_result.value",

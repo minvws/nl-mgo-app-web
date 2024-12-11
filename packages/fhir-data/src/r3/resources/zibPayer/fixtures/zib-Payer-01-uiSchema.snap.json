@@ -17,7 +17,7 @@
                     "display": null
                 },
                 {
-                    "label": "zib_payer.type",
+                    "label": "Verzekerings soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Basis verzekerd (B in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)"
@@ -36,7 +36,7 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_payer.subscriber_id",
+                    "label": "Verzekerde nummer",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -49,20 +49,20 @@
                 {
                     "label": "zib_payer.relationship",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_payer.period.start",
+                    "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 januari 2018"
                 },
                 {
-                    "label": "zib_payer.period.end",
+                    "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "31 januari 2019"
                 },
                 {
-                    "label": "zib_payer.payor",
+                    "label": "Verzekeraar",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Menzis Zorgverzekeraar N.V."
@@ -90,8 +90,9 @@
                 },
                 {
                     "label": "zib_payer.contract",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 }
             ]
         },

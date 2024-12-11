@@ -7,19 +7,21 @@ import { uiSchemaGroup } from './uiSchemaGroup';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 
 export interface ZibAdministrationSchedule {
-    boundsDuration?: parse.MgoDuration;
-    boundsPeriod?: parse.MgoPeriod;
-    boundsRange?: parse.MgoRange;
+    repeat: {
+        boundsDuration?: parse.MgoDuration;
+        boundsPeriod?: parse.MgoPeriod;
+        boundsRange?: parse.MgoRange;
 
-    duration: parse.MgoDecimal | undefined;
-    durationUnit: parse.MgoCode | undefined;
-    frequency: parse.MgoInteger | undefined;
-    frequencyMax: parse.MgoInteger | undefined;
-    period: parse.MgoDecimal | undefined;
-    periodUnit: parse.MgoCode | undefined;
-    dayOfWeek: parse.MgoCode[] | undefined;
-    timeOfDay: parse.MgoDateTime[] | undefined;
-    when: parse.MgoCode[] | undefined;
+        duration: parse.MgoDecimal | undefined;
+        durationUnit: parse.MgoCode | undefined;
+        frequency: parse.MgoInteger | undefined;
+        frequencyMax: parse.MgoInteger | undefined;
+        period: parse.MgoDecimal | undefined;
+        periodUnit: parse.MgoCode | undefined;
+        dayOfWeek: parse.MgoCode[] | undefined;
+        timeOfDay: parse.MgoDateTime[] | undefined;
+        when: parse.MgoCode[] | undefined;
+    };
 }
 
 /**
@@ -31,16 +33,18 @@ function parseZibAdministrationSchedule(value: Nullable<Timing>): ZibAdministrat
     const { repeat } = value ?? {};
 
     return {
-        ...oneOfValueX(repeat, ['duration', 'range', 'period'], 'bounds'),
-        duration: parse.decimal(repeat?.duration),
-        durationUnit: parse.code(repeat?.durationUnit),
-        frequency: parse.integer(repeat?.frequency),
-        frequencyMax: parse.integer(repeat?.frequencyMax),
-        period: parse.decimal(repeat?.period),
-        periodUnit: parse.code(repeat?.periodUnit),
-        dayOfWeek: map(repeat?.dayOfWeek, parse.code),
-        timeOfDay: map(repeat?.timeOfDay, parse.dateTime),
-        when: map(repeat?.when, parse.code),
+        repeat: {
+            ...oneOfValueX(repeat, ['duration', 'range', 'period'], 'bounds'),
+            duration: parse.decimal(repeat?.duration),
+            durationUnit: parse.code(repeat?.durationUnit),
+            frequency: parse.integer(repeat?.frequency),
+            frequencyMax: parse.integer(repeat?.frequencyMax),
+            period: parse.decimal(repeat?.period),
+            periodUnit: parse.code(repeat?.periodUnit),
+            dayOfWeek: map(repeat?.dayOfWeek, parse.code),
+            timeOfDay: map(repeat?.timeOfDay, parse.dateTime),
+            when: map(repeat?.when, parse.code),
+        },
     };
 }
 

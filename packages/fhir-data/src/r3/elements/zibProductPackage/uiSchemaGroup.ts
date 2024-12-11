@@ -1,10 +1,10 @@
-import { ui } from '../../../ui';
-import { type UiSchemaGroup } from '../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type ZibProductPackage } from './zibProductPackage';
 
-export function uiSchemaGroup(resource: ZibProductPackage): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<ZibProductPackage> = (resource, context) => {
     const i18n = 'zib_product_package';
+    const ui = context.ui as NonStrictUi;
 
     type ProductContent = NonNullable<ZibProductPackage['content']>[0];
 
@@ -23,4 +23,4 @@ export function uiSchemaGroup(resource: ZibProductPackage): UiSchemaGroup {
         label: i18n,
         children: [...contents.flat()],
     };
-}
+};

@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type UiSchemaGroupFunction, type NonStrictUi } from '../../../../../ui/types';
 import { type Link } from './link';
 
-export function uiSchemaGroup(resource: Link): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Link> = (resource, context) => {
     const i18n = 'nl_core_patient.link';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,4 +12,4 @@ export function uiSchemaGroup(resource: Link): UiSchemaGroup {
             ui.code(`${i18n}.type`, resource.type),
         ],
     };
-}
+};

@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 // Attempt to change PascalCase labels to normal spaced labels
 export function normalizeLabel(value: string) {
     let label = value.replace(/(\w+)/g, (word) => {

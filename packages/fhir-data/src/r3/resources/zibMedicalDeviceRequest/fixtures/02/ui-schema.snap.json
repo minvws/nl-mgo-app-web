@@ -5,17 +5,17 @@
             "label": "zib_medical_device_request",
             "children": [
                 {
-                    "label": "zib_medical_device_request.status.order_status",
+                    "label": "Order status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
-                    "label": "zib_medical_device_request.occurrence_period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "13 maart 2012"
                 },
                 {
-                    "label": "zib_medical_device_request.occurrence_period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

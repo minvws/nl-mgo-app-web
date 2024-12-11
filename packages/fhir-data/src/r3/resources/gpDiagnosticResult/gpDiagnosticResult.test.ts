@@ -1,7 +1,7 @@
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { beforeAll, test, vi } from 'vitest';
 import { gpDiagnosticResult } from './gpDiagnosticResult';
 import { type Observation } from 'fhir/r3';
@@ -22,12 +22,22 @@ test('returns the expected output 02', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = gpDiagnosticResult.parse(input01 as Observation);
-    const uiSchema = gpDiagnosticResult.uiSchema(output);
+    const uiSchema = gpDiagnosticResult.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
     const output = gpDiagnosticResult.parse(input02 as Observation);
-    const uiSchema = gpDiagnosticResult.uiSchema(output);
+    const uiSchema = gpDiagnosticResult.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });

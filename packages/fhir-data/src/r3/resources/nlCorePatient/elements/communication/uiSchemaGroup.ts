@@ -1,9 +1,9 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type Communication } from './communication';
 
-export function uiSchemaGroup(resource: Communication): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Communication> = (resource, context) => {
     const i18n = 'nl_core_patient.communication';
+    const ui = context.ui as NonStrictUi;
 
     return {
         label: i18n,
@@ -12,4 +12,4 @@ export function uiSchemaGroup(resource: Communication): UiSchemaGroup {
             ui.boolean(`${i18n}.preferred`, resource.preferred),
         ],
     };
-}
+};

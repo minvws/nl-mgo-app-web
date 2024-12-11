@@ -1,22 +1,26 @@
-import { ui } from '../../../../../ui';
-import { type UiSchemaGroup } from '../../../../../ui/types';
+import { type UiSchemaGroupFunction, type NonStrictUi } from '../../../../../ui/types';
+import { isNonNullish, map } from '../../../../../utils';
+import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../../../elements';
 import { type Contact } from './contact';
-import { map } from '../../../../../utils';
-import { nlCoreHumanname, nlCoreAddress, nlCoreContactpoint } from '../../../../elements';
 
-export function uiSchemaGroup(resource: Contact): UiSchemaGroup {
+export const uiSchemaGroup: UiSchemaGroupFunction<Contact> = (resource, context) => {
     const i18n = 'nl_core_patient.contact';
-    const telecom = map(resource.telecom, nlCoreContactpoint.uiSchemaGroup, true);
+    const ui = context.ui as NonStrictUi;
+    const telecom = map(
+        resource.telecom,
+        (x) => nlCoreContactpoint.uiSchemaGroup(x, context),
+        true
+    ).flat();
 
     return {
         label: i18n,
         children: [
-            ...nlCoreHumanname.uiSchemaGroup(resource.name).children,
+            ...nlCoreHumanname.uiSchemaGroup(resource.name, context).children,
             ...ui.helpers.getChildren(telecom),
-            ...nlCoreAddress.uiSchemaGroup(resource.address).children,
+            ...nlCoreAddress.uiSchemaGroup(resource.address, context).children,
             ui.string(`${i18n}.gender`, resource.gender),
             ui.reference(`${i18n}.organization`, resource.organization),
             ...ui.period(`${i18n}.period`, resource.period),
-        ],
+        ].filter(isNonNullish),
     };
-}
+};

@@ -1,41 +1,31 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, type Mock } from 'vitest';
 import { type MgoRatio } from '../../../parse/type';
 import { format } from '../../format';
 import { mockQuantity } from '../quantity/quantity.test';
 import { ratio } from './ratio';
 
 test('ratio', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const { numerator, denominator }: MgoRatio = {
         numerator: mockQuantity(),
         denominator: mockQuantity(),
     };
-    const result = ratio(label, { numerator, denominator }, options);
+    const context = faker.custom.uiContext();
+    (context.hasMessage as unknown as Mock).mockImplementation(() => false);
+    const result = ratio(context)(label, { numerator, denominator }, options);
     expect(result).toEqual([
         {
-            label: `${label}.numerator.value`,
+            label: `intl(fhir.ratio.numerator)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(numerator.value, numerator.unit),
             ...options,
         },
         {
-            label: `${label}.numerator.code`,
-            type: `SINGLE_VALUE`,
-            display: format.codeWithSystem(numerator.code, numerator.system),
-            ...options,
-        },
-        {
-            label: `${label}.denominator.value`,
+            label: `intl(fhir.ratio.denominator)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(denominator.value, denominator.unit),
-            ...options,
-        },
-        {
-            label: `${label}.denominator.code`,
-            type: `SINGLE_VALUE`,
-            display: format.codeWithSystem(denominator.code, denominator.system),
             ...options,
         },
     ]);

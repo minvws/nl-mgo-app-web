@@ -17,14 +17,14 @@
                     "display": "active"
                 },
                 {
-                    "label": "zib_alert.category",
+                    "label": "Alert type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "condition (75323-6 in code systeem http://loinc.org)"
                     ]
                 },
                 {
-                    "label": "zib_alert.code",
+                    "label": "Alert naam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Methicillin resistant staphylococcus aureus carrier (432415000 in code systeem http://snomed.info/sct)"
@@ -37,12 +37,12 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_alert.period.start",
+                    "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 juni 2010"
                 },
                 {
-                    "label": "zib_alert.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

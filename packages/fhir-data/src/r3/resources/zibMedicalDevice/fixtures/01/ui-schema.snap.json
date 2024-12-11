@@ -23,12 +23,12 @@
                     "reference": "Device/zib-MedicalDeviceProduct-03"
                 },
                 {
-                    "label": "zib_medical_device.whenUsed.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "2007"
                 },
                 {
-                    "label": "zib_medical_device.whenUsed.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

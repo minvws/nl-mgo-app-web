@@ -1,9 +1,10 @@
-import { faker } from '$test';
+import { faker, testUiSchemaContext } from '$test';
+import { type Patient } from 'fhir/r4';
 import { expect, test } from 'vitest';
-import { getUiSchema } from './getUiSchema';
+import { Locale } from '../../i18n';
 import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
 import { nlCorePatientR4 } from '../../r4/resources/nlCorePatient/nlCorePatient';
-import { type Patient } from 'fhir/r4';
+import { getUiSchema } from './getUiSchema';
 
 test('returns the expected output for a R3 resource', () => {
     const mgoResource = zibMedicationUse.parse(
@@ -13,7 +14,12 @@ test('returns the expected output for a R3 resource', () => {
             },
         })
     );
-    const expectedResult = zibMedicationUse.uiSchema(mgoResource);
+    const expectedResult = zibMedicationUse.uiSchema(
+        mgoResource,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     const result = getUiSchema(mgoResource);
     expect(result).toEqual(expectedResult);
 });
@@ -24,8 +30,31 @@ test('returns the expected output for a R4 resource', () => {
             profile: [nlCorePatientR4.profile],
         },
     } as Patient);
-    const expectedResult = nlCorePatientR4.uiSchema(mgoResource);
+    const expectedResult = nlCorePatientR4.uiSchema(
+        mgoResource,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     const result = getUiSchema(mgoResource);
+    expect(result).toEqual(expectedResult);
+});
+
+test('returns the expected output when locale is specified', () => {
+    const mgoResource = zibMedicationUse.parse(
+        faker.fhir.medicationStatement({
+            meta: {
+                profile: [zibMedicationUse.profile],
+            },
+        })
+    );
+    const expectedResult = zibMedicationUse.uiSchema(
+        mgoResource,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    const result = getUiSchema(mgoResource, { locale: Locale.NL_NL });
     expect(result).toEqual(expectedResult);
 });
 

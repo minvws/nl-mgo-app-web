@@ -125,15 +125,17 @@
                 }
             },
             "timing": {
-                "duration": null,
-                "durationUnit": null,
-                "frequency": null,
-                "frequencyMax": 4,
-                "period": 1,
-                "periodUnit": "d",
-                "dayOfWeek": null,
-                "timeOfDay": null,
-                "when": null
+                "repeat": {
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": null,
+                    "frequencyMax": 4,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
             }
         }
     ]

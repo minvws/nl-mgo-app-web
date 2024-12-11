@@ -1,4 +1,4 @@
-import { type UiEntry, type UiSchema, type UiSchemaGroup } from '../../types';
+import { type UiSchema, type UiSchemaGroup } from '../../types';
 import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 
 function processGroup(group: UiSchemaGroup) {
@@ -8,8 +8,14 @@ function processGroup(group: UiSchemaGroup) {
     };
 }
 
-function isSchemaGroup(schema: UiSchema | UiSchemaGroup): schema is UiSchemaGroup {
-    return schema.children.some((x) => typeof (x as UiEntry).type === 'string');
+type SchemaLike = UiSchema | UiSchemaGroup | UiSchemaGroup[];
+
+function isSchemaGroup(schema: SchemaLike): schema is UiSchemaGroup {
+    return (schema as UiSchemaGroup).children?.some((x) => typeof x.type === 'string');
+}
+
+function isSchemaGroupCollection(schema: SchemaLike): schema is UiSchemaGroup[] {
+    return Array.isArray(schema) && schema?.some(isSchemaGroup);
 }
 
 function hasChildren(group: UiSchemaGroup) {
@@ -18,9 +24,14 @@ function hasChildren(group: UiSchemaGroup) {
 
 export function dropEmptyEntries(schema: UiSchema): UiSchema;
 export function dropEmptyEntries(schema: UiSchemaGroup): UiSchemaGroup;
-export function dropEmptyEntries(schema: UiSchema | UiSchemaGroup): UiSchema | UiSchemaGroup {
+export function dropEmptyEntries(schema: UiSchemaGroup[]): UiSchemaGroup[];
+export function dropEmptyEntries(schema: SchemaLike): SchemaLike {
     if (isSchemaGroup(schema)) {
         return processGroup(schema);
+    }
+
+    if (isSchemaGroupCollection(schema)) {
+        return schema.map(processGroup).filter(hasChildren);
     }
 
     return {

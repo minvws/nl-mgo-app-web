@@ -5,16 +5,16 @@ import { format } from '../../format';
 import * as general from './coding';
 
 test('coding', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const mgoCoding: MgoCoding = {
         code: faker.fhir.code(),
         system: faker.internet.url(),
         display: faker.lorem.sentence(),
     };
-    const result = general.coding(label, mgoCoding, options);
+    const result = general.coding(faker.custom.uiContext())(label, mgoCoding, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: `${mgoCoding.display} (${format.codeWithSystem(mgoCoding.code, mgoCoding.system)})`,
         ...options,
@@ -22,11 +22,11 @@ test('coding', () => {
 });
 
 test('coding defaults to empty values', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
-    const result = general.coding(label, undefined, options);
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
+    const result = general.coding(faker.custom.uiContext())(label, undefined, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: undefined,
         ...options,

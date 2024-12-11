@@ -5,7 +5,7 @@
             "label": "nl_core_practitioner.group_details",
             "children": [
                 {
-                    "label": "nl_core_practitioner.identifier",
+                    "label": "Zorgverlener identificatie nummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "16efa4a3-8fdf-11ec-1655-020000000000"
@@ -17,35 +17,35 @@
             "label": "nl_core_humanname",
             "children": [
                 {
-                    "label": "nl_core_humanname.family",
+                    "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "display": "de Wit"
                 },
                 {
-                    "label": "nl_core_humanname.given",
+                    "label": "Voornamen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "G.Z.M."
                     ]
                 },
                 {
-                    "label": "nl_core_humanname.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {

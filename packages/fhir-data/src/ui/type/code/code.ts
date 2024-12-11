@@ -1,12 +1,28 @@
 import { type MgoCode } from '../../../parse/type';
 import { toString } from '../../helpers';
-import { type SingleValue, type UiFunction } from '../../types';
+import {
+    type MultipleValues,
+    type SingleValue,
+    type UiFunction,
+    type WithUiContext,
+} from '../../types';
 
-export const code: UiFunction<MgoCode, SingleValue> = (label, value, options) => {
-    return {
-        label,
-        type: 'SINGLE_VALUE',
-        display: toString(value),
-        ...options,
+export const code: WithUiContext<UiFunction<MgoCode | MgoCode[], SingleValue | MultipleValues>> =
+    ({ formatMessage }) =>
+    (label, value, options) => {
+        if (Array.isArray(value)) {
+            return {
+                label: formatMessage(label),
+                type: 'MULTIPLE_VALUES',
+                display: value.map(toString),
+                ...options,
+            };
+        }
+
+        return {
+            label: formatMessage(label),
+            type: 'SINGLE_VALUE',
+            display: toString(value),
+            ...options,
+        };
     };
-};

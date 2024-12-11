@@ -36,12 +36,12 @@
                 {
                     "label": "nl_core_vaccination_event.site",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_vaccination_event.route",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_vaccination_event.dose_quantity",
@@ -65,12 +65,12 @@
                 {
                     "label": "nl_core_vaccination_event.vaccination_indication",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "nl_core_vaccination_event.vaccination_motive",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         }

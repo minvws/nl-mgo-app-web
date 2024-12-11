@@ -4,14 +4,15 @@ import { format } from '../../format';
 import { valueWithUnit } from './valueWithUnit';
 
 test('valueWithUnit', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
     const value = faker.number.int();
     const unit = faker.lorem.word();
 
-    const result = valueWithUnit(label, value, unit, options);
+    const uiValueWithUnit = valueWithUnit(faker.custom.uiContext());
+    const result = uiValueWithUnit(label, value, unit, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: format.valueWithUnit(value, unit),
         ...options,

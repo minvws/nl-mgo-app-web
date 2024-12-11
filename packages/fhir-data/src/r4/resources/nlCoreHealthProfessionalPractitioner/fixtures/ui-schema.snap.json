@@ -24,7 +24,7 @@
                 {
                     "label": "nl_core_health_professional_practitioner.communication",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         },
@@ -57,12 +57,12 @@
                 },
                 {
                     "label": "nl_name_information.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_name_information.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -103,7 +103,7 @@
                 {
                     "label": "nl_core_contact_information_telephone_numbers.telecomType",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         },

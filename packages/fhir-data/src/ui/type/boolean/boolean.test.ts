@@ -1,18 +1,29 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type MgoBoolean } from '../../../parse/type';
-import { toString } from '../../helpers';
 import { boolean } from './boolean';
 
-test('boolean', () => {
-    const label = faker.lorem.word();
-    const options = faker.uiSchema.valueOptions();
-    const value: MgoBoolean = faker.datatype.boolean();
-    const result = boolean(label, value, options);
+test('boolean - true', () => {
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
+    const context = faker.custom.uiContext();
+    const result = boolean(context)(label, true, options);
     expect(result).toEqual({
-        label,
+        label: `intl(${label})`,
         type: 'SINGLE_VALUE',
-        display: toString(value),
+        display: `intl(fhir.boolean.true)`,
+        ...options,
+    });
+});
+
+test('boolean - false', () => {
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
+    const context = faker.custom.uiContext();
+    const result = boolean(context)(label, false, options);
+    expect(result).toEqual({
+        label: `intl(${label})`,
+        type: 'SINGLE_VALUE',
+        display: `intl(fhir.boolean.false)`,
         ...options,
     });
 });

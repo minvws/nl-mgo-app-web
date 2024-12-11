@@ -1,7 +1,7 @@
 import type { MedicationDispense } from 'fhir/r3';
 import inputFhirData from './fixtures/fhir-resource.json';
 
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { zibAdministrationAgreement } from './zibAdministrationAgreement';
 import { uiSchema } from './uiSchema';
@@ -13,6 +13,11 @@ test('parseZibAdministrationAgreement returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const zibData = zibAdministrationAgreement.parse(inputFhirData as MedicationDispense);
-    const zibMedicationUseUiSchema = uiSchema(zibData);
+    const zibMedicationUseUiSchema = uiSchema(
+        zibData,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

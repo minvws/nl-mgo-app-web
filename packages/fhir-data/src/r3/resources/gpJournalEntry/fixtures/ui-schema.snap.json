@@ -56,7 +56,7 @@
                 {
                     "label": "gp_journal_entry.ICPC_E",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 }
             ]
         }

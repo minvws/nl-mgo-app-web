@@ -13,7 +13,6 @@ export function processDefinition(definition: StructureDefinition) {
     const labels: Record<string, string> = {};
 
     diffElements.forEach(({ id, path, alias }) => {
-        // if (path === type) return;
         if (!path || !alias) return;
         if (alias.length > 1) {
             console.warn(`More than 1 aliases found for path: ${path}, alias: ${alias}`);

@@ -10,9 +10,9 @@
                     "display": "active"
                 },
                 {
-                    "label": "zib_problem.category",
+                    "label": "Probleem type",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "zib_problem.onsetDateTime",
@@ -34,7 +34,7 @@
                     ]
                 },
                 {
-                    "label": "zib_problem.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Gevallen op de kunstijsbaan"
@@ -60,10 +60,10 @@
                 {
                     "label": "zib_problem.severity",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
-                    "label": "zib_problem.code",
+                    "label": "Probleem naam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Fracture of wrist (disorder) (31641000146105 in code systeem http://snomed.info/sct)"
@@ -100,12 +100,13 @@
                 {
                     "label": "stage.summary",
                     "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "display": []
                 },
                 {
                     "label": "stage.assessment",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 }
             ]
         }

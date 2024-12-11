@@ -1,4 +1,4 @@
-import { expectJson, faker } from '$test';
+import { expectJson, faker, testUiSchemaContext } from '$test';
 import { type Dosage } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { parse } from '../../../parse';
@@ -13,7 +13,13 @@ test('zibInstructionsForUse returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData as Dosage);
-    const zibMedicationUseUiSchema = uiSchemaGroup(zibData);
+    const zibMedicationUseUiSchema = uiSchemaGroup(
+        zibData,
+        testUiSchemaContext({
+            useMock: true,
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/ui-schema-group.snap.json'
     );

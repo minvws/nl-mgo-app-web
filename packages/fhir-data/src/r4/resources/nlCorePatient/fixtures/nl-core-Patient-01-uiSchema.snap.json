@@ -30,12 +30,12 @@
                 },
                 {
                     "label": "nl_name_information.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_name_information.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
@@ -56,21 +56,21 @@
             "label": "nl_core_patient.group_details",
             "children": [
                 {
-                    "label": "nl_core_patient.identifier",
+                    "label": "Identificatienummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "111222333"
                     ]
                 },
                 {
-                    "label": "nl_core_patient.birth_date",
+                    "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
                     "display": "28 april 1934"
                 },
                 {
-                    "label": "nl_core_patient.deceased",
+                    "label": "Overlijdensindicator/datum overlijden",
                     "type": "SINGLE_VALUE",
-                    "display": "false"
+                    "display": "Nee"
                 },
                 {
                     "label": "nl_core_patient.deceased_date_time",
@@ -78,14 +78,15 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.gender",
+                    "label": "Geslacht",
                     "type": "SINGLE_VALUE",
                     "display": "female"
                 },
                 {
-                    "label": "nl_core_patient.general_practitioner",
-                    "type": "MULTIPLE_VALUES",
-                    "display": null
+                    "label": "Huisarts",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
                 },
                 {
                     "label": "nl_core_patient.managing_organization",
@@ -94,16 +95,16 @@
                     "reference": null
                 },
                 {
-                    "label": "nl_core_patient.marital_status",
+                    "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Divorced (D in code systeem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)"
                     ]
                 },
                 {
-                    "label": "nl_core_patient.multiple_birth",
+                    "label": "Meerlingindicator",
                     "type": "SINGLE_VALUE",
-                    "display": "true"
+                    "display": "Ja"
                 }
             ]
         },

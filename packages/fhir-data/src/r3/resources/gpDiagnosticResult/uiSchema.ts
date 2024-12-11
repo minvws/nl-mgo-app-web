@@ -1,10 +1,12 @@
-import { ui, type UiSchema } from '../../../ui';
+import { type UiSchemaFunction } from '../../../ui';
+import { type NonStrictUi } from '../../../ui/types';
 import { type GpDiagnosticResult } from './gpDiagnosticResult';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316990
  */
-export function uiSchema(resource: GpDiagnosticResult): UiSchema {
+export const uiSchema: UiSchemaFunction<GpDiagnosticResult> = (resource, context) => {
+    const ui = context.ui as NonStrictUi;
     const profile = 'gp_diagnostic_result';
     return {
         label: resource.context?.display,
@@ -12,11 +14,11 @@ export function uiSchema(resource: GpDiagnosticResult): UiSchema {
             {
                 label: `${profile}.group_details`,
                 children: [
-                    ui.multipleValues(`${profile}.identifier`, resource.identifier, ui.identifier),
+                    ui.identifier(`${profile}.identifier`, resource.identifier),
                     ui.reference(`${profile}.context`, resource.context),
                     ui.reference(`${profile}.subject`, resource.subject),
                     ui.dateTime(`${profile}.effective`, resource.effective),
-                    ui.multipleValues(`${profile}.performer`, resource.performer, ui.reference),
+                    ui.reference(`${profile}.performer`, resource.performer),
                     ui.string(`${profile}.status`, resource.status),
                     ui.codeableConcept(`${profile}.code`, resource.code),
                     ui.string(`${profile}.comment`, resource.comment),
@@ -26,4 +28,4 @@ export function uiSchema(resource: GpDiagnosticResult): UiSchema {
             },
         ],
     };
-}
+};

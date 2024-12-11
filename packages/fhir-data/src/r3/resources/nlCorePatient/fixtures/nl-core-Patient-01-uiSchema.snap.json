@@ -7,17 +7,17 @@
                 {
                     "label": "nl_core_patient.active",
                     "type": "SINGLE_VALUE",
-                    "display": "true"
+                    "display": "Ja"
                 },
                 {
-                    "label": "nl_core_patient.birth_date",
+                    "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
                     "display": "25 juli 1964"
                 },
                 {
-                    "label": "nl_core_patient.deceased",
+                    "label": "Overlijdensindicator/datum overlijden",
                     "type": "SINGLE_VALUE",
-                    "display": "false"
+                    "display": "Nee"
                 },
                 {
                     "label": "nl_core_patient.deceased_date_time",
@@ -25,19 +25,19 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.gender",
+                    "label": "Geslacht",
                     "type": "SINGLE_VALUE",
                     "display": "male"
                 },
                 {
-                    "label": "nl_core_patient.general_practitioner",
+                    "label": "Huisarts",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Maatschap Vaste Huisarts"
                     ]
                 },
                 {
-                    "label": "nl_core_patient.identifier",
+                    "label": "Identificatienummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "999911120",
@@ -51,16 +51,16 @@
                     "reference": null
                 },
                 {
-                    "label": "nl_core_patient.marital_status",
+                    "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Married (M in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
                     ]
                 },
                 {
-                    "label": "nl_core_patient.multiple_birth",
+                    "label": "Meerlingindicator",
                     "type": "SINGLE_VALUE",
-                    "display": "false"
+                    "display": "Nee"
                 },
                 {
                     "label": "nl_core_patient.multiple_birth_integer",
@@ -88,24 +88,17 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.line",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Knolweg 1000"
-                    ]
-                },
-                {
-                    "label": "nl_core_address.city",
+                    "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Stitswerd"
                 },
                 {
-                    "label": "nl_core_address.district",
+                    "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.state",
+                    "label": "Provincie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -115,17 +108,17 @@
                     "display": "9999XA"
                 },
                 {
-                    "label": "nl_core_address.country",
+                    "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "NLD"
                 },
                 {
-                    "label": "nl_core_address.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -135,35 +128,35 @@
             "label": "nl_core_patient.contact",
             "children": [
                 {
-                    "label": "nl_core_humanname.family",
+                    "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "display": "van Putten XXX_Helleman"
                 },
                 {
-                    "label": "nl_core_humanname.given",
+                    "label": "Voornamen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Jannie"
                     ]
                 },
                 {
-                    "label": "nl_core_humanname.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
@@ -197,12 +190,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -227,12 +220,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -252,24 +245,17 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.line",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Knolweg 1000"
-                    ]
-                },
-                {
-                    "label": "nl_core_address.city",
+                    "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Stitswerd"
                 },
                 {
-                    "label": "nl_core_address.district",
+                    "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.state",
+                    "label": "Provincie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -279,17 +265,17 @@
                     "display": "9999XA"
                 },
                 {
-                    "label": "nl_core_address.country",
+                    "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "Nederland"
                 },
                 {
-                    "label": "nl_core_address.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -305,12 +291,12 @@
                     "reference": null
                 },
                 {
-                    "label": "nl_core_patient.contact.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.contact.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -320,35 +306,35 @@
             "label": "nl_core_humanname",
             "children": [
                 {
-                    "label": "nl_core_humanname.family",
+                    "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "display": "XXX_Helleman"
                 },
                 {
-                    "label": "nl_core_humanname.given",
+                    "label": "Voornamen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Johan"
                     ]
                 },
                 {
-                    "label": "nl_core_humanname.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.prefix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
                     "label": "nl_core_humanname.suffix",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
@@ -387,12 +373,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
@@ -422,12 +408,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.period.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

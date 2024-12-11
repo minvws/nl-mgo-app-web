@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { test } from 'vitest';
 import { type DocumentReference } from 'fhir/r3';
 import input from './fixtures/fhir-resource.json';
@@ -11,13 +11,23 @@ test('returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
-    const uiSchema = iheMhdMinimalDocumentReference.uiSchema(output);
+    const uiSchema = iheMhdMinimalDocumentReference.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected when there is not content output', () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
     output.content.attachment = undefined;
-    const uiSchema = iheMhdMinimalDocumentReference.uiSchema(output);
+    const uiSchema = iheMhdMinimalDocumentReference.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema-no-content.snap.json');
 });
