@@ -1,0 +1,128 @@
+{
+    "r4.nl_core_vaccination_event.dose_quantity": [
+        {
+            "type": 0,
+            "value": "Dosis"
+        }
+    ],
+    "r4.nl_core_vaccination_event.extra": [
+        {
+            "type": 0,
+            "value": "Extra informatie"
+        }
+    ],
+    "r4.nl_core_vaccination_event.identifier": [
+        {
+            "type": 0,
+            "value": "Identificatienummer"
+        }
+    ],
+    "r4.nl_core_vaccination_event.location": [
+        {
+            "type": 0,
+            "value": "Zorgaanbieder"
+        }
+    ],
+    "r4.nl_core_vaccination_event.note": [
+        {
+            "type": 0,
+            "value": "Toelichting"
+        }
+    ],
+    "r4.nl_core_vaccination_event.occurrence_date_time": [
+        {
+            "type": 0,
+            "value": "Gegeven op"
+        }
+    ],
+    "r4.nl_core_vaccination_event.patient": [
+        {
+            "type": 0,
+            "value": "Naam patient"
+        }
+    ],
+    "r4.nl_core_vaccination_event.performed_by": [
+        {
+            "type": 0,
+            "value": "Gegeven door"
+        }
+    ],
+    "r4.nl_core_vaccination_event.performer": [
+        {
+            "type": 0,
+            "value": "Zorgverlener"
+        }
+    ],
+    "r4.nl_core_vaccination_event.pharmaceutical_product": [
+        {
+            "type": 0,
+            "value": "Inenting"
+        }
+    ],
+    "r4.nl_core_vaccination_event.protocol_applied": [
+        {
+            "type": 0,
+            "value": "Protocol toegepast"
+        }
+    ],
+    "r4.nl_core_vaccination_event.protocol_applied.authority": [
+        {
+            "type": 0,
+            "value": "Autoriteit"
+        }
+    ],
+    "r4.nl_core_vaccination_event.protocol_applied.doseNumber": [
+        {
+            "type": 0,
+            "value": "Dosis nummer"
+        }
+    ],
+    "r4.nl_core_vaccination_event.protocol_applied.seriesDoses": [
+        {
+            "type": 0,
+            "value": "Serie dosis"
+        }
+    ],
+    "r4.nl_core_vaccination_event.protocol_applied.targetDisease": [
+        {
+            "type": 0,
+            "value": "Ziekte"
+        }
+    ],
+    "r4.nl_core_vaccination_event.route": [
+        {
+            "type": 0,
+            "value": "Toedieningsweg"
+        }
+    ],
+    "r4.nl_core_vaccination_event.site": [
+        {
+            "type": 0,
+            "value": "Lichaamsplek"
+        }
+    ],
+    "r4.nl_core_vaccination_event.status": [
+        {
+            "type": 0,
+            "value": "Status"
+        }
+    ],
+    "r4.nl_core_vaccination_event.vaccination_indication": [
+        {
+            "type": 0,
+            "value": "Indicatie"
+        }
+    ],
+    "r4.nl_core_vaccination_event.vaccination_motive": [
+        {
+            "type": 0,
+            "value": "Aanleiding"
+        }
+    ],
+    "r4.nl_core_vaccination_event.vaccine_code": [
+        {
+            "type": 0,
+            "value": "Uniek nummer"
+        }
+    ]
+}

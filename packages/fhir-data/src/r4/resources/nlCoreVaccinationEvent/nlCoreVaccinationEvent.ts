@@ -30,6 +30,7 @@ function parseNlCoreVaccinationEvent(resource: Immunization) {
             resource,
             'ext-Vaccination.PharmaceuticalProduct'
         ), // NL-CM:9.7.19926
+        identifier: map(resource.identifier, parse.identifier),
         status: parse.string(resource.status), // imm-dataelement-144
         vaccineCode: parse.codeableConcept(resource.vaccineCode), // NL-CM:9.7.19927
         patient: parse.reference(resource.patient), // NL-CM:0.1.1
@@ -38,7 +39,7 @@ function parseNlCoreVaccinationEvent(resource: Immunization) {
         site: parse.codeableConcept(resource.site), // NL-CM:20.7.4
         route: parse.codeableConcept(resource.route), // NL-CM:9.13.21195
         doseQuantity: parse.quantity(resource.doseQuantity), // NL-CM:11.1.4
-        administrator: map(resource.performer, (p) => parse.reference(p.actor)), // NL-CM:17.1.1
+        performer: map(resource.performer, (p) => parse.reference(p.actor)), // NL-CM:17.1.1
         note: map(resource.note, parse.annotation), // NL-CM:11.1.7
         vaccinationIndication: map(vaccinationIndication, parse.codeableConcept), // imm-dataelement-160
         vaccinationMotive: map(vaccinationMotive, parse.codeableConcept), // imm-dataelement-158

@@ -2,75 +2,73 @@
     "label": "Hepatitis A-vaccin",
     "children": [
         {
-            "label": "nl_core_vaccination_event.group_details",
+            "label": "Algemeen",
             "children": [
                 {
-                    "label": "nl_core_vaccination_event.pharmaceutical_product",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "nl_core_vaccination_event.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "completed"
-                },
-                {
-                    "label": "nl_core_vaccination_event.vaccine_code",
+                    "label": "Uniek nummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "nl_core_vaccination_event.patient",
+                    "type": "SINGLE_VALUE",
+                    "label": "Dosis",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Naam patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
                     "reference": "Patient/nl-core-Patient-01"
                 },
                 {
-                    "label": "nl_core_vaccination_event.occurrence_date_time",
+                    "label": "Gegeven op",
                     "type": "SINGLE_VALUE",
                     "display": "3 juni 2012"
                 },
                 {
-                    "label": "nl_core_vaccination_event.site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "nl_core_vaccination_event.route",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "nl_core_vaccination_event.dose_quantity",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "nl_core_vaccination_event.administrator",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Healthcare professional (role)"
-                    ]
-                },
-                {
-                    "label": "nl_core_vaccination_event.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Bezoek aan Guatemala."
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
+                {
+                    "label": "Zorgverlener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
                 },
                 {
-                    "label": "nl_core_vaccination_event.vaccination_indication",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Extra informatie",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Aanleiding",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "nl_core_vaccination_event.vaccination_motive",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "type": "SINGLE_VALUE",
+                    "label": "Toedieningsweg",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Lichaamsplek",
+                    "display": "Niet bekend"
                 }
             ]
         }

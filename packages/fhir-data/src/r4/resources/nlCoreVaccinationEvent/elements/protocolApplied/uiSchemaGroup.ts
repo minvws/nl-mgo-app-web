@@ -1,12 +1,12 @@
-import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type ProtocolApplied } from './protocolApplied';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<ProtocolApplied> = (resource, context) => {
-    const profile = 'nl_core_vaccination_event.protocol_applied';
-    const ui = context.ui as NonStrictUi;
+    const profile = 'r4.nl_core_vaccination_event.protocol_applied';
+    const { ui, formatMessage } = context;
 
     return {
-        label: profile,
+        label: formatMessage(profile),
         children: [
             ui.reference(`${profile}.authority`, resource.authority),
             ui.codeableConcept(`${profile}.targetDisease`, resource.targetDisease),

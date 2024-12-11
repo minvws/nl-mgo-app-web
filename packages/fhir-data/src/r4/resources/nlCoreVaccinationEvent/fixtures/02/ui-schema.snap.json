@@ -2,88 +2,71 @@
     "label": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
     "children": [
         {
-            "label": "nl_core_vaccination_event.group_details",
+            "label": "Algemeen",
             "children": [
                 {
-                    "label": "nl_core_vaccination_event.pharmaceutical_product",
-                    "type": "REFERENCE_VALUE",
-                    "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
-                    "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01"
-                },
-                {
-                    "label": "nl_core_vaccination_event.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "completed"
-                },
-                {
-                    "label": "nl_core_vaccination_event.vaccine_code",
+                    "label": "Uniek nummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "nl_core_vaccination_event.patient",
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 milliliter"
+                },
+                {
+                    "label": "Naam patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
                     "reference": "Patient/nl-core-Patient-01"
                 },
                 {
-                    "label": "nl_core_vaccination_event.occurrence_date_time",
+                    "label": "Gegeven op",
                     "type": "SINGLE_VALUE",
                     "display": "3 juni 2012"
                 },
                 {
-                    "label": "nl_core_vaccination_event.site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "gehele rechter bovenarm (59126009 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
-                    "label": "nl_core_vaccination_event.route",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "INTRAMUSCULAIR (2 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)"
-                    ]
-                },
-                {
-                    "label": "nl_core_vaccination_event.dose_quantity",
-                    "type": "SINGLE_VALUE",
-                    "display": "1 milliliter"
-                },
-                {
-                    "label": "nl_core_vaccination_event.administrator",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Healthcare professional (role)"
-                    ]
-                },
-                {
-                    "label": "nl_core_vaccination_event.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Bezoek aan Guatemala."
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
                 {
-                    "label": "nl_core_vaccination_event.vaccination_indication",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "nl_core_vaccination_event.vaccination_motive",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "nl_core_vaccination_event.protocol_applied.authority",
+                    "label": "Zorgverlener",
                     "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
                 },
                 {
-                    "label": "nl_core_vaccination_event.protocol_applied.targetDisease",
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Extra informatie",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Aanleiding",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Autoriteit",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Ziekte",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -92,9 +75,23 @@
                     ]
                 },
                 {
-                    "label": "nl_core_vaccination_event.protocol_applied.doseNumber",
+                    "label": "Dosis nummer",
                     "type": "SINGLE_VALUE",
                     "display": "n/a"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "INTRAMUSCULAIR (2 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)"
+                    ]
+                },
+                {
+                    "label": "Lichaamsplek",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "gehele rechter bovenarm (59126009 in code systeem http://snomed.info/sct)"
+                    ]
                 }
             ]
         }

@@ -1,0 +1,23 @@
+{
+    "r4.nl_core_vaccination_event.performed_by": "Gegeven door",
+    "r4.nl_core_vaccination_event.extra": "Extra informatie",
+    "r4.nl_core_vaccination_event.pharmaceutical_product": "Inenting",
+    "r4.nl_core_vaccination_event.identifier": "Identificatienummer",
+    "r4.nl_core_vaccination_event.status": "Status",
+    "r4.nl_core_vaccination_event.patient": "Naam patient",
+    "r4.nl_core_vaccination_event.location": "Zorgaanbieder",
+    "r4.nl_core_vaccination_event.route": "Toedieningsweg",
+    "r4.nl_core_vaccination_event.site": "Lichaamsplek",
+    "r4.nl_core_vaccination_event.performer": "Zorgverlener",
+    "r4.nl_core_vaccination_event.vaccination_indication": "Indicatie",
+    "r4.nl_core_vaccination_event.vaccination_motive": "Aanleiding",
+    "r4.nl_core_vaccination_event.vaccine_code": "Uniek nummer",
+    "r4.nl_core_vaccination_event.occurrence_date_time": "Gegeven op",
+    "r4.nl_core_vaccination_event.dose_quantity": "Dosis",
+    "r4.nl_core_vaccination_event.note": "Toelichting",
+    "r4.nl_core_vaccination_event.protocol_applied": "Protocol toegepast",
+    "r4.nl_core_vaccination_event.protocol_applied.authority": "Autoriteit",
+    "r4.nl_core_vaccination_event.protocol_applied.targetDisease": "Ziekte",
+    "r4.nl_core_vaccination_event.protocol_applied.doseNumber": "Dosis nummer",
+    "r4.nl_core_vaccination_event.protocol_applied.seriesDoses": "Serie dosis"
+}

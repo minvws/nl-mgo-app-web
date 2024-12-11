@@ -8,6 +8,7 @@
         "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01",
         "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
     },
+    "identifier": null,
     "status": "completed",
     "vaccineCode": {
         "text": null,
@@ -52,7 +53,7 @@
         "system": "http://unitsofmeasure.org",
         "code": "mL"
     },
-    "administrator": [
+    "performer": [
         {
             "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
             "display": "Healthcare professional (role)"
