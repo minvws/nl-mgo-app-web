@@ -90,6 +90,12 @@
             "value": "Onbekend"
         }
     ],
+    "schema.empty_entry_display": [
+        {
+            "type": 0,
+            "value": "Niet bekend"
+        }
+    ],
     "zib_medication_use.repeat_period_cyclical_schedule": [
         {
             "type": 0,

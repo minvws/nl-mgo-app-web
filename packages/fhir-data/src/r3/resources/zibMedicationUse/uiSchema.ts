@@ -8,7 +8,7 @@ import { type ZibMedicationUse } from './zibMedicationUse';
  */
 export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
     const i18n = 'zib_medication_use';
-    const { ui, formatMessage } = context;
+    const { ui, formatMessage, setEmptyEntries } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317279/~mappings
@@ -28,7 +28,7 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
             resource.effectiveDuration
         ),
         MedicationUseDateTime: ui.dateTime(`${i18n}.date_asserted`, resource.dateAsserted),
-        UseIndicator: ui.boolean(`${i18n}.taken`, resource.taken === 'y'),
+        UseIndicator: ui.code(`${i18n}.taken`, resource.taken),
         ReasonForUse: ui.codeableConcept(`${i18n}.reason_code.text`, resource.reasonCode),
         Comment: ui.annotation(`${i18n}.note`, resource.note),
     };
@@ -45,7 +45,7 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
         ),
     };
 
-    return {
+    return setEmptyEntries({
         label: resource.medicationReference?.display,
         children: [
             {
@@ -70,5 +70,5 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
             },
             ...hcimInstructionsForUse.InstructionsForUse.flat(),
         ],
-    };
+    });
 };

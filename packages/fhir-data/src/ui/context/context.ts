@@ -8,6 +8,7 @@ import {
 import { getUi } from './ui';
 import { isNonNullish } from '../../utils/isNonNullish/isNonNullish';
 import { type MessagesIds } from '../../i18n/messages';
+import { setEmptyEntries } from '../helpers';
 
 export function createUiSchemaContext(options: IntlOptions): UiSchemaContext {
     const intl = getIntl(options);
@@ -25,5 +26,6 @@ export function createUiSchemaContext(options: IntlOptions): UiSchemaContext {
     return {
         ...uiHelperContext,
         ui: getUi(uiHelperContext),
+        setEmptyEntries: setEmptyEntries(uiHelperContext),
     };
 }

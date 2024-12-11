@@ -4,3 +4,4 @@ export * from './getChildren/getChildren';
 export * from './isUiEntry/isUiEntry';
 export * from './isEmptyUiEntry/isEmptyUiEntry';
 export * from './dropEmptyEntries/dropEmptyEntries';
+export * from './setEmptyEntries/setEmptyEntries';

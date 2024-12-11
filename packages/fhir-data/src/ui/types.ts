@@ -88,8 +88,10 @@ export type UiSchemaOptions = {
     locale: Locale;
 };
 
+export type SetEmptyEntriesHelper = (schema: UiSchema) => UiSchema;
 export type UiSchemaContext = UiHelperContext & {
     ui: Ui;
+    setEmptyEntries: SetEmptyEntriesHelper;
 };
 
 export type UiSchemaFunction<ParsedResource extends MgoResourceMeta> = (

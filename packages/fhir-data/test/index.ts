@@ -5,6 +5,7 @@ import { createUiSchemaContext } from '../src/ui';
 import { getUi } from '../src/ui/context/ui';
 import { deepReplaceUndefined } from '../src/utils';
 import { uiContext } from './faker/uiContext';
+import { setEmptyEntries } from '../src/ui/helpers';
 
 export { faker } from './faker';
 export { testSet } from './testSet';
@@ -25,6 +26,7 @@ export function testUiSchemaContext(options: Partial<TestUiSchemaOptions> = {}):
         return {
             ...mockUiContext,
             ui: getUi(mockUiContext),
+            setEmptyEntries: setEmptyEntries(mockUiContext),
         };
     }
 

@@ -27,3 +27,16 @@ test('boolean - false', () => {
         ...options,
     });
 });
+
+test('boolean - undefined', () => {
+    const label = faker.custom.messageId();
+    const options = faker.custom.uiEntryOptions();
+    const context = faker.custom.uiContext();
+    const result = boolean(context)(label, undefined, options);
+    expect(result).toEqual({
+        label: `intl(${label})`,
+        type: 'SINGLE_VALUE',
+        display: undefined,
+        ...options,
+    });
+});

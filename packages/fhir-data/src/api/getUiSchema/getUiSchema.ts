@@ -39,6 +39,7 @@ export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(
     const config = getResourceConfig(resource);
 
     const uiSchemaContext = createUiSchemaContext({
+        ignoreMissingTranslations: true,
         locale: options?.locale ?? Locale.NL_NL,
     });
 

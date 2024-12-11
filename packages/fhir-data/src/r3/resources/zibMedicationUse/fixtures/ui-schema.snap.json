@@ -15,9 +15,9 @@
                     "display": "21 juli 2020"
                 },
                 {
-                    "label": "Einddatum",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Einddatum",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Tijds duur",
@@ -25,15 +25,14 @@
                     "display": "30 dagen"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Voorschrijver",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Reden gebruik",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Volgens afspraak indicator",
@@ -43,12 +42,12 @@
                 {
                     "label": "Gebruik indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "display": "y"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Toelichting",
-                    "display": null,
-                    "type": "SINGLE_VALUE"
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Gebruiksproduct",
@@ -62,14 +61,14 @@
                     "display": "completed"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Reden wijzigen of stoppen gebruik",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Herhaalperiode cyclisch schema",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Herhaalperiode cyclisch schema",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Medicamenteuze behandeling",
@@ -109,9 +108,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Aanvullende instructie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Volgnummer",

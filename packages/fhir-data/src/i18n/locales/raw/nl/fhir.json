@@ -10,5 +10,6 @@
     "fhir.ratio.denominator": "Noemer",
     "fhir.boolean.true": "Ja",
     "fhir.boolean.false": "Nee",
-    "fhir.unknown": "Onbekend"
+    "fhir.unknown": "Onbekend",
+    "schema.empty_entry_display": "Niet bekend"
 }
