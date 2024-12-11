@@ -1,4 +1,5 @@
 import { type MgoCode } from '../../../parse/type';
+import { isNonNullish } from '../../../utils';
 import { toString } from '../../helpers';
 import {
     type MultipleValues,
@@ -14,7 +15,7 @@ export const code: WithUiContext<UiFunction<MgoCode | MgoCode[], SingleValue | M
             return {
                 label: formatMessage(label),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(toString),
+                display: value.map(toString).filter(isNonNullish),
                 ...options,
             };
         }

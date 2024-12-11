@@ -20,8 +20,12 @@ export function getIntl(options: IntlOptions): IntlShape {
 
     /* c8 ignore start */
     const onError = (error: Error) => {
+        const environment = typeof process !== 'undefined' ? process.env.NODE_ENV : 'production';
+        if (environment !== 'test' && environment !== 'development') {
+            return;
+        }
+
         if (
-            (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development') &&
             ignoreMissingTranslations &&
             typeof error.message === 'string' &&
             error.message.includes('[@formatjs/intl Error MISSING_TRANSLATION]')

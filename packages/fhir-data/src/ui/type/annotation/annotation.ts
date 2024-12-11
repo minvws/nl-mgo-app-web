@@ -1,5 +1,6 @@
 import { type MgoAnnotation } from '../../../parse/type';
 import { type Nullable } from '../../../types/Nullable';
+import { isNonNullish } from '../../../utils';
 import {
     type MultipleValues,
     type SingleValue,
@@ -20,7 +21,7 @@ export const annotation: WithUiContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(annotationDisplay),
+                display: value.map(annotationDisplay).filter(isNonNullish),
                 ...options,
             };
         }

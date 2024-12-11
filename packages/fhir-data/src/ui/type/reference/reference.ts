@@ -1,4 +1,5 @@
 import { type MgoReference } from '../../../parse/type';
+import { isNonNullish } from '../../../utils';
 import {
     type MultipleValues,
     type ReferenceValue,
@@ -15,7 +16,7 @@ export const reference: WithUiContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value.map((x) => x.display),
+                display: value.map((x) => x.display).filter(isNonNullish),
                 ...options,
             };
         }

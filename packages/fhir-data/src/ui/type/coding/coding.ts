@@ -1,5 +1,6 @@
 import { type MgoCoding } from '../../../parse/type';
 import { type Nullable } from '../../../types/Nullable';
+import { isNonNullish } from '../../../utils';
 import { format } from '../../format';
 import {
     type MultipleValues,
@@ -27,7 +28,7 @@ export const coding: WithUiContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(codingDisplay),
+                display: value.map(codingDisplay).filter(isNonNullish),
                 ...options,
             };
         }

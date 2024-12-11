@@ -1,4 +1,5 @@
 import { type MgoString } from '../../../parse/type';
+import { isNonNullish } from '../../../utils';
 import { toString } from '../../helpers';
 import {
     type MultipleValues,
@@ -16,7 +17,7 @@ export const string: WithUiContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(toString),
+                display: value.map(toString).filter(isNonNullish),
                 ...options,
             };
         }

@@ -7,8 +7,8 @@ import { type FhirVersion } from '../types/Fhir';
 export type FhirVersionR3 = `${FhirVersion.R3}`;
 export type FhirVersionR4 = `${FhirVersion.R4}`;
 
+export * from '../ui/types/schema';
 export * from '../parse/type';
-export { type UiSchema, type UiSchemaGroup, type UiEntry } from '../ui/types';
 export * from '../r3/elements';
 export * from '../r3/resources';
 export * from '../r4/resources';

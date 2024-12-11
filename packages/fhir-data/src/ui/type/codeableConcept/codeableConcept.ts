@@ -1,5 +1,6 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
 import { type Nullable } from '../../../types/Nullable';
+import { isNonNullish } from '../../../utils';
 import {
     type MultipleGroupedValues,
     type MultipleValues,
@@ -13,7 +14,7 @@ function codeableDisplay(value: Nullable<MgoCodeableConcept>) {
         return [value.text];
     }
 
-    return value?.coding.map(codingDisplay) ?? [];
+    return value?.coding.map(codingDisplay).filter(isNonNullish) ?? [];
 }
 
 export const codeableConcept: WithUiContext<

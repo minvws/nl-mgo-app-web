@@ -1,4 +1,5 @@
 import { type MgoIdentifier } from '../../../parse/type';
+import { isNonNullish } from '../../../utils';
 import {
     type MultipleValues,
     type SingleValue,
@@ -15,7 +16,7 @@ export const identifier: WithUiContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value?.map((x) => x?.value),
+                display: value?.map((x) => x?.value).filter(isNonNullish),
                 ...options,
             };
         }
