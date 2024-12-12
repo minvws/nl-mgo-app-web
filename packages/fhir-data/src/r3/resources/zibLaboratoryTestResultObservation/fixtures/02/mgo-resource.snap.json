@@ -27,11 +27,11 @@
         ]
     },
     "method": null,
-    "effective": {
+    "effectivePeriod": {
         "start": "2010-06-01",
         "end": null
     },
-    "result": {
+    "valueQuantity": {
         "value": 109,
         "comparator": null,
         "unit": "mmol/l",
@@ -54,7 +54,10 @@
                 "unit": "mmol/l",
                 "system": "http://unitsofmeasure.org",
                 "code": "mmol/L"
-            }
+            },
+            "type": null,
+            "appliesTo": null,
+            "age": null
         }
     ],
     "interpretation": {
@@ -77,7 +80,9 @@
         "display": "Blood (substance)"
     },
     "comment": null,
-    "category": null,
+    "laboratoryTestResultCode": null,
+    "resultType": null,
     "related": null,
-    "basedOn": null
+    "basedOn": null,
+    "performer": null
 }

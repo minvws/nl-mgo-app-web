@@ -9,13 +9,11 @@ testSet(
         return related.parse(data);
     },
     (data) => {
-        const schema = related.uiSchemaGroup(
-            data,
-            testUiSchemaContext({
-                ignoreMissingTranslations: true,
-            })
+        const context = testUiSchemaContext();
+        const schema = related.uiSchemaGroup(data, context);
+        expect(schema.label).toBe(
+            context.formatMessage('zib_laboratory_test_result_observation.related')
         );
-        expect(schema.label).toBe('zib_laboratory_test_result_observation.related');
     },
     false
 );

@@ -1,10 +1,9 @@
 import { type UiSchemaFunction } from '../../../ui';
-import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
-import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
-import { uiSchemaGroup as referenceRangetUiSchema } from './elements/referenceRange/uiSchemaGroup';
 import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult';
+import { uiSchemaGroup as referenceRangetUiSchema } from './elements/referenceRange/uiSchemaGroup';
+import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
+import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
@@ -13,59 +12,64 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
     resource,
     context
 ) => {
-    const ui = context.ui as NonStrictUi;
     const i18n = 'zib_laboratory_test_result_observation';
+    const { ui, formatMessage, setEmptyEntries } = context;
 
-    const related = map(resource.related, (x) => relatedUiSchema(x, context), true);
-    const referenceRange = map(
-        resource.referenceRange,
-        (x) => referenceRangetUiSchema(x, context),
-        true
-    );
-    const title = resource.category?.[0]?.coding?.[0]?.display ?? `${i18n}`;
-    const effective =
-        typeof resource.effective === 'string'
-            ? [ui.dateTime(`${i18n}.effective`, resource.effective)]
-            : ui.period(`${i18n}.effective`, resource.effective);
+    /**
+     * https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239/~mappings
+     */
+    const hcimLaboratoryTestResult = {
+        BasedOn: ui.reference(`${i18n}.based_on`, resource.basedOn),
+        Status: ui.string(`${i18n}.status`, resource.status),
+        ResultType: ui.codeableConcept(`${i18n}.result_type`, resource.resultType),
+        Code: ui.codeableConcept(`${i18n}.code`, resource.code),
+        Effective: ui.oneOfValueX(`${i18n}.effective`, resource, 'effective'),
+        Value: ui.oneOfValueX(`${i18n}.value`, resource),
+        Interpretation: ui.codeableConcept(`${i18n}.interpretation`, resource.interpretation),
+        Comment: ui.string(`${i18n}.comment`, resource.comment),
+        Method: ui.codeableConcept(`${i18n}.method`, resource.method),
+        Specimen: ui.reference(`${i18n}.specimen`, resource.specimen),
+        ReferenceRange: map(
+            resource.referenceRange,
+            (x) => referenceRangetUiSchema(x, context),
+            true
+        ).flat(),
+        Related: map(resource.related, (x) => relatedUiSchema(x, context), true).flat(),
+    };
 
-    return {
-        label: title,
+    const hcimBasicElements = {
+        Identifier: ui.identifier(`${i18n}.identifier`, resource.identifier),
+        Subject: ui.reference(`${i18n}.subject`, resource.subject),
+        Performer: ui.reference(`${i18n}.performer`, resource.performer),
+    };
+
+    return setEmptyEntries({
+        label: resource.resultType?.at(0)?.coding.at(0)?.display ?? i18n,
         children: [
             {
-                label: `${i18n}`,
+                label: formatMessage(i18n),
                 children: [
-                    ui.identifier(`${i18n}.identifier`, resource.identifier),
-                    ui.reference(`${i18n}.specimen`, resource.specimen),
-                    ui.codeableConcept(
-                        'zib_laboratory_test_result_diagnostic_report.code',
-                        resource.code
-                    ),
-                    ui.string(
-                        'zib_laboratory_test_result_diagnostic_report.status',
-                        resource.status
-                    ),
-                    ui.string(`${i18n}.comment`, resource.comment),
-                    ui.codeableConcept(`${i18n}.result_type`, resource.category),
-                    ...ui.helpers.getChildren(related),
-                    ui.reference(`${i18n}.based_on`, resource.basedOn),
+                    hcimBasicElements.Identifier,
+                    hcimBasicElements.Subject,
+                    ...hcimLaboratoryTestResult.Effective,
                 ],
             },
             {
-                label: `${i18n}.test`,
+                label: formatMessage(`${i18n}.general_test_information`),
+                children: [hcimLaboratoryTestResult.ResultType, hcimLaboratoryTestResult.Comment],
+            },
+            {
+                label: formatMessage(`${i18n}.lab_test`),
                 children: [
-                    ui.codeableConcept(`${i18n}.code`, resource.code),
-                    ui.codeableConcept(`${i18n}.method`, resource.method),
-                    ...effective,
-                    ui.quantity(`${i18n}.value`, resource.result),
-                    ui.string(`${i18n}.status`, resource.status),
-                    ...ui.helpers.getChildren(referenceRange),
-                    ui.codeableConcept(
-                        `${i18n}.interpretation.interpretatie_vlaggen_codelijst`,
-                        resource.interpretation
-                    ),
-                    ui.string(`${i18n}.comment`, resource.comment),
+                    hcimLaboratoryTestResult.Code,
+                    hcimLaboratoryTestResult.Method,
+                    ...hcimLaboratoryTestResult.Effective,
+                    ...hcimLaboratoryTestResult.Value,
+                    hcimLaboratoryTestResult.Status,
+                    ...ui.helpers.getChildren(hcimLaboratoryTestResult.ReferenceRange),
+                    hcimLaboratoryTestResult.Interpretation,
                 ],
             },
         ],
-    };
+    });
 };

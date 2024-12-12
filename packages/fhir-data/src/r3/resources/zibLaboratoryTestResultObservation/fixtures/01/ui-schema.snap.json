@@ -1,8 +1,8 @@
 {
-    "label": "Laboratory test finding (finding)",
+    "label": "Serum chemistry test",
     "children": [
         {
-            "label": "zib_laboratory_test_result_observation",
+            "label": "Laboratorium uitslag",
             "children": [
                 {
                     "label": "Identificatie",
@@ -12,50 +12,39 @@
                     ]
                 },
                 {
-                    "label": "Monster",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
-                    "display": "Blood (substance)",
-                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Onderzoek",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
-                    ]
-                },
-                {
-                    "label": "Resultaat status",
+                    "label": "Test datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
+                    "display": "23 mei 2012 om 12:00:00 GMT+2"
+                }
+            ]
+        },
+        {
+            "label": "Algemene testinformatie",
+            "children": [
                 {
                     "label": "Resultaat type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        [
-                            "Laboratory test finding (finding) (49581000146104 in code systeem http://snomed.info/sct)"
-                        ],
                         [
                             "Serum chemistry test (275711006 in code systeem http://snomed.info/sct)"
                         ]
                     ]
                 },
                 {
-                    "label": "Aanvrager",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "type": "SINGLE_VALUE",
+                    "label": "Toelichting",
+                    "display": "Niet bekend"
                 }
             ]
         },
         {
-            "label": "zib_laboratory_test_result_observation.test",
+            "label": "Laboratoriumtest",
             "children": [
                 {
                     "label": "Test code",
@@ -65,9 +54,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Testmethode",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Test datum tijd",
@@ -95,17 +84,17 @@
                     "display": "108 mmol/l"
                 },
                 {
-                    "label": "Interpretatie vlaggen",
+                    "type": "SINGLE_VALUE",
+                    "label": "Referentie type",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Hoog (H in code systeem http://hl7.org/fhir/v2/0078)",
                         "Above reference range (281302008 in code systeem http://snomed.info/sct)"
                     ]
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         }

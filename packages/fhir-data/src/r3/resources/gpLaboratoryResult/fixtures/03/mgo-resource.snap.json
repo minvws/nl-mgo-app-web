@@ -1,9 +1,4 @@
 {
-    "id": "ont-ver-gpdata-observation-contact14-fastingglucose",
-    "referenceId": "Observation/ont-ver-gpdata-observation-contact14-fastingglucose",
-    "resourceType": "Observation",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult",
-    "fhirVersion": "R3",
     "identifier": [
         {
             "use": null,
@@ -27,11 +22,11 @@
         ]
     },
     "method": null,
-    "effective": {
+    "effectivePeriod": {
         "start": "2024-03-18",
         "end": null
     },
-    "result": {
+    "valueQuantity": {
         "value": 5.4,
         "comparator": null,
         "unit": null,
@@ -54,13 +49,25 @@
                 "unit": null,
                 "system": "http://unitsofmeasure.org",
                 "code": "mmol/L"
-            }
+            },
+            "type": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "normal",
+                        "display": "Normal Range",
+                        "system": "http://hl7.org/fhir/referencerange-meaning"
+                    }
+                ]
+            },
+            "appliesTo": null,
+            "age": null
         }
     ],
     "interpretation": null,
     "specimen": null,
     "comment": null,
-    "category": [
+    "laboratoryTestResultCode": [
         {
             "text": null,
             "coding": [
@@ -72,6 +79,18 @@
             ]
         }
     ],
+    "resultType": null,
     "related": null,
-    "basedOn": null
+    "basedOn": null,
+    "performer": [
+        {
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "id": "ont-ver-gpdata-observation-contact14-fastingglucose",
+    "referenceId": "Observation/ont-ver-gpdata-observation-contact14-fastingglucose",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult",
+    "fhirVersion": "R3"
 }

@@ -6,30 +6,59 @@ import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
 import { related } from './elements/related/related';
 import { referenceRange } from './elements/referenceRange/referenceRange';
+import { filterCodeableConceptByCoding, oneOfValueX } from '../../../parse/helpers';
+import { Snomed, SNOMED_SYSTEM, SnomedResultTypes } from '../../../valueSets/snomed';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation'; // NOSONAR
 
 /**
+ * ZibLaboratoryResultObservation is reused as the baseDefinition for some other resources.
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
  */
-function parseZibLaboratoryTestResultObservation(resource: Observation) {
+export function parseZibLaboratoryTestResultObservationBase(resource: Observation) {
+    const laboratoryTestResultCode = filterCodeableConceptByCoding(
+        resource.category,
+        (x) => x.system === SNOMED_SYSTEM && x.code === Snomed.LABORATORY_TEST_FINDING
+    );
+
+    const resultType = filterCodeableConceptByCoding(
+        resource.category,
+        (x) => x.system === SNOMED_SYSTEM && SnomedResultTypes.includes(x.code as Snomed)
+    );
+
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
         subject: parse.reference(resource.subject),
-        code: parse.codeableConcept(resource?.code), // NL-CM:13.1.8
-        method: parse.codeableConcept(resource?.method), // NL-CM:13.1.9
-        effective:
-            parse.dateTime(resource?.effectiveDateTime) ?? parse.period(resource?.effectivePeriod), // NL-CM:13.1.13
-        result: parse.quantity(resource?.valueQuantity), // NL-CM:13.1.10
-        status: parse.string(resource?.status), // NL-CM:13.1.31
-        referenceRange: map(resource?.referenceRange, referenceRange.parse), // NL-CM:13.1.11 & NL-CM:13.1.12
-        interpretation: parse.codeableConcept(resource?.interpretation), // NL-CM:13.1.14
-        specimen: parse.reference(resource.specimen), // NL-CM:13.1.2
-        comment: parse.string(resource.comment), // NL-CM:13.1.5
-        category: map(resource.category, parse.codeableConcept), // NL-CM:13.1.7
-        related: map(resource.related, related.parse), // NL-CM:13.1.33 or NL-CM:13.1.3
-        basedOn: map(resource.basedOn, parse.reference), // NL-CM:13.1.34
+        code: parse.codeableConcept(resource?.code),
+        method: parse.codeableConcept(resource?.method),
+        ...oneOfValueX(resource, ['dateTime', 'period'], 'effective'),
+        ...oneOfValueX(resource, [
+            'quantity',
+            'codeableConcept',
+            'string',
+            'boolean',
+            'range',
+            'ratio',
+            'dateTime',
+            'period',
+        ]),
+        status: parse.string(resource?.status),
+        referenceRange: map(resource?.referenceRange, referenceRange.parse),
+        interpretation: parse.codeableConcept(resource?.interpretation),
+        specimen: parse.reference(resource.specimen),
+        comment: parse.string(resource.comment),
+        laboratoryTestResultCode: map(laboratoryTestResultCode, parse.codeableConcept),
+        resultType: map(resultType, parse.codeableConcept),
+        related: map(resource.related, related.parse),
+        basedOn: map(resource.basedOn, parse.reference),
+        performer: map(resource.performer, parse.reference),
+    };
+}
+
+export function parseZibLaboratoryTestResultObservation(resource: Observation) {
+    return {
+        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parseZibLaboratoryTestResultObservationBase(resource),
     };
 }
 

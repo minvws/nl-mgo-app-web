@@ -66,8 +66,30 @@
             "author": null
         }
     ],
-    "vaccinationIndication": null,
-    "vaccinationMotive": null,
+    "vaccinationIndication": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "404904002",
+                    "display": "Kwetsbare oudere (bevinding)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "vaccinationMotive": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "159731000146104",
+                    "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
     "protocolApplied": [
         {
             "authority": null,

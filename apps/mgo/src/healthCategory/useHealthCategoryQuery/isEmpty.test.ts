@@ -5,11 +5,11 @@ import { faker } from '$test/faker';
 
 test.each<[HealthCategoryData | undefined, boolean]>([
     [undefined, true],
-    [{}, true],
-    [{ foo: [] }, true],
-    [{ foo: faker.lorem.word() }, true],
-    [{ foo: [faker.lorem.word()] }, false],
-    [{ foo: [undefined] }, false],
+    [{} as HealthCategoryData, true],
+    [{ foo: [] } as unknown as HealthCategoryData, true],
+    [{ foo: faker.lorem.word() } as unknown as HealthCategoryData, true],
+    [{ foo: [faker.lorem.word()] } as unknown as HealthCategoryData, false],
+    [{ foo: [undefined] } as unknown as HealthCategoryData, false],
 ])('returns whether the data contains filled arrays: %s', (data, expectedResult) => {
     const result = isEmpty(data);
     expect(result).toBe(expectedResult);

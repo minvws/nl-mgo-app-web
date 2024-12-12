@@ -2,7 +2,7 @@
     "label": "zib_laboratory_test_result_observation",
     "children": [
         {
-            "label": "zib_laboratory_test_result_observation",
+            "label": "Laboratorium uitslag",
             "children": [
                 {
                     "label": "Identificatie",
@@ -12,43 +12,40 @@
                     ]
                 },
                 {
-                    "label": "Monster",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
-                    "display": "Blood (substance)",
-                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Onderzoek",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
-                    ]
-                },
-                {
-                    "label": "Resultaat status",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "display": "1 juni 2010"
                 },
                 {
-                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Resultaat type",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "Aanvrager",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Eind datum",
+                    "display": "Niet bekend"
                 }
             ]
         },
         {
-            "label": "zib_laboratory_test_result_observation.test",
+            "label": "Algemene testinformatie",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Resultaat type",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Toelichting",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Laboratoriumtest",
             "children": [
                 {
                     "label": "Test code",
@@ -58,9 +55,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Testmethode",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Begin datum",
@@ -68,9 +65,9 @@
                     "display": "1 juni 2010"
                 },
                 {
-                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Eind datum",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Test uitslag",
@@ -93,17 +90,17 @@
                     "display": "108 mmol/l"
                 },
                 {
-                    "label": "Interpretatie vlaggen",
+                    "type": "SINGLE_VALUE",
+                    "label": "Referentie type",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Hoog (H in code systeem http://hl7.org/fhir/v2/0078)",
                         "Above reference range (281302008 in code systeem http://snomed.info/sct)"
                     ]
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         }

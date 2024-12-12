@@ -17,6 +17,7 @@ import { getEncounterQueries } from './encounter';
 import { getVitalQueries } from './vitals';
 import { getProcedureQueries } from './procedure';
 import { getDocumentsQueries } from './documents';
+import { getLaboratoryResultQueries } from './laboratoryResults';
 
 export const healthCategoryQueries = {
     [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
@@ -31,7 +32,7 @@ export const healthCategoryQueries = {
     [HealthCategory.Medication]: getMedicationQueries,
     [HealthCategory.MedicalDevices]: getMedicalDevicesQueries,
     [HealthCategory.Vaccinations]: getVaccinationQueries,
-    [HealthCategory.LaboratoryResults]: () => [],
+    [HealthCategory.LaboratoryResults]: getLaboratoryResultQueries,
     [HealthCategory.Procedures]: getProcedureQueries,
     [HealthCategory.ContactsAndAppointments]: getEncounterQueries,
     [HealthCategory.Vitals]: getVitalQueries,

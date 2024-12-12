@@ -3,12 +3,14 @@ import { setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { HealthCategoryContent } from './HealthCategoryContent';
+import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 
 test('show HealthCategoryContent for category', () => {
     const props = {
         category: HealthCategory.PersonalInformation,
         data: {
             patientInformation: [],
+            practitionerInformation: [],
         },
     };
 
@@ -20,8 +22,13 @@ test('show HealthCategoryContent for category', () => {
     expect(heading).toBeVisible();
 });
 
-test('HealthCategoryContent should be empty when empty category is giving', () => {
-    setupWithAppProviders(<HealthCategoryContent category={'test' as HealthCategory} data={[]} />);
+test('HealthCategoryContent should be empty when no data is supplied', () => {
+    setupWithAppProviders(
+        <HealthCategoryContent
+            category={'test' as HealthCategory}
+            data={{} as HealthCategoryData}
+        />
+    );
 
     expect(screen.queryByRole('link')).toBeNull();
 });

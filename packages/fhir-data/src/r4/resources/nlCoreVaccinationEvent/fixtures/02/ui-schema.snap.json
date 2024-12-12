@@ -56,9 +56,13 @@
             "label": "Extra informatie",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Aanleiding",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie) (159731000146104 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
                 },
                 {
                     "type": "SINGLE_VALUE",

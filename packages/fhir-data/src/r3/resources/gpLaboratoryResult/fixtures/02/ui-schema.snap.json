@@ -1,8 +1,8 @@
 {
-    "label": "bevinding betreffende laboratoriumonderzoek",
+    "label": "zib_laboratory_test_result_observation",
     "children": [
         {
-            "label": "zib_laboratory_test_result_observation",
+            "label": "Laboratorium uitslag",
             "children": [
                 {
                     "label": "Identificatie",
@@ -12,47 +12,35 @@
                     ]
                 },
                 {
-                    "label": "Monster",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "display": "Jacqueline XXX_Cevat",
+                    "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
                 },
                 {
-                    "label": "Onderzoek",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "glucose nuchter, art/cap (lab) (3208 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)"
-                    ]
-                },
-                {
-                    "label": "Resultaat status",
+                    "label": "Test datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Resultaat type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "bevinding betreffende laboratoriumonderzoek (49581000146104 in code systeem http://snomed.info/sct)"
-                        ]
-                    ]
-                },
-                {
-                    "label": "Aanvrager",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "display": "18 maart 2024"
                 }
             ]
         },
         {
-            "label": "zib_laboratory_test_result_observation.test",
+            "label": "Algemene testinformatie",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Resultaat type",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Toelichting",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Laboratoriumtest",
             "children": [
                 {
                     "label": "Test code",
@@ -62,9 +50,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Testmethode",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Test datum tijd",
@@ -92,14 +80,16 @@
                     "display": "5.6"
                 },
                 {
-                    "label": "Interpretatie vlaggen",
+                    "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": [
+                        "Normal Range (normal in code systeem http://hl7.org/fhir/referencerange-meaning)"
+                    ]
                 },
                 {
-                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Interpretatie",
+                    "display": "Niet bekend"
                 }
             ]
         }

@@ -17,11 +17,12 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-e
 function parseNlCoreVaccinationEvent(resource: Immunization) {
     const vaccinationIndication = filterCodeableConceptByCoding(
         resource.reasonCode,
-        (x) => x.code && x.code in VaccinationIndication
+        (x) =>
+            x.code && Object.values(VaccinationIndication).includes(x.code as VaccinationIndication)
     );
     const vaccinationMotive = filterCodeableConceptByCoding(
         resource.reasonCode,
-        (x) => x.code && x.code in VaccinationMotive
+        (x) => x.code && Object.values(VaccinationMotive).includes(x.code as VaccinationMotive)
     );
 
     return {

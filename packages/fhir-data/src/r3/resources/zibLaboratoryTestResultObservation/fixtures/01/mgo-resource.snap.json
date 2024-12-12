@@ -27,8 +27,8 @@
         ]
     },
     "method": null,
-    "effective": "2012-05-23T12:00:00+02:00",
-    "result": {
+    "effectiveDateTime": "2012-05-23T12:00:00+02:00",
+    "valueQuantity": {
         "value": 109,
         "comparator": null,
         "unit": "mmol/l",
@@ -51,7 +51,10 @@
                 "unit": "mmol/l",
                 "system": "http://unitsofmeasure.org",
                 "code": "mmol/L"
-            }
+            },
+            "type": null,
+            "appliesTo": null,
+            "age": null
         }
     ],
     "interpretation": {
@@ -74,7 +77,7 @@
         "display": "Blood (substance)"
     },
     "comment": null,
-    "category": [
+    "laboratoryTestResultCode": [
         {
             "text": null,
             "coding": [
@@ -84,7 +87,9 @@
                     "system": "http://snomed.info/sct"
                 }
             ]
-        },
+        }
+    ],
+    "resultType": [
         {
             "text": null,
             "coding": [
@@ -97,5 +102,6 @@
         }
     ],
     "related": null,
-    "basedOn": null
+    "basedOn": null,
+    "performer": null
 }

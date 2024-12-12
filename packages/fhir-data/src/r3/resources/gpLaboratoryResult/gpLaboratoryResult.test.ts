@@ -13,12 +13,7 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = gpLaboratoryResult.parse(input01 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
@@ -29,12 +24,7 @@ test('returns the expected output 02', () => {
 
 test('uiSchema returns the expected output 02', () => {
     const output = gpLaboratoryResult.parse(input02 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
@@ -45,11 +35,6 @@ test('returns the expected output 03', () => {
 
 test('uiSchema returns the expected output 03', () => {
     const output = gpLaboratoryResult.parse(input03 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
 });
