@@ -43,6 +43,12 @@
     },
     "dependencies": {
         "@formatjs/intl": "^3.0.1",
+        "@formatjs/intl-datetimeformat": "^6.17.1",
+        "@formatjs/intl-locale": "^4.2.8",
+        "@formatjs/intl-numberformat": "^8.15.1",
+        "@formatjs/intl-pluralrules": "^5.4.1",
+        "@formatjs/intl-relativetimeformat": "^11.4.8",
+        "intl": "^1.2.5",
         "lodash": "^4.17.21",
         "lossless-json": "^4.0.1"
     }
