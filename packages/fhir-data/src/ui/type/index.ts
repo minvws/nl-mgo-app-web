@@ -5,6 +5,7 @@ import { codeableConcept } from './codeableConcept/codeableConcept';
 import { coding } from './coding/coding';
 import { date } from './date/date';
 import { dateTime } from './dateTime/dateTime';
+import { instant } from './instant/instant';
 import { duration } from './duration/duration';
 import { identifier } from './identifier/identifier';
 import { period } from './period/period';
@@ -29,6 +30,7 @@ export function getTypes(context: UiHelperContext) {
         coding: coding(context),
         date: date(context),
         dateTime: dateTime(context),
+        instant: instant(context),
         duration: duration(context),
         identifier: identifier(context),
         period: period(context),

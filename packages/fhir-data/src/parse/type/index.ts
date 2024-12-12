@@ -6,6 +6,7 @@ export * from './codeableConcept/codeableConcept';
 export * from './coding/coding';
 export * from './date/date';
 export * from './dateTime/dateTime';
+export * from './instant/instant';
 export * from './duration/duration';
 export * from './identifier/identifier';
 export * from './period/period';

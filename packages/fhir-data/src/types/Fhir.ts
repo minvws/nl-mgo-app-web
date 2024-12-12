@@ -40,3 +40,13 @@ export type DateTimeString =
     | `${number}-${number}`
     | `${number}-${number}-${number}`
     | `${number}-${number}-${number}T${number}:${number}:${number}${string}`;
+
+/**
+ * The format is a subset of [ISO8601] icon: YYYY-MM-DDThh:mm:ss+zz:zz,
+ * @see: https://build.fhir.org/datatypes.html#instant
+ * @example
+ * 2015-02-07T13:28:17-05:00,
+ * 2017-01-01T00:00:00.000Z.
+ */
+export type InstantDateTimeString =
+    `${number}-${number}-${number}T${number}:${number}:${number}${string}`;

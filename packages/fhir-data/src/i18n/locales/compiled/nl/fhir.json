@@ -104,6 +104,102 @@
             "value": "system"
         }
     ],
+    "ihe_mhd_minimal_document_reference.author": [
+        {
+            "type": 0,
+            "value": "Auteur"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.class": [
+        {
+            "type": 0,
+            "value": "Categorie"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content": [
+        {
+            "type": 0,
+            "value": "Inhoud"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content.attachment.content_type": [
+        {
+            "type": 0,
+            "value": "Inhoudstype"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content.attachment.creation": [
+        {
+            "type": 0,
+            "value": "Gecreëerd"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content.attachment.language": [
+        {
+            "type": 0,
+            "value": "Taal"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content.attachment.title": [
+        {
+            "type": 0,
+            "value": "Titel"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.content.attachment.url": [
+        {
+            "type": 0,
+            "value": "Url"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.group_attachment": [
+        {
+            "type": 0,
+            "value": "Inhoud"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.group_author": [
+        {
+            "type": 0,
+            "value": "Opgesteld door"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.indexed": [
+        {
+            "type": 0,
+            "value": "Gecreëerd"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.master_identifier": [
+        {
+            "type": 0,
+            "value": "Identifier"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.security_label": [
+        {
+            "type": 0,
+            "value": "Beveiligingslabel"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.status": [
+        {
+            "type": 0,
+            "value": "Status"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.subject": [
+        {
+            "type": 0,
+            "value": "Onderwerp"
+        }
+    ],
+    "ihe_mhd_minimal_document_reference.type": [
+        {
+            "type": 0,
+            "value": "Type"
+        }
+    ],
     "schema.empty_entry_display": [
         {
             "type": 0,

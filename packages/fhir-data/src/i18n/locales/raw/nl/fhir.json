@@ -13,5 +13,21 @@
     "fhir.unknown": "Onbekend",
     "schema.empty_entry_display": "Niet bekend",
     "format.code_in_system": "{code} in code systeem {system}",
-    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)"
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)",
+    "ihe_mhd_minimal_document_reference.master_identifier": "Identifier",
+    "ihe_mhd_minimal_document_reference.status": "Status",
+    "ihe_mhd_minimal_document_reference.type": "Type",
+    "ihe_mhd_minimal_document_reference.class": "Categorie",
+    "ihe_mhd_minimal_document_reference.subject": "Onderwerp",
+    "ihe_mhd_minimal_document_reference.indexed": "Gecreëerd",
+    "ihe_mhd_minimal_document_reference.author": "Auteur",
+    "ihe_mhd_minimal_document_reference.security_label": "Beveiligingslabel",
+    "ihe_mhd_minimal_document_reference.content": "Inhoud",
+    "ihe_mhd_minimal_document_reference.content.attachment.title": "Titel",
+    "ihe_mhd_minimal_document_reference.content.attachment.content_type": "Inhoudstype",
+    "ihe_mhd_minimal_document_reference.content.attachment.language": "Taal",
+    "ihe_mhd_minimal_document_reference.content.attachment.url": "Url",
+    "ihe_mhd_minimal_document_reference.content.attachment.creation": "Gecreëerd",
+    "ihe_mhd_minimal_document_reference.group_author": "Opgesteld door",
+    "ihe_mhd_minimal_document_reference.group_attachment": "Inhoud"
 }

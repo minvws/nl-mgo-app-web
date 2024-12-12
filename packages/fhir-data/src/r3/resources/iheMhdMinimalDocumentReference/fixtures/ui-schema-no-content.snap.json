@@ -2,57 +2,36 @@
     "label": "Onbekend",
     "children": [
         {
-            "label": "ihe_mhd_minimal_document_reference.group_general_information",
+            "label": "Algemeen",
             "children": [
                 {
-                    "label": "ihe_mhd_minimal_document_reference.indexed",
-                    "type": "SINGLE_VALUE",
-                    "display": "2019-06-10T11:13:21Z"
-                },
-                {
-                    "label": "ihe_mhd_minimal_document_reference.created",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "ihe_mhd_minimal_document_reference.author",
-                    "type": "REFERENCE_VALUE",
-                    "display": "De Hoed",
-                    "reference": "#p1"
-                },
-                {
-                    "label": "ihe_mhd_minimal_document_reference.subject",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
-                    "label": "ihe_mhd_minimal_document_reference.master_identifier",
+                    "label": "Gecreëerd",
+                    "type": "SINGLE_VALUE",
+                    "display": "10 juni 2019 om 13:13:21 GMT+2"
+                },
+                {
+                    "label": "Identifier",
                     "type": "SINGLE_VALUE",
                     "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
                 },
                 {
-                    "label": "ihe_mhd_minimal_document_reference.status",
+                    "label": "Status",
                     "type": "SINGLE_VALUE",
                     "display": "current"
                 },
                 {
-                    "label": "ihe_mhd_minimal_document_reference.security_label",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "ihe_mhd_minimal_document_reference.content.attachment.content_type",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Beveiligingslabel",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "ihe_mhd_minimal_document_reference.content.attachment.language",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "ihe_mhd_minimal_document_reference.type",
+                    "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "ontslagbrief (11071000146104 in code systeem http://snomed.info/sct)"
@@ -61,17 +40,24 @@
             ]
         },
         {
-            "label": "ihe_mhd_minimal_document_reference.document",
+            "label": "Opgesteld door",
             "children": [
                 {
-                    "label": "ihe_mhd_minimal_document_reference.content.attachment.url",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "De Hoed"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Inhoud",
+            "children": [
                 {
-                    "label": "ihe_mhd_minimal_document_reference.content.attachment.date_time",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Inhoud",
+                    "display": "Niet bekend"
                 }
             ]
         }
