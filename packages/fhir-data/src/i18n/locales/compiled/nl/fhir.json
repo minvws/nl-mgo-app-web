@@ -90,10 +90,30 @@
             "value": "Onbekend"
         }
     ],
+    "format.code_in_system": [
+        {
+            "type": 1,
+            "value": "code"
+        },
+        {
+            "type": 0,
+            "value": " in code systeem "
+        },
+        {
+            "type": 1,
+            "value": "system"
+        }
+    ],
     "schema.empty_entry_display": [
         {
             "type": 0,
             "value": "Niet bekend"
+        }
+    ],
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": [
+        {
+            "type": 0,
+            "value": "G-Standaard Toedieningswegen (tabel 7)"
         }
     ],
     "zib_medication_use.repeat_period_cyclical_schedule": [

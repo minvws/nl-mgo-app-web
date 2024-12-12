@@ -51,6 +51,7 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
             {
                 label: formatMessage(`fhir.group_general_info`),
                 children: [
+                    hcimMedicationUse2.ProductUsed,
                     hcimMedicationUse2.MedicationUseDateTime,
                     ...hcimMedicationUse2.PeriodOfUsePeriod,
                     hcimMedicationUse2.PeriodOfUseDuration,
@@ -58,14 +59,11 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
                     hcimMedicationUse2.ReasonForUse,
                     hcimMedicationUse2.AsAgreedIndicator,
                     hcimMedicationUse2.UseIndicator,
-                    hcimMedicationUse2.Comment,
-
-                    hcimMedicationUse2.ProductUsed,
                     hcimMedicationUse2.MedicationUseStopType,
                     hcimMedicationUse2.ReasonForChangeOrDiscontinuationOfUse,
                     hcimInstructionsForUse.RepeatPeriodCyclicalSchedule,
-
                     ui.identifier(`${i18n}.medication_treatment`, resource.medicationTreatment),
+                    hcimMedicationUse2.Comment,
                 ],
             },
             ...hcimInstructionsForUse.InstructionsForUse.flat(),

@@ -1,43 +1,68 @@
 [
     {
-        "label": "intl(zib_administration_schedule)",
+        "label": "Gebruiksinstructie",
         "children": [
             {
-                "label": "intl(zib_administration_schedule.repeat.frequency)",
-                "type": "SINGLE_VALUE",
-                "display": "1"
-            },
-            {
-                "label": "intl(zib_administration_schedule.repeat.period)",
-                "display": "1 d",
-                "type": "SINGLE_VALUE"
-            }
-        ]
-    },
-    {
-        "label": "intl(zib_instructions_for_use)",
-        "children": [
-            {
-                "label": "intl(zib_instructions_for_use.text)",
+                "label": "Omschrijving",
                 "type": "SINGLE_VALUE",
                 "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
             },
             {
-                "label": "intl(zib_instructions_for_use.route)",
+                "label": "Toedieningsweg",
                 "type": "MULTIPLE_VALUES",
                 "display": [
-                    "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                    "rectaal (12 in code systeem G-Standaard Toedieningswegen (tabel 7))"
                 ]
             },
             {
-                "label": "intl(zib_instructions_for_use.additional_instruction)",
+                "label": "Aanvullende instructie",
                 "type": "MULTIPLE_VALUES",
                 "display": []
             },
             {
-                "label": "intl(zib_instructions_for_use.sequence)",
+                "label": "Volgnummer",
                 "type": "SINGLE_VALUE",
                 "display": "1"
+            }
+        ]
+    },
+    {
+        "label": "Toedieningsschema",
+        "children": [
+            {
+                "label": "Toedieninsgduur",
+                "display": null,
+                "type": "SINGLE_VALUE"
+            },
+            {
+                "label": "Frequentie",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            },
+            {
+                "label": "Maximum waarde",
+                "type": "SINGLE_VALUE",
+                "display": null
+            },
+            {
+                "label": "Interval",
+                "display": "1 d",
+                "type": "SINGLE_VALUE"
+            },
+            {
+                "label": "Weekdagen",
+                "type": "SINGLE_VALUE",
+                "display": null
+            },
+            {
+                "label": "Toedientijd",
+                "type": "SINGLE_VALUE",
+                "display": null
+            },
+            {
+                "label": "Dagdeel",
+                "type": "SINGLE_VALUE",
+                "display": null
             }
         ]
     }

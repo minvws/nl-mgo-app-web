@@ -1,8 +1,7 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
-import { format } from '../../format';
-import * as general from './coding';
+import { coding, codingDisplay } from './coding';
 
 test('coding', () => {
     const label = faker.custom.messageId();
@@ -12,11 +11,11 @@ test('coding', () => {
         system: faker.internet.url(),
         display: faker.lorem.sentence(),
     };
-    const result = general.coding(faker.custom.uiContext())(label, mgoCoding, options);
+    const result = coding(faker.custom.uiContext())(label, mgoCoding, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
-        display: `${mgoCoding.display} (${format.codeWithSystem(mgoCoding.code, mgoCoding.system)})`,
+        display: `${mgoCoding.display} (intl(format.code_in_system))`,
         ...options,
     });
 });
@@ -24,11 +23,39 @@ test('coding', () => {
 test('coding defaults to empty values', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
-    const result = general.coding(faker.custom.uiContext())(label, undefined, options);
+    const result = coding(faker.custom.uiContext())(label, undefined, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: undefined,
         ...options,
     });
+});
+
+test.each<[MgoCoding, string | undefined]>([
+    [{}, undefined],
+    [{ code: 'code' }, '(code)'],
+    [{ code: 'code', system: 'system' }, '(intl(format.code_in_system - code / system))'],
+    [
+        { code: 'code', system: 'known-system' },
+        '(intl(format.code_in_system - code / intl(system.known-system)))',
+    ],
+    [
+        { display: 'display', code: 'code', system: 'system' },
+        'display (intl(format.code_in_system - code / system))',
+    ],
+    [{ display: 'display', system: 'system' }, 'display'],
+])('formats mgo coding for %j', (mgoCoding, expected) => {
+    const context = faker.custom.uiContext();
+    vi.spyOn(context, 'hasMessage').mockImplementation((id) => id === 'system.known-system');
+    vi.spyOn(context, 'formatMessage').mockImplementation((id, values) => {
+        const anyValues = values as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+        if (id === 'format.code_in_system') {
+            return `intl(${id} - ${anyValues.code} / ${anyValues.system})`;
+        }
+        return `intl(${id})`;
+    });
+
+    const display = codingDisplay(context);
+    expect(display(mgoCoding)).toEqual(expected);
 });

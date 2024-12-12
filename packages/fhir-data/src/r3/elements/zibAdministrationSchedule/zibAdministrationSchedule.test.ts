@@ -12,13 +12,7 @@ test('zibInstructionsForUse returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const zibData = zibAdministrationSchedule.parse(inputFhirData as Timing);
-    const schema = uiSchemaGroup(
-        zibData,
-        testUiSchemaContext({
-            useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
+    const schema = uiSchemaGroup(zibData, testUiSchemaContext());
     expectJson(schema).toMatchFileSnapshot('./fixtures/ui-schema-group.snap.json');
 });
 

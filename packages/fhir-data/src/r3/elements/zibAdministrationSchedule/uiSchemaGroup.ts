@@ -1,8 +1,7 @@
-import { dropEmptyEntries } from '../../../ui';
-import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../../../ui/types';
+import { type UiSchemaGroupFunction } from '../../../ui/types';
 import { type ZibAdministrationSchedule } from './zibAdministrationSchedule';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule, UiSchemaGroup[]> = (
+export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule> = (
     resource,
     { ui, formatMessage }
 ) => {
@@ -31,22 +30,17 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule, UiS
         TimeOfDay: ui.string(`${i18n}.repeat.when`, repeat?.when),
     };
 
-    return dropEmptyEntries([
-        {
-            label: formatMessage(`${i18n}.repeat.bounds`),
-            children: hcimInstructionsForUse.DoseDuration,
-        },
-        {
-            label: formatMessage(i18n),
-            children: [
-                hcimInstructionsForUse.DurationOfAdministration,
-                hcimInstructionsForUse.Frequency,
-                hcimInstructionsForUse.FrequencyMax,
-                hcimInstructionsForUse.FrequencyOrInterval,
-                hcimInstructionsForUse.WeekDay,
-                hcimInstructionsForUse.AdministrationTime,
-                hcimInstructionsForUse.TimeOfDay,
-            ],
-        },
-    ]);
+    return {
+        label: formatMessage(i18n),
+        children: [
+            ...hcimInstructionsForUse.DoseDuration,
+            hcimInstructionsForUse.DurationOfAdministration,
+            hcimInstructionsForUse.Frequency,
+            hcimInstructionsForUse.FrequencyMax,
+            hcimInstructionsForUse.FrequencyOrInterval,
+            hcimInstructionsForUse.WeekDay,
+            hcimInstructionsForUse.AdministrationTime,
+            hcimInstructionsForUse.TimeOfDay,
+        ],
+    };
 };

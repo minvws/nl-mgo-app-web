@@ -1,15 +1,43 @@
-[
-    {
-        "label": "intl(zib_administration_schedule)",
-        "children": [
-            {
-                "label": "intl(zib_administration_schedule.repeat.time_of_day)",
-                "type": "MULTIPLE_VALUES",
-                "display": [
-                    "08:00:00",
-                    "18:00:00"
-                ]
-            }
-        ]
-    }
-]
+{
+    "label": "Toedieningsschema",
+    "children": [
+        {
+            "label": "Toedieninsgduur",
+            "display": null,
+            "type": "SINGLE_VALUE"
+        },
+        {
+            "label": "Frequentie",
+            "type": "SINGLE_VALUE",
+            "display": null
+        },
+        {
+            "label": "Maximum waarde",
+            "type": "SINGLE_VALUE",
+            "display": null
+        },
+        {
+            "label": "Interval",
+            "display": null,
+            "type": "SINGLE_VALUE"
+        },
+        {
+            "label": "Weekdagen",
+            "type": "SINGLE_VALUE",
+            "display": null
+        },
+        {
+            "label": "Toedientijd",
+            "type": "MULTIPLE_VALUES",
+            "display": [
+                "08:00:00",
+                "18:00:00"
+            ]
+        },
+        {
+            "label": "Dagdeel",
+            "type": "SINGLE_VALUE",
+            "display": null
+        }
+    ]
+}

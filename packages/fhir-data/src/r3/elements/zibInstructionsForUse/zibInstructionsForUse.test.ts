@@ -13,13 +13,7 @@ test('zibInstructionsForUse returns the expected output', () => {
 
 test('uiSchema returns the expected output', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData as Dosage);
-    const zibMedicationUseUiSchema = uiSchemaGroup(
-        zibData,
-        testUiSchemaContext({
-            useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
+    const zibMedicationUseUiSchema = uiSchemaGroup(zibData, testUiSchemaContext());
     expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/ui-schema-group.snap.json'
     );

@@ -81,21 +81,6 @@
             ]
         },
         {
-            "label": "Toedieningsschema",
-            "children": [
-                {
-                    "label": "Frequentie",
-                    "type": "SINGLE_VALUE",
-                    "display": "1"
-                },
-                {
-                    "label": "Interval",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
-                }
-            ]
-        },
-        {
             "label": "Gebruiksinstructie",
             "children": [
                 {
@@ -107,7 +92,7 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                        "rectaal (12 in code systeem G-Standaard Toedieningswegen (tabel 7))"
                     ]
                 },
                 {
@@ -119,6 +104,46 @@
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
+                }
+            ]
+        },
+        {
+            "label": "Toedieningsschema",
+            "children": [
+                {
+                    "label": "Toedieninsgduur",
+                    "display": null,
+                    "type": "SINGLE_VALUE"
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Interval",
+                    "display": "1 d",
+                    "type": "SINGLE_VALUE"
+                },
+                {
+                    "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
+                    "display": null
                 }
             ]
         }

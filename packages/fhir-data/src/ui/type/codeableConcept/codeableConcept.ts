@@ -1,7 +1,7 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { type Nullable } from '../../../types/Nullable';
 import { isNonNullish } from '../../../utils';
 import {
+    type FormatDisplayFunction,
     type MultipleGroupedValues,
     type MultipleValues,
     type UiFunction,
@@ -9,32 +9,34 @@ import {
 } from '../../types';
 import { codingDisplay } from '../coding/coding';
 
-function codeableDisplay(value: Nullable<MgoCodeableConcept>) {
-    if (value?.text?.length) {
-        return [value.text];
-    }
+const codeableDisplay: WithUiContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
+    (context) => (value) => {
+        if (value?.text?.length) {
+            return [value.text];
+        }
 
-    return value?.coding.map(codingDisplay).filter(isNonNullish) ?? [];
-}
+        const coding = codingDisplay(context);
+        return value?.coding.map(coding).filter(isNonNullish) ?? [];
+    };
 
 export const codeableConcept: WithUiContext<
     UiFunction<MgoCodeableConcept | MgoCodeableConcept[], MultipleValues | MultipleGroupedValues>
-> =
-    ({ intl }) =>
-    (label, value, options) => {
-        if (Array.isArray(value)) {
-            return {
-                label: intl.formatMessage({ id: label }),
-                type: 'MULTIPLE_GROUPED_VALUES',
-                display: value.map(codeableDisplay),
-                ...options,
-            };
-        }
-
+> = (context) => (label, value, options) => {
+    const { formatMessage } = context;
+    const display = codeableDisplay(context);
+    if (Array.isArray(value)) {
         return {
-            label: intl.formatMessage({ id: label }),
-            type: 'MULTIPLE_VALUES',
-            display: codeableDisplay(value),
+            label: formatMessage(label),
+            type: 'MULTIPLE_GROUPED_VALUES',
+            display: value.map(display),
             ...options,
         };
+    }
+
+    return {
+        label: formatMessage(label),
+        type: 'MULTIPLE_VALUES',
+        display: display(value),
+        ...options,
     };
+};

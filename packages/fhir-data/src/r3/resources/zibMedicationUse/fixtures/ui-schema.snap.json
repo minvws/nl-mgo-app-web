@@ -5,6 +5,12 @@
             "label": "Algemeen",
             "children": [
                 {
+                    "label": "Gebruiksproduct",
+                    "type": "REFERENCE_VALUE",
+                    "display": "PARACETAMOL TABLET 500MG",
+                    "reference": "Medication/zib-Product-02"
+                },
+                {
                     "label": "Registratiedatum",
                     "type": "SINGLE_VALUE",
                     "display": "21 juli 2020"
@@ -45,17 +51,6 @@
                     "display": "y"
                 },
                 {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toelichting",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Gebruiksproduct",
-                    "type": "REFERENCE_VALUE",
-                    "display": "PARACETAMOL TABLET 500MG",
-                    "reference": "Medication/zib-Product-02"
-                },
-                {
                     "label": "Medicatie gebruik stop type",
                     "type": "SINGLE_VALUE",
                     "display": "completed"
@@ -74,21 +69,11 @@
                     "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
                     "display": "#MB_01i1"
-                }
-            ]
-        },
-        {
-            "label": "Toedieningsschema",
-            "children": [
-                {
-                    "label": "Maximum waarde",
-                    "type": "SINGLE_VALUE",
-                    "display": "4"
                 },
                 {
-                    "label": "Interval",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
+                    "type": "SINGLE_VALUE",
+                    "label": "Toelichting",
+                    "display": "Niet bekend"
                 }
             ]
         },
@@ -104,7 +89,7 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ORAAL (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                        "ORAAL (9 in code systeem G-Standaard Toedieningswegen (tabel 7))"
                     ]
                 },
                 {
@@ -116,6 +101,46 @@
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
+                }
+            ]
+        },
+        {
+            "label": "Toedieningsschema",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Toedieninsgduur",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Frequentie",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "4"
+                },
+                {
+                    "label": "Interval",
+                    "display": "1 d",
+                    "type": "SINGLE_VALUE"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Weekdagen",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Toedientijd",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Dagdeel",
+                    "display": "Niet bekend"
                 }
             ]
         }

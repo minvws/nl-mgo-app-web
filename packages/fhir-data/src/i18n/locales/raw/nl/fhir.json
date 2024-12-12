@@ -11,5 +11,7 @@
     "fhir.boolean.true": "Ja",
     "fhir.boolean.false": "Nee",
     "fhir.unknown": "Onbekend",
-    "schema.empty_entry_display": "Niet bekend"
+    "schema.empty_entry_display": "Niet bekend",
+    "format.code_in_system": "{code} in code systeem {system}",
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)"
 }

@@ -32,7 +32,6 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchem
     };
 
     return [
-        ...hcimInstructionsForUse.AdministeringSchedule,
         {
             label: formatMessage(i18n),
             children: [
@@ -43,5 +42,6 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchem
                 hcimInstructionsForUse.SequenceNumber,
             ],
         },
+        hcimInstructionsForUse.AdministeringSchedule,
     ];
 };

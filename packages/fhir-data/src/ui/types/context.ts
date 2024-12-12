@@ -23,6 +23,10 @@ export type UiHelperContext = {
 
 export type WithUiContext<T> = (context: UiHelperContext) => T;
 
+export type FormatDisplayFunction<Input, Output extends string[] | string | undefined = string> = (
+    value: Nullable<Lossless<Input>>
+) => Output;
+
 export type UiFunction<Input, Output extends UiEntry | UiEntry[], Label = MessagesIds> = (
     label: Label,
     value: Nullable<Lossless<Input>>,
