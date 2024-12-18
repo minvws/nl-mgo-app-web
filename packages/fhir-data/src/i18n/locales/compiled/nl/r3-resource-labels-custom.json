@@ -125,6 +125,12 @@
             "value": "Referentie type"
         }
     ],
+    "r3.zib_medication_use.effective_period.duration": [
+        {
+            "type": 0,
+            "value": "Tijdsduur"
+        }
+    ],
     "r3.zib_medication_use.repeat_period_cyclical_schedule": [
         {
             "type": 0,

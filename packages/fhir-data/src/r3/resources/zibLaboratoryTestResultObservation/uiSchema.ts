@@ -43,8 +43,12 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
         Performer: ui.reference(`${i18n}.performer`, resource.performer),
     };
 
+    const label =
+        resource.resultType?.at(0)?.coding.at(0)?.display ??
+        resource.laboratoryTestResultCode?.at(0)?.coding.at(0)?.display;
+
     return setEmptyEntries({
-        label: resource.resultType?.at(0)?.coding.at(0)?.display ?? i18n,
+        label: label ?? formatMessage(i18n),
         children: [
             {
                 label: formatMessage(i18n),

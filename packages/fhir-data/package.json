@@ -21,7 +21,7 @@
         "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework kotlinx --out ./dist/schema/kotlin/Types.kt",
         "download:definitions": "./bin/download-fhir-definitions.sh",
         "extract:labels": "tsx ./resource-labels/index.ts",
-        "messages:compile": "pnpm messages:compile:nl",
+        "messages:compile": "pnpm messages:compile:nl && pnpm messages:format",
         "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
         "messages:format": "prettier --write ./src/i18n/locales"
     },

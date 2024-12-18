@@ -1,5 +1,6 @@
 {
     "r3.zib_medication_use.repeat_period_cyclical_schedule": "Herhaalperiode cyclisch schema",
+    "r3.zib_medication_use.effective_period.duration": "Tijdsduur",
     "r3.zib_laboratory_test_result_observation.general_test_information": "Algemene testinformatie",
     "r3.zib_laboratory_test_result_observation.lab_test": "Laboratoriumtest",
     "r3.zib_laboratory_test_result_observation.interpretation": "Interpretatie",

@@ -26,7 +26,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Tijds duur",
+                    "label": "Tijdsduur",
                     "type": "SINGLE_VALUE",
                     "display": "30 dagen"
                 },
