@@ -3,7 +3,7 @@ import { type Patient } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import { Locale } from '../../i18n';
 import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
-import { nlCorePatientR4 } from '../../r4/resources/nlCorePatient/nlCorePatient';
+import { r4NlCorePatient } from '../../r4/resources/nlCorePatient/nlCorePatient';
 import { getUiSchema } from './getUiSchema';
 
 test('returns the expected output for a R3 resource', () => {
@@ -25,12 +25,12 @@ test('returns the expected output for a R3 resource', () => {
 });
 
 test('returns the expected output for a R4 resource', () => {
-    const mgoResource = nlCorePatientR4.parse({
+    const mgoResource = r4NlCorePatient.parse({
         meta: {
-            profile: [nlCorePatientR4.profile],
+            profile: [r4NlCorePatient.profile],
         },
     } as Patient);
-    const expectedResult = nlCorePatientR4.uiSchema(
+    const expectedResult = r4NlCorePatient.uiSchema(
         mgoResource,
         testUiSchemaContext({
             ignoreMissingTranslations: true,

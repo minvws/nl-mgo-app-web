@@ -7,7 +7,7 @@ import { type ZibAlert } from './zibAlert';
  */
 export const uiSchema: UiSchemaFunction<ZibAlert> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_alert';
+    const i18n = 'r3.zib_alert';
 
     return {
         label: i18n,

@@ -7,7 +7,7 @@ import { type ZibBodyWeight } from './zibBodyWeight';
  */
 export const uiSchema: UiSchemaFunction<ZibBodyWeight> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_body_weight';
+    const profile = 'r3.zib_body_weight';
 
     return {
         label: resource.effectiveDateTime,

@@ -7,7 +7,7 @@ import { type ZibMedicationUse } from './zibMedicationUse';
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
 export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
-    const i18n = 'zib_medication_use';
+    const i18n = 'r3.zib_medication_use';
     const { ui, formatMessage, setEmptyEntries } = context;
 
     /**

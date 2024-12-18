@@ -8,7 +8,7 @@ import { type ZibAdvanceDirective } from './zibAdvanceDirective';
  */
 export const uiSchema: UiSchemaFunction<ZibAdvanceDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_advance_directive';
+    const profile = 'r3.zib_advance_directive';
 
     const attachment = attachmentUiSchema(resource.source.attachment, context);
 

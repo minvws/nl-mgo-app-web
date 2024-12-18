@@ -2,7 +2,7 @@
     "label": "Revision status",
     "children": [
         {
-            "label": "zib_laboratory_test_result_specimen_isolate",
+            "label": "r3.zib_laboratory_test_result_specimen_isolate",
             "children": [
                 {
                     "label": "Monsternummer",
@@ -31,12 +31,12 @@
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.quantity",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.collected",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.collected",
                     "type": "SINGLE_VALUE",
                     "display": "1 maart 2020 om 22:03:00 GMT+1"
                 },
@@ -51,17 +51,17 @@
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.laterality",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.morphology",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

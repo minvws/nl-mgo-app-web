@@ -2,7 +2,7 @@
     "label": "2013-02-01T08:53:00+01:00",
     "children": [
         {
-            "label": "zib_blood_pressure",
+            "label": "r3.zib_blood_pressure",
             "children": [
                 {
                     "label": "Meetmethode",
@@ -12,31 +12,31 @@
                     ]
                 },
                 {
-                    "label": "zib_blood_pressure.cuff_type_loinc",
+                    "label": "r3.zib_blood_pressure.cuff_type_loinc",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
                     ]
                 },
                 {
-                    "label": "zib_blood_pressure.cuff_type_snomed",
+                    "label": "r3.zib_blood_pressure.cuff_type_snomed",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_blood_pressure.bodySite",
+                    "label": "r3.zib_blood_pressure.bodySite",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Left upper arm structure (368208006 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_blood_pressure.diastolic_endpoint",
+                    "label": "r3.zib_blood_pressure.diastolic_endpoint",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_blood_pressure.systolic_bp",
+                    "label": "r3.zib_blood_pressure.systolic_bp",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmHg"
                 },
@@ -46,12 +46,12 @@
                     "display": "108 mmHg"
                 },
                 {
-                    "label": "zib_blood_pressure.average_blood_pressure_loinc",
+                    "label": "r3.zib_blood_pressure.average_blood_pressure_loinc",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_blood_pressure.average_blood_pressure_snomed",
+                    "label": "r3.zib_blood_pressure.average_blood_pressure_snomed",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -66,12 +66,12 @@
                     "display": null
                 },
                 {
-                    "label": "zib_blood_pressure.position_snomed",
+                    "label": "r3.zib_blood_pressure.position_snomed",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_blood_pressure.position_loinc",
+                    "label": "r3.zib_blood_pressure.position_loinc",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Sitting position (33586001 in code systeem http://snomed.info/sct)"

@@ -2,10 +2,10 @@
     "label": "Johan XXX_Helleman",
     "children": [
         {
-            "label": "nl_core_patient.group_details",
+            "label": "r3.nl_core_patient.group_details",
             "children": [
                 {
-                    "label": "nl_core_patient.active",
+                    "label": "r3.nl_core_patient.active",
                     "type": "SINGLE_VALUE",
                     "display": "Ja"
                 },
@@ -20,7 +20,7 @@
                     "display": "Nee"
                 },
                 {
-                    "label": "nl_core_patient.deceased_date_time",
+                    "label": "r3.nl_core_patient.deceased_date_time",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -45,7 +45,7 @@
                     ]
                 },
                 {
-                    "label": "nl_core_patient.managing_organization",
+                    "label": "r3.nl_core_patient.managing_organization",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -63,27 +63,27 @@
                     "display": "Nee"
                 },
                 {
-                    "label": "nl_core_patient.multiple_birth_integer",
+                    "label": "r3.nl_core_patient.multiple_birth_integer",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
         },
         {
-            "label": "nl_core_address",
+            "label": "r3.nl_core_address",
             "children": [
                 {
-                    "label": "nl_core_address.use",
+                    "label": "r3.nl_core_address.use",
                     "type": "SINGLE_VALUE",
                     "display": "home"
                 },
                 {
-                    "label": "nl_core_address.type",
+                    "label": "r3.nl_core_address.type",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.text",
+                    "label": "r3.nl_core_address.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -103,7 +103,7 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.postalCode",
+                    "label": "r3.nl_core_address.postalCode",
                     "type": "SINGLE_VALUE",
                     "display": "9999XA"
                 },
@@ -125,7 +125,7 @@
             ]
         },
         {
-            "label": "nl_core_patient.contact",
+            "label": "r3.nl_core_patient.contact",
             "children": [
                 {
                     "label": "Achternaam",
@@ -150,42 +150,42 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.prefix",
+                    "label": "r3.nl_core_humanname.prefix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.suffix",
+                    "label": "r3.nl_core_humanname.suffix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.use",
+                    "label": "r3.nl_core_humanname.use",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.text",
+                    "label": "r3.nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": "Jannie van Putten XXX_Helleman"
                 },
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "phone"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "+31611234567"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -200,22 +200,22 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "email"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "info@nictiz.nl"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -230,17 +230,17 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.use",
+                    "label": "r3.nl_core_address.use",
                     "type": "SINGLE_VALUE",
                     "display": "home"
                 },
                 {
-                    "label": "nl_core_address.type",
+                    "label": "r3.nl_core_address.type",
                     "type": "SINGLE_VALUE",
                     "display": "physical"
                 },
                 {
-                    "label": "nl_core_address.text",
+                    "label": "r3.nl_core_address.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -260,7 +260,7 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.postalCode",
+                    "label": "r3.nl_core_address.postalCode",
                     "type": "SINGLE_VALUE",
                     "display": "9999XA"
                 },
@@ -280,12 +280,12 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.contact.gender",
+                    "label": "r3.nl_core_patient.contact.gender",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_patient.contact.organization",
+                    "label": "r3.nl_core_patient.contact.organization",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -303,7 +303,7 @@
             ]
         },
         {
-            "label": "nl_core_humanname",
+            "label": "r3.nl_core_humanname",
             "children": [
                 {
                     "label": "Achternaam",
@@ -328,47 +328,47 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.prefix",
+                    "label": "r3.nl_core_humanname.prefix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.suffix",
+                    "label": "r3.nl_core_humanname.suffix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.use",
+                    "label": "r3.nl_core_humanname.use",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.text",
+                    "label": "r3.nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": "Johan XXX_Helleman"
                 }
             ]
         },
         {
-            "label": "nl_core_contact_point",
+            "label": "r3.nl_core_contact_point",
             "children": [
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "phone"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "06-12345645"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "home"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -385,25 +385,25 @@
             ]
         },
         {
-            "label": "nl_core_contact_point",
+            "label": "r3.nl_core_contact_point",
             "children": [
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "email"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "XXX_Helleman@hotmail.com"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "home"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

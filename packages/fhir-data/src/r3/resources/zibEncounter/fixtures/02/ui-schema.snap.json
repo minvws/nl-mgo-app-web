@@ -2,10 +2,10 @@
     "label": "Universitair Medisch Centrum Groningen",
     "children": [
         {
-            "label": "Encounter",
+            "label": "r3.Encounter",
             "children": [
                 {
-                    "label": "Encounter.class",
+                    "label": "r3.Encounter.class",
                     "type": "SINGLE_VALUE",
                     "display": "emergency (EMER in code systeem http://hl7.org/fhir/v3/ActCode)"
                 },
@@ -16,7 +16,7 @@
                     "reference": "Practitioner/nl-core-practitioner-01"
                 },
                 {
-                    "label": "Encounter.serviceProvider",
+                    "label": "r3.Encounter.serviceProvider",
                     "type": "REFERENCE_VALUE",
                     "display": "Universitair Medisch Centrum Groningen",
                     "reference": "Organization/nl-core-organization-02"
@@ -38,7 +38,7 @@
                     "reference": "Condition/zib-problem-05"
                 },
                 {
-                    "label": "Encounter.reason",
+                    "label": "r3.Encounter.reason",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

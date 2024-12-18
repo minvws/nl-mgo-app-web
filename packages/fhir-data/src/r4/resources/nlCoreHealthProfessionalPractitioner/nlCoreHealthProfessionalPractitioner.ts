@@ -32,12 +32,12 @@ function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
     };
 }
 
-export type NlCoreHealthProfessionalPractitioner = ReturnType<
+export type R4NlCoreHealthProfessionalPractitioner = ReturnType<
     typeof parseNlCoreHealthProfessionalPractitioner
 >;
 
-export const nlCoreHealthProfessionalPractitioner = {
+export const r4NlCoreHealthProfessionalPractitioner = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitioner,
     uiSchema,
-} satisfies ResourceConfigR4<Practitioner, NlCoreHealthProfessionalPractitioner>;
+} satisfies ResourceConfigR4<Practitioner, R4NlCoreHealthProfessionalPractitioner>;

@@ -2,10 +2,10 @@
     "label": "Maatschap Vaste Huisarts",
     "children": [
         {
-            "label": "nl_core_organization.group_details",
+            "label": "r3.nl_core_organization.group_details",
             "children": [
                 {
-                    "label": "nl_core_organization.identifier",
+                    "label": "r3.nl_core_organization.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "162abc65-8fdf-11ec-1585-020000000000"

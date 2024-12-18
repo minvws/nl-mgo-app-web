@@ -2,10 +2,10 @@
     "label": "172613a3-8fdf-11ec-2630-020000000000",
     "children": [
         {
-            "label": "nl_core_practitionerrole.group_details",
+            "label": "r3.nl_core_practitionerrole.group_details",
             "children": [
                 {
-                    "label": "nl_core_practitionerrole.identifier",
+                    "label": "r3.nl_core_practitionerrole.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "172613a3-8fdf-11ec-2630-020000000000"

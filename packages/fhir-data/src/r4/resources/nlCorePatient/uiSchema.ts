@@ -2,13 +2,13 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
-import { type NlCorePatientR4 } from './nlCorePatient';
+import { type R4NlCorePatient } from './nlCorePatient';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-export const uiSchema: UiSchemaFunction<NlCorePatientR4> = (resource, context) => {
-    const i18n = 'nl_core_patient';
+export const uiSchema: UiSchemaFunction<R4NlCorePatient> = (resource, context) => {
+    const i18n = 'r4.nl_core_patient';
     const ui = context.ui as NonStrictUi;
 
     const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);

@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/
 import { type Communication } from './communication';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Communication> = (resource, context) => {
-    const i18n = 'nl_core_patient.communication';
+    const i18n = 'r3.nl_core_patient.communication';
     const ui = context.ui as NonStrictUi;
 
     return {

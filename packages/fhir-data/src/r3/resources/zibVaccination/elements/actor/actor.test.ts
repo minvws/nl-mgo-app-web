@@ -29,7 +29,7 @@ testSet(
                 ignoreMissingTranslations: true,
             })
         );
-        expect(schema.label).toBe('Immunization.practitioner.actor');
+        expect(schema.label).toBe('r3.immunization.practitioner.actor');
     },
     false
 );

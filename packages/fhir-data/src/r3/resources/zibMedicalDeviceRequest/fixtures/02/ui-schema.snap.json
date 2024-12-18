@@ -2,7 +2,7 @@
     "label": "2012-03-13",
     "children": [
         {
-            "label": "zib_medical_device_request",
+            "label": "r3.zib_medical_device_request",
             "children": [
                 {
                     "label": "Order status",
@@ -20,13 +20,13 @@
                     "display": null
                 },
                 {
-                    "label": "zib_medical_device_request.code",
+                    "label": "r3.zib_medical_device_request.code",
                     "type": "REFERENCE_VALUE",
                     "display": "Gehoorapparaat",
                     "reference": "Device/zib-MedicalDeviceProduct-03"
                 },
                 {
-                    "label": "zib_medical_device_request.perfomer",
+                    "label": "r3.zib_medical_device_request.perfomer",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
                     "reference": "Organization/nl-core-organization-02"

@@ -8,7 +8,7 @@ import { type ZibPayer } from './zibPayer';
  */
 export const uiSchema: UiSchemaFunction<ZibPayer> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_payer';
+    const i18n = 'r3.zib_payer';
 
     return {
         label: resource.identifier?.at(0)?.value,

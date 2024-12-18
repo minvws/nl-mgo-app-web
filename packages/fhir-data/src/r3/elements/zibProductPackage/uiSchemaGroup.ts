@@ -3,7 +3,7 @@ import { map } from '../../../utils';
 import { type ZibProductPackage } from './zibProductPackage';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<ZibProductPackage> = (resource, context) => {
-    const i18n = 'zib_product_package';
+    const i18n = 'r3.zib_product_package';
     const ui = context.ui as NonStrictUi;
 
     type ProductContent = NonNullable<ZibProductPackage['content']>[0];

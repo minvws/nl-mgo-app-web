@@ -5,6 +5,6 @@ export const uiSchemaGroup: UiSchemaGroupFunction<Performer> = (resource, contex
     const ui = context.ui;
     return {
         label: 'zib_procedure.performer',
-        children: [ui.reference(`zib_procedure.performer`, resource.actor)],
+        children: [ui.reference(`r3.zib_procedure.performer`, resource.actor)],
     };
 };

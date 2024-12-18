@@ -2,7 +2,7 @@
     "label": "PRIMPERAN ZETPIL 20MG",
     "children": [
         {
-            "label": "zib_administration_agreement.group_general_information",
+            "label": "r3.zib_administration_agreement.group_general_information",
             "children": [
                 {
                     "label": "Toedieningsafspraak datum tijd",
@@ -32,17 +32,17 @@
                     "display": "#MB_01h"
                 },
                 {
-                    "label": "zib_administration_agreement.stop_type",
+                    "label": "r3.zib_administration_agreement.stop_type",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_administration_agreement.repeat_period_cyclical_schedule",
+                    "label": "r3.zib_administration_agreement.repeat_period_cyclical_schedule",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.identifier",
+                    "label": "r3.zib_administration_agreement.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1546339-f6753t65r",
@@ -55,19 +55,19 @@
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.category",
+                    "label": "r3.zib_administration_agreement.category",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Toedieningsafspraak"
                     ]
                 },
                 {
-                    "label": "zib_administration_agreement.quantity",
+                    "label": "r3.zib_administration_agreement.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_administration_agreement.days_supply",
+                    "label": "r3.zib_administration_agreement.days_supply",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

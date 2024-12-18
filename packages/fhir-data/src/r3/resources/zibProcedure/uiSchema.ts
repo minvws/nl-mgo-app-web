@@ -10,7 +10,7 @@ import { type ZibProcedure } from './zibProcedure';
  */
 export const uiSchema: UiSchemaFunction<ZibProcedure> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_procedure';
+    const profile = 'r3.zib_procedure';
     const focalDevices = map(resource.focalDevice, (x) => focalDeviceUiSchema(x, context), true);
     const performers = map(resource.performer, (x) => performerUiSchema(x, context), true);
 

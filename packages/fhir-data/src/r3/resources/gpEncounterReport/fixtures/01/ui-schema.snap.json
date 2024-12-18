@@ -2,38 +2,38 @@
     "label": "Contactverslag dd. 2020-03-15",
     "children": [
         {
-            "label": "EncounterReport",
+            "label": "r3.EncounterReport",
             "children": [
                 {
-                    "label": "EncounterReport.title",
+                    "label": "r3.EncounterReport.title",
                     "type": "SINGLE_VALUE",
                     "display": "Contactverslag dd. 2020-03-15"
                 },
                 {
-                    "label": "EncounterReport.status",
+                    "label": "r3.EncounterReport.status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "EncounterReport.type",
+                    "label": "r3.EncounterReport.type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Summarization of encounter note Narrative (67781-5 in code systeem http://loinc.org)"
                     ]
                 },
                 {
-                    "label": "EncounterReport.encounter",
+                    "label": "r3.EncounterReport.encounter",
                     "type": "REFERENCE_VALUE",
                     "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1",
                     "reference": "Encounter/gpdata-encounter-contact04"
                 },
                 {
-                    "label": "EncounterReport.date",
+                    "label": "r3.EncounterReport.date",
                     "type": "SINGLE_VALUE",
                     "display": "15 maart 2020"
                 },
                 {
-                    "label": "EncounterReport.author",
+                    "label": "r3.EncounterReport.author",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Dr. V. Huisarts 1"

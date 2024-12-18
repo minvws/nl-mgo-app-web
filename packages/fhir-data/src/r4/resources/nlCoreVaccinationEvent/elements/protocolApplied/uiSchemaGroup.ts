@@ -9,9 +9,9 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ProtocolApplied> = (resource, 
         label: formatMessage(profile),
         children: [
             ui.reference(`${profile}.authority`, resource.authority),
-            ui.codeableConcept(`${profile}.targetDisease`, resource.targetDisease),
-            ...ui.oneOfValueX(`${profile}.doseNumber`, resource, 'doseNumber'),
-            ...ui.oneOfValueX(`${profile}.seriesDoses`, resource, 'seriesDoses'),
+            ui.codeableConcept(`${profile}.target_disease`, resource.targetDisease),
+            ...ui.oneOfValueX(`${profile}.dose_number`, resource, 'doseNumber'),
+            ...ui.oneOfValueX(`${profile}.series_doses`, resource, 'seriesDoses'),
         ],
     };
 };

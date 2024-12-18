@@ -2,7 +2,7 @@
     "label": "2013-02-03",
     "children": [
         {
-            "label": "zib_body_weight",
+            "label": "r3.zib_body_weight",
             "children": [
                 {
                     "label": "Lichaamsgewicht",
@@ -20,7 +20,7 @@
                     "display": "3 februari 2013"
                 },
                 {
-                    "label": "zib_body_weight.clothing",
+                    "label": "r3.zib_body_weight.clothing",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Minimal dressed (MINIMAL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)"

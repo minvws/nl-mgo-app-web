@@ -11,7 +11,7 @@ import { type ZibEncounter } from './zibEncounter';
  */
 export const uiSchema: UiSchemaFunction<ZibEncounter> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'Encounter';
+    const profile = 'r3.Encounter';
     const diagnosis = map(resource.diagnosis, (x) => diagnosisUiSchema(x, context), true);
     const participants = map(
         resource.participant,

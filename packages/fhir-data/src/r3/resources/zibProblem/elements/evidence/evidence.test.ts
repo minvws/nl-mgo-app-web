@@ -25,7 +25,7 @@ testSet(
                 ignoreMissingTranslations: true,
             })
         );
-        expect(schema.label).toBe('evidence');
+        expect(schema.label).toBe('r3.evidence');
     },
     false
 );

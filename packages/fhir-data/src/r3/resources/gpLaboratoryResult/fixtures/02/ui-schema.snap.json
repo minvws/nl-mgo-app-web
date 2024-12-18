@@ -1,5 +1,5 @@
 {
-    "label": "zib_laboratory_test_result_observation",
+    "label": "r3.zib_laboratory_test_result_observation",
     "children": [
         {
             "label": "Laboratorium uitslag",

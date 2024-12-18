@@ -9,7 +9,7 @@ import { type NlCorePractitioner } from './nlCorePractitioner';
  */
 export const uiSchema: UiSchemaFunction<NlCorePractitioner> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'nl_core_practitioner';
+    const profile = 'r3.nl_core_practitioner';
 
     const address = map(resource.address, (x) => nlCoreAddress.uiSchemaGroup(x, context), true);
     const name = map(resource.name, (x) => nlCoreHumanname.uiSchemaGroup(x, context), true);

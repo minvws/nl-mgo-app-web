@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/
 import { type Stage } from './stage';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Stage> = (resource, context) => {
-    const i18n = 'stage';
+    const i18n = 'r3.stage';
     const ui = context.ui as NonStrictUi;
 
     return {

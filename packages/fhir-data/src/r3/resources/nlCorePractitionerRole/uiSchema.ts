@@ -9,7 +9,7 @@ import { type NlCorePractitionerRole } from './nlCorePractitionerRole';
  */
 export const uiSchema: UiSchemaFunction<NlCorePractitionerRole> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'nl_core_practitionerrole';
+    const profile = 'r3.nl_core_practitionerrole';
 
     const telecom = map(
         resource.telecom,

@@ -17,7 +17,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Naam patient",
+                    "label": "Patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
                     "reference": "Patient/nl-core-Patient-01"
@@ -57,7 +57,7 @@
             "children": [
                 {
                     "type": "SINGLE_VALUE",
-                    "label": "Aanleiding",
+                    "label": "Vaccinatie aanleiding",
                     "display": "Niet bekend"
                 },
                 {

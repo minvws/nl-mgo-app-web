@@ -4,7 +4,7 @@ import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../../../
 import { type Contact } from './contact';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Contact> = (resource, context) => {
-    const i18n = 'nl_core_patient.contact';
+    const i18n = 'r3.nl_core_patient.contact';
     const ui = context.ui as NonStrictUi;
     const telecom = map(
         resource.telecom,

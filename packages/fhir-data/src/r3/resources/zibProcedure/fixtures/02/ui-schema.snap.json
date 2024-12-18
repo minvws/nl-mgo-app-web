@@ -2,7 +2,7 @@
     "label": "Surgical reduction of fracture (procedure)",
     "children": [
         {
-            "label": "zib_procedure",
+            "label": "r3.zib_procedure",
             "children": [
                 {
                     "label": "Verrichting start datum",
@@ -20,7 +20,7 @@
                     "display": []
                 },
                 {
-                    "label": "zib_procedure.bodySite.extension:ProcedureLaterality",
+                    "label": "r3.zib_procedure.bodySite.extension:ProcedureLaterality",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
@@ -38,12 +38,12 @@
                     ]
                 },
                 {
-                    "label": "zib_procedure.procedure_method",
+                    "label": "r3.zib_procedure.procedure_method",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_procedure.location",
+                    "label": "r3.zib_procedure.location",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -55,7 +55,7 @@
                     "reference": "Organization/nl-core-organization-02"
                 },
                 {
-                    "label": "zib_procedure.subject",
+                    "label": "r3.zib_procedure.subject",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"

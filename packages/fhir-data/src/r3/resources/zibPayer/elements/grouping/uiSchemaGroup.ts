@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/
 import { type Grouping } from './grouping';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Grouping> = (resource, context) => {
-    const i18n = 'zib_payer.grouping';
+    const i18n = 'r3.zib_payer.grouping';
     const ui = context.ui as NonStrictUi;
 
     return {

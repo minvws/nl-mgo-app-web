@@ -2,7 +2,7 @@
     "label": null,
     "children": [
         {
-            "label": "nl_core_practitioner.group_details",
+            "label": "r3.nl_core_practitioner.group_details",
             "children": [
                 {
                     "label": "Zorgverlener identificatie nummer",
@@ -17,20 +17,20 @@
             ]
         },
         {
-            "label": "nl_core_address",
+            "label": "r3.nl_core_address",
             "children": [
                 {
-                    "label": "nl_core_address.use",
+                    "label": "r3.nl_core_address.use",
                     "type": "SINGLE_VALUE",
                     "display": "home"
                 },
                 {
-                    "label": "nl_core_address.type",
+                    "label": "r3.nl_core_address.type",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.text",
+                    "label": "r3.nl_core_address.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -50,7 +50,7 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_address.postalCode",
+                    "label": "r3.nl_core_address.postalCode",
                     "type": "SINGLE_VALUE",
                     "display": "1012AB"
                 },
@@ -72,7 +72,7 @@
             ]
         },
         {
-            "label": "nl_core_humanname",
+            "label": "r3.nl_core_humanname",
             "children": [
                 {
                     "label": "Achternaam",
@@ -97,47 +97,47 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.prefix",
+                    "label": "r3.nl_core_humanname.prefix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.suffix",
+                    "label": "r3.nl_core_humanname.suffix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.use",
+                    "label": "r3.nl_core_humanname.use",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.text",
+                    "label": "r3.nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
         },
         {
-            "label": "nl_core_contact_point",
+            "label": "r3.nl_core_contact_point",
             "children": [
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "phone"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "0612345990"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -154,25 +154,25 @@
             ]
         },
         {
-            "label": "nl_core_contact_point",
+            "label": "r3.nl_core_contact_point",
             "children": [
                 {
-                    "label": "nl_core_contact_point.system",
+                    "label": "r3.nl_core_contact_point.system",
                     "type": "SINGLE_VALUE",
                     "display": "email"
                 },
                 {
-                    "label": "nl_core_contact_point.value",
+                    "label": "r3.nl_core_contact_point.value",
                     "type": "SINGLE_VALUE",
                     "display": "devries@work.com"
                 },
                 {
-                    "label": "nl_core_contact_point.use",
+                    "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "nl_core_contact_point.rank",
+                    "label": "r3.nl_core_contact_point.rank",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

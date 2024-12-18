@@ -2,7 +2,7 @@
     "label": "Blood (substance)",
     "children": [
         {
-            "label": "zib_laboratory_test_result_specimen",
+            "label": "r3.zib_laboratory_test_result_specimen",
             "children": [
                 {
                     "label": "Monsternummer",
@@ -31,12 +31,12 @@
                     ]
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.quantity",
+                    "label": "r3.zib_laboratory_test_result_specimen.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.collected",
+                    "label": "r3.zib_laboratory_test_result_specimen.collected",
                     "type": "SINGLE_VALUE",
                     "display": "23 mei 2012 om 09:08:00 GMT+2"
                 },
@@ -51,17 +51,17 @@
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site",
+                    "label": "r3.zib_laboratory_test_result_specimen.body_site",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site.laterality",
+                    "label": "r3.zib_laboratory_test_result_specimen.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen.body_site.morphology",
+                    "label": "r3.zib_laboratory_test_result_specimen.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

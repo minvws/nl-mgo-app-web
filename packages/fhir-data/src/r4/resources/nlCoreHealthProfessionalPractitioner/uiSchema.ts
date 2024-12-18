@@ -8,16 +8,16 @@ import {
     nlCoreNameInformation,
 } from '../..//elements';
 import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualification/uiSchemaGroup';
-import { type NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
+import { type R4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946120
  */
-export const uiSchema: UiSchemaFunction<NlCoreHealthProfessionalPractitioner> = (
+export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitioner> = (
     resource,
     context
 ) => {
-    const profile = 'nl_core_health_professional_practitioner';
+    const profile = 'r4.nl_core_health_professional_practitioner';
     const ui = context.ui as NonStrictUi;
 
     const address = map(

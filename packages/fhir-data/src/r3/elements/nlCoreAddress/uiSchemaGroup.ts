@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types'
 import { type NlCoreAddress } from './nlCoreAddress';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreAddress> = (resource, context) => {
-    const i18n = 'nl_core_address';
+    const i18n = 'r3.nl_core_address';
     const ui = context.ui as NonStrictUi;
 
     return {

@@ -1,8 +1,8 @@
 {
-    "label": "zib_laboratory_test_result_substance",
+    "label": "r3.zib_laboratory_test_result_substance",
     "children": [
         {
-            "label": "zib_laboratory_test_result_substance",
+            "label": "r3.zib_laboratory_test_result_substance",
             "children": [
                 {
                     "label": "Microorganisme",

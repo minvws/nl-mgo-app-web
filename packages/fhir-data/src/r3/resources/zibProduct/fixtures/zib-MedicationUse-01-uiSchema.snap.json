@@ -2,10 +2,10 @@
     "label": null,
     "children": [
         {
-            "label": "zib_product.group_general_information",
+            "label": "r3.zib_product.group_general_information",
             "children": [
                 {
-                    "label": "zib_product.code",
+                    "label": "r3.zib_product.code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "PRIMPERAN ZETPIL 20MG"
@@ -19,11 +19,11 @@
             ]
         },
         {
-            "label": "zib_product.group_ingredients",
+            "label": "r3.zib_product.group_ingredients",
             "children": []
         },
         {
-            "label": "zib_product_package",
+            "label": "r3.zib_product_package",
             "children": []
         }
     ]

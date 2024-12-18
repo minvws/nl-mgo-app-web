@@ -7,7 +7,7 @@ import { type ZibMedicalDeviceRequest } from './zibMedicalDeviceRequest';
  */
 export const uiSchema: UiSchemaFunction<ZibMedicalDeviceRequest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_medical_device_request';
+    const profile = 'r3.zib_medical_device_request';
 
     return {
         label: resource.occurrence?.start,

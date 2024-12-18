@@ -13,7 +13,7 @@ import { type ZibTreatmentDirective } from './zibTreatmentDirective';
  */
 export const uiSchema: UiSchemaFunction<ZibTreatmentDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_treatment_directive';
+    const i18n = 'r3.zib_treatment_directive';
 
     const actor = map(resource.actor, (x) => actorUiSchema(x, context), true);
     const data = map(resource.data, (x) => dataUiSchema(x, context), true);

@@ -9,7 +9,7 @@ import { type ZibAdministrationAgreement } from './zibAdministrationAgreement';
  */
 export const uiSchema: UiSchemaFunction<ZibAdministrationAgreement> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_administration_agreement';
+    const i18n = 'r3.zib_administration_agreement';
     const instructionsForUse = map(
         resource.dossageInstruction,
         (x) => zibInstructionsForUseUiSchema(x, context),

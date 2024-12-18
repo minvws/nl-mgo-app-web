@@ -29,7 +29,7 @@ testSet(
                 ignoreMissingTranslations: true,
             })
         );
-        expect(schema.label).toBe('nl_core_patient.communication');
+        expect(schema.label).toBe('r3.nl_core_patient.communication');
     },
     false
 );

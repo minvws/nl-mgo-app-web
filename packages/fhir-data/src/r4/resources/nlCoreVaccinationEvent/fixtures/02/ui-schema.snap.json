@@ -17,7 +17,7 @@
                     "display": "1 milliliter"
                 },
                 {
-                    "label": "Naam patient",
+                    "label": "Patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
                     "reference": "Patient/nl-core-Patient-01"
@@ -56,7 +56,7 @@
             "label": "Extra informatie",
             "children": [
                 {
-                    "label": "Aanleiding",
+                    "label": "Vaccinatie aanleiding",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -70,7 +70,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Ziekte",
+                    "label": "Vaccinatie pathogeen",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [

@@ -5,7 +5,7 @@ import { uiSchemaGroup as dataUiSchema } from '../data/uiSchemaGroup';
 import { type Except } from './except';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Except> = (resource, context) => {
-    const i18n = 'zib_treatment_directive.except';
+    const i18n = 'r3.zib_treatment_directive.except';
     const ui = context.ui as NonStrictUi;
 
     const actor = map(resource.actor, (x) => actorUiSchema(x, context));

@@ -7,7 +7,7 @@ import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentRefe
  */
 export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
     const { ui, formatMessage, setEmptyEntries } = context;
-    const i18n = 'ihe_mhd_minimal_document_reference';
+    const i18n = 'r3.ihe_mhd_minimal_document_reference';
 
     const generalInformation = {
         MasterIdentifier: ui.identifier(`${i18n}.master_identifier`, resource.masterIdentifier),

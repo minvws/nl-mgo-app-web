@@ -50,7 +50,7 @@ testSet(
                 ignoreMissingTranslations: true,
             })
         );
-        expect(schema.label).toBe('zib_payer.grouping');
+        expect(schema.label).toBe('r3.zib_payer.grouping');
     },
     false
 );

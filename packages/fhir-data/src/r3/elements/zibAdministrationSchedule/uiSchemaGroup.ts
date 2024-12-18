@@ -5,7 +5,7 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule> = (
     resource,
     { ui, formatMessage }
 ) => {
-    const i18n = 'zib_administration_schedule';
+    const i18n = 'r3.zib_administration_schedule';
     const { repeat } = resource;
 
     /**

@@ -7,7 +7,7 @@ import { type ZibNutritionAdvice } from './zibNutritionAdvice';
  */
 export const uiSchema: UiSchemaFunction<ZibNutritionAdvice> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_nutrition_advice';
+    const i18n = 'r3.zib_nutrition_advice';
 
     return {
         label: resource.identifier?.at(0)?.value,

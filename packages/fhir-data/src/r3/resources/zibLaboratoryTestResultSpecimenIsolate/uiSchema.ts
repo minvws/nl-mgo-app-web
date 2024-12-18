@@ -12,7 +12,7 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSpecimenIsolate> 
     context
 ) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_laboratory_test_result_specimen_isolate';
+    const profile = 'r3.zib_laboratory_test_result_specimen_isolate';
 
     const container = map(resource.container, (x) => containerUiSchema(x, context), true);
 

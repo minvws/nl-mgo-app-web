@@ -4,7 +4,7 @@ import { type Actor } from './actor';
 export const uiSchemaGroup: UiSchemaGroupFunction<Actor> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     return {
-        label: 'Immunization.practitioner.actor',
-        children: [ui.reference(`Immunization.practitioner.actor`, resource.actor)],
+        label: 'r3.immunization.practitioner.actor',
+        children: [ui.reference(`r3.immunization.practitioner.actor`, resource.actor)],
     };
 };

@@ -7,7 +7,7 @@ import { type ZibBloodPressure } from './zibBloodPressure';
  */
 export const uiSchema: UiSchemaFunction<ZibBloodPressure> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_blood_pressure';
+    const profile = 'r3.zib_blood_pressure';
 
     return {
         label: resource.effectiveDateTime,

@@ -2,22 +2,22 @@
     "label": "Rollator",
     "children": [
         {
-            "label": "zib_medical_device.group_product",
+            "label": "r3.zib_medical_device.group_product",
             "children": [
                 {
-                    "label": "zib_medical_device.identifier",
+                    "label": "r3.zib_medical_device.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b88e083-8fdf-11ec-1325-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_medical_device.clinical_status",
+                    "label": "r3.zib_medical_device.clinical_status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
-                    "label": "zib_medical_device.device",
+                    "label": "r3.zib_medical_device.device",
                     "type": "REFERENCE_VALUE",
                     "display": "Rollator",
                     "reference": "Device/zib-medicaldeviceproduct-02"
@@ -33,32 +33,32 @@
                     "display": null
                 },
                 {
-                    "label": "zib_medical_device.recordedOn",
+                    "label": "r3.zib_medical_device.recordedOn",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
         },
         {
-            "label": "zib_medical_device.group_indication",
+            "label": "r3.zib_medical_device.group_indication",
             "children": [
                 {
-                    "label": "zib_medical_device.note",
+                    "label": "r3.zib_medical_device.note",
                     "display": null,
                     "type": "SINGLE_VALUE"
                 },
                 {
-                    "label": "zib_medical_device.bodySite",
+                    "label": "r3.zib_medical_device.bodySite",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_medical_device.laterality",
+                    "label": "r3.zib_medical_device.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_medical_device.reason",
+                    "label": "r3.zib_medical_device.reason",
                     "type": "REFERENCE_VALUE",
                     "display": "Ability to mobilise",
                     "reference": "Observation/zib-mobility-01"
@@ -66,28 +66,28 @@
             ]
         },
         {
-            "label": "zib_medical_device.group_general",
+            "label": "r3.zib_medical_device.group_general",
             "children": [
                 {
-                    "label": "zib_medical_device.patient",
+                    "label": "r3.zib_medical_device.patient",
                     "type": "REFERENCE_VALUE",
                     "display": "I. Jongeneel-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
-                    "label": "zib_medical_device.source",
+                    "label": "r3.zib_medical_device.source",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_medical_device.organization",
+                    "label": "r3.zib_medical_device.organization",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_medical_device.practitioner",
+                    "label": "r3.zib_medical_device.practitioner",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

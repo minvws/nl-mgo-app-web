@@ -7,7 +7,7 @@ import { type ZibAllergyIntolerance } from './zibAllergyIntolerance';
  */
 export const uiSchema: UiSchemaFunction<ZibAllergyIntolerance> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_allergy_intolerance';
+    const i18n = 'r3.zib_allergy_intolerance';
 
     return {
         label: resource.identifier?.at(0)?.value,

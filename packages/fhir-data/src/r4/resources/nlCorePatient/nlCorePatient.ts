@@ -28,10 +28,10 @@ function parseNlCorePatient(resource: Patient) {
     };
 }
 
-export type NlCorePatientR4 = ReturnType<typeof parseNlCorePatient>;
+export type R4NlCorePatient = ReturnType<typeof parseNlCorePatient>;
 
-export const nlCorePatientR4 = {
+export const r4NlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema,
-} satisfies ResourceConfigR4<Patient, NlCorePatientR4>;
+} satisfies ResourceConfigR4<Patient, R4NlCorePatient>;

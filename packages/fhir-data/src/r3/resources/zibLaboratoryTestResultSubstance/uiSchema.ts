@@ -7,7 +7,7 @@ import { type ZibLaboratoryTestResultSubstance } from './zibLaboratoryTestResult
  */
 export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSubstance> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_laboratory_test_result_substance';
+    const i18n = 'r3.zib_laboratory_test_result_substance';
 
     return {
         label: `${i18n}`,

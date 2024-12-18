@@ -2,7 +2,7 @@
     "label": null,
     "children": [
         {
-            "label": "nl_core_practitioner.group_details",
+            "label": "r3.nl_core_practitioner.group_details",
             "children": [
                 {
                     "label": "Zorgverlener identificatie nummer",
@@ -14,7 +14,7 @@
             ]
         },
         {
-            "label": "nl_core_humanname",
+            "label": "r3.nl_core_humanname",
             "children": [
                 {
                     "label": "Achternaam",
@@ -39,22 +39,22 @@
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.prefix",
+                    "label": "r3.nl_core_humanname.prefix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.suffix",
+                    "label": "r3.nl_core_humanname.suffix",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.use",
+                    "label": "r3.nl_core_humanname.use",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_humanname.text",
+                    "label": "r3.nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

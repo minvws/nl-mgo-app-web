@@ -2,33 +2,33 @@
     "label": "19a199c7-8fdf-11ec-9837-020000000000",
     "children": [
         {
-            "label": "nl_core_observation.group_details",
+            "label": "r3.nl_core_observation.group_details",
             "children": [
                 {
-                    "label": "nl_core_observation.identifier",
+                    "label": "r3.nl_core_observation.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "19a199c7-8fdf-11ec-9837-020000000000"
                     ]
                 },
                 {
-                    "label": "nl_core_observation.status",
+                    "label": "r3.nl_core_observation.status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "nl_core_observation.category",
+                    "label": "r3.nl_core_observation.category",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "nl_core_observation.subject",
+                    "label": "r3.nl_core_observation.subject",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "nl_core_observation.context",
+                    "label": "r3.nl_core_observation.context",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -44,17 +44,17 @@
                     "display": "1983"
                 },
                 {
-                    "label": "nl_core_observation.data_absent_reason",
+                    "label": "r3.nl_core_observation.data_absent_reason",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "nl_core_observation.comment",
+                    "label": "r3.nl_core_observation.comment",
                     "type": "SINGLE_VALUE",
                     "display": "Op feestjes en in uitgaanscircuit."
                 },
                 {
-                    "label": "nl_core_observation.body_site",
+                    "label": "r3.nl_core_observation.body_site",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 }

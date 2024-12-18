@@ -10,7 +10,7 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchem
     resource,
     context
 ) => {
-    const i18n = 'zib_instructions_for_use';
+    const i18n = 'r3.zib_instructions_for_use';
     const { ui, formatMessage } = context;
 
     /**

@@ -5,6 +5,6 @@ export const uiSchemaGroup: UiSchemaGroupFunction<FocalDevice> = (resource, cont
     const ui = context.ui;
     return {
         label: 'zib_procedure.focal_device',
-        children: [ui.reference(`zib_procedure.focal_device.manipulated`, resource.manipulated)],
+        children: [ui.reference(`r3.zib_procedure.focal_device.manipulated`, resource.manipulated)],
     };
 };

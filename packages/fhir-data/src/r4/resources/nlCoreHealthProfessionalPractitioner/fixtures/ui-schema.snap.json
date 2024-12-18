@@ -2,27 +2,27 @@
     "label": "J.H.R. Peters",
     "children": [
         {
-            "label": "nl_core_health_professional_practitioner.group_details",
+            "label": "r4.nl_core_health_professional_practitioner.group_details",
             "children": [
                 {
-                    "label": "nl_core_health_professional_practitioner.identifier",
+                    "label": "r4.nl_core_health_professional_practitioner.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "21870932"
                     ]
                 },
                 {
-                    "label": "nl_core_health_professional_practitioner.gender",
+                    "label": "r4.nl_core_health_professional_practitioner.gender",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_health_professional_practitioner.birth_date",
+                    "label": "r4.nl_core_health_professional_practitioner.birth_date",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_health_professional_practitioner.communication",
+                    "label": "r4.nl_core_health_professional_practitioner.communication",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 }

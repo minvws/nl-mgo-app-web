@@ -2,7 +2,7 @@
     "label": "Biopsy of skin (procedure)",
     "children": [
         {
-            "label": "zib_procedure_request",
+            "label": "r3.zib_procedure_request",
             "children": [
                 {
                     "label": "Order status",
@@ -27,7 +27,7 @@
                     ]
                 },
                 {
-                    "label": "zib_procedure_request.perfomer",
+                    "label": "r3.zib_procedure_request.perfomer",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"

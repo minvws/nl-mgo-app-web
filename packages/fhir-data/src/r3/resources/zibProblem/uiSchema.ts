@@ -10,7 +10,7 @@ import { type ZibProblem } from './zibProblem';
  */
 export const uiSchema: UiSchemaFunction<ZibProblem> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_problem';
+    const i18n = 'r3.zib_problem';
 
     const stage = stageUiSchema(resource.stage, context);
     const evidence = map(resource.evidence, (x) => evidenceUiSchema(x, context), true);

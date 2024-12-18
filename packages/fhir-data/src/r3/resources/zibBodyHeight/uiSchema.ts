@@ -7,7 +7,7 @@ import { type ZibBodyHeight } from './zibBodyHeight';
  */
 export const uiSchema: UiSchemaFunction<ZibBodyHeight> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_body_height';
+    const profile = 'r3.zib_body_height';
 
     return {
         label: resource.effectiveDateTime,

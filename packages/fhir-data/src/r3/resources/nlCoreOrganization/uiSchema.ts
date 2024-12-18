@@ -9,7 +9,7 @@ import { type NlCoreOrganization } from './nlCoreOrganization';
  */
 export const uiSchema: UiSchemaFunction<NlCoreOrganization> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'nl_core_organization';
+    const profile = 'r3.nl_core_organization';
 
     const address = map(
         resource.address,

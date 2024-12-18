@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/
 import { type Data } from './data';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Data> = (resource, context) => {
-    const i18n = 'zib_treatment_directive.data';
+    const i18n = 'r3.zib_treatment_directive.data';
     const ui = context.ui as NonStrictUi;
 
     return {

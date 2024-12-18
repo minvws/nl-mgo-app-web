@@ -2,9 +2,8 @@ import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 import { dirname } from 'path';
 import { URL, fileURLToPath } from 'url';
-import { isFhirResource } from '../src/utils/isResource/isResource';
-import { processDefinition } from './processDefinition';
-import { type StructureDefinition } from 'fhir/r3';
+import { processDefinitions } from './processDefinitions';
+import { FhirVersion } from '../src/types/Fhir';
 
 /**
  * A small script to extract relevant labels from the published structure definitions.
@@ -13,35 +12,24 @@ import { type StructureDefinition } from 'fhir/r3';
 
 export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
-const nictizDefinitionsDir = resolvePath('../fhir-definitions/nictiz.fhir.nl.stu3.zib2017');
-const nictizFiles = globSync(`${nictizDefinitionsDir}/{zib,gp,nl-core}-*.json`);
-const outputFile = resolvePath('../dist/i18n/resource-labels.json');
+const dirR4NlCore = resolvePath('../fhir-definitions/nictiz.fhir.nl.r4.nl-core');
+const dirR4Zib2020 = resolvePath('../fhir-definitions/nictiz.fhir.nl.r4.zib2020');
+const dirR3Zib2017 = resolvePath('../fhir-definitions/nictiz.fhir.nl.stu3.zib2017');
 
-const labels: Record<string, string> = {};
+const r4NlCore = globSync(`${dirR4NlCore}/nl-core-*.json`);
+const r4Zibs = globSync(`${dirR4Zib2020}/zib-*.json`);
+const r3Zibs = globSync(`${dirR3Zib2017}/{zib,gp,nl-core}-*.json`);
 
-for (const definitionFile of nictizFiles) {
-    const definition = await import(definitionFile);
-    if (!isFhirResource(definition, 'StructureDefinition')) {
-        console.warn(`Matched file is not a StructureDefinition: ${definitionFile}`);
-        continue;
+async function extractLabels(files: string[], fhirVersion: FhirVersion, fileName: string) {
+    const outputFile = resolvePath(`../dist/i18n/${fileName}.json`);
+    const outputDir = dirname(outputFile);
+    if (!existsSync(outputDir)) {
+        mkdirSync(outputDir, { recursive: true });
     }
 
-    const newLabels = processDefinition(definition as StructureDefinition);
-
-    Object.entries(newLabels).forEach(([key, value]) => {
-        if (labels[key] && labels[key] !== value) {
-            console.warn(
-                `label with key: ${key} already exists with value ${labels[key]}, received different value: ${value}`
-            );
-        } else {
-            labels[key] = value;
-        }
-    });
+    const labels = await processDefinitions(files, fhirVersion);
+    writeFileSync(outputFile, JSON.stringify(labels, null, 2));
 }
 
-const outputDir = dirname(outputFile);
-if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true });
-}
-
-writeFileSync(outputFile, JSON.stringify(labels, null, 2));
+await extractLabels([...r4Zibs, ...r4NlCore], FhirVersion.R4, 'r4-resource-labels');
+await extractLabels(r3Zibs, FhirVersion.R3, 'r3-resource-labels');

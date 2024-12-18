@@ -7,7 +7,7 @@ import { type GpJournalEntry } from './gpJournalEntry';
  */
 export const uiSchema: UiSchemaFunction<GpJournalEntry> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'gp_journal_entry';
+    const profile = 'r3.gp_journal_entry';
     return {
         label: resource.context?.display,
         children: [

@@ -2,7 +2,7 @@ import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/
 import { type Policy } from './policy';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Policy> = (resource, context) => {
-    const i18n = 'zib_treatment_directive.policy';
+    const i18n = 'r3.zib_treatment_directive.policy';
     const ui = context.ui as NonStrictUi;
 
     return {

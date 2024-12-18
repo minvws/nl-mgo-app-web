@@ -9,7 +9,7 @@ import { type ZibMedicationAgreement } from './zibMedicationAgreement';
  */
 export const uiSchema: UiSchemaFunction<ZibMedicationAgreement> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_medication_agreement';
+    const i18n = 'r3.zib_medication_agreement';
     const instructionsForUse = map(
         resource.dossageInstruction,
         (x) => zibInstructionsForUseUiSchema(x, context),

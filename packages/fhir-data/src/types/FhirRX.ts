@@ -19,6 +19,7 @@ import type {
     Ratio as RatioR3,
     Reference as ReferenceR3,
     Resource as ResourceR3,
+    StructureDefinition as StructureDefinitionR3,
 } from 'fhir/r3';
 
 import type {
@@ -42,6 +43,7 @@ import type {
     Ratio as RatioR4,
     Reference as ReferenceR4,
     Resource as ResourceR4,
+    StructureDefinition as StructureDefinitionR4,
 } from 'fhir/r4';
 
 /**
@@ -71,6 +73,7 @@ export type ObservationComponent = ObservationComponentR3 | ObservationComponent
 export type DomainResource = DomainResourceR3 | DomainResourceR4;
 export type Element = ElementR3 | ElementR4;
 export type Resource = ResourceR3 | ResourceR4;
+export type StructureDefinition = StructureDefinitionR3 | StructureDefinitionR4;
 
 export type ResourceType = FhirResource['resourceType'];
 export type ResourceTypeR3 = FhirResourceR3['resourceType'];

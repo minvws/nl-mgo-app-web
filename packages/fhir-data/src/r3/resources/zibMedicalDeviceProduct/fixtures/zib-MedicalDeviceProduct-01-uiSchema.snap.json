@@ -2,23 +2,23 @@
     "label": "zib-medicaldeviceproduct-01",
     "children": [
         {
-            "label": "zib_medical_device_product.group_general_information",
+            "label": "r3.zib_medical_device_product.group_general_information",
             "children": [
                 {
-                    "label": "zib_medical_device_product.patient",
+                    "label": "r3.zib_medical_device_product.patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_medical_device_product.note",
+                    "label": "r3.zib_medical_device_product.note",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Implantant, Gen 2 Tibia Insert 5/6-9mm"
                     ]
                 },
                 {
-                    "label": "zib_medical_device_product.expiration_date",
+                    "label": "r3.zib_medical_device_product.expiration_date",
                     "type": "SINGLE_VALUE",
                     "display": "31 januari 2016"
                 }

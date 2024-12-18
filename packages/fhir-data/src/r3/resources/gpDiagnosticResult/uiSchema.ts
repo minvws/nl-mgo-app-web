@@ -7,7 +7,7 @@ import { type GpDiagnosticResult } from './gpDiagnosticResult';
  */
 export const uiSchema: UiSchemaFunction<GpDiagnosticResult> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'gp_diagnostic_result';
+    const profile = 'r3.gp_diagnostic_result';
     return {
         label: resource.context?.display,
         children: [

@@ -2,7 +2,7 @@ import { type UiSchemaGroupFunction, type NonStrictUi } from '../../../../../ui/
 import { type Link } from './link';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Link> = (resource, context) => {
-    const i18n = 'nl_core_patient.link';
+    const i18n = 'r3.nl_core_patient.link';
     const ui = context.ui as NonStrictUi;
 
     return {

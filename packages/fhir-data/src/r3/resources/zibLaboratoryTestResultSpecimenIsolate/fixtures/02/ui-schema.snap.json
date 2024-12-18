@@ -1,8 +1,8 @@
 {
-    "label": "zib_laboratory_test_result_specimen_isolate",
+    "label": "r3.zib_laboratory_test_result_specimen_isolate",
     "children": [
         {
-            "label": "zib_laboratory_test_result_specimen_isolate",
+            "label": "r3.zib_laboratory_test_result_specimen_isolate",
             "children": [
                 {
                     "label": "Monsternummer",
@@ -29,7 +29,7 @@
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.quantity",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.quantity",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -54,17 +54,17 @@
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.laterality",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_laboratory_test_result_specimen_isolate.body_site.morphology",
+                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site.morphology",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

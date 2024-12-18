@@ -36,5 +36,5 @@ test('humanName UI schema group is created successfully', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(schema.label).toBe('nl_core_humanname');
+    expect(schema.label).toBe('r3.nl_core_humanname');
 });

@@ -2,22 +2,22 @@
     "label": "Gehoorapparaat",
     "children": [
         {
-            "label": "zib_medical_device.group_product",
+            "label": "r3.zib_medical_device.group_product",
             "children": [
                 {
-                    "label": "zib_medical_device.identifier",
+                    "label": "r3.zib_medical_device.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b7c5449-8fdf-11ec-2143-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_medical_device.clinical_status",
+                    "label": "r3.zib_medical_device.clinical_status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
-                    "label": "zib_medical_device.device",
+                    "label": "r3.zib_medical_device.device",
                     "type": "REFERENCE_VALUE",
                     "display": "Gehoorapparaat",
                     "reference": "Device/zib-MedicalDeviceProduct-03"
@@ -33,38 +33,38 @@
                     "display": null
                 },
                 {
-                    "label": "zib_medical_device.recordedOn",
+                    "label": "r3.zib_medical_device.recordedOn",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
         },
         {
-            "label": "zib_medical_device.group_indication",
+            "label": "r3.zib_medical_device.group_indication",
             "children": [
                 {
-                    "label": "zib_medical_device.note",
+                    "label": "r3.zib_medical_device.note",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Apparaat niet zichtbaar (diep in de gehooringang)"
                     ]
                 },
                 {
-                    "label": "zib_medical_device.bodySite",
+                    "label": "r3.zib_medical_device.bodySite",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_medical_device.laterality",
+                    "label": "r3.zib_medical_device.laterality",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Right (24028007 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_medical_device.reason",
+                    "label": "r3.zib_medical_device.reason",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -72,28 +72,28 @@
             ]
         },
         {
-            "label": "zib_medical_device.group_general",
+            "label": "r3.zib_medical_device.group_general",
             "children": [
                 {
-                    "label": "zib_medical_device.patient",
+                    "label": "r3.zib_medical_device.patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_medical_device.source",
+                    "label": "r3.zib_medical_device.source",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_medical_device.organization",
+                    "label": "r3.zib_medical_device.organization",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
-                    "label": "zib_medical_device.practitioner",
+                    "label": "r3.zib_medical_device.practitioner",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

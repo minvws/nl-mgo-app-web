@@ -2,20 +2,20 @@
     "label": "1ebf6227-8fdf-11ec-1682-020000000000",
     "children": [
         {
-            "label": "zib_treatment_directive.group_details",
+            "label": "r3.zib_treatment_directive.group_details",
             "children": [
                 {
-                    "label": "zib_treatment_directive.identifier",
+                    "label": "r3.zib_treatment_directive.identifier",
                     "type": "SINGLE_VALUE",
                     "display": "1ebf6227-8fdf-11ec-1682-020000000000"
                 },
                 {
-                    "label": "zib_treatment_directive.status",
+                    "label": "r3.zib_treatment_directive.status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
                 {
-                    "label": "zib_treatment_directive.category",
+                    "label": "r3.zib_treatment_directive.category",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -24,7 +24,7 @@
                     ]
                 },
                 {
-                    "label": "zib_treatment_directive.patient",
+                    "label": "r3.zib_treatment_directive.patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
@@ -40,50 +40,50 @@
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.date_time",
+                    "label": "r3.zib_treatment_directive.date_time",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.consenting_party",
+                    "label": "r3.zib_treatment_directive.consenting_party",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_treatment_directive.action",
+                    "label": "r3.zib_treatment_directive.action",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_treatment_directive.organization",
+                    "label": "r3.zib_treatment_directive.organization",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_treatment_directive.source_identifier",
+                    "label": "r3.zib_treatment_directive.source_identifier",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.source_reference",
+                    "label": "r3.zib_treatment_directive.source_reference",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_treatment_directive.policy_rule",
+                    "label": "r3.zib_treatment_directive.policy_rule",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.security_label",
+                    "label": "r3.zib_treatment_directive.security_label",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.purpose",
+                    "label": "r3.zib_treatment_directive.purpose",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -100,55 +100,55 @@
             ]
         },
         {
-            "label": "attachment",
+            "label": "r3.attachment",
             "children": [
                 {
-                    "label": "attachment.contentType",
+                    "label": "r3.attachment.contentType",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.language",
+                    "label": "r3.attachment.language",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.data",
+                    "label": "r3.attachment.data",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.url",
+                    "label": "r3.attachment.url",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.size",
+                    "label": "r3.attachment.size",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.hash",
+                    "label": "r3.attachment.hash",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.title",
+                    "label": "r3.attachment.title",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.creation",
+                    "label": "r3.attachment.creation",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }
             ]
         },
         {
-            "label": "zib_treatment_directive.except",
+            "label": "r3.zib_treatment_directive.except",
             "children": [
                 {
-                    "label": "zib_treatment_directive.except.type",
+                    "label": "r3.zib_treatment_directive.except.type",
                     "type": "SINGLE_VALUE",
                     "display": "deny"
                 },
@@ -163,27 +163,27 @@
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.action",
+                    "label": "r3.zib_treatment_directive.except.action",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_treatment_directive.except.security_label",
+                    "label": "r3.zib_treatment_directive.except.security_label",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.purpose",
+                    "label": "r3.zib_treatment_directive.except.purpose",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.class",
+                    "label": "r3.zib_treatment_directive.except.class",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.except.code",
+                    "label": "r3.zib_treatment_directive.except.code",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -200,20 +200,20 @@
             ]
         },
         {
-            "label": "zib_treatment_directive.policy",
+            "label": "r3.zib_treatment_directive.policy",
             "children": [
                 {
-                    "label": "zib_treatment_directive.policy.id",
+                    "label": "r3.zib_treatment_directive.policy.id",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.policy.authority",
+                    "label": "r3.zib_treatment_directive.policy.authority",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_treatment_directive.policy.uri",
+                    "label": "r3.zib_treatment_directive.policy.uri",
                     "type": "SINGLE_VALUE",
                     "display": "http://wetten.overheid.nl/"
                 }

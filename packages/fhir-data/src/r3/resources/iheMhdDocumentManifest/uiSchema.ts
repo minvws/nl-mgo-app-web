@@ -9,7 +9,7 @@ import { type IheMhdDocumentManifest } from './iheMhdDocumentManifest';
  */
 export const uiSchema: UiSchemaFunction<IheMhdDocumentManifest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'ihe_mhd_document_manifest';
+    const i18n = 'r3.ihe_mhd_document_manifest';
 
     return {
         label: resource.description,

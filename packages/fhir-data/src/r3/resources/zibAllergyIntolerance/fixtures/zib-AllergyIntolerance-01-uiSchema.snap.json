@@ -2,7 +2,7 @@
     "label": "18e3c749-8fdf-11ec-2022-020000000000",
     "children": [
         {
-            "label": "zib_allergy_intolerance.group_details",
+            "label": "r3.zib_allergy_intolerance.group_details",
             "children": [
                 {
                     "label": "Identificatie",
@@ -22,19 +22,19 @@
                     "display": "confirmed"
                 },
                 {
-                    "label": "zib_allergy_intolerance.type",
+                    "label": "r3.zib_allergy_intolerance.type",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_allergy_intolerance.category",
+                    "label": "r3.zib_allergy_intolerance.category",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "biologic"
                     ]
                 },
                 {
-                    "label": "zib_allergy_intolerance.criticality",
+                    "label": "r3.zib_allergy_intolerance.criticality",
                     "type": "SINGLE_VALUE",
                     "display": "high"
                 },

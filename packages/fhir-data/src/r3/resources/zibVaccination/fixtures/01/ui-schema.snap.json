@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    "label": "Immunization.practitioner.actor",
+                    "label": "r3.immunization.practitioner.actor",
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"

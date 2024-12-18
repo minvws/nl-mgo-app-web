@@ -2,17 +2,17 @@
     "label": "1c7ad0eb-8fdf-11ec-2921-020000000000",
     "children": [
         {
-            "label": "zib_payer.group_details",
+            "label": "r3.zib_payer.group_details",
             "children": [
                 {
-                    "label": "zib_payer.identifier",
+                    "label": "r3.zib_payer.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1c7ad0eb-8fdf-11ec-2921-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_payer.status",
+                    "label": "r3.zib_payer.status",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -24,13 +24,13 @@
                     ]
                 },
                 {
-                    "label": "zib_payer.policy_holder",
+                    "label": "r3.zib_payer.policy_holder",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_payer.subscriber",
+                    "label": "r3.zib_payer.subscriber",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
@@ -41,13 +41,13 @@
                     "display": null
                 },
                 {
-                    "label": "zib_payer.beneficiary",
+                    "label": "r3.zib_payer.beneficiary",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_payer.relationship",
+                    "label": "r3.zib_payer.relationship",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
@@ -69,27 +69,27 @@
                     ]
                 },
                 {
-                    "label": "zib_payer.dependent",
+                    "label": "r3.zib_payer.dependent",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.sequence",
+                    "label": "r3.zib_payer.sequence",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.order",
+                    "label": "r3.zib_payer.order",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.network",
+                    "label": "r3.zib_payer.network",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.contract",
+                    "label": "r3.zib_payer.contract",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -97,35 +97,35 @@
             ]
         },
         {
-            "label": "zib_payer.grouping",
+            "label": "r3.zib_payer.grouping",
             "children": [
                 {
-                    "label": "zib_payer.grouping.group",
+                    "label": "r3.zib_payer.grouping.group",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.grouping.sub_group",
+                    "label": "r3.zib_payer.grouping.sub_group",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.grouping.plan",
+                    "label": "r3.zib_payer.grouping.plan",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.grouping.sub_plan",
+                    "label": "r3.zib_payer.grouping.sub_plan",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.grouping.class",
+                    "label": "r3.zib_payer.grouping.class",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_payer.grouping.sub_class",
+                    "label": "r3.zib_payer.grouping.sub_class",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

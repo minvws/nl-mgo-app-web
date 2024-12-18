@@ -2,20 +2,20 @@
     "label": null,
     "children": [
         {
-            "label": "ihe_mhd_document_manifest",
+            "label": "r3.ihe_mhd_document_manifest",
             "children": [
                 {
-                    "label": "ihe_mhd_document_manifest.created",
+                    "label": "r3.ihe_mhd_document_manifest.created",
                     "type": "SINGLE_VALUE",
                     "display": "10 maart 2020"
                 },
                 {
-                    "label": "ihe_mhd_document_manifest.status",
+                    "label": "r3.ihe_mhd_document_manifest.status",
                     "type": "SINGLE_VALUE",
                     "display": "superseded"
                 },
                 {
-                    "label": "ihe_mhd_document_manifest.type",
+                    "label": "r3.ihe_mhd_document_manifest.type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Discharge summary (18842-5 in code systeem http://loinc.org)"
@@ -24,10 +24,10 @@
             ]
         },
         {
-            "label": "ihe_mhd_document_manifest.author_group",
+            "label": "r3.ihe_mhd_document_manifest.author_group",
             "children": [
                 {
-                    "label": "ihe_mhd_document_manifest.author",
+                    "label": "r3.ihe_mhd_document_manifest.author",
                     "type": "REFERENCE_VALUE",
                     "display": "B. Kneder",
                     "reference": "#p1"
@@ -35,16 +35,16 @@
             ]
         },
         {
-            "label": "ihe_mhd_document_manifest.content",
+            "label": "r3.ihe_mhd_document_manifest.content",
             "children": [
                 {
-                    "label": "ihe_mhd_document_manifest.content.reference",
+                    "label": "r3.ihe_mhd_document_manifest.content.reference",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "DocumentReference/pdfa-documentreference-01"
                 },
                 {
-                    "label": "ihe_mhd_document_manifest.content.reference",
+                    "label": "r3.ihe_mhd_document_manifest.content.reference",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "DocumentReference/pdfa-documentreference-02"

@@ -3,7 +3,7 @@ import { type MedicationStatement } from 'fhir/r3';
 import { type Patient } from 'fhir/r4';
 import { expect, test, vi } from 'vitest';
 import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
-import { nlCorePatientR4 } from '../../r4/resources';
+import { r4NlCorePatient } from '../../r4/resources';
 import { FhirVersion } from '../../types/Fhir';
 import { getMgoResource } from './getMgoResource';
 
@@ -22,10 +22,10 @@ test('returns the expected output for a R3 Fhir resource', () => {
 test('returns the expected output for a R4 Fhir resource', () => {
     const fhirResource = {
         meta: {
-            profile: [nlCorePatientR4.profile],
+            profile: [r4NlCorePatient.profile],
         },
     } as Patient;
-    const expectedResult = nlCorePatientR4.parse(fhirResource);
+    const expectedResult = r4NlCorePatient.parse(fhirResource);
     const result = getMgoResource(fhirResource, FhirVersion.R4);
     expect(result).toEqual(expectedResult);
     expect(result?.fhirVersion).toEqual(FhirVersion.R4);

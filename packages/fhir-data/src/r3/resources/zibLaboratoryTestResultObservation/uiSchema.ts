@@ -12,7 +12,7 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
     resource,
     context
 ) => {
-    const i18n = 'zib_laboratory_test_result_observation';
+    const i18n = 'r3.zib_laboratory_test_result_observation';
     const { ui, formatMessage, setEmptyEntries } = context;
 
     /**

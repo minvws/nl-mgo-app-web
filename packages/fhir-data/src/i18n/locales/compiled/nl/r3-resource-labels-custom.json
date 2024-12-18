@@ -1,0 +1,134 @@
+{
+    "r3.ihe_mhd_minimal_document_reference.author": [
+        {
+            "type": 0,
+            "value": "Auteur"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.class": [
+        {
+            "type": 0,
+            "value": "Categorie"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content": [
+        {
+            "type": 0,
+            "value": "Inhoud"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
+        {
+            "type": 0,
+            "value": "Inhoudstype"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content.attachment.creation": [
+        {
+            "type": 0,
+            "value": "Gecreëerd"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content.attachment.language": [
+        {
+            "type": 0,
+            "value": "Taal"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content.attachment.title": [
+        {
+            "type": 0,
+            "value": "Titel"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.content.attachment.url": [
+        {
+            "type": 0,
+            "value": "Url"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.group_attachment": [
+        {
+            "type": 0,
+            "value": "Inhoud"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.group_author": [
+        {
+            "type": 0,
+            "value": "Opgesteld door"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.indexed": [
+        {
+            "type": 0,
+            "value": "Gecreëerd"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.master_identifier": [
+        {
+            "type": 0,
+            "value": "Identifier"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.security_label": [
+        {
+            "type": 0,
+            "value": "Beveiligingslabel"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.status": [
+        {
+            "type": 0,
+            "value": "Status"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.subject": [
+        {
+            "type": 0,
+            "value": "Onderwerp"
+        }
+    ],
+    "r3.ihe_mhd_minimal_document_reference.type": [
+        {
+            "type": 0,
+            "value": "Type"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.general_test_information": [
+        {
+            "type": 0,
+            "value": "Algemene testinformatie"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.interpretation": [
+        {
+            "type": 0,
+            "value": "Interpretatie"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.lab_test": [
+        {
+            "type": 0,
+            "value": "Laboratoriumtest"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.performer": [
+        {
+            "type": 0,
+            "value": "Zorgverlener"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.reference_range.type": [
+        {
+            "type": 0,
+            "value": "Referentie type"
+        }
+    ],
+    "r3.zib_medication_use.repeat_period_cyclical_schedule": [
+        {
+            "type": 0,
+            "value": "Herhaalperiode cyclisch schema"
+        }
+    ]
+}

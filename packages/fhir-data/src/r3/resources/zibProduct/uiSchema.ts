@@ -9,7 +9,7 @@ import { type ZibProduct } from './zibProduct';
  */
 export const uiSchema: UiSchemaFunction<ZibProduct> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_product';
+    const i18n = 'r3.zib_product';
 
     const productPackage = zibProductPackage.uiSchemaGroup(resource.package, context);
     const ingredients = map(

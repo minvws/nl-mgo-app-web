@@ -15,7 +15,7 @@ testSet(
                 ignoreMissingTranslations: true,
             })
         );
-        expect(schema.label).toBe('stage');
+        expect(schema.label).toBe('r3.stage');
     },
     false
 );

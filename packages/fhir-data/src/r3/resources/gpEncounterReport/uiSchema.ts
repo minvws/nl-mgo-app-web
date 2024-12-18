@@ -9,7 +9,7 @@ import { map } from '../../../utils';
  */
 export const uiSchema: UiSchemaFunction<GpEncounterReport> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'EncounterReport';
+    const profile = 'r3.EncounterReport';
 
     const section = map(resource.section, (x) => sectionUiSchema(x, context), true);
 

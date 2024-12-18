@@ -8,7 +8,7 @@ import { type EAfspraakAppointment } from './eAfspraakAppointment';
  */
 export const uiSchema: UiSchemaFunction<EAfspraakAppointment> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'e_afspraak_appointment';
+    const profile = 'r3.e_afspraak_appointment';
 
     return {
         label: resource.description,

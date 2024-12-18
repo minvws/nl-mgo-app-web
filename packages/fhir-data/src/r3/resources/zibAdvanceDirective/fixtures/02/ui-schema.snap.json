@@ -2,7 +2,7 @@
     "label": "2011-08-15",
     "children": [
         {
-            "label": "zib_advance_directive.group_details",
+            "label": "r3.zib_advance_directive.group_details",
             "children": [
                 {
                     "label": "Wilsverklaring type",
@@ -35,52 +35,52 @@
                     ]
                 },
                 {
-                    "label": "zib_advance_directive.comment",
+                    "label": "r3.zib_advance_directive.comment",
                     "type": "SINGLE_VALUE",
                     "display": "Niet-reanimerenpenning"
                 }
             ]
         },
         {
-            "label": "attachment",
+            "label": "r3.attachment",
             "children": [
                 {
-                    "label": "attachment.contentType",
+                    "label": "r3.attachment.contentType",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.language",
+                    "label": "r3.attachment.language",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.data",
+                    "label": "r3.attachment.data",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.url",
+                    "label": "r3.attachment.url",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.size",
+                    "label": "r3.attachment.size",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.hash",
+                    "label": "r3.attachment.hash",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.title",
+                    "label": "r3.attachment.title",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "attachment.creation",
+                    "label": "r3.attachment.creation",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

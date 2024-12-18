@@ -3,7 +3,7 @@ import { type Container } from './container';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<Container> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_laboratory_test_result_specimen.container';
+    const i18n = 'r3.zib_laboratory_test_result_specimen.container';
 
     return {
         label: `${i18n}`,

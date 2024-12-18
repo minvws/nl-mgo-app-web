@@ -2,15 +2,15 @@
     "label": "Poliklinische Controle Chirurgie",
     "children": [
         {
-            "label": "e_afspraak_appointment",
+            "label": "r3.e_afspraak_appointment",
             "children": [
                 {
-                    "label": "e_afspraak_appointment.status.order_status",
+                    "label": "r3.e_afspraak_appointment.status.order_status",
                     "type": "SINGLE_VALUE",
                     "display": "fulfilled"
                 },
                 {
-                    "label": "e_afspraak_appointment.specialty",
+                    "label": "r3.e_afspraak_appointment.specialty",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -19,22 +19,22 @@
                     ]
                 },
                 {
-                    "label": "e_afspraak_appointment.description",
+                    "label": "r3.e_afspraak_appointment.description",
                     "type": "SINGLE_VALUE",
                     "display": "Poliklinische Controle Chirurgie"
                 },
                 {
-                    "label": "e_afspraak_appointment.start",
+                    "label": "r3.e_afspraak_appointment.start",
                     "type": "SINGLE_VALUE",
                     "display": "1 januari 2018 om 09:00:00 GMT+1"
                 },
                 {
-                    "label": "e_afspraak_appointment.end",
+                    "label": "r3.e_afspraak_appointment.end",
                     "type": "SINGLE_VALUE",
                     "display": "1 januari 2018 om 09:45:00 GMT+1"
                 },
                 {
-                    "label": "e_afspraak_appointment.participant",
+                    "label": "r3.e_afspraak_appointment.participant",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Alex XXX_Verweij",

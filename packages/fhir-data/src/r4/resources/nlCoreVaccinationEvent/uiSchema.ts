@@ -1,12 +1,12 @@
 import { type UiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import { uiSchemaGroup as protocolAppliedUiSchema } from './elements/protocolApplied/uiSchemaGroup';
-import { type NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
+import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946266
  */
-export const uiSchema: UiSchemaFunction<NlCoreVaccinationEvent> = (resource, context) => {
+export const uiSchema: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
     const profile = 'r4.nl_core_vaccination_event';
     const { ui, formatMessage, setEmptyEntries } = context;
 

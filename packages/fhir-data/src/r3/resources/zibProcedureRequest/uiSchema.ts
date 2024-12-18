@@ -7,7 +7,7 @@ import { type ZibProcedureRequest } from './zibProcedureRequest';
  */
 export const uiSchema: UiSchemaFunction<ZibProcedureRequest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_procedure_request';
+    const profile = 'r3.zib_procedure_request';
 
     return {
         label: resource.code?.coding?.at(0)?.display,

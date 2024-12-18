@@ -2,7 +2,7 @@
     "label": "2012-03-13",
     "children": [
         {
-            "label": "zib_medical_device_request",
+            "label": "r3.zib_medical_device_request",
             "children": [
                 {
                     "label": "Order status",
@@ -20,14 +20,14 @@
                     "display": null
                 },
                 {
-                    "label": "zib_medical_device_request.code",
+                    "label": "r3.zib_medical_device_request.code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Procedure device (405815000 in code systeem http://snomed.info/sct)"
                     ]
                 },
                 {
-                    "label": "zib_medical_device_request.perfomer",
+                    "label": "r3.zib_medical_device_request.perfomer",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
                     "reference": "Organization/nl-core-organization-02"

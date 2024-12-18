@@ -13,7 +13,7 @@ testSet(
             data,
             testUiSchemaContext({ ignoreMissingTranslations: true })
         );
-        expect(schema.label).toBe('zib_laboratory_test_result_specimen_isolate.container');
+        expect(schema.label).toBe('r3.zib_laboratory_test_result_specimen_isolate.container');
     },
     false
 );

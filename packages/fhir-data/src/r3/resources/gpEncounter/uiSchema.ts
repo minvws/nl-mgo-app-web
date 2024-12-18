@@ -9,7 +9,7 @@ import { type GpEncounter } from './gpEncounter';
  */
 export const uiSchema: UiSchemaFunction<GpEncounter> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'Encounter';
+    const profile = 'r3.Encounter';
     const participants = map(
         resource.participant,
         (x) => encounterParticipantUiSchema(x, context),

@@ -1,18 +1,18 @@
 {
-    "label": "zib_alert",
+    "label": "r3.zib_alert",
     "children": [
         {
-            "label": "zib_alert.group_general_information",
+            "label": "r3.zib_alert.group_general_information",
             "children": [
                 {
-                    "label": "zib_alert.identifier",
+                    "label": "r3.zib_alert.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "18d78911-8fdf-11ec-3053-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_alert.status",
+                    "label": "r3.zib_alert.status",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
@@ -31,7 +31,7 @@
                     ]
                 },
                 {
-                    "label": "zib_alert.subject",
+                    "label": "r3.zib_alert.subject",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
@@ -47,13 +47,13 @@
                     "display": null
                 },
                 {
-                    "label": "zib_alert.encounter",
+                    "label": "r3.zib_alert.encounter",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_alert.author",
+                    "label": "r3.zib_alert.author",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

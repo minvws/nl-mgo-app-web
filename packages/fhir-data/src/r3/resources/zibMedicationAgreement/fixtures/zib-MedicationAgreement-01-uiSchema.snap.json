@@ -2,7 +2,7 @@
     "label": "Metoclopramide zetpil 20mg",
     "children": [
         {
-            "label": "zib_medication_agreement.group_general_information",
+            "label": "r3.zib_medication_agreement.group_general_information",
             "children": [
                 {
                     "label": "Begin datum",
@@ -25,17 +25,17 @@
                     "display": "#MB_01h"
                 },
                 {
-                    "label": "zib_medication_agreement.stop_type",
+                    "label": "r3.zib_medication_agreement.stop_type",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "zib_medication_agreement.repeat_period_cyclical_schedule",
+                    "label": "r3.zib_medication_agreement.repeat_period_cyclical_schedule",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.identifier",
+                    "label": "r3.zib_medication_agreement.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "#MB_01h#MA_01",
@@ -43,41 +43,41 @@
                     ]
                 },
                 {
-                    "label": "zib_medication_agreement.definition",
+                    "label": "r3.zib_medication_agreement.definition",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_medication_agreement.basedOn",
+                    "label": "r3.zib_medication_agreement.basedOn",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_medication_agreement.group_identifier",
+                    "label": "r3.zib_medication_agreement.group_identifier",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.status",
+                    "label": "r3.zib_medication_agreement.status",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_medication_agreement.intent",
+                    "label": "r3.zib_medication_agreement.intent",
                     "type": "SINGLE_VALUE",
                     "display": "order"
                 },
                 {
-                    "label": "zib_medication_agreement.category",
+                    "label": "r3.zib_medication_agreement.category",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Medicatieafspraak"
                     ]
                 },
                 {
-                    "label": "zib_medication_agreement.priority",
+                    "label": "r3.zib_medication_agreement.priority",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

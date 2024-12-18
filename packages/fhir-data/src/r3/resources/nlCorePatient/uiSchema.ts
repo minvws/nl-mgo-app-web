@@ -13,7 +13,7 @@ import { type NlCorePatient } from './nlCorePatient';
  */
 export const uiSchema: UiSchemaFunction<NlCorePatient> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'nl_core_patient';
+    const i18n = 'r3.nl_core_patient';
 
     const address = map(resource.address, (x) => nlCoreAddress.uiSchemaGroup(x, context), true);
     const communication = map(

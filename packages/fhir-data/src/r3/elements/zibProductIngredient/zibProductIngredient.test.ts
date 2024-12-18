@@ -21,5 +21,5 @@ test('ui schema group is created successfully', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(schema.label).toBe('zib_product_ingredient');
+    expect(schema.label).toBe('r3.zib_product_ingredient');
 });

@@ -2,7 +2,7 @@
     "label": "hepatitis A immunoglobulin",
     "children": [
         {
-            "label": "zib_vaccination_recommendation",
+            "label": "r3.zib_vaccination_recommendation",
             "children": [
                 {
                     "label": "Order status",
@@ -12,19 +12,19 @@
                     ]
                 },
                 {
-                    "label": "Gewenste datum hervaccinatie",
+                    "label": "zib_vaccination_recommendation.recommendation.date",
                     "type": "SINGLE_VALUE",
                     "display": "2019"
                 },
                 {
-                    "label": "Product code",
+                    "label": "zib_vaccination_recommendation.recommendation.vaccine_code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "Start date",
+                    "label": "zib_vaccination_recommendation.recommendation.date_criterion",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "2018"

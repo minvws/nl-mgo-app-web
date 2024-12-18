@@ -18,7 +18,7 @@ type ObservationLikeResource =
 
 export const uiSchema: UiSchemaFunction<ObservationLikeResource> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'nl_core_observation';
+    const i18n = 'r3.nl_core_observation';
 
     return {
         label: resource.identifier?.[0]?.value,

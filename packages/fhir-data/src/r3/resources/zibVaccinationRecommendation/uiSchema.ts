@@ -9,7 +9,7 @@ import { uiSchemaGroup as RecommendationUiSchema } from './elements/recommendati
  */
 export const uiSchema: UiSchemaFunction<ZibVaccinationRecommendation> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_vaccination_recommendation';
+    const profile = 'r3.zib_vaccination_recommendation';
 
     const recommendation = map(
         resource.recommendation,

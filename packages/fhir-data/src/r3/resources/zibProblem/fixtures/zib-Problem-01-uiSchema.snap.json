@@ -2,10 +2,10 @@
     "label": "Fracture of wrist (disorder)",
     "children": [
         {
-            "label": "zib_problem.group_general_information",
+            "label": "r3.zib_problem.group_general_information",
             "children": [
                 {
-                    "label": "zib_problem.clinicalStatus",
+                    "label": "r3.zib_problem.clinicalStatus",
                     "type": "SINGLE_VALUE",
                     "display": "active"
                 },
@@ -15,17 +15,17 @@
                     "display": []
                 },
                 {
-                    "label": "zib_problem.onsetDateTime",
+                    "label": "r3.zib_problem.onsetDateTime",
                     "type": "SINGLE_VALUE",
                     "display": "2001"
                 },
                 {
-                    "label": "zib_problem.abatementDateTime",
+                    "label": "r3.zib_problem.abatementDateTime",
                     "type": "SINGLE_VALUE",
                     "display": "2002"
                 },
                 {
-                    "label": "zib_problem.bodySite",
+                    "label": "r3.zib_problem.bodySite",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -43,22 +43,22 @@
             ]
         },
         {
-            "label": "zib_problem.group_others",
+            "label": "r3.zib_problem.group_others",
             "children": [
                 {
-                    "label": "zib_problem.identifier",
+                    "label": "r3.zib_problem.identifier",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1d1451f3-8fdf-11ec-5384-020000000000"
                     ]
                 },
                 {
-                    "label": "zib_problem.verificationStatus",
+                    "label": "r3.zib_problem.verificationStatus",
                     "type": "SINGLE_VALUE",
                     "display": "unknown"
                 },
                 {
-                    "label": "zib_problem.severity",
+                    "label": "r3.zib_problem.severity",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
@@ -70,24 +70,24 @@
                     ]
                 },
                 {
-                    "label": "zib_problem.subject",
+                    "label": "r3.zib_problem.subject",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "zib_problem.context",
+                    "label": "r3.zib_problem.context",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
                 },
                 {
-                    "label": "zib_problem.assertedDate",
+                    "label": "r3.zib_problem.assertedDate",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "zib_problem.asserter",
+                    "label": "r3.zib_problem.asserter",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -95,15 +95,15 @@
             ]
         },
         {
-            "label": "stage",
+            "label": "r3.stage",
             "children": [
                 {
-                    "label": "stage.summary",
+                    "label": "r3.stage.summary",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "stage.assessment",
+                    "label": "r3.stage.assessment",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

@@ -30,5 +30,5 @@ test('zibAttachment UI schema group is created successfully', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(schema.label).toBe('attachment');
+    expect(schema.label).toBe('r3.attachment');
 });

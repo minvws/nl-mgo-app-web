@@ -48,10 +48,10 @@ function parseNlCoreVaccinationEvent(resource: Immunization) {
     };
 }
 
-export type NlCoreVaccinationEvent = ReturnType<typeof parseNlCoreVaccinationEvent>;
+export type R4NlCoreVaccinationEvent = ReturnType<typeof parseNlCoreVaccinationEvent>;
 
-export const nlCoreVaccinationEvent = {
+export const r4NlCoreVaccinationEvent = {
     profile,
     parse: parseNlCoreVaccinationEvent,
     uiSchema,
-} satisfies ResourceConfigR4<Immunization, NlCoreVaccinationEvent>;
+} satisfies ResourceConfigR4<Immunization, R4NlCoreVaccinationEvent>;

@@ -7,7 +7,7 @@ import { type ZibMedicalDevice } from './zibMedicalDevice';
  */
 export const uiSchema: UiSchemaFunction<ZibMedicalDevice> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'zib_medical_device';
+    const i18n = 'r3.zib_medical_device';
 
     return {
         label: resource.device?.display,

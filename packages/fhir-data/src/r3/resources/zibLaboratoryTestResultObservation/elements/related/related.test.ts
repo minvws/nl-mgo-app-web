@@ -12,7 +12,7 @@ testSet(
         const context = testUiSchemaContext();
         const schema = related.uiSchemaGroup(data, context);
         expect(schema.label).toBe(
-            context.formatMessage('zib_laboratory_test_result_observation.related')
+            context.formatMessage('r3.zib_laboratory_test_result_observation.related')
         );
     },
     false

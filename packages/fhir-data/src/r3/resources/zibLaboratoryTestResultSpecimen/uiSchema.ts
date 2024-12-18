@@ -9,7 +9,7 @@ import { uiSchemaGroup as containerUiSchema } from './elements/container/uiSchem
  */
 export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSpecimen> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'zib_laboratory_test_result_specimen';
+    const profile = 'r3.zib_laboratory_test_result_specimen';
 
     const container = map(resource.container, (x) => containerUiSchema(x, context), true);
 
