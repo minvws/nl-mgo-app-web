@@ -15,5 +15,18 @@
     "r4.nl_core_vaccination_event.protocol_applied": "Protocol toegepast",
     "r4.nl_core_vaccination_event.protocol_applied.authority": "Autoriteit",
     "r4.nl_core_vaccination_event.protocol_applied.dose_number": "Dosis nummer",
-    "r4.nl_core_vaccination_event.protocol_applied.series_doses": "Serie dosis"
+    "r4.nl_core_vaccination_event.protocol_applied.series_doses": "Serie dosis",
+    "r4.nl_core_health_professional_practitioner_role": "Zorgprofessional rol",
+    "r4.nl_core_health_professional_practitioner_role.practitioner": "Zorgverlener",
+    "r4.nl_core_health_professional_practitioner_role.organization": "Zorgaanbieder",
+    "r4.nl_core_health_professional_practitioner_role.location": "Locatie",
+    "r4.nl_core_health_professional_practitioner_role.speciality": "Specialiteit",
+    "r4.nl_core_contact_information_email_addresses": "Contactgegevens",
+    "r4.nl_core_contact_information_email_addresses.value": "E-mailadres",
+    "r4.nl_core_contact_information_email_addresses.use": "Email soort",
+    "r4.nl_core_contact_information_telephone_numbers": "Contactgegevens",
+    "r4.nl_core_contact_information_telephone_numbers.telecom_type": "Telecom type",
+    "r4.nl_core_contact_information_telephone_numbers.value": "Telefoonnummer",
+    "r4.nl_core_contact_information_telephone_numbers.use": "Telecom type / nummer soort",
+    "r4.nl_core_contact_information_telephone_numbers.comment": "Telecom toelichting"
 }

@@ -9,5 +9,6 @@
  */
 
 export * from './nlCorePatient/nlCorePatient';
+export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
 export * from './nlCoreHealthProfessionalPractitioner/nlCoreHealthProfessionalPractitioner';
 export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';

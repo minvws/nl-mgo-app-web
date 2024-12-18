@@ -1,0 +1,64 @@
+{
+    "label": "Neuroloog",
+    "children": [
+        {
+            "label": "Zorgprofessional rol",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Specialiteit",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Neuroloog (01.026 in code systeem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "E-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "j.peters@hospital.nl"
+                },
+                {
+                    "label": "Email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telefoonnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "+3715828282"
+                },
+                {
+                    "label": "Telecom type / nummer soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Telecom toelichting",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Telecom type",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

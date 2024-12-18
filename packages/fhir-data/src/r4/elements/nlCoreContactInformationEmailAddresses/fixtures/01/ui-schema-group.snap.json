@@ -1,13 +1,13 @@
 {
-    "label": "nl_core_contact_information_email_addresses",
+    "label": "Contactgegevens",
     "children": [
         {
-            "label": "nl_core_contact_information_email_addresses.value",
+            "label": "E-mailadres",
             "type": "SINGLE_VALUE",
             "display": "info@erasmus.nl"
         },
         {
-            "label": "nl_core_contact_information_email_addresses.use",
+            "label": "Email soort",
             "type": "SINGLE_VALUE",
             "display": "work"
         }

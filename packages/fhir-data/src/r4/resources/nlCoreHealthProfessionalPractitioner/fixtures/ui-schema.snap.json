@@ -68,40 +68,40 @@
             ]
         },
         {
-            "label": "nl_core_contact_information_email_addresses",
+            "label": "Contactgegevens",
             "children": [
                 {
-                    "label": "nl_core_contact_information_email_addresses.value",
+                    "label": "E-mailadres",
                     "type": "SINGLE_VALUE",
                     "display": "j.peters@hospital.nl"
                 },
                 {
-                    "label": "nl_core_contact_information_email_addresses.use",
+                    "label": "Email soort",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 }
             ]
         },
         {
-            "label": "nl_core_contact_information_telephone_numbers",
+            "label": "Contactgegevens",
             "children": [
                 {
-                    "label": "nl_core_contact_information_telephone_numbers.value",
+                    "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "display": "+3715828282"
                 },
                 {
-                    "label": "nl_core_contact_information_telephone_numbers.use",
+                    "label": "Telecom type / nummer soort",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "nl_core_contact_information_telephone_numbers.comment",
+                    "label": "Telecom toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_contact_information_telephone_numbers.telecomType",
+                    "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 }

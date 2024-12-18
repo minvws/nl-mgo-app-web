@@ -29,9 +29,7 @@ test('uiSchema returns the expected output 01', () => {
     const output = nlCoreContactInformationTelephoneNumbers.parse(address);
     const uiSchemaGroup = nlCoreContactInformationTelephoneNumbers.uiSchemaGroup(
         output!,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+        testUiSchemaContext()
     );
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });

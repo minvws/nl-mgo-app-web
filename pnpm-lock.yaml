@@ -138,7 +138,7 @@ importers:
         version: 8.4.1
       '@formatjs/cli':
         specifier: ^6.2.12
-        version: 6.2.12(@vue/compiler-core@3.5.6)
+        version: 6.3.11(@vue/compiler-core@3.5.6)
       '@formatjs/intl':
         specifier: ^2.10.4
         version: 2.10.4(typescript@5.4.5)
@@ -965,37 +965,6 @@ packages:
     resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
 
-  '@formatjs/cli@6.2.12':
-    resolution: {integrity: sha512-bt1NEgkeYN8N9zWcpsPu3fZ57vv+biA+NtIQBlyOZnCp1bcvh+vNTXvmwF4C5qxqDtCylpOIb3yi3Ktgp4v0JQ==}
-    engines: {node: '>= 16'}
-    hasBin: true
-    peerDependencies:
-      '@glimmer/env': ^0.1.7
-      '@glimmer/reference': ^0.91.1 || ^0.92.0
-      '@glimmer/syntax': ^0.92.0
-      '@glimmer/validator': ^0.92.0
-      '@vue/compiler-core': ^3.4.0
-      content-tag: ^2.0.1
-      ember-template-recast: ^6.1.4
-      vue: ^3.4.0
-    peerDependenciesMeta:
-      '@glimmer/env':
-        optional: true
-      '@glimmer/reference':
-        optional: true
-      '@glimmer/syntax':
-        optional: true
-      '@glimmer/validator':
-        optional: true
-      '@vue/compiler-core':
-        optional: true
-      content-tag:
-        optional: true
-      ember-template-recast:
-        optional: true
-      vue:
-        optional: true
-
   '@formatjs/cli@6.3.11':
     resolution: {integrity: sha512-TonnLTxrSLoD/ZMNz+XrswN8sTwGBxvq0ff7Tmh7Wx3Mw7U0h1p+bXfevHfHp/5ANra8tfHUd9c3InYOOIp4XQ==}
     engines: {node: '>= 16'}
@@ -1118,6 +1087,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1125,6 +1095,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@inquirer/confirm@3.0.0':
     resolution: {integrity: sha512-LHeuYP1D8NmQra1eR4UqvZMXwxEdDXyElJmmZfU44xdNLL6+GcQBS0uE16vyfZVjH8c22p9e+DStROfE/hyHrg==}
@@ -5997,10 +5968,6 @@ snapshots:
 
   '@faker-js/faker@8.4.1': {}
 
-  '@formatjs/cli@6.2.12(@vue/compiler-core@3.5.6)':
-    optionalDependencies:
-      '@vue/compiler-core': 3.5.6
-
   '@formatjs/cli@6.3.11(@vue/compiler-core@3.5.6)':
     optionalDependencies:
       '@vue/compiler-core': 3.5.6
@@ -8189,7 +8156,7 @@ snapshots:
       is-negative-zero: 2.0.3
       is-regex: 1.1.4
       is-shared-array-buffer: 1.0.3
-      is-string: 1.0.7
+      is-string: 1.1.0
       is-typed-array: 1.1.13
       is-weakref: 1.0.2
       object-inspect: 1.13.1

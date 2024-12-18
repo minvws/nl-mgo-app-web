@@ -1,4 +1,82 @@
 {
+    "r4.nl_core_contact_information_email_addresses": [
+        {
+            "type": 0,
+            "value": "Contactgegevens"
+        }
+    ],
+    "r4.nl_core_contact_information_email_addresses.use": [
+        {
+            "type": 0,
+            "value": "Email soort"
+        }
+    ],
+    "r4.nl_core_contact_information_email_addresses.value": [
+        {
+            "type": 0,
+            "value": "E-mailadres"
+        }
+    ],
+    "r4.nl_core_contact_information_telephone_numbers": [
+        {
+            "type": 0,
+            "value": "Contactgegevens"
+        }
+    ],
+    "r4.nl_core_contact_information_telephone_numbers.comment": [
+        {
+            "type": 0,
+            "value": "Telecom toelichting"
+        }
+    ],
+    "r4.nl_core_contact_information_telephone_numbers.telecom_type": [
+        {
+            "type": 0,
+            "value": "Telecom type"
+        }
+    ],
+    "r4.nl_core_contact_information_telephone_numbers.use": [
+        {
+            "type": 0,
+            "value": "Telecom type / nummer soort"
+        }
+    ],
+    "r4.nl_core_contact_information_telephone_numbers.value": [
+        {
+            "type": 0,
+            "value": "Telefoonnummer"
+        }
+    ],
+    "r4.nl_core_health_professional_practitioner_role": [
+        {
+            "type": 0,
+            "value": "Zorgprofessional rol"
+        }
+    ],
+    "r4.nl_core_health_professional_practitioner_role.location": [
+        {
+            "type": 0,
+            "value": "Locatie"
+        }
+    ],
+    "r4.nl_core_health_professional_practitioner_role.organization": [
+        {
+            "type": 0,
+            "value": "Zorgaanbieder"
+        }
+    ],
+    "r4.nl_core_health_professional_practitioner_role.practitioner": [
+        {
+            "type": 0,
+            "value": "Zorgverlener"
+        }
+    ],
+    "r4.nl_core_health_professional_practitioner_role.speciality": [
+        {
+            "type": 0,
+            "value": "Specialiteit"
+        }
+    ],
     "r4.nl_core_vaccination_event.dose_quantity": [
         {
             "type": 0,
