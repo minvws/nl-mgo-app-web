@@ -108,55 +108,55 @@
             ]
         },
         {
-            "label": "nl_core_address_information",
+            "label": "Adresgegevens",
             "children": [
                 {
-                    "label": "nl_core_address_information.streetName",
+                    "label": "Straat",
                     "type": "SINGLE_VALUE",
                     "display": "Simon Smitweg"
                 },
                 {
-                    "label": "nl_core_address_information.houseNumber",
+                    "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
                 },
                 {
-                    "label": "nl_core_address_information.houseNumberAddition",
+                    "label": "Huisnummerletter",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address_information.houseNumberIndication",
+                    "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address_information.additionalInformation",
+                    "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address_information.city",
+                    "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
                     "display": "Leiderdorp"
                 },
                 {
-                    "label": "nl_core_address_information.district",
+                    "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "nl_core_address_information.postalCode",
+                    "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "display": "2353 GA"
                 },
                 {
-                    "label": "nl_core_address_information.country",
+                    "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "Nederland"
                 },
                 {
-                    "label": "nl_core_address_information.addressType",
+                    "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Work Place (WP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"

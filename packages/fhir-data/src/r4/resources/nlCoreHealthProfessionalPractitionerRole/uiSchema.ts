@@ -38,10 +38,10 @@ export const uiSchema: UiSchemaFunction<NlCoreHealthProfessionalPractitionerRole
     };
 
     return setEmptyEntries({
-        label: resource.speciality?.at(0)?.coding.at(0)?.display ?? formatMessage(`${profile}`),
+        label: resource.speciality?.at(0)?.coding.at(0)?.display ?? formatMessage(profile),
         children: [
             {
-                label: formatMessage(`${profile}`),
+                label: formatMessage(profile),
                 children: [zibHealthProfessional.Organization, zibHealthProfessional.Speciality],
             },
             ...zibContactInformation.EmailAddresses,

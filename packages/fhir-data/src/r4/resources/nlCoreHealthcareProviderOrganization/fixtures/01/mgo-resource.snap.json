@@ -1,0 +1,82 @@
+{
+    "id": "nl-core-HealthcareProvider-Organization-01",
+    "referenceId": "Organization/nl-core-HealthcareProvider-Organization-01",
+    "resourceType": "Organization",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization",
+    "fhirVersion": "R4",
+    "identifier": [
+        {
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "06020806",
+            "type": null
+        }
+    ],
+    "departmentSpecialty": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "0320",
+                    "display": "Medisch specialisten, cardiologie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
+    ],
+    "organizationType": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "V5",
+                    "display": "Universitair Medisch Centrum",
+                    "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
+                }
+            ]
+        }
+    ],
+    "name": "Erasmus Universitair Medisch Centrum",
+    "telephoneNumbers": [
+        {
+            "system": "phone",
+            "telecomType": null,
+            "value": "+31107040704",
+            "use": "work",
+            "comment": null
+        }
+    ],
+    "emailAddresses": [
+        {
+            "system": "email",
+            "value": "info@erasmus.nl",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "line": "s-Gravendijkwal 230",
+            "streetName": "s-Gravendijkwal",
+            "houseNumber": "230",
+            "houseNumberAddition": null,
+            "houseNumberIndication": null,
+            "additionalInformation": null,
+            "city": "Rotterdam",
+            "district": null,
+            "postalCode": "3015 CE",
+            "country": null,
+            "countryCode": null,
+            "addressType": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "WP",
+                        "display": "Work Place",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                    }
+                ]
+            },
+            "period": null
+        }
+    ]
+}

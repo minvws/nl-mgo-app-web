@@ -77,6 +77,36 @@
             "value": "Specialiteit"
         }
     ],
+    "r4.nl_core_healthcare_provider_organization": [
+        {
+            "type": 0,
+            "value": "Zorgverlener organisatie"
+        }
+    ],
+    "r4.nl_core_healthcare_provider_organization.department_speciality": [
+        {
+            "type": 0,
+            "value": "Zorgverlener organisatie afdelings specialiteit"
+        }
+    ],
+    "r4.nl_core_healthcare_provider_organization.identifier": [
+        {
+            "type": 0,
+            "value": "Zorgverlener organisatie identifier"
+        }
+    ],
+    "r4.nl_core_healthcare_provider_organization.name": [
+        {
+            "type": 0,
+            "value": "Zorgverlener organisatie naam"
+        }
+    ],
+    "r4.nl_core_healthcare_provider_organization.organization_type": [
+        {
+            "type": 0,
+            "value": "Zorgverlener organisatie type"
+        }
+    ],
     "r4.nl_core_vaccination_event.dose_quantity": [
         {
             "type": 0,

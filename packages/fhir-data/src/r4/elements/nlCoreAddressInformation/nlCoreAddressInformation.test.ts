@@ -12,12 +12,7 @@ test('returns the expected output 01', () => {
 
 test('uiSchema returns the expected output 01', () => {
     const output = nlCoreAddressInformation.parse(input01 as Address);
-    const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(output, testUiSchemaContext());
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });
 
@@ -28,11 +23,6 @@ test('returns the expected output 02', () => {
 
 test('uiSchema returns the expected output 02', () => {
     const output = nlCoreAddressInformation.parse(input02 as Address);
-    const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchemaGroup = nlCoreAddressInformation.uiSchemaGroup(output, testUiSchemaContext());
     expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/02/ui-schema-group.snap.json');
 });
