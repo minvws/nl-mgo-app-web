@@ -33,5 +33,9 @@
     "r4.nl_core_contact_information_telephone_numbers.telecom_type": "Telecom type",
     "r4.nl_core_contact_information_telephone_numbers.value": "Telefoonnummer",
     "r4.nl_core_contact_information_telephone_numbers.use": "Telecom type / nummer soort",
-    "r4.nl_core_contact_information_telephone_numbers.comment": "Telecom toelichting"
+    "r4.nl_core_contact_information_telephone_numbers.comment": "Telecom toelichting",
+    "r4.nl_core_healtcare_provider": "Zorgverlener",
+    "r4.nl_core_healtcare_provider.identifier": "Identifier",
+    "r4.nl_core_healtcare_provider.name": "Zorgverlener naam",
+    "r4.nl_core_healtcare_provider.managing_organization": "Beherende organisatie"
 }

@@ -47,6 +47,30 @@
             "value": "Telefoonnummer"
         }
     ],
+    "r4.nl_core_healtcare_provider": [
+        {
+            "type": 0,
+            "value": "Zorgverlener"
+        }
+    ],
+    "r4.nl_core_healtcare_provider.identifier": [
+        {
+            "type": 0,
+            "value": "Identifier"
+        }
+    ],
+    "r4.nl_core_healtcare_provider.managing_organization": [
+        {
+            "type": 0,
+            "value": "Beherende organisatie"
+        }
+    ],
+    "r4.nl_core_healtcare_provider.name": [
+        {
+            "type": 0,
+            "value": "Zorgverlener naam"
+        }
+    ],
     "r4.nl_core_health_professional_practitioner_role": [
         {
             "type": 0,

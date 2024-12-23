@@ -1,0 +1,107 @@
+{
+    "label": "Healthcare provider (organization), Erasmus Universitair Medisch Centrum",
+    "children": [
+        {
+            "label": "Zorgverlener",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgverlener naam",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Straat",
+                    "type": "SINGLE_VALUE",
+                    "display": "s-Gravendijkwal"
+                },
+                {
+                    "label": "Huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "230"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Huisnummerletter",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Aanduiding bij nummer",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Additionele informatie",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Woonplaats",
+                    "type": "SINGLE_VALUE",
+                    "display": "Rotterdam"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Gemeente",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Postcode",
+                    "type": "SINGLE_VALUE",
+                    "display": "3015 CE"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Land",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Work Place (WP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telefoonnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "+31107040704"
+                },
+                {
+                    "label": "Telecom type / nummer soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Telecom toelichting",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Telecom type",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "E-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "info@erasmus.nl"
+                },
+                {
+                    "label": "Email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                }
+            ]
+        }
+    ]
+}

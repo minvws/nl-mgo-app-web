@@ -9,6 +9,7 @@
  */
 
 export * from './nlCorePatient/nlCorePatient';
+export * from './nlCoreHealtcareProvider/nlCoreHealtcareProvider';
 export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization';
 export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
 export * from './nlCoreHealthProfessionalPractitioner/nlCoreHealthProfessionalPractitioner';
