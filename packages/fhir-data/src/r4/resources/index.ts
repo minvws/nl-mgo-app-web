@@ -14,3 +14,4 @@ export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOr
 export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
 export * from './nlCoreHealthProfessionalPractitioner/nlCoreHealthProfessionalPractitioner';
 export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';
+export * from './nlCorePharmaceuticalProduct/nlCorePharmaceuticalProduct';

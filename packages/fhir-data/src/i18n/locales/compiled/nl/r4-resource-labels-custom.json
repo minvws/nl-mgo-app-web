@@ -232,5 +232,41 @@
             "type": 0,
             "value": "Uniek nummer"
         }
+    ],
+    "r4.zib_pharmaceutical_product.batch": [
+        {
+            "type": 0,
+            "value": "Batch"
+        }
+    ],
+    "r4.zib_pharmaceutical_product.batch.expiration_date": [
+        {
+            "type": 0,
+            "value": "Batch vervaldatum"
+        }
+    ],
+    "r4.zib_pharmaceutical_product.batch.lot_number": [
+        {
+            "type": 0,
+            "value": "Batch lotnummer"
+        }
+    ],
+    "r4.zib_pharmaceutical_product.description": [
+        {
+            "type": 0,
+            "value": "Omschrijving"
+        }
+    ],
+    "r4.zib_pharmaceutical_product.identifier": [
+        {
+            "type": 0,
+            "value": "Serienummer"
+        }
+    ],
+    "r4.zib_pharmaceutical_product.ingredient.item": [
+        {
+            "type": 0,
+            "value": "Medicatie ingredient item"
+        }
     ]
 }
