@@ -12,7 +12,7 @@ test('ratio', () => {
         numerator: mockQuantity(),
         denominator: mockQuantity(),
     };
-    const context = faker.custom.uiContext();
+    const context = faker.custom.i18nContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => false);
     const result = ratio(context)(label, { numerator, denominator }, options);
     expect(result).toEqual([

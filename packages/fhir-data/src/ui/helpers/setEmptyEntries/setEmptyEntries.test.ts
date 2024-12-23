@@ -59,7 +59,7 @@ test('sets empty entries, but does not mutate the schema', () => {
         ],
     };
 
-    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiContext());
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.i18nContext());
     expect(uiSetEmptyEntries(uiSchema)).toEqual(expected);
     expect(uiSchema.children[0].children[2]).toBe(entry3);
 });
@@ -116,6 +116,6 @@ test('works for all types', () => {
         ],
     };
 
-    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiContext());
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.i18nContext());
     expect(uiSetEmptyEntries(uiSchema)).toEqual(expected);
 });

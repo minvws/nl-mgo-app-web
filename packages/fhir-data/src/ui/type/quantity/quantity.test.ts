@@ -19,7 +19,7 @@ test('quantity', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
     const mgoQuantity = mockQuantity();
-    const result = quantity(faker.custom.uiContext())(label, mgoQuantity, options);
+    const result = quantity(faker.custom.i18nContext())(label, mgoQuantity, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
@@ -31,7 +31,7 @@ test('quantity', () => {
 test('quantity with undefined fields', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
-    const result = quantity(faker.custom.uiContext())(label, undefined, options);
+    const result = quantity(faker.custom.i18nContext())(label, undefined, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,

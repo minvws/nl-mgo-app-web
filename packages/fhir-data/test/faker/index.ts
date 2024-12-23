@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import * as helpers from './helpers';
-import { uiContext } from './uiContext';
+import { i18nContext } from './i18nContext';
 import { uiEntryOptions } from './uiEntryOptions';
 import { messageId } from './messageId';
 import { nullish } from './nullish';
@@ -11,7 +11,7 @@ const custom = {
     ...helpers,
     nullish,
     messageId,
-    uiContext,
+    i18nContext,
     uiEntryOptions,
 };
 

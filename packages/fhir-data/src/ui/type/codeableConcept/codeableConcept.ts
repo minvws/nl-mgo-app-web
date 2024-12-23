@@ -5,11 +5,11 @@ import {
     type MultipleGroupedValues,
     type MultipleValues,
     type UiFunction,
-    type WithUiContext,
+    type WithI18nContext,
 } from '../../types';
 import { codingDisplay } from '../coding/coding';
 
-const codeableDisplay: WithUiContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
+const codeableDisplay: WithI18nContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
     (context) => (value) => {
         if (value?.text?.length) {
             return [value.text];
@@ -19,7 +19,7 @@ const codeableDisplay: WithUiContext<FormatDisplayFunction<MgoCodeableConcept, s
         return value?.coding.map(coding).filter(isNonNullish) ?? [];
     };
 
-export const codeableConcept: WithUiContext<
+export const codeableConcept: WithI18nContext<
     UiFunction<MgoCodeableConcept | MgoCodeableConcept[], MultipleValues | MultipleGroupedValues>
 > = (context) => (label, value, options) => {
     const { formatMessage } = context;

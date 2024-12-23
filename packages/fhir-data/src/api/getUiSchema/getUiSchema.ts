@@ -2,6 +2,7 @@ import { Locale } from '../../i18n';
 import { FhirVersion } from '../../types/Fhir';
 import { createUiSchemaContext, type UiSchema, type UiSchemaOptions } from '../../ui';
 import { type UiSchemaContext } from '../../ui/types';
+import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import {
     resourcesMapR3,
     resourcesMapR4,
@@ -36,6 +37,14 @@ export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(
     resource: T,
     options?: UiSchemaOptions
 ) {
+    // As this method is also used with JSON parsed inputs,
+    // we want to ensure we're really dealing with a MGO Resource.
+    if (!isMgoResource(resource)) {
+        throw new Error(
+            `input does not seem to be a valid MGO Resource. Received MGO resource profile: "${resource?.profile}"`
+        );
+    }
+
     const config = getResourceConfig(resource);
 
     const uiSchemaContext = createUiSchemaContext({

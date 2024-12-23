@@ -1,4 +1,5 @@
 import { type Observation } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { type ResourceConfigR3 } from '../config';
@@ -15,7 +16,10 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestRes
  * ZibLaboratoryResultObservation is reused as the baseDefinition for some other resources.
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
  */
-export function parseZibLaboratoryTestResultObservationBase(resource: Observation) {
+export function parseZibLaboratoryTestResultObservationBase(
+    resource: Observation,
+    _i18nContext: I18nContext
+) {
     const laboratoryTestResultCode = filterCodeableConceptByCoding(
         resource.category,
         (x) => x.system === SNOMED_SYSTEM && x.code === Snomed.LABORATORY_TEST_FINDING
@@ -55,10 +59,13 @@ export function parseZibLaboratoryTestResultObservationBase(resource: Observatio
     };
 }
 
-export function parseZibLaboratoryTestResultObservation(resource: Observation) {
+export function parseZibLaboratoryTestResultObservation(
+    resource: Observation,
+    i18nContext: I18nContext
+) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        ...parseZibLaboratoryTestResultObservationBase(resource),
+        ...parseZibLaboratoryTestResultObservationBase(resource, i18nContext),
     };
 }
 

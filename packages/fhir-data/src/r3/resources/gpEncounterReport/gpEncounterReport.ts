@@ -1,4 +1,5 @@
 import { type Composition } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
 import { FhirVersion } from '../../../types/Fhir';
 import { map } from '../../../utils';
@@ -11,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport'; 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316993
  */
-function parseGpEncounterReport(resource: Composition) {
+function parseGpEncounterReport(resource: Composition, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: parse.identifier(resource.identifier),

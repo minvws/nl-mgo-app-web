@@ -21,7 +21,7 @@ test('identifier', () => {
             ],
         },
     };
-    const result = identifier(faker.custom.uiContext())(label, mgoIdentifier, options);
+    const result = identifier(faker.custom.i18nContext())(label, mgoIdentifier, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',

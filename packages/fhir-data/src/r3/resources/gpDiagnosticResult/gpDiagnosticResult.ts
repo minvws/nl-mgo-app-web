@@ -1,4 +1,5 @@
 import { type Observation } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
 import { FhirVersion } from '../../../types/Fhir';
@@ -10,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult';
 
 export type GpDiagnosticResult = ReturnType<typeof parseGpDiagnosticResult>;
 
-function parseGpDiagnosticResult(resource: Observation) {
+function parseGpDiagnosticResult(resource: Observation, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),

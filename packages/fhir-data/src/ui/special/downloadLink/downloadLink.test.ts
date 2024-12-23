@@ -9,7 +9,7 @@ test('downloadLink', () => {
     value.url = faker.internet.url();
     const options = faker.custom.uiEntryOptions();
 
-    const uiDownloadLink = downloadLink(faker.custom.uiContext());
+    const uiDownloadLink = downloadLink(faker.custom.i18nContext());
     const result = uiDownloadLink(value, options);
     expect(result).toEqual({
         type: 'DOWNLOAD_LINK',
@@ -25,7 +25,7 @@ test('downloadLink values default to empty string', () => {
     value.url = undefined;
     const options = faker.custom.uiEntryOptions();
 
-    const uiDownloadLink = downloadLink(faker.custom.uiContext());
+    const uiDownloadLink = downloadLink(faker.custom.i18nContext());
     const result = uiDownloadLink(value, options);
     expect(result).toEqual({
         type: 'DOWNLOAD_LINK',

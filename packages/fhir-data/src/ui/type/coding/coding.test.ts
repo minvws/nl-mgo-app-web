@@ -11,7 +11,7 @@ test('coding', () => {
         system: faker.internet.url(),
         display: faker.lorem.sentence(),
     };
-    const result = coding(faker.custom.uiContext())(label, mgoCoding, options);
+    const result = coding(faker.custom.i18nContext())(label, mgoCoding, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
@@ -23,7 +23,7 @@ test('coding', () => {
 test('coding defaults to empty values', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
-    const result = coding(faker.custom.uiContext())(label, undefined, options);
+    const result = coding(faker.custom.i18nContext())(label, undefined, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
@@ -46,10 +46,10 @@ test.each<[MgoCoding, string | undefined]>([
     ],
     [{ display: 'display', system: 'system' }, 'display'],
 ])('formats mgo coding for %j', (mgoCoding, expected) => {
-    const context = faker.custom.uiContext();
+    const context = faker.custom.i18nContext();
     vi.spyOn(context, 'hasMessage').mockImplementation((id) => id === 'system.known-system');
     vi.spyOn(context, 'formatMessage').mockImplementation((id, values) => {
-        const anyValues = values as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+        const anyValues = values ?? {};
         if (id === 'format.code_in_system') {
             return `intl(${id} - ${anyValues.code} / ${anyValues.system})`;
         }

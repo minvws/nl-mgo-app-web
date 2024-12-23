@@ -1,3 +1,4 @@
+import { type I18nContext } from '../../../i18n';
 import { type MessagesIds } from '../../../i18n/messages';
 import { type Lossless } from '../../../types/Lossless';
 import { type Nullable } from '../../../types/Nullable';
@@ -7,13 +8,12 @@ import {
     type MultipleValues,
     type ReferenceValue,
     type SingleValue,
-    type UiHelperContext,
     type UiEntryOptions,
     type UiFunction,
 } from '../../types';
 
 export const multipleValues =
-    ({ intl }: UiHelperContext) =>
+    ({ intl }: I18nContext) =>
     <T, R extends SingleValue | ReferenceValue | MultipleValues>(
         label: MessagesIds,
         value: Nullable<Lossless<T>[]>,

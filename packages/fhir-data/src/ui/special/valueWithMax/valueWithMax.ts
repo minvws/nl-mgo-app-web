@@ -1,7 +1,7 @@
 import { format } from '../../format';
-import { type WithUiContext, type CombinedUiFunction, type SingleValue } from '../../types';
+import { type WithI18nContext, type CombinedUiFunction, type SingleValue } from '../../types';
 
-export const valueWithMax: WithUiContext<CombinedUiFunction<number, number, SingleValue>> =
+export const valueWithMax: WithI18nContext<CombinedUiFunction<number, number, SingleValue>> =
     ({ intl }) =>
     (label, value, max, options) => {
         return {

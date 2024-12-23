@@ -23,7 +23,7 @@ test('codeableConcept prefers text value', () => {
         ],
     };
 
-    const result = codeableConcept(faker.custom.uiContext())(label, concept, options);
+    const result = codeableConcept(faker.custom.i18nContext())(label, concept, options);
 
     expect(result).toEqual({
         label: `intl(${label})`,
@@ -52,8 +52,8 @@ test('codeableConcept uses conding values as fallback', () => {
         ],
     };
 
-    const result = codeableConcept(faker.custom.uiContext())(label, concept, options);
-    const codingEntries = coding(faker.custom.uiContext());
+    const result = codeableConcept(faker.custom.i18nContext())(label, concept, options);
+    const codingEntries = coding(faker.custom.i18nContext());
 
     const {
         coding: [coding1, coding2],

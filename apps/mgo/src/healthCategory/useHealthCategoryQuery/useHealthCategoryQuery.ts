@@ -81,7 +81,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
 
             const fhirResources = getBundleResources(responseData);
             const mgoResources = fhirResources
-                .map((x) => getMgoResource(x, fhirVersion))
+                .map((x) => getMgoResource(x, { fhirVersion }))
                 .filter(isNonNullish);
 
             if (mgoResources?.length) {

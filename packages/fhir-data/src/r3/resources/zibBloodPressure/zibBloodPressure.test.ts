@@ -7,12 +7,12 @@ import { zibBloodPressure } from './zibBloodPressure';
 import { parse } from '../../../parse';
 
 test('returns the expected output 01', () => {
-    const output = zibBloodPressure.parse(input as Observation);
+    const output = zibBloodPressure.parse(input as Observation, faker.custom.i18nContext());
     expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output', () => {
-    const output = zibBloodPressure.parse(input as Observation);
+    const output = zibBloodPressure.parse(input as Observation, faker.custom.i18nContext());
     const uiSchema = zibBloodPressure.uiSchema(
         output,
         testUiSchemaContext({
@@ -51,7 +51,7 @@ test.each([
     };
     input.component.push(data);
 
-    const output = zibBloodPressure.parse(input as Observation);
+    const output = zibBloodPressure.parse(input as Observation, faker.custom.i18nContext());
     expect(output).toEqual(
         expect.objectContaining({
             [name]: {
@@ -97,7 +97,7 @@ test.each([
     };
     input.component.push(data);
 
-    const output = zibBloodPressure.parse(input as Observation);
+    const output = zibBloodPressure.parse(input as Observation, faker.custom.i18nContext());
     expect(output).toEqual(
         expect.objectContaining({
             [name]: {

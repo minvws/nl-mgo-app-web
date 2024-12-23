@@ -1,4 +1,5 @@
 import { type Organization } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
@@ -12,7 +13,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-organization'; 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317033
  */
-function parseNlCoreOrganization(resource: Organization) {
+function parseNlCoreOrganization(resource: Organization, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),

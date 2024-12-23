@@ -14,7 +14,7 @@ test('annotation', () => {
             display: faker.lorem.sentence(),
         },
     };
-    const result = annotation(faker.custom.uiContext())(label, data, options);
+    const result = annotation(faker.custom.i18nContext())(label, data, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',

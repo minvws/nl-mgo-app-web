@@ -6,7 +6,7 @@ import { faker, testUiSchemaContext } from '$test';
 beforeAll(async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (global as any).Intl = undefined;
-    await import('./polyfills');
+    await import('./intlPolyfills');
 });
 
 test.each<[string, string]>([
@@ -24,7 +24,7 @@ test.each<[string, string]>([
     expect(result).toEqual(expected);
 });
 
-test('polyfill: variables work as expected', () => {
+test('intl-polyfills: variables work as expected', () => {
     const context = testUiSchemaContext({ ignoreMissingTranslations: true });
     const result = context.intl.formatMessage(
         {
@@ -36,7 +36,7 @@ test('polyfill: variables work as expected', () => {
     expect(result).toEqual('Hello World');
 });
 
-test('polyfill: puralization works as expected', () => {
+test('intl-polyfills: puralization works as expected', () => {
     const context = testUiSchemaContext({ ignoreMissingTranslations: true });
     const result = context.intl.formatMessage(
         {
@@ -48,13 +48,13 @@ test('polyfill: puralization works as expected', () => {
     expect(result).toEqual('10 dagen');
 });
 
-test('polyfill: formatRelativeTime works as expected', () => {
+test('intl-polyfills: formatRelativeTime works as expected', () => {
     const context = testUiSchemaContext({ ignoreMissingTranslations: true });
     const result = context.intl.formatRelativeTime(-24, 'hour', { style: 'narrow' });
     expect(result).toEqual('24 uur geleden');
 });
 
-test('polyfill: formatNumber works as expected', () => {
+test('intl-polyfills: formatNumber works as expected', () => {
     const context = testUiSchemaContext({ ignoreMissingTranslations: true });
     const result = context.intl.formatNumber(1000, { style: 'currency', currency: 'EUR' });
     expect(result).toBe('€\xa01.000,00');

@@ -11,7 +11,7 @@ test('period', () => {
         start: faker.fhir.dateTime(),
         end: faker.fhir.dateTime(),
     };
-    const context = faker.custom.uiContext();
+    const context = faker.custom.i18nContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => false);
     const uiPeriod = period(context);
     const result = uiPeriod(label as any, mgoPeriod, options); // eslint-disable-line @typescript-eslint/no-explicit-any

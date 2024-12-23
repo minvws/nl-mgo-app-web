@@ -1,4 +1,5 @@
 import { type Specimen } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { type ResourceConfigR3 } from '../config';
@@ -12,7 +13,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestRes
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317241
  */
-function parseZibLaboratoryTestResultSpecimen(resource: Specimen) {
+function parseZibLaboratoryTestResultSpecimen(resource: Specimen, _i18nContext: I18nContext) {
     const collection = resource.collection;
 
     return {

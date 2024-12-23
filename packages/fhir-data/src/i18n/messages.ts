@@ -4,6 +4,10 @@ import r3ResourceLabelsCustom from './locales/compiled/nl/r3-resource-labels-cus
 import r4ResourceLabels from './locales/compiled/nl/r4-resource-labels.json';
 import r4ResourceLabelsCustom from './locales/compiled/nl/r4-resource-labels-custom.json';
 
+export enum Locale {
+    NL_NL = 'nl-NL',
+}
+
 export const messagesNL = {
     ...r3ResourceLabels,
     ...r3ResourceLabelsCustom,

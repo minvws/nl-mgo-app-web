@@ -5,10 +5,10 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithUiContext,
+    type WithI18nContext,
 } from '../../types';
 
-export const codingDisplay: WithUiContext<FormatDisplayFunction<MgoCoding, string | undefined>> =
+export const codingDisplay: WithI18nContext<FormatDisplayFunction<MgoCoding, string | undefined>> =
     ({ hasMessage, formatMessage }) =>
     (value) => {
         const { display, code, system } = value ?? {};
@@ -27,7 +27,7 @@ export const codingDisplay: WithUiContext<FormatDisplayFunction<MgoCoding, strin
         return displayString === '' ? undefined : displayString;
     };
 
-export const coding: WithUiContext<
+export const coding: WithI18nContext<
     UiFunction<MgoCoding | MgoCoding[], SingleValue | MultipleValues>
 > = (context) => (label, value, options) => {
     const { formatMessage } = context;

@@ -10,7 +10,7 @@ test('reference', () => {
         display: faker.lorem.word(),
         reference: faker.lorem.word(),
     };
-    const result = special.reference(faker.custom.uiContext())(label, value, options);
+    const result = special.reference(faker.custom.i18nContext())(label, value, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'REFERENCE_VALUE',

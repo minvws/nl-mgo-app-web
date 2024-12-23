@@ -5,14 +5,14 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithUiContext,
+    type WithI18nContext,
 } from '../../types';
 
 export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
     return value?.text;
 };
 
-export const annotation: WithUiContext<
+export const annotation: WithI18nContext<
     UiFunction<MgoAnnotation | MgoAnnotation[], SingleValue | MultipleValues>
 > =
     ({ intl }) =>

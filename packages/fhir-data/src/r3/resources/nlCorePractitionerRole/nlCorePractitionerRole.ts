@@ -1,4 +1,5 @@
 import { type PractitionerRole } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
@@ -11,7 +12,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrol
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317053
  */
-function parseNlCorePractitionerRole(resource: PractitionerRole) {
+function parseNlCorePractitionerRole(resource: PractitionerRole, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),

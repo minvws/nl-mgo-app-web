@@ -6,5 +6,5 @@ export function isMgoResource(
     value: unknown
 ): value is LosslessOutput<typeof value, MgoResourceR3> {
     const resourceTyped = value as Nullable<MgoResourceR3>;
-    return !!resourceTyped?.id && !!resourceTyped?.resourceType && !!resourceTyped?.profile;
+    return !!resourceTyped?.resourceType && !!resourceTyped?.profile;
 }

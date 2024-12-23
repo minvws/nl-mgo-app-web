@@ -1,8 +1,8 @@
 import { type MgoDecimal } from '../../../parse/type';
 import { numberToString } from '../../helpers';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 
-export const decimal: WithUiContext<UiFunction<MgoDecimal, SingleValue>> =
+export const decimal: WithI18nContext<UiFunction<MgoDecimal, SingleValue>> =
     ({ intl }) =>
     (label, value, options) => {
         return {

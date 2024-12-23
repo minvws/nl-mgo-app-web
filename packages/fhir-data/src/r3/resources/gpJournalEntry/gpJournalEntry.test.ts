@@ -8,12 +8,12 @@ import { gpJournalEntry } from './gpJournalEntry';
 import { type Observation } from 'fhir/r3';
 
 test('returns the expected output 01', () => {
-    const output = gpJournalEntry.parse(input01 as Observation);
+    const output = gpJournalEntry.parse(input01 as Observation, faker.custom.i18nContext());
     expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const output = gpJournalEntry.parse(input01 as Observation);
+    const output = gpJournalEntry.parse(input01 as Observation, faker.custom.i18nContext());
     const uiSchema = gpJournalEntry.uiSchema(
         output,
         testUiSchemaContext({
@@ -41,7 +41,7 @@ test('returns ICPC_E in parser', () => {
         },
     });
 
-    const output = gpJournalEntry.parse(input);
+    const output = gpJournalEntry.parse(input, faker.custom.i18nContext());
     expect(output.ICPC_E).toEqual({
         valueCodeableConcept: {
             text: undefined,

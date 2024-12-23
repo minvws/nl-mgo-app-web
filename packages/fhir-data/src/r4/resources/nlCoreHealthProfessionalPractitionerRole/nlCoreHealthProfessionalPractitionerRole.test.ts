@@ -1,18 +1,24 @@
 import input01 from './fixtures/fhir-resource.json';
 
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectJson, testUiSchemaContext, faker } from '$test';
 import { type PractitionerRole } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import { nlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
 import { message } from '$test/i18n';
 
 test('returns the expected output 01', () => {
-    const output = nlCoreHealthProfessionalPractitionerRole.parse(input01 as PractitionerRole);
+    const output = nlCoreHealthProfessionalPractitionerRole.parse(
+        input01 as PractitionerRole,
+        faker.custom.i18nContext()
+    );
     expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const output = nlCoreHealthProfessionalPractitionerRole.parse(input01 as PractitionerRole);
+    const output = nlCoreHealthProfessionalPractitionerRole.parse(
+        input01 as PractitionerRole,
+        faker.custom.i18nContext()
+    );
     const uiSchema = nlCoreHealthProfessionalPractitionerRole.uiSchema(
         output,
         testUiSchemaContext()
@@ -21,7 +27,10 @@ test('uiSchema returns the expected output 01', () => {
 });
 
 test('uiSchema label returns profile when label not specified', () => {
-    const output = nlCoreHealthProfessionalPractitionerRole.parse(input01 as PractitionerRole);
+    const output = nlCoreHealthProfessionalPractitionerRole.parse(
+        input01 as PractitionerRole,
+        faker.custom.i18nContext()
+    );
     output.speciality = undefined;
     const uiSchema = nlCoreHealthProfessionalPractitionerRole.uiSchema(
         output,

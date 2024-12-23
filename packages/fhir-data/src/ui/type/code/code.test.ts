@@ -8,7 +8,7 @@ test('code', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
     const value: MgoCode = faker.fhir.code();
-    const result = code(faker.custom.uiContext())(label, value, options);
+    const result = code(faker.custom.i18nContext())(label, value, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',

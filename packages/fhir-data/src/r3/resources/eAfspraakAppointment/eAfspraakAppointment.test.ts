@@ -1,17 +1,17 @@
 import input1 from './fixtures/01/fhir-resource.json';
 
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectJson, testUiSchemaContext, faker } from '$test';
 import { test } from 'vitest';
 import { type Appointment } from 'fhir/r3';
 import { eAfspraakAppointment } from './eAfspraakAppointment';
 
 test('returns the expected output 01', () => {
-    const output = eAfspraakAppointment.parse(input1 as Appointment);
+    const output = eAfspraakAppointment.parse(input1 as Appointment, faker.custom.i18nContext());
     expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
 test('uiSchema 01 returns the expected output', () => {
-    const output = eAfspraakAppointment.parse(input1 as Appointment);
+    const output = eAfspraakAppointment.parse(input1 as Appointment, faker.custom.i18nContext());
     const uiSchema = eAfspraakAppointment.uiSchema(
         output,
         testUiSchemaContext({

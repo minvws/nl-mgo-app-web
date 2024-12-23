@@ -9,7 +9,7 @@ test('valueWithMax', () => {
     const value = faker.number.int();
     const max = faker.number.int();
 
-    const uiValueWithMax = valueWithMax(faker.custom.uiContext());
+    const uiValueWithMax = valueWithMax(faker.custom.i18nContext());
     const result = uiValueWithMax(label, value, max, options);
     expect(result).toEqual({
         label: `intl(${label})`,

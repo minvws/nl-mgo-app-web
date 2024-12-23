@@ -1,12 +1,11 @@
-import { type UiHelperContext } from '../types';
-
+import { type I18nContext } from '../../i18n';
+import { downloadLink } from './downloadLink/downloadLink';
 import { multipleValues } from './multipleValues/multipleValues';
+import { oneOfValueX } from './oneOfValueX/oneOfValueX';
 import { valueWithMax } from './valueWithMax/valueWithMax';
 import { valueWithUnit } from './valueWithUnit/valueWithUnit';
-import { oneOfValueX } from './oneOfValueX/oneOfValueX';
-import { downloadLink } from './downloadLink/downloadLink';
 
-export function getSpecial(context: UiHelperContext) {
+export function getSpecial(context: I18nContext) {
     return {
         multipleValues: multipleValues(context),
         valueWithMax: valueWithMax(context),

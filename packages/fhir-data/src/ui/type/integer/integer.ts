@@ -1,8 +1,8 @@
 import { type MgoInteger } from '../../../parse/type';
 import { numberToString } from '../../helpers';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 
-export const integer: WithUiContext<UiFunction<MgoInteger, SingleValue>> =
+export const integer: WithI18nContext<UiFunction<MgoInteger, SingleValue>> =
     ({ intl }) =>
     (label, value, options) => {
         return {

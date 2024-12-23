@@ -1,13 +1,13 @@
 import { type MessagesIds } from '../../../i18n/messages';
 import { type MgoDuration } from '../../../parse/type';
 import { format } from '../../format';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 
 const codeLabels: Record<string, MessagesIds> = {
     'http://unitsofmeasure.org|d': 'fhir.duration_days', // NOSONAR
 };
 
-export const duration: WithUiContext<UiFunction<MgoDuration, SingleValue>> =
+export const duration: WithI18nContext<UiFunction<MgoDuration, SingleValue>> =
     ({ formatMessage }) =>
     (label, value, options) => {
         const { value: quantityValue, unit, system, code } = value ?? {};

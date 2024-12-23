@@ -1,4 +1,5 @@
 import { type Patient } from 'fhir/r4';
+import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
 import { type ResourceConfigR4 } from '../config';
@@ -11,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946199
  */
-function parseNlCorePatient(resource: Patient) {
+function parseNlCorePatient(resource: Patient, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         name: map(resource.name, nlCoreNameInformation.parse),

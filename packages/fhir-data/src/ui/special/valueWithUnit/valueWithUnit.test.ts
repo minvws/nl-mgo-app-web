@@ -9,7 +9,7 @@ test('valueWithUnit', () => {
     const value = faker.number.int();
     const unit = faker.lorem.word();
 
-    const uiValueWithUnit = valueWithUnit(faker.custom.uiContext());
+    const uiValueWithUnit = valueWithUnit(faker.custom.i18nContext());
     const result = uiValueWithUnit(label, value, unit, options);
     expect(result).toEqual({
         label: `intl(${label})`,

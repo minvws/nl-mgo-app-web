@@ -5,10 +5,10 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithUiContext,
+    type WithI18nContext,
 } from '../../types';
 
-export const string: WithUiContext<
+export const string: WithI18nContext<
     UiFunction<MgoString | MgoString[], SingleValue | MultipleValues>
 > =
     ({ intl }) =>

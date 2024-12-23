@@ -1,13 +1,14 @@
+import { type I18nContext } from '../../../i18n';
 import { type MessagesIds } from '../../../i18n/messages';
 import { type Lossless } from '../../../types/Lossless';
 import { type Nullable } from '../../../types/Nullable';
 import { capitalizeFirstLetter, isNullish } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { getTypes } from '../../type';
-import { type UiHelperContext, type UiEntry, type UiEntryOptions } from '../../types';
+import { type UiEntry, type UiEntryOptions } from '../../types';
 
 export const oneOfValueX =
-    <T extends object>(context: UiHelperContext) =>
+    <T extends object>(context: I18nContext) =>
     (
         label: MessagesIds,
         value: Nullable<Lossless<T>>,

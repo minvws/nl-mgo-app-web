@@ -8,7 +8,7 @@ test('positiveInt', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
     const value = faker.fhir.unsignedInt() as MgoPositiveInt;
-    const result = positiveInt(faker.custom.uiContext())(label, value, options);
+    const result = positiveInt(faker.custom.i18nContext())(label, value, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',

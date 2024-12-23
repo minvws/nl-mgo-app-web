@@ -4,6 +4,7 @@ import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreHumanname, nlCoreContactpoint } from '../../elements';
 import { type Practitioner } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; // NOSONAR
@@ -11,7 +12,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-function parseNlCorePractitioner(resource: Practitioner) {
+function parseNlCorePractitioner(resource: Practitioner, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),

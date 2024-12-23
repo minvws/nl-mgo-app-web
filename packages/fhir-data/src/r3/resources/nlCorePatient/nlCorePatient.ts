@@ -1,4 +1,5 @@
 import { type Patient } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
@@ -16,7 +17,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-function parseNlCorePatient(resource: Patient) {
+function parseNlCorePatient(resource: Patient, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         active: parse.boolean(resource.active),

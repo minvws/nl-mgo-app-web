@@ -1,8 +1,8 @@
 import { type MgoBoolean } from '../../../parse/type';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 
-export const boolean: WithUiContext<UiFunction<MgoBoolean, SingleValue>> =
+export const boolean: WithI18nContext<UiFunction<MgoBoolean, SingleValue>> =
     ({ formatMessage }) =>
     (label, value, options) => {
         const truthyString = value

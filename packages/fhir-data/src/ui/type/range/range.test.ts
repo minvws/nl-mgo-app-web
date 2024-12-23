@@ -21,7 +21,7 @@ test('range without message', () => {
         low: mockQuantity(),
         high: mockQuantity(),
     };
-    const context = faker.custom.uiContext();
+    const context = faker.custom.i18nContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => false);
     const result = general.range(context)(label, { low, high }, options);
     expect(result).toEqual([
@@ -47,7 +47,7 @@ test('range with message', () => {
         low: mockQuantity(),
         high: mockQuantity(),
     };
-    const context = faker.custom.uiContext();
+    const context = faker.custom.i18nContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => true);
     const result = general.range(context)(label, { low, high }, options);
     expect(result).toEqual([

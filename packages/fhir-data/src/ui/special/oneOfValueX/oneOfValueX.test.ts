@@ -12,7 +12,7 @@ test('valueX with string', () => {
     };
     const options = faker.custom.uiEntryOptions();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiContext());
+    const uiOneOfValueX = oneOfValueX(faker.custom.i18nContext());
     const result = uiOneOfValueX(label, input, undefined, options);
     expect(result).toEqual([
         {
@@ -32,7 +32,7 @@ test('valueX with quantity', () => {
     };
     const options = faker.custom.uiEntryOptions();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiContext());
+    const uiOneOfValueX = oneOfValueX(faker.custom.i18nContext());
     const result = uiOneOfValueX(label, input, undefined, options);
     expect(result).toEqual([
         {
@@ -53,7 +53,7 @@ test('valueX with custom prefix', () => {
     };
     const options = faker.custom.uiEntryOptions();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiContext());
+    const uiOneOfValueX = oneOfValueX(faker.custom.i18nContext());
     const result = uiOneOfValueX(label, input, prefix, options);
     expect(result).toEqual([
         {
@@ -69,7 +69,7 @@ test('valueX with null value', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiContext());
+    const uiOneOfValueX = oneOfValueX(faker.custom.i18nContext());
     const result = uiOneOfValueX(label, null, undefined, options);
     expect(result).toEqual([]);
 });
@@ -83,7 +83,7 @@ test('valueX where prefixed value not found', () => {
     };
     const options = faker.custom.uiEntryOptions();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiContext());
+    const uiOneOfValueX = oneOfValueX(faker.custom.i18nContext());
     const result = uiOneOfValueX(label, input, prefix, options);
     expect(result).toEqual([]);
 });

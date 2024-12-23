@@ -43,7 +43,7 @@ test('combines multiple display values for a single ValueDescription', () => {
     ];
 
     const label = faker.custom.messageId();
-    const uiMultipleValues = multipleValues(faker.custom.uiContext());
+    const uiMultipleValues = multipleValues(faker.custom.i18nContext());
     const result = uiMultipleValues(label, data, singleValueEntry);
 
     expect(result).toEqual({
@@ -66,7 +66,7 @@ test('combines multiple - multiple values for a single multiple grouped values',
     ];
 
     const label = faker.custom.messageId();
-    const uiMultipleValues = multipleValues(faker.custom.uiContext());
+    const uiMultipleValues = multipleValues(faker.custom.i18nContext());
     const result = uiMultipleValues(label, data, multipleValuesEntry);
 
     expect(result).toEqual({

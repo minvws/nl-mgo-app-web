@@ -1,8 +1,8 @@
 import { type MgoDate } from '../../../parse/type';
 import { format } from '../../format';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 
-export const date: WithUiContext<UiFunction<MgoDate, SingleValue>> =
+export const date: WithI18nContext<UiFunction<MgoDate, SingleValue>> =
     ({ intl }) =>
     (label, value, options) => {
         return {

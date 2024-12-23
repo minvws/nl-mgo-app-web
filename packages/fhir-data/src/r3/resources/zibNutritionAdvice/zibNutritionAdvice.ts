@@ -1,4 +1,5 @@
 import { type NutritionOrder } from 'fhir/r3';
+import { type I18nContext } from '../../../i18n';
 import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { type ResourceConfigR3 } from '../config';
@@ -10,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice';
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317294
  */
-function parseZibNutritionAdvice(resource: NutritionOrder) {
+function parseZibNutritionAdvice(resource: NutritionOrder, _i18nContext: I18nContext) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         comment: parse.extensionNictiz(resource, 'zib-NutritionAdvice-Explanation'),

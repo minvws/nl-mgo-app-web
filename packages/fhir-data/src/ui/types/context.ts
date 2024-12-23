@@ -1,5 +1,4 @@
-import { type IntlShape } from '@formatjs/intl';
-import { type Locale } from '../../i18n';
+import { type I18nContext, type Locale } from '../../i18n';
 import { type MessagesIds } from '../../i18n/messages';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type Lossless } from '../../types/Lossless';
@@ -15,13 +14,7 @@ export type FormatMessageHelper = (
 ) => string;
 export type HasMessageHelper = (id: string) => id is MessagesIds;
 
-export type UiHelperContext = {
-    intl: IntlShape;
-    formatMessage: FormatMessageHelper;
-    hasMessage: HasMessageHelper;
-};
-
-export type WithUiContext<T> = (context: UiHelperContext) => T;
+export type WithI18nContext<T> = (context: I18nContext) => T;
 
 export type FormatDisplayFunction<Input, Output extends string[] | string | undefined = string> = (
     value: Nullable<Lossless<Input>>
@@ -50,7 +43,8 @@ export type UiSchemaOptions = {
 };
 
 export type SetEmptyEntriesHelper = (schema: UiSchema) => UiSchema;
-export type UiSchemaContext = UiHelperContext & {
+
+export type UiSchemaContext = I18nContext & {
     ui: Ui;
     setEmptyEntries: SetEmptyEntriesHelper;
 };

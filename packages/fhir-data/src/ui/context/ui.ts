@@ -1,9 +1,9 @@
+import { type I18nContext } from '../../i18n';
 import { getChildren } from '../helpers';
 import { getSpecial } from '../special';
 import { getTypes } from '../type';
-import { type UiHelperContext } from '../types';
 
-export function getUi(context: UiHelperContext) {
+export function getUi(context: I18nContext) {
     return {
         ...getTypes(context),
         ...getSpecial(context),

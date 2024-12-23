@@ -5,10 +5,10 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithUiContext,
+    type WithI18nContext,
 } from '../../types';
 
-export const code: WithUiContext<UiFunction<MgoCode | MgoCode[], SingleValue | MultipleValues>> =
+export const code: WithI18nContext<UiFunction<MgoCode | MgoCode[], SingleValue | MultipleValues>> =
     ({ formatMessage }) =>
     (label, value, options) => {
         if (Array.isArray(value)) {

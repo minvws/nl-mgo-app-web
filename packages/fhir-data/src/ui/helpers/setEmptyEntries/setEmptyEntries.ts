@@ -1,13 +1,13 @@
+import { type I18nContext } from '../../../i18n';
 import {
     type SetEmptyEntriesHelper,
-    type WithUiContext,
-    type UiHelperContext,
     type UiSchema,
     type UiSchemaGroup,
+    type WithI18nContext,
 } from '../../types';
 import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 
-function processGroup(group: UiSchemaGroup, { formatMessage }: UiHelperContext): UiSchemaGroup {
+function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiSchemaGroup {
     return {
         ...group,
         children: group.children.map((entry) => {
@@ -22,7 +22,7 @@ function processGroup(group: UiSchemaGroup, { formatMessage }: UiHelperContext):
     };
 }
 
-export const setEmptyEntries: WithUiContext<SetEmptyEntriesHelper> = (context: UiHelperContext) => {
+export const setEmptyEntries: WithI18nContext<SetEmptyEntriesHelper> = (context: I18nContext) => {
     return (schema: UiSchema): UiSchema => {
         return {
             ...schema,

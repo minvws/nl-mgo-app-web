@@ -8,7 +8,7 @@ test('dateTime', () => {
     const label = faker.custom.messageId();
     const options = faker.custom.uiEntryOptions();
     const value: MgoDateTime = faker.fhir.dateTime();
-    const result = primitive.dateTime(faker.custom.uiContext())(label, value, options);
+    const result = primitive.dateTime(faker.custom.i18nContext())(label, value, options);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',

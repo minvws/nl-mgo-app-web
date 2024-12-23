@@ -3,10 +3,13 @@
 /**
  * Load Intl polyfills for Android
  */
-import './polyfills/polyfills';
+import './intlPolyfills/intlPolyfills';
 
-import { getBundleResourcesJson } from './getBundleResourcesJson/getBundleResourcesJson';
-import { getMgoResourceJson } from './getMgoResourceJson/getMgoResourceJson';
-import { getUiSchemaJson } from './getUiSchemaJson/getUiSchemaJson';
+import { createJsonApi } from './createJsonApi/createJsonApi';
+import { getMgoResource } from './getMgoResource/getMgoResource';
+import { getBundleResources } from './getBundleResources/getBundleResources';
+import { getUiSchema } from './getUiSchema/getUiSchema';
 
-export { getBundleResourcesJson, getUiSchemaJson, getMgoResourceJson };
+export const getBundleResourcesJson = createJsonApi(getBundleResources);
+export const getMgoResourceJson = createJsonApi(getMgoResource);
+export const getUiSchemaJson = createJsonApi(getUiSchema);

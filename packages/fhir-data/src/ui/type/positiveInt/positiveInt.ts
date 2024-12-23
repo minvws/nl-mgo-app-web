@@ -1,8 +1,8 @@
 import { type MgoPositiveInt } from '../../../parse/type';
 import { numberToString } from '../../helpers';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
 
-export const positiveInt: WithUiContext<UiFunction<MgoPositiveInt, SingleValue>> =
+export const positiveInt: WithI18nContext<UiFunction<MgoPositiveInt, SingleValue>> =
     ({ intl }) =>
     (label, value, options) => {
         return {
