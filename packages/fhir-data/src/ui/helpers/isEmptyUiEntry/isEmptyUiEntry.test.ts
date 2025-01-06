@@ -1,9 +1,9 @@
-import { expect, test } from 'vitest';
-import { isEmptyUiEntry } from './isEmptyUiEntry';
-import { type UiEntry } from '../../types';
 import { faker } from '$test';
+import { expect, test } from 'vitest';
+import { type UiElement } from '../../types';
+import { isEmptyUiEntry } from './isEmptyUiEntry';
 
-test.each<Partial<UiEntry>>([
+test.each<Partial<UiElement>>([
     { type: 'REFERENCE_VALUE', reference: undefined },
     { type: 'SINGLE_VALUE', display: undefined },
     { type: 'MULTIPLE_VALUES', display: undefined },
@@ -13,10 +13,10 @@ test.each<Partial<UiEntry>>([
     { type: 'MULTIPLE_GROUPED_VALUES', display: [[], []] },
     { type: 'DOWNLOAD_LINK', url: undefined },
 ])('returns true when the value is nullish: %j', (entry) => {
-    expect(isEmptyUiEntry(entry as UiEntry)).toBe(true);
+    expect(isEmptyUiEntry(entry as UiElement)).toBe(true);
 });
 
-test.each<Partial<UiEntry>>([
+test.each<Partial<UiElement>>([
     { type: 'REFERENCE_VALUE', reference: faker.lorem.word() },
     { type: 'SINGLE_VALUE', display: '' },
     { type: 'SINGLE_VALUE', display: faker.lorem.word() },
@@ -24,7 +24,7 @@ test.each<Partial<UiEntry>>([
     { type: 'MULTIPLE_GROUPED_VALUES', display: [[faker.lorem.word()]] },
     { type: 'DOWNLOAD_LINK', url: faker.lorem.word() },
 ])('returns false if it contains a value: %j', (entry) => {
-    expect(isEmptyUiEntry(entry as UiEntry)).toBe(false);
+    expect(isEmptyUiEntry(entry as UiElement)).toBe(false);
 });
 
 test('throws if the entry is not recognized', () => {

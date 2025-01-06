@@ -1,10 +1,8 @@
 import { encounterParticipant } from '../../elements/encounterParticipant/encounterParticipant';
 import { type Encounter } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { diagnosis } from './elements/diagnosis/diagnosis';
 import { hospitalization } from './elements/hospitalization/hospitalization';
 import { uiSchema } from './uiSchema';
@@ -14,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter'; // NO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317177
  */
-function parseZibEncounter(resource: Encounter, _i18nContext: I18nContext) {
+function parseZibEncounter(resource: Encounter) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         class: parse.coding(resource.class),
@@ -33,4 +31,4 @@ export const zibEncounter = {
     profile,
     parse: parseZibEncounter,
     uiSchema,
-} satisfies ResourceConfigR3<Encounter, ZibEncounter>;
+} satisfies ResourceConfig<Encounter, ZibEncounter>;

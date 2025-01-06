@@ -1,10 +1,8 @@
 import { type Procedure } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
-import { type ResourceConfigR3 } from '../config';
 import { focalDevice } from './elements/focalDevice/focalDevice';
 import { performer } from './elements/performer/performer';
 import { uiSchema } from './uiSchema';
@@ -14,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure'; // NO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317337
  */
-function parseZibProcedure(resource: Procedure, _i18nContext: I18nContext) {
+function parseZibProcedure(resource: Procedure) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         performedPeriod: parse.period(resource.performedPeriod),
@@ -42,4 +40,4 @@ export const zibProcedure = {
     profile,
     parse: parseZibProcedure,
     uiSchema,
-} satisfies ResourceConfigR3<Procedure, ZibProcedure>;
+} satisfies ResourceConfig<Procedure, ZibProcedure>;

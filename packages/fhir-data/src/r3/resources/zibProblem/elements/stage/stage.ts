@@ -1,9 +1,9 @@
 import { type ConditionStage } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import * as parse from '../../../../../parse/type';
 import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { map } from '../../../../../utils';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Stage {
     summary: parse.MgoCodeableConcept | undefined;
@@ -20,4 +20,4 @@ function parseStage(value: Nullable<ConditionStage>): Stage {
 export const stage = {
     parse: parseStage,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ConditionStage, Stage>;
+} satisfies ResourceElementConfig<ConditionStage, Stage>;

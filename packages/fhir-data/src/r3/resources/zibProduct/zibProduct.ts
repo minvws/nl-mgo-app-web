@@ -1,11 +1,9 @@
 import { zibProductIngredient } from '../../elements/zibProductIngredient/zibProductIngredient';
 import { zibProductPackage } from '../../elements/zibProductPackage/zibProductPackage';
 import { type Medication } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Product'; // NOSONAR
@@ -13,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Product'; // NOSO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
-function parseZibProduct(resource: Medication, _i18nContext: I18nContext) {
+function parseZibProduct(resource: Medication) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         description: parse.extensionNictiz(resource, 'zib-Product-Description'),
@@ -30,4 +28,4 @@ export const zibProduct = {
     profile,
     parse: parseZibProduct,
     uiSchema,
-} satisfies ResourceConfigR3<Medication, ZibProduct>;
+} satisfies ResourceConfig<Medication, ZibProduct>;

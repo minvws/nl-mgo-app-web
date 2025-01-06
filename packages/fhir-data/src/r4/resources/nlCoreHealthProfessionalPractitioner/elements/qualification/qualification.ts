@@ -2,7 +2,7 @@ import { type PractitionerQualification } from 'fhir/r4';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
-import { type R4ResourceElementConfig } from '../../../../elements/config';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Qualification {
@@ -24,4 +24,4 @@ function parseQualification(value: Nullable<PractitionerQualification>): Qualifi
 export const qualification = {
     parse: parseQualification,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<PractitionerQualification, Qualification>;
+} satisfies ResourceElementConfig<PractitionerQualification, Qualification>;

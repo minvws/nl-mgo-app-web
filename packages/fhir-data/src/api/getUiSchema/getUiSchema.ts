@@ -1,41 +1,19 @@
-import { Locale } from '../../i18n';
-import { FhirVersion } from '../../types/Fhir';
-import { createUiSchemaContext, type UiSchema, type UiSchemaOptions } from '../../ui';
-import { type UiSchemaContext } from '../../ui/types';
+import { type Locale } from '../../i18n';
+import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
+import { type FhirVersion, type FhirR3R4 } from '../../types/Fhir';
+import { createUiSchemaContext } from '../../ui';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
-import {
-    resourcesMapR3,
-    resourcesMapR4,
-    type MgoResourceR3,
-    type MgoResourceR4,
-} from '../resources/resources';
+import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
+import { type MgoResourceR3, type MgoResourceR4 } from '../resources/resources';
 
-export type ResourceConfig<T extends MgoResourceR3 | MgoResourceR4> = {
-    uiSchema: (arg: T, context: UiSchemaContext) => UiSchema;
-};
-
-function getResourceConfig<T extends MgoResourceR3 | MgoResourceR4>(resource: T) {
-    const { profile, fhirVersion } = resource;
-    let config;
-
-    if (fhirVersion === FhirVersion.R3) {
-        config = resourcesMapR3[profile];
-    } else if (fhirVersion === FhirVersion.R4) {
-        config = resourcesMapR4[profile];
-    }
-
-    if (!config) {
-        throw new Error(
-            `No config found for MGO Resource with profile: "${profile}" and fhir version: "${fhirVersion}"`
-        );
-    }
-
-    return config as ResourceConfig<T>;
+export interface UiSchemaOptions<T extends `${FhirVersion}`> {
+    locale?: Locale;
+    resources?: FhirR3R4<T, MgoResourceR3[], MgoResourceR4[]>;
 }
 
-export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(
+export function getUiSchema<T extends MgoResourceMeta>(
     resource: T,
-    options?: UiSchemaOptions
+    options?: UiSchemaOptions<T['fhirVersion']>
 ) {
     // As this method is also used with JSON parsed inputs,
     // we want to ensure we're really dealing with a MGO Resource.
@@ -45,12 +23,18 @@ export function getUiSchema<T extends MgoResourceR3 | MgoResourceR4>(
         );
     }
 
-    const config = getResourceConfig(resource);
+    const config = getResourceConfig<T>(resource.profile, resource.fhirVersion);
 
-    const uiSchemaContext = createUiSchemaContext({
+    if (!config) {
+        throw new Error(
+            `No config found for MGO Resource with profile: "${resource.profile}" and fhir version: "${resource.fhirVersion}"`
+        );
+    }
+
+    const context = createUiSchemaContext<T['fhirVersion']>({
         ignoreMissingTranslations: true,
-        locale: options?.locale ?? Locale.NL_NL,
+        ...options,
     });
 
-    return config.uiSchema(resource, uiSchemaContext);
+    return config.uiSchema(resource, context);
 }

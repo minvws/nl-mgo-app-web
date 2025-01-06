@@ -2,16 +2,15 @@
  * Configurations for parsing FHIR resources and creating UI schemas.
  * Add new R4 resource configurations here.
  *
- * Note: Make sure you are ONLY exporting `ResourceConfig` objects from this file.
- *
- * @see: https://build.fhir.org/resourcelist.html
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18
+ * Notes:
+ *   - Make sure you are ONLY exporting `ResourceConfig` objects from this file.
+ *   - Don't forget to also export the ResourceType from the `~/api/types` file to make it available for the mobile apps.
  */
 
-export * from './nlCorePatient/nlCorePatient';
 export * from './nlCoreHealtcareProvider/nlCoreHealtcareProvider';
-export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization';
-export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
 export * from './nlCoreHealthProfessionalPractitioner/nlCoreHealthProfessionalPractitioner';
-export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';
+export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
+export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization';
+export * from './nlCorePatient/nlCorePatient';
 export * from './nlCorePharmaceuticalProduct/nlCorePharmaceuticalProduct';
+export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';

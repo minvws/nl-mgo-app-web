@@ -1,11 +1,11 @@
 import { type ConsentExcept } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
+import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
-import { uiSchemaGroup } from './uiSchemaGroup';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { actor, type Actor } from '../actor/actor';
 import { data, type Data } from '../data/data';
-import { parse } from '../../../../../parse';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Except {
     type: parse.MgoCode | undefined;
@@ -38,4 +38,4 @@ function parseExcept(value: Nullable<ConsentExcept>): Except {
 export const except = {
     parse: parseExcept,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ConsentExcept, Except>;
+} satisfies ResourceElementConfig<ConsentExcept, Except>;

@@ -1,9 +1,9 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiEntry } from '../../types';
+import { type UiElement } from '../../types';
 import { isUiEntry } from './isUiEntry';
 
-test.each<[boolean, UiEntry['type'], UiEntry]>([
+test.each<[boolean, UiElement['type'], UiElement]>([
     [
         true,
         'SINGLE_VALUE',
@@ -20,7 +20,7 @@ test.each<[boolean, UiEntry['type'], UiEntry]>([
             label: faker.lorem.word(),
             display: faker.lorem.word(),
             type: faker.lorem.word(),
-        } as UiEntry,
+        } as UiElement,
     ],
     [
         true,
@@ -38,7 +38,7 @@ test.each<[boolean, UiEntry['type'], UiEntry]>([
             label: faker.lorem.word(),
             url: faker.lorem.word(),
             type: faker.lorem.word(),
-        } as UiEntry,
+        } as UiElement,
     ],
 ])('isUiEntry returns: %j for type %j with value %j', (expectedResult, type, value) => {
     const result = isUiEntry(value, type);

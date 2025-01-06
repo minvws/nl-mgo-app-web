@@ -5,7 +5,7 @@ import { type Nullable } from '../../../types/Nullable';
 import { capitalizeFirstLetter, isNullish } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { getTypes } from '../../type';
-import { type UiEntry, type UiEntryOptions } from '../../types';
+import { type UiElement, type UiEntryOptions } from '../../types';
 
 export const oneOfValueX =
     <T extends object>(context: I18nContext) =>
@@ -16,7 +16,7 @@ export const oneOfValueX =
         options?: UiEntryOptions
     ) => {
         if (isNullish(value)) {
-            return [] as UiEntry[];
+            return [] as UiElement[];
         }
 
         const typeUiFunctions = getTypes(context);
@@ -25,9 +25,9 @@ export const oneOfValueX =
             const key = `${prefix}${capitalizeFirstLetter(type)}` as keyof Nullable<Lossless<T>>;
             if (key in value && isNonNullish(value[key])) {
                 const uiValue = typeUiFunctions[type](label, value[key], options);
-                return (Array.isArray(uiValue) ? uiValue : [uiValue]) as UiEntry[];
+                return (Array.isArray(uiValue) ? uiValue : [uiValue]) as UiElement[];
             }
         }
 
-        return [] as UiEntry[];
+        return [] as UiElement[];
     };

@@ -1,8 +1,6 @@
 import { type Practitioner } from 'fhir/r4';
-import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
-import { FhirVersion } from '../../../types/Fhir';
-import { type ResourceConfigR4 } from '../config';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
 import {
@@ -18,10 +16,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfess
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946120
  */
-function parseNlCoreHealthProfessionalPractitioner(
-    resource: Practitioner,
-    _i18nContext: I18nContext
-) {
+function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         identifier: map(resource.identifier, parse.identifier), // NL-CM:17.1.2
@@ -44,4 +39,4 @@ export const r4NlCoreHealthProfessionalPractitioner = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitioner,
     uiSchema,
-} satisfies ResourceConfigR4<Practitioner, R4NlCoreHealthProfessionalPractitioner>;
+} satisfies ResourceConfig<Practitioner, R4NlCoreHealthProfessionalPractitioner>;

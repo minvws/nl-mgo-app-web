@@ -1,26 +1,26 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiSchemaGroup, type UiEntry, type UiSchema } from '../../types';
+import { type UiElement, type UiSchema, type UiSchemaGroup } from '../../types';
 import { dropEmptyEntries } from './dropEmptyEntries';
 
 test('drops empty entries, but does not mutate the schema', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
         reference: undefined,
     };
-    const entry4: UiEntry = {
+    const entry4: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -51,18 +51,18 @@ test('drops empty entries, but does not mutate the schema', () => {
 });
 
 test('does not drop entries that should be shown empty', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
         showEmpty: true,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -93,13 +93,13 @@ test('does not drop entries that should be shown empty', () => {
 });
 
 test('drops groups that are empty', () => {
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
         showEmpty: true,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -138,13 +138,13 @@ test('drops groups that are empty', () => {
 });
 
 test('drops groups that are empty for a group collection', () => {
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
         showEmpty: true,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -177,23 +177,23 @@ test('drops groups that are empty for a group collection', () => {
 });
 
 test('can drops empty entries for a single group but does not mutate the original', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
         reference: undefined,
     };
-    const entry4: UiEntry = {
+    const entry4: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -214,12 +214,12 @@ test('can drops empty entries for a single group but does not mutate the origina
 });
 
 test('returns an empty group if a groups was supplied with empty entries', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),

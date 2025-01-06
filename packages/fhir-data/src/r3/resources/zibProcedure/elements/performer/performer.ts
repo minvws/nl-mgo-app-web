@@ -1,7 +1,7 @@
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type ProcedurePerformer } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Performer {
@@ -17,4 +17,4 @@ function parsePerformer(value: Nullable<ProcedurePerformer>): Performer {
 export const performer = {
     parse: parsePerformer,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ProcedurePerformer, Performer>;
+} satisfies ResourceElementConfig<ProcedurePerformer, Performer>;

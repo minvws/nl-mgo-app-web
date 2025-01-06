@@ -1,10 +1,10 @@
 import { type Timing } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfigR3 } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
-import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 
 export interface ZibAdministrationSchedule {
     repeat: {
@@ -53,4 +53,4 @@ export const zibAdministrationScheduleUiSchema = uiSchemaGroup;
 export const zibAdministrationSchedule = {
     parse: parseZibAdministrationSchedule,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<Timing, ZibAdministrationSchedule>;
+} satisfies ResourceElementConfig<Timing, ZibAdministrationSchedule>;

@@ -1,10 +1,10 @@
 import { type UiSchemaFunction } from '../../../ui';
-import { type NlCoreHealthcareProviderOrganization } from './nlCoreHealthcareProviderOrganization';
+import { type R4NlCoreHealthcareProviderOrganization } from './nlCoreHealthcareProviderOrganization';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946118
  */
-export const uiSchema: UiSchemaFunction<NlCoreHealthcareProviderOrganization> = (
+export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> = (
     resource,
     context
 ) => {

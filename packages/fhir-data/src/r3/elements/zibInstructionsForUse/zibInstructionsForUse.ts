@@ -1,14 +1,14 @@
 import { type Dosage } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfigR3 } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import {
-    type ZibAdministrationSchedule,
     zibAdministrationSchedule,
+    type ZibAdministrationSchedule,
 } from '../zibAdministrationSchedule/zibAdministrationSchedule';
 import { uiSchemaGroup } from './uiSchemaGroup';
-import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
 
 export interface ZibInstructionsForUse {
     sequence: parse.MgoInteger | undefined;
@@ -47,4 +47,4 @@ function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsFor
 export const zibInstructionsForUse = {
     parse: parseZibInstructionsForUse,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<Dosage, ZibInstructionsForUse>;
+} satisfies ResourceElementConfig<Dosage, ZibInstructionsForUse>;

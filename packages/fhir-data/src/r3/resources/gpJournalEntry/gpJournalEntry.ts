@@ -1,18 +1,16 @@
 import { parse } from '../../../parse';
 import { findComponentByCode, oneOfValueX } from '../../../parse/helpers';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { type Observation } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry'; // NOSONAR
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316995
  */
-function parseGpJournalEntry(resource: Observation, _i18nContext: I18nContext) {
+function parseGpJournalEntry(resource: Observation) {
     const ICPC_S = findComponentByCode(resource.component, 'ADMDX');
     const ICPC_E = findComponentByCode(resource.component, 'DISDX');
 
@@ -40,4 +38,4 @@ export const gpJournalEntry = {
     profile,
     parse: parseGpJournalEntry,
     uiSchema,
-} satisfies ResourceConfigR3<Observation, GpJournalEntry>;
+} satisfies ResourceConfig<Observation, GpJournalEntry>;

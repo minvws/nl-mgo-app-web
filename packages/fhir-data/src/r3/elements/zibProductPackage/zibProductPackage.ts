@@ -2,7 +2,7 @@ import { type MedicationPackage } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfigR3 } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 interface ZibProductPackageContent {
@@ -31,4 +31,4 @@ function parseZibProductPackage(value: Nullable<MedicationPackage>) {
 export const zibProductPackage = {
     parse: parseZibProductPackage,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<MedicationPackage, ZibProductPackage>;
+} satisfies ResourceElementConfig<MedicationPackage, ZibProductPackage>;

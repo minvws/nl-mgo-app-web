@@ -1,7 +1,6 @@
 import { type Observation } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
-import { type ResourceConfigR3 } from '../config';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 import { uiSchema } from './uiSchema';
 import { parse } from '../../../parse';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure'; /
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
  */
-function parseZibBloodPressure(resource: Observation, i18nContext: I18nContext) {
+function parseZibBloodPressure(resource: Observation) {
     const cuffTypeLOINC = findComponentByCode(resource.component, '8358-4');
     const cuffTypeSNOMED = findComponentByCode(resource.component, '70665002');
     const diastolicEndpoint = findComponentByCode(resource.component, '85549003');
@@ -24,7 +23,7 @@ function parseZibBloodPressure(resource: Observation, i18nContext: I18nContext) 
     const positionLOINC = findComponentByCode(resource.component, '8361-8');
 
     return {
-        ...parseNlCoreObservationBase(resource, i18nContext),
+        ...parseNlCoreObservationBase(resource),
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         cuffTypeLOINC: {
             valueCodeableConcept: parse.codeableConcept(cuffTypeLOINC?.valueCodeableConcept),
@@ -62,4 +61,4 @@ export const zibBloodPressure = {
     profile,
     parse: parseZibBloodPressure,
     uiSchema,
-} satisfies ResourceConfigR3<Observation, ZibBloodPressure>;
+} satisfies ResourceConfig<Observation, ZibBloodPressure>;

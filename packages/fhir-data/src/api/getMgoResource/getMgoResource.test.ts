@@ -15,7 +15,7 @@ test('returns the expected output for a R3 Fhir resource', () => {
         },
         resourceType: 'Patient',
     };
-    const expectedResult = r3NlCorePatient.parse(fhirResource, faker.custom.i18nContext());
+    const expectedResult = r3NlCorePatient.parse(fhirResource);
     const result = getMgoResource(fhirResource, { fhirVersion: FhirVersion.R3 });
     expect(result).toEqual(expectedResult);
     expect(result?.fhirVersion).toEqual(FhirVersion.R3);
@@ -28,7 +28,7 @@ test('returns the expected output for a R4 Fhir resource', () => {
         },
         resourceType: 'Patient',
     };
-    const expectedResult = r4NlCorePatient.parse(fhirResource, faker.custom.i18nContext());
+    const expectedResult = r4NlCorePatient.parse(fhirResource);
     const result = getMgoResource(fhirResource, { fhirVersion: FhirVersion.R4 });
     expect(result).toEqual(expectedResult);
     expect(result?.fhirVersion).toEqual(FhirVersion.R4);

@@ -1,8 +1,6 @@
 import { type Coverage } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { grouping } from './elements/grouping/grouping';
 import { uiSchema } from './uiSchema';
 import { parse } from '../../../parse';
@@ -12,7 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Payer'; // NOSONA
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317307
  */
-function parseZibPayer(resource: Coverage, _i18nContext: I18nContext) {
+function parseZibPayer(resource: Coverage) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
@@ -40,4 +38,4 @@ export const zibPayer = {
     profile,
     parse: parseZibPayer,
     uiSchema,
-} satisfies ResourceConfigR3<Coverage, ZibPayer>;
+} satisfies ResourceConfig<Coverage, ZibPayer>;

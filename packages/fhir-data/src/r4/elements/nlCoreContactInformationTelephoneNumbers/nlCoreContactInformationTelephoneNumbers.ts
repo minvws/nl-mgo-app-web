@@ -1,10 +1,10 @@
-import { type Nullable } from '../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { parse } from '../../../parse';
-import { type R4ResourceElementConfig } from '../config';
 import { type ContactPoint } from 'fhir/r4';
+import { parse } from '../../../parse';
+import { type Nullable } from '../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface NlCoreContactInformationTelephoneNumbers {
+export interface R4NlCoreContactInformationTelephoneNumbers {
     system: 'phone';
     telecomType: parse.MgoCodeableConcept | undefined;
     value: parse.MgoString | undefined; // NL-CM:20.6.4
@@ -19,7 +19,7 @@ export interface NlCoreContactInformationTelephoneNumbers {
  */
 function parseNlCoreContactInformationTelephoneNumbers(
     value: Nullable<ContactPoint>
-): NlCoreContactInformationTelephoneNumbers | undefined {
+): R4NlCoreContactInformationTelephoneNumbers | undefined {
     if (value?.system !== 'phone') return;
 
     return {
@@ -42,4 +42,4 @@ function parseNlCoreContactInformationTelephoneNumbers(
 export const nlCoreContactInformationTelephoneNumbers = {
     parse: parseNlCoreContactInformationTelephoneNumbers,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<ContactPoint, NlCoreContactInformationTelephoneNumbers>;
+} satisfies ResourceElementConfig<ContactPoint, R4NlCoreContactInformationTelephoneNumbers>;

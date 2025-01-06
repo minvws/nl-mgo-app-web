@@ -1,32 +1,22 @@
+import { expectJson, testUiSchemaContext } from '$test';
+import { type ProcedureRequest } from 'fhir/r3';
+import { test } from 'vitest';
 import input1 from './fixtures/01/fhir-resource.json';
 import input2 from './fixtures/02/fhir-resource.json';
-
-import { expectJson, testUiSchemaContext, faker } from '$test';
-import { test } from 'vitest';
 import { zibProcedureRequest } from './zibProcedureRequest';
-import { type ProcedureRequest } from 'fhir/r3';
 
 test('returns the expected output 01', () => {
-    const output = zibProcedureRequest.parse(
-        input1 as ProcedureRequest,
-        faker.custom.i18nContext()
-    );
+    const output = zibProcedureRequest.parse(input1 as ProcedureRequest);
     expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
 test('returns the expected output 02', () => {
-    const output = zibProcedureRequest.parse(
-        input2 as ProcedureRequest,
-        faker.custom.i18nContext()
-    );
+    const output = zibProcedureRequest.parse(input2 as ProcedureRequest);
     expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
 test('uiSchema 01 returns the expected output', () => {
-    const output = zibProcedureRequest.parse(
-        input1 as ProcedureRequest,
-        faker.custom.i18nContext()
-    );
+    const output = zibProcedureRequest.parse(input1 as ProcedureRequest);
     const uiSchema = zibProcedureRequest.uiSchema(
         output,
         testUiSchemaContext({
@@ -37,10 +27,7 @@ test('uiSchema 01 returns the expected output', () => {
 });
 
 test('uiSchema 02 returns the expected output', () => {
-    const output = zibProcedureRequest.parse(
-        input2 as ProcedureRequest,
-        faker.custom.i18nContext()
-    );
+    const output = zibProcedureRequest.parse(input2 as ProcedureRequest);
     const uiSchema = zibProcedureRequest.uiSchema(
         output,
         testUiSchemaContext({

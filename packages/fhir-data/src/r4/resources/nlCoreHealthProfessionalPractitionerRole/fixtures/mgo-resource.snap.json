@@ -3,7 +3,7 @@
     "referenceId": "PractitionerRole/nl-core-HealthProfessional-PractitionerRole-01",
     "resourceType": "PractitionerRole",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
-    "fhirVersion": "R3",
+    "fhirVersion": "R4",
     "practitioner": {
         "reference": "Practitioner/nl-core-HealthProfessional-Practitioner-01",
         "display": "Healthcare professional (person), J.H.R. Peters"

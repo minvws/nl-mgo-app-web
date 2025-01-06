@@ -1,8 +1,8 @@
 import { type ConsentActor } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Actor {
     role: parse.MgoCodeableConcept | undefined;
@@ -19,4 +19,4 @@ function parseActor(value: Nullable<ConsentActor>): Actor {
 export const actor = {
     parse: parseActor,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ConsentActor, Actor>;
+} satisfies ResourceElementConfig<ConsentActor, Actor>;

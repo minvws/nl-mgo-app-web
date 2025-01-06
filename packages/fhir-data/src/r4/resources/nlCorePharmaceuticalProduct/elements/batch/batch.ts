@@ -1,7 +1,7 @@
 import { type MedicationBatch } from 'fhir/r4';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
-import { type R4ResourceElementConfig } from '../../../../elements/config';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Batch {
@@ -19,4 +19,4 @@ function parseBatch(value: Nullable<MedicationBatch>): Batch {
 export const batch = {
     parse: parseBatch,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<MedicationBatch, Batch>;
+} satisfies ResourceElementConfig<MedicationBatch, Batch>;

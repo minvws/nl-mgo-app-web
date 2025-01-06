@@ -1,7 +1,7 @@
 import { isNullish } from '../../../utils';
-import { type UiEntry } from '../../types';
+import { type UiElement } from '../../types';
 
-export function isEmptyUiEntry<T extends UiEntry>(uiField: T) {
+export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
     switch (uiField.type) {
         case 'REFERENCE_VALUE':
             return isNullish(uiField.reference);

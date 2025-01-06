@@ -1,19 +1,18 @@
-import input01 from './fixtures/fhir-resource.json';
-
 import { expectJson, faker, testUiSchemaContext } from '$test';
+import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { coding } from '../../../parse/type';
 import { map } from '../../../utils';
+import input01 from './fixtures/fhir-resource.json';
 import { gpJournalEntry } from './gpJournalEntry';
-import { type Observation } from 'fhir/r3';
 
 test('returns the expected output 01', () => {
-    const output = gpJournalEntry.parse(input01 as Observation, faker.custom.i18nContext());
+    const output = gpJournalEntry.parse(input01 as Observation);
     expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const output = gpJournalEntry.parse(input01 as Observation, faker.custom.i18nContext());
+    const output = gpJournalEntry.parse(input01 as Observation);
     const uiSchema = gpJournalEntry.uiSchema(
         output,
         testUiSchemaContext({
@@ -41,7 +40,7 @@ test('returns ICPC_E in parser', () => {
         },
     });
 
-    const output = gpJournalEntry.parse(input, faker.custom.i18nContext());
+    const output = gpJournalEntry.parse(input);
     expect(output.ICPC_E).toEqual({
         valueCodeableConcept: {
             text: undefined,

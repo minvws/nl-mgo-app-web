@@ -1,17 +1,16 @@
-import input from './fixtures/zib-Problem-01.json';
-
-import { expectJson, testUiSchemaContext, faker } from '$test';
-import { test } from 'vitest';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Condition } from 'fhir/r3';
+import { test } from 'vitest';
+import input from './fixtures/zib-Problem-01.json';
 import { zibProblem } from './zibProblem';
 
 test('parseZibProblem returns the expected output 01', () => {
-    const output = zibProblem.parse(input as Condition, faker.custom.i18nContext());
+    const output = zibProblem.parse(input as Condition);
     expectJson(output).toMatchFileSnapshot('./fixtures/zib-Problem-01-output.snap.json');
 });
 
 test('uiSchema returns the expected output', () => {
-    const output = zibProblem.parse(input as Condition, faker.custom.i18nContext());
+    const output = zibProblem.parse(input as Condition);
     const uiSchema = zibProblem.uiSchema(
         output,
         testUiSchemaContext({

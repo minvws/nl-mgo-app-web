@@ -3,10 +3,10 @@ import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
-import { type R4ResourceElementConfig } from '../config';
 
-export type NlCoreNameInformation = {
+export type R4NlCoreNameInformation = {
     use: Extract<HumanName['use'], 'official'>;
     text: parse.MgoString | undefined; // NL-CM:20.4.4, NL-CM:20.4.5, NL-CM:20.4.7, NL-CM:20.4.11, NL-CM:20.4.10, NL-CM:20.4.9, NL-CM:20.4.8
     given: parse.MgoString[] | undefined; // NL-CM:20.4.4 | NL-CM:20.4.5
@@ -18,7 +18,7 @@ export type NlCoreNameInformation = {
     suffix: parse.MgoString[] | undefined;
     nameUsage: parse.MgoString | undefined; // NL-CM:20.4.7
 };
-export type NlCoreNameInformationGiven = {
+export type R4NlCoreNameInformationGiven = {
     use: Extract<HumanName['use'], 'usual'>;
     text: parse.MgoString | undefined;
     given: parse.MgoString[] | undefined; // NL-CM:20.4.6
@@ -32,7 +32,7 @@ export type NlCoreNameInformationGiven = {
  */
 function parseNlCoreNameInformation(
     value: Nullable<HumanName>
-): NlCoreNameInformation | NlCoreNameInformationGiven {
+): R4NlCoreNameInformation | R4NlCoreNameInformationGiven {
     if (value?.use === 'usual') {
         return {
             use: value.use,
@@ -72,4 +72,7 @@ function parseNlCoreNameInformation(
 export const nlCoreNameInformation = {
     parse: parseNlCoreNameInformation,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<HumanName, NlCoreNameInformation | NlCoreNameInformationGiven>;
+} satisfies ResourceElementConfig<
+    HumanName,
+    R4NlCoreNameInformation | R4NlCoreNameInformationGiven
+>;

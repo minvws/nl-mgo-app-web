@@ -1,7 +1,7 @@
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type EncounterDiagnosis } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Diagnosis {
@@ -21,4 +21,4 @@ function parseDiagnosis(value: Nullable<EncounterDiagnosis>): Diagnosis {
 export const diagnosis = {
     parse: parseDiagnosis,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<EncounterDiagnosis, Diagnosis>;
+} satisfies ResourceElementConfig<EncounterDiagnosis, Diagnosis>;

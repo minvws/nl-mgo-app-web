@@ -1,7 +1,7 @@
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type EncounterHospitalization } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Hospitalization {
@@ -19,4 +19,4 @@ function parseHospitalization(value: Nullable<EncounterHospitalization>): Hospit
 export const hospitalization = {
     parse: parseHospitalization,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<EncounterHospitalization, Hospitalization>;
+} satisfies ResourceElementConfig<EncounterHospitalization, Hospitalization>;

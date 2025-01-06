@@ -1,51 +1,35 @@
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-
 import { expectJson, faker, testUiSchemaContext } from '$test';
 import { message } from '$test/i18n';
 import { type Medication } from 'fhir/r4';
 import { expect, test } from 'vitest';
+import input01 from './fixtures/01/fhir-resource.json';
+import input02 from './fixtures/02/fhir-resource.json';
 import { nlCorePharmaceuticalProductR4 } from './nlCorePharmaceuticalProduct';
 
 test('returns the expected output 01', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(
-        input01 as Medication,
-        faker.custom.i18nContext()
-    );
+    const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(
-        input01 as Medication,
-        faker.custom.i18nContext()
-    );
+    const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('returns the expected output 02', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(
-        input02 as Medication,
-        faker.custom.i18nContext()
-    );
+    const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
     expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(
-        input02 as Medication,
-        faker.custom.i18nContext()
-    );
+    const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema label returns profile when label not specified', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(
-        input01 as Medication,
-        faker.custom.i18nContext()
-    );
+    const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     output.name = undefined;
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     expect(uiSchema.label).toEqual(message('r4.zib_pharmaceutical_product'));
@@ -57,6 +41,6 @@ test('return batch lotnumber if specified', () => {
     input.batch = {
         lotNumber: lotNumber,
     };
-    const output = nlCorePharmaceuticalProductR4.parse(input, faker.custom.i18nContext());
+    const output = nlCorePharmaceuticalProductR4.parse(input);
     expect(output.batch.lotNumber).toEqual(lotNumber);
 });

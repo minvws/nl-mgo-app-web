@@ -1,9 +1,7 @@
 import { type MedicationStatement } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
 import { parse } from '../../../parse';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { zibInstructionsForUse } from '../../elements';
 import { uiSchema } from './uiSchema';
 
@@ -12,7 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; /
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317279
  */
-function parseZibMedicationUse(resource: MedicationStatement, _i18nContext: I18nContext) {
+function parseZibMedicationUse(resource: MedicationStatement) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         asAgreedIndicator: parse.extensionNictiz(resource, 'zib-MedicationUse-AsAgreedIndicator'),
@@ -53,4 +51,4 @@ export const zibMedicationUse = {
     profile,
     parse: parseZibMedicationUse,
     uiSchema,
-} satisfies ResourceConfigR3<MedicationStatement, ZibMedicationUse>;
+} satisfies ResourceConfig<MedicationStatement, ZibMedicationUse>;

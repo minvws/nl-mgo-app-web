@@ -1,17 +1,16 @@
-import input01 from './fixtures/zib-Payer-01.json';
-
-import { expectJson, testUiSchemaContext, faker } from '$test';
-import { test } from 'vitest';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Coverage } from 'fhir/r3';
+import { test } from 'vitest';
+import input01 from './fixtures/zib-Payer-01.json';
 import { zibPayer } from './zibPayer';
 
 test('parseZibPayer returns the expected output 01', () => {
-    const output = zibPayer.parse(input01 as Coverage, faker.custom.i18nContext());
+    const output = zibPayer.parse(input01 as Coverage);
     expectJson(output).toMatchFileSnapshot('./fixtures/zib-Payer-01-output.snap.json');
 });
 
 test('uiSchema returns the expected output', () => {
-    const output = zibPayer.parse(input01 as Coverage, faker.custom.i18nContext());
+    const output = zibPayer.parse(input01 as Coverage);
     const zibPayerUiSchema = zibPayer.uiSchema(
         output,
         testUiSchemaContext({

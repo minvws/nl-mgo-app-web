@@ -1,8 +1,8 @@
 import { type PatientCommunication } from 'fhir/r3';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Communication {
     language: parse.MgoCodeableConcept | undefined;
@@ -19,4 +19,4 @@ function parseCommunication(value: Nullable<PatientCommunication>): Communicatio
 export const communication = {
     parse: parseCommunication,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<PatientCommunication, Communication>;
+} satisfies ResourceElementConfig<PatientCommunication, Communication>;

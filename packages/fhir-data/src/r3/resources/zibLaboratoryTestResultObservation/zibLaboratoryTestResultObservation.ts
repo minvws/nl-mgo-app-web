@@ -1,14 +1,12 @@
 import { type Observation } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
 import { related } from './elements/related/related';
 import { referenceRange } from './elements/referenceRange/referenceRange';
 import { filterCodeableConceptByCoding, oneOfValueX } from '../../../parse/helpers';
-import { Snomed, SNOMED_SYSTEM, SnomedResultTypes } from '../../../valueSets/snomed';
+import { Snomed, SNOMED_SYSTEM, SnomedResultTypes } from '../../valueSets/snomed';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation'; // NOSONAR
 
@@ -16,10 +14,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestRes
  * ZibLaboratoryResultObservation is reused as the baseDefinition for some other resources.
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
  */
-export function parseZibLaboratoryTestResultObservationBase(
-    resource: Observation,
-    _i18nContext: I18nContext
-) {
+export function parseZibLaboratoryTestResultObservationBase(resource: Observation) {
     const laboratoryTestResultCode = filterCodeableConceptByCoding(
         resource.category,
         (x) => x.system === SNOMED_SYSTEM && x.code === Snomed.LABORATORY_TEST_FINDING
@@ -59,13 +54,10 @@ export function parseZibLaboratoryTestResultObservationBase(
     };
 }
 
-export function parseZibLaboratoryTestResultObservation(
-    resource: Observation,
-    i18nContext: I18nContext
-) {
+export function parseZibLaboratoryTestResultObservation(resource: Observation) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        ...parseZibLaboratoryTestResultObservationBase(resource, i18nContext),
+        ...parseZibLaboratoryTestResultObservationBase(resource),
     };
 }
 
@@ -77,4 +69,4 @@ export const zibLaboratoryTestResultObservation = {
     profile,
     parse: parseZibLaboratoryTestResultObservation,
     uiSchema,
-} satisfies ResourceConfigR3<Observation, ZibLaboratoryTestResultObservation>;
+} satisfies ResourceConfig<Observation, ZibLaboratoryTestResultObservation>;

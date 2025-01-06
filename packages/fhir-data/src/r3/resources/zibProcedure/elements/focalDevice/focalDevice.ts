@@ -1,7 +1,7 @@
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type ProcedureFocalDevice } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface FocalDevice {
@@ -17,4 +17,4 @@ function parseFocalDevice(value: Nullable<ProcedureFocalDevice>): FocalDevice {
 export const focalDevice = {
     parse: parseFocalDevice,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ProcedureFocalDevice, FocalDevice>;
+} satisfies ResourceElementConfig<ProcedureFocalDevice, FocalDevice>;

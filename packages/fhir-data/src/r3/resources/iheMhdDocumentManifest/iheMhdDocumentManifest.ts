@@ -1,9 +1,7 @@
 import { type DocumentManifest } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { parseContent } from './elements/content/content';
 import { uiSchema } from './uiSchema';
 
@@ -12,7 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManif
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317001
  */
-function parseIheMhdDocumentManifest(resource: DocumentManifest, _i18nContext: I18nContext) {
+function parseIheMhdDocumentManifest(resource: DocumentManifest) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         description: parse.string(resource.description),
@@ -32,4 +30,4 @@ export const iheMhdDocumentManifest = {
     profile,
     parse: parseIheMhdDocumentManifest,
     uiSchema,
-} satisfies ResourceConfigR3<DocumentManifest, IheMhdDocumentManifest>;
+} satisfies ResourceConfig<DocumentManifest, IheMhdDocumentManifest>;

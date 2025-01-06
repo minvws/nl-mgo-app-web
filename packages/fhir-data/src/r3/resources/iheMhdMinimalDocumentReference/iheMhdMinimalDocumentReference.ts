@@ -1,9 +1,7 @@
 import { type DocumentReference } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { parseContent } from './elements/content/content';
 import { uiSchema } from './uiSchema';
 
@@ -12,10 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.Docum
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317003
  */
-function parseIheMhdMinimalDocumentReference(
-    resource: DocumentReference,
-    _i18nContext: I18nContext
-) {
+function parseIheMhdMinimalDocumentReference(resource: DocumentReference) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         masterIdentifier: parse.identifier(resource.masterIdentifier),
@@ -36,4 +31,4 @@ export const iheMhdMinimalDocumentReference = {
     profile,
     parse: parseIheMhdMinimalDocumentReference,
     uiSchema,
-} satisfies ResourceConfigR3<DocumentReference, IheMhdMinimalDocumentReference>;
+} satisfies ResourceConfig<DocumentReference, IheMhdMinimalDocumentReference>;

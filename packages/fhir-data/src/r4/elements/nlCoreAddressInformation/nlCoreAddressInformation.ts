@@ -1,10 +1,10 @@
 import { type Address } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type Nullable } from '../../../types/Nullable';
-import { type R4ResourceElementConfig } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface NlCoreAddress {
+export interface R4NlCoreAddressInformation {
     line: parse.MgoString | undefined;
     streetName: parse.MgoString | undefined; // NL-CM:20.5.2
     houseNumber: parse.MgoString | undefined; // NL-CM:20.5.12
@@ -27,7 +27,7 @@ export interface NlCoreAddress {
  * @usage Patient.address
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317236
  */
-function parseNlCoreAddressInformation(value: Nullable<Address>): NlCoreAddress {
+function parseNlCoreAddressInformation(value: Nullable<Address>): R4NlCoreAddressInformation {
     // We assume the full address is available in the first line
     // If it would be split into multiple lines, concatenating them might be an issue
     const lineMeta = value?._line?.[0];
@@ -94,4 +94,4 @@ function parseNlCoreAddressInformation(value: Nullable<Address>): NlCoreAddress 
 export const nlCoreAddressInformation = {
     parse: parseNlCoreAddressInformation,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<Address, NlCoreAddress>;
+} satisfies ResourceElementConfig<Address, R4NlCoreAddressInformation>;

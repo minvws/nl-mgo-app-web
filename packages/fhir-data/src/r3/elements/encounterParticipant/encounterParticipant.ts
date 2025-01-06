@@ -1,14 +1,16 @@
-import { type Nullable } from '../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { type ResourceElementConfigR3 } from '../config';
+import { type EncounterParticipant as FhirEncounterParticipant } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type EncounterParticipant } from 'fhir/r3';
+import { type Nullable } from '../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface Participant {
+export interface EncounterParticipant {
     individual: parse.MgoReference | undefined;
 }
 
-function parseEncounterParticipant(value: Nullable<EncounterParticipant>): Participant {
+function parseEncounterParticipant(
+    value: Nullable<FhirEncounterParticipant>
+): EncounterParticipant {
     return {
         individual: parse.reference(value?.individual),
     };
@@ -17,4 +19,4 @@ function parseEncounterParticipant(value: Nullable<EncounterParticipant>): Parti
 export const encounterParticipant = {
     parse: parseEncounterParticipant,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<EncounterParticipant, Participant>;
+} satisfies ResourceElementConfig<FhirEncounterParticipant, EncounterParticipant>;

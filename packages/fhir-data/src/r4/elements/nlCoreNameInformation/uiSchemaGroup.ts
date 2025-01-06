@@ -1,11 +1,11 @@
 import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
 import {
-    type NlCoreNameInformation,
-    type NlCoreNameInformationGiven,
+    type R4NlCoreNameInformation,
+    type R4NlCoreNameInformationGiven,
 } from './nlCoreNameInformation';
 
 export const uiSchemaGroup: UiSchemaGroupFunction<
-    NlCoreNameInformation | NlCoreNameInformationGiven
+    R4NlCoreNameInformation | R4NlCoreNameInformationGiven
 > = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     if (resource?.use === 'usual') {

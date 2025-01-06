@@ -1,7 +1,7 @@
 import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
-import { type Participant } from './encounterParticipant';
+import { type EncounterParticipant } from './encounterParticipant';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Participant> = (resource, context) => {
+export const uiSchemaGroup: UiSchemaGroupFunction<EncounterParticipant> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     return {
         label: 'Encounter.participant',

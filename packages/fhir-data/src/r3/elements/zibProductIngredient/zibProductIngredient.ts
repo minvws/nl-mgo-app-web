@@ -1,7 +1,7 @@
 import { type MedicationIngredient } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type Nullable } from '../../../types/Nullable';
-import { type ResourceElementConfigR3 } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ZibProductIngredient {
@@ -24,4 +24,4 @@ function parseZibProductIngredient(value: Nullable<MedicationIngredient>): ZibPr
 export const zibProductIngredient = {
     parse: parseZibProductIngredient,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<MedicationIngredient, ZibProductIngredient>;
+} satisfies ResourceElementConfig<MedicationIngredient, ZibProductIngredient>;

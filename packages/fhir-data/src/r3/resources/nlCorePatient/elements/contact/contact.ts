@@ -1,17 +1,17 @@
 import { type PatientContact } from 'fhir/r3';
+import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { map } from '../../../../../utils';
 import {
-    type NlCoreContactpoint,
-    nlCoreContactpoint,
-    type NlCoreAddress,
     nlCoreAddress,
+    nlCoreContactpoint,
     nlCoreHumanname,
+    type NlCoreAddress,
+    type NlCoreContactpoint,
     type NlCoreHumanname,
 } from '../../../../elements';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
-import { map } from '../../../../../utils';
-import { parse } from '../../../../../parse';
 
 export interface Contact {
     relationship: parse.MgoCodeableConcept[];
@@ -38,4 +38,4 @@ function parseContact(value: Nullable<PatientContact>): Contact {
 export const contact = {
     parse: parseContact,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<PatientContact, Contact>;
+} satisfies ResourceElementConfig<PatientContact, Contact>;

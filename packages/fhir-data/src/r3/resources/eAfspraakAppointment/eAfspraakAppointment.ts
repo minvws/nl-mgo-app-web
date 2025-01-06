@@ -1,9 +1,7 @@
 import { type Appointment } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment'; // NOSONAR
@@ -11,7 +9,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.eafspraak/1.0.6/files/714361/
  */
-function parseEAfspraakAppointment(resource: Appointment, _i18nContext: I18nContext) {
+function parseEAfspraakAppointment(resource: Appointment) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         status: parse.string(resource.status),
@@ -29,4 +27,4 @@ export const eAfspraakAppointment = {
     profile,
     parse: parseEAfspraakAppointment,
     uiSchema,
-} satisfies ResourceConfigR3<Appointment, EAfspraakAppointment>;
+} satisfies ResourceConfig<Appointment, EAfspraakAppointment>;

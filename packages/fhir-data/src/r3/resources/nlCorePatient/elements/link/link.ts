@@ -1,8 +1,8 @@
 import { type PatientLink } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Link {
     other: parse.MgoReference | undefined;
@@ -19,4 +19,4 @@ function parseLink(value: Nullable<PatientLink>): Link {
 export const link = {
     parse: parseLink,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<PatientLink, Link>;
+} satisfies ResourceElementConfig<PatientLink, Link>;

@@ -1,10 +1,11 @@
-import { type I18nContext, type Locale } from '../../i18n';
+import { type I18nContext } from '../../i18n';
 import { type MessagesIds } from '../../i18n/messages';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type Lossless } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
+import { type UiSchemaContext } from '../context/context';
 import { type Ui } from '../context/ui';
-import { type UiEntry, type UiEntryOptions, type UiSchema, type UiSchemaGroup } from './schema';
+import { type UiElement, type UiEntryOptions, type UiSchema, type UiSchemaGroup } from './schema';
 
 type PrimitiveType = string | number | boolean | null | undefined | Date;
 
@@ -20,38 +21,29 @@ export type FormatDisplayFunction<Input, Output extends string[] | string | unde
     value: Nullable<Lossless<Input>>
 ) => Output;
 
-export type UiFunction<Input, Output extends UiEntry | UiEntry[], Label = MessagesIds> = (
+export type UiFunction<Input, Output extends UiElement | UiElement[], Label = MessagesIds> = (
     label: Label,
     value: Nullable<Lossless<Input>>,
     options?: UiEntryOptions
 ) => Output;
 
-export type UiFunctionWithoutLabel<Input, Output extends UiEntry | UiEntry[]> = (
+export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
     value: Nullable<Lossless<Input>>,
     options?: UiEntryOptions
 ) => Output;
 
-export type CombinedUiFunction<Input1, Input2, Output extends UiEntry | UiEntry[]> = (
+export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElement[]> = (
     label: MessagesIds,
     value1: Nullable<Lossless<Input1>>,
     value2: Nullable<Lossless<Input2>>,
     options?: UiEntryOptions
 ) => Output;
 
-export type UiSchemaOptions = {
-    locale: Locale;
-};
-
 export type SetEmptyEntriesHelper = (schema: UiSchema) => UiSchema;
 
-export type UiSchemaContext = I18nContext & {
-    ui: Ui;
-    setEmptyEntries: SetEmptyEntriesHelper;
-};
-
-export type UiSchemaFunction<ParsedResource extends MgoResourceMeta> = (
-    parsedResource: ParsedResource,
-    context: UiSchemaContext
+export type UiSchemaFunction<T extends MgoResourceMeta> = (
+    parsedResource: T,
+    context: UiSchemaContext<T['fhirVersion']>
 ) => UiSchema;
 
 export type UiSchemaGroupFunction<

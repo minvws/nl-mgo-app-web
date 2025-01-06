@@ -1,10 +1,10 @@
-import { type Attachment } from 'fhir/r3';
-import { type Nullable } from '../../../types/Nullable';
-import { type ResourceElementConfigR3 } from '../config';
-import { uiSchemaGroup } from './uiSchemaGroup';
+import { type Attachment as FhirAttachment } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { type Nullable } from '../../../types/Nullable';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
-export type MgoAttachment = {
+export type Attachment = {
     contentType: parse.MgoString | undefined;
     language: parse.MgoString | undefined;
     data: parse.MgoString | undefined;
@@ -18,7 +18,7 @@ export type MgoAttachment = {
 /**
  * @see https://simplifier.net/packages/hl7.fhir.r3.core/3.0.2/files/62003
  */
-function parseAttachment(value: Nullable<Attachment>): MgoAttachment {
+function parseAttachment(value: Nullable<FhirAttachment>): Attachment {
     return {
         contentType: parse.code(value?.contentType),
         language: parse.code(value?.language),
@@ -34,4 +34,4 @@ function parseAttachment(value: Nullable<Attachment>): MgoAttachment {
 export const attachment = {
     parse: parseAttachment,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<Attachment, MgoAttachment>;
+} satisfies ResourceElementConfig<FhirAttachment, Attachment>;

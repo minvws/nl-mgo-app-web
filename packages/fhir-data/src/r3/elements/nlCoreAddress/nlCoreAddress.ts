@@ -1,9 +1,9 @@
-import { type Nullable } from '../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { map } from '../../../utils';
-import { parse } from '../../../parse';
-import { type ResourceElementConfigR3 } from '../config';
 import { type Address } from 'fhir/r3';
+import { parse } from '../../../parse';
+import { type Nullable } from '../../../types/Nullable';
+import { map } from '../../../utils';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface NlCoreAddress {
     use: parse.MgoString | undefined;
@@ -41,4 +41,4 @@ function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
 export const nlCoreAddress = {
     parse: parseNlCoreAddress,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<Address, NlCoreAddress>;
+} satisfies ResourceElementConfig<Address, NlCoreAddress>;

@@ -1,8 +1,6 @@
 import { type Specimen } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 import { map } from '../../../utils';
 import { container } from './elements/container/container';
@@ -14,10 +12,7 @@ const profile =
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317243
  */
-function parseZibLaboratoryTestResultSpecimenIsolate(
-    resource: Specimen,
-    _i18nContext: I18nContext
-) {
+function parseZibLaboratoryTestResultSpecimenIsolate(resource: Specimen) {
     const collection = resource.collection;
 
     return {
@@ -49,4 +44,4 @@ export const zibLaboratoryTestResultSpecimenIsolate = {
     profile,
     parse: parseZibLaboratoryTestResultSpecimenIsolate,
     uiSchema,
-} satisfies ResourceConfigR3<Specimen, ZibLaboratoryTestResultSpecimenIsolate>;
+} satisfies ResourceConfig<Specimen, ZibLaboratoryTestResultSpecimenIsolate>;

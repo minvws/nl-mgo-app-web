@@ -8,11 +8,11 @@ export enum Locale {
     NL_NL = 'nl-NL',
 }
 
-export type IntlOptions = {
+export interface IntlOptions {
     locale: Locale;
     ignoreMissingTranslations?: boolean;
     ignoreIntlCache?: boolean;
-};
+}
 
 export function createIntl(options: IntlOptions): IntlShape {
     const { locale, ignoreMissingTranslations, ignoreIntlCache } = options;

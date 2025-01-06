@@ -1,8 +1,8 @@
-import { type Nullable } from '../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { parse } from '../../../parse';
-import { type ResourceElementConfigR3 } from '../config';
 import { type ContactPoint } from 'fhir/r3';
+import { parse } from '../../../parse';
+import { type Nullable } from '../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface NlCoreContactpoint {
     system: parse.MgoString | undefined;
@@ -30,4 +30,4 @@ function parseNlCoreContactpoint(value: Nullable<ContactPoint>): NlCoreContactpo
 export const nlCoreContactpoint = {
     parse: parseNlCoreContactpoint,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ContactPoint, NlCoreContactpoint>;
+} satisfies ResourceElementConfig<ContactPoint, NlCoreContactpoint>;

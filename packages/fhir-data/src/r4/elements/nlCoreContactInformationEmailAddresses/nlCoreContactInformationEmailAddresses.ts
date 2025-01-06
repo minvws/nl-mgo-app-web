@@ -1,10 +1,10 @@
-import { type Nullable } from '../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { parse } from '../../../parse';
-import { type R4ResourceElementConfig } from '../config';
 import { type ContactPoint } from 'fhir/r4';
+import { parse } from '../../../parse';
+import { type Nullable } from '../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface NlCoreContactInformationEmailAddresses {
+export interface R4NlCoreContactInformationEmailAddresses {
     system: 'email';
     value: parse.MgoString | undefined; // NL-CM:20.6.7
     use: parse.MgoString | undefined; // NL-CM:20.6.8
@@ -17,7 +17,7 @@ export interface NlCoreContactInformationEmailAddresses {
  */
 function parseNlCoreContactInformationEmailAddresses(
     value: Nullable<ContactPoint>
-): NlCoreContactInformationEmailAddresses | undefined {
+): R4NlCoreContactInformationEmailAddresses | undefined {
     if (value?.system !== 'email') return;
 
     return {
@@ -30,4 +30,4 @@ function parseNlCoreContactInformationEmailAddresses(
 export const nlCoreContactInformationEmailAddresses = {
     parse: parseNlCoreContactInformationEmailAddresses,
     uiSchemaGroup,
-} satisfies R4ResourceElementConfig<ContactPoint, NlCoreContactInformationEmailAddresses>;
+} satisfies ResourceElementConfig<ContactPoint, R4NlCoreContactInformationEmailAddresses>;

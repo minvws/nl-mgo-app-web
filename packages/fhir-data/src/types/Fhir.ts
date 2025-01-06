@@ -1,11 +1,26 @@
+import {
+    type BackboneElement as BackboneElementR3,
+    type FhirResource as FhirResourceR3,
+} from 'fhir/r3';
+import {
+    type BackboneElement as BackboneElementR4,
+    type FhirResource as FhirResourceR4,
+} from 'fhir/r4';
+import { type MgoResourceMeta } from '../parse/helpers/resourceMeta/resourceMeta';
+import { type UiSchemaFunction } from '../ui';
+import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../ui/types';
+import { type Nullable } from './Nullable';
+
 export enum FhirVersion {
     R3 = 'R3',
     R4 = 'R4',
 }
 
-export type FhirR3R4<V extends FhirVersion, R3, R4> = V extends FhirVersion.R3
+export type FhirR3R4<T extends FhirVersion | `${FhirVersion}`, R3, R4> = T extends
+    | FhirVersion.R3
+    | `${FhirVersion.R3}`
     ? R3
-    : V extends FhirVersion.R4
+    : T extends FhirVersion.R4 | `${FhirVersion.R4}`
       ? R4
       : R3 | R4;
 
@@ -50,3 +65,33 @@ export type DateTimeString =
  */
 export type InstantDateTimeString =
     `${number}-${number}-${number}T${number}:${number}:${number}${string}`;
+
+type ResourceParserFunction<
+    Resource extends FhirResourceR3 | FhirResourceR4,
+    ParsedResource extends MgoResourceMeta,
+> = (resource: Resource) => ParsedResource;
+
+export interface ResourceConfig<
+    Resource extends ParsedResource['fhirVersion'] extends `${FhirVersion.R3}`
+        ? FhirResourceR3
+        : FhirResourceR4,
+    ParsedResource extends MgoResourceMeta,
+> {
+    profile: MgoResourceMeta['profile'];
+    parse: ResourceParserFunction<Resource, ParsedResource>;
+    uiSchema: UiSchemaFunction<ParsedResource>;
+    summary?: UiSchemaFunction<ParsedResource>;
+}
+
+type ElementParserFunction<
+    T extends BackboneElementR3 | BackboneElementR4,
+    ParsedResource extends object,
+> = (resource: Nullable<T>) => ParsedResource | undefined;
+
+export interface ResourceElementConfig<
+    Resource extends BackboneElementR3 | BackboneElementR4,
+    ParsedResource extends object,
+> {
+    parse: ElementParserFunction<Resource, ParsedResource>;
+    uiSchemaGroup: UiSchemaGroupFunction<ParsedResource, UiSchemaGroup | UiSchemaGroup[]>;
+}

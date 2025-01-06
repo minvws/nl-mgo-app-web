@@ -1,9 +1,7 @@
 import { type PractitionerRole } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 import { nlCoreContactpoint } from '../../elements';
 
@@ -12,7 +10,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrol
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317053
  */
-function parseNlCorePractitionerRole(resource: PractitionerRole, _i18nContext: I18nContext) {
+function parseNlCorePractitionerRole(resource: PractitionerRole) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
@@ -28,4 +26,4 @@ export const nlCorePractitionerRole = {
     profile,
     parse: parseNlCorePractitionerRole,
     uiSchema,
-} satisfies ResourceConfigR3<PractitionerRole, NlCorePractitionerRole>;
+} satisfies ResourceConfig<PractitionerRole, NlCorePractitionerRole>;

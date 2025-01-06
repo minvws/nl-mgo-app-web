@@ -1,26 +1,26 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiEntry, type UiSchema } from '../../types';
+import { type UiElement, type UiSchema } from '../../types';
 import { setEmptyEntries } from './setEmptyEntries';
 
 test('sets empty entries, but does not mutate the schema', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
         reference: undefined,
     };
-    const entry4: UiEntry = {
+    const entry4: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
@@ -65,28 +65,28 @@ test('sets empty entries, but does not mutate the schema', () => {
 });
 
 test('works for all types', () => {
-    const entry1: UiEntry = {
+    const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
         display: undefined,
     };
-    const entry2: UiEntry = {
+    const entry2: UiElement = {
         type: 'MULTIPLE_VALUES',
         label: faker.lorem.word(),
         display: [],
     };
-    const entry3: UiEntry = {
+    const entry3: UiElement = {
         type: 'MULTIPLE_GROUPED_VALUES',
         label: faker.lorem.word(),
         display: [[]],
     };
-    const entry4: UiEntry = {
+    const entry4: UiElement = {
         type: 'REFERENCE_VALUE',
         label: faker.lorem.word(),
         display: faker.lorem.word(),
         reference: undefined,
     };
-    const entry5: UiEntry = {
+    const entry5: UiElement = {
         type: 'DOWNLOAD_LINK',
         label: faker.lorem.word(),
         url: undefined as unknown as string,

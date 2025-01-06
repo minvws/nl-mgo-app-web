@@ -1,12 +1,10 @@
 import { type Patient } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreHumanname, nlCoreContactpoint } from '../../elements';
 import { attachment } from '../../elements/attachment/attachment';
-import { type ResourceConfigR3 } from '../config';
 import { communication } from './elements/communication/communication';
 import { contact } from './elements/contact/contact';
 import { link } from './elements/link/link';
@@ -17,7 +15,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
  */
-function parseNlCorePatient(resource: Patient, _i18nContext: I18nContext) {
+function parseNlCorePatient(resource: Patient) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         active: parse.boolean(resource.active),
@@ -47,4 +45,4 @@ export const nlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema,
-} satisfies ResourceConfigR3<Patient, NlCorePatient>;
+} satisfies ResourceConfig<Patient, NlCorePatient>;

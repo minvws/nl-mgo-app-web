@@ -1,10 +1,10 @@
-import { attachment, type MgoAttachment } from '../../../../elements';
 import { type DocumentManifestContent } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { attachment, type Attachment } from '../../../../elements';
 
 export interface IheMhdMinimalDocumentReferenceContent {
-    attachment: MgoAttachment | undefined;
+    attachment: Attachment | undefined;
     reference: parse.MgoReference | undefined;
 }
 

@@ -1,14 +1,10 @@
 import * as resourcesR3 from '../../r3/resources';
-import { type ResourceConfigR3 } from '../../r3/resources/config';
 import * as resourcesR4 from '../../r4/resources';
-import { type ResourceConfigR4 } from '../../r4/resources/config';
-
-type AnyResourceConfigR3 = ResourceConfigR3<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
-type AnyResourceConfigR4 = ResourceConfigR4<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+import { type ResourceConfig } from '../../types/Fhir';
 
 // Ensures only resource configs are listed
-resourcesR3 satisfies Record<string, AnyResourceConfigR3>;
-resourcesR4 satisfies Record<string, AnyResourceConfigR4>;
+resourcesR3 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
+resourcesR4 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export const resourcesMapR3 = Object.fromEntries(
     Object.entries(resourcesR3).map(([_name, config]) => [config.profile, config])

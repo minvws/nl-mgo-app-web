@@ -1,7 +1,6 @@
 import { type Observation } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
-import { type ResourceConfigR3 } from '../config';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 import { uiSchema } from './uiSchema';
 import { parse } from '../../../parse';
@@ -11,9 +10,9 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation';
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317251
  */
-const parseZibLivingSituation = (resource: Observation, i18nContext: I18nContext) => {
+const parseZibLivingSituation = (resource: Observation) => {
     return {
-        ...parseNlCoreObservationBase(resource, i18nContext),
+        ...parseNlCoreObservationBase(resource),
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
     };
 };
@@ -24,4 +23,4 @@ export const zibLivingSituation = {
     profile,
     parse: parseZibLivingSituation,
     uiSchema,
-} satisfies ResourceConfigR3<Observation, ZibLivingSituation>;
+} satisfies ResourceConfig<Observation, ZibLivingSituation>;

@@ -2,7 +2,7 @@ import { type HumanName } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfigR3 } from '../config';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export type NlCoreHumanname = {
@@ -33,4 +33,4 @@ function parseNlCoreHumanname(value: Nullable<HumanName>): NlCoreHumanname {
 export const nlCoreHumanname = {
     parse: parseNlCoreHumanname,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<HumanName, NlCoreHumanname>;
+} satisfies ResourceElementConfig<HumanName, NlCoreHumanname>;

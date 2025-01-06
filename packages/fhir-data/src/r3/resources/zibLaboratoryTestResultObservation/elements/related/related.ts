@@ -1,7 +1,7 @@
 import { type ObservationRelated } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Related {
@@ -17,4 +17,4 @@ function parseRelated(value: Nullable<ObservationRelated>): Related {
 export const related = {
     parse: parseRelated,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ObservationRelated, Related>;
+} satisfies ResourceElementConfig<ObservationRelated, Related>;

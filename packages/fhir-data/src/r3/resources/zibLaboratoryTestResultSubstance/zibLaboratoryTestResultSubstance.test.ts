@@ -1,22 +1,16 @@
-import { expectJson, testUiSchemaContext, faker } from '$test';
-import { test } from 'vitest';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Substance } from 'fhir/r3';
-import { zibLaboratoryTestResultSubstance } from './zibLaboratoryTestResultSubstance';
+import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
+import { zibLaboratoryTestResultSubstance } from './zibLaboratoryTestResultSubstance';
 
 test('returns the expected output 01', () => {
-    const output = zibLaboratoryTestResultSubstance.parse(
-        input as Substance,
-        faker.custom.i18nContext()
-    );
+    const output = zibLaboratoryTestResultSubstance.parse(input as Substance);
     expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
 test('uiSchema returns the expected output 01', () => {
-    const output = zibLaboratoryTestResultSubstance.parse(
-        input as Substance,
-        faker.custom.i18nContext()
-    );
+    const output = zibLaboratoryTestResultSubstance.parse(input as Substance);
     const uiSchema = zibLaboratoryTestResultSubstance.uiSchema(
         output,
         testUiSchemaContext({

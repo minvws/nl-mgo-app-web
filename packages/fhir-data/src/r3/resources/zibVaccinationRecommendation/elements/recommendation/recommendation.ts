@@ -1,9 +1,9 @@
 import { type ImmunizationRecommendationRecommendation } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Recommendation {
     date: parse.MgoDateTime | undefined;
@@ -24,4 +24,4 @@ function parseRecommendation(
 export const recommendation = {
     parse: parseRecommendation,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ImmunizationRecommendationRecommendation, Recommendation>;
+} satisfies ResourceElementConfig<ImmunizationRecommendationRecommendation, Recommendation>;

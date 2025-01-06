@@ -1,10 +1,8 @@
 import { zibInstructionsForUse } from '../../elements';
 import { type MedicationRequest } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement'; // NOSONAR
@@ -12,7 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreeme
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317273
  */
-function parseZibMedicationAgreement(resource: MedicationRequest, _i18nContext: I18nContext) {
+function parseZibMedicationAgreement(resource: MedicationRequest) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         periodOfUse: parse.extensionNictiz(resource, 'zib-Medication-PeriodOfUse'),
@@ -44,4 +42,4 @@ export const zibMedicationAgreement = {
     profile,
     parse: parseZibMedicationAgreement,
     uiSchema,
-} satisfies ResourceConfigR3<MedicationRequest, ZibMedicationAgreement>;
+} satisfies ResourceConfig<MedicationRequest, ZibMedicationAgreement>;

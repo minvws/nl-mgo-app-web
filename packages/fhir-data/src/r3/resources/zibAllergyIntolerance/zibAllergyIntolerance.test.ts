@@ -1,14 +1,10 @@
-import input01 from './fixtures/zib-AllergyIntolerance-01.json';
-
-import { expectJson, faker } from '$test';
-import { test } from 'vitest';
+import { expectJson } from '$test';
 import { type AllergyIntolerance } from 'fhir/r3';
+import { test } from 'vitest';
+import input01 from './fixtures/zib-AllergyIntolerance-01.json';
 import { zibAllergyIntolerance } from './zibAllergyIntolerance';
 
 test('parse returns the expected output 01', () => {
-    const output = zibAllergyIntolerance.parse(
-        input01 as AllergyIntolerance,
-        faker.custom.i18nContext()
-    );
+    const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
     expectJson(output).toMatchFileSnapshot('./fixtures/zib-AllergyIntolerance-01-output.snap.json');
 });

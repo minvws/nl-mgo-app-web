@@ -4,12 +4,12 @@ import {
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
 } from '../../elements';
-import { type NlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
+import { type R4NlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628465
  */
-export const uiSchema: UiSchemaFunction<NlCoreHealthProfessionalPractitionerRole> = (
+export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRole> = (
     resource,
     context
 ) => {

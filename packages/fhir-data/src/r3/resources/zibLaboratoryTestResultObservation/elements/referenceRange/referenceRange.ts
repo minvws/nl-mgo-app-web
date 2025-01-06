@@ -1,9 +1,9 @@
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
 import { type ObservationReferenceRange } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { map } from '../../../../../utils';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ReferenceRange {
     low: parse.MgoQuantity | undefined;
@@ -26,4 +26,4 @@ function parseReferenceRange(value: Nullable<ObservationReferenceRange>): Refere
 export const referenceRange = {
     parse: parseReferenceRange,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ObservationReferenceRange, ReferenceRange>;
+} satisfies ResourceElementConfig<ObservationReferenceRange, ReferenceRange>;

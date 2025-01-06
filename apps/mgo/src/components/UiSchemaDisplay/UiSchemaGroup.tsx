@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { type UiEntry, type UiSchema } from '@minvws/mgo-fhir-data';
+import { type UiElement, type UiSchema } from '@minvws/mgo-fhir-data';
 import { DescriptionList, Heading } from '@minvws/mgo-mgo-ui';
 import { type FunctionComponent, type HTMLAttributes } from 'react';
 import { DownloadLink } from './DownloadLink';
@@ -13,13 +13,13 @@ export interface UiSchemaGroupProps extends HTMLAttributes<HTMLDivElement> {
     readonly group: UiSchema['children'][number];
 }
 
-type UiEntryMap = {
-    [K in UiEntry['type']]: FunctionComponent<{
-        readonly value: Extract<UiEntry, { type: K }>;
+type UiElementMap = {
+    [K in UiElement['type']]: FunctionComponent<{
+        readonly value: Extract<UiElement, { type: K }>;
     }>;
 };
 
-const uiEntryMap: UiEntryMap = {
+const uiEntryMap: UiElementMap = {
     SINGLE_VALUE: SingleValueDisplay,
     REFERENCE_VALUE: ReferenceValueDisplay,
     MULTIPLE_VALUES: MultipleValueDisplay,
@@ -36,15 +36,15 @@ export function UiSchemaGroup({ group: { label, children }, ...rest }: UiSchemaG
 
             <DescriptionList>
                 {children.map((value, index) => {
-                    const UiEntry = uiEntryMap[value.type] as FunctionComponent<{
+                    const UiElement = uiEntryMap[value.type] as FunctionComponent<{
                         readonly value: typeof value;
                     }>;
 
-                    if (!UiEntry) {
+                    if (!UiElement) {
                         throw new Error(`Unknown UiEntry type: ${value.type}`);
                     }
 
-                    return <UiEntry key={`${value.type}-${index}`} value={value} />;
+                    return <UiElement key={`${value.type}-${index}`} value={value} />;
                 })}
             </DescriptionList>
         </div>

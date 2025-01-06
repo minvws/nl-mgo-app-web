@@ -13,8 +13,7 @@ test('returns the expected output for a R3 resource', () => {
             meta: {
                 profile: [zibMedicationUse.profile],
             },
-        }),
-        faker.custom.i18nContext()
+        })
     );
     const expectedResult = zibMedicationUse.uiSchema(
         mgoResource,
@@ -27,15 +26,12 @@ test('returns the expected output for a R3 resource', () => {
 });
 
 test('returns the expected output for a R4 resource', () => {
-    const mgoResource = r4NlCorePatient.parse(
-        {
-            meta: {
-                profile: [r4NlCorePatient.profile],
-            },
-            resourceType: 'Patient',
-        } as Patient,
-        faker.custom.i18nContext()
-    );
+    const mgoResource = r4NlCorePatient.parse({
+        meta: {
+            profile: [r4NlCorePatient.profile],
+        },
+        resourceType: 'Patient',
+    } as Patient);
     const expectedResult = r4NlCorePatient.uiSchema(
         mgoResource,
         testUiSchemaContext({
@@ -52,8 +48,7 @@ test('returns the expected output when locale is specified', () => {
             meta: {
                 profile: [zibMedicationUse.profile],
             },
-        }),
-        faker.custom.i18nContext()
+        })
     );
     const expectedResult = zibMedicationUse.uiSchema(
         mgoResource,
@@ -69,7 +64,7 @@ test('throws if no config could be found', () => {
     const medicationStatement = faker.fhir.medicationStatement({
         meta: { profile: [zibMedicationUse.profile] },
     });
-    const mgoResource = zibMedicationUse.parse(medicationStatement, faker.custom.i18nContext());
+    const mgoResource = zibMedicationUse.parse(medicationStatement);
 
     (mgoResource as any).profile = faker.lorem.word() as any; // eslint-disable-line @typescript-eslint/no-explicit-any
 

@@ -1,10 +1,8 @@
 import { type Organization } from 'fhir/r3';
-import { type I18nContext } from '../../../i18n';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
 import { map } from '../../../utils';
-import { type ResourceConfigR3 } from '../config';
 import { uiSchema } from './uiSchema';
 import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
 
@@ -13,7 +11,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-organization'; 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317033
  */
-function parseNlCoreOrganization(resource: Organization, _i18nContext: I18nContext) {
+function parseNlCoreOrganization(resource: Organization) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
@@ -43,4 +41,4 @@ export const nlCoreOrganization = {
     profile,
     parse: parseNlCoreOrganization,
     uiSchema,
-} satisfies ResourceConfigR3<Organization, NlCoreOrganization>;
+} satisfies ResourceConfig<Organization, NlCoreOrganization>;

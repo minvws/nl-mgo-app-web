@@ -1,19 +1,17 @@
 import { type Medication } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { FhirVersion } from '../../../types/Fhir';
-import { uiSchema } from './uiSchema';
-import { type ResourceConfigR4 } from '../config';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { ingredient } from './elements/ingredient/ingredient';
 import { batch } from './elements/batch/batch';
-import { type I18nContext } from '../../../i18n';
+import { ingredient } from './elements/ingredient/ingredient';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct'; // NOSONAR
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946208
  */
-function parseNlCorePharmaceuticalProduct(resource: Medication, _i18nContext: I18nContext) {
+function parseNlCorePharmaceuticalProduct(resource: Medication) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         description: parse.extensionNictiz(resource, 'ext-PharmaceuticalProduct.Description'),
@@ -29,10 +27,10 @@ function parseNlCorePharmaceuticalProduct(resource: Medication, _i18nContext: I1
     };
 }
 
-export type NlCorePharmaceuticalProductR4 = ReturnType<typeof parseNlCorePharmaceuticalProduct>;
+export type R4NlCorePharmaceuticalProduct = ReturnType<typeof parseNlCorePharmaceuticalProduct>;
 
 export const nlCorePharmaceuticalProductR4 = {
     profile,
     parse: parseNlCorePharmaceuticalProduct,
     uiSchema,
-} satisfies ResourceConfigR4<Medication, NlCorePharmaceuticalProductR4>;
+} satisfies ResourceConfig<Medication, R4NlCorePharmaceuticalProduct>;

@@ -1,4 +1,4 @@
-interface UiSchemaElement {
+interface UiSchemaNode {
     label: string;
 }
 
@@ -6,38 +6,39 @@ export interface UiEntryOptions {
     showEmpty?: boolean;
 }
 
-interface BaseUiEntry<T extends string> extends UiSchemaElement, UiEntryOptions {
+interface BaseUiElement<T extends string> extends UiSchemaNode, UiEntryOptions {
     type: T;
 }
 
-export interface UiEntryValue<T extends string, Display> extends BaseUiEntry<T> {
+interface UiDisplayElement<T extends string, Display> extends BaseUiElement<T> {
     display: Display | undefined;
 }
 
 /**
  * Note: using `undefined` as the `Display` type breaks the Kotlin types.
  */
-export interface SingleValue extends UiEntryValue<'SINGLE_VALUE', string> {}
-export interface MultipleValues extends UiEntryValue<'MULTIPLE_VALUES', string[]> {}
+export interface SingleValue extends UiDisplayElement<'SINGLE_VALUE', string> {}
+export interface MultipleValues extends UiDisplayElement<'MULTIPLE_VALUES', string[]> {}
 export interface MultipleGroupedValues
-    extends UiEntryValue<'MULTIPLE_GROUPED_VALUES', string[][]> {}
-export interface ReferenceValue extends UiEntryValue<'REFERENCE_VALUE', string> {
+    extends UiDisplayElement<'MULTIPLE_GROUPED_VALUES', string[][]> {}
+export interface ReferenceValue extends UiDisplayElement<'REFERENCE_VALUE', string> {
     reference: string | undefined;
 }
 
-export interface DownloadLink extends BaseUiEntry<'DOWNLOAD_LINK'> {
+export interface DownloadLink extends BaseUiElement<'DOWNLOAD_LINK'> {
     url: string;
 }
 
-export type UiEntry =
+export type UiElement =
     | SingleValue
     | MultipleValues
     | MultipleGroupedValues
     | ReferenceValue
     | DownloadLink;
 
-export interface UiSchemaGroup extends UiSchemaElement {
-    children: UiEntry[];
+export interface UiSchemaGroup {
+    label?: string;
+    children: UiElement[];
 }
 
 export interface UiSchema {

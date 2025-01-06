@@ -1,8 +1,8 @@
-import { type UiEntry } from '../../types';
+import { type UiElement } from '../../types';
 
-export function isUiEntry<T extends UiEntry['type']>(
-    entry: UiEntry,
+export function isUiEntry<T extends UiElement['type']>(
+    entry: UiElement,
     type: T
-): entry is Extract<UiEntry, { type: T }> {
+): entry is Extract<UiElement, { type: T }> {
     return entry.type === type;
 }

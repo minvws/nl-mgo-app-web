@@ -1,8 +1,8 @@
 import { type CoverageGrouping } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Grouping {
     group: parse.MgoString | undefined;
@@ -39,4 +39,4 @@ function parseGrouping(value: Nullable<CoverageGrouping>): Grouping {
 export const grouping = {
     parse: parseGrouping,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<CoverageGrouping, Grouping>;
+} satisfies ResourceElementConfig<CoverageGrouping, Grouping>;

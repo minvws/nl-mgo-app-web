@@ -1,26 +1,21 @@
 import { type Organization } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { FhirVersion } from '../../../types/Fhir';
-import { type ResourceConfigR4 } from '../config';
-import { uiSchema } from './uiSchema';
+import { filterCodeableConceptByCoding } from '../../../parse/helpers';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import {
     nlCoreAddressInformation,
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
 } from '../../elements';
-import { filterCodeableConceptByCoding } from '../../../parse/helpers';
-import { type I18nContext } from '../../../i18n';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization'; // NOSONAR
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946118
  */
-function parseNlCoreHealthcareProviderOrganization(
-    resource: Organization,
-    _i18nContext: I18nContext
-) {
+function parseNlCoreHealthcareProviderOrganization(resource: Organization) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         identifier: map(resource.identifier, parse.identifier),
@@ -45,7 +40,7 @@ function parseNlCoreHealthcareProviderOrganization(
     };
 }
 
-export type NlCoreHealthcareProviderOrganization = ReturnType<
+export type R4NlCoreHealthcareProviderOrganization = ReturnType<
     typeof parseNlCoreHealthcareProviderOrganization
 >;
 
@@ -53,4 +48,4 @@ export const nlCoreHealthcareProviderOrganization = {
     profile,
     parse: parseNlCoreHealthcareProviderOrganization,
     uiSchema,
-} satisfies ResourceConfigR4<Organization, NlCoreHealthcareProviderOrganization>;
+} satisfies ResourceConfig<Organization, R4NlCoreHealthcareProviderOrganization>;

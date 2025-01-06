@@ -1,7 +1,10 @@
 import { type UiSchemaGroupFunction } from '../../../ui/types';
-import { type NlCoreAddress } from './nlCoreAddressInformation';
+import { type R4NlCoreAddressInformation } from './nlCoreAddressInformation';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreAddress> = (resource, context) => {
+export const uiSchemaGroup: UiSchemaGroupFunction<R4NlCoreAddressInformation> = (
+    resource,
+    context
+) => {
     const i18n = 'r4.zib_address_information';
     const { ui, formatMessage } = context;
 

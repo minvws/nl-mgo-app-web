@@ -1,13 +1,11 @@
 import { type Immunization } from 'fhir/r4';
-import { type I18nContext } from '../../../i18n';
 import { parse } from '../../../parse';
-import { FhirVersion } from '../../../types/Fhir';
+import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { type ResourceConfigR4 } from '../config';
 import { uiSchema } from './uiSchema';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
-import { VaccinationMotive } from '../valueSets/vaccinationMotive';
-import { VaccinationIndication } from '../valueSets/vaccinationIndication';
+import { VaccinationMotive } from '../../valueSets/vaccinationMotive';
+import { VaccinationIndication } from '../../valueSets/vaccinationIndication';
 import { parseProtocolApplied } from './elements/protocolApplied/protocolApplied';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
@@ -15,7 +13,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-e
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946266
  */
-function parseNlCoreVaccinationEvent(resource: Immunization, _i18nContext: I18nContext) {
+function parseNlCoreVaccinationEvent(resource: Immunization) {
     const vaccinationIndication = filterCodeableConceptByCoding(
         resource.reasonCode,
         (x) =>
@@ -55,4 +53,4 @@ export const r4NlCoreVaccinationEvent = {
     profile,
     parse: parseNlCoreVaccinationEvent,
     uiSchema,
-} satisfies ResourceConfigR4<Immunization, R4NlCoreVaccinationEvent>;
+} satisfies ResourceConfig<Immunization, R4NlCoreVaccinationEvent>;

@@ -1,8 +1,8 @@
 import { type ConsentPolicy } from 'fhir/r3';
-import { type ResourceElementConfigR3 } from '../../../../elements/config';
-import { type Nullable } from '../../../../../types/Nullable';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { parse } from '../../../../../parse';
+import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Policy {
     id: parse.MgoString | undefined;
@@ -21,4 +21,4 @@ function parsePolicy(value: Nullable<ConsentPolicy>): Policy {
 export const policy = {
     parse: parsePolicy,
     uiSchemaGroup,
-} satisfies ResourceElementConfigR3<ConsentPolicy, Policy>;
+} satisfies ResourceElementConfig<ConsentPolicy, Policy>;

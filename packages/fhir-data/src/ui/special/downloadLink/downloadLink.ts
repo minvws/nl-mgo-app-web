@@ -1,7 +1,7 @@
-import { type MgoAttachment } from '../../../r3/elements';
-import { type WithI18nContext, type DownloadLink, type UiFunctionWithoutLabel } from '../../types';
+import { type Attachment } from '../../../r3/elements';
+import { type DownloadLink, type UiFunctionWithoutLabel, type WithI18nContext } from '../../types';
 
-export const downloadLink: WithI18nContext<UiFunctionWithoutLabel<MgoAttachment, DownloadLink>> =
+export const downloadLink: WithI18nContext<UiFunctionWithoutLabel<Attachment, DownloadLink>> =
     (_context) => (value, options) => {
         return {
             type: 'DOWNLOAD_LINK',

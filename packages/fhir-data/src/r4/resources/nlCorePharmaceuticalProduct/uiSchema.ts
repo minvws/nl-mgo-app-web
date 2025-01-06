@@ -2,12 +2,12 @@ import { type UiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import { batch } from './elements/batch/batch';
 import { ingredient } from './elements/ingredient/ingredient';
-import { type NlCorePharmaceuticalProductR4 } from './nlCorePharmaceuticalProduct';
+import { type R4NlCorePharmaceuticalProduct } from './nlCorePharmaceuticalProduct';
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946208
  */
-export const uiSchema: UiSchemaFunction<NlCorePharmaceuticalProductR4> = (resource, context) => {
+export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resource, context) => {
     const i18n = 'r4.zib_pharmaceutical_product';
 
     const { ui, formatMessage, setEmptyEntries } = context;
