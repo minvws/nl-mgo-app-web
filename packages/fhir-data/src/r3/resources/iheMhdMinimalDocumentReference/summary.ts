@@ -1,0 +1,32 @@
+import { type UiSchemaFunction } from '../../../ui';
+import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
+import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
+import { i18n } from './uiSchema';
+
+export const summary: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
+    const { ui, formatMessage } = context;
+
+    return {
+        label: resource.content.attachment?.title ?? formatMessage('fhir.unknown'),
+        children: [
+            {
+                children: [
+                    ui.instant(`${i18n}.indexed`, resource.indexed),
+                    ui.reference(`${i18n}.subject`, resource.subject),
+                    ui.codeableConcept(`${i18n}.type`, resource.type),
+                ],
+            },
+
+            {
+                label: formatMessage(`summary.${i18n}.group_attachment`),
+                children: [ui.attachment(resource.content.attachment)],
+            },
+
+            {
+                label: formatMessage(`summary.${i18n}.group_author`),
+                children: [ui.reference(`${i18n}.author`, resource.author)],
+            },
+            summaryOptions(context, i18n, resource),
+        ],
+    };
+};

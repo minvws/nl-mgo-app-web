@@ -4,20 +4,19 @@ import {
     type MultipleValues,
     type ReferenceValue,
     type UiFunction,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 
-export const reference: WithI18nContext<
+export const reference: WithUiHelperContext<
     UiFunction<MgoReference | MgoReference[], ReferenceValue | MultipleValues>
 > =
     ({ intl }) =>
-    (label, value, options) => {
+    (label, value) => {
         if (Array.isArray(value)) {
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
                 display: value.map((x) => x.display).filter(isNonNullish),
-                ...options,
             };
         }
 
@@ -26,6 +25,5 @@ export const reference: WithI18nContext<
             type: 'REFERENCE_VALUE',
             display: value?.display,
             reference: value?.reference,
-            ...options,
         };
     };

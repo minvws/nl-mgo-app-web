@@ -6,13 +6,12 @@ import { unsignedInt } from './unsignedInt';
 
 test('unsignedInt', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const value = faker.fhir.unsignedInt() as MgoUnsignedInt;
-    const result = unsignedInt(faker.custom.i18nContext())(label, value, options);
+    const result = unsignedInt(faker.custom.uiHelperContext())(label, value);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
-        ...options,
     });
 });

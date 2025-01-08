@@ -25,9 +25,9 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule> = (
             repeat?.period,
             repeat?.periodUnit
         ),
-        WeekDay: ui.string(`${i18n}.repeat.day_of_week`, repeat?.dayOfWeek),
+        WeekDay: ui.code(`${i18n}.repeat.day_of_week`, repeat?.dayOfWeek),
         AdministrationTime: ui.dateTime(`${i18n}.repeat.time_of_day`, repeat?.timeOfDay),
-        TimeOfDay: ui.string(`${i18n}.repeat.when`, repeat?.when),
+        TimeOfDay: ui.code(`${i18n}.repeat.when`, repeat?.when),
     };
 
     return {

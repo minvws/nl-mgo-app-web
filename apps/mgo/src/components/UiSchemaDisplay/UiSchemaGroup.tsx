@@ -19,7 +19,7 @@ type UiElementMap = {
     }>;
 };
 
-const uiEntryMap: UiElementMap = {
+const uiEntryMap: Partial<UiElementMap> = {
     SINGLE_VALUE: SingleValueDisplay,
     REFERENCE_VALUE: ReferenceValueDisplay,
     MULTIPLE_VALUES: MultipleValueDisplay,

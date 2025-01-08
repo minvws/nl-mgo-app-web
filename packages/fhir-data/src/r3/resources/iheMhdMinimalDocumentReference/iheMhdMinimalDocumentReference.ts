@@ -4,6 +4,7 @@ import { parse } from '../../../parse';
 import { map } from '../../../utils';
 import { parseContent } from './elements/content/content';
 import { uiSchema } from './uiSchema';
+import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference'; // NOSONAR
 
@@ -31,4 +32,5 @@ export const iheMhdMinimalDocumentReference = {
     profile,
     parse: parseIheMhdMinimalDocumentReference,
     uiSchema,
+    summary,
 } satisfies ResourceConfig<DocumentReference, IheMhdMinimalDocumentReference>;

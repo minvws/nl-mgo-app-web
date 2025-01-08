@@ -1,6 +1,6 @@
 import { beforeAll, expect, test } from 'vitest';
 import { type DateTimeString } from '../../types/Fhir';
-import { dateTime } from '../../ui/format/dateTime/dateTime';
+import { date } from '../../ui/format/date/date';
 import { faker, testUiSchemaContext } from '$test';
 
 beforeAll(async () => {
@@ -20,7 +20,7 @@ test.each<[string, string]>([
     ['2000-01-01T10:25:56.123+10:00', '1 januari 2000, 01:25:56 GMT+1'],
     ['2000-01-01T22:25-10:00', '2 januari 2000, 09:25 GMT+1'],
 ])('polyfill: format dateTime formats date "%s" into "%s"', (dateTimeString, expected) => {
-    const result = dateTime(dateTimeString as DateTimeString);
+    const result = date(faker.custom.uiHelperContext())(dateTimeString as DateTimeString);
     expect(result).toEqual(expected);
 });
 

@@ -1,31 +1,27 @@
 import { type MgoDateTime } from '../../../parse/type';
 import { isNonNullish } from '../../../utils';
-import { format } from '../../format';
+import { date } from '../../format/date/date';
 import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 
-export const dateTime: WithI18nContext<
+export const dateTime: WithUiHelperContext<
     UiFunction<MgoDateTime | MgoDateTime[], SingleValue | MultipleValues>
-> =
-    ({ intl }) =>
-    (label, value, options) => {
-        if (Array.isArray(value)) {
-            return {
-                label: intl.formatMessage({ id: label }),
-                type: 'MULTIPLE_VALUES',
-                display: value.map(format.dateTime).filter(isNonNullish),
-                ...options,
-            };
-        }
-
+> = (context) => (label, value) => {
+    if (Array.isArray(value)) {
         return {
-            label: intl.formatMessage({ id: label }),
-            type: 'SINGLE_VALUE',
-            display: format.dateTime(value),
-            ...options,
+            label: context.formatMessage(label),
+            type: 'MULTIPLE_VALUES',
+            display: value.map(date(context)).filter(isNonNullish),
         };
+    }
+
+    return {
+        label: context.formatMessage(label),
+        type: 'SINGLE_VALUE',
+        display: date(context)(value),
     };
+};

@@ -20,7 +20,7 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
      */
     const hcimLaboratoryTestResult = {
         BasedOn: ui.reference(`${i18n}.based_on`, resource.basedOn),
-        Status: ui.string(`${i18n}.status`, resource.status),
+        Status: ui.code(`${i18n}.status`, resource.status),
         ResultType: ui.codeableConcept(`${i18n}.result_type`, resource.resultType),
         Code: ui.codeableConcept(`${i18n}.code`, resource.code),
         Effective: ui.oneOfValueX(`${i18n}.effective`, resource, 'effective'),

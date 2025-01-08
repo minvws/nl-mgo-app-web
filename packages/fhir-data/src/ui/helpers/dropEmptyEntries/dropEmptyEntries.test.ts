@@ -50,54 +50,11 @@ test('drops empty entries, but does not mutate the schema', () => {
     expect(uiSchema.children[0].children.length).toBe(4);
 });
 
-test('does not drop entries that should be shown empty', () => {
-    const entry1: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-    };
-    const entry2: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: undefined,
-        showEmpty: true,
-    };
-    const entry3: UiElement = {
-        type: 'REFERENCE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-        reference: undefined,
-    };
-
-    const uiSchema: UiSchema = {
-        label: faker.lorem.word(),
-        children: [
-            {
-                label: faker.lorem.word(),
-                children: [entry1, entry2, entry3],
-            },
-        ],
-    };
-
-    const expected = {
-        label: uiSchema.label,
-        children: [
-            {
-                label: uiSchema.children[0].label,
-                children: [entry1, entry2],
-            },
-        ],
-    };
-
-    expect(dropEmptyEntries(uiSchema)).toEqual(expected);
-});
-
 test('drops groups that are empty', () => {
     const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
-        display: undefined,
-        showEmpty: true,
+        display: faker.lorem.word(),
     };
     const entry3: UiElement = {
         type: 'REFERENCE_VALUE',
@@ -141,8 +98,7 @@ test('drops groups that are empty for a group collection', () => {
     const entry2: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
-        display: undefined,
-        showEmpty: true,
+        display: faker.lorem.word(),
     };
     const entry3: UiElement = {
         type: 'REFERENCE_VALUE',

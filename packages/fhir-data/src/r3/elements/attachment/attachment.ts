@@ -20,8 +20,8 @@ export type Attachment = {
  */
 function parseAttachment(value: Nullable<FhirAttachment>): Attachment {
     return {
-        contentType: parse.code(value?.contentType),
-        language: parse.code(value?.language),
+        contentType: parse.string(value?.contentType),
+        language: parse.string(value?.language),
         data: parse.string(value?.data),
         url: parse.string(value?.url),
         size: parse.unsignedInt(value?.size),

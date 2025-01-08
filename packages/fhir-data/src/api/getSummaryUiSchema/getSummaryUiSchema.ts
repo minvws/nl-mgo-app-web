@@ -30,8 +30,11 @@ export function getSummaryUiSchema<T extends MgoResourceMeta>(
 
     const context = createUiSchemaContext({
         ignoreMissingTranslations: true,
+        isSummary: true,
         ...options,
     });
 
-    return config.summary(resource, context);
+    const summaryUiSchema = config.summary(resource, context);
+
+    return context.setEmptyEntries(summaryUiSchema);
 }

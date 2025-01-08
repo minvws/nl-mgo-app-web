@@ -1,32 +1,31 @@
 import { type MessagesIds } from '../../../i18n/messages';
 import { type MgoPeriod } from '../../../parse/type';
-import { format } from '../../format';
-import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
+import { date } from '../../format/date/date';
+import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 type HasStartLabel = Extract<MessagesIds, `${string}.start`> extends `${infer R}.start` ? R : never;
 type HasEndLabel = Extract<MessagesIds, `${string}.end`> extends `${infer R}.end` ? R : never;
 type PeriodLabel = HasStartLabel | HasEndLabel;
 
-export const period: WithI18nContext<
+export const period: WithUiHelperContext<
     UiFunction<MgoPeriod, SingleValue[], MessagesIds | PeriodLabel>
-> =
-    ({ formatMessage, hasMessage }) =>
-    (label, value, options) => {
-        const startLabel = `${label}.start`;
-        const endLabel = `${label}.end`;
+> = (i18nContext) => (label, value) => {
+    const { formatMessage, hasMessage } = i18nContext;
+    const startLabel = `${label}.start`;
+    const endLabel = `${label}.end`;
 
-        return [
-            {
-                label: formatMessage(hasMessage(startLabel) ? startLabel : `fhir.period.start`),
-                type: `SINGLE_VALUE`,
-                display: format.dateTime(value?.start),
-                ...options,
-            },
-            {
-                label: formatMessage(hasMessage(endLabel) ? endLabel : `fhir.period.end`),
-                type: `SINGLE_VALUE`,
-                display: format.dateTime(value?.end),
-                ...options,
-            },
-        ];
-    };
+    const formatDate = date(i18nContext);
+
+    return [
+        {
+            label: formatMessage(hasMessage(startLabel) ? startLabel : `fhir.period.start`),
+            type: `SINGLE_VALUE`,
+            display: formatDate(value?.start),
+        },
+        {
+            label: formatMessage(hasMessage(endLabel) ? endLabel : `fhir.period.end`),
+            type: `SINGLE_VALUE`,
+            display: formatDate(value?.end),
+        },
+    ];
+};

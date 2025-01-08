@@ -5,13 +5,19 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 
-export const codingDisplay: WithI18nContext<FormatDisplayFunction<MgoCoding, string | undefined>> =
-    ({ hasMessage, formatMessage }) =>
+export const codingDisplay: WithUiHelperContext<
+    FormatDisplayFunction<MgoCoding, string | undefined>
+> =
+    ({ hasMessage, formatMessage, isSummary }) =>
     (value) => {
         const { display, code, system } = value ?? {};
+
+        if (isSummary && display) {
+            return display;
+        }
 
         let displayString: string = display ?? '';
         if (code) {
@@ -27,9 +33,9 @@ export const codingDisplay: WithI18nContext<FormatDisplayFunction<MgoCoding, str
         return displayString === '' ? undefined : displayString;
     };
 
-export const coding: WithI18nContext<
+export const coding: WithUiHelperContext<
     UiFunction<MgoCoding | MgoCoding[], SingleValue | MultipleValues>
-> = (context) => (label, value, options) => {
+> = (context) => (label, value) => {
     const { formatMessage } = context;
     const display = codingDisplay(context);
 
@@ -38,13 +44,11 @@ export const coding: WithI18nContext<
             label: formatMessage(label),
             type: 'MULTIPLE_VALUES',
             display: value.map(display).filter(isNonNullish),
-            ...options,
         };
     }
     return {
         label: formatMessage(label),
         type: 'SINGLE_VALUE',
         display: display(value),
-        ...options,
     };
 };

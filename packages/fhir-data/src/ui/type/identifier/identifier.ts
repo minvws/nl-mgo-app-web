@@ -4,26 +4,24 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 
-export const identifier: WithI18nContext<
+export const identifier: WithUiHelperContext<
     UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues>
 > =
     ({ intl }) =>
-    (label, value, options) => {
+    (label, value) => {
         if (Array.isArray(value)) {
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
                 display: value?.map((x) => x?.value).filter(isNonNullish),
-                ...options,
             };
         }
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
             display: value?.value,
-            ...options,
         };
     };

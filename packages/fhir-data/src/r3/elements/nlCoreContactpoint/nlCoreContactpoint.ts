@@ -5,9 +5,9 @@ import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface NlCoreContactpoint {
-    system: parse.MgoString | undefined;
+    system: parse.MgoCode | undefined;
     value: parse.MgoString | undefined;
-    use: parse.MgoString | undefined;
+    use: parse.MgoCode | undefined;
     rank: parse.MgoPositiveInt | undefined;
     period: parse.MgoPeriod | undefined;
 }

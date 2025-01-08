@@ -3,7 +3,11 @@ import { getChildren } from '../helpers';
 import { getSpecial } from '../special';
 import { getTypes } from '../type';
 
-export function getUi(context: I18nContext) {
+export interface UiHelperContext extends I18nContext {
+    isSummary?: boolean;
+}
+
+export function getUi(context: UiHelperContext) {
     return {
         ...getTypes(context),
         ...getSpecial(context),

@@ -6,13 +6,12 @@ import { decimal } from './decimal';
 
 test('decimal', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const value = faker.fhir.decimal() as MgoDecimal;
-    const result = decimal(faker.custom.i18nContext())(label, value, options);
+    const result = decimal(faker.custom.uiHelperContext())(label, value);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
-        ...options,
     });
 });

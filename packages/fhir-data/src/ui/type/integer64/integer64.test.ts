@@ -6,13 +6,12 @@ import { integer64 } from './integer64';
 
 test('integer64', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const value = faker.fhir.integer64() as MgoInteger64;
-    const result = integer64(faker.custom.i18nContext())(label, value, options);
+    const result = integer64(faker.custom.uiHelperContext())(label, value);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
-        ...options,
     });
 });

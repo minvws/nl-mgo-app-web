@@ -11,7 +11,7 @@
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
-                    "label": "Gecreëerd",
+                    "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "display": "10 juni 2019 om 13:13:21 GMT+2"
                 },
@@ -43,7 +43,7 @@
             "label": "Opgesteld door",
             "children": [
                 {
-                    "label": "Auteur",
+                    "label": "Specialist",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "De Hoed"

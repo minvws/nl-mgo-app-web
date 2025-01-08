@@ -17,25 +17,23 @@ export function mockQuantity(): MgoQuantity {
 
 test('quantity', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const mgoQuantity = mockQuantity();
-    const result = quantity(faker.custom.i18nContext())(label, mgoQuantity, options);
+    const result = quantity(faker.custom.uiHelperContext())(label, mgoQuantity);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
         display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
-        ...options,
     });
 });
 
 test('quantity with undefined fields', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
-    const result = quantity(faker.custom.i18nContext())(label, undefined, options);
+
+    const result = quantity(faker.custom.uiHelperContext())(label, undefined);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
         display: undefined,
-        ...options,
     });
 });

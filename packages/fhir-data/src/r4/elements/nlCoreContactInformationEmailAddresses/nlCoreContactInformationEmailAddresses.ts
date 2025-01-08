@@ -7,7 +7,7 @@ import { uiSchemaGroup } from './uiSchemaGroup';
 export interface R4NlCoreContactInformationEmailAddresses {
     system: 'email';
     value: parse.MgoString | undefined; // NL-CM:20.6.7
-    use: parse.MgoString | undefined; // NL-CM:20.6.8
+    use: parse.MgoCode | undefined; // NL-CM:20.6.8
 }
 
 /**

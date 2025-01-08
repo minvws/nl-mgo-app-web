@@ -12,7 +12,7 @@ export const uiSchemaGroup: UiSchemaGroupFunction<R4NlCoreContactInformationTele
         label: formatMessage(i18n),
         children: [
             ui.string(`${i18n}.value`, resource?.value),
-            ui.string(`${i18n}.use`, resource?.use),
+            ui.code(`${i18n}.use`, resource?.use),
             ui.string(`${i18n}.comment`, resource?.comment),
             ui.codeableConcept(`${i18n}.telecom_type`, resource?.telecomType),
         ],

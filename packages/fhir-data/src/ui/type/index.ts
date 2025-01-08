@@ -1,4 +1,4 @@
-import { type I18nContext } from '../../i18n';
+import { type UiHelperContext } from '../context/ui';
 import { annotation } from './annotation/annotation';
 import { boolean } from './boolean/boolean';
 import { code } from './code/code';
@@ -21,7 +21,7 @@ import { reference } from './reference/reference';
 import { string } from './string/string';
 import { unsignedInt } from './unsignedInt/unsignedInt';
 
-export function getTypes(context: I18nContext) {
+export function getTypes(context: UiHelperContext) {
     return {
         annotation: annotation(context),
         boolean: boolean(context),

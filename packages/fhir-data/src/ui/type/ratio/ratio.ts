@@ -1,17 +1,17 @@
 import { type MessagesIds } from '../../../i18n/messages';
 import { type MgoRatio } from '../../../parse/type';
 import { format } from '../../format';
-import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
+import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 type HasNumeratorLabel =
     Extract<MessagesIds, `${string}.numerator`> extends `${infer R}.numerator` ? R : never;
 type HasDenominatorLabel =
     Extract<MessagesIds, `${string}.denominator`> extends `${infer R}.denominator` ? R : never;
-type RatioLabel = HasNumeratorLabel | HasDenominatorLabel;
+type RatioLabel = HasNumeratorLabel | HasDenominatorLabel; // eslint-disable-line @typescript-eslint/no-duplicate-type-constituents
 
-export const ratio: WithI18nContext<
+export const ratio: WithUiHelperContext<
     UiFunction<MgoRatio, SingleValue[], MessagesIds | RatioLabel>
-> = (context) => (label, value, options) => {
+> = (context) => (label, value) => {
     const { hasMessage, formatMessage } = context;
     const numeratorLabel = `${label}.numerator`;
     const denominatorLabel = `${label}.denominator`;
@@ -23,7 +23,6 @@ export const ratio: WithI18nContext<
             ),
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(value?.numerator?.value, value?.numerator?.unit),
-            ...options,
         },
         {
             label: formatMessage(
@@ -31,7 +30,6 @@ export const ratio: WithI18nContext<
             ),
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(value?.denominator?.value, value?.denominator?.unit),
-            ...options,
         },
     ];
 };

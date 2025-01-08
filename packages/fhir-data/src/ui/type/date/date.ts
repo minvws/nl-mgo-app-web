@@ -1,14 +1,12 @@
 import { type MgoDate } from '../../../parse/type';
-import { format } from '../../format';
-import { type SingleValue, type UiFunction, type WithI18nContext } from '../../types';
+import { date as formatDate } from '../../format/date/date';
+import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
-export const date: WithI18nContext<UiFunction<MgoDate, SingleValue>> =
-    ({ intl }) =>
-    (label, value, options) => {
+export const date: WithUiHelperContext<UiFunction<MgoDate, SingleValue>> =
+    (i18nContext) => (label, value) => {
         return {
-            label: intl.formatMessage({ id: label }),
+            label: i18nContext.formatMessage(label),
             type: 'SINGLE_VALUE',
-            display: format.date(value),
-            ...options,
+            display: formatDate(i18nContext)(value),
         };
     };

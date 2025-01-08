@@ -5,24 +5,23 @@ import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 
 export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
     return value?.text;
 };
 
-export const annotation: WithI18nContext<
+export const annotation: WithUiHelperContext<
     UiFunction<MgoAnnotation | MgoAnnotation[], SingleValue | MultipleValues>
 > =
     ({ intl }) =>
-    (label, value, options) => {
+    (label, value) => {
         if (Array.isArray(value)) {
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
                 display: value.map(annotationDisplay).filter(isNonNullish),
-                ...options,
             };
         }
 
@@ -30,6 +29,5 @@ export const annotation: WithI18nContext<
             label: intl.formatMessage({ id: label }),
             display: annotationDisplay(value),
             type: 'SINGLE_VALUE',
-            ...options,
         };
     };

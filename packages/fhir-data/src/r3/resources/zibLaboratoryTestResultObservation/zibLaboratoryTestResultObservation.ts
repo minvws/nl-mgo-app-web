@@ -41,7 +41,7 @@ export function parseZibLaboratoryTestResultObservationBase(resource: Observatio
             'dateTime',
             'period',
         ]),
-        status: parse.string(resource?.status),
+        status: parse.code(resource?.status),
         referenceRange: map(resource?.referenceRange, referenceRange.parse),
         interpretation: parse.codeableConcept(resource?.interpretation),
         specimen: parse.reference(resource.specimen),

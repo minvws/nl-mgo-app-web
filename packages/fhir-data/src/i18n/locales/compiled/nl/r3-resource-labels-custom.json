@@ -2,7 +2,7 @@
     "r3.ihe_mhd_minimal_document_reference.author": [
         {
             "type": 0,
-            "value": "Auteur"
+            "value": "Specialist"
         }
     ],
     "r3.ihe_mhd_minimal_document_reference.class": [
@@ -47,22 +47,10 @@
             "value": "Url"
         }
     ],
-    "r3.ihe_mhd_minimal_document_reference.group_attachment": [
-        {
-            "type": 0,
-            "value": "Inhoud"
-        }
-    ],
-    "r3.ihe_mhd_minimal_document_reference.group_author": [
-        {
-            "type": 0,
-            "value": "Opgesteld door"
-        }
-    ],
     "r3.ihe_mhd_minimal_document_reference.indexed": [
         {
             "type": 0,
-            "value": "Gecreëerd"
+            "value": "Aangemaakt op"
         }
     ],
     "r3.ihe_mhd_minimal_document_reference.master_identifier": [

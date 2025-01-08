@@ -1,11 +1,10 @@
-import { type I18nContext } from '../../i18n';
 import { type MessagesIds } from '../../i18n/messages';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type Lossless } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
 import { type UiSchemaContext } from '../context/context';
-import { type Ui } from '../context/ui';
-import { type UiElement, type UiEntryOptions, type UiSchema, type UiSchemaGroup } from './schema';
+import { type Ui, type UiHelperContext } from '../context/ui';
+import { type UiElement, type UiSchema, type UiSchemaGroup } from './schema';
 
 type PrimitiveType = string | number | boolean | null | undefined | Date;
 
@@ -15,28 +14,36 @@ export type FormatMessageHelper = (
 ) => string;
 export type HasMessageHelper = (id: string) => id is MessagesIds;
 
-export type WithI18nContext<T> = (context: I18nContext) => T;
+export type WithUiHelperContext<T> = (context: UiHelperContext) => T;
+
+export type FormatFunction<Input, Output extends string | string[] = string> = (
+    value: Nullable<Lossless<Input>>
+) => Output | undefined;
 
 export type FormatDisplayFunction<Input, Output extends string[] | string | undefined = string> = (
     value: Nullable<Lossless<Input>>
 ) => Output;
 
+export type UiFunctionWithOptions<
+    Input,
+    Output extends UiElement | UiElement[],
+    Options,
+    Label = MessagesIds,
+> = (label: Label, value: Nullable<Lossless<Input>>, options?: Options) => Output;
+
 export type UiFunction<Input, Output extends UiElement | UiElement[], Label = MessagesIds> = (
     label: Label,
-    value: Nullable<Lossless<Input>>,
-    options?: UiEntryOptions
+    value: Nullable<Lossless<Input>>
 ) => Output;
 
 export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
-    value: Nullable<Lossless<Input>>,
-    options?: UiEntryOptions
+    value: Nullable<Lossless<Input>>
 ) => Output;
 
 export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElement[]> = (
     label: MessagesIds,
     value1: Nullable<Lossless<Input1>>,
-    value2: Nullable<Lossless<Input2>>,
-    options?: UiEntryOptions
+    value2: Nullable<Lossless<Input2>>
 ) => Output;
 
 export type SetEmptyEntriesHelper = (schema: UiSchema) => UiSchema;

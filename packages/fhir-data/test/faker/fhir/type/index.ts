@@ -21,3 +21,4 @@ export * from './integer';
 export * from './integer64';
 export * from './unsignedInt';
 export * from './positiveInt';
+export * from './string';

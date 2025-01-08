@@ -6,3 +6,7 @@ test('code', () => {
     const value = faker.fhir.code();
     expect(code(value)).toBe(value);
 });
+test('code returns undefined if nullish', () => {
+    const value = faker.helpers.arrayElement([null, undefined]);
+    expect(code(value)).toBeUndefined();
+});

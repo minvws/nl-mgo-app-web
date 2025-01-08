@@ -59,12 +59,12 @@ test('sets empty entries, but does not mutate the schema', () => {
         ],
     };
 
-    const uiSetEmptyEntries = setEmptyEntries(faker.custom.i18nContext());
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiHelperContext());
     expect(uiSetEmptyEntries(uiSchema)).toEqual(expected);
     expect(uiSchema.children[0].children[2]).toBe(entry3);
 });
 
-test('works for all types', () => {
+test('works for all types - except DOWNLOAD_LINK', () => {
     const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
@@ -107,15 +107,33 @@ test('works for all types', () => {
         children: [
             {
                 label: uiSchema.children[0].label,
-                children: uiSchema.children[0].children.map((entry) => ({
-                    label: entry.label,
-                    type: 'SINGLE_VALUE',
-                    display: 'intl(schema.empty_entry_display)',
-                })),
+                children: [
+                    {
+                        label: entry1.label,
+                        type: 'SINGLE_VALUE',
+                        display: 'intl(schema.empty_entry_display)',
+                    },
+                    {
+                        label: entry2.label,
+                        type: 'SINGLE_VALUE',
+                        display: 'intl(schema.empty_entry_display)',
+                    },
+                    {
+                        label: entry3.label,
+                        type: 'SINGLE_VALUE',
+                        display: 'intl(schema.empty_entry_display)',
+                    },
+                    {
+                        label: entry4.label,
+                        type: 'SINGLE_VALUE',
+                        display: 'intl(schema.empty_entry_display)',
+                    },
+                    entry5,
+                ],
             },
         ],
     };
 
-    const uiSetEmptyEntries = setEmptyEntries(faker.custom.i18nContext());
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiHelperContext());
     expect(uiSetEmptyEntries(uiSchema)).toEqual(expected);
 });

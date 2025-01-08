@@ -12,7 +12,7 @@ export const uiSchemaGroup: UiSchemaGroupFunction<R4NlCoreContactInformationEmai
         label: formatMessage(i18n),
         children: [
             ui.string(`${i18n}.value`, resource?.value),
-            ui.string(`${i18n}.use`, resource?.use),
+            ui.code(`${i18n}.use`, resource?.use),
         ],
     };
 };

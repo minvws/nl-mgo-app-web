@@ -5,7 +5,7 @@ import { identifier } from './identifier';
 
 test('identifier', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const mgoIdentifier: MgoIdentifier = {
         use: undefined,
         system: faker.internet.url(),
@@ -21,11 +21,10 @@ test('identifier', () => {
             ],
         },
     };
-    const result = identifier(faker.custom.i18nContext())(label, mgoIdentifier, options);
+    const result = identifier(faker.custom.uiHelperContext())(label, mgoIdentifier);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: mgoIdentifier.value,
-        ...options,
     });
 });

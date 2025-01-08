@@ -3,7 +3,7 @@ import {
     type SetEmptyEntriesHelper,
     type UiSchema,
     type UiSchemaGroup,
-    type WithI18nContext,
+    type WithUiHelperContext,
 } from '../../types';
 import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 
@@ -11,7 +11,7 @@ function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiS
     return {
         ...group,
         children: group.children.map((entry) => {
-            return isEmptyUiEntry(entry)
+            return isEmptyUiEntry(entry) && entry.type !== 'DOWNLOAD_LINK'
                 ? {
                       type: 'SINGLE_VALUE',
                       label: entry.label,
@@ -22,7 +22,9 @@ function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiS
     };
 }
 
-export const setEmptyEntries: WithI18nContext<SetEmptyEntriesHelper> = (context: I18nContext) => {
+export const setEmptyEntries: WithUiHelperContext<SetEmptyEntriesHelper> = (
+    context: I18nContext
+) => {
     return (schema: UiSchema): UiSchema => {
         return {
             ...schema,

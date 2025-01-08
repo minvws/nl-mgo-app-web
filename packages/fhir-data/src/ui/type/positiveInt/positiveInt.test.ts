@@ -6,13 +6,12 @@ import { positiveInt } from './positiveInt';
 
 test('positiveInt', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const value = faker.fhir.unsignedInt() as MgoPositiveInt;
-    const result = positiveInt(faker.custom.i18nContext())(label, value, options);
+    const result = positiveInt(faker.custom.uiHelperContext())(label, value);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
         display: numberToString(value),
-        ...options,
     });
 });

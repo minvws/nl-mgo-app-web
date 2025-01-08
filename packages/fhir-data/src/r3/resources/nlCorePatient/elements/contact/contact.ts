@@ -18,7 +18,7 @@ export interface Contact {
     name: NlCoreHumanname;
     telecom: NlCoreContactpoint[];
     address: NlCoreAddress;
-    gender: parse.MgoString | undefined;
+    gender: parse.MgoCode | undefined;
     organization: parse.MgoReference | undefined;
     period: parse.MgoPeriod | undefined;
 }

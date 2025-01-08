@@ -18,7 +18,7 @@ export const uiSchema: UiSchemaFunction<IheMhdDocumentManifest> = (resource, con
                 label: i18n,
                 children: [
                     ui.dateTime(`${i18n}.created`, resource.created),
-                    ui.string(`${i18n}.status`, resource.status),
+                    ui.code(`${i18n}.status`, resource.status),
                     ui.codeableConcept(`${i18n}.type`, resource.type),
                 ],
             },

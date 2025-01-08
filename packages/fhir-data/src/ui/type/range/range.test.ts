@@ -16,52 +16,48 @@ function mockQuantity() {
 
 test('range without message', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const { low, high }: MgoRange = {
         low: mockQuantity(),
         high: mockQuantity(),
     };
-    const context = faker.custom.i18nContext();
+    const context = faker.custom.uiHelperContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => false);
-    const result = general.range(context)(label, { low, high }, options);
+    const result = general.range(context)(label, { low, high });
     expect(result).toEqual([
         {
             label: `intl(fhir.range.low)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(low.value, low.unit),
-            ...options,
         },
         {
             label: `intl(fhir.range.high)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(high.value, high.unit),
-            ...options,
         },
     ]);
 });
 
 test('range with message', () => {
     const label = faker.custom.messageId();
-    const options = faker.custom.uiEntryOptions();
+
     const { low, high }: MgoRange = {
         low: mockQuantity(),
         high: mockQuantity(),
     };
-    const context = faker.custom.i18nContext();
+    const context = faker.custom.uiHelperContext();
     (context.hasMessage as unknown as Mock).mockImplementation(() => true);
-    const result = general.range(context)(label, { low, high }, options);
+    const result = general.range(context)(label, { low, high });
     expect(result).toEqual([
         {
             label: `intl(${label}.low)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(low.value, low.unit),
-            ...options,
         },
         {
             label: `intl(${label}.high)`,
             type: `SINGLE_VALUE`,
             display: format.valueWithUnit(high.value, high.unit),
-            ...options,
         },
     ]);
 });

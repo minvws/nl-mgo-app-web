@@ -8,8 +8,8 @@ export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreAddress> = (resource, co
     return {
         label: i18n,
         children: [
-            ui.string(`${i18n}.use`, resource?.use),
-            ui.string(`${i18n}.type`, resource?.type),
+            ui.code(`${i18n}.use`, resource?.use),
+            ui.code(`${i18n}.type`, resource?.type),
             ui.string(`${i18n}.text`, resource?.text),
             ui.string(`${i18n}.city`, resource?.city),
             ui.string(`${i18n}.district`, resource?.district),

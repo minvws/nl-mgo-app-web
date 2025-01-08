@@ -36,5 +36,7 @@ export function getUiSchema<T extends MgoResourceMeta>(
         ...options,
     });
 
-    return config.uiSchema(resource, context);
+    const uiSchema = config.uiSchema(resource, context);
+
+    return context.setEmptyEntries(uiSchema);
 }

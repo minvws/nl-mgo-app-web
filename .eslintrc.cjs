@@ -43,6 +43,7 @@ module.exports = {
             parserOptions: { project: true },
             rules: {
                 '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+                '@typescript-eslint/no-duplicate-type-constituents': 'error',
                 '@typescript-eslint/prefer-function-type': 'error',
                 '@typescript-eslint/prefer-optional-chain': 'error',
                 '@typescript-eslint/prefer-nullish-coalescing': [

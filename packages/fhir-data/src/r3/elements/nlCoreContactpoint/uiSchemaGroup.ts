@@ -8,9 +8,9 @@ export const uiSchemaGroup: UiSchemaGroupFunction<NlCoreContactpoint> = (resourc
     return {
         label: i18n,
         children: [
-            ui.string(`${i18n}.system`, resource?.system),
+            ui.code(`${i18n}.system`, resource?.system),
             ui.string(`${i18n}.value`, resource?.value),
-            ui.string(`${i18n}.use`, resource?.use),
+            ui.code(`${i18n}.use`, resource?.use),
             ui.positiveInt(`${i18n}.rank`, resource?.rank),
             ...ui.period(`${i18n}.period`, resource.period),
         ],

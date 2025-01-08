@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`creates a options group for the summary ui schema 1`] = `
+{
+  "children": [
+    {
+      "label": "intl(summary.r3.zib_medication_use.show_details)",
+      "reference": "MedicationStatement/zib-medicationuse-01",
+      "type": "REFERENCE_LINK",
+    },
+  ],
+  "label": "intl(summary.options)",
+}
+`;

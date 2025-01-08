@@ -2,12 +2,10 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type SingleValue } from '../../../ui/types';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
- */
+export const i18n = 'r3.ihe_mhd_minimal_document_reference';
+
 export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
-    const { ui, formatMessage, setEmptyEntries } = context;
-    const i18n = 'r3.ihe_mhd_minimal_document_reference';
+    const { ui, formatMessage } = context;
 
     const generalInformation = {
         MasterIdentifier: ui.identifier(`${i18n}.master_identifier`, resource.masterIdentifier),
@@ -34,11 +32,11 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                   `${i18n}.content.attachment.language`,
                   resource.content.attachment.language
               ),
-              Location: ui.downloadLink(resource.content.attachment),
+              Location: ui.attachment(resource.content.attachment),
           }
         : null;
 
-    return setEmptyEntries({
+    return {
         label: (content?.Title.display as string) ?? formatMessage('fhir.unknown'),
         children: [
             {
@@ -54,7 +52,7 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                 ],
             },
             {
-                label: formatMessage(`${i18n}.group_author`),
+                label: formatMessage(`detail.${i18n}.group_author`),
                 children: [generalInformation.Author],
             },
             ...(content
@@ -64,7 +62,7 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                           children: [content.ContentType, content.Language],
                       },
                       {
-                          label: formatMessage(`${i18n}.group_attachment`),
+                          label: formatMessage(`detail.${i18n}.group_attachment`),
                           children: [content.Location],
                       },
                   ]
@@ -81,5 +79,5 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                       },
                   ]),
         ],
-    });
+    };
 };

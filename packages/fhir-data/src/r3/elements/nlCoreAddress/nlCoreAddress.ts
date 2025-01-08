@@ -6,8 +6,8 @@ import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface NlCoreAddress {
-    use: parse.MgoString | undefined;
-    type: parse.MgoString | undefined;
+    use: parse.MgoCode | undefined;
+    type: parse.MgoCode | undefined;
     text: parse.MgoString | undefined;
     line: parse.MgoString[] | undefined;
     city: parse.MgoString | undefined;

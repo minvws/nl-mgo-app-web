@@ -4,7 +4,7 @@ import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 function processGroup(group: UiSchemaGroup) {
     return {
         ...group,
-        children: group.children.filter((entry) => !isEmptyUiEntry(entry) || entry.showEmpty),
+        children: group.children.filter((entry) => !isEmptyUiEntry(entry)),
     };
 }
 

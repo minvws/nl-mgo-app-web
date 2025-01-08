@@ -8,7 +8,7 @@ export interface R4NlCoreContactInformationTelephoneNumbers {
     system: 'phone';
     telecomType: parse.MgoCodeableConcept | undefined;
     value: parse.MgoString | undefined; // NL-CM:20.6.4
-    use: parse.MgoString | undefined; // NL-CM:20.6.6
+    use: parse.MgoCode | undefined; // NL-CM:20.6.6
     comment: parse.MgoString | undefined; // NL-CM:20.6.9
 }
 

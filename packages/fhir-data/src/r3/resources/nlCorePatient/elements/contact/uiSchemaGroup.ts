@@ -18,7 +18,7 @@ export const uiSchemaGroup: UiSchemaGroupFunction<Contact> = (resource, context)
             ...nlCoreHumanname.uiSchemaGroup(resource.name, context).children,
             ...ui.helpers.getChildren(telecom),
             ...nlCoreAddress.uiSchemaGroup(resource.address, context).children,
-            ui.string(`${i18n}.gender`, resource.gender),
+            ui.code(`${i18n}.gender`, resource.gender),
             ui.reference(`${i18n}.organization`, resource.organization),
             ...ui.period(`${i18n}.period`, resource.period),
         ].filter(isNonNullish),

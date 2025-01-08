@@ -1,11 +1,11 @@
 import { faker } from '$test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../types/Fhir';
-import { type UiSchemaFunction } from '../../ui';
+import { createUiSchemaContext, type UiSchemaFunction } from '../../ui';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
 import { type MgoResourceR3 } from '../resources/resources';
-import { type UiSchema } from '../types';
+import { type SingleValue, type UiSchema } from '../types';
 import { getSummaryUiSchema } from './getSummaryUiSchema';
 
 const mockGetResourceConfig = getResourceConfig as MockedFunction<typeof getResourceConfig>;
@@ -72,6 +72,34 @@ test('returns the result of the summary ui schema and passed any extra resources
         { resources } as UiSchemaOptions<any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
-    expect(result).toBe(summaryUiSchema);
+    expect(result).toEqual(summaryUiSchema);
     expect(summaryFunc).toHaveBeenCalledWith(mgoResource, expect.objectContaining({ resources }));
+});
+
+test('empty entries in the resulting summary ui schema are set with defaults', () => {
+    const summaryUiSchema: UiSchema = {
+        label: 'Summary',
+        children: [
+            {
+                label: faker.lorem.sentence(),
+                children: [
+                    { type: 'SINGLE_VALUE', label: faker.lorem.sentence(), display: undefined },
+                ],
+            },
+        ],
+    };
+    const summary: UiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
+    mockGetResourceConfig.mockImplementation(() => ({ summary }) as ResourceConfig<any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
+
+    const mgoResource = {
+        resourceType: faker.lorem.word(),
+        profile: faker.lorem.word(),
+    };
+
+    const { formatMessage } = createUiSchemaContext({ ignoreMissingTranslations: true });
+
+    const result = getSummaryUiSchema(mgoResource as MgoResourceR3);
+    const singleValueDisplay = (result?.children[0].children[0] as SingleValue).display;
+
+    expect(singleValueDisplay).toBe(formatMessage('schema.empty_entry_display'));
 });
