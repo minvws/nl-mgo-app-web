@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
 import { type Immunization } from 'fhir/r4';
 import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -23,7 +23,7 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns the expected output 02', () => {
@@ -34,5 +34,5 @@ test('uiSchema returns the expected output 02', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });

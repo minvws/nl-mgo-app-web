@@ -15,7 +15,7 @@ export const uiHelperContext = createMockDataFactory<UiHelperContext>(() => {
     return {
         intl: mockIntl as unknown as IntlShape,
         formatMessage: (id: MessagesIds, _values: unknown) => mockIntl.formatMessage({ id }),
-        hasMessage: vi.fn(() => true) as unknown as HasMessageHelper,
+        hasMessage: vi.fn(() => false) as unknown as HasMessageHelper,
         isSummary: false,
     };
 });

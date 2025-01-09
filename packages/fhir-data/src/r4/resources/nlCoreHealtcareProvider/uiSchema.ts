@@ -12,7 +12,7 @@ import { type R4NlCoreHealtcareProvider } from './nlCoreHealtcareProvider';
  */
 export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, context) => {
     const profile = 'r4.nl_core_healtcare_provider';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946116/~mappings
@@ -37,7 +37,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, 
         ).flat(),
     };
 
-    return setEmptyEntries({
+    return {
         label: resource.managingOrganization?.display ?? formatMessage(profile),
         children: [
             {
@@ -50,5 +50,5 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, 
             ...zibContactInformation.TelephoneNumbers,
             ...zibContactInformation.EmailAddresses,
         ],
-    });
+    };
 };

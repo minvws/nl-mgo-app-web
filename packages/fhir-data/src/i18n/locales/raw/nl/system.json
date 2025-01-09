@@ -1,0 +1,5 @@
+{
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)",
+    "system.count.http://unitsofmeasure.org|d": "{count, plural, one {één dag} other {{count, number} dagen}}",
+    "system.count.urn:oid:2.16.840.1.113883.2.4.4.1.900.2|245": "{count, plural, one {{count, number} stuk} other {{count, number} stuks}}"
+}

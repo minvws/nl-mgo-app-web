@@ -1,4 +1,5 @@
 import { type UiHelperContext } from '../context/ui';
+import { type UiElement, type UiFunction } from '../types';
 import { annotation } from './annotation/annotation';
 import { boolean } from './boolean/boolean';
 import { code } from './code/code';
@@ -44,5 +45,5 @@ export function getTypes(context: UiHelperContext) {
         integer64: integer64(context),
         unsignedInt: unsignedInt(context),
         positiveInt: positiveInt(context),
-    };
+    } satisfies Record<string, UiFunction<any, UiElement | UiElement[]>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 }

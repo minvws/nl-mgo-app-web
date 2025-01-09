@@ -1,22 +1,45 @@
-import { expectJson, faker, testUiSchemaContext } from '$test';
+import { expectJson, expectUiSchemaJson, faker, testUiSchemaContext } from '$test';
 import { type Dosage } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { parse } from '../../../parse';
-import inputFhirData from './fixtures/fhir-resource.json';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
 import { uiSchemaGroup } from './uiSchemaGroup';
+import { summary } from './summary';
 import { zibInstructionsForUse } from './zibInstructionsForUse';
 
-test('zibInstructionsForUse returns the expected output', () => {
-    const output = zibInstructionsForUse.parse(inputFhirData as Dosage);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+test('01 mgo-resource', () => {
+    const output = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
+    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
-    const zibData = zibInstructionsForUse.parse(inputFhirData as Dosage);
-    const zibMedicationUseUiSchema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
-        './fixtures/ui-schema-group.snap.json'
-    );
+test('01 ui-schema', () => {
+    const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
+    const schema = uiSchemaGroup(zibData, testUiSchemaContext());
+    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
+});
+
+test('01 summary', () => {
+    const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
+    const schema = summary(zibData, testUiSchemaContext());
+    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
+});
+
+test('02 mgo-resource', () => {
+    const output = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
+    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+});
+
+test('02 ui-schema', () => {
+    const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
+    const schema = uiSchemaGroup(zibData, testUiSchemaContext());
+    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/ui-schema-group.snap.json');
+});
+
+test('02 summary', () => {
+    const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
+    const schema = summary(zibData, testUiSchemaContext());
+    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
 });
 
 test('zibInstructionsForUse parses successfully', () => {

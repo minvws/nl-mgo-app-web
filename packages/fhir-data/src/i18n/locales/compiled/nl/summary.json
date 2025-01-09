@@ -23,10 +23,68 @@
             "value": "Bekijk alle documentgegevens"
         }
     ],
+    "summary.r3.zib_instructions_for_use": [
+        {
+            "type": 0,
+            "value": "Instructies "
+        },
+        {
+            "type": 1,
+            "value": "sequence"
+        }
+    ],
+    "summary.r3.zib_instructions_for_use.dose": [
+        {
+            "type": 0,
+            "value": "Hoeveelheid per keer"
+        }
+    ],
+    "summary.r3.zib_instructions_for_use.dose.high": [
+        {
+            "type": 0,
+            "value": "Maximaal"
+        }
+    ],
+    "summary.r3.zib_instructions_for_use.dose.low": [
+        {
+            "type": 0,
+            "value": "Minimaal"
+        }
+    ],
+    "summary.r3.zib_instructions_for_use.text": [
+        {
+            "type": 0,
+            "value": "Gebruiksaanwijzing"
+        }
+    ],
+    "summary.r3.zib_medication_use.group_period": [
+        {
+            "type": 0,
+            "value": "Periode van gebruik"
+        }
+    ],
+    "summary.r3.zib_medication_use.group_prescriber": [
+        {
+            "type": 0,
+            "value": "Voorgeschreven door"
+        }
+    ],
+    "summary.r3.zib_medication_use.prescriber": [
+        {
+            "type": 0,
+            "value": "Specialist"
+        }
+    ],
     "summary.r3.zib_medication_use.show_details": [
         {
             "type": 0,
             "value": "Bekijk alle medicijngegevens"
+        }
+    ],
+    "summary.r3.zib_medication_use.status": [
+        {
+            "type": 0,
+            "value": "Status"
         }
     ]
 }

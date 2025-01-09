@@ -1,0 +1,51 @@
+{
+    "sequence": 1,
+    "text": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL",
+    "timing": { "repeat": { "frequencyMax": 4, "period": 1, "periodUnit": "d" } },
+    "asNeededCodeableConcept": {
+        "coding": [
+            {
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek",
+                "code": "1137",
+                "display": "zo nodig"
+            }
+        ]
+    },
+    "route": {
+        "coding": [
+            {
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.9",
+                "code": "9",
+                "display": "ORAAL"
+            }
+        ]
+    },
+    "doseRange": {
+        "low": {
+            "value": 1,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        },
+        "high": {
+            "value": 2,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        }
+    },
+    "maxDosePerPeriod": {
+        "numerator": {
+            "value": 6,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        },
+        "denominator": {
+            "value": 1,
+            "unit": "dag",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    }
+}

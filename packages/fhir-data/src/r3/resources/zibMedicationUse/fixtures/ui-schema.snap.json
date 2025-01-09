@@ -101,6 +101,33 @@
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
+                },
+                {
+                    "label": "Ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 stuk"
+                },
+                {
+                    "label": "Bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 stuks"
+                },
+                {
+                    "label": "Teller",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 stuks"
+                },
+                {
+                    "label": "Noemer",
+                    "type": "SINGLE_VALUE",
+                    "display": "één dag"
+                },
+                {
+                    "label": "Zo nodig",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "zo nodig (1137 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
+                    ]
                 }
             ]
         },

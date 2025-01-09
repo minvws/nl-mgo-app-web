@@ -8,7 +8,7 @@ import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
  */
 export const uiSchema: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
     const profile = 'r4.nl_core_vaccination_event';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946266/~mappings
@@ -50,7 +50,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, c
         Note: ui.annotation(`${profile}.note`, resource.note),
     };
 
-    return setEmptyEntries({
+    return {
         label: resource.vaccineCode?.coding?.at(0)?.display,
         children: [
             {
@@ -82,5 +82,5 @@ export const uiSchema: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, c
                 ],
             },
         ],
-    });
+    };
 };

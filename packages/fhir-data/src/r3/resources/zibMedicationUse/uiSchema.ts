@@ -1,14 +1,21 @@
+import { capitalize } from 'lodash';
 import { type UiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
 import { type ZibMedicationUse } from './zibMedicationUse';
+import { type UiHelperContext } from '../../../ui/context/ui';
+
+export const i18n = 'r3.zib_medication_use';
+
+export function getLabel(resource: ZibMedicationUse, { formatMessage }: UiHelperContext) {
+    return capitalize(resource.medicationReference?.display) || formatMessage(i18n);
+}
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
 export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
-    const i18n = 'r3.zib_medication_use';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317279/~mappings
@@ -45,8 +52,8 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
         ),
     };
 
-    return setEmptyEntries({
-        label: resource.medicationReference?.display,
+    return {
+        label: getLabel(resource, context),
         children: [
             {
                 label: formatMessage(`fhir.group_general_info`),
@@ -68,5 +75,5 @@ export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) 
             },
             ...hcimInstructionsForUse.InstructionsForUse.flat(),
         ],
-    });
+    };
 };

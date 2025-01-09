@@ -15,14 +15,29 @@
                 ]
             },
             {
+                "type": "SINGLE_VALUE",
                 "label": "Aanvullende instructie",
-                "type": "MULTIPLE_VALUES",
-                "display": []
+                "display": "Niet bekend"
             },
             {
                 "label": "Volgnummer",
                 "type": "SINGLE_VALUE",
                 "display": "1"
+            },
+            {
+                "type": "SINGLE_VALUE",
+                "label": "Teller",
+                "display": "Niet bekend"
+            },
+            {
+                "type": "SINGLE_VALUE",
+                "label": "Noemer",
+                "display": "Niet bekend"
+            },
+            {
+                "type": "SINGLE_VALUE",
+                "label": "Zo nodig",
+                "display": "Niet bekend"
             }
         ]
     },
@@ -30,9 +45,9 @@
         "label": "Toedieningsschema",
         "children": [
             {
+                "type": "SINGLE_VALUE",
                 "label": "Toedieninsgduur",
-                "display": null,
-                "type": "SINGLE_VALUE"
+                "display": "Niet bekend"
             },
             {
                 "label": "Frequentie",
@@ -40,9 +55,9 @@
                 "display": "1"
             },
             {
-                "label": "Maximum waarde",
                 "type": "SINGLE_VALUE",
-                "display": null
+                "label": "Maximum waarde",
+                "display": "Niet bekend"
             },
             {
                 "label": "Interval",
@@ -50,19 +65,19 @@
                 "type": "SINGLE_VALUE"
             },
             {
+                "type": "SINGLE_VALUE",
                 "label": "Weekdagen",
-                "type": "SINGLE_VALUE",
-                "display": null
+                "display": "Niet bekend"
             },
             {
+                "type": "SINGLE_VALUE",
                 "label": "Toedientijd",
-                "type": "SINGLE_VALUE",
-                "display": null
+                "display": "Niet bekend"
             },
             {
-                "label": "Dagdeel",
                 "type": "SINGLE_VALUE",
-                "display": null
+                "label": "Dagdeel",
+                "display": "Niet bekend"
             }
         ]
     }

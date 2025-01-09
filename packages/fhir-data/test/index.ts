@@ -1,7 +1,8 @@
 import { expect } from 'vitest';
-import { type UiSchema } from '../src/ui';
+import { type UiSchemaGroup, type UiSchema } from '../src/ui';
 import { deepReplaceUndefined } from '../src/utils';
 import { testUiSchemaContext } from './uiSchemaContext';
+import { setEmptyEntries } from '../src/ui/helpers';
 
 export { faker } from './faker';
 export { testSet } from './testSet';
@@ -12,13 +13,13 @@ export function expectJson(value: unknown) {
     return expect(json);
 }
 
-export function expectUiSchemaJson(uiSchema: UiSchema) {
-    const { setEmptyEntries } = testUiSchemaContext({
+export function expectUiSchemaJson(uiSchema: UiSchema | UiSchemaGroup | UiSchemaGroup[]) {
+    const context = testUiSchemaContext({
         ignoreMissingTranslations: true,
     });
     // normally the `getUiSchema` replaces the empty entries.
     // to get a more realistic snapshot we also do that in this helper.
-    return expectJson(setEmptyEntries(uiSchema));
+    return expectJson(setEmptyEntries(context)(uiSchema));
 }
 
 export { testUiSchemaContext } from './uiSchemaContext';

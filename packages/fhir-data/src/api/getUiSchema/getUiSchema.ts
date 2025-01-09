@@ -1,7 +1,8 @@
 import { type Locale } from '../../i18n';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { type FhirVersion, type FhirR3R4 } from '../../types/Fhir';
-import { type UiSchema, createUiSchemaContext } from '../../ui';
+import { type FhirR3R4, type FhirVersion } from '../../types/Fhir';
+import { createUiSchemaContext, type UiSchema } from '../../ui';
+import { setEmptyEntries } from '../../ui/helpers';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type MgoResourceR3, type MgoResourceR4 } from '../resources/resources';
@@ -38,5 +39,5 @@ export function getUiSchema<T extends MgoResourceMeta>(
 
     const uiSchema = config.uiSchema(resource, context);
 
-    return context.setEmptyEntries(uiSchema);
+    return setEmptyEntries(context)(uiSchema);
 }

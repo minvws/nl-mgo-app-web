@@ -1,8 +1,6 @@
 import { type MgoResourceR3, type MgoResourceR4 } from '../../api/resources/resources';
 import { Locale, createI18nContext, type IntlOptions } from '../../i18n';
 import { type FhirR3R4, type FhirVersion } from '../../types/Fhir';
-import { setEmptyEntries } from '../helpers';
-import { type UiSchema } from '../types';
 import { getUi, type Ui, type UiHelperContext } from './ui';
 
 export interface UiSchemaOptions<T extends `${FhirVersion}`> {
@@ -12,7 +10,6 @@ export interface UiSchemaOptions<T extends `${FhirVersion}`> {
 
 export type UiSchemaContext<T extends `${FhirVersion}` = FhirVersion> = UiHelperContext & {
     ui: Ui;
-    setEmptyEntries: (schema: UiSchema) => UiSchema;
     resources: FhirR3R4<T, MgoResourceR3[], MgoResourceR4[]>;
 };
 
@@ -38,7 +35,6 @@ export function createUiSchemaContext<T extends `${FhirVersion}`>(
     return {
         ...uiHelperContext,
         ui: getUi(uiHelperContext),
-        setEmptyEntries: setEmptyEntries(uiHelperContext),
         resources: resources ?? [],
     } as UiSchemaContext<T>;
 }

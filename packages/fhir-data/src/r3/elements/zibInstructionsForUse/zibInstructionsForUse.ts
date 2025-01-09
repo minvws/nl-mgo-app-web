@@ -9,6 +9,7 @@ import {
     type ZibAdministrationSchedule,
 } from '../zibAdministrationSchedule/zibAdministrationSchedule';
 import { uiSchemaGroup } from './uiSchemaGroup';
+import { summary } from './summary';
 
 export interface ZibInstructionsForUse {
     sequence: parse.MgoInteger | undefined;
@@ -32,14 +33,14 @@ export interface ZibInstructionsForUse {
  */
 function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsForUse {
     return {
-        sequence: parse.integer(value?.sequence), // NL-CM:9.12.22503
-        text: parse.string(value?.text), // NL-CM:9.12.9581
-        additionalInstruction: map(value?.additionalInstruction, parse.codeableConcept), // NL-CM:9.12.19944
-        asNeeded: parse.codeableConcept(value?.asNeededCodeableConcept), // NL-CM:9.12.22512 | NL-CM:9.12.19945
-        route: parse.codeableConcept(value?.route), // NL-CM:9.12.19941
-        ...oneOfValueX(value, ['range', 'quantity'], 'dose'), // NL-CM:9.12.19940
-        maxDosePerPeriod: parse.ratio(value?.maxDosePerPeriod), // NL-CM:9.12.19946
-        ...oneOfValueX(value, ['ratio', 'range', 'quantity'], 'rate'), // NL-CM:9.12.19942
+        sequence: parse.integer(value?.sequence),
+        text: parse.string(value?.text),
+        additionalInstruction: map(value?.additionalInstruction, parse.codeableConcept),
+        asNeeded: parse.codeableConcept(value?.asNeededCodeableConcept),
+        route: parse.codeableConcept(value?.route),
+        ...oneOfValueX(value, ['range', 'quantity'], 'dose'),
+        maxDosePerPeriod: parse.ratio(value?.maxDosePerPeriod),
+        ...oneOfValueX(value, ['ratio', 'range', 'quantity'], 'rate'),
         timing: zibAdministrationSchedule.parse(value?.timing),
     };
 }
@@ -47,4 +48,5 @@ function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsFor
 export const zibInstructionsForUse = {
     parse: parseZibInstructionsForUse,
     uiSchemaGroup,
+    summary,
 } satisfies ResourceElementConfig<Dosage, ZibInstructionsForUse>;

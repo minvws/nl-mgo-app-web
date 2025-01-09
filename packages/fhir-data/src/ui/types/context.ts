@@ -46,8 +46,6 @@ export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElem
     value2: Nullable<Lossless<Input2>>
 ) => Output;
 
-export type SetEmptyEntriesHelper = (schema: UiSchema) => UiSchema;
-
 export type UiSchemaFunction<T extends MgoResourceMeta> = (
     parsedResource: T,
     context: UiSchemaContext<T['fhirVersion']>

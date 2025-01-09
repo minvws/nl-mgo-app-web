@@ -93,5 +93,6 @@ export interface ResourceElementConfig<
     ParsedResource extends object,
 > {
     parse: ElementParserFunction<Resource, ParsedResource>;
+    summary?: UiSchemaGroupFunction<ParsedResource, UiSchemaGroup | UiSchemaGroup[]>;
     uiSchemaGroup: UiSchemaGroupFunction<ParsedResource, UiSchemaGroup | UiSchemaGroup[]>;
 }

@@ -3,7 +3,6 @@ import { Locale } from '../src/i18n';
 import { createUiSchemaContext } from '../src/ui';
 import { type UiSchemaContext, type UiSchemaContextOptions } from '../src/ui/context/context';
 import { getUi } from '../src/ui/context/ui';
-import { setEmptyEntries } from '../src/ui/helpers';
 import { uiHelperContext } from './faker/i18nContext';
 
 export interface TestUiSchemaOptions<T extends `${FhirVersion}`> extends UiSchemaContextOptions<T> {
@@ -21,7 +20,6 @@ export function testUiSchemaContext<T extends `${FhirVersion}` = `${FhirVersion.
         return {
             ...mockUiContext,
             ui: getUi(mockUiContext),
-            setEmptyEntries: setEmptyEntries(mockUiContext),
             resources: options.resources ?? [],
         } as UiSchemaContext<T>;
     }

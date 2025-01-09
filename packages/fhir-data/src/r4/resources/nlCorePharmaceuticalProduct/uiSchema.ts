@@ -10,7 +10,7 @@ import { type R4NlCorePharmaceuticalProduct } from './nlCorePharmaceuticalProduc
 export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resource, context) => {
     const i18n = 'r4.zib_pharmaceutical_product';
 
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946208/~mappings
@@ -27,7 +27,7 @@ export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resour
         Description: ui.string(`${i18n}.description`, resource.description),
     };
 
-    return setEmptyEntries({
+    return {
         label: resource.name ?? formatMessage(i18n),
         children: [
             {
@@ -42,5 +42,5 @@ export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resour
                 ],
             },
         ],
-    });
+    };
 };

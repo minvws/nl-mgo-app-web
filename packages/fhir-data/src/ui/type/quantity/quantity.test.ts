@@ -1,10 +1,13 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { type MgoQuantity } from '../../../parse/type';
-import { format } from '../../format';
 import { quantity } from './quantity';
 
-export function mockQuantity(): MgoQuantity {
+vi.mock('../../format/count/count', () => ({
+    count: vi.fn((_context) => (input: MgoQuantity) => `count(${JSON.stringify(input)})`),
+}));
+
+function mockQuantity(): MgoQuantity {
     const comparator = faker.fhir.code(['<', '<=', '>=', '>']);
     return {
         value: faker.number.float(),
@@ -23,7 +26,7 @@ test('quantity', () => {
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
-        display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
+        display: `count(${JSON.stringify(mgoQuantity)})`,
     });
 });
 
@@ -34,6 +37,6 @@ test('quantity with undefined fields', () => {
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
-        display: undefined,
+        display: `count(${JSON.stringify(undefined)})`,
     });
 });

@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
 import { message } from '$test/i18n';
 import { type PractitionerRole } from 'fhir/r4';
 import { expect, test } from 'vitest';
@@ -16,7 +16,7 @@ test('uiSchema returns the expected output 01', () => {
         output,
         testUiSchemaContext()
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('uiSchema label returns profile when label not specified', () => {

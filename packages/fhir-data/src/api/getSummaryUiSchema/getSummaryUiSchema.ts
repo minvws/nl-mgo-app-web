@@ -1,5 +1,6 @@
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { type UiSchema, createUiSchemaContext } from '../../ui';
+import { createUiSchemaContext, type UiSchema } from '../../ui';
+import { setEmptyEntries } from '../../ui/helpers';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
@@ -50,5 +51,5 @@ export function getSummaryUiSchema<T extends MgoResourceMeta>(
 
     const summaryUiSchema = config.summary(resource, context);
 
-    return context.setEmptyEntries(summaryUiSchema);
+    return setEmptyEntries(context)(summaryUiSchema);
 }

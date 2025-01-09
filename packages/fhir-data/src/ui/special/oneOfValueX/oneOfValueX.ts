@@ -16,10 +16,11 @@ export const oneOfValueX =
 
         const typeUiFunctions = getTypes(context);
         let type: keyof typeof typeUiFunctions;
+
         for (type in typeUiFunctions) {
-            const key = `${prefix}${capitalizeFirstLetter(type)}` as keyof Nullable<Lossless<T>>;
+            const key = `${prefix}${capitalizeFirstLetter(type)}` as keyof Lossless<T>;
             if (key in value && isNonNullish(value[key])) {
-                const uiValue = typeUiFunctions[type](label, value[key]);
+                const uiValue = typeUiFunctions[type](label, value[key] as any); // eslint-disable-line @typescript-eslint/no-explicit-any
                 return (Array.isArray(uiValue) ? uiValue : [uiValue]) as UiElement[];
             }
         }

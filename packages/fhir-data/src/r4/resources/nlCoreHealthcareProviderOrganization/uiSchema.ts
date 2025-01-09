@@ -9,7 +9,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> 
     context
 ) => {
     const profile = 'r4.nl_core_healthcare_provider_organization';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946118/~mappings
@@ -30,7 +30,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> 
         OrganizationName: ui.string(`${profile}.name`, resource.name),
     };
 
-    return setEmptyEntries({
+    return {
         label: resource.name ?? formatMessage(profile),
         children: [
             {
@@ -43,5 +43,5 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> 
                 ],
             },
         ],
-    });
+    };
 };

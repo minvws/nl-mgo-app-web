@@ -2,6 +2,8 @@ import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../../../ui/type
 import { zibAdministrationSchedule } from '../zibAdministrationSchedule/zibAdministrationSchedule';
 import { type ZibInstructionsForUse } from './zibInstructionsForUse';
 
+export const i18n = 'r3.zib_instructions_for_use';
+
 /**
  *
  * @see https://decor.nictiz.nl/ad/#/zib2017bbr-/datasets/dataset/2.16.840.1.113883.2.4.3.11.60.40.3.9.12/2017-12-31T00:00:00/concept/2.16.840.1.113883.2.4.3.11.60.40.1.9.12.22504/2017-12-31T00:00:00
@@ -10,7 +12,6 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchem
     resource,
     context
 ) => {
-    const i18n = 'r3.zib_instructions_for_use';
     const { ui, formatMessage } = context;
 
     /**
@@ -40,6 +41,9 @@ export const uiSchemaGroup: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchem
                 hcimInstructionsForUse.AdditionalInstructions,
                 ...hcimInstructionsForUse.AdministeringSpeed,
                 hcimInstructionsForUse.SequenceNumber,
+                ...hcimInstructionsForUse.Dose,
+                ...hcimInstructionsForUse.MaximumDose,
+                hcimInstructionsForUse.AsNeeded,
             ],
         },
         hcimInstructionsForUse.AdministeringSchedule,

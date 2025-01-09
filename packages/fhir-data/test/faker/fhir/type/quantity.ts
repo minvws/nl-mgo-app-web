@@ -1,15 +1,14 @@
 import { faker } from '@faker-js/faker';
 import { type Quantity } from 'fhir/r3';
 import { createMockDataFactory } from '../../factory';
-import { mockOptionalFields } from '../../helpers';
 import { code } from './code';
 
 export const quantity = createMockDataFactory<Quantity>(() => {
-    return mockOptionalFields({
+    return {
         value: faker.number.float(),
-        comparator: code(['<', '<=', '>=', '>']),
+        comparator: code(['<', '<=', '>=', '>'] as const),
         unit: faker.lorem.word(),
         system: faker.internet.url(),
         code: code(),
-    });
+    };
 });

@@ -1,43 +1,38 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
+import { type MgoQuantity, type MgoString } from '../../../parse/type';
+import { quantity } from '../../type/quantity/quantity';
+import { string } from '../../type/string/string';
 import { oneOfValueX } from './oneOfValueX';
-import { mockQuantity } from '../../type/quantity/quantity.test';
-import { format } from '../../format';
 
 test('valueX with string', () => {
     const label = faker.custom.messageId();
     const value = faker.lorem.word();
     const input = {
-        valueString: value,
+        valueString: value as MgoString,
     };
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiHelperContext());
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, undefined);
-    expect(result).toEqual([
-        {
-            label: `intl(${label})`,
-            type: 'SINGLE_VALUE',
-            display: value,
-        },
-    ]);
+    const expected = string(context)(label, input.valueString);
+
+    expect(result).toEqual([expected]);
 });
 
 test('valueX with quantity', () => {
     const label = faker.custom.messageId();
-    const mgoQuantity = mockQuantity();
+    const mgoQuantity = faker.fhir.quantity() as MgoQuantity;
     const input = {
         valueQuantity: mgoQuantity,
     };
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiHelperContext());
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, undefined);
-    expect(result).toEqual([
-        {
-            label: `intl(${label})`,
-            type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(mgoQuantity.value, mgoQuantity.unit),
-        },
-    ]);
+    const exptected = quantity(context)(label, input.valueQuantity);
+
+    expect(result).toEqual([exptected]);
 });
 
 test('valueX with custom prefix', () => {
@@ -45,24 +40,22 @@ test('valueX with custom prefix', () => {
     const value = faker.lorem.word();
     const prefix = faker.lorem.word();
     const input = {
-        [`${prefix}String`]: value,
+        [`${prefix}String`]: value as MgoString,
     };
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiHelperContext());
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, prefix);
-    expect(result).toEqual([
-        {
-            label: `intl(${label})`,
-            type: 'SINGLE_VALUE',
-            display: value,
-        },
-    ]);
+    const expected = string(context)(label, input[`${prefix}String`]);
+
+    expect(result).toEqual([expected]);
 });
 
 test('valueX with null value', () => {
     const label = faker.custom.messageId();
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiHelperContext());
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, null, undefined);
     expect(result).toEqual([]);
 });
@@ -75,7 +68,8 @@ test('valueX where prefixed value not found', () => {
         valueString: value,
     };
 
-    const uiOneOfValueX = oneOfValueX(faker.custom.uiHelperContext());
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, prefix);
     expect(result).toEqual([]);
 });

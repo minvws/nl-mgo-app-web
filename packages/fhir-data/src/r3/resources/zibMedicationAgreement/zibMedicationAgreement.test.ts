@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
 import type { MedicationRequest } from 'fhir/r3';
 import { test } from 'vitest';
 import inputFhirData from './fixtures/zib-MedicationAgreement-01.json';
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+    expectUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/zib-MedicationAgreement-01-uiSchema.snap.json'
     );
 });

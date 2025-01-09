@@ -6,5 +6,12 @@
     "codes.r3.observation.status.corrected": "Gecorrigeerd",
     "codes.r3.observation.status.cancelled": "Geannuleerd",
     "codes.r3.observation.status.entered-in-error": "Foutief ingevoerd",
-    "codes.r3.observation.status.unknown": "Onbekend"
+    "codes.r3.observation.status.unknown": "Onbekend",
+
+    "codes.r3.zib_medication_use.status.active": "Actief",
+    "codes.r3.zib_medication_use.status.completed": "Voldaan",
+    "codes.r3.zib_medication_use.status.entered-in-error": "Foutief ingevoerd",
+    "codes.r3.zib_medication_use.status.intended": "Bedoeld",
+    "codes.r3.zib_medication_use.status.stopped": "Gestopt",
+    "codes.r3.zib_medication_use.status.on-hold": "Gepauzeerd"
 }

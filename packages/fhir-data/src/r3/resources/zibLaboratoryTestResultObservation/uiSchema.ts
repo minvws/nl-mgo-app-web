@@ -13,7 +13,7 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
     context
 ) => {
     const i18n = 'r3.zib_laboratory_test_result_observation';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239/~mappings
@@ -47,7 +47,7 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
         resource.resultType?.at(0)?.coding.at(0)?.display ??
         resource.laboratoryTestResultCode?.at(0)?.coding.at(0)?.display;
 
-    return setEmptyEntries({
+    return {
         label: label ?? formatMessage(i18n),
         children: [
             {
@@ -75,5 +75,5 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
                 ],
             },
         ],
-    });
+    };
 };

@@ -1,7 +1,6 @@
 import { faker } from '$test';
-import { type Mock, expect, test } from 'vitest';
-import { type MgoRange } from '../../../parse/type';
-import { format } from '../../format';
+import { expect, test, vi, type Mock } from 'vitest';
+import { type MgoQuantity, type MgoRange } from '../../../parse/type';
 import * as general from './range';
 
 function mockQuantity() {
@@ -13,6 +12,10 @@ function mockQuantity() {
         unit: faker.lorem.word(),
     };
 }
+
+vi.mock('../../format/count/count', () => ({
+    count: vi.fn((_context) => (input: MgoQuantity) => `count(${JSON.stringify(input)})`),
+}));
 
 test('range without message', () => {
     const label = faker.custom.messageId();
@@ -28,12 +31,12 @@ test('range without message', () => {
         {
             label: `intl(fhir.range.low)`,
             type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(low.value, low.unit),
+            display: `count(${JSON.stringify(low)})`,
         },
         {
             label: `intl(fhir.range.high)`,
             type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(high.value, high.unit),
+            display: `count(${JSON.stringify(high)})`,
         },
     ]);
 });
@@ -52,12 +55,12 @@ test('range with message', () => {
         {
             label: `intl(${label}.low)`,
             type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(low.value, low.unit),
+            display: `count(${JSON.stringify(low)})`,
         },
         {
             label: `intl(${label}.high)`,
             type: `SINGLE_VALUE`,
-            display: format.valueWithUnit(high.value, high.unit),
+            display: `count(${JSON.stringify(high)})`,
         },
     ]);
 });

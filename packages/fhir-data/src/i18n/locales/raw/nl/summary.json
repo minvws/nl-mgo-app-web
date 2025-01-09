@@ -3,5 +3,14 @@
     "summary.r3.zib_medication_use.show_details": "Bekijk alle medicijngegevens",
     "summary.r3.ihe_mhd_minimal_document_reference.show_details": "Bekijk alle documentgegevens",
     "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": "Bijlage",
-    "summary.r3.ihe_mhd_minimal_document_reference.group_author": "Opgesteld door"
+    "summary.r3.ihe_mhd_minimal_document_reference.group_author": "Opgesteld door",
+    "summary.r3.zib_instructions_for_use": "Instructies {sequence}",
+    "summary.r3.zib_instructions_for_use.text": "Gebruiksaanwijzing",
+    "summary.r3.zib_instructions_for_use.dose": "Hoeveelheid per keer",
+    "summary.r3.zib_instructions_for_use.dose.low": "Minimaal",
+    "summary.r3.zib_instructions_for_use.dose.high": "Maximaal",
+    "summary.r3.zib_medication_use.group_period": "Periode van gebruik",
+    "summary.r3.zib_medication_use.group_prescriber": "Voorgeschreven door",
+    "summary.r3.zib_medication_use.status": "Status",
+    "summary.r3.zib_medication_use.prescriber": "Specialist"
 }

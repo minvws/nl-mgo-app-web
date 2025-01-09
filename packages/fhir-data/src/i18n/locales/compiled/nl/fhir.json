@@ -11,37 +11,6 @@
             "value": "Ja"
         }
     ],
-    "fhir.duration_days": [
-        {
-            "offset": 0,
-            "options": {
-                "one": {
-                    "value": [
-                        {
-                            "type": 0,
-                            "value": "één dag"
-                        }
-                    ]
-                },
-                "other": {
-                    "value": [
-                        {
-                            "style": null,
-                            "type": 2,
-                            "value": "count"
-                        },
-                        {
-                            "type": 0,
-                            "value": " dagen"
-                        }
-                    ]
-                }
-            },
-            "pluralType": "cardinal",
-            "type": 6,
-            "value": "count"
-        }
-    ],
     "fhir.group_general_info": [
         {
             "type": 0,
@@ -108,12 +77,6 @@
         {
             "type": 0,
             "value": "Niet bekend"
-        }
-    ],
-    "system.urn:oid:2.16.840.1.113883.2.4.4.9": [
-        {
-            "type": 0,
-            "value": "G-Standaard Toedieningswegen (tabel 7)"
         }
     ]
 }

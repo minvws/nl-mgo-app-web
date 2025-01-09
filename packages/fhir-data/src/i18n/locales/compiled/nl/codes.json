@@ -46,5 +46,41 @@
             "type": 0,
             "value": "Onbekend"
         }
+    ],
+    "codes.r3.zib_medication_use.status.active": [
+        {
+            "type": 0,
+            "value": "Actief"
+        }
+    ],
+    "codes.r3.zib_medication_use.status.completed": [
+        {
+            "type": 0,
+            "value": "Voldaan"
+        }
+    ],
+    "codes.r3.zib_medication_use.status.entered-in-error": [
+        {
+            "type": 0,
+            "value": "Foutief ingevoerd"
+        }
+    ],
+    "codes.r3.zib_medication_use.status.intended": [
+        {
+            "type": 0,
+            "value": "Bedoeld"
+        }
+    ],
+    "codes.r3.zib_medication_use.status.on-hold": [
+        {
+            "type": 0,
+            "value": "Gepauzeerd"
+        }
+    ],
+    "codes.r3.zib_medication_use.status.stopped": [
+        {
+            "type": 0,
+            "value": "Gestopt"
+        }
     ]
 }

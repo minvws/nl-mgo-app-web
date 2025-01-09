@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement, type UiSchema } from '../../types';
+import { type UiElement, type UiSchema, type UiSchemaGroup } from '../../types';
 import { setEmptyEntries } from './setEmptyEntries';
 
 test('sets empty entries, but does not mutate the schema', () => {
@@ -136,4 +136,88 @@ test('works for all types - except DOWNLOAD_LINK', () => {
 
     const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiHelperContext());
     expect(uiSetEmptyEntries(uiSchema)).toEqual(expected);
+});
+
+test('also works for a group', () => {
+    const entry1: UiElement = {
+        type: 'SINGLE_VALUE',
+        label: faker.lorem.word(),
+        display: faker.lorem.word(),
+    };
+    const entry2: UiElement = {
+        type: 'SINGLE_VALUE',
+        label: faker.lorem.word(),
+        display: undefined,
+    };
+
+    const uiSchemaGroup: UiSchemaGroup = {
+        label: faker.lorem.word(),
+        children: [entry1, entry2],
+    };
+
+    const expected = {
+        label: uiSchemaGroup.label,
+        children: [
+            entry1,
+            {
+                label: entry2.label,
+                type: 'SINGLE_VALUE',
+                display: 'intl(schema.empty_entry_display)',
+            },
+        ],
+    };
+
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiHelperContext());
+    expect(uiSetEmptyEntries(uiSchemaGroup)).toEqual(expected);
+});
+
+test('also works for a multiple groups', () => {
+    const entry1: UiElement = {
+        type: 'SINGLE_VALUE',
+        label: faker.lorem.word(),
+        display: faker.lorem.word(),
+    };
+    const entry2: UiElement = {
+        type: 'SINGLE_VALUE',
+        label: faker.lorem.word(),
+        display: undefined,
+    };
+
+    const uiSchemaGroup: UiSchemaGroup[] = [
+        {
+            label: faker.lorem.word(),
+            children: [entry1, entry2],
+        },
+        {
+            label: faker.lorem.word(),
+            children: [entry2],
+        },
+    ];
+
+    const expected = [
+        {
+            label: uiSchemaGroup[0].label,
+            children: [
+                entry1,
+                {
+                    label: entry2.label,
+                    type: 'SINGLE_VALUE',
+                    display: 'intl(schema.empty_entry_display)',
+                },
+            ],
+        },
+        {
+            label: uiSchemaGroup[1].label,
+            children: [
+                {
+                    label: entry2.label,
+                    type: 'SINGLE_VALUE',
+                    display: 'intl(schema.empty_entry_display)',
+                },
+            ],
+        },
+    ];
+
+    const uiSetEmptyEntries = setEmptyEntries(faker.custom.uiHelperContext());
+    expect(uiSetEmptyEntries(uiSchemaGroup)).toEqual(expected);
 });

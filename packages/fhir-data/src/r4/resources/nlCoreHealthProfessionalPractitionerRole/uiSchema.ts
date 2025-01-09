@@ -14,7 +14,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRo
     context
 ) => {
     const profile = 'r4.nl_core_health_professional_practitioner_role';
-    const { ui, formatMessage, setEmptyEntries } = context;
+    const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628465/~mappings
@@ -37,7 +37,7 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRo
         ).flat(),
     };
 
-    return setEmptyEntries({
+    return {
         label: resource.speciality?.at(0)?.coding.at(0)?.display ?? formatMessage(profile),
         children: [
             {
@@ -47,5 +47,5 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRo
             ...zibContactInformation.EmailAddresses,
             ...zibContactInformation.TelephoneNumbers,
         ],
-    });
+    };
 };

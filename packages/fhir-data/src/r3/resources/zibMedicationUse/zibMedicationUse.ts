@@ -4,6 +4,7 @@ import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
 import { uiSchema } from './uiSchema';
+import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; // NOSONAR
 
@@ -50,5 +51,6 @@ export type ZibMedicationUse = ReturnType<typeof parseZibMedicationUse>;
 export const zibMedicationUse = {
     profile,
     parse: parseZibMedicationUse,
+    summary,
     uiSchema,
 } satisfies ResourceConfig<MedicationStatement, ZibMedicationUse>;

@@ -104,6 +104,21 @@
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "display": "1"
+                },
+                {
+                    "label": "Teller",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Noemer",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Zo nodig",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
                 }
             ]
         },
