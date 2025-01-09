@@ -32,7 +32,7 @@ test('throws if no config could be found', () => {
     }).toThrowError(`No config found for MGO Resource with profile: "${mgoResource.profile}"`);
 });
 
-test('returns undefined if there is no summary', () => {
+test('returns mock schema if there is no summary', () => {
     mockGetResourceConfig.mockImplementation(
         () =>
             ({
@@ -41,12 +41,28 @@ test('returns undefined if there is no summary', () => {
     );
 
     const mgoResource = {
+        id: faker.lorem.slug(),
+        referenceId: faker.lorem.slug(),
         resourceType: faker.lorem.word(),
         profile: faker.lorem.word(),
     };
 
     const result = getSummaryUiSchema(mgoResource as MgoResourceR3);
-    expect(result).toBe(undefined);
+    expect(result).toEqual({
+        label: mgoResource.id,
+        children: [
+            {
+                label: 'Opties',
+                children: [
+                    {
+                        type: 'REFERENCE_LINK',
+                        label: 'Bekijk alle gegevens',
+                        reference: mgoResource.referenceId,
+                    },
+                ],
+            },
+        ],
+    });
 });
 
 test('returns the result of the summary ui schema and passed any extra resources', () => {

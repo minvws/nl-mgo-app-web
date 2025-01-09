@@ -1,5 +1,5 @@
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { createUiSchemaContext } from '../../ui';
+import { type UiSchema, createUiSchemaContext } from '../../ui';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
@@ -7,7 +7,7 @@ import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
 export function getSummaryUiSchema<T extends MgoResourceMeta>(
     resource: T,
     options?: UiSchemaOptions<T['fhirVersion']>
-) {
+): UiSchema {
     // As this method is also used with JSON parsed inputs,
     // we want to ensure we're really dealing with a MGO Resource.
     if (!isMgoResource(resource)) {
@@ -25,7 +25,21 @@ export function getSummaryUiSchema<T extends MgoResourceMeta>(
     }
 
     if (!config.summary) {
-        return;
+        return {
+            label: resource.id,
+            children: [
+                {
+                    label: 'Opties',
+                    children: [
+                        {
+                            type: 'REFERENCE_LINK',
+                            label: 'Bekijk alle gegevens',
+                            reference: resource.referenceId,
+                        },
+                    ],
+                },
+            ],
+        };
     }
 
     const context = createUiSchemaContext({

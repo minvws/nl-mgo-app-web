@@ -1,7 +1,7 @@
 import { type Locale } from '../../i18n';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type FhirVersion, type FhirR3R4 } from '../../types/Fhir';
-import { createUiSchemaContext } from '../../ui';
+import { type UiSchema, createUiSchemaContext } from '../../ui';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type MgoResourceR3, type MgoResourceR4 } from '../resources/resources';
@@ -14,7 +14,7 @@ export interface UiSchemaOptions<T extends `${FhirVersion}`> {
 export function getUiSchema<T extends MgoResourceMeta>(
     resource: T,
     options?: UiSchemaOptions<T['fhirVersion']>
-) {
+): UiSchema {
     // As this method is also used with JSON parsed inputs,
     // we want to ensure we're really dealing with a MGO Resource.
     if (!isMgoResource(resource)) {
