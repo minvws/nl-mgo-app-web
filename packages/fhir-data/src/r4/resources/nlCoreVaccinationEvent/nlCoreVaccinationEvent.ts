@@ -7,6 +7,7 @@ import { filterCodeableConceptByCoding } from '../../../parse/helpers';
 import { VaccinationMotive } from '../../valueSets/vaccinationMotive';
 import { VaccinationIndication } from '../../valueSets/vaccinationIndication';
 import { parseProtocolApplied } from './elements/protocolApplied/protocolApplied';
+import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
 
@@ -53,4 +54,5 @@ export const r4NlCoreVaccinationEvent = {
     profile,
     parse: parseNlCoreVaccinationEvent,
     uiSchema,
+    summary,
 } satisfies ResourceConfig<Immunization, R4NlCoreVaccinationEvent>;

@@ -86,5 +86,17 @@
             "type": 0,
             "value": "Status"
         }
+    ],
+    "summary.r4.nl_core_vaccination_event.group_performer": [
+        {
+            "type": 0,
+            "value": "Gegeven door"
+        }
+    ],
+    "summary.r4.nl_core_vaccination_event.show_details": [
+        {
+            "type": 0,
+            "value": "Bekijk alle vaccinatiegegevens"
+        }
     ]
 }

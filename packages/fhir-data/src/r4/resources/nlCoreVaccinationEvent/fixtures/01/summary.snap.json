@@ -1,0 +1,42 @@
+{
+    "label": "Hepatitis a-vaccin",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Gegeven op",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
+                {
+                    "label": "Zorgverlener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle vaccinatiegegevens",
+                    "reference": "Immunization/nl-core-Vaccination-event-02"
+                }
+            ]
+        }
+    ]
+}

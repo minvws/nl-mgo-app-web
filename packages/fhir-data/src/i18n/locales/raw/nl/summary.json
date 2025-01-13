@@ -12,5 +12,7 @@
     "summary.r3.zib_medication_use.group_period": "Periode van gebruik",
     "summary.r3.zib_medication_use.group_prescriber": "Voorgeschreven door",
     "summary.r3.zib_medication_use.status": "Status",
-    "summary.r3.zib_medication_use.prescriber": "Specialist"
+    "summary.r3.zib_medication_use.prescriber": "Specialist",
+    "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens",
+    "summary.r4.nl_core_vaccination_event.group_performer": "Gegeven door"
 }
