@@ -2,6 +2,7 @@ import { type Observation } from 'fhir/r3';
 import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { uiSchema } from './uiSchema';
+import { summary } from './summary';
 import { map } from '../../../utils';
 import { related } from './elements/related/related';
 import { referenceRange } from './elements/referenceRange/referenceRange';
@@ -28,6 +29,7 @@ export function parseZibLaboratoryTestResultObservationBase(resource: Observatio
     return {
         identifier: map(resource.identifier, parse.identifier),
         subject: parse.reference(resource.subject),
+        context: parse.reference(resource.context),
         code: parse.codeableConcept(resource?.code),
         method: parse.codeableConcept(resource?.method),
         ...oneOfValueX(resource, ['dateTime', 'period'], 'effective'),
@@ -69,4 +71,5 @@ export const zibLaboratoryTestResultObservation = {
     profile,
     parse: parseZibLaboratoryTestResultObservation,
     uiSchema,
+    summary,
 } satisfies ResourceConfig<Observation, ZibLaboratoryTestResultObservation>;

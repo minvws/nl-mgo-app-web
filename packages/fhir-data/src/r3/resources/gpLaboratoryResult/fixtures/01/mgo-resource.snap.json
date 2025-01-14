@@ -11,6 +11,10 @@
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
+    "context": {
+        "reference": "Encounter/ont-ver-gpdata-encounter-contact14",
+        "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard"
+    },
     "code": {
         "text": null,
         "coding": [

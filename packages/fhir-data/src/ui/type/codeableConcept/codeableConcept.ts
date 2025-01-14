@@ -1,5 +1,6 @@
 import { type MgoCodeableConcept } from '../../../parse/type';
 import { isNonNullish } from '../../../utils';
+import { system } from '../../format/system/system';
 import {
     type FormatDisplayFunction,
     type MultipleGroupedValues,
@@ -7,7 +8,6 @@ import {
     type UiFunction,
     type WithUiHelperContext,
 } from '../../types';
-import { codingDisplay } from '../coding/coding';
 
 const codeableDisplay: WithUiHelperContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
     (context) => (value) => {
@@ -15,8 +15,8 @@ const codeableDisplay: WithUiHelperContext<FormatDisplayFunction<MgoCodeableConc
             return [value.text];
         }
 
-        const coding = codingDisplay(context);
-        return value?.coding.map(coding).filter(isNonNullish) ?? [];
+        const formatSystem = system(context);
+        return value?.coding.map(formatSystem).filter(isNonNullish) ?? [];
     };
 
 export const codeableConcept: WithUiHelperContext<
@@ -24,6 +24,7 @@ export const codeableConcept: WithUiHelperContext<
 > = (context) => (label, value) => {
     const { formatMessage } = context;
     const display = codeableDisplay(context);
+
     if (Array.isArray(value)) {
         return {
             label: formatMessage(label),

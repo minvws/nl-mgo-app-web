@@ -1,10 +1,18 @@
 import { type UiSchemaFunction } from '../../../ui';
+import { type UiHelperContext } from '../../../ui/context/ui';
 import { zibLaboratoryTestResultObservation } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 import { type GpLaboratoryResult } from './gpLaboratoryResult';
+import { capitalize } from 'lodash';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316997
- */
+export const i18n = 'r3.gp_laboratory_result';
+
+export function getLabel(resource: GpLaboratoryResult, { formatMessage }: UiHelperContext) {
+    return capitalize(resource.context?.display) || formatMessage(i18n);
+}
+
 export const uiSchema: UiSchemaFunction<GpLaboratoryResult> = (resource, context) => {
-    return zibLaboratoryTestResultObservation.uiSchema(resource, context);
+    return {
+        ...zibLaboratoryTestResultObservation.uiSchema(resource, context),
+        label: getLabel(resource, context),
+    };
 };

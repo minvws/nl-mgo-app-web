@@ -70,6 +70,29 @@
                 "system": "http://unitsofmeasure.org",
                 "code": "mmol/L"
             }
+        },
+        {
+            "low": {
+                "value": 180,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "high": {
+                "value": 265,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/referencerange-meaning",
+                        "code": "treatment",
+                        "display": "Treatment Range"
+                    }
+                ]
+            }
         }
     ]
 }

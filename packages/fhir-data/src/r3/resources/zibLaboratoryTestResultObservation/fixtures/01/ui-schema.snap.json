@@ -1,5 +1,5 @@
 {
-    "label": "Serum chemistry test",
+    "label": "Chloride [moles/volume] in blood",
     "children": [
         {
             "label": "Laboratorium uitslag",
@@ -16,6 +16,11 @@
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Verband",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Test datum tijd",
@@ -66,7 +71,7 @@
                 {
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "109 mmol/l"
+                    "display": "109 millimol per liter"
                 },
                 {
                     "label": "Test uitslag status",
@@ -76,12 +81,12 @@
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "99 mmol/l"
+                    "display": "99 millimol per liter"
                 },
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "108 mmol/l"
+                    "display": "108 millimol per liter"
                 },
                 {
                     "type": "SINGLE_VALUE",

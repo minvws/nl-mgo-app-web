@@ -3,8 +3,10 @@ import { expect, test, vi } from 'vitest';
 import { type MgoQuantity } from '../../../parse/type';
 import { quantity } from './quantity';
 
-vi.mock('../../format/count/count', () => ({
-    count: vi.fn((_context) => (input: MgoQuantity) => `count(${JSON.stringify(input)})`),
+vi.mock('../../format/systemValue/systemValue', () => ({
+    systemValue: vi.fn(
+        (_context) => (input: MgoQuantity) => `systemValue(${JSON.stringify(input)})`
+    ),
 }));
 
 function mockQuantity(): MgoQuantity {
@@ -26,7 +28,7 @@ test('quantity', () => {
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
-        display: `count(${JSON.stringify(mgoQuantity)})`,
+        display: `systemValue(${JSON.stringify(mgoQuantity)})`,
     });
 });
 
@@ -37,6 +39,6 @@ test('quantity with undefined fields', () => {
     expect(result).toEqual({
         label: `intl(${label})`,
         type: `SINGLE_VALUE`,
-        display: `count(${JSON.stringify(undefined)})`,
+        display: `systemValue(${JSON.stringify(undefined)})`,
     });
 });

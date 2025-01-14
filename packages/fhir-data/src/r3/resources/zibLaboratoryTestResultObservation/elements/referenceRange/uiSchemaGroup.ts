@@ -1,8 +1,9 @@
 import { type UiSchemaGroupFunction } from '../../../../../ui/types';
 import { type ReferenceRange } from './referenceRange';
 
+export const i18n = 'r3.zib_laboratory_test_result_observation.reference_range';
+
 export const uiSchemaGroup: UiSchemaGroupFunction<ReferenceRange> = (resource, context) => {
-    const i18n = 'r3.zib_laboratory_test_result_observation.reference_range';
     const { ui, formatMessage } = context;
 
     return {

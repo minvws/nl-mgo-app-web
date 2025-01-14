@@ -4,6 +4,7 @@ import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
 import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
+import { summary } from './summary';
 
 export interface ReferenceRange {
     low: parse.MgoQuantity | undefined;
@@ -26,4 +27,5 @@ function parseReferenceRange(value: Nullable<ObservationReferenceRange>): Refere
 export const referenceRange = {
     parse: parseReferenceRange,
     uiSchemaGroup,
+    summary,
 } satisfies ResourceElementConfig<ObservationReferenceRange, ReferenceRange>;

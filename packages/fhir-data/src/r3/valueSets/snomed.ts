@@ -9,6 +9,11 @@ export enum Snomed {
     TOXICOLOGY = '314076009',
     MICROBIOLOGY = '19851009',
     MOLECULAR_GENETICS = '405825005',
+    ABOVE_REFERENCE_RANGE = '281302008',
+    BELOW_REFERENCE_RANGE = '281300000',
+    INTERMEDIATE = '11896004',
+    RESISTANT = '30714006',
+    SUSCEPTIBLE = '131196009',
 }
 
 export const SnomedResultTypes = [
@@ -19,4 +24,12 @@ export const SnomedResultTypes = [
     Snomed.TOXICOLOGY,
     Snomed.MICROBIOLOGY,
     Snomed.MOLECULAR_GENETICS,
+];
+
+export const InterpretatieVlaggenCodelijst = [
+    Snomed.ABOVE_REFERENCE_RANGE,
+    Snomed.BELOW_REFERENCE_RANGE,
+    Snomed.INTERMEDIATE,
+    Snomed.RESISTANT,
+    Snomed.SUSCEPTIBLE,
 ];

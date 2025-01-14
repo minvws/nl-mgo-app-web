@@ -1,84 +1,67 @@
 import { faker } from '$test';
-import { expect, test, vi } from 'vitest';
+import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
-import { coding, codingDisplay } from './coding';
+import { coding } from './coding';
 
-test('coding', () => {
+import { type UiHelperContext } from '../../context/ui';
+import { system } from '../../format/system/system';
+import { type Nullable } from '../../../types/Nullable';
+
+const mockSystem = system as unknown as MockedFunction<typeof system>;
+
+vi.mock('../../format/system/system', () => ({
+    system: vi.fn((_context: UiHelperContext) => vi.fn(() => 'system')),
+}));
+
+test('coding single', () => {
     const label = faker.custom.messageId();
+    const mockFormatSystem = vi.fn(() => 'system');
+    mockSystem.mockReturnValue(mockFormatSystem);
 
-    const mgoCoding: MgoCoding = {
-        code: faker.fhir.code(),
-        system: faker.internet.url(),
-        display: faker.lorem.sentence(),
-    };
+    const mgoCoding: MgoCoding = faker.fhir.coding();
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'SINGLE_VALUE',
-        display: `${mgoCoding.display} (intl(format.code_in_system))`,
+        display: 'system',
     });
+    expect(mockFormatSystem).toHaveBeenCalledWith(mgoCoding);
 });
 
-test('coding defaults to empty values', () => {
+test('coding multiple', () => {
     const label = faker.custom.messageId();
+    const mockFormatSystem = vi.fn(() => 'system');
+    mockSystem.mockReturnValue(mockFormatSystem);
 
-    const result = coding(faker.custom.uiHelperContext())(label, undefined);
+    const mgoCoding: MgoCoding[] = [faker.fhir.coding(), faker.fhir.coding(), faker.fhir.coding()];
+    const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: `intl(${label})`,
-        type: 'SINGLE_VALUE',
-        display: undefined,
+        type: 'MULTIPLE_VALUES',
+        display: ['system', 'system', 'system'],
     });
+
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(1, mgoCoding[0], 0, mgoCoding);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(2, mgoCoding[1], 1, mgoCoding);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(3, mgoCoding[2], 2, mgoCoding);
 });
 
-test.each<[MgoCoding, string | undefined]>([
-    [{}, undefined],
-    [{ code: 'code' }, '(code)'],
-    [{ code: 'code', system: 'system' }, '(intl(format.code_in_system - code / system))'],
-    [
-        { code: 'code', system: 'known-system' },
-        '(intl(format.code_in_system - code / intl(system.known-system)))',
-    ],
-    [
-        { display: 'display', code: 'code', system: 'system' },
-        'display (intl(format.code_in_system - code / system))',
-    ],
-    [{ display: 'display', system: 'system' }, 'display'],
-])('formats mgo coding for %j', (mgoCoding, expected) => {
-    const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockImplementation((id) => id === 'system.known-system');
-    vi.spyOn(context, 'formatMessage').mockImplementation((id, values) => {
-        const anyValues = values ?? {};
-        if (id === 'format.code_in_system') {
-            return `intl(${id} - ${anyValues.code} / ${anyValues.system})`;
-        }
-        return `intl(${id})`;
+test('coding multiple does not return undefined values', () => {
+    const label = faker.custom.messageId();
+    const mockFormatSystem = vi.fn((coding: Nullable<MgoCoding>) =>
+        coding?.system ? 'system' : undefined
+    );
+    mockSystem.mockReturnValue(mockFormatSystem);
+
+    const mgoCoding: MgoCoding[] = [faker.fhir.coding(), {}, faker.fhir.coding()];
+    const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
+    expect(result).toEqual({
+        label: `intl(${label})`,
+        type: 'MULTIPLE_VALUES',
+        display: ['system', 'system'],
     });
 
-    const display = codingDisplay(context);
-    expect(display(mgoCoding)).toEqual(expected);
-});
-
-test.each<[MgoCoding, string | undefined]>([
-    [{}, undefined],
-    [{ code: 'code' }, '(code)'],
-    [{ code: 'code', system: 'system' }, '(intl(format.code_in_system - code / system))'],
-    [
-        { code: 'code', system: 'known-system' },
-        '(intl(format.code_in_system - code / intl(system.known-system)))',
-    ],
-    [{ display: 'display', code: 'code', system: 'system' }, 'display'],
-    [{ display: 'display', system: 'system' }, 'display'],
-])('prefers display when isSummary is true: %j', (mgoCoding, expected) => {
-    const context = faker.custom.uiHelperContext({ isSummary: true });
-    vi.spyOn(context, 'hasMessage').mockImplementation((id) => id === 'system.known-system');
-    vi.spyOn(context, 'formatMessage').mockImplementation((id, values) => {
-        const anyValues = values ?? {};
-        if (id === 'format.code_in_system') {
-            return `intl(${id} - ${anyValues.code} / ${anyValues.system})`;
-        }
-        return `intl(${id})`;
-    });
-
-    const display = codingDisplay(context);
-    expect(display(mgoCoding)).toEqual(expected);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(1, mgoCoding[0], 0, mgoCoding);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(2, mgoCoding[1], 1, mgoCoding);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(3, mgoCoding[2], 2, mgoCoding);
 });

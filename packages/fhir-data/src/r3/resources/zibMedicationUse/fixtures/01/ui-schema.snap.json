@@ -89,7 +89,7 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ORAAL (9 in code systeem G-Standaard Toedieningswegen (tabel 7))"
+                        "ORAAL (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
                     ]
                 },
                 {

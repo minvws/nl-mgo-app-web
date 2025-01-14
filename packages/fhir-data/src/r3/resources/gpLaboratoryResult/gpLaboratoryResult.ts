@@ -3,6 +3,7 @@ import { parse } from '../../../parse';
 import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parseZibLaboratoryTestResultObservationBase } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 import { uiSchema } from './uiSchema';
+import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult'; // NOSONAR
 
@@ -24,4 +25,5 @@ export const gpLaboratoryResult = {
     profile,
     parse: parseGpLaboratoryResult,
     uiSchema,
+    summary,
 } satisfies ResourceConfig<Observation, GpLaboratoryResult>;

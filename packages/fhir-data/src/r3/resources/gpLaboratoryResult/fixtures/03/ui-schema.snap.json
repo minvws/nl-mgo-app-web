@@ -1,5 +1,5 @@
 {
-    "label": "bevinding betreffende laboratoriumonderzoek",
+    "label": "Consult voor hnp (thoracaal/lumbaal) met dokter bernard",
     "children": [
         {
             "label": "Laboratorium uitslag",
@@ -16,6 +16,12 @@
                     "type": "REFERENCE_VALUE",
                     "display": "Jacqueline XXX_Cevat",
                     "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
+                },
+                {
+                    "label": "Verband",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard",
+                    "reference": "Encounter/ont-ver-gpdata-encounter-contact14"
                 },
                 {
                     "label": "Begin datum",
@@ -72,7 +78,7 @@
                 {
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "5.4"
+                    "display": "5,4 millimol per liter"
                 },
                 {
                     "label": "Test uitslag status",
@@ -82,12 +88,12 @@
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "3.5"
+                    "display": "3,5 millimol per liter"
                 },
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "5.6"
+                    "display": "5,6 millimol per liter"
                 },
                 {
                     "label": "Referentie type",

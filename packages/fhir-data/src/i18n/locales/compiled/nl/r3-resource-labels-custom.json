@@ -1,4 +1,10 @@
 {
+    "r3.gp_laboratory_result": [
+        {
+            "type": 0,
+            "value": "Laboratorium uitslag"
+        }
+    ],
     "r3.ihe_mhd_minimal_document_reference.author": [
         {
             "type": 0,
@@ -81,6 +87,12 @@
         {
             "type": 0,
             "value": "Type"
+        }
+    ],
+    "r3.zib_laboratory_test_result_observation.context": [
+        {
+            "type": 0,
+            "value": "Verband"
         }
     ],
     "r3.zib_laboratory_test_result_observation.general_test_information": [

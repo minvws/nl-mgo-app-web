@@ -1,8 +1,15 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCodeableConcept } from '../../../parse/type';
+import { type UiHelperContext } from '../../context/ui';
+import { system } from '../../format/system/system';
 import { codeableConcept } from './codeableConcept';
-import { coding } from '../coding/coding';
+
+const mockSystem = system as unknown as MockedFunction<typeof system>;
+
+vi.mock('../../format/system/system', () => ({
+    system: vi.fn((_context: UiHelperContext) => vi.fn(() => 'system')),
+}));
 
 test('codeableConcept prefers text value', () => {
     const label = faker.custom.messageId();
@@ -51,16 +58,17 @@ test('codeableConcept uses conding values as fallback', () => {
         ],
     };
 
-    const result = codeableConcept(faker.custom.uiHelperContext())(label, concept);
-    const codingEntries = coding(faker.custom.uiHelperContext());
+    const mockFormatSystem = vi.fn(() => 'system');
+    mockSystem.mockReturnValue(mockFormatSystem);
 
-    const {
-        coding: [coding1, coding2],
-    } = concept;
+    const result = codeableConcept(faker.custom.uiHelperContext())(label, concept);
 
     expect(result).toEqual({
         label: `intl(${label})`,
         type: 'MULTIPLE_VALUES',
-        display: [codingEntries(label, coding1).display, codingEntries(label, coding2).display],
+        display: ['system', 'system'],
     });
+
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(1, concept.coding[0], 0, concept.coding);
+    expect(mockFormatSystem).toHaveBeenNthCalledWith(2, concept.coding[1], 1, concept.coding);
 });

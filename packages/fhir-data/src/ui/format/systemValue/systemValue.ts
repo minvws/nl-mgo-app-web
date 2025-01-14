@@ -3,19 +3,19 @@ import { isNullish } from '../../../utils';
 import { numberToString } from '../../helpers';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 
-export const count: WithUiHelperContext<FormatFunction<MgoQuantity>> =
+export const systemValue: WithUiHelperContext<FormatFunction<MgoQuantity>> =
     ({ formatMessage, hasMessage }) =>
     (value) => {
         if (isNullish(value)) return;
-        const { system, code, value: count, unit } = value;
-        const countI18nKey = `system.count.${system}|${code}`;
+        const { system, code, value: quantityValue, unit } = value;
+        const countI18nKey = `system.value.${system}|${code}`;
         if (hasMessage(countI18nKey)) {
-            return formatMessage(countI18nKey, { count: count as number });
+            return formatMessage(countI18nKey, { value: quantityValue as number });
         }
 
         if (unit) {
-            return `${numberToString(count)} ${unit}`;
+            return `${numberToString(quantityValue)} ${unit}`;
         }
 
-        return numberToString(count);
+        return numberToString(quantityValue);
     };

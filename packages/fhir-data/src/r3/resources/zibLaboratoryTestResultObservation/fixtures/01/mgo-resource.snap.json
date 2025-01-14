@@ -16,6 +16,7 @@
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
+    "context": null,
     "code": {
         "text": null,
         "coding": [

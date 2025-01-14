@@ -4,15 +4,22 @@ import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResul
 import { uiSchemaGroup as referenceRangetUiSchema } from './elements/referenceRange/uiSchemaGroup';
 import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
 import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
+import { type UiHelperContext } from '../../../ui/context/ui';
+import { capitalize } from 'lodash';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317239
- */
+export const i18n = 'r3.zib_laboratory_test_result_observation';
+
+export function getLabel(
+    resource: ZibLaboratoryTestResultObservation | GpLaboratoryResult,
+    { formatMessage }: UiHelperContext
+) {
+    return capitalize(resource.code?.coding.at(0)?.display) || formatMessage(i18n);
+}
+
 export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpLaboratoryResult> = (
     resource,
     context
 ) => {
-    const i18n = 'r3.zib_laboratory_test_result_observation';
     const { ui, formatMessage } = context;
 
     /**
@@ -40,21 +47,19 @@ export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpL
     const hcimBasicElements = {
         Identifier: ui.identifier(`${i18n}.identifier`, resource.identifier),
         Subject: ui.reference(`${i18n}.subject`, resource.subject),
+        Context: ui.reference(`${i18n}.context`, resource.context),
         Performer: ui.reference(`${i18n}.performer`, resource.performer),
     };
 
-    const label =
-        resource.resultType?.at(0)?.coding.at(0)?.display ??
-        resource.laboratoryTestResultCode?.at(0)?.coding.at(0)?.display;
-
     return {
-        label: label ?? formatMessage(i18n),
+        label: getLabel(resource, context),
         children: [
             {
                 label: formatMessage(i18n),
                 children: [
                     hcimBasicElements.Identifier,
                     hcimBasicElements.Subject,
+                    hcimBasicElements.Context,
                     ...hcimLaboratoryTestResult.Effective,
                 ],
             },

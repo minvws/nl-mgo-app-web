@@ -13,8 +13,10 @@ function mockQuantity() {
     };
 }
 
-vi.mock('../../format/count/count', () => ({
-    count: vi.fn((_context) => (input: MgoQuantity) => `count(${JSON.stringify(input)})`),
+vi.mock('../../format/systemValue/systemValue', () => ({
+    systemValue: vi.fn(
+        (_context) => (input: MgoQuantity) => `systemValue(${JSON.stringify(input)})`
+    ),
 }));
 
 test('range without message', () => {
@@ -31,12 +33,12 @@ test('range without message', () => {
         {
             label: `intl(fhir.range.low)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(low)})`,
+            display: `systemValue(${JSON.stringify(low)})`,
         },
         {
             label: `intl(fhir.range.high)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(high)})`,
+            display: `systemValue(${JSON.stringify(high)})`,
         },
     ]);
 });
@@ -55,12 +57,12 @@ test('range with message', () => {
         {
             label: `intl(${label}.low)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(low)})`,
+            display: `systemValue(${JSON.stringify(low)})`,
         },
         {
             label: `intl(${label}.high)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(high)})`,
+            display: `systemValue(${JSON.stringify(high)})`,
         },
     ]);
 });

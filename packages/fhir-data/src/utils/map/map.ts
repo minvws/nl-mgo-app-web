@@ -13,21 +13,26 @@ import { isNonNullish } from '../isNonNullish/isNonNullish';
  * map(['foo', 'bar'], iteratee); // => ['foo', 'bar']
  * map(['foo', undefined, 'bar', null, undefined], iteratee); // => ['foo', 'bar']
  */
-export function map<Items extends unknown[], Iteratee extends (arg: Items[number]) => unknown>(
+export function map<
+    Items extends unknown[],
+    Iteratee extends (arg: Items[number], key: number) => unknown,
+>(
     items: Nullable<Items>,
     iteratee: Iteratee,
     returnEmpty: true
 ): NonNullable<ReturnType<Iteratee>>[];
-export function map<Items extends unknown[], Iteratee extends (arg: Items[number]) => unknown>(
+export function map<
+    Items extends unknown[],
+    Iteratee extends (arg: Items[number], key: number) => unknown,
+>(
     items: Nullable<Items>,
     iteratee: Iteratee,
     returnEmpty?: false
 ): NonNullable<ReturnType<Iteratee>>[] | undefined;
-export function map<Items extends unknown[], Iteratee extends (arg: Items[number]) => unknown>(
-    items: Nullable<Items>,
-    iteratee: Iteratee,
-    returnEmpty: boolean = false
-) {
+export function map<
+    Items extends unknown[],
+    Iteratee extends (arg: Items[number], key: number) => unknown,
+>(items: Nullable<Items>, iteratee: Iteratee, returnEmpty: boolean = false) {
     if (!items?.length) {
         return returnEmpty ? [] : undefined;
     }

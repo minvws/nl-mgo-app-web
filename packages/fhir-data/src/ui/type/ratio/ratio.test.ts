@@ -3,8 +3,10 @@ import { expect, test, vi, type Mock } from 'vitest';
 import { type MgoQuantity, type MgoRatio } from '../../../parse/type';
 import { ratio } from './ratio';
 
-vi.mock('../../format/count/count', () => ({
-    count: vi.fn((_context) => (input: MgoQuantity) => `count(${JSON.stringify(input)})`),
+vi.mock('../../format/systemValue/systemValue', () => ({
+    systemValue: vi.fn(
+        (_context) => (input: MgoQuantity) => `systemValue(${JSON.stringify(input)})`
+    ),
 }));
 
 test('ratio', () => {
@@ -22,12 +24,12 @@ test('ratio', () => {
         {
             label: `intl(fhir.ratio.numerator)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(numerator)})`,
+            display: `systemValue(${JSON.stringify(numerator)})`,
         },
         {
             label: `intl(fhir.ratio.denominator)`,
             type: `SINGLE_VALUE`,
-            display: `count(${JSON.stringify(denominator)})`,
+            display: `systemValue(${JSON.stringify(denominator)})`,
         },
     ]);
 });
