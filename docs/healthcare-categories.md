@@ -2,7 +2,7 @@
 
 ## Data services
 
-| short   | data service                   | Fhir version | description           |
+| Short   | Data service                   | FHIR version | Description           |
 | ------- | ------------------------------ | ------------ | --------------------- |
 | **GP**  | [General practicioner](gp)     | R3           | Huisarts gegevens     |
 | **BgZ** | [Common clinical dataset](bgz) | R3           | Basisgegevensset Zorg |
@@ -34,7 +34,7 @@
 
 #### Medicijnen
 
-| Subcategorie                 | profile                       | source      | description                                                               |
+| Subcategorie                 | Profile                       | Source      | Description                                                               |
 | :--------------------------- | :---------------------------- | :---------- | :------------------------------------------------------------------------ |
 | Medicijnen die je gebruikt   | [zib-MedicationUse]           | [BgZ]       | Gaat over welke medicatie                                                 |
 | Afspraken over je medicijnen | [zib-MedicationAgreement]     | [BgZ], [GP] | Beschrijft een voorschrift of een intentie om medicatie voor te schrijven |
@@ -42,7 +42,7 @@
 
 #### Metingen
 
-| Subcategorie          | profile               | source      | description                    |
+| Subcategorie          | Profile               | Source      | Description                    |
 | :-------------------- | :-------------------- | :---------- | :----------------------------- |
 | Bloeddruk             | [zib-BloodPressure]   | [BgZ], [GP] | Laatst bekende bloeddruk       |
 | Gewicht               | [zib-BodyWeight]      | [BgZ], [GP] | Laatst bekende lichaamsgewicht |
@@ -53,7 +53,7 @@
 #### Uitslagen
 
 <!-- prettier-ignore -->
-| Subcategorie                       | profile                                            | source | description                                    |
+| Subcategorie                       | Profile                                            | Source | Description                                    |
 | :--------------------------------- | :------------------------------------------------- | :----- | :--------------------------------------------- |
 | Uitslag van onderzoek laboratorium | [zib&#8209;LaboratoryTestResult&#8209;Observation] | [BgZ]  | Laatst bekende laboratoriumresultaten per type |
 | Onderzoeksmateriaal                | [zib-LaboratoryTestResult-Specimen]                | [BgZ]  |                                                |
@@ -61,20 +61,20 @@
 
 #### Allergieën
 
-| Subcategorie | profile                  | source      | description                             |
+| Subcategorie | Profile                  | Source      | Description                             |
 | :----------- | :----------------------- | :---------- | :-------------------------------------- |
 | Allergieën   | [zib-AllergyIntolerance] | [BgZ], [GP] | Alle bekende informatie over allergieën |
 
 #### Behandelingen
 
-| Subcategorie                | profile                | source | description                       |
+| Subcategorie                | Profile                | Source | Description                       |
 | :-------------------------- | :--------------------- | :----- | :-------------------------------- |
 | Behandelingen en overdracht | [zib-Procedure]        | [BgZ]  | Bekende chirurgische ingrepen     |
 | Geplande zorgafspraken      | [zib-ProcedureRequest] | [BgZ]  | Bekende geplande zorgactiviteiten |
 
 #### Afspraken
 
-| Subcategorie                 | profile                 | source      | description                                              |
+| Subcategorie                 | Profile                 | Source      | Description                                              |
 | :--------------------------- | :---------------------- | :---------- | :------------------------------------------------------- |
 | Afspraken met zorgaanbieders | [eAfspraak-Appointment] | [BgZ]       |                                                          |
 | Contacten met zorgaanbieders | [zib-Encounter]         | [BgZ], [GP] | Bekende ziekenhuisopnames (geen poliklinische contacten) |
@@ -83,7 +83,7 @@
 
 #### Vaccinaties
 
-| Subcategorie        | profile                          | source | description         |
+| Subcategorie        | Profile                          | Source | Description         |
 | :------------------ | :------------------------------- | :----- | :------------------ |
 | Vaccinaties         | [zib-Vaccination]                | [BgZ]  | Bekende vaccinaties |
 | "                   | [nl-core-Vaccination-event-(R4)] | [Vac]  | Bekende vaccinaties |
@@ -91,38 +91,38 @@
 
 #### Documenten
 
-| Subcategorie | profile                             | source | description                 |
+| Subcategorie | Profile                             | Source | Description                 |
 | :----------- | :---------------------------------- | :----- | :-------------------------- |
 | Documenten   | [IHE.MHD.Minimal.DocumentReference] | [Doc]  | Brieven, verslagen, beelden |
 
 #### Medische klachten
 
-| Subcategorie      | profile       | source | description                     |
+| Subcategorie      | Profile       | Source | Description                     |
 | :---------------- | :------------ | :----- | :------------------------------ |
 | Medische klachten | [zib-Problem] | [BgZ]  | Alle bekende medische problemen |
 
 #### Persoonlijke gegevens
 
-| Subcategorie                                          | profile                | source      | description           |
+| Subcategorie                                          | Profile                | Source      | Description           |
 | :---------------------------------------------------- | :--------------------- | :---------- | :-------------------- |
 | Persoonsgegevens, Burgerlijke staat & contactpersonen | [nl-core-patient]      | [BgZ], [GP] | Alle patient gegevens |
 | "                                                     | [nl-core-patient-(R4)] | [Vac]       |                       |
 
 #### Mentaal welzijn
 
-| Subcategorie    | profile                        | source | description                               |
+| Subcategorie    | Profile                        | Source | Description                               |
 | :-------------- | :----------------------------- | :----- | :---------------------------------------- |
 | Mentaal welzijn | [zib-FunctionalOrMentalStatus] | [BgZ]  | Laatst bekende functionele/mentale status |
 
 #### Waarschuwingen
 
-| Subcategorie   | profile     | source | description                 |
+| Subcategorie   | Profile     | Source | Description                 |
 | :------------- | :---------- | :----- | :-------------------------- |
 | Waarschuwingen | [zib-Alert] | [BgZ]  | Alle bekende waarschuwingen |
 
 #### Leefstijl
 
-| Subcategorie       | profile               | source | description                 |
+| Subcategorie       | Profile               | Source | Description                 |
 | :----------------- | :-------------------- | :----- | :-------------------------- |
 | Leefomstandigheden | [zib-LivingSituation] | [BgZ]  | Huidige woonsituatie        |
 | Drugsgebruik       | [zib-DrugUse]         | [BgZ]  | Alle bekende drugsgebruik   |
@@ -132,7 +132,7 @@
 
 #### Medische hulpmiddelen
 
-| Subcategorie          | profile                    | source | description                   |
+| Subcategorie          | Profile                    | Source | Description                   |
 | :-------------------- | :------------------------- | :----- | :---------------------------- |
 | Medische hulpmiddelen | [zib-MedicalDeviceProduct] | [BgZ]  | Bekende medische hulpmiddelen |
 | "                     | [zib-MedicalDevice]        | [BgZ]  |                               |
@@ -140,14 +140,14 @@
 
 #### Behandel plan
 
-| Subcategorie   | profile                  | source | description              |
+| Subcategorie   | Profile                  | Source | Description              |
 | :------------- | :----------------------- | :----- | :----------------------- |
 | Behandelwensen | [zib-TreatmentDirective] | [BgZ]  | Bekende behandelwensen   |
 | Wilsverklaring | [zib-AdvanceDirective]   | [BgZ]  | Bekende wilsverklaringen |
 
 #### Betaalgegevens
 
-| Subcategorie   | profile     | source | description                    |
+| Subcategorie   | Profile     | Source | Description                    |
 | :------------- | :---------- | :----- | :----------------------------- |
 | Betaalgegevens | [zib-Payer] | [BgZ]  | Bekende verzekeringsinformatie |
 
