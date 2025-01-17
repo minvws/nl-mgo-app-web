@@ -4,10 +4,10 @@
 
 | Short   | Data service                   | FHIR version | Description           |
 | ------- | ------------------------------ | ------------ | --------------------- |
-| **GP**  | [General practicioner](gp)     | R3           | Huisarts gegevens     |
-| **BgZ** | [Common clinical dataset](bgz) | R3           | Basisgegevensset Zorg |
-| **Doc** | [PDF/A Documents](doc)         | R3           | Documenten            |
-| **Vac** | [Vaccination](vac)             | R4           | Vaccinaties           |
+| **GP**  | [General practicioner][gp]     | R3           | Huisarts gegevens     |
+| **BgZ** | [Common clinical dataset][bgz] | R3           | Basisgegevensset Zorg |
+| **Doc** | [PDF/A Documents][doc]         | R3           | Documenten            |
+| **Vac** | [Vaccination][vac]             | R4           | Vaccinaties           |
 
 ## Healthcare categories
 
