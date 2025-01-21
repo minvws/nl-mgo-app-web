@@ -1,37 +1,52 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
-import { type UseQueryOptions } from '@tanstack/react-query';
-import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { type CategoryQueriesConfig } from '.';
+import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getLifestyleQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
-    return [
-        createResourceBundleQuery({
+const category = HealthCategory.Lifestyle;
+
+export const lifeStyle: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getCurrentLivingSituation',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getDrugUse',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getAlcoholUse',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getTobaccoUse',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getDietaryRecommendations',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getCurrentLivingSituation',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getDrugUse',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getAlcoholUse',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getTobaccoUse',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getDietaryRecommendations',
+            }),
+        ].filter(isNonNullish);
+    },
+};

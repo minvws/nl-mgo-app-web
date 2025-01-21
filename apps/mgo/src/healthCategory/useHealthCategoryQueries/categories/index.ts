@@ -1,39 +1,57 @@
-import { HealthCategory } from '$/healthCategory/HealthCategory';
-
+import { type HealthCategory } from '$/healthCategory/HealthCategory';
 import { type HealthcareOrganization } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
-import { getMedicationQueries } from './medication';
-import { getPayerQueries } from './payer';
-import { getPersonalInformationQueries } from './personalInformation';
-import { getTreatmentPlanQueries } from './treatmentPlan';
-import { getFunctionalOrMentalStatusQueries } from './functionalOrMentalStatus';
-import { getProblemQueries } from './problem';
-import { getLifestyleQueries } from './lifestyle';
-import { getWarningQueries } from './warning';
-import { getAllergyQueries } from './allergy';
-import { getMedicalDevicesQueries } from './medicalDevices';
-import { getVaccinationQueries } from './vaccination';
-import { getEncounterQueries } from './encounter';
-import { getVitalQueries } from './vitals';
-import { getProcedureQueries } from './procedure';
-import { getDocumentsQueries } from './documents';
-import { getLaboratoryResultQueries } from './laboratoryResults';
+import { allergies } from './allergy';
+import { documents } from './documents';
+import { encounters } from './encounter';
+import { functionalOrMentalStatus } from './functionalOrMentalStatus';
+import { laboratoryResults } from './laboratoryResults';
+import { lifeStyle } from './lifestyle';
+import { medicalDevices } from './medicalDevices';
+import { medication } from './medication';
+import { payers } from './payer';
+import { personalInformation } from './personalInformation';
+import { problems } from './problem';
+import { procedures } from './procedure';
+import { treatmentPlans } from './treatmentPlan';
+import { vaccinations } from './vaccination';
+import { vitals } from './vitals';
+import { warnings } from './warning';
 
-export const healthCategoryQueries = {
-    [HealthCategory.PersonalInformation]: getPersonalInformationQueries,
-    [HealthCategory.PayerAndOrganization]: getPayerQueries,
-    [HealthCategory.TreatmentPlan]: getTreatmentPlanQueries,
-    [HealthCategory.Documents]: getDocumentsQueries,
-    [HealthCategory.FunctionalOrMentalStatus]: getFunctionalOrMentalStatusQueries,
-    [HealthCategory.Problems]: getProblemQueries,
-    [HealthCategory.Lifestyle]: getLifestyleQueries,
-    [HealthCategory.Warning]: getWarningQueries,
-    [HealthCategory.AllergiesAndIntolerances]: getAllergyQueries,
-    [HealthCategory.Medication]: getMedicationQueries,
-    [HealthCategory.MedicalDevices]: getMedicalDevicesQueries,
-    [HealthCategory.Vaccinations]: getVaccinationQueries,
-    [HealthCategory.LaboratoryResults]: getLaboratoryResultQueries,
-    [HealthCategory.Procedures]: getProcedureQueries,
-    [HealthCategory.ContactsAndAppointments]: getEncounterQueries,
-    [HealthCategory.Vitals]: getVitalQueries,
-} satisfies Record<HealthCategory, (organization: HealthcareOrganization) => UseQueryOptions[]>;
+type OrganisationQueryFunction = (organization: HealthcareOrganization) => UseQueryOptions[];
+export type CategoryQueriesConfig<T extends HealthCategory> = {
+    category: T;
+    getQueries: OrganisationQueryFunction;
+};
+
+const healthcareCategoryConfigs = [
+    allergies,
+    documents,
+    encounters,
+    functionalOrMentalStatus,
+    laboratoryResults,
+    lifeStyle,
+    medicalDevices,
+    medication,
+    payers,
+    personalInformation,
+    problems,
+    procedures,
+    treatmentPlans,
+    vaccinations,
+    vitals,
+    warnings,
+];
+
+type HealthcareCategoryQueryMap = {
+    [K in (typeof healthcareCategoryConfigs)[number]['category']]: OrganisationQueryFunction;
+};
+
+const healthcareCategoryQueryMap: Partial<HealthcareCategoryQueryMap> = {};
+healthcareCategoryConfigs.forEach(({ category, getQueries }) => {
+    healthcareCategoryQueryMap[category] = getQueries;
+});
+
+export function getHealthcareCategoryQuery(category: HealthCategory) {
+    return (healthcareCategoryQueryMap as HealthcareCategoryQueryMap)[category];
+}

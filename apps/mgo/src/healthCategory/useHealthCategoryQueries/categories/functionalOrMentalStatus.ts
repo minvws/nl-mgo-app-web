@@ -1,20 +1,28 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
-import { type UseQueryOptions } from '@tanstack/react-query';
-import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { type CategoryQueriesConfig } from '.';
+import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getFunctionalOrMentalStatusQueries(
-    organization: HealthcareOrganization
-): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
+const category = HealthCategory.FunctionalOrMentalStatus;
 
-    return [
-        createResourceBundleQuery({
+export const functionalOrMentalStatus: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getLastFunctionalOrMentalStatus',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getLastFunctionalOrMentalStatus',
+            }),
+        ].filter(isNonNullish);
+    },
+};

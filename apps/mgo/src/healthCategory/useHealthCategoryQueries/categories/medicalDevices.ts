@@ -1,22 +1,34 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
-import { type UseQueryOptions } from '@tanstack/react-query';
-import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { type CategoryQueriesConfig } from '.';
+import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getMedicalDevicesQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
-    return [
-        createResourceBundleQuery({
+const category = HealthCategory.MedicalDevices;
+
+export const medicalDevices: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getMedicalAids',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getPlannedMedicalDevices',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getMedicalAids',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getPlannedMedicalDevices',
+            }),
+        ].filter(isNonNullish);
+    },
+};

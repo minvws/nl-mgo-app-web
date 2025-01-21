@@ -2,6 +2,7 @@ import { type HealthcareOrganization } from '$/store';
 import { type DataService } from '@minvws/mgo-fhir-client';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { type ResourceQueryMeta } from './isResourceQueryMeta';
+import { type HealthCategory } from '../HealthCategory';
 
 type FetchResponse = { json: () => Promise<unknown> };
 type SafeReturnType<T> = T extends (...args: any) => any ? ReturnType<T> : unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -10,12 +11,14 @@ export type ServiceRequestKeys<T extends DataService> = {
 }[keyof T];
 
 export interface ResourceQueryConfig<T extends DataService> {
+    category: HealthCategory;
     organization: HealthcareOrganization;
     service: T | null;
     method: ServiceRequestKeys<T>;
 }
 
 export function createResourceBundleQuery<T extends DataService>({
+    category,
     organization,
     service,
     method,
@@ -34,7 +37,7 @@ export function createResourceBundleQuery<T extends DataService>({
         } satisfies ResourceQueryMeta,
 
         // eslint-disable-next-line @tanstack/query/exhaustive-deps -- service[method] is not properly serializable, this combination of dataServiceId and method is enough
-        queryKey: [organization.id, service.dataServiceId, method],
+        queryKey: [category, organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
             // await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));

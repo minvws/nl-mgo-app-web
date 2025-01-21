@@ -5,6 +5,7 @@ import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';
 import { useHealthCategoryQueries } from './useHealthCategoryQueries';
+// import { getHealthcareCategoryQuery } from './categories';
 
 vi.mock('$/services', () => ({
     getDataService: vi.fn(
@@ -15,16 +16,16 @@ vi.mock('$/services', () => ({
 }));
 
 test('returns queries for specific organisations if specified', () => {
+    const category = HealthCategory.Medication;
     const organizations = [faker.custom.healthcareOrganization()];
     const store = useOrganizationsStore.getState();
     vi.spyOn(store, 'getOrganizationsById').mockImplementation(() => organizations);
 
-    const { result } = renderHook(() =>
-        useHealthCategoryQueries(HealthCategory.Medication, [organizations[0].id])
-    );
+    const { result } = renderHook(() => useHealthCategoryQueries(category, [organizations[0].id]));
     const queryKeys = result.current.map((x) => x.queryKey);
 
     expect(queryKeys[0]).toEqual([
+        category,
         organizations[0].id,
         DataServiceId.CommonClinicalDataset,
         'getMedicationUse',

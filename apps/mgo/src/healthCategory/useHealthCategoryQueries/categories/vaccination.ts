@@ -1,29 +1,41 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { type UseQueryOptions } from '@tanstack/react-query';
+import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getVaccinationQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
-    const vaccinationsDataset = getDataService(organization, DataServiceId.Vaccinations);
+const category = HealthCategory.Vaccinations;
 
-    return [
-        createResourceBundleQuery({
+export const vaccinations: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getVaccinations',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: vaccinationsDataset,
-            method: 'getVaccinations',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getPlannedImmunizations',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+        const vaccinationsDataset = getDataService(organization, DataServiceId.Vaccinations);
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getVaccinations',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: vaccinationsDataset,
+                method: 'getVaccinations',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getPlannedImmunizations',
+            }),
+        ].filter(isNonNullish);
+    },
+};

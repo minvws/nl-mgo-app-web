@@ -10,7 +10,8 @@ import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { message } from '$test/helpers/i18n';
-import { screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { screen, within } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
 
@@ -160,5 +161,46 @@ test('redirects to the overview page if the organisation was not found', async (
 
     expect(mockNavigate.mock.calls[0][0]).toEqual({
         to: `/overzicht`,
+    });
+});
+
+test('invalidates queries when clicking retry button', async () => {
+    const queryClient = new QueryClient({
+        defaultOptions: {
+            queries: {
+                retry: false,
+            },
+        },
+    });
+
+    mockUseHealthCategoryQuery.mockImplementationOnce(() => ({
+        id: faker.string.uuid(),
+        category: HealthCategoryEnum.Medication,
+        isLoading: false,
+        isError: true,
+        isEmpty: true,
+        data: {
+            medicationUse: [],
+            medicationAgreements: [],
+            administrationAgreements: [],
+        } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
+    }));
+
+    const spy = vi.spyOn(queryClient, 'invalidateQueries');
+    const { user } = setupWithAppProviders(
+        <QueryClientProvider client={queryClient}>
+            <HealthCategory />
+        </QueryClientProvider>
+    );
+
+    const alert = screen.getByRole('alert');
+    expect(alert).toBeVisible();
+
+    const button = within(alert).getByRole('button', { name: 'Probeer opnieuw' });
+    await user.click(button);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({
+        queryKey: [HealthCategoryEnum.Medication],
     });
 });

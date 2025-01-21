@@ -1,18 +1,25 @@
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
-import { type UseQueryOptions } from '@tanstack/react-query';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { HealthCategory } from '$/healthCategory/HealthCategory';
+import { type CategoryQueriesConfig } from '.';
 
-export function getDocumentsQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const documentsService = getDataService(organization, DataServiceId.Documents);
+const category = HealthCategory.Documents;
 
-    return [
-        createResourceBundleQuery({
-            organization,
-            service: documentsService,
-            method: 'getDocumentReferences',
-        }),
-    ].filter(isNonNullish);
-}
+export const documents: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const documentsService = getDataService(organization, DataServiceId.Documents);
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: documentsService,
+                method: 'getDocumentReferences',
+            }),
+        ].filter(isNonNullish);
+    },
+};

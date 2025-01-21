@@ -17,7 +17,7 @@ test('show HealthCategoryContent for category', () => {
     setupWithAppProviders(<HealthCategoryContent {...props} />);
     const heading = screen.getByRole('heading', {
         level: 2,
-        name: `health_category.patient.patient_information`,
+        name: `health_category.personal-information.patient_information`,
     });
     expect(heading).toBeVisible();
 });

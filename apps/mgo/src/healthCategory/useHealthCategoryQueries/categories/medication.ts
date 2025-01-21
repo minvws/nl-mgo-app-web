@@ -1,37 +1,50 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { type UseQueryOptions } from '@tanstack/react-query';
+import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getMedicationQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
-    const generalPracticionerService = getDataService(
-        organization,
-        DataServiceId.GeneralPractitioner
-    );
+const category = HealthCategory.Medication;
 
-    return [
-        createResourceBundleQuery({
+export const medication: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getMedicationUse',
-        }),
-        createResourceBundleQuery({
+            DataServiceId.CommonClinicalDataset
+        );
+        const generalPracticionerService = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getMedicationAgreements',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getAdministrationAgreements',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: generalPracticionerService,
-            method: 'getCurrentMedication',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.GeneralPractitioner
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getMedicationUse',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getMedicationAgreements',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getAdministrationAgreements',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: generalPracticionerService,
+                method: 'getCurrentMedication',
+            }),
+        ].filter(isNonNullish);
+    },
+};

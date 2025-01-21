@@ -1,18 +1,28 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { type UseQueryOptions } from '@tanstack/react-query';
+import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getWarningQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
+const category = HealthCategory.Warning;
 
-    return [
-        createResourceBundleQuery({
+export const warnings: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getAlerts',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getAlerts',
+            }),
+        ].filter(isNonNullish);
+    },
+};

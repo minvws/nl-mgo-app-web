@@ -9,12 +9,14 @@ import { Helmet } from 'react-helmet-async';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { HealthCategoryContent } from '../../components/HealthCategoryContent/HealthCategoryContent';
 import { NoData } from './NoData';
+import { useQueryClient } from '@tanstack/react-query';
 
 export function HealthCategory() {
     const intl = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { healthCategorySlug, organizationSlug } = useParams();
     const { getOrganizationBySlug } = useOrganizationsStore();
+    const queryClient = useQueryClient();
 
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const organization = getOrganizationBySlug(organizationSlug);
@@ -45,7 +47,13 @@ export function HealthCategory() {
                     >
                         <Stack className="items-start gap-1">
                             <FormattedMessage id="common.error_in_system" />
-                            <Button variant="ghost" className="p-0 md:p-0">
+                            <Button
+                                variant="ghost"
+                                className="p-0 md:p-0"
+                                onClick={() =>
+                                    queryClient.invalidateQueries({ queryKey: [healthCategory] })
+                                }
+                            >
                                 <FormattedMessage id="common.try_again" />
                             </Button>
                         </Stack>

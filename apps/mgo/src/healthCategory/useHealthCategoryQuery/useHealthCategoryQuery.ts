@@ -1,4 +1,5 @@
 import { useResourcesStore } from '$/store';
+import { isNonNullish } from '$/utils';
 import { getMgoResource, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
 import { getBundleResources } from '@minvws/mgo-fhir-data/api/getBundleResources/getBundleResources.js';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
@@ -15,7 +16,6 @@ import {
 } from '../useHealthCategoryQueries/isResourceQueryMeta';
 import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
 import { isEmpty } from './isEmpty';
-import { isNonNullish } from '$/utils';
 
 export type QueryResult<T extends HealthCategory> = {
     id: string;

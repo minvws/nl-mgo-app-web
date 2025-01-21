@@ -1,28 +1,40 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { type UseQueryOptions } from '@tanstack/react-query';
+import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
-export function getVitalQueries(organization: HealthcareOrganization): UseQueryOptions[] {
-    const commonClinicalDataset = getDataService(organization, DataServiceId.CommonClinicalDataset);
+const category = HealthCategory.Vitals;
 
-    return [
-        createResourceBundleQuery({
+export const vitals: CategoryQueriesConfig<typeof category> = {
+    category,
+    getQueries: (organization: HealthcareOrganization) => {
+        const commonClinicalDataset = getDataService(
             organization,
-            service: commonClinicalDataset,
-            method: 'getLastBloodPressure',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getLastBodyWeight',
-        }),
-        createResourceBundleQuery({
-            organization,
-            service: commonClinicalDataset,
-            method: 'getLastBodyHeight',
-        }),
-    ].filter(isNonNullish);
-}
+            DataServiceId.CommonClinicalDataset
+        );
+
+        return [
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getLastBloodPressure',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getLastBodyWeight',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: commonClinicalDataset,
+                method: 'getLastBodyHeight',
+            }),
+        ].filter(isNonNullish);
+    },
+};

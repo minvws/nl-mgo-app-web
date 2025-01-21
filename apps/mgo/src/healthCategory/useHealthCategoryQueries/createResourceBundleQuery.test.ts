@@ -4,6 +4,7 @@ import { expect, test, vi } from 'vitest';
 import { createResourceBundleQuery } from './createResourceBundleQuery';
 import { type QueryFunction } from '@tanstack/react-query';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { HealthCategory } from '../HealthCategory';
 
 function createMockService() {
     return {
@@ -16,24 +17,33 @@ function createMockService() {
 }
 
 test('returns queries for medication', async () => {
+    const category = HealthCategory.PersonalInformation;
     const organization = faker.custom.healthcareOrganization();
     const service = createMockService();
 
     const { queryKey, queryFn } = createResourceBundleQuery({
+        category,
         organization,
         service,
         method: 'foobar',
     })!;
 
-    expect(queryKey).toEqual([organization.id, DataServiceId.CommonClinicalDataset, 'foobar']);
+    expect(queryKey).toEqual([
+        category,
+        organization.id,
+        DataServiceId.CommonClinicalDataset,
+        'foobar',
+    ]);
 
     (queryFn as QueryFunction)(undefined as any); // eslint-disable-line @typescript-eslint/no-explicit-any
     expect(service.foobar).toHaveBeenCalledTimes(1);
 });
 
 test('returns undefined if there is no service', async () => {
+    const category = HealthCategory.PersonalInformation;
     const organization = faker.custom.healthcareOrganization();
     const result = createResourceBundleQuery({
+        category,
         organization,
         service: null as ReturnType<typeof createMockService> | null,
         method: 'foobar',
