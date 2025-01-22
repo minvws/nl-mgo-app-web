@@ -85,6 +85,11 @@ pnpm dev
 pnpm storybook
 ```
 
+### Playwright e2e tests
+
+For the end-to-end testing of this Web application we make use of [Playwright](https://playwright.dev/).
+If you want to know more about those tests and how to execute them, please read further in [e2e tests Readme](apps/e2e-tests/README.md)
+
 ## Deployment
 
 The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-mgo-app-web-private/actions/workflows/package.yml).

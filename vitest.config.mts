@@ -5,8 +5,9 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             extension: ['ts', 'tsx'],
-            include: ['packages/**', 'apps/*'],
+            include: ['packages/**', 'apps/**'],
             exclude: [
+                'apps/e2e-tests/**',
                 'apps/*/test/*',
                 'packages/*/test/*',
                 'packages/*/docs/*',
