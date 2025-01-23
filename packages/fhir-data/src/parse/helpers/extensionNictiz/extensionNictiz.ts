@@ -1,4 +1,4 @@
-import { type DomainResource, type Element } from '../../../types/FhirRX';
+import { type DomainResource, type Element } from '@minvws/mgo-fhir-types';
 import { extension } from '../extension/extension';
 import { type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 

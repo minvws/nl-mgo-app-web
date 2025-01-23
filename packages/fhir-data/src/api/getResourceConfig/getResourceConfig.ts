@@ -1,6 +1,6 @@
+import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir-types';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { FhirVersion, type ResourceConfig } from '../../types/Fhir';
-import { type FhirResource } from '../../types/FhirRX';
+import { type ResourceConfig } from '../../types/Fhir';
 import { resourcesMapR3, resourcesMapR4 } from '../resources/resources';
 
 type Config<T extends FhirResource | MgoResourceMeta> = T extends FhirResource

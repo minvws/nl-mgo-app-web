@@ -1,13 +1,14 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Immunization } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
-import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
-import { VaccinationMotive } from '../../valueSets/vaccinationMotive';
+import { type ResourceConfig } from '../../../types/Fhir';
+import { map } from '../../../utils';
 import { VaccinationIndication } from '../../valueSets/vaccinationIndication';
+import { VaccinationMotive } from '../../valueSets/vaccinationMotive';
 import { parseProtocolApplied } from './elements/protocolApplied/protocolApplied';
 import { summary } from './summary';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
 

@@ -7,16 +7,17 @@
         "./*": "./src/*"
     },
     "scripts": {
+        "test": "vitest",
         "check-types": "tsc --noEmit"
     },
     "dependencies": {
         "@minvws/mgo-fhir-data": "workspace:*",
-        "ky": "^1.3.0",
+        "@minvws/mgo-fhir-types": "workspace:*",
+        "ky": "^1.7.4",
         "lossless-json": "^4.0.1"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
-        "@types/fhir": "^0.0.41",
         "msw": "^2.4.5",
         "typescript": "^5.4.5"
     }

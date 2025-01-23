@@ -1,4 +1,4 @@
-import { type Identifier } from '../../../types/FhirRX';
+import { type Identifier } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { codeableConcept, type MgoCodeableConcept } from '../codeableConcept/codeableConcept';
 

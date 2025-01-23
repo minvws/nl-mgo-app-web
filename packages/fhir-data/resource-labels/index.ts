@@ -1,9 +1,9 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { globSync } from 'glob';
 import { dirname } from 'path';
 import { URL, fileURLToPath } from 'url';
 import { processDefinitions } from './processDefinitions';
-import { FhirVersion } from '../src/types/Fhir';
 
 /**
  * A small script to extract relevant labels from the published structure definitions.

@@ -1,5 +1,4 @@
-import { type Annotation } from '../../../types/FhirRX';
-import { type DateTimeString } from '../../../types/Fhir';
+import { type Annotation, type DateTimeString } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { dateTime } from '../dateTime/dateTime';
 import { reference, type MgoReference } from '../reference/reference';

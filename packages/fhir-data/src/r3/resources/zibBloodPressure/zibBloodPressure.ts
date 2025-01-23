@@ -1,10 +1,11 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types/Fhir';
 
-import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
-import { uiSchema } from './uiSchema';
 import { parse } from '../../../parse';
 import { findComponentByCode } from '../../../parse/helpers';
+import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure'; // NOSONAR
 

@@ -1,12 +1,12 @@
 import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { flushCallStack } from '$test/helpers';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import {
     FhirVersion,
     getMgoResource,
-    type MgoResourceR3,
-    type ResourceByTypeR3,
+    type MgoResource,
+    type ResourceByType,
 } from '@minvws/mgo-fhir-data';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
@@ -59,7 +59,8 @@ test('returns query state and related store data for medication ', async () => {
     const mgoResource = {
         profile: 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
         referenceId: faker.lorem.word(),
-    } as MgoResourceR3;
+        fhirVersion: FhirVersion.R3,
+    } as MgoResource;
 
     mockUseHealthCategoryQueries.mockImplementation(() => [
         {
@@ -76,7 +77,7 @@ test('returns query state and related store data for medication ', async () => {
                         },
                     ],
                     type: 'batch',
-                } satisfies ResourceByTypeR3<'Bundle'>),
+                } satisfies ResourceByType<'Bundle', FhirVersion.R3>),
         },
     ]);
 

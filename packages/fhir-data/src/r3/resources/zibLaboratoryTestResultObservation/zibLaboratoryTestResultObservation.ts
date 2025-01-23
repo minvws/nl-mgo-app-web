@@ -1,13 +1,14 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
-import { uiSchema } from './uiSchema';
-import { summary } from './summary';
-import { map } from '../../../utils';
-import { related } from './elements/related/related';
-import { referenceRange } from './elements/referenceRange/referenceRange';
 import { filterCodeableConceptByCoding, oneOfValueX } from '../../../parse/helpers';
-import { Snomed, SNOMED_SYSTEM, SnomedResultTypes } from '../../valueSets/snomed';
+import { type ResourceConfig } from '../../../types/Fhir';
+import { map } from '../../../utils';
+import { SNOMED_SYSTEM, Snomed, SnomedResultTypes } from '../../valueSets/snomed';
+import { referenceRange } from './elements/referenceRange/referenceRange';
+import { related } from './elements/related/related';
+import { summary } from './summary';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation'; // NOSONAR
 

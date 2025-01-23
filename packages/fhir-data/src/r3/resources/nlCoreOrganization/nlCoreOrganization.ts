@@ -1,10 +1,11 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Organization } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
 import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-organization'; // NOSONAR
 

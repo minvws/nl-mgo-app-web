@@ -1,4 +1,4 @@
-import { type DataServiceId } from '@minvws/mgo-fhir-client';
+import { type DataServiceId } from '@minvws/mgo-data-services';
 import { type FhirVersion } from '@minvws/mgo-fhir-data';
 
 export interface ResourceQueryMeta {

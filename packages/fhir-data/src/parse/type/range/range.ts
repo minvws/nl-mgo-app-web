@@ -1,6 +1,6 @@
-import { type Range } from '../../../types/FhirRX';
+import { type Range } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type MgoQuantity, quantity } from '../quantity/quantity';
+import { quantity, type MgoQuantity } from '../quantity/quantity';
 
 export interface MgoRange {
     low: MgoQuantity | undefined;

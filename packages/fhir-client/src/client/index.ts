@@ -1,20 +1,48 @@
-import type { FhirResource, ResourceType } from '../types';
-import { type LosslessJson, type LosslessNumber } from './json/json';
-import { type ResourceRequest, type ResourceResponse } from './getResource/getResource';
-import { type ResourcesRequest, type ResourcesResponse } from './getResources/getResources';
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import ky, { type Options as KyOptions } from 'ky';
+import type { WithRequired } from '../types/required';
+import { losslessJson } from '../utils/losslessJson/losslessJson';
+import { setupResource } from './resource/resource';
+import { setupResources } from './resources/resources';
 
-export { createClient } from './createClient/createClient';
+export interface FhirClientOptions<V extends FhirVersion = FhirVersion>
+    extends WithRequired<KyOptions, 'prefixUrl'> {
+    fhirVersion: V;
+}
 
-export type {
-    ResourceRequest,
-    ResourceResponse,
-    ResourcesRequest,
-    ResourcesResponse,
-    LosslessJson,
-    LosslessNumber,
+const defaultHeaders: Record<FhirVersion, Record<string, string>> = {
+    [FhirVersion.R3]: {
+        Accept: 'application/fhir+json; fhirVersion=3.0',
+    },
+    [FhirVersion.R4]: {
+        Accept: 'application/fhir+json; fhirVersion=4.0',
+    },
 };
 
-export type LosslessFhirResource<
-    T extends ResourceType,
-    Resource = Extract<FhirResource, { resourceType: T }>,
-> = LosslessJson<Resource>;
+export function createClient<V extends FhirVersion>({
+    parseJson = losslessJson,
+    headers = {},
+    fhirVersion,
+    ...rest
+}: FhirClientOptions<V>) {
+    const options: FhirClientOptions<V> = {
+        fhirVersion,
+        parseJson,
+        headers: {
+            ...defaultHeaders[fhirVersion],
+            ...headers,
+        },
+        ...rest,
+    };
+
+    const instance = ky.create(options);
+
+    return {
+        fhirVersion,
+        instance,
+        ...setupResource(instance, options),
+        ...setupResources(instance, options),
+    };
+}
+
+export type FhirClient<V extends FhirVersion = FhirVersion> = ReturnType<typeof createClient<V>>;

@@ -1,10 +1,10 @@
 import { type HealthcareOrganization } from '$/store';
+import { type DataServiceId } from '@minvws/mgo-data-services';
 import { type UiSchema } from '@minvws/mgo-fhir-data';
 import { useMemo, type HTMLAttributes } from 'react';
 import { Stack } from '../../../../../packages/mgo-ui/src/components/Stack/Stack';
 import { UiSchemaContext, type UiSchemaContextState } from './UiSchemaContext';
 import { UiSchemaGroup } from './UiSchemaGroup';
-import { type DataServiceId } from '@minvws/mgo-fhir-client';
 
 export interface UiSchemaDisplayProps extends HTMLAttributes<HTMLDivElement> {
     readonly organizationId: HealthcareOrganization['id'];

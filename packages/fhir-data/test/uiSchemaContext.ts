@@ -1,4 +1,4 @@
-import { type FhirVersion } from '../src';
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { Locale } from '../src/i18n';
 import { createUiSchemaContext } from '../src/ui';
 import { type UiSchemaContext, type UiSchemaContextOptions } from '../src/ui/context/context';

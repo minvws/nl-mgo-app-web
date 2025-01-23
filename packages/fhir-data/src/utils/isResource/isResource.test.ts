@@ -1,7 +1,7 @@
+import { type FhirResource, type ResourceType } from '@minvws/mgo-fhir-types';
 import { expect, test } from 'vitest';
-import { isFhirResource } from './isResource';
 import { type Lossless } from '../../types/Lossless';
-import { type FhirResource, type ResourceType } from '../../types/FhirRX';
+import { isFhirResource } from './isResource';
 
 test.each<[Lossless<FhirResource>, ResourceType, boolean]>([
     [{ resourceType: 'Bundle', type: 'searchset' }, 'Bundle', true],

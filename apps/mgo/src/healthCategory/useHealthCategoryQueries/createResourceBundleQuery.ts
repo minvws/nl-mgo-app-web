@@ -1,5 +1,5 @@
 import { type HealthcareOrganization } from '$/store';
-import { type DataService } from '@minvws/mgo-fhir-client';
+import { type DataService } from '@minvws/mgo-data-services';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { type ResourceQueryMeta } from './isResourceQueryMeta';
 import { type HealthCategory } from '../HealthCategory';

@@ -1,8 +1,9 @@
-import { encounterParticipant } from '../../elements/encounterParticipant/encounterParticipant';
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Encounter } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
+import { encounterParticipant } from '../../elements/encounterParticipant/encounterParticipant';
 import { diagnosis } from './elements/diagnosis/diagnosis';
 import { hospitalization } from './elements/hospitalization/hospitalization';
 import { uiSchema } from './uiSchema';

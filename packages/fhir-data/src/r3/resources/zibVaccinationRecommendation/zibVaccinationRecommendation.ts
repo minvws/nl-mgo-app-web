@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { type ImmunizationRecommendation } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { recommendation } from './elements/recommendation/recommendation';
 import { uiSchema } from './uiSchema';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
-import { type ImmunizationRecommendation } from 'fhir/r3';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation'; // NOSONAR
 

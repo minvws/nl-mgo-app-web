@@ -1,4 +1,4 @@
-import { type ObservationComponent } from '../../../types/FhirRX';
+import { type ObservationComponent } from '@minvws/mgo-fhir-types';
 import { type Nullable } from '../../../types/Nullable';
 
 export function findComponentByCode(

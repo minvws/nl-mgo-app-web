@@ -1,4 +1,4 @@
-import { type MgoResourceR4, type MgoResourceR3 } from '../../../api/resources/resources';
+import { type MgoResource } from '../../../api/resources/resources';
 import { type I18nContext, type MessagesIds } from '../../../i18n';
 import { type UiSchemaGroup } from '../../types';
 
@@ -10,7 +10,7 @@ type ShowDetailsLabel =
 export function summaryOptions(
     { formatMessage }: I18nContext,
     i18n: ShowDetailsLabel,
-    resource: MgoResourceR3 | MgoResourceR4
+    resource: MgoResource
 ): UiSchemaGroup {
     return {
         label: formatMessage(`summary.options`),

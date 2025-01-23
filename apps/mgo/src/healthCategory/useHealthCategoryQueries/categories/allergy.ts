@@ -1,10 +1,10 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { createResourceBundleQuery } from '../createResourceBundleQuery';
-import { HealthCategory } from '$/healthCategory/HealthCategory';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { type CategoryQueriesConfig } from '.';
+import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
 const category = HealthCategory.AllergiesAndIntolerances;
 

@@ -1,15 +1,15 @@
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Locale } from '../../i18n';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { type FhirR3R4, type FhirVersion } from '../../types/Fhir';
 import { createUiSchemaContext, type UiSchema } from '../../ui';
 import { setEmptyEntries } from '../../ui/helpers';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type MgoResourceR3, type MgoResourceR4 } from '../resources/resources';
+import { type MgoResource } from '../resources/resources';
 
-export interface UiSchemaOptions<T extends `${FhirVersion}`> {
+export interface UiSchemaOptions<V extends `${FhirVersion}`> {
     locale?: Locale;
-    resources?: FhirR3R4<T, MgoResourceR3[], MgoResourceR4[]>;
+    resources?: MgoResource<V>[];
 }
 
 export function getUiSchema<T extends MgoResourceMeta>(

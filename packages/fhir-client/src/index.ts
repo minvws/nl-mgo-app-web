@@ -1,7 +1,4 @@
+export { FhirVersion } from '@minvws/mgo-fhir-types';
+export { type Options, type ResponsePromise, type SearchParamsOption } from 'ky';
+
 export * from './client';
-export * from './bgz';
-export * from './gp';
-export * from './document';
-export * from './vaccination';
-export * from './DataService';
-export { type FhirClientOptions } from './types';

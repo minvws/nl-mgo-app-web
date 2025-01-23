@@ -1,43 +1,44 @@
+import { type HealthcareOrganization } from '$/store';
 import { faker } from '$test/faker';
 import {
     DataServiceId,
-    createBgzClient,
-    createDocumentsClient,
-    createGpClient,
-    createVaccinationsClient,
-} from '@minvws/mgo-fhir-client';
+    createCommonClinicalDatasetService,
+    createGeneralPractitionerService,
+    createPdfAService,
+    createVaccinationImmunizationService,
+} from '@minvws/mgo-data-services';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { getDataService } from './dataService';
 
-const dataServiceClientMocks = {
-    [DataServiceId.Vaccinations]: createVaccinationsClient as MockedFunction<
-        typeof createVaccinationsClient
+const dataServiceMocks = {
+    [DataServiceId.VaccinationImmunization]: createVaccinationImmunizationService as MockedFunction<
+        typeof createVaccinationImmunizationService
     >,
-    [DataServiceId.CommonClinicalDataset]: createBgzClient as MockedFunction<
-        typeof createBgzClient
+    [DataServiceId.CommonClinicalDataset]: createCommonClinicalDatasetService as MockedFunction<
+        typeof createCommonClinicalDatasetService
     >,
-    [DataServiceId.Documents]: createDocumentsClient as MockedFunction<
-        typeof createDocumentsClient
+    [DataServiceId.PdfA]: createPdfAService as MockedFunction<typeof createPdfAService>,
+    [DataServiceId.GeneralPractitioner]: createGeneralPractitionerService as MockedFunction<
+        typeof createGeneralPractitionerService
     >,
-    [DataServiceId.GeneralPractitioner]: createGpClient as MockedFunction<typeof createGpClient>,
 };
 
-vi.mock('@minvws/mgo-fhir-client', async (importActual) => {
+vi.mock('@minvws/mgo-data-services', async (importActual) => {
     // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-    const mod = await importActual<typeof import('@minvws/mgo-fhir-client')>();
+    const mod = await importActual<typeof import('@minvws/mgo-data-services')>();
     return {
         ...mod,
-        createBgzClient: vi.fn(() => ({
+        createCommonClinicalDatasetService: vi.fn(() => ({
             dataServiceId: DataServiceId.CommonClinicalDataset,
         })),
-        createDocumentsClient: vi.fn(() => ({
-            dataServiceId: DataServiceId.Documents,
+        createPdfAService: vi.fn(() => ({
+            dataServiceId: DataServiceId.PdfA,
         })),
-        createGpClient: vi.fn(() => ({
+        createGeneralPractitionerService: vi.fn(() => ({
             dataServiceId: DataServiceId.GeneralPractitioner,
         })),
-        createVaccinationsClient: vi.fn(() => ({
-            dataServiceId: DataServiceId.Vaccinations,
+        createVaccinationImmunizationService: vi.fn(() => ({
+            dataServiceId: DataServiceId.VaccinationImmunization,
         })),
     };
 });
@@ -46,32 +47,24 @@ afterEach(() => {
     vi.clearAllMocks();
 });
 
-test('returns the vaccinations service when there is a resource endpoint available', () => {
-    const resourceEndpoints = {
-        vaccinations: faker.internet.url(),
-        commonClinicalDataset: faker.internet.url(),
-        documents: faker.internet.url(),
-        generalPractitioner: faker.internet.url(),
+test('returns the data service when there is a resource endpoint available', () => {
+    const resourceEndpoints: HealthcareOrganization['resourceEndpoints'] = {
+        [DataServiceId.VaccinationImmunization]: faker.internet.url(),
+        [DataServiceId.CommonClinicalDataset]: faker.internet.url(),
+        [DataServiceId.PdfA]: faker.internet.url(),
+        [DataServiceId.GeneralPractitioner]: faker.internet.url(),
     };
-    const organization = faker.custom.healthcareOrganization({
-        resourceEndpoints,
-    });
+
+    const organization = faker.custom.healthcareOrganization({ resourceEndpoints });
     const dataServiceId = faker.custom.dataServiceId();
     const dataService = getDataService(organization, dataServiceId);
-    const createClientMock = dataServiceClientMocks[dataServiceId];
-
-    const dataServiceEndpoint = {
-        [DataServiceId.Vaccinations]: resourceEndpoints.vaccinations,
-        [DataServiceId.CommonClinicalDataset]: resourceEndpoints.commonClinicalDataset,
-        [DataServiceId.Documents]: resourceEndpoints.documents,
-        [DataServiceId.GeneralPractitioner]: resourceEndpoints.generalPractitioner,
-    };
+    const createServiceMock = dataServiceMocks[dataServiceId];
 
     expect(dataService?.dataServiceId).toBe(dataServiceId);
-    expect(createClientMock).toHaveBeenCalledWith(
+    expect(createServiceMock).toHaveBeenCalledWith(
         expect.objectContaining({
             headers: {
-                'x-mgo-dva-target': dataServiceEndpoint[dataServiceId],
+                'x-mgo-dva-target': resourceEndpoints[dataServiceId],
             },
         })
     );
@@ -85,10 +78,10 @@ test('returns NULL when there is NO organization', () => {
 test('returns NULL when there is NO resource endpoint available', () => {
     const organization = faker.custom.healthcareOrganization();
     organization.resourceEndpoints = {
-        vaccinations: undefined,
-        commonClinicalDataset: undefined,
-        documents: undefined,
-        generalPractitioner: undefined,
+        [DataServiceId.VaccinationImmunization]: undefined,
+        [DataServiceId.CommonClinicalDataset]: undefined,
+        [DataServiceId.PdfA]: undefined,
+        [DataServiceId.GeneralPractitioner]: undefined,
     };
 
     const dataService = getDataService(organization, faker.custom.dataServiceId());

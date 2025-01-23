@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Patient } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreHumanname, nlCoreContactpoint } from '../../elements';
+import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { attachment } from '../../elements/attachment/attachment';
 import { communication } from './elements/communication/communication';
 import { contact } from './elements/contact/contact';

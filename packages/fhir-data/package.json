@@ -42,6 +42,7 @@
         "vite-plugin-dts": "^4.2.1"
     },
     "dependencies": {
+        "@minvws/mgo-fhir-types": "workspace:*",
         "@formatjs/intl": "^3.0.1",
         "@formatjs/intl-datetimeformat": "^6.17.1",
         "@formatjs/intl-locale": "^4.2.8",

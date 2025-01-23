@@ -2,7 +2,7 @@ import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
@@ -15,7 +15,10 @@ export const vaccinations: CategoryQueriesConfig<typeof category> = {
             organization,
             DataServiceId.CommonClinicalDataset
         );
-        const vaccinationsDataset = getDataService(organization, DataServiceId.Vaccinations);
+        const vaccinationImmunization = getDataService(
+            organization,
+            DataServiceId.VaccinationImmunization
+        );
 
         return [
             createResourceBundleQuery({
@@ -27,7 +30,7 @@ export const vaccinations: CategoryQueriesConfig<typeof category> = {
             createResourceBundleQuery({
                 category,
                 organization,
-                service: vaccinationsDataset,
+                service: vaccinationImmunization,
                 method: 'getVaccinations',
             }),
             createResourceBundleQuery({

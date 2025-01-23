@@ -1,11 +1,7 @@
-import { type FhirResource as FhirResourceR3 } from 'fhir/r3';
-import { type FhirResource as FhirResourceR4 } from 'fhir/r4';
-
-import { FhirVersion, type FhirR3R4 } from '../../types/Fhir';
-import { type FhirResource } from '../../types/FhirRX';
+import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir-types';
 import { isFhirResource } from '../../utils';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type MgoResourceR3, type MgoResourceR4 } from '../resources/resources';
+import { type MgoResource } from '../resources/resources';
 
 export type Options<V extends FhirVersion> = {
     fhirVersion: V;
@@ -15,13 +11,10 @@ const defaultOptions: Options<FhirVersion.R3> = {
     fhirVersion: FhirVersion.R3,
 };
 
-export function getMgoResource<
-    T extends FhirR3R4<V, FhirResourceR3, FhirResourceR4>,
-    V extends FhirVersion,
->(
+export function getMgoResource<T extends FhirResource<V>, V extends FhirVersion>(
     resource: T,
     options: Partial<Options<V>> = {}
-): FhirR3R4<V, MgoResourceR3, MgoResourceR4> | undefined {
+): MgoResource<V> | undefined {
     const { fhirVersion } = { ...defaultOptions, ...options };
 
     // As this method is also used with JSON parsed inputs,
@@ -41,5 +34,5 @@ export function getMgoResource<
         return;
     }
 
-    return config.parse(resource) as FhirR3R4<V, MgoResourceR3, MgoResourceR4>;
+    return config.parse(resource) as MgoResource<V>;
 }

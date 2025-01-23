@@ -1,21 +1,22 @@
 import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
-import { type DataServiceId } from '@minvws/mgo-fhir-client';
+import { type DataServiceId } from '@minvws/mgo-data-services';
 import {
     getUiSchema,
-    type MgoResourceR4,
+    type FhirVersion,
     type Lossless,
-    type MgoResourceR3,
+    type MgoResource,
     type NictizNlProfile,
     type UiSchema,
 } from '@minvws/mgo-fhir-data';
 import { create } from 'zustand';
 
-type MgoResourceR3Profile = MgoResourceR3['profile'];
-type MgoResourceR4Profile = MgoResourceR4['profile'];
-type MgoResourceR3ByProfile<T extends NictizNlProfile> = Extract<MgoResourceR3, { profile: T }>;
-type MgoResourceR4ByProfile<T extends NictizNlProfile> = Extract<MgoResourceR4, { profile: T }>;
+type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];
+type MgoResourceByProfile<V extends FhirVersion, T extends NictizNlProfile> = Extract<
+    MgoResource<V>,
+    { profile: T }
+>;
 
-export type Resource<T extends MgoResourceR3 | MgoResourceR4 = MgoResourceR3 | MgoResourceR4> = {
+export type Resource<T extends MgoResource = MgoResource> = {
     id: string;
     slug: string;
     organizationId: string;
@@ -31,16 +32,17 @@ export type ResourceDTO = Pick<Resource, 'organizationId' | 'dataServiceId' | 'm
 export interface ResourcesState {
     resources: Resource[];
     addResources: (resourceData: ResourceDTO[]) => Resource[];
-    getResourcesByProfile: <T extends MgoResourceR3Profile | MgoResourceR4Profile>(
+    getResourceBySlug: (slug: string | undefined) => Resource | undefined;
+    getResourcesByProfile: <V extends FhirVersion, T extends MgoResourceProfile<V>>(
+        fhirVersion: V,
         profile: T,
         organizationIdFilter?: (string | undefined)[]
-    ) => Resource<MgoResourceR3ByProfile<T> | MgoResourceR4ByProfile<T>>[];
-    getResourceBySlug: (slug: string | undefined) => Resource | undefined;
+    ) => Resource<MgoResourceByProfile<V, T>>[];
 }
 
 function createResource(dto: ResourceDTO, existingSlugs: string[]): Resource {
     const { organizationId, dataServiceId, mgoResource } = dto;
-    const uiSchema = getUiSchema(mgoResource as MgoResourceR3);
+    const uiSchema = getUiSchema(mgoResource as MgoResource);
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {
@@ -81,16 +83,16 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
         return newResources;
     },
 
-    getResourcesByProfile: (profile, organizationIdFilter) => {
+    getResourcesByProfile: (fhirVersion, profile, organizationIdFilter) => {
         const resources = [...get().resources];
         return resources
             .filter(
                 ({ organizationId }) =>
                     !organizationIdFilter || organizationIdFilter.includes(organizationId)
             )
-            .filter(({ mgoResource }) => mgoResource.profile === profile) as Resource<
-            MgoResourceR3ByProfile<typeof profile> | MgoResourceR4ByProfile<typeof profile>
-        >[];
+            .filter(({ mgoResource }) => {
+                return mgoResource.fhirVersion === fhirVersion && mgoResource.profile === profile;
+            }) as Resource<MgoResourceByProfile<typeof fhirVersion, typeof profile>>[];
     },
 
     getResourceBySlug: (slug) => {

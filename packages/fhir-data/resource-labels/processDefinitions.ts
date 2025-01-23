@@ -1,4 +1,4 @@
-import { type FhirVersion } from '../src';
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { isFhirResource } from '../src/utils/isResource/isResource';
 import { processDefinition } from './processDefinition';
 

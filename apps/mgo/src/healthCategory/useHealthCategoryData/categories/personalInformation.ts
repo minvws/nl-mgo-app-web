@@ -1,4 +1,5 @@
 import { type ResourcesState } from '$/store';
+import { FhirVersion } from '@minvws/mgo-fhir-data';
 
 export function getPersonalInformationData(
     resources: ResourcesState,
@@ -6,10 +7,12 @@ export function getPersonalInformationData(
 ) {
     return {
         patientInformation: resources.getResourcesByProfile(
+            FhirVersion.R3,
             'http://fhir.nl/fhir/StructureDefinition/nl-core-patient',
             organizationIdFilter
         ),
         practitionerInformation: resources.getResourcesByProfile(
+            FhirVersion.R3,
             'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner',
             organizationIdFilter
         ),

@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { type Medication } from 'fhir/r3';
+import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
+import { map } from '../../../utils';
 import { zibProductIngredient } from '../../elements/zibProductIngredient/zibProductIngredient';
 import { zibProductPackage } from '../../elements/zibProductPackage/zibProductPackage';
-import { type Medication } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
-import { parse } from '../../../parse';
-import { map } from '../../../utils';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Product'; // NOSONAR

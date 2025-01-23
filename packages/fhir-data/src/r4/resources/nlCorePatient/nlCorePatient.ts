@@ -1,7 +1,8 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Patient } from 'fhir/r4';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 

@@ -1,10 +1,10 @@
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Nullable } from 'vitest';
-import { type MgoResourceR4, type MgoResourceR3 } from '../../api/resources/resources';
-import { type LosslessOutput } from '../../types/Lossless';
+import { type MgoResource } from '../../api/resources/resources';
 
-export function isMgoResource(
+export function isMgoResource<V extends FhirVersion = FhirVersion>(
     value: unknown
-): value is LosslessOutput<typeof value, MgoResourceR3 | MgoResourceR4> {
-    const resourceTyped = value as Nullable<MgoResourceR3>;
+): value is MgoResource<V> {
+    const resourceTyped = value as Nullable<MgoResource<V>>;
     return !!resourceTyped?.resourceType && !!resourceTyped?.profile;
 }

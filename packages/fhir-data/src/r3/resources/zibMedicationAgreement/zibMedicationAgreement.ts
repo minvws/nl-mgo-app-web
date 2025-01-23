@@ -1,8 +1,9 @@
-import { zibInstructionsForUse } from '../../elements';
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type MedicationRequest } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
+import { zibInstructionsForUse } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement'; // NOSONAR

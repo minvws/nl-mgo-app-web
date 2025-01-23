@@ -1,5 +1,5 @@
 import { type HealthcareOrganization } from '$/store';
-import { type DataServiceId } from '@minvws/mgo-fhir-client';
+import { type DataServiceId } from '@minvws/mgo-data-services';
 import { createContext } from 'react';
 
 export interface UiSchemaContextState {

@@ -1,3 +1,4 @@
+import { type FhirR3R4, type FhirVersion } from '@minvws/mgo-fhir-types';
 import * as resourcesR3 from '../../r3/resources';
 import * as resourcesR4 from '../../r4/resources';
 import { type ResourceConfig } from '../../types/Fhir';
@@ -19,5 +20,11 @@ type ResourcesMapR4 = typeof resourcesMapR4;
 export type ResourceTypeConfigR3 = ResourcesMapR3[keyof ResourcesMapR3];
 export type ResourceTypeConfigR4 = ResourcesMapR4[keyof ResourcesMapR4];
 
-export type MgoResourceR3 = ReturnType<ResourceTypeConfigR3['parse']>;
-export type MgoResourceR4 = ReturnType<ResourceTypeConfigR4['parse']>;
+type MgoResourceR3 = ReturnType<ResourceTypeConfigR3['parse']>;
+type MgoResourceR4 = ReturnType<ResourceTypeConfigR4['parse']>;
+
+export type MgoResource<V extends FhirVersion | `${FhirVersion}` = FhirVersion> = FhirR3R4<
+    V,
+    MgoResourceR3,
+    MgoResourceR4
+>;

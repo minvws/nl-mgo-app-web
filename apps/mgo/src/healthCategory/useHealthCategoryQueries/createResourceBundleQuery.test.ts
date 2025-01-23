@@ -1,19 +1,19 @@
 import { faker } from '$test/faker';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { expect, test, vi } from 'vitest';
-import { createResourceBundleQuery } from './createResourceBundleQuery';
-import { type QueryFunction } from '@tanstack/react-query';
+import { DataServiceId, type DataService } from '@minvws/mgo-data-services';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { type QueryFunction } from '@tanstack/react-query';
+import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';
+import { createResourceBundleQuery } from './createResourceBundleQuery';
 
 function createMockService() {
     return {
         dataServiceId: DataServiceId.CommonClinicalDataset,
         fhirVersion: FhirVersion.R3,
-        foobar: vi.fn(() => ({
+        getResource: vi.fn(() => ({
             json: () => Promise.resolve({}),
         })),
-    };
+    } as unknown as DataService<FhirVersion.R3>;
 }
 
 test('returns queries for medication', async () => {
@@ -25,18 +25,18 @@ test('returns queries for medication', async () => {
         category,
         organization,
         service,
-        method: 'foobar',
+        method: 'getResource',
     })!;
 
     expect(queryKey).toEqual([
         category,
         organization.id,
         DataServiceId.CommonClinicalDataset,
-        'foobar',
+        'getResource',
     ]);
 
     (queryFn as QueryFunction)(undefined as any); // eslint-disable-line @typescript-eslint/no-explicit-any
-    expect(service.foobar).toHaveBeenCalledTimes(1);
+    expect(service.getResource).toHaveBeenCalledTimes(1);
 });
 
 test('returns undefined if there is no service', async () => {
@@ -46,7 +46,7 @@ test('returns undefined if there is no service', async () => {
         category,
         organization,
         service: null as ReturnType<typeof createMockService> | null,
-        method: 'foobar',
+        method: 'getResource',
     });
     expect(result).toBeUndefined();
 });

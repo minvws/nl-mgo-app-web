@@ -1,6 +1,7 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Procedure } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { focalDevice } from './elements/focalDevice/focalDevice';

@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { findComponentByCode } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 import { uiSchema } from './uiSchema';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight'; // NOSONAR
 

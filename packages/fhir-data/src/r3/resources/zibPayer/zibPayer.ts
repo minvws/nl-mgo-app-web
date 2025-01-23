@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Coverage } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { grouping } from './elements/grouping/grouping';
 import { uiSchema } from './uiSchema';
-import { parse } from '../../../parse';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Payer'; // NOSONAR
 

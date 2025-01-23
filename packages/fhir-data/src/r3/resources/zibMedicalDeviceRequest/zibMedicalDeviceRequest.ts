@@ -1,8 +1,9 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { type DeviceRequest } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { uiSchema } from './uiSchema';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
-import { type DeviceRequest } from 'fhir/r3';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest'; // NOSONAR
 

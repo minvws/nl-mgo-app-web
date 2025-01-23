@@ -2,25 +2,18 @@ import { readConfig } from '$/lib/config/config';
 import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import {
     DataServiceId,
-    createBgzClient,
-    createDocumentsClient,
-    createGpClient,
-    createVaccinationsClient,
-} from '@minvws/mgo-fhir-client';
+    createCommonClinicalDatasetService,
+    createGeneralPractitionerService,
+    createPdfAService,
+    createVaccinationImmunizationService,
+} from '@minvws/mgo-data-services';
 
 const dataServiceMap = {
-    [DataServiceId.CommonClinicalDataset]: createBgzClient,
-    [DataServiceId.Documents]: createDocumentsClient,
-    [DataServiceId.GeneralPractitioner]: createGpClient,
-    [DataServiceId.Vaccinations]: createVaccinationsClient,
+    [DataServiceId.CommonClinicalDataset]: createCommonClinicalDatasetService,
+    [DataServiceId.PdfA]: createPdfAService,
+    [DataServiceId.GeneralPractitioner]: createGeneralPractitionerService,
+    [DataServiceId.VaccinationImmunization]: createVaccinationImmunizationService,
 };
-
-const resourceEndpointMap = {
-    [DataServiceId.CommonClinicalDataset]: 'commonClinicalDataset',
-    [DataServiceId.Documents]: 'documents',
-    [DataServiceId.GeneralPractitioner]: 'generalPractitioner',
-    [DataServiceId.Vaccinations]: 'vaccinations',
-} satisfies Record<DataServiceId, keyof HealthcareOrganization['resourceEndpoints']>;
 
 export function getDataService<T extends DataServiceId>(
     organization: HealthcareOrganization | undefined,
@@ -31,7 +24,7 @@ export function getDataService<T extends DataServiceId>(
     }
 
     const createClient = dataServiceMap[dataServiceId];
-    const resourceEndpoint = organization?.resourceEndpoints[resourceEndpointMap[dataServiceId]];
+    const resourceEndpoint = organization?.resourceEndpoints[dataServiceId];
 
     if (!resourceEndpoint) {
         return null;

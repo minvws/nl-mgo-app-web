@@ -1,17 +1,17 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { isNonNullish } from '$/utils';
-import { createResourceBundleQuery } from '../createResourceBundleQuery';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
-import { HealthCategory } from '$/healthCategory/HealthCategory';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { type CategoryQueriesConfig } from '.';
+import { createResourceBundleQuery } from '../createResourceBundleQuery';
 
 const category = HealthCategory.Documents;
 
 export const documents: CategoryQueriesConfig<typeof category> = {
     category,
     getQueries: (organization: HealthcareOrganization) => {
-        const documentsService = getDataService(organization, DataServiceId.Documents);
+        const documentsService = getDataService(organization, DataServiceId.PdfA);
 
         return [
             createResourceBundleQuery({

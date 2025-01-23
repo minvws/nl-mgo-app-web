@@ -1,5 +1,6 @@
 import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import { faker } from '@faker-js/faker';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { kebabCase } from 'lodash';
 import { createMockDataFactory } from './factory';
 
@@ -27,10 +28,10 @@ export const healthcareOrganization = createMockDataFactory<HealthcareOrganizati
         category: faker.helpers.arrayElement(categories),
         address: `${streetAddress}\r\n${postalcode} ${city}`,
         resourceEndpoints: {
-            commonClinicalDataset: faker.internet.url(),
-            generalPractitioner: faker.internet.url(),
-            documents: faker.internet.url(),
-            vaccinations: faker.internet.url(),
+            [DataServiceId.CommonClinicalDataset]: faker.internet.url(),
+            [DataServiceId.GeneralPractitioner]: faker.internet.url(),
+            [DataServiceId.PdfA]: faker.internet.url(),
+            [DataServiceId.VaccinationImmunization]: faker.internet.url(),
         },
     };
 });

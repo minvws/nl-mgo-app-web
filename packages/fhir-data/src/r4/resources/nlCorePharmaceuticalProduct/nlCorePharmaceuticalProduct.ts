@@ -1,6 +1,7 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Medication } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { batch } from './elements/batch/batch';
 import { ingredient } from './elements/ingredient/ingredient';

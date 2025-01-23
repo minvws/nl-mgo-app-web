@@ -1,6 +1,6 @@
 import { useOrganizationsStore, type HealthcareOrganization } from '$/store';
 import { faker } from '$test/faker';
-import { DataServiceId } from '@minvws/mgo-fhir-client';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';

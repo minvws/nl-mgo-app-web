@@ -1,6 +1,7 @@
 import { getDataService } from '$/services';
 import { useOrganizationsStore } from '$/store';
-import { type DownloadLink } from '@minvws/mgo-fhir-data';
+import { type DataService } from '@minvws/mgo-data-services';
+import { type DownloadLink, type FhirVersion } from '@minvws/mgo-fhir-data';
 import { DescriptionButton } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
@@ -23,12 +24,12 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
     const [_input, binaryId] = binaryMatch ?? [];
 
     const organization = getOrganizationById(organizationId);
-    const fhirService = getDataService(organization, dataServiceId);
+    const dataService = getDataService(organization, dataServiceId);
 
     const { isLoading, data: binaryBlobUrl } = useQuery({
-        queryKey: ['binary', binaryId, fhirService],
+        queryKey: ['binary', binaryId, dataService],
         queryFn: async () => {
-            const { content, contentType } = await fhirService!
+            const { content, contentType } = await (dataService as DataService<FhirVersion.R3>)
                 .getResource({
                     resource: 'Binary',
                     id: binaryId,
@@ -40,7 +41,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
             const fileBlob = await response.blob();
             return URL.createObjectURL(fileBlob);
         },
-        enabled: !!fhirService && !!binaryId,
+        enabled: !!dataService && !!binaryId,
         retry: 0,
     });
 

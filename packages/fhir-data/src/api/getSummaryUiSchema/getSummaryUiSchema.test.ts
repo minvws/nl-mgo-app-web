@@ -1,10 +1,11 @@
 import { faker } from '$test';
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../types/Fhir';
 import { createUiSchemaContext, type UiSchemaFunction } from '../../ui';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
-import { type MgoResourceR3 } from '../resources/resources';
+import { type MgoResource } from '../resources/resources';
 import { type SingleValue, type UiSchema } from '../types';
 import { getSummaryUiSchema } from './getSummaryUiSchema';
 
@@ -15,7 +16,7 @@ vi.mock('../getResourceConfig/getResourceConfig', () => ({
 }));
 
 test('throws if the input is a MGO resource', () => {
-    expect(() => getSummaryUiSchema({} as MgoResourceR3)).toThrowError(
+    expect(() => getSummaryUiSchema({} as MgoResource<FhirVersion.R3>)).toThrowError(
         `input does not seem to be a valid MGO Resource. Received MGO resource profile: "undefined"`
     );
 });
@@ -28,7 +29,7 @@ test('throws if no config could be found', () => {
     };
 
     expect(() => {
-        getSummaryUiSchema(mgoResource as MgoResourceR3);
+        getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
     }).toThrowError(`No config found for MGO Resource with profile: "${mgoResource.profile}"`);
 });
 
@@ -47,7 +48,7 @@ test('returns mock schema if there is no summary', () => {
         profile: faker.lorem.word(),
     };
 
-    const result = getSummaryUiSchema(mgoResource as MgoResourceR3);
+    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
     expect(result).toEqual({
         label: mgoResource.id,
         children: [
@@ -84,7 +85,7 @@ test('returns the result of the summary ui schema and passed any extra resources
     const resources = [{ profile: faker.lorem.word() }];
 
     const result = getSummaryUiSchema(
-        mgoResource as MgoResourceR3,
+        mgoResource as MgoResource<FhirVersion.R3>,
         { resources } as UiSchemaOptions<any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
@@ -114,7 +115,7 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
 
     const { formatMessage } = createUiSchemaContext({ ignoreMissingTranslations: true });
 
-    const result = getSummaryUiSchema(mgoResource as MgoResourceR3);
+    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
     const singleValueDisplay = (result?.children[0].children[0] as SingleValue).display;
 
     expect(singleValueDisplay).toBe(formatMessage('schema.empty_entry_display'));

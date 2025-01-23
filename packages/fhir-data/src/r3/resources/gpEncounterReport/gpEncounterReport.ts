@@ -1,6 +1,7 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Composition } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { parseSection } from './elements/section/section';
 import { uiSchema } from './uiSchema';

@@ -1,8 +1,9 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Substance } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
-import { uiSchema } from './uiSchema';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Substance'; // NOSONAR
 

@@ -1,8 +1,9 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Consent } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
-import { attachment } from '../../elements/attachment/attachment';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
+import { attachment } from '../../elements/attachment/attachment';
 import { actor } from './elements/actor/actor';
 import { data } from './elements/data/data';
 import { except } from './elements/except/except';

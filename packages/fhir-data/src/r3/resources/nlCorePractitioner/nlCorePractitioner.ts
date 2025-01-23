@@ -1,9 +1,10 @@
-import { parse } from '../../../parse';
-import { uiSchema } from './uiSchema';
-import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreHumanname, nlCoreContactpoint } from '../../elements';
+import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Practitioner } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
+import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
+import { map } from '../../../utils';
+import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; // NOSONAR
 

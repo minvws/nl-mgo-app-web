@@ -1,7 +1,7 @@
-import { beforeAll, expect, test } from 'vitest';
-import { type DateTimeString } from '../../types/Fhir';
-import { date } from '../../ui/format/date/date';
 import { faker, testUiSchemaContext } from '$test';
+import { type DateTimeString } from '@minvws/mgo-fhir-types';
+import { beforeAll, expect, test } from 'vitest';
+import { date } from '../../ui/format/date/date';
 
 beforeAll(async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,7 +1,7 @@
 import { faker } from '$test';
-import { test, expect } from 'vitest';
+import { type ObservationComponent } from '@minvws/mgo-fhir-types';
+import { expect, test } from 'vitest';
 import { findComponentByCode } from './findComponentByCode';
-import { type ObservationComponent } from '../../../types/FhirRX';
 
 test('findComponentByCode matched by code and returns the component', () => {
     const code = faker.number.int(100).toString();

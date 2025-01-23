@@ -1,9 +1,10 @@
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { type Encounter } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { encounterParticipant } from '../../elements/encounterParticipant/encounterParticipant';
 import { uiSchema } from './uiSchema';
-import { type Encounter } from 'fhir/r3';
-import { FhirVersion, type ResourceConfig } from '../../../types/Fhir';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter'; // NOSONAR
 

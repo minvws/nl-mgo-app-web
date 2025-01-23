@@ -1,4 +1,4 @@
-import { type Coding } from '../../../types/FhirRX';
+import { type Coding } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers';
 
 export interface MgoCoding {

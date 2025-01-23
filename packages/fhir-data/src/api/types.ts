@@ -1,6 +1,6 @@
 /* c8 ignore start */
 
-import { type FhirVersion } from '../types/Fhir';
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
 
 // Exporting the string values of the FhirVersion enum will look better in the swift / kotlin code
 // As they reuse existing similar values in the references.

@@ -1,10 +1,10 @@
-import { expect, test } from 'vitest';
-import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
-import { zibMedicationAgreement } from '../../r3/resources/zibMedicationAgreement/zibMedicationAgreement';
-import { FhirVersion } from '../../types/Fhir';
-import { getResourceConfig } from './getResourceConfig';
-import { r4NlCorePatient } from '../../r4/resources/nlCorePatient/nlCorePatient';
 import { faker } from '$test';
+import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { expect, test } from 'vitest';
+import { zibMedicationAgreement } from '../../r3/resources/zibMedicationAgreement/zibMedicationAgreement';
+import { zibMedicationUse } from '../../r3/resources/zibMedicationUse/zibMedicationUse';
+import { r4NlCorePatient } from '../../r4/resources/nlCorePatient/nlCorePatient';
+import { getResourceConfig } from './getResourceConfig';
 
 test('returns the correct resource config for a R3 resource', () => {
     const config = getResourceConfig(zibMedicationUse.profile, FhirVersion.R3);

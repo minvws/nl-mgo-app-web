@@ -1,5 +1,4 @@
-import { type Period } from '../../../types/FhirRX';
-import { type DateTimeString } from '../../../types/Fhir';
+import { type DateTimeString, type Period } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { dateTime } from '../dateTime/dateTime';
 

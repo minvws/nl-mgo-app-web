@@ -1,4 +1,4 @@
-import { type FhirResource, type ResourceByType, type ResourceType } from '../../types/FhirRX';
+import { type FhirResource, type ResourceByType, type ResourceType } from '@minvws/mgo-fhir-types';
 import { type Nullable } from '../../types/Nullable';
 
 export function isFhirResource<Type extends ResourceType>(

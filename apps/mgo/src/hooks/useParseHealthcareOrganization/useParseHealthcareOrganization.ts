@@ -1,18 +1,21 @@
 import { type HealthcareOrganizationDTO } from '$/services/load/load';
+import { DataServiceId } from '@minvws/mgo-data-services';
 import { safeGet } from '@minvws/mgo-fhir-data';
 import { useIntl } from 'react-intl';
 
-const COMMON_CLINICAL_DATASET_SERVICE_ID = '48';
-const GENERAL_PRACTITIONER_SERVICE_ID = '49';
-const DOCUMENTS_SERVICE_ID = '51';
-const VACCINATIONS_SERVICE_ID = '63';
-
-function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: string) {
+function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: DataServiceId) {
     return safeGet(organizationDTO, ({ data_services }) => {
-        const service = data_services.find((x) => x.id === id);
+        const service = data_services.find((x) => x.id === `${id}`);
         return service!.roles[0].resource_endpoint;
     });
 }
+
+const dataServiceIds = [
+    DataServiceId.CommonClinicalDataset,
+    DataServiceId.GeneralPractitioner,
+    DataServiceId.PdfA,
+    DataServiceId.VaccinationImmunization,
+];
 
 export function useParseHealthcareOrganization() {
     const intl = useIntl();
@@ -26,18 +29,10 @@ export function useParseHealthcareOrganization() {
             name: display_name ?? unknownLabel,
             category: safeGet(organizationDTO, (x) => x.types[0].display_name, unknownLabel),
             address: safeGet(organizationDTO, (x) => x.addresses[0].address, unknownLabel),
-            resourceEndpoints: {
-                commonClinicalDataset: getResourceEndpoint(
-                    organizationDTO,
-                    COMMON_CLINICAL_DATASET_SERVICE_ID
-                ),
-                generalPractitioner: getResourceEndpoint(
-                    organizationDTO,
-                    GENERAL_PRACTITIONER_SERVICE_ID
-                ),
-                documents: getResourceEndpoint(organizationDTO, DOCUMENTS_SERVICE_ID),
-                vaccinations: getResourceEndpoint(organizationDTO, VACCINATIONS_SERVICE_ID),
-            },
+            resourceEndpoints: dataServiceIds.reduce(
+                (acc, id) => ({ ...acc, [id]: getResourceEndpoint(organizationDTO, id) }),
+                {}
+            ) as Record<DataServiceId, string | undefined>,
         };
     }
 

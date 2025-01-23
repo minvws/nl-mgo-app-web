@@ -1,6 +1,6 @@
+import { type StructureDefinition } from '@minvws/mgo-fhir-types';
 import _ from 'lodash';
 import { normalizeLabel } from './normalizeLabel';
-import { type StructureDefinition } from '../src/types/FhirRX';
 
 export function processDefinition(definition: StructureDefinition) {
     const { id: definitionId, type, differential } = definition;

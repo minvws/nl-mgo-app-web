@@ -1,0 +1,12 @@
+{
+    "name": "@minvws/mgo-fhir-types",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*.ts"
+    },
+    "devDependencies": {
+        "@types/fhir": "^0.0.41"
+    }
+}

@@ -1,4 +1,4 @@
-import { type DateTimeString } from '../../../types/Fhir';
+import { type DateTimeString } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 
 export type MgoDateTime = DateTimeString;
