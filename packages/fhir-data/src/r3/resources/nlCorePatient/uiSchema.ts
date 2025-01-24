@@ -8,12 +8,9 @@ import { uiSchemaGroup as contactUiSchema } from './elements/contact/uiSchemaGro
 import { uiSchemaGroup as linkUiSchema } from './elements/link/uiSchemaGroup';
 import { type NlCorePatient } from './nlCorePatient';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
- */
+export const i18n = 'r3.nl_core_patient';
 export const uiSchema: UiSchemaFunction<NlCorePatient> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.nl_core_patient';
 
     const address = map(resource.address, (x) => nlCoreAddress.uiSchemaGroup(x, context), true);
     const communication = map(
@@ -32,7 +29,7 @@ export const uiSchema: UiSchemaFunction<NlCorePatient> = (resource, context) => 
     );
 
     return {
-        label: resource.name?.at(0)?.text,
+        label: resource.name?.at(0)?.text ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

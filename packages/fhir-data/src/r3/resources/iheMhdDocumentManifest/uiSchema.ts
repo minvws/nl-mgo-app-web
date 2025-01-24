@@ -4,15 +4,12 @@ import { map } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type IheMhdDocumentManifest } from './iheMhdDocumentManifest';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
- */
+export const i18n = 'r3.ihe_mhd_document_manifest';
 export const uiSchema: UiSchemaFunction<IheMhdDocumentManifest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.ihe_mhd_document_manifest';
 
     return {
-        label: resource.description,
+        label: resource.description ?? context.formatMessage(i18n),
         children: [
             {
                 label: i18n,

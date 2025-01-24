@@ -2,51 +2,48 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibBloodPressure } from './zibBloodPressure';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
- */
+export const i18n = 'r3.zib_blood_pressure';
 export const uiSchema: UiSchemaFunction<ZibBloodPressure> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_blood_pressure';
 
     return {
-        label: resource.effectiveDateTime,
+        label: resource.effectiveDateTime ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.codeableConcept(`${profile}.method`, resource.method),
+                    ui.codeableConcept(`${i18n}.method`, resource.method),
                     ui.codeableConcept(
-                        `${profile}.cuff_type_loinc`,
+                        `${i18n}.cuff_type_loinc`,
                         resource.cuffTypeLOINC.valueCodeableConcept
                     ),
                     ui.codeableConcept(
-                        `${profile}.cuff_type_snomed`,
+                        `${i18n}.cuff_type_snomed`,
                         resource.cuffTypeSNOMED.valueCodeableConcept
                     ),
-                    ui.codeableConcept(`${profile}.bodySite`, resource.bodySite),
+                    ui.codeableConcept(`${i18n}.bodySite`, resource.bodySite),
                     ui.codeableConcept(
-                        `${profile}.diastolic_endpoint`,
+                        `${i18n}.diastolic_endpoint`,
                         resource.diastolicEndpoint.valueCodeableConcept
                     ),
-                    ui.quantity(`${profile}.systolic_bp`, resource.systolicBP.valueQuantity),
-                    ui.quantity(`${profile}.diastolic_bp.code`, resource.diastolicBP.valueQuantity),
+                    ui.quantity(`${i18n}.systolic_bp`, resource.systolicBP.valueQuantity),
+                    ui.quantity(`${i18n}.diastolic_bp.code`, resource.diastolicBP.valueQuantity),
                     ui.quantity(
-                        `${profile}.average_blood_pressure_loinc`,
+                        `${i18n}.average_blood_pressure_loinc`,
                         resource.averageBloodPressureLOINC.valueQuantity
                     ),
                     ui.quantity(
-                        `${profile}.average_blood_pressure_snomed`,
+                        `${i18n}.average_blood_pressure_snomed`,
                         resource.averageBloodPressureSNOMED.valueQuantity
                     ),
-                    ui.dateTime(`${profile}.effective`, resource.effectiveDateTime),
-                    ui.string(`${profile}.comment`, resource.comment),
+                    ui.dateTime(`${i18n}.effective`, resource.effectiveDateTime),
+                    ui.string(`${i18n}.comment`, resource.comment),
                     ui.codeableConcept(
-                        `${profile}.position_snomed`,
+                        `${i18n}.position_snomed`,
                         resource.positionSNOMED.valueCodeableConcept
                     ),
                     ui.codeableConcept(
-                        `${profile}.position_loinc`,
+                        `${i18n}.position_loinc`,
                         resource.positionLOINC.valueCodeableConcept
                     ),
                 ],

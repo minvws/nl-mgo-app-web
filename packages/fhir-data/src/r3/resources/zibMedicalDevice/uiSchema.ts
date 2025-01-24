@@ -2,15 +2,12 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibMedicalDevice } from './zibMedicalDevice';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317253
- */
+export const i18n = 'r3.zib_medical_device';
 export const uiSchema: UiSchemaFunction<ZibMedicalDevice> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_medical_device';
 
     return {
-        label: resource.device?.display,
+        label: resource.device?.display ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_product`,

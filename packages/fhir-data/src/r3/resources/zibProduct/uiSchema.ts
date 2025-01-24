@@ -4,12 +4,9 @@ import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type ZibProduct } from './zibProduct';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
- */
+export const i18n = 'r3.zib_product';
 export const uiSchema: UiSchemaFunction<ZibProduct> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_product';
 
     const productPackage = zibProductPackage.uiSchemaGroup(resource.package, context);
     const ingredients = map(
@@ -19,7 +16,7 @@ export const uiSchema: UiSchemaFunction<ZibProduct> = (resource, context) => {
     );
 
     return {
-        label: resource.description,
+        label: resource.description ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_general_information`,

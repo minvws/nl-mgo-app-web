@@ -4,12 +4,9 @@ import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { type NlCorePractitioner } from './nlCorePractitioner';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
- */
+export const i18n = 'r3.nl_core_practitioner';
 export const uiSchema: UiSchemaFunction<NlCorePractitioner> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.nl_core_practitioner';
 
     const address = map(resource.address, (x) => nlCoreAddress.uiSchemaGroup(x, context), true);
     const name = map(resource.name, (x) => nlCoreHumanname.uiSchemaGroup(x, context), true);
@@ -20,11 +17,11 @@ export const uiSchema: UiSchemaFunction<NlCorePractitioner> = (resource, context
     );
 
     return {
-        label: resource.name?.at(0)?.text,
+        label: resource.name?.at(0)?.text ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
-                children: [ui.identifier(`${profile}.identifier`, resource.identifier)],
+                label: `${i18n}.group_details`,
+                children: [ui.identifier(`${i18n}.identifier`, resource.identifier)],
             },
             ...address,
             ...name,

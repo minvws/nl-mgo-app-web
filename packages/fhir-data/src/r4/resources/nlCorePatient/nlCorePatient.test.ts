@@ -1,8 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type Patient } from 'fhir/r4';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input01 from './fixtures/fhir-resource.json';
 import { r4NlCorePatient } from './nlCorePatient';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('parseNlCorePatient returns the expected output 01', () => {
     const output = r4NlCorePatient.parse(input01 as Patient);
@@ -18,4 +20,16 @@ test('uiSchema returns the expected output', () => {
         })
     );
     expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if name not supplied', () => {
+    const output = r4NlCorePatient.parse(input01 as Patient);
+    output.name = undefined;
+    const uiSchema = r4NlCorePatient.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

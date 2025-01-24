@@ -3,15 +3,12 @@ import { type NonStrictUi } from '../../../ui/types';
 import { uiSchemaGroup as groupingUiSchema } from './elements/grouping/uiSchemaGroup';
 import { type ZibPayer } from './zibPayer';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317307
- */
+export const i18n = 'r3.zib_payer';
 export const uiSchema: UiSchemaFunction<ZibPayer> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_payer';
 
     return {
-        label: resource.identifier?.at(0)?.value,
+        label: resource.identifier?.at(0)?.value ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

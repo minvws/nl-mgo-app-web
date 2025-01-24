@@ -2,10 +2,10 @@
     "label": "Test Medisch Centrum",
     "children": [
         {
-            "label": "r3.Encounter",
+            "label": "r3.zib_encounter",
             "children": [
                 {
-                    "label": "r3.Encounter.class",
+                    "label": "Contact type",
                     "type": "SINGLE_VALUE",
                     "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
                 },
@@ -16,18 +16,18 @@
                     "reference": "Practitioner/nl-core-practitioner-03"
                 },
                 {
-                    "label": "r3.Encounter.serviceProvider",
+                    "label": "r3.zib_encounter.serviceProvider",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
-                    "label": "Begin datum",
+                    "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "16 augustus 2012"
                 },
                 {
-                    "label": "Eind datum",
+                    "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "19 augustus 2012"
                 },
@@ -38,7 +38,7 @@
                     "reference": "Procedure/zib-procedure-02"
                 },
                 {
-                    "label": "r3.Encounter.reason",
+                    "label": "Afwijkende uitslag",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

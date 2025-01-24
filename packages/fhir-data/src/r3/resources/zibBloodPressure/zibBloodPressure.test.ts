@@ -4,6 +4,8 @@ import { expect, test } from 'vitest';
 import { parse } from '../../../parse';
 import input from './fixtures/fhir-resource.json';
 import { zibBloodPressure } from './zibBloodPressure';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = zibBloodPressure.parse(input as Observation);
@@ -104,4 +106,16 @@ test.each([
             },
         })
     );
+});
+
+test('uiSchema returns default label if effectiveDateTime not supplied', () => {
+    const output = zibBloodPressure.parse(input as Observation);
+    output.effectiveDateTime = undefined;
+    const uiSchema = zibBloodPressure.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

@@ -3,26 +3,24 @@ import { type NonStrictUi } from '../../../ui/types';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type EAfspraakAppointment } from './eAfspraakAppointment';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.eafspraak/1.0.6/files/714361/
- */
+export const i18n = 'r3.e_afspraak_appointment';
+
 export const uiSchema: UiSchemaFunction<EAfspraakAppointment> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.e_afspraak_appointment';
 
     return {
-        label: resource.description,
+        label: resource.description ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.string(`${profile}.status.order_status`, resource.status),
-                    ui.codeableConcept(`${profile}.specialty`, resource.specialty),
-                    ui.string(`${profile}.description`, resource.description),
-                    ui.dateTime(`${profile}.start`, resource.start),
-                    ui.dateTime(`${profile}.end`, resource.end),
+                    ui.string(`${i18n}.status.order_status`, resource.status),
+                    ui.codeableConcept(`${i18n}.specialty`, resource.specialty),
+                    ui.string(`${i18n}.description`, resource.description),
+                    ui.dateTime(`${i18n}.start`, resource.start),
+                    ui.dateTime(`${i18n}.end`, resource.end),
                     ui.reference(
-                        `${profile}.participant`,
+                        `${i18n}.participant`,
                         resource.participant?.flatMap((x) => x.actor).filter(isNonNullish)
                     ),
                 ],

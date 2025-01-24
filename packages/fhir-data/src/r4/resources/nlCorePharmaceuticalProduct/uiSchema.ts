@@ -4,12 +4,8 @@ import { batch } from './elements/batch/batch';
 import { ingredient } from './elements/ingredient/ingredient';
 import { type R4NlCorePharmaceuticalProduct } from './nlCorePharmaceuticalProduct';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946208
- */
+export const i18n = 'r4.zib_pharmaceutical_product';
 export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resource, context) => {
-    const i18n = 'r4.zib_pharmaceutical_product';
-
     const { ui, formatMessage } = context;
 
     /**

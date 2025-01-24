@@ -42,6 +42,6 @@ export interface UiSchemaGroup {
 }
 
 export interface UiSchema {
-    label: string | undefined;
+    label: string;
     children: UiSchemaGroup[];
 }

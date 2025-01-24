@@ -6,22 +6,19 @@ import {
 } from '../../elements';
 import { type R4NlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628465
- */
+export const i18n = 'r4.nl_core_health_professional_practitioner_role';
 export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRole> = (
     resource,
     context
 ) => {
-    const profile = 'r4.nl_core_health_professional_practitioner_role';
     const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628465/~mappings
      */
     const zibHealthProfessional = {
-        Organization: ui.reference(`${profile}.organization`, resource.organization),
-        Speciality: ui.codeableConcept(`${profile}.speciality`, resource.speciality),
+        Organization: ui.reference(`${i18n}.organization`, resource.organization),
+        Speciality: ui.codeableConcept(`${i18n}.speciality`, resource.speciality),
     };
 
     const zibContactInformation = {
@@ -38,10 +35,10 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRo
     };
 
     return {
-        label: resource.speciality?.at(0)?.coding.at(0)?.display ?? formatMessage(profile),
+        label: resource.speciality?.at(0)?.coding.at(0)?.display ?? formatMessage(i18n),
         children: [
             {
-                label: formatMessage(profile),
+                label: formatMessage(i18n),
                 children: [zibHealthProfessional.Organization, zibHealthProfessional.Speciality],
             },
             ...zibContactInformation.EmailAddresses,

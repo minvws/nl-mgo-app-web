@@ -2,10 +2,10 @@
     "label": "Huisartspraktijk (zelfstandig of groepspraktijk)",
     "children": [
         {
-            "label": "r3.Encounter",
+            "label": "r3.gp_encounter",
             "children": [
                 {
-                    "label": "r3.Encounter.class",
+                    "label": "r3.gp_encounter.class",
                     "type": "SINGLE_VALUE",
                     "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
                 },
@@ -16,7 +16,7 @@
                     "reference": "Practitioner/nl-core-practitioner-01"
                 },
                 {
-                    "label": "r3.Encounter.serviceProvider",
+                    "label": "r3.gp_encounter.serviceProvider",
                     "type": "REFERENCE_VALUE",
                     "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
                     "reference": "Organization/nl-core-organization-01"
@@ -32,7 +32,7 @@
                     "display": "8 februari 2013"
                 },
                 {
-                    "label": "r3.Encounter.reason",
+                    "label": "r3.gp_encounter.reason",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 }

@@ -1,8 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type ImmunizationRecommendation } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input1 from './fixtures/01/fhir-resource.json';
 import { zibVaccinationRecommendation } from './zibVaccinationRecommendation';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = zibVaccinationRecommendation.parse(input1 as ImmunizationRecommendation);
@@ -18,4 +20,16 @@ test('uiSchema 01 returns the expected output', () => {
         })
     );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if recommendation not supplied', () => {
+    const output = zibVaccinationRecommendation.parse(input1 as ImmunizationRecommendation);
+    output.recommendation = undefined;
+    const uiSchema = zibVaccinationRecommendation.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

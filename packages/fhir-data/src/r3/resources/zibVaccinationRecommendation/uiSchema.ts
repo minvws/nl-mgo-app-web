@@ -4,12 +4,9 @@ import { map } from '../../../utils';
 import { type ZibVaccinationRecommendation } from './zibVaccinationRecommendation';
 import { uiSchemaGroup as RecommendationUiSchema } from './elements/recommendation/uiSchemaGroup';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317390
- */
+export const i18n = 'r3.zib_vaccination_recommendation';
 export const uiSchema: UiSchemaFunction<ZibVaccinationRecommendation> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_vaccination_recommendation';
 
     const recommendation = map(
         resource.recommendation,
@@ -18,12 +15,14 @@ export const uiSchema: UiSchemaFunction<ZibVaccinationRecommendation> = (resourc
     );
 
     return {
-        label: resource.recommendation?.at(0)?.code?.coding?.at(0)?.display,
+        label:
+            resource.recommendation?.at(0)?.code?.coding?.at(0)?.display ??
+            context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.codeableConcept(`${profile}.order_status`, resource.orderStatus),
+                    ui.codeableConcept(`${i18n}.order_status`, resource.orderStatus),
                     ...ui.helpers.getChildren(recommendation),
                 ],
             },

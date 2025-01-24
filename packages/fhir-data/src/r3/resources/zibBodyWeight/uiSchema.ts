@@ -2,26 +2,20 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibBodyWeight } from './zibBodyWeight';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
- */
+export const i18n = 'r3.zib_body_weight';
 export const uiSchema: UiSchemaFunction<ZibBodyWeight> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_body_weight';
 
     return {
-        label: resource.effectiveDateTime,
+        label: resource.effectiveDateTime ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.quantity(profile, resource.valueQuantity),
-                    ui.string(`${profile}.comment`, resource.comment),
-                    ui.dateTime(`${profile}.effective`, resource.effectiveDateTime),
-                    ui.codeableConcept(
-                        `${profile}.clothing`,
-                        resource.clothing.valueCodeableConcept
-                    ),
+                    ui.quantity(i18n, resource.valueQuantity),
+                    ui.string(`${i18n}.comment`, resource.comment),
+                    ui.dateTime(`${i18n}.effective`, resource.effectiveDateTime),
+                    ui.codeableConcept(`${i18n}.clothing`, resource.clothing.valueCodeableConcept),
                 ],
             },
         ],

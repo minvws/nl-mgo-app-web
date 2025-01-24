@@ -1,5 +1,5 @@
 {
-    "label": null,
+    "label": "Zorgverlener",
     "children": [
         {
             "label": "r3.nl_core_practitioner.group_details",

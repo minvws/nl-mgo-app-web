@@ -4,27 +4,24 @@ import { type GpEncounterReport } from './gpEncounterReport';
 import { uiSchemaGroup as sectionUiSchema } from './elements/section/uiSchemaGroup';
 import { map } from '../../../utils';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316993
- */
+export const i18n = 'r3.gp_encounter_report';
 export const uiSchema: UiSchemaFunction<GpEncounterReport> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.EncounterReport';
 
     const section = map(resource.section, (x) => sectionUiSchema(x, context), true);
 
     return {
-        label: resource.title,
+        label: resource.title ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.string(`${profile}.title`, resource.title),
-                    ui.string(`${profile}.status`, resource.status),
-                    ui.coding(`${profile}.type`, resource.type),
-                    ui.reference(`${profile}.encounter`, resource.encounter),
-                    ui.dateTime(`${profile}.date`, resource.date),
-                    ui.reference(`${profile}.author`, resource.author),
+                    ui.string(`${i18n}.title`, resource.title),
+                    ui.string(`${i18n}.status`, resource.status),
+                    ui.coding(`${i18n}.type`, resource.type),
+                    ui.reference(`${i18n}.encounter`, resource.encounter),
+                    ui.dateTime(`${i18n}.date`, resource.date),
+                    ui.reference(`${i18n}.author`, resource.author),
                 ],
             },
             ...section,

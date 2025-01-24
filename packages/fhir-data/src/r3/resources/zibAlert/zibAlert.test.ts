@@ -1,10 +1,35 @@
-import { expectJson } from '$test';
+import { expectJson, testUiSchemaContext } from '$test';
 import { type Flag } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input from './fixtures/zib-Alert-01.json';
 import { zibAlert } from './zibAlert';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('praseZibAlert returns the expected output 01', () => {
     const output = zibAlert.parse(input as Flag);
     expectJson(output).toMatchFileSnapshot('./fixtures/zib-Alert-01-output.snap.json');
+});
+
+test('uiSchema returns the expected output', () => {
+    const output = zibAlert.parse(input as Flag);
+    const uiSchema = zibAlert.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/zib-Alert-01-uiSchema.snap.json');
+});
+
+test('uiSchema returns default label if code not supplied', () => {
+    const output = zibAlert.parse(input as Flag);
+    output.code = undefined;
+    const uiSchema = zibAlert.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

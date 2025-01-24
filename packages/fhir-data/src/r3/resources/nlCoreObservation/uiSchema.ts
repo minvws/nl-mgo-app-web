@@ -16,12 +16,12 @@ type ObservationLikeResource =
     | ZibFunctionalOrMentalStatus
     | ZibTobaccoUse;
 
+export const i18n = 'r3.nl_core_observation';
 export const uiSchema: UiSchemaFunction<ObservationLikeResource> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.nl_core_observation';
 
     return {
-        label: resource.identifier?.[0]?.value,
+        label: resource.identifier?.[0]?.value ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

@@ -5,6 +5,7 @@ import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import { nlCorePharmaceuticalProductR4 } from './nlCorePharmaceuticalProduct';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
@@ -32,7 +33,7 @@ test('uiSchema label returns profile when label not specified', () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     output.name = undefined;
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toEqual(message('r4.zib_pharmaceutical_product'));
+    expect(uiSchema.label).toEqual(message(i18n));
 });
 
 test('return batch lotnumber if specified', () => {

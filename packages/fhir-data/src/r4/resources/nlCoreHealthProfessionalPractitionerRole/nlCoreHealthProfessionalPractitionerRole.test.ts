@@ -4,6 +4,7 @@ import { type PractitionerRole } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/fhir-resource.json';
 import { nlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = nlCoreHealthProfessionalPractitionerRole.parse(input01 as PractitionerRole);
@@ -26,5 +27,5 @@ test('uiSchema label returns profile when label not specified', () => {
         output,
         testUiSchemaContext()
     );
-    expect(uiSchema.label).toEqual(message('r4.nl_core_health_professional_practitioner_role'));
+    expect(uiSchema.label).toEqual(message(i18n));
 });

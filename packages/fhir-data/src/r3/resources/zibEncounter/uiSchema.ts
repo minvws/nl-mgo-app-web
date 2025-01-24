@@ -6,12 +6,9 @@ import { uiSchemaGroup as encounterParticipantUiSchema } from '../../elements/en
 import { map } from '../../../utils';
 import { type ZibEncounter } from './zibEncounter';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
- */
+export const i18n = 'r3.zib_encounter';
 export const uiSchema: UiSchemaFunction<ZibEncounter> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.Encounter';
     const diagnosis = map(resource.diagnosis, (x) => diagnosisUiSchema(x, context), true);
     const participants = map(
         resource.participant,
@@ -20,17 +17,17 @@ export const uiSchema: UiSchemaFunction<ZibEncounter> = (resource, context) => {
     );
 
     return {
-        label: resource.serviceProvider?.display,
+        label: resource.serviceProvider?.display ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.coding(`${profile}.class`, resource.class),
+                    ui.coding(`${i18n}.class`, resource.class),
                     ...ui.helpers.getChildren(participants),
-                    ui.reference(`${profile}.serviceProvider`, resource.serviceProvider),
-                    ...ui.period(`${profile}.period`, resource.period),
+                    ui.reference(`${i18n}.serviceProvider`, resource.serviceProvider),
+                    ...ui.period(`${i18n}.period`, resource.period),
                     ...ui.helpers.getChildren(diagnosis),
-                    ui.codeableConcept(`${profile}.reason`, resource.reason),
+                    ui.codeableConcept(`${i18n}.reason`, resource.reason),
                     ...ui.helpers.getChildren(
                         hospitalizationUiSchema(resource.hospitalization, context)
                     ),

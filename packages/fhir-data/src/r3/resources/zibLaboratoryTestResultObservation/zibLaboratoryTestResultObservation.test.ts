@@ -50,15 +50,8 @@ test('summary returns the expected output 02', () => {
 });
 
 test('uiSchema returns default label if code not supplied', () => {
-    const output = zibLaboratoryTestResultObservation.parse(input02 as Observation);
+    const output = zibLaboratoryTestResultObservation.parse(input01 as Observation);
     output.code = undefined;
     const uiSchema = zibLaboratoryTestResultObservation.uiSchema(output, testUiSchemaContext());
     expect(uiSchema.label).toBe(message('r3.zib_laboratory_test_result_observation'));
-});
-
-test('summary returns default label if code not supplied', () => {
-    const output = zibLaboratoryTestResultObservation.parse(input02 as Observation);
-    output.code = undefined;
-    const summary = zibLaboratoryTestResultObservation.summary(output, testUiSchemaContext());
-    expect(summary.label).toBe(message('r3.zib_laboratory_test_result_observation'));
 });

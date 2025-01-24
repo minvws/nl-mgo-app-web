@@ -2,27 +2,25 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type GpJournalEntry } from './gpJournalEntry';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316995
- */
+export const i18n = 'r3.gp_journal_entry';
 export const uiSchema: UiSchemaFunction<GpJournalEntry> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.gp_journal_entry';
+
     return {
-        label: resource.context?.display,
+        label: resource.context?.display ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
-                    ui.string(`${profile}.status`, resource.status),
-                    ui.codeableConcept(`${profile}.code`, resource.code),
-                    ui.reference(`${profile}.context`, resource.context),
-                    ...ui.oneOfValueX(`${profile}.effective`, resource, 'effective'),
-                    ui.reference(`${profile}.performer`, resource.performer),
-                    ui.string(`${profile}.valueString`, resource.valueString),
-                    ui.codeableConcept(`${profile}.ICPC_S`, resource.ICPC_S.valueCodeableConcept),
-                    ui.codeableConcept(`${profile}.ICPC_E`, resource.ICPC_E.valueCodeableConcept),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
+                    ui.string(`${i18n}.status`, resource.status),
+                    ui.codeableConcept(`${i18n}.code`, resource.code),
+                    ui.reference(`${i18n}.context`, resource.context),
+                    ...ui.oneOfValueX(`${i18n}.effective`, resource, 'effective'),
+                    ui.reference(`${i18n}.performer`, resource.performer),
+                    ui.string(`${i18n}.valueString`, resource.valueString),
+                    ui.codeableConcept(`${i18n}.ICPC_S`, resource.ICPC_S.valueCodeableConcept),
+                    ui.codeableConcept(`${i18n}.ICPC_E`, resource.ICPC_E.valueCodeableConcept),
                 ],
             },
         ],

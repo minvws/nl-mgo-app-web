@@ -4,11 +4,8 @@ import { map } from '../../../utils';
 import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
 import { type R4NlCorePatient } from './nlCorePatient';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
- */
+export const i18n = 'r4.nl_core_patient';
 export const uiSchema: UiSchemaFunction<R4NlCorePatient> = (resource, context) => {
-    const i18n = 'r4.nl_core_patient';
     const ui = context.ui as NonStrictUi;
 
     const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);
@@ -19,7 +16,7 @@ export const uiSchema: UiSchemaFunction<R4NlCorePatient> = (resource, context) =
     );
 
     return {
-        label: resource.name?.at(0)?.text,
+        label: resource.name?.at(0)?.text ?? context.formatMessage(i18n),
         children: [
             ...name,
             {

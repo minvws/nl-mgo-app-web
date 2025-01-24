@@ -7,18 +7,15 @@ import {
 } from '../../elements';
 import { type R4NlCoreHealtcareProvider } from './nlCoreHealtcareProvider';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946116
- */
+export const i18n = 'r4.nl_core_healtcare_provider';
 export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, context) => {
-    const profile = 'r4.nl_core_healtcare_provider';
     const { ui, formatMessage } = context;
 
     /**
      * https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946116/~mappings
      */
     const zibHealthcareProvider = {
-        LocationName: ui.string(`${profile}.name`, resource.name),
+        LocationName: ui.string(`${i18n}.name`, resource.name),
         AddressInformation: ui.helpers.getChildren(
             nlCoreAddressInformation.uiSchemaGroup(resource.address, context)
         ),
@@ -38,10 +35,10 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, 
     };
 
     return {
-        label: resource.managingOrganization?.display ?? formatMessage(profile),
+        label: resource.managingOrganization?.display ?? formatMessage(i18n),
         children: [
             {
-                label: formatMessage(profile),
+                label: formatMessage(i18n),
                 children: [
                     zibHealthcareProvider.LocationName,
                     ...zibHealthcareProvider.AddressInformation,

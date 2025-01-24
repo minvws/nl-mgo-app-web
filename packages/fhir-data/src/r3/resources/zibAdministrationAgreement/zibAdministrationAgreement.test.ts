@@ -1,9 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import type { MedicationDispense } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import inputFhirData from './fixtures/fhir-resource.json';
-import { uiSchema } from './uiSchema';
+import { i18n, uiSchema } from './uiSchema';
 import { zibAdministrationAgreement } from './zibAdministrationAgreement';
+import { message } from '$test/i18n';
 
 test('parseZibAdministrationAgreement returns the expected output', () => {
     const output = zibAdministrationAgreement.parse(inputFhirData as MedicationDispense);
@@ -19,4 +20,16 @@ test('uiSchema returns the expected output', () => {
         })
     );
     expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if medicationReference not supplied', () => {
+    const zibData = zibAdministrationAgreement.parse(inputFhirData as MedicationDispense);
+    zibData.medicationReference = undefined;
+    const uiSchema = zibAdministrationAgreement.uiSchema(
+        zibData,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

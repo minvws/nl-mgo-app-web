@@ -5,6 +5,8 @@ import { coding } from '../../../parse/type';
 import { map } from '../../../utils';
 import input01 from './fixtures/fhir-resource.json';
 import { gpJournalEntry } from './gpJournalEntry';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = gpJournalEntry.parse(input01 as Observation);
@@ -47,4 +49,16 @@ test('returns ICPC_E in parser', () => {
             coding: map(valueCodeableConcept, coding),
         },
     });
+});
+
+test('uiSchema returns default label if context not supplied', () => {
+    const output = gpJournalEntry.parse(input01 as Observation);
+    output.context = undefined;
+    const uiSchema = gpJournalEntry.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

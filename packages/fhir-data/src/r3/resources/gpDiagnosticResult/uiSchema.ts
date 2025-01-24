@@ -2,28 +2,27 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type GpDiagnosticResult } from './gpDiagnosticResult';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316990
- */
+export const i18n = 'r3.gp_diagnostic_result';
+
 export const uiSchema: UiSchemaFunction<GpDiagnosticResult> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.gp_diagnostic_result';
+
     return {
-        label: resource.context?.display,
+        label: resource.context?.display ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
-                    ui.reference(`${profile}.context`, resource.context),
-                    ui.reference(`${profile}.subject`, resource.subject),
-                    ui.dateTime(`${profile}.effective`, resource.effective),
-                    ui.reference(`${profile}.performer`, resource.performer),
-                    ui.string(`${profile}.status`, resource.status),
-                    ui.codeableConcept(`${profile}.code`, resource.code),
-                    ui.string(`${profile}.comment`, resource.comment),
-                    ui.codeableConcept(`${profile}.method`, resource.method),
-                    ...ui.oneOfValueX(`${profile}.value`, resource, 'value'),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
+                    ui.reference(`${i18n}.context`, resource.context),
+                    ui.reference(`${i18n}.subject`, resource.subject),
+                    ui.dateTime(`${i18n}.effective`, resource.effective),
+                    ui.reference(`${i18n}.performer`, resource.performer),
+                    ui.string(`${i18n}.status`, resource.status),
+                    ui.codeableConcept(`${i18n}.code`, resource.code),
+                    ui.string(`${i18n}.comment`, resource.comment),
+                    ui.codeableConcept(`${i18n}.method`, resource.method),
+                    ...ui.oneOfValueX(`${i18n}.value`, resource, 'value'),
                 ],
             },
         ],

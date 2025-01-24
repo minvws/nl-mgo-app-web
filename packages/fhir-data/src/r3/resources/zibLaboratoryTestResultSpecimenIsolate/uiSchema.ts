@@ -4,42 +4,39 @@ import { map } from '../../../utils';
 import { type ZibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate';
 import { uiSchemaGroup as containerUiSchema } from './elements/container/uiSchemaGroup';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317243
- */
+export const i18n = 'r3.zib_laboratory_test_result_specimen_isolate';
 export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSpecimenIsolate> = (
     resource,
     context
 ) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_laboratory_test_result_specimen_isolate';
 
     const container = map(resource.container, (x) => containerUiSchema(x, context), true);
 
     return {
-        label: resource.type?.coding?.[0]?.display ?? `${profile}`,
+        label: resource.type?.coding?.[0]?.display ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
                     ...ui.helpers.getChildren(container),
-                    ui.codeableConcept(`${profile}.type`, resource.type),
-                    ui.quantity(`${profile}.quantity`, resource.collection.quantity),
-                    ...ui.oneOfValueX(`${profile}.collected`, resource.collection, 'collected'),
-                    ui.dateTime(`${profile}.received_time`, resource.receivedTime),
-                    ui.codeableConcept(`${profile}.collection.method`, resource.collection.method),
-                    ui.codeableConcept(`${profile}.body_site`, resource.collection.bodySite.value),
+                    ui.codeableConcept(`${i18n}.type`, resource.type),
+                    ui.quantity(`${i18n}.quantity`, resource.collection.quantity),
+                    ...ui.oneOfValueX(`${i18n}.collected`, resource.collection, 'collected'),
+                    ui.dateTime(`${i18n}.received_time`, resource.receivedTime),
+                    ui.codeableConcept(`${i18n}.collection.method`, resource.collection.method),
+                    ui.codeableConcept(`${i18n}.body_site`, resource.collection.bodySite.value),
                     ui.codeableConcept(
-                        `${profile}.body_site.laterality`,
+                        `${i18n}.body_site.laterality`,
                         resource.collection.bodySite.laterality
                     ),
                     ui.codeableConcept(
-                        `${profile}.body_site.morphology`,
+                        `${i18n}.body_site.morphology`,
                         resource.collection.bodySite.morphology
                     ),
-                    ui.reference(`${profile}.subject`, resource.subject),
-                    ui.annotation(`${profile}.note`, resource.note),
+                    ui.reference(`${i18n}.subject`, resource.subject),
+                    ui.annotation(`${i18n}.note`, resource.note),
                 ],
             },
         ],

@@ -3,26 +3,23 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAdvanceDirective } from './zibAdvanceDirective';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
- */
+export const i18n = 'r3.zib_advance_directive';
 export const uiSchema: UiSchemaFunction<ZibAdvanceDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_advance_directive';
 
     const attachment = attachmentUiSchema(resource.source.attachment, context);
 
     return {
-        label: resource.dateTime,
+        label: resource.dateTime ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.codeableConcept(`${profile}.type_of_living_will`, resource.category),
-                    ui.dateTime(`${profile}.date_time`, resource.dateTime),
-                    ui.reference(`${profile}.disorder`, resource.disorder),
-                    ui.reference(`${profile}.consenting_party`, resource.consentingParty),
-                    ui.string(`${profile}.comment`, resource.comment),
+                    ui.codeableConcept(`${i18n}.type_of_living_will`, resource.category),
+                    ui.dateTime(`${i18n}.date_time`, resource.dateTime),
+                    ui.reference(`${i18n}.disorder`, resource.disorder),
+                    ui.reference(`${i18n}.consenting_party`, resource.consentingParty),
+                    ui.string(`${i18n}.comment`, resource.comment),
                 ],
             },
             attachment,

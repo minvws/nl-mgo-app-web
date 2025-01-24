@@ -6,6 +6,7 @@ import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import input03 from './fixtures/03/fhir-resource.json';
 import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = gpLaboratoryResult.parse(input01 as Observation);
@@ -77,5 +78,5 @@ test('uiSchema returns default label if context not supplied', () => {
     const output = gpLaboratoryResult.parse(input02 as Observation);
     output.context = undefined;
     const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toBe(message('r3.gp_laboratory_result'));
+    expect(uiSchema.label).toBe(message(i18n));
 });

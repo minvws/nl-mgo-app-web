@@ -66,6 +66,24 @@ test('returns mock schema if there is no summary', () => {
     });
 });
 
+test('returns mock schema with profile label if there is no summary and no id', () => {
+    mockGetResourceConfig.mockImplementation(
+        () =>
+            ({
+                summary: undefined,
+            }) as ResourceConfig<any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+    );
+
+    const mgoResource = {
+        referenceId: faker.lorem.slug(),
+        resourceType: faker.lorem.word(),
+        profile: faker.lorem.word(),
+    };
+
+    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
+    expect(result.label).toEqual(mgoResource.profile);
+});
+
 test('returns the result of the summary ui schema and passed any extra resources', () => {
     const summaryUiSchema: UiSchema = { label: 'Summary', children: [] };
     const summaryFunc: UiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any

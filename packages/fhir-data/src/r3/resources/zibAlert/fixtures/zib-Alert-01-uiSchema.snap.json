@@ -1,5 +1,5 @@
 {
-    "label": "r3.zib_alert",
+    "label": "Methicillin resistant staphylococcus aureus carrier",
     "children": [
         {
             "label": "r3.zib_alert.group_general_information",

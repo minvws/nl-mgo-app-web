@@ -11,9 +11,6 @@ export function getLabel(resource: ZibMedicationUse, { formatMessage }: UiHelper
     return capitalize(resource.medicationReference?.display) || formatMessage(i18n);
 }
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
- */
 export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
     const { ui, formatMessage } = context;
 

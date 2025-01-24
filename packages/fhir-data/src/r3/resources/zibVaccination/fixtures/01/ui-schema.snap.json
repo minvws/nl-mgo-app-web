@@ -2,27 +2,27 @@
     "label": "hepatitis A immunoglobulin",
     "children": [
         {
-            "label": "Immunization",
+            "label": "r3.zib_vaccination",
             "children": [
                 {
-                    "label": "Immunization.vaccineCode",
+                    "label": "r3.zib_vaccination.vaccineCode",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "Immunization.doseQuantity",
+                    "label": "r3.zib_vaccination.doseQuantity",
                     "type": "SINGLE_VALUE",
                     "display": "30 ml"
                 },
                 {
-                    "label": "Immunization.date",
+                    "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "display": "9 maart 1999"
                 },
                 {
-                    "label": "Immunization.note.text",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Bezoek aan Guatemala"

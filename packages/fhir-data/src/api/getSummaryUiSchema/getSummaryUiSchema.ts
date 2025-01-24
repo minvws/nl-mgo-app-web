@@ -27,7 +27,7 @@ export function getSummaryUiSchema<T extends MgoResourceMeta>(
 
     if (!config.summary) {
         return {
-            label: resource.id,
+            label: resource.id ?? resource.profile,
             children: [
                 {
                     label: 'Opties',

@@ -1,9 +1,11 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
-import { beforeAll, test, vi } from 'vitest';
+import { beforeAll, expect, test, vi } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import { gpDiagnosticResult } from './gpDiagnosticResult';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 beforeAll(() => {
     vi.clearAllMocks();
@@ -39,4 +41,16 @@ test('uiSchema returns the expected output 02', () => {
         })
     );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if context not supplied', () => {
+    const output = gpDiagnosticResult.parse(input01 as Observation);
+    output.context = undefined;
+    const uiSchema = gpDiagnosticResult.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

@@ -5,34 +5,32 @@ import { uiSchemaGroup as performerUiSchema } from './elements/performer/uiSchem
 import { map } from '../../../utils';
 import { type ZibProcedure } from './zibProcedure';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317388
- */
+export const i18n = 'r3.zib_procedure';
 export const uiSchema: UiSchemaFunction<ZibProcedure> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_procedure';
+
     const focalDevices = map(resource.focalDevice, (x) => focalDeviceUiSchema(x, context), true);
     const performers = map(resource.performer, (x) => performerUiSchema(x, context), true);
 
     return {
-        label: resource.code?.coding?.at(0)?.display,
+        label: resource.code?.coding?.at(0)?.display ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ...ui.period(`${profile}.performed_period`, resource.performedPeriod),
-                    ui.codeableConcept(`${profile}.body_site`, resource.bodySite),
+                    ...ui.period(`${i18n}.performed_period`, resource.performedPeriod),
+                    ui.codeableConcept(`${i18n}.body_site`, resource.bodySite),
                     ui.codeableConcept(
-                        `${profile}.bodySite.extension:ProcedureLaterality`,
+                        `${i18n}.bodySite.extension:ProcedureLaterality`,
                         resource.bodySiteQualifier
                     ),
-                    ui.reference(`${profile}.reason_reference`, resource.reasonReference),
-                    ui.codeableConcept(`${profile}.code`, resource.code),
-                    ui.codeableConcept(`${profile}.procedure_method`, resource.procedureMethod),
+                    ui.reference(`${i18n}.reason_reference`, resource.reasonReference),
+                    ui.codeableConcept(`${i18n}.code`, resource.code),
+                    ui.codeableConcept(`${i18n}.procedure_method`, resource.procedureMethod),
                     ...ui.helpers.getChildren(focalDevices),
-                    ui.reference(`${profile}.location`, resource.location),
+                    ui.reference(`${i18n}.location`, resource.location),
                     ...ui.helpers.getChildren(performers),
-                    ui.reference(`${profile}.subject`, resource.subject),
+                    ui.reference(`${i18n}.subject`, resource.subject),
                 ],
             },
         ],

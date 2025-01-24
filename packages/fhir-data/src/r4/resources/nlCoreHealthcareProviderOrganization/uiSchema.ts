@@ -1,14 +1,11 @@
 import { type UiSchemaFunction } from '../../../ui';
 import { type R4NlCoreHealthcareProviderOrganization } from './nlCoreHealthcareProviderOrganization';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946118
- */
+export const i18n = 'r4.nl_core_healthcare_provider_organization';
 export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> = (
     resource,
     context
 ) => {
-    const profile = 'r4.nl_core_healthcare_provider_organization';
     const { ui, formatMessage } = context;
 
     /**
@@ -16,25 +13,25 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> 
      */
     const zibHealthcareProvider = {
         HealthcareProviderIdentificationNumber: ui.identifier(
-            `${profile}.identifier`,
+            `${i18n}.identifier`,
             resource.identifier
         ),
         DepartmentSpecialty: ui.codeableConcept(
-            `${profile}.department_speciality`,
+            `${i18n}.department_speciality`,
             resource.departmentSpecialty
         ),
         OrganizationType: ui.codeableConcept(
-            `${profile}.organization_type`,
+            `${i18n}.organization_type`,
             resource.organizationType
         ),
-        OrganizationName: ui.string(`${profile}.name`, resource.name),
+        OrganizationName: ui.string(`${i18n}.name`, resource.name),
     };
 
     return {
-        label: resource.name ?? formatMessage(profile),
+        label: resource.name ?? formatMessage(i18n),
         children: [
             {
-                label: formatMessage(profile),
+                label: formatMessage(i18n),
                 children: [
                     zibHealthcareProvider.HealthcareProviderIdentificationNumber,
                     zibHealthcareProvider.DepartmentSpecialty,

@@ -1,8 +1,38 @@
 {
+    "r3.e_afspraak_appointment": [
+        {
+            "type": 0,
+            "value": "Afspraak"
+        }
+    ],
+    "r3.gp_diagnostic_result": [
+        {
+            "type": 0,
+            "value": "Laboratorium uitslag"
+        }
+    ],
+    "r3.gp_encounter": [
+        {
+            "type": 0,
+            "value": "Contact"
+        }
+    ],
+    "r3.gp_journal_entry": [
+        {
+            "type": 0,
+            "value": "Journaalregel"
+        }
+    ],
     "r3.gp_laboratory_result": [
         {
             "type": 0,
             "value": "Laboratorium uitslag"
+        }
+    ],
+    "r3.ihe_mhd_document_manifest": [
+        {
+            "type": 0,
+            "value": "Document manifest"
         }
     ],
     "r3.ihe_mhd_minimal_document_reference.author": [
@@ -89,6 +119,24 @@
             "value": "Type"
         }
     ],
+    "r3.nl_core_observation": [
+        {
+            "type": 0,
+            "value": "Observatie"
+        }
+    ],
+    "r3.nl_core_practitionerrole": [
+        {
+            "type": 0,
+            "value": "Zorgverlener rol"
+        }
+    ],
+    "r3.zib_alert": [
+        {
+            "type": 0,
+            "value": "Alert"
+        }
+    ],
     "r3.zib_laboratory_test_result_observation.context": [
         {
             "type": 0,
@@ -125,6 +173,18 @@
             "value": "Referentie type"
         }
     ],
+    "r3.zib_laboratory_test_result_substance": [
+        {
+            "type": 0,
+            "value": "Monstermateriaal"
+        }
+    ],
+    "r3.zib_medical_device_request": [
+        {
+            "type": 0,
+            "value": "Medisch hulpmiddel aanvraag"
+        }
+    ],
     "r3.zib_medication_use.effective_period.duration": [
         {
             "type": 0,
@@ -135,6 +195,12 @@
         {
             "type": 0,
             "value": "Herhaalperiode cyclisch schema"
+        }
+    ],
+    "r3.zib_vaccination_recommendation": [
+        {
+            "type": 0,
+            "value": "Vaccinatieadvies"
         }
     ]
 }

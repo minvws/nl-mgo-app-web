@@ -4,12 +4,9 @@ import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type NlCoreOrganization } from './nlCoreOrganization';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317033
- */
+export const i18n = 'r3.nl_core_organization';
 export const uiSchema: UiSchemaFunction<NlCoreOrganization> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.nl_core_organization';
 
     const address = map(
         resource.address,
@@ -23,18 +20,18 @@ export const uiSchema: UiSchemaFunction<NlCoreOrganization> = (resource, context
     ).flat();
 
     return {
-        label: resource.name,
+        label: resource.name ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
-                    ui.string(`${profile}.name`, resource.name),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
+                    ui.string(`${i18n}.name`, resource.name),
                     ui.codeableConcept(
-                        `${profile}.department_specialty`,
+                        `${i18n}.department_specialty`,
                         resource.departmentSpecialty
                     ),
-                    ui.codeableConcept(`${profile}.organization_type`, resource.organizationType),
+                    ui.codeableConcept(`${i18n}.organization_type`, resource.organizationType),
                 ],
             },
             ...address,

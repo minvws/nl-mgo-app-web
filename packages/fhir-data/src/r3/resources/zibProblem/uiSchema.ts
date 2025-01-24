@@ -5,17 +5,14 @@ import { uiSchemaGroup as evidenceUiSchema } from './elements/evidence/uiSchemaG
 import { uiSchemaGroup as stageUiSchema } from './elements/stage/uiSchemaGroup';
 import { type ZibProblem } from './zibProblem';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317327
- */
+export const i18n = 'r3.zib_problem';
 export const uiSchema: UiSchemaFunction<ZibProblem> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_problem';
 
     const stage = stageUiSchema(resource.stage, context);
     const evidence = map(resource.evidence, (x) => evidenceUiSchema(x, context), true);
     return {
-        label: resource.code?.coding?.at(0)?.display,
+        label: resource.code?.coding?.at(0)?.display ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_general_information`,

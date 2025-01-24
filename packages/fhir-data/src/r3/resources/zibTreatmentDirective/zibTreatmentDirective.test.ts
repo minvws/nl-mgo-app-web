@@ -1,8 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type Consent } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input from './fixtures/zib-TreatmentDirective-01.json';
 import { zibTreatmentDirective } from './zibTreatmentDirective';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('parseZibTreatmentDirective returns the expected output 01', () => {
     const output = zibTreatmentDirective.parse(input as Consent);
@@ -20,4 +22,16 @@ test('uiSchema returns the expected output', () => {
     expectJson(uiSchema).toMatchFileSnapshot(
         './fixtures/zib-TreatmentDirective-01-uiSchema.snap.json'
     );
+});
+
+test('uiSchema returns default label if identifier not supplied', () => {
+    const output = zibTreatmentDirective.parse(input as Consent);
+    output.identifier = undefined;
+    const uiSchema = zibTreatmentDirective.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

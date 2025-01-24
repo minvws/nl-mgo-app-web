@@ -2,15 +2,12 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibNutritionAdvice } from './zibNutritionAdvice';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317294
- */
+export const i18n = 'r3.zib_nutrition_advice';
 export const uiSchema: UiSchemaFunction<ZibNutritionAdvice> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_nutrition_advice';
 
     return {
-        label: resource.identifier?.at(0)?.value,
+        label: resource.identifier?.at(0)?.value ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

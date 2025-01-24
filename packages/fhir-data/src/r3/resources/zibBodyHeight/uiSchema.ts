@@ -2,22 +2,19 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibBodyHeight } from './zibBodyHeight';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
- */
+export const i18n = 'r3.zib_body_height';
 export const uiSchema: UiSchemaFunction<ZibBodyHeight> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.zib_body_height';
 
     return {
-        label: resource.effectiveDateTime,
+        label: resource.effectiveDateTime ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}`,
+                label: `${i18n}`,
                 children: [
-                    ui.quantity(profile, resource.valueQuantity),
-                    ui.dateTime(`${profile}.effective`, resource.effectiveDateTime),
-                    ui.string(`${profile}.comment`, resource.comment),
+                    ui.quantity(i18n, resource.valueQuantity),
+                    ui.dateTime(`${i18n}.effective`, resource.effectiveDateTime),
+                    ui.string(`${i18n}.comment`, resource.comment),
                 ],
             },
         ],

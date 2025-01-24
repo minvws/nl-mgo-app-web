@@ -1,9 +1,11 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type ProcedureRequest } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input1 from './fixtures/01/fhir-resource.json';
 import input2 from './fixtures/02/fhir-resource.json';
 import { zibProcedureRequest } from './zibProcedureRequest';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = zibProcedureRequest.parse(input1 as ProcedureRequest);
@@ -35,4 +37,16 @@ test('uiSchema 02 returns the expected output', () => {
         })
     );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if code not supplied', () => {
+    const output = zibProcedureRequest.parse(input1 as ProcedureRequest);
+    output.code = undefined;
+    const uiSchema = zibProcedureRequest.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

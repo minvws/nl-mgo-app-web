@@ -2,15 +2,12 @@ import { type UiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAlert } from './zibAlert';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317136
- */
+export const i18n = 'r3.zib_alert';
 export const uiSchema: UiSchemaFunction<ZibAlert> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_alert';
 
     return {
-        label: i18n,
+        label: resource.code?.coding?.[0]?.display ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_general_information`,

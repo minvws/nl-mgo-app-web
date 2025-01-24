@@ -1,8 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type Composition } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import { gpEncounterReport } from './gpEncounterReport';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = gpEncounterReport.parse(input01 as Composition);
@@ -18,4 +20,16 @@ test('uiSchema returns the expected output 01', () => {
         })
     );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if title not supplied', () => {
+    const output = gpEncounterReport.parse(input01 as Composition);
+    output.title = undefined;
+    const uiSchema = gpEncounterReport.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });

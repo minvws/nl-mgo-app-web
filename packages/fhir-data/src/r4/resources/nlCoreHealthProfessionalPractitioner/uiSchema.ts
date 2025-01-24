@@ -10,14 +10,11 @@ import {
 import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualification/uiSchemaGroup';
 import { type R4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946120
- */
+export const i18n = 'r4.nl_core_health_professional_practitioner';
 export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitioner> = (
     resource,
     context
 ) => {
-    const profile = 'r4.nl_core_health_professional_practitioner';
     const ui = context.ui as NonStrictUi;
 
     const address = map(
@@ -43,15 +40,15 @@ export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitioner> 
     );
 
     return {
-        label: resource.name?.at(0)?.text,
+        label: resource.name?.at(0)?.text ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
-                    ui.code(`${profile}.gender`, resource.gender),
-                    ui.date(`${profile}.birth_date`, resource.birthDate),
-                    ui.codeableConcept(`${profile}.communication`, resource.communication),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
+                    ui.code(`${i18n}.gender`, resource.gender),
+                    ui.date(`${i18n}.birth_date`, resource.birthDate),
+                    ui.codeableConcept(`${i18n}.communication`, resource.communication),
                 ],
             },
             ...name,

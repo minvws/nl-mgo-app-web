@@ -4,12 +4,9 @@ import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type NlCorePractitionerRole } from './nlCorePractitionerRole';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
- */
+export const i18n = 'r3.nl_core_practitionerrole';
 export const uiSchema: UiSchemaFunction<NlCorePractitionerRole> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const profile = 'r3.nl_core_practitionerrole';
 
     const telecom = map(
         resource.telecom,
@@ -18,14 +15,14 @@ export const uiSchema: UiSchemaFunction<NlCorePractitionerRole> = (resource, con
     );
 
     return {
-        label: resource.identifier?.at(0)?.value,
+        label: resource.identifier?.at(0)?.value ?? context.formatMessage(i18n),
         children: [
             {
-                label: `${profile}.group_details`,
+                label: `${i18n}.group_details`,
                 children: [
-                    ui.identifier(`${profile}.identifier`, resource.identifier),
-                    ui.reference(`${profile}.organization`, resource.organization),
-                    ui.codeableConcept(`${profile}.specialty`, resource.specialty),
+                    ui.identifier(`${i18n}.identifier`, resource.identifier),
+                    ui.reference(`${i18n}.organization`, resource.organization),
+                    ui.codeableConcept(`${i18n}.specialty`, resource.specialty),
                 ],
             },
             ...telecom,

@@ -4,6 +4,7 @@ import { type Organization } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import { nlCoreHealthcareProviderOrganization } from './nlCoreHealthcareProviderOrganization';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = nlCoreHealthcareProviderOrganization.parse(input01 as Organization);
@@ -20,5 +21,5 @@ test('uiSchema label returns profile when label not specified', () => {
     const output = nlCoreHealthcareProviderOrganization.parse(input01 as Organization);
     output.name = undefined;
     const uiSchema = nlCoreHealthcareProviderOrganization.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toEqual(message('r4.nl_core_healthcare_provider_organization'));
+    expect(uiSchema.label).toEqual(message(i18n));
 });

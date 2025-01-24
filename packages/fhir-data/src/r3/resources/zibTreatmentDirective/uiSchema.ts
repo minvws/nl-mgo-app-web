@@ -8,12 +8,9 @@ import { uiSchemaGroup as exceptUiSchema } from './elements/except/uiSchemaGroup
 import { uiSchemaGroup as policyUiSchema } from './elements/policy/uiSchemaGroup';
 import { type ZibTreatmentDirective } from './zibTreatmentDirective';
 
-/**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317378
- */
+export const i18n = 'r3.zib_treatment_directive';
 export const uiSchema: UiSchemaFunction<ZibTreatmentDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-    const i18n = 'r3.zib_treatment_directive';
 
     const actor = map(resource.actor, (x) => actorUiSchema(x, context), true);
     const data = map(resource.data, (x) => dataUiSchema(x, context), true);
@@ -21,7 +18,7 @@ export const uiSchema: UiSchemaFunction<ZibTreatmentDirective> = (resource, cont
     const policy = map(resource.policy, (x) => policyUiSchema(x, context), true);
 
     return {
-        label: resource.identifier?.value,
+        label: resource.identifier?.value ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

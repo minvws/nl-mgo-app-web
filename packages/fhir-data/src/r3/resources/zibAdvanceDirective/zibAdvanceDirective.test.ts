@@ -1,10 +1,12 @@
 import { expectJson, testUiSchemaContext } from '$test';
 import { type Consent } from 'fhir/r3';
-import { test } from 'vitest';
+import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import input03 from './fixtures/03/fhir-resource.json';
 import { zibAdvanceDirective } from './zibAdvanceDirective';
+import { message } from '$test/i18n';
+import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
     const output = zibAdvanceDirective.parse(input01 as Consent);
@@ -52,4 +54,16 @@ test('uiSchema returns the expected output 03', () => {
         })
     );
     expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
+});
+
+test('uiSchema returns default label if dateTime not supplied', () => {
+    const output = zibAdvanceDirective.parse(input01 as Consent);
+    output.dateTime = undefined;
+    const uiSchema = zibAdvanceDirective.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe(message(i18n));
 });
