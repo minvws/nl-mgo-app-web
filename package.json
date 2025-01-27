@@ -68,11 +68,13 @@
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
                 "CVE-2024-4067": "Affects devDependency eslint-plugin-query waiting for fix to be released https://github.com/micromatch/micromatch/issues/264",
-                "CVE-2024-55565": "Affects devDependency vitest, will probably be fixed in the next release."
+                "CVE-2024-55565": "Affects devDependency vitest, will probably be fixed in the next release.",
+                "CVE-2025-24010": "Affects devDependency vitest, will probably be fixed in the next release."
             },
             "ignoreCves": [
                 "CVE-2024-4067",
-                "CVE-2024-55565"
+                "CVE-2024-55565",
+                "CVE-2025-24010"
             ]
         }
     }

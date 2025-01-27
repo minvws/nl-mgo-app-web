@@ -25,6 +25,9 @@
         "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
         "messages:format": "prettier --write ./src/i18n/locales"
     },
+    "devDependencies comments (non-standard-key)": {
+        "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build."
+    },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
         "@formatjs/cli": "^6.3.11",
@@ -38,17 +41,17 @@
         "tsx": "^4.17.0",
         "type-fest": "^4.23.0",
         "typescript": "^5.4.5",
-        "vite": "^5.4.6",
-        "vite-plugin-dts": "^4.2.1"
+        "vite": "^5.4.14",
+        "vite-plugin-dts": "^4.2.4"
     },
     "dependencies": {
-        "@minvws/mgo-fhir-types": "workspace:*",
         "@formatjs/intl": "^3.0.1",
         "@formatjs/intl-datetimeformat": "^6.17.1",
         "@formatjs/intl-locale": "^4.2.8",
         "@formatjs/intl-numberformat": "^8.15.1",
         "@formatjs/intl-pluralrules": "^5.4.1",
         "@formatjs/intl-relativetimeformat": "^11.4.8",
+        "@minvws/mgo-fhir-types": "workspace:*",
         "intl": "^1.2.5",
         "lodash": "^4.17.21",
         "lossless-json": "^4.0.1"
