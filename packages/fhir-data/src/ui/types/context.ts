@@ -37,7 +37,7 @@ export type UiFunction<Input, Output extends UiElement | UiElement[], Label = Me
 ) => Output;
 
 export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
-    value: Nullable<Lossless<Input>>
+    value: Nullable<Input>
 ) => Output;
 
 export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElement[]> = (

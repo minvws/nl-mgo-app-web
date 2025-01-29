@@ -20,7 +20,12 @@ export interface ReferenceValue extends BaseUiValueElement<'REFERENCE_VALUE', st
 
 export interface DownloadLink extends BaseUiElement<'DOWNLOAD_LINK'> {
     label: string;
-    url: string;
+    url?: string;
+}
+
+export interface DownloadBinary extends BaseUiElement<'DOWNLOAD_BINARY'> {
+    label: string;
+    reference?: string;
 }
 
 export interface ReferenceLink extends BaseUiElement<'REFERENCE_LINK'> {
@@ -34,6 +39,7 @@ export type UiElement =
     | MultipleGroupedValues
     | ReferenceValue
     | DownloadLink
+    | DownloadBinary
     | ReferenceLink;
 
 export interface UiSchemaGroup {

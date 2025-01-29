@@ -20,7 +20,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
     const { organizationId, dataServiceId } = useContext(UiSchemaContext);
 
     const { url, label } = value;
-    const binaryMatch = binaryRegexp.exec(url);
+    const binaryMatch = url ? binaryRegexp.exec(url) : null;
     const [_input, binaryId] = binaryMatch ?? [];
 
     const organization = getOrganizationById(organizationId);

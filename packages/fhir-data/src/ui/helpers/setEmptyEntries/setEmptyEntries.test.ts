@@ -64,7 +64,7 @@ test('sets empty entries, but does not mutate the schema', () => {
     expect(uiSchema.children[0].children[2]).toBe(entry3);
 });
 
-test('works for all types - except DOWNLOAD_LINK', () => {
+test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
     const entry1: UiElement = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.word(),
@@ -91,13 +91,18 @@ test('works for all types - except DOWNLOAD_LINK', () => {
         label: faker.lorem.word(),
         url: undefined as unknown as string,
     };
+    const entry6: UiElement = {
+        type: 'DOWNLOAD_BINARY',
+        label: faker.lorem.word(),
+        reference: undefined as unknown as string,
+    };
 
     const uiSchema: UiSchema = {
         label: faker.lorem.word(),
         children: [
             {
                 label: faker.lorem.word(),
-                children: [entry1, entry2, entry3, entry4, entry5],
+                children: [entry1, entry2, entry3, entry4, entry5, entry6],
             },
         ],
     };
@@ -129,6 +134,7 @@ test('works for all types - except DOWNLOAD_LINK', () => {
                         display: 'intl(schema.empty_entry_display)',
                     },
                     entry5,
+                    entry6,
                 ],
             },
         ],

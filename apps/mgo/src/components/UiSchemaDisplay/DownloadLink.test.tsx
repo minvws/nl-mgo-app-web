@@ -39,6 +39,17 @@ test('DownloadLink renders with regular href', async () => {
     expect(downloadLink.getAttribute('href')).toBe(value.url);
 });
 
+test('DownloadLink renders with regular href when url is empty', async () => {
+    const value: UiDownloadLink = {
+        label: faker.lorem.sentence(),
+        url: undefined,
+        type: 'DOWNLOAD_LINK',
+    };
+    setupWithAppProviders(<DownloadLink data-testid="download_link" value={value} />);
+    const downloadLink = screen.getByTestId('download_link');
+    expect(downloadLink.getAttribute('href')).toBeNull();
+});
+
 test('DownloadLink preloads data when passed a Binary reference', async () => {
     const binaryId = faker.string.uuid();
     const value: UiDownloadLink = {

@@ -18,6 +18,20 @@ test('attachment', () => {
     });
 });
 
+test('attachment where value is a binary reference', () => {
+    const value = zibAttachment.parse(faker.fhir.attachment());
+    value.title = faker.fhir.string();
+    value.url = 'Binary/test' as MgoString;
+
+    const uiDownloadLink = attachment(faker.custom.uiHelperContext());
+    const result = uiDownloadLink(value);
+    expect(result).toEqual({
+        type: 'DOWNLOAD_BINARY',
+        label: value.title,
+        reference: value.url,
+    });
+});
+
 test('attachment values default unknown label and no url', () => {
     const value = zibAttachment.parse(faker.fhir.attachment());
     value.title = undefined;

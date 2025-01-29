@@ -8,7 +8,8 @@ function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiS
     return {
         ...group,
         children: group.children.map((entry) => {
-            return isEmptyUiEntry(entry) && entry.type !== 'DOWNLOAD_LINK'
+            return isEmptyUiEntry(entry) &&
+                !['DOWNLOAD_LINK', 'DOWNLOAD_BINARY'].includes(entry.type)
                 ? {
                       type: 'SINGLE_VALUE',
                       label: entry.label,

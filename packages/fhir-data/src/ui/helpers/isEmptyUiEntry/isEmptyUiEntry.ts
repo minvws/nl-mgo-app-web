@@ -5,6 +5,7 @@ export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
     switch (uiField.type) {
         case 'REFERENCE_VALUE':
         case 'REFERENCE_LINK':
+        case 'DOWNLOAD_BINARY':
             return isNullish(uiField.reference);
         case 'SINGLE_VALUE':
             return isNullish(uiField.display);

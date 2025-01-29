@@ -27,9 +27,9 @@
             "label": "Bijlage",
             "children": [
                 {
-                    "type": "DOWNLOAD_LINK",
+                    "type": "DOWNLOAD_BINARY",
                     "label": "Kopie van ontslagbrief",
-                    "url": "Binary/pdfa-binary-01"
+                    "reference": "Binary/pdfa-binary-01"
                 }
             ]
         },
