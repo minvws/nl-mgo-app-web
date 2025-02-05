@@ -1,3 +1,3 @@
-interface GenericObject {
+export interface GenericObject {
     [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }

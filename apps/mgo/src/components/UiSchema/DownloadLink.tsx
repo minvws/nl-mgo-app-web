@@ -17,14 +17,14 @@ const binaryRegexp = /^Binary\/([^/]+)/;
 export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
     const intl = useIntl();
     const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
-    const { organizationId, dataServiceId } = useContext(UiSchemaContext);
+    const { resource } = useContext(UiSchemaContext);
 
     const { url, label } = value;
     const binaryMatch = url ? binaryRegexp.exec(url) : null;
     const [_input, binaryId] = binaryMatch ?? [];
 
-    const organization = getOrganizationById(organizationId);
-    const dataService = getDataService(organization, dataServiceId);
+    const organization = resource && getOrganizationById(resource.organizationId);
+    const dataService = resource && getDataService(organization, resource.dataServiceId);
 
     const { isLoading, data: binaryBlobUrl } = useQuery({
         queryKey: ['binary', binaryId, dataService],

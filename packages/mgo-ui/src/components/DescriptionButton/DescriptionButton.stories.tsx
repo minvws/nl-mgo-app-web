@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DescriptionButton } from './DescriptionButton';
 import { Stack } from '../Stack/Stack';
+import { DescriptionButton } from './DescriptionButton';
 import { variants } from './variants';
 
 type Story = StoryObj<typeof DescriptionButton>;
@@ -24,9 +24,31 @@ export const Variants: Story = {
             <Stack>
                 <Stack className="gap-0">
                     {variants.map((variant) => (
-                        <DescriptionButton key={variant} {...args} variant={variant} />
+                        <>
+                            <DescriptionButton key={variant} {...args} variant={variant} />
+                            <DescriptionButton
+                                key={variant}
+                                {...args}
+                                term={`${args.term} - icon download`}
+                                icon="download"
+                                variant={variant}
+                            />
+                        </>
                     ))}
                 </Stack>
+
+                <Stack className="gap-0">
+                    {variants.map((variant) => (
+                        <DescriptionButton
+                            key={variant}
+                            {...args}
+                            term={`${args.term} - disabled`}
+                            variant={variant}
+                            isDisabled
+                        />
+                    ))}
+                </Stack>
+
                 <Stack className="gap-0">
                     {variants.map((variant) => (
                         <DescriptionButton

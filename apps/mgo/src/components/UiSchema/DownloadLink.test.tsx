@@ -1,10 +1,12 @@
 import { getDataService } from '$/services';
+import { type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
 import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-fhir-data';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { DownloadLink } from './DownloadLink';
+import { UiSchemaContext } from './UiSchemaContext';
 
 const mockGetResource = getDataService(undefined, undefined)!.getResource as MockedFunction<
     () => unknown
@@ -66,7 +68,11 @@ test('DownloadLink preloads data when passed a Binary reference', async () => {
     };
     mockGetResource.mockImplementationOnce(() => response);
 
-    setupWithAppProviders(<DownloadLink value={value} data-testid="download-link" />);
+    setupWithAppProviders(
+        <UiSchemaContext.Provider value={{ resource: {} as Resource }}>
+            <DownloadLink value={value} data-testid="download-link" />
+        </UiSchemaContext.Provider>
+    );
 
     const mockBlobUrl = 'blob:http://localhost';
     vi.spyOn(global, 'fetch').mockImplementationOnce(() =>

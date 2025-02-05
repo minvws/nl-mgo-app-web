@@ -1,21 +1,32 @@
+import { type DeepPartial } from '$/types/DeepPartial';
 import { faker } from '$test/faker';
-import { FhirVersion, type MgoResource } from '@minvws/mgo-fhir-data';
-import { uniqueId } from 'lodash';
+import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { defaults, uniqueId } from 'lodash';
 import { expect, test, vi } from 'vitest';
-import { useResourcesStore } from './resources';
+import { useResourcesStore, type ResourceDTO } from './resources';
 
 vi.mock('@minvws/mgo-fhir-data');
 
-function mockResourceDto() {
+function mockResourceDto<V extends FhirVersion>(
+    fhirVersion?: V,
+    resource: DeepPartial<ResourceDTO<V>> = {}
+): ResourceDTO<V> {
+    const version = fhirVersion ?? faker.helpers.arrayElement([FhirVersion.R3, FhirVersion.R4]);
     return {
         dataServiceId: faker.number.int({ max: 60 }),
         organizationId: uniqueId(faker.string.uuid()),
-        mgoResource: {
-            fhirVersion: `${FhirVersion.R3}`,
-            profile: uniqueId(faker.lorem.word()),
-            referenceId: faker.lorem.word(),
-        } as MgoResource<FhirVersion.R3>,
-    };
+        mgoResource: defaults(resource.mgoResource, {
+            id: faker.string.uuid(),
+            fhirVersion: `${version}`,
+            profile:
+                version === FhirVersion.R3
+                    ? 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'
+                    : 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient',
+            referenceId: `${faker.lorem.word()}/${faker.number.int()}`,
+            resourceType: faker.lorem.word(),
+        }),
+        ...resource,
+    } as ResourceDTO<V>;
 }
 
 test('addResources adds a resource', async () => {
@@ -38,11 +49,7 @@ test('addResources can add multiple resources and generates unique slugs', async
     state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
     state = useResourcesStore.getState();
 
-    const newResourceDto = mockResourceDto();
-    const newResourceDto2 = mockResourceDto();
-    const newResourceDto3 = mockResourceDto();
-
-    state.addResources([newResourceDto, newResourceDto2, newResourceDto3]);
+    state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
     state = useResourcesStore.getState();
     const slugs = state.resources.map((resource) => resource.slug);
 
@@ -71,55 +78,55 @@ test('getResourcesByProfile returns resource', async () => {
     let state = useResourcesStore.getState();
     expect(state.resources).toEqual([]);
 
-    const resourceDto = mockResourceDto();
-    state.addResources([resourceDto, mockResourceDto(), mockResourceDto(), mockResourceDto()]);
+    const resourceDto = mockResourceDto(FhirVersion.R3, {
+        mgoResource: { profile: 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult' },
+    });
+    const resourceDtos = [resourceDto, mockResourceDto(), mockResourceDto(), mockResourceDto()];
+    state.addResources(resourceDtos);
 
     state = useResourcesStore.getState();
-    expect(state.resources.length).toBe(4);
-    const { organizationId, dataServiceId, mgoResource } = resourceDto;
+
     const matchedResources = state.getResourcesByProfile(
         FhirVersion.R3,
         resourceDto.mgoResource.profile
     );
 
+    expect(state.resources.length).toBe(resourceDtos.length);
     expect(matchedResources.length).toBe(1);
-    expect(matchedResources[0].id).toEqual(
-        `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`
-    );
+    expect(matchedResources[0].mgoResource.id).toEqual(resourceDto.mgoResource.id);
 });
 
 test('getResourcesByProfile returns resource filtered by organization id', async () => {
     let state = useResourcesStore.getState();
     expect(state.resources).toEqual([]);
 
-    const resourceDto1 = mockResourceDto();
-    const resourceDto2 = mockResourceDto();
-    const resourceDto3 = mockResourceDto();
-    const resourceDto4 = mockResourceDto();
+    const resourceDto = mockResourceDto(FhirVersion.R3);
+    const resourceDtos = [
+        resourceDto,
+        mockResourceDto(FhirVersion.R3),
+        mockResourceDto(FhirVersion.R3),
+        mockResourceDto(FhirVersion.R3),
+    ];
 
-    resourceDto2.mgoResource.profile = resourceDto1.mgoResource.profile;
-    resourceDto3.mgoResource.profile = resourceDto1.mgoResource.profile;
-    resourceDto4.mgoResource.profile = resourceDto1.mgoResource.profile;
+    resourceDtos[1].mgoResource.profile = resourceDto.mgoResource.profile;
+    resourceDtos[2].mgoResource.profile = resourceDto.mgoResource.profile;
+    resourceDtos[3].mgoResource.profile = resourceDto.mgoResource.profile;
 
-    resourceDto3.organizationId = resourceDto1.organizationId;
+    resourceDtos[3].organizationId = resourceDto.organizationId;
 
-    state.addResources([resourceDto1, resourceDto2, resourceDto3, resourceDto4]);
+    state.addResources(resourceDtos);
 
     state = useResourcesStore.getState();
     expect(state.resources.length).toBe(4);
     const matchedResources = state.getResourcesByProfile(
         FhirVersion.R3,
-        resourceDto1.mgoResource.profile,
-        [resourceDto1.organizationId]
+        resourceDto.mgoResource.profile,
+        [resourceDto.organizationId]
     );
 
     expect(matchedResources.length).toBe(2);
-    expect(matchedResources[0].id).toEqual(
-        `${resourceDto1.organizationId}-${resourceDto1.dataServiceId}-${resourceDto1.mgoResource.referenceId}`
-    );
-    expect(matchedResources[1].id).toEqual(
-        `${resourceDto3.organizationId}-${resourceDto3.dataServiceId}-${resourceDto3.mgoResource.referenceId}`
-    );
+    expect(matchedResources[0].mgoResource.id).toEqual(resourceDto.mgoResource.id);
+    expect(matchedResources[1].mgoResource.id).toEqual(resourceDtos[3].mgoResource.id);
 });
 
 test('getResourceBySlug returns a resource by slug', async () => {
@@ -140,4 +147,35 @@ test('getResourceBySlug returns undefined if an empty slug is provided', async (
     state.addResources([mockResourceDto()]);
     state = useResourcesStore.getState();
     expect(state.getResourceBySlug('')).toBeUndefined();
+});
+
+test('getResourceByReferenceId returns the resource by referenceID', async () => {
+    let state = useResourcesStore.getState();
+    const dataServiceId = faker.number.int({ max: 60 });
+    const organizationId = uniqueId(faker.string.uuid());
+
+    const resourceDto = mockResourceDto(FhirVersion.R3, { organizationId, dataServiceId });
+    const relatedResourceDto = mockResourceDto(FhirVersion.R3, { organizationId, dataServiceId });
+
+    const [relatedResource, resource] = state.addResources([
+        relatedResourceDto,
+        resourceDto,
+        mockResourceDto(),
+        mockResourceDto(),
+        mockResourceDto(),
+    ]);
+    state = useResourcesStore.getState();
+    expect(
+        state.getResourceByReferenceId(relatedResource, resourceDto.mgoResource.referenceId)
+    ).toBe(resource);
+});
+
+test('getResourceByReferenceId returns undefined if no related resoruce is provided', async () => {
+    let state = useResourcesStore.getState();
+    const resourceDto = mockResourceDto();
+    state.addResources([mockResourceDto(), resourceDto, mockResourceDto(), mockResourceDto()]);
+    state = useResourcesStore.getState();
+    expect(
+        state.getResourceByReferenceId(undefined, resourceDto.mgoResource.referenceId)
+    ).toBeUndefined();
 });

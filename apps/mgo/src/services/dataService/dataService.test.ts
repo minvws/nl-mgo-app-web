@@ -75,6 +75,11 @@ test('returns NULL when there is NO organization', () => {
     expect(dataService).toBeNull();
 });
 
+test('returns NULL when there is NO dataServiceId', () => {
+    const dataService = getDataService(faker.custom.healthcareOrganization(), undefined);
+    expect(dataService).toBeNull();
+});
+
 test('returns NULL when there is NO resource endpoint available', () => {
     const organization = faker.custom.healthcareOrganization();
     organization.resourceEndpoints = {

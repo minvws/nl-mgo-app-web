@@ -30,12 +30,12 @@ export function HealthCategoryDetailList({
             </Text>
 
             <ListWrapper>
-                {resources.map(({ id, slug, uiSchema, organizationId }) => {
+                {resources.map(({ id, slug, label, organizationId }) => {
                     const organization = organisationStore.getOrganizationById(organizationId);
                     return (
                         <DetailButton
                             key={id}
-                            title={uiSchema.label}
+                            title={label}
                             description={organization?.name}
                             asChild
                         >

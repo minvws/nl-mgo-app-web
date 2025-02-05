@@ -1,3 +1,5 @@
+import { type DeepPartial } from '$/types/DeepPartial';
+import { type GenericObject } from '$/types/GenericObject';
 import { defaultsDeep } from 'lodash';
 
 type MockData<T> = GenericObject | Array<T>;

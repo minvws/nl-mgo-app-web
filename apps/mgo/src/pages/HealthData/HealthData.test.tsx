@@ -1,16 +1,23 @@
+import { type UiSchemaProps } from '$/components/UiSchema/UiSchema';
 import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
-import { useParams, Navigate } from '$/routing';
+import { Navigate, useParams } from '$/routing';
 import { useResourcesStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { message, messageRegexp } from '$test/helpers/i18n';
-import { screen } from '@testing-library/react';
+import { message } from '$test/helpers/i18n';
+import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
-import { HealthDataDetail } from './HealthDataDetail';
-import { type MessagesIds } from '$/i18n';
+import { HealthData } from './HealthData';
 
 vi.mock('$/routing/useParams');
 vi.mock('$/routing/Navigate');
+vi.mock('../../components/UiSchema/UiSchema', () => {
+    return {
+        UiSchema: ({ showDetails }: UiSchemaProps) => (
+            <div data-testid="ui-schema">showDetails: {`${!!showDetails}`}</div>
+        ),
+    };
+});
 
 const mockUseParams = useParams as MockedFunction<typeof useParams>;
 const mockNavigate = Navigate as MockedFunction<typeof Navigate>;
@@ -20,7 +27,7 @@ beforeEach(() => {
     mockNavigate.mockReset();
 });
 
-test('shows ui schema', async () => {
+test('shows the summary by default', async () => {
     mockUseParams.mockImplementationOnce(() => ({
         organizationSlug: faker.lorem.slug(),
         healthCategorySlug: healthCategorySlugs[HealthCategory.Medication],
@@ -29,30 +36,31 @@ test('shows ui schema', async () => {
 
     const store = useResourcesStore.getState();
     const mock = vi.spyOn(store, 'getResourceBySlug');
-    mock.mockImplementationOnce(
-        () =>
-            ({
-                uiSchema: {
-                    label: faker.lorem.sentence(),
-                    children: [
-                        {
-                            label: 'zib_medication_use.group_general_information',
-                            children: [],
-                        },
-                    ],
-                },
-            }) as Pick<Resource, 'uiSchema'> as any // eslint-disable-line @typescript-eslint/no-explicit-any
-    );
+    mock.mockImplementationOnce(() => ({}) as Resource);
 
-    setupWithAppProviders(<HealthDataDetail />);
-    screen.getByRole('heading', {
-        name: message('hc_medication.heading_detail'),
-        level: 1,
-    });
-    screen.getByRole('heading', {
-        name: messageRegexp('zib_medication_use.group_general_information' as MessagesIds),
-        level: 2,
-    });
+    setupWithAppProviders(<HealthData />);
+
+    await waitFor(() => expect(document.title).toContain(message('hc_medication.heading_summary')));
+    const uiSchemaComponent = screen.getByTestId('ui-schema');
+    expect(uiSchemaComponent).toHaveTextContent('showDetails: false');
+});
+
+test('can show all the details', async () => {
+    mockUseParams.mockImplementationOnce(() => ({
+        organizationSlug: faker.lorem.slug(),
+        healthCategorySlug: healthCategorySlugs[HealthCategory.Medication],
+        resourceSlug: faker.lorem.slug(),
+    }));
+
+    const store = useResourcesStore.getState();
+    const mock = vi.spyOn(store, 'getResourceBySlug');
+    mock.mockImplementationOnce(() => ({}) as Resource);
+
+    setupWithAppProviders(<HealthData showDetails />);
+
+    await waitFor(() => expect(document.title).toContain(message('hc_medication.heading_detail')));
+    const uiSchemaComponent = screen.getByTestId('ui-schema');
+    expect(uiSchemaComponent).toHaveTextContent('showDetails: true');
 });
 
 test('redirects to the organization / health category page if there is no resource found', async () => {
@@ -67,7 +75,7 @@ test('redirects to the organization / health category page if there is no resour
     const mock = vi.spyOn(store, 'getResourceBySlug');
     mock.mockImplementationOnce(() => undefined);
 
-    setupWithAppProviders(<HealthDataDetail />);
+    setupWithAppProviders(<HealthData />);
 
     expect(mockNavigate.mock.calls[0][0]).toEqual({
         to: `/organisaties/${params.organizationSlug}/${params.healthCategorySlug}`,
@@ -85,7 +93,7 @@ test('redirects to the overview / health category page if there is no resource f
     const mock = vi.spyOn(store, 'getResourceBySlug');
     mock.mockImplementationOnce(() => undefined);
 
-    setupWithAppProviders(<HealthDataDetail />);
+    setupWithAppProviders(<HealthData />);
 
     expect(mockNavigate.mock.calls[0][0]).toEqual({
         to: `/overzicht/${params.healthCategorySlug}`,

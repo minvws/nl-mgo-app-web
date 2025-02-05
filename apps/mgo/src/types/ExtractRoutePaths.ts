@@ -1,7 +1,7 @@
 import type { DeepReadonly } from './DeepReadonly';
 import type { DeepWriteable } from './DeepWritable';
-import type { ToTuple } from './ToTuple';
 import type { StringReplace } from './StringReplace';
+import type { ToTuple } from './ToTuple';
 
 type RouteObject = {
     path?: string;
@@ -58,7 +58,8 @@ type RouteParam<T> = T extends `${string}:${infer Param}/${string}`
 type ReplaceParams<T extends string> =
     RouteParam<T> extends never
         ? T
-        : T | ReplaceParams<StringReplace<T, `:${RouteParam<T>}`, `${string & {}}`>>; // eslint-disable-line @typescript-eslint/ban-types
+        : // eslint-disable-next-line @typescript-eslint/ban-types
+          T | ReplaceParams<StringReplace<T, `:${RouteParam<T>}`, `${string & {}}`>>; // NOSONAR
 
 /**
  * A utility type to extract all the paths from a route configuration.
@@ -91,7 +92,7 @@ type ReplaceParams<T extends string> =
 export type ExtractRoutePaths<
     T extends readonly DeepReadonly<RouteObject>[],
     R = DeepWriteable<T>[number],
-    Paths = ExtractChildPaths<ToTuple<R>>,
+    Paths extends string = ExtractChildPaths<ToTuple<R>>,
 > = ReplaceParams<Paths>;
 
 type ExtractParams<T> = T extends `${string}:${infer Param}/${string}`
@@ -103,7 +104,7 @@ type ExtractParams<T> = T extends `${string}:${infer Param}/${string}`
 export type ExtractRouteParams<
     T extends readonly DeepReadonly<RouteObject>[],
     R = DeepWriteable<T>[number],
-    Paths = ExtractChildPaths<ToTuple<R>>,
+    Paths extends string = ExtractChildPaths<ToTuple<R>>,
 > = ExtractParamsRecord<Paths>;
 
 /**
@@ -113,6 +114,6 @@ export type ExtractRouteParams<
  * type RoutePaths = '/posts/:id' | '/posts/:id/details' | 'foo' | 'foo/:bar/baz/:faz'; ;
  * ExtractRouteParams<RoutePaths> // { id: string, bar: string, faz: string }
  */
-type ExtractParamsRecord<T extends string, O = ExtractParams<T>> = {
+type ExtractParamsRecord<T extends string, O extends string = ExtractParams<T>> = {
     [K in O]: string;
 };

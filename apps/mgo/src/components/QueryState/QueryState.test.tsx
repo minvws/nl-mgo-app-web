@@ -1,5 +1,5 @@
-import { message, setupWithAppProviders } from '$test/helpers';
-import { supressError } from '$test/helpers/supressError';
+import { message, setup, setupWithAppProviders } from '$test/helpers';
+import { supressConsoleError } from '$test/helpers/supressConsoleError';
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
@@ -198,9 +198,7 @@ test('QueryState throws if it receives an invalid status', () => {
         renderResult: <span data-testid="result" />,
     };
 
-    supressError(() => {
-        expect(() => setupWithAppProviders(<QueryState {...query} />)).toThrow(
-            `Unhandled status: ${query.status}`
-        );
+    supressConsoleError(() => {
+        expect(() => setup(<QueryState {...query} />)).toThrow(`Unhandled status: ${query.status}`);
     });
 });

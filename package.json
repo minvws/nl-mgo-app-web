@@ -12,7 +12,7 @@
         "storybook": "pnpm run --dir packages/mgo-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run check-types && vitest run --coverage",
+        "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
         "e2e": "pnpm run --dir apps/e2e-tests e2e"
     },
     "non-standard-dependency-comments": {

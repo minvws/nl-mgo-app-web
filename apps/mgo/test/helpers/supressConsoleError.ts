@@ -13,19 +13,8 @@ const restoreConsoleError = () => {
     }
 };
 
-/**
- * Supress and return any errors thrown, also ensure it is not logged to the console.
- */
-export async function supressError(testFunc: TestFunction) {
-    let error;
+export async function supressConsoleError(testFunc: TestFunction) {
     mockConsoleError();
-
-    try {
-        testFunc();
-    } catch (e) {
-        error = e;
-    }
-
+    testFunc();
     restoreConsoleError();
-    return error;
 }

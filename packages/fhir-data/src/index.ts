@@ -2,6 +2,7 @@
 
 export { getBundleResources } from './api/getBundleResources/getBundleResources';
 export { getMgoResource } from './api/getMgoResource/getMgoResource';
+export { getSummaryUiSchema } from './api/getSummaryUiSchema/getSummaryUiSchema';
 export { getUiSchema } from './api/getUiSchema/getUiSchema';
 export { type MgoResource } from './api/resources/resources';
 export { type NictizNlProfile } from './types/Fhir';
