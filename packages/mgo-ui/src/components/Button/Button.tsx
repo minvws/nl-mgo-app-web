@@ -1,7 +1,8 @@
 import { forwardRef, isValidElement, type ButtonHTMLAttributes, type ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { cn, focusStyle } from '../../utils';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';

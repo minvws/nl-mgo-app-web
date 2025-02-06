@@ -1,6 +1,7 @@
 import { type ButtonHTMLAttributes } from 'react';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { cn, focusStyle } from '../../utils';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { Card } from '../Card/Card';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';

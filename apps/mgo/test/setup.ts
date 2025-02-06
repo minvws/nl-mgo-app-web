@@ -1,10 +1,11 @@
 import type { Config } from '$/lib/config/config';
 import { cleanup, configure } from '@testing-library/react';
 import type { ReactNode } from 'react';
-import { afterEach, beforeEach, vi } from 'vitest';
+import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
+import { useConfig } from '@minvws/mgo-mgo-ui';
 import {
     authState,
     removeUserMock,
@@ -58,6 +59,10 @@ throwOnConsoleLog({
 });
 
 window.scrollTo = vi.fn;
+
+beforeAll(() => {
+    useConfig().animations = false;
+});
 
 beforeEach(() => {
     Object.defineProperty(window, 'matchMedia', {

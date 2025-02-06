@@ -1,7 +1,8 @@
 import { useContext, type HTMLAttributes } from 'react';
-import { AccordionContext } from './AccordionContext';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
-import { cn, focusStyle } from '../../utils';
+import { AccordionContext } from './AccordionContext';
 
 export interface AccordionButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 

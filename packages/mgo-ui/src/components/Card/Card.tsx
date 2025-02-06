@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
-import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
 import { twMerge } from 'tailwind-merge';
+import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 
 export type CardProps = HTMLAttributes<HTMLElement> & CompositionProps;
 

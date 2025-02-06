@@ -40,12 +40,16 @@ export { Spinner, type SpinnerProps } from './Spinner/Spinner';
 export { Stack, type StackProps } from './Stack/Stack';
 export { Text, type TextProps } from './Text/Text';
 
-export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
-export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
-export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
+export { CategoryButton, type CategoryButtonProps } from './CategoryButton/CategoryButton';
 export {
     DescriptionButton,
     type DescriptionButtonProps,
 } from './DescriptionButton/DescriptionButton';
-export { CategoryButton, type CategoryButtonProps } from './CategoryButton/CategoryButton';
+export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
+export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
 export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';
+export { Fade, type FadeProps } from './Fade/Fade';
+export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
+export { MobileMenuButton, type MobileMenuButtonProps } from './MobileMenuButton/MobileMenuButton';
+export { MobileMenuItem, type MobileMenuItemProps } from './MobileMenuItem/MobileMenuItem';
+export { SlideDown, type SlideDownProps } from './SlideDown/SlideDown';

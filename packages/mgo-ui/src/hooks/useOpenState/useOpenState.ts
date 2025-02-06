@@ -31,8 +31,11 @@ export function useOpenState(props: UseOpenStateProps = {}) {
     return {
         isOpen,
         setIsOpen: setIsOpenWithCallbacks,
-        open: () => setIsOpenWithCallbacks(true),
-        close: () => setIsOpenWithCallbacks(false),
-        toggle: () => setIsOpenWithCallbacks(!isOpen),
+        open: useCallback(() => setIsOpenWithCallbacks(true), [setIsOpenWithCallbacks]),
+        close: useCallback(() => setIsOpenWithCallbacks(false), [setIsOpenWithCallbacks]),
+        toggle: useCallback(
+            () => setIsOpenWithCallbacks(!isOpen),
+            [isOpen, setIsOpenWithCallbacks]
+        ),
     };
 }

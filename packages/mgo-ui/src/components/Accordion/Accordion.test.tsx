@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
+import { flushCallStack } from '../../../test/helpers';
 import { Accordion } from './Accordion';
 
 test('Accordion can be open and closed', async () => {
@@ -25,6 +26,7 @@ test('Accordion can be open and closed', async () => {
     expect(screen.getByRole('region').textContent).includes(content);
 
     fireEvent.click(screen.getByRole('button', { name: buttonLabel }));
+    await flushCallStack();
     expect(getParentClassname()).includes(' hidden');
 });
 

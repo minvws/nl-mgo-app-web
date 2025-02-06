@@ -1,9 +1,10 @@
 import { type MouseEventHandler, type ReactNode } from 'react';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { Card, type CardProps } from '../Card/Card';
 import { type IconName } from '../Icon/icons';
-import { Stack } from '../Stack/Stack';
-import { cn, focusStyle } from '../../utils';
 import { IconButton } from '../IconButton/IconButton';
+import { Stack } from '../Stack/Stack';
 
 export type HealthcareOrganizationCardProps = Omit<CardProps, 'title' | 'asChild'> & {
     readonly title: ReactNode;

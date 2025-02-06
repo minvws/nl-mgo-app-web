@@ -1,12 +1,12 @@
-import { Container, cn, useResponsive } from '@minvws/mgo-mgo-ui';
 import { Outlet } from '$/routing';
+import { Container, cn, useResponsive } from '@minvws/mgo-mgo-ui';
+import { ScrollRestoration } from 'react-router-dom';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
+import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 import { Footer } from '../Footer/Footer';
 import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
 import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
-import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
-import { ScrollRestoration } from 'react-router-dom';
 
 export interface LayoutProps {
     readonly hideMenu?: boolean;
@@ -18,19 +18,24 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
         sm: false,
     });
 
-    const Header = isMobile ? MobileHeader : DesktopHeader;
+    const header = isMobile ? (
+        <MobileHeader data-testid="header-mobile" />
+    ) : (
+        <DesktopHeader data-testid="header-desktop" />
+    );
 
     return (
         <>
             <div className="flex min-h-screen flex-col">
-                <header>
-                    <LogoBanner
-                        className={hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'}
-                    />
-                    {!hideMenu && (
-                        <Header className="border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-700 dark:bg-gray-900" />
+                <LogoBanner
+                    className={cn(
+                        'z-20',
+                        hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'
                     )}
-                </header>
+                />
+
+                {!hideMenu && header}
+
                 <main className="flex flex-grow flex-col">
                     <Container
                         className={cn(
