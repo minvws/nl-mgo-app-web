@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
+import { Stack } from '../Stack/Stack';
 import { Alert } from './Alert';
 
 const meta: Meta<typeof Alert> = {
@@ -31,4 +33,22 @@ export const Info: Story = {
         status: 'info',
         children: 'Description',
     },
+};
+
+export const Overview: Story = {
+    render: ({ ...args }) => (
+        <DarkStory>
+            <Stack>
+                <Alert {...args} label="Success" status="success">
+                    Description
+                </Alert>
+                <Alert {...args} label="Warning" status="warning">
+                    Description
+                </Alert>
+                <Alert {...args} label="Info" status="info">
+                    Description
+                </Alert>
+            </Stack>
+        </DarkStory>
+    ),
 };

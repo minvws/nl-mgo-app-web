@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
+import { Stack } from '../Stack/Stack';
 import { Accordion } from './Accordion';
 
 type Story = StoryObj<typeof Accordion>;
@@ -55,5 +57,34 @@ export const DefaultExpanded: Story = {
                 </p>
             </Accordion.Panel>
         </Accordion>
+    ),
+};
+
+export const Overview: Story = {
+    render: () => (
+        <DarkStory orientation="horizontal">
+            <Stack>
+                <Accordion>
+                    <Accordion.Button>Debitis similique fuga</Accordion.Button>
+                    <Accordion.Panel>
+                        <p>
+                            Illo asperiores eius vero placeat iste amet porro dolor. Laudantium
+                            consequatur architecto ex aliquam et asperiores tempore architecto vel
+                            saepe.
+                        </p>
+                    </Accordion.Panel>
+                </Accordion>
+                <Accordion defaultExpanded>
+                    <Accordion.Button>Debitis similique fuga</Accordion.Button>
+                    <Accordion.Panel>
+                        <p>
+                            Illo asperiores eius vero placeat iste amet porro dolor. Laudantium
+                            consequatur architecto ex aliquam et asperiores tempore architecto vel
+                            saepe.
+                        </p>
+                    </Accordion.Panel>
+                </Accordion>
+            </Stack>
+        </DarkStory>
     ),
 };

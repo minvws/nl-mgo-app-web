@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { DescriptionItem } from './DescriptionItem';
 
 type Story = StoryObj<typeof DescriptionItem>;
@@ -13,3 +14,11 @@ export default {
 } satisfies StoryMeta;
 
 export const Default: Story = {};
+
+export const Overview: Story = {
+    render: ({ ...args }) => (
+        <DarkStory>
+            <DescriptionItem {...args} />
+        </DarkStory>
+    ),
+};

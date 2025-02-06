@@ -2,7 +2,7 @@ Describe the issue or concern
 
 ### Acceptatie criteria
 
--   it does something
+- it does something
 
 ### QA
 

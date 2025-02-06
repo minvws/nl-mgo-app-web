@@ -11,22 +11,22 @@
 
 ## Healthcare categories
 
--   [Medicijnen](#medicijnen)
--   [Metingen](#metingen)
--   [Uitslagen](#uitslagen)
--   [Allergieën](#allergieën)
--   [Behandelingen](#behandelingen)
--   [Afspraken](#afspraken)
--   [Vaccinaties](#vaccinaties)
--   [Documenten](#documenten)
--   [Medische klachten](#medische-klachten)
--   [Persoonlijke gegevens](#persoonlijke-gegevens)
--   [Mentaal welzijn](#mentaal-welzijn)
--   [Waarschuwingen](#waarschuwingen)
--   [Leefstijl](#leefstijl)
--   [Medische hulpmiddelen](#medische-hulpmiddelen)
--   [Behandel plan](#behandel-plan)
--   [Betaalgegevens](#betaalgegevens)
+- [Medicijnen](#medicijnen)
+- [Metingen](#metingen)
+- [Uitslagen](#uitslagen)
+- [Allergieën](#allergieën)
+- [Behandelingen](#behandelingen)
+- [Afspraken](#afspraken)
+- [Vaccinaties](#vaccinaties)
+- [Documenten](#documenten)
+- [Medische klachten](#medische-klachten)
+- [Persoonlijke gegevens](#persoonlijke-gegevens)
+- [Mentaal welzijn](#mentaal-welzijn)
+- [Waarschuwingen](#waarschuwingen)
+- [Leefstijl](#leefstijl)
+- [Medische hulpmiddelen](#medische-hulpmiddelen)
+- [Behandel plan](#behandel-plan)
+- [Betaalgegevens](#betaalgegevens)
 
 <hr/>
 

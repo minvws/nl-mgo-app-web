@@ -4,8 +4,8 @@ import { cn, focusStyle } from '../../utils';
 import { Card } from '../Card/Card';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
-import { Text } from '../Text/Text';
 import { Spinner } from '../Spinner/Spinner';
+import { Text } from '../Text/Text';
 
 type CategoryIcon = Extract<
     IconName,
@@ -44,7 +44,7 @@ const iconColors: Record<CategoryIcon, string> = {
     'vital-signs': 'text-dark-green-700',
     'more-horiz': 'text-gray-700',
     'medical-services': 'text-purple-800',
-    'health-and-safety': 'text-logo-blue-700',
+    'health-and-safety': 'text-lint-blue-700',
     'sentiment-satisfied': 'text-sky-blue-600',
 };
 

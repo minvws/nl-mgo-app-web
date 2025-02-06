@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Spinner } from './Spinner';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { Spinner } from './Spinner';
 import { variants } from './variants';
 
 type Story = StoryObj<typeof Spinner>;
@@ -23,15 +24,17 @@ export const Sizing: Story = {
     ),
 };
 
-export const Variants: Story = {
+export const Overview: Story = {
     render: () => (
-        <Stack className="flex-row">
-            {variants.map((variant) => (
-                <div key={variant} className="flex flex-col items-center">
-                    <Spinner variant={variant} />
-                    <span>{variant}</span>
-                </div>
-            ))}
-        </Stack>
+        <DarkStory>
+            <Stack className="flex-row">
+                {variants.map((variant) => (
+                    <div key={variant} className="flex flex-col items-center">
+                        <Spinner variant={variant} />
+                        <span>{variant}</span>
+                    </div>
+                ))}
+            </Stack>
+        </DarkStory>
     ),
 };

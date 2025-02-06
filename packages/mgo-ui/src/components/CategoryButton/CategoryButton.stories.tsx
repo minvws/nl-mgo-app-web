@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CategoryButton } from './CategoryButton';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { CategoryButton } from './CategoryButton';
 
 type Story = StoryObj<typeof CategoryButton>;
 type StoryMeta = Meta<typeof CategoryButton>;
@@ -43,17 +44,19 @@ export const Overview: Story = {
         children: 'Label',
     },
     render: ({ children }) => (
-        <Stack className="gap-8">
-            <CategoryButton icon="diagnosis">{children}</CategoryButton>
-            <CategoryButton icon="diagnosis" label="as link" asChild>
-                <a href="#">{children}</a>
-            </CategoryButton>
-            <CategoryButton icon="diagnosis" isDisabled label="currently disabled">
-                {children}
-            </CategoryButton>
-            <CategoryButton icon="diagnosis" isLoading loadingText="currently loading...">
-                {children}
-            </CategoryButton>
-        </Stack>
+        <DarkStory>
+            <Stack>
+                <CategoryButton icon="diagnosis">{children}</CategoryButton>
+                <CategoryButton icon="diagnosis" label="as link" asChild>
+                    <a href="#">{children}</a>
+                </CategoryButton>
+                <CategoryButton icon="diagnosis" isDisabled label="currently disabled">
+                    {children}
+                </CategoryButton>
+                <CategoryButton icon="diagnosis" isLoading loadingText="currently loading...">
+                    {children}
+                </CategoryButton>
+            </Stack>
+        </DarkStory>
     ),
 };

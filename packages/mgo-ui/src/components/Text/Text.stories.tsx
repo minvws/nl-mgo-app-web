@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text } from './Text';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { Text } from './Text';
 import { sizes } from './sizes';
-import { type Variant, variants } from './variants';
+import { variants, type Variant } from './variants';
 
 type Story = StoryObj<typeof Text>;
 type StoryMeta = Meta<typeof Text>;
@@ -35,7 +36,7 @@ export const AsChildText: Story = {
 
 export const Overview: Story = {
     render: ({ children, ...args }) => (
-        <>
+        <DarkStory>
             {variants.map((variant: Variant) => (
                 <Stack key={variant} className="mb-8">
                     {[...sizes].reverse().map((size) => (
@@ -45,6 +46,6 @@ export const Overview: Story = {
                     ))}
                 </Stack>
             ))}
-        </>
+        </DarkStory>
     ),
 };

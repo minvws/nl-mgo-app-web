@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
+import { Icon } from '../Icon/Icon';
 import { Stack } from '../Stack/Stack';
 import { HealthcareOrganizationCard } from './HealthcareOrganizationCard';
-import { Icon } from '../Icon/Icon';
 
 type Story = StoryObj<typeof HealthcareOrganizationCard>;
 type StoryMeta = Meta<typeof HealthcareOrganizationCard>;
@@ -30,17 +31,19 @@ export const Children: Story = {
     },
 };
 
-export const Variants: Story = {
+export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
-        <Stack>
-            <HealthcareOrganizationCard {...args} icon="add" iconAriaLabel="add" />
-            <HealthcareOrganizationCard
-                {...args}
-                icon="chevron-right"
-                iconAriaLabel="chevron-right"
-            />
-            <HealthcareOrganizationCard {...args} icon="delete" iconAriaLabel="delete" />
-        </Stack>
+        <DarkStory>
+            <Stack>
+                <HealthcareOrganizationCard {...args} icon="add" iconAriaLabel="add" />
+                <HealthcareOrganizationCard
+                    {...args}
+                    icon="chevron-right"
+                    iconAriaLabel="chevron-right"
+                />
+                <HealthcareOrganizationCard {...args} icon="delete" iconAriaLabel="delete" />
+            </Stack>
+        </DarkStory>
     ),
 };

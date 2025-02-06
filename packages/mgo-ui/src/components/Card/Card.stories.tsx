@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Card } from './Card';
 
 type Story = StoryObj<typeof Card>;
@@ -12,3 +13,11 @@ export default {
 } satisfies StoryMeta;
 
 export const Default: Story = {};
+
+export const Overview: Story = {
+    render: ({ ...args }) => (
+        <DarkStory>
+            <Card {...args} />
+        </DarkStory>
+    ),
+};
