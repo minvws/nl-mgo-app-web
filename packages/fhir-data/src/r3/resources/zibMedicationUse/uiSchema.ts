@@ -1,9 +1,9 @@
 import { capitalize } from 'lodash';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
+import { type UiHelperContext } from '../../../ui/context/ui';
 import { map } from '../../../utils';
 import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
 import { type ZibMedicationUse } from './zibMedicationUse';
-import { type UiHelperContext } from '../../../ui/context/ui';
 
 export const i18n = 'r3.zib_medication_use';
 
@@ -11,7 +11,7 @@ export function getLabel(resource: ZibMedicationUse, { formatMessage }: UiHelper
     return capitalize(resource.medicationReference?.display) || formatMessage(i18n);
 }
 
-export const uiSchema: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibMedicationUse> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     /**

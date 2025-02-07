@@ -4,7 +4,7 @@ import { Navigate, useParams } from '$/routing';
 import { useResourcesStore } from '$/store';
 import { Helmet } from 'react-helmet-async';
 import { useIntl } from 'react-intl';
-import { UiSchema } from '../../components/UiSchema/UiSchema';
+import { HealthUiSchema } from '../../components/HealthUiSchema/HealthUiSchema';
 
 export interface HealthDataProps {
     readonly showDetails?: boolean;
@@ -38,7 +38,7 @@ export function HealthData({ showDetails }: HealthDataProps) {
             <section className="flex-grow">
                 <BackButton />
 
-                <UiSchema resource={resource} showDetails={showDetails} />
+                <HealthUiSchema resource={resource} showDetails={showDetails} />
             </section>
         </>
     );

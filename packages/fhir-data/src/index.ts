@@ -1,9 +1,9 @@
 /* c8 ignore start */
 
 export { getBundleResources } from './api/getBundleResources/getBundleResources';
+export { getDetails } from './api/getDetails/getDetails';
 export { getMgoResource } from './api/getMgoResource/getMgoResource';
-export { getSummaryUiSchema } from './api/getSummaryUiSchema/getSummaryUiSchema';
-export { getUiSchema } from './api/getUiSchema/getUiSchema';
+export { getSummary } from './api/getSummary/getSummary';
 export { type MgoResource } from './api/resources/resources';
 export { type NictizNlProfile } from './types/Fhir';
 export { type Lossless } from './types/Lossless';

@@ -1,7 +1,7 @@
-import { type UiSchemaGroupFunction } from '../../../ui/types';
+import { type HealthUiGroupFunction } from '../../../ui/types';
 import { type ZibAdministrationSchedule } from './zibAdministrationSchedule';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<ZibAdministrationSchedule> = (
+export const uiSchemaGroup: HealthUiGroupFunction<ZibAdministrationSchedule> = (
     resource,
     { ui, formatMessage }
 ) => {

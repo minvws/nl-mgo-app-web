@@ -1,4 +1,4 @@
-import { type UiSchemaProps } from '$/components/UiSchema/UiSchema';
+import { type HealthUiSchemaProps } from '$/components/HealthUiSchema/HealthUiSchema';
 import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { Navigate, useParams } from '$/routing';
 import { useResourcesStore, type Resource } from '$/store';
@@ -11,9 +11,9 @@ import { HealthData } from './HealthData';
 
 vi.mock('$/routing/useParams');
 vi.mock('$/routing/Navigate');
-vi.mock('../../components/UiSchema/UiSchema', () => {
+vi.mock('../../components/HealthUiSchema/HealthUiSchema', () => {
     return {
-        UiSchema: ({ showDetails }: UiSchemaProps) => (
+        HealthUiSchema: ({ showDetails }: HealthUiSchemaProps) => (
             <div data-testid="ui-schema">showDetails: {`${!!showDetails}`}</div>
         ),
     };

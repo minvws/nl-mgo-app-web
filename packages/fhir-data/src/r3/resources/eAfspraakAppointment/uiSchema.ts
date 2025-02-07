@@ -1,11 +1,11 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type EAfspraakAppointment } from './eAfspraakAppointment';
 
 export const i18n = 'r3.e_afspraak_appointment';
 
-export const uiSchema: UiSchemaFunction<EAfspraakAppointment> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<EAfspraakAppointment> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

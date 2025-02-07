@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement, type UiSchema, type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../types';
 import { dropEmptyEntries } from './dropEmptyEntries';
 
 test('drops empty entries, but does not mutate the schema', () => {
@@ -26,7 +26,7 @@ test('drops empty entries, but does not mutate the schema', () => {
         display: faker.lorem.word(),
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -63,7 +63,7 @@ test('drops groups that are empty', () => {
         reference: undefined,
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -107,7 +107,7 @@ test('drops groups that are empty for a group collection', () => {
         reference: undefined,
     };
 
-    const uiSchemaGroups: UiSchemaGroup[] = [
+    const uiSchemaGroups: HealthUiGroup[] = [
         {
             label: faker.lorem.word(),
             children: [],
@@ -155,7 +155,7 @@ test('can drops empty entries for a single group but does not mutate the origina
         display: faker.lorem.word(),
     };
 
-    const uiSchemaGroup: UiSchemaGroup = {
+    const uiSchemaGroup: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [entry1, entry2, entry3, entry4],
     };
@@ -182,7 +182,7 @@ test('returns an empty group if a groups was supplied with empty entries', () =>
         reference: undefined,
     };
 
-    const uiSchemaGroup: UiSchemaGroup = {
+    const uiSchemaGroup: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [entry1, entry2],
     };

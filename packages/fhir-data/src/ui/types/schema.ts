@@ -42,12 +42,12 @@ export type UiElement =
     | DownloadBinary
     | ReferenceLink;
 
-export interface UiSchemaGroup {
+export interface HealthUiGroup {
     label?: string;
     children: UiElement[];
 }
 
-export interface UiSchema {
+export interface HealthUiSchema {
     label: string;
-    children: UiSchemaGroup[];
+    children: HealthUiGroup[];
 }

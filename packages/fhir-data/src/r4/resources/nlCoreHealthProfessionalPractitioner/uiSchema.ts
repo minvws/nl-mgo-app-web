@@ -1,4 +1,4 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import {
@@ -11,7 +11,7 @@ import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualific
 import { type R4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 
 export const i18n = 'r4.nl_core_health_professional_practitioner';
-export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitioner> = (
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractitioner> = (
     resource,
     context
 ) => {

@@ -5,8 +5,6 @@ import { defaults, uniqueId } from 'lodash';
 import { expect, test, vi } from 'vitest';
 import { useResourcesStore, type ResourceDTO } from './resources';
 
-vi.mock('@minvws/mgo-fhir-data');
-
 function mockResourceDto<V extends FhirVersion>(
     fhirVersion?: V,
     resource: DeepPartial<ResourceDTO<V>> = {}

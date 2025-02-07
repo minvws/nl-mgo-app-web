@@ -1,10 +1,10 @@
 import { type I18nContext } from '../../../i18n';
 import { type UiHelperContext } from '../../context/ui';
-import { type UiSchema, type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup, type HealthUiSchema } from '../../types';
 import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 import { isUiSchemaGroup } from '../isUiSchemaGroup/isUiSchemaGroup';
 
-function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiSchemaGroup {
+function processGroup(group: HealthUiGroup, { formatMessage }: I18nContext): HealthUiGroup {
     return {
         ...group,
         children: group.children.map((entry) => {
@@ -21,7 +21,7 @@ function processGroup(group: UiSchemaGroup, { formatMessage }: I18nContext): UiS
 }
 
 export function setEmptyEntries(context: UiHelperContext) {
-    return <T extends UiSchema | UiSchemaGroup | UiSchemaGroup[]>(schema: T): T => {
+    return <T extends HealthUiSchema | HealthUiGroup | HealthUiGroup[]>(schema: T): T => {
         if (Array.isArray(schema)) {
             return schema.map((x) => processGroup(x, context)) as T;
         }

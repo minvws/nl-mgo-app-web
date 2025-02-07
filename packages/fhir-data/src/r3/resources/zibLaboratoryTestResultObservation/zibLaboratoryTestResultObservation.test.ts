@@ -1,4 +1,4 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -15,7 +15,7 @@ test('returns the expected output 01', () => {
 test('uiSchema returns the expected output 01', () => {
     const output = zibLaboratoryTestResultObservation.parse(input01 as Observation);
     const uiSchema = zibLaboratoryTestResultObservation.uiSchema(output, testUiSchemaContext());
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('summary returns the expected output 01', () => {
@@ -26,7 +26,7 @@ test('summary returns the expected output 01', () => {
             isSummary: true,
         })
     );
-    expectUiSchemaJson(summary).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
+    expectHealthCareUiSchemaJson(summary).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
 });
 
 test('returns the expected output 02', () => {
@@ -37,7 +37,7 @@ test('returns the expected output 02', () => {
 test('uiSchema returns the expected output 02', () => {
     const output = zibLaboratoryTestResultObservation.parse(input02 as Observation);
     const uiSchema = zibLaboratoryTestResultObservation.uiSchema(output, testUiSchemaContext());
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('summary returns the expected output 02', () => {
@@ -46,7 +46,7 @@ test('summary returns the expected output 02', () => {
         output,
         testUiSchemaContext({ isSummary: true })
     );
-    expectUiSchemaJson(summary).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
+    expectHealthCareUiSchemaJson(summary).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
 });
 
 test('uiSchema returns default label if code not supplied', () => {

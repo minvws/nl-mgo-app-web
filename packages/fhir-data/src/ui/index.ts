@@ -1,5 +1,5 @@
 export { dropEmptyEntries } from './helpers';
 
-export type { UiSchema, UiSchemaGroup, UiSchemaFunction } from './types';
+export type { HealthUiGroup, HealthUiSchema, HealthUiSchemaFunction } from './types';
 
-export { createUiSchemaContext } from './context/context';
+export { createSchemaContext } from './context/context';

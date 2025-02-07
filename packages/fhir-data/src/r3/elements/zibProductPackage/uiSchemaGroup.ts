@@ -1,8 +1,8 @@
-import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../ui/types';
+import { type HealthUiGroupFunction, type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { type ZibProductPackage } from './zibProductPackage';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<ZibProductPackage> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<ZibProductPackage> = (resource, context) => {
     const i18n = 'r3.zib_product_package';
     const ui = context.ui as NonStrictUi;
 

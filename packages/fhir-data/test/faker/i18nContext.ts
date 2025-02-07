@@ -1,6 +1,6 @@
 import { type IntlShape, type MessageDescriptor } from '@formatjs/intl';
 import { vi } from 'vitest';
-import { Locale } from '../../src/i18n/intl/intl';
+import { Locale } from '../../src/i18n';
 import { type MessagesIds } from '../../src/i18n/messages';
 import { type UiHelperContext } from '../../src/ui/context/ui';
 import { type HasMessageHelper } from '../../src/ui/types';

@@ -1,4 +1,4 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { uiSchemaGroup as evidenceUiSchema } from './elements/evidence/uiSchemaGroup';
@@ -6,7 +6,7 @@ import { uiSchemaGroup as stageUiSchema } from './elements/stage/uiSchemaGroup';
 import { type ZibProblem } from './zibProblem';
 
 export const i18n = 'r3.zib_problem';
-export const uiSchema: UiSchemaFunction<ZibProblem> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibProblem> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const stage = stageUiSchema(resource.stage, context);

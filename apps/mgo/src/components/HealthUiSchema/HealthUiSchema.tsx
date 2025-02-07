@@ -1,22 +1,22 @@
 import { useNavFocusRef } from '$/hooks';
 import { type Resource } from '$/store';
-import { getSummaryUiSchema, getUiSchema } from '@minvws/mgo-fhir-data';
+import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
 import { Heading } from '@minvws/mgo-mgo-ui';
 import { Stack } from '@minvws/mgo-mgo-ui/components/Stack/Stack.js';
 import { useMemo } from 'react';
-import { UiSchemaContext, type UiSchemaContextState } from './UiSchemaContext';
-import { UiSchemaGroup } from './UiSchemaGroup';
+import { HealthUiGroup } from './HealthUiGroup';
+import { HealthUiSchemaContext, type HealthUiSchemaContextState } from './HealthUiSchemaContext';
 
-export interface UiSchemaProps {
+export interface HealthUiSchemaProps {
     readonly resource: Resource;
     readonly showDetails?: boolean;
 }
 
-export function UiSchema({ showDetails, resource }: UiSchemaProps) {
+export function HealthUiSchema({ showDetails, resource }: HealthUiSchemaProps) {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const contextValue = useMemo<UiSchemaContextState>(() => ({ resource }), [resource]);
+    const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
 
-    const getSchema = showDetails ? getUiSchema : getSummaryUiSchema;
+    const getSchema = showDetails ? getDetails : getSummary;
     const { label, children } = getSchema(resource.mgoResource);
 
     return (
@@ -26,11 +26,11 @@ export function UiSchema({ showDetails, resource }: UiSchemaProps) {
             </Heading>
 
             <Stack className="gap-6">
-                <UiSchemaContext.Provider value={contextValue}>
+                <HealthUiSchemaContext.Provider value={contextValue}>
                     {children.map((group) => (
-                        <UiSchemaGroup group={group} key={group.label} />
+                        <HealthUiGroup group={group} key={group.label} />
                     ))}
-                </UiSchemaContext.Provider>
+                </HealthUiSchemaContext.Provider>
             </Stack>
         </>
     );

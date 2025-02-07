@@ -1,9 +1,9 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibProcedureRequest } from './zibProcedureRequest';
 
 export const i18n = 'r3.zib_procedure_request';
-export const uiSchema: UiSchemaFunction<ZibProcedureRequest> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibProcedureRequest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

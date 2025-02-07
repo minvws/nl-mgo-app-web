@@ -3,14 +3,14 @@ import { useResourcesStore } from '$/store';
 import { type ReferenceLink as ReferenceLinkData } from '@minvws/mgo-fhir-data';
 import { DescriptionButton } from '@minvws/mgo-mgo-ui';
 import { useContext } from 'react';
-import { UiSchemaContext } from './UiSchemaContext';
+import { HealthUiSchemaContext } from './HealthUiSchemaContext';
 
 export interface ReferenceValueDisplayProps {
     readonly value: ReferenceLinkData;
 }
 
 export function ReferenceLink({ value }: ReferenceValueDisplayProps) {
-    const { resource } = useContext(UiSchemaContext);
+    const { resource } = useContext(HealthUiSchemaContext);
     const getResourceByReferenceId = useResourcesStore((x) => x.getResourceByReferenceId);
     const referencedResource = getResourceByReferenceId(resource, value.reference);
 

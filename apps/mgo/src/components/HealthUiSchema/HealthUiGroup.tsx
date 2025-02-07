@@ -1,14 +1,14 @@
 /* eslint-disable react/no-array-index-key */
-import { type UiSchema } from '@minvws/mgo-fhir-data';
+import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-fhir-data';
 import { DescriptionList, Heading } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { UiElement } from './UiElement';
 
-export interface UiSchemaGroupProps extends HTMLAttributes<HTMLDivElement> {
-    readonly group: UiSchema['children'][number];
+export interface HealthUiGroupProps extends HTMLAttributes<HTMLDivElement> {
+    readonly group: HealthUiGroupData;
 }
 
-export function UiSchemaGroup({ group: { label, children }, ...rest }: UiSchemaGroupProps) {
+export function HealthUiGroup({ group: { label, children }, ...rest }: HealthUiGroupProps) {
     return (
         <div {...rest}>
             {label && (

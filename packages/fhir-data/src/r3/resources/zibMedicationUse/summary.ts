@@ -1,5 +1,5 @@
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
-import { type UiSchemaFunction } from '../../../ui/types';
+import { type HealthUiSchemaFunction } from '../../../ui/types';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
 import { getLabel, i18n } from './uiSchema';
@@ -7,7 +7,7 @@ import { type ZibMedicationUse } from './zibMedicationUse';
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */
-export const summary: UiSchemaFunction<ZibMedicationUse> = (resource, context) => {
+export const summary: HealthUiSchemaFunction<ZibMedicationUse> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     const instructions = map(

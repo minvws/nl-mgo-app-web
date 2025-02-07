@@ -1,24 +1,24 @@
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type UiSchemaGroup as UiSchemaGroupType } from '@minvws/mgo-fhir-data';
+import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-fhir-data';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { UiSchemaGroup } from './UiSchemaGroup';
+import { HealthUiGroup } from './HealthUiGroup';
 
 test('can handle empty group', () => {
-    const group: UiSchemaGroupType = {
+    const group: HealthUiGroupData = {
         label: faker.lorem.sentence(),
         children: [],
     };
 
-    setupWithAppProviders(<UiSchemaGroup group={group} data-testid="ui-schema" />);
+    setupWithAppProviders(<HealthUiGroup group={group} data-testid="ui-schema" />);
 
     const schema = screen.getByTestId('ui-schema');
     expect(schema).toBeVisible();
 });
 
 test('shows the label and children', () => {
-    const group: UiSchemaGroupType = {
+    const group: HealthUiGroupData = {
         label: faker.lorem.sentence(),
         children: [
             {
@@ -29,7 +29,7 @@ test('shows the label and children', () => {
         ],
     };
 
-    setupWithAppProviders(<UiSchemaGroup group={group} data-testid="ui-schema" />);
+    setupWithAppProviders(<HealthUiGroup group={group} data-testid="ui-schema" />);
 
     screen.getByRole('heading', {
         level: 2,
@@ -42,7 +42,7 @@ test('shows the label and children', () => {
 });
 
 test('does not render the label if it is undefined', () => {
-    const group: UiSchemaGroupType = {
+    const group: HealthUiGroupData = {
         label: undefined,
         children: [
             {
@@ -53,7 +53,7 @@ test('does not render the label if it is undefined', () => {
         ],
     };
 
-    setupWithAppProviders(<UiSchemaGroup group={group} data-testid="ui-schema" />);
+    setupWithAppProviders(<HealthUiGroup group={group} data-testid="ui-schema" />);
 
     expect(screen.queryByRole('heading')).not.toBeInTheDocument();
 });

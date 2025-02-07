@@ -1,13 +1,14 @@
 import { faker } from '$test';
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import { expect, test, vi, type MockedFunction } from 'vitest';
+import { Locale } from '../../i18n';
 import { type ResourceConfig } from '../../types/Fhir';
-import { createUiSchemaContext, type UiSchemaFunction } from '../../ui';
+import { createSchemaContext, type HealthUiSchemaFunction } from '../../ui';
+import { type HealthUiSchemaOptions } from '../getDetails/getDetails';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
 import { type MgoResource } from '../resources/resources';
-import { type SingleValue, type UiSchema } from '../types';
-import { getSummaryUiSchema } from './getSummaryUiSchema';
+import { type HealthUiSchema, type SingleValue } from '../types';
+import { getSummary } from './getSummary';
 
 const mockGetResourceConfig = getResourceConfig as MockedFunction<typeof getResourceConfig>;
 
@@ -16,7 +17,7 @@ vi.mock('../getResourceConfig/getResourceConfig', () => ({
 }));
 
 test('throws if the input is a MGO resource', () => {
-    expect(() => getSummaryUiSchema({} as MgoResource<FhirVersion.R3>)).toThrowError(
+    expect(() => getSummary({} as MgoResource<FhirVersion.R3>)).toThrowError(
         `input does not seem to be a valid MGO Resource. Received MGO resource profile: "undefined"`
     );
 });
@@ -29,7 +30,7 @@ test('throws if no config could be found', () => {
     };
 
     expect(() => {
-        getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
+        getSummary(mgoResource as MgoResource<FhirVersion.R3>);
     }).toThrowError(`No config found for MGO Resource with profile: "${mgoResource.profile}"`);
 });
 
@@ -48,7 +49,7 @@ test('returns mock schema if there is no summary', () => {
         profile: faker.lorem.word(),
     };
 
-    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
     expect(result).toEqual({
         label: mgoResource.id,
         children: [
@@ -80,13 +81,13 @@ test('returns mock schema with profile label if there is no summary and no id', 
         profile: faker.lorem.word(),
     };
 
-    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
     expect(result.label).toEqual(mgoResource.profile);
 });
 
 test('returns the result of the summary ui schema and passed any extra resources', () => {
-    const summaryUiSchema: UiSchema = { label: 'Summary', children: [] };
-    const summaryFunc: UiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
+    const summaryUiSchema: HealthUiSchema = { label: 'Summary', children: [] };
+    const summaryFunc: HealthUiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     mockGetResourceConfig.mockImplementation(
         () =>
@@ -102,9 +103,9 @@ test('returns the result of the summary ui schema and passed any extra resources
 
     const resources = [{ profile: faker.lorem.word() }];
 
-    const result = getSummaryUiSchema(
+    const result = getSummary(
         mgoResource as MgoResource<FhirVersion.R3>,
-        { resources } as UiSchemaOptions<any> // eslint-disable-line @typescript-eslint/no-explicit-any
+        { resources } as HealthUiSchemaOptions<any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     expect(result).toEqual(summaryUiSchema);
@@ -112,7 +113,7 @@ test('returns the result of the summary ui schema and passed any extra resources
 });
 
 test('empty entries in the resulting summary ui schema are set with defaults', () => {
-    const summaryUiSchema: UiSchema = {
+    const summaryUiSchema: HealthUiSchema = {
         label: 'Summary',
         children: [
             {
@@ -123,7 +124,7 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
             },
         ],
     };
-    const summary: UiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
+    const summary: HealthUiSchemaFunction<any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
     mockGetResourceConfig.mockImplementation(() => ({ summary }) as ResourceConfig<any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     const mgoResource = {
@@ -131,9 +132,12 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
         profile: faker.lorem.word(),
     };
 
-    const { formatMessage } = createUiSchemaContext({ ignoreMissingTranslations: true });
+    const { formatMessage } = createSchemaContext({
+        ignoreMissingTranslations: true,
+        locale: Locale.NL_NL,
+    });
 
-    const result = getSummaryUiSchema(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
     const singleValueDisplay = (result?.children[0].children[0] as SingleValue).display;
 
     expect(singleValueDisplay).toBe(formatMessage('schema.empty_entry_display'));

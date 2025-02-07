@@ -1,10 +1,10 @@
-import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroupFunction, type NonStrictUi } from '../../../../../ui/types';
 import { map } from '../../../../../utils';
 import { uiSchemaGroup as actorUiSchema } from '../actor/uiSchemaGroup';
 import { uiSchemaGroup as dataUiSchema } from '../data/uiSchemaGroup';
 import { type Except } from './except';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Except> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Except> = (resource, context) => {
     const i18n = 'r3.zib_treatment_directive.except';
     const ui = context.ui as NonStrictUi;
 

@@ -24,7 +24,7 @@ vi.mock('@minvws/mgo-fhir-data', async (importActual) => {
     return {
         ...actual,
         getMgoResource: vi.fn(() => undefined),
-        getUiSchema: vi.fn(() => {}),
+        getDetails: vi.fn(() => {}),
     };
 });
 

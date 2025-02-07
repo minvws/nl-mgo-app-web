@@ -1,4 +1,4 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { message } from '$test/i18n';
 import { type Organization } from 'fhir/r4';
 import { expect, test } from 'vitest';
@@ -14,7 +14,7 @@ test('returns the expected output 01', () => {
 test('uiSchema returns the expected output 01', () => {
     const output = nlCoreHealthcareProviderOrganization.parse(input01 as Organization);
     const uiSchema = nlCoreHealthcareProviderOrganization.uiSchema(output, testUiSchemaContext());
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema label returns profile when label not specified', () => {

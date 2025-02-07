@@ -1,7 +1,7 @@
-import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroupFunction, type NonStrictUi } from '../../../../../ui/types';
 import { type Evidence } from './evidence';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Evidence> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Evidence> = (resource, context) => {
     const i18n = 'r3.evidence';
     const ui = context.ui as NonStrictUi;
 

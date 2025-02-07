@@ -1,11 +1,11 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { capitalize } from 'lodash';
+import { type HealthUiSchemaFunction } from '../../../ui';
+import { type UiHelperContext } from '../../../ui/context/ui';
 import { map } from '../../../utils';
 import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult';
 import { uiSchemaGroup as referenceRangetUiSchema } from './elements/referenceRange/uiSchemaGroup';
 import { uiSchemaGroup as relatedUiSchema } from './elements/related/uiSchemaGroup';
 import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
-import { type UiHelperContext } from '../../../ui/context/ui';
-import { capitalize } from 'lodash';
 
 export const i18n = 'r3.zib_laboratory_test_result_observation';
 
@@ -16,10 +16,9 @@ export function getLabel(
     return capitalize(resource.code?.coding.at(0)?.display) || formatMessage(i18n);
 }
 
-export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpLaboratoryResult> = (
-    resource,
-    context
-) => {
+export const uiSchema: HealthUiSchemaFunction<
+    ZibLaboratoryTestResultObservation | GpLaboratoryResult
+> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     /**

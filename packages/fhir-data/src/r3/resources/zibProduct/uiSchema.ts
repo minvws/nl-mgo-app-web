@@ -1,11 +1,11 @@
-import { zibProductIngredient, zibProductPackage } from '../../elements';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { zibProductIngredient, zibProductPackage } from '../../elements';
 import { type ZibProduct } from './zibProduct';
 
 export const i18n = 'r3.zib_product';
-export const uiSchema: UiSchemaFunction<ZibProduct> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibProduct> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const productPackage = zibProductPackage.uiSchemaGroup(resource.package, context);

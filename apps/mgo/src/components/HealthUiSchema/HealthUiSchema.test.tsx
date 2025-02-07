@@ -2,21 +2,21 @@ import { type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import {
-    getSummaryUiSchema,
-    getUiSchema,
-    type UiSchema as UiSchemaData,
+    getDetails,
+    getSummary,
+    type HealthUiSchema as HealthUiSchemaData,
 } from '@minvws/mgo-fhir-data';
 import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
-import { UiSchema } from './UiSchema';
+import { HealthUiSchema } from './HealthUiSchema';
 
-const mockGetUiSchema = getUiSchema as MockedFunction<typeof getUiSchema>;
-const mockGetSummaryUiSchema = getSummaryUiSchema as MockedFunction<typeof getUiSchema>;
+const mockGetDetails = getDetails as MockedFunction<typeof getDetails>;
+const mockGetSummary = getSummary as MockedFunction<typeof getSummary>;
 
 vi.mock('@minvws/mgo-fhir-data', (importActual) => ({
     ...importActual,
-    getSummaryUiSchema: vi.fn(),
-    getUiSchema: vi.fn(),
+    getSummary: vi.fn(),
+    getDetails: vi.fn(),
 }));
 
 function mockResource(): Resource {
@@ -26,12 +26,12 @@ function mockResource(): Resource {
 }
 
 afterEach(() => {
-    mockGetUiSchema.mockReset();
-    mockGetSummaryUiSchema.mockReset();
+    mockGetDetails.mockReset();
+    mockGetSummary.mockReset();
 });
 
 test('shows summary for a resource by default', () => {
-    const schema: UiSchemaData = {
+    const schema: HealthUiSchemaData = {
         label: faker.lorem.sentence(),
         children: [
             {
@@ -40,8 +40,8 @@ test('shows summary for a resource by default', () => {
             },
         ],
     };
-    mockGetSummaryUiSchema.mockImplementationOnce(() => schema);
-    setupWithAppProviders(<UiSchema resource={mockResource()} />);
+    mockGetSummary.mockImplementationOnce(() => schema);
+    setupWithAppProviders(<HealthUiSchema resource={mockResource()} />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(schema.label);
     screen.getByRole('heading', {
@@ -51,7 +51,7 @@ test('shows summary for a resource by default', () => {
 });
 
 test('shows details for a resource when showDetails is true', () => {
-    const schema: UiSchemaData = {
+    const schema: HealthUiSchemaData = {
         label: faker.lorem.sentence(),
         children: [
             {
@@ -60,9 +60,9 @@ test('shows details for a resource when showDetails is true', () => {
             },
         ],
     };
-    mockGetUiSchema.mockImplementationOnce(() => schema);
+    mockGetDetails.mockImplementationOnce(() => schema);
 
-    setupWithAppProviders(<UiSchema showDetails resource={mockResource()} />);
+    setupWithAppProviders(<HealthUiSchema showDetails resource={mockResource()} />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(schema.label);
     screen.getByRole('heading', {
         name: schema.children[0].label,

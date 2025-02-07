@@ -1,4 +1,4 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import {
     nlCoreContactInformationEmailAddresses,
@@ -7,7 +7,7 @@ import {
 import { type R4NlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
 
 export const i18n = 'r4.nl_core_health_professional_practitioner_role';
-export const uiSchema: UiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRole> = (
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractitionerRole> = (
     resource,
     context
 ) => {

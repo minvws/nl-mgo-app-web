@@ -1,8 +1,12 @@
 import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
 import { type DataServiceId } from '@minvws/mgo-data-services';
-import { type FhirVersion, type MgoResource, type NictizNlProfile } from '@minvws/mgo-fhir-data';
+import {
+    getSummary,
+    type FhirVersion,
+    type MgoResource,
+    type NictizNlProfile,
+} from '@minvws/mgo-fhir-data';
 import { create } from 'zustand';
-import { getSummaryUiSchema } from '../../../../../packages/fhir-data/src/api/getSummaryUiSchema/getSummaryUiSchema';
 
 type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];
 type MgoResourceByProfile<V extends FhirVersion, T extends NictizNlProfile> = Extract<
@@ -46,7 +50,7 @@ export interface ResourcesState {
 
 function createResource(dto: ResourceDTO, slugs: string[]): Resource {
     const { organizationId, dataServiceId, mgoResource } = dto;
-    const summary = getSummaryUiSchema(mgoResource);
+    const summary = getSummary(mgoResource);
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {

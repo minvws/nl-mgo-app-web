@@ -1,7 +1,7 @@
-import { type UiSchemaGroupFunction } from '../../../ui/types';
+import { type HealthUiGroupFunction } from '../../../ui/types';
 import { type R4NlCoreContactInformationEmailAddresses } from './nlCoreContactInformationEmailAddresses';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<R4NlCoreContactInformationEmailAddresses> = (
+export const uiSchemaGroup: HealthUiGroupFunction<R4NlCoreContactInformationEmailAddresses> = (
     resource,
     context
 ) => {

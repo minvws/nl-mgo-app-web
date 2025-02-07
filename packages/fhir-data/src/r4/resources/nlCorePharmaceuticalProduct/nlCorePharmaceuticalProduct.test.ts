@@ -1,4 +1,4 @@
-import { expectJson, expectUiSchemaJson, faker, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } from '$test';
 import { message } from '$test/i18n';
 import { type Medication } from 'fhir/r4';
 import { expect, test } from 'vitest';
@@ -15,7 +15,7 @@ test('returns the expected output 01', () => {
 test('uiSchema returns the expected output 01', () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('returns the expected output 02', () => {
@@ -26,7 +26,7 @@ test('returns the expected output 02', () => {
 test('uiSchema returns the expected output 02', () => {
     const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema label returns profile when label not specified', () => {

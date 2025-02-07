@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup } from '../../types';
 import { getChildren } from './getChildren';
 
 test('returns an empty array is value is nullish', () => {
@@ -9,7 +9,7 @@ test('returns an empty array is value is nullish', () => {
 });
 
 test('returns all children for a UiGroup', () => {
-    const group: UiSchemaGroup = {
+    const group: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
             { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
@@ -23,7 +23,7 @@ test('returns all children for a UiGroup', () => {
 });
 
 test('returns all children for multiple UiGroups', () => {
-    const group1: UiSchemaGroup = {
+    const group1: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
             { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
@@ -32,7 +32,7 @@ test('returns all children for multiple UiGroups', () => {
         ],
     };
 
-    const group2: UiSchemaGroup = {
+    const group2: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
             { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },

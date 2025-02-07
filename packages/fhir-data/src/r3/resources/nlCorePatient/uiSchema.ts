@@ -1,7 +1,7 @@
-import { nlCoreHumanname, nlCoreAddress, nlCoreContactpoint } from '../../elements';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { uiSchemaGroup as photoUiSchemaGroup } from '../../elements/attachment/uiSchemaGroup';
 import { uiSchemaGroup as communicationUiSchema } from './elements/communication/uiSchemaGroup';
 import { uiSchemaGroup as contactUiSchema } from './elements/contact/uiSchemaGroup';
@@ -9,7 +9,7 @@ import { uiSchemaGroup as linkUiSchema } from './elements/link/uiSchemaGroup';
 import { type NlCorePatient } from './nlCorePatient';
 
 export const i18n = 'r3.nl_core_patient';
-export const uiSchema: UiSchemaFunction<NlCorePatient> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<NlCorePatient> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const address = map(resource.address, (x) => nlCoreAddress.uiSchemaGroup(x, context), true);

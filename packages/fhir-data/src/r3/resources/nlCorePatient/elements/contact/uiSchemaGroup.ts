@@ -1,9 +1,9 @@
-import { type UiSchemaGroupFunction, type NonStrictUi } from '../../../../../ui/types';
+import { type HealthUiGroupFunction, type NonStrictUi } from '../../../../../ui/types';
 import { isNonNullish, map } from '../../../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../../../elements';
 import { type Contact } from './contact';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Contact> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Contact> = (resource, context) => {
     const i18n = 'r3.nl_core_patient.contact';
     const ui = context.ui as NonStrictUi;
     const telecom = map(

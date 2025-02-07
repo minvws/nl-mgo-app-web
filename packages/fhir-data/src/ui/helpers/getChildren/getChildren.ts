@@ -1,10 +1,10 @@
-import { isNullish } from '../../../utils';
 import { type Nullable } from '../../../types/Nullable';
-import { type UiSchemaGroup } from '../../types';
+import { isNullish } from '../../../utils';
+import { type HealthUiGroup } from '../../types';
 
-export function getChildren<T extends UiSchemaGroup | UiSchemaGroup[]>(
+export function getChildren<T extends HealthUiGroup | HealthUiGroup[]>(
     value?: Nullable<T>
-): UiSchemaGroup['children'] {
+): HealthUiGroup['children'] {
     if (isNullish(value)) return [];
 
     if (Array.isArray(value)) {

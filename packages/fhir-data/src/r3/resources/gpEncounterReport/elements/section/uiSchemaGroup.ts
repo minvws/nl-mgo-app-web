@@ -1,8 +1,8 @@
-import { type NonStrictUi, type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroupFunction, type NonStrictUi } from '../../../../../ui/types';
 import { map } from '../../../../../utils';
 import { type Section } from './section';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Section> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Section> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     const profile = 'EncounterReport.Section';
 

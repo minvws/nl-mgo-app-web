@@ -1,10 +1,10 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
+import { message } from '$test/i18n';
 import type { MedicationRequest } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import inputFhirData from './fixtures/zib-MedicationAgreement-01.json';
-import { zibMedicationAgreement } from './zibMedicationAgreement';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibMedicationAgreement } from './zibMedicationAgreement';
 
 test('parseZibMedicationAgreement returns the expected output', () => {
     const output = zibMedicationAgreement.parse(inputFhirData as MedicationRequest);
@@ -21,7 +21,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+    expectHealthCareUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/zib-MedicationAgreement-01-uiSchema.snap.json'
     );
 });

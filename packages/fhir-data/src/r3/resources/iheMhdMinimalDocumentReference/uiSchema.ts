@@ -1,10 +1,13 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type SingleValue } from '../../../ui/types';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 
 export const i18n = 'r3.ihe_mhd_minimal_document_reference';
 
-export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = (
+    resource,
+    context
+) => {
     const { ui, formatMessage } = context;
 
     const generalInformation = {

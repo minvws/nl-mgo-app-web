@@ -6,7 +6,7 @@ import { DescriptionButton } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { UiSchemaContext } from './UiSchemaContext';
+import { HealthUiSchemaContext } from './HealthUiSchemaContext';
 
 export interface DownloadLinkProps {
     readonly value: DownloadLink;
@@ -17,7 +17,7 @@ const binaryRegexp = /^Binary\/([^/]+)/;
 export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
     const intl = useIntl();
     const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
-    const { resource } = useContext(UiSchemaContext);
+    const { resource } = useContext(HealthUiSchemaContext);
 
     const { url, label } = value;
     const binaryMatch = url ? binaryRegexp.exec(url) : null;

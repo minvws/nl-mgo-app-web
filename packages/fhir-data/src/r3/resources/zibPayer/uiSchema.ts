@@ -1,10 +1,10 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { uiSchemaGroup as groupingUiSchema } from './elements/grouping/uiSchemaGroup';
 import { type ZibPayer } from './zibPayer';
 
 export const i18n = 'r3.zib_payer';
-export const uiSchema: UiSchemaFunction<ZibPayer> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibPayer> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

@@ -1,12 +1,7 @@
-import { type IntlShape, createIntl as createFormatJsIntl, createIntlCache } from '@formatjs/intl';
-import { messagesNL } from '../messages';
+import { createIntl as createFormatJsIntl, createIntlCache, type IntlShape } from '@formatjs/intl';
+import { messagesNL, type Locale } from '../messages';
 
 const intlCache: Partial<Record<Locale, IntlShape>> = {};
-
-// BCP 47 language tag
-export enum Locale {
-    NL_NL = 'nl-NL',
-}
 
 export interface IntlOptions {
     locale: Locale;

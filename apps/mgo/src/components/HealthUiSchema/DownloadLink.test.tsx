@@ -6,7 +6,7 @@ import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-fhir-data';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { DownloadLink } from './DownloadLink';
-import { UiSchemaContext } from './UiSchemaContext';
+import { HealthUiSchemaContext } from './HealthUiSchemaContext';
 
 const mockGetResource = getDataService(undefined, undefined)!.getResource as MockedFunction<
     () => unknown
@@ -69,9 +69,9 @@ test('DownloadLink preloads data when passed a Binary reference', async () => {
     mockGetResource.mockImplementationOnce(() => response);
 
     setupWithAppProviders(
-        <UiSchemaContext.Provider value={{ resource: {} as Resource }}>
+        <HealthUiSchemaContext.Provider value={{ resource: {} as Resource }}>
             <DownloadLink value={value} data-testid="download-link" />
-        </UiSchemaContext.Provider>
+        </HealthUiSchemaContext.Provider>
     );
 
     const mockBlobUrl = 'blob:http://localhost';

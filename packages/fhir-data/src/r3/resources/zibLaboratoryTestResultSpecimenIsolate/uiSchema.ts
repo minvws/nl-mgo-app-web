@@ -1,11 +1,11 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { type ZibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate';
 import { uiSchemaGroup as containerUiSchema } from './elements/container/uiSchemaGroup';
+import { type ZibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate';
 
 export const i18n = 'r3.zib_laboratory_test_result_specimen_isolate';
-export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSpecimenIsolate> = (
+export const uiSchema: HealthUiSchemaFunction<ZibLaboratoryTestResultSpecimenIsolate> = (
     resource,
     context
 ) => {

@@ -1,14 +1,21 @@
+import { type FhirVersion } from '@minvws/mgo-fhir-types';
+import { Locale } from '../../i18n';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { createUiSchemaContext, type UiSchema } from '../../ui';
+import { createSchemaContext, type HealthUiSchema } from '../../ui';
 import { setEmptyEntries } from '../../ui/helpers';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type UiSchemaOptions } from '../getUiSchema/getUiSchema';
+import { type MgoResource } from '../resources/resources';
 
-export function getSummaryUiSchema<T extends MgoResourceMeta>(
+export interface HealthUiSchemaOptions<V extends `${FhirVersion}`> {
+    locale?: Locale;
+    resources?: MgoResource<V>[];
+}
+
+export function getDetails<T extends MgoResourceMeta>(
     resource: T,
-    options?: UiSchemaOptions<T['fhirVersion']>
-): UiSchema {
+    options?: HealthUiSchemaOptions<T['fhirVersion']>
+): HealthUiSchema {
     // As this method is also used with JSON parsed inputs,
     // we want to ensure we're really dealing with a MGO Resource.
     if (!isMgoResource(resource)) {
@@ -25,31 +32,13 @@ export function getSummaryUiSchema<T extends MgoResourceMeta>(
         );
     }
 
-    if (!config.summary) {
-        return {
-            label: resource.id ?? resource.profile,
-            children: [
-                {
-                    label: 'Opties',
-                    children: [
-                        {
-                            type: 'REFERENCE_LINK',
-                            label: 'Bekijk alle gegevens',
-                            reference: resource.referenceId,
-                        },
-                    ],
-                },
-            ],
-        };
-    }
-
-    const context = createUiSchemaContext({
+    const context = createSchemaContext<T['fhirVersion']>({
+        locale: options?.locale ?? Locale.NL_NL,
         ignoreMissingTranslations: true,
-        isSummary: true,
         ...options,
     });
 
-    const summaryUiSchema = config.summary(resource, context);
+    const uiSchema = config.uiSchema(resource, context);
 
-    return setEmptyEntries(context)(summaryUiSchema);
+    return setEmptyEntries(context)(uiSchema);
 }

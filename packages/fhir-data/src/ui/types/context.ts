@@ -2,9 +2,9 @@ import { type MessagesIds } from '../../i18n/messages';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type Lossless } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
-import { type UiSchemaContext } from '../context/context';
+import { type HealthUiSchemaContext } from '../context/context';
 import { type Ui, type UiHelperContext } from '../context/ui';
-import { type UiElement, type UiSchema, type UiSchemaGroup } from './schema';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from './schema';
 
 type PrimitiveType = string | number | boolean | null | undefined | Date;
 
@@ -46,15 +46,15 @@ export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElem
     value2: Nullable<Lossless<Input2>>
 ) => Output;
 
-export type UiSchemaFunction<T extends MgoResourceMeta> = (
+export type HealthUiSchemaFunction<T extends MgoResourceMeta> = (
     parsedResource: T,
-    context: UiSchemaContext<T['fhirVersion']>
-) => UiSchema;
+    context: HealthUiSchemaContext<T['fhirVersion']>
+) => HealthUiSchema;
 
-export type UiSchemaGroupFunction<
+export type HealthUiGroupFunction<
     ParsedResource extends object,
-    G extends UiSchemaGroup | UiSchemaGroup[] = UiSchemaGroup,
-> = (parsedResource: ParsedResource, context: UiSchemaContext) => G;
+    G extends HealthUiGroup | HealthUiGroup[] = HealthUiGroup,
+> = (parsedResource: ParsedResource, context: HealthUiSchemaContext) => G;
 
 export type NonStrictLabel<T> = T extends (a: MessagesIds, ...args: infer U) => infer R
     ? (a: MessagesIds | string, ...args: U) => R

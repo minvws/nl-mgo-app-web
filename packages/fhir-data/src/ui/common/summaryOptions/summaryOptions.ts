@@ -1,6 +1,6 @@
 import { type MgoResource } from '../../../api/resources/resources';
 import { type I18nContext, type MessagesIds } from '../../../i18n';
-import { type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup } from '../../types';
 
 type ShowDetailsLabel =
     Extract<MessagesIds, `summary.${string}.show_details`> extends `summary.${infer R}.show_details`
@@ -11,7 +11,7 @@ export function summaryOptions(
     { formatMessage }: I18nContext,
     i18n: ShowDetailsLabel,
     resource: MgoResource
-): UiSchemaGroup {
+): HealthUiGroup {
     return {
         label: formatMessage(`summary.options`),
         children: [

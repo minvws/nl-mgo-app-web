@@ -1,11 +1,14 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { type ZibLaboratoryTestResultSpecimen } from './zibLaboratoryTestResultSpecimen';
 import { uiSchemaGroup as containerUiSchema } from './elements/container/uiSchemaGroup';
+import { type ZibLaboratoryTestResultSpecimen } from './zibLaboratoryTestResultSpecimen';
 
 export const i18n = 'r3.zib_laboratory_test_result_specimen';
-export const uiSchema: UiSchemaFunction<ZibLaboratoryTestResultSpecimen> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibLaboratoryTestResultSpecimen> = (
+    resource,
+    context
+) => {
     const ui = context.ui as NonStrictUi;
 
     const container = map(resource.container, (x) => containerUiSchema(x, context), true);

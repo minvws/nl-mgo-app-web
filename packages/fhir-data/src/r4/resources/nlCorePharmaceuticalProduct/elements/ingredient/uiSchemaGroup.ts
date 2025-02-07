@@ -1,7 +1,7 @@
-import { type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroupFunction } from '../../../../../ui/types';
 import { type Ingredient } from './ingredient';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Ingredient> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Ingredient> = (resource, context) => {
     const profile = 'r4.zib_pharmaceutical_product.ingredient';
     const { ui, formatMessage } = context;
 

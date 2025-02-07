@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement, type UiSchema, type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../types';
 import { setEmptyEntries } from './setEmptyEntries';
 
 test('sets empty entries, but does not mutate the schema', () => {
@@ -26,7 +26,7 @@ test('sets empty entries, but does not mutate the schema', () => {
         display: faker.lorem.word(),
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -97,7 +97,7 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
         reference: undefined as unknown as string,
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -156,7 +156,7 @@ test('also works for a group', () => {
         display: undefined,
     };
 
-    const uiSchemaGroup: UiSchemaGroup = {
+    const uiSchemaGroup: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [entry1, entry2],
     };
@@ -189,7 +189,7 @@ test('also works for a multiple groups', () => {
         display: undefined,
     };
 
-    const uiSchemaGroup: UiSchemaGroup[] = [
+    const uiSchemaGroup: HealthUiGroup[] = [
         {
             label: faker.lorem.word(),
             children: [entry1, entry2],

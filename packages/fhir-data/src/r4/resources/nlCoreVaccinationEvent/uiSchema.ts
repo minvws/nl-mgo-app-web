@@ -1,9 +1,9 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { capitalize } from 'lodash';
+import { type HealthUiSchemaFunction } from '../../../ui';
+import { type UiHelperContext } from '../../../ui/context/ui';
 import { map } from '../../../utils';
 import { uiSchemaGroup as protocolAppliedUiSchema } from './elements/protocolApplied/uiSchemaGroup';
 import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
-import { type UiHelperContext } from '../../../ui/context/ui';
-import { capitalize } from 'lodash';
 
 export const i18n = 'r4.nl_core_vaccination_event';
 
@@ -11,7 +11,7 @@ export function getLabel(resource: R4NlCoreVaccinationEvent, context: UiHelperCo
     return capitalize(resource.vaccineCode?.coding?.at(0)?.display) || context.formatMessage(i18n);
 }
 
-export const uiSchema: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     /**

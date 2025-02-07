@@ -1,7 +1,7 @@
-import { uiSchemaGroup as zibAttachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { uiSchemaGroup as zibAttachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
 import { uiSchemaGroup as actorUiSchema } from './elements/actor/uiSchemaGroup';
 import { uiSchemaGroup as dataUiSchema } from './elements/data/uiSchemaGroup';
 import { uiSchemaGroup as exceptUiSchema } from './elements/except/uiSchemaGroup';
@@ -9,7 +9,7 @@ import { uiSchemaGroup as policyUiSchema } from './elements/policy/uiSchemaGroup
 import { type ZibTreatmentDirective } from './zibTreatmentDirective';
 
 export const i18n = 'r3.zib_treatment_directive';
-export const uiSchema: UiSchemaFunction<ZibTreatmentDirective> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibTreatmentDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const actor = map(resource.actor, (x) => actorUiSchema(x, context), true);
