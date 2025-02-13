@@ -26,7 +26,7 @@
         "messages:format": "prettier --write ./src/i18n/locales"
     },
     "devDependencies comments (non-standard-key)": {
-        "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build."
+        "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build. also see: https://github.com/qmhc/vite-plugin-dts/issues/404"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
