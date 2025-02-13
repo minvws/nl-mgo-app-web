@@ -1,9 +1,10 @@
-<h1 align="center">Tailwind</h1>
-<br />
+# [MGO] - Tailwind
 
-This package contains the [Tailwind](https://tailwindcss.com/) theme and font assets for the MGO application.
+This package contains the [Tailwind] theme that is used by the MGO application.
 
-<br />
-<div align="center">
-    🧪 <i>This package and its documentation are still under development.</i>
-</div>
+<hr>
+
+_This package and its documentation are still under development._
+
+[MGO]: ../../README.md
+[Tailwind]: https://tailwindcss.com/

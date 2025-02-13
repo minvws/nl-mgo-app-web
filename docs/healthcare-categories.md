@@ -1,13 +1,6 @@
-# Data services & healthcare categories
+# [MGO] - Healthcare categories
 
-## Data services
-
-| Short   | Data service                   | FHIR version | Description           |
-| ------- | ------------------------------ | ------------ | --------------------- |
-| **GP**  | [General practicioner][gp]     | R3           | Huisarts gegevens     |
-| **BgZ** | [Common clinical dataset][bgz] | R3           | Basisgegevensset Zorg |
-| **Doc** | [PDF/A Documents][doc]         | R3           | Documenten            |
-| **Vac** | [Vaccination][vac]             | R4           | Vaccinaties           |
+This is an overview of the healthcare categories that we use in all the clients.
 
 ## Healthcare categories
 
@@ -150,6 +143,8 @@
 | Subcategorie   | Profile     | Source | Description                    |
 | :------------- | :---------- | :----- | :----------------------------- |
 | Betaalgegevens | [zib-Payer] | [BgZ]  | Bekende verzekeringsinformatie |
+
+[MGO]: ../README.md
 
 <!-- Data services -->
 

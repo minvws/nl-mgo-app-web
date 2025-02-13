@@ -55,6 +55,7 @@ function createResource(dto: ResourceDTO, slugs: string[]): Resource {
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {
         id,
+        // NOTE: Do not use any resource information as a slug as it could potentially be sensitive information
         slug: createUniqueSlug(`${slugs.length}`, slugs),
         label: summary.label,
         organizationId,

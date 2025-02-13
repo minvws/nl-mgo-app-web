@@ -1,4 +1,13 @@
-# Overview of the zib implementation progress
+# [MGO] - HCIM / ZIBs
+
+This is an overview of the HCIM implementation progress. We can parse all the FHIR HCIM information, but not all of them have been thoroughly checked to ensure they contain all the relevant fields of [the original ZIB/HCIM][zib].
+We list both the summary and detail of a HCIM. This is related to the `fhir-data` package.
+
+**Summaries**
+Not all profiles require a summary, but the ones that do, require a specification on what relevent information should be shown. This is still very much a work in progress.
+
+**Detail**
+We aim to support all HCIM profiles that can be returned from a data service. The detail checkmark indicates that the [Health UI Schema][HUIS] contains all relevant fields related to the original HCIM.
 
 ## [Common clinical dataset](bgz) (R3)
 
@@ -40,7 +49,7 @@
 
 ## [General practicioner](gp) (R3)
 
-| profile                    | summary              | ui-schema            |
+| profile                    | summary              | detail               |
 | -------------------------- | -------------------- | -------------------- |
 | ~~nl-core-practitioner~~   |                      |                      |
 | ~~nl-core-organization~~   |                      |                      |
@@ -57,7 +66,7 @@
 
 ## [PDF/A Documents](doc) (R3)
 
-| profile                             | summary            | ui-schema            |
+| profile                             | summary            | detail               |
 | ----------------------------------- | ------------------ | -------------------- |
 | ~~nl-core-patient~~                 |                    |                      |
 | ~~nl-core-practitioner~~            |                    |                      |
@@ -68,7 +77,7 @@
 
 ## [Vaccination](vac) (R4)
 
-| profile                                          | summary              | ui-schema            |
+| profile                                          | summary              | detail               |
 | ------------------------------------------------ | -------------------- | -------------------- |
 | [R4/nl-core-Patient]                             | :white_large_square: | :white_large_square: |
 | [R4/nl-core-Vaccination-event]                   | :white_check_mark:   | :white_check_mark:   |
@@ -79,6 +88,9 @@
 | [R4/nl-core-PharmaceuticalProduct]               |                      | :white_check_mark:   |
 
 <hr/>
+
+[MGO]: ../README.md
+[HUIS]: ./glossary.md#health-ui-schema
 
 <!-- Data services -->
 
@@ -145,3 +157,7 @@
 [R4/nl-core-HealthcareProvider-Organization]: ../packages/fhir-data/src/r4/resources/nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization.ts
 [R4/nl-core-HealthcareProvider]: ../packages/fhir-data/src/r4/resources/nlCoreHealthcareProvider/nlCoreHealthcareProvider.ts
 [R4/nl-core-PharmaceuticalProduct]: ../packages/fhir-data/src/r4/resources/nlCorePharmaceuticalProduct/nlCorePharmaceuticalProduct.ts
+
+<!---->
+
+[zib]: https://zibs.nl/wiki/ZIB_Hoofdpagina

@@ -1,15 +1,16 @@
-<h1 align="center">Mijn Gezondheidsoverzicht (web) ❤️</h1>
+<h1 align="center">Mijn Gezondheidsoverzicht (web)</h1>
 <br />
 
-This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and SDK components. It is a monorepository which contains multiple individual apps and packages.
+This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and components. It is a monorepository which contains multiple individual apps and packages. To [learn more about the MGO app itself][mgo-about] please visit the about page.
 
-## Table of contents
+## Documentation
 
-- 📋 [Directory structure](#directory-structure)
-- 💻 [Running locally](#running-locally)
-- 📦 [Development](#development)
-- 🚀 [Deployment](#deployment)
-- ⚖️ [License](#license)
+- [About the app][mgo-about]
+- [Development setup][mgo-development]
+- [End-to-end tests](apps/e2e-tests/README.md)
+- [Internationalization][mgo-i18n]
+- [Deployment][mgo-deployment]
+- [Glossary][mgo-glossary]
 
 ## Directory structure
 
@@ -18,100 +19,67 @@ This repository is a monorepository in that all directories under `apps/*` and `
     .
     ├── apps
     │    └── mgo                # The main MGO application
+    │    └── e2e-tests          # End-to-end tests for the mgo application
     ├── packages
-    │    ├── fhir-client        # HTTP client for making requests to a FHIR server
-    │    ├── fhir-data          # Helpers for parsing FHIR data structures
-    │    ├── mgo-ui             # UI library for MGO
+    │    ├── data-services      # HTTP client for making requests to data services
+    │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
+    │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
+    │    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
+    │    ├── mgo-ui             # UI library for the MGO app
     │    └── tailwind           # MGO Tailwind theme
+    ├── docs
+    │    └── ...                # Documentation files
     ├── LICENSE
-    └── README.md
+    └── README.md               <-- you are here
 
-## Running locally
+## Quick run
 
-To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development](#development) instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed](https://www.docker.com/products/docker-desktop/)
+To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development][mgo-development] instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed][docker]
 
 ```sh
 # Run a local development server using docker
 docker compose build --no-cache && docker compose up mgo -d
 ```
 
-## Development
+## Scripts
 
-The main MGO application lives in `apps/mgo/`.
+Once you have a [local development environment][mgo-development]] set up there are several `pnpm` scripts you can run from this root directory. To run a command, open a new terminal from this root directory and enter the following command:
 
-The UI components live in `packages/mgo-ui/` and a storybook environment is available.
-
-### Prerequisites
-
-In this repository we are using [asdf](https://asdf-vm.com/guide/introduction.html) to manage the `node`/`pnpm` version for the local development environment.
-The versions are set in the `.tool-versions` file.
-
-To install [asdf](https://asdf-vm.com/guide/introduction.html) please see the [official installation instructions](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf).
-
-After having installed asdf you will need to add the required plugins, followed by the install command to install the specified version.
-
-```sh
-# add plugins
-asdf plugin-add nodejs
-asdf plugin-add pnpm
-
-# install specified versions
-asdf install
+```
+pnpm run <command>
 ```
 
-When this is set up, asdf will ensure you will always have the correct (node) version in any teminal that is opened within this project directory.
-
-### Running a local development server
-
-First, install the dependencies by running:
-
-```sh
-pnpm install
-```
-
-Then, start the development server by running (from the project root):
-
-```sh
-pnpm dev
-```
-
-> By default, the server will be available at [http://localhost:8000](http://localhost:8000). While it is possible to change the port by providing a `--port` argument, doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
-
-### Storybook
-
-`packages/mgo-ui/` contains most MGO styled components, the storybook development server can be started by running:
-
-```sh
-pnpm storybook
-```
-
-### Playwright e2e tests
-
-For the end-to-end testing of this Web application we make use of [Playwright](https://playwright.dev/).
-If you want to know more about those tests and how to execute them, please read further in [e2e tests Readme](apps/e2e-tests/README.md)
-
-## Deployment
-
-The release package can be downloaded from the artifacts of [the "Create release package" CI workflow](https://github.com/minvws/nl-mgo-app-web-private/actions/workflows/package.yml).
-The contents of the package can be hosted as an SPA, with non-existing routes being served the `index.html`.
-Configuration can be provided by overwriting the `config.js` file with environment-specific values. The structure of this file is as follows:
-
-```js
-window.config = {
-    oidc_authority: '...',
-    oidc_client_id: '...',
-    oidc_redirect_uri: '...',
-    load_url: '...',
-    dva_url: '...',
-};
-```
-
-| Field               | Description                                                                          | Default value              |
-| ------------------- | ------------------------------------------------------------------------------------ | -------------------------- |
-| `oidc_authority`    | URI of the OIDC authority (the root path before `.well-known/openid-configuration`). | `'https://max.acc.mgo.nl'` |
-| `oidc_client_id`    | OIDC client ID.                                                                      | `'mgo_dev'`                |
-| `oidc_redirect_uri` | URI of the application itself, as allowlisted for the given client ID.               | `'http://localhost:8000'`  |
+| Command         | Description                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| `dev`           | Starts a new [vite development server][vite-dev].                                                    |
+| `test`          | Runs all unit tests using [vitest].                                                                  |
+| `test:coverage` | Runs all unit tests using [vitest] and publishes a coverage report.                                  |
+| `lint`          | Lints all the code using [eslint].                                                                   |
+| `lint:fix`      | Fixes all fixable lint errors using [eslint].                                                        |
+| `check-types`   | Checks all the types using [TypeScript]                                                              |
+| `storybook`     | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
+| `format`        | Checks if all the code follows the formatting rules using [Prettier]                                 |
+| `format:fix`    | Fixed all fixable formatting error using [Prettier]                                                  |
+| `pr`            | Runs all the checks that are normally also ran for a pull request                                    |
+| `e2e`           | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
 
 ## License
 
 This repository follows the [REUSE Specfication v3.0](https://reuse.software/spec/). Please see [.reuse/dep5](./.reuse/dep5) and the individual `*.license` files for copyright and license information.
+
+[vite-dev]: https://vite.dev/guide/cli.html#dev-server
+[vitest]: https://vitest.dev/
+[eslint]: https://eslint.org/
+[TypeScript]: https://www.typescriptlang.org/
+[Storybook]: https://storybook.js.org/
+[Prettier]: https://prettier.io/
+[Playwright]: https://playwright.dev/
+[docker]: https://www.docker.com/products/docker-desktop/
+
+<!-- Docs -->
+
+[mgo-about]: ./docs/about.md
+[mgo-development]: ./docs/development.md
+[mgo-deployment]: ./docs/deployment.md
+[mgo-glossary]: ./docs/glossary.md
+[mgo-i18n]: ./docs/i18n.md

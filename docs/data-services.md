@@ -1,6 +1,17 @@
-# Used data service endpoints
+# [MGO] - Data services
 
-This is an overview of the data services and their endpoints that we use. It lists the specific headers and parameters that we use on all clients.
+Currently we use the following data services in the application as described by MedMij:
+
+| Short   | Data service                    | FHIR version | Description           |
+| ------- | ------------------------------- | ------------ | --------------------- |
+| **GP**  | [General practicioner][gp]      | R3           | Huisarts gegevens     |
+| **BgZ** | [Common clinical dataset][bgz]  | R3           | Basisgegevensset Zorg |
+| **Doc** | [PDF/A Documents][doc]          | R3           | Documenten            |
+| **Vac** | [Vaccination-Immunization][vac] | R4           | Vaccinaties           |
+
+## Usage
+
+Below follows a description per data service, of all the endpoints and the specific headers and parameters that we use on all clients.
 
 **All parameters should be [encoded]**
 
@@ -125,5 +136,6 @@ The `Vaccination-Immunization` service can also return the `Patient`, `Location`
 
 <!-- Other -->
 
+[MGO]: ../README.md
 [encoded]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 [SOAP]: https://en.wikipedia.org/wiki/SOAP_note
