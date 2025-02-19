@@ -17,6 +17,7 @@ export * from './nlCoreOrganization/nlCoreOrganization';
 export * from './nlCorePatient/nlCorePatient';
 export * from './nlCorePractitioner/nlCorePractitioner';
 export * from './nlCorePractitionerRole/nlCorePractitionerRole';
+export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare';
 
 export * from './eAfspraakAppointment/eAfspraakAppointment';
 export { nlCoreObservation, type NlCoreObservation } from './nlCoreObservation/nlCoreObservation';

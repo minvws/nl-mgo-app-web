@@ -32,5 +32,10 @@
     "r3.zib_alert": "Alert",
     "r3.zib_laboratory_test_result_substance": "Monstermateriaal",
     "r3.zib_medical_device_request": "Medisch hulpmiddel aanvraag",
-    "r3.zib_vaccination_recommendation": "Vaccinatieadvies"
+    "r3.zib_vaccination_recommendation": "Vaccinatieadvies",
+    "r3.nl_core_episodeofcare": "Episode",
+    "r3.nl_core_episodeofcare.identifier": "Identificatienummer",
+    "r3.nl_core_episodeofcare.patient": "Patient",
+    "r3.nl_core_episodeofcare.period": "Periode",
+    "r3.nl_core_episodeofcare.type": "Type"
 }

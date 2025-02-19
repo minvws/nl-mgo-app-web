@@ -8,12 +8,17 @@ export function getProcedureData(
     return {
         procedures: resources.getResourcesByProfile(
             FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure',
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure', // NOSONAR
             organizationIdFilter
         ),
         procedureRequests: resources.getResourcesByProfile(
             FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest',
+            'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest', // NOSONAR
+            organizationIdFilter
+        ),
+        episodes: resources.getResourcesByProfile(
+            FhirVersion.R3,
+            'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare', // NOSONAR
             organizationIdFilter
         ),
     };

@@ -1,0 +1,42 @@
+{
+    "label": "Gebroken been",
+    "children": [
+        {
+            "label": "Episode",
+            "children": [
+                {
+                    "label": "Identificatienummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "15f29a29-8fdf-11ec-1699-020000000000"
+                    ]
+                },
+                {
+                    "label": "Patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 februari 2019"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Eind datum",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Type",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Lichaamsstructuur (123037004 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

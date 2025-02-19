@@ -15,6 +15,10 @@ export const procedures: CategoryQueriesConfig<typeof category> = {
             organization,
             DataServiceId.CommonClinicalDataset
         );
+        const generalPracticionerService = getDataService(
+            organization,
+            DataServiceId.GeneralPractitioner
+        );
 
         return [
             createResourceBundleQuery({
@@ -28,6 +32,12 @@ export const procedures: CategoryQueriesConfig<typeof category> = {
                 organization,
                 service: commonClinicalDataset,
                 method: 'getPlannedProcedures',
+            }),
+            createResourceBundleQuery({
+                category,
+                organization,
+                service: generalPracticionerService,
+                method: 'getEpisodes',
             }),
         ].filter(isNonNullish);
     },

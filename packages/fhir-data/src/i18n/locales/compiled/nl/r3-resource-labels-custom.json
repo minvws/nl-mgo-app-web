@@ -119,6 +119,36 @@
             "value": "Type"
         }
     ],
+    "r3.nl_core_episodeofcare": [
+        {
+            "type": 0,
+            "value": "Episode"
+        }
+    ],
+    "r3.nl_core_episodeofcare.identifier": [
+        {
+            "type": 0,
+            "value": "Identificatienummer"
+        }
+    ],
+    "r3.nl_core_episodeofcare.patient": [
+        {
+            "type": 0,
+            "value": "Patient"
+        }
+    ],
+    "r3.nl_core_episodeofcare.period": [
+        {
+            "type": 0,
+            "value": "Periode"
+        }
+    ],
+    "r3.nl_core_episodeofcare.type": [
+        {
+            "type": 0,
+            "value": "Type"
+        }
+    ],
     "r3.nl_core_observation": [
         {
             "type": 0,

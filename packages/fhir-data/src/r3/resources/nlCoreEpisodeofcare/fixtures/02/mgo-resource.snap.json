@@ -1,0 +1,61 @@
+{
+    "id": "nl-core-episodeofcare-02",
+    "referenceId": "EpisodeOfCare/nl-core-episodeofcare-02",
+    "resourceType": "EpisodeOfCare",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15fcdead-8fdf-11ec-5500-020000000000",
+            "type": null
+        }
+    ],
+    "title": "Drugs en alcohol revalidatie",
+    "status": "active",
+    "statusHistory": null,
+    "type": [
+        {
+            "text": null,
+            "coding": [
+                {
+                    "code": "32709003",
+                    "display": "Verslaving (bevinding)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "diagnosis": [
+        {
+            "condition": {
+                "reference": "Condition/zib-problem-08",
+                "display": "Syndroom van Korsakov"
+            },
+            "role": null,
+            "rank": null
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "managingOrganization": {
+        "reference": "Organization/nl-core-organization-05",
+        "display": "Ziekenhuis Gooi en Overvecht"
+    },
+    "period": {
+        "start": "2019-02-06",
+        "end": null
+    },
+    "referralRequest": null,
+    "careManager": {
+        "reference": "Practitioner/nl-core-practitioner-04",
+        "display": "Dirk de Vries"
+    },
+    "team": null,
+    "account": null,
+    "dateFirstEncounter": "2019-02-06T13:17:00+00:00",
+    "dateLastEncounter": null
+}

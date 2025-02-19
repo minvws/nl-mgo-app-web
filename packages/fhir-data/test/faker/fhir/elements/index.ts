@@ -25,3 +25,6 @@ export * from './encounterHospitalization';
 
 export * from './observationRelated';
 export * from './specimenContainer';
+
+export * from './episodeOfCareDiagnosis';
+export * from './episodeOfCareStatusHistory';

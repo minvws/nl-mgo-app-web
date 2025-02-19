@@ -60,10 +60,11 @@ This is an overview of the healthcare categories that we use in all the clients.
 
 #### Behandelingen
 
-| Subcategorie                | Profile                | Source | Description                       |
-| :-------------------------- | :--------------------- | :----- | :-------------------------------- |
-| Behandelingen en overdracht | [zib-Procedure]        | [BgZ]  | Bekende chirurgische ingrepen     |
-| Geplande zorgafspraken      | [zib-ProcedureRequest] | [BgZ]  | Bekende geplande zorgactiviteiten |
+| Subcategorie                | Profile                 | Source | Description                       |
+| :-------------------------- | :---------------------- | :----- | :-------------------------------- |
+| Behandelingen en overdracht | [zib-Procedure]         | [BgZ]  | Bekende chirurgische ingrepen     |
+| Geplande zorgafspraken      | [zib-ProcedureRequest]  | [BgZ]  | Bekende geplande zorgactiviteiten |
+| "                           | [nl-core-episodeofcare] | [GP]   | Zorgtraject van zorg              |
 
 #### Afspraken
 
@@ -190,6 +191,7 @@ This is an overview of the healthcare categories that we use in all the clients.
 [nl-core-patient]: https://simplifier.net/resolve?target=simplifier&canonical=http://fhir.nl/fhir/StructureDefinition/nl-core-patient&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 [IHE.MHD.Minimal.DocumentReference]: https://simplifier.net/resolve?target=simplifier&canonical=http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 [eAfspraak-Appointment]: https://simplifier.net/resolve?target=simplifier&canonical=http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
+[nl-core-episodeofcare]: https://simplifier.net/resolve?canonical=http%3A%2F%2Ffhir.nl%2Ffhir%2FStructureDefinition%2Fnl-core-episodeofcare&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 
 <!-- Fhir R4 -->
 
