@@ -60,7 +60,7 @@
         "typescript": "^5.4.5",
         "vite": "^5.4.14",
         "vite-plugin-svgr": "^4.3.0",
-        "vitest": "^1.6.0",
+        "vitest": "^1.6.1",
         "vitest-dom": "^0.1.1"
     }
 }
