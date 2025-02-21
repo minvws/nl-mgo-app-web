@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { gpLaboratoryResult } from '././gpLaboratoryResult';
@@ -78,5 +78,5 @@ test('uiSchema returns default label if context not supplied', () => {
     const output = gpLaboratoryResult.parse(input02 as Observation);
     output.context = undefined;
     const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

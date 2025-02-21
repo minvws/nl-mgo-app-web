@@ -1,7 +1,7 @@
+import { useIntl } from '$/intl';
 import { type HealthcareOrganizationDTO } from '$/services/load/load';
 import { DataServiceId } from '@minvws/mgo-data-services';
 import { safeGet } from '@minvws/mgo-fhir-data';
-import { useIntl } from 'react-intl';
 
 function getResourceEndpoint(organizationDTO: HealthcareOrganizationDTO, id: DataServiceId) {
     return safeGet(organizationDTO, ({ data_services }) => {
@@ -18,8 +18,8 @@ const dataServiceIds = [
 ];
 
 export function useParseHealthcareOrganization() {
-    const intl = useIntl();
-    const unknownLabel = intl.formatMessage({ id: 'common.unknown' });
+    const { formatMessage } = useIntl();
+    const unknownLabel = formatMessage('common.unknown');
 
     function parseHealthcareOrganization(organizationDTO: HealthcareOrganizationDTO) {
         const { identification, display_name } = organizationDTO;

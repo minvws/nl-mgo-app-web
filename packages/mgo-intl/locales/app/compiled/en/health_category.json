@@ -1,0 +1,132 @@
+{
+  "eAfspraak_appointment.heading": [
+  ],
+  "gp_diagnostic_result.heading": [
+  ],
+  "gp_laboratory_result.heading": [
+  ],
+  "hc_alerts.heading": [
+  ],
+  "hc_alerts.heading_detail": [
+  ],
+  "hc_allergies.heading": [
+  ],
+  "hc_allergies.heading_detail": [
+  ],
+  "hc_appointments.heading": [
+  ],
+  "hc_appointments.heading_detail": [
+  ],
+  "hc_complaints.heading": [
+  ],
+  "hc_complaints.heading_detail": [
+  ],
+  "hc_devices.heading": [
+  ],
+  "hc_devices.heading_detail": [
+  ],
+  "hc_documents.error": [
+  ],
+  "hc_documents.heading": [
+  ],
+  "hc_documents.heading_detail": [
+  ],
+  "hc_documents.no_document": [
+  ],
+  "hc_lab_results.heading": [
+  ],
+  "hc_lab_results.heading_detail": [
+  ],
+  "hc_lifestyle.heading": [
+  ],
+  "hc_lifestyle.heading_detail": [
+  ],
+  "hc_measurements.heading": [
+  ],
+  "hc_measurements.heading_detail": [
+  ],
+  "hc_medication.heading": [
+  ],
+  "hc_medication.heading_detail": [
+  ],
+  "hc_mental.heading": [
+  ],
+  "hc_mental.heading_detail": [
+  ],
+  "hc_patient.heading": [
+  ],
+  "hc_patient.heading_detail": [
+  ],
+  "hc_payment.heading": [
+  ],
+  "hc_payment.heading_detail": [
+  ],
+  "hc_plans.heading": [
+  ],
+  "hc_plans.heading_detail": [
+  ],
+  "hc_treatments.heading": [
+  ],
+  "hc_treatments.heading_detail": [
+  ],
+  "hc_vaccinations.heading": [
+  ],
+  "hc_vaccinations.heading_detail": [
+  ],
+  "ihe_mhd_minimal_document_reference.heading": [
+  ],
+  "zib_administration_agreement.heading": [
+  ],
+  "zib_advance_directive.heading": [
+  ],
+  "zib_alcohol_use.heading": [
+  ],
+  "zib_alert.heading": [
+  ],
+  "zib_allergy_intolerance.heading": [
+  ],
+  "zib_blood_pressure.heading": [
+  ],
+  "zib_body_height.heading": [
+  ],
+  "zib_body_weight.heading": [
+  ],
+  "zib_drug_use.heading": [
+  ],
+  "zib_encounter.heading": [
+  ],
+  "zib_functional_or_mental_status.heading": [
+  ],
+  "zib_laboratory_test_result_observation.heading": [
+  ],
+  "zib_laboratory_test_result_specimen.heading": [
+  ],
+  "zib_living_situation.heading": [
+  ],
+  "zib_medical_device.heading": [
+  ],
+  "zib_medication_agreement.heading": [
+  ],
+  "zib_medication_use.heading": [
+  ],
+  "zib_nutrition_advice.heading": [
+  ],
+  "zib_patient.heading": [
+  ],
+  "zib_payer.heading": [
+  ],
+  "zib_problem.heading": [
+  ],
+  "zib_procedure.heading": [
+  ],
+  "zib_procedure_request.heading": [
+  ],
+  "zib_tobacco_use.heading": [
+  ],
+  "zib_treatment_directive.heading": [
+  ],
+  "zib_vaccination.heading": [
+  ],
+  "zib_vaccination_recommendation.heading": [
+  ]
+}

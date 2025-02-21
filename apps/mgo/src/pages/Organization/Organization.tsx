@@ -1,11 +1,11 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
 import { useNavFocusRef } from '$/hooks';
+import { FormattedMessage, useIntl } from '$/intl';
 import { useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { Heading } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { NotFound } from './NotFound';
 
 export function Organization() {
@@ -13,7 +13,7 @@ export function Organization() {
     const getOrganizationBySlug = useOrganizationsStore((x) => x.getOrganizationBySlug);
     const organization = getOrganizationBySlug(organizationSlug);
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
 
     const i18nValues = {
         organizationName: organization?.name,
@@ -26,7 +26,7 @@ export function Organization() {
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'organization.title' })} />
+            <Helmet title={formatMessage('organization.title')} />
 
             <section className="flex-grow">
                 <div>

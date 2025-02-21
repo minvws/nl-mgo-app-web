@@ -1,9 +1,9 @@
+import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
+import { FormattedMessage } from '$/intl';
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { Button, ButtonCard, Heading, Stack } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
-import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 
 export function Organizations() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();

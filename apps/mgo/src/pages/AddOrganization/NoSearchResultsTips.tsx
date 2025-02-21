@@ -1,5 +1,5 @@
+import { FormattedMessage } from '$/intl';
 import { List, ListIcon, ListItem } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
 
 export const NoSearchResultsTips = () => (
     <List>

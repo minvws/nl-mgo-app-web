@@ -1,4 +1,5 @@
-import { authState, signinRedirectMock, setupWithAppProviders, message } from '$test/helpers';
+import { authState, setupWithAppProviders, signinRedirectMock } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Login } from './Login';
@@ -6,9 +7,9 @@ import { Login } from './Login';
 test('login', () => {
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(message('login.heading'));
+    expect(screen.getByRole('heading')).toHaveTextContent(appMessage('login.heading'));
 
-    fireEvent.click(screen.getByRole('button', { name: message('login.digid') }));
+    fireEvent.click(screen.getByRole('button', { name: appMessage('login.digid') }));
 
     expect(signinRedirectMock).toHaveBeenCalled();
 });
@@ -44,5 +45,5 @@ test('auth error', () => {
 
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByText(message('login.error_heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('login.error_heading'))).toBeInTheDocument();
 });

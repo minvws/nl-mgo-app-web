@@ -1,10 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type NutritionOrder } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
-import { zibNutritionAdvice } from './zibNutritionAdvice';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibNutritionAdvice } from './zibNutritionAdvice';
 
 test('returns the expected output', () => {
     const output = zibNutritionAdvice.parse(input as NutritionOrder);
@@ -31,5 +31,5 @@ test('uiSchema returns default label if identifier not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

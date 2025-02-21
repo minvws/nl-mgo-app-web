@@ -1,5 +1,5 @@
+import { FormattedMessage, useIntl } from '$/intl';
 import { type HTMLAttributes } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { QueryStateLayout, type QueryStateLayoutProps } from '../QueryStateLayout/QueryStateLayout';
 
 export interface QueryStateNoResultProps
@@ -12,12 +12,12 @@ export function QueryStateNoResult({
     illustration = 'woman-on-couch',
     ...rest
 }: QueryStateNoResultProps) {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
 
     return (
         <QueryStateLayout
             illustration={illustration}
-            title={title ?? intl.formatMessage({ id: 'common.no_results_heading' })}
+            title={title ?? formatMessage('common.no_results_heading')}
             {...rest}
         >
             {children || (

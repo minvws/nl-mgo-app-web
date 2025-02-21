@@ -1,18 +1,11 @@
-import { type MessagesIds } from '../../i18n/messages';
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type Lossless } from '../../types/Lossless';
 import { type Nullable } from '../../types/Nullable';
-import { type HealthUiSchemaContext } from '../context/context';
-import { type Ui, type UiHelperContext } from '../context/ui';
+import { type UiHelperContext } from '../context';
+import { type HealthUiSchemaContext } from '../context/schema/schema';
+import { type Ui } from '../context/schema/ui';
 import { type HealthUiGroup, type HealthUiSchema, type UiElement } from './schema';
-
-type PrimitiveType = string | number | boolean | null | undefined | Date;
-
-export type FormatMessageHelper = (
-    id: MessagesIds,
-    values?: Record<string, PrimitiveType>
-) => string;
-export type HasMessageHelper = (id: string) => id is MessagesIds;
 
 export type WithUiHelperContext<T> = (context: UiHelperContext) => T;
 
@@ -28,10 +21,10 @@ export type UiFunctionWithOptions<
     Input,
     Output extends UiElement | UiElement[],
     Options,
-    Label = MessagesIds,
+    Label = FhirMessagesIds,
 > = (label: Label, value: Nullable<Lossless<Input>>, options?: Options) => Output;
 
-export type UiFunction<Input, Output extends UiElement | UiElement[], Label = MessagesIds> = (
+export type UiFunction<Input, Output extends UiElement | UiElement[], Label = FhirMessagesIds> = (
     label: Label,
     value: Nullable<Lossless<Input>>
 ) => Output;
@@ -41,7 +34,7 @@ export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]
 ) => Output;
 
 export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElement[]> = (
-    label: MessagesIds,
+    label: FhirMessagesIds,
     value1: Nullable<Lossless<Input1>>,
     value2: Nullable<Lossless<Input2>>
 ) => Output;
@@ -56,8 +49,8 @@ export type HealthUiGroupFunction<
     G extends HealthUiGroup | HealthUiGroup[] = HealthUiGroup,
 > = (parsedResource: ParsedResource, context: HealthUiSchemaContext) => G;
 
-export type NonStrictLabel<T> = T extends (a: MessagesIds, ...args: infer U) => infer R
-    ? (a: MessagesIds | string, ...args: U) => R
+export type NonStrictLabel<T> = T extends (a: FhirMessagesIds, ...args: infer U) => infer R
+    ? (a: FhirMessagesIds | string, ...args: U) => R
     : T;
 
 export type NonStrictUi = {

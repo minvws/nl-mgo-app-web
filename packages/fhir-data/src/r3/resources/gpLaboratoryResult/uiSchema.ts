@@ -1,6 +1,6 @@
 import { capitalize } from 'lodash';
 import { type HealthUiSchemaFunction } from '../../../ui';
-import { type UiHelperContext } from '../../../ui/context/ui';
+import { type UiHelperContext } from '../../../ui/context';
 import { zibLaboratoryTestResultObservation } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
 import { type GpLaboratoryResult } from './gpLaboratoryResult';
 

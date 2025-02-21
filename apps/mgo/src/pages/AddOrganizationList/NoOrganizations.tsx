@@ -1,16 +1,16 @@
 import { QueryStateLayout } from '$/components/QueryStateLayout/QueryStateLayout';
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { Button, Card, Stack } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function NoOrganizations() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     return (
         <Stack className="my-6 flex-grow gap-12">
             <Card className="mt-6">
                 <QueryStateLayout
                     illustration="woman-on-couch"
-                    title={intl.formatMessage({ id: 'add_organization_list.no_results_heading' })}
+                    title={formatMessage('add_organization_list.no_results_heading')}
                 >
                     <FormattedMessage
                         id="add_organization_list.no_results_subheading"

@@ -1,18 +1,18 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
+import { FormattedMessage, useIntl } from '$/intl';
 import { Link, RouterLink } from '$/routing';
 import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Proposition() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setOnboardingSeen } = useOnboardingSeen();
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'proposition.heading' })} />
+            <Helmet title={formatMessage('proposition.heading')} />
 
             <Container>
                 <BackButton />

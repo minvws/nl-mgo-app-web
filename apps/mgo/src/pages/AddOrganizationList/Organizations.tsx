@@ -1,3 +1,4 @@
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import {
@@ -8,10 +9,9 @@ import {
     useOpenState,
 } from '@minvws/mgo-mgo-ui';
 import { useState } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Organizations() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const { organizations, getOrganizationBySlug, removeOrganizationBySlug } =
         useOrganizationsStore();
     const [selectedSlug, setSelectedSlug] = useState<string>();
@@ -31,17 +31,11 @@ export function Organizations() {
                 <ConfirmDialog
                     open={isOpen}
                     onOpenChange={setIsOpen}
-                    title={intl.formatMessage(
-                        { id: 'dialog.remove_organization_heading' },
-                        i18nValues
-                    )}
-                    description={intl.formatMessage(
-                        { id: 'dialog.remove_organization_subheading' },
-                        i18nValues
-                    )}
-                    confirmButtonText={intl.formatMessage({ id: 'dialog.remove_organization_yes' })}
-                    cancelButtonText={intl.formatMessage({ id: 'dialog.remove_organization_no' })}
-                    closeButtonAriaLabel={intl.formatMessage({ id: 'common.voice_over_close' })}
+                    title={formatMessage('dialog.remove_organization_heading', i18nValues)}
+                    description={formatMessage('dialog.remove_organization_subheading', i18nValues)}
+                    confirmButtonText={formatMessage('dialog.remove_organization_yes')}
+                    cancelButtonText={formatMessage('dialog.remove_organization_no')}
+                    closeButtonAriaLabel={formatMessage('common.voice_over_close')}
                     onConfirm={() => removeOrganizationBySlug(selectedSlug)}
                 />
             )}
@@ -66,7 +60,7 @@ export function Organizations() {
                                 subTitle={name}
                                 meta={<span className="whitespace-pre">{address}</span>}
                                 icon="delete"
-                                iconAriaLabel={intl.formatMessage({ id: 'common.delete' })}
+                                iconAriaLabel={formatMessage('common.delete')}
                             />
                         </li>
                     ))}

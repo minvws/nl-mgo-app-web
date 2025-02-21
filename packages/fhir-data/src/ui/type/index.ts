@@ -1,4 +1,4 @@
-import { type UiHelperContext } from '../context/ui';
+import { type UiHelperContext } from '../context';
 import { type UiElement, type UiFunction } from '../types';
 import { annotation } from './annotation/annotation';
 import { boolean } from './boolean/boolean';

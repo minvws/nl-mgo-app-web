@@ -2,7 +2,7 @@
 
 ## Setting up a local development environment
 
-### Prerequisites
+### Setup
 
 In this repository we are using [asdf] to manage the `node`/`pnpm` version for the local development environment.
 The versions are set in the `.tool-versions` file.
@@ -20,17 +20,18 @@ asdf plugin-add pnpm
 asdf install
 ```
 
-When this is set up, asdf will ensure you will always have the correct (node) version in any teminal that is opened within this project directory.
+When this is set up, asdf will ensure you will always have the correct (node) version in any terminal that is opened within this project directory.
 
-### Running a local development server
-
-First, install the dependencies by running:
+The last step to finish the setup is to install the project dependencies using `pnpm`:
 
 ```sh
+# install project dependencies
 pnpm install
 ```
 
-Then, start the development server by running (from the project root):
+### Running a local development server
+
+To start the development server run the following command from the project root:
 
 ```sh
 pnpm dev
@@ -48,7 +49,7 @@ pnpm storybook
 
 ### Package information
 
-For more details on a package you can check out the README at the root of a package
+For more details on a package you can check out the README at the root of a package.
 
 [MGO]: ../README.md
 [asdf]: https://asdf-vm.com/guide/introduction.html

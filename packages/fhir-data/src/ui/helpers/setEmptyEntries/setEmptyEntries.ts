@@ -1,10 +1,9 @@
-import { type I18nContext } from '../../../i18n';
-import { type UiHelperContext } from '../../context/ui';
+import { type UiHelperContext } from '../../context';
 import { type HealthUiGroup, type HealthUiSchema } from '../../types';
 import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
 import { isUiSchemaGroup } from '../isUiSchemaGroup/isUiSchemaGroup';
 
-function processGroup(group: HealthUiGroup, { formatMessage }: I18nContext): HealthUiGroup {
+function processGroup(group: HealthUiGroup, { formatMessage }: UiHelperContext): HealthUiGroup {
     return {
         ...group,
         children: group.children.map((entry) => {
@@ -13,7 +12,7 @@ function processGroup(group: HealthUiGroup, { formatMessage }: I18nContext): Hea
                 ? {
                       type: 'SINGLE_VALUE',
                       label: entry.label,
-                      display: formatMessage('schema.empty_entry_display'),
+                      display: formatMessage('fhir.empty_value'),
                   }
                 : entry;
         }),

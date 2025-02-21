@@ -1,7 +1,8 @@
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders, message } from '$test/helpers';
+import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Overview } from './Overview';
@@ -13,8 +14,8 @@ test('overview should show empty state', () => {
 
     setupApp({ initialEntries: ['/overzicht'] });
 
-    expect(screen.getByText(message('overview.heading'))).toBeInTheDocument();
-    expect(screen.getByText(message('common.no_organizations_heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('overview.heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('common.no_organizations_heading'))).toBeInTheDocument();
 });
 
 test('should show the health categories if there are organizations', () => {
@@ -25,5 +26,5 @@ test('should show the health categories if there are organizations', () => {
     setAuthStateAuthenticated();
     setupWithAppProviders(<Overview />);
 
-    expect(screen.getByText(message('hc_medication.heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('hc_medication.heading'))).toBeInTheDocument();
 });

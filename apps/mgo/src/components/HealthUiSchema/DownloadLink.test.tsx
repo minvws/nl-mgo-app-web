@@ -1,8 +1,9 @@
 import { getDataService } from '$/services';
 import { type Resource } from '$/store';
 import { faker } from '$test/faker';
-import { flushCallStack, message, setupWithAppProviders } from '$test/helpers';
+import { flushCallStack, setupWithAppProviders } from '$test/helpers';
 import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-fhir-data';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { DownloadLink } from './DownloadLink';
@@ -81,10 +82,10 @@ test('DownloadLink preloads data when passed a Binary reference', async () => {
     vi.stubGlobal('URL', { createObjectURL: vi.fn(() => mockBlobUrl) });
 
     const downloadLink = screen.getByTestId('download-link');
-    expect(downloadLink.textContent).toContain(message('common.loading'));
+    expect(downloadLink.textContent).toContain(appMessage('common.loading'));
 
     await flushCallStack(2);
 
-    expect(downloadLink.textContent).not.toContain(message('common.loading'));
+    expect(downloadLink.textContent).not.toContain(appMessage('common.loading'));
     expect(downloadLink.getAttribute('href')).toBe(mockBlobUrl);
 });

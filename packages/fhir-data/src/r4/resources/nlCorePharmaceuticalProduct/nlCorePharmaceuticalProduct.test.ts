@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Medication } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -33,7 +33,7 @@ test('uiSchema label returns profile when label not specified', () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     output.name = undefined;
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toEqual(message(i18n));
+    expect(uiSchema.label).toEqual(fhirMessage(i18n));
 });
 
 test('return batch lotnumber if specified', () => {

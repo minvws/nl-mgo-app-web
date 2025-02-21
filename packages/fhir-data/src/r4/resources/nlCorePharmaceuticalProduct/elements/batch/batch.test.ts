@@ -1,7 +1,7 @@
 import { faker, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { batch } from './batch';
-import { message } from '$test/i18n';
 
 test('batch parses successfully', () => {
     const input = {
@@ -24,5 +24,5 @@ test('batch UI schema group is created successfully', () => {
     };
     const data = batch.parse(input);
     const schema = batch.uiSchemaGroup(data, testUiSchemaContext());
-    expect(schema.label).toBe(message('r4.zib_pharmaceutical_product.batch'));
+    expect(schema.label).toBe(fhirMessage('r4.zib_pharmaceutical_product.batch'));
 });

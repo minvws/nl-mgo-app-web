@@ -55,7 +55,7 @@ export const uiSchema: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = 
                 ],
             },
             {
-                label: formatMessage(`detail.${i18n}.group_author`),
+                label: formatMessage(`details.${i18n}.group_author`),
                 children: [generalInformation.Author],
             },
             ...(content
@@ -65,7 +65,7 @@ export const uiSchema: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = 
                           children: [content.ContentType, content.Language],
                       },
                       {
-                          label: formatMessage(`detail.${i18n}.group_attachment`),
+                          label: formatMessage(`details.${i18n}.group_attachment`),
                           children: [content.Location],
                       },
                   ]

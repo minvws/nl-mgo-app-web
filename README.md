@@ -1,5 +1,4 @@
-<h1 align="center">Mijn Gezondheidsoverzicht (web)</h1>
-<br />
+# Mijn Gezondheidsoverzicht (web)
 
 This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and components. It is a monorepository which contains multiple individual apps and packages. To [learn more about the MGO app itself][mgo-about] please visit the about page.
 
@@ -8,8 +7,8 @@ This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and
 - [About the app][mgo-about]
 - [Development setup][mgo-development]
 - [End-to-end tests](apps/e2e-tests/README.md)
-- [Internationalization][mgo-i18n]
 - [Deployment][mgo-deployment]
+- [Internationalization / copy content][mgo-intl]
 - [Glossary][mgo-glossary]
 
 ## Directory structure
@@ -26,6 +25,7 @@ This repository is a monorepository in that all directories under `apps/*` and `
     │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
     │    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
     │    ├── mgo-ui             # UI library for the MGO app
+    │    ├── mgo-intl           # Contains all the text content and translations for the MGO app and the "health ui schema"'s
     │    └── tailwind           # MGO Tailwind theme
     ├── docs
     │    └── ...                # Documentation files
@@ -82,4 +82,4 @@ This repository follows the [REUSE Specfication v3.0](https://reuse.software/spe
 [mgo-development]: ./docs/development.md
 [mgo-deployment]: ./docs/deployment.md
 [mgo-glossary]: ./docs/glossary.md
-[mgo-i18n]: ./docs/i18n.md
+[mgo-intl]: ./packages/mgo-intl/README.md

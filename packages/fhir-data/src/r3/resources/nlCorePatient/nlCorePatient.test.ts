@@ -1,9 +1,9 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Patient } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/nl-core-Patient-01.json';
 import { nlCorePatient } from './nlCorePatient';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
 
 test('parseNlCorePatient returns the expected output 01', () => {
@@ -31,5 +31,5 @@ test('uiSchema returns default label if name not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

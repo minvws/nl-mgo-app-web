@@ -1,12 +1,12 @@
-import { type MessagesIds } from '../../../i18n';
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoCode } from '../../../parse/type';
 import { type Nullable } from '../../../types/Nullable';
 import { isNonNullish, isNullish } from '../../../utils';
-import { type UiHelperContext } from '../../context/ui';
+import { type UiHelperContext } from '../../context';
 import { type MultipleValues, type SingleValue } from '../../types';
 
 type i18nCode<T extends string | undefined> =
-    Extract<MessagesIds, `codes.${string}.${T}`> extends `codes.${infer R}.${T}` ? R : never;
+    Extract<FhirMessagesIds, `codes.${string}.${T}`> extends `codes.${infer R}.${T}` ? R : never;
 
 type CodeOptions<T extends string | undefined> = {
     i18nCode: i18nCode<T>;
@@ -16,7 +16,7 @@ export function code(context: UiHelperContext) {
     const { hasMessage, formatMessage } = context;
 
     return function <T extends MgoCode>(
-        label: MessagesIds,
+        label: FhirMessagesIds,
         value: Nullable<T | T[]>,
         options?: CodeOptions<T>
     ): SingleValue | MultipleValues {

@@ -1,6 +1,6 @@
+import { FormattedMessage } from '$/intl';
 import { Container } from '@minvws/mgo-mgo-ui';
 import { type ComponentProps } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
 
 export interface DesktopHeaderProps extends Omit<ComponentProps<'header'>, 'className'> {}

@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Organization } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -21,5 +21,5 @@ test('uiSchema label returns profile when label not specified', () => {
     const output = nlCoreHealthcareProviderOrganization.parse(input01 as Organization);
     output.name = undefined;
     const uiSchema = nlCoreHealthcareProviderOrganization.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toEqual(message(i18n));
+    expect(uiSchema.label).toEqual(fhirMessage(i18n));
 });

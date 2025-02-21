@@ -46,12 +46,12 @@ test('sets empty entries, but does not mutate the schema', () => {
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     entry4,
                 ],
@@ -116,22 +116,22 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
                     {
                         label: entry1.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry4.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     entry5,
                     entry6,
@@ -168,7 +168,7 @@ test('also works for a group', () => {
             {
                 label: entry2.label,
                 type: 'SINGLE_VALUE',
-                display: 'intl(schema.empty_entry_display)',
+                display: 'intl(fhir.empty_value)',
             },
         ],
     };
@@ -208,7 +208,7 @@ test('also works for a multiple groups', () => {
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(schema.empty_entry_display)',
+                    display: 'intl(fhir.empty_value)',
                 },
             ],
         },
@@ -218,7 +218,7 @@ test('also works for a multiple groups', () => {
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(schema.empty_entry_display)',
+                    display: 'intl(fhir.empty_value)',
                 },
             ],
         },

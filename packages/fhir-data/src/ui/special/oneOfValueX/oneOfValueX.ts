@@ -1,16 +1,16 @@
-import { type MessagesIds } from '../../../i18n/messages';
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type NonArrayObject } from '../../../types/NonArrayObject';
 import { type Nullable } from '../../../types/Nullable';
 import { capitalizeFirstLetter, isNullish } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
-import { type UiHelperContext } from '../../context/ui';
+import { type UiHelperContext } from '../../context';
 import { getTypes } from '../../type';
 import { type UiElement } from '../../types';
 
 export const oneOfValueX =
     (context: UiHelperContext) =>
     <T extends NonArrayObject>(
-        label: MessagesIds,
+        label: FhirMessagesIds,
         value: Nullable<T>,
         prefix: string = 'value'
     ) => {

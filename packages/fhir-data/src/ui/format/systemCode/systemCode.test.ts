@@ -1,12 +1,10 @@
 import { faker } from '$test';
-import { expect, test, type MockedFunction } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { systemCode } from './systemCode';
 
 test('systemCode uses the translated code if available', () => {
     const context = faker.custom.uiHelperContext();
-    const hasMessage = context.hasMessage as unknown as MockedFunction<typeof context.hasMessage>;
-
-    hasMessage.mockReturnValue(true);
+    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
 
     const value = faker.fhir.coding();
     const expected = `intl(system.code.${value.system}|${value.code})`;
@@ -19,9 +17,7 @@ test('systemCode uses the translated code if available', () => {
 
 test('systemCode uses the display value if code can not be translated', () => {
     const context = faker.custom.uiHelperContext();
-    const hasMessage = context.hasMessage as unknown as MockedFunction<typeof context.hasMessage>;
-
-    hasMessage.mockReturnValue(false);
+    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
     const value = faker.fhir.coding();
     const expected = value.display;
@@ -34,9 +30,7 @@ test('systemCode uses the display value if code can not be translated', () => {
 
 test('systemCode uses the raw code if there is NO display AND code can not be translated', () => {
     const context = faker.custom.uiHelperContext();
-    const hasMessage = context.hasMessage as unknown as MockedFunction<typeof context.hasMessage>;
-
-    hasMessage.mockReturnValue(false);
+    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
     const value = faker.fhir.coding();
     value.display = undefined;

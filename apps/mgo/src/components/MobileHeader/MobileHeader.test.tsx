@@ -1,6 +1,7 @@
 import { App } from '$/App';
 import { Outlet } from '$/routing';
-import { message, setup, setupWithAppProviders } from '$test/helpers';
+import { setup, setupWithAppProviders } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { createMemoryRouter } from 'react-router-dom';
 import { expect, test } from 'vitest';
@@ -11,12 +12,12 @@ test('menu button opens and closes menu', async () => {
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 
-    const openMenuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const openMenuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
     await user.click(openMenuButton);
 
     expect(screen.queryByRole('navigation')).toBeInTheDocument();
 
-    const closeButton = screen.getByRole('button', { name: message('common.voice_over_close') });
+    const closeButton = screen.getByRole('button', { name: appMessage('common.voice_over_close') });
     await user.click(closeButton);
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
@@ -25,7 +26,7 @@ test('menu button opens and closes menu', async () => {
 test('clicking outside menu closes menu', async () => {
     const { user } = setupWithAppProviders(<MobileHeader />);
 
-    const menuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
     await user.click(menuButton);
 
     expect(screen.queryByRole('navigation')).toBeInTheDocument();
@@ -59,10 +60,10 @@ test('navigating closes menu', async () => {
     const heading = screen.queryByRole('heading', { level: 1, name: 'Test' });
     expect(heading).not.toBeInTheDocument();
 
-    const menuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
     await user.click(menuButton);
 
-    const overzichtLink = screen.getByRole('link', { name: message('menu.overview_heading') });
+    const overzichtLink = screen.getByRole('link', { name: appMessage('menu.overview_heading') });
     await user.click(overzichtLink);
 
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
@@ -73,7 +74,7 @@ test('navigating closes menu', async () => {
 test('Escape closes menu and moves the focus back to the menu button', async () => {
     const { user } = setupWithAppProviders(<MobileHeader />);
 
-    const menuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
 
     await user.tab();
     expect(menuButton).toHaveFocus();
@@ -92,7 +93,7 @@ test('Escape closes menu and moves the focus back to the menu button', async () 
 test('Escape does not change focus when menu is closed', async () => {
     const { user } = setupWithAppProviders(<MobileHeader />);
 
-    const menuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
 
     expect(menuButton).not.toHaveFocus();
     await user.keyboard('[Escape]');

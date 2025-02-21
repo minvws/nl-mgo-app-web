@@ -1,6 +1,7 @@
-import { message, setup, setupWithAppProviders } from '$test/helpers';
+import { setup, setupWithAppProviders } from '$test/helpers';
 import { supressConsoleError } from '$test/helpers/supressConsoleError';
 import { faker } from '@faker-js/faker';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { QueryState, type QueryStateProps } from './QueryState';
@@ -88,7 +89,7 @@ test.each([undefined, null, []])(
         expect(screen.queryByTestId('result')).toBeNull();
 
         screen.getByRole('heading', {
-            name: message('common.no_results_heading'),
+            name: appMessage('common.no_results_heading'),
         });
     }
 );
@@ -157,7 +158,7 @@ test('Default error is shown', () => {
     expect(screen.queryByRole('progressbar')).toBeNull();
 
     screen.getByRole('heading', {
-        name: message('common.error_heading'),
+        name: appMessage('common.error_heading'),
     });
 });
 

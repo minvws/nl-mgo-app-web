@@ -2,17 +2,17 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
 import { RouterLink } from '$/routing';
 
+import { FormattedMessage, useIntl } from '$/intl';
 import { Button, Card, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function NotFound() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'organization.not_found_heading' })} />
+            <Helmet title={formatMessage('organization.not_found_heading')} />
             <section className="flex-grow">
                 <div>
                     <BackButton />

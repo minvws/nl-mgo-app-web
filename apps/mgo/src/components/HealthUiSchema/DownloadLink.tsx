@@ -1,3 +1,4 @@
+import { useIntl } from '$/intl';
 import { getDataService } from '$/services';
 import { useOrganizationsStore } from '$/store';
 import { type DataService } from '@minvws/mgo-data-services';
@@ -5,7 +6,6 @@ import { type DownloadLink, type FhirVersion } from '@minvws/mgo-fhir-data';
 import { DescriptionButton } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
-import { useIntl } from 'react-intl';
 import { HealthUiSchemaContext } from './HealthUiSchemaContext';
 
 export interface DownloadLinkProps {
@@ -15,7 +15,7 @@ export interface DownloadLinkProps {
 const binaryRegexp = /^Binary\/([^/]+)/;
 
 export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
     const { resource } = useContext(HealthUiSchemaContext);
 
@@ -49,7 +49,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
         <DescriptionButton
             details={label}
             icon="download"
-            loadingText={intl.formatMessage({ id: 'common.loading' })}
+            loadingText={formatMessage('common.loading')}
             isLoading={isLoading}
             variant="highlighted"
             asChild

@@ -5,4 +5,3 @@ export {
     useParseHealthcareOrganization,
     type ParsedHealthcareOrganization,
 } from './useParseHealthcareOrganization/useParseHealthcareOrganization';
-export { useTranslatedDescriptions } from './useTranslatedDescriptions/useTranslatedDescriptions';

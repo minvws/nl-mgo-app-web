@@ -1,4 +1,5 @@
-import { message, setupApp } from '$test/helpers';
+import { setupApp } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 
@@ -11,13 +12,13 @@ test('shows heading and navigates to the next page', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('introduction.heading'));
+    ).toHaveTextContent(appMessage('introduction.heading'));
 
-    fireEvent.click(screen.getByText(message('common.next')));
+    fireEvent.click(screen.getByText(appMessage('common.next')));
 
     expect(
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('proposition.heading'));
+    ).toHaveTextContent(appMessage('proposition.heading'));
 });

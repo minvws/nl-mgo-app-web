@@ -1,11 +1,12 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
 import { coding } from './coding';
 
-import { type UiHelperContext } from '../../context/ui';
-import { system } from '../../format/system/system';
 import { type Nullable } from '../../../types/Nullable';
+import { type UiHelperContext } from '../../context';
+import { system } from '../../format/system/system';
 
 const mockSystem = system as unknown as MockedFunction<typeof system>;
 
@@ -14,14 +15,14 @@ vi.mock('../../format/system/system', () => ({
 }));
 
 test('coding single', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const mockFormatSystem = vi.fn(() => 'system');
     mockSystem.mockReturnValue(mockFormatSystem);
 
     const mgoCoding: MgoCoding = faker.fhir.coding();
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'SINGLE_VALUE',
         display: 'system',
     });
@@ -29,14 +30,14 @@ test('coding single', () => {
 });
 
 test('coding multiple', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const mockFormatSystem = vi.fn(() => 'system');
     mockSystem.mockReturnValue(mockFormatSystem);
 
     const mgoCoding: MgoCoding[] = [faker.fhir.coding(), faker.fhir.coding(), faker.fhir.coding()];
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         display: ['system', 'system', 'system'],
     });
@@ -47,7 +48,7 @@ test('coding multiple', () => {
 });
 
 test('coding multiple does not return undefined values', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const mockFormatSystem = vi.fn((coding: Nullable<MgoCoding>) =>
         coding?.system ? 'system' : undefined
     );
@@ -56,7 +57,7 @@ test('coding multiple does not return undefined values', () => {
     const mgoCoding: MgoCoding[] = [faker.fhir.coding(), {}, faker.fhir.coding()];
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         display: ['system', 'system'],
     });

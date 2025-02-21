@@ -1,8 +1,8 @@
 import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export interface HealthCategoryButtonProps<T extends HealthCategory> {
     readonly query: QueryResult<T>;
@@ -11,7 +11,7 @@ export interface HealthCategoryButtonProps<T extends HealthCategory> {
 export function HealthCategoryButton<T extends HealthCategory>({
     query,
 }: HealthCategoryButtonProps<T>) {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
 
     const iconMap: Record<HealthCategory, CategoryButtonProps['icon']> = {
         [HealthCategory.PersonalInformation]: 'person',
@@ -36,13 +36,9 @@ export function HealthCategoryButton<T extends HealthCategory>({
         <CategoryButton
             asChild
             icon={iconMap[query.category]}
-            loadingText={intl.formatMessage({ id: 'common.loading' })}
+            loadingText={formatMessage('common.loading')}
             isLoading={query.isLoading}
-            label={
-                !query.isLoading && query.isEmpty
-                    ? intl.formatMessage({ id: 'common.no_data' })
-                    : undefined
-            }
+            label={!query.isLoading && query.isEmpty ? formatMessage('common.no_data') : undefined}
         >
             <RouterLink to={`./${healthCategorySlugs[query.category]}`}>
                 <FormattedMessage id={`hc_${query.category}.heading`} />

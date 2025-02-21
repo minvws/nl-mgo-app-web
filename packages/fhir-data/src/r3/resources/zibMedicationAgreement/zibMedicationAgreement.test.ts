@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import type { MedicationRequest } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import inputFhirData from './fixtures/zib-MedicationAgreement-01.json';
@@ -35,5 +35,5 @@ test('uiSchema returns default label if medicationReference not supplied', () =>
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

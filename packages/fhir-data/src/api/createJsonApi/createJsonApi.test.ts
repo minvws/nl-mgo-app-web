@@ -1,6 +1,6 @@
 import { faker } from '$test';
+import { Locale } from '@minvws/mgo-mgo-intl';
 import { expect, test } from 'vitest';
-import { Locale } from '../../i18n';
 import { createJsonApi } from './createJsonApi';
 
 type A = { locale: Locale; a: string; b: number };

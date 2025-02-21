@@ -1,0 +1,86 @@
+{
+  "codes.r3.observation.status.amended": [
+    {
+      "type": 0,
+      "value": "Gewijzigd"
+    }
+  ],
+  "codes.r3.observation.status.cancelled": [
+    {
+      "type": 0,
+      "value": "Geannuleerd"
+    }
+  ],
+  "codes.r3.observation.status.corrected": [
+    {
+      "type": 0,
+      "value": "Gecorrigeerd"
+    }
+  ],
+  "codes.r3.observation.status.entered-in-error": [
+    {
+      "type": 0,
+      "value": "Foutief ingevoerd"
+    }
+  ],
+  "codes.r3.observation.status.final": [
+    {
+      "type": 0,
+      "value": "Definitief"
+    }
+  ],
+  "codes.r3.observation.status.preliminary": [
+    {
+      "type": 0,
+      "value": "Inleidend"
+    }
+  ],
+  "codes.r3.observation.status.registered": [
+    {
+      "type": 0,
+      "value": "Geregistreerd"
+    }
+  ],
+  "codes.r3.observation.status.unknown": [
+    {
+      "type": 0,
+      "value": "Onbekend"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.active": [
+    {
+      "type": 0,
+      "value": "Actief"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.completed": [
+    {
+      "type": 0,
+      "value": "Voldaan"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.entered-in-error": [
+    {
+      "type": 0,
+      "value": "Foutief ingevoerd"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.intended": [
+    {
+      "type": 0,
+      "value": "Bedoeld"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.on-hold": [
+    {
+      "type": 0,
+      "value": "Gepauzeerd"
+    }
+  ],
+  "codes.r3.zib_medication_use.status.stopped": [
+    {
+      "type": 0,
+      "value": "Gestopt"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Encounter } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import input03 from './fixtures/03/fhir-resource.json';
-import { zibEncounter } from './zibEncounter';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibEncounter } from './zibEncounter';
 
 test('returns the expected output 01', () => {
     const output = zibEncounter.parse(input01 as Encounter);
@@ -65,5 +65,5 @@ test('uiSchema returns default label if serviceProvider not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

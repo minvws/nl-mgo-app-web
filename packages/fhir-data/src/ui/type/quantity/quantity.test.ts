@@ -1,4 +1,5 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test, vi } from 'vitest';
 import { type MgoQuantity } from '../../../parse/type';
 import { quantity } from './quantity';
@@ -21,23 +22,23 @@ function mockQuantity(): MgoQuantity {
 }
 
 test('quantity', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const mgoQuantity = mockQuantity();
     const result = quantity(faker.custom.uiHelperContext())(label, mgoQuantity);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: `SINGLE_VALUE`,
         display: `systemValue(${JSON.stringify(mgoQuantity)})`,
     });
 });
 
 test('quantity with undefined fields', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const result = quantity(faker.custom.uiHelperContext())(label, undefined);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: `SINGLE_VALUE`,
         display: `systemValue(${JSON.stringify(undefined)})`,
     });

@@ -2,14 +2,14 @@ import { faker } from '@faker-js/faker';
 import { fhir } from './fhir';
 import { fhirR4 } from './fhirR4';
 import * as helpers from './helpers';
-import { uiHelperContext } from './i18nContext';
-import { messageId } from './messageId';
+import { fhirMessageId } from './messageId';
 import { nullish } from './nullish';
+import { uiHelperContext } from './uiHelperContext';
 
 const custom = {
     ...helpers,
     nullish,
-    messageId,
+    fhirMessageId,
     uiHelperContext,
 };
 

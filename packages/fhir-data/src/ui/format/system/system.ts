@@ -15,7 +15,7 @@ export const system: WithUiHelperContext<FormatFunction<MgoCoding>> = (context) 
     let codeInSystemString;
 
     if (code && system) {
-        codeInSystemString = formatMessage('format.code_in_system', {
+        codeInSystemString = formatMessage('fhir.code_in_system', {
             code,
             system,
         });

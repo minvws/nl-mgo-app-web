@@ -1,4 +1,4 @@
-import { type UiHelperContext } from '../context/ui';
+import { type UiHelperContext } from '../context';
 import { attachment } from './attachment/attachment';
 import { oneOfValueX } from './oneOfValueX/oneOfValueX';
 import { valueWithMax } from './valueWithMax/valueWithMax';

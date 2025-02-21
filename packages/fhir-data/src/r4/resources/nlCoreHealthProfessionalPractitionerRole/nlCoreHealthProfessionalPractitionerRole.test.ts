@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type PractitionerRole } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/fhir-resource.json';
@@ -27,5 +27,5 @@ test('uiSchema label returns profile when label not specified', () => {
         output,
         testUiSchemaContext()
     );
-    expect(uiSchema.label).toEqual(message(i18n));
+    expect(uiSchema.label).toEqual(fhirMessage(i18n));
 });

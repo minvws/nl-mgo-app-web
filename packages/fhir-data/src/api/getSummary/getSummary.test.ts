@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
+import { Locale } from '@minvws/mgo-mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { Locale } from '../../i18n';
 import { type ResourceConfig } from '../../types/Fhir';
 import { createSchemaContext, type HealthUiSchemaFunction } from '../../ui';
 import { type HealthUiSchemaOptions } from '../getDetails/getDetails';
@@ -140,5 +140,5 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
     const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
     const singleValueDisplay = (result?.children[0].children[0] as SingleValue).display;
 
-    expect(singleValueDisplay).toBe(formatMessage('schema.empty_entry_display'));
+    expect(singleValueDisplay).toBe(formatMessage('fhir.empty_value'));
 });

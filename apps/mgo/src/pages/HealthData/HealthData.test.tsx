@@ -4,7 +4,8 @@ import { Navigate, useParams } from '$/routing';
 import { useResourcesStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { message } from '$test/helpers/i18n';
+import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthData } from './HealthData';
@@ -40,7 +41,11 @@ test('shows the summary by default', async () => {
 
     setupWithAppProviders(<HealthData />);
 
-    await waitFor(() => expect(document.title).toContain(message('hc_medication.heading_summary')));
+    await waitFor(() =>
+        expect(document.title).toContain(
+            appMessage('hc_medication.heading_summary' as AppMessagesIds)
+        )
+    );
     const uiSchemaComponent = screen.getByTestId('ui-schema');
     expect(uiSchemaComponent).toHaveTextContent('showDetails: false');
 });
@@ -58,7 +63,9 @@ test('can show all the details', async () => {
 
     setupWithAppProviders(<HealthData showDetails />);
 
-    await waitFor(() => expect(document.title).toContain(message('hc_medication.heading_detail')));
+    await waitFor(() =>
+        expect(document.title).toContain(appMessage('hc_medication.heading_detail'))
+    );
     const uiSchemaComponent = screen.getByTestId('ui-schema');
     expect(uiSchemaComponent).toHaveTextContent('showDetails: true');
 });

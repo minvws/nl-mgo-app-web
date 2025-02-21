@@ -1,10 +1,10 @@
+import { useIntl } from '$/intl';
 import { Spinner, Text } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
-import { useIntl } from 'react-intl';
 
 export function LoadingSpinner({ children }: HTMLAttributes<HTMLElement>) {
-    const intl = useIntl();
-    const loadingText = intl.formatMessage({ id: 'common.loading' });
+    const { formatMessage } = useIntl();
+    const loadingText = formatMessage('common.loading');
 
     return (
         <Text asChild className="text-center">

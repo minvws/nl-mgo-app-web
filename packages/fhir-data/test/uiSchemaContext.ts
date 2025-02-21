@@ -1,9 +1,12 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { Locale } from '../src/i18n';
+import { Locale } from '@minvws/mgo-mgo-intl';
 import { createSchemaContext } from '../src/ui';
-import { type HealthUiSchemaContext, type SchemaContextOptions } from '../src/ui/context/context';
-import { getUi } from '../src/ui/context/ui';
-import { uiHelperContext } from './faker/i18nContext';
+import {
+    type HealthUiSchemaContext,
+    type SchemaContextOptions,
+} from '../src/ui/context/schema/schema';
+import { getUi } from '../src/ui/context/schema/ui';
+import { faker } from './faker';
 
 export interface TestUiSchemaOptions<T extends `${FhirVersion}`> extends SchemaContextOptions<T> {
     useMock: boolean;
@@ -13,21 +16,18 @@ export function testUiSchemaContext<T extends `${FhirVersion}` = `${FhirVersion.
     options: Partial<TestUiSchemaOptions<T>> = {}
 ): HealthUiSchemaContext<T> {
     if (options.useMock) {
-        const mockUiContext = uiHelperContext({
-            isSummary: options.isSummary,
-        });
+        const mockUiHelperContext = faker.custom.uiHelperContext({ isSummary: options.isSummary });
 
         return {
-            ...mockUiContext,
-            ui: getUi(mockUiContext),
+            ui: getUi(mockUiHelperContext),
             resources: options.resources ?? [],
-        } as HealthUiSchemaContext<T>;
+            ...mockUiHelperContext,
+        };
     }
 
     return createSchemaContext<T>({
         locale: Locale.NL_NL,
         ignoreMissingTranslations: false,
-        ignoreIntlCache: true,
         ...options,
     });
 }

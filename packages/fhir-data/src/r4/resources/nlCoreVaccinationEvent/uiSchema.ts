@@ -1,6 +1,6 @@
 import { capitalize } from 'lodash';
 import { type HealthUiSchemaFunction } from '../../../ui';
-import { type UiHelperContext } from '../../../ui/context/ui';
+import { type UiHelperContext } from '../../../ui/context';
 import { map } from '../../../utils';
 import { uiSchemaGroup as protocolAppliedUiSchema } from './elements/protocolApplied/uiSchemaGroup';
 import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';

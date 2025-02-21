@@ -4,12 +4,12 @@ import {
     useHealthCategoryQuery,
 } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
-import { type MessagesIds } from '$/i18n/messages';
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { message } from '$test/helpers/i18n';
+import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { screen, within } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
@@ -63,7 +63,7 @@ test('loads and shows category content', async () => {
     const { rerender } = setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
+        name: appMessage(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
@@ -84,7 +84,7 @@ test('loads and shows category content', async () => {
 
     rerender(<HealthCategory />);
     screen.getByRole('heading', {
-        name: message('health_category.medication.medication_use' as MessagesIds),
+        name: appMessage('health_category.medication.medication_use' as AppMessagesIds),
         level: 2,
     });
 });
@@ -118,7 +118,7 @@ test('loads and receives error from category query', async () => {
     setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
+        name: appMessage(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
@@ -142,12 +142,12 @@ test('loads and receives no data from category query', async () => {
     setupWithAppProviders(<HealthCategory />);
 
     screen.getByRole('heading', {
-        name: message(`hc_${HealthCategoryEnum.Medication}.heading`),
+        name: appMessage(`hc_${HealthCategoryEnum.Medication}.heading`),
         level: 1,
     });
 
     screen.getByRole('heading', {
-        name: message('health_category.empty.heading'),
+        name: appMessage('health_category.empty.heading'),
         level: 2,
     });
 });

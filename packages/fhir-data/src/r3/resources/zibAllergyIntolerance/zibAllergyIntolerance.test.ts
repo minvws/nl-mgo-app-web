@@ -1,10 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type AllergyIntolerance } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/zib-AllergyIntolerance-01.json';
-import { zibAllergyIntolerance } from './zibAllergyIntolerance';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibAllergyIntolerance } from './zibAllergyIntolerance';
 
 test('parse returns the expected output 01', () => {
     const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
@@ -33,5 +33,5 @@ test('uiSchema returns default label if identifier not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

@@ -1,4 +1,5 @@
 import { useKeyDown } from '$/hooks';
+import { useIntl } from '$/intl';
 import {
     Container,
     Fade,
@@ -8,7 +9,6 @@ import {
     useOpenState,
 } from '@minvws/mgo-mgo-ui';
 import { useCallback, useEffect, useRef, type ComponentProps, type FocusEvent } from 'react';
-import { useIntl } from 'react-intl';
 import { useLocation } from 'react-router-dom';
 import { SlideDown } from '../../../../../packages/mgo-ui/src/components/SlideDown/SlideDown';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
@@ -20,7 +20,7 @@ export interface MobileHeaderProps extends Omit<ComponentProps<'header'>, 'class
 const animationDuration = 300;
 
 export function MobileHeader({ ...rest }: MobileHeaderProps) {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const menuContentRef = useRef<HTMLDivElement>(null);
     const { isOpen, close, toggle } = useOpenState();
@@ -77,8 +77,8 @@ export function MobileHeader({ ...rest }: MobileHeaderProps) {
                         aria-expanded={isOpen}
                         onClick={toggle}
                         isOpen={isOpen}
-                        openLabel={intl.formatMessage({ id: 'menu.menu' })}
-                        closeLabel={intl.formatMessage({ id: 'common.voice_over_close' })}
+                        openLabel={formatMessage('menu.menu')}
+                        closeLabel={formatMessage('common.voice_over_close')}
                     />
 
                     <SlideDown

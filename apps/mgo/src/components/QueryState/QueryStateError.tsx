@@ -1,5 +1,5 @@
+import { FormattedMessage, useIntl } from '$/intl';
 import { type HTMLAttributes } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 
 export interface QueryStateErrorProps extends HTMLAttributes<HTMLElement> {
@@ -7,12 +7,12 @@ export interface QueryStateErrorProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function QueryStateError({ title, children, ...rest }: QueryStateErrorProps) {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
 
     return (
         <QueryStateLayout
             illustration="woman-on-couch-exclamation"
-            title={title ?? intl.formatMessage({ id: 'common.error_heading' })}
+            title={title ?? formatMessage('common.error_heading')}
             {...rest}
         >
             {children || (

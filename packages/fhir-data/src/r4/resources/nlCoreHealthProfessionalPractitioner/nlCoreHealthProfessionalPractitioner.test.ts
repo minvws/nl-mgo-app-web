@@ -1,9 +1,9 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Practitioner } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
 import { r4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
 
 test('returns the expected output', () => {
@@ -31,5 +31,5 @@ test('uiSchema returns default label if name not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

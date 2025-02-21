@@ -1,4 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Immunization } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
@@ -29,7 +30,7 @@ test('01 - ui-schema - has a label even when there is no vaccine code', () => {
         testUiSchemaContext({ useMock: true })
     );
 
-    expect(schema.label).toBe(`intl(${i18n})`);
+    expect(schema.label).toBe(testMessage(i18n));
 });
 
 test('01 - summary', () => {

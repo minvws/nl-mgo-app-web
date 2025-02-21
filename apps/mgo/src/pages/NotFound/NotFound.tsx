@@ -1,13 +1,13 @@
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { Button, Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function NotFound() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'not_found.heading' })} />
+            <Helmet title={formatMessage('not_found.heading')} />
             <Container className="max-w-md pb-6 pt-12 md:pb-32 md:pt-24">
                 <Illustration
                     className="mx-auto w-3/4 md:mb-2 md:w-3/5"

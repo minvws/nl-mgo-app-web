@@ -1,0 +1,14 @@
+{
+    "fhir.boolean.false": "Nee",
+    "fhir.boolean.true": "Ja",
+    "fhir.code_in_system": "{code} in code systeem {system}",
+    "fhir.empty_value": "Niet bekend",
+    "fhir.group_general_info": "Algemeen",
+    "fhir.period.end": "Eind datum",
+    "fhir.period.start": "Begin datum",
+    "fhir.range.high": "Bovengrens",
+    "fhir.range.low": "Ondergrens",
+    "fhir.ratio.denominator": "Noemer",
+    "fhir.ratio.numerator": "Teller",
+    "fhir.unknown": "Onbekend"
+}

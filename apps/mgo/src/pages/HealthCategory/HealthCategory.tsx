@@ -2,17 +2,18 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { getHealthCategoryBySlug, useHealthCategoryQuery } from '$/healthCategory';
 import { useNavFocusRef } from '$/hooks/index.ts';
+import { FormattedMessage, useIntl } from '$/intl';
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
+import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { Alert, Button, Heading, Stack } from '@minvws/mgo-mgo-ui';
+import { useQueryClient } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { HealthCategoryContent } from '../../components/HealthCategoryContent/HealthCategoryContent';
 import { NoData } from './NoData';
-import { useQueryClient } from '@tanstack/react-query';
 
 export function HealthCategory() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { healthCategorySlug, organizationSlug } = useParams();
     const { getOrganizationBySlug } = useOrganizationsStore();
@@ -30,7 +31,7 @@ export function HealthCategory() {
         return <Navigate to={`/overzicht`} />;
     }
 
-    const heading = intl.formatMessage({ id: `hc_${healthCategory}.heading` });
+    const heading = formatMessage(`hc_${healthCategory}.heading` as AppMessagesIds);
 
     return (
         <>
@@ -39,10 +40,8 @@ export function HealthCategory() {
             <section className="flex-grow">
                 {isError && (
                     <Alert
-                        label={intl.formatMessage({ id: 'common.failed_to_load_data' })}
-                        aria-label={intl.formatMessage({
-                            id: 'common.failed_to_load_data',
-                        })}
+                        label={formatMessage('common.failed_to_load_data')}
+                        aria-label={formatMessage('common.failed_to_load_data')}
                         status="warning"
                     >
                         <Stack className="items-start gap-1">
