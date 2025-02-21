@@ -4,8 +4,8 @@ import { fhirMessagesNL, type FhirMessagesIds } from './messages';
 
 export type { FhirMessagesIds };
 
-export type FhirIntlShape<RichtTextElement = string> = CustomIntlShape<
-    RichtTextElement,
+export type FhirIntlShape<RichTextElement = string> = CustomIntlShape<
+    RichTextElement,
     FhirMessagesIds
 >;
 

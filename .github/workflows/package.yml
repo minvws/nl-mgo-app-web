@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Update i18n files
-        working-directory: package/mgo-intl
+        working-directory: packages/mgo-intl
         env:
           LOKALISE_API_TOKEN: ${{ secrets.LOKALISE_API_TOKEN }}
           LOKALISE_PROJECT_ID_MGO_APP: ${{ secrets.LOKALISE_PROJECT_ID_MGO_APP }}

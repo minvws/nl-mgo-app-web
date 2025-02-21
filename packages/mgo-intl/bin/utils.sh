@@ -46,7 +46,7 @@ loadDotEnv() {
         source $dotEnvPath
         set +a
     else
-        fatal "Can not locate the .env file: \"$dotEnvPath\""
+        echo "Did not locate a .env file at: \"$dotEnvPath\""
     fi
 }
 

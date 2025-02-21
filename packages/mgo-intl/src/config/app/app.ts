@@ -4,8 +4,8 @@ import { appMessagesNL, type AppMessagesIds } from './messages';
 
 export type { AppMessagesIds };
 
-export type AppIntlShape<RichtTextElement = string> = CustomIntlShape<
-    RichtTextElement,
+export type AppIntlShape<RichTextElement = string> = CustomIntlShape<
+    RichTextElement,
     AppMessagesIds
 >;
 

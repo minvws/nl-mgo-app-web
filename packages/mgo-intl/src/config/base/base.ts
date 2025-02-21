@@ -1,12 +1,12 @@
 import { type IntlConfig as FormatIntlConfig, type OnErrorFn } from '@formatjs/intl';
 import { type Locale } from '../../locale';
 
-export interface IntlOptions<RichtTextElement> extends FormatIntlConfig<RichtTextElement> {
+export interface IntlOptions<RichTextElement> extends FormatIntlConfig<RichTextElement> {
     locale: Locale;
     ignoreMissingTranslations?: boolean;
 }
 
-export function getIntlConfig<RichtTextElement>(options: IntlOptions<RichtTextElement>) {
+export function getIntlConfig<RichTextElement>(options: IntlOptions<RichTextElement>) {
     const { ignoreMissingTranslations, onError, ...rest } = options;
 
     const handleError: OnErrorFn = (error) => {
