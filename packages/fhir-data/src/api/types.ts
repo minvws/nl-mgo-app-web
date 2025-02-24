@@ -30,6 +30,7 @@ export {
     type GpJournalEntry,
     type GpLaboratoryResult,
     type IheMhdMinimalDocumentReference,
+    type NlCoreEpisodeofcare,
     type NlCoreObservation,
     type NlCoreOrganization,
     type NlCorePatient,
