@@ -35,6 +35,8 @@ import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_sat
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Close from '@material-symbols/svg-400/outlined/close.svg?react';
 import Help from '@material-symbols/svg-400/outlined/help.svg?react';
+import Info from '@material-symbols/svg-400/outlined/info-fill.svg?react';
+import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 
 import Add from './icons/add.svg?react';
 import ChevronRightFat from './icons/chevron-right-fat.svg?react';
@@ -98,6 +100,8 @@ export const icons = {
     menu: Menu,
     close: Close,
     help: Help,
+    info: Info,
+    'attach-file': AttachFile,
 };
 
 export type IconName = keyof typeof icons;

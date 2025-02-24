@@ -6,6 +6,7 @@ import { MultipleValues } from './MultipleValues';
 import { ReferenceLink } from './ReferenceLink';
 import { ReferenceValue } from './ReferenceValue';
 import { SingleValue } from './SingleValue';
+import { DownloadBinary } from './DownloadBinary';
 
 export interface UiElementProps extends HTMLAttributes<HTMLDivElement> {
     readonly element: UiElementData;
@@ -24,8 +25,7 @@ const uiElement: UiElementMap = {
     MULTIPLE_VALUES: MultipleValues,
     MULTIPLE_GROUPED_VALUES: MultipleGroupedValues,
     DOWNLOAD_LINK: DownloadLink,
-    /* c8 ignore next */
-    DOWNLOAD_BINARY: () => 'Not implemented',
+    DOWNLOAD_BINARY: DownloadBinary,
 };
 
 export function UiElement({ element }: UiElementProps) {

@@ -5,7 +5,6 @@ import { cn, tw } from '../../utils';
 import { Card } from '../Card/Card';
 import { DescriptionItem, type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 import { Icon, type IconProps } from '../Icon/Icon';
-import { Spinner } from '../Spinner/Spinner';
 import { Text } from '../Text/Text';
 import { type Variant } from './variants';
 
@@ -22,11 +21,11 @@ export type DescriptionButtonProps = DescriptionItemProps &
 
 const variantStyles: Record<Variant, string> = {
     default: 'md:gap-2',
-    highlighted: tw`bg-sky-blue-600 [&_*]:text-white`,
+    highlighted: tw`[&_*]:text-sky-blue-700 [&_*]:dark:text-sky-blue-300`,
 };
 const variantHoverStyles: Record<Variant, string> = {
     default: 'hover:bg-gray-100 dark:hover:bg-[#444444]',
-    highlighted: tw`hover:bg-dark-blue-700`,
+    highlighted: tw`hover:bg-gray-100 dark:hover:bg-gray-800`,
 };
 
 export const DescriptionButton = ({
@@ -68,12 +67,11 @@ export const DescriptionButton = ({
 
                 {isLoading ? (
                     <div className="ml-auto flex items-center gap-2">
-                        <Text className="text-nowrap text-gray-600 dark:text-gray-200">
-                            {loadingText}
-                        </Text>
-                        <Spinner
-                            variant={variant === 'highlighted' ? 'sky-blue' : 'gray'}
-                            className="size-8"
+                        <Text className="text-nowrap">{loadingText}</Text>
+                        <Icon
+                            data-testid="spinner"
+                            icon="spinner"
+                            className="size-8 animate-spin p-0"
                         />
                     </div>
                 ) : (

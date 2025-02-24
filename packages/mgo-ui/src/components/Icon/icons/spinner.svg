@@ -1,4 +1,10 @@
-<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M20.5098 10.9427C20.5098 12.1389 20.2741 13.3235 19.8164 14.4287C19.3586 15.5339 18.6876 16.5381 17.8417 17.384C16.9958 18.2299 15.9916 18.9009 14.8864 19.3587C13.7812 19.8164 12.5966 20.0521 11.4004 20.0521C10.2041 20.0521 9.01958 19.8164 7.91438 19.3587C6.80918 18.9009 5.80497 18.2299 4.95909 17.384C4.1132 16.5381 3.44221 15.5339 2.98442 14.4287C2.52664 13.3235 2.29102 12.1389 2.29102 10.9427C2.29102 9.74642 2.52664 8.56188 2.98443 7.45668C3.44222 6.35148 4.11321 5.34727 4.95909 4.50138C5.80498 3.6555 6.80919 2.98451 7.91439 2.52672C9.01959 2.06893 10.2041 1.83331 11.4004 1.83331C12.5967 1.83331 13.7812 2.06894 14.8864 2.52672C15.9916 2.98451 16.9958 3.65551 17.8417 4.50139C18.6876 5.34728 19.3586 6.35149 19.8164 7.45669C20.2741 8.56189 20.5098 9.74643 20.5098 10.9427L20.5098 10.9427Z" stroke="#E6E6E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.4004 1.83331C12.5967 1.83331 13.7812 2.06893 14.8864 2.52672C15.9916 2.98451 16.9958 3.6555 17.8417 4.50139C18.6876 5.34727 19.3586 6.35148 19.8164 7.45668C20.2741 8.56188 20.5098 9.74643 20.5098 10.9427" stroke="#999999" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.75" x="7.63647" y="10.3638" width="3.27273" height="7.63636" rx="1.5" transform="rotate(90 7.63647 10.3638)" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.87" x="2.35645" y="4.67139" width="3.27273" height="7.63636" rx="1.5" transform="rotate(-45 2.35645 4.67139)" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.51" x="10.3635" y="16.3638" width="3.27273" height="7.63636" rx="1.5" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.63" x="7.75562" y="13.9287" width="3.27273" height="7.63636" rx="1.5" transform="rotate(45 7.75562 13.9287)" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.39" x="13.9304" y="16.2422" width="3.27273" height="7.63636" rx="1.5" transform="rotate(-45 13.9304 16.2422)" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.27" x="24" y="10.3638" width="3.27273" height="7.63636" rx="1.5" transform="rotate(90 24 10.3638)" fill="currentColor" fill-opacity="0.6"/>
+<rect opacity="0.15" x="19.3296" y="2.35742" width="3.27273" height="7.63636" rx="1.5" transform="rotate(45 19.3296 2.35742)" fill="currentColor" fill-opacity="0.6"/>
+<rect x="10.3635" width="3.27273" height="7.63636" rx="1.5" fill="currentColor" fill-opacity="0.6"/>
 </svg>
