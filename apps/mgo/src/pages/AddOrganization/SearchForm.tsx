@@ -1,6 +1,6 @@
+import { FormattedMessage, useIntl } from '$/intl';
 import { Button, InputField } from '@minvws/mgo-mgo-ui';
 import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { useDebounceCallback } from 'usehooks-ts';
 
 export interface SearchFormData {
@@ -13,7 +13,7 @@ export interface SearchFormProps {
 }
 
 export const SearchForm = ({ onSubmit }: SearchFormProps) => {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const [dirty, setDirty] = useState(false);
     const [formData, setFormData] = useState<SearchFormData>({
         name: '',
@@ -26,16 +26,16 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
         const { name, city } = formData;
         const errorMessages: Partial<SearchFormData> = {};
         if (name.length === 0) {
-            errorMessages.name = intl.formatMessage({ id: 'add_organization.error_missing_name' });
+            errorMessages.name = formatMessage('add_organization.error_missing_name');
         }
 
         if (city.length === 0) {
-            errorMessages.city = intl.formatMessage({ id: 'add_organization.error_missing_city' });
+            errorMessages.city = formatMessage('add_organization.error_missing_city');
         }
 
         setErrorState(errorMessages);
         return Object.keys(errorMessages).length === 0;
-    }, [formData, intl]);
+    }, [formData, formatMessage]);
 
     const debouncedValidate = useDebounceCallback(validate, 100);
 

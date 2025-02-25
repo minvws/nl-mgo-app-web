@@ -1,11 +1,11 @@
-import { expectJson, expectUiSchemaJson, faker, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } from '$test';
 import { type Dosage } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { parse } from '../../../parse';
 import inputFhirData01 from './fixtures/01/fhir-resource.json';
 import inputFhirData02 from './fixtures/02/fhir-resource.json';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { summary } from './summary';
+import { uiSchemaGroup } from './uiSchemaGroup';
 import { zibInstructionsForUse } from './zibInstructionsForUse';
 
 test('01 mgo-resource', () => {
@@ -16,13 +16,15 @@ test('01 mgo-resource', () => {
 test('01 ui-schema', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
     const schema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema-group.snap.json'
+    );
 });
 
 test('01 summary', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
     const schema = summary(zibData, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
 });
 
 test('02 mgo-resource', () => {
@@ -33,13 +35,15 @@ test('02 mgo-resource', () => {
 test('02 ui-schema', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
     const schema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/ui-schema-group.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema-group.snap.json'
+    );
 });
 
 test('02 summary', () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
     const schema = summary(zibData, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
 });
 
 test('zibInstructionsForUse parses successfully', () => {

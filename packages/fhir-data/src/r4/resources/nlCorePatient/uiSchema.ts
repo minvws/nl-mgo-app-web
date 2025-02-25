@@ -1,11 +1,11 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
 import { type R4NlCorePatient } from './nlCorePatient';
 
 export const i18n = 'r4.nl_core_patient';
-export const uiSchema: UiSchemaFunction<R4NlCorePatient> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<R4NlCorePatient> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);

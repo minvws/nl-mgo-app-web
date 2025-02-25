@@ -1,6 +1,6 @@
+import { FormattedMessage } from '$/intl';
 import { useNavigate } from '$/routing';
 import { Button, cn, type ButtonProps } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
 
 export function BackButton({ className, ...rest }: ButtonProps) {
     const navigate = useNavigate();

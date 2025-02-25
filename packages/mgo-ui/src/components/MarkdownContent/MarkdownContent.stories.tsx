@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { MarkdownContent } from './MarkdownContent';
 
 type Story = StoryObj<typeof MarkdownContent>;
@@ -112,3 +113,11 @@ function baz(s) {
 } satisfies StoryMeta;
 
 export const Default: Story = {};
+
+export const Overview: Story = {
+    render: ({ ...args }) => (
+        <DarkStory orientation="vertical">
+            <MarkdownContent {...args} />
+        </DarkStory>
+    ),
+};

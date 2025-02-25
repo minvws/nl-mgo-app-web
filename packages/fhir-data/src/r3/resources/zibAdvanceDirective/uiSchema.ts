@@ -1,10 +1,10 @@
-import { uiSchemaGroup as attachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
+import { uiSchemaGroup as attachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
 import { type ZibAdvanceDirective } from './zibAdvanceDirective';
 
 export const i18n = 'r3.zib_advance_directive';
-export const uiSchema: UiSchemaFunction<ZibAdvanceDirective> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const attachment = attachmentUiSchema(resource.source.attachment, context);

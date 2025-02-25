@@ -1,9 +1,12 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 import { i18n } from './uiSchema';
 
-export const summary: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
+export const summary: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = (
+    resource,
+    context
+) => {
     const { ui, formatMessage } = context;
 
     return {

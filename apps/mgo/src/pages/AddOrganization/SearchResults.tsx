@@ -1,9 +1,9 @@
 import { type ParsedHealthcareOrganization } from '$/hooks';
+import { FormattedMessage, useIntl } from '$/intl';
 import { useNavigate } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { Button, HealthcareOrganizationCard, Icon, Stack, cn } from '@minvws/mgo-mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
     readonly searchResults: ParsedHealthcareOrganization[];
@@ -12,7 +12,7 @@ interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
 export const RESULTS_PER_PAGE = 15;
 
 export const SearchResults = ({ searchResults, className, ...rest }: SearchResultsProps) => {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navigate = useNavigate();
     const { addOrganization, hasOrganizationById } = useOrganizationsStore();
     const [showResultsLength, setShowResultsLength] = useState(RESULTS_PER_PAGE);
@@ -45,9 +45,9 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                         title={name}
                                         meta={<span className="whitespace-pre">{address}</span>}
                                         icon="chevron-right"
-                                        iconAriaLabel={intl.formatMessage({
-                                            id: 'add_organization.voice_over_to_overview',
-                                        })}
+                                        iconAriaLabel={formatMessage(
+                                            'add_organization.voice_over_to_overview'
+                                        )}
                                     >
                                         <div className="text-sky-blue-600 mt-2 flex items-center gap-2">
                                             <Icon icon="check" className="h-7 w-9" />
@@ -64,7 +64,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                         title={name}
                                         meta={<span className="whitespace-pre">{address}</span>}
                                         icon="add"
-                                        iconAriaLabel={intl.formatMessage({ id: 'common.add' })}
+                                        iconAriaLabel={formatMessage('common.add')}
                                     />
                                 )}
                             </li>

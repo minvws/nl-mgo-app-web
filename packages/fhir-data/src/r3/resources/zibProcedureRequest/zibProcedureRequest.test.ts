@@ -1,11 +1,11 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type ProcedureRequest } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input1 from './fixtures/01/fhir-resource.json';
 import input2 from './fixtures/02/fhir-resource.json';
-import { zibProcedureRequest } from './zibProcedureRequest';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibProcedureRequest } from './zibProcedureRequest';
 
 test('returns the expected output 01', () => {
     const output = zibProcedureRequest.parse(input1 as ProcedureRequest);
@@ -48,5 +48,5 @@ test('uiSchema returns default label if code not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

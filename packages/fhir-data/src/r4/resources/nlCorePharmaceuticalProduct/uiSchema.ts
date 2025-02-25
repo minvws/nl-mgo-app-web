@@ -1,11 +1,14 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import { batch } from './elements/batch/batch';
 import { ingredient } from './elements/ingredient/ingredient';
 import { type R4NlCorePharmaceuticalProduct } from './nlCorePharmaceuticalProduct';
 
 export const i18n = 'r4.zib_pharmaceutical_product';
-export const uiSchema: UiSchemaFunction<R4NlCorePharmaceuticalProduct> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<R4NlCorePharmaceuticalProduct> = (
+    resource,
+    context
+) => {
     const { ui, formatMessage } = context;
 
     /**

@@ -1,76 +1,42 @@
+import { App } from '$/App';
 import { Outlet } from '$/routing';
-import {
-    setup,
-    setupWithAppProviders,
-    flushCallStack,
-    removeUserMock,
-    setAuthStateAuthenticated,
-    message,
-} from '$test/helpers';
-import { useNavFocusRef } from '$/hooks';
-import { fireEvent, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { setup, setupWithAppProviders } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { screen } from '@testing-library/react';
+import { createMemoryRouter } from 'react-router-dom';
 import { expect, test } from 'vitest';
 import { MobileHeader } from './MobileHeader';
-import { createMemoryRouter } from 'react-router-dom';
-import { App } from '$/App';
-import { messageRegexp } from '$test/helpers/i18n';
 
-test('render MobileHeader', () => {
-    setupWithAppProviders(<MobileHeader />);
-    expect(screen.getAllByRole('button').at(0)).toHaveTextContent(message('menu.menu'));
-});
+test('menu button opens and closes menu', async () => {
+    const { user } = setupWithAppProviders(<MobileHeader />);
 
-test('can logout', () => {
-    setAuthStateAuthenticated();
-    setupWithAppProviders(<MobileHeader />);
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: message('common.logout') }));
+    const openMenuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
+    await user.click(openMenuButton);
 
-    expect(removeUserMock).toHaveBeenCalled();
-});
+    expect(screen.queryByRole('navigation')).toBeInTheDocument();
 
-test('menu button opens menu dialog', async () => {
-    const user = userEvent.setup();
-    setupWithAppProviders(<MobileHeader />);
-
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-
-    const menuButton = screen.getByRole('button', {
-        name: message('menu.menu'),
-    });
-    await user.click(menuButton);
-
-    expect(screen.queryByRole('dialog')).toBeInTheDocument();
-});
-
-test('close button closes menu dialog', async () => {
-    const user = userEvent.setup();
-    setupWithAppProviders(<MobileHeader />);
-
-    const menuButton = screen.getByRole('button', {
-        name: message('menu.menu'),
-    });
-    await user.click(menuButton);
-
-    expect(screen.queryByRole('dialog')).toBeInTheDocument();
-
-    const closeButton = screen.getByRole('button', { name: message('common.voice_over_close') });
-
-    expect(closeButton).toHaveFocus();
-
+    const closeButton = screen.getByRole('button', { name: appMessage('common.voice_over_close') });
     await user.click(closeButton);
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(menuButton).toHaveFocus();
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 });
 
-test('navigating closes menu dialog', async () => {
-    const user = userEvent.setup();
-    const Page = () => {
-        const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-        return <h1 ref={navFocusRef}>Test page</h1>;
-    };
+test('clicking outside menu closes menu', async () => {
+    const { user } = setupWithAppProviders(<MobileHeader />);
+
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
+    await user.click(menuButton);
+
+    expect(screen.queryByRole('navigation')).toBeInTheDocument();
+
+    await user.click(document.body);
+
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+});
+
+test('navigating closes menu', async () => {
     const routes = [
         {
             path: '/',
@@ -83,28 +49,53 @@ test('navigating closes menu dialog', async () => {
             children: [
                 {
                     path: '/overzicht',
-                    element: <Page />,
+                    element: <h1>Test</h1>,
                 },
             ],
         },
     ];
 
-    const router = createMemoryRouter(routes);
-    setup(<App router={router} />);
+    const { user } = setup(<App router={createMemoryRouter(routes)} />);
 
-    const menuButton = screen.getByRole('button', { name: message('menu.menu') });
+    const heading = screen.queryByRole('heading', { level: 1, name: 'Test' });
+    expect(heading).not.toBeInTheDocument();
+
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
     await user.click(menuButton);
 
-    const overzichtLink = screen.getByRole('link', {
-        name: messageRegexp('menu.overview_heading'),
-    });
+    const overzichtLink = screen.getByRole('link', { name: appMessage('menu.overview_heading') });
     await user.click(overzichtLink);
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    await flushCallStack();
-    const heading = screen.getByRole('heading', {
-        level: 1,
-        name: 'Test page',
-    });
-    expect(heading).toHaveFocus();
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+
+    screen.getByRole('heading', { level: 1, name: 'Test' });
+});
+
+test('Escape closes menu and moves the focus back to the menu button', async () => {
+    const { user } = setupWithAppProviders(<MobileHeader />);
+
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
+
+    await user.tab();
+    expect(menuButton).toHaveFocus();
+    await user.keyboard('[Space]');
+    expect(screen.queryByRole('navigation')).toBeInTheDocument();
+
+    await user.tab();
+    expect(menuButton).not.toHaveFocus();
+
+    await user.keyboard('[Escape]');
+    expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
+
+    expect(menuButton).toHaveFocus();
+});
+
+test('Escape does not change focus when menu is closed', async () => {
+    const { user } = setupWithAppProviders(<MobileHeader />);
+
+    const menuButton = screen.getByRole('button', { name: appMessage('menu.menu') });
+
+    expect(menuButton).not.toHaveFocus();
+    await user.keyboard('[Escape]');
+    expect(menuButton).not.toHaveFocus();
 });

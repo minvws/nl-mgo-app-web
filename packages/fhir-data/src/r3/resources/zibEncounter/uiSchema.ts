@@ -1,13 +1,13 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
+import { map } from '../../../utils';
+import { uiSchemaGroup as encounterParticipantUiSchema } from '../../elements/encounterParticipant/uiSchemaGroup';
 import { uiSchemaGroup as diagnosisUiSchema } from './elements/diagnosis/uiSchemaGroup';
 import { uiSchemaGroup as hospitalizationUiSchema } from './elements/hospitalization/uiSchemaGroup';
-import { uiSchemaGroup as encounterParticipantUiSchema } from '../../elements/encounterParticipant/uiSchemaGroup';
-import { map } from '../../../utils';
 import { type ZibEncounter } from './zibEncounter';
 
 export const i18n = 'r3.zib_encounter';
-export const uiSchema: UiSchemaFunction<ZibEncounter> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibEncounter> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     const diagnosis = map(resource.diagnosis, (x) => diagnosisUiSchema(x, context), true);
     const participants = map(

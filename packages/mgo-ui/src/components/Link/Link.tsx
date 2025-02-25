@@ -1,6 +1,7 @@
 import { type AnchorHTMLAttributes } from 'react';
 import { useComposition } from '../../hooks/useComposition/useComposition';
-import { cn, focusStyle } from '../../utils';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 
 type AnchorOrCompositionProps =
     | {

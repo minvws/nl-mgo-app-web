@@ -1,10 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Flag } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input from './fixtures/zib-Alert-01.json';
-import { zibAlert } from './zibAlert';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibAlert } from './zibAlert';
 
 test('praseZibAlert returns the expected output 01', () => {
     const output = zibAlert.parse(input as Flag);
@@ -31,5 +31,5 @@ test('uiSchema returns default label if code not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

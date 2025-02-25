@@ -1,16 +1,15 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { map } from '../../../utils';
-import { InterpretatieVlaggenCodelijst, type Snomed, SNOMED_SYSTEM } from '../../valueSets/snomed';
+import { InterpretatieVlaggenCodelijst, SNOMED_SYSTEM, type Snomed } from '../../valueSets/snomed';
 import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult';
 import { referenceRange } from './elements/referenceRange/referenceRange';
 import { getLabel, i18n } from './uiSchema';
 import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
 
-export const summary: UiSchemaFunction<ZibLaboratoryTestResultObservation | GpLaboratoryResult> = (
-    resource,
-    context
-) => {
+export const summary: HealthUiSchemaFunction<
+    ZibLaboratoryTestResultObservation | GpLaboratoryResult
+> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     const referenceRangeSummary = map(

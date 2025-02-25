@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
 import { Button } from './Button';
 import { variants } from './variants';
@@ -48,23 +49,25 @@ export const AsChildLink: Story = {
 export const Overview: Story = {
     args: {},
     render: ({ ...args }) => (
-        <Stack className="gap-8">
-            {variants.map((variant) => (
-                <Stack className="flex-row" key={variant}>
-                    <Button {...args} variant={variant}>
-                        {variant}
-                    </Button>
-                    <Button {...args} variant={variant} leftIcon="chevron-left">
-                        {variant}
-                    </Button>
-                    <Button {...args} variant={variant} rightIcon="chevron-right">
-                        {variant}
-                    </Button>
-                    <Button {...args} variant={variant} isDisabled>
-                        {`${variant} isDisabled`}
-                    </Button>
-                </Stack>
-            ))}
-        </Stack>
+        <DarkStory>
+            <Stack className="gap-10 p-4">
+                {variants.map((variant) => (
+                    <Stack className="flex-col items-start" key={variant}>
+                        <Button {...args} variant={variant}>
+                            {variant}
+                        </Button>
+                        <Button {...args} variant={variant} leftIcon="chevron-left">
+                            {variant}
+                        </Button>
+                        <Button {...args} variant={variant} rightIcon="chevron-right">
+                            {variant}
+                        </Button>
+                        <Button {...args} variant={variant} isDisabled>
+                            {`${variant} disabled`}
+                        </Button>
+                    </Stack>
+                ))}
+            </Stack>
+        </DarkStory>
     ),
 };

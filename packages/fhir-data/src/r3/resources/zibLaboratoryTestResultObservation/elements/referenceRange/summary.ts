@@ -1,11 +1,11 @@
 import { type MgoCoding } from '../../../../../parse/type';
 import { systemCode } from '../../../../../ui/format/systemCode/systemCode';
-import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroup, type HealthUiGroupFunction } from '../../../../../ui/types';
 import { type ReferenceRange } from './referenceRange';
 
 import { i18n } from './uiSchemaGroup';
 
-export const summary: UiSchemaGroupFunction<ReferenceRange, UiSchemaGroup> = (
+export const summary: HealthUiGroupFunction<ReferenceRange, HealthUiGroup> = (
     resource,
     context
 ) => {

@@ -1,18 +1,18 @@
 import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef, useParseHealthcareOrganization } from '$/hooks';
+import { FormattedMessage, useIntl } from '$/intl';
 import { getLoadService } from '$/services';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 import { BackButton } from '../../components/BackButton/BackButton';
 import { NoSearchResultsTips } from './NoSearchResultsTips';
 import { SearchForm, type SearchFormData } from './SearchForm';
 import { SearchResults } from './SearchResults';
 
 export function AddOrganization() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
     const { parseHealthcareOrganization } = useParseHealthcareOrganization();
@@ -30,7 +30,7 @@ export function AddOrganization() {
 
     return (
         <div className="flex flex-grow flex-col">
-            <Helmet title={intl.formatMessage({ id: 'add_organization.heading' })} />
+            <Helmet title={formatMessage('add_organization.heading')} />
 
             <Container>
                 <BackButton />
@@ -63,9 +63,7 @@ export function AddOrganization() {
                     renderNoResult={
                         <QueryState.NoResult
                             illustration="woman-on-couch-exclamation"
-                            title={intl.formatMessage({
-                                id: 'organization_search.no_results_found_heading',
-                            })}
+                            title={formatMessage('organization_search.no_results_found_heading')}
                         >
                             <NoSearchResultsTips />
                         </QueryState.NoResult>

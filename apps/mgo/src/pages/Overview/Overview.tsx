@@ -1,9 +1,9 @@
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
+import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
+import { FormattedMessage } from '$/intl';
 import { useOrganizationsStore } from '$/store';
 import { Heading } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
-import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();

@@ -1,10 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import type { Device } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import inputFhirData from './fixtures/zib-MedicalDeviceProduct-01.json';
-import { zibMedicalDeviceProduct } from './zibMedicalDeviceProduct';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibMedicalDeviceProduct } from './zibMedicalDeviceProduct';
 
 test('parseZibMedicalDeviceProduct returns the expected output', () => {
     const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
@@ -35,5 +35,5 @@ test('uiSchema returns default label if id not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

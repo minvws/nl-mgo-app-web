@@ -1,12 +1,12 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
+import { map } from '../../../utils';
 import { uiSchemaGroup as focalDeviceUiSchema } from './elements/focalDevice/uiSchemaGroup';
 import { uiSchemaGroup as performerUiSchema } from './elements/performer/uiSchemaGroup';
-import { map } from '../../../utils';
 import { type ZibProcedure } from './zibProcedure';
 
 export const i18n = 'r3.zib_procedure';
-export const uiSchema: UiSchemaFunction<ZibProcedure> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibProcedure> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const focalDevices = map(resource.focalDevice, (x) => focalDeviceUiSchema(x, context), true);

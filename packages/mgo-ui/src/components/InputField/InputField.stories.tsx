@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
+import { Stack } from '../Stack/Stack';
 import { InputField } from './InputField';
 
 type Story = StoryObj<typeof InputField>;
@@ -29,4 +31,15 @@ export const WithError: Story = {
     args: {
         error: 'Vul een naam in',
     },
+};
+
+export const Overview: Story = {
+    render: ({ ...args }) => (
+        <DarkStory>
+            <Stack>
+                <InputField {...args} />
+                <InputField {...args} error="Vul een naam in" />
+            </Stack>
+        </DarkStory>
+    ),
 };

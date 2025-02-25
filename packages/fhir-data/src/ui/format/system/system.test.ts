@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
+import { type UiHelperContext } from '../../context';
 import { systemCode } from '../systemCode/systemCode';
-import { type UiHelperContext } from '../../context/ui';
 import { system } from './system';
 
 const mockSystemCode = systemCode as unknown as MockedFunction<typeof systemCode>;
@@ -29,7 +29,7 @@ test('system returns full information when display, code and system are present'
     });
     const value = faker.fhir.coding();
     const formatSystem = system(context);
-    const expected = `${value.display} (intl(format.code_in_system, {"code":"${value.code}","system":"${value.system}"}))`;
+    const expected = `${value.display} (intl(fhir.code_in_system, {"code":"${value.code}","system":"${value.system}"}))`;
     const result = formatSystem(value);
     expect(result).toBe(expected);
 });

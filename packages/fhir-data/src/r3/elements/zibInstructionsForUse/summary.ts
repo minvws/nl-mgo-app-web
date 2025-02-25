@@ -1,9 +1,9 @@
-import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../../../ui/types';
+import { type HealthUiGroup, type HealthUiGroupFunction } from '../../../ui/types';
 import { type ZibInstructionsForUse } from './zibInstructionsForUse';
 
 import { i18n } from './uiSchemaGroup';
 
-export const summary: UiSchemaGroupFunction<ZibInstructionsForUse, UiSchemaGroup> = (
+export const summary: HealthUiGroupFunction<ZibInstructionsForUse, HealthUiGroup> = (
     resource,
     context
 ) => {

@@ -1,12 +1,12 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
-import { uiSchemaGroup as encounterParticipantUiSchema } from '../../elements/encounterParticipant/uiSchemaGroup';
 import { map } from '../../../utils';
+import { uiSchemaGroup as encounterParticipantUiSchema } from '../../elements/encounterParticipant/uiSchemaGroup';
 import { type GpEncounter } from './gpEncounter';
 
 export const i18n = 'r3.gp_encounter';
 
-export const uiSchema: UiSchemaFunction<GpEncounter> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<GpEncounter> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const participants = map(

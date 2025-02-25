@@ -1,7 +1,9 @@
 import type { StoryObj } from '@storybook/react';
-import { DescriptionList } from './DescriptionList';
-import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { DescriptionButton } from '../DescriptionButton/DescriptionButton';
+import { DescriptionCard } from '../DescriptionCard/DescriptionCard';
+import { Stack } from '../Stack/Stack';
+import { DescriptionList } from './DescriptionList';
 
 type StoryArgs = { label: string; description: string; date: string };
 type Story = StoryObj<StoryArgs>;
@@ -65,4 +67,21 @@ export const WithListArray: Story = {
 
         return <DescriptionList list={list} />;
     },
+};
+
+export const Overview: Story = {
+    render: ({ label, description }) => (
+        <DarkStory>
+            <Stack>
+                <DescriptionList>
+                    <DescriptionCard term={label} details={description} />
+                </DescriptionList>
+
+                <DescriptionList>
+                    <DescriptionCard term={label} details={description} />
+                    <DescriptionCard term="Repellat" details="Distinctio" />
+                </DescriptionList>
+            </Stack>
+        </DarkStory>
+    ),
 };

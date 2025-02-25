@@ -1,4 +1,5 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import type { MedicationStatement } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import inputFhirData01 from './fixtures/01/fhir-resource.json';
@@ -14,13 +15,13 @@ test('01: mgo-resource', () => {
 test('01: ui-schema', () => {
     const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
     const schema = zibMedicationUse.uiSchema(mgoResource, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('01: summary', () => {
     const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
     const schema = zibMedicationUse.summary(mgoResource, testUiSchemaContext({ isSummary: true }));
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
 });
 
 test('01: ui-schema - has a label even when there is no medicine reference', () => {
@@ -31,7 +32,7 @@ test('01: ui-schema - has a label even when there is no medicine reference', () 
     } as MedicationStatement);
 
     const schema = zibMedicationUse.uiSchema(mgoResource, testUiSchemaContext({ useMock: true }));
-    expect(schema.label).toBe(`intl(${i18n})`);
+    expect(schema.label).toBe(testMessage(i18n));
 });
 
 test('02: mgo-resource', () => {
@@ -42,11 +43,11 @@ test('02: mgo-resource', () => {
 test('02: ui-schema', () => {
     const mgoResource = zibMedicationUse.parse(inputFhirData02 as MedicationStatement);
     const schema = zibMedicationUse.uiSchema(mgoResource, testUiSchemaContext());
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('02: summary', () => {
     const mgoResource = zibMedicationUse.parse(inputFhirData02 as MedicationStatement);
     const schema = zibMedicationUse.summary(mgoResource, testUiSchemaContext({ isSummary: true }));
-    expectUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
+    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
 });

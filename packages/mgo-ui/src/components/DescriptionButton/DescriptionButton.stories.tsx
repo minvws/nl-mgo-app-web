@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DescriptionButton } from './DescriptionButton';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { DescriptionButton } from './DescriptionButton';
 import { variants } from './variants';
 
 type Story = StoryObj<typeof DescriptionButton>;
@@ -10,7 +11,7 @@ export default {
     component: DescriptionButton,
     args: {
         term: 'Ab maxime',
-        details: 'Facere enim similique illo ratione assumenda placeat quas.',
+        details: 'Facere enim similique illo.',
         icon: 'chevron-right',
         isLoading: false,
     },
@@ -18,27 +19,35 @@ export default {
 
 export const Default: Story = {};
 
-export const Variants: Story = {
+export const Overview: Story = {
     render: (args) => {
         return (
-            <Stack>
-                <Stack className="gap-0">
-                    {variants.map((variant) => (
-                        <DescriptionButton key={variant} {...args} variant={variant} />
-                    ))}
+            <DarkStory>
+                <Stack>
+                    <Stack className="gap-0">
+                        {variants.map((variant) => (
+                            <DescriptionButton
+                                key={variant}
+                                {...args}
+                                term={variant}
+                                variant={variant}
+                            />
+                        ))}
+                    </Stack>
+                    <Stack className="gap-0">
+                        {variants.map((variant) => (
+                            <DescriptionButton
+                                key={variant}
+                                {...args}
+                                term={variant}
+                                variant={variant}
+                                isLoading
+                                loadingText="Bezig met laden..."
+                            />
+                        ))}
+                    </Stack>
                 </Stack>
-                <Stack className="gap-0">
-                    {variants.map((variant) => (
-                        <DescriptionButton
-                            key={variant}
-                            {...args}
-                            variant={variant}
-                            isLoading
-                            loadingText="Bezig met laden..."
-                        />
-                    ))}
-                </Stack>
-            </Stack>
+            </DarkStory>
         );
     },
 };

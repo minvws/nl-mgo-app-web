@@ -1,25 +1,26 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoDateTime } from '../../../parse/type';
 import { date as formatDateTime } from '../../format/date/date';
 import { dateTime } from './dateTime';
 
 test('dateTime single', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const value: MgoDateTime = faker.fhir.dateTime();
     const uiHelperContext = faker.custom.uiHelperContext();
     const result = dateTime(uiHelperContext)(label, value);
 
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'SINGLE_VALUE',
         display: formatDateTime(uiHelperContext)(value),
     });
 });
 
 test('dateTime multiple', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const value: MgoDateTime[] = [
         faker.fhir.dateTime(),
@@ -30,7 +31,7 @@ test('dateTime multiple', () => {
     const result = dateTime(uiHelperContext)(label, value);
 
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         display: value.map(formatDateTime(uiHelperContext)),
     });

@@ -1,4 +1,5 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoDuration } from '../../../parse/type';
 import { format } from '../../format';
@@ -15,12 +16,11 @@ function mockQuantity() {
 }
 
 test('duration', () => {
-    const label = faker.custom.messageId();
-
+    const label = faker.custom.fhirMessageId();
     const mgoDuration: MgoDuration = mockQuantity();
     const result = duration(faker.custom.uiHelperContext())(label, mgoDuration);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: `SINGLE_VALUE`,
         display: format.valueWithUnit(mgoDuration.value, mgoDuration.unit),
     });

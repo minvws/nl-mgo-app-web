@@ -1,11 +1,11 @@
-import { nlCoreContactpoint } from '../../elements';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { nlCoreContactpoint } from '../../elements';
 import { type NlCorePractitionerRole } from './nlCorePractitionerRole';
 
 export const i18n = 'r3.nl_core_practitionerrole';
-export const uiSchema: UiSchemaFunction<NlCorePractitionerRole> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<NlCorePractitionerRole> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const telecom = map(

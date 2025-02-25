@@ -1,9 +1,9 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAllergyIntolerance } from './zibAllergyIntolerance';
 
 export const i18n = 'r3.zib_allergy_intolerance';
-export const uiSchema: UiSchemaFunction<ZibAllergyIntolerance> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibAllergyIntolerance> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

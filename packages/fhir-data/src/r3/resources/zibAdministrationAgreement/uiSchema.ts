@@ -1,11 +1,11 @@
-import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { uiSchemaGroup as zibInstructionsForUseUiSchema } from '../../elements/zibInstructionsForUse/uiSchemaGroup';
 import { type ZibAdministrationAgreement } from './zibAdministrationAgreement';
 
 export const i18n = 'r3.zib_administration_agreement';
-export const uiSchema: UiSchemaFunction<ZibAdministrationAgreement> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibAdministrationAgreement> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
     const instructionsForUse = map(
         resource.dossageInstruction,

@@ -1,16 +1,16 @@
-import { type MessagesIds } from '../../../i18n/messages';
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoRatio } from '../../../parse/type';
 import { systemValue } from '../../format/systemValue/systemValue';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 type HasNumeratorLabel =
-    Extract<MessagesIds, `${string}.numerator`> extends `${infer R}.numerator` ? R : never;
+    Extract<FhirMessagesIds, `${string}.numerator`> extends `${infer R}.numerator` ? R : never;
 type HasDenominatorLabel =
-    Extract<MessagesIds, `${string}.denominator`> extends `${infer R}.denominator` ? R : never;
+    Extract<FhirMessagesIds, `${string}.denominator`> extends `${infer R}.denominator` ? R : never;
 type RatioLabel = HasNumeratorLabel | HasDenominatorLabel; // eslint-disable-line @typescript-eslint/no-duplicate-type-constituents
 
 export const ratio: WithUiHelperContext<
-    UiFunction<MgoRatio, SingleValue[], MessagesIds | RatioLabel>
+    UiFunction<MgoRatio, SingleValue[], FhirMessagesIds | RatioLabel>
 > = (context) => (label, value) => {
     const { hasMessage, formatMessage } = context;
     const numeratorLabel = `${label}.numerator`;

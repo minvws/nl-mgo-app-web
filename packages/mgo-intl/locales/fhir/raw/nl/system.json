@@ -1,0 +1,17 @@
+{
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|follicular": "Folliculair stadium referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|luteal": "Luteaal referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|midcycle": "Middencyclus referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|normal": "Normale referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|post": "Posttherapeutische referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|postmeopausal": "Post-menopauze referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|pre": "Pre-therapeutische referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|pre-puberty": "Pre-puberteit referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|recommended": "Aanbevolen referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|therapeutic": "Therapeutische referentiewaarden",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|treatment": "Behandelings referentiewaarden",
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)",
+    "system.value.http:\/\/unitsofmeasure.org|d": "{value, plural, one {één dag} other {{value, number} dagen}}",
+    "system.value.http:\/\/unitsofmeasure.org|mmol\/L": "{value, plural, one {{value, number} millimol per liter} other {{value, number} millimol per liter}}",
+    "system.value.urn:oid:2.16.840.1.113883.2.4.4.1.900.2|245": "{value, plural, one {{value, number} stuk} other {{value, number} stuks}}"
+}

@@ -1,7 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react';
-import { NavButton } from './NavButton';
-import { Stack } from '../Stack/Stack';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { iconNames } from '../Icon/icons';
+import { Stack } from '../Stack/Stack';
+import { NavButton } from './NavButton';
 
 type Story = StoryObj<typeof NavButton>;
 type StoryMeta = Meta<typeof NavButton>;
@@ -21,19 +22,6 @@ export default {
 
 export const Default: Story = {};
 
-export const Overview: Story = {
-    args: {},
-    render: ({ ...args }) => (
-        <Stack className="gap-8">
-            <NavButton {...args} icon="home">
-                Label
-            </NavButton>
-            <NavButton {...args} icon="home" aria-current="page">
-                Label
-            </NavButton>
-        </Stack>
-    ),
-};
 export const Overflow: Story = {
     args: {},
     render: ({ ...args }) => (
@@ -42,5 +30,21 @@ export const Overflow: Story = {
                 Quaeratperspiciatisharumreprehenderitfugiatducimusnumquamporroreprehenderitquiundereprehenderitdistinctiovoluptasrecusandae.
             </NavButton>
         </div>
+    ),
+};
+
+export const Overview: Story = {
+    args: {},
+    render: ({ ...args }) => (
+        <DarkStory>
+            <Stack className="items-start gap-8">
+                <NavButton {...args} icon="home">
+                    Label
+                </NavButton>
+                <NavButton {...args} icon="home" aria-current="page">
+                    Label
+                </NavButton>
+            </Stack>
+        </DarkStory>
     ),
 };

@@ -1,4 +1,4 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { map } from '../../../utils';
 import {
     nlCoreAddressInformation,
@@ -8,7 +8,7 @@ import {
 import { type R4NlCoreHealtcareProvider } from './nlCoreHealtcareProvider';
 
 export const i18n = 'r4.nl_core_healtcare_provider';
-export const uiSchema: UiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     /**

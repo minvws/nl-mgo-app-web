@@ -1,5 +1,5 @@
 import { format } from '../../format';
-import { type WithUiHelperContext, type CombinedUiFunction, type SingleValue } from '../../types';
+import { type CombinedUiFunction, type SingleValue, type WithUiHelperContext } from '../../types';
 
 export const valueWithMax: WithUiHelperContext<CombinedUiFunction<number, number, SingleValue>> =
     ({ intl }) =>

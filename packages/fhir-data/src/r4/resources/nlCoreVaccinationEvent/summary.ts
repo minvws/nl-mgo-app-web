@@ -1,10 +1,10 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { map } from '../../../utils';
 import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
 import { getLabel, i18n } from './uiSchema';
 
-export const summary: UiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
+export const summary: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     return {

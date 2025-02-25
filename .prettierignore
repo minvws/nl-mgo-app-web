@@ -5,4 +5,5 @@ LICENSE.*
 LICENSES.*
 packages/fhir-data/fhir-definitions
 packages/fhir-data/dist
+packages/mgo-intl/locales
 *.snap.json

@@ -1,9 +1,9 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type GpJournalEntry } from './gpJournalEntry';
 
 export const i18n = 'r3.gp_journal_entry';
-export const uiSchema: UiSchemaFunction<GpJournalEntry> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<GpJournalEntry> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

@@ -1,14 +1,13 @@
 /* c8 ignore start */
 
+import { uniqBy } from 'lodash';
 import { afterEach, beforeEach } from 'vitest';
 import { flushCallStack } from './flushCallStack';
 
-const logColorGray = '\x1b[2m\x1b[37m';
-
 type ConsoleLogMethod = 'log' | 'debug' | 'info' | 'warn' | 'error';
 type ConsoleLogMessage = {
+    method: ConsoleLogMethod;
     message: string;
-    stack: string;
 };
 type ThrowLogConfig = {
     logMethods: ConsoleLogMethod[];
@@ -27,10 +26,13 @@ afterEach(async () => {
     await flushCallStack();
 
     if (logMessages.length) {
-        const errorMessages = logMessages.map(
-            ({ message, stack }) => `${message}\n${logColorGray}${stack}`
+        const errorMessages = uniqBy(logMessages, ({ message }) => message).map(
+            ({ message, method }) => `${method}:  ${message}`
         );
-        throw new Error(errorMessages.join('\n\n'));
+        throw new Error(
+            `The following messages were logged to the console during the test:\n\n` +
+                errorMessages.join('\n\n')
+        );
     }
 });
 
@@ -45,14 +47,7 @@ function patchConsoleMethod(method: ConsoleLogMethod) {
             return;
         }
 
-        const { stack } = new Error();
-        if (stack) {
-            // Save the callstack and error message so we can throw this after the test.
-            // Throwing the error right away doesn't always make the test fail
-            // and can be accidentally caught and suppressed.
-            const stackWithoutFirstLine = stack.substring(stack.indexOf('\n') + 1);
-            logMessages.push({ message: logMessage, stack: stackWithoutFirstLine });
-        }
+        logMessages.push({ method, message: logMessage });
     };
 }
 

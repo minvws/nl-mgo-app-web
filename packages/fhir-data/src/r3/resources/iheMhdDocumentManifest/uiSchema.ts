@@ -1,11 +1,11 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type IheMhdDocumentManifest } from './iheMhdDocumentManifest';
 
 export const i18n = 'r3.ihe_mhd_document_manifest';
-export const uiSchema: UiSchemaFunction<IheMhdDocumentManifest> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<IheMhdDocumentManifest> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

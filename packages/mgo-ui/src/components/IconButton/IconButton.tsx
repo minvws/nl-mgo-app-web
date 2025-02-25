@@ -1,10 +1,11 @@
-import { Icon, type IconProps } from '../Icon/Icon';
+import { forwardRef, type HTMLAttributes } from 'react';
 import {
     useComposition,
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
-import { forwardRef, type HTMLAttributes } from 'react';
-import { cn, groupFocusStyle } from '../../utils';
+import { groupFocusStyle } from '../../styles';
+import { cn } from '../../utils';
+import { Icon, type IconProps } from '../Icon/Icon';
 import { type Size } from './sizes';
 
 export type IconButtonProps = IconProps &

@@ -1,7 +1,7 @@
 import { AddOrganization } from '$/pages/AddOrganization/AddOrganization';
 import { AddOrganizationList } from '$/pages/AddOrganizationList/AddOrganizationList';
 import { HealthCategory } from '$/pages/HealthCategory/HealthCategory';
-import { HealthDataDetail } from '$/pages/HealthDataDetail/HealthDataDetail';
+import { HealthData } from '$/pages/HealthData/HealthData';
 import { NotFound } from '$/pages/NotFound/NotFound';
 import { Overview } from '$/pages/Overview/Overview';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
@@ -84,7 +84,11 @@ const routeConfig = [
                     },
                     {
                         path: '/overzicht/:healthCategorySlug/:resourceSlug',
-                        element: <HealthDataDetail />,
+                        element: <HealthData />,
+                    },
+                    {
+                        path: '/overzicht/:healthCategorySlug/:resourceSlug/detail',
+                        element: <HealthData showDetails />,
                     },
                     {
                         path: '/organisaties',
@@ -100,7 +104,11 @@ const routeConfig = [
                     },
                     {
                         path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug',
-                        element: <HealthDataDetail />,
+                        element: <HealthData />,
+                    },
+                    {
+                        path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug/detail',
+                        element: <HealthData showDetails />,
                     },
                 ],
             },

@@ -1,4 +1,4 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type DocumentReference } from 'fhir/r3';
 import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
@@ -17,7 +17,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('summary returns the expected output', () => {
@@ -29,7 +29,7 @@ test('summary returns the expected output', () => {
             isSummary: true,
         })
     );
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/summary.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/summary.snap.json');
 });
 
 test('uiSchema returns the expected output when there is no content', () => {
@@ -41,7 +41,9 @@ test('uiSchema returns the expected output when there is no content', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema-no-content.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema-no-content.snap.json'
+    );
 });
 
 test('summary returns the expected output when there is no content', () => {
@@ -54,5 +56,7 @@ test('summary returns the expected output when there is no content', () => {
             isSummary: true,
         })
     );
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/summary-no-content.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/summary-no-content.snap.json'
+    );
 });

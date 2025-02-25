@@ -1,5 +1,5 @@
+import { FormattedMessage } from '$/intl';
 import { Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
 
 export function NoData() {
     return (

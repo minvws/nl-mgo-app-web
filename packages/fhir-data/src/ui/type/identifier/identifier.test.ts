@@ -1,10 +1,11 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoIdentifier } from '../../../parse/type';
 import { identifier } from './identifier';
 
 test('identifier', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const mgoIdentifier: MgoIdentifier = {
         use: undefined,
@@ -23,7 +24,7 @@ test('identifier', () => {
     };
     const result = identifier(faker.custom.uiHelperContext())(label, mgoIdentifier);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'SINGLE_VALUE',
         display: mgoIdentifier.value,
     });

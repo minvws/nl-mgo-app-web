@@ -1,5 +1,5 @@
+import { FormattedMessage } from '$/intl';
 import { Stack } from '@minvws/mgo-mgo-ui';
-import { FormattedMessage } from 'react-intl';
 import { NavItem } from '../NavItem/NavItem';
 
 export function DesktopMenu() {

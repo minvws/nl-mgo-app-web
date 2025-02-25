@@ -1,9 +1,10 @@
 import { useRef, type HTMLAttributes } from 'react';
 import { Transition, type TransitionStatus } from 'react-transition-group';
-import { type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
 import { twMerge } from 'tailwind-merge';
+import { useAnimationDuration } from '../../hooks';
+import { type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { useOnMount } from '../../hooks/useOnMount/useOnMount';
+import { tw } from '../../utils/tw/tw';
 
 export interface CollapseProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
     readonly expanded: boolean;
@@ -12,6 +13,7 @@ export interface CollapseProps extends HTMLAttributes<HTMLDivElement>, Compositi
 export const Collapse = ({ className, children, expanded, ...rest }: CollapseProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+    const animationDuration = useAnimationDuration(300);
     const collapsedSize = '0px';
 
     useOnMount(() => {
@@ -24,38 +26,49 @@ export const Collapse = ({ className, children, expanded, ...rest }: CollapsePro
     const getWrapperSize = () => `${contentRef.current ? contentRef.current.clientHeight : 0}px`;
 
     const transitionStyles: Partial<Record<TransitionStatus, string>> = {
-        entered: tw`overflow-visible`,
         entering: tw`overflow-hidden`,
-        exited: tw`hidden`,
+        entered: tw`overflow-visible`,
         exiting: tw`overflow-hidden`,
+        exited: tw`hidden`,
     };
 
     const callbacks = {
         onEnter: () => {
-            rootRef.current!.style.height = collapsedSize;
+            /* c8 ignore next */
+            if (!rootRef.current) return;
+            rootRef.current.style.height = collapsedSize;
         },
         onEntering: () => {
-            rootRef.current!.style.height = getWrapperSize();
+            /* c8 ignore next */
+            if (!rootRef.current) return;
+            rootRef.current.style.height = getWrapperSize();
         },
         onEntered: () => {
-            rootRef.current!.style.height = `auto`;
+            /* c8 ignore next */
+            if (!rootRef.current) return;
+            rootRef.current.style.height = `auto`;
         },
         onExit: () => {
-            rootRef.current!.style.height = getWrapperSize();
+            /* c8 ignore next */
+            if (!rootRef.current) return;
+            rootRef.current.style.height = getWrapperSize();
         },
         onExiting: () => {
             // Wait for the height to be set first
             setTimeout(() => {
-                rootRef.current!.style.height = collapsedSize;
+                /* c8 ignore next */
+                if (!rootRef.current) return;
+                rootRef.current.style.height = collapsedSize;
             });
         },
     };
 
     return (
-        <Transition nodeRef={rootRef} in={expanded} timeout={300} {...callbacks}>
+        <Transition nodeRef={rootRef} in={expanded} timeout={animationDuration} {...callbacks}>
             {(state) => (
                 <div
-                    className={`selection:ease-[cubic-bezier(0.4, 0, 0.2, 1)] min-h-0 transform-gpu transition-[height] duration-300 ${transitionStyles[state]}`}
+                    style={{ transitionDuration: `${animationDuration}ms` }}
+                    className={`min-h-0 transform-gpu transition-[height] ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}`}
                     ref={rootRef}
                 >
                     <div ref={contentRef} className={twMerge('overflow-auto', className)} {...rest}>

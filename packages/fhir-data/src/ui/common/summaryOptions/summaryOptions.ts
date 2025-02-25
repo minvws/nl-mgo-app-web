@@ -1,17 +1,21 @@
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoResource } from '../../../api/resources/resources';
-import { type I18nContext, type MessagesIds } from '../../../i18n';
-import { type UiSchemaGroup } from '../../types';
+import { type UiHelperContext } from '../../context';
+import { type HealthUiGroup } from '../../types';
 
 type ShowDetailsLabel =
-    Extract<MessagesIds, `summary.${string}.show_details`> extends `summary.${infer R}.show_details`
+    Extract<
+        FhirMessagesIds,
+        `summary.${string}.show_details`
+    > extends `summary.${infer R}.show_details`
         ? R
         : never;
 
 export function summaryOptions(
-    { formatMessage }: I18nContext,
+    { formatMessage }: UiHelperContext,
     i18n: ShowDetailsLabel,
     resource: MgoResource
-): UiSchemaGroup {
+): HealthUiGroup {
     return {
         label: formatMessage(`summary.options`),
         children: [

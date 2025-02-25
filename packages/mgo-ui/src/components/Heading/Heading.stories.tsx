@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Heading } from './Heading';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { Heading } from './Heading';
 import { sizes } from './sizes';
 
 type Story = StoryObj<typeof Heading>;
@@ -34,12 +35,14 @@ export const AsChildHeading: Story = {
 
 export const Overview: Story = {
     render: ({ children, ...args }) => (
-        <Stack className="gap-8">
-            {[...sizes].reverse().map((size) => (
-                <Heading {...args} key={size} size={size}>
-                    ({size}) {children}
-                </Heading>
-            ))}
-        </Stack>
+        <DarkStory>
+            <Stack className="gap-8">
+                {[...sizes].reverse().map((size) => (
+                    <Heading {...args} key={size} size={size}>
+                        ({size}) {children}
+                    </Heading>
+                ))}
+            </Stack>
+        </DarkStory>
     ),
 };

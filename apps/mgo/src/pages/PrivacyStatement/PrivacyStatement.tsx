@@ -1,11 +1,11 @@
 import { BackButton } from '$/components/BackButton/BackButton';
+import { useIntl } from '$/intl';
 import { Container } from '@minvws/mgo-mgo-ui';
-import { useIntl } from 'react-intl';
 import { unescape } from 'html-escaper';
 import { MarkdownContent } from '../../../../../packages/mgo-ui/src/components/MarkdownContent/MarkdownContent';
 
 export function PrivacyStatement() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
 
     return (
         <>
@@ -17,7 +17,7 @@ export function PrivacyStatement() {
                 <MarkdownContent
                     /** Content is sanitized during i18n compilation, see bin/formatter.js */
                     dangerouslySetInnerHTML={{
-                        __html: unescape(intl.formatMessage({ id: 'privacy.markdown' })),
+                        __html: unescape(formatMessage('privacy.markdown')),
                     }}
                 />
             </Container>

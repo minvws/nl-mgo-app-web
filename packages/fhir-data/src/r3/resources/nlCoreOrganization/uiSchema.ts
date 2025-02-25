@@ -1,11 +1,11 @@
-import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
+import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
 import { type NlCoreOrganization } from './nlCoreOrganization';
 
 export const i18n = 'r3.nl_core_organization';
-export const uiSchema: UiSchemaFunction<NlCoreOrganization> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<NlCoreOrganization> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     const address = map(

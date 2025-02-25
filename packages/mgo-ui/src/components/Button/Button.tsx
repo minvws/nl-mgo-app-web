@@ -1,11 +1,12 @@
-import { type ReactElement, type ButtonHTMLAttributes, isValidElement, forwardRef } from 'react';
+import { forwardRef, isValidElement, type ButtonHTMLAttributes, type ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { type Variant } from './variants';
-import { focusStyle } from '../../utils';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
     readonly isDisabled?: boolean;
@@ -18,11 +19,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Co
 const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
 
 const typeColors: Record<Variant, string> = {
-    solid: tw`${disabledStyles} bg-sky-blue-600 hover:bg-dark-blue-700 text-white`,
-    light: tw`${disabledStyles} text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500`,
-    outline: tw`${disabledStyles} border border-gray-200 bg-white text-black hover:bg-gray-50 dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700`,
-    destructive: tw`${disabledStyles} bg-red-600 text-white hover:bg-red-500`,
-    ghost: tw`text-dark-blue-700 hover:text-dark-blue-400 dark:text-light-blue-500 hover:dark:text-light-blue-200`,
+    solid: cn(disabledStyles, 'bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
+    light: cn(disabledStyles, 'text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500'),
+    outline: cn(
+        disabledStyles,
+        'border border-gray-200 bg-white text-black hover:bg-gray-50',
+        'dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700'
+    ),
+    destructive: cn(disabledStyles, 'bg-red-600 text-white hover:bg-red-500'),
+    ghost: cn(
+        'text-dark-blue-700 hover:text-dark-blue-400',
+        'dark:text-light-blue-500 hover:dark:text-light-blue-200'
+    ),
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(

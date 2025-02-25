@@ -1,6 +1,7 @@
 import { useComposition } from '../../hooks';
 import { type CompositionPropsWithoutChildren } from '../../hooks/useComposition/useComposition';
-import { cn, focusStyle, tw } from '../../utils';
+import { focusStyle } from '../../styles';
+import { cn, tw } from '../../utils';
 import { Card } from '../Card/Card';
 import { DescriptionItem, type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 import { Icon, type IconProps } from '../Icon/Icon';

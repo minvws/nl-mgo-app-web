@@ -1,16 +1,16 @@
 import { BackButton } from '$/components/BackButton/BackButton';
+import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { useNavFocusRef } from '$/hooks/index.js';
+import { FormattedMessage, useIntl } from '$/intl';
 import { useAuth } from '$/lib/auth';
+import { useLocation } from '$/routing';
 import { Alert, Button, Container, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
-import { useLocation } from '$/routing';
-import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 
 export function Login() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const auth = useAuth();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { state } = useLocation();
@@ -27,7 +27,7 @@ export function Login() {
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'login.heading' })} />
+            <Helmet title={formatMessage('login.heading')} />
             <Container>
                 <BackButton />
             </Container>
@@ -37,8 +37,8 @@ export function Login() {
                     <Alert
                         className="mb-4 md:mb-6"
                         status="error"
-                        label={intl.formatMessage({ id: 'login.error_heading' })}
-                        aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
+                        label={formatMessage('login.error_heading')}
+                        aria-label={formatMessage('common.voice_over_close')}
                     >
                         <FormattedMessage id="login.error_subheading" />
                     </Alert>

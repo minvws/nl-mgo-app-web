@@ -1,32 +1,25 @@
-# Data services & healthcare categories
+# [MGO] - Healthcare categories
 
-## Data services
-
-| Short   | Data service                   | FHIR version | Description           |
-| ------- | ------------------------------ | ------------ | --------------------- |
-| **GP**  | [General practicioner][gp]     | R3           | Huisarts gegevens     |
-| **BgZ** | [Common clinical dataset][bgz] | R3           | Basisgegevensset Zorg |
-| **Doc** | [PDF/A Documents][doc]         | R3           | Documenten            |
-| **Vac** | [Vaccination][vac]             | R4           | Vaccinaties           |
+This is an overview of the healthcare categories that we use in all the clients.
 
 ## Healthcare categories
 
--   [Medicijnen](#medicijnen)
--   [Metingen](#metingen)
--   [Uitslagen](#uitslagen)
--   [Allergieën](#allergieën)
--   [Behandelingen](#behandelingen)
--   [Afspraken](#afspraken)
--   [Vaccinaties](#vaccinaties)
--   [Documenten](#documenten)
--   [Medische klachten](#medische-klachten)
--   [Persoonlijke gegevens](#persoonlijke-gegevens)
--   [Mentaal welzijn](#mentaal-welzijn)
--   [Waarschuwingen](#waarschuwingen)
--   [Leefstijl](#leefstijl)
--   [Medische hulpmiddelen](#medische-hulpmiddelen)
--   [Behandel plan](#behandel-plan)
--   [Betaalgegevens](#betaalgegevens)
+- [Medicijnen](#medicijnen)
+- [Metingen](#metingen)
+- [Uitslagen](#uitslagen)
+- [Allergieën](#allergieën)
+- [Behandelingen](#behandelingen)
+- [Afspraken](#afspraken)
+- [Vaccinaties](#vaccinaties)
+- [Documenten](#documenten)
+- [Medische klachten](#medische-klachten)
+- [Persoonlijke gegevens](#persoonlijke-gegevens)
+- [Mentaal welzijn](#mentaal-welzijn)
+- [Waarschuwingen](#waarschuwingen)
+- [Leefstijl](#leefstijl)
+- [Medische hulpmiddelen](#medische-hulpmiddelen)
+- [Behandel plan](#behandel-plan)
+- [Betaalgegevens](#betaalgegevens)
 
 <hr/>
 
@@ -67,10 +60,11 @@
 
 #### Behandelingen
 
-| Subcategorie                | Profile                | Source | Description                       |
-| :-------------------------- | :--------------------- | :----- | :-------------------------------- |
-| Behandelingen en overdracht | [zib-Procedure]        | [BgZ]  | Bekende chirurgische ingrepen     |
-| Geplande zorgafspraken      | [zib-ProcedureRequest] | [BgZ]  | Bekende geplande zorgactiviteiten |
+| Subcategorie                | Profile                 | Source | Description                       |
+| :-------------------------- | :---------------------- | :----- | :-------------------------------- |
+| Behandelingen en overdracht | [zib-Procedure]         | [BgZ]  | Bekende chirurgische ingrepen     |
+| Geplande zorgafspraken      | [zib-ProcedureRequest]  | [BgZ]  | Bekende geplande zorgactiviteiten |
+| "                           | [nl-core-episodeofcare] | [GP]   | Zorgtraject van zorg              |
 
 #### Afspraken
 
@@ -151,6 +145,8 @@
 | :------------- | :---------- | :----- | :----------------------------- |
 | Betaalgegevens | [zib-Payer] | [BgZ]  | Bekende verzekeringsinformatie |
 
+[MGO]: ../README.md
+
 <!-- Data services -->
 
 [gp]: https://informatiestandaarden.nictiz.nl/wiki/MedMij:V2020.01/FHIR_GP_Data
@@ -195,6 +191,7 @@
 [nl-core-patient]: https://simplifier.net/resolve?target=simplifier&canonical=http://fhir.nl/fhir/StructureDefinition/nl-core-patient&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 [IHE.MHD.Minimal.DocumentReference]: https://simplifier.net/resolve?target=simplifier&canonical=http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 [eAfspraak-Appointment]: https://simplifier.net/resolve?target=simplifier&canonical=http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
+[nl-core-episodeofcare]: https://simplifier.net/resolve?canonical=http%3A%2F%2Ffhir.nl%2Ffhir%2FStructureDefinition%2Fnl-core-episodeofcare&scope=nictiz.fhir.nl.stu3.zib2017@2.2.18
 
 <!-- Fhir R4 -->
 

@@ -1,9 +1,9 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAlert } from './zibAlert';
 
 export const i18n = 'r3.zib_alert';
-export const uiSchema: UiSchemaFunction<ZibAlert> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibAlert> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

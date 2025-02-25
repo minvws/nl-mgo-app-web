@@ -1,5 +1,5 @@
 import { HealthCategory } from '$/healthCategory';
-import { type Resource, useOrganizationsStore } from '$/store';
+import { useOrganizationsStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
@@ -15,10 +15,7 @@ function mockResource(label?: string): Resource {
         slug: faker.lorem.slug(),
         organizationId: faker.string.uuid(),
         dataServiceId: faker.number.int({ max: 60 }),
-        uiSchema: {
-            label: label ?? faker.lorem.words(),
-            children: [],
-        },
+        label: label ?? faker.lorem.words(),
         mgoResource: {} as any, // eslint-disable-line @typescript-eslint/no-explicit-any
     };
 }

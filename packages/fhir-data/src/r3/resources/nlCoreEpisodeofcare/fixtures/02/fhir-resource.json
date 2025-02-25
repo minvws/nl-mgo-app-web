@@ -1,0 +1,69 @@
+{
+    "resourceType": "EpisodeOfCare",
+    "id": "nl-core-episodeofcare-02",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Zorgepisode. Patiënt: Paul XXX_Mesker. Id: 15fcdead-8fdf-11ec-5500-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: actief</caption><tbody><tr><th>Type</th><td><span title=\"Verslaving (bevinding) (32709003 - SNOMED CT)\">Verslaving (bevinding)</span><div>Drugs en alcohol revalidatie</div></td></tr><tr><th>Periode</th><td>Vanaf 6 februari 2019</td></tr><tr><th>Zorgmanager</th><td>Dirk de Vries<div>Zorgverlenerrol: Medisch specialisten, geriatrie</div>, Ziekenhuis Gooi en Overvecht</td></tr><tr><th>Diagnose</th><td>Syndroom van Korsakov</td></tr></tbody></table></div>"
+    },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/EpisodeOfCare-DateFirstEncounter",
+            "valueDateTime": "2019-02-06T13:17:00+00:00"
+        },
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/EpisodeOfCare-Title",
+            "valueString": "Drugs en alcohol revalidatie"
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15fcdead-8fdf-11ec-5500-020000000000"
+        }
+    ],
+    "status": "active",
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "32709003",
+                    "display": "Verslaving (bevinding)"
+                }
+            ]
+        }
+    ],
+    "diagnosis": [
+        {
+            "condition": {
+                "reference": "Condition/zib-problem-08",
+                "display": "Syndroom van Korsakov"
+            }
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "managingOrganization": {
+        "reference": "Organization/nl-core-organization-05",
+        "display": "Ziekenhuis Gooi en Overvecht"
+    },
+    "period": { "start": "2019-02-06" },
+    "careManager": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                "valueReference": {
+                    "reference": "PractitionerRole/nl-core-practitionerrole-04",
+                    "display": "Medisch specialisten, geriatrie"
+                }
+            }
+        ],
+        "reference": "Practitioner/nl-core-practitioner-04",
+        "display": "Dirk de Vries"
+    }
+}

@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement, type UiSchema, type UiSchemaGroup } from '../../types';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../types';
 import { setEmptyEntries } from './setEmptyEntries';
 
 test('sets empty entries, but does not mutate the schema', () => {
@@ -26,7 +26,7 @@ test('sets empty entries, but does not mutate the schema', () => {
         display: faker.lorem.word(),
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -46,12 +46,12 @@ test('sets empty entries, but does not mutate the schema', () => {
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     entry4,
                 ],
@@ -97,7 +97,7 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
         reference: undefined as unknown as string,
     };
 
-    const uiSchema: UiSchema = {
+    const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
         children: [
             {
@@ -116,22 +116,22 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
                     {
                         label: entry1.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     {
                         label: entry4.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(schema.empty_entry_display)',
+                        display: 'intl(fhir.empty_value)',
                     },
                     entry5,
                     entry6,
@@ -156,7 +156,7 @@ test('also works for a group', () => {
         display: undefined,
     };
 
-    const uiSchemaGroup: UiSchemaGroup = {
+    const uiSchemaGroup: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [entry1, entry2],
     };
@@ -168,7 +168,7 @@ test('also works for a group', () => {
             {
                 label: entry2.label,
                 type: 'SINGLE_VALUE',
-                display: 'intl(schema.empty_entry_display)',
+                display: 'intl(fhir.empty_value)',
             },
         ],
     };
@@ -189,7 +189,7 @@ test('also works for a multiple groups', () => {
         display: undefined,
     };
 
-    const uiSchemaGroup: UiSchemaGroup[] = [
+    const uiSchemaGroup: HealthUiGroup[] = [
         {
             label: faker.lorem.word(),
             children: [entry1, entry2],
@@ -208,7 +208,7 @@ test('also works for a multiple groups', () => {
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(schema.empty_entry_display)',
+                    display: 'intl(fhir.empty_value)',
                 },
             ],
         },
@@ -218,7 +218,7 @@ test('also works for a multiple groups', () => {
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(schema.empty_entry_display)',
+                    display: 'intl(fhir.empty_value)',
                 },
             ],
         },

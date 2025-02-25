@@ -1,4 +1,4 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type ZibAlcoholUse } from '../zibAlcoholUse/zibAlcoholUse';
@@ -17,7 +17,7 @@ type ObservationLikeResource =
     | ZibTobaccoUse;
 
 export const i18n = 'r3.nl_core_observation';
-export const uiSchema: UiSchemaFunction<ObservationLikeResource> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ObservationLikeResource> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

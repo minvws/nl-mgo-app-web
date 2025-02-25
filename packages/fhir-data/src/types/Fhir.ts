@@ -1,7 +1,7 @@
 import { type BackboneElement, type FhirResource } from '@minvws/mgo-fhir-types';
 import { type MgoResourceMeta } from '../parse/helpers/resourceMeta/resourceMeta';
-import { type UiSchemaFunction } from '../ui';
-import { type UiSchemaGroup, type UiSchemaGroupFunction } from '../ui/types';
+import { type HealthUiSchemaFunction } from '../ui';
+import { type HealthUiGroup, type HealthUiGroupFunction } from '../ui/types';
 import { type Nullable } from './Nullable';
 
 export type NictizNlProfile =
@@ -19,8 +19,8 @@ export interface ResourceConfig<
 > {
     profile: MgoResourceMeta['profile'];
     parse: ResourceParserFunction<Resource, ParsedResource>;
-    uiSchema: UiSchemaFunction<ParsedResource>;
-    summary?: UiSchemaFunction<ParsedResource>;
+    uiSchema: HealthUiSchemaFunction<ParsedResource>;
+    summary?: HealthUiSchemaFunction<ParsedResource>;
 }
 
 type ElementParserFunction<T extends BackboneElement, ParsedResource extends object> = (
@@ -32,6 +32,6 @@ export interface ResourceElementConfig<
     ParsedResource extends object,
 > {
     parse: ElementParserFunction<Resource, ParsedResource>;
-    summary?: UiSchemaGroupFunction<ParsedResource, UiSchemaGroup | UiSchemaGroup[]>;
-    uiSchemaGroup: UiSchemaGroupFunction<ParsedResource, UiSchemaGroup | UiSchemaGroup[]>;
+    summary?: HealthUiGroupFunction<ParsedResource, HealthUiGroup | HealthUiGroup[]>;
+    uiSchemaGroup: HealthUiGroupFunction<ParsedResource, HealthUiGroup | HealthUiGroup[]>;
 }

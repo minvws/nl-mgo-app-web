@@ -1,17 +1,17 @@
 import { useNavFocusRef } from '$/hooks';
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { Button, Container, Heading, Illustration } from '@minvws/mgo-mgo-ui';
 import { Text } from '@minvws/mgo-mgo-ui/components/Text/Text.js';
 import { Helmet } from 'react-helmet-async';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 export function Introduction() {
-    const intl = useIntl();
+    const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
-            <Helmet title={intl.formatMessage({ id: 'introduction.heading' })} />
+            <Helmet title={formatMessage('introduction.heading')} />
             <Container className="mb-8 mt-12 md:mb-16 md:mt-16 lg:mt-24" centeredContent>
                 <Illustration
                     illustration="woman-with-phone"

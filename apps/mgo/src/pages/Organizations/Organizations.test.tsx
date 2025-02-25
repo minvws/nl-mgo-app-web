@@ -2,12 +2,12 @@ import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import {
+    flushCallStack,
     setAuthStateAuthenticated,
     setupApp,
     setupWithAppProviders,
-    message,
-    flushCallStack,
 } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Organizations } from './Organizations';
@@ -20,8 +20,8 @@ test('overview should show empty state', async () => {
     setupApp({ initialEntries: ['/organisaties'] });
 
     await flushCallStack();
-    expect(screen.getByText(message('organizations.heading'))).toBeInTheDocument();
-    expect(screen.getByText(message('common.no_organizations_heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('organizations.heading'))).toBeInTheDocument();
+    expect(screen.getByText(appMessage('common.no_organizations_heading'))).toBeInTheDocument();
 });
 
 test('should show the healthcare organizations', () => {

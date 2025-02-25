@@ -3,15 +3,16 @@
 /**
  * Load Intl polyfills for Android
  */
-import './intlPolyfills/intlPolyfills';
+import '@minvws/mgo-mgo-intl/polyfills';
 
 import { createJsonApi } from './createJsonApi/createJsonApi';
-import { getMgoResource } from './getMgoResource/getMgoResource';
 import { getBundleResources } from './getBundleResources/getBundleResources';
-import { getUiSchema } from './getUiSchema/getUiSchema';
-import { getSummaryUiSchema } from './getSummaryUiSchema/getSummaryUiSchema';
+import { getDetails } from './getDetails/getDetails';
+import { getMgoResource } from './getMgoResource/getMgoResource';
+import { getSummary } from './getSummary/getSummary';
 
 export const getBundleResourcesJson = createJsonApi(getBundleResources);
 export const getMgoResourceJson = createJsonApi(getMgoResource);
-export const getUiSchemaJson = createJsonApi(getUiSchema);
-export const getSummaryUiSchemaJson = createJsonApi(getSummaryUiSchema);
+
+export const getSummaryJson = createJsonApi(getSummary);
+export const getDetailsJson = createJsonApi(getDetails);

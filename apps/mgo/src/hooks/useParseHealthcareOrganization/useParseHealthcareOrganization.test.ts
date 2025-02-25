@@ -2,7 +2,11 @@ import { faker } from '$test/faker';
 import { expect, test, vi } from 'vitest';
 import { useParseHealthcareOrganization } from './useParseHealthcareOrganization';
 
-vi.mock('react-intl');
+vi.mock('$/intl', () => ({
+    useIntl: () => ({
+        formatMessage: (key: string) => key,
+    }),
+}));
 
 test('parses healthcare organization dto', () => {
     const { parseHealthcareOrganization } = useParseHealthcareOrganization();

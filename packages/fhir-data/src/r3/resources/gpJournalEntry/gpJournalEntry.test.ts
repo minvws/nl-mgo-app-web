@@ -1,11 +1,11 @@
 import { expectJson, faker, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { coding } from '../../../parse/type';
 import { map } from '../../../utils';
 import input01 from './fixtures/fhir-resource.json';
 import { gpJournalEntry } from './gpJournalEntry';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
 
 test('returns the expected output 01', () => {
@@ -60,5 +60,5 @@ test('uiSchema returns default label if context not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

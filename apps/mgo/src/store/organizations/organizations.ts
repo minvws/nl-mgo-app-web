@@ -31,6 +31,7 @@ export const useOrganizationsStore = create<OrganizationsState>()(
                 const slugs = get().organizations.map((x) => x.slug);
                 const healthcareOrganisation = {
                     ...healthcareOrganizationDetails,
+                    // NOTE: Do not use any organization information as a slug as it could potentially be sensitive information
                     slug: createUniqueSlug('aanbieder', slugs),
                 };
 

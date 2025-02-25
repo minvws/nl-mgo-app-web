@@ -1,117 +1,40 @@
-import { ButtonCard, Heading, IconButton, cn, useOpenState } from '@minvws/mgo-mgo-ui';
-import * as Dialog from '@radix-ui/react-dialog';
-import { useCallback, useEffect, useRef, type HTMLAttributes } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { NavLink, useBlocker } from 'react-router-dom';
-import { MenuButton } from './MenuButton';
+import { FormattedMessage } from '$/intl';
+import { MobileMenuItem, cn } from '@minvws/mgo-mgo-ui';
+import { surfaceStyle } from '@minvws/mgo-mgo-ui/styles/surface.js';
+import { forwardRef, type ComponentProps } from 'react';
+import { NavLink } from 'react-router-dom';
 
-export interface MobileMenuProps extends HTMLAttributes<HTMLElement> {}
+export type MobileMenuProps = ComponentProps<'nav'>;
 
-export function MobileMenu({ className, ...rest }: MobileMenuProps) {
-    const intl = useIntl();
-    const { isOpen, setIsOpen, close } = useOpenState();
-    const navigating = useRef(false);
-    const blocker = useBlocker(
-        ({ currentLocation, nextLocation }) => currentLocation !== nextLocation
-    );
-
-    const handleCloseAutoFocus = useCallback((event: Event) => {
-        if (navigating.current) {
-            event.preventDefault();
-        }
-    }, []);
-
-    useEffect(() => {
-        if (isOpen) {
-            navigating.current = false;
-        }
-    }, [isOpen]);
-
-    useEffect(() => {
-        if (blocker.state === 'blocked') {
-            navigating.current = true;
-            close();
-            blocker.proceed();
-        }
-    }, [blocker, close]);
-
+export const MobileMenu = forwardRef<HTMLUListElement, MobileMenuProps>(function MobileMenu(
+    { className, ...rest },
+    ref
+) {
     return (
-        <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
-            <Dialog.Overlay />
-            <MenuButton asChild>
-                <Dialog.Trigger />
-            </MenuButton>
-
-            <Dialog.Portal>
-                <Dialog.Content
-                    onCloseAutoFocus={handleCloseAutoFocus}
-                    className={cn(
-                        'fixed left-0 top-0 z-50 flex h-screen w-screen flex-col bg-white dark:bg-[#050505]',
-                        className
-                    )}
-                    {...rest}
-                >
-                    <div className="flex h-16 items-center justify-end border-b border-gray-100 p-4 dark:border-gray-500">
-                        <Dialog.Title asChild>
-                            <Heading
-                                asChild
-                                size="md"
-                                className="absolute left-1/2 -translate-x-1/2"
-                            >
-                                <h2>
-                                    <FormattedMessage id="menu.menu" description="Menu" />
-                                </h2>
-                            </Heading>
-                        </Dialog.Title>
-                        <Dialog.Close asChild>
-                            <IconButton
-                                icon="close"
-                                size="sm"
-                                aria-label={intl.formatMessage({ id: 'common.voice_over_close' })}
-                            />
-                        </Dialog.Close>
-                    </div>
-                    <ul className="overflow-y-auto">
-                        <li>
-                            <ButtonCard
-                                className="outline-offset-[-2px]"
-                                asChild
-                                title={intl.formatMessage({ id: 'menu.overview_heading' })}
-                                description={intl.formatMessage({ id: 'menu.overview_subheading' })}
-                                icon="home"
-                            >
-                                <NavLink to="/overzicht" />
-                            </ButtonCard>
-                        </li>
-                        <li>
-                            <ButtonCard
-                                className="outline-offset-[-2px]"
-                                asChild
-                                title={intl.formatMessage({
-                                    id: 'menu.organizations_heading',
-                                })}
-                                description={intl.formatMessage({
-                                    id: 'menu.organizations_subheading',
-                                })}
-                                icon="favorite"
-                            >
-                                <NavLink to="/organisaties" />
-                            </ButtonCard>
-                        </li>
-                        <li>
-                            <ButtonCard
-                                className="outline-offset-[-2px]"
-                                asChild
-                                title={intl.formatMessage({ id: 'menu.about_heading' })}
-                                description={intl.formatMessage({ id: 'menu.about_subheading' })}
-                                icon="question-mark"
-                            >
-                                <NavLink to="/#over-de-site" />
-                            </ButtonCard>
-                        </li>
-                    </ul>
-                </Dialog.Content>
-            </Dialog.Portal>
-        </Dialog.Root>
+        <nav className={cn(surfaceStyle, className)} ref={ref} {...rest}>
+            <ul>
+                <li>
+                    <MobileMenuItem icon="home" asChild>
+                        <NavLink to="/overzicht">
+                            <FormattedMessage id="menu.overview_heading" />
+                        </NavLink>
+                    </MobileMenuItem>
+                </li>
+                <li>
+                    <MobileMenuItem icon="favorite" asChild>
+                        <NavLink to="/organisaties">
+                            <FormattedMessage id="menu.organizations_heading" />
+                        </NavLink>
+                    </MobileMenuItem>
+                </li>
+                <li>
+                    <MobileMenuItem icon="help" asChild>
+                        <NavLink to="/#over-de-site">
+                            <FormattedMessage id="menu.about_heading" />
+                        </NavLink>
+                    </MobileMenuItem>
+                </li>
+            </ul>
+        </nav>
     );
-}
+});

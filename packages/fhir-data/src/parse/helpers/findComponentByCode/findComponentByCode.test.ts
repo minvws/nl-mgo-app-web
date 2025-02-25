@@ -3,23 +3,6 @@ import { type ObservationComponent } from '@minvws/mgo-fhir-types';
 import { expect, test } from 'vitest';
 import { findComponentByCode } from './findComponentByCode';
 
-test('findComponentByCode matched by code and returns the component', () => {
-    const code = faker.number.int(100).toString();
-    const component = createComponent(code);
-    const input = [component, createComponent()];
-
-    const value = findComponentByCode(input, code);
-    expect(value).toBe(component);
-});
-
-test('findComponentByCode does not match by code and returns the undefined', () => {
-    const code = faker.number.int(100).toString();
-    const input = [createComponent(), createComponent()];
-
-    const value = findComponentByCode(input, code);
-    expect(value).toBeUndefined();
-});
-
 function createComponent(code?: string): ObservationComponent {
     return {
         code: {
@@ -39,3 +22,20 @@ function createComponent(code?: string): ObservationComponent {
         },
     };
 }
+
+test('findComponentByCode matched by code and returns the component', () => {
+    const code = faker.number.int(100).toString();
+    const component = createComponent(code);
+    const input = [component, createComponent()];
+
+    const value = findComponentByCode(input, code);
+    expect(value).toBe(component);
+});
+
+test('findComponentByCode does not match by code and returns the undefined', () => {
+    const code = faker.number.int({ min: 200 }).toString();
+    const input = [createComponent(), createComponent()];
+
+    const value = findComponentByCode(input, code);
+    expect(value).toBeUndefined();
+});

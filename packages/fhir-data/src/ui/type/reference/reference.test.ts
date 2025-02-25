@@ -1,10 +1,11 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoReference } from '../../../parse/type';
 import * as special from './reference';
 
 test('reference', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const value: MgoReference = {
         display: faker.lorem.word(),
@@ -12,7 +13,7 @@ test('reference', () => {
     };
     const result = special.reference(faker.custom.uiHelperContext())(label, value);
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'REFERENCE_VALUE',
         display: value.display,
         reference: value.reference,

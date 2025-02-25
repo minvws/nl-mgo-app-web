@@ -6,7 +6,7 @@ import { string } from '../../type/string/string';
 import { oneOfValueX } from './oneOfValueX';
 
 test('valueX with string', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const value = faker.lorem.word();
     const input = {
         valueString: value as MgoString,
@@ -21,7 +21,7 @@ test('valueX with string', () => {
 });
 
 test('valueX with quantity', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const mgoQuantity = faker.fhir.quantity() as MgoQuantity;
     const input = {
         valueQuantity: mgoQuantity,
@@ -36,7 +36,7 @@ test('valueX with quantity', () => {
 });
 
 test('valueX with custom prefix', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const value = faker.lorem.word();
     const prefix = faker.lorem.word();
     const input = {
@@ -52,7 +52,7 @@ test('valueX with custom prefix', () => {
 });
 
 test('valueX with null value', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const context = faker.custom.uiHelperContext();
     const uiOneOfValueX = oneOfValueX(context);
@@ -61,7 +61,7 @@ test('valueX with null value', () => {
 });
 
 test('valueX where prefixed value not found', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
     const value = faker.lorem.word();
     const prefix = faker.lorem.word();
     const input = {

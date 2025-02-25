@@ -1,10 +1,10 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { type GpDiagnosticResult } from './gpDiagnosticResult';
 
 export const i18n = 'r3.gp_diagnostic_result';
 
-export const uiSchema: UiSchemaFunction<GpDiagnosticResult> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<GpDiagnosticResult> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
 
     return {

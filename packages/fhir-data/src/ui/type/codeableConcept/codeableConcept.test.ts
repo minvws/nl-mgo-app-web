@@ -1,7 +1,8 @@
 import { faker } from '$test';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { type UiHelperContext } from '../../context/ui';
+import { type UiHelperContext } from '../../context';
 import { system } from '../../format/system/system';
 import { codeableConcept } from './codeableConcept';
 
@@ -12,7 +13,7 @@ vi.mock('../../format/system/system', () => ({
 }));
 
 test('codeableConcept prefers text value', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const concept: MgoCodeableConcept = {
         text: faker.lorem.sentence(),
@@ -33,14 +34,14 @@ test('codeableConcept prefers text value', () => {
     const result = codeableConcept(faker.custom.uiHelperContext())(label, concept);
 
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         display: [concept.text],
     });
 });
 
 test('codeableConcept uses conding values as fallback', () => {
-    const label = faker.custom.messageId();
+    const label = faker.custom.fhirMessageId();
 
     const concept: MgoCodeableConcept = {
         text: undefined,
@@ -64,7 +65,7 @@ test('codeableConcept uses conding values as fallback', () => {
     const result = codeableConcept(faker.custom.uiHelperContext())(label, concept);
 
     expect(result).toEqual({
-        label: `intl(${label})`,
+        label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         display: ['system', 'system'],
     });

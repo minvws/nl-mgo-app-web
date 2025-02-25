@@ -24,7 +24,7 @@ vi.mock('@minvws/mgo-fhir-data', async (importActual) => {
     return {
         ...actual,
         getMgoResource: vi.fn(() => undefined),
-        getUiSchema: vi.fn(() => {}),
+        getDetails: vi.fn(() => {}),
     };
 });
 
@@ -59,6 +59,7 @@ test('returns query state and related store data for medication ', async () => {
     const mgoResource = {
         profile: 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
         referenceId: faker.lorem.word(),
+        resourceType: faker.lorem.word(),
         fhirVersion: FhirVersion.R3,
     } as MgoResource;
 

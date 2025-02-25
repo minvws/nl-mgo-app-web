@@ -1,10 +1,13 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type SingleValue } from '../../../ui/types';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 
 export const i18n = 'r3.ihe_mhd_minimal_document_reference';
 
-export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = (
+    resource,
+    context
+) => {
     const { ui, formatMessage } = context;
 
     const generalInformation = {
@@ -52,7 +55,7 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                 ],
             },
             {
-                label: formatMessage(`detail.${i18n}.group_author`),
+                label: formatMessage(`details.${i18n}.group_author`),
                 children: [generalInformation.Author],
             },
             ...(content
@@ -62,7 +65,7 @@ export const uiSchema: UiSchemaFunction<IheMhdMinimalDocumentReference> = (resou
                           children: [content.ContentType, content.Language],
                       },
                       {
-                          label: formatMessage(`detail.${i18n}.group_attachment`),
+                          label: formatMessage(`details.${i18n}.group_attachment`),
                           children: [content.Location],
                       },
                   ]

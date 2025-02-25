@@ -1,7 +1,7 @@
-import { type UiSchemaGroupFunction } from '../../../../../ui/types';
+import { type HealthUiGroupFunction } from '../../../../../ui/types';
 import { type Batch } from './batch';
 
-export const uiSchemaGroup: UiSchemaGroupFunction<Batch> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<Batch> = (resource, context) => {
     const profile = 'r4.zib_pharmaceutical_product.batch';
     const { ui, formatMessage } = context;
 

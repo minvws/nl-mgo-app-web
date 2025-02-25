@@ -1,4 +1,4 @@
 import { faker } from '@faker-js/faker';
-import { type MessagesIds } from '../../src/i18n/messages';
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 
-export const messageId = () => faker.lorem.word() as MessagesIds;
+export const fhirMessageId = () => faker.lorem.word() as FhirMessagesIds;

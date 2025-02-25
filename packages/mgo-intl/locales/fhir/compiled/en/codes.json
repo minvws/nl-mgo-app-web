@@ -1,0 +1,30 @@
+{
+  "codes.r3.observation.status.amended": [
+  ],
+  "codes.r3.observation.status.cancelled": [
+  ],
+  "codes.r3.observation.status.corrected": [
+  ],
+  "codes.r3.observation.status.entered-in-error": [
+  ],
+  "codes.r3.observation.status.final": [
+  ],
+  "codes.r3.observation.status.preliminary": [
+  ],
+  "codes.r3.observation.status.registered": [
+  ],
+  "codes.r3.observation.status.unknown": [
+  ],
+  "codes.r3.zib_medication_use.status.active": [
+  ],
+  "codes.r3.zib_medication_use.status.completed": [
+  ],
+  "codes.r3.zib_medication_use.status.entered-in-error": [
+  ],
+  "codes.r3.zib_medication_use.status.intended": [
+  ],
+  "codes.r3.zib_medication_use.status.on-hold": [
+  ],
+  "codes.r3.zib_medication_use.status.stopped": [
+  ]
+}

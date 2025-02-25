@@ -1,8 +1,8 @@
 import { type HTMLAttributes } from 'react';
+import { useUniqueId } from '../../hooks';
 import { cn } from '../../utils';
 import { DescriptionDetails } from './DescriptionDetails';
 import { DescriptionTerm } from './DescriptionTerm';
-import { useUniqueId } from '../../hooks';
 
 export type DescriptionItemProps = HTMLAttributes<HTMLElement> & {
     readonly term?: React.ReactNode;

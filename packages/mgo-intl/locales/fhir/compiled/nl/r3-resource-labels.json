@@ -1,0 +1,236 @@
+{
+  "r3.e_afspraak_appointment": [
+    {
+      "type": 0,
+      "value": "Afspraak"
+    }
+  ],
+  "r3.gp_diagnostic_result": [
+    {
+      "type": 0,
+      "value": "Laboratorium uitslag"
+    }
+  ],
+  "r3.gp_encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_journal_entry": [
+    {
+      "type": 0,
+      "value": "Journaalregel"
+    }
+  ],
+  "r3.gp_laboratory_result": [
+    {
+      "type": 0,
+      "value": "Laboratorium uitslag"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest": [
+    {
+      "type": 0,
+      "value": "Document manifest"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.author": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.class": [
+    {
+      "type": 0,
+      "value": "Categorie"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content": [
+    {
+      "type": 0,
+      "value": "Inhoud"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
+    {
+      "type": 0,
+      "value": "Inhoudstype"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.creation": [
+    {
+      "type": 0,
+      "value": "Gecreëerd"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.language": [
+    {
+      "type": 0,
+      "value": "Taal"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.title": [
+    {
+      "type": 0,
+      "value": "Titel"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.url": [
+    {
+      "type": 0,
+      "value": "Url"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.indexed": [
+    {
+      "type": 0,
+      "value": "Aangemaakt op"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.master_identifier": [
+    {
+      "type": 0,
+      "value": "Identifier"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.security_label": [
+    {
+      "type": 0,
+      "value": "Beveiligingslabel"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.type": [
+    {
+      "type": 0,
+      "value": "Type"
+    }
+  ],
+  "r3.nl_core_episodeofcare": [
+    {
+      "type": 0,
+      "value": "Episode"
+    }
+  ],
+  "r3.nl_core_episodeofcare.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatienummer"
+    }
+  ],
+  "r3.nl_core_episodeofcare.patient": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r3.nl_core_episodeofcare.period": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
+  "r3.nl_core_episodeofcare.type": [
+    {
+      "type": 0,
+      "value": "Type"
+    }
+  ],
+  "r3.nl_core_observation": [
+    {
+      "type": 0,
+      "value": "Observatie"
+    }
+  ],
+  "r3.nl_core_practitionerrole": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.zib_alert": [
+    {
+      "type": 0,
+      "value": "Alert"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.context": [
+    {
+      "type": 0,
+      "value": "Verband"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.general_test_information": [
+    {
+      "type": 0,
+      "value": "Algemene testinformatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.lab_test": [
+    {
+      "type": 0,
+      "value": "Laboratoriumtest"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.performer": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.reference_range.type": [
+    {
+      "type": 0,
+      "value": "Referentie type"
+    }
+  ],
+  "r3.zib_laboratory_test_result_substance": [
+    {
+      "type": 0,
+      "value": "Monstermateriaal"
+    }
+  ],
+  "r3.zib_medical_device_request": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel aanvraag"
+    }
+  ],
+  "r3.zib_medication_use.effective_period.duration": [
+    {
+      "type": 0,
+      "value": "Tijdsduur"
+    }
+  ],
+  "r3.zib_medication_use.repeat_period_cyclical_schedule": [
+    {
+      "type": 0,
+      "value": "Herhaalperiode cyclisch schema"
+    }
+  ],
+  "r3.zib_vaccination_recommendation": [
+    {
+      "type": 0,
+      "value": "Vaccinatieadvies"
+    }
+  ]
+}

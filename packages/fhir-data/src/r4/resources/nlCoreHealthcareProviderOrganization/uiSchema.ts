@@ -1,8 +1,8 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type R4NlCoreHealthcareProviderOrganization } from './nlCoreHealthcareProviderOrganization';
 
 export const i18n = 'r4.nl_core_healthcare_provider_organization';
-export const uiSchema: UiSchemaFunction<R4NlCoreHealthcareProviderOrganization> = (
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthcareProviderOrganization> = (
     resource,
     context
 ) => {

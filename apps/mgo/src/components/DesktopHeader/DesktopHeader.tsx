@@ -1,15 +1,18 @@
-import { useAuth } from '$/lib/auth';
-import { Button, Container } from '@minvws/mgo-mgo-ui';
-import { type HTMLAttributes } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from '$/intl';
+import { Container } from '@minvws/mgo-mgo-ui';
+import { type ComponentProps } from 'react';
+import { LogoutButton } from '../LogoutButton/LogoutButton';
 
-export interface DesktopHeaderProps extends HTMLAttributes<HTMLElement> {}
+export interface DesktopHeaderProps extends Omit<ComponentProps<'header'>, 'className'> {}
 
-export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
-    const auth = useAuth();
-
+export function DesktopHeader({ ...rest }: DesktopHeaderProps) {
     return (
-        <div data-testid="header-desktop" className={className} {...rest}>
+        <header
+            className={
+                'border-b-solid border-b border-b-gray-50 bg-white dark:border-b-gray-700 dark:bg-gray-900'
+            }
+            {...rest}
+        >
             <Container className="flex items-center justify-between py-4">
                 <h2 className="text-xl font-normal leading-tight text-black dark:text-white">
                     <FormattedMessage
@@ -18,10 +21,8 @@ export function DesktopHeader({ className, ...rest }: DesktopHeaderProps) {
                     />
                 </h2>
 
-                <Button onClick={auth.removeUser} variant="ghost">
-                    <FormattedMessage id="common.logout" description="Uitloggen" />
-                </Button>
+                <LogoutButton />
             </Container>
-        </div>
+        </header>
     );
 }

@@ -1,11 +1,14 @@
-import { type UiSchemaFunction } from '../../../ui';
+import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { type ZibVaccinationRecommendation } from './zibVaccinationRecommendation';
 import { uiSchemaGroup as RecommendationUiSchema } from './elements/recommendation/uiSchemaGroup';
+import { type ZibVaccinationRecommendation } from './zibVaccinationRecommendation';
 
 export const i18n = 'r3.zib_vaccination_recommendation';
-export const uiSchema: UiSchemaFunction<ZibVaccinationRecommendation> = (resource, context) => {
+export const uiSchema: HealthUiSchemaFunction<ZibVaccinationRecommendation> = (
+    resource,
+    context
+) => {
     const ui = context.ui as NonStrictUi;
 
     const recommendation = map(

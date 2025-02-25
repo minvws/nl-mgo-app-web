@@ -1,4 +1,5 @@
-import { setupApp, authState, setAuthStateAuthenticated, message } from '$test/helpers';
+import { authState, setAuthStateAuthenticated, setupApp } from '$test/helpers';
+import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { useOnboardingSeen } from './hooks';
@@ -11,7 +12,7 @@ test('redirect from root to welkom if onboarding not seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('introduction.heading'));
+    ).toHaveTextContent(appMessage('introduction.heading'));
 });
 
 test('waits for auth to load if there is a search query', async () => {
@@ -38,7 +39,7 @@ test('waits for auth to load if there is a search query', async () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('introduction.heading'));
+    ).toHaveTextContent(appMessage('introduction.heading'));
 });
 
 test('redirect from root to login from root if onboarding seen', () => {
@@ -50,7 +51,7 @@ test('redirect from root to login from root if onboarding seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('login.heading'));
+    ).toHaveTextContent(appMessage('login.heading'));
 });
 
 test('no redirect from root even if onboarding seen', () => {
@@ -62,7 +63,7 @@ test('no redirect from root even if onboarding seen', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('introduction.heading'));
+    ).toHaveTextContent(appMessage('introduction.heading'));
 });
 
 test('redirect from login to add organization if authenticated', () => {
@@ -72,7 +73,7 @@ test('redirect from login to add organization if authenticated', () => {
     setupApp({ initialEntries: ['/inloggen'] });
 
     expect(
-        screen.getByRole('heading', { name: message('add_organization.heading') })
+        screen.getByRole('heading', { name: appMessage('add_organization.heading') })
     ).toBeVisible();
 });
 
@@ -83,7 +84,7 @@ test('redirect to login from protected route', () => {
         screen.getByRole('heading', {
             level: 1,
         })
-    ).toHaveTextContent(message('login.heading'));
+    ).toHaveTextContent(appMessage('login.heading'));
 });
 
 test('redirect to login with errors if authentication failed', () => {

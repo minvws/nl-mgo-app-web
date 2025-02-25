@@ -1,10 +1,10 @@
 import { expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Coverage } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/zib-Payer-01.json';
-import { zibPayer } from './zibPayer';
-import { message } from '$test/i18n';
 import { i18n } from './uiSchema';
+import { zibPayer } from './zibPayer';
 
 test('parseZibPayer returns the expected output 01', () => {
     const output = zibPayer.parse(input01 as Coverage);
@@ -31,5 +31,5 @@ test('uiSchema returns default label if identifier not supplied', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(message(i18n));
+    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

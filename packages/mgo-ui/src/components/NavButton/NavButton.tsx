@@ -1,9 +1,10 @@
 import { type HTMLAttributes } from 'react';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
+import { focusStyle } from '../../styles';
+import { cn } from '../../utils';
 import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
-import { cn, focusStyle } from '../../utils';
 export interface NavButtonProps extends HTMLAttributes<HTMLElement>, CompositionProps {
     readonly icon: IconName;
 }

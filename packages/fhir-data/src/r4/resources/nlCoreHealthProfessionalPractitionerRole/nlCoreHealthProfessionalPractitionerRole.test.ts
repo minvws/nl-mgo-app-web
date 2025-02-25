@@ -1,5 +1,5 @@
-import { expectJson, expectUiSchemaJson, testUiSchemaContext } from '$test';
-import { message } from '$test/i18n';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type PractitionerRole } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/fhir-resource.json';
@@ -17,7 +17,7 @@ test('uiSchema returns the expected output 01', () => {
         output,
         testUiSchemaContext()
     );
-    expectUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('uiSchema label returns profile when label not specified', () => {
@@ -27,5 +27,5 @@ test('uiSchema label returns profile when label not specified', () => {
         output,
         testUiSchemaContext()
     );
-    expect(uiSchema.label).toEqual(message(i18n));
+    expect(uiSchema.label).toEqual(fhirMessage(i18n));
 });

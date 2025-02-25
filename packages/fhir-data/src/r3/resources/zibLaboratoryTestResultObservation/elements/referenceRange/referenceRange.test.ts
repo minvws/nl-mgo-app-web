@@ -1,8 +1,8 @@
 import { faker, testUiSchemaContext } from '$test';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoQuantity } from '../../../../../parse/type';
 import { referenceRange, type ReferenceRange } from './referenceRange';
-import { message } from '$test/i18n';
 
 test('summary uses translated label when type.coding has system "referencerange-meaning"', () => {
     const value: Partial<ReferenceRange> = {
@@ -31,7 +31,7 @@ test('summary uses translated label when type.coding has system "referencerange-
     );
 
     expect(summarySchema.label).toBe(
-        message(`system.code.http://hl7.org/fhir/referencerange-meaning|recommended`)
+        fhirMessage(`system.code.http://hl7.org/fhir/referencerange-meaning|recommended`)
     );
 });
 
@@ -80,7 +80,7 @@ test('summary uses fallback label when there is a type, but it could not be tran
     );
 
     expect(summarySchema.label).toBe(
-        message('summary.r3.zib_laboratory_test_result_observation.reference_range')
+        fhirMessage('summary.r3.zib_laboratory_test_result_observation.reference_range')
     );
 });
 
@@ -96,6 +96,6 @@ test('summary defaults to the normal range type, when no type is specified', () 
     );
 
     expect(summarySchema.label).toBe(
-        message(`system.code.http://hl7.org/fhir/referencerange-meaning|normal`)
+        fhirMessage(`system.code.http://hl7.org/fhir/referencerange-meaning|normal`)
     );
 });
