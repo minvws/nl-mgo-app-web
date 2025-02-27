@@ -1,4 +1,4 @@
-import { readConfig } from '$/lib/config/config';
+import { config } from '$/config';
 import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import {
     DataServiceId,
@@ -31,7 +31,7 @@ export function getDataService<T extends DataServiceId>(
     }
 
     return createClient({
-        prefixUrl: readConfig().dva_url,
+        prefixUrl: `${config.dva_url}/fhir`,
         timeout: 10000,
         headers: {
             'x-mgo-dva-target': resourceEndpoint,

@@ -1,14 +1,59 @@
-FROM node:20.11.1-alpine3.18
+# syntax=docker/dockerfile:1.7-labs
+#
+# Enables --parents syntax for COPY - see: https://docs.docker.com/build/buildkit/dockerfile-release-notes/#170
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+ARG NODE_VERSION=20.11.1
+ARG NGINX_VERSION=1.26.3
 
+FROM node:${NODE_VERSION}-alpine AS installer
 
-COPY . /app
 WORKDIR /app
-RUN pnpm install;
 
+COPY --parents packages/*/package.json .
+COPY ./apps/mgo/package.json ./apps/mgo/
+COPY ./package.json .
+COPY ./pnpm-*.yaml .
 
-EXPOSE 8000
-CMD ["pnpm", "run", "dev"]
+RUN corepack enable
+RUN pnpm install --frozen-lockfile
+
+FROM node:${NODE_VERSION}-alpine AS builder
+
+WORKDIR /app
+COPY --from=installer /app /app
+COPY . ./
+
+WORKDIR /app/apps/mgo
+
+RUN corepack enable
+RUN pnpm run build
+
+FROM nginx:${NGINX_VERSION}-alpine
+
+ARG PORT
+ARG OIDC_AUTHORITY='https://max.test.mgo.irealisatie.nl'
+ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
+ARG DVA_URL='https://dva.test.mgo.irealisatie.nl'
+
+ENV OIDC_AUTHORITY=$OIDC_AUTHORITY
+ENV LOAD_URL=$LOAD_URL
+ENV DVA_URL=$DVA_URL
+ENV NGINX_PORT=8080
+ENV NGINX_ENVSUBST_OUTPUT_DIR="/etc/nginx"
+
+COPY --from=builder /app/apps/mgo/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/templates/nginx.conf.template
+
+# Write envs to the config file that is read by the app
+RUN echo -en "// This config was generated from the Dockerfile\n""\
+window.config = {\n""\
+  oidc_authority: '$OIDC_AUTHORITY',\n""\
+  oidc_client_id: 'mgo_dev',\n""\
+  oidc_redirect_uri: 'http://localhost:$PORT',\n""\
+  load_url: '$LOAD_URL',\n""\
+  dva_url: '$DVA_URL'\n""\
+};" >/usr/share/nginx/html/config.js
+
+EXPOSE $NGINX_PORT
+
+CMD ["nginx", "-g", "daemon off;"]

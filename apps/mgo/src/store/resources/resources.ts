@@ -1,4 +1,4 @@
-import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
+import { createUniqueSlug } from '$/utils/uniqueSlug/uniqueSlug';
 import { type DataServiceId } from '@minvws/mgo-data-services';
 import {
     getSummary,

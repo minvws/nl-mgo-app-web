@@ -37,9 +37,15 @@ This repository is a monorepository in that all directories under `apps/*` and `
 To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development][mgo-development] instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed][docker]
 
 ```sh
-# Run a local development server using docker
-docker compose build --no-cache && docker compose up mgo -d
+# Build and run a local test server using docker
+docker compose build && docker compose up mgo -d
+# Stop local test server
+docker compose down
 ```
+
+By default it will connect to the test environments, however this can be changed by placing a `.env` at the root. You can copy the `.env.example` for some default values.
+
+> After changing `.env` values you will have to **rebuild** and **restart** the container. (Rerun the first command above)
 
 ## Scripts
 

@@ -1,5 +1,5 @@
 import { type ParsedHealthcareOrganization } from '$/hooks';
-import { createUniqueSlug } from '$/lib/uniqueSlug/uniqueSlug';
+import { createUniqueSlug } from '$/utils/uniqueSlug/uniqueSlug';
 import { isEmpty } from 'lodash';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
