@@ -12,6 +12,7 @@ test.each<HealthcareOrganizationCardProps['icon']>(['add', 'delete', 'chevron-ri
     async (icon) => {
         const props: HealthcareOrganizationCardProps = {
             title: faker.lorem.sentence(),
+            titleTag: faker.helpers.arrayElement(['h2', 'h3', 'h4']),
             subTitle: faker.lorem.sentence(),
             meta: faker.lorem.sentence(),
             icon,

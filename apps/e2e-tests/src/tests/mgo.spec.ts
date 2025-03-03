@@ -27,7 +27,7 @@ test.describe('Visit the MGO page', () => {
         await page.getByRole('link', { name: 'Volgende' }).click();
         await expect(page).toHaveTitle(/Bewijs wie je bent/);
 
-        await page.getByRole('button', { name: 'Inloggen met DigiD' }).click();
+        await page.getByRole('button', { name: 'Log in met DigiD' }).click();
         await expect(page.locator('h1')).toContainText(/DigiD MOCK/);
         await page.getByRole('link', { name: 'Login / Submit' }).click();
 
