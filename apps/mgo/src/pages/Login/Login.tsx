@@ -1,8 +1,8 @@
+import { useAuth } from '$/auth';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { useNavFocusRef } from '$/hooks/index.js';
 import { FormattedMessage, useIntl } from '$/intl';
-import { useAuth } from '$/lib/auth';
 import { useLocation } from '$/routing';
 import { Alert, Button, Container, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
 import { Helmet } from 'react-helmet-async';

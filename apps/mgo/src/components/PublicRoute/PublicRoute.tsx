@@ -1,6 +1,6 @@
+import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
 import { useAuthError } from '$/hooks/useAuthError/useAuthError';
-import { useAuth } from '$/lib/auth';
 import { Navigate, Outlet, useLocation } from '$/routing';
 
 export function PublicRoute() {

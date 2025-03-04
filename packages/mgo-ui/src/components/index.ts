@@ -53,3 +53,7 @@ export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
 export { MobileMenuButton, type MobileMenuButtonProps } from './MobileMenuButton/MobileMenuButton';
 export { MobileMenuItem, type MobileMenuItemProps } from './MobileMenuItem/MobileMenuItem';
 export { SlideDown, type SlideDownProps } from './SlideDown/SlideDown';
+export {
+    DescriptionNotice,
+    type DescriptionNoticeProps,
+} from './DescriptionNotice/DescriptionNotice';

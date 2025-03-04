@@ -2,8 +2,7 @@ import { IntlProvider, useIntl } from '$/intl';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { RouterProvider, type RouterProviderProps } from 'react-router-dom';
-import { AuthProvider } from './lib/auth';
-import { readConfig } from './lib/config/config';
+import { AuthProvider } from './auth';
 import { router as defaultRouter } from './routing';
 
 const queryClient = new QueryClient({
@@ -30,7 +29,7 @@ export const App = ({ router = defaultRouter }: AppProps = {}) => {
             <IntlProvider>
                 <HelmetProvider>
                     <DefaultHelmet />
-                    <AuthProvider {...readConfig().oidc}>
+                    <AuthProvider lang="nl">
                         <RouterProvider router={router} />
                     </AuthProvider>
                 </HelmetProvider>

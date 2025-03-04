@@ -1,4 +1,3 @@
-import type { Config } from '$/lib/config/config';
 import { cleanup, configure } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
@@ -25,17 +24,20 @@ configure({
     },
 });
 
-export const config: Config = {
-    oidc: {
-        authority: 'http://localhost:5000',
-        client_id: 'client_id',
-        redirect_uri: 'http://localhost:3000',
-    },
-    load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
-    dva_url: 'https://dva.test.mgo.irealisatie.nl/fhir',
-};
+vi.mock(
+    '$/config',
+    () =>
+        ({
+            config: {
+                oidc_authority: 'http://localhost:5000',
+                oidc_client_id: 'client_id',
+                oidc_redirect_uri: 'http://localhost:3000',
+                load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
+                dva_url: 'https://dva.test.mgo.irealisatie.nl',
+            },
+        }) as typeof import('$/config') // eslint-disable-line @typescript-eslint/consistent-type-imports
+);
 
-vi.mock('../src/lib/config/config', () => ({ readConfig: () => config }));
 vi.mock('zustand');
 vi.mock('react-oidc-context', () => ({
     AuthProvider: ({ children }: { children: ReactNode }) => children,

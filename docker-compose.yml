@@ -1,17 +1,13 @@
-volumes:
-    hapi-data:
-
 services:
     mgo:
         container_name: mgo
         build:
             context: .
             dockerfile: Dockerfile
+            args:
+                - PORT=${PORT-8000}
+                - OIDC_AUTHORITY
+                - LOAD_URL
+                - DVA_URL
         ports:
-            - ${PORT:-8000}:8000
-
-    hapi:
-        container_name: hapi
-        image: smartonfhir/hapi-5:r3-smart
-        ports:
-            - 8080:8080
+            - ${PORT:-8000}:8080

@@ -1,4 +1,4 @@
-import { useAuth } from '$/lib/auth';
+import { useAuth } from '$/auth';
 import { Navigate, Outlet } from '$/routing';
 
 export function ProtectedRoute() {

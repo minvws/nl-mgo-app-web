@@ -29,7 +29,7 @@ const typeColors: Record<Variant, string> = {
     destructive: cn(disabledStyles, 'bg-red-600 text-white hover:bg-red-500'),
     ghost: cn(
         'text-dark-blue-700 hover:text-dark-blue-400',
-        'dark:text-light-blue-500 hover:dark:text-light-blue-200'
+        'dark:text-light-blue-300 hover:dark:text-light-blue-200'
     ),
 };
 

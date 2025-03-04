@@ -1,14 +1,14 @@
 /* c8 ignore start - this will be moved to another package soon */
+import { config } from '$/config';
 import ky from 'ky';
 import type {
-    OrganisationSearchResponse,
     HealthcareOrganizationDTO,
     HealthcareServiceDTO,
+    OrganisationSearchResponse,
 } from './types';
-import { readConfig } from '$/lib/config/config';
 
 const client = ky.extend({
-    prefixUrl: readConfig().load_url,
+    prefixUrl: config.load_url,
 });
 
 const search = async (searchQuery: { name: string; city: string }) =>
@@ -18,7 +18,7 @@ const search = async (searchQuery: { name: string; city: string }) =>
         })
         .json<OrganisationSearchResponse>();
 
-export type { OrganisationSearchResponse, HealthcareOrganizationDTO, HealthcareServiceDTO };
+export type { HealthcareOrganizationDTO, HealthcareServiceDTO, OrganisationSearchResponse };
 
 export function getLoadService() {
     return {
