@@ -1,3 +1,4 @@
+import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { type HealthUiSchemaFunction } from '../../../ui/types';
 import { map } from '../../../utils';
@@ -36,7 +37,10 @@ export const summary: HealthUiSchemaFunction<ZibMedicationUse> = (resource, cont
             },
             {
                 label: formatMessage(`summary.${i18n}.group_prescriber`),
-                children: [ui.reference(`summary.${i18n}.prescriber`, resource.prescriber)],
+                children: [
+                    ui.reference(`summary.${i18n}.prescriber`, resource.prescriber),
+                    organization(context),
+                ],
             },
             summaryOptions(context, i18n, resource),
         ],

@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 import { i18n } from './uiSchema';
@@ -27,7 +28,7 @@ export const summary: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = (
 
             {
                 label: formatMessage(`summary.${i18n}.group_author`),
-                children: [ui.reference(`${i18n}.author`, resource.author)],
+                children: [ui.reference(`${i18n}.author`, resource.author), organization(context)],
             },
             summaryOptions(context, i18n, resource),
         ],

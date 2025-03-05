@@ -64,6 +64,11 @@
                     "display": [
                         "Dokter Bernard"
                     ]
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
                 }
             ]
         },

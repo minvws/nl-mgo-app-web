@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { map } from '../../../utils';
 import { InterpretatieVlaggenCodelijst, SNOMED_SYSTEM, type Snomed } from '../../valueSets/snomed';
@@ -45,7 +46,10 @@ export const summary: HealthUiSchemaFunction<
             ...referenceRangeSummary,
             {
                 label: formatMessage(`summary.${i18n}.group_performer`),
-                children: [ui.reference(`summary.${i18n}.performer`, resource.performer)],
+                children: [
+                    ui.reference(`summary.${i18n}.performer`, resource.performer),
+                    organization(context),
+                ],
             },
             summaryOptions(context, i18n, resource),
         ],
