@@ -22,5 +22,6 @@
     "common.try_again": "Probeer opnieuw",
     "common.no_organizations_heading": "Je hebt nog geen zorgaanbieders toegevoegd",
     "common.no_organizations_subheading": "Voeg zorgaanbieders toe om gegevens over je gezondheid te zien.",
-    "common.add_organizations": "Voeg zorgaanbieders toe"
+    "common.add_organizations": "Voeg zorgaanbieders toe",
+    "common.search_organizations": "Zoeken naar zorgaanbieders"
 }

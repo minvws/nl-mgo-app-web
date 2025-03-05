@@ -1,8 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 import { DarkStory } from '../DarkStory/DarkStory';
-import { iconNames } from '../Icon/icons';
 import { Stack } from '../Stack/Stack';
 import { NavButton } from './NavButton';
+import { menuIconNames } from './icons';
 
 type Story = StoryObj<typeof NavButton>;
 type StoryMeta = Meta<typeof NavButton>;
@@ -15,7 +15,7 @@ export default {
     },
     argTypes: {
         icon: {
-            options: iconNames,
+            options: menuIconNames,
         },
     },
 } satisfies StoryMeta;
@@ -35,15 +35,17 @@ export const Overflow: Story = {
 
 export const Overview: Story = {
     args: {},
-    render: ({ ...args }) => (
+    render: () => (
         <DarkStory>
             <Stack className="items-start gap-8">
-                <NavButton {...args} icon="home">
-                    Label
-                </NavButton>
-                <NavButton {...args} icon="home" aria-current="page">
-                    Label
-                </NavButton>
+                {menuIconNames.map((menuIcon) => (
+                    <div key={menuIcon}>
+                        <NavButton icon={menuIcon}>Label</NavButton>
+                        <NavButton icon={menuIcon} aria-current="page">
+                            Label
+                        </NavButton>
+                    </div>
+                ))}
             </Stack>
         </DarkStory>
     ),
