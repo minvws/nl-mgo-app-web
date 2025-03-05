@@ -1,2 +1,2 @@
-export { AuthProvider } from './AuthProvider/AuthProvider.tsx';
-export { useAuth } from 'react-oidc-context';
+export { VadAuthProvider } from './VadAuthProvider/VadAuthProvider.tsx';
+export { useAuth, type AuthState } from './useAuth/useAuth';

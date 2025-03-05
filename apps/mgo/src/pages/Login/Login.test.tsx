@@ -1,47 +1,38 @@
-import { authState, setupWithAppProviders, signinRedirectMock } from '$test/helpers';
+import { useAuth } from '$/auth';
+import { faker } from '$test/faker';
+import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
-import { fireEvent, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { screen } from '@testing-library/react';
+import { expect, test, vi, type MockedFunction } from 'vitest';
 import { Login } from './Login';
 
-test('login', () => {
-    setupWithAppProviders(<Login />);
+vi.mock('$/auth');
+
+const mockUseAuth = useAuth as MockedFunction<typeof useAuth>;
+
+test('login', async () => {
+    const login = vi.fn();
+    mockUseAuth.mockImplementation(() => faker.custom.authState({ login }));
+
+    const { user } = setupWithAppProviders(<Login />);
 
     expect(screen.getByRole('heading')).toHaveTextContent(appMessage('login.heading'));
 
-    fireEvent.click(screen.getByRole('button', { name: appMessage('login.digid') }));
+    await user.click(screen.getByRole('button', { name: appMessage('login.digid') }));
 
-    expect(signinRedirectMock).toHaveBeenCalled();
+    expect(login).toHaveBeenCalled();
 });
 
 test('auth loading', () => {
-    authState.isLoading = true;
+    mockUseAuth.mockReturnValue(faker.custom.authState({ isLoading: true }));
 
     setupWithAppProviders(<Login />);
 
-    expect(screen.getByText('Bezig met laden...')).toBeInTheDocument();
-});
-
-test('auth logging in', () => {
-    authState.isLoading = true;
-    authState.activeNavigator = 'signinSilent';
-
-    setupWithAppProviders(<Login />);
-
-    expect(screen.getByText('Bezig met inloggen...')).toBeInTheDocument();
-});
-
-test('auth logging out', () => {
-    authState.isLoading = true;
-    authState.activeNavigator = 'signoutRedirect';
-
-    setupWithAppProviders(<Login />);
-
-    expect(screen.getByText('Bezig met uitloggen...')).toBeInTheDocument();
+    screen.getByRole('button', { name: appMessage('common.loading') });
 });
 
 test('auth error', () => {
-    authState.error = new Error('Something went wrong');
+    mockUseAuth.mockReturnValue({ ...faker.custom.authState(), loadingError: new Error() });
 
     setupWithAppProviders(<Login />);
 

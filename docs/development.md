@@ -37,8 +37,6 @@ To start the development server run the following command from the project root:
 pnpm dev
 ```
 
-> By default, the server will be available at [http://localhost:8000](http://localhost:8000). While it is possible to change the port by providing a `--port` argument, doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
-
 ### UI Components
 
 The `packages/mgo-ui/` contains most of the UI components that we use in the MGO app. They are all documented using [Storybook]. The storybook development server can be started by running (from the project root):

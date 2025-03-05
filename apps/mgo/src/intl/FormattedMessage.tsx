@@ -1,13 +1,13 @@
 import { type Override } from '$/types/Override';
 import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
-import { type ComponentProps } from 'react';
+import { type ComponentProps, type FC } from 'react';
 import { FormattedMessage as ReactFormattedMessage } from 'react-intl';
 
-export type RouterNavLinkProps = Override<
+export type FormattedMessageProps = Override<
     ComponentProps<typeof ReactFormattedMessage>,
     {
         id: AppMessagesIds;
     }
 >;
 
-export const FormattedMessage = ReactFormattedMessage;
+export const FormattedMessage = ReactFormattedMessage as FC<FormattedMessageProps>;

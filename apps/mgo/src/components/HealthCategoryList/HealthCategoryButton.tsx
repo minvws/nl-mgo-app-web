@@ -2,6 +2,7 @@ import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
+import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-mgo-ui';
 
 export interface HealthCategoryButtonProps<T extends HealthCategory> {
@@ -41,7 +42,7 @@ export function HealthCategoryButton<T extends HealthCategory>({
             label={!query.isLoading && query.isEmpty ? formatMessage('common.no_data') : undefined}
         >
             <RouterLink to={`./${healthCategorySlugs[query.category]}`}>
-                <FormattedMessage id={`hc_${query.category}.heading`} />
+                <FormattedMessage id={`hc_${query.category}.heading` as AppMessagesIds} />
             </RouterLink>
         </CategoryButton>
     );

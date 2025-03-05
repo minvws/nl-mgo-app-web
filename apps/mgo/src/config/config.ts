@@ -1,7 +1,4 @@
 export interface Config {
-    oidc_authority: string;
-    oidc_client_id: string;
-    oidc_redirect_uri: string;
     load_url: string;
     dva_url: string;
 }
@@ -14,9 +11,6 @@ const readConfig = () => {
     }
 
     return Object.freeze({
-        oidc_authority: getConfigSetting(config, 'oidc_authority'),
-        oidc_client_id: getConfigSetting(config, 'oidc_client_id'),
-        oidc_redirect_uri: getConfigSetting(config, 'oidc_redirect_uri'),
         load_url: getConfigSetting(config, 'load_url'),
         dva_url: getConfigSetting(config, 'dva_url'),
     });

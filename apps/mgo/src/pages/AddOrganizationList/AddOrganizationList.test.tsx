@@ -1,17 +1,23 @@
+import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
+import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { expect, test } from 'vitest';
+import { expect, test, vi, type MockedFunction } from 'vitest';
 import { AddOrganizationList } from './AddOrganizationList';
 
+vi.mock('$/auth');
+
+const mockUseAuth = useAuth as MockedFunction<typeof useAuth>;
+
 test('render from store', async () => {
+    mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
-    setAuthStateAuthenticated();
+
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
 
