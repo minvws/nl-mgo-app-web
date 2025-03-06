@@ -1,3 +1,7 @@
+---
+name: MGO Issue
+about: Use this template for tor submitting issues for MGO
+---
 Describe the issue or concern
 
 ### Acceptatie criteria
@@ -5,8 +9,9 @@ Describe the issue or concern
 - it does something
 
 ### QA
-
 Steps to test the behaviour:
-
 1. Go to '...'
 2. Click on '....'
+
+### Definition of Done
+from the concept/idea > Refinement (Acceptance Criteria defined) > Todo > In progress > Review (AC are met) > QA (AC are met - critical issues are resolved on the feat. branch) > merge to develop > Waiting for release > Release release/vx.x.x (deployment to Test env) > merge to main (deployment to Acc) > Done
