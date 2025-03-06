@@ -1,5 +1,5 @@
 ---
-name: MGO Issue: WEB
+name: MGO Issue - WEB
 about: Use this template for tor submitting issues for MGO
 ---
 Describe the issue or concern
