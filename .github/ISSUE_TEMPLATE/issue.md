@@ -14,4 +14,4 @@ Steps to test the behaviour:
 2. Click on '....'
 
 ### Definition of Done
-from the concept/idea > Refinement (Acceptance Criteria defined) > Todo > In progress > Review (AC are met) > QA (AC are met - critical issues are resolved on the feat. branch) > merge to develop > Waiting for release > Release release/vx.x.x (deployment to Test env) > merge to main (deployment to Acc) > Done
+from the concept/idea > Refinement (Acceptance Criteria defined) > Todo > In progress > Review (AC are met) > merge to `develop` > QA (AC are met - critical issues are resolved on a new branch) > Waiting for release > Release release/vx.x.x (deployment to Test env) > merge to `main` (deployment to Acc) > Done
