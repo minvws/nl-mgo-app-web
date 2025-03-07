@@ -8,16 +8,18 @@ export function getMedicationData(
     return {
         medicationUse: resources.getResourcesByProfile(
             FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse', // NOSONAR
             organizationIdFilter
         ),
         medicationAgreements: resources.getResourcesByProfile(
             FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement'
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement', // NOSONAR
+            organizationIdFilter
         ),
         administrationAgreements: resources.getResourcesByProfile(
             FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement'
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement', // NOSONAR
+            organizationIdFilter
         ),
     };
 }
