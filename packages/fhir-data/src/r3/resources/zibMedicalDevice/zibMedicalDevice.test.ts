@@ -7,17 +7,17 @@ import input02 from './fixtures/02/fhir-resource.json';
 import { i18n } from './uiSchema';
 import { zibMedicalDevice } from './zibMedicalDevice';
 
-test('parse returns the expected output 01', () => {
+test('parse returns the expected output 01', async () => {
     const output = zibMedicalDevice.parse(input01 as DeviceUseStatement);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('parse returns the expected output 02', () => {
+test('parse returns the expected output 02', async () => {
     const output = zibMedicalDevice.parse(input02 as DeviceUseStatement);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = zibMedicalDevice.parse(input01 as DeviceUseStatement);
     const zibUiSchema = zibMedicalDevice.uiSchema(
         output,
@@ -25,10 +25,10 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 02', () => {
+test('uiSchema returns the expected output 02', async () => {
     const output = zibMedicalDevice.parse(input02 as DeviceUseStatement);
     const zibUiSchema = zibMedicalDevice.uiSchema(
         output,
@@ -36,7 +36,7 @@ test('uiSchema returns the expected output 02', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if device not supplied', () => {

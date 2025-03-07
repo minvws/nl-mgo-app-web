@@ -29,7 +29,7 @@
         "@tanstack/eslint-plugin-query": "^5.43.1",
         "@typescript-eslint/eslint-plugin": "^7.13.0",
         "@typescript-eslint/parser": "^7.13.0",
-        "@vitest/coverage-v8": "^1.6.1",
+        "@vitest/coverage-v8": "^3.0.8",
         "eslint": "^8.57.0",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-react": "^7.34.2",
@@ -40,7 +40,7 @@
         "prettier-plugin-tailwindcss": "^0.6.11",
         "simple-git-hooks": "^2.11.1",
         "typescript": "^5.4.5",
-        "vitest": "^1.6.1"
+        "vitest": "^3.0.8"
     },
     "simple-git-hooks": {
         "commit-msg": "pnpm commitlint --edit ${1}"
@@ -69,15 +69,9 @@
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
-                "CVE-2024-4067": "Affects devDependency eslint-plugin-query waiting for fix to be released https://github.com/micromatch/micromatch/issues/264",
-                "CVE-2024-55565": "Affects devDependency vitest, will probably be fixed in the next release.",
-                "CVE-2025-24010": "Affects devDependency vitest, will probably be fixed in the next release."
+                "CVE-0000-0000": "Please provide a reason for ignoring the CVE here"
             },
-            "ignoreCves": [
-                "CVE-2024-4067",
-                "CVE-2024-55565",
-                "CVE-2025-24010"
-            ]
+            "ignoreCves": []
         }
     }
 }

@@ -4,12 +4,12 @@ import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
 import { zibFunctionalOrMentalStatus } from './zibFunctionalOrMentalStatus';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibFunctionalOrMentalStatus.parse(input as Observation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibFunctionalOrMentalStatus.parse(input as Observation);
     const uiSchema = zibFunctionalOrMentalStatus.uiSchema(
         output,
@@ -17,5 +17,5 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });

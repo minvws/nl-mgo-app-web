@@ -4,12 +4,12 @@ import { test } from 'vitest';
 import inputMedication01 from './fixtures/zib-Product-01.json';
 import { zibProduct } from './zibProduct';
 
-test('parseZibProduct returns the expected output 01', () => {
+test('parseZibProduct returns the expected output 01', async () => {
     const output = zibProduct.parse(inputMedication01 as Medication);
-    expectJson(output).toMatchFileSnapshot('./fixtures/zib-Product-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/zib-Product-01-output.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibProduct.parse(inputMedication01 as Medication);
     const uiSchema = zibProduct.uiSchema(
         output,
@@ -17,5 +17,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/zib-MedicationUse-01-uiSchema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/zib-MedicationUse-01-uiSchema.snap.json'
+    );
 });

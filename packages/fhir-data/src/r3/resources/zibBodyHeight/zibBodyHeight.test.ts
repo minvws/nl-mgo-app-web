@@ -6,12 +6,12 @@ import input from './fixtures/fhir-resource.json';
 import { i18n } from './uiSchema';
 import { zibBodyHeight } from './zibBodyHeight';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibBodyHeight.parse(input as Observation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibBodyHeight.parse(input as Observation);
     const uiSchema = zibBodyHeight.uiSchema(
         output,
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if effectiveDateTime not supplied', () => {

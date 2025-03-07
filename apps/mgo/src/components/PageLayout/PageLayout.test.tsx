@@ -10,6 +10,7 @@ vi.mock('react-router-dom', async (importOriginal) => {
     return {
         ...mod,
         Outlet: () => <div data-testid="outlet" />,
+        ScrollRestoration: () => <div data-testid="scroll-restoration" />,
     };
 });
 

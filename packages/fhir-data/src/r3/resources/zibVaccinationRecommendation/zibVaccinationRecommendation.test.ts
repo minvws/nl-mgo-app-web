@@ -6,12 +6,12 @@ import input1 from './fixtures/01/fhir-resource.json';
 import { i18n } from './uiSchema';
 import { zibVaccinationRecommendation } from './zibVaccinationRecommendation';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibVaccinationRecommendation.parse(input1 as ImmunizationRecommendation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema 01 returns the expected output', () => {
+test('uiSchema 01 returns the expected output', async () => {
     const output = zibVaccinationRecommendation.parse(input1 as ImmunizationRecommendation);
     const uiSchema = zibVaccinationRecommendation.uiSchema(
         output,
@@ -19,7 +19,7 @@ test('uiSchema 01 returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if recommendation not supplied', () => {

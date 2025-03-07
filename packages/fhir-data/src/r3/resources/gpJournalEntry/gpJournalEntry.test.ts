@@ -8,12 +8,12 @@ import input01 from './fixtures/fhir-resource.json';
 import { gpJournalEntry } from './gpJournalEntry';
 import { i18n } from './uiSchema';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = gpJournalEntry.parse(input01 as Observation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = gpJournalEntry.parse(input01 as Observation);
     const uiSchema = gpJournalEntry.uiSchema(
         output,
@@ -21,7 +21,7 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('returns ICPC_E in parser', () => {

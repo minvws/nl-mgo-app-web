@@ -6,12 +6,12 @@ import input01 from './fixtures/01/fhir-resource.json';
 import { gpEncounter } from './gpEncounter';
 import { i18n } from './uiSchema';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = gpEncounter.parse(input01 as Encounter);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = gpEncounter.parse(input01 as Encounter);
     const uiSchema = gpEncounter.uiSchema(
         output,
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if context not supplied', () => {

@@ -41,8 +41,8 @@
         "@storybook/react": "^8.5.1",
         "@storybook/react-vite": "^8.5.1",
         "@storybook/test": "^8.5.1",
-        "@testing-library/react": "^16.0.0",
-        "@testing-library/user-event": "^14.5.2",
+        "@testing-library/react": "^16.2.0",
+        "@testing-library/user-event": "^14.6.1",
         "@types/lodash": "^4.17.4",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
@@ -53,8 +53,8 @@
         "storybook": "^8.5.1",
         "storybook-addon-css-user-preferences": "^0.0.3",
         "storybook-addon-render-modes": "^0.0.11",
-        "vite": "^5.4.14",
-        "vitest": "^1.6.1",
+        "vite": "^6.2.0",
+        "vitest": "^3.0.8",
         "vitest-dom": "^0.1.1"
     }
 }

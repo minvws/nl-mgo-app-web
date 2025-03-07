@@ -65,7 +65,7 @@ test('returns query state and related store data for medication ', async () => {
 
     mockUseHealthCategoryQueries.mockImplementation(() => [
         {
-            meta: queryMeta,
+            meta: queryMeta as any, // eslint-disable-line @typescript-eslint/no-explicit-any
             queryKey: [queryKey],
             queryFn: () =>
                 Promise.resolve({

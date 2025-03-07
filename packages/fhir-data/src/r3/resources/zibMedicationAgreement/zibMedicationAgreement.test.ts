@@ -6,14 +6,14 @@ import inputFhirData from './fixtures/zib-MedicationAgreement-01.json';
 import { i18n } from './uiSchema';
 import { zibMedicationAgreement } from './zibMedicationAgreement';
 
-test('parseZibMedicationAgreement returns the expected output', () => {
+test('parseZibMedicationAgreement returns the expected output', async () => {
     const output = zibMedicationAgreement.parse(inputFhirData as MedicationRequest);
-    expectJson(output).toMatchFileSnapshot(
+    await expectJson(output).toMatchFileSnapshot(
         './fixtures/zib-MedicationAgreement-01-output.snap.json'
     );
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibMedicationAgreement.parse(inputFhirData as MedicationRequest);
     const zibMedicationUseUiSchema = zibMedicationAgreement.uiSchema(
         output,
@@ -21,7 +21,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectHealthCareUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/zib-MedicationAgreement-01-uiSchema.snap.json'
     );
 });

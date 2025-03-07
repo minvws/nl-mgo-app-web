@@ -31,6 +31,7 @@ vi.mock('zustand');
 
 throwOnConsoleLog({
     logMethods: ['warn', 'error'],
+    ignoreMessages: [/React Router Future Flag Warning:/],
 });
 
 window.scrollTo = vi.fn;

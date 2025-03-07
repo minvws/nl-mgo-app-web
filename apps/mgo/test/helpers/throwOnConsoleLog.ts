@@ -11,11 +11,11 @@ type ConsoleLogMessage = {
 };
 type ThrowLogConfig = {
     logMethods: ConsoleLogMethod[];
-    ignoreMessages?: string[];
+    ignoreMessages?: (string | RegExp)[];
 };
 
 let isConfigured = false;
-let ignoreLogMessages: string[];
+let ignoreLogMessages: (string | RegExp)[] = [];
 let logMessages: ConsoleLogMessage[] = [];
 
 beforeEach(() => {
@@ -43,7 +43,15 @@ function patchConsoleMethod(method: ConsoleLogMethod) {
                 ? message
                 : ((message as Error)?.message ?? 'unknown error message');
 
-        if (!!logMessage && ignoreLogMessages.includes(logMessage)) {
+        const ignoreMessage = ignoreLogMessages.find((ignoreMessage) => {
+            if (ignoreMessage instanceof RegExp) {
+                return ignoreMessage.test(logMessage);
+            }
+
+            return ignoreMessage === logMessage;
+        });
+
+        if (ignoreMessage) {
             return;
         }
 

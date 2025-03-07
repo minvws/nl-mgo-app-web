@@ -4,12 +4,12 @@ import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
 import { iheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
 
-test('returns the expected output', () => {
+test('returns the expected output', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
     const uiSchema = iheMhdMinimalDocumentReference.uiSchema(
         output,
@@ -17,10 +17,12 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
+    );
 });
 
-test('summary returns the expected output', () => {
+test('summary returns the expected output', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
     const uiSchema = iheMhdMinimalDocumentReference.summary(
         output,
@@ -29,10 +31,12 @@ test('summary returns the expected output', () => {
             isSummary: true,
         })
     );
-    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/summary.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/summary.snap.json'
+    );
 });
 
-test('uiSchema returns the expected output when there is no content', () => {
+test('uiSchema returns the expected output when there is no content', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
     output.content.attachment = undefined;
     const uiSchema = iheMhdMinimalDocumentReference.uiSchema(
@@ -41,12 +45,12 @@ test('uiSchema returns the expected output when there is no content', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/ui-schema-no-content.snap.json'
     );
 });
 
-test('summary returns the expected output when there is no content', () => {
+test('summary returns the expected output when there is no content', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input as DocumentReference);
     output.content.attachment = undefined;
     const uiSchema = iheMhdMinimalDocumentReference.summary(
@@ -56,7 +60,7 @@ test('summary returns the expected output when there is no content', () => {
             isSummary: true,
         })
     );
-    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/summary-no-content.snap.json'
     );
 });

@@ -1,11 +1,11 @@
+import { faker } from '@faker-js/faker';
 import { render, screen, within } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { faker } from '@faker-js/faker';
 import { CategoryButton } from './CategoryButton';
 
 test('render', async () => {
     const text = faker.lorem.word();
-    render(<CategoryButton>{text}</CategoryButton>);
+    render(<CategoryButton icon="allergy">{text}</CategoryButton>);
 
     const element = screen.getByRole('button', {
         name: text,

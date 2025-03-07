@@ -11,17 +11,17 @@ beforeAll(() => {
     vi.clearAllMocks();
 });
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = gpDiagnosticResult.parse(input01 as Observation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', () => {
+test('returns the expected output 02', async () => {
     const output = gpDiagnosticResult.parse(input02 as Observation);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = gpDiagnosticResult.parse(input01 as Observation);
     const uiSchema = gpDiagnosticResult.uiSchema(
         output,
@@ -29,10 +29,10 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 02', () => {
+test('uiSchema returns the expected output 02', async () => {
     const output = gpDiagnosticResult.parse(input02 as Observation);
     const uiSchema = gpDiagnosticResult.uiSchema(
         output,
@@ -40,7 +40,7 @@ test('uiSchema returns the expected output 02', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if context not supplied', () => {

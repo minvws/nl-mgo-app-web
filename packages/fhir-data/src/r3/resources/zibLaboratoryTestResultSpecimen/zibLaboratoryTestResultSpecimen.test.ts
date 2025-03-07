@@ -5,12 +5,12 @@ import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import { zibLaboratoryTestResultSpecimen } from './zibLaboratoryTestResultSpecimen';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibLaboratoryTestResultSpecimen.parse(input01 as Specimen);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = zibLaboratoryTestResultSpecimen.parse(input01 as Specimen);
     const uiSchema = zibLaboratoryTestResultSpecimen.uiSchema(
         output,
@@ -18,15 +18,15 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('returns the expected output 02', () => {
+test('returns the expected output 02', async () => {
     const output = zibLaboratoryTestResultSpecimen.parse(input02 as Specimen);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 02', () => {
+test('uiSchema returns the expected output 02', async () => {
     const output = zibLaboratoryTestResultSpecimen.parse(input02 as Specimen);
     const uiSchema = zibLaboratoryTestResultSpecimen.uiSchema(
         output,
@@ -34,5 +34,5 @@ test('uiSchema returns the expected output 02', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });

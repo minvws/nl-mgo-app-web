@@ -6,12 +6,12 @@ import input from './fixtures/zib-Alert-01.json';
 import { i18n } from './uiSchema';
 import { zibAlert } from './zibAlert';
 
-test('praseZibAlert returns the expected output 01', () => {
+test('praseZibAlert returns the expected output 01', async () => {
     const output = zibAlert.parse(input as Flag);
-    expectJson(output).toMatchFileSnapshot('./fixtures/zib-Alert-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/zib-Alert-01-output.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibAlert.parse(input as Flag);
     const uiSchema = zibAlert.uiSchema(
         output,
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/zib-Alert-01-uiSchema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/zib-Alert-01-uiSchema.snap.json');
 });
 
 test('uiSchema returns default label if code not supplied', () => {

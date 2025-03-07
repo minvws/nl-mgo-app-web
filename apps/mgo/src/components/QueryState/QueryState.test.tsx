@@ -53,7 +53,7 @@ test('Custom loading state is shown', () => {
     expect(screen.queryByTestId('result')).toBeNull();
 });
 
-test('Loading state can be set to use the fetchStatus', () => {
+test('Loading state can be set to use the fetchStatus', async () => {
     const query: QueryStateProps = {
         useFetchStatus: true,
         fetchStatus: 'idle',
@@ -62,12 +62,11 @@ test('Loading state can be set to use the fetchStatus', () => {
         status: 'pending',
         renderResult: <span data-testid="result" />,
     };
-
     const { rerender } = setupWithAppProviders(<QueryState {...query} />);
 
     expect(screen.queryByRole('progressbar')).toBeNull();
 
-    rerender(<QueryState {...query} fetchStatus="fetching" />);
+    rerender(<QueryState {...{ ...query, useFetchStatus: false }} fetchStatus="fetching" />);
 
     expect(screen.getByRole('progressbar')).toBeVisible();
 });

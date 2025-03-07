@@ -6,12 +6,14 @@ import input01 from './fixtures/zib-AllergyIntolerance-01.json';
 import { i18n } from './uiSchema';
 import { zibAllergyIntolerance } from './zibAllergyIntolerance';
 
-test('parse returns the expected output 01', () => {
+test('parse returns the expected output 01', async () => {
     const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
-    expectJson(output).toMatchFileSnapshot('./fixtures/zib-AllergyIntolerance-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot(
+        './fixtures/zib-AllergyIntolerance-01-output.snap.json'
+    );
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
     const zibUiSchema = zibAllergyIntolerance.uiSchema(
         output,
@@ -19,7 +21,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibUiSchema).toMatchFileSnapshot(
+    await expectJson(zibUiSchema).toMatchFileSnapshot(
         './fixtures/zib-AllergyIntolerance-01-uiSchema.snap.json'
     );
 });

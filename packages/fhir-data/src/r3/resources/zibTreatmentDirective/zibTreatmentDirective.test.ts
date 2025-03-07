@@ -6,12 +6,14 @@ import input from './fixtures/zib-TreatmentDirective-01.json';
 import { i18n } from './uiSchema';
 import { zibTreatmentDirective } from './zibTreatmentDirective';
 
-test('parseZibTreatmentDirective returns the expected output 01', () => {
+test('parseZibTreatmentDirective returns the expected output 01', async () => {
     const output = zibTreatmentDirective.parse(input as Consent);
-    expectJson(output).toMatchFileSnapshot('./fixtures/zib-TreatmentDirective-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot(
+        './fixtures/zib-TreatmentDirective-01-output.snap.json'
+    );
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibTreatmentDirective.parse(input as Consent);
     const uiSchema = zibTreatmentDirective.uiSchema(
         output,
@@ -19,7 +21,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot(
+    await expectJson(uiSchema).toMatchFileSnapshot(
         './fixtures/zib-TreatmentDirective-01-uiSchema.snap.json'
     );
 });

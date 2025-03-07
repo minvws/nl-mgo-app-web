@@ -6,14 +6,14 @@ import inputFhirData from './fixtures/zib-MedicalDeviceProduct-01.json';
 import { i18n } from './uiSchema';
 import { zibMedicalDeviceProduct } from './zibMedicalDeviceProduct';
 
-test('parseZibMedicalDeviceProduct returns the expected output', () => {
+test('parseZibMedicalDeviceProduct returns the expected output', async () => {
     const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
-    expectJson(output).toMatchFileSnapshot(
+    await expectJson(output).toMatchFileSnapshot(
         './fixtures/zib-MedicalDeviceProduct-01-output.snap.json'
     );
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
     const zibMedicalDeviceProductUiSchema = zibMedicalDeviceProduct.uiSchema(
         output,
@@ -21,7 +21,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibMedicalDeviceProductUiSchema).toMatchFileSnapshot(
+    await expectJson(zibMedicalDeviceProductUiSchema).toMatchFileSnapshot(
         './fixtures/zib-MedicalDeviceProduct-01-uiSchema.snap.json'
     );
 });
