@@ -13,8 +13,8 @@ After having installed asdf you will need to add the required plugins, followed 
 
 ```sh
 # add plugins
-asdf plugin-add nodejs
-asdf plugin-add pnpm
+asdf plugin add nodejs
+asdf plugin add pnpm
 
 # install specified versions
 asdf install
