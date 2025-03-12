@@ -161,6 +161,42 @@
       "value": "Zorgverlener rol"
     }
   ],
+  "r3.zib_administration_agreement.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r3.zib_administration_agreement.performer.actor": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "r3.zib_administration_agreement.performer.on_behalf_of": [
+    {
+      "type": 0,
+      "value": "Op verzoek van"
+    }
+  ],
+  "r3.zib_administration_agreement.period_of_use": [
+    {
+      "type": 0,
+      "value": "Gebruiksperiode"
+    }
+  ],
+  "r3.zib_administration_agreement.stop_type": [
+    {
+      "type": 0,
+      "value": "Beëindigingsreden"
+    }
+  ],
+  "r3.zib_advance_directive.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
   "r3.zib_alert": [
     {
       "type": 0,

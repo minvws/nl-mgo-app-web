@@ -6,6 +6,10 @@
     "fhirVersion": "R3",
     "authoredOn": "2020-06-08T10:54:12+02:00",
     "agreementReason": null,
+    "periodOfUse": {
+        "start": "2020-06-08",
+        "end": null
+    },
     "usageDuration": null,
     "additionalInformation": {
         "text": null,
@@ -93,6 +97,21 @@
                     "when": null
                 }
             }
+        }
+    ],
+    "performer": [
+        {
+            "actor": {
+                "reference": "Organization/nl-core-organization-06",
+                "display": "Apotheek De Gulle Gaper"
+            },
+            "onBehalfOf": null
+        }
+    ],
+    "authorizingPrescription": [
+        {
+            "reference": null,
+            "display": "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
         }
     ]
 }

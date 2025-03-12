@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Consent } from 'fhir/r3';
 import { expect, test } from 'vitest';
@@ -31,7 +31,9 @@ test('uiSchema returns the expected output 01', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
+    );
 });
 
 test('uiSchema returns the expected output 02', async () => {
@@ -42,7 +44,9 @@ test('uiSchema returns the expected output 02', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
+    );
 });
 
 test('uiSchema returns the expected output 03', async () => {
@@ -53,7 +57,9 @@ test('uiSchema returns the expected output 03', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/03/ui-schema.snap.json'
+    );
 });
 
 test('uiSchema returns default label if dateTime not supplied', () => {

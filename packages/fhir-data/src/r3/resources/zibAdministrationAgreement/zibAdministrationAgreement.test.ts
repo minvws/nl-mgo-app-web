@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import type { MedicationDispense } from 'fhir/r3';
 import { expect, test } from 'vitest';
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(zibMedicationUseUiSchema).toMatchFileSnapshot(
         './fixtures/ui-schema.snap.json'
     );
 });

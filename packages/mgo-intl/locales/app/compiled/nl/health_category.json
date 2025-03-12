@@ -29,6 +29,12 @@
       "value": "Alle waarschuwing gegevens"
     }
   ],
+  "hc_alerts.heading_summary": [
+    {
+      "type": 0,
+      "value": "Waarschuwing gegevens"
+    }
+  ],
   "hc_allergies.heading": [
     {
       "type": 0,
@@ -39,6 +45,12 @@
     {
       "type": 0,
       "value": "Alle allergiegegevens"
+    }
+  ],
+  "hc_allergies.heading_summary": [
+    {
+      "type": 0,
+      "value": "Allergiegegevens"
     }
   ],
   "hc_appointments.heading": [
@@ -53,6 +65,12 @@
       "value": "Alle afspraakgegevens"
     }
   ],
+  "hc_appointments.heading_summary": [
+    {
+      "type": 0,
+      "value": "Afspraakgegevens"
+    }
+  ],
   "hc_complaints.heading": [
     {
       "type": 0,
@@ -65,6 +83,12 @@
       "value": "Alle klachtgegevens"
     }
   ],
+  "hc_complaints.heading_summary": [
+    {
+      "type": 0,
+      "value": "Klachtgegevens"
+    }
+  ],
   "hc_devices.heading": [
     {
       "type": 0,
@@ -75,6 +99,12 @@
     {
       "type": 0,
       "value": "Alle medische hulpmiddel gegevens"
+    }
+  ],
+  "hc_devices.heading_summary": [
+    {
+      "type": 0,
+      "value": "Medische hulpmiddel gegevens"
     }
   ],
   "hc_documents.error": [
@@ -95,6 +125,12 @@
       "value": "Alle documentgegevens"
     }
   ],
+  "hc_documents.heading_summary": [
+    {
+      "type": 0,
+      "value": "Documentgegevens"
+    }
+  ],
   "hc_documents.no_document": [
     {
       "type": 0,
@@ -113,6 +149,12 @@
       "value": "Alle uitslaggegevens"
     }
   ],
+  "hc_lab_results.heading_summary": [
+    {
+      "type": 0,
+      "value": "Uitslaggegevens"
+    }
+  ],
   "hc_lifestyle.heading": [
     {
       "type": 0,
@@ -123,6 +165,12 @@
     {
       "type": 0,
       "value": "Alle leefstijlgegevens"
+    }
+  ],
+  "hc_lifestyle.heading_summary": [
+    {
+      "type": 0,
+      "value": "Leefstijlgegevens"
     }
   ],
   "hc_measurements.heading": [
@@ -137,6 +185,12 @@
       "value": "Alle meetgegevens"
     }
   ],
+  "hc_measurements.heading_summary": [
+    {
+      "type": 0,
+      "value": "Meetgegevens"
+    }
+  ],
   "hc_medication.heading": [
     {
       "type": 0,
@@ -147,6 +201,12 @@
     {
       "type": 0,
       "value": "Alle medicijngegevens"
+    }
+  ],
+  "hc_medication.heading_summary": [
+    {
+      "type": 0,
+      "value": "Medicijngegevens"
     }
   ],
   "hc_mental.heading": [
@@ -161,6 +221,12 @@
       "value": "All mentaal welzijngegevens"
     }
   ],
+  "hc_mental.heading_summary": [
+    {
+      "type": 0,
+      "value": "Mentaal welzijngegevens"
+    }
+  ],
   "hc_patient.heading": [
     {
       "type": 0,
@@ -171,6 +237,12 @@
     {
       "type": 0,
       "value": "Alle persoonlijke gegevens"
+    }
+  ],
+  "hc_patient.heading_summary": [
+    {
+      "type": 0,
+      "value": "Persoonlijke gegevens"
     }
   ],
   "hc_payment.heading": [
@@ -185,6 +257,12 @@
       "value": "Alle betaalgegevens"
     }
   ],
+  "hc_payment.heading_summary": [
+    {
+      "type": 0,
+      "value": "Betaalgegevens"
+    }
+  ],
   "hc_plans.heading": [
     {
       "type": 0,
@@ -195,6 +273,12 @@
     {
       "type": 0,
       "value": "Alle behandelwens/plan gegevens"
+    }
+  ],
+  "hc_plans.heading_summary": [
+    {
+      "type": 0,
+      "value": "Behandelwens/plan gegevens"
     }
   ],
   "hc_treatments.heading": [
@@ -209,6 +293,12 @@
       "value": "Alle behandelgegevens"
     }
   ],
+  "hc_treatments.heading_summary": [
+    {
+      "type": 0,
+      "value": "Behandelgegevens"
+    }
+  ],
   "hc_vaccinations.heading": [
     {
       "type": 0,
@@ -219,6 +309,240 @@
     {
       "type": 0,
       "value": "Alle vaccinatiegegevens"
+    }
+  ],
+  "hc_vaccinations.heading_summary": [
+    {
+      "type": 0,
+      "value": "Vaccinatiegegevens"
+    }
+  ],
+  "health_category.alerts.warnings": [
+    {
+      "type": 0,
+      "value": "Waarschuwingen"
+    }
+  ],
+  "health_category.allergies.allergies": [
+    {
+      "type": 0,
+      "value": "Allergieën"
+    }
+  ],
+  "health_category.appointments.appointments": [
+    {
+      "type": 0,
+      "value": "Afspraken"
+    }
+  ],
+  "health_category.appointments.compositions": [
+    {
+      "type": 0,
+      "value": "Composities"
+    }
+  ],
+  "health_category.appointments.encounters": [
+    {
+      "type": 0,
+      "value": "Ontmoetingen"
+    }
+  ],
+  "health_category.appointments.hospital_admissions": [
+    {
+      "type": 0,
+      "value": "Ziekenhuisopnames"
+    }
+  ],
+  "health_category.appointments.journal_entries": [
+    {
+      "type": 0,
+      "value": "Journaalposten"
+    }
+  ],
+  "health_category.complaints.problems": [
+    {
+      "type": 0,
+      "value": "Problemen"
+    }
+  ],
+  "health_category.devices.medical_device_products": [
+    {
+      "type": 0,
+      "value": "Producten voor medische apparaten"
+    }
+  ],
+  "health_category.devices.medical_device_requests": [
+    {
+      "type": 0,
+      "value": "Aanvragen voor medische hulpmiddelen"
+    }
+  ],
+  "health_category.devices.medical_devices": [
+    {
+      "type": 0,
+      "value": "Medische apparaten"
+    }
+  ],
+  "health_category.documents.documents": [
+    {
+      "type": 0,
+      "value": "Documenten"
+    }
+  ],
+  "health_category.lab_results.gp_laboratory_results": [
+    {
+      "type": 0,
+      "value": "GP laboratoriumuitslagen"
+    }
+  ],
+  "health_category.lab_results.laboratory_results": [
+    {
+      "type": 0,
+      "value": "Laboratoriumresultaten"
+    }
+  ],
+  "health_category.lifestyle.alchoholuse": [
+    {
+      "type": 0,
+      "value": "Alcoholgebruik"
+    }
+  ],
+  "health_category.lifestyle.current_living_situation": [
+    {
+      "type": 0,
+      "value": "Huidige woonsituatie"
+    }
+  ],
+  "health_category.lifestyle.drug_use": [
+    {
+      "type": 0,
+      "value": "Drugsgebruik"
+    }
+  ],
+  "health_category.lifestyle.nutrition_advice": [
+    {
+      "type": 0,
+      "value": "Voedingsadvies"
+    }
+  ],
+  "health_category.lifestyle.tabacco_use": [
+    {
+      "type": 0,
+      "value": "Tabaksgebruik"
+    }
+  ],
+  "health_category.measurements.blood_pressure": [
+    {
+      "type": 0,
+      "value": "Bloeddruk"
+    }
+  ],
+  "health_category.measurements.body_height": [
+    {
+      "type": 0,
+      "value": "Lichaamslengte"
+    }
+  ],
+  "health_category.measurements.body_weight": [
+    {
+      "type": 0,
+      "value": "Lichaamsgewicht"
+    }
+  ],
+  "health_category.medication.administration_agreements": [
+    {
+      "type": 0,
+      "value": "Beheerovereenkomsten"
+    }
+  ],
+  "health_category.medication.medication_agreements": [
+    {
+      "type": 0,
+      "value": "Medicatie afspraken"
+    }
+  ],
+  "health_category.medication.medication_use": [
+    {
+      "type": 0,
+      "value": "Medicatie gebruik"
+    }
+  ],
+  "health_category.mental.functional_or_mental_status": [
+    {
+      "type": 0,
+      "value": "Functionele of mentale status"
+    }
+  ],
+  "health_category.patient.patient_information": [
+    {
+      "type": 0,
+      "value": "Patiëntinformatie"
+    }
+  ],
+  "health_category.patient.practitioner_information": [
+    {
+      "type": 0,
+      "value": "Praktijk informatie"
+    }
+  ],
+  "health_category.payment.get_insurance_information": [
+    {
+      "type": 0,
+      "value": "Verzekeringsinformatie"
+    }
+  ],
+  "health_category.payment.get_organization_information": [
+    {
+      "type": 0,
+      "value": "Organisatie informatie"
+    }
+  ],
+  "health_category.plans.get_advance_directives": [
+    {
+      "type": 0,
+      "value": "Voorafgaande richtlijnen"
+    }
+  ],
+  "health_category.plans.get_treatment_directives": [
+    {
+      "type": 0,
+      "value": "Behandelrichtlijnen"
+    }
+  ],
+  "health_category.treatments.episodes": [
+    {
+      "type": 0,
+      "value": "Behandelingsepisodes"
+    }
+  ],
+  "health_category.treatments.procedure_requests": [
+    {
+      "type": 0,
+      "value": "Procedure verzoeken"
+    }
+  ],
+  "health_category.treatments.procedures": [
+    {
+      "type": 0,
+      "value": "Procedures"
+    }
+  ],
+  "health_category.vaccinations.vaccination_events": [
+    {
+      "type": 0,
+      "value": "Vaccinatie evenementen"
+    }
+  ],
+  "health_category.vaccinations.vaccination_recommendations": [
+    {
+      "type": 0,
+      "value": "Aanbevelingen voor vaccinatie"
+    }
+  ],
+  "health_category.vaccinations.vaccinations": [
+    {
+      "type": 0,
+      "value": "Vaccinaties"
     }
   ],
   "ihe_mhd_minimal_document_reference.heading": [

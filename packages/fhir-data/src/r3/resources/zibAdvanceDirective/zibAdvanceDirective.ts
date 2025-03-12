@@ -5,6 +5,8 @@ import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { attachment } from '../../elements/attachment/attachment';
 import { uiSchema } from './uiSchema';
+import { typeOfLivingWillValueSet } from '../../valueSets/typeOfLivingWill';
+import { intersectCodeableConcept } from '../../../parse/helpers';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'; // NOSONAR
 
@@ -12,6 +14,11 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
  */
 function parseZibAdvanceDirective(resource: Consent) {
+    const typeOfLivingWillCodeableConcepts = intersectCodeableConcept(
+        resource.category,
+        typeOfLivingWillValueSet
+    );
+
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         category: map(resource.category, parse.codeableConcept),
@@ -24,6 +31,7 @@ function parseZibAdvanceDirective(resource: Consent) {
             reference: parse.reference(resource.sourceReference),
         },
         comment: parse.extensionNictiz(resource, 'Comment'),
+        typeOfLivingWill: map(typeOfLivingWillCodeableConcepts, parse.codeableConcept),
     };
 }
 

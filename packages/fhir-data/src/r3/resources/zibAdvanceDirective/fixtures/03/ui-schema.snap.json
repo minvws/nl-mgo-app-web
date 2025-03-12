@@ -2,15 +2,22 @@
     "label": "2018-04-09",
     "children": [
         {
-            "label": "r3.zib_advance_directive.group_details",
+            "label": "Algemeen",
             "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Aandoening",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Mondelinge afspraak"
+                },
                 {
                     "label": "Wilsverklaring type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        [
-                            "Living will and advance directive record (record artifact) (11341000146107 in code systeem http://snomed.info/sct)"
-                        ],
                         [
                             "Mondelinge afspraak (MON in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
                         ]
@@ -22,21 +29,9 @@
                     "display": "9 april 2018"
                 },
                 {
-                    "label": "Aandoening",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "Vertegenwoordiger",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "r3.zib_advance_directive.comment",
                     "type": "SINGLE_VALUE",
-                    "display": "Mondelinge afspraak"
+                    "label": "Vertegenwoordiger",
+                    "display": "Niet bekend"
                 }
             ]
         },
@@ -44,44 +39,44 @@
             "label": "r3.attachment",
             "children": [
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.contentType",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.language",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.data",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.url",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.size",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.hash",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.title",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.attachment.creation",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "r3.attachment.creation",
+                    "display": "Niet bekend"
                 }
             ]
         }
