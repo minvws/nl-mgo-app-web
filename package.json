@@ -69,9 +69,11 @@
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
-                "CVE-0000-0000": "Please provide a reason for ignoring the CVE here"
+                "CVE-2025-27789": "We don't meet the vulnerability conditions: https://github.com/advisories/GHSA-968p-4wvh-cqc8"
             },
-            "ignoreCves": []
+            "ignoreCves": [
+                "CVE-2025-27789"
+            ]
         }
     }
 }
