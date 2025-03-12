@@ -7,7 +7,8 @@ const { getDiagnosticAndLabResults } = createGeneralPractitionerService({
 });
 
 test('getDiagnosticAndLabResults', () =>
-    testRequestHandler(getDiagnosticAndLabResults, 'Observation', {
-        code: 'https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen|',
-        _include: 'Observation:related-target,Observation:specimen',
-    }));
+    testRequestHandler(getDiagnosticAndLabResults, 'Observation', [
+        ['code', 'https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen|'],
+        ['_include', 'Observation:related-target'],
+        ['_include', 'Observation:specimen'],
+    ]));

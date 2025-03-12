@@ -10,7 +10,7 @@ export function setupCompositions<V extends FhirVersion>({ getResources }: FhirC
             } as const,
             {
                 searchParams: {
-                    type: 'https://loinc.org|67781-5',
+                    type: 'http://loinc.org|67781-5', // NOSONAR,
                 },
             }
         ),

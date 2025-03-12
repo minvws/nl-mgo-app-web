@@ -6,17 +6,9 @@ export function setupDocuments<V extends FhirVersion>({
     getResource,
 }: FhirClient<V>) {
     return {
-        getDocumentReferences: partialRequest(
-            getResources,
-            {
-                resource: 'DocumentReference',
-            } as const,
-            {
-                searchParams: {
-                    status: 'current',
-                },
-            }
-        ),
+        getDocumentReferences: partialRequest(getResources, {
+            resource: 'DocumentReference',
+        } as const),
         getDocumentReference: (id: string) =>
             partialRequest(getResource, {
                 resource: 'DocumentReference',

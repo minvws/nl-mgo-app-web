@@ -6,5 +6,5 @@ const { getCompositions } = createGeneralPractitionerService({ prefixUrl: MOCK_S
 
 test('getCompositions', () =>
     testRequestHandler(getCompositions, 'Composition', {
-        type: 'https://loinc.org|67781-5',
+        type: 'http://loinc.org|67781-5',
     }));

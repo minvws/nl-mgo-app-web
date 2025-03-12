@@ -3,16 +3,8 @@ import { partialRequest } from '../../../../utils/partialRequest/partialRequest'
 
 export function setupVaccinations<V extends FhirVersion>({ getResources }: FhirClient<V>) {
     return {
-        getVaccinations: partialRequest(
-            getResources,
-            {
-                resource: 'Immunization',
-            } as const,
-            {
-                searchParams: {
-                    _include: 'patient,location,performer',
-                },
-            }
-        ),
+        getVaccinations: partialRequest(getResources, {
+            resource: 'Immunization',
+        } as const),
     };
 }

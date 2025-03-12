@@ -8,9 +8,7 @@ const { getDocumentReferences, getDocumentReference } = createPdfAService({
 });
 
 test('getDocumentReferences', () => {
-    testRequestHandler(getDocumentReferences, 'DocumentReference', {
-        status: 'current',
-    });
+    testRequestHandler(getDocumentReferences, 'DocumentReference');
 });
 
 test('getDocumentReference', () => {

@@ -9,10 +9,14 @@ export function setupObservations<V extends FhirVersion>({ getResources }: FhirC
                 resource: 'Observation',
             } as const,
             {
-                searchParams: {
-                    code: 'https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen|',
-                    _include: 'Observation:related-target,Observation:specimen',
-                },
+                searchParams: [
+                    [
+                        'code',
+                        'https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen|',
+                    ],
+                    ['_include', 'Observation:related-target'],
+                    ['_include', 'Observation:specimen'],
+                ],
             }
         ),
     };
