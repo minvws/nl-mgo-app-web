@@ -32,6 +32,7 @@
         "system": "http://unitsofmeasure.org",
         "code": "kg"
     },
+    "valueCodeableConcept": null,
     "effectivePeriod": null,
     "dataAbsentReason": null,
     "method": null,

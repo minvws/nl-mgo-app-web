@@ -1,62 +1,53 @@
 {
-    "label": "18cc8831-8fdf-11ec-2010-020000000000",
+    "label": "Alcohol gebruik",
     "children": [
         {
-            "label": "r3.nl_core_observation.group_details",
+            "label": "Algemeen",
             "children": [
                 {
-                    "label": "r3.nl_core_observation.identifier",
+                    "label": "Start datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1980"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Stop datum",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Alcohol gebruik status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Current drinker of alcohol (219006 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Toelichting",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "4 glasses per week"
+                },
+                {
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "18cc8831-8fdf-11ec-2010-020000000000"
                     ]
                 },
                 {
-                    "label": "r3.nl_core_observation.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "r3.nl_core_observation.category",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.nl_core_observation.subject",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.nl_core_observation.context",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1980"
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.data_absent_reason",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.nl_core_observation.comment",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.body_site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "label": "Verantwoordelijk",
+                    "display": "Niet bekend"
                 }
             ]
         }

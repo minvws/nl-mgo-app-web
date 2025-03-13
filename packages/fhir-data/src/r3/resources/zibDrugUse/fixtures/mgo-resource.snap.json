@@ -15,6 +15,16 @@
     },
     "context": null,
     "valueQuantity": null,
+    "valueCodeableConcept": {
+        "text": null,
+        "coding": [
+            {
+                "code": "44870007",
+                "display": "Misused drugs in past (finding)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "effectivePeriod": {
         "start": "1981",
         "end": "1983"

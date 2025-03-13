@@ -19,6 +19,7 @@ export function parseNlCoreObservationBase(resource: Observation) {
         subject: parse.reference(resource.subject),
         context: parse.reference(resource.context),
         valueQuantity: parse.quantity(resource.valueQuantity),
+        valueCodeableConcept: parse.codeableConcept(resource.valueCodeableConcept),
         effectivePeriod: parse.period(resource.effectivePeriod),
         dataAbsentReason: parse.codeableConcept(resource.dataAbsentReason),
         method: parse.codeableConcept(resource.method),

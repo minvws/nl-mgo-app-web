@@ -15,6 +15,16 @@
     },
     "context": null,
     "valueQuantity": null,
+    "valueCodeableConcept": {
+        "text": null,
+        "coding": [
+            {
+                "code": "219006",
+                "display": "Current drinker of alcohol",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "effectivePeriod": {
         "start": "1980",
         "end": null
@@ -27,5 +37,15 @@
     "referenceId": "Observation/zib-alcoholuse-01",
     "resourceType": "Observation",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse",
-    "fhirVersion": "R3"
+    "fhirVersion": "R3",
+    "component": {
+        "amount": {
+            "value": 4,
+            "comparator": null,
+            "unit": "glasses per week",
+            "system": "http://unitsofmeasure.org",
+            "code": "{glasses}/wk"
+        }
+    },
+    "performer": null
 }

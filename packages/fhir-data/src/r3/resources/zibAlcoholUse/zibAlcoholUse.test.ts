@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
 import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
@@ -17,5 +17,7 @@ test('uiSchema returns the expected output', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
+    );
 });

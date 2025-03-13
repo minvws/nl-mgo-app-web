@@ -197,6 +197,24 @@
       "value": "Toelichting"
     }
   ],
+  "r3.zib_alcohol_use.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
+  "r3.zib_alcohol_use.performer": [
+    {
+      "type": 0,
+      "value": "Verantwoordelijk"
+    }
+  ],
+  "r3.zib_alcohol_use.subject": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
   "r3.zib_alert": [
     {
       "type": 0,

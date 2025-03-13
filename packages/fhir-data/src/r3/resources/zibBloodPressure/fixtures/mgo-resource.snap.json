@@ -26,6 +26,7 @@
     },
     "context": null,
     "valueQuantity": null,
+    "valueCodeableConcept": null,
     "effectivePeriod": null,
     "dataAbsentReason": null,
     "method": {

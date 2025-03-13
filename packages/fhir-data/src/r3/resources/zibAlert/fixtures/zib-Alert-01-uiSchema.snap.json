@@ -37,10 +37,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Auteur",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "display": "Niet bekend"
                 }
             ]
         }

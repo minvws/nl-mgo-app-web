@@ -1,4 +1,4 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Flag } from 'fhir/r3';
 import { expect, test } from 'vitest';
@@ -19,7 +19,9 @@ test('uiSchema returns the expected output', async () => {
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/zib-Alert-01-uiSchema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/zib-Alert-01-uiSchema.snap.json'
+    );
 });
 
 test('uiSchema returns default label if code not supplied', () => {
