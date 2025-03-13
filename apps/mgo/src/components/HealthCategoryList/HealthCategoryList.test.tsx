@@ -1,7 +1,6 @@
 import { HealthCategory } from '$/healthCategory';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { appMessageRegexp } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
@@ -12,7 +11,7 @@ test('HealthCategoryList with organization filter', () => {
     setupWithAppProviders(<HealthCategoryList organization={organization} />);
 
     Object.values(HealthCategory).forEach((category) => {
-        const name = appMessageRegexp(`hc_${category}.heading` as AppMessagesIds);
+        const name = appMessageRegexp(`hc_${category}.heading`);
         expect(
             screen.getByRole('link', {
                 name: name,
@@ -25,7 +24,7 @@ test('HealthCategoryList without organization filter', () => {
     setupWithAppProviders(<HealthCategoryList />);
 
     Object.values(HealthCategory).forEach((category) => {
-        const name = appMessageRegexp(`hc_${category}.heading` as AppMessagesIds);
+        const name = appMessageRegexp(`hc_${category}.heading`);
         expect(
             screen.getByRole('link', {
                 name: name,

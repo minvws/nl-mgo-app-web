@@ -16,11 +16,17 @@ import { getVitalsData } from './vitals';
 import { getProcedureData } from './procedure';
 import { getDocumentsData } from './documents';
 import { getLaboratoryResultData } from './laboratoryResults';
+import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
+
+export interface SubCategoryData {
+    label: AppMessagesIds;
+    data: unknown[];
+}
 
 type HealthCategoryResources = (
     resources: ResourcesState,
     organizationIds?: (string | undefined)[]
-) => Record<string, unknown>;
+) => Record<string, SubCategoryData>;
 
 export const healthCategoryData = {
     [HealthCategory.PersonalInformation]: getPersonalInformationData,

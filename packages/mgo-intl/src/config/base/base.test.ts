@@ -36,3 +36,12 @@ test('does throw other errors than missing translation when missing translation 
         intl.onError(new Error(faker.lorem.sentence()) as MissingTranslationError)
     ).toThrow();
 });
+
+test('does throw error when missing translations are not ignored', () => {
+    const intl = createIntl({ locale: Locale.NL_NL });
+    expect(() =>
+        intl.onError(
+            new Error('[@formatjs/intl Error MISSING_TRANSLATION]') as MissingTranslationError
+        )
+    ).toThrow();
+});

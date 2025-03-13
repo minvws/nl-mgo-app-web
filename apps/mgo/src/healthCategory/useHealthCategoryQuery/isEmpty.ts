@@ -2,5 +2,5 @@ import { type HealthCategoryData } from '../useHealthCategoryData/useHealthCateg
 
 export function isEmpty(data: HealthCategoryData | undefined) {
     if (!data) return true;
-    return !Object.values(data).some((x) => Array.isArray(x) && x.length > 0);
+    return !Object.values(data).some((x) => Array.isArray(x.data) && x.data.length > 0);
 }

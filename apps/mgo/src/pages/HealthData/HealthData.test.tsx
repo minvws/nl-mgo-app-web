@@ -4,7 +4,6 @@ import { Navigate, useParams } from '$/routing';
 import { useResourcesStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
@@ -42,9 +41,7 @@ test('shows the summary by default', async () => {
     setupWithAppProviders(<HealthData />);
 
     await waitFor(() =>
-        expect(document.title).toContain(
-            appMessage('hc_medication.heading_summary' as AppMessagesIds)
-        )
+        expect(document.title).toContain(appMessage('hc_medication.heading_summary'))
     );
     const uiSchemaComponent = screen.getByTestId('ui-schema');
     expect(uiSchemaComponent).toHaveTextContent('showDetails: false');

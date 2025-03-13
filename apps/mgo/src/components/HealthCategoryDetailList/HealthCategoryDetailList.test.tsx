@@ -1,4 +1,3 @@
-import { HealthCategory } from '$/healthCategory';
 import { useOrganizationsStore, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
@@ -26,7 +25,6 @@ test('shows HealthCategoryDetailList with organization', () => {
 
     const label = faker.lorem.words();
     const props: HealthCategoryDetailListProps = {
-        category: HealthCategory.PersonalInformation,
         heading: 'patient_information',
         resources: [
             {
@@ -45,7 +43,6 @@ test('shows HealthCategoryDetailList with organization', () => {
 test('shows HealthCategoryDetailList without organization', () => {
     const label = faker.lorem.words();
     const props: HealthCategoryDetailListProps = {
-        category: HealthCategory.PersonalInformation,
         heading: 'patient_information',
         resources: [
             {

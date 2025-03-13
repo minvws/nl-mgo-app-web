@@ -8,7 +8,6 @@ import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { screen, within } from '@testing-library/react';
@@ -76,15 +75,24 @@ test('loads and shows category content', async () => {
         isError: false,
         isEmpty: false,
         data: {
-            medicationUse: [],
-            medicationAgreements: [],
-            administrationAgreements: [],
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
         } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 
     rerender(<HealthCategory />);
     screen.getByRole('heading', {
-        name: appMessage('health_category.medication.medication_use' as AppMessagesIds),
+        name: appMessage('health_category.medication.medication_use'),
         level: 2,
     });
 });
@@ -109,9 +117,18 @@ test('loads and receives error from category query', async () => {
         isError: true,
         isEmpty: false,
         data: {
-            medicationUse: [],
-            medicationAgreements: [],
-            administrationAgreements: [],
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
         } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 
@@ -133,9 +150,18 @@ test('loads and receives no data from category query', async () => {
         isError: false,
         isEmpty: true,
         data: {
-            medicationUse: [],
-            medicationAgreements: [],
-            administrationAgreements: [],
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
         } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 
@@ -180,9 +206,18 @@ test('invalidates queries when clicking retry button', async () => {
         isError: true,
         isEmpty: true,
         data: {
-            medicationUse: [],
-            medicationAgreements: [],
-            administrationAgreements: [],
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
         } as HealthCategoryData<typeof HealthCategoryEnum.Medication>,
     }));
 

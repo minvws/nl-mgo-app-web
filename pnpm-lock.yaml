@@ -207,6 +207,9 @@ importers:
       msw:
         specifier: ^2.4.5
         version: 2.7.3(@types/node@22.13.9)(typescript@5.8.2)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.8.2
 
   packages/fhir-client:
     dependencies:

@@ -120,9 +120,18 @@ test('returns query state and related store data for medication ', async () => {
         isError: false,
         isEmpty: false,
         data: {
-            administrationAgreements: [],
-            medicationAgreements: [],
-            medicationUse: [resource],
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [resource],
+            },
         },
     });
 });
@@ -157,9 +166,18 @@ test('can handle errors', async () => {
         isError: true,
         isEmpty: true,
         data: {
-            administrationAgreements: [],
-            medicationAgreements: [],
-            medicationUse: [],
+            administrationAgreements: {
+                label: 'health_category.medication.administration_agreements',
+                data: [],
+            },
+            medicationAgreements: {
+                label: 'health_category.medication.medication_agreements',
+                data: [],
+            },
+            medicationUse: {
+                label: 'health_category.medication.medication_use',
+                data: [],
+            },
         },
     });
 });

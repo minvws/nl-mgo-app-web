@@ -1,4 +1,4 @@
-import { HealthCategory } from '$/healthCategory';
+import { type SubCategoryData } from '$/healthCategory/useHealthCategoryData/categories';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
@@ -8,11 +8,16 @@ import { HealthCategoryContent } from './HealthCategoryContent';
 
 test('show HealthCategoryContent for category', () => {
     const props = {
-        category: HealthCategory.PersonalInformation,
         data: {
-            patientInformation: [],
-            practitionerInformation: [],
-        },
+            patientInformation: {
+                label: 'health_category.patient.patient_information',
+                data: [],
+            },
+            practitionerInformation: {
+                label: 'health_category.patient.practitioner_information',
+                data: [],
+            },
+        } satisfies Record<string, SubCategoryData>,
     };
 
     setupWithAppProviders(<HealthCategoryContent {...props} />);
@@ -24,12 +29,7 @@ test('show HealthCategoryContent for category', () => {
 });
 
 test('HealthCategoryContent should be empty when no data is supplied', () => {
-    setupWithAppProviders(
-        <HealthCategoryContent
-            category={'test' as HealthCategory}
-            data={{} as HealthCategoryData}
-        />
-    );
+    setupWithAppProviders(<HealthCategoryContent data={{} as HealthCategoryData} />);
 
     expect(screen.queryByRole('link')).toBeNull();
 });
