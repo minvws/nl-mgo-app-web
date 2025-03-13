@@ -21,6 +21,11 @@ function parseZibAlert(resource: Flag) {
         period: parse.period(resource.period),
         encounter: parse.reference(resource.encounter),
         author: parse.reference(resource.author),
+        concernReference: parse.extension(
+            resource,
+            'http://hl7.org/fhir/StructureDefinition/flag-detail', // NOSONAR
+            'reference'
+        ),
     };
 }
 

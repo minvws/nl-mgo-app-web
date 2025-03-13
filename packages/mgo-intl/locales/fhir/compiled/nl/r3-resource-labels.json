@@ -203,6 +203,18 @@
       "value": "Alert"
     }
   ],
+  "r3.zib_alert.author": [
+    {
+      "type": 0,
+      "value": "Auteur"
+    }
+  ],
+  "r3.zib_alert.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.context": [
     {
       "type": 0,

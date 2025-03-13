@@ -1,25 +1,34 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
-import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAlert } from './zibAlert';
 
 export const i18n = 'r3.zib_alert';
 export const uiSchema: HealthUiSchemaFunction<ZibAlert> = (resource, context) => {
-    const ui = context.ui as NonStrictUi;
+    const { ui, formatMessage } = context;
+
+    const hcimAlert = {
+        Condition: ui.reference(`${i18n}.concern_reference`, resource.concernReference),
+        AlertType: ui.codeableConcept(`${i18n}.category`, resource.category),
+        AlertName: ui.codeableConcept(`${i18n}.code`, resource.code),
+        StartDateTime: ui.dateTime(`${i18n}.period.start`, resource.period?.start),
+    };
+
+    const hcimBasicElements = {
+        IdentificationNumber: ui.identifier(`${i18n}.identifier`, resource.identifier),
+        Author: ui.reference(`${i18n}.author`, resource.author),
+    };
 
     return {
-        label: resource.code?.coding?.[0]?.display ?? context.formatMessage(i18n),
+        label: formatMessage(i18n),
         children: [
             {
-                label: `${i18n}.group_general_information`,
+                label: resource.code?.coding?.[0]?.display ?? context.formatMessage(i18n),
                 children: [
-                    ui.identifier(`${i18n}.identifier`, resource.identifier),
-                    ui.code(`${i18n}.status`, resource.status),
-                    ui.codeableConcept(`${i18n}.category`, resource.category),
-                    ui.codeableConcept(`${i18n}.code`, resource.code),
-                    ui.reference(`${i18n}.subject`, resource.subject),
-                    ...ui.period(`${i18n}.period`, resource.period),
-                    ui.reference(`${i18n}.encounter`, resource.encounter),
-                    ui.reference(`${i18n}.author`, resource.author),
+                    hcimAlert.Condition,
+                    hcimAlert.AlertType,
+                    hcimAlert.AlertName,
+                    hcimAlert.StartDateTime,
+                    hcimBasicElements.IdentificationNumber,
+                    hcimBasicElements.Author,
                 ],
             },
         ],
