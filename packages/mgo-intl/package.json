@@ -32,6 +32,6 @@
         "prettier": "^3.5.1",
         "sanitize-html": "^2.14.0",
         "type-fest": "^4.23.0",
-        "vitest": "^3.0.8"
+        "vitest": "^3.0.9"
     }
 }
