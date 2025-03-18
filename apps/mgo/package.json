@@ -1,7 +1,11 @@
 {
+    "name": "@minvws/mgo-apps-mgo",
     "private": true,
     "license": "UNLICENSED",
     "type": "module",
+    "exports": {
+        ".": "./src/index.ts"
+    },
     "scripts": {
         "dev": "vite",
         "test": "vitest",

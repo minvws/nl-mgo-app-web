@@ -2,6 +2,7 @@ const configFiles = [
     'vitest.workspace.mts',
     '*.config.mts',
     '*.config.ts',
+    '*.config.*.ts',
     '*.config.js',
     'packages/mgo-ui/docs/*',
     'packages/fhir-data/schema-generator/*',

@@ -1,8 +1,7 @@
-**/node_modules
-**/__mocks__
-**/fixtures
+**/node_modules/
+**/__mocks__/
+**/fixtures/
 
-apps/e2e-tests
 apps/mgo/dist
 apps/mgo/test
 

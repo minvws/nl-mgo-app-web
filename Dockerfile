@@ -2,35 +2,41 @@
 #
 # Enables --parents syntax for COPY - see: https://docs.docker.com/build/buildkit/dockerfile-release-notes/#170
 
-ARG NODE_VERSION=20.11.1
-ARG NGINX_VERSION=1.26.3
+ARG NODE_VERSION
+ARG NGINX_VERSION
 
-FROM node:${NODE_VERSION}-alpine AS installer
+#
+FROM node:${NODE_VERSION}-slim AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+#
+FROM base AS installer
 
 WORKDIR /app
 
 COPY --parents packages/*/package.json .
-COPY ./apps/mgo/package.json ./apps/mgo/
+COPY --parents apps/*/package.json .
 COPY ./package.json .
 COPY ./pnpm-*.yaml .
 
-RUN corepack enable
-RUN pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-FROM node:${NODE_VERSION}-alpine AS builder
+#
+FROM base AS builder
 
-WORKDIR /app
 COPY --from=installer /app /app
-COPY . ./
+COPY . ./app
 
 WORKDIR /app/apps/mgo
 
-RUN corepack enable
 RUN pnpm run build
 
-FROM nginx:${NGINX_VERSION}-alpine
+#
+FROM nginx:${NGINX_VERSION}-alpine-slim
 
-ARG PORT
 ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
 ARG DVA_URL='https://dva.test.mgo.irealisatie.nl'

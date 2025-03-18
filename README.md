@@ -1,6 +1,6 @@
 # Mijn Gezondheidsoverzicht (web)
 
-This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and components. It is a monorepository which contains multiple individual apps and packages. To [learn more about the MGO app itself][mgo-about] please visit the about page.
+This repository contains the "Mijn Gezondheidsoverzicht", or MGO, application and components. It is a monorepo which contains multiple individual apps and packages. To [learn more about the MGO app itself][mgo-about] please visit the `about` page.
 
 ## Documentation
 
@@ -13,45 +13,46 @@ This repository contains the "Mijn Gezondheidsoverzicht" or MGO, application and
 
 ## Directory structure
 
-This repository is a monorepository in that all directories under `apps/*` and `packages/*` are condisered their own individual package and contain their own dependencies and scripts. A few things are organised at the root level, such as formatting and linting.
+This repository is a monorepo in that all directories under `apps/*` and `packages/*` are condisered their own individual package and contain their own dependencies and scripts. Only a few things are organised at the root level, such as formatting and linting.
 
-    .
-    ├── apps
-    │    └── mgo                # The main MGO application
-    │    └── e2e-tests          # End-to-end tests for the mgo application
-    ├── packages
-    │    ├── data-services      # HTTP client for making requests to data services
-    │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
-    │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
-    │    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
-    │    ├── mgo-ui             # UI library for the MGO app
-    │    ├── mgo-intl           # Contains all the text content and translations for the MGO app and the "health ui schema"'s
-    │    └── tailwind           # MGO Tailwind theme
-    ├── docs
-    │    └── ...                # Documentation files
-    ├── LICENSE
-    └── README.md               <-- you are here
+```shell
+├── apps
+│    └── mgo                # The main MGO application
+│    └── e2e-tests          # End-to-end tests for the mgo application
+├── packages
+│    ├── data-services      # HTTP client for making requests to data services
+│    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
+│    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
+│    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
+│    ├── mgo-ui             # UI library for the MGO app
+│    ├── mgo-intl           # Contains all the text content and translations for the MGO app and the "health ui schema"'s
+│    └── tailwind           # MGO Tailwind theme
+├── docs
+│    └── ...                # Documentation files
+├── LICENSE
+└── README.md               <-- you are here
+```
 
 ## Quick run
 
-To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development][mgo-development] instructions instead. To run the MGO app locally using docker ensure you have the latest [Docker (Desktop) installed][docker]
+To run the MGO app locally there is a `docker-compose` configuration available. This is only meant for testing the application, **it is not to be used in production**. For actual development, we recommend you use the [Development][mgo-development] instructions instead. To run the MGO app locally using docker, ensure you have the latest [Docker (Desktop) installed][docker].
 
 ```sh
 # Build and run a local test server using docker
-docker compose build && docker compose up mgo -d
+docker compose up --build mgo
 # Stop local test server
 docker compose down
 ```
 
-By default it will connect to the test environments, however this can be changed by placing a `.env` at the root. You can copy the `.env.example` for some default values.
+By default it will connect to the test environments, however this can be changed by adding a `.env` at the root. You can copy the `.env.example` for some default values.
 
 > After changing `.env` values you will have to **rebuild** and **restart** the container. (Rerun the first command above)
 
 ## Scripts
 
-Once you have a [local development environment][mgo-development]] set up there are several `pnpm` scripts you can run from this root directory. To run a command, open a new terminal from this root directory and enter the following command:
+Once you have a [local development environment][mgo-development]] set up, there are several `pnpm` scripts you can run from this root directory. To run a command, open a new terminal from this root directory and enter the following command:
 
-```
+```bash
 pnpm run <command>
 ```
 
