@@ -4,10 +4,9 @@ import {
     type Location as RouterLocation,
 } from 'react-router-dom';
 import { type RouteConfigPaths } from './routes';
-import { type AuthErrorState } from '$/hooks/useAuthError/useAuthError';
 
 export type LocationState = {
-    readonly authError?: AuthErrorState;
+    // add location states here
 };
 
 type Location = Override<RouterLocation<LocationState>, { pathname: RouteConfigPaths }>;

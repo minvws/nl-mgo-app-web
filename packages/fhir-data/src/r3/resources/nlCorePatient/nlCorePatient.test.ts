@@ -6,12 +6,12 @@ import input01 from './fixtures/nl-core-Patient-01.json';
 import { nlCorePatient } from './nlCorePatient';
 import { i18n } from './uiSchema';
 
-test('parseNlCorePatient returns the expected output 01', () => {
+test('parseNlCorePatient returns the expected output 01', async () => {
     const output = nlCorePatient.parse(input01 as Patient);
-    expectJson(output).toMatchFileSnapshot('./fixtures/nl-core-Patient-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/nl-core-Patient-01-output.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = nlCorePatient.parse(input01 as Patient);
     const zibUiSchema = nlCorePatient.uiSchema(
         output,
@@ -19,7 +19,9 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/nl-core-Patient-01-uiSchema.snap.json');
+    await expectJson(zibUiSchema).toMatchFileSnapshot(
+        './fixtures/nl-core-Patient-01-uiSchema.snap.json'
+    );
 });
 
 test('uiSchema returns default label if name not supplied', () => {

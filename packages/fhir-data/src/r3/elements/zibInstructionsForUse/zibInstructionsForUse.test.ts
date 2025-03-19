@@ -8,42 +8,46 @@ import { summary } from './summary';
 import { uiSchemaGroup } from './uiSchemaGroup';
 import { zibInstructionsForUse } from './zibInstructionsForUse';
 
-test('01 mgo-resource', () => {
+test('01 mgo-resource', async () => {
     const output = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('01 ui-schema', () => {
+test('01 ui-schema', async () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
     const schema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/01/ui-schema-group.snap.json'
     );
 });
 
-test('01 summary', () => {
+test('01 summary', async () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData01 as Dosage);
     const schema = summary(zibData, testUiSchemaContext());
-    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/01/summary.snap.json');
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/01/summary.snap.json'
+    );
 });
 
-test('02 mgo-resource', () => {
+test('02 mgo-resource', async () => {
     const output = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('02 ui-schema', () => {
+test('02 ui-schema', async () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
     const schema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/02/ui-schema-group.snap.json'
     );
 });
 
-test('02 summary', () => {
+test('02 summary', async () => {
     const zibData = zibInstructionsForUse.parse(inputFhirData02 as Dosage);
     const schema = summary(zibData, testUiSchemaContext());
-    expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot('./fixtures/02/summary.snap.json');
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/02/summary.snap.json'
+    );
 });
 
 test('zibInstructionsForUse parses successfully', () => {

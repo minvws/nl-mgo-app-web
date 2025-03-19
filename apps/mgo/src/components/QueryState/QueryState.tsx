@@ -1,9 +1,9 @@
+import { Card, Render, type RenderProps } from '@minvws/mgo-mgo-ui';
 import { type DefaultError as DefaultQueryError, type UseQueryResult } from '@tanstack/react-query';
 import { Fragment, type ReactNode } from 'react';
 import { QueryStateError } from './QueryStateError';
 import { QueryStateLoading } from './QueryStateLoading';
 import { QueryStateNoResult } from './QueryStateNoResult';
-import { Card, Render, type RenderProps } from '@minvws/mgo-mgo-ui';
 
 export type QueryStateProps<TData = unknown, TError = DefaultQueryError> = Pick<
     UseQueryResult<TData, TError>,

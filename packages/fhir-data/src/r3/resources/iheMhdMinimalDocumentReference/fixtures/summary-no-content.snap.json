@@ -42,6 +42,11 @@
                     "display": [
                         "De Hoed"
                     ]
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
                 }
             ]
         },

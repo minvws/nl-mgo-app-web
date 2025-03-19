@@ -12,7 +12,7 @@ export function setupFunctionalStatus<V extends FhirVersion>({ getResources }: F
             {
                 searchParams: {
                     category: [
-                        'http://snomed.info/sct|11291000146105', // NOSONAR
+                        'http://snomed.info/sct|118228005', // NOSONAR
                         'http://snomed.info/sct|384821006', // NOSONAR
                     ].join(','),
                 },

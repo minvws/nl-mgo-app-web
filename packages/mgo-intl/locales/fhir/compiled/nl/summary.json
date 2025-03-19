@@ -5,6 +5,12 @@
       "value": "Opties"
     }
   ],
+  "summary.organization": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
   "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": [
     {
       "type": 0,

@@ -6,12 +6,12 @@ import input01 from './fixtures/zib-Payer-01.json';
 import { i18n } from './uiSchema';
 import { zibPayer } from './zibPayer';
 
-test('parseZibPayer returns the expected output 01', () => {
+test('parseZibPayer returns the expected output 01', async () => {
     const output = zibPayer.parse(input01 as Coverage);
-    expectJson(output).toMatchFileSnapshot('./fixtures/zib-Payer-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/zib-Payer-01-output.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const output = zibPayer.parse(input01 as Coverage);
     const zibPayerUiSchema = zibPayer.uiSchema(
         output,
@@ -19,7 +19,9 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibPayerUiSchema).toMatchFileSnapshot('./fixtures/zib-Payer-01-uiSchema.snap.json');
+    await expectJson(zibPayerUiSchema).toMatchFileSnapshot(
+        './fixtures/zib-Payer-01-uiSchema.snap.json'
+    );
 });
 
 test('uiSchema returns default label if identifier not supplied', () => {

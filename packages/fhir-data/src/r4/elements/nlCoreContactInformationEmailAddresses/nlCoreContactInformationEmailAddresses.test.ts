@@ -1,8 +1,8 @@
-import { expect, test } from 'vitest';
-import { nlCoreContactInformationEmailAddresses } from './nlCoreContactInformationEmailAddresses';
 import { expectJson, faker, testUiSchemaContext } from '$test';
 import { type ContactPoint } from 'fhir/r4';
+import { expect, test } from 'vitest';
 import inputContactPoint01 from './fixtures/01/fhir-resource.json';
+import { nlCoreContactInformationEmailAddresses } from './nlCoreContactInformationEmailAddresses';
 
 test('returns undefined if the data is undefined', () => {
     const input = undefined;
@@ -18,18 +18,18 @@ test('returns undefined if system is not email', () => {
     expect(zibData).toBeUndefined();
 });
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const address = inputContactPoint01 as ContactPoint;
     const output = nlCoreContactInformationEmailAddresses.parse(address);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const address = inputContactPoint01 as ContactPoint;
     const output = nlCoreContactInformationEmailAddresses.parse(address);
     const uiSchemaGroup = nlCoreContactInformationEmailAddresses.uiSchemaGroup(
         output!,
         testUiSchemaContext()
     );
-    expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
+    await expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });

@@ -31,11 +31,10 @@ RUN pnpm run build
 FROM nginx:${NGINX_VERSION}-alpine
 
 ARG PORT
-ARG OIDC_AUTHORITY='https://max.test.mgo.irealisatie.nl'
+ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
 ARG DVA_URL='https://dva.test.mgo.irealisatie.nl'
 
-ENV OIDC_AUTHORITY=$OIDC_AUTHORITY
 ENV LOAD_URL=$LOAD_URL
 ENV DVA_URL=$DVA_URL
 ENV NGINX_PORT=8080
@@ -47,9 +46,7 @@ COPY nginx.conf /etc/nginx/templates/nginx.conf.template
 # Write envs to the config file that is read by the app
 RUN echo -en "// This config was generated from the Dockerfile\n""\
 window.config = {\n""\
-  oidc_authority: '$OIDC_AUTHORITY',\n""\
-  oidc_client_id: 'mgo_dev',\n""\
-  oidc_redirect_uri: 'http://localhost:$PORT',\n""\
+  ignore_missing_translations: '$IGNORE_MISSING_TRANSLATIONS',\n""\
   load_url: '$LOAD_URL',\n""\
   dva_url: '$DVA_URL'\n""\
 };" >/usr/share/nginx/html/config.js

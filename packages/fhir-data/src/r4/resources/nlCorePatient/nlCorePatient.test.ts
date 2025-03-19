@@ -6,12 +6,12 @@ import input01 from './fixtures/fhir-resource.json';
 import { r4NlCorePatient } from './nlCorePatient';
 import { i18n } from './uiSchema';
 
-test('parseNlCorePatient returns the expected output 01', () => {
+test('parseNlCorePatient returns the expected output 01', async () => {
     const output = r4NlCorePatient.parse(input01 as Patient);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const zibData = r4NlCorePatient.parse(input01 as Patient);
     const zibUiSchema = r4NlCorePatient.uiSchema(
         zibData,
@@ -19,7 +19,7 @@ test('uiSchema returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
+    await expectJson(zibUiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if name not supplied', () => {

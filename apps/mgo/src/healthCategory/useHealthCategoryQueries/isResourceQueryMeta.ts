@@ -8,10 +8,6 @@ export interface ResourceQueryMeta {
     fhirVersion: FhirVersion;
 }
 
-declare module '@tanstack/react-query' {
-    interface QueryMeta extends ResourceQueryMeta {}
-}
-
 export function isResourceQueryMeta(value: unknown): value is ResourceQueryMeta {
     return (
         typeof value === 'object' &&

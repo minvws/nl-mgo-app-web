@@ -5,9 +5,11 @@ import { Card, type CardProps } from '../Card/Card';
 import { type IconName } from '../Icon/icons';
 import { IconButton } from '../IconButton/IconButton';
 import { Stack } from '../Stack/Stack';
+import { useUniqueId } from '../../hooks';
 
 export type HealthcareOrganizationCardProps = Omit<CardProps, 'title' | 'asChild'> & {
     readonly title: ReactNode;
+    readonly titleTag?: Extract<'h2' | 'h3' | 'h4', keyof HTMLElementTagNameMap>;
     readonly subTitle?: ReactNode;
     readonly meta?: ReactNode;
     readonly icon: Extract<IconName, 'add' | 'chevron-right' | 'delete'>;
@@ -17,6 +19,7 @@ export type HealthcareOrganizationCardProps = Omit<CardProps, 'title' | 'asChild
 
 export const HealthcareOrganizationCard = ({
     title,
+    titleTag = 'h2',
     subTitle,
     meta,
     className,
@@ -26,6 +29,9 @@ export const HealthcareOrganizationCard = ({
     onActionClick,
     ...rest
 }: HealthcareOrganizationCardProps) => {
+    const uniqueId = useUniqueId('healthcare_organization_card');
+    const TitleComp = titleTag;
+
     return (
         <Card
             className={cn(
@@ -36,7 +42,9 @@ export const HealthcareOrganizationCard = ({
             {...rest}
         >
             <Stack className="text-md flex-grow items-start gap-0 text-left">
-                <span className="mb-1 font-bold text-black dark:text-white">{title}</span>
+                <TitleComp id={uniqueId} className="font-bold text-black dark:text-white">
+                    {title}
+                </TitleComp>
                 {subTitle && <span className="text-gray-950 dark:text-gray-100">{subTitle}</span>}
                 {meta && <span className="italic text-gray-600 dark:text-gray-300">{meta}</span>}
                 {children}
@@ -56,6 +64,7 @@ export const HealthcareOrganizationCard = ({
                     }
                     icon={icon}
                     aria-label={iconAriaLabel}
+                    aria-labelledby={uniqueId}
                 />
             </div>
         </Card>

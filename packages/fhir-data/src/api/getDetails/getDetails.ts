@@ -7,9 +7,13 @@ import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type MgoResource } from '../resources/resources';
 
+export type HealthUiSchemaOrganization = {
+    name: string;
+};
 export interface HealthUiSchemaOptions<V extends `${FhirVersion}`> {
     locale?: Locale;
     resources?: MgoResource<V>[];
+    organization?: HealthUiSchemaOrganization;
 }
 
 export function getDetails<T extends MgoResourceMeta>(

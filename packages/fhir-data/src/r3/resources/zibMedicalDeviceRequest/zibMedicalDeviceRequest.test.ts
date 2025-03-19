@@ -7,17 +7,17 @@ import input2 from './fixtures/02/fhir-resource.json';
 import { i18n } from './uiSchema';
 import { zibMedicalDeviceRequest } from './zibMedicalDeviceRequest';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibMedicalDeviceRequest.parse(input1 as DeviceRequest);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', () => {
+test('returns the expected output 02', async () => {
     const output = zibMedicalDeviceRequest.parse(input2 as DeviceRequest);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema 01 returns the expected output', () => {
+test('uiSchema 01 returns the expected output', async () => {
     const output = zibMedicalDeviceRequest.parse(input1 as DeviceRequest);
     const uiSchema = zibMedicalDeviceRequest.uiSchema(
         output,
@@ -25,10 +25,10 @@ test('uiSchema 01 returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('uiSchema 02 returns the expected output', () => {
+test('uiSchema 02 returns the expected output', async () => {
     const output = zibMedicalDeviceRequest.parse(input2 as DeviceRequest);
     const uiSchema = zibMedicalDeviceRequest.uiSchema(
         output,
@@ -36,7 +36,7 @@ test('uiSchema 02 returns the expected output', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if occurrence not supplied', () => {

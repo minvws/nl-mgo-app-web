@@ -1,17 +1,9 @@
 import { cleanup, configure } from '@testing-library/react';
-import type { ReactNode } from 'react';
 import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
 import { useConfig } from '@minvws/mgo-mgo-ui';
-import {
-    authState,
-    removeUserMock,
-    resetAuthState,
-    signinRedirectMock,
-    signoutRedirectMock,
-} from './helpers/auth';
 
 configure({
     // Remove the huge error output from `testing-library`
@@ -29,9 +21,6 @@ vi.mock(
     () =>
         ({
             config: {
-                oidc_authority: 'http://localhost:5000',
-                oidc_client_id: 'client_id',
-                oidc_redirect_uri: 'http://localhost:3000',
                 load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
                 dva_url: 'https://dva.test.mgo.irealisatie.nl',
             },
@@ -39,25 +28,10 @@ vi.mock(
 );
 
 vi.mock('zustand');
-vi.mock('react-oidc-context', () => ({
-    AuthProvider: ({ children }: { children: ReactNode }) => children,
-    /**
-     * To control this mocked useAuth, import `authState` from test/auth.ts into
-     * your test, mutate its properties and rerender to apply.
-     * NB: the return value of this mock satisfies the full AuthState interface,
-     * but only partially satisfies AuthContextProps.
-     */
-    useAuth: () => ({
-        ...authState,
-        signinRedirect: signinRedirectMock,
-        removeUser: removeUserMock,
-        signoutRedirect: signoutRedirectMock,
-        settings: {},
-    }),
-}));
 
 throwOnConsoleLog({
     logMethods: ['warn', 'error'],
+    ignoreMessages: [/React Router Future Flag Warning:/],
 });
 
 window.scrollTo = vi.fn;
@@ -74,6 +48,5 @@ beforeEach(() => {
 
 afterEach(() => {
     localStorage.clear();
-    resetAuthState();
     cleanup();
 });

@@ -15,6 +15,16 @@
     },
     "context": null,
     "valueQuantity": null,
+    "valueCodeableConcept": {
+        "text": null,
+        "coding": [
+            {
+                "code": "8517006",
+                "display": "Ex-smoker (finding)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "effectivePeriod": {
         "start": "1980",
         "end": "1983"

@@ -67,6 +67,11 @@
                     "type": "SINGLE_VALUE",
                     "label": "Specialist",
                     "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "display": "Niet bekend"
                 }
             ]
         },

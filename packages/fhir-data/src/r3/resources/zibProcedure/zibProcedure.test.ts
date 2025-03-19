@@ -7,17 +7,17 @@ import input02 from './fixtures/02/fhir-resource.json';
 import { i18n } from './uiSchema';
 import { zibProcedure } from './zibProcedure';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = zibProcedure.parse(input01 as Procedure);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', () => {
+test('returns the expected output 02', async () => {
     const output = zibProcedure.parse(input02 as Procedure);
-    expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const output = zibProcedure.parse(input01 as Procedure);
     const uiSchema = zibProcedure.uiSchema(
         output,
@@ -25,10 +25,10 @@ test('uiSchema returns the expected output 01', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 02', () => {
+test('uiSchema returns the expected output 02', async () => {
     const output = zibProcedure.parse(input02 as Procedure);
     const uiSchema = zibProcedure.uiSchema(
         output,
@@ -36,7 +36,7 @@ test('uiSchema returns the expected output 02', () => {
             ignoreMissingTranslations: true,
         })
     );
-    expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
+    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
 test('uiSchema returns default label if code not supplied', () => {

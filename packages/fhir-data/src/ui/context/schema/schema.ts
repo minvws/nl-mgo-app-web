@@ -1,5 +1,8 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { type HealthUiSchemaOptions } from '../../../api/getDetails/getDetails';
+import {
+    type HealthUiSchemaOrganization,
+    type HealthUiSchemaOptions,
+} from '../../../api/getDetails/getDetails';
 import { type MgoResource } from '../../../api/resources/resources';
 import {
     createUiHelperContext,
@@ -14,12 +17,19 @@ export type SchemaContextOptions<T extends `${FhirVersion}`> = HealthUiSchemaOpt
 export type HealthUiSchemaContext<V extends `${FhirVersion}` = FhirVersion> = UiHelperContext & {
     ui: Ui;
     resources: MgoResource<V>[];
+    organization: HealthUiSchemaOrganization | undefined;
 };
 
 export function createSchemaContext<V extends `${FhirVersion}`>(
     options: SchemaContextOptions<V>
 ): HealthUiSchemaContext<V> {
-    const { resources = [], locale, ignoreMissingTranslations, isSummary } = options;
+    const {
+        resources = [],
+        organization = undefined,
+        locale,
+        ignoreMissingTranslations,
+        isSummary,
+    } = options;
 
     const uiHelperContext = createUiHelperContext({ locale, ignoreMissingTranslations, isSummary });
 
@@ -27,6 +37,7 @@ export function createSchemaContext<V extends `${FhirVersion}`>(
         ...uiHelperContext,
         ui: getUi(uiHelperContext),
         resources,
+        organization,
         isSummary,
     };
 }

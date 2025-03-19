@@ -6,15 +6,17 @@ import input1 from './fixtures/01/fhir-resource.json';
 import { nlCoreHealtcareProvider } from './nlCoreHealtcareProvider';
 import { i18n } from './uiSchema';
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const output = nlCoreHealtcareProvider.parse(input1 as Location);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema 01 returns the expected output', () => {
+test('uiSchema 01 returns the expected output', async () => {
     const output = nlCoreHealtcareProvider.parse(input1 as Location);
     const uiSchema = nlCoreHealtcareProvider.uiSchema(output, testUiSchemaContext());
-    expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
+    );
 });
 
 test('uiSchema label returns profile when label not specified', () => {

@@ -1,5 +1,5 @@
 import { useNavFocusRef } from '$/hooks';
-import { type Resource } from '$/store';
+import { useOrganizationsStore, type Resource } from '$/store';
 import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
 import { Heading } from '@minvws/mgo-mgo-ui';
 import { Stack } from '@minvws/mgo-mgo-ui/components/Stack/Stack.js';
@@ -16,8 +16,11 @@ export function HealthUiSchema({ showDetails, resource }: HealthUiSchemaProps) {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
 
+    const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
+    const organization = getOrganizationById(resource.organizationId);
+
     const getSchema = showDetails ? getDetails : getSummary;
-    const { label, children } = getSchema(resource.mgoResource);
+    const { label, children } = getSchema(resource.mgoResource, { organization });
 
     return (
         <>

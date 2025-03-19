@@ -5,15 +5,15 @@ import inputFhirData from './fixtures/fhir-resource.json';
 import { uiSchemaGroup } from './uiSchemaGroup';
 import { zibAdministrationSchedule } from './zibAdministrationSchedule';
 
-test('zibInstructionsForUse returns the expected output', () => {
+test('zibInstructionsForUse returns the expected output', async () => {
     const output = zibAdministrationSchedule.parse(inputFhirData as Timing);
-    expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', () => {
+test('uiSchema returns the expected output', async () => {
     const zibData = zibAdministrationSchedule.parse(inputFhirData as Timing);
     const schema = uiSchemaGroup(zibData, testUiSchemaContext());
-    expectJson(schema).toMatchFileSnapshot('./fixtures/ui-schema-group.snap.json');
+    await expectJson(schema).toMatchFileSnapshot('./fixtures/ui-schema-group.snap.json');
 });
 
 test('zibAdministrationSchedule parses successfully', () => {

@@ -4,7 +4,7 @@ import { Navigate, Outlet } from '$/routing';
 export function ProtectedRoute() {
     const auth = useAuth();
 
-    if (!auth.isLoading && !auth.isAuthenticated) {
+    if (!auth.isAuthenticated) {
         return <Navigate to="/inloggen" replace />;
     }
 

@@ -3,7 +3,6 @@ import { getHealthCategoryBySlug } from '$/healthCategory';
 import { useIntl } from '$/intl';
 import { Navigate, useParams } from '$/routing';
 import { useResourcesStore } from '$/store';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { Helmet } from 'react-helmet-async';
 import { HealthUiSchema } from '../../components/HealthUiSchema/HealthUiSchema';
 
@@ -19,9 +18,7 @@ export function HealthData({ showDetails }: HealthDataProps) {
     const resource = getResourceBySlug(resourceSlug);
 
     const heading = formatMessage(
-        showDetails
-            ? (`hc_${healthCategory}.heading_detail` as AppMessagesIds)
-            : (`hc_${healthCategory}.heading_summary` as AppMessagesIds)
+        showDetails ? `hc_${healthCategory}.heading_detail` : `hc_${healthCategory}.heading_summary`
     );
 
     if (!resource) {

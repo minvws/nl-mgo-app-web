@@ -1,8 +1,8 @@
 {
-    "label": "PRIMPERAN ZETPIL 20MG",
+    "label": "Primperan zetpil 20mg",
     "children": [
         {
-            "label": "r3.zib_administration_agreement.group_general_information",
+            "label": "Algemeen",
             "children": [
                 {
                     "label": "Toedieningsafspraak datum tijd",
@@ -10,14 +10,24 @@
                     "display": "8 juni 2020 om 10:54:12 GMT+2"
                 },
                 {
-                    "label": "Reden afspraak",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Reden afspraak",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Gebruiksduur",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "8 juni 2020"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Eind datum",
+                    "display": "Niet bekend"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Gebruiksduur",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Toedieningsafspraak aanvullende informatie",
@@ -27,49 +37,27 @@
                     ]
                 },
                 {
-                    "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
-                    "display": "#MB_01h"
+                    "label": "Beëindigingsreden",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_administration_agreement.stop_type",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_administration_agreement.repeat_period_cyclical_schedule",
                     "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.zib_administration_agreement.identifier",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1546339-f6753t65r",
-                        "189ef867-8fdf-11ec-6427-020000000000"
-                    ]
-                },
-                {
                     "label": "Geannuleerd indicator",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_administration_agreement.category",
+                    "label": "Geneesmiddel bij toedienings afspraak",
+                    "type": "REFERENCE_VALUE",
+                    "display": "PRIMPERAN ZETPIL 20MG",
+                    "reference": "Medication/zib-Product-01"
+                },
+                {
+                    "label": "Medicatieafspraak",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Toedieningsafspraak"
+                        "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
                     ]
-                },
-                {
-                    "label": "r3.zib_administration_agreement.quantity",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.zib_administration_agreement.days_supply",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 },
                 {
                     "label": "Toelichting",
@@ -77,6 +65,22 @@
                     "display": [
                         "Tekstuele toelichting bij deze toedieningsafspraak"
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Uitvoerder",
+            "children": [
+                {
+                    "label": "Specialist",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Apotheek De Gulle Gaper",
+                    "reference": "Organization/nl-core-organization-06"
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Op verzoek van",
+                    "display": "Niet bekend"
                 }
             ]
         },
@@ -96,9 +100,9 @@
                     ]
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Aanvullende instructie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Volgnummer",
@@ -106,19 +110,19 @@
                     "display": "1"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Teller",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Noemer",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Zo nodig",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 }
             ]
         },
@@ -126,9 +130,9 @@
             "label": "Toedieningsschema",
             "children": [
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Toedieninsgduur",
-                    "display": null,
-                    "type": "SINGLE_VALUE"
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Frequentie",
@@ -136,9 +140,9 @@
                     "display": "1"
                 },
                 {
-                    "label": "Maximum waarde",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Maximum waarde",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Interval",
@@ -146,19 +150,19 @@
                     "type": "SINGLE_VALUE"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Weekdagen",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
+                    "type": "SINGLE_VALUE",
                     "label": "Toedientijd",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Dagdeel",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Dagdeel",
+                    "display": "Niet bekend"
                 }
             ]
         }

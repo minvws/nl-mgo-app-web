@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { map } from '../../../utils';
 import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
@@ -20,6 +21,7 @@ export const summary: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resour
                 label: formatMessage(`summary.${i18n}.group_performer`),
                 children: [
                     ...map(resource.performer, (x) => ui.reference(`${i18n}.performer`, x), true),
+                    organization(context),
                 ],
             },
             summaryOptions(context, i18n, resource),

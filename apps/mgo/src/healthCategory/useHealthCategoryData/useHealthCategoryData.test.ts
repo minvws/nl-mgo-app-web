@@ -7,9 +7,18 @@ test('returns medication data', () => {
     const { result } = renderHook(() => useHealthCategoryData(HealthCategory.Medication));
 
     expect(result.current).toEqual({
-        administrationAgreements: [],
-        medicationAgreements: [],
-        medicationUse: [],
+        medicationUse: {
+            label: 'health_category.medication.medication_use',
+            data: [],
+        },
+        medicationAgreements: {
+            label: 'health_category.medication.medication_agreements',
+            data: [],
+        },
+        administrationAgreements: {
+            label: 'health_category.medication.administration_agreements',
+            data: [],
+        },
     });
 });
 

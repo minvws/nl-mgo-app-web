@@ -6,7 +6,4 @@ const { getVaccinations } = createVaccinationImmunizationService({
     prefixUrl: MOCK_SERVER_URL,
 });
 
-test('getVaccinations', () =>
-    testRequestHandler(getVaccinations, 'Immunization', {
-        _include: 'patient,location,performer',
-    }));
+test('getVaccinations', () => testRequestHandler(getVaccinations, 'Immunization'));

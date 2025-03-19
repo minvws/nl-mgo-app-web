@@ -9,7 +9,7 @@ import Description from '@material-symbols/svg-400/outlined/description.svg?reac
 import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
 import Encrypted from '@material-symbols/svg-400/outlined/encrypted-fill.svg?react';
 import KeyboardArrowDown from '@material-symbols/svg-400/outlined/keyboard_arrow_down.svg?react';
-import Favorite from '@material-symbols/svg-400/outlined/favorite.svg?react';
+import Favorite from '@material-symbols/svg-400/rounded/favorite.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
 import Person from '@material-symbols/svg-400/outlined/person.svg?react';
@@ -34,7 +34,13 @@ import MedicalServices from '@material-symbols/svg-400/outlined/medical_services
 import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Close from '@material-symbols/svg-400/outlined/close.svg?react';
-import Help from '@material-symbols/svg-400/outlined/help.svg?react';
+import Help from '@material-symbols/svg-400/rounded/help.svg?react';
+import Home from '@material-symbols/svg-400/rounded/home.svg?react';
+import Settings from '@material-symbols/svg-400/rounded/settings.svg?react';
+
+import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
+import FavoriteFill from '@material-symbols/svg-400/rounded/favorite-fill.svg?react';
+import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
 import Info from '@material-symbols/svg-400/outlined/info-fill.svg?react';
 import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 
@@ -45,10 +51,8 @@ import GGZ from './icons/ggz.svg?react';
 import Hospital from './icons/hospital.svg?react';
 import Huisarts from './icons/huisarts.svg?react';
 import Tandarts from './icons/tandarts.svg?react';
-import Home from './icons/home.svg?react';
 import QuestionMark from './icons/question_mark.svg?react';
 import Spinner from './icons/spinner.svg?react';
-import Settings from './icons/settings.svg?react';
 
 export const icons = {
     hospital: Hospital,
@@ -56,11 +60,9 @@ export const icons = {
     'general-practitioner': Huisarts,
     dentist: Tandarts,
     ggz: GGZ,
-    home: Home,
     'question-mark': QuestionMark,
     'chevron-right-fat': ChevronRightFat,
     spinner: Spinner,
-    settings: Settings,
 
     'chevron-left': ChevronLeft,
     'chevron-right': ChevronRight,
@@ -100,6 +102,11 @@ export const icons = {
     menu: Menu,
     close: Close,
     help: Help,
+    home: Home,
+    settings: Settings,
+    'home-fill': HomeFill,
+    'favorite-fill': FavoriteFill,
+    'settings-fill': SettingsFill,
     info: Info,
     'attach-file': AttachFile,
 };
@@ -108,7 +115,6 @@ export type IconName = keyof typeof icons;
 export const iconNames = Object.keys(icons) as IconName[];
 
 export const iconPaddings: Partial<Record<IconName, string>> = {
-    home: 'p-[2px]',
     'question-mark': 'pl-[2px] py-[2px]',
     download: 'p-[2px]',
     spinner: 'p-[4px]',

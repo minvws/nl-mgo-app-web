@@ -1,22 +1,16 @@
 import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
-import { useAuthError } from '$/hooks/useAuthError/useAuthError';
 import { Navigate, Outlet, useLocation } from '$/routing';
 
 export function PublicRoute() {
     const auth = useAuth();
-    const { pathname, search } = useLocation();
+    const { pathname } = useLocation();
     const { isOnboardingSeen } = useOnboardingSeen();
-    const authError = useAuthError();
-    const waitForAuth = !!search && auth.isLoading;
 
     switch (pathname) {
         case '/':
-            if (waitForAuth) {
-                return <Outlet />;
-            }
-            if (authError) {
-                return <Navigate to="/inloggen" replace state={{ authError }} />;
+            if (auth.parsingError) {
+                return <Navigate to="/inloggen" replace />;
             }
             if (!isOnboardingSeen) {
                 return <Navigate to="/welkom" replace />;

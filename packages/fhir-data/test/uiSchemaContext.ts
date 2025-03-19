@@ -21,6 +21,7 @@ export function testUiSchemaContext<T extends `${FhirVersion}` = `${FhirVersion.
         return {
             ui: getUi(mockUiHelperContext),
             resources: options.resources ?? [],
+            organization: options.organization,
             ...mockUiHelperContext,
         };
     }

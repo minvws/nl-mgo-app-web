@@ -1,21 +1,24 @@
+import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import {
-    flushCallStack,
-    setAuthStateAuthenticated,
-    setupApp,
-    setupWithAppProviders,
-} from '$test/helpers';
+import { flushCallStack, setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { Organizations } from './Organizations';
+
+vi.mock('$/auth');
+
+beforeEach(() => {
+    (useAuth as MockedFunction<typeof useAuth>).mockImplementation(() =>
+        faker.custom.authState({ isAuthenticated: true })
+    );
+});
 
 test('overview should show empty state', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
-    setAuthStateAuthenticated();
 
     setupApp({ initialEntries: ['/organisaties'] });
 
@@ -29,7 +32,6 @@ test('should show the healthcare organizations', () => {
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
 
-    setAuthStateAuthenticated();
     setupWithAppProviders(<Organizations />);
 
     screen.getByRole('link', {

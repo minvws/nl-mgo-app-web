@@ -8,8 +8,6 @@ test.each<[HealthCategoryData | undefined, boolean]>([
     [{} as HealthCategoryData, true],
     [{ foo: [] } as unknown as HealthCategoryData, true],
     [{ foo: faker.lorem.word() } as unknown as HealthCategoryData, true],
-    [{ foo: [faker.lorem.word()] } as unknown as HealthCategoryData, false],
-    [{ foo: [undefined] } as unknown as HealthCategoryData, false],
 ])('returns whether the data contains filled arrays: %s', (data, expectedResult) => {
     const result = isEmpty(data);
     expect(result).toBe(expectedResult);

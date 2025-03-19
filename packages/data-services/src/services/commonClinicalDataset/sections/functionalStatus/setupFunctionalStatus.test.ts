@@ -9,7 +9,7 @@ const { getLastFunctionalOrMentalStatus } = createCommonClinicalDatasetService({
 test('getLastFunctionalOrMentalStatus', () =>
     testRequestHandler(getLastFunctionalOrMentalStatus, 'Observation/$lastn', {
         category: [
-            'http://snomed.info/sct|11291000146105', // NOSONAR
+            'http://snomed.info/sct|118228005', // NOSONAR
             'http://snomed.info/sct|384821006', // NOSONAR
         ].join(','),
     }));

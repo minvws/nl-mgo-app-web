@@ -12,3 +12,4 @@ export * from './oneOfValueX/oneOfValueX';
 export * from './filterCodeableConceptByCoding/filterCodeableConceptByCoding';
 export * from './filterPrimitiveByExtension/filterPrimitiveByExtension';
 export * from './filterPrimitive/filterPrimitive';
+export * from './intersectCodeableConcept/intersectCodeableConcept';

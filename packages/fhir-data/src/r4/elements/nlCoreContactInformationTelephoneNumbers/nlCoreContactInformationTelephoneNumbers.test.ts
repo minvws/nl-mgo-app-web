@@ -18,18 +18,18 @@ test('returns undefined if system is not email', () => {
     expect(zibData).toBeUndefined();
 });
 
-test('returns the expected output 01', () => {
+test('returns the expected output 01', async () => {
     const address = inputContactPoint01 as ContactPoint;
     const output = nlCoreContactInformationTelephoneNumbers.parse(address);
-    expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', () => {
+test('uiSchema returns the expected output 01', async () => {
     const address = inputContactPoint01 as ContactPoint;
     const output = nlCoreContactInformationTelephoneNumbers.parse(address);
     const uiSchemaGroup = nlCoreContactInformationTelephoneNumbers.uiSchemaGroup(
         output!,
         testUiSchemaContext()
     );
-    expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
+    await expectJson(uiSchemaGroup).toMatchFileSnapshot('./fixtures/01/ui-schema-group.snap.json');
 });

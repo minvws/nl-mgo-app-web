@@ -5,7 +5,6 @@ import { useNavFocusRef } from '$/hooks/index.ts';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Navigate, useParams } from '$/routing';
 import { useOrganizationsStore } from '$/store';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { Alert, Button, Heading, Stack } from '@minvws/mgo-mgo-ui';
 import { useQueryClient } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
@@ -31,7 +30,7 @@ export function HealthCategory() {
         return <Navigate to={`/overzicht`} />;
     }
 
-    const heading = formatMessage(`hc_${healthCategory}.heading` as AppMessagesIds);
+    const heading = formatMessage(`hc_${healthCategory}.heading`);
 
     return (
         <>
@@ -73,11 +72,7 @@ export function HealthCategory() {
                             </LoadingSpinner>
                         </div>
                     )}
-                    {!isLoading && !isEmpty ? (
-                        <HealthCategoryContent category={healthCategory} data={data} />
-                    ) : (
-                        <NoData />
-                    )}
+                    {!isLoading && !isEmpty ? <HealthCategoryContent data={data} /> : <NoData />}
                 </div>
             </section>
         </>

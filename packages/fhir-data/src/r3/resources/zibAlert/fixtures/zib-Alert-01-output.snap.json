@@ -42,5 +42,9 @@
         "end": null
     },
     "encounter": null,
-    "author": null
+    "author": null,
+    "concernReference": {
+        "reference": "Condition/zib-problem-01",
+        "display": "Fracture of wrist (disorder)"
+    }
 }

@@ -13,8 +13,8 @@ After having installed asdf you will need to add the required plugins, followed 
 
 ```sh
 # add plugins
-asdf plugin-add nodejs
-asdf plugin-add pnpm
+asdf plugin add nodejs
+asdf plugin add pnpm
 
 # install specified versions
 asdf install
@@ -36,8 +36,6 @@ To start the development server run the following command from the project root:
 ```sh
 pnpm dev
 ```
-
-> By default, the server will be available at [http://localhost:8000](http://localhost:8000). While it is possible to change the port by providing a `--port` argument, doing so is not advisable as only port `8000` is allowlisted for the OIDC `redirect_uri`.
 
 ### UI Components
 

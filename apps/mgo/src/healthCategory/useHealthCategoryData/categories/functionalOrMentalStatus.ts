@@ -1,15 +1,20 @@
 import { type ResourcesState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { type SubCategoryData } from '.';
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 
 export function getFunctionalOrMentalStatusData(
     resources: ResourcesState,
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
-        functionalOrMentalStatus: resources.getResourcesByProfile(
-            FhirVersion.R3,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus',
-            organizationIdFilter
-        ),
-    };
+        functionalOrMentalStatus: {
+            label: `health_category.${HealthCategory.FunctionalOrMentalStatus}.functional_or_mental_status`,
+            data: resources.getResourcesByProfile(
+                FhirVersion.R3,
+                'http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus',
+                organizationIdFilter
+            ),
+        },
+    } satisfies Record<string, SubCategoryData>;
 }

@@ -5,6 +5,7 @@ import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
 import { uiSchema } from './uiSchema';
+import { parsePerformer } from './elements/performer/performer';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement'; // NOSONAR
 
@@ -19,6 +20,7 @@ function parseZibAdministrationAgreement(resource: MedicationDispense) {
             resource,
             'zib-AdministrationAgreement-AgreementReason'
         ),
+        periodOfUse: parse.extensionNictiz(resource, 'zib-Medication-PeriodOfUse'),
         usageDuration: parse.extensionNictiz(resource, 'zib-MedicationUse-Duration'),
         additionalInformation: parse.extensionNictiz(
             resource,
@@ -38,6 +40,8 @@ function parseZibAdministrationAgreement(resource: MedicationDispense) {
         daysSupply: parse.quantity(resource.daysSupply),
         note: map(resource.note, parse.annotation),
         dossageInstruction: map(resource.dosageInstruction, zibInstructionsForUse.parse),
+        performer: map(resource.performer, parsePerformer),
+        authorizingPrescription: map(resource.authorizingPrescription, parse.reference),
     };
 }
 

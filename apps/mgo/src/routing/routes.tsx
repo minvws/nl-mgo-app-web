@@ -119,7 +119,7 @@ const routeConfig = [
 export type RouteConfigPaths = ExtractRoutePaths<typeof routeConfig>;
 export type RouteParams = ExtractRouteParams<typeof routeConfig>;
 
-type RoutePath =
+export type RoutePath =
     | RouteConfigPaths
     | `${RouteConfigPaths}${'?' | '#'}${string}`
     | `${'?' | '#' | '..'}${string}`

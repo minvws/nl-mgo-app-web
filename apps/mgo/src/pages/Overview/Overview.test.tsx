@@ -1,16 +1,24 @@
+import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
-import { setAuthStateAuthenticated, setupApp, setupWithAppProviders } from '$test/helpers';
+import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-mgo-intl/test';
 import { screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { Overview } from './Overview';
+
+vi.mock('$/auth');
+
+beforeEach(() => {
+    (useAuth as MockedFunction<typeof useAuth>).mockImplementation(() =>
+        faker.custom.authState({ isAuthenticated: true })
+    );
+});
 
 test('overview should show empty state', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen(true);
-    setAuthStateAuthenticated();
 
     setupApp({ initialEntries: ['/overzicht'] });
 
@@ -23,7 +31,6 @@ test('should show the health categories if there are organizations', () => {
     const { addOrganization } = useOrganizationsStore.getState();
     addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
 
-    setAuthStateAuthenticated();
     setupWithAppProviders(<Overview />);
 
     expect(screen.getByText(appMessage('hc_medication.heading'))).toBeInTheDocument();

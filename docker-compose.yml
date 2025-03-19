@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile
             args:
                 - PORT=${PORT-8000}
-                - OIDC_AUTHORITY
+                - IGNORE_MISSING_TRANSLATIONS
                 - LOAD_URL
                 - DVA_URL
         ports:

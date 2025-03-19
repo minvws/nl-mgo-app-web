@@ -5,6 +5,7 @@ import { type ResourceConfig } from '../../../types/Fhir';
 import { parse } from '../../../parse';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 import { uiSchema } from './uiSchema';
+import { map } from '../../../utils/map/map';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse'; // NOSONAR
 
@@ -16,6 +17,8 @@ function parseZibAlcoholUse(resource: Observation) {
     return {
         ...rest,
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        component: { amount: parse.quantity(resource.component?.[0]?.valueQuantity) },
+        performer: map(resource.performer, parse.reference),
     };
 }
 

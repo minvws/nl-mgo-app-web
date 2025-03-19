@@ -8,7 +8,6 @@ import { Helmet } from 'react-helmet-async';
 export function Introduction() {
     const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-
     return (
         <>
             <Helmet title={formatMessage('introduction.heading')} />

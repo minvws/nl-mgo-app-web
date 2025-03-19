@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '@minvws/mgo-tailwind/fonts.css';
-import '@minvws/mgo-tailwind/index.css';
+
 import './style.css';
 
 const preview: Preview = {

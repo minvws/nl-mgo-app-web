@@ -1,20 +1,14 @@
 {
-    "label": "Methicillin resistant staphylococcus aureus carrier",
+    "label": "Alert",
     "children": [
         {
-            "label": "r3.zib_alert.group_general_information",
+            "label": "Methicillin resistant staphylococcus aureus carrier",
             "children": [
                 {
-                    "label": "r3.zib_alert.identifier",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "18d78911-8fdf-11ec-3053-020000000000"
-                    ]
-                },
-                {
-                    "label": "r3.zib_alert.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "active"
+                    "label": "Conditie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Fracture of wrist (disorder)",
+                    "reference": "Condition/zib-problem-01"
                 },
                 {
                     "label": "Alert type",
@@ -31,32 +25,21 @@
                     ]
                 },
                 {
-                    "label": "r3.zib_alert.subject",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Johan XXX_Helleman",
-                    "reference": "Patient/nl-core-patient-01"
-                },
-                {
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 juni 2010"
                 },
                 {
-                    "label": "Eind datum",
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "18d78911-8fdf-11ec-3053-020000000000"
+                    ]
+                },
+                {
                     "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.zib_alert.encounter",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "r3.zib_alert.author",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Auteur",
+                    "display": "Niet bekend"
                 }
             ]
         }
