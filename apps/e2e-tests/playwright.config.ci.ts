@@ -7,7 +7,7 @@ export default defineConfig({
     forbidOnly: true,
     workers: 10,
     timeout: 60000,
-    reporter: 'line',
+    reporter: [['github'], ['html', { outputFolder: baseConfig.outputDir, open: 'never' }]],
     use: {
         ...baseConfig.use,
         headless: true,

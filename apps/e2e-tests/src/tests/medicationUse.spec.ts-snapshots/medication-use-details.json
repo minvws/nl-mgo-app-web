@@ -1,0 +1,133 @@
+[
+  {
+    "label": "Algemeen",
+    "children": [
+      {
+        "label": "Gebruiksproduct",
+        "value": "Zestril tablet 10mg"
+      },
+      {
+        "label": "Registratiedatum",
+        "value": "16 augustus 2018"
+      },
+      {
+        "label": "Ingangsdatum",
+        "value": "28 juni 2018"
+      },
+      {
+        "label": "Einddatum",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Tijdsduur",
+        "value": "3 weken"
+      },
+      {
+        "label": "Voorschrijver",
+        "value": "Huisartspraktijk Heideroosje"
+      },
+      {
+        "label": "Reden gebruik",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Volgens afspraak indicator",
+        "value": "Ja"
+      },
+      {
+        "label": "Gebruik indicator",
+        "value": "y"
+      },
+      {
+        "label": "Medicatie gebruik stop type",
+        "value": "in gebruik"
+      },
+      {
+        "label": "Reden wijzigen of stoppen gebruik",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Herhaalperiode cyclisch schema",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Medicamenteuze behandeling",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Toelichting",
+        "value": "Niet bekend"
+      }
+    ]
+  },
+  {
+    "label": "Gebruiksinstructie",
+    "children": [
+      {
+        "label": "Omschrijving",
+        "value": "1 maal per dag 1 tablet, oraal"
+      },
+      {
+        "label": "Toedieningsweg",
+        "value": "Oraal (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+      },
+      {
+        "label": "Aanvullende instructie",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Volgnummer",
+        "value": "1"
+      },
+      {
+        "label": "Keerdosis",
+        "value": "1 stuk"
+      },
+      {
+        "label": "Teller",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Noemer",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Zo nodig",
+        "value": "Niet bekend"
+      }
+    ]
+  },
+  {
+    "label": "Toedieningsschema",
+    "children": [
+      {
+        "label": "Toedieninsgduur",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Frequentie",
+        "value": "1"
+      },
+      {
+        "label": "Maximum waarde",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Interval",
+        "value": "1 d"
+      },
+      {
+        "label": "Weekdagen",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Toedientijd",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Dagdeel",
+        "value": "Niet bekend"
+      }
+    ]
+  }
+]

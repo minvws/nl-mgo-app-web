@@ -1,7 +1,7 @@
 import { type HTMLAttributes, type ReactElement } from 'react';
+import { type CompositionProps, useComposition } from '../../hooks';
 import { cn } from '../../utils';
 import { type Gap } from './gap';
-import { type CompositionProps, useComposition } from '../../hooks';
 
 export type ListWrapperProps = HTMLAttributes<HTMLElement> &
     CompositionProps & {
@@ -16,7 +16,7 @@ export const ListWrapper = ({
     children,
     ...rest
 }: ListWrapperProps) => {
-    const { Comp } = useComposition({ asChild, tag: 'div' });
+    const { Comp } = useComposition({ asChild, tag: 'ul' });
 
     const gapMap: Record<Gap, string> = {
         normal: 'gap-2 gap-md-3',

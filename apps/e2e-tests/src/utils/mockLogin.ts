@@ -7,7 +7,7 @@ import { type Page } from '@playwright/test';
  */
 export async function mockLogin(page: Page) {
     await page.addInitScript(() => {
-        window.localStorage.setItem(
+        window.sessionStorage.setItem(
             'mgo-userinfo',
             JSON.stringify({
                 reference_pseudonym: {

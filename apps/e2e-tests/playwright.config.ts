@@ -32,7 +32,7 @@ if (!Object.keys(baseUrls).includes(APP_ENVIRONMENT)) {
 
 const authToken = btoa(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}`);
 
-const outputDir = 'test-results';
+const outputDir = 'results';
 
 export default defineConfig({
     testDir: './src/tests',
@@ -56,4 +56,8 @@ export default defineConfig({
             use: { ...devices['Desktop Chrome'] },
         },
     ],
+
+    // Playwright will by default use the operating system as a suffix for the snapshot filename.
+    // We disabled this for now so snapshot files created locally will have the same name as in the Docker environment.
+    snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{ext}',
 });

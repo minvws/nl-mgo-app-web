@@ -1,6 +1,9 @@
 import { type Page } from '@playwright/test';
 import { AddOrganizationPage } from './AddOrganization';
 import { AddOrganizationListPage } from './AddOrganizationList';
+import { HealthCategoryPage } from './HealthCategory';
+import { HealthDataDetailPage } from './HealthDataDetail';
+import { HealthDataSummaryPage } from './HealthDataSummary';
 import { IntroductionPage } from './Introduction';
 import { LoginPage } from './Login';
 import { OverviewPage } from './Overview';
@@ -18,6 +21,9 @@ export const pages = {
     pageAddOrganizationList: AddOrganizationListPage,
     pageLogin: LoginPage,
     pageOverview: OverviewPage,
+    pageHealthCategory: HealthCategoryPage,
+    pageHealthDataSummary: HealthDataSummaryPage,
+    pageHealthDataDetail: HealthDataDetailPage,
 } satisfies Record<string, PageConstructor>;
 
 export type Pages = typeof pages;

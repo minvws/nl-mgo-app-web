@@ -67,9 +67,7 @@ export function HealthCategory() {
                 <div className="py-4 md:py-8">
                     {isLoading && (
                         <div className="py-8 text-center md:py-16">
-                            <LoadingSpinner>
-                                <FormattedMessage id="common.loading" />
-                            </LoadingSpinner>
+                            <LoadingSpinner />
                         </div>
                     )}
                     {!isLoading && !isEmpty ? <HealthCategoryContent data={data} /> : <NoData />}

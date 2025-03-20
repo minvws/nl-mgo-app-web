@@ -11,7 +11,7 @@ This package contains the end-to-end tests for the MGO application. It uses [Pla
 │    └── setup              # Setup for custom fixtures and assertions
 │    └── tests              # All the tests
 │    └── utils              # Small utility functions
-├── test-results
+├── results
 │    └── ...                # Results from test runs
 └── .env.example            # Example config file for environment variables
 └── README.md               <-- you are here
@@ -51,7 +51,7 @@ To run the E2E tests using docker, ensure you have the latest [Docker (Desktop) 
 3. Connect to the `playwright` instance with `docker exec -it playwright`
 4. From the `playwright` shell, run the tests with `pnpm e2e` or `pnpm e2e:ci`
 
-> Test results will still be stored in the `apps/e2e-tests/test-results` as this folder is volume mounted.
+> Test results will still be stored in the `apps/e2e-tests/results` as this folder is volume mounted.
 
 > `pnpm e2e:ui` will not work from the docker container as the image does not contain the dependencies needed for running the tests in [headed mode][playwright-headed].
 

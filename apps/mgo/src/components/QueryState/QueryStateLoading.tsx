@@ -1,8 +1,8 @@
 import { type HTMLAttributes } from 'react';
-import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
+import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 
-export interface QueryStateLoadingProps extends HTMLAttributes<HTMLElement> {}
+export type QueryStateLoadingProps = HTMLAttributes<HTMLElement>;
 
 export function QueryStateLoading({ children, ...rest }: QueryStateLoadingProps) {
     return (

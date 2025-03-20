@@ -14,7 +14,7 @@ services:
         ipc: host
         network_mode: host
         volumes:
-            - ./apps/e2e-tests/test-results:/app/apps/e2e-tests/test-results/
+            - ./apps/e2e-tests/results:/app/apps/e2e-tests/results/
     mgo:
         container_name: mgo
         build:

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore, type Resource } from '$/store';
 import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
@@ -30,8 +31,8 @@ export function HealthUiSchema({ showDetails, resource }: HealthUiSchemaProps) {
 
             <Stack className="gap-6">
                 <HealthUiSchemaContext.Provider value={contextValue}>
-                    {children.map((group) => (
-                        <HealthUiGroup group={group} key={group.label} />
+                    {children.map((group, i) => (
+                        <HealthUiGroup group={group} key={`${group.label}-${i}`} />
                     ))}
                 </HealthUiSchemaContext.Provider>
             </Stack>
