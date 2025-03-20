@@ -1,0 +1,20 @@
+.loading-spinner-fg {
+    --_circumference: 21.99px;
+    --_spinner-size: calc(var(--_circumference) / 4);
+    stroke-linecap: round;
+    stroke-dasharray: var(--_spinner-size) calc(var(--_circumference) - var(--_spinner-size));
+    stroke-dashoffset: 0;
+    animation: loading-spinner 2s steps(4) infinite;
+}
+
+@keyframes loading-spinner {
+    to {
+        stroke-dashoffset: calc(-1 * var(--_circumference));
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .loading-spinner-fg {
+        animation: loading-spinner 1s linear infinite;
+    }
+}

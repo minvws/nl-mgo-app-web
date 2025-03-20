@@ -79,7 +79,9 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
                 currentResources.some(({ id }) => id === newResource.id) ||
                 newResources.some(({ id }) => id === newResource.id)
             ) {
-                console.warn(`Resource with id "${newResource.id}" already exists`);
+                if (import.meta.env.DEV) {
+                    console.warn(`Resource with id "${newResource.id}" already exists`);
+                }
             } else {
                 newResources.push(newResource);
             }
