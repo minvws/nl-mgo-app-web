@@ -9,6 +9,7 @@ export default defineConfig({
             exclude: [
                 'apps/e2e-tests/**',
                 'apps/*/test/*',
+                'apps/mgo/public/**',
                 'packages/*/test/*',
                 'packages/*/docs/*',
                 'packages/fhir-data/resource-labels/*',

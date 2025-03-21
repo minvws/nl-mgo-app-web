@@ -1,7 +1,11 @@
 import { useResourcesStore } from '$/store';
 import { isNonNullish } from '$/utils';
-import { getMgoResource, isFhirResource, type FhirResource } from '@minvws/mgo-fhir-data';
-import { getBundleResources } from '@minvws/mgo-fhir-data/api/getBundleResources/getBundleResources.js';
+import {
+    getBundleResources,
+    getMgoResource,
+    isFhirResource,
+    type FhirResource,
+} from '@minvws/mgo-fhir-data';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
 import { useQueries } from '@tanstack/react-query';
 import { useEffect } from 'react';

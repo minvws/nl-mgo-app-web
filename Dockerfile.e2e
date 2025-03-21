@@ -1,0 +1,42 @@
+# syntax=docker/dockerfile:1.7-labs
+#
+# Enables --parents syntax for COPY - see: https://docs.docker.com/build/buildkit/dockerfile-release-notes/#170
+
+ARG NODE_VERSION
+ARG PLAYWRIGHT_VERSION
+
+#
+FROM node:${NODE_VERSION}-slim AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+#
+FROM base AS installer
+
+WORKDIR /app
+
+COPY --parents packages/*/package.json .
+COPY --parents apps/*/package.json .
+COPY ./package.json .
+COPY ./pnpm-*.yaml .
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+#
+FROM mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION}-noble
+
+ARG NODE_VERSION
+
+COPY --from=installer /app /app
+COPY . ./app
+
+WORKDIR /app/apps/e2e-tests
+
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+# Force the use of the same node version as the base image
+RUN npm install -g corepack@latest && corepack enable
+RUN npm install -g node@${NODE_VERSION} --force
+
+ENTRYPOINT ["/bin/bash"]

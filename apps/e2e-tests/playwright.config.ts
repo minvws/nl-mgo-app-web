@@ -1,26 +1,52 @@
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
-import { Environment, environmentConfig } from './src/environment';
+import { config as dotEnvConfig } from 'dotenv';
+import { register as registerEsbuildLoader } from 'esbuild-register/dist/node';
 
-dotenv.config({ override: true });
+dotEnvConfig({ override: true });
 
-const envConfig = environmentConfig[process.env.APP_ENVIRONMENT as Environment];
+/**
+ * Register esbuild for transpiling TypeScript files.
+ * Without this registration, we will not be able to use TypeScript files
+ * that are directly imported from other packages in this monorepo.
+ */
+registerEsbuildLoader();
+
+const { APP_ENVIRONMENT = 'local', BASIC_AUTH_USER, BASIC_AUTH_PASSWORD } = process.env;
+
+const baseUrls = {
+    local: 'http://localhost:8000',
+    test: 'https://web.test.mgo.irealisatie.nl',
+    acc: 'https://web.acc.mgo.irealisatie.nl',
+};
+
+if (!BASIC_AUTH_USER || !BASIC_AUTH_PASSWORD) {
+    throw new Error(
+        'BASIC_AUTH_USER and BASIC_AUTH_PASSWORD must be set in the environment variables / .env file'
+    );
+}
+if (!Object.keys(baseUrls).includes(APP_ENVIRONMENT)) {
+    throw new Error(
+        `Invalid APP_ENVIRONMENT provided: "${APP_ENVIRONMENT}". Must be one of: ${Object.keys(baseUrls).join(', ')}`
+    );
+}
+
+const authToken = btoa(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}`);
+
+const outputDir = 'results';
 
 export default defineConfig({
     testDir: './src/tests',
     fullyParallel: true,
-    forbidOnly: !!process.env.CI,
-    retries: process.env.CI ? 2 : 0,
-    workers: process.env.CI ? 1 : undefined,
-    reporter: 'html',
+    retries: 0,
+    reporter: [['html', { outputFolder: outputDir }]],
+    outputDir,
+    timeout: 10000,
 
     use: {
-        baseURL: envConfig.baseUrl,
+        baseURL: baseUrls[APP_ENVIRONMENT],
         trace: 'on-first-retry',
-        // screenshot: 'on',
-        colorScheme: 'dark',
-        launchOptions: {
-            slowMo: 50,
+        extraHTTPHeaders: {
+            Authorization: `Basic ${authToken}`,
         },
     },
 
@@ -29,20 +55,9 @@ export default defineConfig({
             name: 'chromium',
             use: { ...devices['Desktop Chrome'] },
         },
-
-        {
-            name: 'firefox',
-            use: { ...devices['Desktop Firefox'] },
-        },
-
-        {
-            name: 'webkit',
-            use: { ...devices['Desktop Safari'] },
-        },
-
-        {
-            name: 'Mobile Safari',
-            use: { ...devices['iPhone 12 Pro'] },
-        },
     ],
+
+    // Playwright will by default use the operating system as a suffix for the snapshot filename.
+    // We disabled this for now so snapshot files created locally will have the same name as in the Docker environment.
+    snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{ext}',
 });

@@ -7,3 +7,6 @@ packages/fhir-data/fhir-definitions
 packages/fhir-data/dist
 packages/mgo-intl/locales
 *.snap.json
+*-snapshots/
+apps/mgo/dist
+apps/e2e-tests/results
