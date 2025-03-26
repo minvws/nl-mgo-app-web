@@ -69,10 +69,12 @@
         },
         "auditConfig": {
             "ignoreCves comments (non-standard-key)": {
-                "CVE-2025-27789": "We don't meet the vulnerability conditions: https://github.com/advisories/GHSA-968p-4wvh-cqc8"
+                "CVE-2025-27789": "@babel - We don't meet the vulnerability conditions: https://github.com/advisories/GHSA-968p-4wvh-cqc8",
+                "CVE-2025-30208": "vite - We don't use the vite (dev) server in production. https://github.com/advisories/GHSA-x574-m823-4x7w"
             },
             "ignoreCves": [
-                "CVE-2025-27789"
+                "CVE-2025-27789",
+                "CVE-2025-30208"
             ]
         }
     }
