@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1ef6763b-8fdf-11ec-2005-020000000000",
@@ -13,13 +14,16 @@
         }
     ],
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "vaccineCode": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "J06BB11",
                 "display": "hepatitis A immunoglobulin",
                 "system": "http://www.whocc.no/atc"
@@ -27,16 +31,21 @@
         ]
     },
     "dose": {
+        "_type": "Quantity",
         "value": 30,
         "comparator": null,
         "unit": "ml",
         "system": "http://unitsofmeasure.org",
         "code": "ml"
     },
-    "vaccinationDate": "1999-03-09",
+    "vaccinationDate": {
+        "_type": "Date",
+        "value": "1999-03-09"
+    },
     "practitioner": [
         {
             "actor": {
+                "_type": "Reference",
                 "reference": "Practitioner/nl-core-practitioner-01",
                 "display": "Henk de Vries"
             }
@@ -44,6 +53,7 @@
     ],
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Bezoek aan Guatemala",
             "author": null

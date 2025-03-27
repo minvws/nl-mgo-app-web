@@ -3,7 +3,6 @@ import { type DocumentReference } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { parseContent } from './elements/content/content';
 import { summary } from './summary';
 import { uiSchema } from './uiSchema';
 
@@ -22,7 +21,9 @@ function parseIheMhdMinimalDocumentReference(resource: DocumentReference) {
         subject: parse.reference(resource.subject),
         indexed: parse.instant(resource.indexed),
         author: map(resource.author, parse.reference),
-        content: parseContent(resource.content[0]),
+        content: {
+            attachment: parse.attachment(resource.content?.[0].attachment),
+        },
         securityLabel: map(resource.securityLabel, parse.codeableConcept),
     };
 }

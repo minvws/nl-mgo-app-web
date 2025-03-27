@@ -11,7 +11,6 @@ export * from '../parse/type';
 export * from '../ui/types/schema';
 
 export {
-    type Attachment,
     type EncounterParticipant,
     type NlCoreAddress,
     type NlCoreContactpoint,
@@ -79,9 +78,9 @@ export {
 
 export {
     type R4NlCoreHealtcareProvider,
+    type R4NlCoreHealthcareProviderOrganization,
     type R4NlCoreHealthProfessionalPractitioner,
     type R4NlCoreHealthProfessionalPractitionerRole,
-    type R4NlCoreHealthcareProviderOrganization,
     type R4NlCorePatient,
     type R4NlCorePharmaceuticalProduct,
     type R4NlCoreVaccinationEvent,

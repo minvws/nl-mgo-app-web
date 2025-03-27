@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { uiSchemaGroup as zibAttachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
@@ -18,7 +19,7 @@ export const uiSchema: HealthUiSchemaFunction<ZibTreatmentDirective> = (resource
     const policy = map(resource.policy, (x) => policyUiSchema(x, context), true);
 
     return {
-        label: resource.identifier?.value ?? context.formatMessage(i18n),
+        label: valueOf(resource.identifier) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,
@@ -40,7 +41,9 @@ export const uiSchema: HealthUiSchemaFunction<ZibTreatmentDirective> = (resource
                     ...ui.period(`${i18n}.data_period`, resource.dataPeriod),
                 ],
             },
-            zibAttachmentUiSchema(resource.sourceAttachment, context),
+            ...(resource.sourceAttachment
+                ? [zibAttachmentUiSchema(resource.sourceAttachment, context)]
+                : []),
             ...actor,
             ...data,
             ...except,

@@ -5,16 +5,25 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManifest",
     "fhirVersion": "R3",
     "description": null,
-    "created": "2020-03-10",
+    "created": {
+        "_type": "DateTime",
+        "value": "2020-03-10"
+    },
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-02",
         "display": "Paul XXX_Mesker"
     },
-    "status": "superseded",
+    "status": {
+        "_type": "Code",
+        "value": "superseded"
+    },
     "type": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "18842-5",
                 "display": "Discharge summary",
                 "system": "http://loinc.org"
@@ -23,6 +32,7 @@
     },
     "author": [
         {
+            "_type": "Reference",
             "reference": "#p1",
             "display": "B. Kneder"
         }
@@ -32,6 +42,7 @@
         {
             "attachment": null,
             "reference": {
+                "_type": "Reference",
                 "reference": "DocumentReference/pdfa-documentreference-01",
                 "display": null
             }
@@ -39,6 +50,7 @@
         {
             "attachment": null,
             "reference": {
+                "_type": "Reference",
                 "reference": "DocumentReference/pdfa-documentreference-02",
                 "display": null
             }

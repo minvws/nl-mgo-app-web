@@ -1,12 +1,20 @@
 {
-    "sequence": 1,
-    "text": "Vanaf 8 jun 2020, 1 maal per dag, rectaal",
+    "sequence": {
+        "_type": "Integer",
+        "value": 1
+    },
+    "text": {
+        "_type": "String",
+        "value": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+    },
     "additionalInstruction": null,
     "asNeeded": null,
     "route": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "12",
                 "display": "rectaal",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -18,10 +26,19 @@
         "repeat": {
             "duration": null,
             "durationUnit": null,
-            "frequency": 1,
+            "frequency": {
+                "_type": "Integer",
+                "value": 1
+            },
             "frequencyMax": null,
-            "period": 1,
-            "periodUnit": "d",
+            "period": {
+                "_type": "Decimal",
+                "value": 1
+            },
+            "periodUnit": {
+                "_type": "Code",
+                "value": "d"
+            },
             "dayOfWeek": null,
             "timeOfDay": null,
             "when": null

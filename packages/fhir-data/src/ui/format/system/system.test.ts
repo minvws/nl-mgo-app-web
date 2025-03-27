@@ -16,7 +16,7 @@ test('system returns system code translation when it is a summary', () => {
     const context = faker.custom.uiHelperContext({
         isSummary: true,
     });
-    const value = faker.fhir.coding();
+    const value = faker.mgo.coding();
     const formatSystem = system(context);
     const expected = systemCodeTranslation;
     const result = formatSystem(value);
@@ -27,7 +27,7 @@ test('system returns full information when display, code and system are present'
     const context = faker.custom.uiHelperContext({
         isSummary: false,
     });
-    const value = faker.fhir.coding();
+    const value = faker.mgo.coding();
     const formatSystem = system(context);
     const expected = `${value.display} (intl(fhir.code_in_system, {"code":"${value.code}","system":"${value.system}"}))`;
     const result = formatSystem(value);
@@ -37,7 +37,7 @@ test('system returns full information when display, code and system are present'
 test('system returns system when code is not present', () => {
     const context = faker.custom.uiHelperContext();
 
-    const value = faker.fhir.coding();
+    const value = faker.mgo.coding();
     value.code = undefined;
     const expected = `${value.display} (${value.system})`;
 
@@ -50,7 +50,7 @@ test('system returns system when code is not present', () => {
 test('system returns code when system is not present', () => {
     const context = faker.custom.uiHelperContext();
 
-    const value = faker.fhir.coding();
+    const value = faker.mgo.coding();
     value.system = undefined;
     const expected = `${value.display} (${value.code})`;
 
@@ -63,7 +63,7 @@ test('system returns code when system is not present', () => {
 test('system return display when system and code not present', () => {
     const context = faker.custom.uiHelperContext();
 
-    const value = faker.fhir.coding();
+    const value = faker.mgo.coding();
     value.system = undefined;
     value.code = undefined;
     const expected = value.display;

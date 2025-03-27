@@ -1,5 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { parseContent } from './content';
 
 const mockContent = () => ({
@@ -12,8 +13,8 @@ test('content parses successfully', () => {
     const schema = parseContent(content);
     expect(schema).toEqual(
         expect.objectContaining({
-            attachment: content.pAttachment,
-            reference: content.pReference,
+            attachment: parse.attachment(content.pAttachment),
+            reference: parse.reference(content.pReference),
         })
     );
 });

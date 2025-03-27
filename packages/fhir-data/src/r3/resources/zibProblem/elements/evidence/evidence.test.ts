@@ -1,31 +1,20 @@
-import { faker, testSet, testUiSchemaContext } from '$test';
-import { expect } from 'vitest';
+import { faker, testUiSchemaContext } from '$test';
+import { expect, test } from 'vitest';
 import { evidence } from './evidence';
 
-testSet(
-    'evidence parses successfully',
-    faker.fhir.conditionEvidence,
-    (data) => {
-        const schema = evidence.parse(data);
-        expect(schema.detail).toHaveLength(data.detail?.length ?? 0);
-    },
-    false
-);
+test('evidence parses successfully', () => {
+    const data = faker.fhir.conditionEvidence();
+    const schema = evidence.parse(data);
+    expect(schema.detail).toHaveLength(data.detail?.length ?? 0);
+});
 
-testSet(
-    'evidence UI schema group is created successfully',
-    () => {
-        const data = faker.fhir.conditionEvidence();
-        return evidence.parse(data);
-    },
-    (data) => {
-        const schema = evidence.uiSchemaGroup(
-            data,
-            testUiSchemaContext({
-                ignoreMissingTranslations: true,
-            })
-        );
-        expect(schema.label).toBe('r3.evidence');
-    },
-    false
-);
+test('evidence UI schema group is created successfully', () => {
+    const data = evidence.parse(faker.fhir.conditionEvidence());
+    const schema = evidence.uiSchemaGroup(
+        data,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(schema.label).toBe('r3.evidence');
+});

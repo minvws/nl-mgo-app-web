@@ -1,13 +1,14 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { period } from './period';
-import { dateTime } from '../dateTime/dateTime';
 
-testSet('period', faker.fhir.period, (data) => {
+test('period', () => {
+    const data = faker.fhir.period();
     const { start, end } = data;
     const expected = {
-        start: dateTime(start),
-        end: dateTime(end),
+        _type: 'Period',
+        start,
+        end,
     };
     expect(period(data)).toEqual(expected);
 });

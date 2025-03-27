@@ -4,17 +4,23 @@
     "resourceType": "MedicationDispense",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement",
     "fhirVersion": "R3",
-    "authoredOn": "2020-06-08T10:54:12+02:00",
+    "authoredOn": {
+        "_type": "DateTime",
+        "value": "2020-06-08T10:54:12+02:00"
+    },
     "agreementReason": null,
     "periodOfUse": {
+        "_type": "Period",
         "start": "2020-06-08",
         "end": null
     },
     "usageDuration": null,
     "additionalInformation": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "1",
                 "display": "Niet leverbaar",
                 "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
@@ -22,6 +28,7 @@
         ]
     },
     "medicationTreatment": {
+        "_type": "Identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
         "value": "#MB_01h",
@@ -31,12 +38,14 @@
     "repeatPeriodCyclicalSchedule": null,
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.422037009.1",
             "value": "1546339-f6753t65r",
             "type": null
         },
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "189ef867-8fdf-11ec-6427-020000000000",
@@ -45,9 +54,11 @@
     ],
     "status": null,
     "category": {
+        "_type": "CodeableConcept",
         "text": "Toedieningsafspraak",
         "coding": [
             {
+                "_type": "Coding",
                 "code": "422037009",
                 "display": "Provider medication administration instructions (procedure)",
                 "system": "http://snomed.info/sct"
@@ -55,6 +66,7 @@
         ]
     },
     "medicationReference": {
+        "_type": "Reference",
         "reference": "Medication/zib-Product-01",
         "display": "PRIMPERAN ZETPIL 20MG"
     },
@@ -62,6 +74,7 @@
     "daysSupply": null,
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Tekstuele toelichting bij deze toedieningsafspraak",
             "author": null
@@ -69,14 +82,22 @@
     ],
     "dossageInstruction": [
         {
-            "sequence": 1,
-            "text": "Vanaf 8 jun 2020, 1 maal per dag, rectaal",
+            "sequence": {
+                "_type": "Integer",
+                "value": 1
+            },
+            "text": {
+                "_type": "String",
+                "value": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+            },
             "additionalInstruction": null,
             "asNeeded": null,
             "route": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "12",
                         "display": "rectaal",
                         "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -88,10 +109,19 @@
                 "repeat": {
                     "duration": null,
                     "durationUnit": null,
-                    "frequency": 1,
+                    "frequency": {
+                        "_type": "Integer",
+                        "value": 1
+                    },
                     "frequencyMax": null,
-                    "period": 1,
-                    "periodUnit": "d",
+                    "period": {
+                        "_type": "Decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "Code",
+                        "value": "d"
+                    },
                     "dayOfWeek": null,
                     "timeOfDay": null,
                     "when": null
@@ -102,6 +132,7 @@
     "performer": [
         {
             "actor": {
+                "_type": "Reference",
                 "reference": "Organization/nl-core-organization-06",
                 "display": "Apotheek De Gulle Gaper"
             },
@@ -110,6 +141,7 @@
     ],
     "authorizingPrescription": [
         {
+            "_type": "Reference",
             "reference": null,
             "display": "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
         }

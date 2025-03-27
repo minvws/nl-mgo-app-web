@@ -1,15 +1,14 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type MgoQuantity, type MgoString } from '../../../parse/type';
+import { type MgoQuantityLike } from '../../../parse/type';
 import { quantity } from '../../type/quantity/quantity';
 import { string } from '../../type/string/string';
 import { oneOfValueX } from './oneOfValueX';
 
 test('valueX with string', () => {
     const label = faker.custom.fhirMessageId();
-    const value = faker.lorem.word();
     const input = {
-        valueString: value as MgoString,
+        valueString: faker.mgo.string(),
     };
 
     const context = faker.custom.uiHelperContext();
@@ -22,7 +21,7 @@ test('valueX with string', () => {
 
 test('valueX with quantity', () => {
     const label = faker.custom.fhirMessageId();
-    const mgoQuantity = faker.fhir.quantity() as MgoQuantity;
+    const mgoQuantity = faker.fhir.quantity() as MgoQuantityLike;
     const input = {
         valueQuantity: mgoQuantity,
     };
@@ -37,10 +36,9 @@ test('valueX with quantity', () => {
 
 test('valueX with custom prefix', () => {
     const label = faker.custom.fhirMessageId();
-    const value = faker.lorem.word();
     const prefix = faker.lorem.word();
     const input = {
-        [`${prefix}String`]: value as MgoString,
+        [`${prefix}String`]: faker.mgo.string(),
     };
 
     const context = faker.custom.uiHelperContext();
@@ -53,7 +51,6 @@ test('valueX with custom prefix', () => {
 
 test('valueX with null value', () => {
     const label = faker.custom.fhirMessageId();
-
     const context = faker.custom.uiHelperContext();
     const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, null, undefined);

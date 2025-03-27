@@ -1,8 +1,8 @@
 import { type DateTimeString, type Period } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { dateTime } from '../dateTime/dateTime';
+import { type ValueType } from '../../types';
 
-export interface MgoPeriod {
+export interface MgoPeriod extends ValueType<'Period'> {
     start: DateTimeString | undefined;
     end: DateTimeString | undefined;
 }
@@ -10,7 +10,8 @@ export interface MgoPeriod {
 export const period = createTypeParser<Period, MgoPeriod>((value) => {
     const { start, end } = value;
     return {
-        start: dateTime(start),
-        end: dateTime(end),
+        _type: 'Period',
+        start: start as DateTimeString,
+        end: end as DateTimeString,
     };
 });

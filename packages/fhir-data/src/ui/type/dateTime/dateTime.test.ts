@@ -8,31 +8,29 @@ import { dateTime } from './dateTime';
 test('dateTime single', () => {
     const label = faker.custom.fhirMessageId();
 
-    const value: MgoDateTime = faker.fhir.dateTime();
+    const value: MgoDateTime = faker.mgo.dateTime();
     const uiHelperContext = faker.custom.uiHelperContext();
     const result = dateTime(uiHelperContext)(label, value);
+    const formatDate = formatDateTime(uiHelperContext);
 
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: formatDateTime(uiHelperContext)(value),
+        display: formatDate(value.value),
     });
 });
 
 test('dateTime multiple', () => {
     const label = faker.custom.fhirMessageId();
 
-    const value: MgoDateTime[] = [
-        faker.fhir.dateTime(),
-        faker.fhir.dateTime(),
-        faker.fhir.dateTime(),
-    ];
+    const value: MgoDateTime[] = [faker.mgo.dateTime(), faker.mgo.dateTime(), faker.mgo.dateTime()];
     const uiHelperContext = faker.custom.uiHelperContext();
     const result = dateTime(uiHelperContext)(label, value);
+    const formatDate = formatDateTime(uiHelperContext);
 
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: value.map(formatDateTime(uiHelperContext)),
+        display: value.map((x) => formatDate(x.value)),
     });
 });

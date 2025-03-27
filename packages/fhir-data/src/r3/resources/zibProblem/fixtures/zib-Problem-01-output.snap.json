@@ -6,20 +6,29 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1d1451f3-8fdf-11ec-5384-020000000000",
             "type": null
         }
     ],
-    "clinicalStatus": "active",
-    "verificationStatus": "unknown",
+    "clinicalStatus": {
+        "_type": "Code",
+        "value": "active"
+    },
+    "verificationStatus": {
+        "_type": "Code",
+        "value": "unknown"
+    },
     "category": null,
     "severity": null,
     "code": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "31641000146105",
                 "display": "Fracture of wrist (disorder)",
                 "system": "http://snomed.info/sct"
@@ -28,9 +37,11 @@
     },
     "bodySite": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "361289009",
                     "display": "Entire wrist region",
                     "system": "http://snomed.info/sct"
@@ -39,12 +50,19 @@
         }
     ],
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
-    "onsetDateTime": "2001",
-    "abatementDateTime": "2002",
+    "onsetDateTime": {
+        "_type": "DateTime",
+        "value": "2001"
+    },
+    "abatementDateTime": {
+        "_type": "DateTime",
+        "value": "2002"
+    },
     "assertedDate": null,
     "asserter": null,
     "stage": {
@@ -54,6 +72,7 @@
     "evidence": null,
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Gevallen op de kunstijsbaan",
             "author": null

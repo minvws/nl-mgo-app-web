@@ -1,13 +1,11 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { attachment as zibAttachment } from '../../../r3/elements';
 import { attachment } from './attachment';
-import { type MgoString } from '../../../parse/type';
 
 test('attachment', () => {
-    const value = zibAttachment.parse(faker.fhir.attachment());
+    const value = faker.mgo.attachment();
     value.title = faker.fhir.string();
-    value.url = faker.internet.url() as MgoString;
+    value.url = faker.internet.url();
 
     const uiDownloadLink = attachment(faker.custom.uiHelperContext());
     const result = uiDownloadLink(value);
@@ -19,9 +17,9 @@ test('attachment', () => {
 });
 
 test('attachment where value is a binary reference', () => {
-    const value = zibAttachment.parse(faker.fhir.attachment());
+    const value = faker.mgo.attachment();
     value.title = faker.fhir.string();
-    value.url = 'Binary/test' as MgoString;
+    value.url = 'Binary/test';
 
     const uiDownloadLink = attachment(faker.custom.uiHelperContext());
     const result = uiDownloadLink(value);
@@ -33,7 +31,7 @@ test('attachment where value is a binary reference', () => {
 });
 
 test('attachment values default unknown label and no url', () => {
-    const value = zibAttachment.parse(faker.fhir.attachment());
+    const value = faker.mgo.attachment();
     value.title = undefined;
     value.url = undefined;
 

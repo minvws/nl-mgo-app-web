@@ -8,6 +8,6 @@ export const decimal: WithUiHelperContext<UiFunction<MgoDecimal, SingleValue>> =
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
-            display: numberToString(value),
+            display: numberToString(value?.value),
         };
     };

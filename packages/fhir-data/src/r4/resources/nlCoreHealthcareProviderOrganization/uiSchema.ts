@@ -28,7 +28,7 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthcareProviderOrganiza
     };
 
     return {
-        label: resource.name ?? formatMessage(i18n),
+        label: resource.name?.value ?? formatMessage(i18n),
         children: [
             {
                 label: formatMessage(i18n),

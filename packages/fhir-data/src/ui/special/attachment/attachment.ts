@@ -1,4 +1,4 @@
-import { type Attachment } from '../../../r3/elements';
+import { type MgoAttachment } from '../../../parse/type/attachment/attachment';
 import {
     type DownloadBinary,
     type DownloadLink,
@@ -7,7 +7,7 @@ import {
 } from '../../types';
 
 export const attachment: WithUiHelperContext<
-    UiFunctionWithoutLabel<Attachment, DownloadLink | DownloadBinary>
+    UiFunctionWithoutLabel<MgoAttachment, DownloadLink | DownloadBinary>
 > =
     ({ formatMessage }) =>
     (value) => {

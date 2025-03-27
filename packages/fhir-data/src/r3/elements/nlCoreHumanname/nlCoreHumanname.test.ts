@@ -1,5 +1,6 @@
 import { faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
+import { parse } from '../../../parse';
 import { nlCoreHumanname } from './nlCoreHumanname';
 
 test('humanName parses successfully', () => {
@@ -7,7 +8,7 @@ test('humanName parses successfully', () => {
     const schema = nlCoreHumanname.parse(data);
     expect(schema).toEqual(
         expect.objectContaining({
-            text: data.text,
+            text: parse.string(data.text),
         })
     );
 });

@@ -19,7 +19,7 @@ test('coding single', () => {
     const mockFormatSystem = vi.fn(() => 'system');
     mockSystem.mockReturnValue(mockFormatSystem);
 
-    const mgoCoding: MgoCoding = faker.fhir.coding();
+    const mgoCoding: MgoCoding = faker.mgo.coding();
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: testMessage(label),
@@ -34,7 +34,7 @@ test('coding multiple', () => {
     const mockFormatSystem = vi.fn(() => 'system');
     mockSystem.mockReturnValue(mockFormatSystem);
 
-    const mgoCoding: MgoCoding[] = [faker.fhir.coding(), faker.fhir.coding(), faker.fhir.coding()];
+    const mgoCoding: MgoCoding[] = [faker.mgo.coding(), faker.mgo.coding(), faker.mgo.coding()];
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: testMessage(label),
@@ -54,7 +54,7 @@ test('coding multiple does not return undefined values', () => {
     );
     mockSystem.mockReturnValue(mockFormatSystem);
 
-    const mgoCoding: MgoCoding[] = [faker.fhir.coding(), {}, faker.fhir.coding()];
+    const mgoCoding: MgoCoding[] = [faker.mgo.coding(), { _type: 'Coding' }, faker.mgo.coding()];
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: testMessage(label),

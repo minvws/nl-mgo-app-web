@@ -13,6 +13,7 @@ test('codeableConcept', () => {
         }),
     });
     const expected = {
+        _type: 'CodeableConcept',
         text: concept.text,
         coding: map(concept.coding, coding),
     };
@@ -25,6 +26,7 @@ test('codeableConcept always returns coding array', () => {
     concept.coding = undefined;
 
     const expected = {
+        _type: 'CodeableConcept',
         text: concept.text,
         coding: [],
     };

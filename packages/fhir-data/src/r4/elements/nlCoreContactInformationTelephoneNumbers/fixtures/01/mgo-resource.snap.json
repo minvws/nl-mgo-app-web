@@ -1,16 +1,27 @@
 {
     "system": "phone",
     "telecomType": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "MC",
                 "display": "Mobile Phone",
                 "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
             }
         ]
     },
-    "value": "+31611234567",
-    "use": "work",
-    "comment": "Tussen 9 en 17"
+    "value": {
+        "_type": "String",
+        "value": "+31611234567"
+    },
+    "use": {
+        "_type": "Code",
+        "value": "work"
+    },
+    "comment": {
+        "_type": "String",
+        "value": "Tussen 9 en 17"
+    }
 }

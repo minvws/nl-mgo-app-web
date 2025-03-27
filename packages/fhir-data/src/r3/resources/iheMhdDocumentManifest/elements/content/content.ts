@@ -1,10 +1,9 @@
 import { type DocumentManifestContent } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 import { type Nullable } from '../../../../../types/Nullable';
-import { attachment, type Attachment } from '../../../../elements';
 
 export interface IheMhdMinimalDocumentReferenceContent {
-    attachment: Attachment | undefined;
+    attachment: parse.MgoAttachment | undefined;
     reference: parse.MgoReference | undefined;
 }
 
@@ -12,7 +11,7 @@ export function parseContent(
     value: Nullable<DocumentManifestContent>
 ): IheMhdMinimalDocumentReferenceContent {
     return {
-        attachment: value?.pAttachment ? attachment.parse(value.pAttachment) : undefined,
+        attachment: parse.attachment(value?.pAttachment),
         reference: parse.reference(value?.pReference),
     };
 }

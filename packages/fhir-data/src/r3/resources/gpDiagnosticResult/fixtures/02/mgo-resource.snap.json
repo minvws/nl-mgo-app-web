@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "bb4f140b-041c-11ec-6152-020000000000",
@@ -13,30 +14,42 @@
         }
     ],
     "context": {
+        "_type": "Reference",
         "reference": "Encounter/ont-ver-gpdata-encounter-contact01",
         "display": "Consult voor Boezemfibrilleren/-fladderen met Dokter Bernard"
     },
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
-    "effective": "2023-05-03",
+    "effective": {
+        "_type": "DateTime",
+        "value": "2023-05-03"
+    },
     "performer": [
         {
+            "_type": "Reference",
             "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
             "display": "Dokter Bernard"
         }
     ],
-    "status": "final",
+    "status": {
+        "_type": "String",
+        "value": "final"
+    },
     "code": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "1875",
                 "display": "polsfrequentie",
                 "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
             },
             {
+                "_type": "Coding",
                 "code": "8893-0",
                 "display": "Heart rate Peripheral artery by Palpation",
                 "system": "http://loinc.org"
@@ -44,6 +57,7 @@
         ]
     },
     "valueQuantity": {
+        "_type": "Quantity",
         "value": 120,
         "comparator": null,
         "unit": "/min",

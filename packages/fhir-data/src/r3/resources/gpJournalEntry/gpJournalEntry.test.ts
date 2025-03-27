@@ -2,8 +2,7 @@ import { expectJson, faker, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
-import { coding } from '../../../parse/type';
-import { map } from '../../../utils';
+import { codeableConcept } from '../../../parse/type';
 import input01 from './fixtures/fhir-resource.json';
 import { gpJournalEntry } from './gpJournalEntry';
 import { i18n } from './uiSchema';
@@ -25,7 +24,7 @@ test('uiSchema returns the expected output 01', async () => {
 });
 
 test('returns ICPC_E in parser', () => {
-    const valueCodeableConcept = [faker.fhir.coding()];
+    const coding = [faker.fhir.coding()];
     const input = input01 as Observation;
     input.component?.push({
         code: {
@@ -38,16 +37,16 @@ test('returns ICPC_E in parser', () => {
             ],
         },
         valueCodeableConcept: {
-            coding: valueCodeableConcept,
+            coding,
         },
     });
 
     const output = gpJournalEntry.parse(input);
     expect(output.ICPC_E).toEqual({
-        valueCodeableConcept: {
+        valueCodeableConcept: codeableConcept({
             text: undefined,
-            coding: map(valueCodeableConcept, coding),
-        },
+            coding,
+        }),
     });
 });
 

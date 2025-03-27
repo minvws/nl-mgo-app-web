@@ -1,6 +1,11 @@
-import { passThrough } from '../../helpers';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
+import { type ValueType } from '../../types';
 
-export type MgoPositiveInt = number & { readonly '': unique symbol };
+export interface MgoPositiveInt extends ValueType<'PositiveInt'> {
+    value: number;
+}
 
-export const positiveInt = createTypeParser<number, MgoPositiveInt>(passThrough);
+export const positiveInt = createTypeParser<number, MgoPositiveInt>((value) => ({
+    _type: 'PositiveInt',
+    value,
+}));

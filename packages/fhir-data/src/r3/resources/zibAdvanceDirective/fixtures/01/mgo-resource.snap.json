@@ -6,9 +6,11 @@
     "fhirVersion": "R3",
     "category": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "11341000146107",
                     "display": "Living will and advance directive record (record artifact)",
                     "system": "http://snomed.info/sct"
@@ -16,9 +18,11 @@
             ]
         },
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "NR",
                     "display": "Niet reanimeren verklaring",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
@@ -26,37 +30,38 @@
             ]
         }
     ],
-    "dateTime": "2018-04-09",
+    "dateTime": {
+        "_type": "DateTime",
+        "value": "2018-04-09"
+    },
     "disorder": {
+        "_type": "Reference",
         "reference": "Condition/zib-problem-01",
         "display": "Amyotrofe laterale sclerose"
     },
     "consentingParty": [
         {
+            "_type": "Reference",
             "reference": "RelatedPerson/nl-core-relatedperson-01",
             "display": "Janni van Putten-van der Giessen"
         }
     ],
     "source": {
-        "attachment": {
-            "contentType": null,
-            "language": null,
-            "data": null,
-            "url": null,
-            "size": null,
-            "hash": null,
-            "title": null,
-            "creation": null
-        },
+        "attachment": null,
         "identifier": null,
         "reference": null
     },
-    "comment": "Niet-reanimerenpenning",
+    "comment": {
+        "_type": "String",
+        "value": "Niet-reanimerenpenning"
+    },
     "typeOfLivingWill": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "NR",
                     "display": "Niet reanimeren verklaring",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"

@@ -40,7 +40,7 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractiti
     );
 
     return {
-        label: resource.name?.at(0)?.text ?? context.formatMessage(i18n),
+        label: resource.name?.at(0)?.text?.value ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

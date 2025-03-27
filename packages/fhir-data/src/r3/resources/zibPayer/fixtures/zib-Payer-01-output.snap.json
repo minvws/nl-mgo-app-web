@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1c7ad0eb-8fdf-11ec-2921-020000000000",
@@ -14,9 +15,11 @@
     ],
     "status": null,
     "type": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "B",
                 "display": "Basis verzekerd",
                 "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1"
@@ -25,21 +28,25 @@
     },
     "policyHolder": null,
     "subscriber": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "subscriberId": null,
     "beneficiary": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "relationship": null,
     "period": {
+        "_type": "Period",
         "start": "2018-01-01",
         "end": "2019-01-31"
     },
     "payor": [
         {
+            "_type": "Reference",
             "reference": "Organization/nl-core-organization-04",
             "display": "Menzis Zorgverzekeraar N.V."
         }

@@ -4,15 +4,21 @@
     "resourceType": "DeviceRequest",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
     "fhirVersion": "R3",
-    "status": "active",
+    "status": {
+        "_type": "String",
+        "value": "active"
+    },
     "occurrence": {
+        "_type": "Period",
         "start": "2012-03-13",
         "end": null
     },
     "codeCodeableConcept": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "405815000",
                 "display": "Procedure device",
                 "system": "http://snomed.info/sct"
@@ -20,9 +26,11 @@
         ]
     },
     "intent": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "order",
                 "display": null,
                 "system": "http://hl7.org/fhir/request-intent"
@@ -30,10 +38,12 @@
         ]
     },
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "perfomer": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-02",
         "display": "UMCG - Afdeling Orthopedie"
     }

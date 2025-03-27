@@ -1,6 +1,7 @@
 import type {
     Address as AddressR3,
     Annotation as AnnotationR3,
+    Attachment as AttachmentR3,
     BackboneElement as BackboneElementR3,
     CodeableConcept as CodeableConceptR3,
     Coding as CodingR3,
@@ -23,6 +24,7 @@ import type {
 import type {
     Address as AddressR4,
     Annotation as AnnotationR4,
+    Attachment as AttachmentR4,
     BackboneElement as BackboneElementR4,
     CodeableConcept as CodeableConceptR4,
     Coding as CodingR4,
@@ -56,6 +58,7 @@ export type HumanName = HumanNameR3 | HumanNameR4;
 export type ContactPoint = ContactPointR3 | ContactPointR4;
 export type BackboneElement = BackboneElementR3 | BackboneElementR4;
 export type Reference = ReferenceR3 | ReferenceR4;
+export type Attachment = AttachmentR3 | AttachmentR4;
 
 export type ObservationComponent = ObservationComponentR3 | ObservationComponentR4;
 export type DomainResource = DomainResourceR3 | DomainResourceR4;

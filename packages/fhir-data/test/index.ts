@@ -5,7 +5,6 @@ import { deepReplaceUndefined } from '../src/utils';
 import { testUiSchemaContext } from './uiSchemaContext';
 
 export { faker } from './faker';
-export { testSet } from './testSet';
 
 export function expectJson(value: unknown) {
     // replace undefined with null so it shows up in the json snapshot

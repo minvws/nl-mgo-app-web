@@ -2,6 +2,7 @@ import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } 
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Medication } from 'fhir/r4';
 import { expect, test } from 'vitest';
+import { parse } from '../../../parse';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import { nlCorePharmaceuticalProductR4 } from './nlCorePharmaceuticalProduct';
@@ -47,5 +48,5 @@ test('return batch lotnumber if specified', () => {
         lotNumber: lotNumber,
     };
     const output = nlCorePharmaceuticalProductR4.parse(input);
-    expect(output.batch.lotNumber).toEqual(lotNumber);
+    expect(output.batch.lotNumber).toEqual(parse.string(lotNumber));
 });

@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { nlCoreContactpoint } from '../../elements';
@@ -15,7 +16,7 @@ export const uiSchema: HealthUiSchemaFunction<NlCorePractitionerRole> = (resourc
     );
 
     return {
-        label: resource.identifier?.at(0)?.value ?? context.formatMessage(i18n),
+        label: valueOf(resource.identifier?.at(0)) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

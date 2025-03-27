@@ -42,14 +42,14 @@
             "label": "r3.attachment",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.contentType",
-                    "display": "Niet bekend"
+                    "type": "SINGLE_VALUE",
+                    "display": "application/pdf"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.language",
-                    "display": "Niet bekend"
+                    "type": "SINGLE_VALUE",
+                    "display": "nl"
                 },
                 {
                     "type": "SINGLE_VALUE",
@@ -57,9 +57,9 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.url",
-                    "display": "Niet bekend"
+                    "type": "SINGLE_VALUE",
+                    "display": "Binary/pdfa-binary-02"
                 },
                 {
                     "type": "SINGLE_VALUE",
@@ -72,9 +72,9 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.attachment.title",
-                    "display": "Niet bekend"
+                    "type": "SINGLE_VALUE",
+                    "display": "Verwijsbrief Arts"
                 },
                 {
                     "type": "SINGLE_VALUE",

@@ -1,22 +1,24 @@
 import { faker, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
-import { type MgoQuantity } from '../../../../../parse/type';
 import { referenceRange, type ReferenceRange } from './referenceRange';
 
 test('summary uses translated label when type.coding has system "referencerange-meaning"', () => {
     const value: Partial<ReferenceRange> = {
-        low: faker.fhir.quantity() as MgoQuantity,
-        high: faker.fhir.quantity() as MgoQuantity,
+        low: faker.mgo.quantity(),
+        high: faker.mgo.quantity(),
         type: {
+            _type: 'CodeableConcept',
             text: undefined,
             coding: [
                 {
+                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
                 },
                 {
+                    _type: 'Coding',
                     system: 'http://hl7.org/fhir/referencerange-meaning',
                     code: 'recommended',
                     display: 'Recommended Range',
@@ -37,17 +39,20 @@ test('summary uses translated label when type.coding has system "referencerange-
 
 test('summary uses label from the first type.coding system found when "referencerange-meaning" is not available', () => {
     const value: Partial<ReferenceRange> = {
-        low: faker.fhir.quantity() as MgoQuantity,
-        high: faker.fhir.quantity() as MgoQuantity,
+        low: faker.mgo.quantity(),
+        high: faker.mgo.quantity(),
         type: {
+            _type: 'CodeableConcept',
             text: undefined,
             coding: [
                 {
+                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
                 },
                 {
+                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
@@ -66,9 +71,10 @@ test('summary uses label from the first type.coding system found when "reference
 
 test('summary uses fallback label when there is a type, but it could not be translated in any way', () => {
     const value: Partial<ReferenceRange> = {
-        low: faker.fhir.quantity() as MgoQuantity,
-        high: faker.fhir.quantity() as MgoQuantity,
+        low: faker.mgo.quantity(),
+        high: faker.mgo.quantity(),
         type: {
+            _type: 'CodeableConcept',
             text: undefined,
             coding: [],
         },
@@ -86,8 +92,8 @@ test('summary uses fallback label when there is a type, but it could not be tran
 
 test('summary defaults to the normal range type, when no type is specified', () => {
     const value: Partial<ReferenceRange> = {
-        low: faker.fhir.quantity() as MgoQuantity,
-        high: faker.fhir.quantity() as MgoQuantity,
+        low: faker.mgo.quantity(),
+        high: faker.mgo.quantity(),
     };
 
     const summarySchema = referenceRange.summary(

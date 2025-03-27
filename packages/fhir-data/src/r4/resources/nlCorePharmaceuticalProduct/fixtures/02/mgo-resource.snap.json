@@ -6,9 +6,11 @@
     "fhirVersion": "R4",
     "description": null,
     "code": {
+        "_type": "CodeableConcept",
         "text": "Methotrexaat injvlst 25mg/ml 0,6 ml",
         "coding": [
             {
+                "_type": "Coding",
                 "code": "89907",
                 "display": "Methotrexaat injvlst 25mg/ml 0,6 ml",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.1"
@@ -25,5 +27,8 @@
         "expirationDate": null
     },
     "identifier": null,
-    "name": "Methotrexaat injvlst 25mg/ml 0,6 ml"
+    "name": {
+        "_type": "String",
+        "value": "Methotrexaat injvlst 25mg/ml 0,6 ml"
+    }
 }

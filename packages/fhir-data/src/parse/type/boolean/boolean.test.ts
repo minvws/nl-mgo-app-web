@@ -4,5 +4,8 @@ import { boolean } from './boolean';
 
 test('boolean', () => {
     const value = faker.datatype.boolean();
-    expect(boolean(value)).toBe(value);
+    expect(boolean(value)).toEqual({
+        _type: 'Boolean',
+        value,
+    });
 });

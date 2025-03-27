@@ -3,7 +3,6 @@ import { type Consent } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { attachment } from '../../elements/attachment/attachment';
 import { actor } from './elements/actor/actor';
 import { data } from './elements/data/data';
 import { except } from './elements/except/except';
@@ -28,7 +27,7 @@ function parseZibTreatmentDirective(resource: Consent) {
         actor: map(resource.actor, actor.parse),
         action: map(resource.action, parse.codeableConcept),
         organization: map(resource.organization, parse.reference),
-        sourceAttachment: attachment.parse(resource.sourceAttachment),
+        sourceAttachment: parse.attachment(resource.sourceAttachment),
         sourceIdentifier: parse.identifier(resource.sourceIdentifier),
         sourceReference: parse.reference(resource.sourceReference),
         policy: map(resource.policy, policy.parse),

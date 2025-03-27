@@ -4,11 +4,16 @@
     "resourceType": "Medication",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct",
     "fhirVersion": "R4",
-    "description": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
+    "description": {
+        "_type": "String",
+        "value": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
+    },
     "code": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "J07BC02",
                 "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
                 "system": "http://www.whocc.no/atc"
@@ -18,9 +23,11 @@
     "status": null,
     "manufacturer": null,
     "form": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "21",
                 "display": "SUSPENSIE VOOR INJECTIE",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.11"
@@ -30,7 +37,10 @@
     "amount": null,
     "ingredient": null,
     "batch": {
-        "lotNumber": "AW1898",
+        "lotNumber": {
+            "_type": "String",
+            "value": "AW1898"
+        },
         "expirationDate": null
     },
     "identifier": null,

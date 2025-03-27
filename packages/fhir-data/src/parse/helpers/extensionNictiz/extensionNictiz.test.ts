@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
+import { boolean } from '../../type';
 import { extensionNictiz } from './extensionNictiz';
 
 test('extensionNictiz matches by zibID and returns the value', () => {
@@ -14,7 +15,7 @@ test('extensionNictiz matches by zibID and returns the value', () => {
     };
 
     const value = extensionNictiz(input, 'zib-MedicationUse-AsAgreedIndicator');
-    expect(value).toBe(valueBoolean);
+    expect(value).toEqual(boolean(valueBoolean));
 });
 
 test('extensionNictiz also matches modifierExtentions and returns the value', () => {
@@ -30,5 +31,5 @@ test('extensionNictiz also matches modifierExtentions and returns the value', ()
     };
 
     const value = extensionNictiz(input, 'zib-MedicationUse-AsAgreedIndicator');
-    expect(value).toBe(valueBoolean);
+    expect(value).toEqual(boolean(valueBoolean));
 });

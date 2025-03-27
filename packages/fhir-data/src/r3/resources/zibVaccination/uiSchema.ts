@@ -17,7 +17,7 @@ export const uiSchema: HealthUiSchemaFunction<ZibVaccination> = (resource, conte
                 children: [
                     ui.codeableConcept(`${i18n}.vaccineCode`, resource.vaccineCode),
                     ui.quantity(`${i18n}.doseQuantity`, resource.dose),
-                    ui.dateTime(`${i18n}.date`, resource.vaccinationDate),
+                    ui.date(`${i18n}.date`, resource.vaccinationDate),
                     ui.annotation(`${i18n}.note.text`, resource.note),
 
                     ...ui.helpers.getChildren(practitioners),

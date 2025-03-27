@@ -1,35 +1,25 @@
-import { faker, testSet, testUiSchemaContext } from '$test';
-import { expect } from 'vitest';
+import { faker, testUiSchemaContext } from '$test';
+import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { actor } from './actor';
 
-testSet(
-    'actor parses successfully',
-    faker.fhir.immunizationPractitioner,
-    (data) => {
-        const schema = actor.parse(data);
-        expect(schema).toEqual(
-            expect.objectContaining({
-                actor: data.actor,
-            })
-        );
-    },
-    false
-);
+test('actor parses successfully', () => {
+    const data = faker.fhir.immunizationPractitioner();
+    const schema = actor.parse(data);
+    expect(schema).toEqual(
+        expect.objectContaining({
+            actor: parse.reference(data.actor),
+        })
+    );
+});
 
-testSet(
-    'actor UI schema group is created successfully',
-    () => {
-        const data = faker.fhir.immunizationPractitioner();
-        return actor.parse(data);
-    },
-    (data) => {
-        const schema = actor.uiSchemaGroup(
-            data,
-            testUiSchemaContext({
-                ignoreMissingTranslations: true,
-            })
-        );
-        expect(schema.label).toBe('r3.immunization.practitioner.actor');
-    },
-    false
-);
+test('actor UI schema group is created successfully', () => {
+    const data = actor.parse(faker.fhir.immunizationPractitioner());
+    const schema = actor.uiSchemaGroup(
+        data,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(schema.label).toBe('r3.immunization.practitioner.actor');
+});

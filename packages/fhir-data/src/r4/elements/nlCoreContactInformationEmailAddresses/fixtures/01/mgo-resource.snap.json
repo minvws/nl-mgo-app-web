@@ -1,5 +1,11 @@
 {
     "system": "email",
-    "value": "info@erasmus.nl",
-    "use": "work"
+    "value": {
+        "_type": "String",
+        "value": "info@erasmus.nl"
+    },
+    "use": {
+        "_type": "Code",
+        "value": "work"
+    }
 }

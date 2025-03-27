@@ -1,11 +1,13 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { codeableConcept } from '../codeableConcept/codeableConcept';
 import { identifier } from './identifier';
 
-testSet('identifier', faker.fhir.identifier, (data) => {
+test('identifier', () => {
+    const data = faker.fhir.identifier();
     const { use, system, value, type } = data;
     const expected = {
+        _type: 'Identifier',
         use,
         system,
         value,

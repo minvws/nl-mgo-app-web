@@ -1,18 +1,24 @@
 {
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "191e51d9-8fdf-11ec-1102-020000000000",
             "type": null
         }
     ],
-    "status": "final",
+    "status": {
+        "_type": "Code",
+        "value": "final"
+    },
     "category": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "vital-signs",
                     "display": "Vital Signs",
                     "system": "http://hl7.org/fhir/observation-category"
@@ -21,6 +27,7 @@
         }
     ],
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
@@ -30,9 +37,11 @@
     "effectivePeriod": null,
     "dataAbsentReason": null,
     "method": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "22762002",
                 "display": "Non-invasive",
                 "system": "http://snomed.info/sct"
@@ -40,16 +49,21 @@
         ]
     },
     "bodySite": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "368208006",
                 "display": "Left upper arm structure",
                 "system": "http://snomed.info/sct"
             }
         ]
     },
-    "effectiveDateTime": "2013-02-01T08:53:00+01:00",
+    "effectiveDateTime": {
+        "_type": "DateTime",
+        "value": "2013-02-01T08:53:00+01:00"
+    },
     "comment": null,
     "id": "zib-bloodpressure-01",
     "referenceId": "Observation/zib-bloodpressure-01",
@@ -58,9 +72,11 @@
     "fhirVersion": "R3",
     "cuffTypeLOINC": {
         "valueCodeableConcept": {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "L",
                     "display": "Groot",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
@@ -76,6 +92,7 @@
     },
     "systolicBP": {
         "valueQuantity": {
+            "_type": "Quantity",
             "value": 108,
             "comparator": null,
             "unit": "mmHg",
@@ -85,6 +102,7 @@
     },
     "diastolicBP": {
         "valueQuantity": {
+            "_type": "Quantity",
             "value": 108,
             "comparator": null,
             "unit": "mmHg",
@@ -103,9 +121,11 @@
     },
     "positionLOINC": {
         "valueCodeableConcept": {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "33586001",
                     "display": "Sitting position",
                     "system": "http://snomed.info/sct"

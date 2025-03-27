@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "16e29a33-8fdf-11ec-6379-020000000000",
@@ -14,7 +15,10 @@
     ],
     "name": [
         {
-            "family": "Vaste Huisarts 1",
+            "family": {
+                "_type": "String",
+                "value": "Vaste Huisarts 1"
+            },
             "given": null,
             "period": null,
             "prefix": null,
@@ -25,32 +29,65 @@
     ],
     "address": [
         {
-            "use": "work",
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "type": null,
             "text": null,
             "line": [
-                "Valkendael 45"
+                {
+                    "_type": "String",
+                    "value": "Valkendael 45"
+                }
             ],
-            "city": "Maastricht",
+            "city": {
+                "_type": "String",
+                "value": "Maastricht"
+            },
             "district": null,
             "state": null,
-            "postalCode": "6245HK",
-            "country": "Nederland",
+            "postalCode": {
+                "_type": "String",
+                "value": "6245HK"
+            },
+            "country": {
+                "_type": "String",
+                "value": "Nederland"
+            },
             "period": null
         }
     ],
     "telecom": [
         {
-            "system": "phone",
-            "value": "+31434073576",
-            "use": "work",
+            "system": {
+                "_type": "Code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "String",
+                "value": "+31434073576"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "rank": null,
             "period": null
         },
         {
-            "system": "email",
-            "value": "huisarts@huisarts.nl",
-            "use": "work",
+            "system": {
+                "_type": "Code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "String",
+                "value": "huisarts@huisarts.nl"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "rank": null,
             "period": null
         }

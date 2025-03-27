@@ -6,23 +6,38 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "18e3c749-8fdf-11ec-2022-020000000000",
             "type": null
         }
     ],
-    "clinicalStatus": "active",
-    "verificationStatus": "confirmed",
+    "clinicalStatus": {
+        "_type": "Code",
+        "value": "active"
+    },
+    "verificationStatus": {
+        "_type": "Code",
+        "value": "confirmed"
+    },
     "type": null,
     "category": [
-        "biologic"
+        {
+            "_type": "Code",
+            "value": "biologic"
+        }
     ],
-    "criticality": "high",
+    "criticality": {
+        "_type": "Code",
+        "value": "high"
+    },
     "code": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "288328004",
                 "display": "Bee venom",
                 "system": "http://snomed.info/sct"
@@ -30,6 +45,7 @@
         ]
     },
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     }

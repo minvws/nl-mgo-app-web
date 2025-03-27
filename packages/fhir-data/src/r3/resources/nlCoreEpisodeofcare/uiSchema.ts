@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NlCoreEpisodeofcare } from './nlCoreEpisodeofcare';
 
 export const i18n = 'r3.nl_core_episodeofcare';
@@ -20,7 +21,7 @@ export const uiSchema: HealthUiSchemaFunction<NlCoreEpisodeofcare> = (resource, 
     };
 
     return {
-        label: resource.title ?? formatMessage(i18n),
+        label: valueOf(resource.title) ?? formatMessage(i18n),
         children: [
             {
                 label: formatMessage(i18n),

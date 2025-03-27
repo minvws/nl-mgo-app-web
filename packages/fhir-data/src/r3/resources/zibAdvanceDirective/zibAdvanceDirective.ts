@@ -1,12 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Consent } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { intersectCodeableConcept } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
-import { attachment } from '../../elements/attachment/attachment';
-import { uiSchema } from './uiSchema';
 import { typeOfLivingWillValueSet } from '../../valueSets/typeOfLivingWill';
-import { intersectCodeableConcept } from '../../../parse/helpers';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'; // NOSONAR
 
@@ -26,7 +25,7 @@ function parseZibAdvanceDirective(resource: Consent) {
         disorder: parse.extensionNictiz(resource, 'zib-AdvanceDirective-Disorder'),
         consentingParty: map(resource.consentingParty, parse.reference),
         source: {
-            attachment: attachment.parse(resource.sourceAttachment),
+            attachment: parse.attachment(resource.sourceAttachment),
             identifier: parse.identifier(resource.sourceIdentifier),
             reference: parse.reference(resource.sourceReference),
         },

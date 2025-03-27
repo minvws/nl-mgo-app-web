@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { zibProductIngredient, zibProductPackage } from '../../elements';
@@ -16,7 +17,7 @@ export const uiSchema: HealthUiSchemaFunction<ZibProduct> = (resource, context) 
     );
 
     return {
-        label: resource.description ?? context.formatMessage(i18n),
+        label: valueOf(resource.description) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_general_information`,

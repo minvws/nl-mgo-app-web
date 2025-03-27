@@ -1,18 +1,50 @@
 {
-    "line": "1e Jacob van Campenstr to 15 A 2e",
-    "streetName": "1e Jacob van Campenstr",
-    "houseNumber": "15",
-    "houseNumberAddition": "A 2e",
-    "houseNumberIndication": "to",
-    "additionalInformation": "test info",
-    "city": "Hoogmade",
-    "district": "Kaag en Braassem",
-    "postalCode": "1012 NX",
-    "country": "Nederland",
+    "line": {
+        "_type": "String",
+        "value": "1e Jacob van Campenstr to 15 A 2e"
+    },
+    "streetName": {
+        "_type": "String",
+        "value": "1e Jacob van Campenstr"
+    },
+    "houseNumber": {
+        "_type": "String",
+        "value": "15"
+    },
+    "houseNumberAddition": {
+        "_type": "String",
+        "value": "A 2e"
+    },
+    "houseNumberIndication": {
+        "_type": "String",
+        "value": "to"
+    },
+    "additionalInformation": {
+        "_type": "String",
+        "value": "test info"
+    },
+    "city": {
+        "_type": "String",
+        "value": "Hoogmade"
+    },
+    "district": {
+        "_type": "String",
+        "value": "Kaag en Braassem"
+    },
+    "postalCode": {
+        "_type": "String",
+        "value": "1012 NX"
+    },
+    "country": {
+        "_type": "String",
+        "value": "Nederland"
+    },
     "countryCode": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "NL",
                 "display": "Nederland",
                 "system": "urn:iso:std:iso:3166"
@@ -20,9 +52,11 @@
         ]
     },
     "addressType": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "HP",
                 "display": "Primary Home",
                 "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"

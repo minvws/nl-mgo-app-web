@@ -4,7 +4,10 @@ import { code } from './code';
 
 test('code', () => {
     const value = faker.fhir.code();
-    expect(code(value)).toBe(value);
+    expect(code(value)).toEqual({
+        _type: 'Code',
+        value,
+    });
 });
 test('code returns undefined if nullish', () => {
     const value = faker.helpers.arrayElement([null, undefined]);

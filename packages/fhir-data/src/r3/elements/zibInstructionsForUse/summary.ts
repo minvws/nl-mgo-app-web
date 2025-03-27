@@ -10,7 +10,7 @@ export const summary: HealthUiGroupFunction<ZibInstructionsForUse, HealthUiGroup
     const { ui, formatMessage } = context;
 
     return {
-        label: formatMessage(`summary.${i18n}`, { sequence: resource.sequence }),
+        label: formatMessage(`summary.${i18n}`, { sequence: resource.sequence?.value }),
         children: [
             ui.string(`summary.${i18n}.text`, resource.text),
             ...ui.oneOfValueX(`summary.${i18n}.dose`, resource, 'dose'),

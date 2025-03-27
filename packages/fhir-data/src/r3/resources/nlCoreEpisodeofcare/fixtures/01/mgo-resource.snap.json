@@ -6,20 +6,29 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "15f29a29-8fdf-11ec-1699-020000000000",
             "type": null
         }
     ],
-    "title": "Gebroken been",
-    "status": "active",
+    "title": {
+        "_type": "String",
+        "value": "Gebroken been"
+    },
+    "status": {
+        "_type": "Code",
+        "value": "active"
+    },
     "statusHistory": null,
     "type": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "123037004",
                     "display": "Lichaamsstructuur",
                     "system": "http://snomed.info/sct"
@@ -30,6 +39,7 @@
     "diagnosis": [
         {
             "condition": {
+                "_type": "Reference",
                 "reference": "Condition/zib-problem-07",
                 "display": "Gebroken dijbeen"
             },
@@ -38,24 +48,31 @@
         }
     ],
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-02",
         "display": "Paul XXX_Mesker"
     },
     "managingOrganization": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-05",
         "display": "Ziekenhuis Gooi en Overvecht"
     },
     "period": {
+        "_type": "Period",
         "start": "2019-02-06",
         "end": null
     },
     "referralRequest": null,
     "careManager": {
+        "_type": "Reference",
         "reference": "Practitioner/nl-core-practitioner-04",
         "display": "Dirk de Vries"
     },
     "team": null,
     "account": null,
-    "dateFirstEncounter": "2019-02-06T13:17:00+00:00",
+    "dateFirstEncounter": {
+        "_type": "DateTime",
+        "value": "2019-02-06T13:17:00+00:00"
+    },
     "dateLastEncounter": null
 }

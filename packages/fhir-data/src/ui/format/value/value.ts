@@ -1,7 +1,7 @@
+import { type Lossless } from '../../../types/Lossless';
 import { type Nullable } from '../../../types/Nullable';
 import { isNullish } from '../../../utils';
 import { numberToString } from '../../helpers';
-import { type Lossless } from '../../../types/Lossless';
 
 export function valueWithUnit(value: Nullable<Lossless<number>>, unit: Nullable<string>) {
     if (isNullish(value)) return;

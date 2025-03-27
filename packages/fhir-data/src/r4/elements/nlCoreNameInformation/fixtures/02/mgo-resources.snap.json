@@ -1,46 +1,94 @@
 [
     {
         "nameUsage": null,
-        "family": "Schemer",
+        "family": {
+            "_type": "String",
+            "value": "Schemer"
+        },
         "given": [
-            "Hendrik",
-            "Willem"
+            {
+                "_type": "String",
+                "value": "Hendrik"
+            },
+            {
+                "_type": "String",
+                "value": "Willem"
+            }
         ],
         "givenNames": [
-            "Hendrik",
-            "Willem"
+            {
+                "_type": "String",
+                "value": "Hendrik"
+            },
+            {
+                "_type": "String",
+                "value": "Willem"
+            }
         ],
         "givenInitials": null,
         "period": null,
         "prefix": null,
         "suffix": null,
-        "text": "Hendrik Willem Schemer",
-        "use": "official"
+        "text": {
+            "_type": "String",
+            "value": "Hendrik Willem Schemer"
+        },
+        "use": {
+            "_type": "Code",
+            "value": "official"
+        }
     },
     {
         "nameUsage": null,
         "family": null,
         "given": [
-            "H.",
-            "J.",
-            "W."
+            {
+                "_type": "String",
+                "value": "H."
+            },
+            {
+                "_type": "String",
+                "value": "J."
+            },
+            {
+                "_type": "String",
+                "value": "W."
+            }
         ],
         "givenNames": null,
         "givenInitials": [
-            "H.",
-            "J.",
-            "W."
+            {
+                "_type": "String",
+                "value": "H."
+            },
+            {
+                "_type": "String",
+                "value": "J."
+            },
+            {
+                "_type": "String",
+                "value": "W."
+            }
         ],
         "period": null,
         "prefix": null,
         "suffix": null,
         "text": null,
-        "use": "official"
+        "use": {
+            "_type": "Code",
+            "value": "official"
+        }
     },
     {
-        "use": "usual",
+        "use": {
+            "_type": "Code",
+            "value": "usual"
+        },
         "given": [
-            "Henk"
+            {
+                "_type": "String",
+                "value": "Henk"
+            }
         ],
         "period": null,
         "text": null

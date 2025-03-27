@@ -1,35 +1,25 @@
-import { faker, testSet, testUiSchemaContext } from '$test';
-import { expect } from 'vitest';
+import { faker, testUiSchemaContext } from '$test';
+import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { contact } from './contact';
 
-testSet(
-    'contact parses successfully',
-    faker.fhir.patientContact,
-    (data) => {
-        const schema = contact.parse(data);
-        expect(schema).toEqual(
-            expect.objectContaining({
-                organization: data.organization,
-            })
-        );
-    },
-    false
-);
+test('contact parses successfully', () => {
+    const data = faker.fhir.patientContact();
+    const schema = contact.parse(data);
+    expect(schema).toEqual(
+        expect.objectContaining({
+            organization: parse.reference(data.organization),
+        })
+    );
+});
 
-testSet(
-    'contact UI schema group is created successfully',
-    () => {
-        const data = faker.fhir.patientContact();
-        return contact.parse(data);
-    },
-    (data) => {
-        const schema = contact.uiSchemaGroup(
-            data,
-            testUiSchemaContext({
-                ignoreMissingTranslations: true,
-            })
-        );
-        expect(schema.label).toBe('r3.nl_core_patient.contact');
-    },
-    false
-);
+test('contact UI schema group is created successfully', () => {
+    const data = contact.parse(faker.fhir.patientContact());
+    const schema = contact.uiSchemaGroup(
+        data,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(schema.label).toBe('r3.nl_core_patient.contact');
+});

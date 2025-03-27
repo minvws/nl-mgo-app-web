@@ -8,6 +8,6 @@ export const positiveInt: WithUiHelperContext<UiFunction<MgoPositiveInt, SingleV
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
-            display: numberToString(value),
+            display: numberToString(value?.value),
         };
     };

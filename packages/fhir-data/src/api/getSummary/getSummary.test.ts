@@ -4,10 +4,10 @@ import { Locale } from '@minvws/mgo-mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../types/Fhir';
 import { createSchemaContext, type HealthUiSchemaFunction } from '../../ui';
+import { type HealthUiSchema, type SingleValue } from '../../ui/types';
 import { type HealthUiSchemaOptions } from '../getDetails/getDetails';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type MgoResource } from '../resources/resources';
-import { type HealthUiSchema, type SingleValue } from '../types';
 import { getSummary } from './getSummary';
 
 const mockGetResourceConfig = getResourceConfig as MockedFunction<typeof getResourceConfig>;

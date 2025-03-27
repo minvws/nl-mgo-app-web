@@ -1,30 +1,69 @@
 [
     {
-        "nameUsage": "NL3",
-        "family": "van der Giessen-van Putten",
+        "nameUsage": {
+            "_type": "Code",
+            "value": "NL3"
+        },
+        "family": {
+            "_type": "String",
+            "value": "van der Giessen-van Putten"
+        },
         "given": [
-            "Johanna",
-            "Petronella",
-            "Maria"
+            {
+                "_type": "String",
+                "value": "Johanna"
+            },
+            {
+                "_type": "String",
+                "value": "Petronella"
+            },
+            {
+                "_type": "String",
+                "value": "Maria"
+            }
         ],
         "givenNames": [
-            "Johanna",
-            "Petronella",
-            "Maria"
+            {
+                "_type": "String",
+                "value": "Johanna"
+            },
+            {
+                "_type": "String",
+                "value": "Petronella"
+            },
+            {
+                "_type": "String",
+                "value": "Maria"
+            }
         ],
         "givenInitials": null,
         "period": null,
         "prefix": [
-            "PhD"
+            {
+                "_type": "String",
+                "value": "PhD"
+            }
         ],
         "suffix": null,
-        "text": "Johanna Petronella Maria van der Giessen-van Putten",
-        "use": "official"
+        "text": {
+            "_type": "String",
+            "value": "Johanna Petronella Maria van der Giessen-van Putten"
+        },
+        "use": {
+            "_type": "Code",
+            "value": "official"
+        }
     },
     {
-        "use": "usual",
+        "use": {
+            "_type": "Code",
+            "value": "usual"
+        },
         "given": [
-            "Jo"
+            {
+                "_type": "String",
+                "value": "Jo"
+            }
         ],
         "period": null,
         "text": null

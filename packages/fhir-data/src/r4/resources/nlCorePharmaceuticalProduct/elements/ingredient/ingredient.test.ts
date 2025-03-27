@@ -1,20 +1,20 @@
 import { faker, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { ingredient } from './ingredient';
 
-test('qualification parses successfully', () => {
+test('ingredient parses successfully', () => {
     const input = faker.fhirR4.medicationIngredient();
     const data = ingredient.parse(input);
     expect(data).toEqual(
         expect.objectContaining({
-            itemReference: input.itemReference,
-            strength: input.strength,
+            strength: parse.ratio(input.strength),
         })
     );
 });
 
-test('qualification UI schema group is created successfully', () => {
+test('ingredient UI schema group is created successfully', () => {
     const input = faker.fhirR4.medicationIngredient();
     const data = ingredient.parse(input);
     const schema = ingredient.uiSchemaGroup(data, testUiSchemaContext());

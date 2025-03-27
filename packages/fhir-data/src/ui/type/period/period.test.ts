@@ -1,17 +1,13 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test, vi } from 'vitest';
-import { type MgoPeriod } from '../../../parse/type';
 import { date } from '../../format/date/date';
 import { period } from './period';
 
 test('period, defaults to fhir.start/end labels', () => {
     const label = faker.custom.fhirMessageId();
 
-    const mgoPeriod: MgoPeriod = {
-        start: faker.fhir.dateTime(),
-        end: faker.fhir.dateTime(),
-    };
+    const mgoPeriod = faker.mgo.period();
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
     const formatDateTime = date(context);
@@ -35,10 +31,7 @@ test('period, defaults to fhir.start/end labels', () => {
 test('period, uses custom labels if available', () => {
     const label = faker.custom.fhirMessageId();
 
-    const mgoPeriod: MgoPeriod = {
-        start: faker.fhir.dateTime(),
-        end: faker.fhir.dateTime(),
-    };
+    const mgoPeriod = faker.mgo.period();
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValue(true);
     const formatDateTime = date(context);

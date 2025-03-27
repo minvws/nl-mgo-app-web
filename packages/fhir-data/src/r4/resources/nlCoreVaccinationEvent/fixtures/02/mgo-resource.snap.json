@@ -5,15 +5,21 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event",
     "fhirVersion": "R4",
     "pharmaceuticalProduct": {
+        "_type": "Reference",
         "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01",
         "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
     },
     "identifier": null,
-    "status": "completed",
+    "status": {
+        "_type": "String",
+        "value": "completed"
+    },
     "vaccineCode": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "J07BC02",
                 "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
                 "system": "http://www.whocc.no/atc"
@@ -21,15 +27,21 @@
         ]
     },
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-Patient-01",
         "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
     },
-    "occurrenceDateTime": "2012-06-03",
+    "occurrenceDateTime": {
+        "_type": "DateTime",
+        "value": "2012-06-03"
+    },
     "location": null,
     "site": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "59126009",
                 "display": "gehele rechter bovenarm",
                 "system": "http://snomed.info/sct"
@@ -37,9 +49,11 @@
         ]
     },
     "route": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "2",
                 "display": "INTRAMUSCULAIR",
                 "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2"
@@ -47,6 +61,7 @@
         ]
     },
     "doseQuantity": {
+        "_type": "Quantity",
         "value": 1,
         "comparator": null,
         "unit": "milliliter",
@@ -55,12 +70,14 @@
     },
     "performer": [
         {
+            "_type": "Reference",
             "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
             "display": "Healthcare professional (role)"
         }
     ],
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Bezoek aan Guatemala.",
             "author": null
@@ -68,9 +85,11 @@
     ],
     "vaccinationIndication": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "404904002",
                     "display": "Kwetsbare oudere (bevinding)",
                     "system": "http://snomed.info/sct"
@@ -80,9 +99,11 @@
     ],
     "vaccinationMotive": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "159731000146104",
                     "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie)",
                     "system": "http://snomed.info/sct"
@@ -95,9 +116,11 @@
             "authority": null,
             "targetDisease": [
                 {
+                    "_type": "CodeableConcept",
                     "text": null,
                     "coding": [
                         {
+                            "_type": "Coding",
                             "code": "128241005",
                             "display": "hepatitis",
                             "system": "http://snomed.info/sct"
@@ -105,7 +128,10 @@
                     ]
                 }
             ],
-            "doseNumberString": "n/a"
+            "doseNumberString": {
+                "_type": "String",
+                "value": "n/a"
+            }
         }
     ]
 }

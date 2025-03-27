@@ -5,37 +5,52 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport",
     "fhirVersion": "R3",
     "identifier": {
+        "_type": "Identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
         "value": "1529b7df-8fdf-11ec-1458-020000000000",
         "type": null
     },
-    "status": "final",
+    "status": {
+        "_type": "String",
+        "value": "final"
+    },
     "type": [
         {
+            "_type": "Coding",
             "code": "67781-5",
             "display": "Summarization of encounter note Narrative",
             "system": "http://loinc.org"
         }
     ],
     "encounter": {
+        "_type": "Reference",
         "reference": "Encounter/gpdata-encounter-contact04",
         "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1"
     },
-    "date": "2020-03-15",
+    "date": {
+        "_type": "DateTime",
+        "value": "2020-03-15"
+    },
     "author": [
         {
+            "_type": "Reference",
             "reference": "Practitioner/gpdata-practitioner-01",
             "display": "Dr. V. Huisarts 1"
         }
     ],
-    "title": "Contactverslag dd. 2020-03-15",
+    "title": {
+        "_type": "String",
+        "value": "Contactverslag dd. 2020-03-15"
+    },
     "section": [
         {
             "code": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "E",
                         "display": "Evaluatie",
                         "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
@@ -44,10 +59,12 @@
             },
             "entry": [
                 {
+                    "_type": "Reference",
                     "reference": "Observation/gpdata-observation-contact04-e",
                     "display": "lage rugpijn"
                 },
                 {
+                    "_type": "Reference",
                     "reference": "EpisodeOfCare/gpdata-episodeofcare-icpc-l8601",
                     "display": "Condition HNP (thoracaal/lumbaal)"
                 }

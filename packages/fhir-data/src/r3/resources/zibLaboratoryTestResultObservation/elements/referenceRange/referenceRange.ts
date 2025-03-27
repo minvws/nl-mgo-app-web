@@ -1,10 +1,10 @@
 import { type ObservationReferenceRange } from 'fhir/r3';
 import { parse } from '../../../../../parse';
+import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
-import { type ResourceElementConfig } from '../../../../../types/Fhir';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { summary } from './summary';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ReferenceRange {
     low: parse.MgoQuantity | undefined;

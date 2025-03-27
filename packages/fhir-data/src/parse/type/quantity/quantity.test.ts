@@ -1,10 +1,12 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { quantity } from './quantity';
 
-testSet('quantity', faker.fhir.quantity, (data) => {
+test('quantity', () => {
+    const data = faker.fhir.quantity();
     const { value, comparator, unit, system, code } = data;
     const expected = {
+        _type: 'Quantity',
         value,
         comparator,
         unit,

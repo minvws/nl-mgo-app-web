@@ -1,7 +1,7 @@
+import { type MgoAttachment } from '../../../parse/type';
 import { type HealthUiGroupFunction, type NonStrictUi } from '../../../ui/types';
-import { type Attachment } from './attachment';
 
-export const uiSchemaGroup: HealthUiGroupFunction<Attachment> = (resource, context) => {
+export const uiSchemaGroup: HealthUiGroupFunction<MgoAttachment> = (resource, context) => {
     const i18n = 'r3.attachment';
     const ui = context.ui as NonStrictUi;
 

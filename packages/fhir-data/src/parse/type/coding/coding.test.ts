@@ -1,9 +1,10 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { coding } from './coding';
 
-testSet('coding', faker.fhir.coding, (data) => {
+test('coding', () => {
+    const data = faker.fhir.coding();
     const { code, display, system } = data;
-    const expected = { code, display, system };
+    const expected = { _type: 'Coding', code, display, system };
     expect(coding(data)).toEqual(expected);
 });

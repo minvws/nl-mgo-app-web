@@ -1,15 +1,15 @@
 import { type Dosage } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfig } from '../../../types/Fhir';
 import {
     zibAdministrationSchedule,
     type ZibAdministrationSchedule,
 } from '../zibAdministrationSchedule/zibAdministrationSchedule';
-import { uiSchemaGroup } from './uiSchemaGroup';
 import { summary } from './summary';
+import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ZibInstructionsForUse {
     sequence: parse.MgoInteger | undefined;
@@ -17,13 +17,13 @@ export interface ZibInstructionsForUse {
     additionalInstruction: parse.MgoCodeableConcept[] | undefined;
     asNeeded: parse.MgoCodeableConcept | undefined;
     route: parse.MgoCodeableConcept | undefined;
-    doseQuantity?: parse.MgoQuantity;
+    doseQuantity?: parse.MgoQuantityLike;
     doseRange?: parse.MgoRange;
     maxDosePerPeriod: parse.MgoRatio | undefined;
     timing: ZibAdministrationSchedule;
     rateRatio?: parse.MgoRatio;
     rateRange?: parse.MgoRange;
-    rateQuantity?: parse.MgoQuantity;
+    rateQuantity?: parse.MgoQuantityLike;
 }
 
 /**

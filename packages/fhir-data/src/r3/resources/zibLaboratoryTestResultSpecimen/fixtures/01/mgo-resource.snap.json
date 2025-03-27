@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b3b213b-8fdf-11ec-5198-020000000000",
@@ -13,6 +14,7 @@
         }
     ],
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
@@ -20,9 +22,11 @@
         {
             "identifier": null,
             "type": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "370133003",
                         "display": "Specimen substance",
                         "system": "http://snomed.info/sct"
@@ -32,9 +36,11 @@
         }
     ],
     "type": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "87612001",
                 "display": "Blood (substance)",
                 "system": "http://snomed.info/sct"
@@ -44,7 +50,10 @@
     "receivedTime": null,
     "collection": {
         "quantity": null,
-        "collectedDateTime": "2012-05-23T08:08:00+01:00",
+        "collectedDateTime": {
+            "_type": "DateTime",
+            "value": "2012-05-23T08:08:00+01:00"
+        },
         "method": null,
         "bodySite": {
             "value": null,

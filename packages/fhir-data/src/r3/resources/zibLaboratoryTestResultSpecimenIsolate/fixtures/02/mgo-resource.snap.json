@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b4904db-8fdf-11ec-1469-020000000000",
@@ -13,6 +14,7 @@
         }
     ],
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "J. XXX_Helleman (Johan)"
     },
@@ -20,9 +22,11 @@
         {
             "identifier": null,
             "type": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "370133003",
                         "display": "Specimen substance",
                         "system": "http://snomed.info/sct"
@@ -32,13 +36,18 @@
         }
     ],
     "type": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": []
     },
-    "receivedTime": "2020-03-01T22:03:00+00:00",
+    "receivedTime": {
+        "_type": "DateTime",
+        "value": "2020-03-01T22:03:00+00:00"
+    },
     "collection": {
         "quantity": null,
         "collectedPeriod": {
+            "_type": "Period",
             "start": "2010-06-01",
             "end": null
         },
@@ -51,6 +60,7 @@
     },
     "note": [
         {
+            "_type": "Annotation",
             "time": "2020-03-01T22:03:00+00:00",
             "text": "het monster toont afwijkingen",
             "author": null

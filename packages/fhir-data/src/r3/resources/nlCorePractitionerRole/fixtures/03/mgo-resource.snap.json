@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "171b988d-8fdf-11ec-1629-020000000000",
@@ -13,14 +14,17 @@
         }
     ],
     "organization": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-03",
         "display": "Test Medisch Centrum"
     },
     "specialty": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "0310",
                     "display": "Medisch specialisten, dermatologie",
                     "system": "urn:oid:2.16.840.1.113883.2.4.6.7"

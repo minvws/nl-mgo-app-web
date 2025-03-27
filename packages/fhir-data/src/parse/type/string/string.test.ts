@@ -4,5 +4,8 @@ import { string } from './string';
 
 test('string', () => {
     const value = faker.lorem.sentences();
-    expect(string(value)).toBe(value);
+    expect(string(value)).toEqual({
+        _type: 'String',
+        value,
+    });
 });

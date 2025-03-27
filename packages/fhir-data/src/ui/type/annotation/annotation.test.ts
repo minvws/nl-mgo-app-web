@@ -8,9 +8,11 @@ test('annotation', () => {
     const label = faker.custom.fhirMessageId();
 
     const data: MgoAnnotation = {
+        _type: 'Annotation',
         time: faker.fhir.dateTime(),
         text: faker.lorem.sentence(),
         author: {
+            _type: 'Reference',
             reference: faker.lorem.sentence(),
             display: faker.lorem.sentence(),
         },

@@ -1,6 +1,5 @@
 import { type FhirVersion, type Resource } from '@minvws/mgo-fhir-types';
 import { type NictizNlProfile } from '../../../types/Fhir';
-import { string } from '../../type/string/string';
 
 export type MgoResourceMeta<
     T extends NictizNlProfile = NictizNlProfile,
@@ -20,7 +19,7 @@ export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
     profile: T,
     fhirVersion: V
 ) {
-    const { resourceType: fhirResourceType, id, meta } = resource;
+    const { resourceType, id, meta } = resource;
 
     if (!meta?.profile?.includes(profile)) {
         throw new Error(
@@ -28,12 +27,9 @@ export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
         );
     }
 
-    const resourceId = string(id);
-    const resourceType = string(fhirResourceType);
-
     return {
-        id: resourceId,
-        referenceId: `${resourceType}/${resourceId}`,
+        id,
+        referenceId: `${resourceType}/${id}`,
         resourceType,
         profile,
         fhirVersion: `${fhirVersion}`,

@@ -6,18 +6,24 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "16369fdf-8fdf-11ec-1349-020000000000",
             "type": null
         }
     ],
-    "name": "Orthopedie - UMCG",
+    "name": {
+        "_type": "String",
+        "value": "Orthopedie - UMCG"
+    },
     "departmentSpecialty": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "0305",
                     "display": "Medisch specialisten, orthopedie",
                     "system": "urn:oid:2.16.840.1.113883.2.4.6.7"

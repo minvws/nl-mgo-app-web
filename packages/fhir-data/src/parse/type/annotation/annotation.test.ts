@@ -1,13 +1,14 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
-import { dateTime } from '../dateTime/dateTime';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { reference } from '../reference/reference';
 import * as general from './annotation';
 
-testSet('annotation', faker.fhir.annotation, (data) => {
+test('annotation', () => {
+    const data = faker.fhir.annotation();
     const { time, text, authorReference } = data;
     const expected = {
-        time: dateTime(time),
+        _type: 'Annotation',
+        time,
         text,
         author: reference(authorReference),
     };

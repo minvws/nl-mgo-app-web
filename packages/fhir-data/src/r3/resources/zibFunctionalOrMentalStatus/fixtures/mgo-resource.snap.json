@@ -1,18 +1,24 @@
 {
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1a56e129-8fdf-11ec-2982-020000000000",
             "type": null
         }
     ],
-    "status": "final",
+    "status": {
+        "_type": "Code",
+        "value": "final"
+    },
     "category": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "118228005",
                     "display": "Functional finding (finding)",
                     "system": "http://snomed.info/sct"
@@ -21,15 +27,18 @@
         }
     ],
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "valueQuantity": null,
     "valueCodeableConcept": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "d510.3",
                 "display": "ERNSTIGE stoornis (aanzienlijk, hoog, sterk, ...) 50-95%",
                 "system": "http://hl7.org/fhir/sid/icf-nl"
@@ -37,6 +46,7 @@
         ]
     },
     "effectivePeriod": {
+        "_type": "Period",
         "start": "2001",
         "end": null
     },

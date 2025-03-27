@@ -1,12 +1,12 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { type UiHelperContext } from '../../../ui/context';
 import { uiSchemaGroup as attachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
 import { type ZibAdvanceDirective } from './zibAdvanceDirective';
-import { type UiHelperContext } from '../../../ui/context';
 
 export const i18n = 'r3.zib_advance_directive';
 
 export function getLabel(resource: ZibAdvanceDirective, { formatMessage }: UiHelperContext) {
-    return resource.dateTime ?? formatMessage(i18n);
+    return resource.dateTime?.value ?? formatMessage(i18n);
 }
 
 export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, context) => {
@@ -23,7 +23,9 @@ export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, 
         ConsentingParty: ui.reference(`${i18n}.consenting_party`, resource.consentingParty),
     };
 
-    const attachment = attachmentUiSchema(resource.source.attachment, context);
+    const attachment = resource.source.attachment
+        ? attachmentUiSchema(resource.source.attachment, context)
+        : null;
 
     return {
         label: getLabel(resource, context),
@@ -38,7 +40,7 @@ export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, 
                     hcimAdvanceDirective.ConsentingParty,
                 ],
             },
-            attachment,
+            ...(attachment ? [attachment] : []),
         ],
     };
 };

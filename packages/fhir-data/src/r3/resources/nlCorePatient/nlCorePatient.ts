@@ -5,7 +5,6 @@ import { identifier } from '../../../parse/type/identifier/identifier';
 import { type ResourceConfig } from '../../../types/Fhir';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
-import { attachment } from '../../elements/attachment/attachment';
 import { communication } from './elements/communication/communication';
 import { contact } from './elements/contact/contact';
 import { link } from './elements/link/link';
@@ -35,7 +34,7 @@ function parseNlCorePatient(resource: Patient) {
         multipleBirth: parse.boolean(resource.multipleBirthBoolean),
         multipleBirthInteger: parse.integer(resource.multipleBirthInteger),
         name: map(resource.name, nlCoreHumanname.parse),
-        photo: map(resource.photo, attachment.parse),
+        photo: map(resource.photo, parse.attachment),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
     };
 }

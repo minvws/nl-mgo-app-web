@@ -5,9 +5,11 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation",
     "fhirVersion": "R3",
     "orderStatus": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "new",
                 "display": "Ordered",
                 "system": "http://hl7.org/fhir/v3/ActStatus"
@@ -16,11 +18,16 @@
     },
     "recommendation": [
         {
-            "date": "2019",
+            "date": {
+                "_type": "DateTime",
+                "value": "2019"
+            },
             "code": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "J06BB11",
                         "display": "hepatitis A immunoglobulin",
                         "system": "http://www.whocc.no/atc"
@@ -28,7 +35,10 @@
                 ]
             },
             "dateCriterion": [
-                "2018"
+                {
+                    "_type": "DateTime",
+                    "value": "2018"
+                }
             ]
         }
     ]

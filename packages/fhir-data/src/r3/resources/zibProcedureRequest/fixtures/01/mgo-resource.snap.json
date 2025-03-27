@@ -4,32 +4,44 @@
     "resourceType": "ProcedureRequest",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest",
     "fhirVersion": "R3",
-    "status": "active",
+    "status": {
+        "_type": "String",
+        "value": "active"
+    },
     "occurrence": {
+        "_type": "Period",
         "start": "2012-03-13",
         "end": null
     },
     "code": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "240977001",
                 "display": "Biopsy of skin (procedure)",
                 "system": "http://snomed.info/sct"
             }
         ]
     },
-    "intent": "plan",
+    "intent": {
+        "_type": "String",
+        "value": "plan"
+    },
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "perfomer": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-03",
         "display": "Test Medisch Centrum"
     },
     "reason": [
         {
+            "_type": "Reference",
             "reference": "Condition/zib-problem-06",
             "display": "Pigmented nevus, no International Classification of Diseases for Oncology subtype (morphologic abnormality)"
         }

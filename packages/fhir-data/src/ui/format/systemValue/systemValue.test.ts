@@ -1,13 +1,13 @@
 import { faker } from '$test';
 import { expect, test, vi } from 'vitest';
-import { type MgoQuantity } from '../../../parse/type';
+import { type MgoQuantityLike } from '../../../parse/type';
 import { systemValue } from './systemValue';
 
 test('count returns basic format when there is no translation', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
-    const value: MgoQuantity = faker.fhir.quantity() as MgoQuantity;
+    const value: MgoQuantityLike = faker.fhir.quantity() as MgoQuantityLike;
     const expected = `${value.value} ${value.unit}`;
 
     const formatSystemValue = systemValue(context);
@@ -20,7 +20,7 @@ test('count returns translation when available', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
 
-    const value: MgoQuantity = faker.fhir.quantity() as MgoQuantity;
+    const value: MgoQuantityLike = faker.fhir.quantity() as MgoQuantityLike;
     const expected = `intl(system.value.${value.system}|${value.code}, ${JSON.stringify({ value: value.value })})`;
 
     const formatSystemValue = systemValue(context);
@@ -33,7 +33,7 @@ test('count returns string without unit', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
-    const value: MgoQuantity = faker.fhir.quantity() as MgoQuantity;
+    const value: MgoQuantityLike = faker.fhir.quantity() as MgoQuantityLike;
     value.unit = undefined;
     const expected = `${value.value}`;
 

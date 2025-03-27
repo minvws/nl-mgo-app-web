@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
@@ -20,7 +21,7 @@ export const uiSchema: HealthUiSchemaFunction<NlCoreOrganization> = (resource, c
     ).flat();
 
     return {
-        label: resource.name ?? context.formatMessage(i18n),
+        label: valueOf(resource.name) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}.group_details`,

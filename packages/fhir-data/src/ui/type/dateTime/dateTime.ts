@@ -1,6 +1,8 @@
+import { type DateTimeString } from '@minvws/mgo-fhir-types';
 import { type MgoDateTime } from '../../../parse/type';
 import { isNonNullish } from '../../../utils';
 import { date } from '../../format/date/date';
+import { valueOf } from '../../helpers/valueOf/valueOf';
 import {
     type MultipleValues,
     type SingleValue,
@@ -9,19 +11,24 @@ import {
 } from '../../types';
 
 export const dateTime: WithUiHelperContext<
-    UiFunction<MgoDateTime | MgoDateTime[], SingleValue | MultipleValues>
+    UiFunction<
+        DateTimeString | MgoDateTime | DateTimeString[] | MgoDateTime[],
+        SingleValue | MultipleValues
+    >
 > = (context) => (label, value) => {
+    const formatDate = date(context);
+
     if (Array.isArray(value)) {
         return {
             label: context.formatMessage(label),
             type: 'MULTIPLE_VALUES',
-            display: value.map(date(context)).filter(isNonNullish),
+            display: value.map((x) => formatDate(valueOf(x))).filter(isNonNullish),
         };
     }
 
     return {
         label: context.formatMessage(label),
         type: 'SINGLE_VALUE',
-        display: date(context)(value),
+        display: formatDate(valueOf(value)),
     };
 };

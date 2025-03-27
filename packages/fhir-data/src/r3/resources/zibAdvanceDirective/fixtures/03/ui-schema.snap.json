@@ -34,51 +34,6 @@
                     "display": "Niet bekend"
                 }
             ]
-        },
-        {
-            "label": "r3.attachment",
-            "children": [
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.contentType",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.language",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.data",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.url",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.size",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.hash",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.title",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.creation",
-                    "display": "Niet bekend"
-                }
-            ]
         }
     ]
 }

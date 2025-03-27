@@ -6,33 +6,52 @@ import { code } from './code';
 
 test('code single', () => {
     const label = faker.custom.fhirMessageId();
-    const value: MgoCode = faker.fhir.code();
+    const value: MgoCode = {
+        _type: 'Code',
+        value: faker.fhir.code(),
+    };
     const context = faker.custom.uiHelperContext();
     const result = code(context)(label, value);
 
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: value,
+        display: value.value,
     });
 });
 
 test('code multiple', () => {
     const label = faker.custom.fhirMessageId();
-    const value: MgoCode[] = [faker.fhir.code(), faker.fhir.code(), faker.fhir.code()];
+    const value: MgoCode[] = [
+        {
+            _type: 'Code',
+            value: faker.fhir.code(),
+        },
+        {
+            _type: 'Code',
+            value: faker.fhir.code(),
+        },
+        {
+            _type: 'Code',
+            value: faker.fhir.code(),
+        },
+    ];
     const context = faker.custom.uiHelperContext();
     const result = code(context)(label, value);
 
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: value,
+        display: value.map((x) => x.value),
     });
 });
 
 test('code translates the code when options are used', () => {
     const label = faker.custom.fhirMessageId();
-    const value: MgoCode = faker.fhir.code();
+    const value: MgoCode = {
+        _type: 'Code',
+        value: faker.fhir.code(),
+    };
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
     const i18nCode = faker.lorem.word();
@@ -41,13 +60,16 @@ test('code translates the code when options are used', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: `intl(codes.${i18nCode}.${value})`,
+        display: `intl(codes.${i18nCode}.${value.value})`,
     });
 });
 
 test('code defaults to value if no translation is found and options are used', () => {
     const label = faker.custom.fhirMessageId();
-    const value: MgoCode = faker.fhir.code();
+    const value: MgoCode = {
+        _type: 'Code',
+        value: faker.fhir.code(),
+    };
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
     const i18nCode = faker.lorem.word();
@@ -56,7 +78,7 @@ test('code defaults to value if no translation is found and options are used', (
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: value,
+        display: value.value,
     });
 });
 

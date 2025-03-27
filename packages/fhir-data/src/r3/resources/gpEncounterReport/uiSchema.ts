@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { uiSchemaGroup as sectionUiSchema } from './elements/section/uiSchemaGroup';
@@ -11,7 +12,7 @@ export const uiSchema: HealthUiSchemaFunction<GpEncounterReport> = (resource, co
     const section = map(resource.section, (x) => sectionUiSchema(x, context), true);
 
     return {
-        label: resource.title ?? context.formatMessage(i18n),
+        label: valueOf(resource.title) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}`,

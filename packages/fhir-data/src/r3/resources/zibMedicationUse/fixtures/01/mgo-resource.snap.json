@@ -4,78 +4,61 @@
     "resourceType": "MedicationStatement",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
     "fhirVersion": "R3",
-    "asAgreedIndicator": true,
+    "asAgreedIndicator": {
+        "_type": "Boolean",
+        "value": true
+    },
     "prescriber": null,
-    "author": {
-        "reference": "PractitionerRole/nl-core-practitionerrole-02",
-        "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
-    },
-    "medicationTreatment": {
-        "use": null,
-        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
-        "value": "#MB_01i1",
-        "type": null
-    },
     "reasonForChangeOrDiscontinuationOfUse": null,
-    "repeatPeriodCyclicalSchedule": null,
-    "identifier": [
-        {
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.6.1",
-            "value": "#MB_01i1#GE_01",
-            "type": null
-        },
-        {
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "1bfa2275-8fdf-11ec-2032-020000000000",
-            "type": null
-        }
-    ],
-    "status": "completed",
-    "category": {
-        "text": "Medicatiegebruik",
-        "coding": [
-            {
-                "code": "6",
-                "display": "Medicatiegebruik",
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.3"
-            }
-        ]
+    "status": {
+        "_type": "Code",
+        "value": "completed"
     },
     "medicationReference": {
+        "_type": "Reference",
         "reference": "Medication/zib-Product-02",
         "display": "PARACETAMOL TABLET 500MG"
     },
+    "dateAsserted": {
+        "_type": "DateTime",
+        "value": "2020-07-21"
+    },
+    "taken": {
+        "_type": "Code",
+        "value": "y"
+    },
+    "reasonCode": null,
     "effectivePeriod": {
+        "_type": "Period",
         "start": "2020-07-21",
         "end": null
     },
     "effectiveDuration": {
+        "_type": "Duration",
         "value": 30,
         "comparator": null,
         "unit": "dag",
         "system": "http://unitsofmeasure.org",
         "code": "d"
     },
-    "dateAsserted": "2020-07-21",
-    "informationSource": null,
-    "subject": {
-        "reference": "Patient/nl-core-patient-01",
-        "display": "XXX_Helleman"
-    },
-    "taken": "y",
-    "reasonCode": null,
     "note": null,
     "dosage": [
         {
-            "sequence": 1,
-            "text": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL",
+            "sequence": {
+                "_type": "Integer",
+                "value": 1
+            },
+            "text": {
+                "_type": "String",
+                "value": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+            },
             "additionalInstruction": null,
             "asNeeded": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "1137",
                         "display": "zo nodig",
                         "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
@@ -83,9 +66,11 @@
                 ]
             },
             "route": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "9",
                         "display": "ORAAL",
                         "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -93,7 +78,9 @@
                 ]
             },
             "doseRange": {
+                "_type": "Range",
                 "low": {
+                    "_type": "Quantity",
                     "value": 1,
                     "comparator": null,
                     "unit": "Stuk",
@@ -101,6 +88,7 @@
                     "code": "245"
                 },
                 "high": {
+                    "_type": "Quantity",
                     "value": 2,
                     "comparator": null,
                     "unit": "Stuk",
@@ -109,7 +97,9 @@
                 }
             },
             "maxDosePerPeriod": {
+                "_type": "Ratio",
                 "numerator": {
+                    "_type": "Quantity",
                     "value": 6,
                     "comparator": null,
                     "unit": "Stuk",
@@ -117,6 +107,7 @@
                     "code": "245"
                 },
                 "denominator": {
+                    "_type": "Quantity",
                     "value": 1,
                     "comparator": null,
                     "unit": "dag",
@@ -129,14 +120,58 @@
                     "duration": null,
                     "durationUnit": null,
                     "frequency": null,
-                    "frequencyMax": 4,
-                    "period": 1,
-                    "periodUnit": "d",
+                    "frequencyMax": {
+                        "_type": "Integer",
+                        "value": 4
+                    },
+                    "period": {
+                        "_type": "Decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "Code",
+                        "value": "d"
+                    },
                     "dayOfWeek": null,
                     "timeOfDay": null,
                     "when": null
                 }
             }
         }
-    ]
+    ],
+    "repeatPeriodCyclicalSchedule": null,
+    "author": {
+        "_type": "Reference",
+        "reference": "PractitionerRole/nl-core-practitionerrole-02",
+        "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
+    },
+    "identifier": [
+        {
+            "_type": "Identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.6.1",
+            "value": "#MB_01i1#GE_01",
+            "type": null
+        },
+        {
+            "_type": "Identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bfa2275-8fdf-11ec-2032-020000000000",
+            "type": null
+        }
+    ],
+    "informationSource": null,
+    "subject": {
+        "_type": "Reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "XXX_Helleman"
+    },
+    "medicationTreatment": {
+        "_type": "Identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01i1",
+        "type": null
+    }
 }

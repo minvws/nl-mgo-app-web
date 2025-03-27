@@ -7,7 +7,10 @@ test('boolean - true', () => {
     const label = faker.custom.fhirMessageId();
 
     const context = faker.custom.uiHelperContext();
-    const result = boolean(context)(label, true);
+    const result = boolean(context)(label, {
+        _type: 'Boolean',
+        value: true,
+    });
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
@@ -19,7 +22,10 @@ test('boolean - false', () => {
     const label = faker.custom.fhirMessageId();
 
     const context = faker.custom.uiHelperContext();
-    const result = boolean(context)(label, false);
+    const result = boolean(context)(label, {
+        _type: 'Boolean',
+        value: false,
+    });
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',

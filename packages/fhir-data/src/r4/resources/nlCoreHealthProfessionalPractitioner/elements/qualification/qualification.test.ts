@@ -1,5 +1,6 @@
 import { faker, testUiSchemaContext } from '$test';
 import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { qualification } from './qualification';
 
 test('qualification parses successfully', () => {
@@ -7,8 +8,8 @@ test('qualification parses successfully', () => {
     const data = qualification.parse(input);
     expect(data).toEqual(
         expect.objectContaining({
-            period: input.period,
-            issuer: input.issuer,
+            period: parse.period(data.period),
+            issuer: parse.reference(data.issuer),
         })
     );
 });

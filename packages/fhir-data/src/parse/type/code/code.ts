@@ -1,9 +1,13 @@
-import { isNullish } from '../../../utils';
 import { type Nullable } from '../../../types/Nullable';
+import { isNullish } from '../../../utils';
+import { type PrimitiveValueType } from '../../types';
 
-export type MgoCode<T extends string = string> = T;
+export interface MgoCode<T extends string = string> extends PrimitiveValueType<'Code', T> {}
 
 export function code<T extends string>(value: Nullable<T>): MgoCode<T> | undefined {
     if (isNullish(value)) return;
-    return value;
+    return {
+        _type: 'Code',
+        value,
+    };
 }

@@ -1,5 +1,6 @@
 import { type MgoString } from '../../../parse/type';
 import { isNonNullish } from '../../../utils';
+import { valueOf } from '../../helpers/valueOf/valueOf';
 import {
     type MultipleValues,
     type SingleValue,
@@ -8,7 +9,7 @@ import {
 } from '../../types';
 
 export const string: WithUiHelperContext<
-    UiFunction<MgoString | MgoString[], SingleValue | MultipleValues>
+    UiFunction<MgoString | string | MgoString[] | string[], SingleValue | MultipleValues>
 > =
     ({ intl }) =>
     (label, value) => {
@@ -16,13 +17,13 @@ export const string: WithUiHelperContext<
             return {
                 label: intl.formatMessage({ id: label }),
                 type: 'MULTIPLE_VALUES',
-                display: value.filter(isNonNullish) as string[],
+                display: value.map((x) => valueOf(x)).filter(isNonNullish),
             };
         }
 
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
-            display: value as string,
+            display: valueOf(value),
         };
     };

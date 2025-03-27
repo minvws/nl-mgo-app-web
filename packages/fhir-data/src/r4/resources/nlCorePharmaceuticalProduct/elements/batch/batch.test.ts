@@ -1,6 +1,7 @@
 import { faker, testUiSchemaContext } from '$test';
 import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
+import { parse } from '../../../../../parse';
 import { batch } from './batch';
 
 test('batch parses successfully', () => {
@@ -11,8 +12,8 @@ test('batch parses successfully', () => {
     const data = batch.parse(input);
     expect(data).toEqual(
         expect.objectContaining({
-            lotNumber: input.lotNumber,
-            expirationDate: input.expirationDate,
+            lotNumber: parse.string(input.lotNumber),
+            expirationDate: parse.dateTime(input.expirationDate),
         })
     );
 });

@@ -1,6 +1,9 @@
-import { passThrough } from '../../helpers';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
+import { type PrimitiveValueType } from '../../types';
 
-export type MgoInteger64 = number & { readonly '': unique symbol };
+export interface MgoInteger64 extends PrimitiveValueType<'Integer64', number> {}
 
-export const integer64 = createTypeParser<number, MgoInteger64>(passThrough);
+export const integer64 = createTypeParser<number, MgoInteger64>((value) => ({
+    _type: 'Integer64',
+    value: value,
+}));

@@ -1,9 +1,9 @@
-import { type MgoQuantity } from '../../../parse/type';
+import { type MgoQuantityLike } from '../../../parse/type';
 import { isNullish } from '../../../utils';
 import { numberToString } from '../../helpers';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 
-export const systemValue: WithUiHelperContext<FormatFunction<MgoQuantity>> =
+export const systemValue: WithUiHelperContext<FormatFunction<MgoQuantityLike>> =
     ({ formatMessage, hasMessage }) =>
     (value) => {
         if (isNullish(value)) return;

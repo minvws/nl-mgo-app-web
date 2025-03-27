@@ -6,24 +6,28 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
             "value": "129854656",
             "type": null
         },
         {
+            "_type": "Identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
             "value": "01069857",
             "type": null
         },
         {
+            "_type": "Identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/big",
             "value": "12345678912",
             "type": null
         },
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "16d6f97b-8fdf-11ec-2007-020000000000",
@@ -32,9 +36,15 @@
     ],
     "name": [
         {
-            "family": "de Vries",
+            "family": {
+                "_type": "String",
+                "value": "de Vries"
+            },
             "given": [
-                "Henk"
+                {
+                    "_type": "String",
+                    "value": "Henk"
+                }
             ],
             "period": null,
             "prefix": null,
@@ -45,18 +55,37 @@
     ],
     "address": [
         {
-            "use": "home",
+            "use": {
+                "_type": "Code",
+                "value": "home"
+            },
             "type": null,
             "text": null,
             "line": [
-                "Straatweg 12bII"
+                {
+                    "_type": "String",
+                    "value": "Straatweg 12bII"
+                }
             ],
-            "city": "Weesp",
-            "district": "Amsterdam",
+            "city": {
+                "_type": "String",
+                "value": "Weesp"
+            },
+            "district": {
+                "_type": "String",
+                "value": "Amsterdam"
+            },
             "state": null,
-            "postalCode": "1012AB",
-            "country": "NLD",
+            "postalCode": {
+                "_type": "String",
+                "value": "1012AB"
+            },
+            "country": {
+                "_type": "String",
+                "value": "NLD"
+            },
             "period": {
+                "_type": "Period",
                 "start": "2015-04",
                 "end": null
             }
@@ -64,16 +93,34 @@
     ],
     "telecom": [
         {
-            "system": "phone",
-            "value": "0612345990",
-            "use": "work",
+            "system": {
+                "_type": "Code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "String",
+                "value": "0612345990"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "rank": null,
             "period": null
         },
         {
-            "system": "email",
-            "value": "devries@work.com",
-            "use": "work",
+            "system": {
+                "_type": "Code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "String",
+                "value": "devries@work.com"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "rank": null,
             "period": null
         }

@@ -1,11 +1,13 @@
-import { faker, testSet } from '$test';
-import { expect } from 'vitest';
+import { faker } from '$test';
+import { expect, test } from 'vitest';
 import { quantity } from '../quantity/quantity';
 import * as general from './ratio';
 
-testSet('ratio', faker.fhir.ratio, (data) => {
+test('ratio', () => {
+    const data = faker.fhir.ratio();
     const { numerator, denominator } = data;
     const expected = {
+        _type: 'Ratio',
         numerator: quantity(numerator),
         denominator: quantity(denominator),
     };

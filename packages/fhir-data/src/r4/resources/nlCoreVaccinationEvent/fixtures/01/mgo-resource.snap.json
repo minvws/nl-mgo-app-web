@@ -6,11 +6,16 @@
     "fhirVersion": "R4",
     "pharmaceuticalProduct": null,
     "identifier": null,
-    "status": "completed",
+    "status": {
+        "_type": "String",
+        "value": "completed"
+    },
     "vaccineCode": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "J07BC02",
                 "display": "Hepatitis A-vaccin",
                 "system": "http://www.whocc.no/atc"
@@ -18,22 +23,28 @@
         ]
     },
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-Patient-01",
         "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
     },
-    "occurrenceDateTime": "2012-06-03",
+    "occurrenceDateTime": {
+        "_type": "DateTime",
+        "value": "2012-06-03"
+    },
     "location": null,
     "site": null,
     "route": null,
     "doseQuantity": null,
     "performer": [
         {
+            "_type": "Reference",
             "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
             "display": "Healthcare professional (role)"
         }
     ],
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Bezoek aan Guatemala.",
             "author": null

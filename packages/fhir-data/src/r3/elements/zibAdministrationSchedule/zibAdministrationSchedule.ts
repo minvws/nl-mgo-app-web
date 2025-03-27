@@ -1,9 +1,9 @@
 import { type Timing } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface ZibAdministrationSchedule {
@@ -11,7 +11,6 @@ export interface ZibAdministrationSchedule {
         boundsDuration?: parse.MgoDuration;
         boundsPeriod?: parse.MgoPeriod;
         boundsRange?: parse.MgoRange;
-
         duration: parse.MgoDecimal | undefined;
         durationUnit: parse.MgoCode | undefined;
         frequency: parse.MgoInteger | undefined;

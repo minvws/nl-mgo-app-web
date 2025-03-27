@@ -5,17 +5,23 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective",
     "fhirVersion": "R3",
     "identifier": {
+        "_type": "Identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
         "value": "1ebf6227-8fdf-11ec-1682-020000000000",
         "type": null
     },
-    "status": "active",
+    "status": {
+        "_type": "Code",
+        "value": "active"
+    },
     "category": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "11291000146105",
                     "display": "Treatment instructions (record artifact)",
                     "system": "http://snomed.info/sct"
@@ -24,10 +30,12 @@
         }
     ],
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "period": {
+        "_type": "Period",
         "start": "2018-04-09",
         "end": null
     },
@@ -37,13 +45,14 @@
     "action": null,
     "organization": null,
     "sourceAttachment": {
-        "contentType": null,
-        "language": null,
+        "_type": "Attachment",
+        "contentType": "application/pdf",
+        "language": "nl",
         "data": null,
-        "url": null,
+        "url": "Binary/pdfa-binary-02",
         "size": null,
         "hash": null,
-        "title": null,
+        "title": "Verwijsbrief Arts",
         "creation": null
     },
     "sourceIdentifier": null,
@@ -52,7 +61,10 @@
         {
             "id": null,
             "authority": null,
-            "uri": "http://wetten.overheid.nl/"
+            "uri": {
+                "_type": "String",
+                "value": "http://wetten.overheid.nl/"
+            }
         }
     ],
     "policyRule": null,
@@ -62,7 +74,10 @@
     "data": null,
     "except": [
         {
-            "type": "deny",
+            "type": {
+                "_type": "Code",
+                "value": "deny"
+            },
             "period": null,
             "actor": null,
             "action": null,

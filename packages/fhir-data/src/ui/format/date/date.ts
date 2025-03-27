@@ -1,4 +1,8 @@
-import { type MgoDate, type MgoInstant, type MgoDateTime } from '../../../parse/type';
+import {
+    type DateString,
+    type DateTimeString,
+    type InstantDateTimeString,
+} from '@minvws/mgo-fhir-types';
 import { isNullish } from '../../../utils';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 
@@ -38,7 +42,9 @@ function getDateFormatOptions(
     };
 }
 
-export const date: WithUiHelperContext<FormatFunction<MgoDate | MgoDateTime | MgoInstant>> =
+export const date: WithUiHelperContext<
+    FormatFunction<DateString | DateTimeString | InstantDateTimeString>
+> =
     ({ intl: { locale }, isSummary }) =>
     (value) => {
         if (isNullish(value)) return;

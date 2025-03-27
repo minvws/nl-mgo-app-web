@@ -3,15 +3,14 @@ import {
     createIntl,
     createIntlCache,
     getFhirIntlConfig,
-    type FhirIntlOptions,
     type FhirIntlShape,
+    type Locale,
 } from '@minvws/mgo-mgo-intl';
 
-export type UiHelperContextOptions = Pick<
-    FhirIntlOptions<string>,
-    'ignoreMissingTranslations' | 'locale'
-> & {
+export type UiHelperContextOptions = {
     isSummary?: boolean;
+    ignoreMissingTranslations?: boolean;
+    locale: Locale;
 };
 
 const intlCache = createIntlCache();

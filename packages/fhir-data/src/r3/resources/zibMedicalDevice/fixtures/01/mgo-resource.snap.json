@@ -6,6 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b7c5449-8fdf-11ec-2143-020000000000",
@@ -13,30 +14,39 @@
         }
     ],
     "organization": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-03",
         "display": "Test Medisch Centrum"
     },
     "practitioner": null,
     "reason": null,
-    "status": "active",
+    "status": {
+        "_type": "Code",
+        "value": "active"
+    },
     "patient": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "whenUsed": {
+        "_type": "Period",
         "start": "2007",
         "end": null
     },
     "recordedOn": null,
     "source": null,
     "device": {
+        "_type": "Reference",
         "reference": "Device/zib-MedicalDeviceProduct-03",
         "display": "Gehoorapparaat"
     },
     "bodySite": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "117590005",
                 "display": "Ear Structure",
                 "system": "http://snomed.info/sct"
@@ -44,9 +54,11 @@
         ]
     },
     "laterality": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "24028007",
                 "display": "Right",
                 "system": "http://snomed.info/sct"
@@ -55,6 +67,7 @@
     },
     "note": [
         {
+            "_type": "Annotation",
             "time": null,
             "text": "Apparaat niet zichtbaar (diep in de gehooringang)",
             "author": null

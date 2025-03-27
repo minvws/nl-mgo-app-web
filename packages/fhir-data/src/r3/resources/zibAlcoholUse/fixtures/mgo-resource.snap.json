@@ -1,24 +1,31 @@
 {
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "18cc8831-8fdf-11ec-2010-020000000000",
             "type": null
         }
     ],
-    "status": "final",
+    "status": {
+        "_type": "Code",
+        "value": "final"
+    },
     "category": null,
     "subject": {
+        "_type": "Reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "valueQuantity": null,
     "valueCodeableConcept": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "219006",
                 "display": "Current drinker of alcohol",
                 "system": "http://snomed.info/sct"
@@ -26,6 +33,7 @@
         ]
     },
     "effectivePeriod": {
+        "_type": "Period",
         "start": "1980",
         "end": null
     },
@@ -40,6 +48,7 @@
     "fhirVersion": "R3",
     "component": {
         "amount": {
+            "_type": "Quantity",
             "value": 4,
             "comparator": null,
             "unit": "glasses per week",

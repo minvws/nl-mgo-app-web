@@ -105,12 +105,12 @@
                 {
                     "label": "r3.attachment.contentType",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "application/pdf"
                 },
                 {
                     "label": "r3.attachment.language",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "nl"
                 },
                 {
                     "label": "r3.attachment.data",
@@ -120,7 +120,7 @@
                 {
                     "label": "r3.attachment.url",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Binary/pdfa-binary-02"
                 },
                 {
                     "label": "r3.attachment.size",
@@ -135,7 +135,7 @@
                 {
                     "label": "r3.attachment.title",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Verwijsbrief Arts"
                 },
                 {
                     "label": "r3.attachment.creation",

@@ -69,6 +69,12 @@
             ]
         }
     ],
+    "sourceAttachment": {
+        "contentType": "application/pdf",
+        "language": "nl",
+        "url": "Binary/pdfa-binary-02",
+        "title": "Verwijsbrief Arts"
+    },
     "patient": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
     "period": { "start": "2018-04-09" },
     "policy": [{ "uri": "http://wetten.overheid.nl/" }],

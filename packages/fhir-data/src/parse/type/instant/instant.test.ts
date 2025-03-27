@@ -4,5 +4,8 @@ import { instant } from './instant';
 
 test('instant', () => {
     const value = faker.fhir.dateTime();
-    expect(instant(value)).toBe(value);
+    expect(instant(value)).toEqual({
+        _type: 'Instant',
+        value,
+    });
 });

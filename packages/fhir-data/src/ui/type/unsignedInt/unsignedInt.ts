@@ -8,6 +8,6 @@ export const unsignedInt: WithUiHelperContext<UiFunction<MgoUnsignedInt, SingleV
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
-            display: numberToString(value),
+            display: numberToString(value?.value),
         };
     };

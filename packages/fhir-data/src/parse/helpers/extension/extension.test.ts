@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
+import { boolean } from '../../type';
 import { extension } from './extension';
 
 test('extension matched by url and returns the value', () => {
@@ -8,7 +9,7 @@ test('extension matched by url and returns the value', () => {
     const input = { extension: [{ url, valueBoolean }] };
 
     const value = extension(input, url, 'boolean');
-    expect(value).toBe(valueBoolean);
+    expect(value).toEqual(boolean(valueBoolean));
 });
 
 test('extension also matches modifierExtentions and returns the value', () => {
@@ -20,5 +21,5 @@ test('extension also matches modifierExtentions and returns the value', () => {
     };
 
     const value = extension(input, url, 'boolean');
-    expect(value).toBe(valueBoolean);
+    expect(value).toEqual(boolean(valueBoolean));
 });

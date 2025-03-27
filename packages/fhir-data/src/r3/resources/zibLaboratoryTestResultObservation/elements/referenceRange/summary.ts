@@ -14,6 +14,7 @@ export const summary: HealthUiGroupFunction<ReferenceRange, HealthUiGroup> = (
     const formatSystemCode = systemCode(context);
 
     let typeCoding: MgoCoding = {
+        _type: 'Coding',
         system: 'http://hl7.org/fhir/referencerange-meaning', // NOSONAR,
         code: 'normal',
     };
@@ -29,6 +30,11 @@ export const summary: HealthUiGroupFunction<ReferenceRange, HealthUiGroup> = (
         label:
             formatSystemCode(typeCoding) ??
             formatMessage('summary.r3.zib_laboratory_test_result_observation.reference_range'),
-        children: [...ui.range(`summary.${i18n}`, resource)],
+        children: [
+            ...ui.range(`summary.${i18n}`, {
+                _type: 'Range',
+                ...resource,
+            }),
+        ],
     };
 };

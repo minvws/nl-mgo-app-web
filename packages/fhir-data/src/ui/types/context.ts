@@ -26,7 +26,7 @@ export type UiFunctionWithOptions<
 
 export type UiFunction<Input, Output extends UiElement | UiElement[], Label = FhirMessagesIds> = (
     label: Label,
-    value: Nullable<Lossless<Input>>
+    value: Nullable<Input>
 ) => Output;
 
 export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
@@ -35,8 +35,8 @@ export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]
 
 export type CombinedUiFunction<Input1, Input2, Output extends UiElement | UiElement[]> = (
     label: FhirMessagesIds,
-    value1: Nullable<Lossless<Input1>>,
-    value2: Nullable<Lossless<Input2>>
+    value1: Nullable<Input1>,
+    value2: Nullable<Input2>
 ) => Output;
 
 export type HealthUiSchemaFunction<T extends MgoResourceMeta> = (

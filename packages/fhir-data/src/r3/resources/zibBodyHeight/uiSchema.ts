@@ -1,4 +1,5 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
+import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { type ZibBodyHeight } from './zibBodyHeight';
 
@@ -7,7 +8,7 @@ export const uiSchema: HealthUiSchemaFunction<ZibBodyHeight> = (resource, contex
     const ui = context.ui as NonStrictUi;
 
     return {
-        label: resource.effectiveDateTime ?? context.formatMessage(i18n),
+        label: valueOf(resource.effectiveDateTime) ?? context.formatMessage(i18n),
         children: [
             {
                 label: `${i18n}`,

@@ -20,5 +20,5 @@
             "$test/*": ["./test/*"]
         }
     },
-    "include": ["src", "test", "resource-labels"]
+    "include": ["src", "test", "resource-labels", "schema-generator"]
 }

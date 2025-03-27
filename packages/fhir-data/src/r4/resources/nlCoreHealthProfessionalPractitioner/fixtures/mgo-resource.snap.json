@@ -6,6 +6,7 @@
     "fhirVersion": "R4",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/big",
             "value": "21870932",
@@ -15,57 +16,116 @@
     "name": [
         {
             "nameUsage": null,
-            "family": "Peters",
+            "family": {
+                "_type": "String",
+                "value": "Peters"
+            },
             "given": [
-                "J.",
-                "H.",
-                "R."
+                {
+                    "_type": "String",
+                    "value": "J."
+                },
+                {
+                    "_type": "String",
+                    "value": "H."
+                },
+                {
+                    "_type": "String",
+                    "value": "R."
+                }
             ],
             "givenNames": null,
             "givenInitials": [
-                "J.",
-                "H.",
-                "R."
+                {
+                    "_type": "String",
+                    "value": "J."
+                },
+                {
+                    "_type": "String",
+                    "value": "H."
+                },
+                {
+                    "_type": "String",
+                    "value": "R."
+                }
             ],
             "period": null,
             "prefix": null,
             "suffix": null,
-            "text": "J.H.R. Peters",
-            "use": "official"
+            "text": {
+                "_type": "String",
+                "value": "J.H.R. Peters"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "official"
+            }
         }
     ],
     "telephoneNumbers": [
         {
             "system": "phone",
             "telecomType": null,
-            "value": "+3715828282",
-            "use": "work",
+            "value": {
+                "_type": "String",
+                "value": "+3715828282"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "comment": null
         }
     ],
     "emailAddresses": [
         {
             "system": "email",
-            "value": "j.peters@hospital.nl",
-            "use": "work"
+            "value": {
+                "_type": "String",
+                "value": "j.peters@hospital.nl"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            }
         }
     ],
     "address": [
         {
-            "line": "Simon Smitweg 1",
-            "streetName": "Simon Smitweg",
-            "houseNumber": "1",
+            "line": {
+                "_type": "String",
+                "value": "Simon Smitweg 1"
+            },
+            "streetName": {
+                "_type": "String",
+                "value": "Simon Smitweg"
+            },
+            "houseNumber": {
+                "_type": "String",
+                "value": "1"
+            },
             "houseNumberAddition": null,
             "houseNumberIndication": null,
             "additionalInformation": null,
-            "city": "Leiderdorp",
+            "city": {
+                "_type": "String",
+                "value": "Leiderdorp"
+            },
             "district": null,
-            "postalCode": "2353 GA",
-            "country": "Nederland",
+            "postalCode": {
+                "_type": "String",
+                "value": "2353 GA"
+            },
+            "country": {
+                "_type": "String",
+                "value": "Nederland"
+            },
             "countryCode": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "NL",
                         "display": "Nederland",
                         "system": "urn:iso:std:iso:3166"
@@ -73,9 +133,11 @@
                 ]
             },
             "addressType": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "WP",
                         "display": "Work Place",
                         "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"

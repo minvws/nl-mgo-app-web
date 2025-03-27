@@ -15,35 +15,41 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; /
 function parseZibMedicationUse(resource: MedicationStatement) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM MedicationUse2-v1.0.1(2017EN)
         asAgreedIndicator: parse.extensionNictiz(resource, 'zib-MedicationUse-AsAgreedIndicator'),
         prescriber: parse.extensionNictiz(resource, 'zib-MedicationUse-Prescriber'),
-        author: parse.extensionNictiz(resource, 'zib-MedicationUse-Author'),
-        medicationTreatment: parse.extensionNictiz(resource, 'zib-Medication-MedicationTreatment'),
         reasonForChangeOrDiscontinuationOfUse: parse.extensionNictiz(
             resource,
             'zib-MedicationUse-ReasonForChangeOrDiscontinuationOfUse'
         ),
-        repeatPeriodCyclicalSchedule: parse.extensionNictiz(
-            resource,
-            'zib-Medication-RepeatPeriodCyclicalSchedule'
-        ),
-        identifier: map(resource.identifier, parse.identifier),
         status: parse.code(resource.status),
-        category: parse.codeableConcept(resource.category),
         medicationReference: parse.reference(resource.medicationReference),
+        dateAsserted: parse.dateTime(resource.dateAsserted),
+        taken: parse.code(resource.taken),
+        reasonCode: map(resource.reasonCode, parse.codeableConcept),
         effectivePeriod: parse.period(resource.effectivePeriod),
-
         effectiveDuration: parse.extensionNictiz(
             resource.effectivePeriod,
             'zib-MedicationUse-Duration'
         ),
-        dateAsserted: parse.dateTime(resource.dateAsserted),
+        note: map(resource.note, parse.annotation),
+
+        // HCIM InstructionsForUse-v1.1(2017EN)
+        dosage: map(resource.dosage, zibInstructionsForUse.parse),
+        repeatPeriodCyclicalSchedule: parse.extensionNictiz(
+            resource,
+            'zib-Medication-RepeatPeriodCyclicalSchedule'
+        ),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        author: parse.extensionNictiz(resource, 'zib-MedicationUse-Author'),
+        identifier: map(resource.identifier, parse.identifier),
         informationSource: parse.reference(resource.informationSource),
         subject: parse.reference(resource.subject),
-        taken: parse.code(resource.taken),
-        reasonCode: map(resource.reasonCode, parse.codeableConcept),
-        note: map(resource.note, parse.annotation),
-        dosage: map(resource.dosage, zibInstructionsForUse.parse),
+
+        // Medication Process v09
+        medicationTreatment: parse.extensionNictiz(resource, 'zib-Medication-MedicationTreatment'),
     };
 }
 

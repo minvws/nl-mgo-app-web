@@ -1,6 +1,7 @@
 import { expectJson, faker, testUiSchemaContext } from '$test';
 import { type Timing } from 'fhir/r3';
 import { expect, test } from 'vitest';
+import { parse } from '../../../parse';
 import inputFhirData from './fixtures/fhir-resource.json';
 import { uiSchemaGroup } from './uiSchemaGroup';
 import { zibAdministrationSchedule } from './zibAdministrationSchedule';
@@ -21,7 +22,7 @@ test('zibAdministrationSchedule parses successfully', () => {
     const zibData = zibAdministrationSchedule.parse(data);
     expect(zibData.repeat).toEqual(
         expect.objectContaining({
-            duration: data.repeat?.duration,
+            duration: parse.decimal(data.repeat?.duration),
         })
     );
 });

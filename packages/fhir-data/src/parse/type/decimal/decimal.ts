@@ -1,6 +1,9 @@
-import { passThrough } from '../../helpers';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
+import { type PrimitiveValueType } from '../../types';
 
-export type MgoDecimal = number & { readonly '': unique symbol };
+export interface MgoDecimal extends PrimitiveValueType<'Decimal', number> {}
 
-export const decimal = createTypeParser<number, MgoDecimal>(passThrough);
+export const decimal = createTypeParser<number, MgoDecimal>((value) => ({
+    _type: 'Decimal',
+    value,
+}));

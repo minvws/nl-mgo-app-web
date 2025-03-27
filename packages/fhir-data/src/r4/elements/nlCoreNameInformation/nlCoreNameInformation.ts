@@ -1,13 +1,14 @@
 import { type HumanName } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';
+import { type MgoCode } from '../../../parse/type';
+import { type ResourceElementConfig } from '../../../types/Fhir';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
-import { type ResourceElementConfig } from '../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export type R4NlCoreNameInformation = {
-    use: Extract<HumanName['use'], 'official'>;
+    use: parse.MgoCode<Extract<HumanName['use'], 'official'>>;
     text: parse.MgoString | undefined; // NL-CM:20.4.4, NL-CM:20.4.5, NL-CM:20.4.7, NL-CM:20.4.11, NL-CM:20.4.10, NL-CM:20.4.9, NL-CM:20.4.8
     given: parse.MgoString[] | undefined; // NL-CM:20.4.4 | NL-CM:20.4.5
     givenNames: parse.MgoString[] | undefined; // NL-CM:20.4.4
@@ -19,7 +20,7 @@ export type R4NlCoreNameInformation = {
     nameUsage: parse.MgoString | undefined; // NL-CM:20.4.7
 };
 export type R4NlCoreNameInformationGiven = {
-    use: Extract<HumanName['use'], 'usual'>;
+    use: parse.MgoCode<Extract<HumanName['use'], 'usual'>>;
     text: parse.MgoString | undefined;
     given: parse.MgoString[] | undefined; // NL-CM:20.4.6
     period: parse.MgoPeriod | undefined;
@@ -35,7 +36,7 @@ function parseNlCoreNameInformation(
 ): R4NlCoreNameInformation | R4NlCoreNameInformationGiven {
     if (value?.use === 'usual') {
         return {
-            use: value.use,
+            use: parse.code(value?.use) as MgoCode<'usual'>,
             given: map(value?.given, parse.string),
             period: parse.period(value?.period),
             text: parse.string(value?.text),
@@ -65,7 +66,7 @@ function parseNlCoreNameInformation(
         prefix: map(value?.prefix, parse.string),
         suffix: map(value?.suffix, parse.string),
         text: parse.string(value?.text),
-        use: parse.string(value?.use) as 'official',
+        use: parse.code(value?.use) as MgoCode<'official'>,
     };
 }
 

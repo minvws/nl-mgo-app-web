@@ -1,11 +1,19 @@
 {
-    "sequence": 1,
-    "text": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL",
+    "sequence": {
+        "_type": "Integer",
+        "value": 1
+    },
+    "text": {
+        "_type": "String",
+        "value": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+    },
     "additionalInstruction": null,
     "asNeeded": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "1137",
                 "display": "zo nodig",
                 "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
@@ -13,9 +21,11 @@
         ]
     },
     "route": {
+        "_type": "CodeableConcept",
         "text": null,
         "coding": [
             {
+                "_type": "Coding",
                 "code": "9",
                 "display": "ORAAL",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -23,7 +33,9 @@
         ]
     },
     "doseRange": {
+        "_type": "Range",
         "low": {
+            "_type": "Quantity",
             "value": 1,
             "comparator": null,
             "unit": "Stuk",
@@ -31,6 +43,7 @@
             "code": "245"
         },
         "high": {
+            "_type": "Quantity",
             "value": 2,
             "comparator": null,
             "unit": "Stuk",
@@ -39,7 +52,9 @@
         }
     },
     "maxDosePerPeriod": {
+        "_type": "Ratio",
         "numerator": {
+            "_type": "Quantity",
             "value": 6,
             "comparator": null,
             "unit": "Stuk",
@@ -47,6 +62,7 @@
             "code": "245"
         },
         "denominator": {
+            "_type": "Quantity",
             "value": 1,
             "comparator": null,
             "unit": "dag",
@@ -59,9 +75,18 @@
             "duration": null,
             "durationUnit": null,
             "frequency": null,
-            "frequencyMax": 4,
-            "period": 1,
-            "periodUnit": "d",
+            "frequencyMax": {
+                "_type": "Integer",
+                "value": 4
+            },
+            "period": {
+                "_type": "Decimal",
+                "value": 1
+            },
+            "periodUnit": {
+                "_type": "Code",
+                "value": "d"
+            },
             "dayOfWeek": null,
             "timeOfDay": null,
             "when": null

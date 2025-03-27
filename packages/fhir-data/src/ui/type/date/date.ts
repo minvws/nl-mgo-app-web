@@ -7,6 +7,6 @@ export const date: WithUiHelperContext<UiFunction<MgoDate, SingleValue>> =
         return {
             label: i18nContext.formatMessage(label),
             type: 'SINGLE_VALUE',
-            display: formatDate(i18nContext)(value),
+            display: formatDate(i18nContext)(value?.value),
         };
     };

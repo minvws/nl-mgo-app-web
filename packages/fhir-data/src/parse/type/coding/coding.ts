@@ -1,7 +1,8 @@
 import { type Coding } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers';
+import { type ValueType } from '../../types';
 
-export interface MgoCoding {
+export interface MgoCoding extends ValueType<'Coding'> {
     code?: string;
     display?: string;
     system?: string;
@@ -10,8 +11,9 @@ export interface MgoCoding {
 export const coding = createTypeParser<Coding, MgoCoding>((value) => {
     const { code, display, system } = value;
     return {
+        _type: 'Coding',
         code,
         display,
         system,
-    } as MgoCoding;
+    };
 });

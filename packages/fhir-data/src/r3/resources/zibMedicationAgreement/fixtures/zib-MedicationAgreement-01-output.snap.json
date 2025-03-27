@@ -5,11 +5,13 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement",
     "fhirVersion": "R3",
     "periodOfUse": {
+        "_type": "Period",
         "start": "2020-06-08",
         "end": null
     },
     "usageDuration": null,
     "medicationTreatment": {
+        "_type": "Identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
         "value": "#MB_01h",
@@ -19,12 +21,14 @@
     "repeatPeriodCyclicalSchedule": null,
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.16076005.1",
             "value": "#MB_01h#MA_01",
             "type": null
         },
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1bed45b9-8fdf-11ec-1339-020000000000",
@@ -35,11 +39,16 @@
     "basedOn": null,
     "groupIdentifier": null,
     "status": null,
-    "intent": "order",
+    "intent": {
+        "_type": "Code",
+        "value": "order"
+    },
     "category": {
+        "_type": "CodeableConcept",
         "text": "Medicatieafspraak",
         "coding": [
             {
+                "_type": "Coding",
                 "code": "16076005",
                 "display": "Prescription (procedure)",
                 "system": "http://snomed.info/sct"
@@ -48,19 +57,25 @@
     },
     "priority": null,
     "medicationReference": {
+        "_type": "Reference",
         "reference": "Medication/zib-Product-03",
         "display": "Metoclopramide zetpil 20mg"
     },
     "note": null,
     "dossageInstruction": [
         {
-            "sequence": 1,
+            "sequence": {
+                "_type": "Integer",
+                "value": 1
+            },
             "text": null,
             "additionalInstruction": null,
             "asNeeded": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "1137",
                         "display": "zo nodig",
                         "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
@@ -68,9 +83,11 @@
                 ]
             },
             "route": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "12",
                         "display": "rectaal",
                         "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -78,6 +95,7 @@
                 ]
             },
             "doseQuantity": {
+                "_type": "Quantity",
                 "value": 1,
                 "comparator": null,
                 "unit": "stuk",
@@ -89,10 +107,19 @@
                 "repeat": {
                     "duration": null,
                     "durationUnit": null,
-                    "frequency": 1,
+                    "frequency": {
+                        "_type": "Integer",
+                        "value": 1
+                    },
                     "frequencyMax": null,
-                    "period": 1,
-                    "periodUnit": "d",
+                    "period": {
+                        "_type": "Decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "Code",
+                        "value": "d"
+                    },
                     "dayOfWeek": null,
                     "timeOfDay": null,
                     "when": null

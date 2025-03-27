@@ -5,6 +5,7 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter",
     "fhirVersion": "R3",
     "class": {
+        "_type": "Coding",
         "code": "EMER",
         "display": "emergency",
         "system": "http://hl7.org/fhir/v3/ActCode"
@@ -12,22 +13,26 @@
     "participant": [
         {
             "individual": {
+                "_type": "Reference",
                 "reference": "Practitioner/nl-core-practitioner-01",
                 "display": "Henk de Vries"
             }
         }
     ],
     "serviceProvider": {
+        "_type": "Reference",
         "reference": "Organization/nl-core-organization-02",
         "display": "Universitair Medisch Centrum Groningen"
     },
     "period": {
+        "_type": "Period",
         "start": "2012-08-16",
         "end": null
     },
     "diagnosis": [
         {
             "condition": {
+                "_type": "Reference",
                 "reference": "Condition/zib-problem-05",
                 "display": "Broken leg"
             },

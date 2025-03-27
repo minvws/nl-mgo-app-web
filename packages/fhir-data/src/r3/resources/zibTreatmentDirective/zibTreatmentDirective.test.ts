@@ -26,6 +26,18 @@ test('uiSchema returns the expected output', async () => {
     );
 });
 
+test('parses fine without an attachment', async () => {
+    const output = zibTreatmentDirective.parse(input as Consent);
+    output.sourceAttachment = undefined;
+    const uiSchema = zibTreatmentDirective.uiSchema(
+        output,
+        testUiSchemaContext({
+            ignoreMissingTranslations: true,
+        })
+    );
+    expect(uiSchema.label).toBe('1ebf6227-8fdf-11ec-1682-020000000000');
+});
+
 test('uiSchema returns default label if identifier not supplied', () => {
     const output = zibTreatmentDirective.parse(input as Consent);
     output.identifier = undefined;

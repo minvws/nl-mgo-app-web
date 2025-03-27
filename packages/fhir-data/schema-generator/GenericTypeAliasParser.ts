@@ -17,16 +17,19 @@ import {
  */
 export class GenericTypeAliasParser implements SubNodeParser {
     constructor(
-        private program: ts.Program,
-        private chainNodeParser: ChainNodeParser
+        private readonly program: ts.Program,
+        private readonly chainNodeParser: ChainNodeParser
     ) {}
 
     supportsNode(node: ts.Node): boolean {
-        return node.kind === ts.SyntaxKind.TypeAliasDeclaration && node.type?.typeArguments?.length;
+        return (
+            node.kind === ts.SyntaxKind.TypeAliasDeclaration &&
+            (node as any).type?.typeArguments?.length // eslint-disable-line @typescript-eslint/no-explicit-any
+        );
     }
 
-    createType(node: ts.TypeAliasDeclaration): BaseType | undefined {
-        const name = node.name.escapedText;
+    createType(node: ts.TypeAliasDeclaration): BaseType {
+        const name = node.name.escapedText as string;
         const typeChecker = this.program.getTypeChecker();
         const resolvedType = typeChecker.getTypeAtLocation(node);
         const typeNode = typeChecker.typeToTypeNode(

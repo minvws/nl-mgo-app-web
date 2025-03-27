@@ -6,13 +6,17 @@
     "fhirVersion": "R3",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1642a7d5-8fdf-11ec-4396-020000000000",
             "type": null
         }
     ],
-    "name": "Test Medisch Centrum",
+    "name": {
+        "_type": "String",
+        "value": "Test Medisch Centrum"
+    },
     "departmentSpecialty": null,
     "telecom": null,
     "address": null,

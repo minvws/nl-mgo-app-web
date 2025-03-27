@@ -6,6 +6,7 @@
     "fhirVersion": "R4",
     "identifier": [
         {
+            "_type": "Identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/ura",
             "value": "06020806",
@@ -14,9 +15,11 @@
     ],
     "departmentSpecialty": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "0320",
                     "display": "Medisch specialisten, cardiologie",
                     "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
@@ -26,9 +29,11 @@
     ],
     "organizationType": [
         {
+            "_type": "CodeableConcept",
             "text": null,
             "coding": [
                 {
+                    "_type": "Coding",
                     "code": "V5",
                     "display": "Universitair Medisch Centrum",
                     "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
@@ -36,40 +41,72 @@
             ]
         }
     ],
-    "name": "Erasmus Universitair Medisch Centrum",
+    "name": {
+        "_type": "String",
+        "value": "Erasmus Universitair Medisch Centrum"
+    },
     "telephoneNumbers": [
         {
             "system": "phone",
             "telecomType": null,
-            "value": "+31107040704",
-            "use": "work",
+            "value": {
+                "_type": "String",
+                "value": "+31107040704"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            },
             "comment": null
         }
     ],
     "emailAddresses": [
         {
             "system": "email",
-            "value": "info@erasmus.nl",
-            "use": "work"
+            "value": {
+                "_type": "String",
+                "value": "info@erasmus.nl"
+            },
+            "use": {
+                "_type": "Code",
+                "value": "work"
+            }
         }
     ],
     "address": [
         {
-            "line": "s-Gravendijkwal 230",
-            "streetName": "s-Gravendijkwal",
-            "houseNumber": "230",
+            "line": {
+                "_type": "String",
+                "value": "s-Gravendijkwal 230"
+            },
+            "streetName": {
+                "_type": "String",
+                "value": "s-Gravendijkwal"
+            },
+            "houseNumber": {
+                "_type": "String",
+                "value": "230"
+            },
             "houseNumberAddition": null,
             "houseNumberIndication": null,
             "additionalInformation": null,
-            "city": "Rotterdam",
+            "city": {
+                "_type": "String",
+                "value": "Rotterdam"
+            },
             "district": null,
-            "postalCode": "3015 CE",
+            "postalCode": {
+                "_type": "String",
+                "value": "3015 CE"
+            },
             "country": null,
             "countryCode": null,
             "addressType": {
+                "_type": "CodeableConcept",
                 "text": null,
                 "coding": [
                     {
+                        "_type": "Coding",
                         "code": "WP",
                         "display": "Work Place",
                         "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
