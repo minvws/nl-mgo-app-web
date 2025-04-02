@@ -5,7 +5,7 @@ import { dateTime } from './dateTime';
 test('dateTime', () => {
     const value = faker.fhir.dateTime();
     expect(dateTime(value)).toEqual({
-        _type: 'DateTime',
+        _type: 'dateTime',
         value,
     });
 });

@@ -15,9 +15,23 @@
                 ]
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Aanvullende instructie",
-                "display": "Niet bekend"
+                "type": "MULTIPLE_GROUPED_VALUES",
+                "display": [
+                    [
+                        "Then stop (422327006 in code systeem http://snomed.info/sct)"
+                    ]
+                ]
+            },
+            {
+                "label": "Teller",
+                "type": "SINGLE_VALUE",
+                "display": "200 milliliter"
+            },
+            {
+                "label": "Noemer",
+                "type": "SINGLE_VALUE",
+                "display": "12 uur"
             },
             {
                 "label": "Volgnummer",
@@ -25,19 +39,26 @@
                 "display": "1"
             },
             {
+                "label": "Keerdosis",
                 "type": "SINGLE_VALUE",
+                "display": "20 milligram"
+            },
+            {
                 "label": "Teller",
-                "display": "Niet bekend"
+                "type": "SINGLE_VALUE",
+                "display": "1000 milliliter"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Noemer",
-                "display": "Niet bekend"
+                "type": "SINGLE_VALUE",
+                "display": "24 uur"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Zo nodig",
-                "display": "Niet bekend"
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    "zo nodig"
+                ]
             }
         ]
     },
@@ -45,8 +66,8 @@
         "label": "Toedieningsschema",
         "children": [
             {
-                "type": "SINGLE_VALUE",
                 "label": "Toedieninsgduur",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
@@ -55,8 +76,8 @@
                 "display": "1"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Maximum waarde",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
@@ -65,18 +86,18 @@
                 "type": "SINGLE_VALUE"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Weekdagen",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Toedientijd",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Dagdeel",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             }
         ]

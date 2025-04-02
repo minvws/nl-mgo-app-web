@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "18d78911-8fdf-11ec-3053-020000000000",
@@ -14,15 +14,14 @@
         }
     ],
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "active"
     },
     "category": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "75323-6",
                 "display": "condition",
                 "system": "http://loinc.org"
@@ -30,11 +29,10 @@
         ]
     },
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "432415000",
                 "display": "Methicillin resistant staphylococcus aureus carrier",
                 "system": "http://snomed.info/sct"
@@ -42,19 +40,19 @@
         ]
     },
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "period": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2010-06-01",
         "end": null
     },
     "encounter": null,
     "author": null,
     "concernReference": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Condition/zib-problem-01",
         "display": "Fracture of wrist (disorder)"
     }

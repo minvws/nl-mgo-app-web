@@ -418,6 +418,10 @@
                     "display": null
                 }
             ]
+        },
+        {
+            "label": "r3.nl_core_patient.photos",
+            "children": []
         }
     ]
 }

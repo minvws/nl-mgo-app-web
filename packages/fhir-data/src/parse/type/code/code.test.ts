@@ -5,7 +5,7 @@ import { code } from './code';
 test('code', () => {
     const value = faker.fhir.code();
     expect(code(value)).toEqual({
-        _type: 'Code',
+        _type: 'code',
         value,
     });
 });

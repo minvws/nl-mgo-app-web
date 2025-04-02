@@ -1,8 +1,8 @@
-import { type MgoCoding } from '../../../parse/type';
+import { type MgoCodingProps } from '../../../parse/type/coding/coding';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 import { systemCode } from '../systemCode/systemCode';
 
-export const system: WithUiHelperContext<FormatFunction<MgoCoding>> = (context) => (value) => {
+export const system: WithUiHelperContext<FormatFunction<MgoCodingProps>> = (context) => (value) => {
     const { isSummary, formatMessage } = context;
     const { display, code, system } = value ?? {};
 

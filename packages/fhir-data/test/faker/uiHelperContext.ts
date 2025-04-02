@@ -1,4 +1,4 @@
-import { createHelpers, type FhirIntlShape } from '@minvws/mgo-mgo-intl';
+import { createHelpers, type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { createTestIntl } from '@minvws/mgo-mgo-intl/test';
 import { type UiHelperContext } from '../../src/ui/context';
 import { createMockDataFactory } from './factory';
@@ -10,5 +10,7 @@ export const uiHelperContext = createMockDataFactory<UiHelperContext>(() => {
         intl: mockIntl,
         isSummary: false,
         ...createHelpers(mockIntl),
+        formatLabel: (label: string, _value: unknown) =>
+            mockIntl.formatMessage({ id: label as FhirMessagesIds }),
     };
 });

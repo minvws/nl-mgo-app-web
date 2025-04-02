@@ -5,7 +5,7 @@
             "label": "r4.nl_core_health_professional_practitioner.group_details",
             "children": [
                 {
-                    "label": "r4.nl_core_health_professional_practitioner.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "21870932"

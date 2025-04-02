@@ -35,51 +35,11 @@
                     "display": [
                         "J.P.M. van Putten-van der Giessen"
                     ]
-                }
-            ]
-        },
-        {
-            "label": "r3.attachment",
-            "children": [
-                {
-                    "label": "r3.attachment.contentType",
-                    "type": "SINGLE_VALUE",
-                    "display": "application/pdf"
                 },
                 {
-                    "label": "r3.attachment.language",
-                    "type": "SINGLE_VALUE",
-                    "display": "nl"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.data",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "r3.attachment.url",
-                    "type": "SINGLE_VALUE",
-                    "display": "Binary/pdfa-binary-02"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.size",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.hash",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "r3.attachment.title",
-                    "type": "SINGLE_VALUE",
-                    "display": "Verwijsbrief Arts"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "r3.attachment.creation",
-                    "display": "Niet bekend"
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Verwijsbrief Arts",
+                    "reference": "Binary/pdfa-binary-02"
                 }
             ]
         }

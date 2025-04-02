@@ -24,10 +24,11 @@ export type UiFunctionWithOptions<
     Label = FhirMessagesIds,
 > = (label: Label, value: Nullable<Lossless<Input>>, options?: Options) => Output;
 
-export type UiFunction<Input, Output extends UiElement | UiElement[], Label = FhirMessagesIds> = (
-    label: Label,
-    value: Nullable<Input>
-) => Output;
+export type UiFunction<
+    Input,
+    Output extends UiElement | UiElement[] | HealthUiGroup,
+    Label = FhirMessagesIds,
+> = (label: Label, value: Nullable<Input>) => Output;
 
 export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
     value: Nullable<Input>

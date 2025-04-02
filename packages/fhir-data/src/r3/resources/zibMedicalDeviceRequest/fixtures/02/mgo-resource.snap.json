@@ -5,25 +5,24 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
     "fhirVersion": "R3",
     "status": {
-        "_type": "String",
+        "_type": "string",
         "value": "active"
     },
     "occurrence": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2012-03-13",
         "end": null
     },
     "codeReference": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Device/zib-MedicalDeviceProduct-03",
         "display": "Gehoorapparaat"
     },
     "intent": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "order",
                 "display": null,
                 "system": "http://hl7.org/fhir/request-intent"
@@ -31,12 +30,12 @@
         ]
     },
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "perfomer": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Organization/nl-core-organization-02",
         "display": "UMCG - Afdeling Orthopedie"
     }

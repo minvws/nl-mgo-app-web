@@ -6,6 +6,7 @@ import {
     type FhirIntlShape,
     type Locale,
 } from '@minvws/mgo-mgo-intl';
+import { createLabelFormatter } from './formatLabel';
 
 export type UiHelperContextOptions = {
     isSummary?: boolean;
@@ -30,6 +31,7 @@ export function createUiHelperContext(options: UiHelperContextOptions) {
         isSummary,
         intl,
         ...createHelpers(intl),
+        formatLabel: createLabelFormatter(intl),
     };
 }
 

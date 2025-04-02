@@ -16,17 +16,15 @@ test('codeableConcept prefers text value', () => {
     const label = faker.custom.fhirMessageId();
 
     const concept: MgoCodeableConcept = {
-        _type: 'CodeableConcept',
+        _type: 'codeableConcept',
         text: faker.lorem.sentence(),
         coding: [
             {
-                _type: 'Coding',
                 code: faker.fhir.code(),
                 system: faker.internet.url(),
                 display: faker.lorem.sentence(),
             },
             {
-                _type: 'Coding',
                 code: faker.fhir.code(),
                 system: faker.internet.url(),
                 display: faker.lorem.sentence(),
@@ -47,17 +45,15 @@ test('codeableConcept uses conding values as fallback', () => {
     const label = faker.custom.fhirMessageId();
 
     const concept: MgoCodeableConcept = {
-        _type: 'CodeableConcept',
+        _type: 'codeableConcept',
         text: undefined,
         coding: [
             {
-                _type: 'Coding',
                 code: faker.fhir.code(),
                 system: faker.internet.url(),
                 display: faker.lorem.sentence(),
             },
             {
-                _type: 'Coding',
                 code: faker.fhir.code(),
                 system: faker.internet.url(),
                 display: faker.lorem.sentence(),

@@ -6,24 +6,23 @@
     "fhirVersion": "R3",
     "description": null,
     "created": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2020-03-10"
     },
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-02",
         "display": "Paul XXX_Mesker"
     },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "superseded"
     },
     "type": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "18842-5",
                 "display": "Discharge summary",
                 "system": "http://loinc.org"
@@ -32,7 +31,7 @@
     },
     "author": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "#p1",
             "display": "B. Kneder"
         }
@@ -42,7 +41,7 @@
         {
             "attachment": null,
             "reference": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "DocumentReference/pdfa-documentreference-01",
                 "display": null
             }
@@ -50,7 +49,7 @@
         {
             "attachment": null,
             "reference": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "DocumentReference/pdfa-documentreference-02",
                 "display": null
             }

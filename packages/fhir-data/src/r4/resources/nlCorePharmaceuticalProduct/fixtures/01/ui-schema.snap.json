@@ -19,8 +19,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Serienummer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -29,8 +29,8 @@
                     "display": "AW1898"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Batch vervaldatum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {

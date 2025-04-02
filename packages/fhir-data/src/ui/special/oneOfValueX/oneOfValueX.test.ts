@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type MgoQuantityLike } from '../../../parse/type';
+import { type MgoQuantityProps } from '../../../parse/type';
 import { quantity } from '../../type/quantity/quantity';
 import { string } from '../../type/string/string';
 import { oneOfValueX } from './oneOfValueX';
@@ -21,7 +21,7 @@ test('valueX with string', () => {
 
 test('valueX with quantity', () => {
     const label = faker.custom.fhirMessageId();
-    const mgoQuantity = faker.fhir.quantity() as MgoQuantityLike;
+    const mgoQuantity = faker.fhir.quantity() as MgoQuantityProps;
     const input = {
         valueQuantity: mgoQuantity,
     };

@@ -1,6 +1,6 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { type UiHelperContext } from '../../../ui/context';
-import { uiSchemaGroup as attachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
+import { isNonNullish } from '../../../utils';
 import { type ZibAdvanceDirective } from './zibAdvanceDirective';
 
 export const i18n = 'r3.zib_advance_directive';
@@ -23,10 +23,6 @@ export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, 
         ConsentingParty: ui.reference(`${i18n}.consenting_party`, resource.consentingParty),
     };
 
-    const attachment = resource.source.attachment
-        ? attachmentUiSchema(resource.source.attachment, context)
-        : null;
-
     return {
         label: getLabel(resource, context),
         children: [
@@ -38,9 +34,9 @@ export const uiSchema: HealthUiSchemaFunction<ZibAdvanceDirective> = (resource, 
                     hcimAdvanceDirective.LivingWillType,
                     hcimAdvanceDirective.LivingWillDate,
                     hcimAdvanceDirective.ConsentingParty,
-                ],
+                    resource.source.attachment ? ui.attachment(resource.source.attachment) : null,
+                ].filter(isNonNullish),
             },
-            ...(attachment ? [attachment] : []),
         ],
     };
 };

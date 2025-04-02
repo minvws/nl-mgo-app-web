@@ -2,7 +2,7 @@ import { type Quantity } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type ValueType } from '../../types';
 
-export interface MgoQuantityLike<T extends string = string> extends ValueType<T> {
+export interface MgoQuantityProps {
     value: number | undefined;
     comparator: string | undefined;
     unit: string | undefined;
@@ -10,16 +10,14 @@ export interface MgoQuantityLike<T extends string = string> extends ValueType<T>
     code: string | undefined;
 }
 
-export interface MgoQuantity extends MgoQuantityLike<'Quantity'> {}
+export interface MgoQuantity extends MgoQuantityProps, ValueType<'quantity'> {}
 
-export function quantityLike<T extends Quantity, Type extends string = 'Quanity'>(
-    value: T,
-    type: Type
-): MgoQuantityLike<Type> {
+export function quantityProps<T extends Quantity>(value: T): MgoQuantityProps {
     const { value: valueQuantity, comparator, unit, system, code } = value;
-    return { _type: type, value: valueQuantity, comparator, unit, system, code };
+    return { value: valueQuantity, comparator, unit, system, code };
 }
 
-export const quantity = createTypeParser<Quantity, MgoQuantity>((value) =>
-    quantityLike(value, 'Quantity')
-);
+export const quantity = createTypeParser<Quantity, MgoQuantity>((value) => ({
+    _type: 'quantity',
+    ...quantityProps(value),
+}));

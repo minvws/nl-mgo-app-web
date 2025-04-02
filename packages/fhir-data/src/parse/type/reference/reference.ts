@@ -2,16 +2,24 @@ import { type Reference } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type ValueType } from '../../types';
 
-export interface MgoReference extends ValueType<'Reference'> {
+export interface MgoReferenceProps {
     reference: string | undefined;
     display: string | undefined;
 }
 
-export const reference = createTypeParser<Reference, MgoReference>((value) => {
+export interface MgoReference extends MgoReferenceProps, ValueType<'reference'> {}
+
+export function referenceProps<T extends Reference>(value: T): MgoReferenceProps {
     const { reference, display } = value;
     return {
-        _type: 'Reference',
         reference,
         display,
+    };
+}
+
+export const reference = createTypeParser<Reference, MgoReference>((value) => {
+    return {
+        _type: 'reference',
+        ...referenceProps(value),
     };
 });

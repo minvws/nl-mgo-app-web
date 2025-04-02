@@ -24,9 +24,13 @@
                     "display": "Voldaan"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Reden gebruik",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Nursing Procedure"
+                        ]
+                    ]
                 }
             ]
         },
@@ -39,8 +43,8 @@
                     "display": "21 juli 2020"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -49,13 +53,14 @@
             "label": "Voorgeschreven door",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Specialist",
-                    "display": "Niet bekend"
+                    "type": "REFERENCE_VALUE",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

@@ -5,7 +5,7 @@
             "label": "r3.zib_treatment_directive.group_details",
             "children": [
                 {
-                    "label": "r3.zib_treatment_directive.identifier",
+                    "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "display": "1ebf6227-8fdf-11ec-1682-020000000000"
                 },
@@ -62,7 +62,7 @@
                     "reference": null
                 },
                 {
-                    "label": "r3.zib_treatment_directive.source_identifier",
+                    "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -96,51 +96,11 @@
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": null
-                }
-            ]
-        },
-        {
-            "label": "r3.attachment",
-            "children": [
-                {
-                    "label": "r3.attachment.contentType",
-                    "type": "SINGLE_VALUE",
-                    "display": "application/pdf"
                 },
                 {
-                    "label": "r3.attachment.language",
-                    "type": "SINGLE_VALUE",
-                    "display": "nl"
-                },
-                {
-                    "label": "r3.attachment.data",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.attachment.url",
-                    "type": "SINGLE_VALUE",
-                    "display": "Binary/pdfa-binary-02"
-                },
-                {
-                    "label": "r3.attachment.size",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.attachment.hash",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.attachment.title",
-                    "type": "SINGLE_VALUE",
-                    "display": "Verwijsbrief Arts"
-                },
-                {
-                    "label": "r3.attachment.creation",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Verwijsbrief Arts",
+                    "reference": "Binary/pdfa-binary-02"
                 }
             ]
         },

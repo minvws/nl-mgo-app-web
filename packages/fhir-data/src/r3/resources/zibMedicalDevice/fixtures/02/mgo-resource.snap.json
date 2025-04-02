@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b88e083-8fdf-11ec-1325-020000000000",
@@ -16,16 +16,16 @@
     "organization": null,
     "practitioner": null,
     "reason": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Observation/zib-mobility-01",
         "display": "Ability to mobilise"
     },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "active"
     },
     "patient": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-03",
         "display": "I. Jongeneel-de Haas"
     },
@@ -33,7 +33,7 @@
     "recordedOn": null,
     "source": null,
     "device": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Device/zib-medicaldeviceproduct-02",
         "display": "Rollator"
     },

@@ -10,7 +10,7 @@
                     "display": null
                 },
                 {
-                    "label": "r3.zib_nutrition_advice.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1c2bf38b-8fdf-11ec-1435-020000000000"

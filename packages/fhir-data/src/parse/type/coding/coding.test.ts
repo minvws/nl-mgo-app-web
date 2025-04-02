@@ -5,6 +5,6 @@ import { coding } from './coding';
 test('coding', () => {
     const data = faker.fhir.coding();
     const { code, display, system } = data;
-    const expected = { _type: 'Coding', code, display, system };
+    const expected = { _type: 'coding', code, display, system };
     expect(coding(data)).toEqual(expected);
 });

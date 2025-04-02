@@ -37,6 +37,12 @@
       "value": "Algemeen"
     }
   ],
+  "fhir.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
   "fhir.period.end": [
     {
       "type": 0,

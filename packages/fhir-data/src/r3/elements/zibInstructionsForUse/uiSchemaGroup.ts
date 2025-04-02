@@ -25,7 +25,10 @@ export const uiSchemaGroup: HealthUiGroupFunction<ZibInstructionsForUse, HealthU
             resource.additionalInstruction
         ),
         AdministeringSchedule: zibAdministrationSchedule.uiSchemaGroup(resource.timing, context),
-        AsNeeded: ui.codeableConcept(`${i18n}.as_needed_codeable_concept`, resource.asNeeded),
+        AsNeeded: ui.codeableConcept(
+            `${i18n}.as_needed_codeable_concept`,
+            resource.asNeededCodeableConcept
+        ),
         RouteOfAdministration: ui.codeableConcept(`${i18n}.route`, resource.route),
         Dose: ui.oneOfValueX(`${i18n}.dose`, resource, 'dose'),
         MaximumDose: ui.ratio(`${i18n}.max_dose_per_period`, resource.maxDosePerPeriod),

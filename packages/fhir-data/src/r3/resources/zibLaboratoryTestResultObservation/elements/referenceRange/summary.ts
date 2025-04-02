@@ -1,4 +1,4 @@
-import { type MgoCoding } from '../../../../../parse/type';
+import { type MgoCodingProps } from '../../../../../parse/type/coding/coding';
 import { systemCode } from '../../../../../ui/format/systemCode/systemCode';
 import { type HealthUiGroup, type HealthUiGroupFunction } from '../../../../../ui/types';
 import { type ReferenceRange } from './referenceRange';
@@ -13,8 +13,7 @@ export const summary: HealthUiGroupFunction<ReferenceRange, HealthUiGroup> = (
 
     const formatSystemCode = systemCode(context);
 
-    let typeCoding: MgoCoding = {
-        _type: 'Coding',
+    let typeCoding: MgoCodingProps = {
         system: 'http://hl7.org/fhir/referencerange-meaning', // NOSONAR,
         code: 'normal',
     };
@@ -32,7 +31,7 @@ export const summary: HealthUiGroupFunction<ReferenceRange, HealthUiGroup> = (
             formatMessage('summary.r3.zib_laboratory_test_result_observation.reference_range'),
         children: [
             ...ui.range(`summary.${i18n}`, {
-                _type: 'Range',
+                _type: 'range',
                 ...resource,
             }),
         ],

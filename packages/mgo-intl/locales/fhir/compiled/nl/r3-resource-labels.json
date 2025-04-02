@@ -287,10 +287,28 @@
       "value": "Tijdsduur"
     }
   ],
+  "r3.zib_medication_use.information_source": [
+    {
+      "type": 0,
+      "value": "Informatiebron"
+    }
+  ],
+  "r3.zib_medication_use.reason_code": [
+    {
+      "type": 0,
+      "value": "Reden gebruik"
+    }
+  ],
   "r3.zib_medication_use.repeat_period_cyclical_schedule": [
     {
       "type": 0,
       "value": "Herhaalperiode cyclisch schema"
+    }
+  ],
+  "r3.zib_medication_use.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp"
     }
   ],
   "r3.zib_vaccination_recommendation": [

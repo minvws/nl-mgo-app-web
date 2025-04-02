@@ -6,7 +6,7 @@ test('period', () => {
     const data = faker.fhir.period();
     const { start, end } = data;
     const expected = {
-        _type: 'Period',
+        _type: 'period',
         start,
         end,
     };

@@ -5,7 +5,7 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
     "fhirVersion": "R4",
     "practitioner": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Practitioner/nl-core-HealthProfessional-Practitioner-01",
         "display": "Healthcare professional (person), J.H.R. Peters"
     },
@@ -13,11 +13,10 @@
     "location": null,
     "speciality": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "01.026",
                     "display": "Neuroloog",
                     "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode"
@@ -30,11 +29,11 @@
             "system": "phone",
             "telecomType": null,
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "+3715828282"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "work"
             },
             "comment": null
@@ -44,11 +43,11 @@
         {
             "system": "email",
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "j.peters@hospital.nl"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "work"
             }
         }

@@ -12,8 +12,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Dosis",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -46,8 +46,8 @@
                     "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -56,18 +56,18 @@
             "label": "Extra informatie",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Vaccinatie aanleiding",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toedieningsweg",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Lichaamsplek",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

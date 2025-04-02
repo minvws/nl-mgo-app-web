@@ -1,7 +1,7 @@
 {
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "c1975acb-041c-11ec-1725-020000000000",
@@ -9,21 +9,20 @@
         }
     ],
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
     "context": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Encounter/ont-ver-gpdata-encounter-contact14",
         "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard"
     },
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "3208",
                 "display": "glucose nuchter, art/cap (lab)",
                 "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
@@ -32,12 +31,12 @@
     },
     "method": null,
     "effectivePeriod": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2024-03-18",
         "end": null
     },
     "valueQuantity": {
-        "_type": "Quantity",
+        "_type": "quantity",
         "value": 5.4,
         "comparator": null,
         "unit": null,
@@ -45,13 +44,13 @@
         "code": "mmol/L"
     },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "final"
     },
     "referenceRange": [
         {
             "low": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 3.5,
                 "comparator": null,
                 "unit": null,
@@ -59,7 +58,7 @@
                 "code": "mmol/L"
             },
             "high": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 5.6,
                 "comparator": null,
                 "unit": null,
@@ -67,11 +66,10 @@
                 "code": "mmol/L"
             },
             "type": {
-                "_type": "CodeableConcept",
+                "_type": "codeableConcept",
                 "text": null,
                 "coding": [
                     {
-                        "_type": "Coding",
                         "code": "normal",
                         "display": "Normal Range",
                         "system": "http://hl7.org/fhir/referencerange-meaning"
@@ -87,11 +85,10 @@
     "comment": null,
     "laboratoryTestResultCode": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "49581000146104",
                     "display": "bevinding betreffende laboratoriumonderzoek",
                     "system": "http://snomed.info/sct"
@@ -104,7 +101,7 @@
     "basedOn": null,
     "performer": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
             "display": "Dokter Bernard"
         }

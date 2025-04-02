@@ -23,8 +23,8 @@
                     "display": "6 februari 2019"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {

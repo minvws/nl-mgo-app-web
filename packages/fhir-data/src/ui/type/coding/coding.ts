@@ -1,4 +1,5 @@
 import { type MgoCoding } from '../../../parse/type';
+import { type MgoCodingProps } from '../../../parse/type/coding/coding';
 import { isNonNullish } from '../../../utils';
 import { system } from '../../format/system/system';
 import {
@@ -9,7 +10,10 @@ import {
 } from '../../types';
 
 export const coding: WithUiHelperContext<
-    UiFunction<MgoCoding | MgoCoding[], SingleValue | MultipleValues>
+    UiFunction<
+        MgoCoding | MgoCodingProps | MgoCoding[] | MgoCodingProps[],
+        SingleValue | MultipleValues
+    >
 > = (context) => (label, value) => {
     const { formatMessage } = context;
     const display = system(context);

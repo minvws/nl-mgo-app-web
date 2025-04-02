@@ -5,7 +5,7 @@
             "label": "r3.zib_payer.group_details",
             "children": [
                 {
-                    "label": "r3.zib_payer.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1c7ad0eb-8fdf-11ec-2921-020000000000"

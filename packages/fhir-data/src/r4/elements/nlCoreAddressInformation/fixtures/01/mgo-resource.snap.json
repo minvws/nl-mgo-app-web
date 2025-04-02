@@ -1,41 +1,40 @@
 {
     "line": {
-        "_type": "String",
+        "_type": "string",
         "value": "1e Jacob van Campenstr 15"
     },
     "streetName": {
-        "_type": "String",
+        "_type": "string",
         "value": "1e Jacob van Campenstr"
     },
     "houseNumber": {
-        "_type": "String",
+        "_type": "string",
         "value": "15"
     },
     "houseNumberAddition": null,
     "houseNumberIndication": null,
     "additionalInformation": null,
     "city": {
-        "_type": "String",
+        "_type": "string",
         "value": "Hoogmade"
     },
     "district": {
-        "_type": "String",
+        "_type": "string",
         "value": "Kaag en Braassem"
     },
     "postalCode": {
-        "_type": "String",
+        "_type": "string",
         "value": "1012 NX"
     },
     "country": {
-        "_type": "String",
+        "_type": "string",
         "value": "Nederland"
     },
     "countryCode": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "6030",
                 "display": "Nederland",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34"
@@ -43,11 +42,10 @@
         ]
     },
     "addressType": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "HP",
                 "display": "Primary Home",
                 "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"

@@ -5,42 +5,42 @@
     "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-patient",
     "fhirVersion": "R3",
     "active": {
-        "_type": "Boolean",
+        "_type": "boolean",
         "value": true
     },
     "address": [
         {
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "home"
             },
             "type": null,
             "text": null,
             "line": [
                 {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Knolweg 1000"
                 }
             ],
             "city": {
-                "_type": "String",
+                "_type": "string",
                 "value": "Stitswerd"
             },
             "district": null,
             "state": null,
             "postalCode": {
-                "_type": "String",
+                "_type": "string",
                 "value": "9999XA"
             },
             "country": {
-                "_type": "String",
+                "_type": "string",
                 "value": "NLD"
             },
             "period": null
         }
     ],
     "birthDate": {
-        "_type": "Date",
+        "_type": "date",
         "value": "1964-07-25"
     },
     "communication": null,
@@ -48,11 +48,10 @@
         {
             "relationship": [
                 {
-                    "_type": "CodeableConcept",
+                    "_type": "codeableConcept",
                     "text": null,
                     "coding": [
                         {
-                            "_type": "Coding",
                             "code": "1",
                             "display": "Eerste relatie/contactpersoon",
                             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
@@ -60,11 +59,10 @@
                     ]
                 },
                 {
-                    "_type": "CodeableConcept",
+                    "_type": "codeableConcept",
                     "text": null,
                     "coding": [
                         {
-                            "_type": "Coding",
                             "code": "WIFE",
                             "display": "Wife",
                             "system": "http://hl7.org/fhir/v3/RoleCode"
@@ -74,12 +72,12 @@
             ],
             "name": {
                 "family": {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "van Putten XXX_Helleman"
                 },
                 "given": [
                     {
-                        "_type": "String",
+                        "_type": "string",
                         "value": "Jannie"
                     }
                 ],
@@ -87,7 +85,7 @@
                 "prefix": null,
                 "suffix": null,
                 "text": {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Jannie van Putten XXX_Helleman"
                 },
                 "use": null
@@ -95,15 +93,15 @@
             "telecom": [
                 {
                     "system": {
-                        "_type": "Code",
+                        "_type": "code",
                         "value": "phone"
                     },
                     "value": {
-                        "_type": "String",
+                        "_type": "string",
                         "value": "+31611234567"
                     },
                     "use": {
-                        "_type": "Code",
+                        "_type": "code",
                         "value": "work"
                     },
                     "rank": null,
@@ -111,15 +109,15 @@
                 },
                 {
                     "system": {
-                        "_type": "Code",
+                        "_type": "code",
                         "value": "email"
                     },
                     "value": {
-                        "_type": "String",
+                        "_type": "string",
                         "value": "info@nictiz.nl"
                     },
                     "use": {
-                        "_type": "Code",
+                        "_type": "code",
                         "value": "work"
                     },
                     "rank": null,
@@ -128,32 +126,32 @@
             ],
             "address": {
                 "use": {
-                    "_type": "Code",
+                    "_type": "code",
                     "value": "home"
                 },
                 "type": {
-                    "_type": "Code",
+                    "_type": "code",
                     "value": "physical"
                 },
                 "text": null,
                 "line": [
                     {
-                        "_type": "String",
+                        "_type": "string",
                         "value": "Knolweg 1000"
                     }
                 ],
                 "city": {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Stitswerd"
                 },
                 "district": null,
                 "state": null,
                 "postalCode": {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "9999XA"
                 },
                 "country": {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Nederland"
                 },
                 "period": null
@@ -164,31 +162,31 @@
         }
     ],
     "deceased": {
-        "_type": "Boolean",
+        "_type": "boolean",
         "value": false
     },
     "deceasedDateTime": null,
     "gender": {
-        "_type": "Code",
+        "_type": "code",
         "value": "male"
     },
     "generalPractitioner": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "Organization/nl-core-organization-01",
             "display": "Maatschap Vaste Huisarts"
         }
     ],
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": "official",
             "system": "http://fhir.nl/fhir/NamingSystem/bsn",
             "value": "999911120",
             "type": null
         },
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1683aefb-8fdf-11ec-1800-020000000000",
@@ -198,11 +196,10 @@
     "link": null,
     "managingOrganization": null,
     "maritalStatus": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "M",
                 "display": "Married",
                 "system": "http://hl7.org/fhir/v3/MaritalStatus"
@@ -210,19 +207,19 @@
         ]
     },
     "multipleBirth": {
-        "_type": "Boolean",
+        "_type": "boolean",
         "value": false
     },
     "multipleBirthInteger": null,
     "name": [
         {
             "family": {
-                "_type": "String",
+                "_type": "string",
                 "value": "XXX_Helleman"
             },
             "given": [
                 {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Johan"
                 }
             ],
@@ -230,7 +227,7 @@
             "prefix": null,
             "suffix": null,
             "text": {
-                "_type": "String",
+                "_type": "string",
                 "value": "Johan XXX_Helleman"
             },
             "use": null
@@ -240,15 +237,15 @@
     "telecom": [
         {
             "system": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "phone"
             },
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "06-12345645"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "home"
             },
             "rank": null,
@@ -256,15 +253,15 @@
         },
         {
             "system": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "email"
             },
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "XXX_Helleman@hotmail.com"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "home"
             },
             "rank": null,

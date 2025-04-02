@@ -26,8 +26,8 @@
                     "display": "current"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Beveiligingslabel",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -55,8 +55,8 @@
             "label": "Inhoud",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Inhoud",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

@@ -3,7 +3,6 @@ import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
-import { uiSchemaGroup as photoUiSchemaGroup } from '../../elements/attachment/uiSchemaGroup';
 import { uiSchemaGroup as communicationUiSchema } from './elements/communication/uiSchemaGroup';
 import { uiSchemaGroup as contactUiSchema } from './elements/contact/uiSchemaGroup';
 import { uiSchemaGroup as linkUiSchema } from './elements/link/uiSchemaGroup';
@@ -22,7 +21,7 @@ export const uiSchema: HealthUiSchemaFunction<NlCorePatient> = (resource, contex
     const contact = map(resource.contact, (x) => contactUiSchema(x, context), true);
     const link = map(resource.link, (x) => linkUiSchema(x, context), true);
     const name = map(resource.name, (x) => nlCoreHumanname.uiSchemaGroup(x, context), true);
-    const photo = map(resource.photo, (x) => photoUiSchemaGroup(x, context), true);
+    const photos = map(resource.photo, ui.attachment, true);
     const telecom = map(
         resource.telecom,
         (x) => nlCoreContactpoint.uiSchemaGroup(x, context),
@@ -53,8 +52,11 @@ export const uiSchema: HealthUiSchemaFunction<NlCorePatient> = (resource, contex
             ...contact,
             ...link,
             ...name,
-            ...photo,
             ...telecom,
+            {
+                label: `${i18n}.photos`,
+                children: photos,
+            },
         ],
     };
 };

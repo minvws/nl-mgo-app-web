@@ -5,17 +5,16 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure",
     "fhirVersion": "R3",
     "performedPeriod": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2012-06-05",
         "end": null
     },
     "bodySite": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "72696002",
                     "display": "Knee region structure (body structure)",
                     "system": "http://snomed.info/sct"
@@ -25,11 +24,10 @@
     ],
     "bodySiteQualifier": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "7771000",
                     "display": "Left",
                     "system": "http://snomed.info/sct"
@@ -39,17 +37,16 @@
     ],
     "reasonReference": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "Condition/zib-problem-02",
             "display": "Arthropathy (disorder)"
         }
     ],
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "60159002",
                 "display": "Implantation of Swanson prosthesis of knee (procedure)",
                 "system": "http://snomed.info/sct"
@@ -60,7 +57,7 @@
     "focalDevice": [
         {
             "manipulated": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Device/zib-medicaldeviceproduct-01",
                 "display": "Knee joint prosthesis, device (physical object)"
             }
@@ -70,14 +67,14 @@
     "performer": [
         {
             "actor": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Organization/nl-core-organization-02",
                 "display": "UMCG - Afdeling Orthopedie"
             }
         }
     ],
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     }

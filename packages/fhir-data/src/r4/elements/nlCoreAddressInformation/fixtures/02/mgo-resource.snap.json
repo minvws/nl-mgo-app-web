@@ -1,50 +1,49 @@
 {
     "line": {
-        "_type": "String",
+        "_type": "string",
         "value": "1e Jacob van Campenstr to 15 A 2e"
     },
     "streetName": {
-        "_type": "String",
+        "_type": "string",
         "value": "1e Jacob van Campenstr"
     },
     "houseNumber": {
-        "_type": "String",
+        "_type": "string",
         "value": "15"
     },
     "houseNumberAddition": {
-        "_type": "String",
+        "_type": "string",
         "value": "A 2e"
     },
     "houseNumberIndication": {
-        "_type": "String",
+        "_type": "string",
         "value": "to"
     },
     "additionalInformation": {
-        "_type": "String",
+        "_type": "string",
         "value": "test info"
     },
     "city": {
-        "_type": "String",
+        "_type": "string",
         "value": "Hoogmade"
     },
     "district": {
-        "_type": "String",
+        "_type": "string",
         "value": "Kaag en Braassem"
     },
     "postalCode": {
-        "_type": "String",
+        "_type": "string",
         "value": "1012 NX"
     },
     "country": {
-        "_type": "String",
+        "_type": "string",
         "value": "Nederland"
     },
     "countryCode": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "NL",
                 "display": "Nederland",
                 "system": "urn:iso:std:iso:3166"
@@ -52,11 +51,10 @@
         ]
     },
     "addressType": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "HP",
                 "display": "Primary Home",
                 "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"

@@ -2,24 +2,30 @@ import { type CodeableConcept } from '@minvws/mgo-fhir-types';
 import { map } from '../../../utils';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type ValueType } from '../../types';
-import { coding, type MgoCoding } from '../coding/coding';
+import { codingProps, type MgoCodingProps } from '../coding/coding';
 
-export interface MgoCodeableConcept extends ValueType<'CodeableConcept'> {
+export interface MgoCodeableConceptProps {
     text: string | undefined;
-    coding: MgoCoding[];
+    coding: MgoCodingProps[];
 }
+export interface MgoCodeableConcept extends MgoCodeableConceptProps, ValueType<'codeableConcept'> {}
 
-export const codeableConcept = createTypeParser<CodeableConcept, MgoCodeableConcept>((value) => {
+export function codeableConceptProps<T extends CodeableConcept>(value: T): MgoCodeableConceptProps {
     if (!value.coding?.length) {
         return {
-            _type: 'CodeableConcept',
             text: value.text,
             coding: [],
         };
     }
     return {
-        _type: 'CodeableConcept',
         text: value.text,
-        coding: map(value.coding, coding, true),
+        coding: map(value.coding, codingProps, true),
+    };
+}
+
+export const codeableConcept = createTypeParser<CodeableConcept, MgoCodeableConcept>((value) => {
+    return {
+        _type: 'codeableConcept',
+        ...codeableConceptProps(value),
     };
 });

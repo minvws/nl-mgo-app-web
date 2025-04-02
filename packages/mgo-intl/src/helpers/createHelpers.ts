@@ -16,7 +16,7 @@ export function createHelpers<TBase, MessageIds extends string>(
     ) => intl.formatMessage({ id }, ...args);
 
     const hasMessage = (id: string): id is ExtractedMessagesIds =>
-        !!intl.messages[id as keyof typeof intl.messages];
+        Object.prototype.hasOwnProperty.call(intl.messages, id);
 
     return {
         formatMessage,

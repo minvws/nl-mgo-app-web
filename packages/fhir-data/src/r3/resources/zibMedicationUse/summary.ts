@@ -1,9 +1,9 @@
+import { capitalize } from 'lodash';
 import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { type HealthUiSchemaFunction } from '../../../ui/types';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
-import { getLabel, i18n } from './uiSchema';
 import { type ZibMedicationUse } from './zibMedicationUse';
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
@@ -18,8 +18,10 @@ export const summary: HealthUiSchemaFunction<ZibMedicationUse> = (resource, cont
     );
     const hasSingleInstruction = instructions.length === 1;
 
+    const i18n = `r3.zib_medication_use`;
+
     return {
-        label: getLabel(resource, context),
+        label: capitalize(resource.medicationReference?.display) || formatMessage(i18n),
         children: [
             {
                 children: [

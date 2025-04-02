@@ -5,7 +5,7 @@
             "label": "r3.zib_medical_device.group_product",
             "children": [
                 {
-                    "label": "r3.zib_medical_device.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1b88e083-8fdf-11ec-1325-020000000000"

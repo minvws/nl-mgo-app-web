@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "16efa4a3-8fdf-11ec-1655-020000000000",
@@ -16,12 +16,12 @@
     "name": [
         {
             "family": {
-                "_type": "String",
+                "_type": "string",
                 "value": "de Wit"
             },
             "given": [
                 {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "G.Z.M."
                 }
             ],

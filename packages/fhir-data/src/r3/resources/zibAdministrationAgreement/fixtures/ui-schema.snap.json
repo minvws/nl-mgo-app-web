@@ -10,8 +10,8 @@
                     "display": "8 juni 2020 om 10:54:12 GMT+2"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Reden afspraak",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -20,13 +20,13 @@
                     "display": "8 juni 2020"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Gebruiksduur",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -37,13 +37,13 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Beëindigingsreden",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Geannuleerd indicator",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -78,8 +78,8 @@
                     "reference": "Organization/nl-core-organization-06"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Op verzoek van",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -100,8 +100,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -110,18 +110,18 @@
                     "display": "1"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Teller",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Noemer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zo nodig",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -130,8 +130,8 @@
             "label": "Toedieningsschema",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -140,8 +140,8 @@
                     "display": "1"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -150,18 +150,18 @@
                     "type": "SINGLE_VALUE"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

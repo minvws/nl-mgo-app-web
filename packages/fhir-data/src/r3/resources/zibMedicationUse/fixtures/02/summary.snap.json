@@ -9,8 +9,8 @@
                     "display": "Actief"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Reden gebruik",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -54,8 +54,8 @@
                     "display": "16 juli 2018"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -64,13 +64,13 @@
             "label": "Voorgeschreven door",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Specialist",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

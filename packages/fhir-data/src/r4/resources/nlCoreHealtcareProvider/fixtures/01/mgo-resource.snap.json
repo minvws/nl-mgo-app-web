@@ -11,11 +11,11 @@
             "system": "phone",
             "telecomType": null,
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "+31107040704"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "work"
             },
             "comment": null
@@ -25,48 +25,47 @@
         {
             "system": "email",
             "value": {
-                "_type": "String",
+                "_type": "string",
                 "value": "info@erasmus.nl"
             },
             "use": {
-                "_type": "Code",
+                "_type": "code",
                 "value": "work"
             }
         }
     ],
     "address": {
         "line": {
-            "_type": "String",
+            "_type": "string",
             "value": "s-Gravendijkwal 230"
         },
         "streetName": {
-            "_type": "String",
+            "_type": "string",
             "value": "s-Gravendijkwal"
         },
         "houseNumber": {
-            "_type": "String",
+            "_type": "string",
             "value": "230"
         },
         "houseNumberAddition": null,
         "houseNumberIndication": null,
         "additionalInformation": null,
         "city": {
-            "_type": "String",
+            "_type": "string",
             "value": "Rotterdam"
         },
         "district": null,
         "postalCode": {
-            "_type": "String",
+            "_type": "string",
             "value": "3015 CE"
         },
         "country": null,
         "countryCode": null,
         "addressType": {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "WP",
                     "display": "Work Place",
                     "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
@@ -76,7 +75,7 @@
         "period": null
     },
     "managingOrganization": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Organization/nl-core-HealthcareProvider-Organization-01",
         "display": "Healthcare provider (organization), Erasmus Universitair Medisch Centrum"
     }

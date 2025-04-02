@@ -1,7 +1,7 @@
 {
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "192a097f-8fdf-11ec-1258-020000000000",
@@ -9,16 +9,15 @@
         }
     ],
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "final"
     },
     "category": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "vital-signs",
                     "display": "Vital Signs",
                     "system": "http://hl7.org/fhir/observation-category"
@@ -27,13 +26,13 @@
         }
     ],
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "valueQuantity": {
-        "_type": "Quantity",
+        "_type": "quantity",
         "value": 183,
         "comparator": null,
         "unit": "cm",
@@ -46,11 +45,11 @@
     "method": null,
     "bodySite": null,
     "effectiveDateTime": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2013-02-08"
     },
     "comment": {
-        "_type": "String",
+        "_type": "string",
         "value": "met schoenen aan"
     },
     "id": "zib-bodyheight-01",

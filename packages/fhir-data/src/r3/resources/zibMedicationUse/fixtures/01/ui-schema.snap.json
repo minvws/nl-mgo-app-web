@@ -1,49 +1,18 @@
 {
-    "label": "Paracetamol tablet 500mg",
+    "label": "Medicatiegebruik",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
                 {
-                    "label": "Gebruiksproduct",
+                    "label": "Auteur",
                     "type": "REFERENCE_VALUE",
-                    "display": "PARACETAMOL TABLET 500MG",
-                    "reference": "Medication/zib-Product-02"
+                    "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts",
+                    "reference": "PractitionerRole/nl-core-practitionerrole-02"
                 },
                 {
-                    "label": "Registratiedatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "21 juli 2020"
-                },
-                {
-                    "label": "Ingangsdatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "21 juli 2020"
-                },
-                {
-                    "type": "SINGLE_VALUE",
                     "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
-                },
-                {
-                    "label": "Tijdsduur",
-                    "type": "SINGLE_VALUE",
-                    "display": "30 dagen"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Voorschrijver",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Reden gebruik",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Volgens afspraak indicator",
-                    "type": "SINGLE_VALUE",
-                    "display": "Ja"
                 },
                 {
                     "label": "Gebruik indicator",
@@ -51,19 +20,34 @@
                     "display": "y"
                 },
                 {
-                    "label": "Medicatie gebruik stop type",
-                    "type": "SINGLE_VALUE",
-                    "display": "completed"
+                    "label": "Gebruiksproduct",
+                    "type": "REFERENCE_VALUE",
+                    "display": "PARACETAMOL TABLET 500MG",
+                    "reference": "Medication/zib-Product-02"
                 },
                 {
-                    "type": "SINGLE_VALUE",
-                    "label": "Reden wijzigen of stoppen gebruik",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
                     "label": "Herhaalperiode cyclisch schema",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "#MB_01i1#GE_01",
+                        "1bfa2275-8fdf-11ec-2032-020000000000"
+                    ]
+                },
+                {
+                    "label": "Informatiebron",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
+                },
+                {
+                    "label": "Ingangsdatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "21 juli 2020"
                 },
                 {
                     "label": "Medicamenteuze behandeling",
@@ -71,9 +55,55 @@
                     "display": "#MB_01i1"
                 },
                 {
+                    "label": "Medicatie gebruik stop type",
                     "type": "SINGLE_VALUE",
+                    "display": "completed"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Reden gebruik",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Nursing Procedure (9632001 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Reden wijzigen of stoppen gebruik",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Drug interaction (finding) (79899007 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Registratiedatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "21 juli 2020"
+                },
+                {
+                    "label": "Tijdsduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "30 dagen"
+                },
+                {
                     "label": "Toelichting",
-                    "display": "Niet bekend"
+                    "display": "het monster toont afwijkingen",
+                    "type": "SINGLE_VALUE"
+                },
+                {
+                    "label": "Volgens afspraak indicator",
+                    "type": "SINGLE_VALUE",
+                    "display": "Ja"
+                },
+                {
+                    "label": "Voorschrijver",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
                 }
             ]
         },
@@ -81,9 +111,59 @@
             "label": "Gebruiksinstructie",
             "children": [
                 {
+                    "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 stuks"
+                },
+                {
+                    "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "d"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "4"
+                },
+                {
+                    "label": "Noemer",
+                    "type": "SINGLE_VALUE",
+                    "display": "één dag"
+                },
+                {
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+                },
+                {
+                    "label": "Ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 stuk"
+                },
+                {
+                    "label": "Teller",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 stuks"
                 },
                 {
                     "label": "Toedieningsweg",
@@ -93,8 +173,18 @@
                     ]
                 },
                 {
+                    "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
-                    "label": "Aanvullende instructie",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -103,24 +193,9 @@
                     "display": "1"
                 },
                 {
-                    "label": "Ondergrens",
+                    "label": "Weekdagen",
                     "type": "SINGLE_VALUE",
-                    "display": "1 stuk"
-                },
-                {
-                    "label": "Bovengrens",
-                    "type": "SINGLE_VALUE",
-                    "display": "2 stuks"
-                },
-                {
-                    "label": "Teller",
-                    "type": "SINGLE_VALUE",
-                    "display": "6 stuks"
-                },
-                {
-                    "label": "Noemer",
-                    "type": "SINGLE_VALUE",
-                    "display": "één dag"
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Zo nodig",
@@ -128,46 +203,6 @@
                     "display": [
                         "zo nodig (1137 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
                     ]
-                }
-            ]
-        },
-        {
-            "label": "Toedieningsschema",
-            "children": [
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toedieninsgduur",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Frequentie",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Maximum waarde",
-                    "type": "SINGLE_VALUE",
-                    "display": "4"
-                },
-                {
-                    "label": "Interval",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Weekdagen",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toedientijd",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Dagdeel",
-                    "display": "Niet bekend"
                 }
             ]
         }

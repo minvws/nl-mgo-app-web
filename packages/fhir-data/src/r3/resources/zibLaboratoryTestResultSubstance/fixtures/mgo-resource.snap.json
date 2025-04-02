@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b55ba69-8fdf-11ec-4275-020000000000",
@@ -14,16 +14,15 @@
         }
     ],
     "status": {
-        "_type": "String",
+        "_type": "string",
         "value": "active"
     },
     "category": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "chemical",
                     "display": "Chemical",
                     "system": "http://hl7.org/fhir/substance-category"
@@ -32,11 +31,10 @@
         }
     ],
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "127489000",
                 "display": "Has active ingredient",
                 "system": "http://snomed.info/sct"
@@ -44,7 +42,7 @@
         ]
     },
     "description": {
-        "_type": "String",
+        "_type": "string",
         "value": "Luchtwegproblemen/ ademhalingdedeficiëntie en/of extreem lage bloeddruk (anafylactische shock)"
     }
 }

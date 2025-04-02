@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b6fe23b-8fdf-11ec-1802-020000000000",
@@ -14,23 +14,22 @@
         }
     ],
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "final"
     },
     "category": null,
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "valueQuantity": null,
     "valueCodeableConcept": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "EENGEZW",
                 "display": "Eengezinswoning",
                 "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.13.1"

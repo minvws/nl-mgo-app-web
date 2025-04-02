@@ -2,10 +2,10 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type MedicationStatement } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types/Fhir';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
 import { summary } from './summary';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; // NOSONAR
 
@@ -15,6 +15,12 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; /
 function parseZibMedicationUse(resource: MedicationStatement) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        author: parse.extensionNictiz(resource, 'zib-MedicationUse-Author'),
+        identifier: map(resource.identifier, parse.identifier),
+        informationSource: parse.reference(resource.informationSource),
+        subject: parse.reference(resource.subject),
 
         // HCIM MedicationUse2-v1.0.1(2017EN)
         asAgreedIndicator: parse.extensionNictiz(resource, 'zib-MedicationUse-AsAgreedIndicator'),
@@ -28,11 +34,13 @@ function parseZibMedicationUse(resource: MedicationStatement) {
         dateAsserted: parse.dateTime(resource.dateAsserted),
         taken: parse.code(resource.taken),
         reasonCode: map(resource.reasonCode, parse.codeableConcept),
-        effectivePeriod: parse.period(resource.effectivePeriod),
-        effectiveDuration: parse.extensionNictiz(
-            resource.effectivePeriod,
-            'zib-MedicationUse-Duration'
-        ),
+        effectivePeriod: {
+            _type: 'period' as const,
+            start: undefined,
+            end: undefined,
+            ...parse.period(resource.effectivePeriod),
+            duration: parse.extensionNictiz(resource.effectivePeriod, 'zib-MedicationUse-Duration'),
+        },
         note: map(resource.note, parse.annotation),
 
         // HCIM InstructionsForUse-v1.1(2017EN)
@@ -41,12 +49,6 @@ function parseZibMedicationUse(resource: MedicationStatement) {
             resource,
             'zib-Medication-RepeatPeriodCyclicalSchedule'
         ),
-
-        // HCIM BasicElements-v1.0(2017EN)
-        author: parse.extensionNictiz(resource, 'zib-MedicationUse-Author'),
-        identifier: map(resource.identifier, parse.identifier),
-        informationSource: parse.reference(resource.informationSource),
-        subject: parse.reference(resource.subject),
 
         // Medication Process v09
         medicationTreatment: parse.extensionNictiz(resource, 'zib-Medication-MedicationTreatment'),
@@ -59,5 +61,5 @@ export const zibMedicationUse = {
     profile,
     parse: parseZibMedicationUse,
     summary,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<MedicationStatement, ZibMedicationUse>;

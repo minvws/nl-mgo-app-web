@@ -5,7 +5,7 @@ import { date } from './date';
 test('date', () => {
     const value = faker.fhir.date();
     expect(date(value)).toEqual({
-        _type: 'Date',
+        _type: 'date',
         value,
     });
 });

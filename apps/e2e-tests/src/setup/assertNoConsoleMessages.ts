@@ -13,6 +13,10 @@ interface LoggedConsoleMessage {
     toString: () => string;
 }
 
+const ignoredMessages = [
+    'Failed to load resource: net::ERR_CONNECTION_RESET', // Ignore connection reset error, which can be triggered when a test is retried.
+];
+
 /**
  * Asserts that no console messages are logged during the test.
  * NOTE: For development mode, only errors are checked.
@@ -44,6 +48,7 @@ export const assertNoConsoleMessages: TestFixture<
     const mode = await page.locator('html').getAttribute('data-mode');
     const messages = consoleMessages
         .filter((message) => (mode === 'development' ? message.type === 'error' : true))
+        .filter(({ message }) => !ignoredMessages.includes(message))
         .map((message) => message.toString());
 
     expect(messages, 'No console messages should be logged during the test').toEqual([]);

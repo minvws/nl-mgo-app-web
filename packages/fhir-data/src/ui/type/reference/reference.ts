@@ -10,18 +10,18 @@ import {
 export const reference: WithUiHelperContext<
     UiFunction<MgoReference | MgoReference[], ReferenceValue | MultipleValues>
 > =
-    ({ intl }) =>
+    ({ formatMessage }) =>
     (label, value) => {
         if (Array.isArray(value)) {
             return {
-                label: intl.formatMessage({ id: label }),
+                label: formatMessage(label),
                 type: 'MULTIPLE_VALUES',
                 display: value.map((x) => x.display).filter(isNonNullish),
             };
         }
 
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatMessage(label),
             type: 'REFERENCE_VALUE',
             display: value?.display,
             reference: value?.reference,

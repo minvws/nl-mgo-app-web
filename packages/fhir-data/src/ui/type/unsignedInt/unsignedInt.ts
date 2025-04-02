@@ -1,13 +1,14 @@
 import { type MgoUnsignedInt } from '../../../parse/type';
 import { numberToString } from '../../helpers';
+import { valueOf } from '../../helpers/valueOf/valueOf';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
-export const unsignedInt: WithUiHelperContext<UiFunction<MgoUnsignedInt, SingleValue>> =
+export const unsignedInt: WithUiHelperContext<UiFunction<MgoUnsignedInt | number, SingleValue>> =
     ({ intl }) =>
     (label, value) => {
         return {
             label: intl.formatMessage({ id: label }),
             type: 'SINGLE_VALUE',
-            display: numberToString(value?.value),
+            display: numberToString(valueOf(value)),
         };
     };

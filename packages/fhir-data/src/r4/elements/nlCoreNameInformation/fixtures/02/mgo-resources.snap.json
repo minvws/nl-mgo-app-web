@@ -2,26 +2,26 @@
     {
         "nameUsage": null,
         "family": {
-            "_type": "String",
+            "_type": "string",
             "value": "Schemer"
         },
         "given": [
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "Hendrik"
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "Willem"
             }
         ],
         "givenNames": [
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "Hendrik"
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "Willem"
             }
         ],
@@ -30,11 +30,11 @@
         "prefix": null,
         "suffix": null,
         "text": {
-            "_type": "String",
+            "_type": "string",
             "value": "Hendrik Willem Schemer"
         },
         "use": {
-            "_type": "Code",
+            "_type": "code",
             "value": "official"
         }
     },
@@ -43,30 +43,30 @@
         "family": null,
         "given": [
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "H."
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "J."
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "W."
             }
         ],
         "givenNames": null,
         "givenInitials": [
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "H."
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "J."
             },
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "W."
             }
         ],
@@ -75,18 +75,18 @@
         "suffix": null,
         "text": null,
         "use": {
-            "_type": "Code",
+            "_type": "code",
             "value": "official"
         }
     },
     {
         "use": {
-            "_type": "Code",
+            "_type": "code",
             "value": "usual"
         },
         "given": [
             {
-                "_type": "String",
+                "_type": "string",
                 "value": "Henk"
             }
         ],

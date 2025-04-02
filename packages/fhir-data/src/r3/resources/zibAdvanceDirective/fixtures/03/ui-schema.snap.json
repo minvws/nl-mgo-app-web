@@ -5,8 +5,8 @@
             "label": "Algemeen",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Aandoening",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -29,8 +29,8 @@
                     "display": "9 april 2018"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Vertegenwoordiger",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

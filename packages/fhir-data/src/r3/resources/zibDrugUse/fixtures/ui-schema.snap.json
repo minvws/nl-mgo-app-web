@@ -5,7 +5,7 @@
             "label": "r3.nl_core_observation.group_details",
             "children": [
                 {
-                    "label": "r3.nl_core_observation.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "19a199c7-8fdf-11ec-9837-020000000000"

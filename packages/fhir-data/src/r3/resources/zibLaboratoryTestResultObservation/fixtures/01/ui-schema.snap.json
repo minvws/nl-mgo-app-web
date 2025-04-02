@@ -18,8 +18,8 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Verband",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -42,8 +42,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -59,8 +59,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Testmethode",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -89,8 +89,8 @@
                     "display": "108 millimol per liter"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Referentie type",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {

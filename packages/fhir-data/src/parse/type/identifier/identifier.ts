@@ -1,22 +1,25 @@
 import { type Identifier } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type ValueType } from '../../types';
-import { codeableConcept, type MgoCodeableConcept } from '../codeableConcept/codeableConcept';
+import {
+    codeableConceptProps,
+    type MgoCodeableConceptProps,
+} from '../codeableConcept/codeableConcept';
 
-export interface MgoIdentifier extends ValueType<'Identifier'> {
+export interface MgoIdentifier extends ValueType<'identifier'> {
     use: string | undefined;
     system: string | undefined;
     value: string | undefined;
-    type: MgoCodeableConcept | undefined;
+    type: MgoCodeableConceptProps | undefined;
 }
 
 export const identifier = createTypeParser<Identifier, MgoIdentifier>((value) => {
     const { use, system, value: identifierValue, type } = value;
     return {
-        _type: 'Identifier',
+        _type: 'identifier',
         use,
         system,
         value: identifierValue,
-        type: codeableConcept(type),
+        type: type && codeableConceptProps(type),
     };
 });

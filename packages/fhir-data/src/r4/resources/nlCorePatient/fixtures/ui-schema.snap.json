@@ -56,7 +56,7 @@
             "label": "r4.nl_core_patient.group_details",
             "children": [
                 {
-                    "label": "r4.nl_core_patient.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "111222333"

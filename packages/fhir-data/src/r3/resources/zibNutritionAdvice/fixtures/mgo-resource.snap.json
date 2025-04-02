@@ -7,7 +7,7 @@
     "comment": null,
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1c2bf38b-8fdf-11ec-1435-020000000000",
@@ -15,16 +15,16 @@
         }
     ],
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "active"
     },
     "patient": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "dateTime": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2018-01-01"
     },
     "foodPreferenceModifier": null

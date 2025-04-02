@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "17056b5d-8fdf-11ec-1149-020000000000",
@@ -14,17 +14,16 @@
         }
     ],
     "organization": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Organization/nl-core-organization-02",
         "display": "Orthopedie - UMCG"
     },
     "specialty": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "0305",
                     "display": "Medisch specialisten, Orthopedie",
                     "system": "urn:oid:2.16.840.1.113883.2.4.6.7"

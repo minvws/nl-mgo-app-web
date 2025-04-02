@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1ef6763b-8fdf-11ec-2005-020000000000",
@@ -14,17 +14,17 @@
         }
     ],
     "patient": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "vaccineCode": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": []
     },
     "dose": {
-        "_type": "Quantity",
+        "_type": "quantity",
         "value": 30,
         "comparator": null,
         "unit": "ml",
@@ -32,13 +32,13 @@
         "code": "ml"
     },
     "vaccinationDate": {
-        "_type": "Date",
+        "_type": "date",
         "value": "1999-03-09"
     },
     "practitioner": [
         {
             "actor": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Practitioner/nl-core-practitioner-01",
                 "display": "Henk de Vries"
             }
@@ -46,7 +46,7 @@
     ],
     "note": [
         {
-            "_type": "Annotation",
+            "_type": "annotation",
             "time": null,
             "text": "Bezoek aan Guatemala",
             "author": null

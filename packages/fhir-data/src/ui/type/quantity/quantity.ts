@@ -1,13 +1,13 @@
-import { type MgoQuantityLike } from '../../../parse/type';
+import { type MgoQuantityProps } from '../../../parse/type';
 import { systemValue } from '../../format/systemValue/systemValue';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
-export const quantity: WithUiHelperContext<UiFunction<MgoQuantityLike, SingleValue>> =
+export const quantity: WithUiHelperContext<UiFunction<MgoQuantityProps, SingleValue>> =
     (context) => (label, value) => {
-        const { formatMessage } = context;
+        const { formatLabel } = context;
 
         return {
-            label: formatMessage(label),
+            label: formatLabel(label, value),
             type: `SINGLE_VALUE`,
             display: systemValue(context)(value),
         };

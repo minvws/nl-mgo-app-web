@@ -5,7 +5,7 @@
             "label": "r3.nl_core_organization.group_details",
             "children": [
                 {
-                    "label": "r3.nl_core_organization.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "16369fdf-8fdf-11ec-1349-020000000000"

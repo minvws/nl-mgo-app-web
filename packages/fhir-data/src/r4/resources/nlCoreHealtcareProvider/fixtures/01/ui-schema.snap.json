@@ -5,8 +5,8 @@
             "label": "Zorgverlener",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgverlener naam",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -20,18 +20,18 @@
                     "display": "230"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Huisnummerletter",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Aanduiding bij nummer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Additionele informatie",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -40,8 +40,8 @@
                     "display": "Rotterdam"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Gemeente",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -50,8 +50,8 @@
                     "display": "3015 CE"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Land",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -77,13 +77,13 @@
                     "display": "work"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Telecom toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

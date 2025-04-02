@@ -7,7 +7,7 @@ import { code } from './code';
 test('code single', () => {
     const label = faker.custom.fhirMessageId();
     const value: MgoCode = {
-        _type: 'Code',
+        _type: 'code',
         value: faker.fhir.code(),
     };
     const context = faker.custom.uiHelperContext();
@@ -24,15 +24,15 @@ test('code multiple', () => {
     const label = faker.custom.fhirMessageId();
     const value: MgoCode[] = [
         {
-            _type: 'Code',
+            _type: 'code',
             value: faker.fhir.code(),
         },
         {
-            _type: 'Code',
+            _type: 'code',
             value: faker.fhir.code(),
         },
         {
-            _type: 'Code',
+            _type: 'code',
             value: faker.fhir.code(),
         },
     ];
@@ -49,7 +49,7 @@ test('code multiple', () => {
 test('code translates the code when options are used', () => {
     const label = faker.custom.fhirMessageId();
     const value: MgoCode = {
-        _type: 'Code',
+        _type: 'code',
         value: faker.fhir.code(),
     };
     const context = faker.custom.uiHelperContext();
@@ -67,7 +67,7 @@ test('code translates the code when options are used', () => {
 test('code defaults to value if no translation is found and options are used', () => {
     const label = faker.custom.fhirMessageId();
     const value: MgoCode = {
-        _type: 'Code',
+        _type: 'code',
         value: faker.fhir.code(),
     };
     const context = faker.custom.uiHelperContext();

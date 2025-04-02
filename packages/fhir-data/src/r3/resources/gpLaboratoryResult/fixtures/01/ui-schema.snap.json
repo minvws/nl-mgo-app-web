@@ -34,13 +34,13 @@
             "label": "Algemene testinformatie",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Resultaat type",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -56,8 +56,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Testmethode",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -93,8 +93,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Interpretatie",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

@@ -12,28 +12,28 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Farmaceutische vorm",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Serienummer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Batch lotnummer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Batch vervaldatum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Omschrijving",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

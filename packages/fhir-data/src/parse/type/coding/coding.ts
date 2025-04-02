@@ -2,18 +2,26 @@ import { type Coding } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers';
 import { type ValueType } from '../../types';
 
-export interface MgoCoding extends ValueType<'Coding'> {
+export interface MgoCodingProps {
     code?: string;
     display?: string;
     system?: string;
 }
 
-export const coding = createTypeParser<Coding, MgoCoding>((value) => {
+export interface MgoCoding extends MgoCodingProps, ValueType<'coding'> {}
+
+export function codingProps<T extends Coding>(value: T): MgoCodingProps {
     const { code, display, system } = value;
     return {
-        _type: 'Coding',
         code,
         display,
         system,
+    };
+}
+
+export const coding = createTypeParser<Coding, MgoCoding>((value) => {
+    return {
+        _type: 'coding',
+        ...codingProps(value),
     };
 });

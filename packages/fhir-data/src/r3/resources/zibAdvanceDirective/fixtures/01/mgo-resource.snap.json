@@ -6,11 +6,10 @@
     "fhirVersion": "R3",
     "category": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "11341000146107",
                     "display": "Living will and advance directive record (record artifact)",
                     "system": "http://snomed.info/sct"
@@ -18,11 +17,10 @@
             ]
         },
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "NR",
                     "display": "Niet reanimeren verklaring",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
@@ -31,17 +29,17 @@
         }
     ],
     "dateTime": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2018-04-09"
     },
     "disorder": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Condition/zib-problem-01",
         "display": "Amyotrofe laterale sclerose"
     },
     "consentingParty": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "RelatedPerson/nl-core-relatedperson-01",
             "display": "Janni van Putten-van der Giessen"
         }
@@ -52,16 +50,15 @@
         "reference": null
     },
     "comment": {
-        "_type": "String",
+        "_type": "string",
         "value": "Niet-reanimerenpenning"
     },
     "typeOfLivingWill": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "NR",
                     "display": "Niet reanimeren verklaring",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"

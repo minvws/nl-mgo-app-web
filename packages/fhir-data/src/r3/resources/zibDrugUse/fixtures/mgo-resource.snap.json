@@ -1,7 +1,7 @@
 {
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "19a199c7-8fdf-11ec-9837-020000000000",
@@ -9,23 +9,22 @@
         }
     ],
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "final"
     },
     "category": null,
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "valueQuantity": null,
     "valueCodeableConcept": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "44870007",
                 "display": "Misused drugs in past (finding)",
                 "system": "http://snomed.info/sct"
@@ -33,7 +32,7 @@
         ]
     },
     "effectivePeriod": {
-        "_type": "Period",
+        "_type": "period",
         "start": "1981",
         "end": "1983"
     },
@@ -41,7 +40,7 @@
     "method": null,
     "bodySite": null,
     "comment": {
-        "_type": "String",
+        "_type": "string",
         "value": "Op feestjes en in uitgaanscircuit."
     },
     "id": "zib-druguse-01",

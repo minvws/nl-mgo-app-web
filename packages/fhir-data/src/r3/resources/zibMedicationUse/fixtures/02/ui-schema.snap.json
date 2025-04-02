@@ -1,9 +1,24 @@
 {
-    "label": "Doxycycline tablet 100mg",
+    "label": "Medicatiegebruik",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
+                {
+                    "label": "Auteur",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts",
+                    "reference": "PractitionerRole/nl-core-practitionerrole-02"
+                },
+                {
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gebruik indicator",
+                    "type": "SINGLE_VALUE",
+                    "display": "y"
+                },
                 {
                     "label": "Gebruiksproduct",
                     "type": "REFERENCE_VALUE",
@@ -11,9 +26,22 @@
                     "reference": "Medication/zib-Product-02"
                 },
                 {
-                    "label": "Registratiedatum",
+                    "label": "Herhaalperiode cyclisch schema",
                     "type": "SINGLE_VALUE",
-                    "display": "16 juli 2018"
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "#MB_01i1#GE_01",
+                        "1bfa2275-8fdf-11ec-2032-020000000000"
+                    ]
+                },
+                {
+                    "label": "Informatiebron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Ingangsdatum",
@@ -21,9 +49,35 @@
                     "display": "16 juli 2018"
                 },
                 {
+                    "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
-                    "label": "Einddatum",
+                    "display": "#MB_01i1"
+                },
+                {
+                    "label": "Medicatie gebruik stop type",
+                    "type": "SINGLE_VALUE",
+                    "display": "active"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Reden gebruik",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                },
+                {
+                    "label": "Reden wijzigen of stoppen gebruik",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Registratiedatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "16 juli 2018"
                 },
                 {
                     "label": "Tijdsduur",
@@ -31,13 +85,8 @@
                     "display": "5 dagen"
                 },
                 {
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "label": "Voorschrijver",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Reden gebruik",
                     "display": "Niet bekend"
                 },
                 {
@@ -46,33 +95,8 @@
                     "display": "Ja"
                 },
                 {
-                    "label": "Gebruik indicator",
+                    "label": "Voorschrijver",
                     "type": "SINGLE_VALUE",
-                    "display": "y"
-                },
-                {
-                    "label": "Medicatie gebruik stop type",
-                    "type": "SINGLE_VALUE",
-                    "display": "active"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Reden wijzigen of stoppen gebruik",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Herhaalperiode cyclisch schema",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Medicamenteuze behandeling",
-                    "type": "SINGLE_VALUE",
-                    "display": "#MB_01i1"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toelichting",
                     "display": "Niet bekend"
                 }
             ]
@@ -80,6 +104,51 @@
         {
             "label": "Gebruiksinstructie",
             "children": [
+                {
+                    "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Doseerduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "één dag"
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "d"
+                },
+                {
+                    "label": "Keerdosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 stuks"
+                },
+                {
+                    "label": "Maximale dosering",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
@@ -93,8 +162,18 @@
                     ]
                 },
                 {
+                    "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
-                    "label": "Aanvullende instructie",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -103,68 +182,13 @@
                     "display": "1"
                 },
                 {
-                    "label": "Keerdosis",
-                    "type": "SINGLE_VALUE",
-                    "display": "2 stuks"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Teller",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Noemer",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Zo nodig",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Toedieningsschema",
-            "children": [
-                {
-                    "label": "Doseerduur",
-                    "type": "SINGLE_VALUE",
-                    "display": "één dag"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toedieninsgduur",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Frequentie",
-                    "type": "SINGLE_VALUE",
-                    "display": "1"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Maximum waarde",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Interval",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "type": "SINGLE_VALUE",
                     "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
+                    "label": "Zo nodig",
                     "type": "SINGLE_VALUE",
-                    "label": "Toedientijd",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Dagdeel",
                     "display": "Niet bekend"
                 }
             ]
@@ -172,6 +196,51 @@
         {
             "label": "Gebruiksinstructie",
             "children": [
+                {
+                    "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Doseerduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "4 dagen"
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "d"
+                },
+                {
+                    "label": "Keerdosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 stuk"
+                },
+                {
+                    "label": "Maximale dosering",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
@@ -185,8 +254,18 @@
                     ]
                 },
                 {
+                    "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
-                    "label": "Aanvullende instructie",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -195,68 +274,13 @@
                     "display": "2"
                 },
                 {
-                    "label": "Keerdosis",
-                    "type": "SINGLE_VALUE",
-                    "display": "1 stuk"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Teller",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Noemer",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Zo nodig",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Toedieningsschema",
-            "children": [
-                {
-                    "label": "Doseerduur",
-                    "type": "SINGLE_VALUE",
-                    "display": "4 dagen"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Toedieninsgduur",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Frequentie",
-                    "type": "SINGLE_VALUE",
-                    "display": "1"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Maximum waarde",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Interval",
-                    "display": "1 d",
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "type": "SINGLE_VALUE",
                     "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
+                    "label": "Zo nodig",
                     "type": "SINGLE_VALUE",
-                    "label": "Toedientijd",
-                    "display": "Niet bekend"
-                },
-                {
-                    "type": "SINGLE_VALUE",
-                    "label": "Dagdeel",
                     "display": "Niet bekend"
                 }
             ]

@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "15fcdead-8fdf-11ec-5500-020000000000",
@@ -14,21 +14,20 @@
         }
     ],
     "title": {
-        "_type": "String",
+        "_type": "string",
         "value": "Drugs en alcohol revalidatie"
     },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "active"
     },
     "statusHistory": null,
     "type": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "32709003",
                     "display": "Verslaving (bevinding)",
                     "system": "http://snomed.info/sct"
@@ -39,7 +38,7 @@
     "diagnosis": [
         {
             "condition": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Condition/zib-problem-08",
                 "display": "Syndroom van Korsakov"
             },
@@ -48,30 +47,30 @@
         }
     ],
     "patient": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-02",
         "display": "Paul XXX_Mesker"
     },
     "managingOrganization": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Organization/nl-core-organization-05",
         "display": "Ziekenhuis Gooi en Overvecht"
     },
     "period": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2019-02-06",
         "end": null
     },
     "referralRequest": null,
     "careManager": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Practitioner/nl-core-practitioner-04",
         "display": "Dirk de Vries"
     },
     "team": null,
     "account": null,
     "dateFirstEncounter": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2019-02-06T13:17:00+00:00"
     },
     "dateLastEncounter": null

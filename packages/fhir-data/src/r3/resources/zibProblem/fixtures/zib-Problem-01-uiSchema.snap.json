@@ -46,7 +46,7 @@
             "label": "r3.zib_problem.group_others",
             "children": [
                 {
-                    "label": "r3.zib_problem.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "1d1451f3-8fdf-11ec-5384-020000000000"

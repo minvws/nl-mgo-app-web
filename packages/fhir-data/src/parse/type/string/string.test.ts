@@ -5,7 +5,7 @@ import { string } from './string';
 test('string', () => {
     const value = faker.lorem.sentences();
     expect(string(value)).toEqual({
-        _type: 'String',
+        _type: 'string',
         value,
     });
 });

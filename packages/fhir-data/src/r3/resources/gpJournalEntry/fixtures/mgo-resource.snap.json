@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "15390bbd-8fdf-11ec-8940-020000000000",
@@ -14,15 +14,14 @@
         }
     ],
     "status": {
-        "_type": "String",
+        "_type": "string",
         "value": "final"
     },
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "S",
                 "display": "Subjectief",
                 "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
@@ -30,32 +29,31 @@
         ]
     },
     "context": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Encounter/gp-encounter-01",
         "display": "Visite bij Huisartspraktijk 2013-02-06"
     },
     "effectiveDateTime": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2013-02-06T03:17:00+00:00"
     },
     "performer": [
         {
-            "_type": "Reference",
+            "_type": "reference",
             "reference": "Practitioner/nl-core-practitioner-02",
             "display": "Vaste Huisarts 1"
         }
     ],
     "valueString": {
-        "_type": "String",
+        "_type": "string",
         "value": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS."
     },
     "ICPC_S": {
         "valueCodeableConcept": {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "R02",
                     "display": "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02]",
                     "system": "http://hl7.org/fhir/sid/icpc-1-nl"

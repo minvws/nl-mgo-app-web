@@ -1,8 +1,7 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
-import { map } from '../../../utils';
-import { uiSchemaGroup as zibAttachmentUiSchema } from '../../elements/attachment/uiSchemaGroup';
+import { isNonNullish, map } from '../../../utils';
 import { uiSchemaGroup as actorUiSchema } from './elements/actor/uiSchemaGroup';
 import { uiSchemaGroup as dataUiSchema } from './elements/data/uiSchemaGroup';
 import { uiSchemaGroup as exceptUiSchema } from './elements/except/uiSchemaGroup';
@@ -39,11 +38,9 @@ export const uiSchema: HealthUiSchemaFunction<ZibTreatmentDirective> = (resource
                     ui.coding(`${i18n}.security_label`, resource.securityLabel),
                     ui.coding(`${i18n}.purpose`, resource.purpose),
                     ...ui.period(`${i18n}.data_period`, resource.dataPeriod),
-                ],
+                    resource.sourceAttachment ? ui.attachment(resource.sourceAttachment) : null,
+                ].filter(isNonNullish),
             },
-            ...(resource.sourceAttachment
-                ? [zibAttachmentUiSchema(resource.sourceAttachment, context)]
-                : []),
             ...actor,
             ...data,
             ...except,

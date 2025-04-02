@@ -8,7 +8,7 @@ test('boolean - true', () => {
 
     const context = faker.custom.uiHelperContext();
     const result = boolean(context)(label, {
-        _type: 'Boolean',
+        _type: 'boolean',
         value: true,
     });
     expect(result).toEqual({
@@ -23,7 +23,7 @@ test('boolean - false', () => {
 
     const context = faker.custom.uiHelperContext();
     const result = boolean(context)(label, {
-        _type: 'Boolean',
+        _type: 'boolean',
         value: false,
     });
     expect(result).toEqual({

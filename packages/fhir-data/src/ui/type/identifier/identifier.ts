@@ -1,3 +1,4 @@
+import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoIdentifier } from '../../../parse/type';
 import { isNonNullish } from '../../../utils';
 import {
@@ -8,19 +9,21 @@ import {
 } from '../../types';
 
 export const identifier: WithUiHelperContext<
-    UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues>
+    UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues, FhirMessagesIds>
 > =
-    ({ intl }) =>
+    ({ hasMessage, formatMessage }) =>
     (label, value) => {
+        label = hasMessage(label) ? label : `fhir.identifier`;
+
         if (Array.isArray(value)) {
             return {
-                label: intl.formatMessage({ id: label }),
+                label: formatMessage(label),
                 type: 'MULTIPLE_VALUES',
                 display: value?.map((x) => x?.value).filter(isNonNullish),
             };
         }
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatMessage(label),
             type: 'SINGLE_VALUE',
             display: value?.value,
         };

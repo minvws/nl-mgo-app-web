@@ -6,7 +6,7 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "1b2d4dbd-8fdf-11ec-8670-020000000000",
@@ -14,17 +14,16 @@
         }
     ],
     "subject": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
     "context": null,
     "code": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "2069-3",
                 "display": "Chloride [Moles/volume] in Blood",
                 "system": "http://loinc.org"
@@ -33,12 +32,12 @@
     },
     "method": null,
     "effectivePeriod": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2010-06-01",
         "end": null
     },
     "valueQuantity": {
-        "_type": "Quantity",
+        "_type": "quantity",
         "value": 109,
         "comparator": null,
         "unit": "mmol/l",
@@ -46,13 +45,13 @@
         "code": "mmol/L"
     },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "final"
     },
     "referenceRange": [
         {
             "low": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 99,
                 "comparator": null,
                 "unit": "mmol/l",
@@ -60,7 +59,7 @@
                 "code": "mmol/L"
             },
             "high": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 108,
                 "comparator": null,
                 "unit": "mmol/l",
@@ -73,7 +72,7 @@
         },
         {
             "low": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 180,
                 "comparator": null,
                 "unit": "mmol/l",
@@ -81,7 +80,7 @@
                 "code": "mmol/L"
             },
             "high": {
-                "_type": "Quantity",
+                "_type": "quantity",
                 "value": 265,
                 "comparator": null,
                 "unit": "mmol/l",
@@ -89,11 +88,10 @@
                 "code": "mmol/L"
             },
             "type": {
-                "_type": "CodeableConcept",
+                "_type": "codeableConcept",
                 "text": null,
                 "coding": [
                     {
-                        "_type": "Coding",
                         "code": "treatment",
                         "display": "Treatment Range",
                         "system": "http://hl7.org/fhir/referencerange-meaning"
@@ -105,17 +103,15 @@
         }
     ],
     "interpretation": {
-        "_type": "CodeableConcept",
+        "_type": "codeableConcept",
         "text": null,
         "coding": [
             {
-                "_type": "Coding",
                 "code": "H",
                 "display": "Hoog",
                 "system": "http://hl7.org/fhir/v2/0078"
             },
             {
-                "_type": "Coding",
                 "code": "281302008",
                 "display": "Above reference range",
                 "system": "http://snomed.info/sct"
@@ -123,7 +119,7 @@
         ]
     },
     "specimen": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Specimen/zib-laboratorytestresult-specimen-01",
         "display": "Blood (substance)"
     },

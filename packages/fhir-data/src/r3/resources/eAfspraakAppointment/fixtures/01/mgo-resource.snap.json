@@ -5,16 +5,15 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment",
     "fhirVersion": "R3",
     "status": {
-        "_type": "String",
+        "_type": "string",
         "value": "fulfilled"
     },
     "specialty": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "0303",
                     "display": "Medisch specialisten, chirurgie",
                     "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
@@ -23,35 +22,35 @@
         }
     ],
     "description": {
-        "_type": "String",
+        "_type": "string",
         "value": "Poliklinische Controle Chirurgie"
     },
     "start": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2018-01-01T09:00:00+01:00"
     },
     "end": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2018-01-01T09:45:00+01:00"
     },
     "participant": [
         {
             "actor": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Patient/eafspraak-patient-01",
                 "display": "Alex XXX_Verweij"
             }
         },
         {
             "actor": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Practitioner/eafspraak-practitioner-01",
                 "display": "A.F. Snijder"
             }
         },
         {
             "actor": {
-                "_type": "Reference",
+                "_type": "reference",
                 "reference": "Location/eafspraak-location-01",
                 "display": "West vleugel"
             }

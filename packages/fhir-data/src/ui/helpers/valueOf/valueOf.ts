@@ -1,22 +1,15 @@
-import { type PrimitiveValueType } from '../../../parse/types';
+import { isPrimitiveValueType, type PrimitiveValueType } from '../../../parse/types';
 import { type Nullable } from '../../../types/Nullable';
 import { isNullish } from '../../../utils';
 
-function isPrimitiveValue<T>(
-    value: Nullable<T | PrimitiveValueType<string, T>>
-): value is PrimitiveValueType<string, T> {
-    return (
-        typeof (value as PrimitiveValueType<string, T>)['_type'] === 'string' &&
-        Object.prototype.hasOwnProperty.call(value, 'value')
-    );
-}
-
-export function valueOf<T>(value: Nullable<T | PrimitiveValueType<string, T>>): T | undefined {
+export function valueOf<T extends string, V>(
+    value: Nullable<V | PrimitiveValueType<T, V>>
+): V | undefined {
     if (isNullish(value)) {
         return;
     }
 
-    if (isPrimitiveValue<T>(value)) {
+    if (isPrimitiveValueType<T>(value)) {
         return value.value;
     }
 

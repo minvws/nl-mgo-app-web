@@ -1,4 +1,5 @@
 import { HealthCategory } from '@minvws/mgo-apps-mgo';
+import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';
 
@@ -41,7 +42,7 @@ test('User can see their medication use details', async ({
     await expect(dataListSummary).toMatchSnapshot('medication-use-summary.json');
     await pageHealthDataSummary.buttonDetails('r3.zib_medication_use').click();
 
-    await expect(pageHealthDataDetail.heading('Zestril tablet 10mg')).toBeVisible();
+    await expect(pageHealthDataDetail.heading(fhirMessage('r3.zib_medication_use'))).toBeVisible();
     const dataListDetail = await pageHealthDataDetail.getDataListContentsJson();
     await expect(dataListDetail).toMatchSnapshot('medication-use-details.json');
 });

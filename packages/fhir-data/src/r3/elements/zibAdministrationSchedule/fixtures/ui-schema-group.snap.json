@@ -2,29 +2,42 @@
     "label": "Toedieningsschema",
     "children": [
         {
+            "label": "Begin datum",
+            "type": "SINGLE_VALUE",
+            "display": "6 februari 2019"
+        },
+        {
+            "label": "Eind datum",
+            "type": "SINGLE_VALUE",
+            "display": "9 februari 2019"
+        },
+        {
             "label": "Toedieninsgduur",
-            "display": null,
+            "display": "30 d",
             "type": "SINGLE_VALUE"
         },
         {
             "label": "Frequentie",
             "type": "SINGLE_VALUE",
-            "display": null
+            "display": "2"
         },
         {
             "label": "Maximum waarde",
             "type": "SINGLE_VALUE",
-            "display": null
+            "display": "20"
         },
         {
             "label": "Interval",
-            "display": null,
+            "display": "1 d",
             "type": "SINGLE_VALUE"
         },
         {
             "label": "Weekdagen",
-            "type": "SINGLE_VALUE",
-            "display": null
+            "type": "MULTIPLE_VALUES",
+            "display": [
+                "mon",
+                "tue"
+            ]
         },
         {
             "label": "Toedientijd",
@@ -36,8 +49,10 @@
         },
         {
             "label": "Dagdeel",
-            "type": "SINGLE_VALUE",
-            "display": null
+            "type": "MULTIPLE_VALUES",
+            "display": [
+                "73775008"
+            ]
         }
     ]
 }

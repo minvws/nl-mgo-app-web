@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
 import { map } from '../../../utils';
-import { coding } from '../coding/coding';
+import { codingProps } from '../coding/coding';
 import { codeableConcept } from './codeableConcept';
 
 test('codeableConcept', () => {
@@ -13,9 +13,9 @@ test('codeableConcept', () => {
         }),
     });
     const expected = {
-        _type: 'CodeableConcept',
+        _type: 'codeableConcept',
         text: concept.text,
-        coding: map(concept.coding, coding),
+        coding: map(concept.coding, codingProps),
     };
 
     expect(codeableConcept(concept)).toEqual(expected);
@@ -26,7 +26,7 @@ test('codeableConcept always returns coding array', () => {
     concept.coding = undefined;
 
     const expected = {
-        _type: 'CodeableConcept',
+        _type: 'codeableConcept',
         text: concept.text,
         coding: [],
     };

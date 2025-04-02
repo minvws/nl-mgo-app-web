@@ -4,61 +4,148 @@
     "resourceType": "MedicationStatement",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
     "fhirVersion": "R3",
+    "author": {
+        "_type": "reference",
+        "reference": "PractitionerRole/nl-core-practitionerrole-02",
+        "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
+    },
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.6.1",
+            "value": "#MB_01i1#GE_01",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bfa2275-8fdf-11ec-2032-020000000000",
+            "type": null
+        }
+    ],
+    "informationSource": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-01",
+        "display": "Henk de Vries"
+    },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "XXX_Helleman"
+    },
     "asAgreedIndicator": {
-        "_type": "Boolean",
+        "_type": "boolean",
         "value": true
     },
-    "prescriber": null,
-    "reasonForChangeOrDiscontinuationOfUse": null,
+    "prescriber": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-01",
+        "display": "Henk de Vries"
+    },
+    "reasonForChangeOrDiscontinuationOfUse": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "79899007",
+                "display": "Drug interaction (finding)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "status": {
-        "_type": "Code",
+        "_type": "code",
         "value": "completed"
     },
     "medicationReference": {
-        "_type": "Reference",
+        "_type": "reference",
         "reference": "Medication/zib-Product-02",
         "display": "PARACETAMOL TABLET 500MG"
     },
     "dateAsserted": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2020-07-21"
     },
     "taken": {
-        "_type": "Code",
+        "_type": "code",
         "value": "y"
     },
-    "reasonCode": null,
+    "reasonCode": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "9632001",
+                    "display": "Nursing Procedure",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
     "effectivePeriod": {
-        "_type": "Period",
+        "_type": "period",
         "start": "2020-07-21",
-        "end": null
+        "end": null,
+        "duration": {
+            "_type": "duration",
+            "value": 30,
+            "comparator": null,
+            "unit": "dag",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
     },
-    "effectiveDuration": {
-        "_type": "Duration",
-        "value": 30,
-        "comparator": null,
-        "unit": "dag",
-        "system": "http://unitsofmeasure.org",
-        "code": "d"
-    },
-    "note": null,
+    "note": [
+        {
+            "_type": "annotation",
+            "time": "2020-03-01T22:03:00+00:00",
+            "text": "het monster toont afwijkingen",
+            "author": null
+        }
+    ],
     "dosage": [
         {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
             "sequence": {
-                "_type": "Integer",
+                "_type": "integer",
                 "value": 1
             },
             "text": {
-                "_type": "String",
+                "_type": "string",
                 "value": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
             },
             "additionalInstruction": null,
-            "asNeeded": {
-                "_type": "CodeableConcept",
+            "timing": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+                "repeat": {
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": null,
+                    "frequencyMax": {
+                        "_type": "integer",
+                        "value": 4
+                    },
+                    "period": {
+                        "_type": "decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "code",
+                        "value": "d"
+                    },
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
+            },
+            "asNeededCodeableConcept": {
+                "_type": "codeableConcept",
                 "text": null,
                 "coding": [
                     {
-                        "_type": "Coding",
                         "code": "1137",
                         "display": "zo nodig",
                         "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
@@ -66,11 +153,10 @@
                 ]
             },
             "route": {
-                "_type": "CodeableConcept",
+                "_type": "codeableConcept",
                 "text": null,
                 "coding": [
                     {
-                        "_type": "Coding",
                         "code": "9",
                         "display": "ORAAL",
                         "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
@@ -78,9 +164,8 @@
                 ]
             },
             "doseRange": {
-                "_type": "Range",
+                "_type": "range",
                 "low": {
-                    "_type": "Quantity",
                     "value": 1,
                     "comparator": null,
                     "unit": "Stuk",
@@ -88,7 +173,6 @@
                     "code": "245"
                 },
                 "high": {
-                    "_type": "Quantity",
                     "value": 2,
                     "comparator": null,
                     "unit": "Stuk",
@@ -97,9 +181,8 @@
                 }
             },
             "maxDosePerPeriod": {
-                "_type": "Ratio",
+                "_type": "ratio",
                 "numerator": {
-                    "_type": "Quantity",
                     "value": 6,
                     "comparator": null,
                     "unit": "Stuk",
@@ -107,68 +190,18 @@
                     "code": "245"
                 },
                 "denominator": {
-                    "_type": "Quantity",
                     "value": 1,
                     "comparator": null,
                     "unit": "dag",
                     "system": "http://unitsofmeasure.org",
                     "code": "d"
                 }
-            },
-            "timing": {
-                "repeat": {
-                    "duration": null,
-                    "durationUnit": null,
-                    "frequency": null,
-                    "frequencyMax": {
-                        "_type": "Integer",
-                        "value": 4
-                    },
-                    "period": {
-                        "_type": "Decimal",
-                        "value": 1
-                    },
-                    "periodUnit": {
-                        "_type": "Code",
-                        "value": "d"
-                    },
-                    "dayOfWeek": null,
-                    "timeOfDay": null,
-                    "when": null
-                }
             }
         }
     ],
     "repeatPeriodCyclicalSchedule": null,
-    "author": {
-        "_type": "Reference",
-        "reference": "PractitionerRole/nl-core-practitionerrole-02",
-        "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
-    },
-    "identifier": [
-        {
-            "_type": "Identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.6.1",
-            "value": "#MB_01i1#GE_01",
-            "type": null
-        },
-        {
-            "_type": "Identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "1bfa2275-8fdf-11ec-2032-020000000000",
-            "type": null
-        }
-    ],
-    "informationSource": null,
-    "subject": {
-        "_type": "Reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "XXX_Helleman"
-    },
     "medicationTreatment": {
-        "_type": "Identifier",
+        "_type": "identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
         "value": "#MB_01i1",

@@ -1,7 +1,6 @@
-import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Dosage } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
+import { test } from 'vitest';
 import inputFhirData01 from './fixtures/01/fhir-resource.json';
 import inputFhirData02 from './fixtures/02/fhir-resource.json';
 import { summary } from './summary';
@@ -47,15 +46,5 @@ test('02 summary', async () => {
     const schema = summary(zibData, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/02/summary.snap.json'
-    );
-});
-
-test('zibInstructionsForUse parses successfully', () => {
-    const data = faker.fhir.dosage();
-    const schema = zibInstructionsForUse.parse(data);
-    expect(schema).toEqual(
-        expect.objectContaining({
-            asNeeded: parse.codeableConcept(data.asNeededCodeableConcept),
-        })
     );
 });

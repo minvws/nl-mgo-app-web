@@ -26,8 +26,8 @@
                     "display": "current"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Beveiligingslabel",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {

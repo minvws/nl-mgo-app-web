@@ -6,11 +6,10 @@
     "fhirVersion": "R3",
     "category": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "11341000146107",
                     "display": "Living will and advance directive record (record artifact)",
                     "system": "http://snomed.info/sct"
@@ -18,11 +17,10 @@
             ]
         },
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "MON",
                     "display": "Mondelinge afspraak",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
@@ -31,7 +29,7 @@
         }
     ],
     "dateTime": {
-        "_type": "DateTime",
+        "_type": "dateTime",
         "value": "2018-04-09"
     },
     "disorder": null,
@@ -42,16 +40,15 @@
         "reference": null
     },
     "comment": {
-        "_type": "String",
+        "_type": "string",
         "value": "Mondelinge afspraak"
     },
     "typeOfLivingWill": [
         {
-            "_type": "CodeableConcept",
+            "_type": "codeableConcept",
             "text": null,
             "coding": [
                 {
-                    "_type": "Coding",
                     "code": "MON",
                     "display": "Mondelinge afspraak",
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"

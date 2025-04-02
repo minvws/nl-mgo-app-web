@@ -44,8 +44,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

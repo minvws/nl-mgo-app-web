@@ -27,8 +27,8 @@
                     "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

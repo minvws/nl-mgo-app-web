@@ -10,8 +10,8 @@
                     "display": "1980"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Stop datum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -22,8 +22,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -45,8 +45,8 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Verantwoordelijk",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

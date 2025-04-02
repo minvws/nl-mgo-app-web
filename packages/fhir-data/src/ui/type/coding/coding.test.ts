@@ -4,6 +4,7 @@ import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
 import { coding } from './coding';
 
+import { type MgoCodingProps } from '../../../parse/type/coding/coding';
 import { type Nullable } from '../../../types/Nullable';
 import { type UiHelperContext } from '../../context';
 import { system } from '../../format/system/system';
@@ -49,12 +50,12 @@ test('coding multiple', () => {
 
 test('coding multiple does not return undefined values', () => {
     const label = faker.custom.fhirMessageId();
-    const mockFormatSystem = vi.fn((coding: Nullable<MgoCoding>) =>
+    const mockFormatSystem = vi.fn((coding: Nullable<MgoCodingProps>) =>
         coding?.system ? 'system' : undefined
     );
     mockSystem.mockReturnValue(mockFormatSystem);
 
-    const mgoCoding: MgoCoding[] = [faker.mgo.coding(), { _type: 'Coding' }, faker.mgo.coding()];
+    const mgoCoding: MgoCoding[] = [faker.mgo.coding(), { _type: 'coding' }, faker.mgo.coding()];
     const result = coding(faker.custom.uiHelperContext())(label, mgoCoding);
     expect(result).toEqual({
         label: testMessage(label),

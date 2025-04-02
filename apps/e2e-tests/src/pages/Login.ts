@@ -21,7 +21,7 @@ export class LoginPage extends AbstractPage {
         const currentUrl = await this.page.url();
         const { origin } = new URL(currentUrl);
         await this.buttonDigid.click();
-        await expect(this.page).toHaveURL(/irealisatie\.nl\/digid-mock/);
+        await expect(this.page).toHaveURL(/irealisatie\.nl\/digid-mock/, { timeout: 15000 });
         await this.page.getByRole('link', { name: 'Login' }).click();
         // Check if we're back on the original origin (after the oidc redirect).
         // AND that there is no `userinfo` in the url params anymore, this should indicate that

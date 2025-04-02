@@ -57,13 +57,13 @@
             "label": "Test afgenomen door",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Specialist",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

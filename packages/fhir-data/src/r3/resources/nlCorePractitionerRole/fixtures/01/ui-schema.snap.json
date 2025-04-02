@@ -5,7 +5,7 @@
             "label": "r3.nl_core_practitionerrole.group_details",
             "children": [
                 {
-                    "label": "r3.nl_core_practitionerrole.identifier",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "17056b5d-8fdf-11ec-1149-020000000000"

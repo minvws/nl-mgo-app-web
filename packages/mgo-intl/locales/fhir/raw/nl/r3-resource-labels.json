@@ -47,6 +47,9 @@
     "r3.zib_laboratory_test_result_substance": "Monstermateriaal",
     "r3.zib_medical_device_request": "Medisch hulpmiddel aanvraag",
     "r3.zib_medication_use.effective_period.duration": "Tijdsduur",
+    "r3.zib_medication_use.information_source": "Informatiebron",
+    "r3.zib_medication_use.reason_code": "Reden gebruik",
     "r3.zib_medication_use.repeat_period_cyclical_schedule": "Herhaalperiode cyclisch schema",
+    "r3.zib_medication_use.subject": "Onderwerp",
     "r3.zib_vaccination_recommendation": "Vaccinatieadvies"
 }

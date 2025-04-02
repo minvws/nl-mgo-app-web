@@ -10,13 +10,13 @@
                     "display": "8 juni 2020"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Duur",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -25,17 +25,17 @@
                     "display": "#MB_01h"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.zib_medication_agreement.stop_type",
-                    "display": "Niet bekend"
-                },
-                {
                     "type": "SINGLE_VALUE",
-                    "label": "r3.zib_medication_agreement.repeat_period_cyclical_schedule",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_medication_agreement.identifier",
+                    "label": "r3.zib_medication_agreement.repeat_period_cyclical_schedule",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "#MB_01h#MA_01",
@@ -43,23 +43,23 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.zib_medication_agreement.definition",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.zib_medication_agreement.basedOn",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
+                    "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "label": "r3.zib_medication_agreement.group_identifier",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.zib_medication_agreement.status",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -75,8 +75,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "r3.zib_medication_agreement.priority",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -86,8 +86,8 @@
                     "reference": "Medication/zib-Product-03"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -96,8 +96,8 @@
             "label": "Gebruiksinstructie",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Omschrijving",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -108,8 +108,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -123,13 +123,13 @@
                     "display": "1 stuk"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Teller",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Noemer",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -145,8 +145,8 @@
             "label": "Toedieningsschema",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -155,8 +155,8 @@
                     "display": "1"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -165,18 +165,18 @@
                     "type": "SINGLE_VALUE"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

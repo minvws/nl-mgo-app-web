@@ -6,7 +6,7 @@ test('quantity', () => {
     const data = faker.fhir.quantity();
     const { value, comparator, unit, system, code } = data;
     const expected = {
-        _type: 'Quantity',
+        _type: 'quantity',
         value,
         comparator,
         unit,

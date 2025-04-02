@@ -6,14 +6,14 @@
     "fhirVersion": "R3",
     "identifier": [
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
             "value": "000432123",
             "type": null
         },
         {
-            "_type": "Identifier",
+            "_type": "identifier",
             "use": null,
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
             "value": "16fa74e1-8fdf-11ec-1810-020000000000",
@@ -23,12 +23,12 @@
     "name": [
         {
             "family": {
-                "_type": "String",
+                "_type": "string",
                 "value": "de Vries"
             },
             "given": [
                 {
-                    "_type": "String",
+                    "_type": "string",
                     "value": "Dirk"
                 }
             ],

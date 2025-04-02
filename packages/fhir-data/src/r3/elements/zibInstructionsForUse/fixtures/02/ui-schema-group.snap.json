@@ -15,8 +15,8 @@
                 ]
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Aanvullende instructie",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
@@ -57,13 +57,13 @@
         "label": "Toedieningsschema",
         "children": [
             {
-                "type": "SINGLE_VALUE",
                 "label": "Toedieninsgduur",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Frequentie",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
@@ -77,18 +77,18 @@
                 "type": "SINGLE_VALUE"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Weekdagen",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Toedientijd",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             },
             {
-                "type": "SINGLE_VALUE",
                 "label": "Dagdeel",
+                "type": "SINGLE_VALUE",
                 "display": "Niet bekend"
             }
         ]

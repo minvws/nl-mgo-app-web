@@ -2,12 +2,12 @@ import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { beforeEach } from 'node:test';
 import { expect, test, vi } from 'vitest';
-import { type MgoQuantityLike } from '../../../parse/type';
+import { type MgoQuantityProps } from '../../../parse/type';
 import { range } from './range';
 
 vi.mock('../../format/systemValue/systemValue', () => ({
     systemValue: vi.fn(
-        (_context) => (input: MgoQuantityLike) => `systemValue(${JSON.stringify(input)})`
+        (_context) => (input: MgoQuantityProps) => `systemValue(${JSON.stringify(input)})`
     ),
 }));
 

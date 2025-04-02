@@ -4,6 +4,7 @@
     "fhir.code_in_system": "{code} in code systeem {system}",
     "fhir.empty_value": "Niet bekend",
     "fhir.group_general_info": "Algemeen",
+    "fhir.identifier": "Identificatie",
     "fhir.period.end": "Eind datum",
     "fhir.period.start": "Begin datum",
     "fhir.range.high": "Bovengrens",

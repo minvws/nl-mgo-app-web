@@ -9,8 +9,8 @@
                     "display": "18 maart 2024"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Eind datum van de uitslag",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -19,8 +19,8 @@
                     "display": "5,4 millimol per liter"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Beoordeling",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -34,8 +34,8 @@
                     "display": "Definitief"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Materiaal",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]
@@ -66,8 +66,8 @@
                     ]
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

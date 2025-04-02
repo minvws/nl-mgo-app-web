@@ -5,8 +5,8 @@
             "label": "Zorgprofessional rol",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
@@ -49,13 +49,13 @@
                     "display": "work"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Telecom toelichting",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "type": "SINGLE_VALUE",
                     "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
             ]

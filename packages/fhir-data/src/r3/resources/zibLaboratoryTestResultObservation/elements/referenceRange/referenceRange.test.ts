@@ -8,17 +8,15 @@ test('summary uses translated label when type.coding has system "referencerange-
         low: faker.mgo.quantity(),
         high: faker.mgo.quantity(),
         type: {
-            _type: 'CodeableConcept',
+            _type: 'codeableConcept',
             text: undefined,
             coding: [
                 {
-                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
                 },
                 {
-                    _type: 'Coding',
                     system: 'http://hl7.org/fhir/referencerange-meaning',
                     code: 'recommended',
                     display: 'Recommended Range',
@@ -42,17 +40,15 @@ test('summary uses label from the first type.coding system found when "reference
         low: faker.mgo.quantity(),
         high: faker.mgo.quantity(),
         type: {
-            _type: 'CodeableConcept',
+            _type: 'codeableConcept',
             text: undefined,
             coding: [
                 {
-                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
                 },
                 {
-                    _type: 'Coding',
                     system: faker.internet.url(),
                     code: faker.lorem.slug(),
                     display: faker.lorem.sentence(),
@@ -74,7 +70,7 @@ test('summary uses fallback label when there is a type, but it could not be tran
         low: faker.mgo.quantity(),
         high: faker.mgo.quantity(),
         type: {
-            _type: 'CodeableConcept',
+            _type: 'codeableConcept',
             text: undefined,
             coding: [],
         },

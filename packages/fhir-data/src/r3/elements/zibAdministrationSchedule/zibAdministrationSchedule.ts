@@ -1,12 +1,14 @@
 import { type Timing } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
-import { type ResourceElementConfig } from '../../../types/Fhir';
+import { type MgoElementMeta, type ResourceElementConfig } from '../../../types/Fhir';
 import { type Nullable } from '../../../types/Nullable';
 import { map } from '../../../utils';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface ZibAdministrationSchedule {
+const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule'; // NOSONAR
+
+export interface ZibAdministrationSchedule extends MgoElementMeta<typeof profile> {
     repeat: {
         boundsDuration?: parse.MgoDuration;
         boundsPeriod?: parse.MgoPeriod;
@@ -32,7 +34,9 @@ function parseZibAdministrationSchedule(value: Nullable<Timing>): ZibAdministrat
     const { repeat } = value ?? {};
 
     return {
+        _profile: profile,
         repeat: {
+            // HCIM InstructionsForUse-v1.1(2017EN)
             ...oneOfValueX(repeat, ['duration', 'range', 'period'], 'bounds'),
             duration: parse.decimal(repeat?.duration),
             durationUnit: parse.code(repeat?.durationUnit),
