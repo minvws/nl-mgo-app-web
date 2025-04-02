@@ -48,7 +48,7 @@ To run the E2E tests using docker, ensure you have the latest [Docker (Desktop) 
 
 1. From the root of this repository, copy of the `.env.example`, rename it as `.env` and fill in the variables.
 2. From the root of this repository, Start up all docker containers with `docker compose up --build`
-3. Connect to the `playwright` instance with `docker exec -it playwright`
+3. Connect to the `playwright` instance with `docker exec -it playwright bash`
 4. From the `playwright` shell, run the tests with `pnpm e2e` or `pnpm e2e:ci`
 
 > Test results will still be stored in the `apps/e2e-tests/results` as this folder is volume mounted.
@@ -60,4 +60,4 @@ To run the E2E tests using docker, ensure you have the latest [Docker (Desktop) 
 [playwright]: https://playwright.dev/
 [playwright-headed]: https://playwright.dev/docs/running-tests#run-tests-in-headed-mode
 [mgo-test]: https://web.test.mgo.irealisatie.nl/
-[development]: ../../docs/development
+[development]: ../../docs/development.md

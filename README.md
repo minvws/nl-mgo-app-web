@@ -44,7 +44,7 @@ docker compose up --build mgo
 docker compose down
 ```
 
-By default it will connect to the test environments, however this can be changed by adding a `.env` at the root. You can copy the `.env.example` for some default values.
+By default it will connect to the test environments, however this can be changed by adding a `.env` in the `apps/e2e-tests` directory. You can copy the `.env.example` for some default values.
 
 > After changing `.env` values you will have to **rebuild** and **restart** the container. (Rerun the first command above)
 
@@ -65,8 +65,8 @@ pnpm run <command>
 | `lint:fix`      | Fixes all fixable lint errors using [eslint].                                                        |
 | `check-types`   | Checks all the types using [TypeScript]                                                              |
 | `storybook`     | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
-| `format`        | Checks if all the code follows the formatting rules using [Prettier]                                 |
-| `format:fix`    | Fixed all fixable formatting error using [Prettier]                                                  |
+| `format`        | Checks and fixes any formatting issues using [Prettier]                                              |
+| `format:check`  | Checks only any formatting issues using [Prettier]                                                   |
 | `pr`            | Runs all the checks that are normally also ran for a pull request                                    |
 | `e2e`           | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
 
