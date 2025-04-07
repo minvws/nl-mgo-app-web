@@ -11,19 +11,19 @@ type RangeLabel = HasLowLabel | HasHighLabel; // eslint-disable-line @typescript
 export const range: WithUiHelperContext<
     UiFunction<MgoRange, SingleValue[], FhirMessagesIds | RangeLabel>
 > = (context) => (label, value) => {
-    const { hasMessage, formatMessage } = context;
+    const { formatLabel } = context;
     const lowLabel = `${label}.low`;
     const highLabel = `${label}.high`;
     const formatSystemValue = systemValue(context);
 
     return [
         {
-            label: formatMessage(hasMessage(lowLabel) ? lowLabel : `fhir.range.low`),
+            label: formatLabel(lowLabel, value, `fhir.range.low`),
             type: `SINGLE_VALUE`,
             display: formatSystemValue(value?.low),
         },
         {
-            label: formatMessage(hasMessage(highLabel) ? highLabel : `fhir.range.high`),
+            label: formatLabel(highLabel, value, `fhir.range.high`),
             type: `SINGLE_VALUE`,
             display: formatSystemValue(value?.high),
         },

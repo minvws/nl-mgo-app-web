@@ -62,7 +62,7 @@
                     "reference": null
                 },
                 {
-                    "label": "Identificatie",
+                    "label": "r3.zib_treatment_directive.source_identifier",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

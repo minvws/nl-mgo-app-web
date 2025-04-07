@@ -2,10 +2,10 @@ import { format } from '../../format';
 import { type CombinedUiFunction, type SingleValue, type WithUiHelperContext } from '../../types';
 
 export const valueWithMax: WithUiHelperContext<CombinedUiFunction<number, number, SingleValue>> =
-    ({ intl }) =>
+    ({ formatLabel }) =>
     (label, value, max) => {
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatLabel(label, value),
             display: format.valueWithMaxValue(value, max),
             type: 'SINGLE_VALUE',
         };

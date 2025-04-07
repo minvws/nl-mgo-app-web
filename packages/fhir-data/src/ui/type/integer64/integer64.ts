@@ -3,10 +3,10 @@ import { numberToString } from '../../helpers';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 export const integer64: WithUiHelperContext<UiFunction<MgoInteger64, SingleValue>> =
-    ({ intl }) =>
+    ({ formatLabel }) =>
     (label, value) => {
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatLabel(label, value),
             type: 'SINGLE_VALUE',
             display: numberToString(value?.value),
         };

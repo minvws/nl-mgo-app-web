@@ -1,7 +1,7 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
 import {
-    type HealthUiSchemaOrganization,
     type HealthUiSchemaOptions,
+    type HealthUiSchemaOrganization,
 } from '../../../api/getDetails/getDetails';
 import { type MgoResource } from '../../../api/resources/resources';
 import {

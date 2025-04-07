@@ -56,19 +56,20 @@ Once you have a [local development environment][mgo-development]] set up, there 
 pnpm run <command>
 ```
 
-| Command         | Description                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| `dev`           | Starts a new [vite development server][vite-dev].                                                    |
-| `test`          | Runs all unit tests using [vitest].                                                                  |
-| `test:coverage` | Runs all unit tests using [vitest] and publishes a coverage report.                                  |
-| `lint`          | Lints all the code using [eslint].                                                                   |
-| `lint:fix`      | Fixes all fixable lint errors using [eslint].                                                        |
-| `check-types`   | Checks all the types using [TypeScript]                                                              |
-| `storybook`     | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
-| `format`        | Checks and fixes any formatting issues using [Prettier]                                              |
-| `format:check`  | Checks only any formatting issues using [Prettier]                                                   |
-| `pr`            | Runs all the checks that are normally also ran for a pull request                                    |
-| `e2e`           | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
+| Command           | Description                                                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| `dev`             | Starts a new [vite development server][vite-dev].                                                    |
+| `test`            | Runs all unit tests using [vitest].                                                                  |
+| `test:coverage`   | Runs all unit tests using [vitest] and publishes a coverage report.                                  |
+| `lint`            | Lints all the code using [eslint].                                                                   |
+| `lint:fix`        | Fixes all fixable lint errors using [eslint].                                                        |
+| `check-types`     | Checks all the types using [TypeScript]                                                              |
+| `storybook`       | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
+| `format`          | Checks and fixes any formatting issues using [Prettier]                                              |
+| `format:check`    | Checks only any formatting issues using [Prettier]                                                   |
+| `messages:update` | Download latest translations from lokalise, see [mgo-intl] for details.                              |
+| `pr`              | Runs all the checks that are normally also ran for a pull request                                    |
+| `e2e`             | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
 
 ## License
 

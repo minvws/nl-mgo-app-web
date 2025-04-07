@@ -11,19 +11,17 @@ import {
 export const identifier: WithUiHelperContext<
     UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues, FhirMessagesIds>
 > =
-    ({ hasMessage, formatMessage }) =>
+    ({ formatLabel }) =>
     (label, value) => {
-        label = hasMessage(label) ? label : `fhir.identifier`;
-
         if (Array.isArray(value)) {
             return {
-                label: formatMessage(label),
+                label: formatLabel(label, value),
                 type: 'MULTIPLE_VALUES',
                 display: value?.map((x) => x?.value).filter(isNonNullish),
             };
         }
         return {
-            label: formatMessage(label),
+            label: formatLabel(label, value),
             type: 'SINGLE_VALUE',
             display: value?.value,
         };

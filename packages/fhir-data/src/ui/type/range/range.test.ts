@@ -15,31 +15,10 @@ beforeEach(() => {
     vi.resetAllMocks();
 });
 
-test('range without message', () => {
+test('range', () => {
     const label = faker.custom.fhirMessageId();
     const mgoRange = faker.mgo.range();
     const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValue(false);
-    const result = range(context)(label, mgoRange);
-    expect(result).toEqual([
-        {
-            label: testMessage('fhir.range.low'),
-            type: `SINGLE_VALUE`,
-            display: `systemValue(${JSON.stringify(mgoRange.low)})`,
-        },
-        {
-            label: testMessage('fhir.range.high'),
-            type: `SINGLE_VALUE`,
-            display: `systemValue(${JSON.stringify(mgoRange.high)})`,
-        },
-    ]);
-});
-
-test('range with message', () => {
-    const label = faker.custom.fhirMessageId();
-    const mgoRange = faker.mgo.range();
-    const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValue(true);
     const result = range(context)(label, mgoRange);
     expect(result).toEqual([
         {
@@ -49,6 +28,28 @@ test('range with message', () => {
         },
         {
             label: `intl(${label}.high)`,
+            type: `SINGLE_VALUE`,
+            display: `systemValue(${JSON.stringify(mgoRange.high)})`,
+        },
+    ]);
+});
+
+test('range with fallback labels', () => {
+    const label = faker.custom.fhirMessageId();
+    const mgoRange = faker.mgo.range();
+    const context = faker.custom.uiHelperContext();
+    vi.spyOn(context, 'formatLabel').mockImplementation(
+        (_label, _value, fallbackLabel) => testMessage(fallbackLabel) ?? ''
+    );
+    const result = range(context)(label, mgoRange);
+    expect(result).toEqual([
+        {
+            label: testMessage('fhir.range.low'),
+            type: `SINGLE_VALUE`,
+            display: `systemValue(${JSON.stringify(mgoRange.low)})`,
+        },
+        {
+            label: testMessage('fhir.range.high'),
             type: `SINGLE_VALUE`,
             display: `systemValue(${JSON.stringify(mgoRange.high)})`,
         },

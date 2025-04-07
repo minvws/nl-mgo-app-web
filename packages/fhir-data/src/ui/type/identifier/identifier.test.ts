@@ -16,17 +16,3 @@ test('identifier, with existing label', () => {
         display: mgoIdentifier.value,
     });
 });
-
-test('identifier, without existing label', () => {
-    const label = faker.custom.fhirMessageId();
-    const mgoIdentifier = faker.mgo.identifier();
-    const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
-
-    const result = identifier(context)(label, mgoIdentifier);
-    expect(result).toEqual({
-        label: testMessage('fhir.identifier'),
-        type: 'SINGLE_VALUE',
-        display: mgoIdentifier.value,
-    });
-});

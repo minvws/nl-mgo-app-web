@@ -10,21 +10,21 @@ type PeriodLabel = HasStartLabel | HasEndLabel;
 
 export const period: WithUiHelperContext<
     UiFunction<MgoPeriod, SingleValue[], FhirMessagesIds | PeriodLabel>
-> = (i18nContext) => (label, value) => {
-    const { formatMessage, hasMessage } = i18nContext;
+> = (context) => (label, value) => {
+    const { formatLabel } = context;
     const startLabel = `${label}.start`;
     const endLabel = `${label}.end`;
 
-    const formatDate = date(i18nContext);
+    const formatDate = date(context);
 
     return [
         {
-            label: formatMessage(hasMessage(startLabel) ? startLabel : `fhir.period.start`),
+            label: formatLabel(startLabel, value, `fhir.period.start`),
             type: `SINGLE_VALUE`,
             display: formatDate(value?.start),
         },
         {
-            label: formatMessage(hasMessage(endLabel) ? endLabel : `fhir.period.end`),
+            label: formatLabel(endLabel, value, `fhir.period.end`),
             type: `SINGLE_VALUE`,
             display: formatDate(value?.end),
         },

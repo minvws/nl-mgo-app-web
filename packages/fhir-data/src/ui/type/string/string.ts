@@ -11,18 +11,18 @@ import {
 export const string: WithUiHelperContext<
     UiFunction<MgoString | string | MgoString[] | string[], SingleValue | MultipleValues>
 > =
-    ({ intl }) =>
+    ({ formatLabel }) =>
     (label, value) => {
         if (Array.isArray(value)) {
             return {
-                label: intl.formatMessage({ id: label }),
+                label: formatLabel(label, value),
                 type: 'MULTIPLE_VALUES',
                 display: value.map((x) => valueOf(x)).filter(isNonNullish),
             };
         }
 
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatLabel(label, value),
             type: 'SINGLE_VALUE',
             display: valueOf(value),
         };

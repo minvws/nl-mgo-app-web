@@ -14,7 +14,10 @@ test('ratio', () => {
     const label = faker.custom.fhirMessageId();
     const mgoRatio = faker.mgo.ratio();
     const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
+    vi.spyOn(context, 'formatLabel').mockImplementation(
+        (_label, _value, fallbackLabel) => testMessage(fallbackLabel) ?? ''
+    );
+
     const result = ratio(context)(label, mgoRatio);
 
     expect(result).toEqual([

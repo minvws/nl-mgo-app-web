@@ -14,7 +14,7 @@ type CodeOptions<T extends string | undefined> = {
 };
 
 export function code(context: UiHelperContext) {
-    const { hasMessage, formatMessage } = context;
+    const { hasMessage, formatMessage, formatLabel } = context;
 
     return function <T extends string>(
         label: FhirMessagesIds,
@@ -37,14 +37,14 @@ export function code(context: UiHelperContext) {
 
         if (Array.isArray(value)) {
             return {
-                label: formatMessage(label),
+                label: formatLabel(label, value),
                 type: 'MULTIPLE_VALUES',
                 display: value.map(translateCode).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatMessage(label),
+            label: formatLabel(label, value),
             type: 'SINGLE_VALUE',
             display: translateCode(value),
         };

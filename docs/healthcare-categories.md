@@ -18,7 +18,7 @@ This is an overview of the healthcare categories that we use in all the clients.
 - [Waarschuwingen](#waarschuwingen)
 - [Leefstijl](#leefstijl)
 - [Medische hulpmiddelen](#medische-hulpmiddelen)
-- [Behandel plan](#behandel-plan)
+- [Behandelplan](#behandelplan)
 - [Betaalgegevens](#betaalgegevens)
 
 <hr/>
@@ -132,7 +132,7 @@ This is an overview of the healthcare categories that we use in all the clients.
 | "                     | [zib-MedicalDevice]        | [BgZ]  |                               |
 | "                     | [zib-MedicalDeviceRequest] | [BgZ]  |                               |
 
-#### Behandel plan
+#### Behandelplan
 
 | Subcategorie   | Profile                  | Source | Description              |
 | :------------- | :----------------------- | :----- | :----------------------- |

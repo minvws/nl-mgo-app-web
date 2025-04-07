@@ -12,23 +12,19 @@ type RatioLabel = HasNumeratorLabel | HasDenominatorLabel; // eslint-disable-lin
 export const ratio: WithUiHelperContext<
     UiFunction<MgoRatio, SingleValue[], FhirMessagesIds | RatioLabel>
 > = (context) => (label, value) => {
-    const { hasMessage, formatMessage } = context;
+    const { formatLabel } = context;
     const numeratorLabel = `${label}.numerator`;
     const denominatorLabel = `${label}.denominator`;
     const formatSystemValue = systemValue(context);
 
     return [
         {
-            label: formatMessage(
-                hasMessage(numeratorLabel) ? numeratorLabel : `fhir.ratio.numerator`
-            ),
+            label: formatLabel(numeratorLabel, value, `fhir.ratio.numerator`),
             type: `SINGLE_VALUE`,
             display: formatSystemValue(value?.numerator),
         },
         {
-            label: formatMessage(
-                hasMessage(denominatorLabel) ? denominatorLabel : `fhir.ratio.denominator`
-            ),
+            label: formatLabel(denominatorLabel, value, `fhir.ratio.denominator`),
             type: `SINGLE_VALUE`,
             display: formatSystemValue(value?.denominator),
         },

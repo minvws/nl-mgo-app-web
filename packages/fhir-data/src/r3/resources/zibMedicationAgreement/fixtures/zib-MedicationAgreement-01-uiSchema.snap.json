@@ -53,7 +53,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Identificatie",
+                    "label": "r3.zib_medication_agreement.group_identifier",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },

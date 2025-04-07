@@ -12,17 +12,18 @@ export const instant: WithUiHelperContext<
     UiFunction<MgoInstant | MgoInstant[], SingleValue | MultipleValues>
 > = (context) => (label, value) => {
     const formatDate = date(context);
+    const { formatLabel } = context;
 
     if (Array.isArray(value)) {
         return {
-            label: context.formatMessage(label),
+            label: formatLabel(label, value),
             type: 'MULTIPLE_VALUES',
             display: value.map((x) => formatDate(x.value)).filter(isNonNullish),
         };
     }
 
     return {
-        label: context.formatMessage(label),
+        label: formatLabel(label, value),
         type: 'SINGLE_VALUE',
         display: formatDate(value?.value),
     };

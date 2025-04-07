@@ -22,19 +22,19 @@ const codeableDisplay: WithUiHelperContext<FormatDisplayFunction<MgoCodeableConc
 export const codeableConcept: WithUiHelperContext<
     UiFunction<MgoCodeableConcept | MgoCodeableConcept[], MultipleValues | MultipleGroupedValues>
 > = (context) => (label, value) => {
-    const { formatMessage } = context;
+    const { formatLabel } = context;
     const display = codeableDisplay(context);
 
     if (Array.isArray(value)) {
         return {
-            label: formatMessage(label),
+            label: formatLabel(label, value),
             type: 'MULTIPLE_GROUPED_VALUES',
             display: value.map(display),
         };
     }
 
     return {
-        label: formatMessage(label),
+        label: formatLabel(label, value),
         type: 'MULTIPLE_VALUES',
         display: display(value),
     };

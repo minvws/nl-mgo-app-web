@@ -9,7 +9,10 @@ test('period, defaults to fhir.start/end labels', () => {
 
     const mgoPeriod = faker.mgo.period();
     const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
+    vi.spyOn(context, 'formatLabel').mockImplementation(
+        (_label, _value, fallbackLabel) => testMessage(fallbackLabel) ?? ''
+    );
+
     const formatDateTime = date(context);
     const uiPeriod = period(context);
     const result = uiPeriod(label as any, mgoPeriod); // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -33,7 +36,6 @@ test('period, uses custom labels if available', () => {
 
     const mgoPeriod = faker.mgo.period();
     const context = faker.custom.uiHelperContext();
-    vi.spyOn(context, 'hasMessage').mockReturnValue(true);
     const formatDateTime = date(context);
     const uiPeriod = period(context);
     const result = uiPeriod(label as any, mgoPeriod); // eslint-disable-line @typescript-eslint/no-explicit-any

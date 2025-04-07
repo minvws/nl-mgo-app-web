@@ -9,8 +9,6 @@
   ],
   "fhir.group_general_info": [
   ],
-  "fhir.identifier": [
-  ],
   "fhir.period.end": [
   ],
   "fhir.period.start": [
@@ -24,5 +22,7 @@
   "fhir.ratio.numerator": [
   ],
   "fhir.unknown": [
+  ],
+  "fhir.x.identifier": [
   ]
 }

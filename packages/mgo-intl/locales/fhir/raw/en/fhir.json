@@ -4,12 +4,12 @@
     "fhir.code_in_system": "",
     "fhir.empty_value": "",
     "fhir.group_general_info": "",
-    "fhir.identifier": "",
     "fhir.period.end": "",
     "fhir.period.start": "",
     "fhir.range.high": "",
     "fhir.range.low": "",
     "fhir.ratio.denominator": "",
     "fhir.ratio.numerator": "",
-    "fhir.unknown": ""
+    "fhir.unknown": "",
+    "fhir.x.identifier": ""
 }

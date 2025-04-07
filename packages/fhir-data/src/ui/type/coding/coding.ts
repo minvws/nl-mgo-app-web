@@ -15,18 +15,18 @@ export const coding: WithUiHelperContext<
         SingleValue | MultipleValues
     >
 > = (context) => (label, value) => {
-    const { formatMessage } = context;
+    const { formatLabel } = context;
     const display = system(context);
 
     if (Array.isArray(value)) {
         return {
-            label: formatMessage(label),
+            label: formatLabel(label, value),
             type: 'MULTIPLE_VALUES',
             display: value.map(display).filter(isNonNullish),
         };
     }
     return {
-        label: formatMessage(label),
+        label: formatLabel(label, value),
         type: 'SINGLE_VALUE',
         display: display(value),
     };

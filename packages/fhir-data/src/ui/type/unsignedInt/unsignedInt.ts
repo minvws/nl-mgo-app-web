@@ -4,10 +4,10 @@ import { valueOf } from '../../helpers/valueOf/valueOf';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 export const unsignedInt: WithUiHelperContext<UiFunction<MgoUnsignedInt | number, SingleValue>> =
-    ({ intl }) =>
+    ({ formatLabel }) =>
     (label, value) => {
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatLabel(label, value),
             type: 'SINGLE_VALUE',
             display: numberToString(valueOf(value)),
         };

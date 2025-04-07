@@ -10,10 +10,10 @@ export const valueWithUnit: WithUiHelperContext<
         SingleValue
     >
 > =
-    ({ intl }) =>
+    ({ formatLabel }) =>
     (label, value, unit) => {
         return {
-            label: intl.formatMessage({ id: label }),
+            label: formatLabel(label, value),
             display: format.valueWithUnit(valueOf(value), valueOf(unit)),
             type: 'SINGLE_VALUE',
         };
