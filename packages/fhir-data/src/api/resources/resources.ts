@@ -8,10 +8,10 @@ resourcesR3 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disabl
 resourcesR4 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export const resourcesMapR3 = Object.fromEntries(
-    Object.entries(resourcesR3).map(([_name, config]) => [config.profile, config])
+    Object.entries(resourcesR3).map(([_name, config]) => [config.profile.toLowerCase(), config])
 );
 export const resourcesMapR4 = Object.fromEntries(
-    Object.entries(resourcesR4).map(([_name, config]) => [config.profile, config])
+    Object.entries(resourcesR4).map(([_name, config]) => [config.profile.toLowerCase(), config])
 );
 
 type ResourcesMapR3 = typeof resourcesMapR3;

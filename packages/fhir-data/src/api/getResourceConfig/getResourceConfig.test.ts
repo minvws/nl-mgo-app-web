@@ -16,6 +16,15 @@ test('returns the correct resource config for a R4 resource', () => {
     expect(config).toBe(r4NlCorePatient);
 });
 
+test('matching is case insensitive for a R3 resource', () => {
+    const config = getResourceConfig(zibMedicationUse.profile.toUpperCase(), FhirVersion.R3);
+    expect(config).toBe(zibMedicationUse);
+});
+test('matching is case insensitive for a R4 resource', () => {
+    const config = getResourceConfig(r4NlCorePatient.profile.toUpperCase(), FhirVersion.R4);
+    expect(config).toBe(r4NlCorePatient);
+});
+
 test('returns the first resource config that is found when given an array of profile', () => {
     const config = getResourceConfig(
         [

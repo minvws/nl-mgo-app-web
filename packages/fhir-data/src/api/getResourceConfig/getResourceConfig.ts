@@ -16,11 +16,15 @@ export function getResourceConfig<T extends FhirResource | MgoResourceMeta>(
     const resourcesMap =
         FhirVersion[fhirVersion] === FhirVersion.R3 ? resourcesMapR3 : resourcesMapR4;
 
+    let matchingProfile: string | undefined;
+
     if (Array.isArray(profile)) {
-        profile = profile.find((x) => !!resourcesMap[x]) ?? profile[0];
+        matchingProfile = profile.map((x) => x.toLowerCase()).find((x) => !!resourcesMap[x]);
+    } else {
+        matchingProfile = profile.toLowerCase();
     }
 
-    if (resourcesMap[profile]) {
-        return resourcesMap[profile] as unknown as Config<T>;
+    if (!!matchingProfile && resourcesMap[matchingProfile]) {
+        return resourcesMap[matchingProfile] as unknown as Config<T>;
     }
 }
