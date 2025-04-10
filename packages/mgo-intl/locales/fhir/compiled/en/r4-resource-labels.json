@@ -15,14 +15,6 @@
   ],
   "r4.nl_core_contact_information_telephone_numbers.value": [
   ],
-  "r4.nl_core_healtcare_provider": [
-  ],
-  "r4.nl_core_healtcare_provider.identifier": [
-  ],
-  "r4.nl_core_healtcare_provider.managing_organization": [
-  ],
-  "r4.nl_core_healtcare_provider.name": [
-  ],
   "r4.nl_core_health_professional_practitioner_role": [
   ],
   "r4.nl_core_health_professional_practitioner_role.location": [
@@ -32,6 +24,14 @@
   "r4.nl_core_health_professional_practitioner_role.practitioner": [
   ],
   "r4.nl_core_health_professional_practitioner_role.speciality": [
+  ],
+  "r4.nl_core_healthcare_provider": [
+  ],
+  "r4.nl_core_healthcare_provider.identifier": [
+  ],
+  "r4.nl_core_healthcare_provider.managing_organization": [
+  ],
+  "r4.nl_core_healthcare_provider.name": [
   ],
   "r4.nl_core_healthcare_provider_organization": [
   ],

@@ -77,7 +77,7 @@ export {
 } from '../r4/elements';
 
 export {
-    type R4NlCoreHealtcareProvider,
+    type R4NlCoreHealthcareProvider,
     type R4NlCoreHealthcareProviderOrganization,
     type R4NlCoreHealthProfessionalPractitioner,
     type R4NlCoreHealthProfessionalPractitionerRole,

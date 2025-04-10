@@ -7,10 +7,10 @@
  *   - Don't forget to also export the ResourceType from the `~/api/types` file to make it available for the mobile apps.
  */
 
-export * from './nlCoreHealtcareProvider/nlCoreHealtcareProvider';
+export * from './nlCoreHealthcareProvider/nlCoreHealthcareProvider';
+export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization';
 export * from './nlCoreHealthProfessionalPractitioner/nlCoreHealthProfessionalPractitioner';
 export * from './nlCoreHealthProfessionalPractitionerRole/nlCoreHealthProfessionalPractitionerRole';
-export * from './nlCoreHealthcareProviderOrganization/nlCoreHealthcareProviderOrganization';
 export * from './nlCorePatient/nlCorePatient';
 export * from './nlCorePharmaceuticalProduct/nlCorePharmaceuticalProduct';
 export * from './nlCoreVaccinationEvent/nlCoreVaccinationEvent';

@@ -5,10 +5,10 @@ import {
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
 } from '../../elements';
-import { type R4NlCoreHealtcareProvider } from './nlCoreHealtcareProvider';
+import { type R4NlCoreHealthcareProvider } from './nlCoreHealthcareProvider';
 
-export const i18n = 'r4.nl_core_healtcare_provider';
-export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealtcareProvider> = (resource, context) => {
+export const i18n = 'r4.nl_core_healthcare_provider';
+export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthcareProvider> = (resource, context) => {
     const { ui, formatMessage } = context;
 
     /**

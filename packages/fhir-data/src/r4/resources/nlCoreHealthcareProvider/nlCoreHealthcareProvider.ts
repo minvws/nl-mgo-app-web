@@ -15,7 +15,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcarePro
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946116
  */
-function parseNlCoreHealtcareProvider(resource: Location) {
+function parseNlCoreHealthcareProvider(resource: Location) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         identifier: map(resource.identifier, parse.identifier),
@@ -27,10 +27,10 @@ function parseNlCoreHealtcareProvider(resource: Location) {
     };
 }
 
-export type R4NlCoreHealtcareProvider = ReturnType<typeof parseNlCoreHealtcareProvider>;
+export type R4NlCoreHealthcareProvider = ReturnType<typeof parseNlCoreHealthcareProvider>;
 
-export const nlCoreHealtcareProvider = {
+export const nlCoreHealthcareProvider = {
     profile,
-    parse: parseNlCoreHealtcareProvider,
+    parse: parseNlCoreHealthcareProvider,
     uiSchema,
-} satisfies ResourceConfig<Location, R4NlCoreHealtcareProvider>;
+} satisfies ResourceConfig<Location, R4NlCoreHealthcareProvider>;
