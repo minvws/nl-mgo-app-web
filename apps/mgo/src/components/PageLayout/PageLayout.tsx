@@ -1,5 +1,5 @@
 import { Outlet } from '$/routing';
-import { Container, cn, useResponsive } from '@minvws/mgo-mgo-ui';
+import { cn, Container, useResponsive } from '@minvws/mgo-mgo-ui';
 import { ScrollRestoration } from 'react-router-dom';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { DesktopMenu } from '../DesktopMenu/DesktopMenu';

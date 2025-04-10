@@ -47,6 +47,23 @@ test('shows the summary by default', async () => {
     expect(uiSchemaComponent).toHaveTextContent('showDetails: false');
 });
 
+test('shows not found page if healthcategory is not found', async () => {
+    mockUseParams.mockImplementation(() => ({
+        organizationSlug: faker.lorem.slug(),
+        healthCategorySlug: 'foobar',
+        resourceSlug: faker.lorem.slug(),
+    }));
+
+    setupWithAppProviders(<HealthData />);
+
+    const heading = screen.getByRole('heading', {
+        name: appMessage(`not_found.heading`),
+        level: 1,
+    });
+
+    expect(heading).toBeVisible();
+});
+
 test('can show all the details', async () => {
     mockUseParams.mockImplementationOnce(() => ({
         organizationSlug: faker.lorem.slug(),

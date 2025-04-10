@@ -1,14 +1,17 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Button, cn, Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { type HTMLAttributes } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export function NotFound() {
+export interface NotFoundProps extends HTMLAttributes<HTMLElement> {}
+
+export function NotFound({ className, ...rest }: NotFoundProps) {
     const { formatMessage } = useIntl();
     return (
         <>
             <Helmet title={formatMessage('not_found.heading')} />
-            <Container className="max-w-md pb-6 pt-12 md:pb-32 md:pt-24">
+            <Container className={cn('max-w-md pb-6 pt-12 md:pb-32 md:pt-24', className)} {...rest}>
                 <Illustration
                     className="mx-auto w-3/4 md:mb-2 md:w-3/5"
                     illustration="woman-with-umbrella"
@@ -30,7 +33,7 @@ export function NotFound() {
                     />
                 </Text>
                 <Button asChild className="mt-6 md:mt-12">
-                    <RouterLink to={'/overzicht'}>
+                    <RouterLink to="/overzicht">
                         <FormattedMessage
                             id="not_found.to_overview"
                             description="Ga naar het overzicht"

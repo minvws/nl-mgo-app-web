@@ -5,10 +5,7 @@ test('getHealthCategoryBySlug returns category', async () => {
     const result = getHealthCategoryBySlug('medicijnen');
     expect(result).toEqual(HealthCategory.Medication);
 });
-test('getHealthCategoryBySlug throws if slug is invalid', async () => {
-    expect(() => {
-        getHealthCategoryBySlug('foobar');
-    }).toThrowError(
-        'No health category found for slug: "foobar", this is most likely not a valid slug value.'
-    );
+test('getHealthCategoryBySlug return undefined if slug is invalid', async () => {
+    const result = getHealthCategoryBySlug('foobar');
+    expect(result).toBeUndefined();
 });

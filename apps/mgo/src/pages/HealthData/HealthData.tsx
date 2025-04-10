@@ -5,6 +5,7 @@ import { Navigate, useParams } from '$/routing';
 import { useResourcesStore } from '$/store';
 import { Helmet } from 'react-helmet-async';
 import { HealthUiSchema } from '../../components/HealthUiSchema/HealthUiSchema';
+import { NotFound } from '../NotFound/NotFound';
 
 export interface HealthDataProps {
     readonly showDetails?: boolean;
@@ -17,9 +18,9 @@ export function HealthData({ showDetails }: HealthDataProps) {
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const resource = getResourceBySlug(resourceSlug);
 
-    const heading = formatMessage(
-        showDetails ? `hc_${healthCategory}.heading_detail` : `hc_${healthCategory}.heading_summary`
-    );
+    if (!healthCategory) {
+        return <NotFound className="flex flex-col items-center text-center" />;
+    }
 
     if (!resource) {
         return organizationSlug ? (
@@ -28,6 +29,10 @@ export function HealthData({ showDetails }: HealthDataProps) {
             <Navigate to={`/overzicht/${healthCategorySlug}`} />
         );
     }
+
+    const heading = formatMessage(
+        showDetails ? `hc_${healthCategory}.heading_detail` : `hc_${healthCategory}.heading_summary`
+    );
 
     return (
         <>

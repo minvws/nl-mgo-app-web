@@ -36,12 +36,10 @@ export const healthCategorySlugs = {
     [HealthCategory.Vitals]: 'vitale-functies',
 } as const satisfies Record<HealthCategory, string>;
 
-export function getHealthCategoryBySlug(slug: string) {
+export function getHealthCategoryBySlug(slug: string): HealthCategory | undefined {
     const entry = Object.entries(healthCategorySlugs).find(([_key, value]) => value === slug);
     if (!entry) {
-        throw new Error(
-            `No health category found for slug: "${slug}", this is most likely not a valid slug value.`
-        );
+        return;
     }
     return entry[0] as HealthCategory;
 }

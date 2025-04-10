@@ -98,6 +98,10 @@ test('loads and shows category content', async () => {
 });
 
 test('does not apply an organization filter if there is no organisation slug', async () => {
+    const store = useOrganizationsStore.getState();
+    const mock = vi.spyOn(store, 'getOrganizationBySlug');
+    mock.mockImplementation(() => undefined);
+
     mockUseParams.mockImplementation(() => ({
         organizationSlug: undefined,
         healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Medication],
@@ -107,6 +111,23 @@ test('does not apply an organization filter if there is no organisation slug', a
     setupWithAppProviders(<HealthCategory />);
 
     expect(mockUseHealthCategoryQuery).toHaveBeenCalledWith('medication', undefined);
+});
+
+test('shows not found page if healthcategory is not found', async () => {
+    mockUseParams.mockImplementation(() => ({
+        organizationSlug: undefined,
+        healthCategorySlug: 'foobar',
+        resourceSlug: faker.lorem.slug(),
+    }));
+
+    setupWithAppProviders(<HealthCategory />);
+
+    const heading = screen.getByRole('heading', {
+        name: appMessage(`not_found.heading`),
+        level: 1,
+    });
+
+    expect(heading).toBeVisible();
 });
 
 test('loads and receives error from category query', async () => {
