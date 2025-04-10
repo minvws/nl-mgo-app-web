@@ -15,11 +15,7 @@ export default {
 export const Default: Story = {};
 
 export const WithColorAndSizeFromParent: Story = {
-    render: ({ ...args }) => (
-        <div className="text-sky-blue-500 text-4xl">
-            <Icon {...args} />
-        </div>
-    ),
+    render: ({ ...args }) => <Icon {...args} className="text-sky-blue-500 text-4xl" />,
 };
 
 export const WithLabel: Story = {

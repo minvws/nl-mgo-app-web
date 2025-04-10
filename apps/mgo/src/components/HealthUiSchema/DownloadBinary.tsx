@@ -15,7 +15,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
     if (isEmpty) {
         return (
             <DescriptionNotice
-                icon="info"
+                icon="info-fill"
                 iconClassName="fill-dark-blue-700 dark:fill-dark-blue-300"
                 {...rest}
             >

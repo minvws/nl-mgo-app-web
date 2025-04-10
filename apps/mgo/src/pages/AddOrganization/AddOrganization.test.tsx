@@ -24,7 +24,7 @@ test('show loading state', async () => {
 });
 
 test('no results found', async () => {
-    mockSearch.mockResolvedValueOnce({ organizations: [] });
+    mockSearch.mockResolvedValueOnce([]);
     const { user } = setupWithAppProviders(<AddOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
     await flushCallStack();
@@ -36,7 +36,7 @@ test('no results found', async () => {
 });
 
 test('results found', async () => {
-    mockSearch.mockResolvedValueOnce({ organizations: [faker.custom.healthcareOrganizationDTO()] });
+    mockSearch.mockResolvedValueOnce([faker.custom.healthcareOrganization()]);
     const { user } = setupWithAppProviders(<AddOrganization />);
     await submitSearchForm(user, { name: faker.word.sample(), city: faker.word.sample() });
 

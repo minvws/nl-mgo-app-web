@@ -13,7 +13,11 @@ export const Icon = ({ icon, ['aria-label']: ariaLabel, className, ...rest }: Ic
             role="img"
             aria-label={ariaLabel}
             aria-hidden={!ariaLabel}
-            className={twMerge('h-[1em] w-[1em] fill-current', iconPaddings[icon], className)}
+            className={twMerge(
+                'h-[1em] w-[1em] shrink-0 fill-current',
+                iconPaddings[icon],
+                className
+            )}
             {...rest}
         />
     );

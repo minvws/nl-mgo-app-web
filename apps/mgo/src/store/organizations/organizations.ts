@@ -1,17 +1,17 @@
-import { type ParsedHealthcareOrganization } from '$/hooks';
+import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
 import { createUniqueSlug } from '$/utils/uniqueSlug/uniqueSlug';
 import { isEmpty } from 'lodash';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-export type HealthcareOrganization = ParsedHealthcareOrganization & {
+export type HealthcareOrganization = HealthcareOrganizationSearchResult & {
     slug: string;
 };
 
 export interface OrganizationsState {
     organizations: HealthcareOrganization[];
     addOrganization: (
-        healthcareOrganizationDetails: ParsedHealthcareOrganization
+        healthcareOrganizationDetails: HealthcareOrganizationSearchResult
     ) => HealthcareOrganization;
     hasOrganizations: () => boolean;
     hasOrganizationById: (id: string) => boolean;

@@ -1,6 +1,6 @@
 import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
-import { FormattedMessage } from '$/intl';
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { Button, ButtonCard, Heading, Stack } from '@minvws/mgo-mgo-ui';
@@ -9,6 +9,7 @@ export function Organizations() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     const { organizations } = useOrganizationsStore();
+    const { formatMessage } = useIntl();
 
     return (
         <>
@@ -28,7 +29,11 @@ export function Organizations() {
                         <ul>
                             {organizations.map(({ slug, name, category }) => (
                                 <li key={slug}>
-                                    <ButtonCard asChild title={name} description={category}>
+                                    <ButtonCard
+                                        asChild
+                                        title={name ?? formatMessage('common.unknown')}
+                                        description={category}
+                                    >
                                         <RouterLink to={`/organisaties/${slug}`} />
                                     </ButtonCard>
                                 </li>

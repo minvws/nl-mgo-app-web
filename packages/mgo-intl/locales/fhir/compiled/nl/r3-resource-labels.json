@@ -134,7 +134,7 @@
   "r3.nl_core_episodeofcare.patient": [
     {
       "type": 0,
-      "value": "Patient"
+      "value": "Patiënt"
     }
   ],
   "r3.nl_core_episodeofcare.period": [

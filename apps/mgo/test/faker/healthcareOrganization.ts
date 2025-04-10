@@ -27,11 +27,11 @@ export const healthcareOrganization = createMockDataFactory<HealthcareOrganizati
         slug: kebabCase(name),
         category: faker.helpers.arrayElement(categories),
         address: `${streetAddress}\r\n${postalcode} ${city}`,
-        resourceEndpoints: {
-            [DataServiceId.CommonClinicalDataset]: faker.internet.url(),
-            [DataServiceId.GeneralPractitioner]: faker.internet.url(),
-            [DataServiceId.PdfA]: faker.internet.url(),
-            [DataServiceId.VaccinationImmunization]: faker.internet.url(),
-        },
+        dataServices: [
+            { id: DataServiceId.VaccinationImmunization, resourceEndpoint: faker.internet.url() },
+            { id: DataServiceId.CommonClinicalDataset, resourceEndpoint: faker.internet.url() },
+            { id: DataServiceId.PdfA, resourceEndpoint: faker.internet.url() },
+            { id: DataServiceId.GeneralPractitioner, resourceEndpoint: faker.internet.url() },
+        ],
     };
 });

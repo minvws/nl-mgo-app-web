@@ -1,3 +1,4 @@
+import { log } from '$/utils';
 import { createUniqueSlug } from '$/utils/uniqueSlug/uniqueSlug';
 import { type DataServiceId } from '@minvws/mgo-data-services';
 import {
@@ -79,9 +80,7 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
                 currentResources.some(({ id }) => id === newResource.id) ||
                 newResources.some(({ id }) => id === newResource.id)
             ) {
-                if (import.meta.env.DEV) {
-                    console.warn(`Resource with id "${newResource.id}" already exists`);
-                }
+                log.warn(`Resource with id "${newResource.id}" already exists`);
             } else {
                 newResources.push(newResource);
             }

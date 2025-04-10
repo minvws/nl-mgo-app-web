@@ -21,7 +21,7 @@
     "r3.ihe_mhd_minimal_document_reference.type": "Type",
     "r3.nl_core_episodeofcare": "Episode",
     "r3.nl_core_episodeofcare.identifier": "Identificatienummer",
-    "r3.nl_core_episodeofcare.patient": "Patient",
+    "r3.nl_core_episodeofcare.patient": "Patiënt",
     "r3.nl_core_episodeofcare.period": "Periode",
     "r3.nl_core_episodeofcare.type": "Type",
     "r3.nl_core_observation": "Observatie",

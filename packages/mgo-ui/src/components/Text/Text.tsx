@@ -11,6 +11,7 @@ export interface TextProps extends HTMLAttributes<HTMLElement>, CompositionProps
 }
 
 const TextSizes: Record<Size, string> = {
+    sm: tw`text-xs md:text-sm`,
     md: tw`md:text-md text-sm`,
     lg: tw`text-lg md:text-xl`,
 };

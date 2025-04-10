@@ -13,7 +13,7 @@ function mockResource(label?: string): Resource {
         id: faker.string.uuid(),
         slug: faker.lorem.slug(),
         organizationId: faker.string.uuid(),
-        dataServiceId: faker.number.int({ max: 60 }),
+        dataServiceId: faker.custom.dataServiceId(),
         label: label ?? faker.lorem.words(),
         mgoResource: {} as any, // eslint-disable-line @typescript-eslint/no-explicit-any
     };

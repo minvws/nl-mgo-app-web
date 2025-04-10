@@ -1,5 +1,5 @@
 import { type UserInfo } from '$/auth/VadAuthProvider/takeUserInfoFromUrl';
-import { faker } from '$test/faker';
+import { faker } from '@faker-js/faker';
 
 export function userInfo(): UserInfo {
     return {

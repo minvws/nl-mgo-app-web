@@ -8,7 +8,7 @@
   "add_organization.city": [
     {
       "type": 0,
-      "value": "Plaats (verplicht)"
+      "value": "Plaats"
     }
   ],
   "add_organization.error_missing_city": [
@@ -38,13 +38,7 @@
   "add_organization.name": [
     {
       "type": 0,
-      "value": "Naam (verplicht)"
-    }
-  ],
-  "add_organization.not_implemented": [
-    {
-      "type": 0,
-      "value": "Zorgaanbieder nog niet beschikbaar"
+      "value": "Naam"
     }
   ],
   "add_organization.not_participating": [
@@ -337,6 +331,12 @@
     {
       "type": 0,
       "value": "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+    }
+  ],
+  "not_found.to_home": [
+    {
+      "type": 0,
+      "value": "Ga naar home"
     }
   ],
   "not_found.to_overview": [

@@ -8,7 +8,7 @@ import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
 import { type MgoResource } from '../resources/resources';
 
 export type HealthUiSchemaOrganization = {
-    name: string;
+    name?: string;
 };
 export interface HealthUiSchemaOptions<V extends `${FhirVersion}`> {
     locale?: Locale;

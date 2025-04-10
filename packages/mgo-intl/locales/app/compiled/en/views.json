@@ -13,8 +13,6 @@
   ],
   "add_organization.name": [
   ],
-  "add_organization.not_implemented": [
-  ],
   "add_organization.not_participating": [
   ],
   "add_organization.voice_over_to_overview": [
@@ -110,6 +108,8 @@
   "not_found.heading": [
   ],
   "not_found.subheading": [
+  ],
+  "not_found.to_home": [
   ],
   "not_found.to_overview": [
   ],

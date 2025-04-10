@@ -12,7 +12,7 @@
                     ]
                 },
                 {
-                    "label": "Patient",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"

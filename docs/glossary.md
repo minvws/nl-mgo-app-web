@@ -6,9 +6,9 @@ This glossary introduces common MGO terminology.
 
 Mijn Gezondheidsoverzicht. An application where somone can view their own medical information that is stored by a healthcare organisation.
 
-## Healthcare Organzation
+## Healthcare Organization
 
-A Healthcare Organzation that can provide medical information through data services. Such as a general practitioner or a hospital.
+A Healthcare Organization that can provide medical information through data services. Such as a general practitioner or a hospital.
 
 ## Data Service
 

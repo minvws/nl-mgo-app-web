@@ -48,14 +48,14 @@ afterEach(() => {
 });
 
 test('returns the data service when there is a resource endpoint available', () => {
-    const resourceEndpoints: HealthcareOrganization['resourceEndpoints'] = {
-        [DataServiceId.VaccinationImmunization]: faker.internet.url(),
-        [DataServiceId.CommonClinicalDataset]: faker.internet.url(),
-        [DataServiceId.PdfA]: faker.internet.url(),
-        [DataServiceId.GeneralPractitioner]: faker.internet.url(),
-    };
+    const dataServices: HealthcareOrganization['dataServices'] = [
+        { id: DataServiceId.VaccinationImmunization, resourceEndpoint: faker.internet.url() },
+        { id: DataServiceId.CommonClinicalDataset, resourceEndpoint: faker.internet.url() },
+        { id: DataServiceId.PdfA, resourceEndpoint: faker.internet.url() },
+        { id: DataServiceId.GeneralPractitioner, resourceEndpoint: faker.internet.url() },
+    ];
 
-    const organization = faker.custom.healthcareOrganization({ resourceEndpoints });
+    const organization = faker.custom.healthcareOrganization({ dataServices });
     const dataServiceId = faker.custom.dataServiceId();
     const dataService = getDataService(organization, dataServiceId);
     const createServiceMock = dataServiceMocks[dataServiceId];
@@ -64,7 +64,8 @@ test('returns the data service when there is a resource endpoint available', () 
     expect(createServiceMock).toHaveBeenCalledWith(
         expect.objectContaining({
             headers: {
-                'x-mgo-dva-target': resourceEndpoints[dataServiceId],
+                'x-mgo-dva-target': dataServices.find((x) => x.id === dataServiceId)
+                    ?.resourceEndpoint,
             },
         })
     );
@@ -82,12 +83,7 @@ test('returns NULL when there is NO dataServiceId', () => {
 
 test('returns NULL when there is NO resource endpoint available', () => {
     const organization = faker.custom.healthcareOrganization();
-    organization.resourceEndpoints = {
-        [DataServiceId.VaccinationImmunization]: undefined,
-        [DataServiceId.CommonClinicalDataset]: undefined,
-        [DataServiceId.PdfA]: undefined,
-        [DataServiceId.GeneralPractitioner]: undefined,
-    };
+    organization.dataServices = [];
 
     const dataService = getDataService(organization, faker.custom.dataServiceId());
     expect(dataService).toBeNull();

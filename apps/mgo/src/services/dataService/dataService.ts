@@ -24,7 +24,9 @@ export function getDataService<T extends DataServiceId>(
     }
 
     const createClient = dataServiceMap[dataServiceId];
-    const resourceEndpoint = organization?.resourceEndpoints[dataServiceId];
+    const resourceEndpoint = organization?.dataServices.find(
+        (x) => x.id === dataServiceId
+    )?.resourceEndpoint;
 
     if (!resourceEndpoint) {
         return null;

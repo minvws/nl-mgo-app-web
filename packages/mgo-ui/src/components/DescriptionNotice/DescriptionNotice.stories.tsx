@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DescriptionNotice } from './DescriptionNotice';
 import { DarkStory } from '../DarkStory/DarkStory';
+import { DescriptionNotice } from './DescriptionNotice';
 
 type Story = StoryObj<typeof DescriptionNotice>;
 type StoryMeta = Meta<typeof DescriptionNotice>;
@@ -8,7 +8,7 @@ type StoryMeta = Meta<typeof DescriptionNotice>;
 export default {
     component: DescriptionNotice,
     args: {
-        icon: 'info',
+        icon: 'info-fill',
         iconClassName: 'fill-dark-blue-700',
         children: 'This is a description',
     },

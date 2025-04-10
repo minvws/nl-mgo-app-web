@@ -38,3 +38,17 @@ test('should show the healthcare organizations', () => {
         name: new RegExp(organizationName),
     });
 });
+
+test('should show the healthcare organization with an unknown label if the name is not defined', () => {
+    const { addOrganization } = useOrganizationsStore.getState();
+    addOrganization({
+        ...faker.custom.healthcareOrganization(),
+        name: undefined,
+    });
+
+    setupWithAppProviders(<Organizations />);
+
+    screen.getByRole('link', {
+        name: new RegExp(appMessage('common.unknown')),
+    });
+});

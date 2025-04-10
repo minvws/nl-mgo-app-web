@@ -1,5 +1,5 @@
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useNavFocusRef, useParseHealthcareOrganization } from '$/hooks';
+import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { getLoadService } from '$/services';
 import { Container, Heading } from '@minvws/mgo-mgo-ui';
@@ -15,15 +15,11 @@ export function AddOrganization() {
     const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
-    const { parseHealthcareOrganization } = useParseHealthcareOrganization();
     const loadService = getLoadService();
 
     const query = useQuery({
-        queryKey: ['search', searchQuery], // eslint-disable-line @tanstack/query/exhaustive-deps
-        queryFn: async () => {
-            const searchResults = await loadService.search(searchQuery!);
-            return searchResults.organizations.map(parseHealthcareOrganization);
-        },
+        queryKey: ['search', searchQuery],
+        queryFn: async () => loadService.search(searchQuery!),
         enabled: !!searchQuery,
         retry: 0,
     });
@@ -45,6 +41,7 @@ export function AddOrganization() {
                         />
                     </h1>
                 </Heading>
+
                 <SearchForm onSubmit={setSearchQuery} />
             </Container>
 

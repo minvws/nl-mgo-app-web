@@ -149,7 +149,7 @@ test('getResourceBySlug returns undefined if an empty slug is provided', async (
 
 test('getResourceByReferenceId returns the resource by referenceID', async () => {
     let state = useResourcesStore.getState();
-    const dataServiceId = faker.number.int({ max: 60 });
+    const dataServiceId = faker.custom.dataServiceId();
     const organizationId = uniqueId(faker.string.uuid());
 
     const resourceDto = mockResourceDto(FhirVersion.R3, { organizationId, dataServiceId });

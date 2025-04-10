@@ -24,7 +24,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
     }
 
     return (
-        <DescriptionNotice icon="info" iconClassName="fill-dark-blue-700" {...rest}>
+        <DescriptionNotice icon="info-fill" iconClassName="fill-dark-blue-700" {...rest}>
             <Text className="max-w-[300px] text-center">
                 <FormattedMessage id="hc_documents.no_document" description="Geen documenten" />
             </Text>
