@@ -1,6 +1,6 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type DocumentManifestContent } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
 
 export interface IheMhdMinimalDocumentReferenceContent {
     attachment: parse.MgoAttachment | undefined;

@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Consent } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { intersectCodeableConcept } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { typeOfLivingWillValueSet } from '../../valueSets/typeOfLivingWill';
 import { uiSchema } from './uiSchema';

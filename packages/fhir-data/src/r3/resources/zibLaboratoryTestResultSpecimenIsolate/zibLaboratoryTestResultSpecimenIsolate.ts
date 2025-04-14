@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Specimen } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { container } from './elements/container/container';
 import { uiSchema } from './uiSchema';

@@ -1,8 +1,8 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type Dosage } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
-import { type MgoElementMeta, type ResourceElementConfig } from '../../../types/Fhir';
-import { type Nullable } from '../../../types/Nullable';
+import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
 import { map } from '../../../utils';
 import {
     zibAdministrationSchedule,
@@ -13,7 +13,7 @@ import { uiSchemaGroup } from './uiSchemaGroup';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse'; // NOSONAR
 
-export interface ZibInstructionsForUse extends MgoElementMeta<typeof profile> {
+export type ZibInstructionsForUse = MgoElementMeta<typeof profile> & {
     sequence: parse.MgoInteger | undefined;
     text: parse.MgoString | undefined;
     additionalInstruction: parse.MgoCodeableConcept[] | undefined;
@@ -26,7 +26,7 @@ export interface ZibInstructionsForUse extends MgoElementMeta<typeof profile> {
     rateRatio?: parse.MgoRatio;
     rateRange?: parse.MgoRange;
     rateQuantity?: parse.MgoQuantityProps;
-}
+};
 
 /**
  * @name HCIM InstructionsForUse

@@ -1,8 +1,8 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type IheMhdDocumentManifest } from './iheMhdDocumentManifest';
 
 export const i18n = 'r3.ihe_mhd_document_manifest';

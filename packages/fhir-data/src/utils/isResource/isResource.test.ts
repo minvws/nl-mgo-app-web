@@ -1,9 +1,8 @@
 import { type FhirResource, type ResourceType } from '@minvws/mgo-fhir-types';
 import { expect, test } from 'vitest';
-import { type Lossless } from '../../types/Lossless';
 import { isFhirResource } from './isResource';
 
-test.each<[Lossless<FhirResource>, ResourceType, boolean]>([
+test.each<[FhirResource, ResourceType, boolean]>([
     [{ resourceType: 'Bundle', type: 'searchset' }, 'Bundle', true],
     [{ resourceType: 'Patient' }, 'Bundle', false],
     [{ resourceType: 'Patient' }, 'Patient', true],
@@ -20,6 +19,6 @@ test.each<[unknown, boolean]>([
 ])(
     'isResource correctly returns whether resource %j is probably a FhirResource ',
     (resource, expected) => {
-        expect(isFhirResource(resource as Lossless<FhirResource>)).toEqual(expected);
+        expect(isFhirResource(resource as FhirResource)).toEqual(expected);
     }
 );

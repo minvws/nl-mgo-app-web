@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Patient } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { communication } from './elements/communication/communication';

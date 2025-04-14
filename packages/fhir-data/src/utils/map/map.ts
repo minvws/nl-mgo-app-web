@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
-import { type Nullable } from '../../types/Nullable';
-import { isNonNullish } from '../isNonNullish/isNonNullish';
+import { isNonNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 
 /**
  * Creates an array of values by running each element in collection thru iteratee.

@@ -1,6 +1,6 @@
+import { flushCallStack } from '@minvws/mgo-mgo-utils';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { flushCallStack } from '../../../test/helpers';
 import { SlideDown } from './SlideDown';
 
 test('SlideDown can be open and closed', async () => {

@@ -1,8 +1,8 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
-import { isNonNullish } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-data-services';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 

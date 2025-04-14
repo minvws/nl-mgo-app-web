@@ -1,7 +1,7 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type MedicationBatch } from 'fhir/r4';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
-import { type ResourceElementConfig } from '../../../../../types/Fhir';
+import { type ResourceElementConfig } from '../../../../../types';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Batch {

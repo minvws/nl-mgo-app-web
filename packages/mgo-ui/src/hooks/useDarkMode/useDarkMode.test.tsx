@@ -1,7 +1,7 @@
+import { flushCallStack } from '@minvws/mgo-mgo-utils';
 import { renderHook } from '@testing-library/react';
 import { beforeAll, expect, test, vi } from 'vitest';
 import { useDarkMode } from './useDarkMode';
-import { flushCallStack } from '../../../test/helpers';
 
 const matchMedia = vi.fn();
 

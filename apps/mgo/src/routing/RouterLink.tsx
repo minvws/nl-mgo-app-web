@@ -1,8 +1,8 @@
-import { type Override } from '$/types/Override';
 import { Link, type LinkProps } from 'react-router-dom';
+import { type OverrideProperties } from 'type-fest';
 import { type To } from './routes';
 
-export type RouterLinkProps = Override<
+export type RouterLinkProps = OverrideProperties<
     LinkProps,
     {
         to: To;

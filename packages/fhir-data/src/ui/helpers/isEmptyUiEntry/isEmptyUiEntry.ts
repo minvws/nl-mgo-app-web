@@ -1,4 +1,4 @@
-import { isNullish } from '../../../utils';
+import { isNullish } from '@minvws/mgo-mgo-utils';
 import { type UiElement } from '../../types';
 
 export function isEmptyUiEntry<T extends UiElement>(uiField: T) {

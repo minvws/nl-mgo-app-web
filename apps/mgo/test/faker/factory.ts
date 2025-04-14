@@ -1,10 +1,9 @@
-import { type DeepPartial } from '$/types/DeepPartial';
-import { type GenericObject } from '$/types/GenericObject';
 import { defaultsDeep } from 'lodash';
+import { type PartialDeep } from 'type-fest';
 
-type MockData<T> = GenericObject | Array<T>;
+type MockData<T> = object | Array<T>;
 
-export type MockDataFactory<T extends MockData<T>> = (partialData?: DeepPartial<T>) => T;
+export type MockDataFactory<T extends MockData<T>> = (partialData?: PartialDeep<T>) => T;
 
 /**
  * Returns a function that can be used for creating test data.

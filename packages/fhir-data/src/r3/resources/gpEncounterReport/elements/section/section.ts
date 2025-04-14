@@ -1,6 +1,6 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type CompositionSection } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
 
 export interface Section {

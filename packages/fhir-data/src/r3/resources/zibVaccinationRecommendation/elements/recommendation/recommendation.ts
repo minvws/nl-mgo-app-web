@@ -1,8 +1,8 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type ImmunizationRecommendationRecommendation } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types';
 import { map } from '../../../../../utils';
-import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Recommendation {

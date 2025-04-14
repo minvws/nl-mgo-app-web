@@ -1,8 +1,8 @@
 import { type Element as ElementR3, type Extension as ExtensionR3 } from 'fhir/r3';
 import { type Element as ElementR4, type Extension as ExtensionR4 } from 'fhir/r4';
 
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { filterPrimitive, type ExtractKeysWithMeta } from '../filterPrimitive/filterPrimitive';
-import { type Nullable } from '../../../types/Nullable';
 
 export function filterPrimitiveByExtension<
     Resource extends ElementR3 | ElementR4,

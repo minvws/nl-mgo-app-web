@@ -1,5 +1,5 @@
 import { type ObservationComponent } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '../../../types/Nullable';
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 
 export function findComponentByCode(
     components: Nullable<ObservationComponent[]>,

@@ -1,5 +1,5 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoInstant } from '../../../parse/type';
-import { isNonNullish } from '../../../utils';
 import { date } from '../../format/date/date';
 import {
     type MultipleValues,

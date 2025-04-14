@@ -1,6 +1,7 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type PatientContact } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types';
 import { map } from '../../../../../utils';
 import {
     nlCoreAddress,
@@ -10,7 +11,6 @@ import {
     type NlCoreContactpoint,
     type NlCoreHumanname,
 } from '../../../../elements';
-import { type ResourceElementConfig } from '../../../../../types/Fhir';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Contact {

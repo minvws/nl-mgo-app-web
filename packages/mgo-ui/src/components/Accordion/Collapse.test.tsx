@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
+import { flushCallStack } from '@minvws/mgo-mgo-utils';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { flushCallStack } from '../../../test/helpers';
 import { Collapse } from './Collapse';
 
 test('Collapse can be open and closed', async () => {

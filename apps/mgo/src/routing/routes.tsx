@@ -5,10 +5,9 @@ import { HealthData } from '$/pages/HealthData/HealthData';
 import { NotFound } from '$/pages/NotFound/NotFound';
 import { Overview } from '$/pages/Overview/Overview';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
-import { type ExtractRouteParams, type ExtractRoutePaths } from '$/types/ExtractRoutePaths';
-import { type LiteralToCollective } from '$/types/LiteralToCollective';
-import { type Override } from '$/types/Override';
+import { type ExtractRouteParams, type ExtractRoutePaths } from '$/routing/ExtractRoutePaths';
 import { type RouteObject, type Path as RouterPath } from 'react-router-dom';
+import { type OverrideProperties } from 'type-fest';
 import { PageLayout } from '../components/PageLayout/PageLayout';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { PublicRoute } from '../components/PublicRoute/PublicRoute';
@@ -126,7 +125,7 @@ export type RoutePath =
     | '/niet-gevonden'
     | `./${string}`;
 
-export type To = RoutePath | Partial<Override<RouterPath, { pathname: RoutePath }>>;
+export type To = RoutePath | Partial<OverrideProperties<RouterPath, { pathname: RoutePath }>>;
 
 // Cast routeConfig from the literal type back to the collective type to make it compatible with react-router
-export const routes = routeConfig as LiteralToCollective<typeof routeConfig>;
+export const routes = routeConfig as RouteObject[];

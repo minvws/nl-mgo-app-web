@@ -1,8 +1,8 @@
 /* c8 ignore start */
 
+import { flushCallStack } from '@minvws/mgo-mgo-utils';
 import { uniqBy } from 'lodash';
 import { afterEach, beforeEach } from 'vitest';
-import { flushCallStack } from './flushCallStack';
 
 type ConsoleLogMethod = 'log' | 'debug' | 'info' | 'warn' | 'error';
 type ConsoleLogMessage = {

@@ -1,7 +1,7 @@
 import { type FhirVersion, type ResourceByType, type ResourceType } from '@minvws/mgo-fhir-types';
+import { type Lossless } from '@minvws/mgo-mgo-utils';
 import type { KyInstance, Options as KyOptions } from 'ky';
 import type { FhirClientOptions } from '..';
-import { type LosslessJson } from '../../utils/losslessJson/losslessJson';
 
 export interface ResourceRequest<
     V extends FhirVersion,
@@ -15,7 +15,7 @@ export type ResourceResponse<
     V extends FhirVersion,
     T extends ResourceType<V>,
     Resource = ResourceByType<T, V>,
-> = LosslessJson<Resource>;
+> = Lossless<Resource>;
 
 export function setupResource<V extends FhirVersion>(
     instance: KyInstance,

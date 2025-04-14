@@ -1,7 +1,7 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type ObservationReferenceRange } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type ResourceElementConfig } from '../../../../../types/Fhir';
-import { type Nullable } from '../../../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../../../types';
 import { map } from '../../../../../utils';
 import { summary } from './summary';
 import { uiSchemaGroup } from './uiSchemaGroup';

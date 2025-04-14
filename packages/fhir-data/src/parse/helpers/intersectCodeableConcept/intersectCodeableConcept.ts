@@ -1,6 +1,6 @@
 import { type CodeableConcept } from '@minvws/mgo-fhir-types';
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { intersectionWith } from 'lodash';
-import { type Nullable } from '../../../types/Nullable';
 
 interface CodeableConceptIntersectItem {
     system?: string;

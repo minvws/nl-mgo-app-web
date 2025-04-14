@@ -1,5 +1,4 @@
-import { isNullish } from '../../../utils';
-import { type Nullable } from '../../../types/Nullable';
+import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 
 export function toString<T extends string | boolean>(value?: Nullable<T>) {
     if (isNullish(value)) return;

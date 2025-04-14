@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Practitioner } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
 import { uiSchema } from './uiSchema';

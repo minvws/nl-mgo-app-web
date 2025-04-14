@@ -1,5 +1,4 @@
 import { useResourcesStore } from '$/store';
-import { isNonNullish } from '$/utils';
 import {
     getBundleResources,
     getMgoResource,
@@ -7,6 +6,7 @@ import {
     type FhirResource,
 } from '@minvws/mgo-fhir-data';
 import { useUniqueId } from '@minvws/mgo-mgo-ui';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { useQueries } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { type HealthCategory } from '..';

@@ -4,8 +4,8 @@ import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
 import { coding } from './coding';
 
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type MgoCodingProps } from '../../../parse/type/coding/coding';
-import { type Nullable } from '../../../types/Nullable';
 import { type UiHelperContext } from '../../context';
 import { system } from '../../format/system/system';
 

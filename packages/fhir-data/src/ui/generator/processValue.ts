@@ -1,9 +1,8 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types/fhirVersion';
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { isPrimitiveValueType, isValueType } from '../../parse/types';
-import { isMgoElement } from '../../types/Fhir';
-import { type Nullable } from '../../types/Nullable';
-import { isNullish } from '../../utils';
+import { isMgoElement } from '../../utils';
 import { type HealthUiSchemaContext } from '../context';
 import { isUiSchemaGroup } from '../helpers/isUiSchemaGroup/isUiSchemaGroup';
 import { type HealthUiGroup, type UiElement } from '../types';

@@ -1,8 +1,7 @@
+import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { upperFirst } from 'lodash';
-import { type Nullable } from '../../../types/Nullable';
-import { isNullish } from '../../../utils/isNullish/isNullish';
+import { type StringKeyOf } from 'type-fest';
 import * as parse from '../../type';
-import { type StringKeys } from '../../../types/StringKeys';
 
 type ParseMap = typeof parse;
 export type ParserKey = keyof ParseMap;
@@ -30,7 +29,7 @@ export type ReturnTypeParser<
  */
 export type ExtractValueTypes<T extends object, Prefix extends string> =
     Extract<
-        StringKeys<NonNullable<T>>,
+        StringKeyOf<NonNullable<T>>,
         `${Prefix}${Capitalize<ParserKey>}`
     > extends `${Prefix}${infer ValueType}`
         ? Uncapitalize<ValueType> extends ParserKey

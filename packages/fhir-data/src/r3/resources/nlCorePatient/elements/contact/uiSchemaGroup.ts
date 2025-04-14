@@ -1,5 +1,6 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiGroupFunction, type NonStrictUi } from '../../../../../ui/types';
-import { isNonNullish, map } from '../../../../../utils';
+import { map } from '../../../../../utils';
 import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../../../elements';
 import { type Contact } from './contact';
 

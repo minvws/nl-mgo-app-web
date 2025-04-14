@@ -1,5 +1,5 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoBoolean } from '../../../parse/type';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 
 export const boolean: WithUiHelperContext<UiFunction<MgoBoolean, SingleValue>> =

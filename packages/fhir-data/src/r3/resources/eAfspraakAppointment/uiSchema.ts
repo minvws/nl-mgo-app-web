@@ -1,7 +1,7 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type EAfspraakAppointment } from './eAfspraakAppointment';
 
 export const i18n = 'r3.e_afspraak_appointment';

@@ -2,7 +2,6 @@ import { App } from '$/App';
 import { VadAuthProvider } from '$/auth';
 import { IntlProvider } from '$/intl';
 import { routes, type To } from '$/routing/routes';
-import { type Override } from '$/types/Override';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, type RenderOptions } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -10,12 +9,13 @@ import { type ReactNode } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { createMemoryRouter } from 'react-router-dom';
 import { StaticRouter } from 'react-router-dom/server';
+import { type OverrideProperties } from 'type-fest';
 import { vi } from 'vitest';
 
 type MemoryOptions = Parameters<typeof createMemoryRouter>[1];
 
-type TypedMemoryRouterOptions = Override<
-    MemoryOptions,
+type TypedMemoryRouterOptions = OverrideProperties<
+    NonNullable<MemoryOptions>,
     {
         initialEntries: To[];
     }

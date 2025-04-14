@@ -1,5 +1,5 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoString } from '../../../parse/type';
-import { isNonNullish } from '../../../utils';
 import { valueOf } from '../../helpers/valueOf/valueOf';
 import {
     type MultipleValues,

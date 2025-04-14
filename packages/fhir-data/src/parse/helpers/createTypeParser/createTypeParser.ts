@@ -1,5 +1,4 @@
-import { type Nullable } from '../../../types/Nullable';
-import { isNullish } from '../../../utils';
+import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 
 type ParserFunc<Input, Output> = (input: Input) => Output;
 

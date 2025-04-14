@@ -5,7 +5,6 @@ import {
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
-import { type OptionalPropsWhenFlagIsTrue } from '../../types/OptionalPropsWhenFlagIsTrue';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
@@ -14,18 +13,19 @@ import { SkeletonCircle, SkeletonText } from '../Skeleton';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
+type Details = {
+    readonly title: string;
+    readonly description?: string;
+    readonly icon?: IconName;
+    readonly iconAriaLabel?: string;
+};
+
 export type ButtonCardProps = HTMLAttributes<HTMLElement> &
     CompositionPropsWithoutChildren &
-    OptionalPropsWhenFlagIsTrue<
-        {
-            isLoading?: boolean;
-            title: string;
-            description?: string;
-            icon?: IconName;
-            iconAriaLabel?: string;
-        },
-        'isLoading'
-    >;
+    (
+        | (Details & { readonly isLoading?: false })
+        | (Partial<Details> & { readonly isLoading: true })
+    );
 
 export const ButtonCard = ({
     isLoading = false,

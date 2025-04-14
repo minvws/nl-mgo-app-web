@@ -3,7 +3,7 @@ import {
     type DateTimeString,
     type InstantDateTimeString,
 } from '@minvws/mgo-fhir-types';
-import { isNullish } from '../../../utils';
+import { isNullish } from '@minvws/mgo-mgo-utils';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 
 const milliseconds = /T\d\d:\d\d:\d\d\.\d+/i;

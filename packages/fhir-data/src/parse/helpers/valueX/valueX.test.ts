@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { valueX } from './valueX';
 import { boolean, codeableConcept } from '../../type';
+import { valueX } from './valueX';
 
 test('returns undefined if value is nullish', () => {
     const element = faker.custom.nullish<{

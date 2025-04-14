@@ -1,6 +1,6 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { type UiHelperContext } from '../../../ui/context';
-import { isNonNullish } from '../../../utils';
 import { type ZibAdvanceDirective } from './zibAdvanceDirective';
 
 export const i18n = 'r3.zib_advance_directive';

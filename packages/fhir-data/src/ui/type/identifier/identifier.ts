@@ -1,6 +1,6 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoIdentifier } from '../../../parse/type';
-import { isNonNullish } from '../../../utils';
 import {
     type MultipleValues,
     type SingleValue,

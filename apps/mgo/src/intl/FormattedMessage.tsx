@@ -1,9 +1,9 @@
-import { type Override } from '$/types/Override';
 import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type ComponentProps, type FC } from 'react';
 import { FormattedMessage as ReactFormattedMessage } from 'react-intl';
+import { type OverrideProperties } from 'type-fest';
 
-export type FormattedMessageProps = Override<
+export type FormattedMessageProps = OverrideProperties<
     ComponentProps<typeof ReactFormattedMessage>,
     {
         id: AppMessagesIds;

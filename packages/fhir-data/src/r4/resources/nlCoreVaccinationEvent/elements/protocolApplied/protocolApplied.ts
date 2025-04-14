@@ -1,8 +1,8 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type ImmunizationProtocolApplied } from 'fhir/r4';
 import { parse } from '../../../../../parse';
 import { oneOfValueX } from '../../../../../parse/helpers';
-import { type Nullable } from '../../../../../types/Nullable';
 import { map } from '../../../../../utils';
-import { type ImmunizationProtocolApplied } from 'fhir/r4';
 
 export interface ProtocolApplied {
     authority: parse.MgoReference | undefined;

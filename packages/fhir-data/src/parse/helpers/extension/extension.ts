@@ -1,5 +1,5 @@
 import { type DomainResource, type Element } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '../../../types/Nullable';
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 
 function getExtension<T extends DomainResource | Element>(resource: Nullable<T>, url: string) {

@@ -1,5 +1,5 @@
 import { type FhirResource, type ResourceByType, type ResourceType } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '../../types/Nullable';
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 
 export function isFhirResource<Type extends ResourceType>(
     value: unknown,

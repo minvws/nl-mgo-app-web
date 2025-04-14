@@ -1,6 +1,6 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 
 import { parse } from '../../../parse';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';

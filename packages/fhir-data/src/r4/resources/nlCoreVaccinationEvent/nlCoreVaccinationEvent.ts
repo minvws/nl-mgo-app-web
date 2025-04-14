@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Immunization } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { filterCodeableConceptByCoding } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { VaccinationIndication } from '../../valueSets/vaccinationIndication';
 import { VaccinationMotive } from '../../valueSets/vaccinationMotive';

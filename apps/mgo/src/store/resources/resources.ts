@@ -1,5 +1,3 @@
-import { log } from '$/utils';
-import { createUniqueSlug } from '$/utils/uniqueSlug/uniqueSlug';
 import { type DataServiceId } from '@minvws/mgo-data-services';
 import {
     getSummary,
@@ -7,6 +5,7 @@ import {
     type MgoResource,
     type NictizNlProfile,
 } from '@minvws/mgo-fhir-data';
+import { createUniqueSlug, log } from '@minvws/mgo-mgo-utils';
 import { create } from 'zustand';
 
 type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];

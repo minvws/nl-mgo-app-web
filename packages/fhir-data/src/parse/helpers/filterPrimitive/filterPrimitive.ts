@@ -1,10 +1,10 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type Element as ElementR3 } from 'fhir/r3';
 import { type Element as ElementR4 } from 'fhir/r4';
-import { type StringKeys } from '../../../types/StringKeys';
-import { type Nullable } from '../../../types/Nullable';
+import { type StringKeyOf } from 'type-fest';
 
 export type ExtractKeysWithMeta<T extends object> =
-    Extract<StringKeys<NonNullable<T>>, `_${string}`> extends `_${infer K}`
+    Extract<StringKeyOf<NonNullable<T>>, `_${string}`> extends `_${infer K}`
         ? K extends keyof T
             ? K
             : never

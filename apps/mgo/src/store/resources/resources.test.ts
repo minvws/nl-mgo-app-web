@@ -1,13 +1,13 @@
-import { type DeepPartial } from '$/types/DeepPartial';
 import { faker } from '$test/faker';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
 import { defaults, uniqueId } from 'lodash';
+import { type PartialDeep } from 'type-fest';
 import { expect, test, vi } from 'vitest';
 import { useResourcesStore, type ResourceDTO } from './resources';
 
 function mockResourceDto<V extends FhirVersion>(
     fhirVersion?: V,
-    resource: DeepPartial<ResourceDTO<V>> = {}
+    resource: PartialDeep<ResourceDTO<V>> = {}
 ): ResourceDTO<V> {
     const version = fhirVersion ?? faker.helpers.arrayElement([FhirVersion.R3, FhirVersion.R4]);
     return {

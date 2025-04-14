@@ -1,6 +1,6 @@
 import { type DateTimeString } from '@minvws/mgo-fhir-types';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoDateTime } from '../../../parse/type';
-import { isNonNullish } from '../../../utils';
 import { date } from '../../format/date/date';
 import { valueOf } from '../../helpers/valueOf/valueOf';
 import {

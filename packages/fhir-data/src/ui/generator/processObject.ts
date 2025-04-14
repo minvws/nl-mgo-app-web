@@ -1,7 +1,7 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types/fhirVersion';
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { isNullish } from '@minvws/mgo-mgo-utils';
 import { snakeCase } from 'lodash';
-import { isNullish } from '../../utils';
 import { type HealthUiSchemaContext } from '../context';
 import { type HealthUiGroup, type UiElement } from '../types';
 import { processValue } from './processValue';

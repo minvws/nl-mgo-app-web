@@ -1,11 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type EpisodeOfCare } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
 import { diagnosis } from './elements/diagnosis/diagnosis';
 import { statusHistory } from './elements/statusHistory/statusHistory';
+import { uiSchema } from './uiSchema';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare'; // NOSONAR
 

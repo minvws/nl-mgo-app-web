@@ -1,6 +1,5 @@
-import { type Nullable } from '../../../types/Nullable';
-import { capitalizeFirstLetter, isNullish } from '../../../utils';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
+import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { upperFirst } from 'lodash';
 import {
     type ExtractValueTypes,
     type ParserKey,
@@ -41,7 +40,7 @@ export function oneOfValueX<
 
         if (isNonNullish(parsedValue)) {
             return {
-                [`${valuePrefix}${capitalizeFirstLetter(valueKey)}`]: parsedValue,
+                [`${valuePrefix}${upperFirst(valueKey)}`]: parsedValue,
             } as ValueTypeObject<Prefix, Types>;
         }
     }

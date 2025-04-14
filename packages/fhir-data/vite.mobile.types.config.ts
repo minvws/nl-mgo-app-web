@@ -12,7 +12,7 @@ export default mergeConfig(config, {
             tsconfigPath: resolvePath('./tsconfig.json'),
             clearPureImport: true,
             include: ['src'],
-            exclude: ['test', 'src/**/*.test.ts'],
+            exclude: ['test'],
             declarationOnly: true,
             copyDtsFiles: true,
             afterBuild: (results) => {

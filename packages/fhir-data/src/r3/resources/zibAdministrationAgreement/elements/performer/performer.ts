@@ -1,6 +1,6 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type MedicationDispensePerformer } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type Nullable } from '../../../../../types/Nullable';
 
 export interface Performer {
     actor: parse.MgoReference | undefined;

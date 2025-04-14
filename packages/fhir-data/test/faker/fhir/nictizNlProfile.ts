@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type NictizNlProfile } from '../../../src/types/Fhir';
+import { type NictizNlProfile } from '../../../src/types';
 
 export const nictizNlProfile = () => {
     return faker.helpers.arrayElement([

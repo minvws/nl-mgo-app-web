@@ -1,5 +1,4 @@
-import { isNullish } from '../../../utils';
-import { type Nullable } from '../../../types/Nullable';
+import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { type LosslessNumber } from 'lossless-json';
 
 export function numberToString(value: Nullable<number | LosslessNumber>) {

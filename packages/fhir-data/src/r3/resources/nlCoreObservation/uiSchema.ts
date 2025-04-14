@@ -1,7 +1,7 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { type ZibAlcoholUse } from '../zibAlcoholUse/zibAlcoholUse';
 import { type ZibDrugUse } from '../zibDrugUse/zibDrugUse';
 import { type ZibFunctionalOrMentalStatus } from '../zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';

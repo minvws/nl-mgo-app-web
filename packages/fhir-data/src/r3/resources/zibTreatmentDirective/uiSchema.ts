@@ -1,7 +1,8 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { valueOf } from '../../../ui/helpers/valueOf/valueOf';
 import { type NonStrictUi } from '../../../ui/types';
-import { isNonNullish, map } from '../../../utils';
+import { map } from '../../../utils';
 import { uiSchemaGroup as actorUiSchema } from './elements/actor/uiSchemaGroup';
 import { uiSchemaGroup as dataUiSchema } from './elements/data/uiSchemaGroup';
 import { uiSchemaGroup as exceptUiSchema } from './elements/except/uiSchemaGroup';

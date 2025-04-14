@@ -1,9 +1,3 @@
-export { deepReplaceUndefined } from './deepReplaceUndefined/deepReplaceUndefined';
+export { isMgoElement } from './isMgoElement/isMgoElement';
 export { isFhirResource } from './isResource/isResource';
-export { findByUse } from './findByUse/findByUse';
-export { safeGet } from './safeGet/safeGet';
-export { safeGetBulk } from './safeGetBulk/safeGetBulk';
-export { isNullish } from './isNullish/isNullish';
-export { isNonNullish } from './isNonNullish/isNonNullish';
 export { map } from './map/map';
-export { capitalizeFirstLetter } from './capitalizeFirstLetter/capitalizeFirstLetter';

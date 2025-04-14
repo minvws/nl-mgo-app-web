@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type Procedure } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types/Fhir';
+import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { isNonNullish } from '../../../utils/isNonNullish/isNonNullish';
 import { focalDevice } from './elements/focalDevice/focalDevice';
 import { performer } from './elements/performer/performer';
 import { uiSchema } from './uiSchema';

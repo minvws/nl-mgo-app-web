@@ -1,6 +1,6 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoCoding } from '../../../parse/type';
 import { type MgoCodingProps } from '../../../parse/type/coding/coding';
-import { isNonNullish } from '../../../utils';
 import { system } from '../../format/system/system';
 import {
     type MultipleValues,

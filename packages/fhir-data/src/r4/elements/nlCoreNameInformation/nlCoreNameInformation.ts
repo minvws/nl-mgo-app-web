@@ -1,9 +1,9 @@
+import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type HumanName } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';
 import { type MgoCode } from '../../../parse/type';
-import { type ResourceElementConfig } from '../../../types/Fhir';
-import { type Nullable } from '../../../types/Nullable';
+import { type ResourceElementConfig } from '../../../types';
 import { map } from '../../../utils';
 import { uiSchemaGroup } from './uiSchemaGroup';
 

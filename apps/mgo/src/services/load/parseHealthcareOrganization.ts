@@ -1,6 +1,5 @@
-import { isNonNullish, log } from '$/utils';
 import { DataServiceId } from '@minvws/mgo-data-services';
-import { safeGet } from '@minvws/mgo-fhir-data';
+import { isNonNullish, log } from '@minvws/mgo-mgo-utils';
 import { type HealthcareOrganizationDTO } from './types';
 
 export const supportedDataServiceIds = [
@@ -33,8 +32,8 @@ export function parseHealthcareOrganization(organizationDTO: HealthcareOrganizat
     return {
         id: identification,
         name: display_name,
-        category: safeGet(organizationDTO, (x) => x.types[0].display_name),
-        address: safeGet(organizationDTO, (x) => x.addresses[0].address),
+        category: organizationDTO?.types?.[0]?.display_name,
+        address: organizationDTO?.addresses?.[0]?.address,
         dataServices,
     };
 }

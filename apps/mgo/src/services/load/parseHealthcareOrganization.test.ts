@@ -1,5 +1,5 @@
-import { log } from '$/utils';
 import { faker } from '$test/faker';
+import { log } from '@minvws/mgo-mgo-utils';
 import { expect, type MockedFunction, test, vi } from 'vitest';
 import {
     parseHealthcareOrganization,
@@ -7,7 +7,17 @@ import {
 } from './parseHealthcareOrganization';
 import { type HealthcareOrganizationDTO, type HealthcareServiceDTO } from './types';
 
-vi.mock('$/utils/log/log');
+vi.mock('@minvws/mgo-mgo-utils', async (importOriginal) => {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+    const mod = await importOriginal<typeof import('@minvws/mgo-mgo-utils')>();
+    return {
+        ...mod,
+        log: {
+            warn: vi.fn(),
+            error: vi.fn(),
+        },
+    };
+});
 
 function mockHealthcareServiceDTO(): HealthcareServiceDTO {
     return {

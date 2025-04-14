@@ -1,4 +1,4 @@
-import { isNonNullish } from '../utils';
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 
 export interface ValueType<T extends string = string> {
     _type: T;

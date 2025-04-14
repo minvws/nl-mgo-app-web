@@ -1,5 +1,5 @@
+import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { isNonNullish } from '../../../utils';
 import { system } from '../../format/system/system';
 import {
     type FormatDisplayFunction,
