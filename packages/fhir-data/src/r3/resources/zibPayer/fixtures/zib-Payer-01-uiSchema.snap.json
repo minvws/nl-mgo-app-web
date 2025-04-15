@@ -41,7 +41,7 @@
                     "display": null
                 },
                 {
-                    "label": "r3.zib_payer.beneficiary",
+                    "label": "Onderwerp (Patiënt)",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"

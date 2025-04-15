@@ -1,20 +1,15 @@
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type ProcedurePerformer } from 'fhir/r3';
 import { parse } from '../../../../../parse';
-import { type ResourceElementConfig } from '../../../../../types';
-import { uiSchemaGroup } from './uiSchemaGroup';
 
 export interface Performer {
     actor: parse.MgoReference | undefined;
+    healthProfessionalRole: parse.MgoCodeableConcept | undefined;
 }
 
-function parsePerformer(value: Nullable<ProcedurePerformer>): Performer {
+export function parsePerformer(value: Nullable<ProcedurePerformer>): Performer {
     return {
         actor: parse.reference(value?.actor),
+        healthProfessionalRole: parse.codeableConcept(value?.role),
     };
 }
-
-export const performer = {
-    parse: parsePerformer,
-    uiSchemaGroup,
-} satisfies ResourceElementConfig<ProcedurePerformer, Performer>;

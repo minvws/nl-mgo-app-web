@@ -40,7 +40,7 @@ test('types are added', () => {
     expect(result).toEqual(expected);
 });
 
-test('nested types are added', () => {
+test('types in nested objects are added to their own group instead of the default (labelless) group', () => {
     const mgoResource = {
         ...testMeta,
         foo: {
@@ -48,6 +48,10 @@ test('nested types are added', () => {
                 _type: 'string',
                 value: 'baz',
             },
+        },
+        koo: {
+            _type: 'string',
+            value: 'kaz',
         },
     };
 
@@ -57,7 +61,53 @@ test('nested types are added', () => {
             {
                 children: [
                     {
+                        label: testMessage('r3.nl_core_patient.koo'),
+                        type: 'SINGLE_VALUE',
+                        display: 'kaz',
+                    },
+                ],
+            },
+            {
+                label: testMessage('r3.nl_core_patient.foo'),
+                children: [
+                    {
                         label: testMessage('r3.nl_core_patient.foo.bar'),
+                        type: 'SINGLE_VALUE',
+                        display: 'baz',
+                    },
+                ],
+            },
+        ],
+    };
+
+    const result = generateUiSchema(mgoResource, testUiSchemaContext({ useMock: true }));
+    expect(result).toEqual(expected);
+});
+
+test('deeply nested types are merged to the first group', () => {
+    const mgoResource = {
+        ...testMeta,
+        foo: {
+            bar: {
+                baz: {
+                    _type: 'string',
+                    value: 'baz',
+                },
+            },
+        },
+    };
+
+    const expected = {
+        label: testMessage('r3.nl_core_patient'),
+        children: [
+            {
+                children: [],
+            },
+            {
+                label: testMessage('r3.nl_core_patient.foo'),
+                children: [
+                    {
+                        label: testMessage('r3.nl_core_patient.foo.bar.baz'),
                         type: 'SINGLE_VALUE',
                         display: 'baz',
                     },

@@ -311,6 +311,132 @@
       "value": "Onderwerp"
     }
   ],
+  "r3.zib_payer.beneficiary": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_procedure.based_on": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r3.zib_procedure.body_site_qualifier": [
+    {
+      "type": 0,
+      "value": "Verrichting lateraliteit"
+    }
+  ],
+  "r3.zib_procedure.focal_device": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel"
+    }
+  ],
+  "r3.zib_procedure.location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r3.zib_procedure.performed_period": [
+    {
+      "type": 0,
+      "value": "Verrichting datum"
+    }
+  ],
+  "r3.zib_procedure.performer.actor": [
+    {
+      "type": 0,
+      "value": "Uitgevoerd door"
+    }
+  ],
+  "r3.zib_procedure.performer.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.zib_procedure.procedure_method": [
+    {
+      "type": 0,
+      "value": "Verrichting methode"
+    }
+  ],
+  "r3.zib_procedure.report": [
+    {
+      "type": 0,
+      "value": "Resultaat"
+    }
+  ],
+  "r3.zib_procedure.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_treatment_directive.additional_sources": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
+  "r3.zib_treatment_directive.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.zib_treatment_directive.consenting_party": [
+    {
+      "type": 0,
+      "value": "Toestemmende partij"
+    }
+  ],
+  "r3.zib_treatment_directive.date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_treatment_directive.except_restrictions": [
+    {
+      "type": 0,
+      "value": "Beperkingen"
+    }
+  ],
+  "r3.zib_treatment_directive.patient": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "r3.zib_treatment_directive.source_attachment": [
+    {
+      "type": 0,
+      "value": "Bron bijlage"
+    }
+  ],
+  "r3.zib_treatment_directive.source_identifier": [
+    {
+      "type": 0,
+      "value": "Bron identificatie"
+    }
+  ],
+  "r3.zib_treatment_directive.source_reference": [
+    {
+      "type": 0,
+      "value": "Bron referentie"
+    }
+  ],
+  "r3.zib_treatment_directive.verified": [
+    {
+      "type": 0,
+      "value": "Bevestigd"
+    }
+  ],
   "r3.zib_vaccination_recommendation": [
     {
       "type": 0,

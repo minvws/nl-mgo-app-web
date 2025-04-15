@@ -120,7 +120,7 @@
   "footer.about_heading": [
     {
       "type": 0,
-      "value": "Over deze site"
+      "value": "Over deze website"
     }
   ],
   "footer.about_site": [
@@ -331,12 +331,6 @@
     {
       "type": 0,
       "value": "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
-    }
-  ],
-  "not_found.to_home": [
-    {
-      "type": 0,
-      "value": "Ga naar home"
     }
   ],
   "not_found.to_overview": [

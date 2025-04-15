@@ -34,6 +34,15 @@
     "subject": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
     "performer": [
         {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "PRF",
+                        "display": "Uitvoerder"
+                    }
+                ]
+            },
             "actor": {
                 "extension": [
                     {

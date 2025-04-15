@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR=$(dirname $(realpath $0))
+SOURCE_DIR="$(dirname $(realpath $0))"
 
 # Public: Prints an error message and exits the script.
 #
@@ -26,7 +26,7 @@ resetCwd() {
 setCwdToPackageJson() {
     packageJson=$(cd $SOURCE_DIR && findNearestAncestorFile "package.json")
     if ! [ $packageJson ]; then
-        fatal "Could not find package.json"
+        fatal "Could not find package.json in $SOURCE_DIR"
     fi
     cd "$(dirname $packageJson)"
 }

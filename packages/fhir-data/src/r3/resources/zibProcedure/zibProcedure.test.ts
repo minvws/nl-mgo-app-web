@@ -1,52 +1,32 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Procedure } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
 import { zibProcedure } from './zibProcedure';
 
-test('returns the expected output 01', async () => {
-    const output = zibProcedure.parse(input01 as Procedure);
+test('01: mgo-resource', async () => {
+    const output = zibProcedure.parse(inputFhirData01 as Procedure);
     await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', async () => {
-    const output = zibProcedure.parse(input02 as Procedure);
+test('01: ui-schema', async () => {
+    const mgoResource = zibProcedure.parse(inputFhirData01 as Procedure);
+    const uiSchema = zibProcedure.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
+    );
+});
+
+test('02: mgo-resource', async () => {
+    const output = zibProcedure.parse(inputFhirData02 as Procedure);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', async () => {
-    const output = zibProcedure.parse(input01 as Procedure);
-    const uiSchema = zibProcedure.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
-});
-
 test('uiSchema returns the expected output 02', async () => {
-    const output = zibProcedure.parse(input02 as Procedure);
-    const uiSchema = zibProcedure.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+    const mgoResource = zibProcedure.parse(inputFhirData02 as Procedure);
+    const uiSchema = zibProcedure.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
-});
-
-test('uiSchema returns default label if code not supplied', () => {
-    const output = zibProcedure.parse(input01 as Procedure);
-    output.code = undefined;
-    const uiSchema = zibProcedure.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

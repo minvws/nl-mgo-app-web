@@ -1,5 +1,4 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types/fhirVersion';
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { isPrimitiveValueType, isValueType } from '../../parse/types';
 import { isMgoElement } from '../../utils';
@@ -17,23 +16,20 @@ export function processValue(
     helpers: UiElementGeneratorHelpers,
     fhirVersion: `${FhirVersion}`,
     path: string,
-    value: Nullable<unknown[] | object>,
-    group: HealthUiGroup | null = null
+    value: Nullable<unknown[] | object>
 ): (UiElement | HealthUiGroup)[] {
+    let elements: (UiElement | HealthUiGroup)[] = [];
+    let group: HealthUiGroup | null = null;
+
     if (isMgoElement(value)) {
         const { _profile, ...rest } = value;
         path = getProfileKey(fhirVersion, _profile);
         value = rest;
-
-        if (!group) {
-            group = {
-                label: context.formatMessage(path as FhirMessagesIds),
-                children: [],
-            };
-        }
+        group = {
+            label: path,
+            children: [],
+        };
     }
-
-    let elements: (UiElement | HealthUiGroup)[] = [];
 
     if (isNullish(value)) {
         elements = [];

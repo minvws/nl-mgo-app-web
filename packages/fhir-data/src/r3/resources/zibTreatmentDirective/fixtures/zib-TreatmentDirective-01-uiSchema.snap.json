@@ -24,7 +24,7 @@
                     ]
                 },
                 {
-                    "label": "r3.zib_treatment_directive.patient",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
@@ -40,12 +40,12 @@
                     "display": null
                 },
                 {
-                    "label": "r3.zib_treatment_directive.date_time",
+                    "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "r3.zib_treatment_directive.consenting_party",
+                    "label": "Toestemmende partij",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null
@@ -62,12 +62,12 @@
                     "reference": null
                 },
                 {
-                    "label": "r3.zib_treatment_directive.source_identifier",
+                    "label": "Bron identificatie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "r3.zib_treatment_directive.source_reference",
+                    "label": "Bron referentie",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

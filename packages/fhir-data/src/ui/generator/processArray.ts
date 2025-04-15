@@ -2,7 +2,6 @@ import { type FhirVersion } from '@minvws/mgo-fhir-types/fhirVersion';
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { isPrimitiveValueType, isValueType } from '../../parse/types';
 import { type HealthUiSchemaContext } from '../context';
-import { type HealthUiGroup } from '../types';
 import { processValue } from './processValue';
 import { type MgoValueType, type UiElementGeneratorHelpers } from './uiHelpers';
 
@@ -26,8 +25,7 @@ export function processArray(
     helpers: UiElementGeneratorHelpers,
     fhirVersion: `${FhirVersion}`,
     path: string,
-    value: unknown[],
-    group: HealthUiGroup | null = null
+    value: unknown[]
 ) {
     const { handleMultipleUiTypes } = helpers;
     if (isArrayOfSameValueType(value)) {
@@ -35,7 +33,5 @@ export function processArray(
         return [result].flat();
     }
 
-    return value
-        .map((x) => processValue(context, helpers, fhirVersion, path, x as object, group))
-        .flat();
+    return value.map((x) => processValue(context, helpers, fhirVersion, path, x as object)).flat();
 }

@@ -12,13 +12,7 @@ test('01: mgo-resource', async () => {
 
 test('01: ui-schema', async () => {
     const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
-    const schema = zibMedicationUse.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            // useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
+    const schema = zibMedicationUse.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
