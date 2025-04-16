@@ -1,38 +1,63 @@
 {
-    "label": "hepatitis A immunoglobulin",
+    "label": "Vaccinatie",
     "children": [
         {
-            "label": "r3.zib_vaccination",
             "children": [
                 {
-                    "label": "r3.zib_vaccination.vaccineCode",
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "30 ml"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1ef6763b-8fdf-11ec-2005-020000000000"
+                    ]
+                },
+                {
+                    "label": "Informatiebron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "r3.zib_vaccination.doseQuantity",
-                    "type": "SINGLE_VALUE",
-                    "display": "30 ml"
+                    "label": "Toelichting",
+                    "display": "Bezoek aan Guatemala",
+                    "type": "SINGLE_VALUE"
                 },
                 {
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "display": "9 maart 1999"
-                },
+                }
+            ]
+        },
+        {
+            "label": "Zorgverlener",
+            "children": [
                 {
-                    "label": "Toelichting",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bezoek aan Guatemala"
-                    ]
-                },
-                {
-                    "label": "r3.immunization.practitioner.actor",
+                    "label": "Toediener",
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

@@ -65,6 +65,10 @@
   ],
   "r3.zib_advance_directive.comment": [
   ],
+  "r3.zib_advance_directive.source.identifier": [
+  ],
+  "r3.zib_advance_directive.source.reference": [
+  ],
   "r3.zib_alcohol_use.identifier": [
   ],
   "r3.zib_alcohol_use.performer": [
@@ -152,6 +156,8 @@
   "r3.zib_treatment_directive.verification": [
   ],
   "r3.zib_treatment_directive.verified": [
+  ],
+  "r3.zib_vaccination.report_origin": [
   ],
   "r3.zib_vaccination_recommendation": [
   ],

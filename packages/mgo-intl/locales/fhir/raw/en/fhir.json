@@ -11,5 +11,8 @@
     "fhir.ratio.denominator": "",
     "fhir.ratio.numerator": "",
     "fhir.unknown": "",
-    "fhir.x.identifier": ""
+    "fhir.x.identifier": "",
+    "fhir.x.note": "",
+    "fhir.x.patient": "",
+    "fhir.x.practitioner": ""
 }

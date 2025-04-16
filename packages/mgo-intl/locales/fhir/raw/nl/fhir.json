@@ -11,5 +11,8 @@
     "fhir.ratio.denominator": "Noemer",
     "fhir.ratio.numerator": "Teller",
     "fhir.unknown": "Onbekend",
-    "fhir.x.identifier": "Identificatie"
+    "fhir.x.identifier": "Identificatie",
+    "fhir.x.note": "Toelichting",
+    "fhir.x.patient": "Patiënt",
+    "fhir.x.practitioner": "Zorgverlener"
 }

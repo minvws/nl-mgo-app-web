@@ -22,7 +22,7 @@
                     "display": "active"
                 },
                 {
-                    "label": "r3.zib_nutrition_advice.patient",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"

@@ -18,6 +18,23 @@
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
+    "date": {
+        "_type": "date",
+        "value": "1999-03-09"
+    },
+    "reportOrigin": null,
+    "practitioner": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            },
+            "role": {
+                "healthProfessionalRole": null
+            }
+        }
+    ],
     "vaccineCode": {
         "_type": "codeableConcept",
         "text": null,
@@ -29,7 +46,7 @@
             }
         ]
     },
-    "dose": {
+    "doseQuantity": {
         "_type": "quantity",
         "value": 30,
         "comparator": null,
@@ -37,19 +54,6 @@
         "system": "http://unitsofmeasure.org",
         "code": "ml"
     },
-    "vaccinationDate": {
-        "_type": "date",
-        "value": "1999-03-09"
-    },
-    "practitioner": [
-        {
-            "actor": {
-                "_type": "reference",
-                "reference": "Practitioner/nl-core-practitioner-01",
-                "display": "Henk de Vries"
-            }
-        }
-    ],
     "note": [
         {
             "_type": "annotation",

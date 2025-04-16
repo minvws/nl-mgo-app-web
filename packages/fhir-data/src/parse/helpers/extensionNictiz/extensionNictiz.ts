@@ -34,6 +34,9 @@ const nictizIdValueXMap = {
 
 type NictizId = keyof typeof nictizIdValueXMap;
 
+/**
+ * @deprecated The method should not be used - these extension urls are rarely reused, if ever, so please just use `extension` instead.
+ */
 export function extensionNictiz<
     T extends DomainResource | Element,
     Id extends NictizId,

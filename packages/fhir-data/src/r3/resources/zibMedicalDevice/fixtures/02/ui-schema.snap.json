@@ -43,7 +43,7 @@
             "label": "r3.zib_medical_device.group_indication",
             "children": [
                 {
-                    "label": "r3.zib_medical_device.note",
+                    "label": "Toelichting",
                     "display": null,
                     "type": "SINGLE_VALUE"
                 },
@@ -69,7 +69,7 @@
             "label": "r3.zib_medical_device.group_general",
             "children": [
                 {
-                    "label": "r3.zib_medical_device.patient",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "I. Jongeneel-de Haas",
                     "reference": "Patient/nl-core-patient-03"
@@ -87,7 +87,7 @@
                     "reference": null
                 },
                 {
-                    "label": "r3.zib_medical_device.practitioner",
+                    "label": "Zorgverlener",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": null

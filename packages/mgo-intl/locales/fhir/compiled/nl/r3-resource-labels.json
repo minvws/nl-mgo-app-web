@@ -197,6 +197,18 @@
       "value": "Toelichting"
     }
   ],
+  "r3.zib_advance_directive.source.identifier": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring document"
+    }
+  ],
+  "r3.zib_advance_directive.source.reference": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring document"
+    }
+  ],
   "r3.zib_alcohol_use.identifier": [
     {
       "type": 0,
@@ -459,6 +471,12 @@
     {
       "type": 0,
       "value": "Bevestigd"
+    }
+  ],
+  "r3.zib_vaccination.report_origin": [
+    {
+      "type": 0,
+      "value": "Informatiebron"
     }
   ],
   "r3.zib_vaccination_recommendation": [

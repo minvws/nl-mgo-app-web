@@ -84,5 +84,23 @@
       "type": 0,
       "value": "Identificatie"
     }
+  ],
+  "fhir.x.note": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "fhir.x.patient": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "fhir.x.practitioner": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
   ]
 }

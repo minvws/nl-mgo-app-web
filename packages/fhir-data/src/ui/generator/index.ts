@@ -30,7 +30,7 @@ export const generateUiSchema: HealthUiSchemaFunction<MgoResourceMeta> = (resour
         if (isUiSchemaGroup(element)) {
             groups.push({
                 ...element,
-                label: context.formatMessage(element.label as FhirMessagesIds),
+                label: context.formatLabel(element.label as FhirMessagesIds, null),
             });
         } else {
             defaultGroup.children.push(element);

@@ -5,13 +5,13 @@
             "label": "r3.zib_medical_device_product.group_general_information",
             "children": [
                 {
-                    "label": "r3.zib_medical_device_product.patient",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.zib_medical_device_product.note",
+                    "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Implantant, Gen 2 Tibia Insert 5/6-9mm"
