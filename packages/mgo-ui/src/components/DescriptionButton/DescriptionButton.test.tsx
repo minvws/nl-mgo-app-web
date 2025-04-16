@@ -19,29 +19,13 @@ test.each<Variant[]>(variants.map((x) => [x]))(
 
         expect(screen.getByRole('button')).toHaveTextContent(props.term as string);
         expect(screen.getByRole('button')).toHaveTextContent(props.details as string);
-        expect(screen.getByRole('button')).not.toBeDisabled();
     }
 );
-
-test('renders a disabled button', async () => {
-    const props: DescriptionButtonProps = {
-        isDisabled: true,
-        term: faker.lorem.sentence(),
-        details: faker.lorem.sentence(),
-        variant: faker.helpers.arrayElement(variants),
-        icon: faker.helpers.arrayElement(iconNames),
-    };
-
-    render(<DescriptionButton {...props} />);
-
-    expect(screen.getByRole('button')).toHaveAttribute('aria-disabled');
-});
 
 test.each<Variant[]>(variants.map((x) => [x]))(
     'renders a loading button as variant %s',
     async (variant) => {
         const props: DescriptionButtonProps = {
-            isDisabled: true,
             term: faker.lorem.sentence(),
             details: faker.lorem.sentence(),
             icon: faker.helpers.arrayElement(iconNames),
@@ -56,7 +40,6 @@ test.each<Variant[]>(variants.map((x) => [x]))(
         const spinner = within(element).getByTestId('spinner');
 
         expect(element).toHaveTextContent(props.loadingText as string);
-        expect(element).toHaveAttribute('aria-disabled');
         expect(spinner).toBeVisible();
     }
 );

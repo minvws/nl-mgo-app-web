@@ -14,9 +14,6 @@ export type DescriptionButtonProps = DescriptionItemProps &
         readonly variant?: Variant;
         readonly loadingText?: string;
         readonly isLoading?: boolean;
-        readonly isDisabled?: boolean;
-        readonly disabled?: never; // Please use `isDisabled` instead
-        readonly 'aria-disabled'?: never; // Please use `isDisabled` instead
     };
 
 const variantStyles: Record<Variant, string> = {
@@ -36,15 +33,12 @@ export const DescriptionButton = ({
     asChild,
     variant = 'default',
     loadingText,
-    isDisabled = false,
     isLoading = false,
     onClick,
     children,
     ...rest
 }: DescriptionButtonProps) => {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
-
-    isDisabled = isDisabled || isLoading;
 
     return (
         <Card
@@ -53,13 +47,12 @@ export const DescriptionButton = ({
                 'rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg',
                 'flex w-full items-center justify-between gap-1 p-4 text-left',
                 variantStyles[variant],
-                !isDisabled && variantHoverStyles[variant],
+                variantHoverStyles[variant],
                 isLoading && 'cursor-progress',
                 focusStyle,
                 className
             )}
-            onClick={isDisabled ? undefined : onClick}
-            aria-disabled={isDisabled}
+            onClick={isLoading ? undefined : onClick}
         >
             <Comp {...rest}>
                 <Slottable>{children}</Slottable>

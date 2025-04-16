@@ -37,13 +37,3 @@ test('render with subLabel', async () => {
     expect(icon).toBeNull();
     expect(element).toContainHTML(label);
 });
-
-test('render disabled', async () => {
-    const text = faker.lorem.word();
-    render(<CategoryButton isDisabled>{text}</CategoryButton>);
-
-    const element = screen.getByRole('button', {
-        name: text,
-    });
-    expect(element).toHaveAttribute('aria-disabled');
-});

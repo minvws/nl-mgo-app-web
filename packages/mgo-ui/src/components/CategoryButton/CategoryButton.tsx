@@ -57,9 +57,6 @@ export interface CategoryButtonProps
     readonly label?: string;
     readonly isLoading?: boolean;
     readonly loadingText?: string;
-    readonly isDisabled?: boolean;
-    readonly disabled?: never; // Please use `isDisabled` instead
-    readonly 'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
 export const CategoryButton = ({
@@ -68,7 +65,6 @@ export const CategoryButton = ({
     label,
     loadingText,
     isLoading = false,
-    isDisabled = false,
     onClick,
     className,
     asChild,
@@ -77,23 +73,18 @@ export const CategoryButton = ({
 }: CategoryButtonProps) => {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
-    isDisabled = isDisabled || isLoading;
-
     return (
         <Text asChild>
             <Card asChild>
                 <Comp
                     className={cn(
-                        'aria-disabled:cursor-default',
                         'border-0 p-0 shadow-none',
                         'flex w-full items-center gap-4 p-4 text-left',
-                        !isDisabled && 'hover:bg-gray-100 dark:hover:bg-[#444444]',
                         isLoading && 'cursor-progress',
                         focusStyle,
                         className
                     )}
-                    onClick={isDisabled ? undefined : onClick}
-                    aria-disabled={isDisabled}
+                    onClick={isLoading ? undefined : onClick}
                     {...rest}
                 >
                     {icon && (
@@ -121,12 +112,7 @@ export const CategoryButton = ({
                                 </Text>
                             )}
 
-                            {!isDisabled && (
-                                <Icon
-                                    icon="chevron-right"
-                                    className={cn('h-8 w-8 text-gray-400')}
-                                />
-                            )}
+                            <Icon icon="chevron-right" className={cn('h-8 w-8 text-gray-400')} />
                         </div>
                     )}
                 </Comp>

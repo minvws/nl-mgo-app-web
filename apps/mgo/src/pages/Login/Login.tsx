@@ -47,8 +47,7 @@ export function Login() {
                     <ul>
                         <li>
                             <Button
-                                isDisabled={auth.isLoading}
-                                onClick={auth.login}
+                                onClick={auth.isLoading ? undefined : auth.login}
                                 variant="outline"
                                 className="w-full p-4 sm:p-6"
                                 leftIcon={

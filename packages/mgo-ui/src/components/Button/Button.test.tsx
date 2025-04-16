@@ -13,20 +13,6 @@ test('renders a button with a label', async () => {
     render(<Button {...props} />);
 
     expect(screen.getByRole('button')).toHaveTextContent(props.children as string);
-    expect(screen.getByRole('button')).not.toBeDisabled();
-});
-
-test('renders a disabled button', async () => {
-    const props: ButtonProps = {
-        isDisabled: true,
-        children: faker.lorem.sentence(),
-        variant: faker.helpers.arrayElement(variants),
-    };
-
-    render(<Button {...props} />);
-
-    expect(screen.getByRole('button')).toHaveTextContent(props.children as string);
-    expect(screen.getByRole('button')).toHaveAttribute('aria-disabled');
 });
 
 test('renders with a left icon component', async () => {

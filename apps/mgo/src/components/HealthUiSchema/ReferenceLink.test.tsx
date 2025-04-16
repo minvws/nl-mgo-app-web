@@ -41,7 +41,7 @@ test('renders with regular href', async () => {
     expect(link.getAttribute('href')).toBe(`/${resource.slug}/detail`);
 });
 
-test('does not render as a link when the resource was not found', async () => {
+test('does render as a link when the resource was not found', async () => {
     const value: ReferenceLinkData = {
         type: 'REFERENCE_LINK',
         label: faker.lorem.sentence(),
@@ -52,5 +52,5 @@ test('does not render as a link when the resource was not found', async () => {
 
     setupWithAppProviders(<ReferenceLink value={value} />);
     const link = screen.queryByRole('link', { name: value.label });
-    expect(link).not.toBeInTheDocument();
+    expect(link).toBeInTheDocument();
 });

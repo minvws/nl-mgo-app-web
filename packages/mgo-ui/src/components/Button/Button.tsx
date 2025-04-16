@@ -3,30 +3,24 @@ import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
-import { tw } from '../../utils/tw/tw';
 import { Icon } from '../Icon/Icon';
 import { type IconName } from '../Icon/icons';
 import { type Variant } from './variants';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
-    readonly isDisabled?: boolean;
     readonly variant?: Variant;
     readonly leftIcon?: IconName | ReactElement;
     readonly rightIcon?: IconName | ReactElement;
-    readonly 'aria-disabled'?: never; // Please use `isDisabled` instead
 }
 
-const disabledStyles = tw`aria-disabled:cursor-default aria-disabled:border-gray-300 aria-disabled:bg-gray-300 aria-disabled:focus:border-gray-100`;
-
 const typeColors: Record<Variant, string> = {
-    solid: cn(disabledStyles, 'bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
-    light: cn(disabledStyles, 'text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500'),
+    solid: cn('bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
+    light: cn('text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500'),
     outline: cn(
-        disabledStyles,
         'border border-gray-200 bg-white text-black hover:bg-gray-50',
         'dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700'
     ),
-    destructive: cn(disabledStyles, 'bg-red-600 text-white hover:bg-red-500'),
+    destructive: cn('bg-red-600 text-white hover:bg-red-500'),
     ghost: cn(
         'text-dark-blue-700 hover:text-dark-blue-400',
         'dark:text-light-blue-300 hover:dark:text-light-blue-200'
@@ -34,17 +28,7 @@ const typeColors: Record<Variant, string> = {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-    {
-        asChild,
-        isDisabled,
-        onClick,
-        variant = 'solid',
-        children,
-        className,
-        leftIcon,
-        rightIcon,
-        ...rest
-    },
+    { asChild, onClick, variant = 'solid', children, className, leftIcon, rightIcon, ...rest },
     ref
 ) {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
@@ -52,8 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     return (
         <Comp
             ref={ref}
-            aria-disabled={isDisabled}
-            onClick={isDisabled ? undefined : onClick}
+            onClick={onClick}
             className={twMerge(
                 `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
                 focusStyle,

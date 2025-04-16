@@ -62,9 +62,6 @@ export const Overview: Story = {
                         <Button {...args} variant={variant} rightIcon="chevron-right">
                             {variant}
                         </Button>
-                        <Button {...args} variant={variant} isDisabled>
-                            {`${variant} disabled`}
-                        </Button>
                     </Stack>
                 ))}
             </Stack>

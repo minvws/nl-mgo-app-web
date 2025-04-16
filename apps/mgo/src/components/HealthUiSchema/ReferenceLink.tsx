@@ -15,12 +15,7 @@ export function ReferenceLink({ value }: ReferenceValueDisplayProps) {
     const referencedResource = getResourceByReferenceId(resource, value.reference);
 
     return (
-        <DescriptionButton
-            details={value.label}
-            icon="chevron-right"
-            asChild
-            isDisabled={!referencedResource}
-        >
+        <DescriptionButton details={value.label} icon="chevron-right" asChild>
             <RouterLink relative="path" to={`../${referencedResource?.slug}/detail`} />
         </DescriptionButton>
     );

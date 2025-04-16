@@ -13,7 +13,6 @@ test('renders a button with a label', async () => {
 
     expect(screen.getByRole('button')).toHaveTextContent(props.title as string);
     expect(screen.getByRole('button')).toHaveTextContent(props.description as string);
-    expect(screen.getByRole('button')).not.toBeDisabled();
 });
 
 test('renders with a date description if specified', async () => {
@@ -26,5 +25,4 @@ test('renders with a date description if specified', async () => {
     render(<DetailButton {...props} />);
 
     expect(screen.getByRole('button')).toHaveTextContent(props.date as string);
-    expect(screen.getByRole('button')).not.toBeDisabled();
 });

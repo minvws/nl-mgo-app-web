@@ -50,9 +50,6 @@ export const Overview: Story = {
                 <CategoryButton icon="diagnosis" label="as link" asChild>
                     <a href="#">{children}</a>
                 </CategoryButton>
-                <CategoryButton icon="diagnosis" isDisabled label="currently disabled">
-                    {children}
-                </CategoryButton>
                 <CategoryButton icon="diagnosis" isLoading loadingText="currently loading...">
                     {children}
                 </CategoryButton>
