@@ -383,6 +383,24 @@
       "value": "Aanvullende bronnen"
     }
   ],
+  "r3.zib_treatment_directive.additional_sources.value_attachment": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
+  "r3.zib_treatment_directive.additional_sources.value_identifier": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
+  "r3.zib_treatment_directive.additional_sources.value_reference": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
   "r3.zib_treatment_directive.comment": [
     {
       "type": 0,
@@ -431,6 +449,12 @@
       "value": "Bron referentie"
     }
   ],
+  "r3.zib_treatment_directive.verification": [
+    {
+      "type": 0,
+      "value": "Verificatie"
+    }
+  ],
   "r3.zib_treatment_directive.verified": [
     {
       "type": 0,
@@ -441,6 +465,24 @@
     {
       "type": 0,
       "value": "Vaccinatieadvies"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.recommendation": [
+    {
+      "type": 0,
+      "value": "Vaccinatieadvies"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.recommendation.supporting_immunization": [
+    {
+      "type": 0,
+      "value": "Vaccinatie"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
     }
   ]
 }

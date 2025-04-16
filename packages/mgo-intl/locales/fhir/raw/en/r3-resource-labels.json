@@ -63,6 +63,9 @@
     "r3.zib_procedure.report": "",
     "r3.zib_procedure.subject": "",
     "r3.zib_treatment_directive.additional_sources": "",
+    "r3.zib_treatment_directive.additional_sources.value_attachment": "",
+    "r3.zib_treatment_directive.additional_sources.value_identifier": "",
+    "r3.zib_treatment_directive.additional_sources.value_reference": "",
     "r3.zib_treatment_directive.comment": "",
     "r3.zib_treatment_directive.consenting_party": "",
     "r3.zib_treatment_directive.date_time": "",
@@ -71,6 +74,10 @@
     "r3.zib_treatment_directive.source_attachment": "",
     "r3.zib_treatment_directive.source_identifier": "",
     "r3.zib_treatment_directive.source_reference": "",
+    "r3.zib_treatment_directive.verification": "",
     "r3.zib_treatment_directive.verified": "",
-    "r3.zib_vaccination_recommendation": ""
+    "r3.zib_vaccination_recommendation": "",
+    "r3.zib_vaccination_recommendation.recommendation": "",
+    "r3.zib_vaccination_recommendation.recommendation.supporting_immunization": "",
+    "r3.zib_vaccination_recommendation.subject": ""
 }

@@ -63,6 +63,9 @@
     "r3.zib_procedure.report": "Resultaat",
     "r3.zib_procedure.subject": "Onderwerp (Patiënt)",
     "r3.zib_treatment_directive.additional_sources": "Aanvullende bronnen",
+    "r3.zib_treatment_directive.additional_sources.value_attachment": "Aanvullende bronnen",
+    "r3.zib_treatment_directive.additional_sources.value_identifier": "Aanvullende bronnen",
+    "r3.zib_treatment_directive.additional_sources.value_reference": "Aanvullende bronnen",
     "r3.zib_treatment_directive.comment": "Toelichting",
     "r3.zib_treatment_directive.consenting_party": "Toestemmende partij",
     "r3.zib_treatment_directive.date_time": "Datum",
@@ -71,6 +74,10 @@
     "r3.zib_treatment_directive.source_attachment": "Bron bijlage",
     "r3.zib_treatment_directive.source_identifier": "Bron identificatie",
     "r3.zib_treatment_directive.source_reference": "Bron referentie",
+    "r3.zib_treatment_directive.verification": "Verificatie",
     "r3.zib_treatment_directive.verified": "Bevestigd",
-    "r3.zib_vaccination_recommendation": "Vaccinatieadvies"
+    "r3.zib_vaccination_recommendation": "Vaccinatieadvies",
+    "r3.zib_vaccination_recommendation.recommendation": "Vaccinatieadvies",
+    "r3.zib_vaccination_recommendation.recommendation.supporting_immunization": "Vaccinatie",
+    "r3.zib_vaccination_recommendation.subject": "Onderwerp (Patiënt)"
 }

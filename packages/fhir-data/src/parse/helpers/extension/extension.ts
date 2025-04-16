@@ -20,3 +20,12 @@ export function extension<
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return valueX(extension, valueType as any) as ParsedType;
 }
+
+export function customExtension<
+    T extends DomainResource | Element,
+    Parser extends (element: any) => unknown, // eslint-disable-line @typescript-eslint/no-explicit-any
+    RT = ReturnType<Parser>,
+>(resource: Nullable<T>, url: string, parser: Parser) {
+    const extension = getExtension(resource, url);
+    return parser(extension) as RT;
+}

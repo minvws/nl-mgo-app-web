@@ -1,51 +1,32 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Consent } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input from './fixtures/zib-TreatmentDirective-01.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
 import { zibTreatmentDirective } from './zibTreatmentDirective';
 
-test('parseZibTreatmentDirective returns the expected output 01', async () => {
-    const output = zibTreatmentDirective.parse(input as Consent);
-    await expectJson(output).toMatchFileSnapshot(
-        './fixtures/zib-TreatmentDirective-01-output.snap.json'
+test('01: mgo-resource', async () => {
+    const output = zibTreatmentDirective.parse(inputFhirData01 as Consent);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+});
+
+test('01: ui-schema', async () => {
+    const mgoResource = zibTreatmentDirective.parse(inputFhirData01 as Consent);
+    const schema = zibTreatmentDirective.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
     );
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibTreatmentDirective.parse(input as Consent);
-    const uiSchema = zibTreatmentDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectJson(uiSchema).toMatchFileSnapshot(
-        './fixtures/zib-TreatmentDirective-01-uiSchema.snap.json'
-    );
+test('02: mgo-resource', async () => {
+    const output = zibTreatmentDirective.parse(inputFhirData02 as Consent);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('parses fine without an attachment', async () => {
-    const output = zibTreatmentDirective.parse(input as Consent);
-    output.sourceAttachment = undefined;
-    const uiSchema = zibTreatmentDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+test('02: ui-schema', async () => {
+    const mgoResource = zibTreatmentDirective.parse(inputFhirData02 as Consent);
+    const schema = zibTreatmentDirective.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
     );
-    expect(uiSchema.label).toBe('1ebf6227-8fdf-11ec-1682-020000000000');
-});
-
-test('uiSchema returns default label if identifier not supplied', () => {
-    const output = zibTreatmentDirective.parse(input as Consent);
-    output.identifier = undefined;
-    const uiSchema = zibTreatmentDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });
