@@ -1,34 +1,57 @@
 {
-    "label": "hepatitis A immunoglobulin",
+    "label": "Vaccinatieadvies",
     "children": [
         {
-            "label": "r3.zib_vaccination_recommendation",
             "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1f046007-8fdf-11ec-2006-020000000000"
+                    ]
+                },
+                {
+                    "label": "Onderwerp (Patiënt)",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
                 {
                     "label": "Order status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Ordered (new in code systeem http://hl7.org/fhir/v3/ActStatus)"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "label": "Vaccinatieadvies",
+            "children": [
                 {
-                    "label": "zib_vaccination_recommendation.recommendation.date",
+                    "label": "Gewenste datum hervaccinatie",
                     "type": "SINGLE_VALUE",
                     "display": "2019"
                 },
                 {
-                    "label": "zib_vaccination_recommendation.recommendation.vaccine_code",
+                    "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
                     ]
                 },
                 {
-                    "label": "zib_vaccination_recommendation.recommendation.date_criterion",
+                    "label": "Start date",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "2018"
                     ]
+                },
+                {
+                    "label": "Vaccinatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "hepatitis A immunoglobulin",
+                    "reference": "Immunization/zib-vaccination-01"
                 }
             ]
         }

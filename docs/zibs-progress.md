@@ -35,12 +35,12 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-NutritionAdvice]                  | :white_large_square: | :white_large_square: |
 | [zib-Payer]                            | :white_large_square: | :white_large_square: |
 | [zib-Problem]                          | :white_large_square: | :white_large_square: |
-| [zib-Procedure]                        | :white_large_square: | :white_large_square: |
+| [zib-Procedure]                        | :white_large_square: | :white_check_mark:   |
 | [zib-ProcedureRequest]                 | :white_large_square: | :white_large_square: |
 | [zib-TobaccoUse]                       | :white_large_square: | :white_large_square: |
 | [zib-TreatmentDirective]               | :white_large_square: | :white_large_square: |
 | [zib-Vaccination]                      | :white_large_square: | :white_large_square: |
-| [zib-VaccinationRecommendation]        | :white_large_square: | :white_large_square: |
+| [zib-VaccinationRecommendation]        | :white_large_square: | :white_check_mark:   |
 | [eAfspraak-Appointment]                | :white_large_square: | :white_large_square: |
 | [nl-core-patient]                      | :white_large_square: | :white_large_square: |
 | [nl-core-practitioner]                 |                      | :white_large_square: |

@@ -4,6 +4,20 @@
     "resourceType": "ImmunizationRecommendation",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation",
     "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1f046007-8fdf-11ec-2006-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
     "orderStatus": {
         "_type": "codeableConcept",
         "text": null,
@@ -21,7 +35,14 @@
                 "_type": "dateTime",
                 "value": "2019"
             },
-            "code": {
+            "supportingImmunization": [
+                {
+                    "_type": "reference",
+                    "reference": "Immunization/zib-vaccination-01",
+                    "display": "hepatitis A immunoglobulin"
+                }
+            ],
+            "vaccineCode": {
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
