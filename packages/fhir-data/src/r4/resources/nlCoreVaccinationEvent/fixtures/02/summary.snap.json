@@ -22,9 +22,8 @@
             "children": [
                 {
                     "label": "Zorgverlener",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Healthcare professional (role)",
-                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                    "type": "SINGLE_VALUE",
+                    "display": "Healthcare professional (role)"
                 },
                 {
                     "label": "Zorgaanbieder",

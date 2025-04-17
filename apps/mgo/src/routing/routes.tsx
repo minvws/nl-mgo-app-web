@@ -83,11 +83,11 @@ const routeConfig = [
                     },
                     {
                         path: '/overzicht/:healthCategorySlug/:resourceSlug',
-                        element: <HealthData />,
+                        element: <HealthData summary />,
                     },
                     {
                         path: '/overzicht/:healthCategorySlug/:resourceSlug/detail',
-                        element: <HealthData showDetails />,
+                        element: <HealthData />,
                     },
                     {
                         path: '/organisaties',
@@ -103,11 +103,11 @@ const routeConfig = [
                     },
                     {
                         path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug',
-                        element: <HealthData />,
+                        element: <HealthData summary />,
                     },
                     {
                         path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug/detail',
-                        element: <HealthData showDetails />,
+                        element: <HealthData />,
                     },
                 ],
             },

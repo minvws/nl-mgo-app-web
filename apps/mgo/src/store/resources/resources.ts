@@ -23,12 +23,13 @@ export type Resource<
     label: string;
     organizationId: string;
     dataServiceId: DataServiceId;
+    dataServiceMethod: string;
     mgoResource: T;
 };
 
 export type ResourceDTO<V extends FhirVersion = FhirVersion> = Pick<
     Resource<V>,
-    'organizationId' | 'dataServiceId' | 'mgoResource'
+    'organizationId' | 'dataServiceId' | 'mgoResource' | 'dataServiceMethod'
 > & {
     id?: never;
 };
@@ -38,7 +39,7 @@ export interface ResourcesState {
     addResources: (resourceData: ResourceDTO[]) => Resource[];
     getResourceByReferenceId: (
         relatedResource: Resource | undefined,
-        referenceId: string
+        referenceId: string | undefined
     ) => Resource | undefined;
     getResourceBySlug: (slug: string | undefined) => Resource | undefined;
     getResourcesByProfile: <V extends FhirVersion, T extends MgoResourceProfile<V>>(
@@ -49,7 +50,7 @@ export interface ResourcesState {
 }
 
 function createResource(dto: ResourceDTO, slugs: string[]): Resource {
-    const { organizationId, dataServiceId, mgoResource } = dto;
+    const { organizationId, dataServiceId, mgoResource, dataServiceMethod } = dto;
     const summary = getSummary(mgoResource);
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
@@ -60,6 +61,7 @@ function createResource(dto: ResourceDTO, slugs: string[]): Resource {
         label: summary.label,
         organizationId,
         dataServiceId,
+        dataServiceMethod,
         mgoResource,
     };
 }
@@ -108,7 +110,7 @@ export const useResourcesStore = create<ResourcesState>()((set, get) => ({
     },
 
     getResourceByReferenceId: (relatedResource, referenceId) => {
-        if (!relatedResource) return;
+        if (!relatedResource || !referenceId) return;
         return get()
             .resources.filter(
                 ({ organizationId, dataServiceId }) =>

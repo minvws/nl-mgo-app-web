@@ -1,5 +1,4 @@
 import { getDataService } from '$/services';
-import { type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { type DownloadBinary as UiDownloadBinary } from '@minvws/mgo-fhir-data';
@@ -50,7 +49,7 @@ test('DownloadBinary preloads data when passed a Binary reference', async () => 
     mockGetResource.mockImplementationOnce(() => response);
 
     setupWithAppProviders(
-        <HealthUiSchemaContext.Provider value={{ resource: {} as Resource }}>
+        <HealthUiSchemaContext.Provider value={{ resource: faker.custom.resource() }}>
             <DownloadBinary value={value} data-testid="download-binary" />
         </HealthUiSchemaContext.Provider>
     );
@@ -88,7 +87,7 @@ test('DownloadBinary renders error when fetch throws error', async () => {
 
     const { user } = setupWithAppProviders(
         <QueryClientProvider client={queryClient}>
-            <HealthUiSchemaContext.Provider value={{ resource: {} as Resource }}>
+            <HealthUiSchemaContext.Provider value={{ resource: faker.custom.resource() }}>
                 <DownloadBinary value={value} data-testid="download-binary" />
             </HealthUiSchemaContext.Provider>
         </QueryClientProvider>
@@ -112,7 +111,7 @@ test('DownloadBinary renders not found when reference is empty', async () => {
         type: 'DOWNLOAD_BINARY',
     };
     setupWithAppProviders(
-        <HealthUiSchemaContext.Provider value={{ resource: {} as Resource }}>
+        <HealthUiSchemaContext.Provider value={{ resource: faker.custom.resource() }}>
             <DownloadBinary value={value} data-testid="download-binary" />
         </HealthUiSchemaContext.Provider>
     );

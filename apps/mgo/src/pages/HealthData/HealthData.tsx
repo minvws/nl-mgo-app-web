@@ -1,37 +1,31 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { getHealthCategoryBySlug } from '$/healthCategory';
 import { useIntl } from '$/intl';
-import { Navigate, useParams } from '$/routing';
+import { useParams } from '$/routing';
 import { useResourcesStore } from '$/store';
 import { Helmet } from 'react-helmet-async';
-import { HealthUiSchema } from '../../components/HealthUiSchema/HealthUiSchema';
+import {
+    HealthUiSchema,
+    type HealthUiSchemaProps,
+} from '../../components/HealthUiSchema/HealthUiSchema';
 import { NotFound } from '../NotFound/NotFound';
 
-export interface HealthDataProps {
-    readonly showDetails?: boolean;
-}
+export interface HealthDataProps extends Pick<HealthUiSchemaProps, 'summary'> {}
 
-export function HealthData({ showDetails }: HealthDataProps) {
+export function HealthData({ summary }: HealthDataProps) {
     const { formatMessage } = useIntl();
-    const { resourceSlug, organizationSlug, healthCategorySlug } = useParams();
+    const params = useParams();
+    const { resourceSlug, healthCategorySlug } = params;
     const getResourceBySlug = useResourcesStore((x) => x.getResourceBySlug);
     const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
     const resource = getResourceBySlug(resourceSlug);
 
-    if (!healthCategory) {
+    if (!healthCategory || !resource) {
         return <NotFound className="flex flex-col items-center text-center" />;
     }
 
-    if (!resource) {
-        return organizationSlug ? (
-            <Navigate to={`/organisaties/${organizationSlug}/${healthCategorySlug}`} />
-        ) : (
-            <Navigate to={`/overzicht/${healthCategorySlug}`} />
-        );
-    }
-
     const heading = formatMessage(
-        showDetails ? `hc_${healthCategory}.heading_detail` : `hc_${healthCategory}.heading_summary`
+        summary ? `hc_${healthCategory}.heading_summary` : `hc_${healthCategory}.heading_detail`
     );
 
     return (
@@ -41,7 +35,7 @@ export function HealthData({ showDetails }: HealthDataProps) {
             <section className="flex-grow">
                 <BackButton />
 
-                <HealthUiSchema resource={resource} showDetails={showDetails} />
+                <HealthUiSchema resource={resource} summary={summary} />
             </section>
         </>
     );

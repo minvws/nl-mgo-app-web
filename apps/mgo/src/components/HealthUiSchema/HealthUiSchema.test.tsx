@@ -30,7 +30,7 @@ afterEach(() => {
     mockGetSummary.mockReset();
 });
 
-test('shows summary for a resource by default', () => {
+test('shows summary when summary is true', () => {
     const schema: HealthUiSchemaData = {
         label: faker.lorem.sentence(),
         children: [
@@ -41,7 +41,7 @@ test('shows summary for a resource by default', () => {
         ],
     };
     mockGetSummary.mockImplementationOnce(() => schema);
-    setupWithAppProviders(<HealthUiSchema resource={mockResource()} />);
+    setupWithAppProviders(<HealthUiSchema resource={mockResource()} summary />);
 
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(schema.label);
     screen.getByRole('heading', {
@@ -50,7 +50,7 @@ test('shows summary for a resource by default', () => {
     });
 });
 
-test('shows details for a resource when showDetails is true', () => {
+test('shows details by default', () => {
     const schema: HealthUiSchemaData = {
         label: faker.lorem.sentence(),
         children: [
@@ -62,7 +62,7 @@ test('shows details for a resource when showDetails is true', () => {
     };
     mockGetDetails.mockImplementationOnce(() => schema);
 
-    setupWithAppProviders(<HealthUiSchema showDetails resource={mockResource()} />);
+    setupWithAppProviders(<HealthUiSchema resource={mockResource()} />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(schema.label);
     screen.getByRole('heading', {
         name: schema.children[0].label,

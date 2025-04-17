@@ -1,7 +1,7 @@
-import { test, expect, vi, afterEach } from 'vitest';
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
+import { afterEach, expect, test, vi } from 'vitest';
 
-import { useOnboardingSeen, LOCAL_STORAGE_KEY } from './useOnboardingSeen';
+import { LOCAL_STORAGE_KEY, useOnboardingSeen } from './useOnboardingSeen';
 
 afterEach(() => {
     vi.restoreAllMocks();

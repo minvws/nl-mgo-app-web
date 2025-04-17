@@ -10,9 +10,8 @@
                 },
                 {
                     "label": "Onderwerp",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Paul XXX_Mesker",
-                    "reference": "Patient/nl-core-patient-02"
+                    "type": "SINGLE_VALUE",
+                    "display": "Paul XXX_Mesker"
                 },
                 {
                     "label": "Type",

@@ -168,7 +168,7 @@ test('getResourceByReferenceId returns the resource by referenceID', async () =>
     ).toBe(resource);
 });
 
-test('getResourceByReferenceId returns undefined if no related resoruce is provided', async () => {
+test('getResourceByReferenceId returns undefined if no related resource is provided', async () => {
     let state = useResourcesStore.getState();
     const resourceDto = mockResourceDto();
     state.addResources([mockResourceDto(), resourceDto, mockResourceDto(), mockResourceDto()]);
@@ -176,4 +176,19 @@ test('getResourceByReferenceId returns undefined if no related resoruce is provi
     expect(
         state.getResourceByReferenceId(undefined, resourceDto.mgoResource.referenceId)
     ).toBeUndefined();
+});
+
+test('getResourceByReferenceId returns undefined if no referenceID is provided', async () => {
+    let state = useResourcesStore.getState();
+    const relatedResourceDto = mockResourceDto();
+
+    const [relatedResource] = state.addResources([
+        relatedResourceDto,
+        mockResourceDto(),
+        mockResourceDto(),
+        mockResourceDto(),
+        mockResourceDto(),
+    ]);
+    state = useResourcesStore.getState();
+    expect(state.getResourceByReferenceId(relatedResource, undefined)).toBeUndefined();
 });

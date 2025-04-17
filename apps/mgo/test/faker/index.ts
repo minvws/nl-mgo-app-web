@@ -1,7 +1,9 @@
 import { faker as originalFaker } from '@faker-js/faker';
 import { authState } from './authState';
 import { dataServiceId } from './dataServiceId';
+import { healthCategory, healthCategorySlug } from './healthCategory';
 import { healthcareOrganization } from './healthcareOrganization';
+import { resource } from './resource';
 import { userInfo } from './userInfo';
 
 const custom = {
@@ -9,6 +11,9 @@ const custom = {
     dataServiceId,
     userInfo,
     authState,
+    healthCategory,
+    healthCategorySlug,
+    resource,
 };
 
 const faker = {

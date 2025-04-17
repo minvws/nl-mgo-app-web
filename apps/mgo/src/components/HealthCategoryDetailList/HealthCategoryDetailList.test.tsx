@@ -1,4 +1,4 @@
-import { useOrganizationsStore, type Resource } from '$/store';
+import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
@@ -8,17 +8,6 @@ import {
     type HealthCategoryDetailListProps,
 } from './HealthCategoryDetailList';
 
-function mockResource(label?: string): Resource {
-    return {
-        id: faker.string.uuid(),
-        slug: faker.lorem.slug(),
-        organizationId: faker.string.uuid(),
-        dataServiceId: faker.custom.dataServiceId(),
-        label: label ?? faker.lorem.words(),
-        mgoResource: {} as any, // eslint-disable-line @typescript-eslint/no-explicit-any
-    };
-}
-
 test('shows HealthCategoryDetailList with organization', () => {
     const { addOrganization } = useOrganizationsStore.getState();
     const organization = addOrganization(faker.custom.healthcareOrganization());
@@ -27,10 +16,10 @@ test('shows HealthCategoryDetailList with organization', () => {
     const props: HealthCategoryDetailListProps = {
         heading: 'patient_information',
         resources: [
-            {
-                ...mockResource(label),
+            faker.custom.resource({
+                label,
                 organizationId: organization.id,
-            },
+            }),
         ],
     };
 
@@ -44,11 +33,7 @@ test('shows HealthCategoryDetailList without organization', () => {
     const label = faker.lorem.words();
     const props: HealthCategoryDetailListProps = {
         heading: 'patient_information',
-        resources: [
-            {
-                ...mockResource(label),
-            },
-        ],
+        resources: [faker.custom.resource({ label })],
     };
 
     setupWithAppProviders(<HealthCategoryDetailList {...props} />);

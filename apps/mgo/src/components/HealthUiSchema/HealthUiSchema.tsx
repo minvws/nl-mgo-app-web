@@ -10,17 +10,17 @@ import { HealthUiSchemaContext, type HealthUiSchemaContextState } from './Health
 
 export interface HealthUiSchemaProps {
     readonly resource: Resource;
-    readonly showDetails?: boolean;
+    readonly summary?: boolean;
 }
 
-export function HealthUiSchema({ showDetails, resource }: HealthUiSchemaProps) {
+export function HealthUiSchema({ summary, resource }: HealthUiSchemaProps) {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
 
     const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
     const organization = getOrganizationById(resource.organizationId);
 
-    const getSchema = showDetails ? getDetails : getSummary;
+    const getSchema = summary ? getSummary : getDetails;
     const { label, children } = getSchema(resource.mgoResource, { organization });
 
     return (

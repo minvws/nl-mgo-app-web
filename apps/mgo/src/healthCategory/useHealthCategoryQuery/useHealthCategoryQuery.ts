@@ -92,6 +92,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
                 addResources(
                     mgoResources.map((mgoResource) => ({
                         dataServiceId,
+                        dataServiceMethod: method,
                         organizationId,
                         mgoResource,
                     }))

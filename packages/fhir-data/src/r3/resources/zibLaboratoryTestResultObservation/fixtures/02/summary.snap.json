@@ -37,9 +37,8 @@
                 },
                 {
                     "label": "Materiaal",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Blood (substance)",
-                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                    "type": "SINGLE_VALUE",
+                    "display": "Blood (substance)"
                 }
             ]
         },
