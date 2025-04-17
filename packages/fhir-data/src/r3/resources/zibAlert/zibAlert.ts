@@ -2,8 +2,8 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Flag } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Alert'; // NOSONAR
 
@@ -13,19 +13,21 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Alert'; // NOSONA
 function parseZibAlert(resource: Flag) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
-        status: parse.code(resource.status),
-        category: parse.codeableConcept(resource.category),
-        code: parse.codeableConcept(resource.code),
-        subject: parse.reference(resource.subject),
-        period: parse.period(resource.period),
-        encounter: parse.reference(resource.encounter),
         author: parse.reference(resource.author),
+        patient: parse.reference(resource.subject),
+
+        // HCIM Alert-v3.2(2017EN)
         concernReference: parse.extension(
             resource,
             'http://hl7.org/fhir/StructureDefinition/flag-detail', // NOSONAR
             'reference'
         ),
+        category: parse.codeableConcept(resource.category),
+        code: parse.codeableConcept(resource.code),
+        period: parse.period(resource.period),
     };
 }
 
@@ -34,5 +36,5 @@ export type ZibAlert = ReturnType<typeof parseZibAlert>;
 export const zibAlert = {
     profile,
     parse: parseZibAlert,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Flag, ZibAlert>;

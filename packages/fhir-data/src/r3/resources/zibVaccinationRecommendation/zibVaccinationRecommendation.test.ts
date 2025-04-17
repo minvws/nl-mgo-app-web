@@ -12,10 +12,10 @@ test('01: mgo-resource', async () => {
 });
 
 test('01: ui-schema', async () => {
-    const output = zibVaccinationRecommendation.parse(
+    const mgoResource = zibVaccinationRecommendation.parse(
         inputFhirData01 as ImmunizationRecommendation
     );
-    const uiSchema = zibVaccinationRecommendation.uiSchema(output, testUiSchemaContext());
+    const uiSchema = zibVaccinationRecommendation.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );

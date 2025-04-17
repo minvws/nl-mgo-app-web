@@ -13,9 +13,16 @@
             "type": null
         }
     ],
-    "status": {
-        "_type": "code",
-        "value": "active"
+    "author": null,
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "concernReference": {
+        "_type": "reference",
+        "reference": "Condition/zib-problem-01",
+        "display": "Fracture of wrist (disorder)"
     },
     "category": {
         "_type": "codeableConcept",
@@ -39,21 +46,9 @@
             }
         ]
     },
-    "subject": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
-    },
     "period": {
         "_type": "period",
         "start": "2010-06-01",
         "end": null
-    },
-    "encounter": null,
-    "author": null,
-    "concernReference": {
-        "_type": "reference",
-        "reference": "Condition/zib-problem-01",
-        "display": "Fracture of wrist (disorder)"
     }
 }
