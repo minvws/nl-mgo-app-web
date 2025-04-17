@@ -1,75 +1,46 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
 import { type Consent } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
+import inputFhirData03 from './fixtures/03/fhir-resource.json';
 import { zibAdvanceDirective } from './zibAdvanceDirective';
 
-test('returns the expected output 01', async () => {
-    const output = zibAdvanceDirective.parse(input01 as Consent);
+test('01: mgo-resource', async () => {
+    const output = zibAdvanceDirective.parse(inputFhirData01 as Consent);
     await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', async () => {
-    const output = zibAdvanceDirective.parse(input02 as Consent);
-    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
-});
-
-test('returns the expected output 03', async () => {
-    const output = zibAdvanceDirective.parse(input03 as Consent);
-    await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
-});
-
-test('uiSchema returns the expected output 01', async () => {
-    const output = zibAdvanceDirective.parse(input01 as Consent);
-    const uiSchema = zibAdvanceDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+test('01: ui-schema', async () => {
+    const mgoResource = zibAdvanceDirective.parse(inputFhirData01 as Consent);
+    const schema = zibAdvanceDirective.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
 });
 
-test('uiSchema returns the expected output 02', async () => {
-    const output = zibAdvanceDirective.parse(input02 as Consent);
-    const uiSchema = zibAdvanceDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+test('02: mgo-resource', async () => {
+    const output = zibAdvanceDirective.parse(inputFhirData02 as Consent);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+});
+
+test('02: ui-schema', async () => {
+    const mgoResource = zibAdvanceDirective.parse(inputFhirData02 as Consent);
+    const schema = zibAdvanceDirective.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );
 });
 
-test('uiSchema returns the expected output 03', async () => {
-    const output = zibAdvanceDirective.parse(input03 as Consent);
-    const uiSchema = zibAdvanceDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
-        './fixtures/03/ui-schema.snap.json'
-    );
+test('03: mgo-resource', async () => {
+    const output = zibAdvanceDirective.parse(inputFhirData03 as Consent);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });
 
-test('uiSchema returns default label if dateTime not supplied', () => {
-    const output = zibAdvanceDirective.parse(input01 as Consent);
-    output.dateTime = undefined;
-    const uiSchema = zibAdvanceDirective.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+test('03: ui-schema', async () => {
+    const mgoResource = zibAdvanceDirective.parse(inputFhirData03 as Consent);
+    const schema = zibAdvanceDirective.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(schema).toMatchFileSnapshot(
+        './fixtures/03/ui-schema.snap.json'
     );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

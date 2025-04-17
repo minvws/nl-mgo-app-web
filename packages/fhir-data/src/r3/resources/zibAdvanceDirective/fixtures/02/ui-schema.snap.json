@@ -1,8 +1,7 @@
 {
-    "label": "2011-08-15",
+    "label": "Wilsverklaring",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
                 {
                     "label": "Aandoening",
@@ -11,18 +10,25 @@
                     "reference": "Condition/zib-problem-01"
                 },
                 {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "18b69251-8fdf-11ec-7008-020000000000"
+                },
+                {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": "Niet-reanimerenpenning"
                 },
                 {
-                    "label": "Wilsverklaring type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Niet reanimeren verklaring (NR in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
-                        ]
-                    ]
+                    "label": "Vertegenwoordiger",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J.P.M. van Putten-van der Giessen",
+                    "reference": "RelatedPerson/nl-core-relatedperson-01"
+                },
+                {
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Verwijsbrief Arts",
+                    "reference": "Binary/pdfa-binary-02"
                 },
                 {
                     "label": "Wilsverklaring datum",
@@ -30,16 +36,11 @@
                     "display": "15 augustus 2011"
                 },
                 {
-                    "label": "Vertegenwoordiger",
+                    "label": "Wilsverklaring type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "J.P.M. van Putten-van der Giessen"
+                        "Niet reanimeren verklaring (NR in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
                     ]
-                },
-                {
-                    "type": "DOWNLOAD_BINARY",
-                    "label": "Verwijsbrief Arts",
-                    "reference": "Binary/pdfa-binary-02"
                 }
             ]
         }

@@ -1,11 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Consent } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { intersectCodeableConcept } from '../../../parse/helpers';
+import { intersectCodeableConcept, oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { typeOfLivingWillValueSet } from '../../valueSets/typeOfLivingWill';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'; // NOSONAR
 
@@ -20,17 +20,17 @@ function parseZibAdvanceDirective(resource: Consent) {
 
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        category: map(resource.category, parse.codeableConcept),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier: parse.identifier(resource.identifier),
         dateTime: parse.dateTime(resource.dateTime),
+
+        // HCIM AdvanceDirective-v3.1(2017EN)
         disorder: parse.extensionNictiz(resource, 'zib-AdvanceDirective-Disorder'),
-        consentingParty: map(resource.consentingParty, parse.reference),
-        source: {
-            attachment: parse.attachment(resource.sourceAttachment),
-            identifier: parse.identifier(resource.sourceIdentifier),
-            reference: parse.reference(resource.sourceReference),
-        },
         comment: parse.extensionNictiz(resource, 'Comment'),
         typeOfLivingWill: map(typeOfLivingWillCodeableConcepts, parse.codeableConcept),
+        consentingParty: parse.reference(resource.consentingParty?.[0]),
+        ...oneOfValueX(resource, ['attachment', 'identifier', 'reference'], 'source'),
     };
 }
 
@@ -39,5 +39,5 @@ export type ZibAdvanceDirective = ReturnType<typeof parseZibAdvanceDirective>;
 export const zibAdvanceDirective = {
     profile,
     parse: parseZibAdvanceDirective,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Consent, ZibAdvanceDirective>;
