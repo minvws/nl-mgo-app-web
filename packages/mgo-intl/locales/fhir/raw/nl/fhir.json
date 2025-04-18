@@ -14,5 +14,7 @@
     "fhir.x.identifier": "Identificatie",
     "fhir.x.note": "Toelichting",
     "fhir.x.patient": "Patiënt",
-    "fhir.x.practitioner": "Zorgverlener"
+    "fhir.x.practitioner": "Zorgverlener",
+    "fhir.x.repeat_period_cyclical_schedule": "Herhaalperiode cyclisch schema",
+    "fhir.x.stop_type": "Beëindigingsreden"
 }

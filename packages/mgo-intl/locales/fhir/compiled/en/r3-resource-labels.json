@@ -61,8 +61,6 @@
   ],
   "r3.zib_administration_agreement.period_of_use": [
   ],
-  "r3.zib_administration_agreement.stop_type": [
-  ],
   "r3.zib_advance_directive.comment": [
   ],
   "r3.zib_advance_directive.source.identifier": [
@@ -102,8 +100,6 @@
   "r3.zib_medication_use.information_source": [
   ],
   "r3.zib_medication_use.reason_code": [
-  ],
-  "r3.zib_medication_use.repeat_period_cyclical_schedule": [
   ],
   "r3.zib_medication_use.subject": [
   ],

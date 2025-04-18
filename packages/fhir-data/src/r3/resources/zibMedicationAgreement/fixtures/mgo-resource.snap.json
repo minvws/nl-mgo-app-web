@@ -4,21 +4,6 @@
     "resourceType": "MedicationRequest",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement",
     "fhirVersion": "R3",
-    "periodOfUse": {
-        "_type": "period",
-        "start": "2020-06-08",
-        "end": null
-    },
-    "usageDuration": null,
-    "medicationTreatment": {
-        "_type": "identifier",
-        "use": null,
-        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
-        "value": "#MB_01h",
-        "type": null
-    },
-    "stopType": null,
-    "repeatPeriodCyclicalSchedule": null,
     "identifier": [
         {
             "_type": "identifier",
@@ -35,31 +20,35 @@
             "type": null
         }
     ],
-    "definition": null,
-    "basedOn": null,
-    "groupIdentifier": null,
-    "status": null,
-    "intent": {
-        "_type": "code",
-        "value": "order"
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
     },
-    "category": {
-        "_type": "codeableConcept",
-        "text": "Medicatieafspraak",
-        "coding": [
-            {
-                "code": "16076005",
-                "display": "Prescription (procedure)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
+    "periodOfUse": {
+        "_type": "period",
+        "start": "2020-06-08",
+        "end": null
     },
-    "priority": null,
+    "usageDuration": null,
+    "additionalInformation": null,
+    "stopType": null,
     "medicationReference": {
         "_type": "reference",
         "reference": "Medication/zib-Product-03",
         "display": "Metoclopramide zetpil 20mg"
     },
+    "authoredOn": {
+        "_type": "dateTime",
+        "value": "2020-06-08T10:54:23+02:00"
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": null,
+        "display": null
+    },
+    "reasonCode": null,
+    "reasonReference": null,
     "note": null,
     "dossageInstruction": [
         {
@@ -125,5 +114,13 @@
             },
             "maxDosePerPeriod": null
         }
-    ]
+    ],
+    "repeatPeriodCyclicalSchedule": null,
+    "medicationTreatment": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    }
 }

@@ -2,10 +2,9 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type MedicationDispense } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { zibInstructionsForUse } from '../../elements';
-import { parsePerformer } from './elements/performer/performer';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement'; // NOSONAR
 
@@ -15,33 +14,65 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgr
 function parseZibAdministrationAgreement(resource: MedicationDispense) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        authoredOn: parse.extensionNictiz(resource, 'zib-AdministrationAgreement-AuthoredOn'),
-        agreementReason: parse.extensionNictiz(
-            resource,
-            'zib-AdministrationAgreement-AgreementReason'
-        ),
-        periodOfUse: parse.extensionNictiz(resource, 'zib-Medication-PeriodOfUse'),
-        usageDuration: parse.extensionNictiz(resource, 'zib-MedicationUse-Duration'),
-        additionalInformation: parse.extensionNictiz(
-            resource,
-            'zib-Medication-AdditionalInformation'
-        ),
-        medicationTreatment: parse.extensionNictiz(resource, 'zib-Medication-MedicationTreatment'),
-        stopType: parse.extensionNictiz(resource, 'zib-Medication-StopType'),
-        repeatPeriodCyclicalSchedule: parse.extensionNictiz(
-            resource,
-            'zib-Medication-RepeatPeriodCyclicalSchedule'
-        ),
+
+        // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
+        patient: parse.reference(resource.subject),
+        performer: map(resource.performer, (performer) => ({
+            actor: parse.reference(performer?.actor),
+            onBehalfOf: parse.reference(performer?.onBehalfOf),
+        })),
+
+        // HCIM AdministrationAgreement-v1.0.1(2017EN)
+        authoredOn: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement-AuthoredOn', // NOSONAR
+            'dateTime'
+        ),
+        agreementReason: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement-AgreementReason', // NOSONAR
+            'string'
+        ),
+        periodOfUse: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-PeriodOfUse', // NOSONAR
+            'period'
+        ),
+        usageDuration: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-Duration', // NOSONAR
+            'duration'
+        ),
+        additionalInformation: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-AdditionalInformation', // NOSONAR
+            'codeableConcept'
+        ),
+        stopType: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-StopType', // NOSONAR
+            'codeableConcept'
+        ),
         status: parse.code(resource.status),
-        category: parse.codeableConcept(resource.category),
         medicationReference: parse.reference(resource.medicationReference),
-        quantity: parse.quantity(resource.quantity),
-        daysSupply: parse.quantity(resource.daysSupply),
-        note: map(resource.note, parse.annotation),
-        dossageInstruction: map(resource.dosageInstruction, zibInstructionsForUse.parse),
-        performer: map(resource.performer, parsePerformer),
         authorizingPrescription: map(resource.authorizingPrescription, parse.reference),
+        note: map(resource.note, parse.annotation),
+
+        // HCIM InstructionsForUse-v1.1(2017EN)
+        dossageInstruction: map(resource.dosageInstruction, zibInstructionsForUse.parse),
+        repeatPeriodCyclicalSchedule: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-RepeatPeriodCyclicalSchedule', // NOSONAR
+            'duration'
+        ),
+
+        // Medication Process v09
+        medicationTreatment: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-MedicationTreatment', // NOSONAR
+            'identifier'
+        ),
     };
 }
 
@@ -50,5 +81,5 @@ export type ZibAdministrationAgreement = ReturnType<typeof parseZibAdministratio
 export const zibAdministrationAgreement = {
     profile,
     parse: parseZibAdministrationAgreement,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<MedicationDispense, ZibAdministrationAgreement>;

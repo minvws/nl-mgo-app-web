@@ -4,6 +4,37 @@
     "resourceType": "MedicationDispense",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement",
     "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.422037009.1",
+            "value": "1546339-f6753t65r",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "189ef867-8fdf-11ec-6427-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "performer": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Organization/nl-core-organization-06",
+                "display": "Apotheek De Gulle Gaper"
+            },
+            "onBehalfOf": null
+        }
+    ],
     "authoredOn": {
         "_type": "dateTime",
         "value": "2020-06-08T10:54:12+02:00"
@@ -26,50 +57,20 @@
             }
         ]
     },
-    "medicationTreatment": {
-        "_type": "identifier",
-        "use": null,
-        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
-        "value": "#MB_01h",
-        "type": null
-    },
     "stopType": null,
-    "repeatPeriodCyclicalSchedule": null,
-    "identifier": [
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.422037009.1",
-            "value": "1546339-f6753t65r",
-            "type": null
-        },
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "189ef867-8fdf-11ec-6427-020000000000",
-            "type": null
-        }
-    ],
     "status": null,
-    "category": {
-        "_type": "codeableConcept",
-        "text": "Toedieningsafspraak",
-        "coding": [
-            {
-                "code": "422037009",
-                "display": "Provider medication administration instructions (procedure)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
-    },
     "medicationReference": {
         "_type": "reference",
         "reference": "Medication/zib-Product-01",
         "display": "PRIMPERAN ZETPIL 20MG"
     },
-    "quantity": null,
-    "daysSupply": null,
+    "authorizingPrescription": [
+        {
+            "_type": "reference",
+            "reference": null,
+            "display": "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
+        }
+    ],
     "note": [
         {
             "_type": "annotation",
@@ -128,21 +129,12 @@
             "maxDosePerPeriod": null
         }
     ],
-    "performer": [
-        {
-            "actor": {
-                "_type": "reference",
-                "reference": "Organization/nl-core-organization-06",
-                "display": "Apotheek De Gulle Gaper"
-            },
-            "onBehalfOf": null
-        }
-    ],
-    "authorizingPrescription": [
-        {
-            "_type": "reference",
-            "reference": null,
-            "display": "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
-        }
-    ]
+    "repeatPeriodCyclicalSchedule": null,
+    "medicationTreatment": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    }
 }

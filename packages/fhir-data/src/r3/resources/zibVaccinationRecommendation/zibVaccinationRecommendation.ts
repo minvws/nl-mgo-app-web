@@ -19,7 +19,11 @@ function parseZibVaccinationRecommendation(resource: ImmunizationRecommendation)
         subject: parse.reference(resource.patient),
 
         // HCIM PlannedCareActivityForTransfer-v3.1(2017EN) & HCIM Vaccination-v3.1(2017EN)
-        orderStatus: parse.extensionNictiz(resource, 'zib-VaccinationRecommendation-OrderStatus'),
+        orderStatus: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation-OrderStatus', // NOSONAR
+            'codeableConcept'
+        ),
         recommendation: map(resource.recommendation, (recomendation) => ({
             // HCIM BasicElements-v1.0(2017EN)
             date: parse.dateTime(recomendation?.date),

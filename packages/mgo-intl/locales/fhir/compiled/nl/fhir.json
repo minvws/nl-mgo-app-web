@@ -102,5 +102,17 @@
       "type": 0,
       "value": "Zorgverlener"
     }
+  ],
+  "fhir.x.repeat_period_cyclical_schedule": [
+    {
+      "type": 0,
+      "value": "Herhaalperiode cyclisch schema"
+    }
+  ],
+  "fhir.x.stop_type": [
+    {
+      "type": 0,
+      "value": "Beëindigingsreden"
+    }
   ]
 }

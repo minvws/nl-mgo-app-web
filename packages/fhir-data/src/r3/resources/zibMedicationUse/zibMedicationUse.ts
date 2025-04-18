@@ -17,17 +17,30 @@ function parseZibMedicationUse(resource: MedicationStatement) {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
 
         // HCIM BasicElements-v1.0(2017EN)
-        author: parse.extensionNictiz(resource, 'zib-MedicationUse-Author'),
+        author: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-Author', // NOSONAR
+            'reference'
+        ),
         identifier: map(resource.identifier, parse.identifier),
         informationSource: parse.reference(resource.informationSource),
         subject: parse.reference(resource.subject),
 
         // HCIM MedicationUse2-v1.0.1(2017EN)
-        asAgreedIndicator: parse.extensionNictiz(resource, 'zib-MedicationUse-AsAgreedIndicator'),
-        prescriber: parse.extensionNictiz(resource, 'zib-MedicationUse-Prescriber'),
-        reasonForChangeOrDiscontinuationOfUse: parse.extensionNictiz(
+        asAgreedIndicator: parse.extension(
             resource,
-            'zib-MedicationUse-ReasonForChangeOrDiscontinuationOfUse'
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-AsAgreedIndicator', // NOSONAR
+            'boolean'
+        ),
+        prescriber: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-Prescriber', // NOSONAR
+            'reference'
+        ),
+        reasonForChangeOrDiscontinuationOfUse: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-ReasonForChangeOrDiscontinuationOfUse', // NOSONAR
+            'codeableConcept'
         ),
         status: parse.code(resource.status),
         medicationReference: parse.reference(resource.medicationReference),
@@ -39,19 +52,28 @@ function parseZibMedicationUse(resource: MedicationStatement) {
             start: undefined,
             end: undefined,
             ...parse.period(resource.effectivePeriod),
-            duration: parse.extensionNictiz(resource.effectivePeriod, 'zib-MedicationUse-Duration'),
+            duration: parse.extension(
+                resource.effectivePeriod,
+                'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse-Duration', // NOSONAR
+                'duration'
+            ),
         },
         note: map(resource.note, parse.annotation),
 
         // HCIM InstructionsForUse-v1.1(2017EN)
         dosage: map(resource.dosage, zibInstructionsForUse.parse),
-        repeatPeriodCyclicalSchedule: parse.extensionNictiz(
+        repeatPeriodCyclicalSchedule: parse.extension(
             resource,
-            'zib-Medication-RepeatPeriodCyclicalSchedule'
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-RepeatPeriodCyclicalSchedule', // NOSONAR
+            'duration'
         ),
 
         // Medication Process v09
-        medicationTreatment: parse.extensionNictiz(resource, 'zib-Medication-MedicationTreatment'),
+        medicationTreatment: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-MedicationTreatment', // NOSONAR
+            'identifier'
+        ),
     };
 }
 

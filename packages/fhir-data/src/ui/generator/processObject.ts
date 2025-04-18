@@ -21,7 +21,7 @@ export function processObject(
         const valuePath = `${path}.${snakeCase(key)}`;
         if (isNullish(value)) {
             elements.push({
-                label: context.formatMessage(valuePath as FhirMessagesIds),
+                label: context.formatLabel(valuePath as FhirMessagesIds, null),
                 type: 'SINGLE_VALUE',
                 display: undefined,
             });

@@ -185,12 +185,6 @@
       "value": "Gebruiksperiode"
     }
   ],
-  "r3.zib_administration_agreement.stop_type": [
-    {
-      "type": 0,
-      "value": "Beëindigingsreden"
-    }
-  ],
   "r3.zib_advance_directive.comment": [
     {
       "type": 0,
@@ -309,12 +303,6 @@
     {
       "type": 0,
       "value": "Reden gebruik"
-    }
-  ],
-  "r3.zib_medication_use.repeat_period_cyclical_schedule": [
-    {
-      "type": 0,
-      "value": "Herhaalperiode cyclisch schema"
     }
   ],
   "r3.zib_medication_use.subject": [

@@ -14,5 +14,7 @@
     "fhir.x.identifier": "",
     "fhir.x.note": "",
     "fhir.x.patient": "",
-    "fhir.x.practitioner": ""
+    "fhir.x.practitioner": "",
+    "fhir.x.repeat_period_cyclical_schedule": "",
+    "fhir.x.stop_type": ""
 }
