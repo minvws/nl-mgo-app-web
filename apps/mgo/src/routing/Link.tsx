@@ -1,13 +1,13 @@
-import { Link as UiLink } from '@minvws/mgo-mgo-ui';
+import { Link as UiLink, type LinkProps as UiLinkProps } from '@minvws/mgo-mgo-ui';
 import { RouterLink, type RouterLinkProps } from './RouterLink';
 
-export type LinkProps = RouterLinkProps;
+export type LinkProps = RouterLinkProps & Pick<UiLinkProps, 'variant'>;
 
 /**
  * This `Link` component combines the RouterLink functionality with the visual styles from the MGO-UI library
  */
-export const Link = ({ className, ...rest }: LinkProps) => (
-    <UiLink asChild className={className}>
+export const Link = ({ variant, className, ...rest }: LinkProps) => (
+    <UiLink asChild variant={variant} className={className}>
         <RouterLink {...rest} />
     </UiLink>
 );

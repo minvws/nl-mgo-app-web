@@ -6,7 +6,6 @@ import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 import { Footer } from '../Footer/Footer';
 import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
-import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
 
 export interface LayoutProps {
     readonly hideMenu?: boolean;
@@ -50,8 +49,6 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                             <Outlet />
                         </div>
                     </Container>
-
-                    <RibbonBanner />
                 </main>
                 <Footer />
             </div>

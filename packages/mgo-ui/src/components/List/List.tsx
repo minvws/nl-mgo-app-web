@@ -12,7 +12,7 @@ export const List = ({ className, asChild, children, ...rest }: ListProps) => {
     return (
         <Comp
             className={twMerge(
-                'text-md flex flex-col gap-6 font-sans leading-normal text-black dark:text-white',
+                'md:text-md flex flex-col gap-6 font-sans text-sm leading-normal text-black dark:text-white',
                 className
             )}
             {...rest}
