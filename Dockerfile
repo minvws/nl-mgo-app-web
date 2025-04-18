@@ -39,7 +39,7 @@ FROM nginx:${NGINX_VERSION}-alpine-slim
 
 ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
-ARG DVA_URL='https://dva.test.mgo.irealisatie.nl'
+ARG DVA_URL='https://dvp-proxy.test.mgo.irealisatie.nl'
 
 ENV LOAD_URL=$LOAD_URL
 ENV DVA_URL=$DVA_URL

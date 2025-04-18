@@ -22,7 +22,7 @@ vi.mock(
         ({
             config: {
                 load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
-                dva_url: 'https://dva.test.mgo.irealisatie.nl',
+                dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
             },
         }) as typeof import('$/config') // eslint-disable-line @typescript-eslint/consistent-type-imports
 );

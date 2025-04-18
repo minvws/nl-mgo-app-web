@@ -6,5 +6,5 @@
 window.config = {
     ignore_missing_translations: false,
     load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
-    dva_url: 'https://dva.test.mgo.irealisatie.nl',
+    dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
 };

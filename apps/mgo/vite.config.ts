@@ -43,7 +43,7 @@ export default defineConfig({
                 `font-src 'self'`,
                 `media-src 'none'`,
                 `frame-src 'none'`,
-                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dva.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:*`,
+                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:*`,
                 `worker-src 'none'`,
                 `form-action 'none'`,
                 // Unfortunately 'unsafe-inline' is needed as the vite development server uses inline scripts
