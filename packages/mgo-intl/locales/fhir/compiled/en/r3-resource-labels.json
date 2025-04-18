@@ -79,6 +79,20 @@
   ],
   "r3.zib_alert.identifier": [
   ],
+  "r3.zib_allergy_intolerance.category": [
+  ],
+  "r3.zib_allergy_intolerance.category.category": [
+  ],
+  "r3.zib_allergy_intolerance.category.extent.allergie_categorie_codelijst": [
+  ],
+  "r3.zib_allergy_intolerance.clinical_status_codelist": [
+  ],
+  "r3.zib_allergy_intolerance.criticality": [
+  ],
+  "r3.zib_allergy_intolerance.criticality.criticality": [
+  ],
+  "r3.zib_allergy_intolerance.reaction.severity_codelist": [
+  ],
   "r3.zib_laboratory_test_result_observation.context": [
   ],
   "r3.zib_laboratory_test_result_observation.general_test_information": [
@@ -92,6 +106,14 @@
   "r3.zib_laboratory_test_result_observation.reference_range.type": [
   ],
   "r3.zib_laboratory_test_result_substance": [
+  ],
+  "r3.zib_medical_device.body_site.coding": [
+  ],
+  "r3.zib_medical_device.body_site.laterality": [
+  ],
+  "r3.zib_medical_device.body_site.text": [
+  ],
+  "r3.zib_medical_device.indication_problem": [
   ],
   "r3.zib_medical_device_request": [
   ],

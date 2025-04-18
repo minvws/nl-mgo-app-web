@@ -27,7 +27,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-LaboratoryTestResult-Observation] | :white_check_mark:   | :white_check_mark:   |
 | [zib-LaboratoryTestResult-Specimen]    | :white_large_square: | :white_large_square: |
 | [zib-LivingSituation]                  | :white_large_square: | :white_large_square: |
-| [zib-MedicalDevice]                    | :white_large_square: | :white_large_square: |
+| [zib-MedicalDevice]                    | :white_large_square: | :white_check_mark:   |
 | [zib-MedicalDeviceProduct]             | :white_large_square: | :white_large_square: |
 | [zib-MedicalDeviceRequest]             | :white_large_square: | :white_large_square: |
 | [zib-MedicationUse]                    | :white_check_mark:   | :white_check_mark:   |

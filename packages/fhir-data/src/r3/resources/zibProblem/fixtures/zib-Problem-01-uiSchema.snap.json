@@ -70,7 +70,7 @@
                     ]
                 },
                 {
-                    "label": "r3.zib_problem.subject",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"

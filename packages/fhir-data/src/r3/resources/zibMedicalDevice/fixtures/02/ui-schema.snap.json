@@ -1,9 +1,19 @@
 {
-    "label": "Rollator",
+    "label": "Medisch hulpmiddel",
     "children": [
         {
-            "label": "r3.zib_medical_device.group_product",
             "children": [
+                {
+                    "label": "Apparaat",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Rollator",
+                    "reference": "Device/zib-medicaldeviceproduct-02"
+                },
+                {
+                    "label": "Bron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,85 +22,55 @@
                     ]
                 },
                 {
-                    "label": "r3.zib_medical_device.clinical_status",
+                    "label": "Indicatieprobleem",
                     "type": "SINGLE_VALUE",
-                    "display": "active"
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_medical_device.device",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Rollator",
-                    "reference": "Device/zib-medicaldeviceproduct-02"
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.zib_medical_device.recordedOn",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
-            "label": "r3.zib_medical_device.group_indication",
-            "children": [
-                {
-                    "label": "Toelichting",
-                    "display": null,
-                    "type": "SINGLE_VALUE"
-                },
-                {
-                    "label": "r3.zib_medical_device.bodySite",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_medical_device.laterality",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_medical_device.reason",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Ability to mobilise",
-                    "reference": "Observation/zib-mobility-01"
-                }
-            ]
-        },
-        {
-            "label": "r3.zib_medical_device.group_general",
-            "children": [
-                {
-                    "label": "Patiënt",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "I. Jongeneel-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
-                    "label": "r3.zib_medical_device.source",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Tijdsduur gedefinieerd door start- en einddatum/tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_medical_device.organization",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Zorgverlener",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Anatomische locatie",
+            "children": [
+                {
+                    "label": "Codes",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Tekst",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zijde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

@@ -1,23 +1,10 @@
 {
-    "label": "Gehoorapparaat",
+    "label": "Medisch hulpmiddel",
     "children": [
         {
-            "label": "r3.zib_medical_device.group_product",
             "children": [
                 {
-                    "label": "Identificatie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b7c5449-8fdf-11ec-2143-020000000000"
-                    ]
-                },
-                {
-                    "label": "r3.zib_medical_device.clinical_status",
-                    "type": "SINGLE_VALUE",
-                    "display": "active"
-                },
-                {
-                    "label": "r3.zib_medical_device.device",
+                    "label": "Apparaat",
                     "type": "REFERENCE_VALUE",
                     "display": "Gehoorapparaat",
                     "reference": "Device/zib-MedicalDeviceProduct-03"
@@ -28,75 +15,69 @@
                     "display": "2007"
                 },
                 {
+                    "label": "Bron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_medical_device.recordedOn",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
-            "label": "r3.zib_medical_device.group_indication",
-            "children": [
-                {
-                    "label": "Toelichting",
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Apparaat niet zichtbaar (diep in de gehooringang)"
+                        "1b7c5449-8fdf-11ec-2143-020000000000"
                     ]
                 },
                 {
-                    "label": "r3.zib_medical_device.bodySite",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
-                    "label": "r3.zib_medical_device.laterality",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Right (24028007 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
-                    "label": "r3.zib_medical_device.reason",
+                    "label": "Indicatieprobleem",
                     "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                }
-            ]
-        },
-        {
-            "label": "r3.zib_medical_device.group_general",
-            "children": [
+                    "display": "Presbyacusis",
+                    "reference": "Condition/zib-problem-04"
+                },
                 {
-                    "label": "Patiënt",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.zib_medical_device.source",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Toelichting",
+                    "display": "Apparaat niet zichtbaar (diep in de gehooringang)",
+                    "type": "SINGLE_VALUE"
                 },
                 {
-                    "label": "r3.zib_medical_device.organization",
+                    "label": "Zorgaanbieder",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
                     "label": "Zorgverlener",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Anatomische locatie",
+            "children": [
+                {
+                    "label": "Codes",
+                    "type": "SINGLE_VALUE",
+                    "display": "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
+                },
+                {
+                    "label": "Tekst",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zijde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

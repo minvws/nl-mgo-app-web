@@ -79,6 +79,24 @@
       "value": "Onbekend"
     }
   ],
+  "fhir.x.device": [
+    {
+      "type": 0,
+      "value": "Apparaat"
+    }
+  ],
+  "fhir.x.health_care_provider": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "fhir.x.health_professional": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
   "fhir.x.identifier": [
     {
       "type": 0,
@@ -109,10 +127,22 @@
       "value": "Herhaalperiode cyclisch schema"
     }
   ],
+  "fhir.x.source": [
+    {
+      "type": 0,
+      "value": "Bron"
+    }
+  ],
   "fhir.x.stop_type": [
     {
       "type": 0,
       "value": "Beëindigingsreden"
+    }
+  ],
+  "fhir.x.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp"
     }
   ]
 }

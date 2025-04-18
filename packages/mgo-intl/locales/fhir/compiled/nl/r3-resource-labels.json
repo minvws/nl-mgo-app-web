@@ -239,6 +239,48 @@
       "value": "Identificatie"
     }
   ],
+  "r3.zib_allergy_intolerance.category": [
+    {
+      "type": 0,
+      "value": "Allergie categorie"
+    }
+  ],
+  "r3.zib_allergy_intolerance.category.category": [
+    {
+      "type": 0,
+      "value": "Allergie categorie"
+    }
+  ],
+  "r3.zib_allergy_intolerance.category.extent.allergie_categorie_codelijst": [
+    {
+      "type": 0,
+      "value": "Allergie categorie"
+    }
+  ],
+  "r3.zib_allergy_intolerance.clinical_status_codelist": [
+    {
+      "type": 0,
+      "value": "Allergie status"
+    }
+  ],
+  "r3.zib_allergy_intolerance.criticality": [
+    {
+      "type": 0,
+      "value": "Mate van kritiek zijn"
+    }
+  ],
+  "r3.zib_allergy_intolerance.criticality.criticality": [
+    {
+      "type": 0,
+      "value": "Mate van kritiek zijn"
+    }
+  ],
+  "r3.zib_allergy_intolerance.reaction.severity_codelist": [
+    {
+      "type": 0,
+      "value": "Ernst"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.context": [
     {
       "type": 0,
@@ -279,6 +321,30 @@
     {
       "type": 0,
       "value": "Monstermateriaal"
+    }
+  ],
+  "r3.zib_medical_device.body_site.coding": [
+    {
+      "type": 0,
+      "value": "Codes"
+    }
+  ],
+  "r3.zib_medical_device.body_site.laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_medical_device.body_site.text": [
+    {
+      "type": 0,
+      "value": "Tekst"
+    }
+  ],
+  "r3.zib_medical_device.indication_problem": [
+    {
+      "type": 0,
+      "value": "Indicatieprobleem"
     }
   ],
   "r3.zib_medical_device_request": [

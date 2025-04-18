@@ -18,7 +18,7 @@
                     "reference": "Encounter/ont-ver-gpdata-encounter-contact01"
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.subject",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Jacqueline XXX_Cevat",
                     "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"

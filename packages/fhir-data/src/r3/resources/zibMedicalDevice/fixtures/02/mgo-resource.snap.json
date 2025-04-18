@@ -13,31 +13,25 @@
             "type": null
         }
     ],
-    "organization": null,
-    "practitioner": null,
-    "reason": {
-        "_type": "reference",
-        "reference": "Observation/zib-mobility-01",
-        "display": "Ability to mobilise"
-    },
-    "status": {
-        "_type": "code",
-        "value": "active"
-    },
-    "patient": {
+    "subject": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-03",
         "display": "I. Jongeneel-de Haas"
     },
     "whenUsed": null,
-    "recordedOn": null,
     "source": null,
+    "healthCareProvider": null,
+    "healthProfessional": null,
     "device": {
         "_type": "reference",
         "reference": "Device/zib-medicaldeviceproduct-02",
         "display": "Rollator"
     },
-    "bodySite": null,
-    "laterality": null,
+    "indicationProblem": null,
+    "bodySite": {
+        "laterality": null,
+        "coding": null,
+        "text": null
+    },
     "note": null
 }

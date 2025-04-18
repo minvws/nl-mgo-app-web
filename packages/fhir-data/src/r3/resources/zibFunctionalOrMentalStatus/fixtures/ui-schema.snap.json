@@ -26,7 +26,7 @@
                     ]
                 },
                 {
-                    "label": "r3.nl_core_observation.subject",
+                    "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"

@@ -27,14 +27,14 @@
                     "display": null
                 },
                 {
-                    "label": "r3.zib_allergy_intolerance.category",
+                    "label": "Allergie categorie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "biologic"
                     ]
                 },
                 {
-                    "label": "r3.zib_allergy_intolerance.criticality",
+                    "label": "Mate van kritiek zijn",
                     "type": "SINGLE_VALUE",
                     "display": "high"
                 },

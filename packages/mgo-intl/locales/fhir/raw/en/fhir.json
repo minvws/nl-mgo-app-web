@@ -11,10 +11,15 @@
     "fhir.ratio.denominator": "",
     "fhir.ratio.numerator": "",
     "fhir.unknown": "",
+    "fhir.x.device": "",
+    "fhir.x.health_care_provider": "",
+    "fhir.x.health_professional": "",
     "fhir.x.identifier": "",
     "fhir.x.note": "",
     "fhir.x.patient": "",
     "fhir.x.practitioner": "",
     "fhir.x.repeat_period_cyclical_schedule": "",
-    "fhir.x.stop_type": ""
+    "fhir.x.source": "",
+    "fhir.x.stop_type": "",
+    "fhir.x.subject": ""
 }

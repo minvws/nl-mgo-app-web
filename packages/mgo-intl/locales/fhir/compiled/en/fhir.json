@@ -23,6 +23,12 @@
   ],
   "fhir.unknown": [
   ],
+  "fhir.x.device": [
+  ],
+  "fhir.x.health_care_provider": [
+  ],
+  "fhir.x.health_professional": [
+  ],
   "fhir.x.identifier": [
   ],
   "fhir.x.note": [
@@ -33,6 +39,10 @@
   ],
   "fhir.x.repeat_period_cyclical_schedule": [
   ],
+  "fhir.x.source": [
+  ],
   "fhir.x.stop_type": [
+  ],
+  "fhir.x.subject": [
   ]
 }
