@@ -35,7 +35,7 @@
                     "display": "6 februari 2013 om 04:17:00 GMT+1"
                 },
                 {
-                    "label": "r3.gp_journal_entry.performer",
+                    "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Vaste Huisarts 1"

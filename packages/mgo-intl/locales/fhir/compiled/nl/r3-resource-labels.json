@@ -227,12 +227,6 @@
       "value": "Alert"
     }
   ],
-  "r3.zib_alert.author": [
-    {
-      "type": 0,
-      "value": "Auteur"
-    }
-  ],
   "r3.zib_alert.identifier": [
     {
       "type": 0,
@@ -245,40 +239,28 @@
       "value": "Allergie categorie"
     }
   ],
-  "r3.zib_allergy_intolerance.category.category": [
-    {
-      "type": 0,
-      "value": "Allergie categorie"
-    }
-  ],
-  "r3.zib_allergy_intolerance.category.extent.allergie_categorie_codelijst": [
-    {
-      "type": 0,
-      "value": "Allergie categorie"
-    }
-  ],
-  "r3.zib_allergy_intolerance.clinical_status_codelist": [
-    {
-      "type": 0,
-      "value": "Allergie status"
-    }
-  ],
   "r3.zib_allergy_intolerance.criticality": [
     {
       "type": 0,
       "value": "Mate van kritiek zijn"
     }
   ],
-  "r3.zib_allergy_intolerance.criticality.criticality": [
-    {
-      "type": 0,
-      "value": "Mate van kritiek zijn"
-    }
-  ],
-  "r3.zib_allergy_intolerance.reaction.severity_codelist": [
+  "r3.zib_allergy_intolerance.reaction.severity.severity_codelist": [
     {
       "type": 0,
       "value": "Ernst"
+    }
+  ],
+  "r3.zib_body_height.position": [
+    {
+      "type": 0,
+      "value": "Positie"
+    }
+  ],
+  "r3.zib_body_weight.clothing": [
+    {
+      "type": 0,
+      "value": "Kleding"
     }
   ],
   "r3.zib_laboratory_test_result_observation.context": [

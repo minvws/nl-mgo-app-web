@@ -33,7 +33,7 @@
                     "display": "15 maart 2020"
                 },
                 {
-                    "label": "r3.gp_encounter_report.author",
+                    "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Dr. V. Huisarts 1"

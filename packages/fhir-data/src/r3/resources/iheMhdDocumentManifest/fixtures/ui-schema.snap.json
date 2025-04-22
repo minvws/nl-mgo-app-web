@@ -27,7 +27,7 @@
             "label": "r3.ihe_mhd_document_manifest.author_group",
             "children": [
                 {
-                    "label": "r3.ihe_mhd_document_manifest.author",
+                    "label": "Auteur",
                     "type": "REFERENCE_VALUE",
                     "display": "B. Kneder",
                     "reference": "#p1"

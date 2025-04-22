@@ -29,7 +29,7 @@
                     "display": "3 mei 2023"
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.performer",
+                    "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Dokter Bernard"

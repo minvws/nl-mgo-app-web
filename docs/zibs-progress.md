@@ -17,7 +17,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-AdvanceDirective]                 | :white_large_square: | :white_check_mark:   |
 | [zib-AlcoholUse]                       | :white_large_square: | :white_large_square: |
 | [zib-Alert]                            | :white_large_square: | :white_check_mark:   |
-| [zib-AllergyIntolerance]               | :white_large_square: | :white_large_square: |
+| [zib-AllergyIntolerance]               | :white_large_square: | :white_check_mark:   |
 | [zib-BloodPressure]                    | :white_large_square: | :white_large_square: |
 | [zib-BodyHeight]                       | :white_large_square: | :white_large_square: |
 | [zib-BodyWeight]                       | :white_large_square: | :white_large_square: |

@@ -23,6 +23,8 @@
   ],
   "fhir.unknown": [
   ],
+  "fhir.x.author": [
+  ],
   "fhir.x.device": [
   ],
   "fhir.x.health_care_provider": [
@@ -34,6 +36,8 @@
   "fhir.x.note": [
   ],
   "fhir.x.patient": [
+  ],
+  "fhir.x.performer": [
   ],
   "fhir.x.practitioner": [
   ],

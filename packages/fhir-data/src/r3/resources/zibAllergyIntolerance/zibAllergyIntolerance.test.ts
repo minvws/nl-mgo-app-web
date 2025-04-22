@@ -1,39 +1,32 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type AllergyIntolerance } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input01 from './fixtures/zib-AllergyIntolerance-01.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
 import { zibAllergyIntolerance } from './zibAllergyIntolerance';
 
-test('parse returns the expected output 01', async () => {
-    const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
-    await expectJson(output).toMatchFileSnapshot(
-        './fixtures/zib-AllergyIntolerance-01-output.snap.json'
+test('01: mgo-resource', async () => {
+    const output = zibAllergyIntolerance.parse(inputFhirData01 as AllergyIntolerance);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+});
+
+test('01: ui-schema', async () => {
+    const mgoResource = zibAllergyIntolerance.parse(inputFhirData01 as AllergyIntolerance);
+    const zibUiSchema = zibAllergyIntolerance.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(zibUiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
     );
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
-    const zibUiSchema = zibAllergyIntolerance.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    await expectJson(zibUiSchema).toMatchFileSnapshot(
-        './fixtures/zib-AllergyIntolerance-01-uiSchema.snap.json'
-    );
+test('02: mgo-resource', async () => {
+    const output = zibAllergyIntolerance.parse(inputFhirData02 as AllergyIntolerance);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns default label if identifier not supplied', () => {
-    const output = zibAllergyIntolerance.parse(input01 as AllergyIntolerance);
-    output.identifier = undefined;
-    const uiSchema = zibAllergyIntolerance.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+test('02: ui-schema', async () => {
+    const mgoResource = zibAllergyIntolerance.parse(inputFhirData02 as AllergyIntolerance);
+    const zibUiSchema = zibAllergyIntolerance.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(zibUiSchema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
     );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });
