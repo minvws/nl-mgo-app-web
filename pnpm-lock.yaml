@@ -412,6 +412,9 @@ importers:
       '@material-symbols/svg-400':
         specifier: ^0.19.0
         version: 0.19.0
+      '@material-symbols/svg-700':
+        specifier: ^0.19.0
+        version: 0.19.0
       '@minvws/mgo-mgo-utils':
         specifier: workspace:*
         version: link:../mgo-utils
@@ -1419,6 +1422,9 @@ packages:
 
   '@material-symbols/svg-400@0.19.0':
     resolution: {integrity: sha512-ezFKtcPzrZ2EEGYBInh21eJc5uy1ayIAa7UpH4vk+P+IRS7C5shPZzq8vQ6uTAue2RXZ6qqw4hg6yBWXVdYYeA==}
+
+  '@material-symbols/svg-700@0.19.0':
+    resolution: {integrity: sha512-Jadn0xOMkrbNJ2YNuw89L0xDtJdvVgBCQatPVm4NnszeiWcsC+sr2/FijOqQf6MfhyR6coM5ZtjJPowqzzHR3w==}
 
   '@mdx-js/react@3.1.0':
     resolution: {integrity: sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==}
@@ -6553,6 +6559,8 @@ snapshots:
       - '@swc/wasm'
 
   '@material-symbols/svg-400@0.19.0': {}
+
+  '@material-symbols/svg-700@0.19.0': {}
 
   '@mdx-js/react@3.1.0(@types/react@18.3.18)(react@18.3.1)':
     dependencies:

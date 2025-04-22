@@ -1,12 +1,10 @@
 import Allergy from '@material-symbols/svg-400/outlined/allergy.svg?react';
 import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
+import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
 import Cancel from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
-import ChevronLeft from '@material-symbols/svg-400/outlined/chevron_left.svg?react';
-import ChevronRight from '@material-symbols/svg-400/outlined/chevron_right.svg?react';
-import Close from '@material-symbols/svg-400/outlined/close.svg?react';
 import DateRange from '@material-symbols/svg-400/outlined/date_range.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';
@@ -18,11 +16,9 @@ import EventNote from '@material-symbols/svg-400/outlined/event_note.svg?react';
 import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
-import KeyboardArrowDown from '@material-symbols/svg-400/outlined/keyboard_arrow_down.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
 import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
-import MoreHoriz from '@material-symbols/svg-400/outlined/more_horiz.svg?react';
 import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
 import Person from '@material-symbols/svg-400/outlined/person.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
@@ -33,47 +29,32 @@ import Syringe from '@material-symbols/svg-400/outlined/syringe.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
-import Favorite from '@material-symbols/svg-400/rounded/favorite.svg?react';
+
+import Add from '@material-symbols/svg-400/rounded/add.svg?react';
+import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
+import ChevronRight from '@material-symbols/svg-400/rounded/chevron_right.svg?react';
 import Help from '@material-symbols/svg-400/rounded/help.svg?react';
 import Home from '@material-symbols/svg-400/rounded/home.svg?react';
 import Settings from '@material-symbols/svg-400/rounded/settings.svg?react';
+import Close from '@material-symbols/svg-700/rounded/close.svg?react';
+import Favorite from '@material-symbols/svg-700/rounded/favorite.svg?react';
 
-import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 import CheckFill from '@material-symbols/svg-400/outlined/check_circle-fill.svg?react';
 import InfoFill from '@material-symbols/svg-400/outlined/info-fill.svg?react';
 import FavoriteFill from '@material-symbols/svg-400/rounded/favorite-fill.svg?react';
 import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
 import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
 
-import Add from './icons/add.svg?react';
-import ChevronRightFat from './icons/chevron-right-fat.svg?react';
-import Esculaap from './icons/esculaap.svg?react';
-import GGZ from './icons/ggz.svg?react';
-import Hospital from './icons/hospital.svg?react';
-import Huisarts from './icons/huisarts.svg?react';
-import QuestionMark from './icons/question_mark.svg?react';
-import Spinner from './icons/spinner.svg?react';
-import Tandarts from './icons/tandarts.svg?react';
-
 export const icons = {
-    hospital: Hospital,
-    esculaap: Esculaap,
-    'general-practitioner': Huisarts,
-    dentist: Tandarts,
-    ggz: GGZ,
-    'question-mark': QuestionMark,
-    'chevron-right-fat': ChevronRightFat,
-    spinner: Spinner,
-
     'chevron-left': ChevronLeft,
     'chevron-right': ChevronRight,
+    'chevron-right-fat': ChevronRight,
     encrypted: Encrypted,
     'health-and-safety': HealthAndSafety,
     'verified-user': VerifiedUser,
     'gpp-bad': GppBad,
     'progress-activity': ProgressActivity,
     person: Person,
-    'keyboard-arrow-down': KeyboardArrowDown,
     favorite: Favorite,
     call: Call,
     delete: Delete,
@@ -97,7 +78,6 @@ export const icons = {
     'date-range': DateRange,
     'vital-signs': VitalSigns,
     allergy: Allergy,
-    'more-horiz': MoreHoriz,
     'medical-services': MedicalServices,
     'sentiment-satisfied': SentimentSatisfied,
     menu: Menu,
@@ -117,23 +97,5 @@ export type IconName = keyof typeof icons;
 export const iconNames = Object.keys(icons).sort((a, b) => a.localeCompare(b)) as IconName[];
 
 export const iconPaddings: Partial<Record<IconName, string>> = {
-    'question-mark': 'pl-[2px] py-[2px]',
     download: 'p-[2px]',
-    spinner: 'p-[4px]',
-};
-
-export const iconColours: Partial<Record<IconName, string>> = {
-    hospital: 'bg-[#FF0000] text-white',
-    esculaap: 'bg-[#39870C] text-white',
-    'general-practitioner': 'bg-[#007BC7] text-white',
-    dentist: 'bg-[#8FCAE7] text-white',
-    ggz: 'bg-[#42145F] text-white',
-    home: 'bg-[#01689B] text-white',
-    favorite: 'bg-[#D52B1E] text-white',
-    'question-mark': 'bg-[#8FCAE7] text-white',
-    call: 'bg-[#007BC7] text-white',
-    delete: 'bg-[#D52B1E] text-white',
-    pill: 'bg-[#EE82EE] text-white',
-    diagnosis: 'bg-[#8FCAE7] text-white',
-    description: 'bg-[#94710A] text-white',
 };

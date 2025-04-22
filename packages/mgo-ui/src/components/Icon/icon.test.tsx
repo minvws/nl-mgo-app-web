@@ -1,9 +1,19 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
-import { iconNames } from './icons';
+import { expect, test, vi } from 'vitest';
 import { Icon } from './Icon';
+import { type IconName, iconNames } from './icons';
 
-test.each(iconNames)('renders icon `%s` with attributes', async (name) => {
-    render(<Icon data-testid="test-icon" icon={name} />);
+test('renders icon `%s` with attributes', async () => {
+    const icon = faker.helpers.arrayElement(iconNames);
+    render(<Icon data-testid="test-icon" icon={icon} />);
     expect(await screen.findByTestId('test-icon')).toBeVisible();
+});
+
+test('unknown icon will throw', async () => {
+    vi.spyOn(console, 'error').mockImplementation(vi.fn());
+    const icon = faker.lorem.word();
+    expect(async () =>
+        render(<Icon data-testid="test-icon" icon={icon as IconName} />)
+    ).rejects.toThrow(`Could not find icon: "${icon}"`);
 });

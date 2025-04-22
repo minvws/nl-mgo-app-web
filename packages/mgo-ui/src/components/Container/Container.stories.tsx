@@ -51,7 +51,7 @@ export const SizesOverview: Story = {
                     <div className="bg-sky-blue-500 min-h-4 px-4">max-w-md</div>
                 </Container>
                 <Container className="bg-sky-blue-100 max-w-lg">
-                    <div className="bg-sky-blue-600 min-h-4 px-4 text-white">max-w-lg</div>
+                    <div className="min-h-4 px-4 text-white">max-w-lg</div>
                 </Container>
                 <Container className="bg-sky-blue-100 max-w-xl">
                     <div className="bg-dark-blue-700 min-h-4 px-4 text-white">max-w-xl</div>

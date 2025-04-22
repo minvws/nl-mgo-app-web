@@ -24,7 +24,7 @@ export const DarkStory = ({ className, orientation, children, ...rest }: DarkSto
         >
             <div
                 className={cn(
-                    'flex-grow bg-[#F5F5F5] p-6 text-black',
+                    'flex-grow bg-white p-6 text-black',
                     orientation === 'horizontal' && 'w-1/2'
                 )}
             >

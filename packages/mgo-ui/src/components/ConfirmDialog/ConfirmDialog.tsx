@@ -9,7 +9,7 @@ export interface ConfirmDialogProps extends AlertDialog.AlertDialogProps {
     readonly title: string;
     readonly description: string;
     readonly confirmButtonText: string;
-    readonly cancelButtonText: string;
+    readonly cancelButtonText?: string;
     readonly closeButtonAriaLabel: string;
     readonly onConfirm: (event: UIEvent) => void;
 }
@@ -26,7 +26,6 @@ export const ConfirmDialog = ({
     cancelButtonText,
     closeButtonAriaLabel,
     onConfirm,
-    onOpenChange,
     children,
     ...rest
 }: ConfirmDialogProps) => {
@@ -35,18 +34,18 @@ export const ConfirmDialog = ({
     };
 
     return (
-        <AlertDialog.Root onOpenChange={onOpenChange} {...rest}>
+        <AlertDialog.Root {...rest}>
             {children}
 
             <AlertDialog.Portal>
-                <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-75 dark:bg-gray-700" />
+                <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
 
                 <AlertDialog.Content className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-6">
                     <div className="flex min-h-full items-center justify-center">
-                        <div className="flex w-full max-w-[432px] flex-col gap-4 rounded-lg bg-white p-4 shadow-sm sm:gap-6 sm:p-6 dark:bg-gray-900">
-                            <div className="flex items-start justify-between">
+                        <div className="flex w-full max-w-[432px] flex-col rounded-lg bg-white p-4 shadow-sm sm:p-6 dark:bg-gray-900">
+                            <div className="mb-2 flex items-start justify-between md:mb-3">
                                 <AlertDialog.Title asChild>
-                                    <Heading asChild>
+                                    <Heading asChild size="md">
                                         <h1>{title}</h1>
                                     </Heading>
                                 </AlertDialog.Title>
@@ -61,21 +60,24 @@ export const ConfirmDialog = ({
                                 </AlertDialog.Cancel>
                             </div>
 
-                            <AlertDialog.Description asChild>
+                            <AlertDialog.Description asChild className="mb-4 md:mb-6">
                                 <Text>{description}</Text>
                             </AlertDialog.Description>
 
-                            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+                            <div className="flex flex-col-reverse gap-4 sm:flex-row-reverse sm:gap-6">
                                 <AlertDialog.Action asChild>
                                     <Button className="flex-grow" onClick={handleConfirm}>
                                         {confirmButtonText}
                                     </Button>
                                 </AlertDialog.Action>
-                                <AlertDialog.Cancel asChild>
-                                    <Button variant="light" className="flex-grow">
-                                        {cancelButtonText}
-                                    </Button>
-                                </AlertDialog.Cancel>
+
+                                {cancelButtonText && (
+                                    <AlertDialog.Cancel asChild>
+                                        <Button variant="light" className="flex-grow">
+                                            {cancelButtonText}
+                                        </Button>
+                                    </AlertDialog.Cancel>
+                                )}
                             </div>
                         </div>
                     </div>

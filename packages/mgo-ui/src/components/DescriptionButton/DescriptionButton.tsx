@@ -63,7 +63,7 @@ export const DescriptionButton = ({
                         <Text className="text-nowrap">{loadingText}</Text>
                         <Icon
                             data-testid="spinner"
-                            icon="spinner"
+                            icon="progress-activity"
                             className="size-8 animate-spin p-0"
                         />
                     </div>

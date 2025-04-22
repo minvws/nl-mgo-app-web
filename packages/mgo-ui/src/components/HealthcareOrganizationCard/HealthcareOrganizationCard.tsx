@@ -78,6 +78,7 @@ export const HealthcareOrganizationCard = ({
                                     : 'text-gray-500 dark:text-gray-300'
                             }
                             icon={icon}
+                            variant="ghost"
                             aria-label={iconAriaLabel}
                             aria-labelledby={uniqueId}
                         />

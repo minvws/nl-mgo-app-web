@@ -23,7 +23,6 @@ type CategoryIcon = Extract<
     | 'labs'
     | 'date-range'
     | 'vital-signs'
-    | 'more-horiz'
     | 'medical-services'
     | 'health-and-safety'
     | 'sentiment-satisfied'
@@ -43,7 +42,6 @@ const iconColors: Record<CategoryIcon, string> = {
     labs: 'text-ruby-700',
     'date-range': 'text-dark-brown-800',
     'vital-signs': 'text-dark-green-700',
-    'more-horiz': 'text-gray-700',
     'medical-services': 'text-purple-800',
     'health-and-safety': 'text-lint-blue-700',
     'sentiment-satisfied': 'text-sky-blue-600',

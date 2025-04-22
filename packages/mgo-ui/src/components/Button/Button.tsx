@@ -15,7 +15,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, Co
 
 const typeColors: Record<Variant, string> = {
     solid: cn('bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
-    light: cn('text-dark-blue-700 bg-sky-blue-100 hover:bg-light-blue-500'),
+    light: cn(
+        'text-sky-blue-700 bg-sky-blue-700/10  hover:bg-sky-blue-700/5',
+        'dark:text-sky-blue-300 dark:bg-sky-blue-300/10  dark:hover:bg-sky-blue-300/5'
+    ),
     outline: cn(
         'border border-gray-200 bg-white text-black hover:bg-gray-50',
         'dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700'

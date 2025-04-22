@@ -1,8 +1,8 @@
+import { faker } from '@faker-js/faker';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { IconButton } from './IconButton';
-import { faker } from '@faker-js/faker';
-import { sizes } from './sizes';
+import { sizes } from './props';
 
 test('render', async () => {
     const label = faker.lorem.word();

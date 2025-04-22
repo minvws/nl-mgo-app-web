@@ -11,7 +11,6 @@ export default {
     args: {
         title: 'title',
         description: 'description',
-        icon: 'hospital',
     },
 } satisfies StoryMeta;
 
@@ -23,7 +22,6 @@ export const Overflow: Story = {
             <ButtonCard
                 title="Suntexplicabodoloresimpeditquoerroreaporrotemporibus."
                 description="Pariaturaliquidquoquasvoluptatibusipsamsitasperioresautem."
-                icon="add"
             />
         </div>
     ),

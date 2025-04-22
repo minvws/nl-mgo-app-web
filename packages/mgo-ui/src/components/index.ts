@@ -12,7 +12,6 @@ export {
     type HealthcareOrganizationCardProps,
 } from './HealthcareOrganizationCard/HealthcareOrganizationCard';
 export { Icon, type IconProps } from './Icon/Icon';
-export { IconAvatar, type IconAvatarProps } from './IconAvatar/IconAvatar';
 export { IconButton, type IconButtonProps } from './IconButton/IconButton';
 export { Illustration, type IllustrationProps } from './Illustration/Illustration';
 export { InputField, type InputFieldProps } from './InputField/InputField';
@@ -47,13 +46,13 @@ export {
 } from './DescriptionButton/DescriptionButton';
 export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
+export {
+    DescriptionNotice,
+    type DescriptionNoticeProps,
+} from './DescriptionNotice/DescriptionNotice';
 export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
 export { MobileMenuButton, type MobileMenuButtonProps } from './MobileMenuButton/MobileMenuButton';
 export { MobileMenuItem, type MobileMenuItemProps } from './MobileMenuItem/MobileMenuItem';
 export { SlideDown, type SlideDownProps } from './SlideDown/SlideDown';
-export {
-    DescriptionNotice,
-    type DescriptionNoticeProps,
-} from './DescriptionNotice/DescriptionNotice';

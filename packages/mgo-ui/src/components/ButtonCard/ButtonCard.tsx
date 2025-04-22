@@ -7,17 +7,13 @@ import {
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
-import { type IconName } from '../Icon/icons';
-import { IconAvatar } from '../IconAvatar/IconAvatar';
-import { SkeletonCircle, SkeletonText } from '../Skeleton';
+import { SkeletonText } from '../Skeleton';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
 type Details = {
     readonly title: string;
     readonly description?: string;
-    readonly icon?: IconName;
-    readonly iconAriaLabel?: string;
 };
 
 export type ButtonCardProps = HTMLAttributes<HTMLElement> &
@@ -31,8 +27,6 @@ export const ButtonCard = ({
     isLoading = false,
     title,
     description,
-    icon,
-    iconAriaLabel,
     className,
     asChild,
     children,
@@ -51,11 +45,7 @@ export const ButtonCard = ({
             {...rest}
         >
             <Slottable>{children}</Slottable>
-            {icon && (
-                <SkeletonCircle isLoading={isLoading} className="mr-4">
-                    <IconAvatar icon={icon} aria-label={iconAriaLabel} />
-                </SkeletonCircle>
-            )}
+
             <SkeletonText
                 className="flex flex-grow flex-col justify-center gap-1 sm:gap-2"
                 height="h-6 sm:h-8"
