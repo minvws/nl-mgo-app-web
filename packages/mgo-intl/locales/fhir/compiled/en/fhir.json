@@ -23,9 +23,13 @@
   ],
   "fhir.unknown": [
   ],
+  "fhir.x.amount": [
+  ],
   "fhir.x.author": [
   ],
   "fhir.x.device": [
+  ],
+  "fhir.x.effective_period": [
   ],
   "fhir.x.health_care_provider": [
   ],

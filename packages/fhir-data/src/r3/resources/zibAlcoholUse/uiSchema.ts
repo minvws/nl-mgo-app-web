@@ -12,15 +12,18 @@ export const uiSchema: HealthUiSchemaFunction<ZibAlcoholUse> = (resource, contex
     const hcimAlcoholUse = {
         StartDate: ui.dateTime(`${i18n}.effective_period.start`, resource.effectivePeriod?.start),
         EndDate: ui.dateTime(`${i18n}.effective_period.end`, resource.effectivePeriod?.end),
-        AlcoholUseStatus: ui.codeableConcept(`${i18n}.value`, resource.valueCodeableConcept),
+        AlcoholUseStatus: ui.codeableConcept(
+            `${i18n}.value_codeable_concept`,
+            resource.valueCodeableConcept
+        ),
         Comment: ui.string(`${i18n}.comment`, resource.comment),
-        Amount: ui.quantity(`${i18n}.amount.value`, resource.component.amount),
+        Amount: ui.quantity(`${i18n}.amount.value_quantity`, resource.component.amount),
     };
 
     const hcimBasicElements = {
         IdentificationNumber: ui.identifier(`${i18n}.identifier`, resource.identifier),
         Subject: ui.reference(`${i18n}.subject`, resource.subject),
-        Author: ui.reference(`${i18n}.performer`, resource.performer),
+        Author: ui.reference(`fhir.x.performer`, resource.performer),
     };
 
     return {

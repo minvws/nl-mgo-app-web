@@ -79,6 +79,12 @@
       "value": "Onbekend"
     }
   ],
+  "fhir.x.amount": [
+    {
+      "type": 0,
+      "value": "Hoeveelheid"
+    }
+  ],
   "fhir.x.author": [
     {
       "type": 0,
@@ -89,6 +95,12 @@
     {
       "type": 0,
       "value": "Apparaat"
+    }
+  ],
+  "fhir.x.effective_period": [
+    {
+      "type": 0,
+      "value": "Periode"
     }
   ],
   "fhir.x.health_care_provider": [

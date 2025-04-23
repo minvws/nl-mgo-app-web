@@ -10,7 +10,8 @@
     "scripts": {
         "test": "vitest",
         "check-types": "tsc --noEmit",
-        "messages:update": "./bin/lokalise.sh"
+        "messages:update": "./bin/lokalise.sh",
+        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl"
     },
     "dependencies": {
         "@formatjs/cli": "^6.6.1",

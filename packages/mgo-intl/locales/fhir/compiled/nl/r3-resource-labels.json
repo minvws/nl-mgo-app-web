@@ -209,12 +209,6 @@
       "value": "Identificatie"
     }
   ],
-  "r3.zib_alcohol_use.performer": [
-    {
-      "type": 0,
-      "value": "Verantwoordelijk"
-    }
-  ],
   "r3.zib_alcohol_use.subject": [
     {
       "type": 0,
@@ -287,7 +281,7 @@
       "value": "Systolische bloeddruk"
     }
   ],
-  "r3.zib_body_height.position": [
+  "r3.zib_body_height.code": [
     {
       "type": 0,
       "value": "Positie"
@@ -299,7 +293,19 @@
       "value": "Kleding"
     }
   ],
-  "r3.zib_functional_or_mental_status.device.value": [
+  "r3.zib_drug_use.drug_or_medication_type": [
+    {
+      "type": 0,
+      "value": "Drugs of geneesmiddel soort"
+    }
+  ],
+  "r3.zib_drug_use.route_of_administration": [
+    {
+      "type": 0,
+      "value": "Toedieningsweg"
+    }
+  ],
+  "r3.zib_functional_or_mental_status.medical_device": [
     {
       "type": 0,
       "value": "Medisch hulpmiddel"
@@ -519,6 +525,18 @@
     {
       "type": 0,
       "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_tobacco_use.pack_years": [
+    {
+      "type": 0,
+      "value": "Pack years"
+    }
+  ],
+  "r3.zib_tobacco_use.type_of_tobacco_used": [
+    {
+      "type": 0,
+      "value": "Soort tabak gebruik"
     }
   ],
   "r3.zib_treatment_directive.additional_sources": [

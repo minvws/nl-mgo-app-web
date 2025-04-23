@@ -941,7 +941,7 @@
       "value": "Te kleden lichaamsdeel"
     }
   ],
-  "r4.zib_ability_to_dress_oneself.value": [
+  "r4.zib_ability_to_dress_oneself.value_codeable_concept": [
     {
       "type": 0,
       "value": "Zich kleden"
@@ -953,13 +953,13 @@
       "value": "Vermogen tot drinken"
     }
   ],
-  "r4.zib_ability_to_drink.drinking_limitations.value": [
+  "r4.zib_ability_to_drink.drinking_limitations.value_codeable_concept": [
     {
       "type": 0,
       "value": "Drink beperkingen"
     }
   ],
-  "r4.zib_ability_to_drink.value": [
+  "r4.zib_ability_to_drink.value_codeable_concept": [
     {
       "type": 0,
       "value": "Drinken"
@@ -971,13 +971,13 @@
       "value": "Vermogen tot eten"
     }
   ],
-  "r4.zib_ability_to_eat.eating_limitations.value": [
+  "r4.zib_ability_to_eat.eating_limitations.value_codeable_concept": [
     {
       "type": 0,
       "value": "Eet beperkingen"
     }
   ],
-  "r4.zib_ability_to_eat.value": [
+  "r4.zib_ability_to_eat.value_codeable_concept": [
     {
       "type": 0,
       "value": "Eten"
@@ -989,7 +989,7 @@
       "value": "Vermogen tot uiterlijke verzorging"
     }
   ],
-  "r4.zib_ability_to_groom.value": [
+  "r4.zib_ability_to_groom.value_codeable_concept": [
     {
       "type": 0,
       "value": "Uiterlijke verzorging"
@@ -1025,7 +1025,7 @@
       "value": "Te wassen lichaamsdeel"
     }
   ],
-  "r4.zib_ability_to_wash_oneself.value": [
+  "r4.zib_ability_to_wash_oneself.value_codeable_concept": [
     {
       "type": 0,
       "value": "Zich wassen"
@@ -1169,7 +1169,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_alcohol_use.value": [
+  "r4.zib_alcohol_use.value_codeable_concept": [
     {
       "type": 0,
       "value": "Alcohol gebruik status"
@@ -1373,7 +1373,7 @@
       "value": "Ademhaling score"
     }
   ],
-  "r4.zib_apgar_score_10_minute.value": [
+  "r4.zib_apgar_score_10_minute.value_integer": [
     {
       "type": 0,
       "value": "Apgar score totaal"
@@ -1427,7 +1427,7 @@
       "value": "Ademhaling score"
     }
   ],
-  "r4.zib_apgar_score_1_minute.value": [
+  "r4.zib_apgar_score_1_minute.value_integer": [
     {
       "type": 0,
       "value": "Apgar score totaal"
@@ -1481,7 +1481,7 @@
       "value": "Ademhaling score"
     }
   ],
-  "r4.zib_apgar_score_5_minute.value": [
+  "r4.zib_apgar_score_5_minute.value_integer": [
     {
       "type": 0,
       "value": "Apgar score totaal"
@@ -1553,7 +1553,7 @@
       "value": "Transfers"
     }
   ],
-  "r4.zib_barthel_adl_index.value": [
+  "r4.zib_barthel_adl_index.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -1919,7 +1919,7 @@
       "value": "Tranen"
     }
   ],
-  "r4.zib_checklist_pain_behavior.value": [
+  "r4.zib_checklist_pain_behavior.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -1985,7 +1985,7 @@
       "value": "Ademhalingsreactie"
     }
   ],
-  "r4.zib_comfort_scale.value": [
+  "r4.zib_comfort_scale.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -2273,7 +2273,7 @@
       "value": "Vraag antwoord niet af"
     }
   ],
-  "r4.zib_dos_score.value": [
+  "r4.zib_dos_score.value_integer": [
     {
       "type": 0,
       "value": "DOS score totaal"
@@ -2321,7 +2321,7 @@
       "value": "Toedieningsweg"
     }
   ],
-  "r4.zib_drug_use.value": [
+  "r4.zib_drug_use.value_codeable_concept": [
     {
       "type": 0,
       "value": "Drugs gebruik status"
@@ -2333,7 +2333,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_education.value": [
+  "r4.zib_education.value_codeable_concept": [
     {
       "type": 0,
       "value": "Schooltype"
@@ -2543,7 +2543,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_flac_cpain_scale.value": [
+  "r4.zib_flac_cpain_scale.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -2681,7 +2681,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_functional_or_mental_status.value": [
+  "r4.zib_functional_or_mental_status.value_codeable_concept": [
     {
       "type": 0,
       "value": "Status waarde"
@@ -2729,7 +2729,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_glasgow_coma_scale.value": [
+  "r4.zib_glasgow_coma_scale.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -2891,7 +2891,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_hearing_function.value": [
+  "r4.zib_hearing_function.value_codeable_concept": [
     {
       "type": 0,
       "value": "Hoor functie"
@@ -3281,7 +3281,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_life_stance.value": [
+  "r4.zib_life_stance.value_codeable_concept": [
     {
       "type": 0,
       "value": "Levensovertuiging"
@@ -3311,7 +3311,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_living_situation.value": [
+  "r4.zib_living_situation.value_codeable_concept": [
     {
       "type": 0,
       "value": "Woning type"
@@ -3545,7 +3545,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_must_score.value": [
+  "r4.zib_must_score.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -3815,7 +3815,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_pain_score.value": [
+  "r4.zib_pain_score.value_integer": [
     {
       "type": 0,
       "value": "Pijnscore waarde"
@@ -4109,7 +4109,7 @@
       "value": "Zwangerschap"
     }
   ],
-  "r4.zib_pregnancy.date_last_menstruation.value": [
+  "r4.zib_pregnancy.date_last_menstruation.value_date_time": [
     {
       "type": 0,
       "value": "Datum laatste menstruatie"
@@ -4127,13 +4127,13 @@
       "value": "Bepalings methode"
     }
   ],
-  "r4.zib_pregnancy.estimated_date_of_delivery.value": [
+  "r4.zib_pregnancy.estimated_date_of_delivery.value_date_time": [
     {
       "type": 0,
       "value": "A terme datum"
     }
   ],
-  "r4.zib_pregnancy.gravidity.value": [
+  "r4.zib_pregnancy.gravidity.value_integer": [
     {
       "type": 0,
       "value": "Graviditeit"
@@ -4145,13 +4145,13 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_pregnancy.parity.value": [
+  "r4.zib_pregnancy.parity.value_integer": [
     {
       "type": 0,
       "value": "Pariteit"
     }
   ],
-  "r4.zib_pregnancy.pregnancy_duration.value": [
+  "r4.zib_pregnancy.pregnancy_duration.value_quantity": [
     {
       "type": 0,
       "value": "Zwangerschapsduur"
@@ -4541,7 +4541,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_sna_qrc_score.value": [
+  "r4.zib_sna_qrc_score.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -4589,7 +4589,7 @@
       "value": "Bovenarm omtrek score"
     }
   ],
-  "r4.zib_snaq_65_plus_score.value": [
+  "r4.zib_snaq_65_plus_score.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -4631,7 +4631,7 @@
       "value": "Voedings score"
     }
   ],
-  "r4.zib_snaq_score.value": [
+  "r4.zib_snaq_score.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -4673,7 +4673,7 @@
       "value": "SOEP regel naam"
     }
   ],
-  "r4.zib_soap_report.soap_line.value": [
+  "r4.zib_soap_report.soap_line.value_string": [
     {
       "type": 0,
       "value": "SOEP regel tekst"
@@ -4745,7 +4745,7 @@
       "value": "Voedingstoestand score"
     }
   ],
-  "r4.zib_strong_kids_score.value": [
+  "r4.zib_strong_kids_score.value_integer": [
     {
       "type": 0,
       "value": "Totaal score"
@@ -4859,7 +4859,7 @@
       "value": "Soort tabak gebruik"
     }
   ],
-  "r4.zib_tobacco_use.value": [
+  "r4.zib_tobacco_use.value_codeable_concept": [
     {
       "type": 0,
       "value": "Tabak gebruik status"
@@ -4991,7 +4991,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_visual_function.value": [
+  "r4.zib_visual_function.value_codeable_concept": [
     {
       "type": 0,
       "value": "Visuele functie"

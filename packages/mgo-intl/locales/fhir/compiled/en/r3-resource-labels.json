@@ -69,8 +69,6 @@
   ],
   "r3.zib_alcohol_use.identifier": [
   ],
-  "r3.zib_alcohol_use.performer": [
-  ],
   "r3.zib_alcohol_use.subject": [
   ],
   "r3.zib_alert": [
@@ -95,11 +93,15 @@
   ],
   "r3.zib_blood_pressure.systolic_bp": [
   ],
-  "r3.zib_body_height.position": [
+  "r3.zib_body_height.code": [
   ],
   "r3.zib_body_weight.clothing": [
   ],
-  "r3.zib_functional_or_mental_status.device.value": [
+  "r3.zib_drug_use.drug_or_medication_type": [
+  ],
+  "r3.zib_drug_use.route_of_administration": [
+  ],
+  "r3.zib_functional_or_mental_status.medical_device": [
   ],
   "r3.zib_laboratory_test_result_observation.context": [
   ],
@@ -172,6 +174,10 @@
   "r3.zib_procedure.report": [
   ],
   "r3.zib_procedure.subject": [
+  ],
+  "r3.zib_tobacco_use.pack_years": [
+  ],
+  "r3.zib_tobacco_use.type_of_tobacco_used": [
   ],
   "r3.zib_treatment_directive.additional_sources": [
   ],

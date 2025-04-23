@@ -45,7 +45,7 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Verantwoordelijk",
+                    "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
