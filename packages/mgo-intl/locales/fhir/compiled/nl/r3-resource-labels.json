@@ -251,6 +251,42 @@
       "value": "Ernst"
     }
   ],
+  "r3.zib_blood_pressure.average_blood_pressure": [
+    {
+      "type": 0,
+      "value": "Gemiddelde bloeddruk"
+    }
+  ],
+  "r3.zib_blood_pressure.cuff_type": [
+    {
+      "type": 0,
+      "value": "Manchet type"
+    }
+  ],
+  "r3.zib_blood_pressure.diastolic_bp": [
+    {
+      "type": 0,
+      "value": "Diastolische bloeddruk"
+    }
+  ],
+  "r3.zib_blood_pressure.diastolic_endpoint": [
+    {
+      "type": 0,
+      "value": "Diastolisch eindpunt"
+    }
+  ],
+  "r3.zib_blood_pressure.position": [
+    {
+      "type": 0,
+      "value": "Houding"
+    }
+  ],
+  "r3.zib_blood_pressure.systolic_bp": [
+    {
+      "type": 0,
+      "value": "Systolische bloeddruk"
+    }
+  ],
   "r3.zib_body_height.position": [
     {
       "type": 0,
@@ -261,6 +297,12 @@
     {
       "type": 0,
       "value": "Kleding"
+    }
+  ],
+  "r3.zib_functional_or_mental_status.device.value": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel"
     }
   ],
   "r3.zib_laboratory_test_result_observation.context": [
@@ -303,6 +345,12 @@
     {
       "type": 0,
       "value": "Monstermateriaal"
+    }
+  ],
+  "r3.zib_living_situation.effective": [
+    {
+      "type": 0,
+      "value": "Datum"
     }
   ],
   "r3.zib_medical_device.body_site.coding": [
@@ -357,6 +405,54 @@
     {
       "type": 0,
       "value": "Onderwerp"
+    }
+  ],
+  "r3.zib_nutrition_advice.date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet": [
+    {
+      "type": 0,
+      "value": "Dieet"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.fluid_consistency_type": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture.food_type": [
+    {
+      "type": 0,
+      "value": "Voedsel type"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture.modifier": [
+    {
+      "type": 0,
+      "value": "Aangepast"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.type": [
+    {
+      "type": 0,
+      "value": "Dieet type"
+    }
+  ],
+  "r3.zib_nutrition_advice.orderer": [
+    {
+      "type": 0,
+      "value": "Auteur"
     }
   ],
   "r3.zib_payer.beneficiary": [

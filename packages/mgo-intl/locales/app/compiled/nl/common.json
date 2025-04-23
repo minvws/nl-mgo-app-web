@@ -107,6 +107,12 @@
       "value": "Nog niet beschikbaar"
     }
   ],
+  "common.ok": [
+    {
+      "type": 0,
+      "value": "ok"
+    }
+  ],
   "common.previous": [
     {
       "type": 0,

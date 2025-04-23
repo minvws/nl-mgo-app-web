@@ -4,7 +4,6 @@
     "resourceType": "NutritionOrder",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice",
     "fhirVersion": "R3",
-    "comment": null,
     "identifier": [
         {
             "_type": "identifier",
@@ -14,10 +13,6 @@
             "type": null
         }
     ],
-    "status": {
-        "_type": "code",
-        "value": "active"
-    },
     "patient": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
@@ -27,5 +22,23 @@
         "_type": "dateTime",
         "value": "2018-01-01"
     },
-    "foodPreferenceModifier": null
+    "orderer": null,
+    "comment": null,
+    "oralDiet": {
+        "type": [
+            {
+                "_type": "codeableConcept",
+                "text": "Energie verrijkt",
+                "coding": []
+            }
+        ],
+        "fluidConsistencyType": [
+            {
+                "_type": "codeableConcept",
+                "text": "Dikvloeibaar",
+                "coding": []
+            }
+        ],
+        "texture": null
+    }
 }
