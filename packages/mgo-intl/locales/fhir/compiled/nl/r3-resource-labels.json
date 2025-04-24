@@ -383,6 +383,36 @@
       "value": "Indicatieprobleem"
     }
   ],
+  "r3.zib_medical_device_product.expiration_date": [
+    {
+      "type": 0,
+      "value": "Expiratie datum"
+    }
+  ],
+  "r3.zib_medical_device_product.lot_number": [
+    {
+      "type": 0,
+      "value": "Product ID (batch or lot number (10) part of the UDI)"
+    }
+  ],
+  "r3.zib_medical_device_product.udi": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r3.zib_medical_device_product.udi.carrier_hrf": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r3.zib_medical_device_product.udi.device_identifier": [
+    {
+      "type": 0,
+      "value": "Product ID (application identifier (AI) (01) part of the udi)"
+    }
+  ],
   "r3.zib_medical_device_request": [
     {
       "type": 0,

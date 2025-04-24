@@ -127,6 +127,16 @@
   ],
   "r3.zib_medical_device.indication_problem": [
   ],
+  "r3.zib_medical_device_product.expiration_date": [
+  ],
+  "r3.zib_medical_device_product.lot_number": [
+  ],
+  "r3.zib_medical_device_product.udi": [
+  ],
+  "r3.zib_medical_device_product.udi.carrier_hrf": [
+  ],
+  "r3.zib_medical_device_product.udi.device_identifier": [
+  ],
   "r3.zib_medical_device_request": [
   ],
   "r3.zib_medication_use.effective_period.duration": [

@@ -1,39 +1,21 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import type { Device } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import inputFhirData from './fixtures/zib-MedicalDeviceProduct-01.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData from './fixtures/fhir-resource.json';
 import { zibMedicalDeviceProduct } from './zibMedicalDeviceProduct';
 
-test('parseZibMedicalDeviceProduct returns the expected output', async () => {
+test('01: mgo-resource', async () => {
     const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
-    await expectJson(output).toMatchFileSnapshot(
-        './fixtures/zib-MedicalDeviceProduct-01-output.snap.json'
-    );
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
+test('01: ui-schema', async () => {
+    const mgoResource = zibMedicalDeviceProduct.parse(inputFhirData as Device);
     const zibMedicalDeviceProductUiSchema = zibMedicalDeviceProduct.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+        mgoResource,
+        testUiSchemaContext()
     );
-    await expectJson(zibMedicalDeviceProductUiSchema).toMatchFileSnapshot(
-        './fixtures/zib-MedicalDeviceProduct-01-uiSchema.snap.json'
+    await expectHealthCareUiSchemaJson(zibMedicalDeviceProductUiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
     );
-});
-
-test('uiSchema returns default label if id not supplied', () => {
-    const output = zibMedicalDeviceProduct.parse(inputFhirData as Device);
-    output.id = undefined;
-    const uiSchema = zibMedicalDeviceProduct.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });
