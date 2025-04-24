@@ -31,12 +31,12 @@
                     ]
                 },
                 {
-                    "label": "Diastolisch eindpunt",
+                    "label": "r3.zib_blood_pressure.diastolic_endpoint",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "Systolische bloeddruk",
+                    "label": "r3.zib_blood_pressure.systolic_bp",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmHg"
                 },

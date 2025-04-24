@@ -14,6 +14,7 @@
     "fhir.x.amount": "Hoeveelheid",
     "fhir.x.author": "Auteur",
     "fhir.x.device": "Apparaat",
+    "fhir.x.effective_date_time": "Datum",
     "fhir.x.effective_period": "Periode",
     "fhir.x.health_care_provider": "Zorgaanbieder",
     "fhir.x.health_professional": "Zorgverlener",

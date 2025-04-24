@@ -227,18 +227,6 @@
       "value": "Identificatie"
     }
   ],
-  "r3.zib_allergy_intolerance.category": [
-    {
-      "type": 0,
-      "value": "Allergie categorie"
-    }
-  ],
-  "r3.zib_allergy_intolerance.criticality": [
-    {
-      "type": 0,
-      "value": "Mate van kritiek zijn"
-    }
-  ],
   "r3.zib_allergy_intolerance.reaction.severity.severity_codelist": [
     {
       "type": 0,
@@ -251,7 +239,19 @@
       "value": "Gemiddelde bloeddruk"
     }
   ],
+  "r3.zib_blood_pressure.average_blood_pressure.value_quantity": [
+    {
+      "type": 0,
+      "value": "Gemiddelde bloeddruk"
+    }
+  ],
   "r3.zib_blood_pressure.cuff_type": [
+    {
+      "type": 0,
+      "value": "Manchet type"
+    }
+  ],
+  "r3.zib_blood_pressure.cuff_type.value_codeable_concept": [
     {
       "type": 0,
       "value": "Manchet type"
@@ -263,10 +263,10 @@
       "value": "Diastolische bloeddruk"
     }
   ],
-  "r3.zib_blood_pressure.diastolic_endpoint": [
+  "r3.zib_blood_pressure.diastolic_bp.value_quantity": [
     {
       "type": 0,
-      "value": "Diastolisch eindpunt"
+      "value": "Diastolische bloeddruk"
     }
   ],
   "r3.zib_blood_pressure.position": [
@@ -275,10 +275,10 @@
       "value": "Houding"
     }
   ],
-  "r3.zib_blood_pressure.systolic_bp": [
+  "r3.zib_blood_pressure.position.value_codeable_concept": [
     {
       "type": 0,
-      "value": "Systolische bloeddruk"
+      "value": "Houding"
     }
   ],
   "r3.zib_body_height.code": [
@@ -545,19 +545,7 @@
       "value": "Aanvullende bronnen"
     }
   ],
-  "r3.zib_treatment_directive.additional_sources.value_attachment": [
-    {
-      "type": 0,
-      "value": "Aanvullende bronnen"
-    }
-  ],
-  "r3.zib_treatment_directive.additional_sources.value_identifier": [
-    {
-      "type": 0,
-      "value": "Aanvullende bronnen"
-    }
-  ],
-  "r3.zib_treatment_directive.additional_sources.value_reference": [
+  "r3.zib_treatment_directive.additional_sources.value": [
     {
       "type": 0,
       "value": "Aanvullende bronnen"

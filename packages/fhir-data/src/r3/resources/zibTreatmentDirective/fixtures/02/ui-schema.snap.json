@@ -4,6 +4,12 @@
         {
             "children": [
                 {
+                    "label": "Aanvullende bronnen",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Mondelinge afspraak",
+                    "reference": "Consent/zib-advancedirective-03"
+                },
+                {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "9 april 2018"
@@ -95,17 +101,6 @@
                     "label": "Verificatie datum",
                     "type": "SINGLE_VALUE",
                     "display": "9 april 2018"
-                }
-            ]
-        },
-        {
-            "label": "Aanvullende bronnen",
-            "children": [
-                {
-                    "label": "Aanvullende bronnen",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Mondelinge afspraak",
-                    "reference": "Consent/zib-advancedirective-03"
                 }
             ]
         }

@@ -97,6 +97,12 @@
       "value": "Apparaat"
     }
   ],
+  "fhir.x.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
   "fhir.x.effective_period": [
     {
       "type": 0,

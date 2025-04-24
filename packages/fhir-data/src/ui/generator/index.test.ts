@@ -48,6 +48,10 @@ test('types in nested objects are added to their own group instead of the defaul
                 _type: 'string',
                 value: 'baz',
             },
+            bas: {
+                _type: 'string',
+                value: 'bas',
+            },
         },
         koo: {
             _type: 'string',
@@ -75,6 +79,50 @@ test('types in nested objects are added to their own group instead of the defaul
                         type: 'SINGLE_VALUE',
                         display: 'baz',
                     },
+                    {
+                        label: testMessage('r3.nl_core_patient.foo.bas'),
+                        type: 'SINGLE_VALUE',
+                        display: 'bas',
+                    },
+                ],
+            },
+        ],
+    };
+
+    const result = generateUiSchema(mgoResource, testUiSchemaContext({ useMock: true }));
+    expect(result).toEqual(expected);
+});
+
+test('types in nested objects are NOT added to their own group if they only have one child', () => {
+    const mgoResource = {
+        ...testMeta,
+        koo: {
+            _type: 'string',
+            value: 'kaz',
+        },
+        foo: {
+            bar: {
+                _type: 'string',
+                value: 'baz',
+            },
+        },
+    };
+
+    const expected = {
+        label: testMessage('r3.nl_core_patient'),
+        children: [
+            {
+                children: [
+                    {
+                        label: testMessage('r3.nl_core_patient.foo.bar'),
+                        type: 'SINGLE_VALUE',
+                        display: 'baz',
+                    },
+                    {
+                        label: testMessage('r3.nl_core_patient.koo'),
+                        type: 'SINGLE_VALUE',
+                        display: 'kaz',
+                    },
                 ],
             },
         ],
@@ -94,6 +142,10 @@ test('deeply nested types are merged to the first group', () => {
                     value: 'baz',
                 },
             },
+            bas: {
+                _type: 'string',
+                value: 'bas',
+            },
         },
     };
 
@@ -110,6 +162,11 @@ test('deeply nested types are merged to the first group', () => {
                         label: testMessage('r3.nl_core_patient.foo.bar.baz'),
                         type: 'SINGLE_VALUE',
                         display: 'baz',
+                    },
+                    {
+                        label: testMessage('r3.nl_core_patient.foo.bas'),
+                        type: 'SINGLE_VALUE',
+                        display: 'bas',
                     },
                 ],
             },

@@ -14,6 +14,7 @@
     "fhir.x.amount": "",
     "fhir.x.author": "",
     "fhir.x.device": "",
+    "fhir.x.effective_date_time": "",
     "fhir.x.effective_period": "",
     "fhir.x.health_care_provider": "",
     "fhir.x.health_professional": "",

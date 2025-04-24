@@ -34,7 +34,7 @@
                     "reference": null
                 },
                 {
-                    "label": "r3.nl_core_observation.effective_date_time",
+                    "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

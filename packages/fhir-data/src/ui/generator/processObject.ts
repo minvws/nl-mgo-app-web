@@ -33,7 +33,7 @@ export function processObject(
     let group: HealthUiGroup | null = null;
     // the match will always be successfull so the array fallback can't be tests
     /* c8 ignore next */
-    if ((path.match(/\./g) || []).length >= 2) {
+    if ((path.match(/\./g) || []).length >= 2 && elements.length > 1) {
         group = {
             label: path,
             children: [],
