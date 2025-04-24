@@ -40,6 +40,7 @@
     "method": null,
     "bodySite": null,
     "comment": null,
+    "performer": null,
     "id": "zib-alcoholuse-01",
     "referenceId": "Observation/zib-alcoholuse-01",
     "resourceType": "Observation",
@@ -54,6 +55,5 @@
             "system": "http://unitsofmeasure.org",
             "code": "{glasses}/wk"
         }
-    },
-    "performer": null
+    }
 }

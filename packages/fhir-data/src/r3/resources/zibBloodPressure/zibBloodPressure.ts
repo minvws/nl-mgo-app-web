@@ -1,11 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../types';
-
 import { parse } from '../../../parse';
 import { findComponentByCode } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure'; // NOSONAR
 
@@ -13,45 +12,62 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure'; /
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317147
  */
 function parseZibBloodPressure(resource: Observation) {
-    const cuffTypeLOINC = findComponentByCode(resource.component, '8358-4');
-    const cuffTypeSNOMED = findComponentByCode(resource.component, '70665002');
-    const diastolicEndpoint = findComponentByCode(resource.component, '85549003');
-    const systolicBP = findComponentByCode(resource.component, '8480-6');
-    const diastolicBP = findComponentByCode(resource.component, '8462-4');
-    const averageBloodPressureLOINC = findComponentByCode(resource.component, '8478-0');
-    const averageBloodPressureSNOMED = findComponentByCode(resource.component, '6797001');
-    const positionSNOMED = findComponentByCode(resource.component, '424724000');
-    const positionLOINC = findComponentByCode(resource.component, '8361-8');
+    const {
+        bodySite,
+        comment,
+        effectiveDateTime,
+        effectivePeriod,
+        identifier,
+        method,
+        performer,
+        subject,
+    } = parseNlCoreObservationBase(resource);
 
     return {
-        ...parseNlCoreObservationBase(resource),
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        cuffTypeLOINC: {
-            valueCodeableConcept: parse.codeableConcept(cuffTypeLOINC?.valueCodeableConcept),
-        },
-        cuffTypeSNOMED: {
-            valueCodeableConcept: parse.codeableConcept(cuffTypeSNOMED?.valueCodeableConcept),
-        },
-        diastolicEndpoint: {
-            valueCodeableConcept: parse.codeableConcept(diastolicEndpoint?.valueCodeableConcept),
-        },
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier,
+        subject,
+        effectiveDateTime,
+        effectivePeriod,
+        performer,
+
+        // HCIM BloodPressure-v3.1(2017EN)
+        comment,
+        bodySite,
+        method,
         systolicBP: {
-            valueQuantity: parse.quantity(systolicBP?.valueQuantity),
+            valueQuantity: parse.quantity(
+                findComponentByCode(resource.component, '8480-6')?.valueQuantity
+            ),
         },
         diastolicBP: {
-            valueQuantity: parse.quantity(diastolicBP?.valueQuantity),
+            valueQuantity: parse.quantity(
+                findComponentByCode(resource.component, '8462-4')?.valueQuantity
+            ),
         },
-        averageBloodPressureLOINC: {
-            valueQuantity: parse.quantity(averageBloodPressureLOINC?.valueQuantity),
+        averageBloodPressure: {
+            valueQuantity: parse.quantity(
+                findComponentByCode(resource.component, ['8478-0', '6797001'])?.valueQuantity
+            ),
         },
-        averageBloodPressureSNOMED: {
-            valueQuantity: parse.quantity(averageBloodPressureSNOMED?.valueQuantity),
+        diastolicEndpoint: {
+            valueCodeableConcept: parse.codeableConcept(
+                findComponentByCode(resource.component, '85549003')?.valueCodeableConcept
+            ),
         },
-        positionSNOMED: {
-            valueCodeableConcept: parse.codeableConcept(positionSNOMED?.valueCodeableConcept),
+        cuffType: {
+            valueCodeableConcept: parse.codeableConcept(
+                findComponentByCode(resource.component, ['8358-4', '70665002'])
+                    ?.valueCodeableConcept
+            ),
         },
-        positionLOINC: {
-            valueCodeableConcept: parse.codeableConcept(positionLOINC?.valueCodeableConcept),
+        position: {
+            valueCodeableConcept: parse.codeableConcept(
+                findComponentByCode(resource.component, ['8361-8', '424724000'])
+                    ?.valueCodeableConcept
+            ),
         },
     };
 }
@@ -61,5 +77,5 @@ export type ZibBloodPressure = ReturnType<typeof parseZibBloodPressure>;
 export const zibBloodPressure = {
     profile,
     parse: parseZibBloodPressure,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Observation, ZibBloodPressure>;

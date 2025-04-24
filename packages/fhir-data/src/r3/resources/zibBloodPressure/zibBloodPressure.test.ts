@@ -1,121 +1,42 @@
-import { expectJson, faker, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
-import input from './fixtures/fhir-resource.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFHIRData01 from './fixtures/01/fhir-resource.json';
+import inputFHIRData02 from './fixtures/02/fhir-resource.json';
 import { zibBloodPressure } from './zibBloodPressure';
 
-test('returns the expected output 01', async () => {
-    const output = zibBloodPressure.parse(input as Observation);
-    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
+test('01: mgo-resource', async () => {
+    const output = zibBloodPressure.parse(inputFHIRData01 as Observation);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibBloodPressure.parse(input as Observation);
+test('01: ui-schema', async () => {
+    const mgoResource = zibBloodPressure.parse(inputFHIRData01 as Observation);
     const uiSchema = zibBloodPressure.uiSchema(
-        output,
+        mgoResource,
         testUiSchemaContext({
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
-});
-
-test.each([
-    {
-        name: 'averageBloodPressureLOINC',
-        code: '8478-0',
-    },
-    {
-        name: 'averageBloodPressureSNOMED',
-        code: '6797001',
-    },
-])('Default NoResult is shown when data is considered empty: %j', ({ name, code }) => {
-    const data = {
-        code: {
-            coding: [
-                {
-                    system: 'http://loinc.org',
-                    code: code,
-                    display: 'AverageBloodPressure recorded with UCUM',
-                },
-            ],
-        },
-        valueQuantity: {
-            value: faker.number.int(999),
-            unit: 'mmHg',
-            system: 'http://unitsofmeasure.org',
-            code: 'mm[Hg]',
-        },
-    };
-    input.component.push(data);
-
-    const output = zibBloodPressure.parse(input as Observation);
-    expect(output).toEqual(
-        expect.objectContaining({
-            [name]: {
-                valueQuantity: parse.quantity(data.valueQuantity),
-            },
-        })
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
     );
 });
 
-test.each([
-    {
-        name: 'positionSNOMED',
-        code: '424724000',
-    },
-    {
-        name: 'cuffTypeSNOMED',
-        code: '70665002',
-    },
-    {
-        name: 'diastolicEndpoint',
-        code: '85549003',
-    },
-])('Default NoResult is shown when data is considered empty: %j', ({ name, code }) => {
-    const data = {
-        code: {
-            coding: [
-                {
-                    system: 'http://loinc.org',
-                    code: code,
-                    display: 'AverageBloodPressure recorded with UCUM',
-                },
-            ],
-        },
-        valueCodeableConcept: {
-            coding: [
-                {
-                    system: 'urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1',
-                    code: 'L',
-                    display: 'Groot',
-                },
-            ],
-        },
-    };
-    input.component.push(data);
-
-    const output = zibBloodPressure.parse(input as Observation);
-    expect(output).toEqual(
-        expect.objectContaining({
-            [name]: {
-                valueCodeableConcept: parse.codeableConcept(data.valueCodeableConcept),
-            },
-        })
-    );
+test('02: mgo-resource', async () => {
+    const output = zibBloodPressure.parse(inputFHIRData02 as Observation);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns default label if effectiveDateTime not supplied', () => {
-    const output = zibBloodPressure.parse(input as Observation);
-    output.effectiveDateTime = undefined;
+test('02: ui-schema', async () => {
+    const mgoResource = zibBloodPressure.parse(inputFHIRData02 as Observation);
     const uiSchema = zibBloodPressure.uiSchema(
-        output,
+        mgoResource,
         testUiSchemaContext({
             ignoreMissingTranslations: true,
         })
     );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
+    );
 });

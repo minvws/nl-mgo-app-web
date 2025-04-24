@@ -41,5 +41,6 @@
     "method": null,
     "bodySite": null,
     "effectiveDateTime": null,
-    "comment": null
+    "comment": null,
+    "performer": null
 }

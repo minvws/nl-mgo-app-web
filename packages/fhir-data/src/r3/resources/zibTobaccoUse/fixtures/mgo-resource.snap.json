@@ -40,6 +40,7 @@
     "method": null,
     "bodySite": null,
     "comment": null,
+    "performer": null,
     "id": "zib-tobaccouse-01",
     "referenceId": "Observation/zib-tobaccouse-01",
     "resourceType": "Observation",

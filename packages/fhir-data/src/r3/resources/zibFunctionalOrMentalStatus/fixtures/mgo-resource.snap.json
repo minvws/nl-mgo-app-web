@@ -52,6 +52,7 @@
     "method": null,
     "bodySite": null,
     "comment": null,
+    "performer": null,
     "id": "zib-functionalormentalstatus-01",
     "referenceId": "Observation/zib-functionalormentalstatus-01",
     "resourceType": "Observation",

@@ -43,6 +43,7 @@
         "_type": "string",
         "value": "Op feestjes en in uitgaanscircuit."
     },
+    "performer": null,
     "id": "zib-druguse-01",
     "referenceId": "Observation/zib-druguse-01",
     "resourceType": "Observation",

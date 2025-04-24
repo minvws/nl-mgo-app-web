@@ -1,4 +1,9 @@
 {
+    "id": "zib-bodyheight-01",
+    "referenceId": "Observation/zib-bodyheight-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight",
+    "fhirVersion": "R3",
     "identifier": [
         {
             "_type": "identifier",
@@ -8,29 +13,39 @@
             "type": null
         }
     ],
-    "status": {
-        "_type": "code",
-        "value": "final"
-    },
-    "category": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "vital-signs",
-                    "display": "Vital Signs",
-                    "system": "http://hl7.org/fhir/observation-category"
-                }
-            ]
-        }
-    ],
     "subject": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "context": null,
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2013-02-08"
+    },
+    "effectivePeriod": null,
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "8302-2",
+                "display": "Body height",
+                "system": "http://loinc.org"
+            },
+            {
+                "code": "8308-9",
+                "display": "Body height --standing",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
     "valueQuantity": {
         "_type": "quantity",
         "value": 183,
@@ -39,22 +54,8 @@
         "system": "http://unitsofmeasure.org",
         "code": "cm"
     },
-    "valueCodeableConcept": null,
-    "effectivePeriod": null,
-    "dataAbsentReason": null,
-    "method": null,
-    "bodySite": null,
-    "effectiveDateTime": {
-        "_type": "dateTime",
-        "value": "2013-02-08"
-    },
     "comment": {
         "_type": "string",
         "value": "met schoenen aan"
-    },
-    "id": "zib-bodyheight-01",
-    "referenceId": "Observation/zib-bodyheight-01",
-    "resourceType": "Observation",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight",
-    "fhirVersion": "R3"
+    }
 }

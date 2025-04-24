@@ -1,18 +1,49 @@
 {
-    "label": "2013-02-08",
+    "label": "Lichaamslengte",
     "children": [
         {
-            "label": "r3.zib_body_height",
             "children": [
                 {
-                    "label": "Lichaamslengte",
-                    "type": "SINGLE_VALUE",
-                    "display": "183 cm"
+                    "label": "Auteur",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Vaste Huisarts 1",
+                    "reference": "Practitioner/nl-core-practitioner-02"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "192a097f-8fdf-11ec-1258-020000000000"
+                    ]
                 },
                 {
                     "label": "Lengte datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "8 februari 2013"
+                },
+                {
+                    "label": "Lengte waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "183 cm"
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Positie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Body height (8302-2 in code systeem http://loinc.org)",
+                        "Body height --standing (8308-9 in code systeem http://loinc.org)"
+                    ]
                 },
                 {
                     "label": "Toelichting",

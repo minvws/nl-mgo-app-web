@@ -1,35 +1,18 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input from './fixtures/fhir-resource.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/fhir-resource.json';
 import { zibBodyWeight } from './zibBodyWeight';
 
-test('returns the expected output 01', async () => {
-    const output = zibBodyWeight.parse(input as Observation);
+test('01 mgo-resource', async () => {
+    const output = zibBodyWeight.parse(inputFhirData01 as Observation);
     await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibBodyWeight.parse(input as Observation);
-    const uiSchema = zibBodyWeight.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+test('01: ui-schema', async () => {
+    const mgoResource = zibBodyWeight.parse(inputFhirData01 as Observation);
+    const uiSchema = zibBodyWeight.uiSchema(mgoResource, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
-});
-
-test('uiSchema returns default label if effectiveDateTime not supplied', () => {
-    const output = zibBodyWeight.parse(input as Observation);
-    output.effectiveDateTime = undefined;
-    const uiSchema = zibBodyWeight.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

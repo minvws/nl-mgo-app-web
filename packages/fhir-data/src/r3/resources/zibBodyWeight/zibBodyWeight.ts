@@ -3,8 +3,8 @@ import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { findComponentByCode } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight'; // NOSONAR
 
@@ -12,13 +12,33 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight'; // N
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317153
  */
 function parseZibBodyWeight(resource: Observation) {
-    const clothing = findComponentByCode(resource.component, '8352-7');
+    const {
+        comment,
+        effectiveDateTime,
+        effectivePeriod,
+        identifier,
+        performer,
+        subject,
+        valueQuantity,
+    } = parseNlCoreObservationBase(resource);
 
     return {
-        ...parseNlCoreObservationBase(resource),
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier,
+        subject,
+        effectiveDateTime,
+        effectivePeriod,
+        performer,
+
+        // HCIM BodyWeight-v3.1(2017EN)
+        valueQuantity,
+        comment,
         clothing: {
-            valueCodeableConcept: parse.codeableConcept(clothing?.valueCodeableConcept),
+            valueCodeableConcept: parse.codeableConcept(
+                findComponentByCode(resource.component, '8352-7')?.valueCodeableConcept
+            ),
         },
     };
 }
@@ -28,5 +48,5 @@ export type ZibBodyWeight = ReturnType<typeof parseZibBodyWeight>;
 export const zibBodyWeight = {
     profile,
     parse: parseZibBodyWeight,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Observation, ZibBodyWeight>;

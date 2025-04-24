@@ -1,18 +1,13 @@
 {
-    "label": "2013-02-03",
+    "label": "Lichaamsgewicht",
     "children": [
         {
-            "label": "r3.zib_body_weight",
             "children": [
                 {
-                    "label": "Lichaamsgewicht",
-                    "type": "SINGLE_VALUE",
-                    "display": "72 kg"
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Auteur",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Vaste Huisarts 1",
+                    "reference": "Practitioner/nl-core-practitioner-02"
                 },
                 {
                     "label": "Gewicht datum tijd",
@@ -20,11 +15,39 @@
                     "display": "3 februari 2013"
                 },
                 {
+                    "label": "Gewicht waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "72 kg"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "194206c9-8fdf-11ec-1006-020000000000"
+                    ]
+                },
+                {
                     "label": "Kleding",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Minimal dressed (MINIMAL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)"
                     ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

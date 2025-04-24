@@ -37,6 +37,7 @@
     "bodySite": null,
     "effectiveDateTime": null,
     "comment": null,
+    "performer": null,
     "id": "zib-livingsituation-01",
     "referenceId": "Observation/zib-livingsituation-01",
     "resourceType": "Observation",

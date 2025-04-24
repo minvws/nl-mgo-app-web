@@ -26,6 +26,7 @@ export function parseNlCoreObservationBase(resource: Observation) {
         bodySite: parse.codeableConcept(resource.bodySite),
         effectiveDateTime: parse.dateTime(resource.effectiveDateTime),
         comment: parse.string(resource.comment),
+        performer: map(resource.performer, parse.reference),
     };
 }
 
