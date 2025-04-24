@@ -1,9 +1,18 @@
 {
-    "label": "1b6fe23b-8fdf-11ec-1802-020000000000",
+    "label": "Woonsituatie",
     "children": [
         {
-            "label": "r3.nl_core_observation.group_details",
             "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "30 juni 2016"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,56 +21,27 @@
                     ]
                 },
                 {
-                    "label": "r3.nl_core_observation.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "r3.nl_core_observation.category",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.nl_core_observation.context",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "Datum",
+                    "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Begin datum",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.data_absent_reason",
+                    "label": "Woning type",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.nl_core_observation.comment",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.body_site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": [
+                        "Eengezinswoning (EENGEZW in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.13.1)"
+                    ]
                 }
             ]
         }

@@ -18,11 +18,12 @@
             {
                 "system": "http://snomed.info/sct",
                 "code": "365508006",
-                "display": "Finding of residence and accommodation circumstances (finding)"
+                "display": "Bevinding betreffende woon- en huisvestingssituatie (bevinding)"
             }
         ]
     },
     "subject": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
+    "effectiveDateTime": "2016-06-30",
     "valueCodeableConcept": {
         "coding": [
             {

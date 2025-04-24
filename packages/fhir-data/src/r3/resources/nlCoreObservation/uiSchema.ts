@@ -5,7 +5,6 @@ import { type NonStrictUi } from '../../../ui/types';
 import { type ZibAlcoholUse } from '../zibAlcoholUse/zibAlcoholUse';
 import { type ZibDrugUse } from '../zibDrugUse/zibDrugUse';
 import { type ZibFunctionalOrMentalStatus } from '../zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';
-import { type ZibLivingSituation } from '../zibLivingSituation/zibLivingSituation';
 import { type ZibTobaccoUse } from '../zibTobaccoUse/zibTobaccoUse';
 import { type NlCoreObservation } from './nlCoreObservation';
 
@@ -13,7 +12,6 @@ type ObservationLikeResource =
     | NlCoreObservation
     | ZibAlcoholUse
     | ZibDrugUse
-    | ZibLivingSituation
     | ZibFunctionalOrMentalStatus
     | ZibTobaccoUse;
 

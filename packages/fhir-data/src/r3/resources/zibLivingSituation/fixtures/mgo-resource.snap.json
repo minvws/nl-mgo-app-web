@@ -1,4 +1,9 @@
 {
+    "id": "zib-livingsituation-01",
+    "referenceId": "Observation/zib-livingsituation-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation",
+    "fhirVersion": "R3",
     "identifier": [
         {
             "_type": "identifier",
@@ -8,18 +13,17 @@
             "type": null
         }
     ],
-    "status": {
-        "_type": "code",
-        "value": "final"
-    },
-    "category": null,
     "subject": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "context": null,
-    "valueQuantity": null,
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2016-06-30"
+    },
+    "effectivePeriod": null,
+    "performer": null,
     "valueCodeableConcept": {
         "_type": "codeableConcept",
         "text": null,
@@ -31,16 +35,5 @@
             }
         ]
     },
-    "effectivePeriod": null,
-    "dataAbsentReason": null,
-    "method": null,
-    "bodySite": null,
-    "effectiveDateTime": null,
-    "comment": null,
-    "performer": null,
-    "id": "zib-livingsituation-01",
-    "referenceId": "Observation/zib-livingsituation-01",
-    "resourceType": "Observation",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation",
-    "fhirVersion": "R3"
+    "comment": null
 }
