@@ -34,11 +34,6 @@
                     "reference": null
                 },
                 {
-                    "label": "Datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": null

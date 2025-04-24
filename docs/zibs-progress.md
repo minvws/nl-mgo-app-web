@@ -15,13 +15,13 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | -------------------------------------- | -------------------- | -------------------- |
 | [zib-AdministrationAgreement]          | :white_large_square: | :white_check_mark:   |
 | [zib-AdvanceDirective]                 | :white_large_square: | :white_check_mark:   |
-| [zib-AlcoholUse]                       | :white_large_square: | :white_large_square: |
+| [zib-AlcoholUse]                       | :white_large_square: | :white_check_mark:   |
 | [zib-Alert]                            | :white_large_square: | :white_check_mark:   |
 | [zib-AllergyIntolerance]               | :white_large_square: | :white_check_mark:   |
 | [zib-BloodPressure]                    | :white_large_square: | :white_check_mark:   |
 | [zib-BodyHeight]                       | :white_large_square: | :white_check_mark:   |
 | [zib-BodyWeight]                       | :white_large_square: | :white_check_mark:   |
-| [zib-DrugUse]                          | :white_large_square: | :white_large_square: |
+| [zib-DrugUse]                          | :white_large_square: | :white_check_mark:   |
 | [zib-Encounter]                        | :white_large_square: | :white_large_square: |
 | [zib-FunctionalOrMentalStatus]         | :white_large_square: | :white_large_square: |
 | [zib-LaboratoryTestResult-Observation] | :white_check_mark:   | :white_check_mark:   |
@@ -37,7 +37,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-Problem]                          | :white_large_square: | :white_large_square: |
 | [zib-Procedure]                        | :white_large_square: | :white_check_mark:   |
 | [zib-ProcedureRequest]                 | :white_large_square: | :white_large_square: |
-| [zib-TobaccoUse]                       | :white_large_square: | :white_large_square: |
+| [zib-TobaccoUse]                       | :white_large_square: | :white_check_mark:   |
 | [zib-TreatmentDirective]               | :white_large_square: | :white_check_mark:   |
 | [zib-Vaccination]                      | :white_large_square: | :white_check_mark:   |
 | [zib-VaccinationRecommendation]        | :white_large_square: | :white_check_mark:   |

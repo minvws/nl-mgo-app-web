@@ -39,3 +39,13 @@ test('findComponentByCode does not match by code and returns the undefined', () 
     const value = findComponentByCode(input, code);
     expect(value).toBeUndefined();
 });
+
+test('findComponentByCode matched by code with multiple inputs and returns the component', () => {
+    const code1 = faker.number.int(100).toString();
+    const code2 = faker.number.int(200).toString();
+    const component = createComponent(code1);
+    const input = [component, createComponent()];
+
+    const value = findComponentByCode(input, [code1, code2]);
+    expect(value).toBe(component);
+});

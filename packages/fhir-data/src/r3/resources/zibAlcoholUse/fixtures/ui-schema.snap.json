@@ -2,18 +2,7 @@
     "label": "Alcohol gebruik",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
-                {
-                    "label": "Start datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "1980"
-                },
-                {
-                    "label": "Stop datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
                 {
                     "label": "Alcohol gebruik status",
                     "type": "MULTIPLE_VALUES",
@@ -22,7 +11,12 @@
                     ]
                 },
                 {
-                    "label": "Toelichting",
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
@@ -45,7 +39,17 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Auteur",
+                    "label": "Start datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1980"
+                },
+                {
+                    "label": "Stop datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

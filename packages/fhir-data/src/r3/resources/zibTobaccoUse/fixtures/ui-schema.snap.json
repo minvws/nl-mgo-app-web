@@ -1,9 +1,23 @@
 {
-    "label": "1eb10781-8fdf-11ec-7373-020000000000",
+    "label": "Tabak gebruik",
     "children": [
         {
-            "label": "r3.nl_core_observation.group_details",
             "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 packs per week"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,51 +26,44 @@
                     ]
                 },
                 {
-                    "label": "r3.nl_core_observation.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "r3.nl_core_observation.category",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.nl_core_observation.context",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "label": "Pack years",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 PackYears"
                 },
                 {
-                    "label": "Begin datum",
+                    "label": "Soort tabak gebruik",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Cigarette smoker (finding) (65568007 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Start datum",
                     "type": "SINGLE_VALUE",
                     "display": "1980"
                 },
                 {
-                    "label": "Eind datum",
+                    "label": "Stop datum",
                     "type": "SINGLE_VALUE",
                     "display": "1983"
                 },
                 {
-                    "label": "r3.nl_core_observation.data_absent_reason",
+                    "label": "Tabak gebruik status",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": [
+                        "Ex-smoker (finding) (8517006 in code systeem http://snomed.info/sct)"
+                    ]
                 },
                 {
-                    "label": "r3.nl_core_observation.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.body_site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": "Niet bekend"
                 }
             ]
         }

@@ -1,11 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../types';
-
 import { parse } from '../../../parse';
-import { map } from '../../../utils/map/map';
+import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
+import { map } from '../../../utils';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse'; // NOSONAR
 
@@ -13,12 +12,32 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse'; // N
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317134
  */
 function parseZibAlcoholUse(resource: Observation) {
-    const { effectiveDateTime: _, ...rest } = parseNlCoreObservationBase(resource);
+    const {
+        comment,
+        effectiveDateTime,
+        effectivePeriod,
+        identifier,
+        performer,
+        subject,
+        valueCodeableConcept,
+    } = parseNlCoreObservationBase(resource);
+
     return {
-        ...rest,
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        component: { amount: parse.quantity(resource.component?.[0]?.valueQuantity) },
-        performer: map(resource.performer, parse.reference),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier,
+        subject,
+        effectiveDateTime,
+        effectivePeriod,
+        performer,
+
+        // HCIM AlcoholUse-v3.1(2017EN)
+        valueCodeableConcept,
+        comment,
+        amount: map(resource.component, (component) => ({
+            valueQuantity: parse.quantity(component.valueQuantity),
+        })),
     };
 }
 
@@ -27,5 +46,5 @@ export type ZibAlcoholUse = ReturnType<typeof parseZibAlcoholUse>;
 export const zibAlcoholUse = {
     profile,
     parse: parseZibAlcoholUse,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Observation, ZibAlcoholUse>;
