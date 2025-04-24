@@ -9,9 +9,6 @@ export function PublicRoute() {
 
     switch (pathname) {
         case '/':
-            if (auth.parsingError) {
-                return <Navigate to="/inloggen" replace />;
-            }
             if (!isOnboardingSeen) {
                 return <Navigate to="/welkom" replace />;
             }

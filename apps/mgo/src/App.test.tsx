@@ -67,14 +67,3 @@ test('redirect to login from protected route', () => {
         })
     ).toHaveTextContent(appMessage('login.heading'));
 });
-
-test('redirect to login with errors if authentication failed', () => {
-    mockUseAuth.mockImplementation(() => faker.custom.authState({ parsingError: new Error() }));
-    setupApp({ initialEntries: ['/'] });
-
-    expect(
-        screen.getByRole('heading', {
-            level: 1,
-        })
-    ).toHaveTextContent(appMessage('login.heading'));
-});

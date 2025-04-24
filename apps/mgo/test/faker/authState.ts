@@ -9,6 +9,7 @@ export function authState(state: Partial<AuthState> = {}): AuthState {
         parsingError: null,
         login: vi.fn(),
         logout: vi.fn(),
+        updateUserInfoFromUrl: vi.fn(),
         userInfo: null,
         ...state,
     };

@@ -6,26 +6,19 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { VadAuthProvider, type VadAuthProviderProps } from './VadAuthProvider';
-import { USER_INFO_SESSION_STORAGE_KEY, getUserInfo } from './getUserInfo';
+import { USER_INFO_SESSION_STORAGE_KEY } from './getUserInfoFromSession';
+import { takeUserInfoFromUrl } from './takeUserInfoFromUrl';
 
 const mockNavigate = vi.fn();
 const mockGetAuthUrl = getAuthUrl as MockedFunction<typeof getAuthUrl>;
-const mockGetUserInfo = getUserInfo as MockedFunction<typeof getUserInfo>;
+const mockTakeUserInfoFromUrl = takeUserInfoFromUrl as MockedFunction<typeof takeUserInfoFromUrl>;
 
 vi.mock(
     '$/services/vad/vad',
     () => ({ getAuthUrl: vi.fn() }) as typeof import('$/services/vad/vad') // eslint-disable-line @typescript-eslint/consistent-type-imports
 );
-vi.mock('./getUserInfo', async (importActual) => {
-    const module = await importActual<typeof import('./getUserInfo')>(); // eslint-disable-line @typescript-eslint/consistent-type-imports
-    return {
-        ...module,
-        getUserInfo: vi.fn(() => ({
-            userInfo: null,
-            error: null,
-        })),
-    } as typeof import('./getUserInfo'); // eslint-disable-line @typescript-eslint/consistent-type-imports
-});
+
+vi.mock('./takeUserInfoFromUrl', () => ({ takeUserInfoFromUrl: vi.fn(() => null) }));
 
 vi.mock('$/routing', () => ({
     useNavigate: () => mockNavigate,
@@ -62,14 +55,20 @@ const TestProvider = ({ onAuth, navigate }: TestProviderProps) => {
 
 beforeEach(() => {
     vi.restoreAllMocks();
+    vi.stubGlobal('sessionStorage', {
+        getItem: vi.fn(),
+        setItem: vi.fn(),
+        clear: vi.fn(),
+    } as Partial<Storage>);
 });
 
 test('does not attempt login on render', async () => {
-    let auth: Partial<AuthState> = {};
-    render(<TestProvider onAuth={(authState) => (auth = authState)} />);
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
+    render(<TestProvider onAuth={onAuth} />);
 
     expect(mockGetAuthUrl).not.toHaveBeenCalled();
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: false,
         loadingError: null,
@@ -79,23 +78,23 @@ test('does not attempt login on render', async () => {
 });
 
 test('login loads the auth url and redirects', async () => {
-    let auth: Partial<AuthState> = {};
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
     const deferredAuthUrl = defer<AuthUrlResponse>();
     const location: Partial<Location> = {};
     vi.stubGlobal('location', location);
 
     mockGetAuthUrl.mockImplementation(() => deferredAuthUrl.promise);
 
-    const { rerender } = render(<TestProvider onAuth={(authState) => (auth = authState)} />);
+    const { rerender } = render(<TestProvider onAuth={onAuth} />);
 
-    const loginButton = screen.getByRole('button', { name: 'login' });
-    await loginButton.click();
+    await screen.getByRole('button', { name: 'login' }).click();
 
     rerender(<TestProvider onAuth={(authState) => (auth = authState)} />);
 
     expect(mockGetAuthUrl).toHaveBeenCalled();
 
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: true,
         isAuthenticated: false,
         loadingError: null,
@@ -111,36 +110,26 @@ test('login loads the auth url and redirects', async () => {
 });
 
 test('if loading the auth url fails it updates the state', async () => {
-    let auth: Partial<AuthState> = {};
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
     const deferredAuthUrl = defer<AuthUrlResponse>();
     const location: Partial<Location> = {};
     vi.stubGlobal('location', location);
 
     mockGetAuthUrl.mockImplementation(() => deferredAuthUrl.promise);
 
-    const { rerender } = render(<TestProvider onAuth={(authState) => (auth = authState)} />);
+    const { rerender } = render(<TestProvider onAuth={onAuth} />);
 
-    const loginButton = screen.getByRole('button', { name: 'login' });
-    await loginButton.click();
+    await screen.getByRole('button', { name: 'login' }).click();
 
-    rerender(<TestProvider onAuth={(authState) => (auth = authState)} />);
-
-    expect(mockGetAuthUrl).toHaveBeenCalled();
-
-    expect(auth).toMatchObject<Partial<AuthState>>({
-        isLoading: true,
-        isAuthenticated: false,
-        loadingError: null,
-        parsingError: null,
-        userInfo: null,
-    });
+    rerender(<TestProvider onAuth={onAuth} />);
 
     const authLoadError = new Error();
     deferredAuthUrl.reject(authLoadError);
 
     await flushCallStack();
 
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: false,
         loadingError: authLoadError,
@@ -151,20 +140,19 @@ test('if loading the auth url fails it updates the state', async () => {
     expect(location.href).toBe(undefined);
 });
 
-test('if parsing the userinfo fails on the initial render it updates the state', async () => {
-    let auth: Partial<AuthState> = {};
+test('if parsing the userinfo fails it updates the state', async () => {
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
     const parsingError = new Error();
-    mockGetUserInfo.mockReturnValue({
-        userInfo: null,
-        error: parsingError,
+    mockTakeUserInfoFromUrl.mockImplementationOnce(() => {
+        throw parsingError;
     });
 
-    render(<TestProvider onAuth={(authState) => (auth = authState)} />);
+    const { rerender } = render(<TestProvider onAuth={onAuth} />);
+    auth!.updateUserInfoFromUrl();
+    rerender(<TestProvider onAuth={onAuth} />);
 
-    expect(mockGetUserInfo).toHaveBeenCalledOnce();
-    expect(mockGetAuthUrl).not.toHaveBeenCalled();
-
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: false,
         loadingError: null,
@@ -173,24 +161,39 @@ test('if parsing the userinfo fails on the initial render it updates the state',
     });
 });
 
-test('provider loads userinfo on initial render and stores is in the session storage', async () => {
-    let auth: Partial<AuthState> = {};
+test('if no userinfo is found it updates the state with an error', async () => {
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
+    mockTakeUserInfoFromUrl.mockImplementationOnce(() => null);
+
+    const { rerender } = render(<TestProvider onAuth={onAuth} />);
+    auth!.updateUserInfoFromUrl();
+    rerender(<TestProvider onAuth={onAuth} />);
+
+    expect(auth!).toMatchObject<Partial<AuthState>>({
+        isLoading: false,
+        isAuthenticated: false,
+        loadingError: null,
+        parsingError: new Error('No userinfo found!'),
+        userInfo: null,
+    });
+});
+
+test('provider loads userinfo from the urls when called and stores is in the session storage', async () => {
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
     const userInfo = faker.custom.userInfo();
 
-    mockGetUserInfo.mockReturnValue({
-        userInfo,
-        error: null,
-    });
+    mockTakeUserInfoFromUrl.mockReturnValue(userInfo);
 
-    const sessionStorage: Partial<Storage> = { setItem: vi.fn() };
-    vi.stubGlobal('sessionStorage', sessionStorage);
+    render(<TestProvider onAuth={onAuth} />);
+    auth!.updateUserInfoFromUrl();
+    await flushCallStack();
 
-    const { rerender } = render(<TestProvider onAuth={(authState) => (auth = authState)} />);
-
-    expect(mockGetUserInfo).toHaveBeenCalledOnce();
+    expect(mockTakeUserInfoFromUrl).toHaveBeenCalledOnce();
     expect(mockGetAuthUrl).not.toHaveBeenCalled();
 
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: true,
         loadingError: null,
@@ -202,28 +205,23 @@ test('provider loads userinfo on initial render and stores is in the session sto
         USER_INFO_SESSION_STORAGE_KEY,
         JSON.stringify(userInfo)
     );
-
-    rerender(<TestProvider onAuth={(authState) => (auth = authState)} />);
-
-    expect(mockGetUserInfo).toHaveBeenCalledTimes(2);
 });
 
 test('logout clears the session storage and navigates to the logout page', async () => {
-    let auth: Partial<AuthState> = {};
+    let auth: AuthState;
+    const onAuth = (authState: AuthState) => (auth = authState);
     const userInfo = faker.custom.userInfo();
-    mockGetUserInfo.mockReturnValue({
-        userInfo,
-        error: null,
-    });
     const navigate = vi.fn();
-    const sessionStorage: Partial<Storage> = { setItem: vi.fn(), clear: vi.fn() };
+    (sessionStorage.getItem as MockedFunction<typeof sessionStorage.getItem>).mockReturnValueOnce(
+        JSON.stringify(userInfo)
+    );
 
     vi.stubGlobal('location', location);
     vi.stubGlobal('sessionStorage', sessionStorage);
 
-    render(<TestProvider onAuth={(authState) => (auth = authState)} navigate={navigate} />);
+    render(<TestProvider onAuth={onAuth} navigate={navigate} />);
 
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: true,
         loadingError: null,
@@ -234,7 +232,7 @@ test('logout clears the session storage and navigates to the logout page', async
     const logoutButton = screen.getByRole('button', { name: 'logout' });
     await logoutButton.click();
 
-    expect(auth).toMatchObject<Partial<AuthState>>({
+    expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,
         isAuthenticated: false,
         loadingError: null,

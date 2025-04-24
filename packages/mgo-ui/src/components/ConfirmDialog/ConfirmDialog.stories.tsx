@@ -1,6 +1,8 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { Button } from '../Button/Button';
+import { Link } from '../Link/Link';
 import { ConfirmDialog } from './ConfirmDialog';
 
 type Story = StoryObj<typeof ConfirmDialog>;
@@ -35,5 +37,21 @@ export const OnlyConfirm: Story = {
                 <Button>Open</Button>
             </ConfirmDialog.Trigger>
         ),
+    },
+};
+
+export const Controlled: Story = {
+    render: ({ ...args }) => {
+        const [open, setOpen] = useState(false); // eslint-disable-line react-hooks/rules-of-hooks
+
+        return (
+            <div>
+                <Link asChild>
+                    <button onClick={() => setOpen(true)}>Open</button>
+                </Link>
+
+                <ConfirmDialog {...args} open={open} onOpenChange={setOpen} />
+            </div>
+        );
     },
 };

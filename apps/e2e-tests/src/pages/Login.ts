@@ -26,6 +26,6 @@ export class LoginPage extends AbstractPage {
         // Check if we're back on the original origin (after the oidc redirect).
         // AND that there is no `userinfo` in the url params anymore, this should indicate that
         // the URL params have been processed and that we're logged in.
-        await this.page.waitForURL(new RegExp(`^${origin}((?![?&]userinfo=).)*$`, 'i'));
+        await this.page.waitForURL(new RegExp(`^${origin}[^?]*((?![?&]userinfo=).)*$`, 'i'));
     }
 }

@@ -1,9 +1,12 @@
 import { useAuth } from '$/auth';
+import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks/index.js';
 import { FormattedMessage, useIntl } from '$/intl';
-import { Alert, Button, Container, Heading, Stack, Text } from '@minvws/mgo-mgo-ui';
+import { Button, Container, Heading, Stack, Text, useOnMount } from '@minvws/mgo-mgo-ui';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { ConfirmDialog } from '../../../../../packages/mgo-ui/src/components/ConfirmDialog/ConfirmDialog';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
 
@@ -11,6 +14,20 @@ export function Login() {
     const { formatMessage } = useIntl();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const auth = useAuth();
+    const [showErrorDialog, setShowErrorDialog] = useState(Boolean(auth.parsingError));
+
+    useOnMount(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has(LOGIN_CALLBACK_FLAG)) {
+            auth.updateUserInfoFromUrl();
+        }
+    });
+
+    useEffect(() => {
+        if (auth.parsingError || auth.loadingError) {
+            setShowErrorDialog(true);
+        }
+    }, [auth.loadingError, auth.parsingError]);
 
     return (
         <>
@@ -20,16 +37,6 @@ export function Login() {
             </Container>
 
             <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">
-                {(auth.loadingError || auth.parsingError) && (
-                    <Alert
-                        className="mb-4 md:mb-6"
-                        status="error"
-                        label={formatMessage('login.error_heading')}
-                        aria-label={formatMessage('common.voice_over_close')}
-                    >
-                        <FormattedMessage id="login.error_subheading" />
-                    </Alert>
-                )}
                 <Heading asChild size="lg" className="mb-4 md:mb-6">
                     <h1 ref={navFocusRef}>
                         <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
@@ -64,6 +71,7 @@ export function Login() {
                                 </span>
                             </Button>
                         </li>
+
                         <li>
                             <Button
                                 variant="outline"
@@ -81,6 +89,16 @@ export function Login() {
                     </ul>
                 </Stack>
             </Container>
+
+            <ConfirmDialog
+                title={formatMessage('login.error_heading')}
+                description={formatMessage('login.error_subheading')}
+                confirmButtonText={formatMessage('common.ok')}
+                closeButtonAriaLabel={formatMessage('common.voice_over_close')}
+                onConfirm={() => setShowErrorDialog(false)}
+                open={showErrorDialog}
+                onOpenChange={setShowErrorDialog}
+            />
         </>
     );
 }

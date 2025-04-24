@@ -15,6 +15,17 @@ test('userinfo is read from the url search params', async () => {
     expect(user).toEqual(userInfo);
 });
 
+test('if there is no userinfo it returns null', async () => {
+    const searchParams = new URLSearchParams({ foobar: faker.lorem.word() });
+    const location: Partial<Location> = { search: searchParams.toString() };
+    const history: Partial<History> = { replaceState: vi.fn() };
+    vi.stubGlobal('location', location);
+    vi.stubGlobal('history', history);
+
+    const user = takeUserInfoFromUrl();
+    expect(user).toEqual(null);
+});
+
 test('when userinfo is read from the url it is removed', async () => {
     const userInfo = faker.custom.userInfo();
     const searchParams = new URLSearchParams({ userinfo: btoa(JSON.stringify(userInfo)) });

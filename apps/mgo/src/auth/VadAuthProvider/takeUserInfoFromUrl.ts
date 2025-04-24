@@ -28,4 +28,6 @@ export function takeUserInfoFromUrl() {
         window.history.replaceState(null, '', `${window.location.pathname}${searchString}`);
         return userInfo;
     }
+
+    return null;
 }
