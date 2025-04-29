@@ -1,4 +1,9 @@
 {
+    "id": "zib-functionalormentalstatus-01",
+    "referenceId": "Observation/zib-functionalormentalstatus-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus",
+    "fhirVersion": "R3",
     "identifier": [
         {
             "_type": "identifier",
@@ -8,30 +13,36 @@
             "type": null
         }
     ],
-    "status": {
-        "_type": "code",
-        "value": "final"
-    },
-    "category": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "118228005",
-                    "display": "Functional finding (finding)",
-                    "system": "http://snomed.info/sct"
-                }
-            ]
-        }
-    ],
     "subject": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "context": null,
-    "valueQuantity": null,
+    "effectiveDateTime": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2001",
+        "end": null
+    },
+    "performer": null,
+    "medicalDevice": [
+        {
+            "_type": "reference",
+            "reference": "Device/zib-MedicalDeviceProduct-03",
+            "display": "Gehoorapparaat"
+        }
+    ],
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "d510",
+                "display": "Zich wassen",
+                "system": "http://hl7.org/fhir/sid/icf-nl"
+            }
+        ]
+    },
     "valueCodeableConcept": {
         "_type": "codeableConcept",
         "text": null,
@@ -43,19 +54,5 @@
             }
         ]
     },
-    "effectivePeriod": {
-        "_type": "period",
-        "start": "2001",
-        "end": null
-    },
-    "dataAbsentReason": null,
-    "method": null,
-    "bodySite": null,
-    "comment": null,
-    "performer": null,
-    "id": "zib-functionalormentalstatus-01",
-    "referenceId": "Observation/zib-functionalormentalstatus-01",
-    "resourceType": "Observation",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus",
-    "fhirVersion": "R3"
+    "comment": null
 }

@@ -1,9 +1,29 @@
 {
-    "label": "1a56e129-8fdf-11ec-2982-020000000000",
+    "label": "Functionele of mentale status",
     "children": [
         {
-            "label": "r3.nl_core_observation.group_details",
             "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Hulpmiddel",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Gehoorapparaat",
+                    "reference": "Device/zib-MedicalDeviceProduct-03"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,55 +32,34 @@
                     ]
                 },
                 {
-                    "label": "r3.nl_core_observation.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "r3.nl_core_observation.category",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Functional finding (finding) (118228005 in code systeem http://snomed.info/sct)"
-                        ]
-                    ]
-                },
-                {
-                    "label": "Onderwerp",
+                    "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "r3.nl_core_observation.context",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
-                },
-                {
-                    "label": "Begin datum",
+                    "label": "Status datum",
                     "type": "SINGLE_VALUE",
                     "display": "2001"
                 },
                 {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.data_absent_reason",
+                    "label": "Status naam",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": [
+                        "Zich wassen (d510 in code systeem http://hl7.org/fhir/sid/icf-nl)"
+                    ]
                 },
                 {
-                    "label": "r3.nl_core_observation.comment",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_observation.body_site",
+                    "label": "Status waarde",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "display": [
+                        "ERNSTIGE stoornis (aanzienlijk, hoog, sterk, ...) 50-95% (d510.3 in code systeem http://hl7.org/fhir/sid/icf-nl)"
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

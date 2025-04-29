@@ -1,21 +1,18 @@
-import { expectJson, testUiSchemaContext } from '$test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Observation } from 'fhir/r3';
 import { test } from 'vitest';
 import input from './fixtures/fhir-resource.json';
 import { zibFunctionalOrMentalStatus } from './zibFunctionalOrMentalStatus';
 
-test('returns the expected output 01', async () => {
+test('r01: mgo-resource', async () => {
     const output = zibFunctionalOrMentalStatus.parse(input as Observation);
     await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', async () => {
+test('01: ui-schema', async () => {
     const output = zibFunctionalOrMentalStatus.parse(input as Observation);
-    const uiSchema = zibFunctionalOrMentalStatus.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+    const uiSchema = zibFunctionalOrMentalStatus.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/ui-schema.snap.json');
 });
