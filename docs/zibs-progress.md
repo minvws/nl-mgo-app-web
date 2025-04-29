@@ -34,7 +34,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-MedicationAgreement]              | :white_large_square: | :white_check_mark:   |
 | [zib-NutritionAdvice]                  | :white_large_square: | :white_check_mark:   |
 | [zib-Payer]                            | :white_large_square: | :white_large_square: |
-| [zib-Problem]                          | :white_large_square: | :white_large_square: |
+| [zib-Problem]                          | :white_large_square: | :white_check_mark:   |
 | [zib-Procedure]                        | :white_large_square: | :white_check_mark:   |
 | [zib-ProcedureRequest]                 | :white_large_square: | :white_large_square: |
 | [zib-TobaccoUse]                       | :white_large_square: | :white_check_mark:   |

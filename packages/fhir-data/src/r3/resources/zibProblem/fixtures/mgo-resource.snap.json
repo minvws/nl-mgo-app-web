@@ -13,16 +13,43 @@
             "type": null
         }
     ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "onsetDateTime": {
+        "_type": "dateTime",
+        "value": "2001"
+    },
+    "asserter": null,
     "clinicalStatus": {
-        "_type": "code",
-        "value": "active"
+        "problemStatusCodelist": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "55561003",
+                    "display": "Active",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
     },
     "verificationStatus": {
-        "_type": "code",
-        "value": "unknown"
+        "verificatieStatusCodelijst": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "UNK",
+                    "display": "Unknown",
+                    "system": "http://hl7.org/fhir/v3/NullFlavor"
+                }
+            ]
+        }
     },
     "category": null,
-    "severity": null,
     "code": {
         "_type": "codeableConcept",
         "text": null,
@@ -44,30 +71,24 @@
                     "display": "Entire wrist region",
                     "system": "http://snomed.info/sct"
                 }
-            ]
+            ],
+            "laterality": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "24028007",
+                        "display": "Right",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
         }
     ],
-    "subject": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
-    },
-    "context": null,
-    "onsetDateTime": {
-        "_type": "dateTime",
-        "value": "2001"
-    },
     "abatementDateTime": {
         "_type": "dateTime",
         "value": "2002"
     },
-    "assertedDate": null,
-    "asserter": null,
-    "stage": {
-        "summary": null,
-        "assessment": null
-    },
-    "evidence": null,
     "note": [
         {
             "_type": "annotation",

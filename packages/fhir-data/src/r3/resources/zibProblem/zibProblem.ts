@@ -2,10 +2,8 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Condition } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { evidence } from './elements/evidence/evidence';
-import { stage } from './elements/stage/stage';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Problem'; // NOSONAR
 
@@ -15,21 +13,39 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Problem'; // NOSO
 function parseZibProblem(resource: Condition) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
-        clinicalStatus: parse.code(resource.clinicalStatus),
-        verificationStatus: parse.code(resource.verificationStatus),
-        category: map(resource.category, parse.codeableConcept),
-        severity: parse.codeableConcept(resource.severity),
-        code: parse.codeableConcept(resource.code),
-        bodySite: map(resource.bodySite, parse.codeableConcept),
         subject: parse.reference(resource.subject),
-        context: parse.reference(resource.context),
         onsetDateTime: parse.dateTime(resource.onsetDateTime),
-        abatementDateTime: parse.dateTime(resource.abatementDateTime),
-        assertedDate: parse.dateTime(resource.assertedDate),
         asserter: parse.reference(resource.asserter),
-        stage: stage.parse(resource.stage),
-        evidence: map(resource.evidence, evidence.parse),
+
+        // HCIM Problem-v4.1(2017EN)
+        clinicalStatus: {
+            problemStatusCodelist: parse.extension(
+                resource._clinicalStatus,
+                'http://nictiz.nl/fhir/StructureDefinition/code-specification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
+        verificationStatus: {
+            verificatieStatusCodelijst: parse.extension(
+                resource._verificationStatus,
+                'http://nictiz.nl/fhir/StructureDefinition/code-specification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
+        category: map(resource.category, parse.codeableConcept),
+        code: parse.codeableConcept(resource.code),
+        bodySite: map(resource.bodySite, (bodySite) => ({
+            ...parse.codeableConcept(bodySite),
+            laterality: parse.extension(
+                bodySite,
+                'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier', // NOSONAR
+                'codeableConcept'
+            ),
+        })),
+        abatementDateTime: parse.dateTime(resource.abatementDateTime),
         note: map(resource.note, parse.annotation),
     };
 }
@@ -39,5 +55,5 @@ export type ZibProblem = ReturnType<typeof parseZibProblem>;
 export const zibProblem = {
     profile,
     parse: parseZibProblem,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Condition, ZibProblem>;

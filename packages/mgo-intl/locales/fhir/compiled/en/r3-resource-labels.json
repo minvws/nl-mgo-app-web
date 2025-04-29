@@ -9,6 +9,42 @@
   ],
   "r3.gp_laboratory_result": [
   ],
+  "r3.gp_laboratory_result.based_on": [
+  ],
+  "r3.gp_laboratory_result.code": [
+  ],
+  "r3.gp_laboratory_result.comment": [
+  ],
+  "r3.gp_laboratory_result.context": [
+  ],
+  "r3.gp_laboratory_result.interpretation": [
+  ],
+  "r3.gp_laboratory_result.laboratory_test_result_code": [
+  ],
+  "r3.gp_laboratory_result.method": [
+  ],
+  "r3.gp_laboratory_result.reference_range": [
+  ],
+  "r3.gp_laboratory_result.reference_range.high": [
+  ],
+  "r3.gp_laboratory_result.reference_range.low": [
+  ],
+  "r3.gp_laboratory_result.reference_range.type": [
+  ],
+  "r3.gp_laboratory_result.related": [
+  ],
+  "r3.gp_laboratory_result.result_type": [
+  ],
+  "r3.gp_laboratory_result.specimen": [
+  ],
+  "r3.gp_laboratory_result.status": [
+  ],
+  "r3.gp_laboratory_result.status.test_result_status": [
+  ],
+  "r3.gp_laboratory_result.status.value": [
+  ],
+  "r3.gp_laboratory_result.value": [
+  ],
   "r3.ihe_mhd_document_manifest": [
   ],
   "r3.ihe_mhd_minimal_document_reference.author": [
@@ -97,8 +133,6 @@
   ],
   "r3.zib_body_weight.clothing": [
   ],
-  "r3.zib_functional_or_mental_status.medical_device.value_reference": [
-  ],
   "r3.zib_laboratory_test_result_observation.context": [
   ],
   "r3.zib_laboratory_test_result_observation.general_test_information": [
@@ -112,6 +146,8 @@
   "r3.zib_laboratory_test_result_observation.performer": [
   ],
   "r3.zib_laboratory_test_result_observation.reference_range.type": [
+  ],
+  "r3.zib_laboratory_test_result_observation.status.value": [
   ],
   "r3.zib_laboratory_test_result_specimen.collection": [
   ],
@@ -180,12 +216,6 @@
   "r3.zib_payer.beneficiary": [
   ],
   "r3.zib_problem.asserter": [
-  ],
-  "r3.zib_problem.body_site.value_codable_concept": [
-  ],
-  "r3.zib_problem.clinical_status.value": [
-  ],
-  "r3.zib_problem.verification_status.value": [
   ],
   "r3.zib_procedure.based_on": [
   ],

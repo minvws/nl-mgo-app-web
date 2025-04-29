@@ -29,6 +29,114 @@
       "value": "Laboratorium uitslag"
     }
   ],
+  "r3.gp_laboratory_result.based_on": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r3.gp_laboratory_result.code": [
+    {
+      "type": 0,
+      "value": "Test code"
+    }
+  ],
+  "r3.gp_laboratory_result.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.gp_laboratory_result.context": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_laboratory_result.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie"
+    }
+  ],
+  "r3.gp_laboratory_result.laboratory_test_result_code": [
+    {
+      "type": 0,
+      "value": "Resultaat code"
+    }
+  ],
+  "r3.gp_laboratory_result.method": [
+    {
+      "type": 0,
+      "value": "Testmethode"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range": [
+    {
+      "type": 0,
+      "value": "Referentie"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.high": [
+    {
+      "type": 0,
+      "value": "Referentie bovengrens"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.low": [
+    {
+      "type": 0,
+      "value": "Referentie ondergrens"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.type": [
+    {
+      "type": 0,
+      "value": "Referentie type"
+    }
+  ],
+  "r3.gp_laboratory_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.result_type": [
+    {
+      "type": 0,
+      "value": "Restultaat type"
+    }
+  ],
+  "r3.gp_laboratory_result.specimen": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.gp_laboratory_result.status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.status.test_result_status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.status.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag"
+    }
+  ],
   "r3.ihe_mhd_document_manifest": [
     {
       "type": 0,
@@ -293,12 +401,6 @@
       "value": "Kleding"
     }
   ],
-  "r3.zib_functional_or_mental_status.medical_device.value_reference": [
-    {
-      "type": 0,
-      "value": "Medisch hulpmiddel"
-    }
-  ],
   "r3.zib_laboratory_test_result_observation.context": [
     {
       "type": 0,
@@ -326,7 +428,7 @@
   "r3.zib_laboratory_test_result_observation.laboratory_test_result_code": [
     {
       "type": 0,
-      "value": "Resultaat"
+      "value": "Resultaat code"
     }
   ],
   "r3.zib_laboratory_test_result_observation.performer": [
@@ -339,6 +441,12 @@
     {
       "type": 0,
       "value": "Referentie type"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.status.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
     }
   ],
   "r3.zib_laboratory_test_result_specimen.collection": [
@@ -543,24 +651,6 @@
     {
       "type": 0,
       "value": "Bron"
-    }
-  ],
-  "r3.zib_problem.body_site.value_codable_concept": [
-    {
-      "type": 0,
-      "value": "Probleem anatomische locatie"
-    }
-  ],
-  "r3.zib_problem.clinical_status.value": [
-    {
-      "type": 0,
-      "value": "Probleem status"
-    }
-  ],
-  "r3.zib_problem.verification_status.value": [
-    {
-      "type": 0,
-      "value": "Verificatie status"
     }
   ],
   "r3.zib_procedure.based_on": [
