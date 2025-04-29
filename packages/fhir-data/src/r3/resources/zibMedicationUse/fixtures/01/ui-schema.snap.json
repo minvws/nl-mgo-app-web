@@ -10,11 +10,6 @@
                     "reference": "PractitionerRole/nl-core-practitionerrole-02"
                 },
                 {
-                    "label": "Einddatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Gebruik indicator",
                     "type": "SINGLE_VALUE",
                     "display": "y"
@@ -43,11 +38,6 @@
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
-                },
-                {
-                    "label": "Ingangsdatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "21 juli 2020"
                 },
                 {
                     "label": "Medicamenteuze behandeling",
@@ -85,11 +75,6 @@
                     "display": "21 juli 2020"
                 },
                 {
-                    "label": "Tijdsduur",
-                    "type": "SINGLE_VALUE",
-                    "display": "30 dagen"
-                },
-                {
                     "label": "Toelichting",
                     "display": "het monster toont afwijkingen",
                     "type": "SINGLE_VALUE"
@@ -104,6 +89,26 @@
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
+                }
+            ]
+        },
+        {
+            "label": "Gebruiksperiode",
+            "children": [
+                {
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Ingangsdatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "21 juli 2020"
+                },
+                {
+                    "label": "Tijdsduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "30 dagen"
                 }
             ]
         },

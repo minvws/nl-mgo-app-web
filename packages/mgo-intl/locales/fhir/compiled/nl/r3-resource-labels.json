@@ -323,6 +323,12 @@
       "value": "Laboratoriumtest"
     }
   ],
+  "r3.zib_laboratory_test_result_observation.laboratory_test_result_code": [
+    {
+      "type": 0,
+      "value": "Resultaat"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.performer": [
     {
       "type": 0,
@@ -333,6 +339,54 @@
     {
       "type": 0,
       "value": "Referentie type"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection": [
+    {
+      "type": 0,
+      "value": "Afname"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection.body_site.laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection.body_site.value": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.parent": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection": [
+    {
+      "type": 0,
+      "value": "Afname"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.value": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.parent": [
+    {
+      "type": 0,
+      "value": "Monster"
     }
   ],
   "r3.zib_laboratory_test_result_substance": [
@@ -483,6 +537,30 @@
     {
       "type": 0,
       "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_problem.asserter": [
+    {
+      "type": 0,
+      "value": "Bron"
+    }
+  ],
+  "r3.zib_problem.body_site.value_codable_concept": [
+    {
+      "type": 0,
+      "value": "Probleem anatomische locatie"
+    }
+  ],
+  "r3.zib_problem.clinical_status.value": [
+    {
+      "type": 0,
+      "value": "Probleem status"
+    }
+  ],
+  "r3.zib_problem.verification_status.value": [
+    {
+      "type": 0,
+      "value": "Verificatie status"
     }
   ],
   "r3.zib_procedure.based_on": [

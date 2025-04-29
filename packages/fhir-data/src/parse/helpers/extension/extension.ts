@@ -1,4 +1,4 @@
-import { type DomainResource, type Element } from '@minvws/mgo-fhir-types';
+import { type DomainResource, type Element, type Reference } from '@minvws/mgo-fhir-types';
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
 
@@ -22,7 +22,7 @@ export function extension<
 }
 
 export function customExtension<
-    T extends DomainResource | Element,
+    T extends DomainResource | Element | Reference,
     Parser extends (element: any) => unknown, // eslint-disable-line @typescript-eslint/no-explicit-any
     RT = ReturnType<Parser>,
 >(resource: Nullable<T>, url: string, parser: Parser) {

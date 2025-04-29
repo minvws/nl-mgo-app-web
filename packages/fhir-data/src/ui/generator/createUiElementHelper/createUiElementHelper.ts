@@ -1,25 +1,23 @@
-import { type UiElement, type UiFunction } from '../types';
-
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import type * as parse from '../../parse/type';
-import { map } from '../../utils';
-import { type HealthUiSchemaContext } from '../context';
+import type * as typeParsers from '../../../parse/type';
+import { map } from '../../../utils';
+import { type HealthUiSchemaContext } from '../../context';
+import { type UiElement, type UiFunction } from '../../types';
 
-type Parsers = typeof parse;
+type TypeParsers = typeof typeParsers;
 
-export type MgoValueType = NonNullable<ReturnType<Parsers[keyof Parsers]>>;
-type Type = MgoValueType['_type'];
-type MgoByType<T extends Type> = Extract<MgoValueType, { _type: T }>;
+export type MgoType = NonNullable<ReturnType<TypeParsers[keyof TypeParsers]>>;
+type MgoTypeId = MgoType['_type'];
+type MgoTypeByTypeId<T extends MgoTypeId> = Extract<MgoType, { _type: T }>;
 
 type SingleTypeUiFunctionMap = {
-    [T in Type]: UiFunction<MgoByType<T>, UiElement | UiElement[]>;
+    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>, UiElement | UiElement[]>;
 };
 type MultipleTypeUiFunctionMap = {
-    [T in Type]: UiFunction<MgoByType<T>[], UiElement | UiElement[]>;
+    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>[], UiElement | UiElement[]>;
 };
 
-export function getUiHelpers(context: HealthUiSchemaContext) {
-    const { ui } = context;
+export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
     const singleUiTypeMap: SingleTypeUiFunctionMap = {
         annotation: ui.annotation,
         attachment: (_label, value) => ui.attachment(value),
@@ -57,30 +55,22 @@ export function getUiHelpers(context: HealthUiSchemaContext) {
         string: ui.string,
     };
 
-    function handleSingeUiType<T extends Type>(
+    return function createUiElement<T extends MgoTypeId>(
         label: FhirMessagesIds,
-        value: MgoByType<T>
+        value: MgoTypeByTypeId<T> | MgoTypeByTypeId<T>[]
     ): UiElement | UiElement[] {
+        if (Array.isArray(value)) {
+            const uiHelper = multipleUiTypeMap[value[0]._type];
+            if (uiHelper) {
+                return uiHelper(label, value);
+            }
+            return map(value, (x) => createUiElement(label, x), true);
+        }
+
         const uiHelper = singleUiTypeMap[value._type];
         if (!uiHelper) {
             throw new Error(`No ui helper found for type "${value._type}"`);
         }
         return uiHelper(label, value);
-    }
-
-    function handleMultipleUiTypes<T extends Type>(
-        label: FhirMessagesIds,
-        value: MgoByType<T>[]
-    ): UiElement | UiElement[] {
-        const uiHelper = multipleUiTypeMap[value[0]._type];
-        if (uiHelper) {
-            return uiHelper(label, value);
-        }
-
-        return map(value, (x) => handleSingeUiType(label, x), true);
-    }
-
-    return { handleSingeUiType, handleMultipleUiTypes };
+    };
 }
-
-export type UiElementGeneratorHelpers = ReturnType<typeof getUiHelpers>;

@@ -7,10 +7,6 @@
         "value": "Niet bekend"
       },
       {
-        "label": "Einddatum",
-        "value": "Niet bekend"
-      },
-      {
         "label": "Gebruik indicator",
         "value": "y"
       },
@@ -29,10 +25,6 @@
       {
         "label": "Informatiebron",
         "value": "Johan XXX_Helleman"
-      },
-      {
-        "label": "Ingangsdatum",
-        "value": "28 juni 2018"
       },
       {
         "label": "Medicamenteuze behandeling",
@@ -59,10 +51,6 @@
         "value": "16 augustus 2018"
       },
       {
-        "label": "Tijdsduur",
-        "value": "3 weken"
-      },
-      {
         "label": "Toelichting",
         "value": "Niet bekend"
       },
@@ -73,6 +61,23 @@
       {
         "label": "Voorschrijver",
         "value": "Huisartspraktijk Heideroosje"
+      }
+    ]
+  },
+  {
+    "label": "Gebruiksperiode",
+    "children": [
+      {
+        "label": "Einddatum",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Ingangsdatum",
+        "value": "28 juni 2018"
+      },
+      {
+        "label": "Tijdsduur",
+        "value": "3 weken"
       }
     ]
   },

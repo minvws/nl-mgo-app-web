@@ -107,9 +107,27 @@
   ],
   "r3.zib_laboratory_test_result_observation.lab_test": [
   ],
+  "r3.zib_laboratory_test_result_observation.laboratory_test_result_code": [
+  ],
   "r3.zib_laboratory_test_result_observation.performer": [
   ],
   "r3.zib_laboratory_test_result_observation.reference_range.type": [
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection": [
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection.body_site.laterality": [
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection.body_site.value": [
+  ],
+  "r3.zib_laboratory_test_result_specimen.parent": [
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection": [
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.laterality": [
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.value": [
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.parent": [
   ],
   "r3.zib_laboratory_test_result_substance": [
   ],
@@ -160,6 +178,14 @@
   "r3.zib_nutrition_advice.orderer": [
   ],
   "r3.zib_payer.beneficiary": [
+  ],
+  "r3.zib_problem.asserter": [
+  ],
+  "r3.zib_problem.body_site.value_codable_concept": [
+  ],
+  "r3.zib_problem.clinical_status.value": [
+  ],
+  "r3.zib_problem.verification_status.value": [
   ],
   "r3.zib_procedure.based_on": [
   ],

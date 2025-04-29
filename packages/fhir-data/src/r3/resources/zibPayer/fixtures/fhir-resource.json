@@ -22,10 +22,30 @@
         ]
     },
     "subscriber": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
+    "subscriberId": "12345678",
     "beneficiary": { "reference": "Patient/nl-core-patient-01", "display": "Johan XXX_Helleman" },
     "period": { "start": "2018-01-01", "end": "2019-01-31" },
     "payor": [
         {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-Payer-BankInformation",
+                    "extension": [
+                        {
+                            "url": "BankName",
+                            "valueString": "ING"
+                        },
+                        {
+                            "url": "AccountNumber",
+                            "valueString": "NL85INGB0001234567"
+                        },
+                        {
+                            "url": "Bankcode",
+                            "valueString": "INGBNL2A"
+                        }
+                    ]
+                }
+            ],
             "reference": "Organization/nl-core-organization-04",
             "display": "Menzis Zorgverzekeraar N.V."
         }

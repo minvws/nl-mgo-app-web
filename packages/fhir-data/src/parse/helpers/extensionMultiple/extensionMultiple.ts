@@ -22,3 +22,12 @@ export function extensionMultiple<
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return extensions.map((x) => valueX(x, valueType as any) as ParsedType).filter(isNonNullish);
 }
+
+export function customExtensionMultiple<
+    T extends DomainResource | Element,
+    Parser extends (element: any) => unknown, // eslint-disable-line @typescript-eslint/no-explicit-any
+    RT = ReturnType<Parser>,
+>(resource: Nullable<T>, url: string, parser: Parser) {
+    const extensions = getAllExtensions(resource, url);
+    return extensions.map((x) => parser(x) as RT).filter(isNonNullish);
+}

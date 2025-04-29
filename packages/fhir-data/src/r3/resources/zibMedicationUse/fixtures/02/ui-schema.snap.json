@@ -10,11 +10,6 @@
                     "reference": "PractitionerRole/nl-core-practitionerrole-02"
                 },
                 {
-                    "label": "Einddatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Gebruik indicator",
                     "type": "SINGLE_VALUE",
                     "display": "y"
@@ -42,11 +37,6 @@
                     "label": "Informatiebron",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
-                },
-                {
-                    "label": "Ingangsdatum",
-                    "type": "SINGLE_VALUE",
-                    "display": "16 juli 2018"
                 },
                 {
                     "label": "Medicamenteuze behandeling",
@@ -80,11 +70,6 @@
                     "display": "16 juli 2018"
                 },
                 {
-                    "label": "Tijdsduur",
-                    "type": "SINGLE_VALUE",
-                    "display": "5 dagen"
-                },
-                {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
@@ -98,6 +83,26 @@
                     "label": "Voorschrijver",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Gebruiksperiode",
+            "children": [
+                {
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Ingangsdatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "16 juli 2018"
+                },
+                {
+                    "label": "Tijdsduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "5 dagen"
                 }
             ]
         },

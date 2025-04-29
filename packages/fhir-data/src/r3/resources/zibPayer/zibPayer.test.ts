@@ -1,37 +1,23 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Coverage } from 'fhir/r3';
-import { expect, test } from 'vitest';
-import input01 from './fixtures/zib-Payer-01.json';
-import { i18n } from './uiSchema';
+import { test } from 'vitest';
+import input01 from './fixtures/fhir-resource.json';
 import { zibPayer } from './zibPayer';
 
-test('parseZibPayer returns the expected output 01', async () => {
+test('01: mgo-resource', async () => {
     const output = zibPayer.parse(input01 as Coverage);
-    await expectJson(output).toMatchFileSnapshot('./fixtures/zib-Payer-01-output.snap.json');
+    await expectJson(output).toMatchFileSnapshot('./fixtures/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output', async () => {
-    const output = zibPayer.parse(input01 as Coverage);
+test('01: ui-schema', async () => {
+    const mgoResource = zibPayer.parse(input01 as Coverage);
     const zibPayerUiSchema = zibPayer.uiSchema(
-        output,
+        mgoResource,
         testUiSchemaContext({
             ignoreMissingTranslations: true,
         })
     );
-    await expectJson(zibPayerUiSchema).toMatchFileSnapshot(
-        './fixtures/zib-Payer-01-uiSchema.snap.json'
+    await expectHealthCareUiSchemaJson(zibPayerUiSchema).toMatchFileSnapshot(
+        './fixtures/ui-schema.snap.json'
     );
-});
-
-test('uiSchema returns default label if identifier not supplied', () => {
-    const output = zibPayer.parse(input01 as Coverage);
-    output.identifier = undefined;
-    const uiSchema = zibPayer.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

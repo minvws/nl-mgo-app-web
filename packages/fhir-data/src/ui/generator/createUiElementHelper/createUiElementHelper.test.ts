@@ -1,12 +1,12 @@
 import { faker, testUiSchemaContext } from '$test';
 import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
-import { type MgoPositiveInt, type MgoString } from '../../parse/type';
-import { numberToString } from '../helpers/numberToString/numberToString';
-import { getUiHelpers, type MgoValueType } from './uiHelpers';
+import { type MgoPositiveInt, type MgoString } from '../../../parse/type';
+import { numberToString } from '../../helpers/numberToString/numberToString';
+import { createUiElementHelper, type MgoType } from './createUiElementHelper';
 
 test('creates a helper to process single value types', () => {
-    const { handleSingeUiType } = getUiHelpers(testUiSchemaContext({ useMock: true }));
+    const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
 
     const label = faker.custom.fhirMessageId();
     const value: MgoString = {
@@ -14,7 +14,7 @@ test('creates a helper to process single value types', () => {
         value: faker.lorem.word(),
     };
 
-    const result = handleSingeUiType(label, value);
+    const result = createUiElement(label, value);
     const expected = {
         label: testMessage(label),
         type: 'SINGLE_VALUE',
@@ -25,26 +25,26 @@ test('creates a helper to process single value types', () => {
 });
 
 test('throws if the ui helper can not be found for this unknown type', () => {
-    const { handleSingeUiType } = getUiHelpers(testUiSchemaContext({ useMock: true }));
+    const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
 
     const label = faker.custom.fhirMessageId();
     const value = {
         _type: faker.lorem.word(),
         value: faker.lorem.word(),
-    } as unknown as MgoValueType;
+    } as unknown as MgoType;
 
     expect(() => {
-        handleSingeUiType(label, value);
+        createUiElement(label, value);
     }).toThrow(`No ui helper found for type "${value._type}"`);
 });
 
 test(`label is ignored for helpers that don't require one`, () => {
-    const { handleSingeUiType } = getUiHelpers(testUiSchemaContext({ useMock: true }));
+    const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
 
     const value = faker.mgo.attachment();
     const label = faker.custom.fhirMessageId();
 
-    const result = handleSingeUiType(label, value);
+    const result = createUiElement(label, value);
     const expected = {
         type: 'DOWNLOAD_LINK',
         label: value?.title,
@@ -55,7 +55,7 @@ test(`label is ignored for helpers that don't require one`, () => {
 });
 
 test('creates a helper to process multiple same value types', () => {
-    const { handleMultipleUiTypes } = getUiHelpers(testUiSchemaContext({ useMock: true }));
+    const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
 
     const label = faker.custom.fhirMessageId();
     const value: MgoString[] = [
@@ -69,7 +69,7 @@ test('creates a helper to process multiple same value types', () => {
         },
     ];
 
-    const result = handleMultipleUiTypes(label, value);
+    const result = createUiElement(label, value);
     const expected = {
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
@@ -80,7 +80,7 @@ test('creates a helper to process multiple same value types', () => {
 });
 
 test('if a type does not have a dedicated multiple values handle, the single value handler is called multiple times', () => {
-    const { handleMultipleUiTypes } = getUiHelpers(testUiSchemaContext({ useMock: true }));
+    const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
 
     const label = faker.custom.fhirMessageId();
     const value: MgoPositiveInt[] = [
@@ -94,7 +94,7 @@ test('if a type does not have a dedicated multiple values handle, the single val
         },
     ];
 
-    const result = handleMultipleUiTypes(label, value);
+    const result = createUiElement(label, value);
     const expected = [
         {
             label: testMessage(label),
