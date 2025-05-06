@@ -22,7 +22,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-BodyHeight]                       | :white_large_square: | :white_check_mark:   |
 | [zib-BodyWeight]                       | :white_large_square: | :white_check_mark:   |
 | [zib-DrugUse]                          | :white_large_square: | :white_check_mark:   |
-| [zib-Encounter]                        | :white_large_square: | :white_large_square: |
+| [zib-Encounter]                        | :white_large_square: | :white_check_mark:   |
 | [zib-FunctionalOrMentalStatus]         | :white_large_square: | :white_check_mark:   |
 | [zib-LaboratoryTestResult-Observation] | :white_check_mark:   | :white_check_mark:   |
 | [zib-LaboratoryTestResult-Specimen]    | :white_large_square: | :white_large_square: |

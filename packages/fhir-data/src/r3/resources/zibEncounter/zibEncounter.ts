@@ -2,11 +2,8 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Encounter } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { encounterParticipant } from '../../elements/encounterParticipant/encounterParticipant';
-import { diagnosis } from './elements/diagnosis/diagnosis';
-import { hospitalization } from './elements/hospitalization/hospitalization';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter'; // NOSONAR
 
@@ -16,13 +13,34 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter'; // NO
 function parseZibEncounter(resource: Encounter) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        class: parse.coding(resource.class),
-        participant: map(resource.participant, encounterParticipant.parse),
-        serviceProvider: parse.reference(resource.serviceProvider),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier: map(resource.identifier, parse.identifier),
+        subject: parse.reference(resource.subject),
         period: parse.period(resource.period),
-        diagnosis: map(resource.diagnosis, diagnosis.parse),
+        participant: map(resource.participant, (participant) => ({
+            // HCIM Encounter-v3.1(2017EN)
+            individual: parse.reference(participant.individual),
+
+            // HCIM HealthProfessional-v3.2(2017EN)
+            type: {
+                healthProfessionalRole: map(participant.type, parse.codeableConcept),
+            },
+        })),
+
+        // HCIM Encounter-v3.1(2017EN)
         reason: map(resource.reason, parse.codeableConcept),
-        hospitalization: hospitalization.parse(resource.hospitalization),
+        class: parse.coding(resource.class),
+        diagnosis: map(resource.diagnosis, (diagnosis) => ({
+            condition: parse.reference(diagnosis?.condition),
+        })),
+        hospitalization: {
+            admitSource: parse.codeableConcept(resource.hospitalization?.admitSource),
+            dischargeDisposition: parse.codeableConcept(
+                resource.hospitalization?.dischargeDisposition
+            ),
+        },
+        serviceProvider: parse.reference(resource.serviceProvider),
     };
 }
 
@@ -31,5 +49,5 @@ export type ZibEncounter = ReturnType<typeof parseZibEncounter>;
 export const zibEncounter = {
     profile,
     parse: parseZibEncounter,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Encounter, ZibEncounter>;

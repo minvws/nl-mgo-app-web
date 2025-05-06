@@ -21,6 +21,17 @@
     "subject": { "reference": "Patient/nl-core-patient-03", "display": "I. Jongeneel-de Haas" },
     "participant": [
         {
+            "type": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/ParticipationType",
+                            "code": "RESP",
+                            "display": "Responsible Party"
+                        }
+                    ]
+                }
+            ],
             "individual": {
                 "extension": [
                     {
@@ -48,5 +59,16 @@
     "serviceProvider": {
         "reference": "Organization/nl-core-organization-03",
         "display": "Test Medisch Centrum"
+    },
+    "hospitalization": {
+        "admitSource": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/admit-source",
+                    "code": "emd",
+                    "display": "From accident/emergency department"
+                }
+            ]
+        }
     }
 }

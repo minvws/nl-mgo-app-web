@@ -1,25 +1,12 @@
 {
-    "label": "UMCG - Afdeling Orthopedie",
+    "label": "Contact",
     "children": [
         {
-            "label": "r3.zib_encounter",
             "children": [
                 {
-                    "label": "Contact type",
+                    "label": "Afwijkende uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
-                },
-                {
-                    "label": "Encounter.participant.individual",
-                    "type": "REFERENCE_VALUE",
-                    "display": "G.Z.M. de Wit",
-                    "reference": "Practitioner/nl-core-practitioner-03"
-                },
-                {
-                    "label": "r3.zib_encounter.serviceProvider",
-                    "type": "REFERENCE_VALUE",
-                    "display": "UMCG - Afdeling Orthopedie",
-                    "reference": "Organization/nl-core-organization-02"
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Begin datum tijd",
@@ -27,36 +14,76 @@
                     "display": "16 augustus 2012"
                 },
                 {
+                    "label": "Contact type",
+                    "type": "SINGLE_VALUE",
+                    "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
+                },
+                {
                     "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "19 augustus 2012"
                 },
                 {
-                    "label": "Encounter.diagnosis.condition",
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "19adad57-8fdf-11ec-1860-020000000000"
+                    ]
+                },
+                {
+                    "label": "Locatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "UMCG - Afdeling Orthopedie",
+                    "reference": "Organization/nl-core-organization-02"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Probleem",
                     "type": "REFERENCE_VALUE",
                     "display": "Fracture of lower limb (disorder)",
                     "reference": "Condition/zib-problem-05"
                 },
                 {
-                    "label": "Encounter.diagnosis.condition",
+                    "label": "Probleem",
                     "type": "REFERENCE_VALUE",
                     "display": "Surgical reduction of fracture (procedure)",
                     "reference": "Procedure/zib-procedure-02"
+                }
+            ]
+        },
+        {
+            "label": "Zorgverlener",
+            "children": [
+                {
+                    "label": "Contact met",
+                    "type": "REFERENCE_VALUE",
+                    "display": "G.Z.M. de Wit",
+                    "reference": "Practitioner/nl-core-practitioner-03"
                 },
                 {
-                    "label": "Afwijkende uitslag",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opname",
+            "children": [
+                {
+                    "label": "Bestemming",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Encounter.hospitalization.admitSource",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "Encounter.hospitalization.dischargeDisposition",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "label": "Herkomst",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

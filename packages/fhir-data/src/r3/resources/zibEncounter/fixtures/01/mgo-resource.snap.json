@@ -4,11 +4,24 @@
     "resourceType": "Encounter",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter",
     "fhirVersion": "R3",
-    "class": {
-        "_type": "coding",
-        "code": "IMP",
-        "display": "inpatient encounter",
-        "system": "http://hl7.org/fhir/v3/ActCode"
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19adad57-8fdf-11ec-1860-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2012-08-16",
+        "end": "2012-08-19"
     },
     "participant": [
         {
@@ -16,18 +29,18 @@
                 "_type": "reference",
                 "reference": "Practitioner/nl-core-practitioner-03",
                 "display": "G.Z.M. de Wit"
+            },
+            "type": {
+                "healthProfessionalRole": null
             }
         }
     ],
-    "serviceProvider": {
-        "_type": "reference",
-        "reference": "Organization/nl-core-organization-02",
-        "display": "UMCG - Afdeling Orthopedie"
-    },
-    "period": {
-        "_type": "period",
-        "start": "2012-08-16",
-        "end": "2012-08-19"
+    "reason": null,
+    "class": {
+        "_type": "coding",
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "system": "http://hl7.org/fhir/v3/ActCode"
     },
     "diagnosis": [
         {
@@ -35,23 +48,23 @@
                 "_type": "reference",
                 "reference": "Condition/zib-problem-05",
                 "display": "Fracture of lower limb (disorder)"
-            },
-            "role": null,
-            "rank": null
+            }
         },
         {
             "condition": {
                 "_type": "reference",
                 "reference": "Procedure/zib-procedure-02",
                 "display": "Surgical reduction of fracture (procedure)"
-            },
-            "role": null,
-            "rank": null
+            }
         }
     ],
-    "reason": null,
     "hospitalization": {
         "admitSource": null,
         "dischargeDisposition": null
+    },
+    "serviceProvider": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-02",
+        "display": "UMCG - Afdeling Orthopedie"
     }
 }

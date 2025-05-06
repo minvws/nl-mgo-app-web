@@ -39,5 +39,10 @@
     "serviceProvider": {
         "reference": "Organization/nl-core-organization-02",
         "display": "Universitair Medisch Centrum Groningen"
-    }
+    },
+    "reason": [
+        {
+            "text": "The patient had fever peaks over the last couple of days. He is worried about these peaks."
+        }
+    ]
 }
