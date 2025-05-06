@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
-import { map } from '../../../utils';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse'; // NOSONAR
@@ -35,9 +35,15 @@ function parseZibAlcoholUse(resource: Observation) {
         // HCIM AlcoholUse-v3.1(2017EN)
         valueCodeableConcept,
         comment,
-        amount: map(resource.component, (component) => ({
-            valueQuantity: parse.quantity(component.valueQuantity),
-        })),
+        component: parseObservationComponents(resource.component, {
+            amount: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '160573003',
+                },
+                type: 'quantity',
+            },
+        }),
     };
 }
 

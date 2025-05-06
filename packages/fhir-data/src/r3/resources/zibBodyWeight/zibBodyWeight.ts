@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { findComponentByCode } from '../../../parse/helpers';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
@@ -35,11 +35,16 @@ function parseZibBodyWeight(resource: Observation) {
         // HCIM BodyWeight-v3.1(2017EN)
         valueQuantity,
         comment,
-        clothing: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, '8352-7')?.valueCodeableConcept
-            ),
-        },
+
+        component: parseObservationComponents(resource.component, {
+            clothing: {
+                coding: {
+                    system: 'http://loinc.org', // NOSONAR
+                    code: '8352-7',
+                },
+                type: 'codeableConcept',
+            },
+        }),
     };
 }
 

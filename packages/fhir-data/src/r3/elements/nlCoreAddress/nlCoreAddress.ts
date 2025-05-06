@@ -21,7 +21,7 @@ export interface NlCoreAddress {
 /**
  * @name HCIM NlCoreAddress
  * @usage Patient.address
- * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317236
+ * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317015
  */
 function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
     return {

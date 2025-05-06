@@ -1,7 +1,7 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { type ResourcesState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
 import { type SubCategoryData } from '.';
-import { HealthCategory } from '$/healthCategory/HealthCategory';
 
 export function getVitalsData(
     resources: ResourcesState,
@@ -12,7 +12,7 @@ export function getVitalsData(
             label: `health_category.${HealthCategory.Vitals}.blood_pressure`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getVitalsData(
             label: `health_category.${HealthCategory.Vitals}.body_weight`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -28,7 +28,7 @@ export function getVitalsData(
             label: `health_category.${HealthCategory.Vitals}.body_height`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight', // NOSONAR
                 organizationIdFilter
             ),
         },

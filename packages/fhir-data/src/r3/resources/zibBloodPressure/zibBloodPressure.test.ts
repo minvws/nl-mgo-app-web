@@ -12,12 +12,7 @@ test('01: mgo-resource', async () => {
 
 test('01: ui-schema', async () => {
     const mgoResource = zibBloodPressure.parse(inputFHIRData01 as Observation);
-    const uiSchema = zibBloodPressure.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = zibBloodPressure.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
@@ -30,12 +25,7 @@ test('02: mgo-resource', async () => {
 
 test('02: ui-schema', async () => {
     const mgoResource = zibBloodPressure.parse(inputFHIRData02 as Observation);
-    const uiSchema = zibBloodPressure.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = zibBloodPressure.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );

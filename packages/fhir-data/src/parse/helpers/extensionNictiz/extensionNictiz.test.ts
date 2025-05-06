@@ -7,7 +7,7 @@ test('extensionNictiz matches by zibID and returns the value', () => {
     const input = {
         extension: [
             {
-                url: 'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice-Explanation',
+                url: 'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice-Explanation', // NOSONAR
                 valueString,
             },
         ],
@@ -23,7 +23,7 @@ test('extensionNictiz also matches modifierExtentions and returns the value', ()
         resourceType: faker.lorem.word(),
         modifierExtension: [
             {
-                url: 'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice-Explanation',
+                url: 'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice-Explanation', // NOSONAR
                 valueString,
             },
         ],

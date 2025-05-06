@@ -12,7 +12,7 @@ export function getPayerData(
             label: `health_category.${HealthCategory.PayerAndOrganization}.get_insurance_information`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-Payer',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-Payer', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getPayerData(
             label: `health_category.${HealthCategory.PayerAndOrganization}.get_organization_information`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://fhir.nl/fhir/StructureDefinition/nl-core-organization',
+                'http://fhir.nl/fhir/StructureDefinition/nl-core-organization', // NOSONAR
                 organizationIdFilter
             ),
         },

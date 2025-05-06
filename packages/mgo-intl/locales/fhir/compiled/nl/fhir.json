@@ -73,6 +73,54 @@
       "value": "Teller"
     }
   ],
+  "fhir.sample_data": [
+    {
+      "type": 0,
+      "value": "Data"
+    }
+  ],
+  "fhir.sample_data.data": [
+    {
+      "type": 0,
+      "value": "Gesamplede gegevens"
+    }
+  ],
+  "fhir.sample_data.dimensions": [
+    {
+      "type": 0,
+      "value": "Aantal sample punten"
+    }
+  ],
+  "fhir.sample_data.factor": [
+    {
+      "type": 0,
+      "value": "Factor"
+    }
+  ],
+  "fhir.sample_data.lower_limit": [
+    {
+      "type": 0,
+      "value": "ondergrens"
+    }
+  ],
+  "fhir.sample_data.origin": [
+    {
+      "type": 0,
+      "value": "Origin"
+    }
+  ],
+  "fhir.sample_data.period": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
+  "fhir.sample_data.upper_limit": [
+    {
+      "type": 0,
+      "value": "bovengrens"
+    }
+  ],
   "fhir.unknown": [
     {
       "type": 0,
@@ -89,6 +137,12 @@
     {
       "type": 0,
       "value": "Auteur"
+    }
+  ],
+  "fhir.x.component": [
+    {
+      "type": 0,
+      "value": "Onderliggende metingen"
     }
   ],
   "fhir.x.device": [
@@ -125,6 +179,12 @@
     {
       "type": 0,
       "value": "Identificatie"
+    }
+  ],
+  "fhir.x.laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
     }
   ],
   "fhir.x.note": [

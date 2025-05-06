@@ -37,37 +37,45 @@
         ]
     },
     "comment": null,
-    "typeOfTobaccoUsed": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "65568007",
-                    "display": "Cigarette smoker (finding)",
-                    "system": "http://snomed.info/sct"
+    "component": {
+        "typeOfTobaccoUsed": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "65568007",
+                            "display": "Cigarette smoker (finding)",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
                 }
-            ]
-        }
-    },
-    "amount": {
-        "valueQuantity": {
-            "_type": "quantity",
-            "value": 2,
-            "comparator": null,
-            "unit": "packs per week",
-            "system": "http://unitsofmeasure.org",
-            "code": "{packs}/wk"
-        }
-    },
-    "packYears": {
-        "valueQuantity": {
-            "_type": "quantity",
-            "value": 1,
-            "comparator": null,
-            "unit": "PackYears",
-            "system": "http://unitsofmeasure.org",
-            "code": "{PackYears}"
-        }
+            }
+        ],
+        "amount": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 2,
+                    "comparator": null,
+                    "unit": "packs per week",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{packs}/wk"
+                }
+            }
+        ],
+        "packYears": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 1,
+                    "comparator": null,
+                    "unit": "PackYears",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{PackYears}"
+                }
+            }
+        ]
     }
 }

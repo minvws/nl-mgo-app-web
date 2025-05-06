@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { findComponentByCode } from '../../../parse/helpers';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
@@ -35,21 +35,30 @@ function parseZibTobaccoUse(resource: Observation) {
         // HCIM TobaccoUse-v3.1(2017EN)
         valueCodeableConcept,
         comment,
-        typeOfTobaccoUsed: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, '53661000146106')?.valueCodeableConcept
-            ),
-        },
-        amount: {
-            valueQuantity: parse.quantity(
-                findComponentByCode(resource.component, '266918002')?.valueQuantity
-            ),
-        },
-        packYears: {
-            valueQuantity: parse.quantity(
-                findComponentByCode(resource.component, '401201003')?.valueQuantity
-            ),
-        },
+
+        component: parseObservationComponents(resource.component, {
+            typeOfTobaccoUsed: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '53661000146106',
+                },
+                type: 'codeableConcept',
+            },
+            amount: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '266918002',
+                },
+                type: 'quantity',
+            },
+            packYears: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '401201003',
+                },
+                type: 'quantity',
+            },
+        }),
     };
 }
 

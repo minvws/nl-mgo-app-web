@@ -1,7 +1,7 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { type ResourcesState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
 import { type SubCategoryData } from '.';
-import { HealthCategory } from '$/healthCategory/HealthCategory';
 
 export function getLifestyleData(
     resources: ResourcesState,
@@ -12,7 +12,7 @@ export function getLifestyleData(
             label: `health_category.${HealthCategory.Lifestyle}.current_living_situation`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-LivingSituation', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getLifestyleData(
             label: `health_category.${HealthCategory.Lifestyle}.drug_use`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-DrugUse',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-DrugUse', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -28,7 +28,7 @@ export function getLifestyleData(
             label: `health_category.${HealthCategory.Lifestyle}.alchoholuse`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -36,7 +36,7 @@ export function getLifestyleData(
             label: `health_category.${HealthCategory.Lifestyle}.tabacco_use`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-TobaccoUse',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-TobaccoUse', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -44,7 +44,7 @@ export function getLifestyleData(
             label: `health_category.${HealthCategory.Lifestyle}.nutrition_advice`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice', // NOSONAR
                 organizationIdFilter
             ),
         },

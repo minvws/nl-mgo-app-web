@@ -30,7 +30,7 @@ test('returns ICPC_E in parser', () => {
         code: {
             coding: [
                 {
-                    system: 'http://hl7.org/fhir/v3/ActCode',
+                    system: 'http://hl7.org/fhir/v3/ActCode', // NOSONAR
                     code: 'DISDX',
                     display: 'discharge diagnosis',
                 },

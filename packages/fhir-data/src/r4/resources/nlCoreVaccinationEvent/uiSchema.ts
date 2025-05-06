@@ -30,11 +30,11 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resou
         Site: ui.codeableConcept(`${i18n}.site`, resource.site),
         Performer: map(resource.performer, (x) => ui.reference(`${i18n}.performer`, x), true),
         VaccinationIndication: ui.codeableConcept(
-            `${i18n}.vaccination_indication`,
+            `${i18n}.reason_code.vaccination_indication`,
             resource.vaccinationIndication
         ),
         VaccinationMotive: ui.codeableConcept(
-            `${i18n}.vaccination_motive`,
+            `${i18n}.reason_code.vaccination_motive`,
             resource.vaccinationMotive
         ),
         ProtocolApplied: map(

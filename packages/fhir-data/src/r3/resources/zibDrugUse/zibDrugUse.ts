@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { findComponentByCode } from '../../../parse/helpers';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
@@ -35,21 +35,30 @@ function parseZibDrugUse(resource: Observation) {
         // HCIM DrugUse-v3.2(2017EN)
         valueCodeableConcept,
         comment,
-        drugOrMedicationType: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, '410942007')?.valueCodeableConcept
-            ),
-        },
-        routeOfAdministration: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, '410675002')?.valueCodeableConcept
-            ),
-        },
-        amount: {
-            valueString: parse.string(
-                findComponentByCode(resource.component, '228390007')?.valueString
-            ),
-        },
+
+        component: parseObservationComponents(resource.component, {
+            drugOrMedicationType: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '410942007',
+                },
+                type: 'codeableConcept',
+            },
+            routeOfAdministration: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '410675002',
+                },
+                type: 'codeableConcept',
+            },
+            amount: {
+                coding: {
+                    system: 'http://snomed.info/sct', // NOSONAR
+                    code: '228390007',
+                },
+                type: 'string',
+            },
+        }),
     };
 }
 

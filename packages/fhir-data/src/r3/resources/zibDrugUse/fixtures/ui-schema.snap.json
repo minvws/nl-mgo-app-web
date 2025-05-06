@@ -21,18 +21,6 @@
                     ]
                 },
                 {
-                    "label": "Drugs of geneesmiddel soort",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Amphetamine (703842006 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
-                    "label": "Hoeveelheid",
-                    "type": "SINGLE_VALUE",
-                    "display": "3 times a year"
-                },
-                {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
@@ -56,16 +44,33 @@
                     "display": "1983"
                 },
                 {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Op feestjes en in uitgaanscircuit."
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Drugs of geneesmiddel soort",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Amphetamine (703842006 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 times a year"
+                },
+                {
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "NASAAL (6 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
                     ]
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": "Op feestjes en in uitgaanscircuit."
                 }
             ]
         }

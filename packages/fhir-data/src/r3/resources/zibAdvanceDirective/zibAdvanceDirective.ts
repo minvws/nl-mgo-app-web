@@ -13,11 +13,6 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317129
  */
 function parseZibAdvanceDirective(resource: Consent) {
-    const typeOfLivingWillCodeableConcepts = intersectCodeableConcept(
-        resource.category,
-        typeOfLivingWillValueSet
-    );
-
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
 
@@ -26,9 +21,22 @@ function parseZibAdvanceDirective(resource: Consent) {
         dateTime: parse.dateTime(resource.dateTime),
 
         // HCIM AdvanceDirective-v3.1(2017EN)
-        disorder: parse.extensionNictiz(resource, 'zib-AdvanceDirective-Disorder'),
-        comment: parse.extensionNictiz(resource, 'Comment'),
-        typeOfLivingWill: map(typeOfLivingWillCodeableConcepts, parse.codeableConcept),
+        disorder: parse.extensionMultiple(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective-Disorder', // NOSONAR
+            'reference'
+        ),
+        comment: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/Comment', // NOSONAR
+            'string'
+        ),
+        category: {
+            typeOfLivingWill: map(
+                intersectCodeableConcept(resource.category, typeOfLivingWillValueSet),
+                parse.codeableConcept
+            ),
+        },
         consentingParty: parse.reference(resource.consentingParty?.[0]),
         ...oneOfValueX(resource, ['attachment', 'identifier', 'reference'], 'source'),
     };

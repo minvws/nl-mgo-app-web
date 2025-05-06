@@ -13,10 +13,10 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@material-symbols/svg-700": "^0.19.0",
         "@material-symbols/svg-400": "^0.19.0",
-        "@minvws/mgo-tailwind": "workspace:*",
+        "@material-symbols/svg-700": "^0.19.0",
         "@minvws/mgo-mgo-utils": "workspace:*",
+        "@minvws/mgo-tailwind": "workspace:*",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-slot": "^1.0.2",
         "@react-hook/media-query": "^1.1.1",
@@ -56,8 +56,8 @@
         "storybook": "^8.6.11",
         "storybook-addon-css-user-preferences": "^0.0.3",
         "storybook-addon-render-modes": "^0.0.11",
-        "vite": "^6.2.6",
-        "vitest": "^3.1.1",
+        "vite": "^6.3.5",
+        "vitest": "^3.1.3",
         "vitest-dom": "^0.1.1"
     }
 }

@@ -17,7 +17,7 @@
                     "display": "Orthopedie - UMCG"
                 },
                 {
-                    "label": "Afdeling specialisme",
+                    "label": "r3.nl_core_organization.department_specialty",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -26,7 +26,7 @@
                     ]
                 },
                 {
-                    "label": "Organisatie type",
+                    "label": "r3.nl_core_organization.organization_type",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 }

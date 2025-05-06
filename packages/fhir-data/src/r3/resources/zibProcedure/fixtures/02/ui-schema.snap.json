@@ -52,11 +52,6 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Verrichting lateraliteit",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Verrichting methode",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"

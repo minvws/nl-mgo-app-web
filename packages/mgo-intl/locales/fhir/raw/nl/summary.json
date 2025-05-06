@@ -14,7 +14,7 @@
     "summary.r3.zib_laboratory_test_result_observation.effective.start": "Begin datum van de uitslag",
     "summary.r3.zib_laboratory_test_result_observation.group_performer": "Test afgenomen door",
     "summary.r3.zib_laboratory_test_result_observation.group_test_details": "Details van de test",
-    "summary.r3.zib_laboratory_test_result_observation.interpretation": "Beoordeling",
+    "summary.r3.zib_laboratory_test_result_observation.interpretation": "Interpretatie",
     "summary.r3.zib_laboratory_test_result_observation.performer": "Specialist",
     "summary.r3.zib_laboratory_test_result_observation.reference_range": "Referentiewaarden",
     "summary.r3.zib_laboratory_test_result_observation.reference_range.high": "Maximale waarde",

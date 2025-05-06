@@ -10,7 +10,7 @@
                     "display": "fulfilled"
                 },
                 {
-                    "label": "r3.e_afspraak_appointment.specialty",
+                    "label": "Specialisme",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
@@ -19,22 +19,22 @@
                     ]
                 },
                 {
-                    "label": "r3.e_afspraak_appointment.description",
+                    "label": "Contact onderwerp",
                     "type": "SINGLE_VALUE",
                     "display": "Poliklinische Controle Chirurgie"
                 },
                 {
-                    "label": "r3.e_afspraak_appointment.start",
+                    "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "1 januari 2018 om 09:00:00 GMT+1"
                 },
                 {
-                    "label": "r3.e_afspraak_appointment.end",
+                    "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "display": "1 januari 2018 om 09:45:00 GMT+1"
                 },
                 {
-                    "label": "r3.e_afspraak_appointment.participant",
+                    "label": "Contact met",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Alex XXX_Verweij",

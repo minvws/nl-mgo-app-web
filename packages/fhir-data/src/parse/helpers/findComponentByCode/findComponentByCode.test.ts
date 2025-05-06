@@ -8,7 +8,7 @@ function createComponent(code?: string): ObservationComponent {
         code: {
             coding: [
                 {
-                    system: 'http://loinc.org',
+                    system: 'http://loinc.org', // NOSONAR
                     code: code ?? faker.number.int(100).toString(),
                     display: 'AverageBloodPressure recorded with UCUM',
                 },
@@ -17,7 +17,7 @@ function createComponent(code?: string): ObservationComponent {
         valueQuantity: {
             value: faker.number.int(999),
             unit: 'mmHg',
-            system: 'http://unitsofmeasure.org',
+            system: 'http://unitsofmeasure.org', // NOSONAR
             code: 'mm[Hg]',
         },
     };

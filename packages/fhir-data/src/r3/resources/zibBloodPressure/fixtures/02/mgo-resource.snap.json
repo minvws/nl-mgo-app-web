@@ -53,73 +53,87 @@
             }
         ]
     },
-    "systolicBP": {
-        "valueQuantity": {
-            "_type": "quantity",
-            "value": 108,
-            "comparator": null,
-            "unit": "mmHg",
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]"
-        }
-    },
-    "diastolicBP": {
-        "valueQuantity": {
-            "_type": "quantity",
-            "value": 108,
-            "comparator": null,
-            "unit": "mmHg",
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]"
-        }
-    },
-    "averageBloodPressure": {
-        "valueQuantity": {
-            "_type": "quantity",
-            "value": 103,
-            "comparator": null,
-            "unit": "mmHg",
-            "system": "http://unitsofmeasure.org",
-            "code": "mm[Hg]"
-        }
-    },
-    "diastolicEndpoint": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "255272007",
-                    "display": "Phase 5",
-                    "system": "http://snomed.info/sct"
+    "component": {
+        "systolicBP": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 108,
+                    "comparator": null,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
                 }
-            ]
-        }
-    },
-    "cuffType": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "L",
-                    "display": "Groot",
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+            }
+        ],
+        "diastolicBP": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 108,
+                    "comparator": null,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
                 }
-            ]
-        }
-    },
-    "position": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "33586001",
-                    "display": "Sitting position",
-                    "system": "http://snomed.info/sct"
+            }
+        ],
+        "averageBloodPressureSnomed": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 103,
+                    "comparator": null,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
                 }
-            ]
-        }
+            }
+        ],
+        "diastolicEndpoint": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "255272007",
+                            "display": "Phase 5",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ],
+        "cuffTypeLoinc": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "L",
+                            "display": "Groot",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+                        }
+                    ]
+                }
+            }
+        ],
+        "positionLoinc": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "33586001",
+                            "display": "Sitting position",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ]
     }
 }

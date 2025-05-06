@@ -40,36 +40,44 @@
         "_type": "string",
         "value": "Op feestjes en in uitgaanscircuit."
     },
-    "drugOrMedicationType": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "703842006",
-                    "display": "Amphetamine",
-                    "system": "http://snomed.info/sct"
+    "component": {
+        "drugOrMedicationType": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "703842006",
+                            "display": "Amphetamine",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
                 }
-            ]
-        }
-    },
-    "routeOfAdministration": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "6",
-                    "display": "NASAAL",
-                    "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+            }
+        ],
+        "routeOfAdministration": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "6",
+                            "display": "NASAAL",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                        }
+                    ]
                 }
-            ]
-        }
-    },
-    "amount": {
-        "valueString": {
-            "_type": "string",
-            "value": "3 times a year"
-        }
+            }
+        ],
+        "amount": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "3 times a year"
+                }
+            }
+        ]
     }
 }

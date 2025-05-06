@@ -19,7 +19,7 @@
                     "display": "109 millimol per liter"
                 },
                 {
-                    "label": "Beoordeling",
+                    "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Above reference range"

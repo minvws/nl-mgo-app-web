@@ -1,7 +1,7 @@
+import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { type ResourcesState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir-data';
 import { type SubCategoryData } from '.';
-import { HealthCategory } from '$/healthCategory/HealthCategory';
 
 export function getEncounterData(
     resources: ResourcesState,
@@ -12,7 +12,7 @@ export function getEncounterData(
             label: `health_category.${HealthCategory.ContactsAndAppointments}.hospital_admissions`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getEncounterData(
             label: `health_category.${HealthCategory.ContactsAndAppointments}.appointments`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment',
+                'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -28,7 +28,7 @@ export function getEncounterData(
             label: `health_category.${HealthCategory.ContactsAndAppointments}.encounters`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter',
+                'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -36,7 +36,7 @@ export function getEncounterData(
             label: `health_category.${HealthCategory.ContactsAndAppointments}.journal_entries`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry',
+                'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -44,7 +44,7 @@ export function getEncounterData(
             label: `health_category.${HealthCategory.ContactsAndAppointments}.compositions`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport',
+                'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport', // NOSONAR
                 organizationIdFilter
             ),
         },

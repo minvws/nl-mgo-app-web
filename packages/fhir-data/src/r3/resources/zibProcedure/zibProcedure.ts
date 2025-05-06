@@ -1,12 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
 import { type Procedure } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { parseFocalDevice } from './elements/focalDevice/focalDevice';
 import { parsePerformer } from './elements/performer/performer';
-import { generateUiSchema } from '../../../ui/generator';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure'; // NOSONAR
 
@@ -36,10 +35,14 @@ function parseZibProcedure(resource: Procedure) {
         performer: map(resource.performer, parsePerformer),
         location: parse.reference(resource.location),
         reasonReference: map(resource.reasonReference, parse.reference),
-        bodySite: map(resource.bodySite, parse.codeableConcept),
-        bodySiteQualifier: resource.bodySite
-            ?.map((x) => parse.extensionNictiz(x, 'BodySite-Qualifier'))
-            .filter(isNonNullish),
+        bodySite: map(resource.bodySite, (bodySite) => ({
+            ...parse.codeableConcept,
+            procedureLaterality: parse.extension(
+                bodySite,
+                'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier', // NOSONAR
+                'codeableConcept'
+            ),
+        })),
         focalDevice: map(resource.focalDevice, parseFocalDevice),
     };
 }

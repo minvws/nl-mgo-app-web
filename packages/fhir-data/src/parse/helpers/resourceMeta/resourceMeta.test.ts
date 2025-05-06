@@ -8,7 +8,7 @@ import { resourceMeta } from './resourceMeta';
 test('returns the expected output', () => {
     const result = resourceMeta(
         input01 as Resource,
-        'http://nictiz.nl/fhir/StructureDefinition/zib-Product',
+        'http://nictiz.nl/fhir/StructureDefinition/zib-Product', // NOSONAR
         FhirVersion.R3
     );
     expect(result).toEqual(expected01);
@@ -22,7 +22,7 @@ test('throws if the provided profile can not be found in the resource', () => {
                     profile: undefined,
                 },
             } as Resource,
-            'http://nictiz.nl/fhir/StructureDefinition/zib-Product',
+            'http://nictiz.nl/fhir/StructureDefinition/zib-Product', // NOSONAR
             FhirVersion.R3
         );
     }).toThrowError(

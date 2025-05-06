@@ -69,7 +69,7 @@
             "code": {
                 "coding": [
                     {
-                        "system": "http://loinc.org",
+                        "system": "http://snomed.info/sct",
                         "code": "6797001",
                         "display": "Average Blood Pressure"
                     }

@@ -18,8 +18,8 @@
         "@minvws/mgo-fhir-data": "workspace:*",
         "@minvws/mgo-mgo-intl": "workspace:*",
         "@minvws/mgo-mgo-ui": "workspace:*",
-        "@minvws/mgo-tailwind": "workspace:*",
         "@minvws/mgo-mgo-utils": "workspace:*",
+        "@minvws/mgo-tailwind": "workspace:*",
         "@radix-ui/react-dialog": "^1.0.5",
         "@tanstack/react-query": "^5.40.1",
         "autoprefixer": "^10.4.20",
@@ -49,9 +49,9 @@
         "tailwindcss": "^3.4.17",
         "type-fest": "^4.37.0",
         "typescript": "^5.4.5",
-        "vite": "^6.2.6",
+        "vite": "^6.3.5",
         "vite-plugin-svgr": "^4.3.0",
-        "vitest": "^3.1.1",
+        "vitest": "^3.1.3",
         "vitest-dom": "^0.1.1"
     }
 }

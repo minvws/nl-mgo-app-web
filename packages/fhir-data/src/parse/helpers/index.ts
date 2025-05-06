@@ -13,4 +13,5 @@ export * from './filterPrimitiveByExtension/filterPrimitiveByExtension';
 export * from './findComponentByCode/findComponentByCode';
 export * from './intersectCodeableConcept/intersectCodeableConcept';
 export * from './oneOfValueX/oneOfValueX';
+export * from './parseObservationComponents/parseObservationComponents';
 export * from './passThrough/passThrough';

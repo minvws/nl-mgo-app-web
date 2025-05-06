@@ -12,7 +12,7 @@ export function getAllergyData(
             label: `health_category.${HealthCategory.AllergiesAndIntolerances}.allergies`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance', // NOSONAR
                 organizationIdFilter
             ),
         },

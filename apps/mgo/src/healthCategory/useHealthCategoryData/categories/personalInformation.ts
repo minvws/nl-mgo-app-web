@@ -12,7 +12,7 @@ export function getPersonalInformationData(
             label: `health_category.${HealthCategory.PersonalInformation}.patient_information`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://fhir.nl/fhir/StructureDefinition/nl-core-patient',
+                'http://fhir.nl/fhir/StructureDefinition/nl-core-patient', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getPersonalInformationData(
             label: `health_category.${HealthCategory.PersonalInformation}.practitioner_information`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner',
+                'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner', // NOSONAR
                 organizationIdFilter
             ),
         },

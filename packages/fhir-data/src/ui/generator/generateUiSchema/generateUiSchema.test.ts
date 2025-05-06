@@ -13,7 +13,7 @@ vi.mock('../processValue/processValue', () => {
 });
 
 const testMeta = {
-    profile: 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient',
+    profile: 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient', // NOSONAR
     fhirVersion: 'R3',
     id: '123',
     referenceId: 'Patient/123',

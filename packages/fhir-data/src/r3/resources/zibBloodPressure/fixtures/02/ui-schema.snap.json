@@ -15,41 +15,10 @@
                     "display": "1 februari 2013 om 08:53:00 GMT+1"
                 },
                 {
-                    "label": "Diastolisch eindpunt",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Phase 5 (255272007 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
-                    "label": "Diastolische bloeddruk",
-                    "type": "SINGLE_VALUE",
-                    "display": "108 mmHg"
-                },
-                {
-                    "label": "Gemiddelde bloeddruk",
-                    "type": "SINGLE_VALUE",
-                    "display": "103 mmHg"
-                },
-                {
-                    "label": "Houding",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Sitting position (33586001 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "191e51d9-8fdf-11ec-1102-020000000000"
-                    ]
-                },
-                {
-                    "label": "Manchet type",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
                     ]
                 },
                 {
@@ -78,14 +47,50 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Systolische bloeddruk",
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Diastolisch eindpunt",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Phase 5 (255272007 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Diastolische bloeddruk",
                     "type": "SINGLE_VALUE",
                     "display": "108 mmHg"
                 },
                 {
-                    "label": "Toelichting",
+                    "label": "Gemiddelde bloeddruk",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "103 mmHg"
+                },
+                {
+                    "label": "Houding",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Sitting position (33586001 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Manchet type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
+                    ]
+                },
+                {
+                    "label": "Systolische bloeddruk",
+                    "type": "SINGLE_VALUE",
+                    "display": "108 mmHg"
                 }
             ]
         }

@@ -19,7 +19,7 @@
                     "display": "5,4 millimol per liter"
                 },
                 {
-                    "label": "Beoordeling",
+                    "label": "Interpretatie",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

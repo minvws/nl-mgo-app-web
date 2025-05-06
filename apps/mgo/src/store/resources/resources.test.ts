@@ -18,8 +18,8 @@ function mockResourceDto<V extends FhirVersion>(
             fhirVersion: `${version}`,
             profile:
                 version === FhirVersion.R3
-                    ? 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'
-                    : 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient',
+                    ? 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient' // NOSONAR
+                    : 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient', // NOSONAR
             referenceId: `${faker.lorem.word()}/${faker.number.int()}`,
             resourceType: faker.lorem.word(),
         }),
@@ -77,7 +77,7 @@ test('getResourcesByProfile returns resource', async () => {
     expect(state.resources).toEqual([]);
 
     const resourceDto = mockResourceDto(FhirVersion.R3, {
-        mgoResource: { profile: 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult' },
+        mgoResource: { profile: 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult' }, // NOSONAR
     });
     const resourceDtos = [resourceDto, mockResourceDto(), mockResourceDto(), mockResourceDto()];
     state.addResources(resourceDtos);

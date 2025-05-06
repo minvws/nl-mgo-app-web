@@ -7,7 +7,6 @@ const nictizIdValueXMap = {
     'BodySite-Morphology': 'codeableConcept',
     'zib-Product-Description': 'string',
     'zib-NutritionAdvice-Explanation': 'string',
-    'zib-AdvanceDirective-Disorder': 'reference',
     'ext-Vaccination.PharmaceuticalProduct': 'reference',
     'ext-PharmaceuticalProduct.Description': 'string',
     'EpisodeOfCare-Title': 'string',
@@ -29,7 +28,7 @@ export function extensionNictiz<
 >(resource: T | undefined, zibId: Id): R {
     return extension(
         resource,
-        `http://nictiz.nl/fhir/StructureDefinition/${zibId}`,
+        `http://nictiz.nl/fhir/StructureDefinition/${zibId}`, // NOSONAR
         nictizIdValueXMap[zibId]
     );
 }

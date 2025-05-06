@@ -12,6 +12,7 @@ import type {
     HumanName as HumanNameR3,
     Identifier as IdentifierR3,
     ObservationComponent as ObservationComponentR3,
+    Observation as ObservationR3,
     Period as PeriodR3,
     Quantity as QuantityR3,
     Range as RangeR3,
@@ -35,6 +36,7 @@ import type {
     HumanName as HumanNameR4,
     Identifier as IdentifierR4,
     ObservationComponent as ObservationComponentR4,
+    Observation as ObservationR4,
     Period as PeriodR4,
     Quantity as QuantityR4,
     Range as RangeR4,
@@ -65,3 +67,4 @@ export type DomainResource = DomainResourceR3 | DomainResourceR4;
 export type Element = ElementR3 | ElementR4;
 export type Resource = ResourceR3 | ResourceR4;
 export type StructureDefinition = StructureDefinitionR3 | StructureDefinitionR4;
+export type Observation = ObservationR3 | ObservationR4;

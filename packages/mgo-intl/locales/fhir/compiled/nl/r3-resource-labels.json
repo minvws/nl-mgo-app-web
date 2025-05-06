@@ -5,6 +5,132 @@
       "value": "Afspraak"
     }
   ],
+  "r3.e_afspraak_appointment.appointment_type": [
+    {
+      "type": 0,
+      "value": "Contact type"
+    }
+  ],
+  "r3.e_afspraak_appointment.created": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.description": [
+    {
+      "type": 0,
+      "value": "Contact onderwerp"
+    }
+  ],
+  "r3.e_afspraak_appointment.end": [
+    {
+      "type": 0,
+      "value": "Eind datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.incoming_referral": [
+    {
+      "type": 0,
+      "value": "Verwijzing"
+    }
+  ],
+  "r3.e_afspraak_appointment.indication": [
+    {
+      "type": 0,
+      "value": "Verrichting of probleem"
+    }
+  ],
+  "r3.e_afspraak_appointment.minutes_duration": [
+    {
+      "type": 0,
+      "value": "Contact duur in minuten"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable.indicator": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar indicator"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable.online_editable_until": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar tot"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant": [
+    {
+      "type": 0,
+      "value": "Contact met"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.actor": [
+    {
+      "type": 0,
+      "value": "Contactpersoon, patiënt, zorgverlener of locatie"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.required": [
+    {
+      "type": 0,
+      "value": "Vereist"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "r3.e_afspraak_appointment.patient_instructions": [
+    {
+      "type": 0,
+      "value": "Contact patiënt instructie"
+    }
+  ],
+  "r3.e_afspraak_appointment.reason": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r3.e_afspraak_appointment.service_category": [
+    {
+      "type": 0,
+      "value": "Contact categorie"
+    }
+  ],
+  "r3.e_afspraak_appointment.specialty": [
+    {
+      "type": 0,
+      "value": "Specialisme"
+    }
+  ],
+  "r3.e_afspraak_appointment.start": [
+    {
+      "type": 0,
+      "value": "Begin datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.status": [
+    {
+      "type": 0,
+      "value": "Contact status"
+    }
+  ],
   "r3.gp_diagnostic_result": [
     {
       "type": 0,
@@ -96,6 +222,12 @@
     }
   ],
   "r3.gp_laboratory_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.related.target": [
     {
       "type": 0,
       "value": "Gerelateerde uitslag"
@@ -341,52 +473,10 @@
       "value": "Ernst"
     }
   ],
-  "r3.zib_blood_pressure.average_blood_pressure": [
-    {
-      "type": 0,
-      "value": "Gemiddelde bloeddruk"
-    }
-  ],
-  "r3.zib_blood_pressure.average_blood_pressure.value_quantity": [
-    {
-      "type": 0,
-      "value": "Gemiddelde bloeddruk"
-    }
-  ],
-  "r3.zib_blood_pressure.cuff_type": [
-    {
-      "type": 0,
-      "value": "Manchet type"
-    }
-  ],
-  "r3.zib_blood_pressure.cuff_type.value_codeable_concept": [
-    {
-      "type": 0,
-      "value": "Manchet type"
-    }
-  ],
-  "r3.zib_blood_pressure.diastolic_bp": [
+  "r3.zib_blood_pressure.component.diastolic_bp.value_quantity": [
     {
       "type": 0,
       "value": "Diastolische bloeddruk"
-    }
-  ],
-  "r3.zib_blood_pressure.diastolic_bp.value_quantity": [
-    {
-      "type": 0,
-      "value": "Diastolische bloeddruk"
-    }
-  ],
-  "r3.zib_blood_pressure.position": [
-    {
-      "type": 0,
-      "value": "Houding"
-    }
-  ],
-  "r3.zib_blood_pressure.position.value_codeable_concept": [
-    {
-      "type": 0,
-      "value": "Houding"
     }
   ],
   "r3.zib_body_height.code": [
@@ -399,6 +489,18 @@
     {
       "type": 0,
       "value": "Kleding"
+    }
+  ],
+  "r3.zib_encounter.hospitalization": [
+    {
+      "type": 0,
+      "value": "Opname"
+    }
+  ],
+  "r3.zib_encounter.participant": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
     }
   ],
   "r3.zib_laboratory_test_result_observation.context": [
@@ -443,6 +545,12 @@
       "value": "Referentie type"
     }
   ],
+  "r3.zib_laboratory_test_result_observation.related.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.status.value": [
     {
       "type": 0,
@@ -453,12 +561,6 @@
     {
       "type": 0,
       "value": "Afname"
-    }
-  ],
-  "r3.zib_laboratory_test_result_specimen.collection.body_site.laterality": [
-    {
-      "type": 0,
-      "value": "Zijde"
     }
   ],
   "r3.zib_laboratory_test_result_specimen.collection.body_site.value": [
@@ -477,12 +579,6 @@
     {
       "type": 0,
       "value": "Afname"
-    }
-  ],
-  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.laterality": [
-    {
-      "type": 0,
-      "value": "Zijde"
     }
   ],
   "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.value": [
@@ -659,10 +755,10 @@
       "value": "Verrichting"
     }
   ],
-  "r3.zib_procedure.body_site_qualifier": [
+  "r3.zib_procedure.body_site.procedure_laterality": [
     {
       "type": 0,
-      "value": "Verrichting lateraliteit"
+      "value": "Zijde"
     }
   ],
   "r3.zib_procedure.focal_device": [
@@ -711,6 +807,30 @@
     {
       "type": 0,
       "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_procedure_request.body_site.procedure_laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_period": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_timing.repeat": [
+    {
+      "type": 0,
+      "value": "Herhaling"
     }
   ],
   "r3.zib_treatment_directive.additional_sources": [

@@ -12,7 +12,7 @@ export function getTreatmentPlanData(
             label: `health_category.${HealthCategory.TreatmentPlan}.get_treatment_directives`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective', // NOSONAR
                 organizationIdFilter
             ),
         },
@@ -20,7 +20,7 @@ export function getTreatmentPlanData(
             label: `health_category.${HealthCategory.TreatmentPlan}.get_advance_directives`,
             data: resources.getResourcesByProfile(
                 FhirVersion.R3,
-                'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective',
+                'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective', // NOSONAR
                 organizationIdFilter
             ),
         },

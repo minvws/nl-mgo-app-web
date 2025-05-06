@@ -39,17 +39,21 @@
         "code": "kg"
     },
     "comment": null,
-    "clothing": {
-        "valueCodeableConcept": {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "MINIMAL",
-                    "display": "Minimal dressed",
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
+    "component": {
+        "clothing": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "MINIMAL",
+                            "display": "Minimal dressed",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
+                        }
+                    ]
                 }
-            ]
-        }
+            }
+        ]
     }
 }

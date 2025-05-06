@@ -37,16 +37,18 @@
         ]
     },
     "comment": null,
-    "amount": [
-        {
-            "valueQuantity": {
-                "_type": "quantity",
-                "value": 4,
-                "comparator": null,
-                "unit": "glasses per week",
-                "system": "http://unitsofmeasure.org",
-                "code": "{glasses}/wk"
+    "component": {
+        "amount": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 4,
+                    "comparator": null,
+                    "unit": "glasses per week",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{glasses}/wk"
+                }
             }
-        }
-    ]
+        ]
+    }
 }

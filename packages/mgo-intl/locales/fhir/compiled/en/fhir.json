@@ -21,11 +21,29 @@
   ],
   "fhir.ratio.numerator": [
   ],
+  "fhir.sample_data": [
+  ],
+  "fhir.sample_data.data": [
+  ],
+  "fhir.sample_data.dimensions": [
+  ],
+  "fhir.sample_data.factor": [
+  ],
+  "fhir.sample_data.lower_limit": [
+  ],
+  "fhir.sample_data.origin": [
+  ],
+  "fhir.sample_data.period": [
+  ],
+  "fhir.sample_data.upper_limit": [
+  ],
   "fhir.unknown": [
   ],
   "fhir.x.amount": [
   ],
   "fhir.x.author": [
+  ],
+  "fhir.x.component": [
   ],
   "fhir.x.device": [
   ],
@@ -38,6 +56,8 @@
   "fhir.x.health_professional": [
   ],
   "fhir.x.identifier": [
+  ],
+  "fhir.x.laterality": [
   ],
   "fhir.x.note": [
   ],

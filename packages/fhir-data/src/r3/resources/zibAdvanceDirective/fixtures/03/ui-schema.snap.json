@@ -4,11 +4,6 @@
         {
             "children": [
                 {
-                    "label": "Aandoening",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "display": "18c1f7b3-8fdf-11ec-1027-020000000000"

@@ -96,7 +96,7 @@
   "summary.r3.zib_laboratory_test_result_observation.interpretation": [
     {
       "type": 0,
-      "value": "Beoordeling"
+      "value": "Interpretatie"
     }
   ],
   "summary.r3.zib_laboratory_test_result_observation.performer": [

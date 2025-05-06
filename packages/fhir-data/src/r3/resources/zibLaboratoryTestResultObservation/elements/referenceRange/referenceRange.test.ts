@@ -17,7 +17,7 @@ test('summary uses translated label when type.coding has system "referencerange-
                     display: faker.lorem.sentence(),
                 },
                 {
-                    system: 'http://hl7.org/fhir/referencerange-meaning',
+                    system: 'http://hl7.org/fhir/referencerange-meaning', // NOSONAR
                     code: 'recommended',
                     display: 'Recommended Range',
                 },

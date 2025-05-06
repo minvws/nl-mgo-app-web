@@ -1,5 +1,6 @@
 {
     "tailwindCSS.experimental.classRegex": ["cn\\(([^)]*)", "tw`([^`]*)"],
     "typescript.tsdk": "./node_modules/typescript/lib",
-    "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"]
+    "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
+    "cSpell.words": ["Loinc"]
 }

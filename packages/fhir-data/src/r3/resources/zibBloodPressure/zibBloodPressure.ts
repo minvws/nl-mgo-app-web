@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { findComponentByCode } from '../../../parse/helpers';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
@@ -37,38 +37,44 @@ function parseZibBloodPressure(resource: Observation) {
         comment,
         bodySite,
         method,
-        systolicBP: {
-            valueQuantity: parse.quantity(
-                findComponentByCode(resource.component, '8480-6')?.valueQuantity
-            ),
-        },
-        diastolicBP: {
-            valueQuantity: parse.quantity(
-                findComponentByCode(resource.component, '8462-4')?.valueQuantity
-            ),
-        },
-        averageBloodPressure: {
-            valueQuantity: parse.quantity(
-                findComponentByCode(resource.component, ['8478-0', '6797001'])?.valueQuantity
-            ),
-        },
-        diastolicEndpoint: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, '85549003')?.valueCodeableConcept
-            ),
-        },
-        cuffType: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, ['8358-4', '70665002'])
-                    ?.valueCodeableConcept
-            ),
-        },
-        position: {
-            valueCodeableConcept: parse.codeableConcept(
-                findComponentByCode(resource.component, ['8361-8', '424724000'])
-                    ?.valueCodeableConcept
-            ),
-        },
+        component: parseObservationComponents(resource.component, {
+            systolicBP: {
+                coding: { system: 'http://loinc.org', code: '8480-6' }, // NOSONAR
+                type: 'quantity',
+            },
+            diastolicBP: {
+                coding: { system: 'http://loinc.org', code: '8462-4' }, // NOSONAR
+                type: 'quantity',
+            },
+            averageBloodPressureSnomed: {
+                coding: { system: 'http://snomed.info/sct', code: '6797001' }, // NOSONAR
+                type: 'quantity',
+            },
+            averageBloodPressureLoinc: {
+                coding: { system: 'http://loinc.org', code: '8478-0' }, // NOSONAR
+                type: 'quantity',
+            },
+            diastolicEndpoint: {
+                coding: { system: 'http://snomed.info/sct', code: '85549003' }, // NOSONAR
+                type: 'codeableConcept',
+            },
+            cuffTypeSnomed: {
+                coding: { system: 'http://snomed.info/sct', code: '70665002' }, // NOSONAR
+                type: 'codeableConcept',
+            },
+            cuffTypeLoinc: {
+                coding: { system: 'http://loinc.org', code: '8358-4' }, // NOSONAR
+                type: 'codeableConcept',
+            },
+            positionSnomed: {
+                coding: { system: 'http://snomed.info/sct', code: '424724000' }, // NOSONAR
+                type: 'codeableConcept',
+            },
+            positionLoinc: {
+                coding: { system: 'http://loinc.org', code: '8361-8' }, // NOSONAR
+                type: 'codeableConcept',
+            },
+        }),
     };
 }
 

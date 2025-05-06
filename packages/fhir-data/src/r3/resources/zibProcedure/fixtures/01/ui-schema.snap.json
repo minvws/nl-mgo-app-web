@@ -44,23 +44,9 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Verrichting anatomische locatie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Knee region structure (body structure) (72696002 in code systeem http://snomed.info/sct)"
-                    ]
-                },
-                {
                     "label": "Verrichting eind datum",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
-                },
-                {
-                    "label": "Verrichting lateraliteit",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Left (7771000 in code systeem http://snomed.info/sct)"
-                    ]
                 },
                 {
                     "label": "Verrichting methode",
@@ -77,6 +63,13 @@
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Implantation of Swanson prosthesis of knee (procedure) (60159002 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Zijde",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Left (7771000 in code systeem http://snomed.info/sct)"
                     ]
                 }
             ]
