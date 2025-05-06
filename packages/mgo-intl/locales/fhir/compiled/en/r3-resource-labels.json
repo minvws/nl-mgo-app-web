@@ -25,11 +25,11 @@
   ],
   "r3.e_afspraak_appointment.participant.actor": [
   ],
-  "r3.e_afspraak_appointment.participant.health_professional_role": [
-  ],
   "r3.e_afspraak_appointment.participant.required": [
   ],
   "r3.e_afspraak_appointment.participant.status": [
+  ],
+  "r3.e_afspraak_appointment.participant.type.health_professional_role": [
   ],
   "r3.e_afspraak_appointment.patient_instructions": [
   ],

@@ -77,12 +77,6 @@
       "value": "Contactpersoon, patiënt, zorgverlener of locatie"
     }
   ],
-  "r3.e_afspraak_appointment.participant.health_professional_role": [
-    {
-      "type": 0,
-      "value": "Zorgverlener rol"
-    }
-  ],
   "r3.e_afspraak_appointment.participant.required": [
     {
       "type": 0,
@@ -93,6 +87,12 @@
     {
       "type": 0,
       "value": "Status"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.type.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
     }
   ],
   "r3.e_afspraak_appointment.patient_instructions": [

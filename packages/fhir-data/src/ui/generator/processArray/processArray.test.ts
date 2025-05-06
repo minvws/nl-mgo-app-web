@@ -1,5 +1,6 @@
 import { faker, testUiSchemaContext } from '$test';
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoString } from '../../../parse/type';
 import { boolean } from '../../type/boolean/boolean';
@@ -112,7 +113,13 @@ test('empty array returns empty result', () => {
     );
 
     const value: unknown[] = [];
-    const expected: unknown[] = [];
+    const expected = [
+        {
+            label: testMessage(path),
+            type: 'SINGLE_VALUE',
+            display: undefined,
+        },
+    ];
 
     expect(processArray(context, path, value)).toEqual(expected);
 });

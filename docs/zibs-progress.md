@@ -41,7 +41,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-TreatmentDirective]               | :white_large_square: | :white_check_mark:   |
 | [zib-Vaccination]                      | :white_large_square: | :white_check_mark:   |
 | [zib-VaccinationRecommendation]        | :white_large_square: | :white_check_mark:   |
-| [eAfspraak-Appointment]                | :white_large_square: | :white_large_square: |
+| [eAfspraak-Appointment]                | :white_large_square: | :white_check_mark:   |
 | [nl-core-patient]                      | :white_large_square: | :white_large_square: |
 | [nl-core-practitioner]                 |                      | :white_large_square: |
 | [nl-core-practitionerrole]             |                      | :white_large_square: |

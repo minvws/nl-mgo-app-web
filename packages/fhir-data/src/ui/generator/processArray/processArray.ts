@@ -1,5 +1,6 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { isPrimitiveValueType, isValueType } from '../../../parse/types';
+import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
 import { type MgoType } from '../createUiElementHelper/createUiElementHelper';
 import { processValue } from '../processValue/processValue';
@@ -19,7 +20,11 @@ function isArrayOfSameValueType(values: unknown[]): values is MgoType[] {
     });
 }
 
-export function processArray(context: GeneratorContext, path: string, value: unknown[]) {
+export function processArray(
+    context: GeneratorContext,
+    path: string,
+    value: unknown[]
+): (UiElement | HealthUiGroup)[] {
     const { createUiElement } = context;
 
     if (isArrayOfSameValueType(value)) {
@@ -27,5 +32,16 @@ export function processArray(context: GeneratorContext, path: string, value: unk
         return [result].flat();
     }
 
-    return value.map((x) => processValue(context, path, x as object)).flat();
+    const elements = value.map((x) => processValue(context, path, x as object)).flat();
+    if (elements.length) {
+        return elements;
+    }
+
+    return [
+        {
+            label: context.formatLabel(path as FhirMessagesIds, null),
+            type: 'SINGLE_VALUE',
+            display: undefined,
+        },
+    ];
 }

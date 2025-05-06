@@ -5,8 +5,10 @@
             "children": [
                 {
                     "label": "Afwijkende uitslag",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Clinical Review"
+                    ]
                 },
                 {
                     "label": "Begin datum",
@@ -15,13 +17,15 @@
                 },
                 {
                     "label": "Contact categorie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "General Practice (gp in code systeem http://example.org/service-category)"
+                    ]
                 },
                 {
                     "label": "Contact duur in minuten",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "15"
                 },
                 {
                     "label": "Contact onderwerp",
@@ -30,8 +34,10 @@
                 },
                 {
                     "label": "Contact patiënt instructie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Please park in P2; P1 is under construction"
+                    ]
                 },
                 {
                     "label": "Contact status",
@@ -40,13 +46,15 @@
                 },
                 {
                     "label": "Contact type",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Followup (follow in code systeem http://example.org/appointment-type)"
+                    ]
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "10 oktober 2017"
                 },
                 {
                     "label": "Eind datum",
@@ -69,13 +77,15 @@
                 },
                 {
                     "label": "Verrichting of probleem",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "REFERENCE_VALUE",
+                    "display": "Severe burn of left ear",
+                    "reference": "Condition/example"
                 },
                 {
                     "label": "Verwijzing",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": "ReferralRequest/example"
                 }
             ]
         },
@@ -85,12 +95,12 @@
                 {
                     "label": "Online wijzigbaar indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "Ja"
                 },
                 {
                     "label": "Online wijzigbaar tot",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "31-12-2017"
                 }
             ]
         },
@@ -141,8 +151,10 @@
                 },
                 {
                     "label": "Zorgverlener rol",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "(ATND in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                    ]
                 }
             ]
         },
