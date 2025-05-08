@@ -56,7 +56,7 @@
                     "display": []
                 },
                 {
-                    "label": "r3.zib_laboratory_test_result_specimen.body_site.laterality",
+                    "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },

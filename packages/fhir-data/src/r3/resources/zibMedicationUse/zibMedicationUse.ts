@@ -4,7 +4,7 @@ import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { zibInstructionsForUse } from '../../elements';
+import { parseZibInstructionsForUse } from '../../elements';
 import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; // NOSONAR
@@ -61,7 +61,7 @@ function parseZibMedicationUse(resource: MedicationStatement) {
         note: map(resource.note, parse.annotation),
 
         // HCIM InstructionsForUse-v1.1(2017EN)
-        dosage: map(resource.dosage, zibInstructionsForUse.parse),
+        dosage: map(resource.dosage, parseZibInstructionsForUse),
         repeatPeriodCyclicalSchedule: parse.extension(
             resource,
             'http://nictiz.nl/fhir/StructureDefinition/zib-Medication-RepeatPeriodCyclicalSchedule', // NOSONAR

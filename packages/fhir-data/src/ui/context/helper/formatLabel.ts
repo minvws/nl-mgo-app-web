@@ -2,17 +2,55 @@ import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { snakeCase } from 'lodash';
 import { isValueType } from '../../../parse/types';
 
-const zibPropertyLabelRegexp = /^(r[34])\.(\w+)\./;
+const fhirXLabelRegexp = /^r[34]\.[\w.]+\./;
+
+type FallbackLabels = {
+    labelWithoutType: string | null;
+    fhirXLabel: string | null;
+    fhirXLabelWithoutType: string | null;
+};
+
+function getFallbackLabels(label: string, value: unknown): FallbackLabels {
+    let typeExtension: string | null = null;
+    if (isValueType(value)) {
+        typeExtension = `_${snakeCase(value._type)}`;
+    } else if (Array.isArray(value) && isValueType(value[0])) {
+        typeExtension = `_${snakeCase(value[0]._type)}`;
+    }
+
+    const labels: FallbackLabels = {
+        labelWithoutType: null,
+        fhirXLabel: null,
+        fhirXLabelWithoutType: null,
+    };
+
+    if (typeExtension && label.endsWith(typeExtension)) {
+        labels.labelWithoutType = label.substring(0, label.lastIndexOf(typeExtension));
+    }
+
+    if (fhirXLabelRegexp.test(label)) {
+        labels.fhirXLabel = label.replace(fhirXLabelRegexp, 'fhir.x.');
+        if (typeExtension) {
+            labels.fhirXLabelWithoutType = labels.fhirXLabel.substring(
+                0,
+                labels.fhirXLabel.lastIndexOf(typeExtension)
+            );
+        }
+    }
+
+    return labels;
+}
 
 /**
  * Attempts to translate the label using several fallbacks if the initial label is not available.
  *
- * Given the label: `r3.zib_medication_use.medication_reference` it will try the following options:
+ * Given the label: `r3.resource.foo.bar_reference` it will try the following options:
  *
- * - r3.zib_medication_use.medication_reference     // the initial label first
- * - r3.zib_medication_use.medication               // the label without the type extension
- * - fhir.x.medication_reference                    // a generic "x" property label
- * - (fallback)                                     // a fallback label if provided
+ * - r3.resource.foo.bar_reference      // the initial label first
+ * - r3.resource.foo.bar                // the label without the type extension
+ * - fhir.x.bar_reference               // a generic "x" property label
+ * - fhir.x.bar                         // a generic "x" property label without the type extension
+ * - (fallback)                         // a fallback label if provided
  */
 export function createLabelFormatter(intl: FhirIntlShape) {
     const hasMessage = (id: string): id is FhirMessagesIds =>
@@ -27,26 +65,21 @@ export function createLabelFormatter(intl: FhirIntlShape) {
             return intl.formatMessage({ id: label });
         }
 
-        let valueType: string | null = null;
-        if (isValueType(value)) {
-            valueType = value._type;
-        } else if (Array.isArray(value) && isValueType(value[0])) {
-            valueType = value[0]._type;
+        const { labelWithoutType, fhirXLabel, fhirXLabelWithoutType } = getFallbackLabels(
+            label,
+            value
+        );
+
+        if (labelWithoutType && hasMessage(labelWithoutType)) {
+            return intl.formatMessage({ id: labelWithoutType });
         }
 
-        if (valueType) {
-            const typeExtension = `_${snakeCase(valueType)}`;
-            const labelWithoutTypeExtension = label.substring(0, label.lastIndexOf(typeExtension));
-            if (label.endsWith(typeExtension) && hasMessage(labelWithoutTypeExtension)) {
-                return intl.formatMessage({ id: labelWithoutTypeExtension });
-            }
+        if (fhirXLabel && hasMessage(fhirXLabel)) {
+            return intl.formatMessage({ id: fhirXLabel });
         }
 
-        if (zibPropertyLabelRegexp.test(label)) {
-            const genericPropertyLabel = label.replace(zibPropertyLabelRegexp, 'fhir.x.');
-            if (hasMessage(genericPropertyLabel)) {
-                return intl.formatMessage({ id: genericPropertyLabel });
-            }
+        if (fhirXLabelWithoutType && hasMessage(fhirXLabelWithoutType)) {
+            return intl.formatMessage({ id: fhirXLabelWithoutType });
         }
 
         if (fallbackLabel && hasMessage(fallbackLabel)) {

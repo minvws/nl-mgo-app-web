@@ -33,7 +33,7 @@ export type ZibInstructionsForUse = MgoElementMeta<typeof profile> & {
  * @usage zibMedicationUse.dosage
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317236
  */
-function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsForUse {
+export function parseZibInstructionsForUse(value: Nullable<Dosage>): ZibInstructionsForUse {
     return {
         _profile: profile,
 
