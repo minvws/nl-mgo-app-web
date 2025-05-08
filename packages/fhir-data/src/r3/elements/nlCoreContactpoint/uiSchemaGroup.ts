@@ -11,8 +11,6 @@ export const uiSchemaGroup: HealthUiGroupFunction<NlCoreContactpoint> = (resourc
             ui.code(`${i18n}.system`, resource?.system),
             ui.string(`${i18n}.value`, resource?.value),
             ui.code(`${i18n}.use`, resource?.use),
-            ui.positiveInt(`${i18n}.rank`, resource?.rank),
-            ...ui.period(`${i18n}.period`, resource.period),
         ],
     };
 };

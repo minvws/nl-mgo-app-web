@@ -1,0 +1,16 @@
+{
+    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+    "telecomType": null,
+    "system": {
+        "_type": "code",
+        "value": "email"
+    },
+    "value": {
+        "_type": "string",
+        "value": "test@example.com"
+    },
+    "use": {
+        "_type": "code",
+        "value": "home"
+    }
+}

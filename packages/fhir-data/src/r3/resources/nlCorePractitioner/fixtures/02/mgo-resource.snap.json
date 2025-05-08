@@ -79,6 +79,18 @@
     ],
     "telecom": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "LL",
+                        "display": "Vast telefoonnummer",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                    }
+                ]
+            },
             "system": {
                 "_type": "code",
                 "value": "phone"
@@ -90,11 +102,11 @@
             "use": {
                 "_type": "code",
                 "value": "work"
-            },
-            "rank": null,
-            "period": null
+            }
         },
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
             "system": {
                 "_type": "code",
                 "value": "email"
@@ -106,9 +118,7 @@
             "use": {
                 "_type": "code",
                 "value": "work"
-            },
-            "rank": null,
-            "period": null
+            }
         }
     ]
 }

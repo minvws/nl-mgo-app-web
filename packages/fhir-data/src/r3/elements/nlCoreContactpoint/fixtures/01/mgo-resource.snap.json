@@ -1,0 +1,16 @@
+{
+    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+    "telecomType": null,
+    "system": {
+        "_type": "code",
+        "value": "phone"
+    },
+    "value": {
+        "_type": "string",
+        "value": "+31611234567"
+    },
+    "use": {
+        "_type": "code",
+        "value": "work"
+    }
+}

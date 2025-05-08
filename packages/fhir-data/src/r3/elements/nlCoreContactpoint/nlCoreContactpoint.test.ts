@@ -1,35 +1,22 @@
-import { faker, testUiSchemaContext } from '$test';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
-import { nlCoreContactpoint } from './nlCoreContactpoint';
+import { expectJson } from '$test';
+import { type ContactPoint } from 'fhir/r3';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
+import inputFhirData03 from './fixtures/03/fhir-resource.json';
+import { parseNlCoreContactpoint } from './nlCoreContactpoint';
 
-test('parses successfully', () => {
-    const data = faker.fhir.contactPoint();
-    const schema = nlCoreContactpoint.parse(data);
-    expect(schema).toEqual(
-        expect.objectContaining({
-            value: parse.string(data.value),
-        })
-    );
+test('01: mgo-resource', async () => {
+    const output = parseNlCoreContactpoint(inputFhirData01 as ContactPoint);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('parses successfully when there data is undefined', () => {
-    const zibData = nlCoreContactpoint.parse(undefined);
-    expect(zibData).toEqual(
-        expect.objectContaining({
-            value: undefined,
-        })
-    );
+test('02: mgo-resource', async () => {
+    const output = parseNlCoreContactpoint(inputFhirData02 as ContactPoint);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('UI schema group is created successfully', () => {
-    const data = nlCoreContactpoint.parse(faker.fhir.contactPoint());
-    const schema = nlCoreContactpoint.uiSchemaGroup(
-        data,
-        testUiSchemaContext({
-            useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(schema.label).toBe('r3.nl_core_contact_point');
+test('03: mgo-resource', async () => {
+    const output = parseNlCoreContactpoint(inputFhirData03 as ContactPoint);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });

@@ -115,21 +115,6 @@
                     "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.rank",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         },
@@ -150,21 +135,6 @@
                     "label": "r3.nl_core_contact_point.use",
                     "type": "SINGLE_VALUE",
                     "display": "work"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.rank",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         }
