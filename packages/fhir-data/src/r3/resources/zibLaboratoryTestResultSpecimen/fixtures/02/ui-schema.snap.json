@@ -2,8 +2,33 @@
     "label": "Monster",
     "children": [
         {
-            "label": "r3.zib_laboratory_test_result_specimen",
             "children": [
+                {
+                    "label": "Aanname datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bron monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Monster",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Monstercontainer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Monstermateriaal",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
@@ -12,14 +37,19 @@
                     ]
                 },
                 {
-                    "label": "Monstermateriaal",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_laboratory_test_result_specimen.quantity",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Afname",
+            "children": [
+                {
+                    "label": "Afnameprocedure",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Begin datum",
@@ -29,43 +59,22 @@
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Aanname datum tijd",
+                    "label": "Morfologie",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Afnameprocedure",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_laboratory_test_result_specimen.body_site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "label": "Verzamelvolume",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Zijde",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.zib_laboratory_test_result_specimen.body_site.morphology",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "Bron monster",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Johan XXX_Helleman",
-                    "reference": "Patient/nl-core-patient-01"
-                },
-                {
-                    "label": "Toelichting",
-                    "display": null,
-                    "type": "SINGLE_VALUE"
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

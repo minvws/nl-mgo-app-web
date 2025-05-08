@@ -52,7 +52,7 @@ test('elements are added to a default labelless group', () => {
     expect(generateUiSchema(mgoResource, context)).toEqual(expected);
 });
 
-test('group labels are translated', () => {
+test('group labels that start with r3 or r4 are translated', () => {
     const context = testUiSchemaContext({ useMock: true });
     const mgoResource = {
         ...testMeta,
@@ -63,6 +63,17 @@ test('group labels are translated', () => {
     };
 
     const group: HealthUiGroup = {
+        label: faker.helpers.arrayElement(['r3.', 'r4.']) + faker.lorem.word(),
+        children: [
+            {
+                label: faker.lorem.word(),
+                type: 'SINGLE_VALUE',
+                display: faker.lorem.sentence(),
+            },
+        ],
+    };
+
+    const group2: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
             {
@@ -73,7 +84,7 @@ test('group labels are translated', () => {
         ],
     };
 
-    const elements = [group];
+    const elements = [group, group2];
 
     const expected = {
         label: testMessage('r3.nl_core_patient'),
@@ -84,6 +95,10 @@ test('group labels are translated', () => {
             {
                 label: testMessage(group.label),
                 children: group.children,
+            },
+            {
+                label: group2.label,
+                children: group2.children,
             },
         ],
     };

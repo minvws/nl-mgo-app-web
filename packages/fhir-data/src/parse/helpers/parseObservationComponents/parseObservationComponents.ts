@@ -1,10 +1,8 @@
-import { type ObservationComponent } from '@minvws/mgo-fhir-types';
+import { type Coding, type ObservationComponent } from '@minvws/mgo-fhir-types';
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { upperFirst } from 'lodash';
-import { type UnionToIntersection } from 'type-fest';
+import { type SetRequired, type UnionToIntersection } from 'type-fest';
 import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
-
-export type CodingMatch = { system: 'http://loinc.org' | 'http://snomed.info/sct'; code: string }; // NOSONAR
 
 type ObservationComponentTypeR3 =
     | 'quantity'
@@ -33,7 +31,7 @@ type ObservationComponentTypeR4 =
 
 export type ObservationComponentParseMap = {
     [key: string]: {
-        coding: CodingMatch;
+        coding: SetRequired<Coding, 'system' | 'code'>;
         type: Extract<ParserKey, ObservationComponentTypeR3 | ObservationComponentTypeR4>;
     };
 };
@@ -49,7 +47,7 @@ type ObservationComponentsResult<T extends ObservationComponentParseMap> = {
  */
 function getObservationComponents(
     components: ObservationComponent[],
-    coding: CodingMatch
+    coding: SetRequired<Coding, 'system' | 'code'>
 ): ObservationComponent[] | undefined {
     return components?.filter((comp) => {
         const index =

@@ -14,9 +14,39 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Resultaat",
+                    "label": "Origin",
                     "type": "SINGLE_VALUE",
-                    "display": "109 millimol per liter"
+                    "display": "0 mmHg"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "0.1"
+                },
+                {
+                    "label": "Factor",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "0"
+                },
+                {
+                    "label": "bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "300"
+                },
+                {
+                    "label": "Aantal sample punten",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Gesamplede gegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "120 125 123 121 119 118 117 116 115 114"
                 },
                 {
                     "label": "Interpretatie",
@@ -43,7 +73,7 @@
             ]
         },
         {
-            "label": "Normale referentiewaarden",
+            "label": "Referentiewaarden",
             "children": [
                 {
                     "label": "Minimale waarde",

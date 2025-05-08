@@ -43,6 +43,8 @@
   ],
   "fhir.x.author": [
   ],
+  "fhir.x.category": [
+  ],
   "fhir.x.component": [
   ],
   "fhir.x.device": [
@@ -56,6 +58,8 @@
   "fhir.x.health_professional": [
   ],
   "fhir.x.identifier": [
+  ],
+  "fhir.x.laboratory_test_result_code": [
   ],
   "fhir.x.laterality": [
   ],

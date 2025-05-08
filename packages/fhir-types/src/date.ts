@@ -1,4 +1,13 @@
 /**
+ * A time during the day, in the format hh:mm:ss (a subset of [ISO8601] icon)
+ * @see: https://build.fhir.org/datatypes.html#time
+ * @example
+ * 13:28:17
+ * 13:28:17.20
+ */
+export type TimeString = `${number}:${number}:${number}${string}`;
+
+/**
  * A date, or partial date (e.g. just year or year + month) as used in human communication.
  * The format is a subset of [ISO8601] icon: YYYY, YYYY-MM, or YYYY-MM-DD
  * @see: https://build.fhir.org/datatypes.html#date

@@ -6,6 +6,8 @@ import { createGeneratorContext } from '../createGeneratorContext/createGenerato
 import { getProfileKey } from '../getProfileKey/getProfileKey';
 import { processValue } from '../processValue/processValue';
 
+const untranslatedLabelRegexp = /^(r3|r4|fhir)\./;
+
 export const generateUiSchema: HealthUiSchemaFunction<MgoResourceMeta> = (resource, context) => {
     const { formatMessage } = context;
     const {
@@ -34,7 +36,9 @@ export const generateUiSchema: HealthUiSchemaFunction<MgoResourceMeta> = (resour
                 // Otherwise groups within other groups might be missing translations for their label
                 // even though that label is never actually used as their contents will be merged
                 // into their parent group.
-                label: context.formatLabel(element.label as FhirMessagesIds, null),
+                label: untranslatedLabelRegexp.test(element.label as string)
+                    ? context.formatLabel(element.label as FhirMessagesIds, null)
+                    : element.label,
             });
         } else {
             defaultGroup.children.push(element);

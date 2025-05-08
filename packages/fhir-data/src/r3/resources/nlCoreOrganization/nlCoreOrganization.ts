@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Organization } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { filterCodeableConceptByCoding } from '../../../parse/helpers';
+import { filterCodeableConcept } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import { nlCoreAddress, nlCoreContactpoint } from '../../elements';
@@ -18,18 +18,15 @@ function parseNlCoreOrganization(resource: Organization) {
         identifier: map(resource.identifier, parse.identifier),
         name: parse.string(resource.name),
         departmentSpecialty: map(
-            filterCodeableConceptByCoding(
-                resource.type,
-                (x) => x.system === 'urn:oid:2.16.840.1.113883.2.4.6.7'
-            ),
+            filterCodeableConcept(resource.type, { system: 'urn:oid:2.16.840.1.113883.2.4.6.7' }),
             parse.codeableConcept
         ),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
         address: map(resource.address, nlCoreAddress.parse),
         organizationType: map(
-            filterCodeableConceptByCoding(
+            filterCodeableConcept(
                 resource.type,
-                (x) => x.system === 'http://nictiz.nl/fhir/NamingSystem/organization-type' // NOSONAR
+                { system: 'http://nictiz.nl/fhir/NamingSystem/organization-type' } // NOSONAR
             ),
             parse.codeableConcept
         ),

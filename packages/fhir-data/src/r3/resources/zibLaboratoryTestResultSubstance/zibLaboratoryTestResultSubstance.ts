@@ -2,8 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Substance } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
-import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
+import { generateUiSchema } from '../../../ui/generator';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Substance'; // NOSONAR
 
@@ -13,11 +12,9 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestRes
 function parseZibLaboratoryTestResultSubstance(resource: Substance) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        identifier: map(resource.identifier, parse.identifier),
-        status: parse.string(resource?.status),
-        category: map(resource.category, parse.codeableConcept),
-        code: parse.codeableConcept(resource.code), // NL-CM:13.1.22
-        description: parse.string(resource.description),
+
+        // HCIM LaboratoryTestResult-v4.1(2017EN)
+        code: parse.codeableConcept(resource.code),
     };
 }
 
@@ -28,5 +25,5 @@ export type ZibLaboratoryTestResultSubstance = ReturnType<
 export const zibLaboratoryTestResultSubstance = {
     profile,
     parse: parseZibLaboratoryTestResultSubstance,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Substance, ZibLaboratoryTestResultSubstance>;

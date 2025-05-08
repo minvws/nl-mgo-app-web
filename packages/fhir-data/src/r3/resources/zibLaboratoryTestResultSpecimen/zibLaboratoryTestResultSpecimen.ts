@@ -3,9 +3,8 @@ import { type Specimen } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { container } from './elements/container/container';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen'; // NOSONAR
 
@@ -17,22 +16,36 @@ function parseZibLaboratoryTestResultSpecimen(resource: Specimen) {
 
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        identifier: map(resource.identifier, parse.identifier), // NL-CM:13.1.15
-        subject: parse.reference(resource.subject), // NL-CM:13.1.29
-        container: map(resource.container, container.parse), // NL-CM:13.1.20 & NL-CM:13.1.21
-        type: parse.codeableConcept(resource.type), // NL-CM:13.1.16
-        receivedTime: parse.dateTime(resource.receivedTime), // NL-CM:13.1.25
+
+        // HCIM LaboratoryTestResult-v4.1(2017EN)
+        identifier: map(resource.identifier, parse.identifier),
+        type: parse.codeableConcept(resource.type),
+        subject: parse.reference(resource.subject),
+        receivedTime: parse.dateTime(resource.receivedTime),
+        parent: map(resource.parent, parse.reference),
         collection: {
-            quantity: parse.quantity(collection?.quantity), // NL-CM:13.1.23
-            ...oneOfValueX(collection, ['dateTime', 'period'], 'collected'), // dateTime NL-CM:13.1.17, period NL-CM:13.1.24
-            method: parse.codeableConcept(collection?.method), // NL-CM:13.1.18
+            ...oneOfValueX(collection, ['dateTime', 'period'], 'collected'),
+            quantity: parse.simpleQuantity(collection?.quantity),
+            method: parse.codeableConcept(collection?.method),
             bodySite: {
-                value: parse.codeableConcept(collection?.bodySite), // NL-CM:13.1.26
-                laterality: parse.extensionNictiz(collection?.bodySite, 'BodySite-Qualifier'), // NL-CM:13.1.27
-                morphology: parse.extensionNictiz(collection?.bodySite, 'BodySite-Morphology'), // NL-CM:13.1.28
+                ...parse.codeableConcept(collection?.bodySite),
+                laterality: parse.extensionMultiple(
+                    collection?.bodySite,
+                    'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier', // NOSONAR
+                    'codeableConcept'
+                ),
+                morphology: parse.extensionMultiple(
+                    collection?.bodySite,
+                    'http://nictiz.nl/fhir/StructureDefinition/Morphology', // NOSONAR
+                    'codeableConcept'
+                ),
             },
         },
-        note: map(resource.note, parse.annotation), // NL-CM:13.1.19
+        container: map(resource.container, (container) => ({
+            identifier: map(container?.identifier, parse.identifier),
+            type: parse.codeableConcept(container?.type),
+        })),
+        note: map(resource.note, parse.annotation),
     };
 }
 
@@ -43,5 +56,5 @@ export type ZibLaboratoryTestResultSpecimen = ReturnType<
 export const zibLaboratoryTestResultSpecimen = {
     profile,
     parse: parseZibLaboratoryTestResultSpecimen,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Specimen, ZibLaboratoryTestResultSpecimen>;

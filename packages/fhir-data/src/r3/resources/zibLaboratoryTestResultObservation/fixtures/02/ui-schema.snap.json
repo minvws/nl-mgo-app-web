@@ -1,9 +1,29 @@
 {
-    "label": "Chloride [moles/volume] in blood",
+    "label": "Laboratorium uitslag",
     "children": [
         {
-            "label": "Laboratorium uitslag",
             "children": [
+                {
+                    "label": "Aanvrager",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 juni 2010"
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gerelateerde uitslag",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Variant-1",
+                    "reference": "Observation/example-genetics-1"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,46 +32,22 @@
                     ]
                 },
                 {
+                    "label": "Interpretatie vlaggen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Above reference range (281302008 in code systeem http://snomed.info/sct)"
+                },
+                {
+                    "label": "Monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Blood (substance)",
+                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                },
+                {
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
-                {
-                    "label": "Verband",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Algemene testinformatie",
-            "children": [
-                {
-                    "label": "Resultaat type",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Laboratoriumtest",
-            "children": [
                 {
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
@@ -60,29 +56,94 @@
                     ]
                 },
                 {
+                    "label": "Test uitslag status",
+                    "type": "SINGLE_VALUE",
+                    "display": "final"
+                },
+                {
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
-                },
-                {
-                    "label": "Eind datum",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Test uitslag",
+                    "label": "Verband",
                     "type": "SINGLE_VALUE",
-                    "display": "109 millimol per liter"
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Test uitslag status",
+                    "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Categorie",
+            "children": [
+                {
+                    "label": "Resultaat code",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Resultaat type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Data",
+            "children": [
+                {
+                    "label": "Aantal sample punten",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "300"
+                },
+                {
+                    "label": "Factor",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Gesamplede gegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "120 125 123 121 119 118 117 116 115 114"
+                },
+                {
+                    "label": "ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "0"
+                },
+                {
+                    "label": "Origin",
+                    "type": "SINGLE_VALUE",
+                    "display": "0 mmHg"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "0.1"
+                }
+            ]
+        },
+        {
+            "label": "Referentie",
+            "children": [
+                {
+                    "label": "Referentie bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "108 millimol per liter"
                 },
                 {
                     "label": "Referentie ondergrens",
@@ -90,14 +151,19 @@
                     "display": "99 millimol per liter"
                 },
                 {
-                    "label": "Referentie bovengrens",
-                    "type": "SINGLE_VALUE",
-                    "display": "108 millimol per liter"
-                },
-                {
                     "label": "Referentie type",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Referentie",
+            "children": [
+                {
+                    "label": "Referentie bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "265 millimol per liter"
                 },
                 {
                     "label": "Referentie ondergrens",
@@ -105,23 +171,10 @@
                     "display": "180 millimol per liter"
                 },
                 {
-                    "label": "Referentie bovengrens",
-                    "type": "SINGLE_VALUE",
-                    "display": "265 millimol per liter"
-                },
-                {
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Treatment Range (treatment in code systeem http://hl7.org/fhir/referencerange-meaning)"
-                    ]
-                },
-                {
-                    "label": "Interpretatie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Hoog (H in code systeem http://hl7.org/fhir/v2/0078)",
-                        "Above reference range (281302008 in code systeem http://snomed.info/sct)"
                     ]
                 }
             ]

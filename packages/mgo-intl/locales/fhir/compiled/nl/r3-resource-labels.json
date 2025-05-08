@@ -185,12 +185,6 @@
       "value": "Interpretatie"
     }
   ],
-  "r3.gp_laboratory_result.laboratory_test_result_code": [
-    {
-      "type": 0,
-      "value": "Resultaat code"
-    }
-  ],
   "r3.gp_laboratory_result.method": [
     {
       "type": 0,
@@ -359,6 +353,54 @@
       "value": "Type"
     }
   ],
+  "r3.nl_core_address.line.additional_locator": [
+    {
+      "type": 0,
+      "value": "Aanduiding bij huisnummer"
+    }
+  ],
+  "r3.nl_core_address.line.building_numbersuffix": [
+    {
+      "type": 0,
+      "value": "Huisnummertoevoeging"
+    }
+  ],
+  "r3.nl_core_address.line.house_number": [
+    {
+      "type": 0,
+      "value": "Huisnummer"
+    }
+  ],
+  "r3.nl_core_address.line.street_name": [
+    {
+      "type": 0,
+      "value": "Straatnaam"
+    }
+  ],
+  "r3.nl_core_address.line.unit_id": [
+    {
+      "type": 0,
+      "value": "Extra informatie"
+    }
+  ],
+  "r3.nl_core_address.official.value": [
+    {
+      "type": 0,
+      "value": "Markeer een adres als een 'officieel geregistreerd adres."
+    }
+  ],
+  "r3.nl_core_address.type": [
+    {
+      "type": 0,
+      "value": "Adres type"
+    }
+  ],
+  "r3.nl_core_address.use": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
   "r3.nl_core_episodeofcare": [
     {
       "type": 0,
@@ -395,10 +437,46 @@
       "value": "Observatie"
     }
   ],
+  "r3.nl_core_organization.type": [
+    {
+      "type": 0,
+      "value": "Organisatie type"
+    }
+  ],
+  "r3.nl_core_patient.contact.relationship.value": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r3.nl_core_patient.legal_status": [
+    {
+      "type": 0,
+      "value": "Juridische status"
+    }
+  ],
+  "r3.nl_core_patient.life_stance": [
+    {
+      "type": 0,
+      "value": "Levensovertuiging"
+    }
+  ],
+  "r3.nl_core_patient.nationality.code": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
+    }
+  ],
   "r3.nl_core_practitionerrole": [
     {
       "type": 0,
       "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.nl_core_practitionerrole.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r3.zib_administration_agreement.performer": [
@@ -527,12 +605,6 @@
       "value": "Laboratoriumtest"
     }
   ],
-  "r3.zib_laboratory_test_result_observation.laboratory_test_result_code": [
-    {
-      "type": 0,
-      "value": "Resultaat code"
-    }
-  ],
   "r3.zib_laboratory_test_result_observation.performer": [
     {
       "type": 0,
@@ -551,22 +623,10 @@
       "value": "Gerelateerde uitslag"
     }
   ],
-  "r3.zib_laboratory_test_result_observation.status.value": [
-    {
-      "type": 0,
-      "value": "Test uitslag status"
-    }
-  ],
   "r3.zib_laboratory_test_result_specimen.collection": [
     {
       "type": 0,
       "value": "Afname"
-    }
-  ],
-  "r3.zib_laboratory_test_result_specimen.collection.body_site.value": [
-    {
-      "type": 0,
-      "value": "Anatomische locatie"
     }
   ],
   "r3.zib_laboratory_test_result_specimen.parent": [
@@ -663,6 +723,18 @@
     {
       "type": 0,
       "value": "Medisch hulpmiddel aanvraag"
+    }
+  ],
+  "r3.zib_medical_device_request.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_medical_device_request.requester": [
+    {
+      "type": 0,
+      "value": "Aangevraagd door"
     }
   ],
   "r3.zib_medication_use.effective_period.duration": [

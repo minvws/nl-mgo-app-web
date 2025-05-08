@@ -18,7 +18,22 @@
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
     },
-    "context": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2010-06-01",
+        "end": null
+    },
+    "performer": null,
+    "basedOn": null,
+    "status": {
+        "_type": "code",
+        "value": "final",
+        "testResultStatus": null
+    },
+    "category": {
+        "laboratoryTestResultCode": null,
+        "resultType": null
+    },
     "code": {
         "_type": "codeableConcept",
         "text": null,
@@ -30,23 +45,38 @@
             }
         ]
     },
+    "valueSampledData": {
+        "_type": "sampledData",
+        "origin": {
+            "value": 0,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        },
+        "period": 0.1,
+        "factor": 1,
+        "lowerLimit": 0,
+        "upperLimit": 300,
+        "dimensions": 1,
+        "data": "120 125 123 121 119 118 117 116 115 114"
+    },
+    "interpretation": {
+        "interpretatieVlaggenCodelijst": [
+            {
+                "_type": "coding",
+                "code": "281302008",
+                "display": "Above reference range",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "context": null,
     "method": null,
-    "effectivePeriod": {
-        "_type": "period",
-        "start": "2010-06-01",
-        "end": null
-    },
-    "valueQuantity": {
-        "_type": "quantity",
-        "value": 109,
-        "comparator": null,
-        "unit": "mmol/l",
-        "system": "http://unitsofmeasure.org",
-        "code": "mmol/L"
-    },
-    "status": {
-        "_type": "code",
-        "value": "final"
+    "specimen": {
+        "_type": "reference",
+        "reference": "Specimen/zib-laboratorytestresult-specimen-01",
+        "display": "Blood (substance)"
     },
     "referenceRange": [
         {
@@ -66,9 +96,7 @@
                 "system": "http://unitsofmeasure.org",
                 "code": "mmol/L"
             },
-            "type": null,
-            "appliesTo": null,
-            "age": null
+            "type": null
         },
         {
             "low": {
@@ -97,36 +125,16 @@
                         "system": "http://hl7.org/fhir/referencerange-meaning"
                     }
                 ]
-            },
-            "appliesTo": null,
-            "age": null
+            }
         }
     ],
-    "interpretation": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
-            {
-                "code": "H",
-                "display": "Hoog",
-                "system": "http://hl7.org/fhir/v2/0078"
-            },
-            {
-                "code": "281302008",
-                "display": "Above reference range",
-                "system": "http://snomed.info/sct"
+    "related": [
+        {
+            "target": {
+                "_type": "reference",
+                "reference": "Observation/example-genetics-1",
+                "display": "Variant-1"
             }
-        ]
-    },
-    "specimen": {
-        "_type": "reference",
-        "reference": "Specimen/zib-laboratorytestresult-specimen-01",
-        "display": "Blood (substance)"
-    },
-    "comment": null,
-    "laboratoryTestResultCode": null,
-    "resultType": null,
-    "related": null,
-    "basedOn": null,
-    "performer": null
+        }
+    ]
 }

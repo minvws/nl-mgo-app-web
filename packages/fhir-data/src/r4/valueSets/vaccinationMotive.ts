@@ -1,12 +1,35 @@
 /**
- * SNOMED CT Codes
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946006
  */
-export enum VaccinationMotive {
-    VACCINATION_NEEDED_AS_PART_OF_IMMUNIZATION_PROGRAMME = '159741000146107',
-    VACCINATION_NEEDED_AS_PART_OF_NATIONAL_IMMUNIZATION_PROGRAMME = '159731000146104',
-    OCCUPATIONAL_VACCINATION_NEEDED = '159721000146101',
-    ACTIVE_IMMUNIZATION = '33879002',
-    PASSIVE_IMMUNISATION = '51116004',
-    ELECTIVE_IMMUNIZATION_FOR_INTERNATIONAL_TRAVEL = '14747002',
-}
+export const vaccinationMotiveValueSet = [
+    {
+        display: 'Immunisatie nodig vanuit vaccinatieprogramma (situatie)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '159741000146107',
+    },
+    {
+        display: 'Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '159731000146104',
+    },
+    {
+        display: 'Immunisatie nodig voor werk (situatie)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '159721000146101',
+    },
+    {
+        display: 'Vaccinatie (verrichting)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '33879002',
+    },
+    {
+        display: 'Passieve immunisatie (verrichting)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '51116004',
+    },
+    {
+        display: 'Reizigersvaccinatie (verrichting)',
+        system: 'http://snomed.info/sct', // NOSONAR
+        code: '14747002',
+    },
+] as const;

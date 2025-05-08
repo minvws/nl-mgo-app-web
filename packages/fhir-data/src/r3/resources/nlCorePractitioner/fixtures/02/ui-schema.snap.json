@@ -17,12 +17,12 @@
             "label": "r3.nl_core_address",
             "children": [
                 {
-                    "label": "r3.nl_core_address.use",
+                    "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "display": "work"
                 },
                 {
-                    "label": "r3.nl_core_address.type",
+                    "label": "Adres type",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },

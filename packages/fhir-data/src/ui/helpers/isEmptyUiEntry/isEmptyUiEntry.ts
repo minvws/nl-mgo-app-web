@@ -15,7 +15,6 @@ export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
         case 'DOWNLOAD_LINK':
             return isNullish(uiField.url);
         default:
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            throw new Error(`Unknown UI entry type: ${(uiField as any).type}`);
+            throw new Error(`Unknown UI entry type: ${JSON.stringify(uiField)}`);
     }
 }

@@ -33,5 +33,5 @@ test('throws if the entry is not recognized', () => {
             isEmptyUiEntry({
                 type: 'UKNOWN_TYPE',
             } as any) // eslint-disable-line @typescript-eslint/no-explicit-any
-    ).toThrowError(`Unknown UI entry type: UKNOWN_TYPE`);
+    ).toThrowError(`Unknown UI entry type: {"type":"UKNOWN_TYPE"}`);
 });

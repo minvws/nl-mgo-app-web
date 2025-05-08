@@ -4,6 +4,7 @@ import { type Nullable } from '@minvws/mgo-mgo-utils';
 /**
  * Returns the first observation component that has a matching code.
  * When multiple codes are given, it returns the first obsevation component that matches ONE OF the codes given.
+ * @deprecated Use `parseObservationComponent` instead.
  */
 export function findComponentByCode(
     components: Nullable<ObservationComponent[]>,

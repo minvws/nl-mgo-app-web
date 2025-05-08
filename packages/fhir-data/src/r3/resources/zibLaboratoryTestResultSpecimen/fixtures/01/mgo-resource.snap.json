@@ -13,10 +13,35 @@
             "type": null
         }
     ],
+    "type": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "87612001",
+                "display": "Blood (substance)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
     "subject": {
         "_type": "reference",
         "reference": "Patient/nl-core-patient-01",
         "display": "Johan XXX_Helleman"
+    },
+    "receivedTime": null,
+    "parent": null,
+    "collection": {
+        "collectedDateTime": {
+            "_type": "dateTime",
+            "value": "2012-05-23T08:08:00+01:00"
+        },
+        "quantity": null,
+        "method": null,
+        "bodySite": {
+            "laterality": [],
+            "morphology": []
+        }
     },
     "container": [
         {
@@ -34,30 +59,5 @@
             }
         }
     ],
-    "type": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
-            {
-                "code": "87612001",
-                "display": "Blood (substance)",
-                "system": "http://snomed.info/sct"
-            }
-        ]
-    },
-    "receivedTime": null,
-    "collection": {
-        "quantity": null,
-        "collectedDateTime": {
-            "_type": "dateTime",
-            "value": "2012-05-23T08:08:00+01:00"
-        },
-        "method": null,
-        "bodySite": {
-            "value": null,
-            "laterality": null,
-            "morphology": null
-        }
-    },
     "note": null
 }

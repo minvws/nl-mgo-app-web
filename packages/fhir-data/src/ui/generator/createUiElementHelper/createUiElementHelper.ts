@@ -2,7 +2,7 @@ import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import type * as typeParsers from '../../../parse/type';
 import { map } from '../../../utils';
 import { type HealthUiSchemaContext } from '../../context';
-import { type UiElement, type UiFunction } from '../../types';
+import { type HealthUiGroup, type UiElement, type UiFunction } from '../../types';
 
 type TypeParsers = typeof typeParsers;
 
@@ -11,10 +11,10 @@ type MgoTypeId = MgoType['_type'];
 type MgoTypeByTypeId<T extends MgoTypeId> = Extract<MgoType, { _type: T }>;
 
 type SingleTypeUiFunctionMap = {
-    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>, UiElement | UiElement[]>;
+    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>, UiElement | UiElement[] | HealthUiGroup>;
 };
 type MultipleTypeUiFunctionMap = {
-    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>[], UiElement | UiElement[]>;
+    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>[], UiElement | UiElement[] | HealthUiGroup>;
 };
 
 export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
@@ -39,7 +39,10 @@ export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
         range: ui.range,
         ratio: ui.ratio,
         reference: ui.reference,
+        sampledData: ui.sampledData,
+        simpleQuantity: ui.simpleQuantity,
         string: ui.string,
+        time: ui.time,
         unsignedInt: ui.unsignedInt,
     };
 
@@ -58,7 +61,7 @@ export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
     return function createUiElement<T extends MgoTypeId>(
         label: FhirMessagesIds,
         value: MgoTypeByTypeId<T> | MgoTypeByTypeId<T>[]
-    ): UiElement | UiElement[] {
+    ): UiElement | UiElement[] | HealthUiGroup {
         if (Array.isArray(value)) {
             const uiHelper = multipleUiTypeMap[value[0]._type];
             if (uiHelper) {

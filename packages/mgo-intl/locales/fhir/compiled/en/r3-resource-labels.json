@@ -61,8 +61,6 @@
   ],
   "r3.gp_laboratory_result.interpretation": [
   ],
-  "r3.gp_laboratory_result.laboratory_test_result_code": [
-  ],
   "r3.gp_laboratory_result.method": [
   ],
   "r3.gp_laboratory_result.reference_range": [
@@ -119,6 +117,22 @@
   ],
   "r3.ihe_mhd_minimal_document_reference.type": [
   ],
+  "r3.nl_core_address.line.additional_locator": [
+  ],
+  "r3.nl_core_address.line.building_numbersuffix": [
+  ],
+  "r3.nl_core_address.line.house_number": [
+  ],
+  "r3.nl_core_address.line.street_name": [
+  ],
+  "r3.nl_core_address.line.unit_id": [
+  ],
+  "r3.nl_core_address.official.value": [
+  ],
+  "r3.nl_core_address.type": [
+  ],
+  "r3.nl_core_address.use": [
+  ],
   "r3.nl_core_episodeofcare": [
   ],
   "r3.nl_core_episodeofcare.identifier": [
@@ -131,7 +145,19 @@
   ],
   "r3.nl_core_observation": [
   ],
+  "r3.nl_core_organization.type": [
+  ],
+  "r3.nl_core_patient.contact.relationship.value": [
+  ],
+  "r3.nl_core_patient.legal_status": [
+  ],
+  "r3.nl_core_patient.life_stance": [
+  ],
+  "r3.nl_core_patient.nationality.code": [
+  ],
   "r3.nl_core_practitionerrole": [
+  ],
+  "r3.nl_core_practitionerrole.telecom": [
   ],
   "r3.zib_administration_agreement.performer": [
   ],
@@ -175,19 +201,13 @@
   ],
   "r3.zib_laboratory_test_result_observation.lab_test": [
   ],
-  "r3.zib_laboratory_test_result_observation.laboratory_test_result_code": [
-  ],
   "r3.zib_laboratory_test_result_observation.performer": [
   ],
   "r3.zib_laboratory_test_result_observation.reference_range.type": [
   ],
   "r3.zib_laboratory_test_result_observation.related.target": [
   ],
-  "r3.zib_laboratory_test_result_observation.status.value": [
-  ],
   "r3.zib_laboratory_test_result_specimen.collection": [
-  ],
-  "r3.zib_laboratory_test_result_specimen.collection.body_site.value": [
   ],
   "r3.zib_laboratory_test_result_specimen.parent": [
   ],
@@ -220,6 +240,10 @@
   "r3.zib_medical_device_product.udi.device_identifier": [
   ],
   "r3.zib_medical_device_request": [
+  ],
+  "r3.zib_medical_device_request.occurrence_date_time": [
+  ],
+  "r3.zib_medical_device_request.requester": [
   ],
   "r3.zib_medication_use.effective_period.duration": [
   ],

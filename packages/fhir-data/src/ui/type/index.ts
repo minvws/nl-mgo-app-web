@@ -1,5 +1,5 @@
 import { type UiHelperContext } from '../context';
-import { type UiElement, type UiFunction } from '../types';
+import { type HealthUiGroup, type UiElement, type UiFunction } from '../types';
 import { annotation } from './annotation/annotation';
 import { boolean } from './boolean/boolean';
 import { code } from './code/code';
@@ -19,7 +19,10 @@ import { quantity } from './quantity/quantity';
 import { range } from './range/range';
 import { ratio } from './ratio/ratio';
 import { reference } from './reference/reference';
+import { sampledData } from './sampledData/sampledData';
+import { simpleQuantity } from './simpleQuantity/simpleQuantity';
 import { string } from './string/string';
+import { time } from './time/time';
 import { unsignedInt } from './unsignedInt/unsignedInt';
 
 export function getTypes(context: UiHelperContext) {
@@ -45,5 +48,8 @@ export function getTypes(context: UiHelperContext) {
         integer64: integer64(context),
         unsignedInt: unsignedInt(context),
         positiveInt: positiveInt(context),
-    } satisfies Record<string, UiFunction<any, UiElement | UiElement[]>>; // eslint-disable-line @typescript-eslint/no-explicit-any
+        time: time(context),
+        sampledData: sampledData(context),
+        simpleQuantity: simpleQuantity(context),
+    } satisfies Record<string, UiFunction<any, UiElement | UiElement[] | HealthUiGroup>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 }

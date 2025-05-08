@@ -15,21 +15,3 @@ export enum Snomed {
     RESISTANT = '30714006',
     SUSCEPTIBLE = '131196009',
 }
-
-export const SnomedResultTypes = [
-    Snomed.HEMATOLOGY,
-    Snomed.CHEMISTRY,
-    Snomed.SEROLOGY,
-    Snomed.VIROLOGY,
-    Snomed.TOXICOLOGY,
-    Snomed.MICROBIOLOGY,
-    Snomed.MOLECULAR_GENETICS,
-];
-
-export const InterpretatieVlaggenCodelijst = [
-    Snomed.ABOVE_REFERENCE_RANGE,
-    Snomed.BELOW_REFERENCE_RANGE,
-    Snomed.INTERMEDIATE,
-    Snomed.RESISTANT,
-    Snomed.SUSCEPTIBLE,
-];

@@ -1,11 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Immunization } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { filterCodeableConceptByCoding } from '../../../parse/helpers';
+import { filterCodeableConcept } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { VaccinationIndication } from '../../valueSets/vaccinationIndication';
-import { VaccinationMotive } from '../../valueSets/vaccinationMotive';
+import { vaccinationIndicationValueSet } from '../../valueSets/vaccinationIndication';
+import { vaccinationMotiveValueSet } from '../../valueSets/vaccinationMotive';
 import { parseProtocolApplied } from './elements/protocolApplied/protocolApplied';
 import { summary } from './summary';
 import { uiSchema } from './uiSchema';
@@ -16,15 +16,11 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-e
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946266
  */
 function parseNlCoreVaccinationEvent(resource: Immunization) {
-    const vaccinationIndication = filterCodeableConceptByCoding(
+    const vaccinationIndication = filterCodeableConcept(
         resource.reasonCode,
-        (x) =>
-            x.code && Object.values(VaccinationIndication).includes(x.code as VaccinationIndication)
+        vaccinationIndicationValueSet
     );
-    const vaccinationMotive = filterCodeableConceptByCoding(
-        resource.reasonCode,
-        (x) => x.code && Object.values(VaccinationMotive).includes(x.code as VaccinationMotive)
-    );
+    const vaccinationMotive = filterCodeableConcept(resource.reasonCode, vaccinationMotiveValueSet);
 
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),

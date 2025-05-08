@@ -1,27 +1,18 @@
 {
-    "label": "Revision status",
+    "label": "Monster",
     "children": [
         {
-            "label": "r3.zib_laboratory_test_result_specimen_isolate",
             "children": [
                 {
-                    "label": "Monsternummer",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b4904db-8fdf-11ec-1469-020000000000"
-                    ]
-                },
-                {
-                    "label": "Monstervolgnummer",
+                    "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "1 maart 2020 om 23:03:00 GMT+1"
                 },
                 {
-                    "label": "Containertype",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
-                    ]
+                    "label": "Bron monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J. XXX_Helleman (Johan)",
+                    "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "Microorganisme",
@@ -31,52 +22,74 @@
                     ]
                 },
                 {
-                    "label": "r3.zib_laboratory_test_result_specimen_isolate.quantity",
-                    "type": "SINGLE_VALUE",
-                    "display": null
+                    "label": "Monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Blood (substance)",
+                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
                 },
                 {
-                    "label": "r3.zib_laboratory_test_result_specimen_isolate.collected",
+                    "label": "Monsternummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1b4904db-8fdf-11ec-1469-020000000000"
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "display": "het monster toont afwijkingen",
+                    "type": "SINGLE_VALUE"
+                }
+            ]
+        },
+        {
+            "label": "Afname",
+            "children": [
+                {
+                    "label": "Afname datum tijd",
                     "type": "SINGLE_VALUE",
                     "display": "1 maart 2020 om 22:03:00 GMT+1"
                 },
                 {
-                    "label": "Aanname datum tijd",
-                    "type": "SINGLE_VALUE",
-                    "display": "1 maart 2020 om 23:03:00 GMT+1"
-                },
-                {
                     "label": "Afnameprocedure",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
+                    "label": "Anatomische locatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Morfologie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Verzamelvolume",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Zijde",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Monstercontainer",
+            "children": [
                 {
-                    "label": "r3.zib_laboratory_test_result_specimen_isolate.body_site.morphology",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "Bron monster",
-                    "type": "REFERENCE_VALUE",
-                    "display": "J. XXX_Helleman (Johan)",
-                    "reference": "Patient/nl-core-patient-01"
-                },
-                {
-                    "label": "Toelichting",
+                    "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "het monster toont afwijkingen"
+                        "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
                     ]
+                },
+                {
+                    "label": "Monstervolgnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

@@ -1,7 +1,7 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Consent } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { intersectCodeableConcept, oneOfValueX } from '../../../parse/helpers';
+import { filterCodeableConcept, oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
@@ -33,7 +33,7 @@ function parseZibAdvanceDirective(resource: Consent) {
         ),
         category: {
             typeOfLivingWill: map(
-                intersectCodeableConcept(resource.category, typeOfLivingWillValueSet),
+                filterCodeableConcept(resource.category, typeOfLivingWillValueSet),
                 parse.codeableConcept
             ),
         },

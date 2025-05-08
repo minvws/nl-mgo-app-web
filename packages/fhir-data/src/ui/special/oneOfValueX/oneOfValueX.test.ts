@@ -1,9 +1,17 @@
 import { faker } from '$test';
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { type MgoQuantityProps } from '../../../parse/type';
+import { getTypes } from '../../type';
 import { quantity } from '../../type/quantity/quantity';
 import { string } from '../../type/string/string';
+import { type HealthUiGroup } from '../../types';
 import { oneOfValueX } from './oneOfValueX';
+
+vi.mock('../../type', async (importOriginal) => {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+    const { getTypes } = await importOriginal<typeof import('../../type')>();
+    return { getTypes: vi.fn(getTypes) };
+});
 
 test('valueX with string', () => {
     const label = faker.custom.fhirMessageId();
@@ -29,9 +37,9 @@ test('valueX with quantity', () => {
     const context = faker.custom.uiHelperContext();
     const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, undefined);
-    const exptected = quantity(context)(label, input.valueQuantity);
+    const expected = quantity(context)(label, input.valueQuantity);
 
-    expect(result).toEqual([exptected]);
+    expect(result).toEqual([expected]);
 });
 
 test('valueX with custom prefix', () => {
@@ -69,4 +77,32 @@ test('valueX where prefixed value not found', () => {
     const uiOneOfValueX = oneOfValueX(context);
     const result = uiOneOfValueX(label, input, prefix);
     expect(result).toEqual([]);
+});
+
+test('valueX always returns ui elements, even if a helper returns a group', () => {
+    const group: HealthUiGroup = {
+        label: faker.lorem.sentence(),
+        children: [
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.sentence(),
+                display: faker.lorem.sentence(),
+            },
+        ],
+    };
+
+    vi.mocked(getTypes).mockReturnValueOnce({
+        string: () => group,
+    } as any); // eslint-disable-line @typescript-eslint/no-explicit-any
+
+    const label = faker.custom.fhirMessageId();
+    const value = faker.lorem.word();
+    const input = {
+        valueString: value,
+    };
+
+    const context = faker.custom.uiHelperContext();
+    const uiOneOfValueX = oneOfValueX(context);
+    const result = uiOneOfValueX(label, input);
+    expect(result).toEqual([...group.children]);
 });

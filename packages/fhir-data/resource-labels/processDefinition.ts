@@ -2,13 +2,36 @@ import { type StructureDefinition } from '@minvws/mgo-fhir-types';
 import _ from 'lodash';
 import { normalizeLabel } from './normalizeLabel';
 
+/**
+ * This object contains the mapping of definitions that should share the same defaultlabels.
+ */
+const mirrorLabels = {
+    ['zib_laboratory_test_result_observation']: 'gp_laboratory_result',
+};
+
+/**
+ * Converts a string to snake_case.
+ * But it preserves dot (.) notation.
+ *
+ * @example
+ * snakeCase('zibLaboratoryTest.resultObservation') -> 'zib_laboratory_test.result_observation'
+ */
+function snakeCase(value: string | undefined) {
+    if (!value) return '';
+    return value.replace(/[^.]+/g, (match) => _.snakeCase(match));
+}
+
 export function processDefinition(definition: StructureDefinition) {
     const { id: definitionId, type, differential } = definition;
     const diffElements = differential?.element ?? [];
+    const definitionIdKey = snakeCase(definitionId);
 
-    if (!definitionId) {
+    if (!definitionIdKey) {
         throw new Error('No id found for StructureDefinition');
     }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mirrorDefinitionKey = (mirrorLabels as any)[definitionIdKey];
 
     const labels: Record<string, string> = {};
 
@@ -20,7 +43,7 @@ export function processDefinition(definition: StructureDefinition) {
             );
         }
 
-        let key = id!.replace(type, definitionId);
+        let key = id!.replace(type, definitionIdKey);
 
         // move extension: properties to its parent
         key = key.replace(/extension:/g, '');
@@ -38,10 +61,15 @@ export function processDefinition(definition: StructureDefinition) {
         // remove remaining [x] from the end of the key
         key = key.replace(/\[x\]$/, '');
         // convert to snake_case
-        key = key.replace(/[^.]+/g, (match) => _.snakeCase(match));
+        key = key.replace(/[^.]+/g, (match) => snakeCase(match));
 
         if (!labels[key]) {
-            labels[key] = normalizeLabel(alias[0]);
+            const label = normalizeLabel(alias[0]);
+            labels[key] = label;
+
+            if (mirrorDefinitionKey) {
+                labels[key.replace(definitionIdKey, mirrorDefinitionKey)] = label;
+            }
         } else {
             console.warn(`"${key}" already exists, unused value: ${alias[0]}`);
         }

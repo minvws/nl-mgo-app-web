@@ -11,6 +11,138 @@
       "value": "Journaalregel tekst"
     }
   ],
+  "r3.gp_laboratory_result": [
+    {
+      "type": 0,
+      "value": "Laboratorium uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.based_on": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r3.gp_laboratory_result.category.result_type": [
+    {
+      "type": 0,
+      "value": "Resultaat type"
+    }
+  ],
+  "r3.gp_laboratory_result.code": [
+    {
+      "type": 0,
+      "value": "Test code"
+    }
+  ],
+  "r3.gp_laboratory_result.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.gp_laboratory_result.component": [
+    {
+      "type": 0,
+      "value": "Laboratorium test"
+    }
+  ],
+  "r3.gp_laboratory_result.component.code": [
+    {
+      "type": 0,
+      "value": "Test code"
+    }
+  ],
+  "r3.gp_laboratory_result.component.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie vlaggen"
+    }
+  ],
+  "r3.gp_laboratory_result.component.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.effective": [
+    {
+      "type": 0,
+      "value": "Test datum tijd"
+    }
+  ],
+  "r3.gp_laboratory_result.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
+  "r3.gp_laboratory_result.interpretation.interpretatie_vlaggen_codelijst": [
+    {
+      "type": 0,
+      "value": "Interpretatie vlaggen"
+    }
+  ],
+  "r3.gp_laboratory_result.method": [
+    {
+      "type": 0,
+      "value": "Testmethode"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range": [
+    {
+      "type": 0,
+      "value": "Referentie"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.high": [
+    {
+      "type": 0,
+      "value": "Referentie bovengrens"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.low": [
+    {
+      "type": 0,
+      "value": "Referentie ondergrens"
+    }
+  ],
+  "r3.gp_laboratory_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.specimen": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.gp_laboratory_result.status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.status.test_result_status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.subject": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "r3.gp_laboratory_result.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag"
+    }
+  ],
   "r3.nl_core_address": [
     {
       "type": 0,

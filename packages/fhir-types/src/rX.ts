@@ -19,6 +19,7 @@ import type {
     Ratio as RatioR3,
     Reference as ReferenceR3,
     Resource as ResourceR3,
+    SampledData as SampledDataR3Original,
     StructureDefinition as StructureDefinitionR3,
 } from 'fhir/r3';
 
@@ -43,8 +44,11 @@ import type {
     Ratio as RatioR4,
     Reference as ReferenceR4,
     Resource as ResourceR4,
+    SampledData as SampledDataR4Original,
     StructureDefinition as StructureDefinitionR4,
 } from 'fhir/r4';
+
+import type { OverrideProperties } from 'type-fest';
 
 export type Quantity = QuantityR3 | QuantityR4;
 export type Address = AddressR3 | AddressR4;
@@ -68,3 +72,12 @@ export type Element = ElementR3 | ElementR4;
 export type Resource = ResourceR3 | ResourceR4;
 export type StructureDefinition = StructureDefinitionR3 | StructureDefinitionR4;
 export type Observation = ObservationR3 | ObservationR4;
+
+export type SimpleQuantityR3 = Omit<QuantityR3, 'comparator'>;
+export type SimpleQuantityR4 = Omit<QuantityR4, 'comparator'>;
+export type SimpleQuantity = SimpleQuantityR3 | SimpleQuantityR4;
+
+type SampledDataR3 = OverrideProperties<SampledDataR3Original, { origin: SimpleQuantityR3 }>;
+type SampledDataR4 = OverrideProperties<SampledDataR4Original, { origin: SimpleQuantityR4 }>;
+
+export type SampledData = SampledDataR3 | SampledDataR4;

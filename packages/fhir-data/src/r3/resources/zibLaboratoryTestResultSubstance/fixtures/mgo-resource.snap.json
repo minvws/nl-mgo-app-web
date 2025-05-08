@@ -4,32 +4,6 @@
     "resourceType": "Substance",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Substance",
     "fhirVersion": "R3",
-    "identifier": [
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "1b55ba69-8fdf-11ec-4275-020000000000",
-            "type": null
-        }
-    ],
-    "status": {
-        "_type": "string",
-        "value": "active"
-    },
-    "category": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "chemical",
-                    "display": "Chemical",
-                    "system": "http://hl7.org/fhir/substance-category"
-                }
-            ]
-        }
-    ],
     "code": {
         "_type": "codeableConcept",
         "text": null,
@@ -40,9 +14,5 @@
                 "system": "http://snomed.info/sct"
             }
         ]
-    },
-    "description": {
-        "_type": "string",
-        "value": "Luchtwegproblemen/ ademhalingdedeficiëntie en/of extreem lage bloeddruk (anafylactische shock)"
     }
 }

@@ -1,4 +1,9 @@
 {
+    "id": "ont-ver-gpdata-observation-contact14-fastingglucose",
+    "referenceId": "Observation/ont-ver-gpdata-observation-contact14-fastingglucose",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult",
+    "fhirVersion": "R3",
     "identifier": [
         {
             "_type": "identifier",
@@ -13,10 +18,37 @@
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
-    "context": {
-        "_type": "reference",
-        "reference": "Encounter/ont-ver-gpdata-encounter-contact14",
-        "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard"
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2024-03-18",
+        "end": null
+    },
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "basedOn": null,
+    "status": {
+        "_type": "code",
+        "value": "final",
+        "testResultStatus": null
+    },
+    "category": {
+        "laboratoryTestResultCode": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "49581000146104",
+                    "display": "bevinding betreffende laboratoriumonderzoek",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        },
+        "resultType": null
     },
     "code": {
         "_type": "codeableConcept",
@@ -29,12 +61,6 @@
             }
         ]
     },
-    "method": null,
-    "effectivePeriod": {
-        "_type": "period",
-        "start": "2024-03-18",
-        "end": null
-    },
     "valueQuantity": {
         "_type": "quantity",
         "value": 5.4,
@@ -43,10 +69,17 @@
         "system": "http://unitsofmeasure.org",
         "code": "mmol/L"
     },
-    "status": {
-        "_type": "code",
-        "value": "final"
+    "interpretation": {
+        "interpretatieVlaggenCodelijst": null
     },
+    "comment": null,
+    "context": {
+        "_type": "reference",
+        "reference": "Encounter/ont-ver-gpdata-encounter-contact14",
+        "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard"
+    },
+    "method": null,
+    "specimen": null,
     "referenceRange": [
         {
             "low": {
@@ -75,40 +108,8 @@
                         "system": "http://hl7.org/fhir/referencerange-meaning"
                     }
                 ]
-            },
-            "appliesTo": null,
-            "age": null
+            }
         }
     ],
-    "interpretation": null,
-    "specimen": null,
-    "comment": null,
-    "laboratoryTestResultCode": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "49581000146104",
-                    "display": "bevinding betreffende laboratoriumonderzoek",
-                    "system": "http://snomed.info/sct"
-                }
-            ]
-        }
-    ],
-    "resultType": null,
-    "related": null,
-    "basedOn": null,
-    "performer": [
-        {
-            "_type": "reference",
-            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
-            "display": "Dokter Bernard"
-        }
-    ],
-    "id": "ont-ver-gpdata-observation-contact14-fastingglucose",
-    "referenceId": "Observation/ont-ver-gpdata-observation-contact14-fastingglucose",
-    "resourceType": "Observation",
-    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult",
-    "fhirVersion": "R3"
+    "related": null
 }

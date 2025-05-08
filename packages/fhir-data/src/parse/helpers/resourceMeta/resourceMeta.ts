@@ -17,7 +17,8 @@ export type MgoResourceMeta<
 export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
     resource: Resource,
     profile: T,
-    fhirVersion: V
+    fhirVersion: V,
+    _i18nProfile?: NictizNlProfile
 ) {
     const { resourceType, id, meta } = resource;
 

@@ -16,11 +16,15 @@ function processNestedArray(
     context: GeneratorContext,
     path: string,
     value: unknown[]
-): UiElement[] {
+): (UiElement | HealthUiGroup)[] {
     return value.map((item) => processNestedValue(context, path, item).flat()).flat();
 }
 
-function processNestedValue(context: GeneratorContext, path: string, value: unknown): UiElement[] {
+function processNestedValue(
+    context: GeneratorContext,
+    path: string,
+    value: unknown
+): (UiElement | HealthUiGroup)[] {
     if (isNullish(value)) {
         return [];
     } else if (isValueType(value) || isPrimitiveValueType(value)) {
@@ -33,8 +37,12 @@ function processNestedValue(context: GeneratorContext, path: string, value: unkn
     return [];
 }
 
-function processNestedObject(context: GeneratorContext, path: string, value: object): UiElement[] {
-    const uiElements: UiElement[] = [];
+function processNestedObject(
+    context: GeneratorContext,
+    path: string,
+    value: object
+): (UiElement | HealthUiGroup)[] {
+    const uiElements: (UiElement | HealthUiGroup)[] = [];
     const entries = Object.entries(value);
     for (const [key, value] of entries) {
         uiElements.push(...processNestedValue(context, `${path}.${snakeCase(key)}`, value));
@@ -48,7 +56,7 @@ export function processMgoType(
     value: ValueType | PrimitiveValueType
 ) {
     const { createUiElement } = context;
-    const elements: UiElement[] = [];
+    const elements: (UiElement | HealthUiGroup)[] = [];
     const uiElement = createUiElement(path as FhirMessagesIds, value as MgoType);
 
     elements.push(...[uiElement].flat());

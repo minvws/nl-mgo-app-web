@@ -32,11 +32,19 @@
         "display": "Johan XXX_Helleman"
     },
     "effectivePeriod": { "start": "2010-06-01" },
-    "valueQuantity": {
-        "value": 109,
-        "unit": "mmol/l",
-        "system": "http://unitsofmeasure.org",
-        "code": "mmol/L"
+    "valueSampledData": {
+        "origin": {
+            "value": 0,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        },
+        "period": 0.1,
+        "factor": 1,
+        "lowerLimit": 0,
+        "upperLimit": 300,
+        "dimensions": 1,
+        "data": "120 125 123 121 119 118 117 116 115 114"
     },
     "interpretation": {
         "coding": [
@@ -52,6 +60,15 @@
             }
         ]
     },
+    "related": [
+        {
+            "type": "has-member",
+            "target": {
+                "reference": "Observation/example-genetics-1",
+                "display": "Variant-1"
+            }
+        }
+    ],
     "specimen": {
         "reference": "Specimen/zib-laboratorytestresult-specimen-01",
         "display": "Blood (substance)"

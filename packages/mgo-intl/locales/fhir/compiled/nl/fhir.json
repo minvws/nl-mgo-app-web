@@ -139,6 +139,12 @@
       "value": "Auteur"
     }
   ],
+  "fhir.x.category": [
+    {
+      "type": 0,
+      "value": "Categorie"
+    }
+  ],
   "fhir.x.component": [
     {
       "type": 0,
@@ -179,6 +185,12 @@
     {
       "type": 0,
       "value": "Identificatie"
+    }
+  ],
+  "fhir.x.laboratory_test_result_code": [
+    {
+      "type": 0,
+      "value": "Resultaat code"
     }
   ],
   "fhir.x.laterality": [

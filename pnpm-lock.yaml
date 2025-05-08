@@ -347,6 +347,9 @@ importers:
       '@types/fhir':
         specifier: ^0.0.41
         version: 0.0.41
+      type-fest:
+        specifier: ^4.23.0
+        version: 4.39.1
 
   packages/mgo-intl:
     dependencies:

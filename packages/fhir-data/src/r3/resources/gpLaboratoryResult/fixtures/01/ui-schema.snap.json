@@ -1,9 +1,30 @@
 {
-    "label": "Consult voor hnp (thoracaal/lumbaal) met dokter bernard",
+    "label": "Laboratorium uitslag",
     "children": [
         {
-            "label": "Laboratorium uitslag",
             "children": [
+                {
+                    "label": "Aanvrager",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Auteur",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Dokter Bernard",
+                    "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1"
+                },
+                {
+                    "label": "Contact",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard",
+                    "reference": "Encounter/ont-ver-gpdata-encounter-contact14"
+                },
+                {
+                    "label": "Gerelateerde uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,53 +33,27 @@
                     ]
                 },
                 {
+                    "label": "Interpretatie vlaggen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Monster",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Jacqueline XXX_Cevat",
                     "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
                 },
                 {
-                    "label": "Verband",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard",
-                    "reference": "Encounter/ont-ver-gpdata-encounter-contact14"
-                },
-                {
-                    "label": "Test datum tijd",
-                    "type": "SINGLE_VALUE",
-                    "display": "18 maart 2024"
-                }
-            ]
-        },
-        {
-            "label": "Algemene testinformatie",
-            "children": [
-                {
-                    "label": "Resultaat type",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Laboratoriumtest",
-            "children": [
-                {
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "glucose nuchter, art/cap (lab) (3208 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)"
                     ]
-                },
-                {
-                    "label": "Testmethode",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
                 },
                 {
                     "label": "Test datum tijd",
@@ -76,14 +71,46 @@
                     "display": "final"
                 },
                 {
-                    "label": "Referentie ondergrens",
+                    "label": "Testmethode",
                     "type": "SINGLE_VALUE",
-                    "display": "3,5 millimol per liter"
+                    "display": "Niet bekend"
                 },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Categorie",
+            "children": [
+                {
+                    "label": "Resultaat code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "bevinding betreffende laboratoriumonderzoek (49581000146104 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Resultaat type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Referentie",
+            "children": [
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "display": "5,6 millimol per liter"
+                },
+                {
+                    "label": "Referentie ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "3,5 millimol per liter"
                 },
                 {
                     "label": "Referentie type",
@@ -91,11 +118,6 @@
                     "display": [
                         "Normal Range (normal in code systeem http://hl7.org/fhir/referencerange-meaning)"
                     ]
-                },
-                {
-                    "label": "Interpretatie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
                 }
             ]
         }

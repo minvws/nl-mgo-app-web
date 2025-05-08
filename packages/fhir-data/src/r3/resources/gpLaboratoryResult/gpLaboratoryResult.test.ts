@@ -6,25 +6,25 @@ import { gpLaboratoryResult } from '././gpLaboratoryResult';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import input03 from './fixtures/03/fhir-resource.json';
-import { i18n } from './uiSchema';
+import { i18n } from './summary';
 
-test('returns the expected output 01', async () => {
+test('01: mgo-resource', async () => {
     const output = gpLaboratoryResult.parse(input01 as Observation);
     await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', async () => {
-    const output = gpLaboratoryResult.parse(input01 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
+test('01: ui-schema', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input01 as Observation);
+    const uiSchema = gpLaboratoryResult.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
 });
 
-test('summary returns the expected output 01', async () => {
-    const output = gpLaboratoryResult.parse(input01 as Observation);
+test('01: summary', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input01 as Observation);
     const summary = gpLaboratoryResult.summary(
-        output,
+        mgoResource,
         testUiSchemaContext({
             isSummary: true,
         })
@@ -34,23 +34,23 @@ test('summary returns the expected output 01', async () => {
     );
 });
 
-test('returns the expected output 02', async () => {
+test('02: mgo-resource', async () => {
     const output = gpLaboratoryResult.parse(input02 as Observation);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 02', async () => {
-    const output = gpLaboratoryResult.parse(input02 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
+test('02: ui-schema', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
+    const uiSchema = gpLaboratoryResult.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );
 });
 
-test('summary returns the expected output 02', async () => {
-    const output = gpLaboratoryResult.parse(input02 as Observation);
+test('02: summary', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
     const summary = gpLaboratoryResult.summary(
-        output,
+        mgoResource,
         testUiSchemaContext({
             isSummary: true,
         })
@@ -60,23 +60,23 @@ test('summary returns the expected output 02', async () => {
     );
 });
 
-test('returns the expected output 03', async () => {
+test('03: mgo-resource', async () => {
     const output = gpLaboratoryResult.parse(input03 as Observation);
     await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 03', async () => {
-    const output = gpLaboratoryResult.parse(input03 as Observation);
-    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
+test('03: ui-schema', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input03 as Observation);
+    const uiSchema = gpLaboratoryResult.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/03/ui-schema.snap.json'
     );
 });
 
-test('summary returns the expected output 03', async () => {
-    const output = gpLaboratoryResult.parse(input03 as Observation);
+test('03: summary', async () => {
+    const mgoResource = gpLaboratoryResult.parse(input03 as Observation);
     const summary = gpLaboratoryResult.summary(
-        output,
+        mgoResource,
         testUiSchemaContext({
             isSummary: true,
         })
@@ -87,8 +87,20 @@ test('summary returns the expected output 03', async () => {
 });
 
 test('uiSchema returns default label if context not supplied', () => {
-    const output = gpLaboratoryResult.parse(input02 as Observation);
-    output.context = undefined;
-    const uiSchema = gpLaboratoryResult.uiSchema(output, testUiSchemaContext());
+    const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
+    mgoResource.context = undefined;
+    const uiSchema = gpLaboratoryResult.uiSchema(mgoResource, testUiSchemaContext());
     expect(uiSchema.label).toBe(fhirMessage(i18n));
+});
+
+test('summary returns default label if context not supplied', () => {
+    const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
+    mgoResource.context = undefined;
+    const summary = gpLaboratoryResult.summary(
+        mgoResource,
+        testUiSchemaContext({
+            isSummary: true,
+        })
+    );
+    expect(summary.label).toBe(fhirMessage(i18n));
 });

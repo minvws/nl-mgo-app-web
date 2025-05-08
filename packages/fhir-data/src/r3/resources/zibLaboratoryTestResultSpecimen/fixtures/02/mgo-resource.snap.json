@@ -13,31 +13,31 @@
             "type": null
         }
     ],
-    "subject": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
-    },
-    "container": null,
     "type": {
         "_type": "codeableConcept",
         "text": null,
         "coding": []
     },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
     "receivedTime": null,
+    "parent": null,
     "collection": {
-        "quantity": null,
         "collectedPeriod": {
             "_type": "period",
             "start": "2010-06-01",
             "end": null
         },
+        "quantity": null,
         "method": null,
         "bodySite": {
-            "value": null,
-            "laterality": null,
-            "morphology": null
+            "laterality": [],
+            "morphology": []
         }
     },
+    "container": null,
     "note": null
 }
