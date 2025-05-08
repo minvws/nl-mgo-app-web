@@ -10,16 +10,40 @@
     },
     "address": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_type": "boolean",
+                "value": true
+            },
             "use": {
                 "_type": "code",
                 "value": "home"
             },
             "type": null,
-            "text": null,
             "line": [
                 {
-                    "_type": "string",
-                    "value": "Knolweg 1000"
+                    "streetName": {
+                        "_type": "string",
+                        "value": "Knolweg"
+                    },
+                    "houseNumber": {
+                        "_type": "string",
+                        "value": "1000"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
                 }
             ],
             "city": {
@@ -27,7 +51,6 @@
                 "value": "Stitswerd"
             },
             "district": null,
-            "state": null,
             "postalCode": {
                 "_type": "string",
                 "value": "9999XA"
@@ -35,8 +58,7 @@
             "country": {
                 "_type": "string",
                 "value": "NLD"
-            },
-            "period": null
+            }
         }
     ],
     "birthDate": {
@@ -125,6 +147,19 @@
                 }
             ],
             "address": {
+                "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+                "addressType": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "PHYS",
+                            "display": "Woon-/verblijfadres",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
+                    ]
+                },
+                "official": null,
                 "use": {
                     "_type": "code",
                     "value": "home"
@@ -133,11 +168,19 @@
                     "_type": "code",
                     "value": "physical"
                 },
-                "text": null,
                 "line": [
                     {
-                        "_type": "string",
-                        "value": "Knolweg 1000"
+                        "streetName": {
+                            "_type": "string",
+                            "value": "Knolweg"
+                        },
+                        "houseNumber": {
+                            "_type": "string",
+                            "value": "1000"
+                        },
+                        "buildingNumbersuffix": [],
+                        "unitID": null,
+                        "additionalLocator": null
                     }
                 ],
                 "city": {
@@ -145,7 +188,6 @@
                     "value": "Stitswerd"
                 },
                 "district": null,
-                "state": null,
                 "postalCode": {
                     "_type": "string",
                     "value": "9999XA"
@@ -153,8 +195,7 @@
                 "country": {
                     "_type": "string",
                     "value": "Nederland"
-                },
-                "period": null
+                }
             },
             "gender": null,
             "organization": null,

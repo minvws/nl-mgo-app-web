@@ -83,22 +83,12 @@
                     "display": null
                 },
                 {
-                    "label": "r3.nl_core_address.text",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Stitswerd"
                 },
                 {
                     "label": "Gemeente",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Provincie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -111,16 +101,6 @@
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "NLD"
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         },
@@ -240,22 +220,12 @@
                     "display": "physical"
                 },
                 {
-                    "label": "r3.nl_core_address.text",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Stitswerd"
                 },
                 {
                     "label": "Gemeente",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Provincie",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
@@ -268,16 +238,6 @@
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "Nederland"
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 },
                 {
                     "label": "r3.nl_core_patient.contact.gender",

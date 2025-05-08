@@ -1,0 +1,44 @@
+{
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/AddressUse",
+                        "code": "HV",
+                        "display": "Vakantie adres"
+                    }
+                ]
+            }
+        }
+    ],
+    "use": "temp",
+    "line": ["Binnenkant 12A Hoog"],
+    "_line": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Binnenkant"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "12"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+                    "valueString": "A"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
+                    "valueString": "Hoog"
+                }
+            ]
+        }
+    ],
+    "city": "Amsterdam",
+    "state": "NH",
+    "postalCode": "1000AA",
+    "country": "NLD"
+}

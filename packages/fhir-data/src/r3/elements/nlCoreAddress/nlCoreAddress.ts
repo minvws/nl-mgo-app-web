@@ -1,43 +1,95 @@
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type Address } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type ResourceElementConfig } from '../../../types';
+import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
 import { map } from '../../../utils';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface NlCoreAddress {
+export interface NlCoreAddressLine {
+    streetName: parse.MgoString | undefined;
+    houseNumber: parse.MgoString | undefined;
+    buildingNumberSuffix: parse.MgoString | undefined;
+    unitId: parse.MgoString | undefined;
+    additionalLocator: parse.MgoString | undefined;
+}
+
+const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NOSONAR
+
+/***
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317015
+ */
+export type NlCoreAddress = MgoElementMeta<typeof profile> & {
+    addressType: parse.MgoCodeableConcept | undefined;
+    official: parse.MgoBoolean | undefined;
     use: parse.MgoCode | undefined;
     type: parse.MgoCode | undefined;
-    text: parse.MgoString | undefined;
-    line: parse.MgoString[] | undefined;
+    line: NlCoreAddressLine[] | undefined;
     city: parse.MgoString | undefined;
     district: parse.MgoString | undefined;
-    state: parse.MgoString | undefined;
     postalCode: parse.MgoString | undefined;
     country: parse.MgoString | undefined;
-    period: parse.MgoPeriod | undefined;
-}
+};
 
 /**
  * @name HCIM NlCoreAddress
  * @usage Patient.address
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317015
  */
-function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
+export function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
     return {
+        _profile: profile,
+
+        // HCIM AddressInformation-v1.0(2017EN)
+
+        addressType: parse.extension(
+            value,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType', // NOSONAR
+            'codeableConcept'
+        ),
+        official: parse.extension(
+            value,
+            'http://fhir.nl/fhir/StructureDefinition/nl-core-address-official', // NOSONAR
+            'boolean'
+        ),
         use: parse.code(value?.use),
         type: parse.code(value?.type),
-        text: parse.string(value?.text),
-        line: map(value?.line, parse.string),
+        line: map(value?._line, (line) => ({
+            streetName: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName', // NOSONAR
+                'string'
+            ),
+            houseNumber: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber', // NOSONAR,
+                'string'
+            ),
+            buildingNumbersuffix: parse.extensionMultiple(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix', // NOSONAR,
+                'string'
+            ),
+            unitID: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID', // NOSONAR,
+                'string'
+            ),
+            additionalLocator: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator', // NOSONAR,
+                'string'
+            ),
+        })),
         city: parse.string(value?.city),
         district: parse.string(value?.district),
-        state: parse.string(value?.state),
         postalCode: parse.string(value?.postalCode),
         country: parse.string(value?.country),
-        period: parse.period(value?.period),
     };
 }
 
+/**
+ * @deprecated This object should not be used - use the parseNlCoreAddress method instead.
+ */
 export const nlCoreAddress = {
     parse: parseNlCoreAddress,
     uiSchemaGroup,

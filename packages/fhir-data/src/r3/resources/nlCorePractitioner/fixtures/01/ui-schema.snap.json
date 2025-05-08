@@ -30,11 +30,6 @@
                     "display": null
                 },
                 {
-                    "label": "r3.nl_core_address.text",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "display": "Weesp"
@@ -45,11 +40,6 @@
                     "display": "Amsterdam"
                 },
                 {
-                    "label": "Provincie",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
                     "label": "r3.nl_core_address.postalCode",
                     "type": "SINGLE_VALUE",
                     "display": "1012AB"
@@ -58,16 +48,6 @@
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "NLD"
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "april 2015"
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
                 }
             ]
         },

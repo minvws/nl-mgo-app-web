@@ -1,35 +1,16 @@
-import { faker, testUiSchemaContext } from '$test';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
-import { nlCoreAddress } from './nlCoreAddress';
+import { expectJson } from '$test';
+import { type Address } from 'fhir/r3';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import inputFhirData02 from './fixtures/02/fhir-resource.json';
+import { parseNlCoreAddress } from './nlCoreAddress';
 
-test('parses successfully', () => {
-    const data = faker.fhir.address();
-    const schema = nlCoreAddress.parse(data);
-    expect(schema).toEqual(
-        expect.objectContaining({
-            city: parse.string(data.city),
-        })
-    );
+test('01: mgo-resource', async () => {
+    const output = parseNlCoreAddress(inputFhirData01 as Address);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('parses successfully when data is undefined', () => {
-    const zibData = nlCoreAddress.parse(undefined);
-    expect(zibData).toEqual(
-        expect.objectContaining({
-            city: undefined,
-        })
-    );
-});
-
-test('UI schema group is created successfully', () => {
-    const data = nlCoreAddress.parse(faker.fhir.attachment());
-    const schema = nlCoreAddress.uiSchemaGroup(
-        data,
-        testUiSchemaContext({
-            useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(schema.label).toBe('r3.nl_core_address');
+test('02: mgo-resource', async () => {
+    const output = parseNlCoreAddress(inputFhirData02 as Address);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });

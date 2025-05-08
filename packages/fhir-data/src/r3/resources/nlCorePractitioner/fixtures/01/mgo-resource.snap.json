@@ -55,16 +55,45 @@
     ],
     "address": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_type": "boolean",
+                "value": true
+            },
             "use": {
                 "_type": "code",
                 "value": "home"
             },
             "type": null,
-            "text": null,
             "line": [
                 {
-                    "_type": "string",
-                    "value": "Straatweg 12bII"
+                    "streetName": {
+                        "_type": "string",
+                        "value": "Straatweg"
+                    },
+                    "houseNumber": {
+                        "_type": "string",
+                        "value": "12"
+                    },
+                    "buildingNumbersuffix": [
+                        {
+                            "_type": "string",
+                            "value": "bII"
+                        }
+                    ],
+                    "unitID": null,
+                    "additionalLocator": null
                 }
             ],
             "city": {
@@ -75,7 +104,6 @@
                 "_type": "string",
                 "value": "Amsterdam"
             },
-            "state": null,
             "postalCode": {
                 "_type": "string",
                 "value": "1012AB"
@@ -83,11 +111,6 @@
             "country": {
                 "_type": "string",
                 "value": "NLD"
-            },
-            "period": {
-                "_type": "period",
-                "start": "2015-04",
-                "end": null
             }
         }
     ],

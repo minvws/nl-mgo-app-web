@@ -29,16 +29,37 @@
     ],
     "address": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "WP",
+                        "display": "Werkadres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": null,
             "use": {
                 "_type": "code",
                 "value": "work"
             },
             "type": null,
-            "text": null,
             "line": [
                 {
-                    "_type": "string",
-                    "value": "Valkendael 45"
+                    "streetName": {
+                        "_type": "string",
+                        "value": "Valkendael"
+                    },
+                    "houseNumber": {
+                        "_type": "string",
+                        "value": "45"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
                 }
             ],
             "city": {
@@ -46,7 +67,6 @@
                 "value": "Maastricht"
             },
             "district": null,
-            "state": null,
             "postalCode": {
                 "_type": "string",
                 "value": "6245HK"
@@ -54,8 +74,7 @@
             "country": {
                 "_type": "string",
                 "value": "Nederland"
-            },
-            "period": null
+            }
         }
     ],
     "telecom": [
