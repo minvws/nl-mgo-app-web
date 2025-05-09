@@ -33,7 +33,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [zib-MedicationUse]                    | :white_check_mark:   | :white_check_mark:   |
 | [zib-MedicationAgreement]              | :white_large_square: | :white_check_mark:   |
 | [zib-NutritionAdvice]                  | :white_large_square: | :white_check_mark:   |
-| [zib-Payer]                            | :white_large_square: | :white_large_square: |
+| [zib-Payer]                            | :white_large_square: | :white_check_mark:   |
 | [zib-Problem]                          | :white_large_square: | :white_check_mark:   |
 | [zib-Procedure]                        | :white_large_square: | :white_check_mark:   |
 | [zib-ProcedureRequest]                 | :white_large_square: | :white_large_square: |
@@ -45,7 +45,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [nl-core-patient]                      | :white_large_square: | :white_large_square: |
 | [nl-core-practitioner]                 |                      | :white_large_square: |
 | [nl-core-practitionerrole]             |                      | :white_large_square: |
-| [nl-core-organization]                 |                      | :white_large_square: |
+| [nl-core-organization]                 |                      | :white_check_mark:   |
 
 ## [General practicioner](gp) (R3)
 

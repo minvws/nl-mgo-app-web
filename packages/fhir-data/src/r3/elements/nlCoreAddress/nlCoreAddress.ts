@@ -19,8 +19,8 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NO
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317015
  */
 export type NlCoreAddress = MgoElementMeta<typeof profile> & {
-    addressType: parse.MgoCodeableConcept | undefined;
-    official: parse.MgoBoolean | undefined;
+    addressType: { value_codeableConcept: parse.MgoCodeableConcept | undefined };
+    official: { value_boolean: parse.MgoBoolean | undefined };
     use: parse.MgoCode | undefined;
     type: parse.MgoCode | undefined;
     line: NlCoreAddressLine[] | undefined;

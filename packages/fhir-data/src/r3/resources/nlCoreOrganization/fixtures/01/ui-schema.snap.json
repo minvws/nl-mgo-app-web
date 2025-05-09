@@ -1,9 +1,18 @@
 {
-    "label": "Maatschap Vaste Huisarts",
+    "label": "Zorgaanbieder",
     "children": [
         {
-            "label": "r3.nl_core_organization.group_details",
             "children": [
+                {
+                    "label": "Adresgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Contactgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,22 +21,30 @@
                     ]
                 },
                 {
+                    "label": "Organisatie alias",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
                     "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
                     "display": "Maatschap Vaste Huisarts"
+                }
+            ]
+        },
+        {
+            "label": "Organisatie type",
+            "children": [
+                {
+                    "label": "Afdeling specialisme",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "r3.nl_core_organization.department_specialty",
+                    "label": "Organisatie type",
                     "type": "MULTIPLE_VALUES",
-                    "display": []
-                },
-                {
-                    "label": "r3.nl_core_organization.organization_type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        [
-                            "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
-                        ]
+                        "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
                     ]
                 }
             ]

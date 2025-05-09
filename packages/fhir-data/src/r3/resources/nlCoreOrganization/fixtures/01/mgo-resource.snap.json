@@ -17,20 +17,23 @@
         "_type": "string",
         "value": "Maatschap Vaste Huisarts"
     },
-    "departmentSpecialty": null,
+    "alias": null,
     "telecom": null,
     "address": null,
-    "organizationType": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "Z3",
-                    "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
-                    "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
-                }
-            ]
-        }
-    ]
+    "type": {
+        "organizationType": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "Z3",
+                        "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
+                        "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
+                    }
+                ]
+            }
+        ],
+        "departmentSpecialty": null
+    }
 }
