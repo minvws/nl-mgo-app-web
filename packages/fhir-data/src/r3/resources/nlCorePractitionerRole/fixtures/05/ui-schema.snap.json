@@ -1,30 +1,76 @@
 {
-    "label": "172613a3-8fdf-11ec-2630-020000000000",
+    "label": "Zorgverlener rol",
     "children": [
         {
-            "label": "r3.nl_core_practitionerrole.group_details",
             "children": [
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "172613a3-8fdf-11ec-2630-020000000000"
+                        "170gov17-8pdf-1aec-1664-020000000000"
+                    ]
+                },
+                {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Huisartsen, niet nader gespecificeerd (0100 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
                     ]
                 },
                 {
                     "label": "Zorgaanbieder",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": null
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Specialisme",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Medisch specialisten, geriatrie (0335 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
-                        ]
-                    ]
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "email"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "example@example.com"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "phone"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "mobile"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "+31611234567"
                 }
             ]
         }

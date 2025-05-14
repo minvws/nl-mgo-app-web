@@ -1,102 +1,72 @@
-import { expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type PractitionerRole } from 'fhir/r3';
-import { expect, test } from 'vitest';
+import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
 import input03 from './fixtures/03/fhir-resource.json';
 import input04 from './fixtures/04/fhir-resource.json';
+import input05 from './fixtures/05/fhir-resource.json';
 import { nlCorePractitionerRole } from './nlCorePractitionerRole';
-import { i18n } from './uiSchema';
 
-test('returns the expected output 01', async () => {
+test('01: mgo-resource', async () => {
     const output = nlCorePractitionerRole.parse(input01 as PractitionerRole);
     await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('returns the expected output 02', async () => {
+test('02: mgo-resource', async () => {
     const output = nlCorePractitionerRole.parse(input02 as PractitionerRole);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('returns the expected output 03', async () => {
+test('03: mgo-resource', async () => {
     const output = nlCorePractitionerRole.parse(input03 as PractitionerRole);
     await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });
 
-test('returns the expected output 04', async () => {
+test('04: mgo-resource', async () => {
     const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
     await expectJson(output).toMatchFileSnapshot('./fixtures/04/mgo-resource.snap.json');
 });
 
-test('returns the expected output 05', async () => {
-    const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
+test('05: mgo-resource', async () => {
+    const output = nlCorePractitionerRole.parse(input05 as PractitionerRole);
     await expectJson(output).toMatchFileSnapshot('./fixtures/05/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', async () => {
+test('01: ui-schema', async () => {
     const output = nlCorePractitionerRole.parse(input01 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = nlCorePractitionerRole.uiSchema(output, testUiSchemaContext());
     await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 02', async () => {
+test('02: ui-schema', async () => {
     const output = nlCorePractitionerRole.parse(input02 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+    const uiSchema = nlCorePractitionerRole.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/02/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/02/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 03', async () => {
+test('03: ui-schema', async () => {
     const output = nlCorePractitionerRole.parse(input03 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+    const uiSchema = nlCorePractitionerRole.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/03/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/03/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 04', async () => {
+test('04: ui-schema', async () => {
     const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+    const uiSchema = nlCorePractitionerRole.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/04/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/04/ui-schema.snap.json');
 });
 
-test('uiSchema returns the expected output 05', async () => {
-    const output = nlCorePractitionerRole.parse(input04 as PractitionerRole);
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
+test('05: ui-schema', async () => {
+    const output = nlCorePractitionerRole.parse(input05 as PractitionerRole);
+    const uiSchema = nlCorePractitionerRole.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/05/ui-schema.snap.json'
     );
-    await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/05/ui-schema.snap.json');
-});
-
-test('uiSchema returns default label if identifier not supplied', () => {
-    const output = nlCorePractitionerRole.parse(input01 as PractitionerRole);
-    output.identifier = undefined;
-    const uiSchema = nlCorePractitionerRole.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(uiSchema.label).toBe(fhirMessage(i18n));
 });

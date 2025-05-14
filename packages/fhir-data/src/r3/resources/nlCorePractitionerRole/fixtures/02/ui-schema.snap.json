@@ -1,9 +1,13 @@
 {
-    "label": "170fed17-8fdf-11ec-1686-020000000000",
+    "label": "Zorgverlener rol",
     "children": [
         {
-            "label": "r3.nl_core_practitionerrole.group_details",
             "children": [
+                {
+                    "label": "Contactgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
@@ -12,19 +16,17 @@
                     ]
                 },
                 {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Huisartsen, niet nader gespecificeerd (0100 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                    ]
+                },
+                {
                     "label": "Zorgaanbieder",
                     "type": "REFERENCE_VALUE",
                     "display": "Maatschap Vaste Huisarts",
                     "reference": "Organization/nl-core-organization-01"
-                },
-                {
-                    "label": "Specialisme",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Huisartsen, niet nader gespecificeerd (0100 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
-                        ]
-                    ]
                 }
             ]
         }

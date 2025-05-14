@@ -44,7 +44,7 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | [eAfspraak-Appointment]                | :white_large_square: | :white_check_mark:   |
 | [nl-core-patient]                      | :white_large_square: | :white_large_square: |
 | [nl-core-practitioner]                 |                      | :white_large_square: |
-| [nl-core-practitionerrole]             |                      | :white_large_square: |
+| [nl-core-practitionerrole]             |                      | :white_check_mark:   |
 | [nl-core-organization]                 |                      | :white_check_mark:   |
 
 ## [General practicioner](gp) (R3)

@@ -2,9 +2,9 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type PractitionerRole } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { nlCoreContactpoint } from '../../elements';
-import { uiSchema } from './uiSchema';
+import { parseNlCoreContactpoint } from '../../elements';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole'; // NOSONAR
 
@@ -14,10 +14,16 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrol
 function parseNlCorePractitionerRole(resource: PractitionerRole) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
+
+        // HCIM ContactInformation-v1.0(2017EN)
+        telecom: map(resource.telecom, parseNlCoreContactpoint),
+
+        // HCIM HealthProfessional-v3.2(2017EN)
         organization: parse.reference(resource.organization),
-        specialty: map(resource.specialty, parse.codeableConcept),
-        telecom: map(resource.telecom, nlCoreContactpoint.parse),
+        specialty: parse.codeableConcept(resource.specialty?.[0]),
     };
 }
 
@@ -26,5 +32,5 @@ export type NlCorePractitionerRole = ReturnType<typeof parseNlCorePractitionerRo
 export const nlCorePractitionerRole = {
     profile,
     parse: parseNlCorePractitionerRole,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<PractitionerRole, NlCorePractitionerRole>;

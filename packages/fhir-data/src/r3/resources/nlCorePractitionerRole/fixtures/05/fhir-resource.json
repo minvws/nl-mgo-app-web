@@ -37,5 +37,17 @@
                 }
             ]
         }
+    ],
+    "telecom": [
+        {
+            "system": "email",
+            "value": "example@example.com",
+            "use": "work"
+        },
+        {
+            "system": "phone",
+            "value": "+31611234567",
+            "use": "mobile"
+        }
     ]
 }
