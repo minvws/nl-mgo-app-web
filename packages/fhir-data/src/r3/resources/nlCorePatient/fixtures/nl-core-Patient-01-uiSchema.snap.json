@@ -1,5 +1,5 @@
 {
-    "label": "Johan XXX_Helleman",
+    "label": "Patiënt",
     "children": [
         {
             "label": "r3.nl_core_patient.group_details",
@@ -108,46 +108,11 @@
             "label": "r3.nl_core_patient.contact",
             "children": [
                 {
-                    "label": "Achternaam",
-                    "type": "SINGLE_VALUE",
-                    "display": "van Putten XXX_Helleman"
-                },
-                {
                     "label": "Voornamen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Jannie"
                     ]
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.prefix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.suffix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.use",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.text",
-                    "type": "SINGLE_VALUE",
-                    "display": "Jannie van Putten XXX_Helleman"
                 },
                 {
                     "label": "r3.nl_core_contact_point.system",
@@ -236,46 +201,11 @@
             "label": "r3.nl_core_humanname",
             "children": [
                 {
-                    "label": "Achternaam",
-                    "type": "SINGLE_VALUE",
-                    "display": "XXX_Helleman"
-                },
-                {
                     "label": "Voornamen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Johan"
                     ]
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.prefix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.suffix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.use",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.text",
-                    "type": "SINGLE_VALUE",
-                    "display": "Johan XXX_Helleman"
                 }
             ]
         },

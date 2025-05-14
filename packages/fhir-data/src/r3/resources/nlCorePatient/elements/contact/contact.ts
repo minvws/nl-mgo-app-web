@@ -6,7 +6,7 @@ import { map } from '../../../../../utils';
 import {
     nlCoreAddress,
     nlCoreContactpoint,
-    nlCoreHumanname,
+    parseNlCoreHumanname,
     type NlCoreAddress,
     type NlCoreContactpoint,
     type NlCoreHumanname,
@@ -26,7 +26,7 @@ export interface Contact {
 function parseContact(value: Nullable<PatientContact>): Contact {
     return {
         relationship: map(value?.relationship, parse.codeableConcept, true),
-        name: nlCoreHumanname.parse(value?.name),
+        name: parseNlCoreHumanname(value?.name),
         telecom: map(value?.telecom, nlCoreContactpoint.parse, true),
         address: nlCoreAddress.parse(value?.address),
         gender: parse.code(value?.gender),

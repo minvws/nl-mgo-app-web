@@ -97,24 +97,40 @@
                 }
             ],
             "name": {
+                "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+                "humannameAssemblyOrder": {
+                    "_ext": true,
+                    "_type": "code",
+                    "value": "NL4"
+                },
                 "family": {
-                    "_type": "string",
-                    "value": "van Putten XXX_Helleman"
-                },
-                "given": [
-                    {
+                    "humannameOwnPrefix": {
+                        "_ext": true,
                         "_type": "string",
-                        "value": "Jannie"
+                        "value": "van"
+                    },
+                    "humannameOwnName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Putten"
+                    },
+                    "humannamePartnerPrefix": null,
+                    "humannamePartnerName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "XXX_Helleman"
                     }
-                ],
-                "period": null,
-                "prefix": null,
-                "suffix": null,
-                "text": {
-                    "_type": "string",
-                    "value": "Jannie van Putten XXX_Helleman"
                 },
-                "use": null
+                "given": {
+                    "birthName": null,
+                    "initials": null,
+                    "callName": [
+                        {
+                            "_type": "string",
+                            "value": "Jannie"
+                        }
+                    ]
+                }
             },
             "telecom": [
                 {
@@ -272,24 +288,32 @@
     "multipleBirthInteger": null,
     "name": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL4"
+            },
             "family": {
-                "_type": "string",
-                "value": "XXX_Helleman"
-            },
-            "given": [
-                {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": {
+                    "_ext": true,
                     "_type": "string",
-                    "value": "Johan"
-                }
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
-            "text": {
-                "_type": "string",
-                "value": "Johan XXX_Helleman"
+                    "value": "XXX_Helleman"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
             },
-            "use": null
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": [
+                    {
+                        "_type": "string",
+                        "value": "Johan"
+                    }
+                ]
+            }
         }
     ],
     "photo": null,

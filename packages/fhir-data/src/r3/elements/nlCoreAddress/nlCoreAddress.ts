@@ -5,25 +5,22 @@ import { type MgoElementMeta, type ResourceElementConfig } from '../../../types'
 import { map } from '../../../utils';
 import { uiSchemaGroup } from './uiSchemaGroup';
 
-export interface NlCoreAddressLine {
-    streetName: parse.MgoString | undefined;
-    houseNumber: parse.MgoString | undefined;
-    buildingNumberSuffix: parse.MgoString | undefined;
-    unitId: parse.MgoString | undefined;
-    additionalLocator: parse.MgoString | undefined;
-}
-
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NOSONAR
 
-/***
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317015
- */
 export type NlCoreAddress = MgoElementMeta<typeof profile> & {
-    addressType: parse.ExtensionValue<parse.MgoCodeableConcept> | undefined;
-    official: parse.ExtensionValue<parse.MgoBoolean> | undefined;
+    addressType: parse.MgoCodeableConcept | undefined;
+    official: parse.MgoBoolean | undefined;
     use: parse.MgoCode | undefined;
     type: parse.MgoCode | undefined;
-    line: NlCoreAddressLine[] | undefined;
+    line:
+        | {
+              streetName: parse.MgoString | undefined;
+              houseNumber: parse.MgoString | undefined;
+              buildingNumberSuffix: parse.MgoString | undefined;
+              unitId: parse.MgoString | undefined;
+              additionalLocator: parse.MgoString | undefined;
+          }[]
+        | undefined;
     city: parse.MgoString | undefined;
     district: parse.MgoString | undefined;
     postalCode: parse.MgoString | undefined;
@@ -40,7 +37,6 @@ export function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
         _profile: profile,
 
         // HCIM AddressInformation-v1.0(2017EN)
-
         addressType: parse.extension(
             value,
             'http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType', // NOSONAR

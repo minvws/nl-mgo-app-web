@@ -22,21 +22,32 @@
     ],
     "name": [
         {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": null,
             "family": {
-                "_type": "string",
-                "value": "de Vries"
-            },
-            "given": [
-                {
+                "humannameOwnPrefix": {
+                    "_ext": true,
                     "_type": "string",
-                    "value": "Dirk"
-                }
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
-            "text": null,
-            "use": null
+                    "value": "de"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Vries"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": [
+                    {
+                        "_type": "string",
+                        "value": "Dirk"
+                    }
+                ],
+                "initials": null,
+                "callName": null
+            }
         }
     ],
     "address": null,

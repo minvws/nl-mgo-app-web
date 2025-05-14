@@ -13,7 +13,6 @@ export * from '../ui/types/schema';
 export {
     type EncounterParticipant,
     type NlCoreAddress,
-    type NlCoreAddressLine,
     type NlCoreContactpoint,
     type NlCoreHumanname,
     type ZibAdministrationSchedule,

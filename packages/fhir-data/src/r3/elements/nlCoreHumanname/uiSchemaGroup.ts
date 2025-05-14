@@ -7,14 +7,6 @@ export const uiSchemaGroup: HealthUiGroupFunction<NlCoreHumanname> = (resource, 
 
     return {
         label: i18n,
-        children: [
-            ui.string(`${i18n}.family`, resource?.family),
-            ui.string(`${i18n}.given`, resource?.given),
-            ...ui.period(`${i18n}.period`, resource?.period),
-            ui.string(`${i18n}.prefix`, resource?.prefix),
-            ui.string(`${i18n}.suffix`, resource?.suffix),
-            ui.string(`${i18n}.use`, resource?.use),
-            ui.string(`${i18n}.text`, resource?.text),
-        ],
+        children: [ui.string(`${i18n}.given`, resource?.given?.callName)],
     };
 };

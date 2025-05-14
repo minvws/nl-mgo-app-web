@@ -1,41 +1,10 @@
-import { faker, testUiSchemaContext } from '$test';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
-import { nlCoreHumanname } from './nlCoreHumanname';
+import { expectJson } from '$test';
+import { type HumanName } from 'fhir/r3';
+import { test } from 'vitest';
+import inputFhirData01 from './fixtures/01/fhir-resource.json';
+import { parseNlCoreHumanname } from './nlCoreHumanname';
 
-test('humanName parses successfully', () => {
-    const data = faker.fhir.humanName();
-    const schema = nlCoreHumanname.parse(data);
-    expect(schema).toEqual(
-        expect.objectContaining({
-            text: parse.string(data.text),
-        })
-    );
-});
-
-test.each([
-    {
-        ...faker.fhir.humanName(),
-        text: undefined,
-    },
-    undefined,
-])('humanName parses successfully when there data is undefined', (data) => {
-    const zibData = nlCoreHumanname.parse(data);
-    expect(zibData).toEqual(
-        expect.objectContaining({
-            text: undefined,
-        })
-    );
-});
-
-test('humanName UI schema group is created successfully', () => {
-    const data = nlCoreHumanname.parse(faker.fhir.humanName());
-    const schema = nlCoreHumanname.uiSchemaGroup(
-        data,
-        testUiSchemaContext({
-            useMock: true,
-            ignoreMissingTranslations: true,
-        })
-    );
-    expect(schema.label).toBe('r3.nl_core_humanname');
+test('01: mgo-resource', async () => {
+    const output = parseNlCoreHumanname(inputFhirData01 as HumanName);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });

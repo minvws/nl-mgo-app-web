@@ -15,21 +15,36 @@
     ],
     "name": [
         {
-            "family": {
-                "_type": "string",
-                "value": "de Wit"
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL1"
             },
-            "given": [
-                {
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
                     "_type": "string",
-                    "value": "G.Z.M."
-                }
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
-            "text": null,
-            "use": null
+                    "value": "de"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Wit"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": [
+                    {
+                        "_type": "string",
+                        "value": "G.Z.M."
+                    }
+                ],
+                "callName": null
+            }
         }
     ],
     "address": null,

@@ -52,42 +52,7 @@
             "label": "r3.nl_core_humanname",
             "children": [
                 {
-                    "label": "Achternaam",
-                    "type": "SINGLE_VALUE",
-                    "display": "Vaste Huisarts 1"
-                },
-                {
                     "label": "Voornamen",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.prefix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.suffix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.use",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_humanname.text",
                     "type": "SINGLE_VALUE",
                     "display": null
                 }

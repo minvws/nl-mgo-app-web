@@ -4,7 +4,7 @@ import { parse } from '../../../parse';
 import { identifier } from '../../../parse/type/identifier/identifier';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
+import { nlCoreAddress, nlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
 import { communication } from './elements/communication/communication';
 import { contact } from './elements/contact/contact';
 import { link } from './elements/link/link';
@@ -33,7 +33,7 @@ function parseNlCorePatient(resource: Patient) {
         maritalStatus: parse.codeableConcept(resource.maritalStatus),
         multipleBirth: parse.boolean(resource.multipleBirthBoolean),
         multipleBirthInteger: parse.integer(resource.multipleBirthInteger),
-        name: map(resource.name, nlCoreHumanname.parse),
+        name: map(resource.name, parseNlCoreHumanname),
         photo: map(resource.photo, parse.attachment),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
     };

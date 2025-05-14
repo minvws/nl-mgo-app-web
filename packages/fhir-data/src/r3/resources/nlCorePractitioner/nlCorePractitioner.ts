@@ -3,7 +3,7 @@ import { type Practitioner } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreContactpoint, nlCoreHumanname } from '../../elements';
+import { nlCoreAddress, nlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; // NOSONAR
@@ -15,7 +15,7 @@ function parseNlCorePractitioner(resource: Practitioner) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
         identifier: map(resource.identifier, parse.identifier),
-        name: map(resource.name, nlCoreHumanname.parse),
+        name: map(resource.name, parseNlCoreHumanname),
         address: map(resource.address, nlCoreAddress.parse),
         telecom: map(resource.telecom, nlCoreContactpoint.parse),
     };
