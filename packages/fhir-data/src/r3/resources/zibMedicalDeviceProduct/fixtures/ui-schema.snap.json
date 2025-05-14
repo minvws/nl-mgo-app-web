@@ -36,8 +36,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "Implantant, Gen 2 Tibia Insert 5/6-9mm",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Implantant, Gen 2 Tibia Insert 5/6-9mm"
+                    ]
                 }
             ]
         },

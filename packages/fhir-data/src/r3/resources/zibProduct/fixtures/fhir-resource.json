@@ -31,5 +31,33 @@
             }
         ],
         "text": "PRIMPERAN ZETPIL 20MG"
-    }
+    },
+    "ingredient": [
+        {
+            "itemCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://www.whocc.no/atc",
+                        "code": "B01AC08",
+                        "display": "Carbasalate calcium"
+                    }
+                ],
+                "text": "Carbasalate calcium"
+            },
+            "amount": {
+                "numerator": {
+                    "value": 600,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                },
+                "denominator": {
+                    "value": 1,
+                    "unit": "tablet",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{tablet}"
+                }
+            }
+        }
+    ]
 }

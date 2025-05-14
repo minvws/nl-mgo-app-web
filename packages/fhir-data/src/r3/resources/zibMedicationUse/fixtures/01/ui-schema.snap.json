@@ -57,9 +57,11 @@
                 },
                 {
                     "label": "Reden gebruik",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Nursing Procedure (9632001 in code systeem http://snomed.info/sct)"
+                        [
+                            "Nursing Procedure (9632001 in code systeem http://snomed.info/sct)"
+                        ]
                     ]
                 },
                 {
@@ -76,8 +78,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "het monster toont afwijkingen",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "het monster toont afwijkingen"
+                    ]
                 },
                 {
                     "label": "Volgens afspraak indicator",

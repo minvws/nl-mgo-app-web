@@ -20,9 +20,10 @@
                 },
                 {
                     "label": "Hulpmiddel",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Gehoorapparaat",
-                    "reference": "Device/zib-MedicalDeviceProduct-03"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Gehoorapparaat"
+                    ]
                 },
                 {
                     "label": "Identificatie",

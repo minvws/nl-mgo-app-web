@@ -12,9 +12,10 @@
                 },
                 {
                     "label": "Indicatie",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Arthropathy (disorder)",
-                    "reference": "Condition/zib-problem-02"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Arthropathy (disorder)"
+                    ]
                 },
                 {
                     "label": "Locatie",

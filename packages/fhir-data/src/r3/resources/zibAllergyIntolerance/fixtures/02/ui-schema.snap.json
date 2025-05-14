@@ -81,9 +81,11 @@
             "children": [
                 {
                     "label": "Ernst",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Ernstig (kwalificatiewaarde) (24484000 in code systeem http://snomed.info/sct)"
+                        [
+                            "Ernstig (kwalificatiewaarde) (24484000 in code systeem http://snomed.info/sct)"
+                        ]
                     ]
                 },
                 {
@@ -103,9 +105,11 @@
                 },
                 {
                     "label": "Symptoom",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "misselijkheid en braken (aandoening) (16932000 in code systeem http://snomed.info/sct)"
+                        [
+                            "misselijkheid en braken (aandoening) (16932000 in code systeem http://snomed.info/sct)"
+                        ]
                     ]
                 },
                 {

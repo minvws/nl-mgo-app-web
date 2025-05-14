@@ -61,9 +61,11 @@
                 },
                 {
                     "label": "Zorgverlener rol",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Responsible Party (RESP in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        [
+                            "Responsible Party (RESP in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        ]
                     ]
                 }
             ]

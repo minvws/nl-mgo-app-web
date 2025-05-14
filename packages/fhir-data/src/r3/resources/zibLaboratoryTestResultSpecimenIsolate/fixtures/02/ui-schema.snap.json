@@ -21,9 +21,10 @@
                 },
                 {
                     "label": "Monster",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Blood (substance)",
-                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Blood (substance)"
+                    ]
                 },
                 {
                     "label": "Monsternummer",
@@ -34,8 +35,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "het monster toont afwijkingen",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "het monster toont afwijkingen"
+                    ]
                 }
             ]
         },

@@ -33,8 +33,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "Bezoek aan Guatemala",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala"
+                    ]
                 },
                 {
                     "label": "Vaccinatie datum",

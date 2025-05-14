@@ -81,6 +81,10 @@ test('non-mgo types are processed as usual', () => {
 
     const value = [
         {
+            _type: 'string',
+            value: faker.lorem.word(),
+        },
+        {
             foo: {
                 bar: {
                     _type: 'string',
@@ -88,15 +92,11 @@ test('non-mgo types are processed as usual', () => {
                 },
             },
         },
-        {
-            _type: 'string',
-            value: faker.lorem.word(),
-        },
     ] as const;
 
     const expected = [
-        ...processObject(context, path, value[0]),
-        string(healthUiSchemaContext)(path as FhirMessagesIds, value[1]),
+        string(healthUiSchemaContext)(path as FhirMessagesIds, value[0]),
+        ...processObject(context, path, value[1]),
     ];
 
     expect(processArray(context, path, value as any)).toEqual(expected); // eslint-disable-line @typescript-eslint/no-explicit-any

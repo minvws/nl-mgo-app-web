@@ -17,8 +17,6 @@ export {
     type NlCoreHumanname,
     type ZibAdministrationSchedule,
     type ZibInstructionsForUse,
-    type ZibProductIngredient,
-    type ZibProductPackage,
 } from '../r3/elements';
 
 export {

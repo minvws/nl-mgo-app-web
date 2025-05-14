@@ -1,5 +1,5 @@
 import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
-import { isPrimitiveValueType, isValueType } from '../../../parse/types';
+import { isValueType } from '../../../parse/types';
 import { isMgoElement } from '../../../utils';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
@@ -27,7 +27,7 @@ export function processValue(
 
     if (isNullish(value)) {
         elements = [];
-    } else if (isValueType(value) || isPrimitiveValueType(value)) {
+    } else if (isValueType(value)) {
         elements = processMgoType(context, path, value);
     } else if (Array.isArray(value)) {
         elements = processArray(context, path, value);

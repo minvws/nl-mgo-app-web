@@ -145,7 +145,19 @@
   ],
   "r3.nl_core_episodeofcare.period": [
   ],
+  "r3.nl_core_episodeofcare.title": [
+  ],
   "r3.nl_core_episodeofcare.type": [
+  ],
+  "r3.nl_core_humanname": [
+  ],
+  "r3.nl_core_humanname.given.birth_name": [
+  ],
+  "r3.nl_core_humanname.given.call_name": [
+  ],
+  "r3.nl_core_humanname.given.initials": [
+  ],
+  "r3.nl_core_humanname.text": [
   ],
   "r3.nl_core_observation": [
   ],
@@ -318,6 +330,8 @@
   "r3.zib_procedure_request.occurrence_period": [
   ],
   "r3.zib_procedure_request.occurrence_timing.repeat": [
+  ],
+  "r3.zib_product.code": [
   ],
   "r3.zib_treatment_directive.additional_sources": [
   ],

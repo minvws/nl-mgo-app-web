@@ -9,6 +9,7 @@ export type SystemUrn = `urn:oid:${string}`;
 export type SystemFhir = `http://hl7.org/fhir/v${3 | 4}/${string}`;
 export type SystemFhirNL = `http://fhir.nl/fhir/${string}`;
 export type SystemNictiz = `http://nictiz.nl/fhir/${string}`;
+export type SystemWhocc = 'http://www.whocc.no/atc'; // NOSONAR
 
 /**
  * More strict type for coding systems.
@@ -20,4 +21,5 @@ export type CodingSystem =
     | SystemUrn
     | SystemFhir
     | SystemFhirNL
-    | SystemNictiz;
+    | SystemNictiz
+    | SystemWhocc;

@@ -437,10 +437,46 @@
       "value": "Periode"
     }
   ],
+  "r3.nl_core_episodeofcare.title": [
+    {
+      "type": 0,
+      "value": "Titel"
+    }
+  ],
   "r3.nl_core_episodeofcare.type": [
     {
       "type": 0,
       "value": "Type"
+    }
+  ],
+  "r3.nl_core_humanname": [
+    {
+      "type": 0,
+      "value": "Naam"
+    }
+  ],
+  "r3.nl_core_humanname.given.birth_name": [
+    {
+      "type": 0,
+      "value": "Voornaam"
+    }
+  ],
+  "r3.nl_core_humanname.given.call_name": [
+    {
+      "type": 0,
+      "value": "Roepnaam"
+    }
+  ],
+  "r3.nl_core_humanname.given.initials": [
+    {
+      "type": 0,
+      "value": "Initialen"
+    }
+  ],
+  "r3.nl_core_humanname.text": [
+    {
+      "type": 0,
+      "value": "Naam"
     }
   ],
   "r3.nl_core_observation": [
@@ -957,6 +993,12 @@
     {
       "type": 0,
       "value": "Herhaling"
+    }
+  ],
+  "r3.zib_product.code": [
+    {
+      "type": 0,
+      "value": "Product"
     }
   ],
   "r3.zib_treatment_directive.additional_sources": [

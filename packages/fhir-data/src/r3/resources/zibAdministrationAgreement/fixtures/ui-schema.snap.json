@@ -54,8 +54,10 @@
                 },
                 {
                     "label": "Medicatieafspraak",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
+                    ]
                 },
                 {
                     "label": "Patiënt",
@@ -82,8 +84,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "Tekstuele toelichting bij deze toedieningsafspraak",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Tekstuele toelichting bij deze toedieningsafspraak"
+                    ]
                 }
             ]
         },

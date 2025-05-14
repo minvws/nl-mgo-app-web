@@ -45,16 +45,20 @@
                 },
                 {
                     "label": "Consistentie",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Dikvloeibaar"
+                        [
+                            "Dikvloeibaar"
+                        ]
                     ]
                 },
                 {
                     "label": "Dieet type",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Energie verrijkt"
+                        [
+                            "Energie verrijkt"
+                        ]
                     ]
                 },
                 {

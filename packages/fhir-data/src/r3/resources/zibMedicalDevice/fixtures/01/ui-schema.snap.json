@@ -33,9 +33,10 @@
                 },
                 {
                     "label": "Indicatieprobleem",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Presbyacusis",
-                    "reference": "Condition/zib-problem-04"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Presbyacusis"
+                    ]
                 },
                 {
                     "label": "Onderwerp",
@@ -45,8 +46,10 @@
                 },
                 {
                     "label": "Toelichting",
-                    "display": "Apparaat niet zichtbaar (diep in de gehooringang)",
-                    "type": "SINGLE_VALUE"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Apparaat niet zichtbaar (diep in de gehooringang)"
+                    ]
                 },
                 {
                     "label": "Zorgaanbieder",
@@ -66,8 +69,10 @@
             "children": [
                 {
                     "label": "Codes",
-                    "type": "SINGLE_VALUE",
-                    "display": "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Ear Structure (117590005 in code systeem http://snomed.info/sct)"
+                    ]
                 },
                 {
                     "label": "Tekst",

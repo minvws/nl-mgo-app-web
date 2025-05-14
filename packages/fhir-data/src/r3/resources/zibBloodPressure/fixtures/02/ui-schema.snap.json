@@ -5,9 +5,10 @@
             "children": [
                 {
                     "label": "Auteur",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Vaste Huisarts 1",
-                    "reference": "Practitioner/nl-core-practitioner-02"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Vaste Huisarts 1"
+                    ]
                 },
                 {
                     "label": "Bloeddruk datum tijd",

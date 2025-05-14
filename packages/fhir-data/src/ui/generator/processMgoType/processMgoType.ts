@@ -3,7 +3,6 @@ import { isNullish } from '@minvws/mgo-mgo-utils';
 import { snakeCase } from 'lodash';
 import {
     isExtensionValue,
-    isPrimitiveValueType,
     isValueType,
     type MgoType,
     type PrimitiveValueType,
@@ -28,7 +27,7 @@ function processNestedValue(
 ): (UiElement | HealthUiGroup)[] {
     if (isNullish(value)) {
         return [];
-    } else if (isExtensionValue(value) && (isValueType(value) || isPrimitiveValueType(value))) {
+    } else if (isExtensionValue(value) && isValueType(value)) {
         return [context.createUiElement(path as FhirMessagesIds, value as MgoType)].flat();
     } else if (Array.isArray(value)) {
         return processNestedArray(context, path, value);

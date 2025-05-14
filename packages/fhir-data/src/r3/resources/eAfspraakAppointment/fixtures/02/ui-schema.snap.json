@@ -5,9 +5,11 @@
             "children": [
                 {
                     "label": "Afwijkende uitslag",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Clinical Review"
+                        [
+                            "Clinical Review"
+                        ]
                     ]
                 },
                 {
@@ -70,22 +72,24 @@
                 },
                 {
                     "label": "Specialisme",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Medisch specialisten, chirurgie (0303 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        [
+                            "Medisch specialisten, chirurgie (0303 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        ]
                     ]
                 },
                 {
                     "label": "Verrichting of probleem",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Severe burn of left ear",
-                    "reference": "Condition/example"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Severe burn of left ear"
+                    ]
                 },
                 {
                     "label": "Verwijzing",
-                    "type": "REFERENCE_VALUE",
-                    "display": null,
-                    "reference": "ReferralRequest/example"
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         },
@@ -151,9 +155,11 @@
                 },
                 {
                     "label": "Zorgverlener rol",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "(ATND in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        [
+                            "(ATND in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        ]
                     ]
                 }
             ]

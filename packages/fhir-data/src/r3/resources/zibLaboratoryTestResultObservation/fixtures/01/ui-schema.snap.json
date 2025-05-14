@@ -22,8 +22,10 @@
                 },
                 {
                     "label": "Interpretatie vlaggen",
-                    "type": "SINGLE_VALUE",
-                    "display": "Above reference range (281302008 in code systeem http://snomed.info/sct)"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Above reference range (281302008 in code systeem http://snomed.info/sct)"
+                    ]
                 },
                 {
                     "label": "Monster",

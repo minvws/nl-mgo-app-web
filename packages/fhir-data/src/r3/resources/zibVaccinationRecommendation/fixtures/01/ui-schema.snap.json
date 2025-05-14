@@ -49,9 +49,10 @@
                 },
                 {
                     "label": "Vaccinatie",
-                    "type": "REFERENCE_VALUE",
-                    "display": "hepatitis A immunoglobulin",
-                    "reference": "Immunization/zib-vaccination-01"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "hepatitis A immunoglobulin"
+                    ]
                 }
             ]
         }

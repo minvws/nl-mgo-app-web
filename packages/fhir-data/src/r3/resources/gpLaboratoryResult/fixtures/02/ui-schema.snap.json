@@ -10,9 +10,10 @@
                 },
                 {
                     "label": "Auteur",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Dokter Bernard",
-                    "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dokter Bernard"
+                    ]
                 },
                 {
                     "label": "Contact",

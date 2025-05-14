@@ -5,7 +5,6 @@ import { extension } from '../extension/extension';
 const nictizIdValueXMap = {
     'BodySite-Qualifier': 'codeableConcept',
     'BodySite-Morphology': 'codeableConcept',
-    'zib-Product-Description': 'string',
     'zib-NutritionAdvice-Explanation': 'string',
     'ext-Vaccination.PharmaceuticalProduct': 'reference',
     'ext-PharmaceuticalProduct.Description': 'string',

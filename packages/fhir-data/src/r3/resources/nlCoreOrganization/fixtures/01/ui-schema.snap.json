@@ -42,9 +42,11 @@
                 },
                 {
                     "label": "Organisatie type",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
+                        [
+                            "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
+                        ]
                     ]
                 }
             ]

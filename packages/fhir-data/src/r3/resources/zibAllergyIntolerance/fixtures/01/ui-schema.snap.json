@@ -81,9 +81,11 @@
             "children": [
                 {
                     "label": "Ernst",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Severe (24484000 in code systeem http://snomed.info/sct)"
+                        [
+                            "Severe (24484000 in code systeem http://snomed.info/sct)"
+                        ]
                     ]
                 },
                 {
@@ -103,9 +105,11 @@
                 },
                 {
                     "label": "Symptoom",
-                    "type": "MULTIPLE_VALUES",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
-                        "Nausea and vomiting (16932000 in code systeem http://snomed.info/sct)"
+                        [
+                            "Nausea and vomiting (16932000 in code systeem http://snomed.info/sct)"
+                        ]
                     ]
                 },
                 {
