@@ -2,8 +2,9 @@ import { faker, testUiSchemaContext } from '$test';
 import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoPositiveInt, type MgoString } from '../../../parse/type';
+import { type MgoType } from '../../../parse/types';
 import { numberToString } from '../../helpers/numberToString/numberToString';
-import { createUiElementHelper, type MgoType } from './createUiElementHelper';
+import { createUiElementHelper } from './createUiElementHelper';
 
 test('creates a helper to process single value types', () => {
     const createUiElement = createUiElementHelper(testUiSchemaContext({ useMock: true }));
@@ -14,7 +15,7 @@ test('creates a helper to process single value types', () => {
         value: faker.lorem.word(),
     };
 
-    const result = createUiElement(label, value);
+    const result = createUiElement<'string'>(label, value);
     const expected = {
         label: testMessage(label),
         type: 'SINGLE_VALUE',

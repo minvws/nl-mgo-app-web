@@ -2,14 +2,15 @@ import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { isNullish } from '@minvws/mgo-mgo-utils';
 import { snakeCase } from 'lodash';
 import {
+    isExtensionValue,
     isPrimitiveValueType,
     isValueType,
+    type MgoType,
     type PrimitiveValueType,
     type ValueType,
 } from '../../../parse/types';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { type MgoType } from '../createUiElementHelper/createUiElementHelper';
 import { getUiElements } from '../getUiElements/getUiElements';
 
 function processNestedArray(
@@ -27,7 +28,7 @@ function processNestedValue(
 ): (UiElement | HealthUiGroup)[] {
     if (isNullish(value)) {
         return [];
-    } else if (isValueType(value) || isPrimitiveValueType(value)) {
+    } else if (isExtensionValue(value) && (isValueType(value) || isPrimitiveValueType(value))) {
         return [context.createUiElement(path as FhirMessagesIds, value as MgoType)].flat();
     } else if (Array.isArray(value)) {
         return processNestedArray(context, path, value);

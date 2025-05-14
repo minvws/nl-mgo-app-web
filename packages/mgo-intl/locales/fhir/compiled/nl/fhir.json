@@ -121,6 +121,138 @@
       "value": "bovengrens"
     }
   ],
+  "fhir.timing": [
+    {
+      "type": 0,
+      "value": "Tijdschema"
+    }
+  ],
+  "fhir.timing.code": [
+    {
+      "type": 0,
+      "value": "Tijdschema-code"
+    }
+  ],
+  "fhir.timing.event": [
+    {
+      "type": 0,
+      "value": "Gebeurtenistijdstippen"
+    }
+  ],
+  "fhir.timing.repeat": [
+    {
+      "type": 0,
+      "value": "Herhalingspatroon"
+    }
+  ],
+  "fhir.timing.repeat.bounds_duration": [
+    {
+      "type": 0,
+      "value": "Duur van herhaling"
+    }
+  ],
+  "fhir.timing.repeat.bounds_period": [
+    {
+      "type": 0,
+      "value": "Periode van herhaling"
+    }
+  ],
+  "fhir.timing.repeat.bounds_range": [
+    {
+      "type": 0,
+      "value": "Bereik van herhaling"
+    }
+  ],
+  "fhir.timing.repeat.code": [
+    {
+      "type": 0,
+      "value": "Herhalingscode"
+    }
+  ],
+  "fhir.timing.repeat.count": [
+    {
+      "type": 0,
+      "value": "Aantal herhalingen"
+    }
+  ],
+  "fhir.timing.repeat.count_max": [
+    {
+      "type": 0,
+      "value": "Maximum aantal herhalingen"
+    }
+  ],
+  "fhir.timing.repeat.day_of_week": [
+    {
+      "type": 0,
+      "value": "Dag(en) van de week"
+    }
+  ],
+  "fhir.timing.repeat.duration": [
+    {
+      "type": 0,
+      "value": "Duur van elke gebeurtenis"
+    }
+  ],
+  "fhir.timing.repeat.duration_max": [
+    {
+      "type": 0,
+      "value": "Maximale duur"
+    }
+  ],
+  "fhir.timing.repeat.duration_unit": [
+    {
+      "type": 0,
+      "value": "Duureenheid"
+    }
+  ],
+  "fhir.timing.repeat.frequency": [
+    {
+      "type": 0,
+      "value": "Frequentie"
+    }
+  ],
+  "fhir.timing.repeat.frequency_max": [
+    {
+      "type": 0,
+      "value": "Maximale frequentie"
+    }
+  ],
+  "fhir.timing.repeat.offset": [
+    {
+      "type": 0,
+      "value": "Tijdsafwijking"
+    }
+  ],
+  "fhir.timing.repeat.period": [
+    {
+      "type": 0,
+      "value": "Herhalingsperiode"
+    }
+  ],
+  "fhir.timing.repeat.period_max": [
+    {
+      "type": 0,
+      "value": "Maximale herhalingsperiode"
+    }
+  ],
+  "fhir.timing.repeat.period_unit": [
+    {
+      "type": 0,
+      "value": "Eenheid van herhalingsperiode"
+    }
+  ],
+  "fhir.timing.repeat.time_of_day": [
+    {
+      "type": 0,
+      "value": "Tijdstip(pen) van de dag"
+    }
+  ],
+  "fhir.timing.repeat.when": [
+    {
+      "type": 0,
+      "value": "Momenten van de dag"
+    }
+  ],
   "fhir.unknown": [
     {
       "type": 0,

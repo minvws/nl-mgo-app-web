@@ -1,8 +1,7 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isPrimitiveValueType, isValueType } from '../../../parse/types';
+import { isPrimitiveValueType, isValueType, type MgoType } from '../../../parse/types';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { type MgoType } from '../createUiElementHelper/createUiElementHelper';
 import { processValue } from '../processValue/processValue';
 
 function isArrayOfSameValueType(values: unknown[]): values is MgoType[] {

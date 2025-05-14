@@ -97,10 +97,12 @@
                 "value": "Simon Smitweg 1"
             },
             "streetName": {
+                "_ext": true,
                 "_type": "string",
                 "value": "Simon Smitweg"
             },
             "houseNumber": {
+                "_ext": true,
                 "_type": "string",
                 "value": "1"
             },
@@ -121,6 +123,7 @@
                 "value": "Nederland"
             },
             "countryCode": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
@@ -132,6 +135,7 @@
                 ]
             },
             "addressType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

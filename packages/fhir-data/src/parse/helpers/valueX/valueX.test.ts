@@ -28,3 +28,10 @@ test('returns the parsed value for fooBoolean with custom prefix', () => {
     const value = valueX(element, 'boolean', 'foo');
     expect(value).toEqual(boolean(element.fooBoolean));
 });
+
+test('throws error when parser is not found', () => {
+    const element = { valueInvalidType: 'some value' };
+    expect(() => valueX(element, 'invalidType' as never)).toThrow(
+        'Failed to find parser for invalidType'
+    );
+});

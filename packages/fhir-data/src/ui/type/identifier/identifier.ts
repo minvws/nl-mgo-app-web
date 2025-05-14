@@ -12,16 +12,16 @@ export const identifier: WithUiHelperContext<
     UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues, FhirMessagesIds>
 > =
     ({ formatLabel }) =>
-    (label, value) => {
+    (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
                 display: value?.map((x) => x?.value).filter(isNonNullish),
             };
         }
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
             display: value?.value,
         };

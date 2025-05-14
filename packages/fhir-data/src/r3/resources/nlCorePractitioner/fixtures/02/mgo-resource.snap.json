@@ -31,6 +31,7 @@
         {
             "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
             "addressType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
@@ -50,10 +51,12 @@
             "line": [
                 {
                     "streetName": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "Valkendael"
                     },
                     "houseNumber": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "45"
                     },
@@ -81,6 +84,7 @@
         {
             "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
             "telecomType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

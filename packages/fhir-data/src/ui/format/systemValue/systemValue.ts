@@ -9,13 +9,15 @@ export const systemValue: WithUiHelperContext<FormatFunction<MgoSimpleQuantityPr
         if (isNullish(value)) return;
         const { system, code, value: quantityValue, unit } = value;
         const countI18nKey = `system.value.${system}|${code}`;
+        const numberString = numberToString(quantityValue);
+
         if (hasMessage(countI18nKey)) {
-            return formatMessage(countI18nKey, { value: quantityValue as number });
+            return formatMessage(countI18nKey, { value: numberString });
         }
 
         if (unit) {
-            return `${numberToString(quantityValue)} ${unit}`;
+            return `${numberString} ${unit}`;
         }
 
-        return numberToString(quantityValue);
+        return numberString;
     };

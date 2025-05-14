@@ -119,6 +119,8 @@
   ],
   "r3.nl_core_address.address_type": [
   ],
+  "r3.nl_core_address.line": [
+  ],
   "r3.nl_core_address.line.additional_locator": [
   ],
   "r3.nl_core_address.line.building_numbersuffix": [
@@ -150,6 +152,18 @@
   "r3.nl_core_organization.type": [
   ],
   "r3.nl_core_patient.communication.comment": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.level": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.type": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.level": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.type": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.level": [
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.type": [
   ],
   "r3.nl_core_patient.contact.relationship.value": [
   ],

@@ -17,7 +17,7 @@ export type R4NlCoreNameInformation = {
     family: parse.MgoString | undefined; // NL-CM:20.4.7, NL-CM:20.4.11, NL-CM:20.4.10, NL-CM:20.4.9, NL-CM:20.4.8
     prefix: parse.MgoString[] | undefined;
     suffix: parse.MgoString[] | undefined;
-    nameUsage: parse.MgoString | undefined; // NL-CM:20.4.7
+    nameUsage: parse.ExtensionValue<parse.MgoCode<string>> | undefined; // NL-CM:20.4.7
 };
 export type R4NlCoreNameInformationGiven = {
     use: parse.MgoCode<Extract<HumanName['use'], 'usual'>>;

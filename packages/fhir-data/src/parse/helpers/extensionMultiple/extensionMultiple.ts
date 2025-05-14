@@ -1,6 +1,7 @@
 import { type DomainResource, type Element } from '@minvws/mgo-fhir-types';
 import { isNonNullish, type Nullable } from '@minvws/mgo-mgo-utils';
-import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
+import { type ExtensionValue, type MgoType, type MgoTypeId } from '../../types';
+import { valueX } from '../valueX/valueX';
 
 function getAllExtensions<T extends DomainResource | Element>(resource: Nullable<T>, url: string) {
     return [
@@ -11,23 +12,47 @@ function getAllExtensions<T extends DomainResource | Element>(resource: Nullable
     ];
 }
 
-export function extensionMultiple<
-    T extends DomainResource | Element,
-    ValueType extends ParserKey,
-    ParsedType = ReturnTypeParser<ValueType>,
->(resource: Nullable<T>, url: string, valueType: ValueType) {
+export function extensionMultiple<T extends DomainResource | Element, Type extends MgoTypeId>(
+    resource: Nullable<T>,
+    url: string,
+    valueType: Type
+): ExtensionValue<MgoType<Type>>[] {
     const extensions = getAllExtensions(resource, url);
     // `valueX` attempts to restrict the value options based on the input object
     // But that does not apply here, so we need to cast the value type to `any`
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return extensions.map((x) => valueX(x, valueType as any) as ParsedType).filter(isNonNullish);
+    return extensions
+        .map((x) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const value = valueX(x, valueType as any) as MgoType<Type> | undefined;
+
+            if (value) {
+                return {
+                    _ext: true,
+                    ...value,
+                };
+            }
+        })
+        .filter(isNonNullish);
 }
 
 export function customExtensionMultiple<
     T extends DomainResource | Element,
     Parser extends (element: any) => unknown, // eslint-disable-line @typescript-eslint/no-explicit-any
-    RT = ReturnType<Parser>,
->(resource: Nullable<T>, url: string, parser: Parser) {
+>(
+    resource: Nullable<T>,
+    url: string,
+    parser: Parser
+): ExtensionValue<NonNullable<ReturnType<Parser>>>[] {
     const extensions = getAllExtensions(resource, url);
-    return extensions.map((x) => parser(x) as RT).filter(isNonNullish);
+    return extensions
+        .map((x) => {
+            const value = parser(x) as ReturnType<Parser>;
+            if (value) {
+                return {
+                    _ext: true,
+                    ...value,
+                };
+            }
+        })
+        .filter(isNonNullish);
 }

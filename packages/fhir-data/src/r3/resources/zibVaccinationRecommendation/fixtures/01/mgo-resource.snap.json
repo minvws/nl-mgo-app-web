@@ -19,6 +19,7 @@
         "display": "Johan XXX_Helleman"
     },
     "orderStatus": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [

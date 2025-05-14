@@ -1,6 +1,7 @@
 {
     "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
     "telecomType": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [

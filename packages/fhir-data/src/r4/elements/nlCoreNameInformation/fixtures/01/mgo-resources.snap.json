@@ -1,6 +1,7 @@
 [
     {
         "nameUsage": {
+            "_ext": true,
             "_type": "code",
             "value": "NL3"
         },

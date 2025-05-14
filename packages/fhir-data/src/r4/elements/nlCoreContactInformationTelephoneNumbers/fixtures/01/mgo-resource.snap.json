@@ -1,6 +1,7 @@
 {
     "system": "phone",
     "telecomType": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -20,6 +21,7 @@
         "value": "work"
     },
     "comment": {
+        "_ext": true,
         "_type": "string",
         "value": "Tussen 9 en 17"
     }

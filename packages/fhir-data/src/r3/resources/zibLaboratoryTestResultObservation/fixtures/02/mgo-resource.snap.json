@@ -48,17 +48,36 @@
     "valueSampledData": {
         "_type": "sampledData",
         "origin": {
+            "_type": "simpleQuantity",
             "value": 0,
             "unit": "mmHg",
             "system": "http://unitsofmeasure.org",
             "code": "mm[Hg]"
         },
-        "period": 0.1,
-        "factor": 1,
-        "lowerLimit": 0,
-        "upperLimit": 300,
-        "dimensions": 1,
-        "data": "120 125 123 121 119 118 117 116 115 114"
+        "period": {
+            "_type": "decimal",
+            "value": 0.1
+        },
+        "factor": {
+            "_type": "decimal",
+            "value": 1
+        },
+        "lowerLimit": {
+            "_type": "decimal",
+            "value": 0
+        },
+        "upperLimit": {
+            "_type": "decimal",
+            "value": 300
+        },
+        "dimensions": {
+            "_type": "positiveInt",
+            "value": 1
+        },
+        "data": {
+            "_type": "string",
+            "value": "120 125 123 121 119 118 117 116 115 114"
+        }
     },
     "interpretation": {
         "interpretatieVlaggenCodelijst": [

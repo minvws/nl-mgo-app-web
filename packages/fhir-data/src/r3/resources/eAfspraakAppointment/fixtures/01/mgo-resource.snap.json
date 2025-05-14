@@ -28,6 +28,7 @@
     },
     "patientInstructions": [],
     "onlineEditable": {
+        "_ext": true,
         "indicator": null,
         "onlineEditableUntil": null
     },

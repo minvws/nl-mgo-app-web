@@ -1,15 +1,12 @@
 import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { upperFirst } from 'lodash';
 import { type StringKeyOf } from 'type-fest';
-import * as parse from '../../type';
+import * as type from '../../type';
 
-type ParseMap = typeof parse;
-export type ParserKey = keyof ParseMap;
+type Parsers = typeof type;
+export type ParserKey = keyof Parsers;
 
-export type ReturnTypeParser<
-    Type,
-    F = Type extends ParserKey ? ParseMap[Type] : never,
-> = F extends (
+export type ReturnTypeParser<Type, F = Type extends ParserKey ? Parsers[Type] : never> = F extends (
     ...args: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
 ) => any // eslint-disable-line @typescript-eslint/no-explicit-any
     ? ReturnType<F>
@@ -44,9 +41,14 @@ export function valueX<T extends object, Prefix extends string = 'value'>(
 ) {
     if (isNullish(value)) return;
 
-    const parser = parse[valueXType as ParserKey] as (
+    const parser = type[valueXType as ParserKey] as (
         arg: unknown
     ) => ReturnTypeParser<typeof valueXType>;
+
+    if (!parser) {
+        throw new Error(`Failed to find parser for ${valueXType}`);
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const valueX = (value as any)[`${valuePrefix}${upperFirst(valueXType)}`];
     return parser(valueX);

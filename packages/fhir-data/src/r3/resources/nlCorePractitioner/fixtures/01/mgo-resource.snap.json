@@ -57,6 +57,7 @@
         {
             "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
             "addressType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
@@ -68,6 +69,7 @@
                 ]
             },
             "official": {
+                "_ext": true,
                 "_type": "boolean",
                 "value": true
             },
@@ -79,15 +81,18 @@
             "line": [
                 {
                     "streetName": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "Straatweg"
                     },
                     "houseNumber": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "12"
                     },
                     "buildingNumbersuffix": [
                         {
+                            "_ext": true,
                             "_type": "string",
                             "value": "bII"
                         }
@@ -118,6 +123,7 @@
         {
             "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
             "telecomType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

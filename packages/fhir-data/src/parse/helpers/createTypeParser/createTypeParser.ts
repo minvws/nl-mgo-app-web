@@ -1,8 +1,11 @@
 import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { type ValueType } from '../../types';
 
-type ParserFunc<Input, Output> = (input: Input) => Output;
+type ParserFunc<Input, Output extends ValueType> = (input: Input) => Output;
 
-export function createTypeParser<Input, Output>(parser: ParserFunc<Input, Output>) {
+export function createTypeParser<Input, Output extends ValueType>(
+    parser: ParserFunc<Input, Output>
+) {
     return (value: Nullable<Input>) => {
         if (isNullish(value)) return;
         return parser(value);

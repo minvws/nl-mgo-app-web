@@ -17,9 +17,12 @@ export { positiveInt, type MgoPositiveInt } from './positiveInt/positiveInt';
 export { quantity, type MgoQuantity, type MgoQuantityProps } from './quantity/quantity';
 export { range, type MgoRange } from './range/range';
 export { ratio, type MgoRatio } from './ratio/ratio';
-export { reference, type MgoReference, type MgoReferenceProps } from './reference/reference';
-export { sampledData, type MgoSampledData } from './sampledData/sampledData';
+export { reference, type MgoReference } from './reference/reference';
 export { simpleQuantity, type MgoSimpleQuantity } from './simpleQuantity/simpleQuantity';
 export { string, type MgoString } from './string/string';
 export { time, type MgoTime } from './time/time';
 export { unsignedInt, type MgoUnsignedInt } from './unsignedInt/unsignedInt';
+
+// complex
+export { sampledData, type MgoSampledData } from './sampledData/sampledData';
+export { timing, type MgoTiming } from './timing/timing';

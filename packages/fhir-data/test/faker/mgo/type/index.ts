@@ -28,6 +28,7 @@ export const unsignedInt = createMockDataFactory(() => parse.unsignedInt(fhir.un
 export const attachment = createMockDataFactory(() => parse.attachment(fhir.attachment())!);
 export const time = createMockDataFactory(() => parse.time(fhir.time())!);
 export const sampledData = createMockDataFactory(() => parse.sampledData(fhir.sampledData())!);
+export const timing = createMockDataFactory(() => parse.timing(fhir.timing())!);
 export const simpleQuantity = createMockDataFactory(
     () => parse.simpleQuantity(fhir.simpleQuantity())!
 );

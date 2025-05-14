@@ -5,6 +5,7 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct",
     "fhirVersion": "R4",
     "description": {
+        "_ext": true,
         "_type": "string",
         "value": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
     },

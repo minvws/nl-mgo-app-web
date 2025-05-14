@@ -36,17 +36,20 @@
         }
     ],
     "authoredOn": {
+        "_ext": true,
         "_type": "dateTime",
         "value": "2020-06-08T10:54:12+02:00"
     },
     "agreementReason": null,
     "periodOfUse": {
+        "_ext": true,
         "_type": "period",
         "start": "2020-06-08",
         "end": null
     },
     "usageDuration": null,
     "additionalInformation": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -131,6 +134,7 @@
     ],
     "repeatPeriodCyclicalSchedule": null,
     "medicationTreatment": {
+        "_ext": true,
         "_type": "identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",

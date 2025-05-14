@@ -10,21 +10,23 @@ import {
 
 export const instant: WithUiHelperContext<
     UiFunction<MgoInstant | MgoInstant[], SingleValue | MultipleValues>
-> = (context) => (label, value) => {
-    const formatDate = date(context);
-    const { formatLabel } = context;
+> =
+    (context) =>
+    (label, value, options = {}) => {
+        const formatDate = date(context);
+        const { formatLabel } = context;
 
-    if (Array.isArray(value)) {
+        if (Array.isArray(value)) {
+            return {
+                label: formatLabel(label, value, options.defaultLabel),
+                type: 'MULTIPLE_VALUES',
+                display: value.map((x) => formatDate(x.value)).filter(isNonNullish),
+            };
+        }
+
         return {
-            label: formatLabel(label, value),
-            type: 'MULTIPLE_VALUES',
-            display: value.map((x) => formatDate(x.value)).filter(isNonNullish),
+            label: formatLabel(label, value, options.defaultLabel),
+            type: 'SINGLE_VALUE',
+            display: formatDate(value?.value),
         };
-    }
-
-    return {
-        label: formatLabel(label, value),
-        type: 'SINGLE_VALUE',
-        display: formatDate(value?.value),
     };
-};

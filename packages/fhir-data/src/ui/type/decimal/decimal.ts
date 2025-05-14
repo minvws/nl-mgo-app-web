@@ -4,9 +4,9 @@ import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../
 
 export const decimal: WithUiHelperContext<UiFunction<MgoDecimal, SingleValue>> =
     ({ formatLabel }) =>
-    (label, value) => {
+    (label, value, options = {}) => {
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
             display: numberToString(value?.value),
         };

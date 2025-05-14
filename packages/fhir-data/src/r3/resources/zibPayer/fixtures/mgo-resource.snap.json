@@ -45,15 +45,19 @@
             "display": "Menzis Zorgverzekeraar N.V.",
             "bankInformation": [
                 {
+                    "_ext": true,
                     "bankName": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "ING"
                     },
                     "accountNumber": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "NL85INGB0001234567"
                     },
                     "bankcode": {
+                        "_ext": true,
                         "_type": "string",
                         "value": "INGBNL2A"
                     }

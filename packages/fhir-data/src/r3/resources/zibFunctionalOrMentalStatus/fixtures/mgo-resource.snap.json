@@ -27,6 +27,7 @@
     "performer": null,
     "medicalDevice": [
         {
+            "_ext": true,
             "_type": "reference",
             "reference": "Device/zib-MedicalDeviceProduct-03",
             "display": "Gehoorapparaat"

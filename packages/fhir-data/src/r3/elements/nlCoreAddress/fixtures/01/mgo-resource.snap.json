@@ -1,6 +1,7 @@
 {
     "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
     "addressType": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -20,20 +21,24 @@
     "line": [
         {
             "streetName": {
+                "_ext": true,
                 "_type": "string",
                 "value": "Binnenkant"
             },
             "houseNumber": {
+                "_ext": true,
                 "_type": "string",
                 "value": "12"
             },
             "buildingNumbersuffix": [
                 {
+                    "_ext": true,
                     "_type": "string",
                     "value": "A"
                 }
             ],
             "unitID": {
+                "_ext": true,
                 "_type": "string",
                 "value": "Hoog"
             },

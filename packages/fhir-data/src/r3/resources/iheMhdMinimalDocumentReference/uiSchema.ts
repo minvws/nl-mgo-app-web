@@ -22,21 +22,24 @@ export const uiSchema: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = 
     };
 
     const content = resource.content.attachment
-        ? {
-              Title: ui.string(
-                  `${i18n}.content.attachment.title`,
-                  resource.content.attachment.title
-              ),
-              ContentType: ui.string(
-                  `${i18n}.content.attachment.content_type`,
-                  resource.content.attachment.contentType
-              ),
-              Language: ui.string(
-                  `${i18n}.content.attachment.language`,
-                  resource.content.attachment.language
-              ),
+        ? ({
+              Title: {
+                  label: formatMessage(`${i18n}.content.attachment.title`),
+                  type: 'SINGLE_VALUE',
+                  display: resource.content.attachment.title,
+              },
+              ContentType: {
+                  label: formatMessage(`${i18n}.content.attachment.content_type`),
+                  type: 'SINGLE_VALUE',
+                  display: resource.content.attachment.contentType,
+              },
+              Language: {
+                  label: formatMessage(`${i18n}.content.attachment.language`),
+                  type: 'SINGLE_VALUE',
+                  display: resource.content.attachment.language,
+              },
               Location: ui.attachment(resource.content.attachment),
-          }
+          } as const)
         : null;
 
     return {

@@ -3,7 +3,8 @@ import { type DeviceRequest } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
-import { uiSchema } from './uiSchema';
+import { generateUiSchema } from '../../../ui/generator';
+import { map } from '../../../utils';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest'; // NOSONAR
 
@@ -13,12 +14,29 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequ
 function parseZibMedicalDeviceRequest(resource: DeviceRequest) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        status: parse.string(resource.status),
-        occurrence: parse.period(resource.occurrencePeriod),
-        ...oneOfValueX(resource, ['reference', 'codeableConcept'], 'code'),
-        intent: parse.codeableConcept(resource.intent),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier: map(resource.identifier, parse.identifier),
         subject: parse.reference(resource.subject),
-        perfomer: parse.reference(resource.performer),
+        ...oneOfValueX(resource, ['period', 'dateTime', 'timing'], 'occurrence'),
+        requester: parse.reference(resource.requester?.agent),
+
+        // HCIM MedicalDevice-v3.1(2017EN)
+        ...oneOfValueX(resource, ['reference', 'codeableConcept'], 'code'),
+
+        // HCIM PlannedCareActivityForTransfer-v3.1(2017EN)
+        status: {
+            orderStatus: parse.extension(
+                resource._status,
+                'http://nictiz.nl/fhir/StructureDefinition/code-specification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
+
+        // HCIM HealthProfessional-v3.2(2017EN)
+        performerType: {
+            healthProfessionalRole: map(resource.performerType?.coding, parse.coding),
+        },
     };
 }
 
@@ -27,5 +45,5 @@ export type ZibMedicalDeviceRequest = ReturnType<typeof parseZibMedicalDeviceReq
 export const zibMedicalDeviceRequest = {
     profile,
     parse: parseZibMedicalDeviceRequest,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<DeviceRequest, ZibMedicalDeviceRequest>;

@@ -10,20 +10,22 @@ import {
 
 export const time: WithUiHelperContext<
     UiFunction<MgoTime | MgoTime[], SingleValue | MultipleValues>
-> = (context) => (label, value) => {
-    const { formatLabel } = context;
+> =
+    (context) =>
+    (label, value, options = {}) => {
+        const { formatLabel } = context;
 
-    if (Array.isArray(value)) {
+        if (Array.isArray(value)) {
+            return {
+                label: formatLabel(label, value, options.defaultLabel),
+                type: 'MULTIPLE_VALUES',
+                display: value.map(valueOf).filter(isNonNullish),
+            };
+        }
+
         return {
-            label: formatLabel(label, value),
-            type: 'MULTIPLE_VALUES',
-            display: value.map(valueOf).filter(isNonNullish),
+            label: formatLabel(label, value, options.defaultLabel),
+            type: 'SINGLE_VALUE',
+            display: valueOf(value),
         };
-    }
-
-    return {
-        label: formatLabel(label, value),
-        type: 'SINGLE_VALUE',
-        display: valueOf(value),
     };
-};

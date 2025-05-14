@@ -5,6 +5,7 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
     "fhirVersion": "R3",
     "author": {
+        "_ext": true,
         "_type": "reference",
         "reference": "PractitionerRole/nl-core-practitionerrole-02",
         "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
@@ -32,6 +33,7 @@
         "display": "XXX_Helleman"
     },
     "asAgreedIndicator": {
+        "_ext": true,
         "_type": "boolean",
         "value": true
     },
@@ -60,6 +62,7 @@
         "start": "2018-07-16",
         "end": null,
         "duration": {
+            "_ext": true,
             "_type": "duration",
             "value": 5,
             "comparator": null,
@@ -201,6 +204,7 @@
     ],
     "repeatPeriodCyclicalSchedule": null,
     "medicationTreatment": {
+        "_ext": true,
         "_type": "identifier",
         "use": null,
         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",

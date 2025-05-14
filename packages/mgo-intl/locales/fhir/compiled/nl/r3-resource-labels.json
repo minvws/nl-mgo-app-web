@@ -359,6 +359,12 @@
       "value": "Adres soort"
     }
   ],
+  "r3.nl_core_address.line": [
+    {
+      "type": 0,
+      "value": "Adres informatie"
+    }
+  ],
   "r3.nl_core_address.line.additional_locator": [
     {
       "type": 0,
@@ -453,6 +459,42 @@
     {
       "type": 0,
       "value": "Toelichting"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.level": [
+    {
+      "type": 0,
+      "value": "Luistervaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.type": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.level": [
+    {
+      "type": 0,
+      "value": "Leesvaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.type": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.level": [
+    {
+      "type": 0,
+      "value": "Spreekvaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.type": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
     }
   ],
   "r3.nl_core_patient.contact.relationship.value": [

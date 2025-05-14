@@ -15,17 +15,17 @@ export const annotation: WithUiHelperContext<
     UiFunction<MgoAnnotation | MgoAnnotation[], SingleValue | MultipleValues>
 > =
     ({ formatLabel }) =>
-    (label, value) => {
+    (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
                 display: value.map(annotationDisplay).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, options.defaultLabel),
             display: annotationDisplay(value),
             type: 'SINGLE_VALUE',
         };

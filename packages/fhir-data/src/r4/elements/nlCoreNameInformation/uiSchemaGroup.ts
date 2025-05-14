@@ -24,7 +24,7 @@ export const uiSchemaGroup: HealthUiGroupFunction<
             ui.string(`${i18n}.text`, nameInformation?.text),
             ui.string(`${i18n}.family`, nameInformation?.family),
             ui.string(`${i18n}.given`, nameInformation?.given),
-            ui.string(`${i18n}.name_usage`, nameInformation?.nameUsage),
+            ui.code(`${i18n}.name_usage`, nameInformation?.nameUsage),
             ui.string(`${i18n}.prefix`, nameInformation?.prefix),
             ui.string(`${i18n}.suffix`, nameInformation?.suffix),
         ],

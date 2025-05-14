@@ -1,79 +1,43 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type MgoSampledData } from '../../../parse/type';
-import { systemValue } from '../../format/systemValue/systemValue';
-import { numberToString } from '../../helpers/numberToString/numberToString';
 import { type HealthUiGroup, type UiFunction, type WithUiHelperContext } from '../../types';
+import { decimal } from '../decimal/decimal';
+import { positiveInt } from '../positiveInt/positiveInt';
+import { simpleQuantity } from '../simpleQuantity/simpleQuantity';
+import { string } from '../string/string';
 
 export const sampledData: WithUiHelperContext<UiFunction<MgoSampledData, HealthUiGroup>> =
     (context) => (label, value) => {
         const { formatLabel } = context;
+        const formatSimpleQuantity = simpleQuantity(context);
+        const formatDecimal = decimal(context);
+        const formatPositiveInt = positiveInt(context);
+        const formatString = string(context);
 
         return {
             label: formatLabel(label, null, 'fhir.sample_data'),
             children: [
-                {
-                    label: formatLabel(
-                        `${label}.origin` as FhirMessagesIds,
-                        value?.origin,
-                        `fhir.sample_data.origin`
-                    ),
-                    type: `SINGLE_VALUE`,
-                    display: systemValue(context)(value?.origin),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.period` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.period'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: numberToString(value?.period),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.factor` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.factor'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: numberToString(value?.factor),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.lower_limit` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.lower_limit'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: numberToString(value?.lowerLimit),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.upper_limit` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.upper_limit'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: numberToString(value?.upperLimit),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.dimensions` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.dimensions'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: numberToString(value?.dimensions),
-                },
-                {
-                    label: formatLabel(
-                        `${label}.data` as FhirMessagesIds,
-                        value,
-                        'fhir.sample_data.data'
-                    ),
-                    type: 'SINGLE_VALUE',
-                    display: value?.data,
-                },
+                formatSimpleQuantity(`${label}.origin` as FhirMessagesIds, value?.origin, {
+                    defaultLabel: 'fhir.sample_data.origin',
+                }),
+                formatDecimal(`${label}.period` as FhirMessagesIds, value?.period, {
+                    defaultLabel: 'fhir.sample_data.period',
+                }),
+                formatDecimal(`${label}.factor` as FhirMessagesIds, value?.factor, {
+                    defaultLabel: 'fhir.sample_data.factor',
+                }),
+                formatDecimal(`${label}.lower_limit` as FhirMessagesIds, value?.lowerLimit, {
+                    defaultLabel: 'fhir.sample_data.lower_limit',
+                }),
+                formatDecimal(`${label}.upper_limit` as FhirMessagesIds, value?.upperLimit, {
+                    defaultLabel: 'fhir.sample_data.upper_limit',
+                }),
+                formatPositiveInt(`${label}.dimensions` as FhirMessagesIds, value?.dimensions, {
+                    defaultLabel: 'fhir.sample_data.dimensions',
+                }),
+                formatString(`${label}.data` as FhirMessagesIds, value?.data, {
+                    defaultLabel: 'fhir.sample_data.data',
+                }),
             ],
         };
     };

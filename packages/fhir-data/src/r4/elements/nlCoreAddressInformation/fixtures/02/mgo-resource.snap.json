@@ -4,22 +4,27 @@
         "value": "1e Jacob van Campenstr to 15 A 2e"
     },
     "streetName": {
+        "_ext": true,
         "_type": "string",
         "value": "1e Jacob van Campenstr"
     },
     "houseNumber": {
+        "_ext": true,
         "_type": "string",
         "value": "15"
     },
     "houseNumberAddition": {
+        "_ext": true,
         "_type": "string",
         "value": "A 2e"
     },
     "houseNumberIndication": {
+        "_ext": true,
         "_type": "string",
         "value": "to"
     },
     "additionalInformation": {
+        "_ext": true,
         "_type": "string",
         "value": "test info"
     },
@@ -40,6 +45,7 @@
         "value": "Nederland"
     },
     "countryCode": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -51,6 +57,7 @@
         ]
     },
     "addressType": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [

@@ -17,12 +17,14 @@
     },
     "disorder": [
         {
+            "_ext": true,
             "_type": "reference",
             "reference": "Condition/zib-problem-01",
             "display": "Amyotrofe laterale sclerose"
         }
     ],
     "comment": {
+        "_ext": true,
         "_type": "string",
         "value": "Niet-reanimerenpenning"
     },

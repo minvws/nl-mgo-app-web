@@ -100,10 +100,12 @@
                 "value": "1e Jacob van Campenstr 15"
             },
             "streetName": {
+                "_ext": true,
                 "_type": "string",
                 "value": "1e Jacob van Campenstr"
             },
             "houseNumber": {
+                "_ext": true,
                 "_type": "string",
                 "value": "15"
             },
@@ -127,6 +129,7 @@
                 "value": "Nederland"
             },
             "countryCode": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
@@ -138,6 +141,7 @@
                 ]
             },
             "addressType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

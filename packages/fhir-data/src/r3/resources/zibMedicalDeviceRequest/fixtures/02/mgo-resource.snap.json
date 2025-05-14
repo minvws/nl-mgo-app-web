@@ -4,39 +4,71 @@
     "resourceType": "DeviceRequest",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
     "fhirVersion": "R3",
-    "status": {
-        "_type": "string",
-        "value": "active"
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bbb2101-8fdf-11ec-1269-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
     },
-    "occurrence": {
-        "_type": "period",
-        "start": "2012-03-13",
-        "end": null
+    "occurrenceTiming": {
+        "_type": "timing",
+        "code": null,
+        "event": null,
+        "repeat": {
+            "count": null,
+            "countMax": null,
+            "duration": null,
+            "durationMax": null,
+            "durationUnit": null,
+            "frequency": {
+                "_type": "integer",
+                "value": 3
+            },
+            "frequencyMax": null,
+            "period": {
+                "_type": "decimal",
+                "value": 1
+            },
+            "periodMax": null,
+            "periodUnit": {
+                "_type": "string",
+                "value": "d"
+            },
+            "dayOfWeek": null,
+            "timeOfDay": null,
+            "when": null,
+            "offset": null
+        }
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-02",
+        "display": "Vaste Huisarts 1"
     },
     "codeReference": {
         "_type": "reference",
         "reference": "Device/zib-MedicalDeviceProduct-03",
         "display": "Gehoorapparaat"
     },
-    "intent": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
+    "status": {
+        "orderStatus": null
+    },
+    "performerType": {
+        "healthProfessionalRole": [
             {
-                "code": "order",
-                "display": null,
-                "system": "http://hl7.org/fhir/request-intent"
+                "_type": "coding",
+                "code": null,
+                "display": "Qualified nurse",
+                "system": null
             }
         ]
-    },
-    "subject": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
-    },
-    "perfomer": {
-        "_type": "reference",
-        "reference": "Organization/nl-core-organization-02",
-        "display": "UMCG - Afdeling Orthopedie"
     }
 }

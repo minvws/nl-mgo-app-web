@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
 import { boolean } from '../../type';
-import { extensionMultiple } from './extensionMultiple';
+import { customExtensionMultiple, extensionMultiple } from './extensionMultiple';
 
 test('extensionMultiple returns empty array if no extensions are found', () => {
     const url = faker.internet.url();
@@ -23,7 +23,20 @@ test('extensionMultiple matched by url and returns the value', () => {
     };
 
     const value = extensionMultiple(input, url, 'boolean');
-    expect(value).toEqual([boolean(valueBoolean), boolean(valueBoolean), boolean(valueBoolean)]);
+    expect(value).toEqual([
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+    ]);
 });
 
 test('extensionMultiple filters nonNullish values from the result', () => {
@@ -38,7 +51,16 @@ test('extensionMultiple filters nonNullish values from the result', () => {
     };
 
     const value = extensionMultiple(input, url, 'boolean');
-    expect(value).toEqual([boolean(valueBoolean), boolean(valueBoolean)]);
+    expect(value).toEqual([
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+    ]);
 });
 
 test('extensionMultiple also matches modifierExtentions and returns the value', () => {
@@ -54,5 +76,49 @@ test('extensionMultiple also matches modifierExtentions and returns the value', 
     };
 
     const value = extensionMultiple(input, url, 'boolean');
-    expect(value).toEqual([boolean(valueBoolean), boolean(valueBoolean), boolean(valueBoolean)]);
+    expect(value).toEqual([
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+        {
+            _ext: true,
+            ...boolean(valueBoolean),
+        },
+    ]);
+});
+
+test('customExtensionMultiple uses provided parser function to transform values', () => {
+    const url = faker.internet.url();
+    const valueString = faker.lorem.word();
+    const input = {
+        extension: [
+            { url, valueString },
+            { url, valueString: undefined },
+            { url, valueString },
+        ],
+    };
+
+    const parser = (element: { valueString?: string }) => {
+        if (element.valueString) {
+            return { customField: element.valueString.toUpperCase() };
+        }
+        return undefined;
+    };
+
+    const value = customExtensionMultiple(input, url, parser);
+    expect(value).toEqual([
+        {
+            _ext: true,
+            customField: valueString.toUpperCase(),
+        },
+        {
+            _ext: true,
+            customField: valueString.toUpperCase(),
+        },
+    ]);
 });

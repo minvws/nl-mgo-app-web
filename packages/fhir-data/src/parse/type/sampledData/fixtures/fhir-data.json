@@ -1,0 +1,14 @@
+{
+    "origin": {
+        "value": 0,
+        "unit": "mV",
+        "system": "http://unitsofmeasure.org",
+        "code": "mV"
+    },
+    "period": 4,
+    "factor": 0.01,
+    "lowerLimit": -1.5,
+    "upperLimit": 1.5,
+    "dimensions": 1,
+    "data": "1 0 -1 0 1 0 -1 0"
+}

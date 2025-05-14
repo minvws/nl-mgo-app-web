@@ -25,6 +25,7 @@
     },
     "source": null,
     "healthCareProvider": {
+        "_ext": true,
         "_type": "reference",
         "reference": "Organization/nl-core-organization-03",
         "display": "Test Medisch Centrum"
@@ -37,6 +38,7 @@
     },
     "indicationProblem": [
         {
+            "_ext": true,
             "_type": "reference",
             "reference": "Condition/zib-problem-04",
             "display": "Presbyacusis"

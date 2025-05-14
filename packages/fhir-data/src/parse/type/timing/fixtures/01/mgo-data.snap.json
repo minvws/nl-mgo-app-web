@@ -1,0 +1,117 @@
+{
+  "_type": "timing",
+  "code": {
+    "_type": "codeableConcept",
+    "coding": [
+      {
+        "code": "TID",
+        "display": "three times per day",
+        "system": "http://hl7.org/fhir/v3/GTSAbbreviation",
+      },
+    ],
+    "text": "Three times per day",
+  },
+  "event": [
+    {
+      "_type": "dateTime",
+      "value": "2025-05-10T08:00:00Z",
+    },
+    {
+      "_type": "dateTime",
+      "value": "2025-05-11T08:00:00Z",
+    },
+  ],
+  "repeat": {
+    "boundsPeriod": {
+      "_type": "period",
+      "end": "2025-05-20T00:00:00Z",
+      "start": "2025-05-10T00:00:00Z",
+    },
+    "count": {
+      "_type": "integer",
+      "value": 10,
+    },
+    "countMax": {
+      "_type": "integer",
+      "value": 15,
+    },
+    "dayOfWeek": [
+      {
+        "_type": "string",
+        "value": "mon",
+      },
+      {
+        "_type": "string",
+        "value": "wed",
+      },
+      {
+        "_type": "string",
+        "value": "fri",
+      },
+    ],
+    "duration": {
+      "_type": "decimal",
+      "value": 1,
+    },
+    "durationMax": {
+      "_type": "decimal",
+      "value": 2,
+    },
+    "durationUnit": {
+      "_type": "string",
+      "value": "h",
+    },
+    "frequency": {
+      "_type": "integer",
+      "value": 3,
+    },
+    "frequencyMax": {
+      "_type": "integer",
+      "value": 4,
+    },
+    "offset": {
+      "_type": "unsignedInt",
+      "value": 30,
+    },
+    "period": {
+      "_type": "decimal",
+      "value": 1,
+    },
+    "periodMax": {
+      "_type": "decimal",
+      "value": 2,
+    },
+    "periodUnit": {
+      "_type": "string",
+      "value": "d",
+    },
+    "timeOfDay": [
+      {
+        "_type": "string",
+        "value": "08:00:00",
+      },
+      {
+        "_type": "string",
+        "value": "12:00:00",
+      },
+      {
+        "_type": "string",
+        "value": "18:00:00",
+      },
+    ],
+    "when": [
+      {
+        "_type": "string",
+        "value": "MORN",
+      },
+      {
+        "_type": "string",
+        "value": "AFT",
+      },
+      {
+        "_type": "string",
+        "value": "EVE",
+      },
+    ],
+  },
+}

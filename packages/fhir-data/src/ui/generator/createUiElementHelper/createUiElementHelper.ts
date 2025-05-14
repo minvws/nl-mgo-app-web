@@ -1,20 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import type * as typeParsers from '../../../parse/type';
+import { type MgoType, type MgoTypeId } from '../../../parse/types';
 import { map } from '../../../utils';
 import { type HealthUiSchemaContext } from '../../context';
 import { type HealthUiGroup, type UiElement, type UiFunction } from '../../types';
 
-type TypeParsers = typeof typeParsers;
-
-export type MgoType = NonNullable<ReturnType<TypeParsers[keyof TypeParsers]>>;
-type MgoTypeId = MgoType['_type'];
-type MgoTypeByTypeId<T extends MgoTypeId> = Extract<MgoType, { _type: T }>;
-
 type SingleTypeUiFunctionMap = {
-    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>, UiElement | UiElement[] | HealthUiGroup>;
+    [T in MgoTypeId]: UiFunction<MgoType<T>, UiElement | UiElement[] | HealthUiGroup, any, any>;
 };
 type MultipleTypeUiFunctionMap = {
-    [T in MgoTypeId]: UiFunction<MgoTypeByTypeId<T>[], UiElement | UiElement[] | HealthUiGroup>;
+    [T in MgoTypeId]: UiFunction<MgoType<T>[], UiElement | UiElement[] | HealthUiGroup, any, any>;
 };
 
 export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
@@ -39,11 +35,13 @@ export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
         range: ui.range,
         ratio: ui.ratio,
         reference: ui.reference,
-        sampledData: ui.sampledData,
         simpleQuantity: ui.simpleQuantity,
         string: ui.string,
         time: ui.time,
         unsignedInt: ui.unsignedInt,
+        // complex types
+        timing: ui.timing,
+        sampledData: ui.sampledData,
     };
 
     const multipleUiTypeMap: Partial<MultipleTypeUiFunctionMap> = {
@@ -60,17 +58,17 @@ export function createUiElementHelper({ ui }: HealthUiSchemaContext) {
 
     return function createUiElement<T extends MgoTypeId>(
         label: FhirMessagesIds,
-        value: MgoTypeByTypeId<T> | MgoTypeByTypeId<T>[]
+        value: MgoType<T> | MgoType<T>[]
     ): UiElement | UiElement[] | HealthUiGroup {
         if (Array.isArray(value)) {
-            const uiHelper = multipleUiTypeMap[value[0]._type];
+            const uiHelper = multipleUiTypeMap[value[0]._type as T];
             if (uiHelper) {
                 return uiHelper(label, value);
             }
             return map(value, (x) => createUiElement(label, x), true);
         }
 
-        const uiHelper = singleUiTypeMap[value._type];
+        const uiHelper = singleUiTypeMap[value._type as T];
         if (!uiHelper) {
             throw new Error(`No ui helper found for type "${value._type}"`);
         }

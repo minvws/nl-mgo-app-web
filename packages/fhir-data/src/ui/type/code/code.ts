@@ -3,7 +3,7 @@ import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
 import { type MgoCode } from '../../../parse/type';
 import { type UiHelperContext } from '../../context';
 import { valueOf } from '../../helpers/valueOf/valueOf';
-import { type MultipleValues, type SingleValue } from '../../types';
+import { type MultipleValues, type SingleValue, type UiFunctionOptions } from '../../types';
 
 type i18nCode<T extends string | undefined> =
     Extract<FhirMessagesIds, `codes.${string}.${T}`> extends `codes.${infer R}.${T}` ? R : never;
@@ -18,9 +18,9 @@ export function code(context: UiHelperContext) {
     return function <T extends string>(
         label: FhirMessagesIds,
         value: Nullable<MgoCode<T> | MgoCode<T>[]>,
-        options?: CodeOptions<T>
+        options?: CodeOptions<T> & UiFunctionOptions
     ): SingleValue | MultipleValues {
-        const { i18nCode } = options ?? {};
+        const { i18nCode, defaultLabel } = options ?? {};
 
         function translateCode(code: Nullable<MgoCode<T>>) {
             const codeValue = valueOf(code);
@@ -36,14 +36,14 @@ export function code(context: UiHelperContext) {
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, defaultLabel),
                 type: 'MULTIPLE_VALUES',
                 display: value.map(translateCode).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, defaultLabel),
             type: 'SINGLE_VALUE',
             display: translateCode(value),
         };

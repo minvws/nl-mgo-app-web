@@ -9,20 +9,20 @@ import {
 } from '../../types';
 
 export const string: WithUiHelperContext<
-    UiFunction<MgoString | string | MgoString[] | string[], SingleValue | MultipleValues>
+    UiFunction<MgoString | MgoString[], SingleValue | MultipleValues>
 > =
     ({ formatLabel }) =>
-    (label, value) => {
+    (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
                 display: value.map((x) => valueOf(x)).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
             display: valueOf(value),
         };

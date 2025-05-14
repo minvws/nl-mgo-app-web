@@ -12,10 +12,10 @@ export const reference: WithUiHelperContext<
     UiFunction<MgoReference | MgoReference[], SingleValue | ReferenceValue | MultipleValues>
 > =
     ({ formatLabel, isSummary }) =>
-    (label, value) => {
+    (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
                 display: value.map((x) => x.display).filter(isNonNullish),
             };
@@ -23,14 +23,14 @@ export const reference: WithUiHelperContext<
 
         if (isSummary) {
             return {
-                label: formatLabel(label, value),
+                label: formatLabel(label, value, options.defaultLabel),
                 type: 'SINGLE_VALUE',
                 display: value?.display,
             };
         }
 
         return {
-            label: formatLabel(label, value),
+            label: formatLabel(label, value, options.defaultLabel),
             type: 'REFERENCE_VALUE',
             display: value?.display,
             reference: value?.reference,

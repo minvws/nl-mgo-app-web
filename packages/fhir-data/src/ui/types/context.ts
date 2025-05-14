@@ -1,6 +1,7 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { type Lossless, type Nullable } from '@minvws/mgo-mgo-utils';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
+import { type ValueType } from '../../parse/types';
 import { type UiHelperContext } from '../context';
 import { type HealthUiSchemaContext } from '../context/schema/schema';
 import { type Ui } from '../context/schema/ui';
@@ -16,11 +17,16 @@ export type FormatDisplayFunction<Input, Output extends string[] | string | unde
     value: Nullable<Input | Lossless<Input>>
 ) => Output;
 
+export type UiFunctionOptions = {
+    defaultLabel?: FhirMessagesIds;
+};
+
 export type UiFunction<
-    Input,
+    Input extends ValueType | ValueType[],
     Output extends UiElement | UiElement[] | HealthUiGroup,
     Label = FhirMessagesIds,
-> = (label: Label, value: Nullable<Input>) => Output;
+    Options extends UiFunctionOptions = UiFunctionOptions,
+> = (label: Label, value: Nullable<Input>, options?: Options) => Output;
 
 export type UiFunctionWithoutLabel<Input, Output extends UiElement | UiElement[]> = (
     value: Nullable<Input>

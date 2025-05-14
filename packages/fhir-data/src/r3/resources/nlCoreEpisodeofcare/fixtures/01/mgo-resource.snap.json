@@ -14,6 +14,7 @@
         }
     ],
     "title": {
+        "_ext": true,
         "_type": "string",
         "value": "Gebroken been"
     },
@@ -70,6 +71,7 @@
     "team": null,
     "account": null,
     "dateFirstEncounter": {
+        "_ext": true,
         "_type": "dateTime",
         "value": "2019-02-06T13:17:00+00:00"
     },

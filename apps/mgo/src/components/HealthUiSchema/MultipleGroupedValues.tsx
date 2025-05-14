@@ -12,8 +12,9 @@ export function MultipleGroupedValues({ value }: MultipleGroupedValuesProps) {
             term={value.label}
             details={
                 <Stack className="gap-2">
-                    {value.display?.map((values) => (
-                        <MultipleValuesDisplay values={values} key={values.join()} />
+                    {value.display?.map((values, index) => (
+                        // eslint-disable-next-line react/no-array-index-key
+                        <MultipleValuesDisplay values={values} key={`${values.join()}-${index}`} />
                     ))}
                 </Stack>
             }

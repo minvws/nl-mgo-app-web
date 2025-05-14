@@ -58,6 +58,7 @@
     "bodySite": [
         {
             "procedureLaterality": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

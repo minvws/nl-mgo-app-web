@@ -26,6 +26,7 @@
     "source": null,
     "clinicalStatus": {
         "allergieStatusCodelijst": {
+            "_ext": true,
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -44,6 +45,7 @@
     "category": [
         {
             "allergieCategorieCodelijst": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [
@@ -58,6 +60,7 @@
     ],
     "criticality": {
         "criticalExtentCodelist": {
+            "_ext": true,
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -106,6 +109,7 @@
             "severity": {
                 "severityCodelist": [
                     {
+                        "_ext": true,
                         "_type": "codeableConcept",
                         "text": null,
                         "coding": [

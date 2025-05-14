@@ -20,6 +20,7 @@
         "display": "Johan XXX_Helleman"
     },
     "concernReference": {
+        "_ext": true,
         "_type": "reference",
         "reference": "Condition/zib-problem-01",
         "display": "Fracture of wrist (disorder)"

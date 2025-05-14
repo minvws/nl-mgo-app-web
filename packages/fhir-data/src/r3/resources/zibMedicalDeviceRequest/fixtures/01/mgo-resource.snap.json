@@ -4,14 +4,29 @@
     "resourceType": "DeviceRequest",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
     "fhirVersion": "R3",
-    "status": {
-        "_type": "string",
-        "value": "active"
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bbb2101-8fdf-11ec-1269-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
     },
-    "occurrence": {
+    "occurrencePeriod": {
         "_type": "period",
         "start": "2012-03-13",
         "end": null
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-02",
+        "display": "Vaste Huisarts 1"
     },
     "codeCodeableConcept": {
         "_type": "codeableConcept",
@@ -24,25 +39,10 @@
             }
         ]
     },
-    "intent": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
-            {
-                "code": "order",
-                "display": null,
-                "system": "http://hl7.org/fhir/request-intent"
-            }
-        ]
+    "status": {
+        "orderStatus": null
     },
-    "subject": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-01",
-        "display": "Johan XXX_Helleman"
-    },
-    "perfomer": {
-        "_type": "reference",
-        "reference": "Organization/nl-core-organization-02",
-        "display": "UMCG - Afdeling Orthopedie"
+    "performerType": {
+        "healthProfessionalRole": null
     }
 }

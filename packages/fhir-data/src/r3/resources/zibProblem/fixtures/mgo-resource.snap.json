@@ -25,6 +25,7 @@
     "asserter": null,
     "clinicalStatus": {
         "problemStatusCodelist": {
+            "_ext": true,
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -38,6 +39,7 @@
     },
     "verificationStatus": {
         "verificatieStatusCodelijst": {
+            "_ext": true,
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -73,6 +75,7 @@
                 }
             ],
             "laterality": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

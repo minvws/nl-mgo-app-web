@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { referenceProps } from '../reference/reference';
+import { reference } from '../reference/reference';
 import * as general from './annotation';
 
 test('annotation', () => {
@@ -10,7 +10,7 @@ test('annotation', () => {
         _type: 'annotation',
         time,
         text,
-        author: authorReference && referenceProps(authorReference),
+        author: reference(authorReference),
     };
     expect(general.annotation(data)).toEqual(expected);
 });

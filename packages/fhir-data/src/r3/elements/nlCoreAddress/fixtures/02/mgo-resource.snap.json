@@ -1,6 +1,7 @@
 {
     "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
     "addressType": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -12,6 +13,7 @@
         ]
     },
     "official": {
+        "_ext": true,
         "_type": "boolean",
         "value": true
     },
@@ -23,16 +25,19 @@
     "line": [
         {
             "streetName": {
+                "_ext": true,
                 "_type": "string",
                 "value": "Binnenkant"
             },
             "houseNumber": {
+                "_ext": true,
                 "_type": "string",
                 "value": "10"
             },
             "buildingNumbersuffix": [],
             "unitID": null,
             "additionalLocator": {
+                "_ext": true,
                 "_type": "string",
                 "value": "to"
             }

@@ -1,0 +1,34 @@
+{
+  "_type": "sampledData",
+  "data": {
+    "_type": "string",
+    "value": "1 0 -1 0 1 0 -1 0",
+  },
+  "dimensions": {
+    "_type": "positiveInt",
+    "value": 1,
+  },
+  "factor": {
+    "_type": "decimal",
+    "value": 0.01,
+  },
+  "lowerLimit": {
+    "_type": "decimal",
+    "value": -1.5,
+  },
+  "origin": {
+    "_type": "simpleQuantity",
+    "code": "mV",
+    "system": "http://unitsofmeasure.org",
+    "unit": "mV",
+    "value": 0,
+  },
+  "period": {
+    "_type": "decimal",
+    "value": 4,
+  },
+  "upperLimit": {
+    "_type": "decimal",
+    "value": 1.5,
+  },
+}

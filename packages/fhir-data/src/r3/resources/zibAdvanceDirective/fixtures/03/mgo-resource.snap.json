@@ -17,6 +17,7 @@
     },
     "disorder": [],
     "comment": {
+        "_ext": true,
         "_type": "string",
         "value": "Mondelinge afspraak"
     },

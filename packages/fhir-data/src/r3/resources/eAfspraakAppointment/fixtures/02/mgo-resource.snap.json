@@ -28,16 +28,20 @@
     },
     "patientInstructions": [
         {
+            "_ext": true,
             "_type": "string",
             "value": "Please park in P2; P1 is under construction"
         }
     ],
     "onlineEditable": {
+        "_ext": true,
         "indicator": {
+            "_ext": true,
             "_type": "boolean",
             "value": true
         },
         "onlineEditableUntil": {
+            "_ext": true,
             "_type": "dateTime",
             "value": "12/31/2017 09:00:00"
         }

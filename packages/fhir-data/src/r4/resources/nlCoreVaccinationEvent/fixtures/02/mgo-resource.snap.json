@@ -5,6 +5,7 @@
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event",
     "fhirVersion": "R4",
     "pharmaceuticalProduct": {
+        "_ext": true,
         "_type": "reference",
         "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01",
         "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"

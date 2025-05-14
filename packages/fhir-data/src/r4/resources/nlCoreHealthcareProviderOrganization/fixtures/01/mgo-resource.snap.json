@@ -78,10 +78,12 @@
                 "value": "s-Gravendijkwal 230"
             },
             "streetName": {
+                "_ext": true,
                 "_type": "string",
                 "value": "s-Gravendijkwal"
             },
             "houseNumber": {
+                "_ext": true,
                 "_type": "string",
                 "value": "230"
             },
@@ -100,6 +102,7 @@
             "country": null,
             "countryCode": null,
             "addressType": {
+                "_ext": true,
                 "_type": "codeableConcept",
                 "text": null,
                 "coding": [

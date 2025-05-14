@@ -1,12 +1,12 @@
 import { type Annotation, type DateTimeString } from '@minvws/mgo-fhir-types';
 import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
 import { type ValueType } from '../../types';
-import { type MgoReferenceProps, referenceProps } from '../reference/reference';
+import { type MgoReference, reference } from '../reference/reference';
 
 export interface MgoAnnotation extends ValueType<'annotation'> {
     time: DateTimeString | undefined;
     text: string | undefined;
-    author: MgoReferenceProps | undefined;
+    author: MgoReference | undefined;
 }
 
 export const annotation = createTypeParser<Annotation, MgoAnnotation>((value) => {
@@ -15,6 +15,6 @@ export const annotation = createTypeParser<Annotation, MgoAnnotation>((value) =>
         _type: 'annotation',
         time: time as DateTimeString,
         text,
-        author: authorReference && referenceProps(authorReference),
+        author: reference(authorReference),
     };
 });

@@ -19,11 +19,14 @@
     "dateTime": null,
     "consentingParty": null,
     "verification": {
+        "_ext": true,
         "verified": {
+            "_ext": true,
             "_type": "boolean",
             "value": true
         },
         "verifiedWith": {
+            "_ext": true,
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -35,12 +38,14 @@
             ]
         },
         "verificationDate": {
+            "_ext": true,
             "_type": "dateTime",
             "value": "2018-04-09"
         }
     },
     "comment": null,
     "treatment": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [
@@ -52,6 +57,7 @@
         ]
     },
     "additionalSources": {
+        "_ext": true,
         "valueReference": {
             "_type": "reference",
             "reference": "Consent/zib-advancedirective-03",
@@ -59,6 +65,7 @@
         }
     },
     "treatmentPermitted": {
+        "_ext": true,
         "_type": "codeableConcept",
         "text": null,
         "coding": [

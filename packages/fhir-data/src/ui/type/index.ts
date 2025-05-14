@@ -23,6 +23,7 @@ import { sampledData } from './sampledData/sampledData';
 import { simpleQuantity } from './simpleQuantity/simpleQuantity';
 import { string } from './string/string';
 import { time } from './time/time';
+import { timing } from './timing/timing';
 import { unsignedInt } from './unsignedInt/unsignedInt';
 
 export function getTypes(context: UiHelperContext) {
@@ -49,7 +50,8 @@ export function getTypes(context: UiHelperContext) {
         unsignedInt: unsignedInt(context),
         positiveInt: positiveInt(context),
         time: time(context),
-        sampledData: sampledData(context),
         simpleQuantity: simpleQuantity(context),
-    } satisfies Record<string, UiFunction<any, UiElement | UiElement[] | HealthUiGroup>>; // eslint-disable-line @typescript-eslint/no-explicit-any
+        sampledData: sampledData(context),
+        timing: timing(context),
+    } satisfies Record<string, UiFunction<any, UiElement | UiElement[] | HealthUiGroup, any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 }

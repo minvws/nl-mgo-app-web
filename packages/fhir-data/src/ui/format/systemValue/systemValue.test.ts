@@ -20,7 +20,8 @@ test('count returns translation when available', () => {
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
 
     const value = faker.mgo.quantity();
-    const expected = `intl(system.value.${value.system}|${value.code}, ${JSON.stringify({ value: value.value })})`;
+    const messageValues = JSON.stringify({ value: `${value.value}` });
+    const expected = `intl(system.value.${value.system}|${value.code}, ${messageValues})`;
 
     const formatSystemValue = systemValue(context);
     const result = formatSystemValue(value);
