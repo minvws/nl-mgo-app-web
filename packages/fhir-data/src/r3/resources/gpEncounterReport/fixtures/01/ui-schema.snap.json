@@ -4,11 +4,6 @@
         {
             "children": [
                 {
-                    "label": "",
-                    "type": "SINGLE_VALUE",
-                    "display": "Contactverslag dd. 2020-03-15"
-                },
-                {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "display": [
@@ -35,6 +30,11 @@
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
+                },
+                {
+                    "label": "Titel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Contactverslag dd. 2020-03-15"
                 },
                 {
                     "label": "Type",

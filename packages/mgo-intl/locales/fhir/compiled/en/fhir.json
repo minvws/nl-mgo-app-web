@@ -133,6 +133,8 @@
   ],
   "fhir.x.performer": [
   ],
+  "fhir.x.period": [
+  ],
   "fhir.x.practitioner": [
   ],
   "fhir.x.repeat_period_cyclical_schedule": [

@@ -409,6 +409,12 @@
       "value": "Auteur"
     }
   ],
+  "fhir.x.period": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
   "fhir.x.practitioner": [
     {
       "type": 0,
@@ -446,6 +452,10 @@
     }
   ],
   "fhir.x.title": [
+    {
+      "type": 0,
+      "value": "Titel"
+    }
   ],
   "fhir.x.type": [
     {

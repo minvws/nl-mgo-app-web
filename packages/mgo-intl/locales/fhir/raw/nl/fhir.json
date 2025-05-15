@@ -66,12 +66,13 @@
     "fhir.x.participant": "Deelnemer",
     "fhir.x.patient": "Patiënt",
     "fhir.x.performer": "Auteur",
+    "fhir.x.period": "Periode",
     "fhir.x.practitioner": "Zorgverlener",
     "fhir.x.repeat_period_cyclical_schedule": "Herhaalperiode cyclisch schema",
     "fhir.x.source": "Bron",
     "fhir.x.status": "Status",
     "fhir.x.stop_type": "Beëindigingsreden",
     "fhir.x.subject": "Onderwerp",
-    "fhir.x.title": "",
+    "fhir.x.title": "Titel",
     "fhir.x.type": "Type"
 }

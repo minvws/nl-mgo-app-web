@@ -2,10 +2,8 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type EpisodeOfCare } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { diagnosis } from './elements/diagnosis/diagnosis';
-import { statusHistory } from './elements/statusHistory/statusHistory';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare'; // NOSONAR
 
@@ -15,21 +13,19 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare';
 function parseNlCoreEpisodeofcare(resource: EpisodeOfCare) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+
+        // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
-        title: parse.extensionNictiz(resource, 'EpisodeOfCare-Title'),
-        status: parse.code(resource.status),
-        statusHistory: map(resource.statusHistory, statusHistory.parse),
-        type: map(resource.type, parse.codeableConcept),
-        diagnosis: map(resource.diagnosis, diagnosis.parse),
         patient: parse.reference(resource.patient),
-        managingOrganization: parse.reference(resource.managingOrganization),
         period: parse.period(resource.period),
-        referralRequest: map(resource.referralRequest, parse.reference),
-        careManager: parse.reference(resource.careManager),
-        team: map(resource.team, parse.reference),
-        account: map(resource.account, parse.reference),
-        dateFirstEncounter: parse.extensionNictiz(resource, 'EpisodeOfCare-DateFirstEncounter'),
-        dateLastEncounter: parse.extensionNictiz(resource, 'EpisodeOfCare-DateLastEncounter'),
+
+        // HCIM ConcernForTransfer-v1.2(2015EN)
+        type: map(resource.type, parse.codeableConcept),
+        title: parse.extension(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/EpisodeOfCare-Title', // NOSONAR
+            'string'
+        ),
     };
 }
 
@@ -38,5 +34,5 @@ export type NlCoreEpisodeofcare = ReturnType<typeof parseNlCoreEpisodeofcare>;
 export const nlCoreEpisodeofcare = {
     profile,
     parse: parseNlCoreEpisodeofcare,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<EpisodeOfCare, NlCoreEpisodeofcare>;

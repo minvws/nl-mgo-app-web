@@ -491,34 +491,10 @@
       "value": "Episode"
     }
   ],
-  "r3.nl_core_episodeofcare.identifier": [
-    {
-      "type": 0,
-      "value": "Identificatienummer"
-    }
-  ],
-  "r3.nl_core_episodeofcare.patient": [
-    {
-      "type": 0,
-      "value": "Patiënt"
-    }
-  ],
-  "r3.nl_core_episodeofcare.period": [
-    {
-      "type": 0,
-      "value": "Periode"
-    }
-  ],
-  "r3.nl_core_episodeofcare.title": [
-    {
-      "type": 0,
-      "value": "Titel"
-    }
-  ],
   "r3.nl_core_episodeofcare.type": [
     {
       "type": 0,
-      "value": "Type"
+      "value": "Concern label"
     }
   ],
   "r3.nl_core_humanname": [

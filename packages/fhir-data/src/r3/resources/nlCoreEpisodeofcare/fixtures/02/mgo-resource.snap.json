@@ -13,16 +13,16 @@
             "type": null
         }
     ],
-    "title": {
-        "_ext": true,
-        "_type": "string",
-        "value": "Drugs en alcohol revalidatie"
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
     },
-    "status": {
-        "_type": "code",
-        "value": "active"
+    "period": {
+        "_type": "period",
+        "start": "2019-02-06",
+        "end": null
     },
-    "statusHistory": null,
     "type": [
         {
             "_type": "codeableConcept",
@@ -36,44 +36,9 @@
             ]
         }
     ],
-    "diagnosis": [
-        {
-            "condition": {
-                "_type": "reference",
-                "reference": "Condition/zib-problem-08",
-                "display": "Syndroom van Korsakov"
-            },
-            "role": null,
-            "rank": null
-        }
-    ],
-    "patient": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-patient-02",
-        "display": "Paul XXX_Mesker"
-    },
-    "managingOrganization": {
-        "_type": "reference",
-        "reference": "Organization/nl-core-organization-05",
-        "display": "Ziekenhuis Gooi en Overvecht"
-    },
-    "period": {
-        "_type": "period",
-        "start": "2019-02-06",
-        "end": null
-    },
-    "referralRequest": null,
-    "careManager": {
-        "_type": "reference",
-        "reference": "Practitioner/nl-core-practitioner-04",
-        "display": "Dirk de Vries"
-    },
-    "team": null,
-    "account": null,
-    "dateFirstEncounter": {
+    "title": {
         "_ext": true,
-        "_type": "dateTime",
-        "value": "2019-02-06T13:17:00+00:00"
-    },
-    "dateLastEncounter": null
+        "_type": "string",
+        "value": "Drugs en alcohol revalidatie"
+    }
 }

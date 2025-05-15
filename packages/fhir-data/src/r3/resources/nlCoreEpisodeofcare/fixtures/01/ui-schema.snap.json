@@ -1,11 +1,29 @@
 {
-    "label": "Gebroken been",
+    "label": "Episode",
     "children": [
         {
-            "label": "Episode",
             "children": [
                 {
-                    "label": "Identificatienummer",
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 februari 2019"
+                },
+                {
+                    "label": "Concern label",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Lichaamsstructuur (123037004 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "15f29a29-8fdf-11ec-1699-020000000000"
@@ -18,23 +36,9 @@
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
-                    "label": "Begin datum",
+                    "label": "Titel",
                     "type": "SINGLE_VALUE",
-                    "display": "6 februari 2019"
-                },
-                {
-                    "label": "Eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Lichaamsstructuur (123037004 in code systeem http://snomed.info/sct)"
-                        ]
-                    ]
+                    "display": "Gebroken been"
                 }
             ]
         }

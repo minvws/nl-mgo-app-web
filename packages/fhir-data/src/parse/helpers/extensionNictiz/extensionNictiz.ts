@@ -8,9 +8,6 @@ const nictizIdValueXMap = {
     'zib-NutritionAdvice-Explanation': 'string',
     'ext-Vaccination.PharmaceuticalProduct': 'reference',
     'ext-PharmaceuticalProduct.Description': 'string',
-    'EpisodeOfCare-Title': 'string',
-    'EpisodeOfCare-DateFirstEncounter': 'dateTime',
-    'EpisodeOfCare-DateLastEncounter': 'dateTime',
     Comment: 'string',
 } satisfies Record<string, MgoTypeId>;
 

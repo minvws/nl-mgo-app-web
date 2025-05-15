@@ -48,9 +48,9 @@ function getFallbackLabels(label: string, value: unknown): FallbackLabels {
  *
  * - r3.resource.foo.bar_reference      // the initial label first
  * - r3.resource.foo.bar                // the label without the type extension
+ * - (fallback)                         // a fallback label if provided
  * - fhir.x.bar_reference               // a generic "x" property label
  * - fhir.x.bar                         // a generic "x" property label without the type extension
- * - (fallback)                         // a fallback label if provided
  */
 export function createLabelFormatter(intl: FhirIntlShape) {
     const hasMessage = (id: string): id is FhirMessagesIds =>
@@ -74,16 +74,16 @@ export function createLabelFormatter(intl: FhirIntlShape) {
             return intl.formatMessage({ id: labelWithoutType });
         }
 
+        if (fallbackLabel && hasMessage(fallbackLabel)) {
+            return intl.formatMessage({ id: fallbackLabel });
+        }
+
         if (fhirXLabel && hasMessage(fhirXLabel)) {
             return intl.formatMessage({ id: fhirXLabel });
         }
 
         if (fhirXLabelWithoutType && hasMessage(fhirXLabelWithoutType)) {
             return intl.formatMessage({ id: fhirXLabelWithoutType });
-        }
-
-        if (fallbackLabel && hasMessage(fallbackLabel)) {
-            return intl.formatMessage({ id: fallbackLabel });
         }
 
         // Let intl handle the missing translation error

@@ -54,10 +54,10 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | ~~nl-core-practitioner~~   |                      |                      |
 | ~~nl-core-organization~~   |                      |                      |
 | ~~nl-core-patient~~        |                      |                      |
-| ~~nl-core-episodeof~~      |                      |                      |
 | ~~zib-Alert~~              |                      |                      |
 | ~~zib-MedicationAgreemen~~ |                      |                      |
 | ~~zib-AllergyIntoleranc~~  |                      |                      |
+| [nl-core-episodeofCare]    | :white_large_square: | :white_check_mark:   |
 | [gp-DiagnosticResult]      | :white_large_square: | :white_large_square: |
 | [gp-Encounter]             | :white_large_square: | :white_large_square: |
 | [gp-EncounterReport]       | :white_large_square: | :white_large_square: |
