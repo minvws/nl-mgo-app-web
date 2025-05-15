@@ -1,16 +1,46 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Patient } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { identifier } from '../../../parse/type/identifier/identifier';
+import { filterCodeableConcept, oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { nlCoreAddress, nlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
-import { communication } from './elements/communication/communication';
-import { contact } from './elements/contact/contact';
-import { link } from './elements/link/link';
-import { uiSchema } from './uiSchema';
+import { parseNlCoreAddress, parseNlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
+import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst';
+import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NOSONAR
+
+function parseLanguageProficiency(communication: NonNullable<Patient['communication']>[number]) {
+    const result: {
+        languageControlListening: parse.MgoCoding | undefined;
+        languageControlReading: parse.MgoCoding | undefined;
+        languageControlSpeaking: parse.MgoCoding | undefined;
+    } = {
+        languageControlListening: undefined,
+        languageControlReading: undefined,
+        languageControlSpeaking: undefined,
+    };
+
+    parse.customExtensionMultiple(
+        communication,
+        'http://nictiz.nl/fhir/StructureDefinition/patient-proficiency', // NOSONAR
+        (proficiency) => {
+            const type = parse.extension(proficiency, 'type', 'coding');
+            const level = parse.extension(proficiency, 'level', 'coding');
+
+            if (type?.code === 'RSP') {
+                result.languageControlListening = level;
+            } else if (type?.code === 'RWR') {
+                result.languageControlReading = level;
+            } else if (type?.code === 'ESP') {
+                result.languageControlSpeaking = level;
+            }
+        }
+    );
+
+    return result;
+}
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317041
@@ -18,24 +48,99 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NO
 function parseNlCorePatient(resource: Patient) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        active: parse.boolean(resource.active),
-        address: map(resource.address, nlCoreAddress.parse),
-        birthDate: parse.date(resource.birthDate),
-        communication: map(resource.communication, communication.parse),
-        contact: map(resource.contact, contact.parse),
-        deceased: parse.boolean(resource.deceasedBoolean),
-        deceasedDateTime: parse.dateTime(resource.deceasedDateTime),
-        gender: parse.code(resource.gender),
-        generalPractitioner: map(resource.generalPractitioner, parse.reference),
-        identifier: map(resource.identifier, identifier),
-        link: map(resource.link, link.parse),
-        managingOrganization: parse.reference(resource.managingOrganization),
+
+        // HCIM LifeStance-v3.1(2017EN)
+        lifeStance: parse.extensionMultiple(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-LifeStance', // NOSONAR,
+            'codeableConcept'
+        ),
+
+        // HCIM FamilySituation-v3.0(2017EN), HCIM MaritalStatus-v3.0(2017EN)
         maritalStatus: parse.codeableConcept(resource.maritalStatus),
-        multipleBirth: parse.boolean(resource.multipleBirthBoolean),
-        multipleBirthInteger: parse.integer(resource.multipleBirthInteger),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier: {
+            bsn: parse.identifier(
+                resource.identifier?.find(
+                    (x) => x.system === 'http://fhir.nl/fhir/NamingSystem/bsn' // NOSONAR
+                )
+            ),
+        },
+
+        // HCIM FreedomRestrictingMeasures-v3.1(2017EN)
+        legalStatus: parse.extensionMultiple(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/zib-patient-legalstatus', // NOSONAR,
+            'codeableConcept'
+        ),
+
+        // HCIM LanguageProficiency-v3.1(2017EN)
+        communication: map(resource.communication, (communication) => ({
+            languageProficiency: parseLanguageProficiency(communication),
+            comment: parse.extensionMultiple(
+                communication,
+                'http://nictiz.nl/fhir/StructureDefinition/ext-Comment', // NOSONAR
+                'string'
+            ),
+            language: parse.codeableConcept(communication.language),
+        })),
+
+        // HCIM ContactInformation-v1.0(2017EN)
+        telecom: map(resource.telecom, parseNlCoreContactpoint),
+
+        // HCIM Payer-v3.1(2017EN)
         name: map(resource.name, parseNlCoreHumanname),
-        photo: map(resource.photo, parse.attachment),
-        telecom: map(resource.telecom, nlCoreContactpoint.parse),
+        address: map(resource.address, parseNlCoreAddress),
+
+        // HCIM Nationality-v3.0(2017EN)
+        nationality: parse.customExtensionMultiple(
+            resource,
+            'http://hl7.org/fhir/StructureDefinition/patient-nationality', // NOSONAR
+            (nationality) => ({
+                code: parse.extension(nationality, 'code', 'codeableConcept'),
+                period: parse.extension(nationality, 'period', 'period'),
+            })
+        ),
+
+        // HCIM HealthProfessional-v3.2(2017EN), HCIM HealthcareProvider-v3.1.1(2017EN)
+        generalPractitioner: parse.reference(resource.generalPractitioner?.[0]),
+        preferredPharmacy: parse.extension(
+            resource,
+            'http://fhir.nl/fhir/StructureDefinition/nl-core-preferred-pharmacy', // NOSONAR
+            'reference'
+        ),
+
+        // HCIM ContactPerson-v3.1(2017EN)
+        contact: map(resource.contact, (contact) => ({
+            relationship: {
+                role: map(
+                    filterCodeableConcept(contact.relationship, rolCodelijstValueSet),
+                    parse.codeableConcept
+                ),
+                relationship: map(
+                    filterCodeableConcept(contact.relationship, relatieCodelijstValueSet),
+                    parse.codeableConcept
+                ),
+            },
+            name: parseNlCoreHumanname(contact.name),
+            address: parseNlCoreAddress(contact.address),
+            // HCIM ContactInformation-v1.0(2017EN)
+            telecom: map(contact.telecom, parseNlCoreContactpoint),
+        })),
+
+        // HCIM Patient-v3.1(2017EN)
+        birthDate: parse.date(resource.birthDate),
+        ...oneOfValueX(resource, ['boolean', 'dateTime'], 'deceased'),
+        ...oneOfValueX(resource, ['boolean', 'integer'], 'multipleBirth'),
+        gender: {
+            ...parse.string(resource.gender),
+            geslachtCodelijst: parse.extension(
+                resource._gender,
+                'http://nictiz.nl/fhir/StructureDefinition/code-specification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
     };
 }
 
@@ -44,5 +149,5 @@ export type NlCorePatient = ReturnType<typeof parseNlCorePatient>;
 export const nlCorePatient = {
     profile,
     parse: parseNlCorePatient,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Patient, NlCorePatient>;

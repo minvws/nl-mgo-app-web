@@ -1,11 +1,27 @@
 {
     "resourceType": "Patient",
-    "id": "nl-core-patient-01",
-    "meta": { "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-patient"] },
+    "id": "zib-legalstatus-01",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-patient"]
+    },
     "text": {
         "status": "extensions",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Id 999911120 (BSN), Id 1683aefb-8fdf-11ec-1800-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Johan XXX_Helleman (Johan), Man, 25 juli 1964, <span title=\"Married (M - v3/MaritalStatus)\">Married</span></div><div><a href=\"tel:06-12345645\">06-12345645</a> (Tel Privé), <a href=\"mailto:XXX_Helleman@hotmail.com\">XXX_Helleman@hotmail.com</a> (E-mail Privé)</div><div>Knolweg 1000, 9999XA Stitswerd, NLD (officieel Privé (hoofd))</div><div><span title=\"Eerste relatie/contactpersoon (1 - RoleCodeLijst (COD472-VEKT))\">Eerste relatie/contactpersoon</span>, <span title=\"Wife (WIFE - v3/RoleCode)\">Wife</span> Jannie van Putten XXX_Helleman (Jannie)<div><a href=\"tel:+31611234567\">+31611234567</a> (Tel Werk), <a href=\"mailto:info@nictiz.nl\">info@nictiz.nl</a> (E-mail Werk), Knolweg 1000, 9999XA Stitswerd, Nederland (Bezoek)</div></div><div>Huisarts: Maatschap Vaste Huisarts</div></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Id 999911120 (BSN), Id 16b3194d-8fdf-11ec-5622-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Alex XXX_Helleman (Alex), Man, 2 augustus 1964, <span title=\"Married (M - v3/MaritalStatus)\">Married</span></div><div>Juridische status: <b><span title=\"Onder toezichtstelling (ots) (4 - 2.16.840.1.113883.2.4.3.11.60.40.2.14.3.2)\">Onder toezichtstelling (ots)</span></b></div><div><a href=\"tel:06-12345678\">06-12345678</a> (Tel Privé), <a href=\"mailto:XXX_Helleman@hotmail.com\">XXX_Helleman@hotmail.com</a> (E-mail Privé)</div><div>Knolweg 1020, 9999XB Stitswerd, NLD (officieel Privé (hoofd))</div><div><span title=\"Eerste relatie/contactpersoon (1 - RoleCodeLijst (COD472-VEKT))\">Eerste relatie/contactpersoon</span>, <span title=\"Husband (HUSB - v3/RoleCode)\">Husband</span> Janni van Molenaar van der Jutte (Janni)<div><a href=\"tel:06-12345645\">06-12345645</a> (Tel Privé), <a href=\"mailto:j.vanderjutte@example.com\">j.vanderjutte@example.com</a> (E-mail Privé), Knolweg 1020, 9999XB Stitswerd, Nederland (Privé)</div></div><div>Huisarts: Vaste Huisarts 1 - Maatschap Vaste Huisarts</div></div>"
     },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/zib-patient-legalstatus",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.14.3.2",
+                        "code": "4",
+                        "display": "Onder toezichtstelling (ots)"
+                    }
+                ]
+            }
+        }
+    ],
     "identifier": [
         {
             "use": "official",
@@ -14,7 +30,7 @@
         },
         {
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "1683aefb-8fdf-11ec-1800-020000000000"
+            "value": "16b3194d-8fdf-11ec-5622-020000000000"
         }
     ],
     "active": true,
@@ -26,17 +42,17 @@
                     "valueCode": "NL4"
                 }
             ],
-            "text": "Johan XXX_Helleman",
+            "text": "Alex XXX_Helleman",
             "family": "XXX_Helleman",
             "_family": {
                 "extension": [
                     {
                         "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                        "valueString": "XXX_Helleman"
+                        "valueString": "XXX_Verweij"
                     }
                 ]
             },
-            "given": ["Johan"],
+            "given": ["Alex"],
             "_given": [
                 {
                     "extension": [
@@ -66,7 +82,7 @@
                 }
             ],
             "system": "phone",
-            "value": "06-12345645",
+            "value": "06-12345678",
             "use": "home"
         },
         { "system": "email", "value": "XXX_Helleman@hotmail.com", "use": "home" }
@@ -88,7 +104,7 @@
             }
         ]
     },
-    "birthDate": "1964-07-25",
+    "birthDate": "1964-08-02",
     "deceasedBoolean": false,
     "address": [
         {
@@ -111,7 +127,7 @@
                 }
             ],
             "use": "home",
-            "line": ["Knolweg 1000"],
+            "line": ["Knolweg 1020"],
             "_line": [
                 {
                     "extension": [
@@ -121,13 +137,13 @@
                         },
                         {
                             "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                            "valueString": "1000"
+                            "valueString": "1020"
                         }
                     ]
                 }
             ],
             "city": "Stitswerd",
-            "postalCode": "9999XA",
+            "postalCode": "9999XB",
             "country": "NLD",
             "_country": {
                 "extension": [
@@ -149,7 +165,11 @@
     ],
     "maritalStatus": {
         "coding": [
-            { "system": "http://hl7.org/fhir/v3/MaritalStatus", "code": "M", "display": "Married" }
+            {
+                "system": "http://hl7.org/fhir/v3/MaritalStatus",
+                "code": "M",
+                "display": "Married"
+            }
         ]
     },
     "multipleBirthBoolean": false,
@@ -169,8 +189,8 @@
                     "coding": [
                         {
                             "system": "http://hl7.org/fhir/v3/RoleCode",
-                            "code": "WIFE",
-                            "display": "Wife"
+                            "code": "HUSB",
+                            "display": "Husband"
                         }
                     ]
                 }
@@ -182,8 +202,8 @@
                         "valueCode": "NL4"
                     }
                 ],
-                "text": "Jannie van Putten XXX_Helleman",
-                "family": "van Putten XXX_Helleman",
+                "text": "Janni van Molenaar van der Jutte",
+                "family": "van Molenaar van der Jutte",
                 "_family": {
                     "extension": [
                         {
@@ -192,21 +212,33 @@
                         },
                         {
                             "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
-                            "valueString": "Putten"
+                            "valueString": "Molenaar"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix",
+                            "valueString": "van der"
                         },
                         {
                             "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name",
-                            "valueString": "XXX_Helleman"
+                            "valueString": "Jutte"
                         }
                     ]
                 },
-                "given": ["Jannie"],
+                "given": ["Janni", "J.P.M."],
                 "_given": [
                     {
                         "extension": [
                             {
                                 "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
                                 "valueCode": "CL"
+                            }
+                        ]
+                    },
+                    {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                                "valueCode": "IN"
                             }
                         ]
                     }
@@ -229,29 +261,18 @@
                         }
                     ],
                     "system": "phone",
-                    "value": "+31611234567",
-                    "use": "work"
+                    "value": "06-12345645",
+                    "use": "home"
                 },
-                { "system": "email", "value": "info@nictiz.nl", "use": "work" }
+                {
+                    "system": "email",
+                    "value": "j.vanderjutte@example.com",
+                    "use": "home"
+                }
             ],
             "address": {
-                "extension": [
-                    {
-                        "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
-                        "valueCodeableConcept": {
-                            "coding": [
-                                {
-                                    "system": "http://hl7.org/fhir/v3/AddressUse",
-                                    "code": "PHYS",
-                                    "display": "Woon-/verblijfadres"
-                                }
-                            ]
-                        }
-                    }
-                ],
                 "use": "home",
-                "type": "physical",
-                "line": ["Knolweg 1000"],
+                "line": ["Knolweg 1020"],
                 "_line": [
                     {
                         "extension": [
@@ -261,13 +282,13 @@
                             },
                             {
                                 "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-                                "valueString": "1000"
+                                "valueString": "1020"
                             }
                         ]
                     }
                 ],
                 "city": "Stitswerd",
-                "postalCode": "9999XA",
+                "postalCode": "9999XB",
                 "country": "Nederland",
                 "_country": {
                     "extension": [
@@ -290,8 +311,17 @@
     ],
     "generalPractitioner": [
         {
-            "reference": "Organization/nl-core-organization-01",
-            "display": "Maatschap Vaste Huisarts"
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/nl-core-practitionerrole-02",
+                        "display": "Vaste Huisarts 1 - Maatschap Vaste Huisarts"
+                    }
+                }
+            ],
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
         }
     ]
 }

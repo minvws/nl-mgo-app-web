@@ -2,8 +2,10 @@ import { faker, testUiSchemaContext } from '$test';
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
 import { testMessage } from '@minvws/mgo-mgo-intl/test';
 import { expect, test } from 'vitest';
-import { type MgoString } from '../../../parse/type';
+import { type MgoCodeableConcept, type MgoString } from '../../../parse/type';
+import { type ExtensionValue } from '../../../parse/types';
 import { boolean } from '../../type/boolean/boolean';
+import { codeableConcept } from '../../type/codeableConcept/codeableConcept';
 import { string } from '../../type/string/string';
 import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
 import { processObject } from '../processObject/processObject';
@@ -120,6 +122,36 @@ test('empty array returns empty result', () => {
             display: undefined,
         },
     ];
+
+    expect(processArray(context, path, value)).toEqual(expected);
+});
+
+test('processes extension values', () => {
+    const rootPath = faker.lorem.word();
+    const path = rootPath;
+    const healthUiSchemaContext = testUiSchemaContext({ useMock: true });
+    const context = createGeneratorContext(
+        healthUiSchemaContext,
+        rootPath,
+        faker.fhir.fhirVersion()
+    );
+
+    const value: ExtensionValue<MgoCodeableConcept>[] = [
+        {
+            _ext: true,
+            _type: 'codeableConcept',
+            text: undefined,
+            coding: [
+                {
+                    code: '4',
+                    display: 'Onder toezichtstelling (ots)',
+                    system: 'urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.14.3.2',
+                },
+            ],
+        },
+    ];
+
+    const expected = [codeableConcept(healthUiSchemaContext)(path as FhirMessagesIds, value)];
 
     expect(processArray(context, path, value)).toEqual(expected);
 });

@@ -21,6 +21,7 @@ export type NlCoreHumanname = MgoElementMeta<typeof profile> & {
         initials: parse.MgoString[] | undefined;
         callName: parse.MgoString[] | undefined;
     };
+    text: parse.MgoString | undefined;
 };
 
 /**
@@ -76,6 +77,7 @@ export function parseNlCoreHumanname(value: Nullable<HumanName>): NlCoreHumannam
             initials: map(initials, parse.string),
             callName: map(callNames, parse.string),
         },
+        text: parse.string(value?.text),
     };
 }
 

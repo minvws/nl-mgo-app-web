@@ -1,0 +1,221 @@
+{
+    "resourceType": "Patient",
+    "id": "nl-core-patient-lifeStance-01",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-patient"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Id 999911120 (BSN), Id 16bf2a5d-8fdf-11ec-1343-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Alex XXX_Helleman (Alex), Man, 2 augustus 1964, <span title=\"Married (M - v3/MaritalStatus)\">Married</span></div><div><a href=\"tel:06-12345678\">06-12345678</a> (Tel Mobiel), <a href=\"mailto:XXX_Helleman@hotmail.com\">XXX_Helleman@hotmail.com</a> (E-mail Privé)</div><div>Knolweg 1020, 9999XB Stitswerd Nederland, NLD (officieel Privé Post / Bezoek)</div><div><span title=\"Eerste relatie/contactpersoon (1 - RoleCodeLijst (COD472-VEKT))\">Eerste relatie/contactpersoon</span>, <span title=\"Husband (HUSB - v3/RoleCode)\">Husband</span> Janni van Molenaar van der Jutte (Janni)<div><a href=\"tel:06-12345645\">06-12345645</a> (Tel Mobiel), <a href=\"mailto:j.vanderjutte@example.com\">j.vanderjutte@example.com</a> (E-mail), Knolweg 1020, 9999XB Sitswerd, Nederland (Privé)</div></div><div>Huisarts: Henk de Vries<div>Zorgverlenerrol: Huisartsen, niet nader gespecificeerd</div></div></div>"
+    },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/zib-LifeStance",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "428821008",
+                        "display": "Zevendedagsadventist"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "999911120"
+        },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16bf2a5d-8fdf-11ec-1343-020000000000"
+        }
+    ],
+    "active": true,
+    "name": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                    "valueCode": "NL4"
+                }
+            ],
+            "text": "Alex XXX_Helleman",
+            "family": "XXX_Helleman",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "XXX_Verweij"
+                    }
+                ]
+            },
+            "given": ["Alex"],
+            "_given": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "CL"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        { "system": "phone", "value": "06-12345678", "use": "mobile" },
+        { "system": "email", "value": "XXX_Helleman@hotmail.com", "use": "home" }
+    ],
+    "gender": "male",
+    "birthDate": "1964-08-02",
+    "deceasedBoolean": false,
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                    "valueBoolean": true
+                }
+            ],
+            "use": "home",
+            "type": "both",
+            "line": ["Knolweg 1020"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Knolweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "1020"
+                        }
+                    ]
+                }
+            ],
+            "city": "Stitswerd",
+            "district": "Nederland",
+            "postalCode": "9999XB",
+            "country": "NLD"
+        }
+    ],
+    "maritalStatus": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/MaritalStatus",
+                "code": "M",
+                "display": "Married"
+            }
+        ]
+    },
+    "multipleBirthBoolean": false,
+    "contact": [
+        {
+            "relationship": [
+                {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                            "code": "1",
+                            "display": "Eerste relatie/contactpersoon"
+                        }
+                    ]
+                },
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/RoleCode",
+                            "code": "HUSB",
+                            "display": "Husband"
+                        }
+                    ]
+                }
+            ],
+            "name": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                        "valueCode": "NL4"
+                    }
+                ],
+                "text": "Janni van Molenaar van der Jutte",
+                "family": "van Molenaar van der Jutte",
+                "_family": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                            "valueString": "van"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                            "valueString": "Molenaar"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix",
+                            "valueString": "van der"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name",
+                            "valueString": "Jutte"
+                        }
+                    ]
+                },
+                "given": ["Janni"],
+                "_given": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                                "valueCode": "CL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "telecom": [
+                { "system": "phone", "value": "06-12345645", "use": "mobile" },
+                { "system": "email", "value": "j.vanderjutte@example.com" }
+            ],
+            "address": {
+                "use": "home",
+                "line": ["Knolweg 1020"],
+                "_line": [
+                    {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                                "valueString": "Knolweg"
+                            },
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                                "valueString": "1020"
+                            }
+                        ]
+                    }
+                ],
+                "city": "Sitswerd",
+                "postalCode": "9999XB",
+                "country": "Nederland"
+            }
+        }
+    ],
+    "generalPractitioner": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/nl-core-practitionerrole-05",
+                        "display": "Huisartsen, niet nader gespecificeerd"
+                    }
+                }
+            ],
+            "reference": "Practitioner/nl-core-practitioner-01",
+            "display": "Henk de Vries"
+        }
+    ]
+}

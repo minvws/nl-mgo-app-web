@@ -355,6 +355,30 @@
       "value": "Resultaat code"
     }
   ],
+  "fhir.x.language_control_listening": [
+    {
+      "type": 0,
+      "value": "Luistervaardigheid"
+    }
+  ],
+  "fhir.x.language_control_reading": [
+    {
+      "type": 0,
+      "value": "Leesvaardigheid"
+    }
+  ],
+  "fhir.x.language_control_speaking": [
+    {
+      "type": 0,
+      "value": "Spreekvaardigheid"
+    }
+  ],
+  "fhir.x.language_proficiency": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
   "fhir.x.laterality": [
     {
       "type": 0,

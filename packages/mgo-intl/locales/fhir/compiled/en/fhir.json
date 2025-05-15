@@ -115,6 +115,14 @@
   ],
   "fhir.x.laboratory_test_result_code": [
   ],
+  "fhir.x.language_control_listening": [
+  ],
+  "fhir.x.language_control_reading": [
+  ],
+  "fhir.x.language_control_speaking": [
+  ],
+  "fhir.x.language_proficiency": [
+  ],
   "fhir.x.laterality": [
   ],
   "fhir.x.note": [

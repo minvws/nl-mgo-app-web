@@ -569,43 +569,25 @@
       "value": "Toelichting"
     }
   ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.level": [
-    {
-      "type": 0,
-      "value": "Luistervaardigheid"
-    }
-  ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_listening.type": [
+  "r3.nl_core_patient.communication.language_proficiency": [
     {
       "type": 0,
       "value": "Taalvaardigheid"
     }
   ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.level": [
+  "r3.nl_core_patient.communication.language_proficiency.level": [
     {
       "type": 0,
-      "value": "Leesvaardigheid"
+      "value": "Niveau"
     }
   ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_reading.type": [
+  "r3.nl_core_patient.communication.language_proficiency.type": [
     {
       "type": 0,
-      "value": "Taalvaardigheid"
+      "value": "Type"
     }
   ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.level": [
-    {
-      "type": 0,
-      "value": "Spreekvaardigheid"
-    }
-  ],
-  "r3.nl_core_patient.communication.language_proficiency.language_control_speaking.type": [
-    {
-      "type": 0,
-      "value": "Taalvaardigheid"
-    }
-  ],
-  "r3.nl_core_patient.contact.relationship.value": [
+  "r3.nl_core_patient.contact.relationship.relationship": [
     {
       "type": 0,
       "value": "Relatie"

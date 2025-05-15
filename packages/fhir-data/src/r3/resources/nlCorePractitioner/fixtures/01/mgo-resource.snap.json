@@ -56,7 +56,8 @@
                 "birthName": null,
                 "initials": null,
                 "callName": null
-            }
+            },
+            "text": null
         }
     ],
     "address": [
