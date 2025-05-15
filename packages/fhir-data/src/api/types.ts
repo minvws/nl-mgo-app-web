@@ -11,7 +11,6 @@ export * from '../parse/type';
 export * from '../ui/types/schema';
 
 export {
-    type EncounterParticipant,
     type NlCoreAddress,
     type NlCoreContactpoint,
     type NlCoreHumanname,

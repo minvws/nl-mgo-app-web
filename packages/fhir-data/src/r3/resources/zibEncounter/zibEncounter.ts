@@ -10,10 +10,8 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Encounter'; // NO
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317177
  */
-function parseZibEncounter(resource: Encounter) {
+export function parseZibEncounterBase(resource: Encounter) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
         subject: parse.reference(resource.subject),
@@ -41,6 +39,13 @@ function parseZibEncounter(resource: Encounter) {
             ),
         },
         serviceProvider: parse.reference(resource.serviceProvider),
+    };
+}
+
+export function parseZibEncounter(resource: Encounter) {
+    return {
+        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parseZibEncounterBase(resource),
     };
 }
 

@@ -13,11 +13,11 @@ export * from './gpEncounterReport/gpEncounterReport';
 export * from './gpJournalEntry/gpJournalEntry';
 export * from './gpLaboratoryResult/gpLaboratoryResult';
 
+export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare';
 export * from './nlCoreOrganization/nlCoreOrganization';
 export * from './nlCorePatient/nlCorePatient';
 export * from './nlCorePractitioner/nlCorePractitioner';
 export * from './nlCorePractitionerRole/nlCorePractitionerRole';
-export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare';
 
 export * from './eAfspraakAppointment/eAfspraakAppointment';
 export { nlCoreObservation, type NlCoreObservation } from './nlCoreObservation/nlCoreObservation';
@@ -30,7 +30,7 @@ export * from './zibBloodPressure/zibBloodPressure';
 export * from './zibBodyHeight/zibBodyHeight';
 export * from './zibBodyWeight/zibBodyWeight';
 export * from './zibDrugUse/zibDrugUse';
-export * from './zibEncounter/zibEncounter';
+export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter';
 export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';
 export {
     zibLaboratoryTestResultObservation,
