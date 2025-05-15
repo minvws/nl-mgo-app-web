@@ -27,13 +27,6 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Verzekeraar",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Menzis Zorgverzekeraar N.V."
-                    ]
-                },
-                {
                     "label": "Verzekerde nummer",
                     "type": "SINGLE_VALUE",
                     "display": "12345678"
@@ -44,6 +37,32 @@
                     "display": [
                         "Basis verzekerd (B in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)"
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Verzekeraar",
+            "children": [
+                {
+                    "label": "Bank naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "ING"
+                },
+                {
+                    "label": "Bankcode",
+                    "type": "SINGLE_VALUE",
+                    "display": "INGBNL2A"
+                },
+                {
+                    "label": "Rekeningnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "NL85INGB0001234567"
+                },
+                {
+                    "label": "Verzekeraar",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Menzis Zorgverzekeraar N.V.",
+                    "reference": "Organization/nl-core-organization-04"
                 }
             ]
         }

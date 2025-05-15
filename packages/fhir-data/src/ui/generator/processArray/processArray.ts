@@ -1,5 +1,6 @@
 import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isValueType, type MgoType } from '../../../parse/types';
+import { isValueType, type MgoType, type ValueType } from '../../../parse/types';
+import { hasExtensions } from '../../helpers/hasExtensions/hasExtensions';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
 import { processValue } from '../processValue/processValue';
@@ -19,6 +20,10 @@ function isArrayOfSameValueType(values: unknown[]): values is MgoType[] {
     });
 }
 
+function arrayContainsExtensions(values: ValueType[]): boolean {
+    return values.some((value) => hasExtensions(value));
+}
+
 export function processArray(
     context: GeneratorContext,
     path: string,
@@ -26,7 +31,7 @@ export function processArray(
 ): (UiElement | HealthUiGroup)[] {
     const { createUiElement } = context;
 
-    if (isArrayOfSameValueType(value)) {
+    if (isArrayOfSameValueType(value) && !arrayContainsExtensions(value)) {
         const result = createUiElement(path as FhirMessagesIds, value);
         return [result].flat();
     }

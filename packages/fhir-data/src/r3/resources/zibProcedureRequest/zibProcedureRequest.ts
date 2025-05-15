@@ -1,9 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type ProcedureRequest } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest'; // NOSONAR
 
@@ -13,13 +14,43 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest'
 function parseZibProcedureRequest(resource: ProcedureRequest) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        status: parse.string(resource.status),
-        occurrence: parse.period(resource.occurrencePeriod),
-        code: parse.codeableConcept(resource.code),
-        intent: parse.string(resource.intent),
+
+        // HCIM BasicElements-v1.0(2017EN)
+        identifier: map(resource.identifier, parse.identifier),
         subject: parse.reference(resource.subject),
-        perfomer: parse.reference(resource.performer),
-        reason: map(resource.reasonReference, parse.reference),
+        requester: {
+            agent: parse.reference(resource.requester?.agent),
+        },
+
+        // HCIM HealthProfessional-v3.2(2017EN)
+        performerType: {
+            healthProfessionalRole: map(resource.performerType?.coding, parse.coding),
+        },
+
+        // HCIM NursingIntervention-v3.1(2017EN)
+        ...oneOfValueX(resource, ['dateTime', 'period', 'timing'], 'occurrence'),
+
+        // HCIM Procedure-v4.1(2017EN)	HCIM ProcedureRequest
+        code: parse.codeableConcept(resource.code),
+        performer: parse.reference(resource.performer),
+        reasonReference: map(resource.reasonReference, parse.reference),
+        bodySite: map(resource.bodySite, (bodySite) => ({
+            ...parse.codeableConcept(bodySite),
+            procedureLaterality: parse.extension(
+                bodySite,
+                'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier', // NOSONAR
+                'codeableConcept'
+            ),
+        })),
+
+        // HCIM PlannedCareActivityForTransfer-v3.1(2017EN)
+        status: {
+            orderStatus: parse.extension(
+                resource._status,
+                'http://nictiz.nl/fhir/StructureDefinition/code-specification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
     };
 }
 
@@ -28,5 +59,5 @@ export type ZibProcedureRequest = ReturnType<typeof parseZibProcedureRequest>;
 export const zibProcedureRequest = {
     profile,
     parse: parseZibProcedureRequest,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<ProcedureRequest, ZibProcedureRequest>;

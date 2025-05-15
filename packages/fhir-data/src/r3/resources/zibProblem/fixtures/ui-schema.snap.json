@@ -22,15 +22,6 @@
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
-                    "label": "Probleem anatomische locatie",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Entire wrist region (361289009 in code systeem http://snomed.info/sct)"
-                        ]
-                    ]
-                },
-                {
                     "label": "Probleem begin datum",
                     "type": "SINGLE_VALUE",
                     "display": "2001"
@@ -71,6 +62,25 @@
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Unknown (UNK in code systeem http://hl7.org/fhir/v3/NullFlavor)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Probleem anatomische locatie",
+            "children": [
+                {
+                    "label": "Probleem anatomische locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Entire wrist region (361289009 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Probleem lateraliteit",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Right (24028007 in code systeem http://snomed.info/sct)"
                     ]
                 }
             ]
