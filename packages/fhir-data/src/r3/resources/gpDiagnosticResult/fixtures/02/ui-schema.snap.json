@@ -36,12 +36,12 @@
                     ]
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.status",
+                    "label": "Status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.code",
+                    "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "polsfrequentie (1875 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
@@ -49,17 +49,17 @@
                     ]
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.comment",
+                    "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "display": null
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.method",
+                    "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
                     "display": []
                 },
                 {
-                    "label": "r3.gp_diagnostic_result.value",
+                    "label": "Uitslag waarde",
                     "type": "SINGLE_VALUE",
                     "display": "120 /min"
                 }

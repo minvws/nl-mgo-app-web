@@ -2,14 +2,14 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Composition } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { parseSection } from './elements/section/section';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport'; // NOSONAR
 
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316993
+ * There are no mapping available for this resource, so all values are mapped that exist in the test data set.
  */
 function parseGpEncounterReport(resource: Composition) {
     return {
@@ -21,7 +21,10 @@ function parseGpEncounterReport(resource: Composition) {
         date: parse.dateTime(resource.date),
         author: map(resource.author, parse.reference),
         title: parse.string(resource.title),
-        section: map(resource.section, parseSection),
+        section: map(resource.section, (section) => ({
+            code: parse.codeableConcept(section?.code),
+            entry: map(section?.entry, parse.reference),
+        })),
     };
 }
 
@@ -30,5 +33,5 @@ export type GpEncounterReport = ReturnType<typeof parseGpEncounterReport>;
 export const gpEncounterReport = {
     profile,
     parse: parseGpEncounterReport,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Composition, GpEncounterReport>;

@@ -855,5 +855,17 @@
   "r3.nl_core_address.country.country_code.value_codeable_concept": "Land GBA codelijst",
   "r3.nl_core_address_official.value_boolean": "True als deze deel is van een officieel register. false indien dat niet het geval is",
   "r3.gp_journal_entry.value_string": "Journaalregel tekst",
-  "r3.gp_encounter_report": "Deelcontactverslag"
+  "r3.gp_encounter_report": "Deelcontactverslag",
+  "r3.gp_encounter": "Contact",
+  "r3.gp_encounter.class": "Contact type",
+  "r3.gp_encounter.participant.type.health_professional_role": "Zorgverlener rol",
+  "r3.gp_encounter.participant.individual": "Contact met",
+  "r3.gp_encounter.period.start": "Begin datum tijd",
+  "r3.gp_encounter.period.end": "Eind datum tijd",
+  "r3.gp_encounter.reason": "Afwijkende uitslag",
+  "r3.gp_encounter.reason.text": "Afwijkende uitslag",
+  "r3.gp_encounter.diagnosis.condition": "Probleem",
+  "r3.gp_encounter.hospitalization.admit_source": "Herkomst",
+  "r3.gp_encounter.hospitalization.discharge_disposition": "Bestemming",
+  "r3.gp_encounter.service_provider": "Locatie"
 }

@@ -1,4 +1,76 @@
 {
+  "r3.gp_encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_encounter.class": [
+    {
+      "type": 0,
+      "value": "Contact type"
+    }
+  ],
+  "r3.gp_encounter.diagnosis.condition": [
+    {
+      "type": 0,
+      "value": "Probleem"
+    }
+  ],
+  "r3.gp_encounter.hospitalization.admit_source": [
+    {
+      "type": 0,
+      "value": "Herkomst"
+    }
+  ],
+  "r3.gp_encounter.hospitalization.discharge_disposition": [
+    {
+      "type": 0,
+      "value": "Bestemming"
+    }
+  ],
+  "r3.gp_encounter.participant.individual": [
+    {
+      "type": 0,
+      "value": "Contact met"
+    }
+  ],
+  "r3.gp_encounter.participant.type.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.gp_encounter.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r3.gp_encounter.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r3.gp_encounter.reason": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r3.gp_encounter.reason.text": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r3.gp_encounter.service_provider": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
   "r3.gp_encounter_report": [
     {
       "type": 0,

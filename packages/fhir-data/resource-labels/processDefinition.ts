@@ -7,6 +7,7 @@ import { normalizeLabel } from './normalizeLabel';
  */
 const mirrorLabels = {
     ['zib_laboratory_test_result_observation']: 'gp_laboratory_result',
+    ['zib_encounter']: 'gp_encounter',
 };
 
 /**

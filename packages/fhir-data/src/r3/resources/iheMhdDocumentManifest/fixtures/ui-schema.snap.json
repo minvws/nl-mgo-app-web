@@ -10,12 +10,12 @@
                     "display": "10 maart 2020"
                 },
                 {
-                    "label": "r3.ihe_mhd_document_manifest.status",
+                    "label": "Status",
                     "type": "SINGLE_VALUE",
                     "display": "superseded"
                 },
                 {
-                    "label": "r3.ihe_mhd_document_manifest.type",
+                    "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Discharge summary (18842-5 in code systeem http://loinc.org)"

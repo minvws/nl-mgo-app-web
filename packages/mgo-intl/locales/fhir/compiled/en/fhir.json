@@ -89,7 +89,11 @@
   ],
   "fhir.x.category": [
   ],
+  "fhir.x.code": [
+  ],
   "fhir.x.component": [
+  ],
+  "fhir.x.date": [
   ],
   "fhir.x.device": [
   ],
@@ -97,9 +101,15 @@
   ],
   "fhir.x.effective_period": [
   ],
+  "fhir.x.episode_of_care": [
+  ],
   "fhir.x.health_care_provider": [
   ],
   "fhir.x.health_professional": [
+  ],
+  "fhir.x.health_professional_role": [
+  ],
+  "fhir.x.hospitalization": [
   ],
   "fhir.x.identifier": [
   ],
@@ -108,6 +118,8 @@
   "fhir.x.laterality": [
   ],
   "fhir.x.note": [
+  ],
+  "fhir.x.participant": [
   ],
   "fhir.x.patient": [
   ],
@@ -119,8 +131,14 @@
   ],
   "fhir.x.source": [
   ],
+  "fhir.x.status": [
+  ],
   "fhir.x.stop_type": [
   ],
   "fhir.x.subject": [
+  ],
+  "fhir.x.title": [
+  ],
+  "fhir.x.type": [
   ]
 }

@@ -1,4 +1,10 @@
 {
+  "fhir.x.diagnosis": [
+    {
+      "type": 0,
+      "value": "Diagnosis"
+    }
+  ],
   "r3.e_afspraak_appointment": [
     {
       "type": 0,
@@ -89,12 +95,6 @@
       "value": "Status"
     }
   ],
-  "r3.e_afspraak_appointment.participant.type.health_professional_role": [
-    {
-      "type": 0,
-      "value": "Zorgverlener rol"
-    }
-  ],
   "r3.e_afspraak_appointment.patient_instructions": [
     {
       "type": 0,
@@ -134,7 +134,49 @@
   "r3.gp_diagnostic_result": [
     {
       "type": 0,
-      "value": "Laboratorium uitslag"
+      "value": "Diagnose"
+    }
+  ],
+  "r3.gp_diagnostic_result.code.coding.nhg_table_45": [
+    {
+      "type": 0,
+      "value": "Onderzoek"
+    }
+  ],
+  "r3.gp_diagnostic_result.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.gp_diagnostic_result.method": [
+    {
+      "type": 0,
+      "value": "Meetmethode"
+    }
+  ],
+  "r3.gp_diagnostic_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde meetuitslagen"
+    }
+  ],
+  "r3.gp_diagnostic_result.related.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerde meetuitslag"
+    }
+  ],
+  "r3.gp_diagnostic_result.status.result_status_codelist": [
+    {
+      "type": 0,
+      "value": "Resultaat status"
+    }
+  ],
+  "r3.gp_diagnostic_result.value": [
+    {
+      "type": 0,
+      "value": "Uitslag waarde"
     }
   ],
   "r3.gp_encounter": [
@@ -143,10 +185,40 @@
       "value": "Contact"
     }
   ],
+  "r3.gp_encounter_report.encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_encounter_report.section": [
+    {
+      "type": 0,
+      "value": "Sectie"
+    }
+  ],
+  "r3.gp_encounter_report.section.entry": [
+    {
+      "type": 0,
+      "value": "Vermelding"
+    }
+  ],
   "r3.gp_journal_entry": [
     {
       "type": 0,
       "value": "Journaalregel"
+    }
+  ],
+  "r3.gp_journal_entry.component.icpc_e.value": [
+    {
+      "type": 0,
+      "value": "ICPC Code"
+    }
+  ],
+  "r3.gp_journal_entry.component.icpc_s.value": [
+    {
+      "type": 0,
+      "value": "ICPC Code"
     }
   ],
   "r3.gp_laboratory_result": [
@@ -945,12 +1017,6 @@
     {
       "type": 0,
       "value": "Uitgevoerd door"
-    }
-  ],
-  "r3.zib_procedure.performer.health_professional_role": [
-    {
-      "type": 0,
-      "value": "Zorgverlener rol"
     }
   ],
   "r3.zib_procedure.procedure_method": [

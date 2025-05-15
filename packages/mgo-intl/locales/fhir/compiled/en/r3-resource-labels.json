@@ -1,4 +1,6 @@
 {
+  "fhir.x.diagnosis": [
+  ],
   "r3.e_afspraak_appointment": [
   ],
   "r3.e_afspraak_appointment.appointment_type": [
@@ -29,8 +31,6 @@
   ],
   "r3.e_afspraak_appointment.participant.status": [
   ],
-  "r3.e_afspraak_appointment.participant.type.health_professional_role": [
-  ],
   "r3.e_afspraak_appointment.patient_instructions": [
   ],
   "r3.e_afspraak_appointment.reason": [
@@ -45,9 +45,33 @@
   ],
   "r3.gp_diagnostic_result": [
   ],
+  "r3.gp_diagnostic_result.code.coding.nhg_table_45": [
+  ],
+  "r3.gp_diagnostic_result.comment": [
+  ],
+  "r3.gp_diagnostic_result.method": [
+  ],
+  "r3.gp_diagnostic_result.related": [
+  ],
+  "r3.gp_diagnostic_result.related.target": [
+  ],
+  "r3.gp_diagnostic_result.status.result_status_codelist": [
+  ],
+  "r3.gp_diagnostic_result.value": [
+  ],
   "r3.gp_encounter": [
   ],
+  "r3.gp_encounter_report.encounter": [
+  ],
+  "r3.gp_encounter_report.section": [
+  ],
+  "r3.gp_encounter_report.section.entry": [
+  ],
   "r3.gp_journal_entry": [
+  ],
+  "r3.gp_journal_entry.component.icpc_e.value": [
+  ],
+  "r3.gp_journal_entry.component.icpc_s.value": [
   ],
   "r3.gp_laboratory_result": [
   ],
@@ -314,8 +338,6 @@
   "r3.zib_procedure.performed_period": [
   ],
   "r3.zib_procedure.performer.actor": [
-  ],
-  "r3.zib_procedure.performer.health_professional_role": [
   ],
   "r3.zib_procedure.procedure_method": [
   ],

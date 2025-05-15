@@ -65,6 +65,11 @@
                     "display": "Niet bekend"
                 },
                 {
+                    "label": "Code",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
                     "label": "Dag(en) van de week",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
@@ -121,11 +126,6 @@
                 },
                 {
                     "label": "Tijdsafwijking",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Tijdschema-code",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },

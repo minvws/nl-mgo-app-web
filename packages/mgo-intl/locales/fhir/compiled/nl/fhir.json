@@ -277,10 +277,22 @@
       "value": "Categorie"
     }
   ],
+  "fhir.x.code": [
+    {
+      "type": 0,
+      "value": "Code"
+    }
+  ],
   "fhir.x.component": [
     {
       "type": 0,
       "value": "Onderliggende metingen"
+    }
+  ],
+  "fhir.x.date": [
+    {
+      "type": 0,
+      "value": "Datum"
     }
   ],
   "fhir.x.device": [
@@ -301,6 +313,12 @@
       "value": "Periode"
     }
   ],
+  "fhir.x.episode_of_care": [
+    {
+      "type": 0,
+      "value": "Episode"
+    }
+  ],
   "fhir.x.health_care_provider": [
     {
       "type": 0,
@@ -311,6 +329,18 @@
     {
       "type": 0,
       "value": "Zorgverlener"
+    }
+  ],
+  "fhir.x.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "fhir.x.hospitalization": [
+    {
+      "type": 0,
+      "value": "Ziekenhuisopname"
     }
   ],
   "fhir.x.identifier": [
@@ -335,6 +365,12 @@
     {
       "type": 0,
       "value": "Toelichting"
+    }
+  ],
+  "fhir.x.participant": [
+    {
+      "type": 0,
+      "value": "Deelnemer"
     }
   ],
   "fhir.x.patient": [
@@ -367,6 +403,12 @@
       "value": "Bron"
     }
   ],
+  "fhir.x.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
   "fhir.x.stop_type": [
     {
       "type": 0,
@@ -377,6 +419,14 @@
     {
       "type": 0,
       "value": "Onderwerp"
+    }
+  ],
+  "fhir.x.title": [
+  ],
+  "fhir.x.type": [
+    {
+      "type": 0,
+      "value": "Type"
     }
   ]
 }

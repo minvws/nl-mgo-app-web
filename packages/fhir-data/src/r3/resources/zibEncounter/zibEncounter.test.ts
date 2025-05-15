@@ -23,12 +23,7 @@ test('03: mgo-resource', async () => {
 
 test('01: ui-schema', async () => {
     const mgoResource = zibEncounter.parse(input01 as Encounter);
-    const uiSchema = zibEncounter.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = zibEncounter.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
@@ -36,12 +31,7 @@ test('01: ui-schema', async () => {
 
 test('02: ui-schema', async () => {
     const mgoResource = zibEncounter.parse(input02 as Encounter);
-    const uiSchema = zibEncounter.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = zibEncounter.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );
@@ -49,12 +39,7 @@ test('02: ui-schema', async () => {
 
 test('03: ui-schema', async () => {
     const mgoResource = zibEncounter.parse(input03 as Encounter);
-    const uiSchema = zibEncounter.uiSchema(
-        mgoResource,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = zibEncounter.uiSchema(mgoResource, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/03/ui-schema.snap.json'
     );

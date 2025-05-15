@@ -11,11 +11,6 @@ test('returns the expected output 01', async () => {
 
 test('uiSchema returns the expected output 01', async () => {
     const output = gpEncounter.parse(input01 as Encounter);
-    const uiSchema = gpEncounter.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = gpEncounter.uiSchema(output, testUiSchemaContext());
     await expectJson(uiSchema).toMatchFileSnapshot('./fixtures/01/ui-schema.snap.json');
 });

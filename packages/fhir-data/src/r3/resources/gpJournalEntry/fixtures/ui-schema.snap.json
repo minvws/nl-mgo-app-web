@@ -12,12 +12,12 @@
                     ]
                 },
                 {
-                    "label": "r3.gp_journal_entry.status",
+                    "label": "Status",
                     "type": "SINGLE_VALUE",
                     "display": "final"
                 },
                 {
-                    "label": "r3.gp_journal_entry.code",
+                    "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Subjectief (S in code systeem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"

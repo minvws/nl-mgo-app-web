@@ -1,36 +1,12 @@
 {
-    "label": "Contactverslag dd. 2020-03-15",
+    "label": "Deelcontactverslag",
     "children": [
         {
-            "label": "r3.gp_encounter_report",
             "children": [
                 {
-                    "label": "r3.gp_encounter_report.title",
+                    "label": "",
                     "type": "SINGLE_VALUE",
                     "display": "Contactverslag dd. 2020-03-15"
-                },
-                {
-                    "label": "r3.gp_encounter_report.status",
-                    "type": "SINGLE_VALUE",
-                    "display": "final"
-                },
-                {
-                    "label": "r3.gp_encounter_report.type",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Summarization of encounter note Narrative (67781-5 in code systeem http://loinc.org)"
-                    ]
-                },
-                {
-                    "label": "r3.gp_encounter_report.encounter",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1",
-                    "reference": "Encounter/gpdata-encounter-contact04"
-                },
-                {
-                    "label": "r3.gp_encounter_report.date",
-                    "type": "SINGLE_VALUE",
-                    "display": "15 maart 2020"
                 },
                 {
                     "label": "Auteur",
@@ -38,30 +14,54 @@
                     "display": [
                         "Dr. V. Huisarts 1"
                     ]
+                },
+                {
+                    "label": "Contact",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1",
+                    "reference": "Encounter/gpdata-encounter-contact04"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "15 maart 2020"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1529b7df-8fdf-11ec-1458-020000000000"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "final"
+                },
+                {
+                    "label": "Type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Summarization of encounter note Narrative (67781-5 in code systeem http://loinc.org)"
+                    ]
                 }
             ]
         },
         {
-            "label": "EncounterReport.Section",
+            "label": "Sectie",
             "children": [
                 {
-                    "label": "EncounterReport.Section.code",
+                    "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Evaluatie (E in code systeem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
                     ]
                 },
                 {
-                    "label": "EncounterReport.Section.entry",
-                    "type": "REFERENCE_VALUE",
-                    "display": "lage rugpijn",
-                    "reference": "Observation/gpdata-observation-contact04-e"
-                },
-                {
-                    "label": "EncounterReport.Section.entry",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Condition HNP (thoracaal/lumbaal)",
-                    "reference": "EpisodeOfCare/gpdata-episodeofcare-icpc-l8601"
+                    "label": "Vermelding",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "lage rugpijn",
+                        "Condition HNP (thoracaal/lumbaal)"
+                    ]
                 }
             ]
         }
