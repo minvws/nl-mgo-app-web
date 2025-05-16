@@ -2,23 +2,152 @@
     "label": "Zorgverlener",
     "children": [
         {
-            "label": "r3.nl_core_practitioner.group_details",
+            "children": []
+        },
+        {
+            "label": "Zorgverlener identificatie nummer",
             "children": [
                 {
-                    "label": "Zorgverlener identificatie nummer",
+                    "label": "AGB",
+                    "type": "SINGLE_VALUE",
+                    "display": "01069857"
+                },
+                {
+                    "label": "BIG",
+                    "type": "SINGLE_VALUE",
+                    "display": "12345678912"
+                },
+                {
+                    "label": "Overig(e)",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "129854656",
-                        "01069857",
-                        "12345678912",
                         "16d6f97b-8fdf-11ec-2007-020000000000"
                     ]
+                },
+                {
+                    "label": "UZI",
+                    "type": "SINGLE_VALUE",
+                    "display": "129854656"
                 }
             ]
         },
         {
-            "label": "r3.nl_core_address",
+            "label": "Contactgegevens",
             "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                    ]
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "phone"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "0612345990"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "email"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "devries@work.com"
+                }
+            ]
+        },
+        {
+            "label": "Naam",
+            "children": [
+                {
+                    "label": "Geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vries"
+                },
+                {
+                    "label": "Geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Initialen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Henk de Vries"
+                },
+                {
+                    "label": "Roepnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorkeursvolgorde van de naamdelen.",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voornaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "de"
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Adres informatie",
+            "children": [
+                {
+                    "label": "Aanduiding bij huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Officieel adres (HP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                    ]
+                },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
@@ -27,12 +156,12 @@
                 {
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Municipality",
+                    "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Weesp"
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Gemeente",
@@ -40,64 +169,41 @@
                     "display": "Amsterdam"
                 },
                 {
-                    "label": "r3.nl_core_address.postalCode",
+                    "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "1012AB"
+                    "display": "12"
+                },
+                {
+                    "label": "Huisnummertoevoeging",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "bII"
+                    ]
                 },
                 {
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "display": "NLD"
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_humanname",
-            "children": [
-                {
-                    "label": "Voornamen",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_contact_point",
-            "children": [
-                {
-                    "label": "r3.nl_core_contact_point.system",
-                    "type": "SINGLE_VALUE",
-                    "display": "phone"
                 },
                 {
-                    "label": "r3.nl_core_contact_point.value",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
                     "type": "SINGLE_VALUE",
-                    "display": "0612345990"
+                    "display": "Ja"
                 },
                 {
-                    "label": "r3.nl_core_contact_point.use",
+                    "label": "Municipality",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_contact_point",
-            "children": [
-                {
-                    "label": "r3.nl_core_contact_point.system",
-                    "type": "SINGLE_VALUE",
-                    "display": "email"
+                    "display": "Weesp"
                 },
                 {
-                    "label": "r3.nl_core_contact_point.value",
+                    "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "devries@work.com"
+                    "display": "1012AB"
                 },
                 {
-                    "label": "r3.nl_core_contact_point.use",
+                    "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "display": "Straatweg"
                 }
             ]
         }

@@ -2,20 +2,152 @@
     "label": "Zorgverlener",
     "children": [
         {
-            "label": "r3.nl_core_practitioner.group_details",
+            "children": []
+        },
+        {
+            "label": "Zorgverlener identificatie nummer",
             "children": [
                 {
-                    "label": "Zorgverlener identificatie nummer",
+                    "label": "AGB",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "BIG",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Overig(e)",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "16e29a33-8fdf-11ec-6379-020000000000"
                     ]
+                },
+                {
+                    "label": "UZI",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         },
         {
-            "label": "r3.nl_core_address",
+            "label": "Contactgegevens",
             "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Vast telefoonnummer (LL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
+                    ]
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "phone"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "+31434073576"
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "email"
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "display": "huisarts@huisarts.nl"
+                }
+            ]
+        },
+        {
+            "label": "Naam",
+            "children": [
+                {
+                    "label": "Geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Initialen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Roepnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorkeursvolgorde van de naamdelen.",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voornaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Adres informatie",
+            "children": [
+                {
+                    "label": "Aanduiding bij huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Werkadres (WP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                    ]
+                },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
@@ -24,7 +156,37 @@
                 {
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Extra informatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gemeente",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "45"
+                },
+                {
+                    "label": "Huisnummertoevoeging",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Land",
+                    "type": "SINGLE_VALUE",
+                    "display": "Nederland"
+                },
+                {
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Municipality",
@@ -32,69 +194,14 @@
                     "display": "Maastricht"
                 },
                 {
-                    "label": "Gemeente",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "r3.nl_core_address.postalCode",
+                    "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "display": "6245HK"
                 },
                 {
-                    "label": "Land",
+                    "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Nederland"
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_humanname",
-            "children": [
-                {
-                    "label": "Voornamen",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_contact_point",
-            "children": [
-                {
-                    "label": "r3.nl_core_contact_point.system",
-                    "type": "SINGLE_VALUE",
-                    "display": "phone"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.value",
-                    "type": "SINGLE_VALUE",
-                    "display": "+31434073576"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.use",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
-                }
-            ]
-        },
-        {
-            "label": "r3.nl_core_contact_point",
-            "children": [
-                {
-                    "label": "r3.nl_core_contact_point.system",
-                    "type": "SINGLE_VALUE",
-                    "display": "email"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.value",
-                    "type": "SINGLE_VALUE",
-                    "display": "huisarts@huisarts.nl"
-                },
-                {
-                    "label": "r3.nl_core_contact_point.use",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "display": "Valkendael"
                 }
             ]
         }

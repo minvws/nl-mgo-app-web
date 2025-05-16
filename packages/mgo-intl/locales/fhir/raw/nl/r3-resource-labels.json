@@ -98,7 +98,6 @@
     "r3.nl_core_patient.life_stance": "Levensovertuiging",
     "r3.nl_core_patient.nationality.code": "Nationaliteit",
     "r3.nl_core_practitionerrole": "Zorgverlener rol",
-    "r3.nl_core_practitionerrole.telecom": "Contactgegevens",
     "r3.zib_administration_agreement.performer": "Uitvoerder",
     "r3.zib_administration_agreement.performer.actor": "Specialist",
     "r3.zib_administration_agreement.performer.on_behalf_of": "Op verzoek van",

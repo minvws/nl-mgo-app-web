@@ -63,6 +63,7 @@
     "fhir.x.language_proficiency": "Taalvaardigheid",
     "fhir.x.laterality": "Zijde",
     "fhir.x.note": "Toelichting",
+    "fhir.x.other": "Overig(e)",
     "fhir.x.participant": "Deelnemer",
     "fhir.x.patient": "Patiënt",
     "fhir.x.performer": "Auteur",
@@ -73,6 +74,7 @@
     "fhir.x.status": "Status",
     "fhir.x.stop_type": "Beëindigingsreden",
     "fhir.x.subject": "Onderwerp",
+    "fhir.x.telecom": "Contactgegevens",
     "fhir.x.title": "Titel",
     "fhir.x.type": "Type"
 }

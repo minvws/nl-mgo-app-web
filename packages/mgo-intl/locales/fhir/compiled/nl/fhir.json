@@ -391,6 +391,12 @@
       "value": "Toelichting"
     }
   ],
+  "fhir.x.other": [
+    {
+      "type": 0,
+      "value": "Overig(e)"
+    }
+  ],
   "fhir.x.participant": [
     {
       "type": 0,
@@ -449,6 +455,12 @@
     {
       "type": 0,
       "value": "Onderwerp"
+    }
+  ],
+  "fhir.x.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "fhir.x.title": [

@@ -11,41 +11,41 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 
 ## [Common clinical dataset](bgz) (R3)
 
-| profile                                | summary              | detail               |
-| -------------------------------------- | -------------------- | -------------------- |
-| [zib-AdministrationAgreement]          | :white_large_square: | :white_check_mark:   |
-| [zib-AdvanceDirective]                 | :white_large_square: | :white_check_mark:   |
-| [zib-AlcoholUse]                       | :white_large_square: | :white_check_mark:   |
-| [zib-Alert]                            | :white_large_square: | :white_check_mark:   |
-| [zib-AllergyIntolerance]               | :white_large_square: | :white_check_mark:   |
-| [zib-BloodPressure]                    | :white_large_square: | :white_check_mark:   |
-| [zib-BodyHeight]                       | :white_large_square: | :white_check_mark:   |
-| [zib-BodyWeight]                       | :white_large_square: | :white_check_mark:   |
-| [zib-DrugUse]                          | :white_large_square: | :white_check_mark:   |
-| [zib-Encounter]                        | :white_large_square: | :white_check_mark:   |
-| [zib-FunctionalOrMentalStatus]         | :white_large_square: | :white_check_mark:   |
-| [zib-LaboratoryTestResult-Observation] | :white_check_mark:   | :white_check_mark:   |
-| [zib-LaboratoryTestResult-Specimen]    | :white_large_square: | :white_check_mark:   |
-| [zib-LivingSituation]                  | :white_large_square: | :white_check_mark:   |
-| [zib-MedicalDevice]                    | :white_large_square: | :white_check_mark:   |
-| [zib-MedicalDeviceProduct]             | :white_large_square: | :white_check_mark:   |
-| [zib-MedicalDeviceRequest]             | :white_large_square: | :white_check_mark:   |
-| [zib-MedicationUse]                    | :white_check_mark:   | :white_check_mark:   |
-| [zib-MedicationAgreement]              | :white_large_square: | :white_check_mark:   |
-| [zib-NutritionAdvice]                  | :white_large_square: | :white_check_mark:   |
-| [zib-Payer]                            | :white_large_square: | :white_check_mark:   |
-| [zib-Problem]                          | :white_large_square: | :white_check_mark:   |
-| [zib-Procedure]                        | :white_large_square: | :white_check_mark:   |
-| [zib-ProcedureRequest]                 | :white_large_square: | :white_large_square: |
-| [zib-TobaccoUse]                       | :white_large_square: | :white_check_mark:   |
-| [zib-TreatmentDirective]               | :white_large_square: | :white_check_mark:   |
-| [zib-Vaccination]                      | :white_large_square: | :white_check_mark:   |
-| [zib-VaccinationRecommendation]        | :white_large_square: | :white_check_mark:   |
-| [eAfspraak-Appointment]                | :white_large_square: | :white_check_mark:   |
-| [nl-core-patient]                      | :white_large_square: | :white_check_mark:   |
-| [nl-core-practitioner]                 |                      | :white_large_square: |
-| [nl-core-practitionerrole]             |                      | :white_check_mark:   |
-| [nl-core-organization]                 |                      | :white_check_mark:   |
+| profile                                | summary              | detail             |
+| -------------------------------------- | -------------------- | ------------------ |
+| [zib-AdministrationAgreement]          | :white_large_square: | :white_check_mark: |
+| [zib-AdvanceDirective]                 | :white_large_square: | :white_check_mark: |
+| [zib-AlcoholUse]                       | :white_large_square: | :white_check_mark: |
+| [zib-Alert]                            | :white_large_square: | :white_check_mark: |
+| [zib-AllergyIntolerance]               | :white_large_square: | :white_check_mark: |
+| [zib-BloodPressure]                    | :white_large_square: | :white_check_mark: |
+| [zib-BodyHeight]                       | :white_large_square: | :white_check_mark: |
+| [zib-BodyWeight]                       | :white_large_square: | :white_check_mark: |
+| [zib-DrugUse]                          | :white_large_square: | :white_check_mark: |
+| [zib-Encounter]                        | :white_large_square: | :white_check_mark: |
+| [zib-FunctionalOrMentalStatus]         | :white_large_square: | :white_check_mark: |
+| [zib-LaboratoryTestResult-Observation] | :white_check_mark:   | :white_check_mark: |
+| [zib-LaboratoryTestResult-Specimen]    | :white_large_square: | :white_check_mark: |
+| [zib-LivingSituation]                  | :white_large_square: | :white_check_mark: |
+| [zib-MedicalDevice]                    | :white_large_square: | :white_check_mark: |
+| [zib-MedicalDeviceProduct]             | :white_large_square: | :white_check_mark: |
+| [zib-MedicalDeviceRequest]             | :white_large_square: | :white_check_mark: |
+| [zib-MedicationUse]                    | :white_check_mark:   | :white_check_mark: |
+| [zib-MedicationAgreement]              | :white_large_square: | :white_check_mark: |
+| [zib-NutritionAdvice]                  | :white_large_square: | :white_check_mark: |
+| [zib-Payer]                            | :white_large_square: | :white_check_mark: |
+| [zib-Problem]                          | :white_large_square: | :white_check_mark: |
+| [zib-Procedure]                        | :white_large_square: | :white_check_mark: |
+| [zib-ProcedureRequest]                 | :white_large_square: | :white_check_mark: |
+| [zib-TobaccoUse]                       | :white_large_square: | :white_check_mark: |
+| [zib-TreatmentDirective]               | :white_large_square: | :white_check_mark: |
+| [zib-Vaccination]                      | :white_large_square: | :white_check_mark: |
+| [zib-VaccinationRecommendation]        | :white_large_square: | :white_check_mark: |
+| [eAfspraak-Appointment]                | :white_large_square: | :white_check_mark: |
+| [nl-core-patient]                      | :white_large_square: | :white_check_mark: |
+| [nl-core-practitioner]                 |                      | :white_check_mark: |
+| [nl-core-practitionerrole]             |                      | :white_check_mark: |
+| [nl-core-organization]                 |                      | :white_check_mark: |
 
 ## [General practicioner](gp) (R3)
 

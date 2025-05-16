@@ -2,9 +2,8 @@ import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type HumanName } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';
-import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
+import { type MgoElementMeta } from '../../../types';
 import { map } from '../../../utils';
-import { uiSchemaGroup } from './uiSchemaGroup';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-humanname'; // NOSONAR
 
@@ -80,11 +79,3 @@ export function parseNlCoreHumanname(value: Nullable<HumanName>): NlCoreHumannam
         text: parse.string(value?.text),
     };
 }
-
-/**
- * @deprecated This object should not be used - use the parseNlCoreHumanname method instead.
- */
-export const nlCoreHumanname = {
-    parse: parseNlCoreHumanname,
-    uiSchemaGroup,
-} satisfies ResourceElementConfig<HumanName, NlCoreHumanname>;

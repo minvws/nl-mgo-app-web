@@ -1,8 +1,7 @@
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type ContactPoint } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
-import { uiSchemaGroup } from './uiSchemaGroup';
+import { type MgoElementMeta } from '../../../types';
 
 /*
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317022
@@ -36,11 +35,3 @@ export function parseNlCoreContactpoint(value: Nullable<ContactPoint>): NlCoreCo
         use: parse.code(value?.use),
     };
 }
-
-/**
- * @deprecated This object should not be used - use the parseNlCoreContactpoint method instead.
- */
-export const nlCoreContactpoint = {
-    parse: parseNlCoreContactpoint,
-    uiSchemaGroup,
-} satisfies ResourceElementConfig<ContactPoint, NlCoreContactpoint>;

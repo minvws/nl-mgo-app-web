@@ -4,13 +4,63 @@
     "resourceType": "Practitioner",
     "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
     "fhirVersion": "R3",
-    "identifier": [
+    "identifier": {
+        "uzi": null,
+        "agb": null,
+        "big": null,
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16e29a33-8fdf-11ec-6379-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": [
         {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "16e29a33-8fdf-11ec-6379-020000000000",
-            "type": null
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "LL",
+                        "display": "Vast telefoonnummer",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31434073576"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "huisarts@huisarts.nl"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
         }
     ],
     "name": [
@@ -81,51 +131,6 @@
             "country": {
                 "_type": "string",
                 "value": "Nederland"
-            }
-        }
-    ],
-    "telecom": [
-        {
-            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
-            "telecomType": {
-                "_ext": true,
-                "_type": "codeableConcept",
-                "text": null,
-                "coding": [
-                    {
-                        "code": "LL",
-                        "display": "Vast telefoonnummer",
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
-                    }
-                ]
-            },
-            "system": {
-                "_type": "code",
-                "value": "phone"
-            },
-            "value": {
-                "_type": "string",
-                "value": "+31434073576"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
-            }
-        },
-        {
-            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
-            "telecomType": null,
-            "system": {
-                "_type": "code",
-                "value": "email"
-            },
-            "value": {
-                "_type": "string",
-                "value": "huisarts@huisarts.nl"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
             }
         }
     ]

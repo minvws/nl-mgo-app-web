@@ -4,15 +4,21 @@
     "resourceType": "Practitioner",
     "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
     "fhirVersion": "R3",
-    "identifier": [
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "16efa4a3-8fdf-11ec-1655-020000000000",
-            "type": null
-        }
-    ],
+    "identifier": {
+        "uzi": null,
+        "agb": null,
+        "big": null,
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16efa4a3-8fdf-11ec-1655-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": null,
     "name": [
         {
             "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
@@ -48,6 +54,5 @@
             "text": null
         }
     ],
-    "address": null,
-    "telecom": null
+    "address": null
 }

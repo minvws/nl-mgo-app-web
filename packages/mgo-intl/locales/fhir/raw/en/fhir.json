@@ -63,6 +63,7 @@
     "fhir.x.language_proficiency": "",
     "fhir.x.laterality": "",
     "fhir.x.note": "",
+    "fhir.x.other": "",
     "fhir.x.participant": "",
     "fhir.x.patient": "",
     "fhir.x.performer": "",
@@ -73,6 +74,7 @@
     "fhir.x.status": "",
     "fhir.x.stop_type": "",
     "fhir.x.subject": "",
+    "fhir.x.telecom": "",
     "fhir.x.title": "",
     "fhir.x.type": ""
 }

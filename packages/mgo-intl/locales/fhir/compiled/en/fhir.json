@@ -127,6 +127,8 @@
   ],
   "fhir.x.note": [
   ],
+  "fhir.x.other": [
+  ],
   "fhir.x.participant": [
   ],
   "fhir.x.patient": [
@@ -146,6 +148,8 @@
   "fhir.x.stop_type": [
   ],
   "fhir.x.subject": [
+  ],
+  "fhir.x.telecom": [
   ],
   "fhir.x.title": [
   ],

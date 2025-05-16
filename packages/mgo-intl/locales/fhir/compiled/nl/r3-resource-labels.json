@@ -593,12 +593,6 @@
       "value": "Zorgverlener rol"
     }
   ],
-  "r3.nl_core_practitionerrole.telecom": [
-    {
-      "type": 0,
-      "value": "Contactgegevens"
-    }
-  ],
   "r3.zib_administration_agreement.performer": [
     {
       "type": 0,

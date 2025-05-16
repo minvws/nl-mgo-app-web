@@ -34,7 +34,8 @@
                     }
                 ]
             },
-            "given": ["Henk"]
+            "given": ["Henk"],
+            "text": "Henk de Vries"
         }
     ],
     "telecom": [

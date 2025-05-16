@@ -1,9 +1,8 @@
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type Address } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
+import { type MgoElementMeta } from '../../../types';
 import { map } from '../../../utils';
-import { uiSchemaGroup } from './uiSchemaGroup';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NOSONAR
 
@@ -82,11 +81,3 @@ export function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
         country: parse.string(value?.country),
     };
 }
-
-/**
- * @deprecated This object should not be used - use the parseNlCoreAddress method instead.
- */
-export const nlCoreAddress = {
-    parse: parseNlCoreAddress,
-    uiSchemaGroup,
-} satisfies ResourceElementConfig<Address, NlCoreAddress>;

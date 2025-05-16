@@ -4,34 +4,81 @@
     "resourceType": "Practitioner",
     "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
     "fhirVersion": "R3",
-    "identifier": [
-        {
+    "identifier": {
+        "uzi": {
             "_type": "identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
             "value": "129854656",
             "type": null
         },
-        {
+        "agb": {
             "_type": "identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
             "value": "01069857",
             "type": null
         },
-        {
+        "big": {
             "_type": "identifier",
             "use": null,
             "system": "http://fhir.nl/fhir/NamingSystem/big",
             "value": "12345678912",
             "type": null
         },
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16d6f97b-8fdf-11ec-2007-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": [
         {
-            "_type": "identifier",
-            "use": null,
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
-            "value": "16d6f97b-8fdf-11ec-2007-020000000000",
-            "type": null
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "MC",
+                        "display": "Mobiel telefoonnummer",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "0612345990"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "devries@work.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
         }
     ],
     "name": [
@@ -57,7 +104,10 @@
                 "initials": null,
                 "callName": null
             },
-            "text": null
+            "text": {
+                "_type": "string",
+                "value": "Henk de Vries"
+            }
         }
     ],
     "address": [
@@ -123,51 +173,6 @@
             "country": {
                 "_type": "string",
                 "value": "NLD"
-            }
-        }
-    ],
-    "telecom": [
-        {
-            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
-            "telecomType": {
-                "_ext": true,
-                "_type": "codeableConcept",
-                "text": null,
-                "coding": [
-                    {
-                        "code": "MC",
-                        "display": "Mobiel telefoonnummer",
-                        "system": "http://hl7.org/fhir/v3/AddressUse"
-                    }
-                ]
-            },
-            "system": {
-                "_type": "code",
-                "value": "phone"
-            },
-            "value": {
-                "_type": "string",
-                "value": "0612345990"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
-            }
-        },
-        {
-            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
-            "telecomType": null,
-            "system": {
-                "_type": "code",
-                "value": "email"
-            },
-            "value": {
-                "_type": "string",
-                "value": "devries@work.com"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
             }
         }
     ]
