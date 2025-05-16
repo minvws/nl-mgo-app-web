@@ -2,6 +2,25 @@
 
 This repository contains the "Mijn Gezondheidsoverzicht", or MGO, application and components. It is a monorepo which contains multiple individual apps and packages. To [learn more about the MGO app itself][mgo-about] please visit the `about` page.
 
+## Disclaimer
+
+This project and all associated code serve solely as documentation
+and demonstration purposes to illustrate potential system
+communication patterns and architectures.
+
+This codebase:
+
+- Is NOT intended for production use
+- Does NOT represent a final specification
+- Should NOT be considered feature-complete or secure
+- May contain errors, omissions, or oversimplified implementations
+- Has NOT been tested or hardened for real-world scenarios
+
+The code examples are only meant to help understand concepts and demonstrate possibilities.
+
+By using or referencing this code, you acknowledge that you do so at your own
+risk and that the authors assume no liability for any consequences of its use.
+
 ## Documentation
 
 - [About the app][mgo-about]
@@ -91,3 +110,18 @@ This repository follows the [REUSE Specfication v3.0](https://reuse.software/spe
 [mgo-deployment]: ./docs/deployment.md
 [mgo-glossary]: ./docs/glossary.md
 [mgo-intl]: ./packages/mgo-intl/README.md
+
+## Contributing
+
+If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull
+request on the GitHub repository of this package.
+
+## License
+
+The source code is released under the [EUPL license](./LICENSES/EUPL-1.2.txt).
+The documentation is released under the [CC0 license](./LICENSES/CC0-1.0.txt).
+The EUPL 1.2 and the CC0 do not apply to photos, videos, infographics, fonts or other forms of media.
+Specifically the rijkslogo and rijkshuisstijl have specific [terms of use](./LICENSES/LicenseRef-Rijkshuisstijl.txt).
+
+This repository follows the [REUSE Specfication v3.3](https://reuse.software/spec/).
+Please see [REUSE.toml](./REUSE.toml) and the individual `*.license` files for copyright and license information.
