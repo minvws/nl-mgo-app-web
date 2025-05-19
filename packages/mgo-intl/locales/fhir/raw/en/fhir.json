@@ -43,6 +43,7 @@
     "fhir.unknown": "",
     "fhir.x.amount": "",
     "fhir.x.author": "",
+    "fhir.x.body_site": "",
     "fhir.x.category": "",
     "fhir.x.code": "",
     "fhir.x.component": "",
@@ -74,6 +75,7 @@
     "fhir.x.status": "",
     "fhir.x.stop_type": "",
     "fhir.x.subject": "",
+    "fhir.x.target": "",
     "fhir.x.telecom": "",
     "fhir.x.title": "",
     "fhir.x.type": ""

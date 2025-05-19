@@ -58,9 +58,9 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 | ~~zib-MedicationAgreemen~~ |                      |                      |
 | ~~zib-AllergyIntoleranc~~  |                      |                      |
 | [nl-core-episodeofCare]    | :white_large_square: | :white_check_mark:   |
-| [gp-DiagnosticResult]      | :white_large_square: | :white_large_square: |
-| [gp-Encounter]             | :white_large_square: | :white_large_square: |
-| [gp-EncounterReport]       | :white_large_square: | :white_large_square: |
+| [gp-DiagnosticResult]      | :white_large_square: | :white_check_mark:   |
+| [gp-Encounter]             | :white_large_square: | :white_check_mark:   |
+| [gp-EncounterReport]       | :white_large_square: | :white_check_mark:   |
 | [gp-LaboratoryResult]      | :white_check_mark:   | :white_check_mark:   |
 | [gp-JournalEntry]          |                      | :white_large_square: |
 

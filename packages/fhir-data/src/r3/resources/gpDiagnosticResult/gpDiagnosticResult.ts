@@ -1,41 +1,32 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
-import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
+import { generateUiSchema } from '../../../ui/generator';
+import { parseZibGeneralMeasurementBase } from '../zibGeneralMeasurement/zibGeneralMeasurement';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult'; // NOSONAR
 
 export type GpDiagnosticResult = ReturnType<typeof parseGpDiagnosticResult>;
 
+/**
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316990
+ */
 function parseGpDiagnosticResult(resource: Observation) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        identifier: map(resource.identifier, parse.identifier),
-        context: parse.reference(resource.context),
-        subject: parse.reference(resource.subject),
-        effective: parse.dateTime(resource.effectiveDateTime),
-        performer: map(resource.performer, parse.reference),
-        status: parse.string(resource.status),
-        code: parse.codeableConcept(resource.code),
-        ...oneOfValueX(resource, [
-            'quantity',
-            'codeableConcept',
-            'string',
-            'boolean',
-            'range',
-            'dateTime',
-            'period',
-        ]),
-        comment: parse.string(resource.comment),
-        method: parse.codeableConcept(resource.method),
+        ...parseZibGeneralMeasurementBase(resource),
+
+        episodeOfCare: parse.extensionMultiple(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/extension-context-nl-core-episodeofcare', // NOSONAR
+            'reference'
+        ),
     };
 }
 
 export const gpDiagnosticResult = {
     profile,
     parse: parseGpDiagnosticResult,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Observation, GpDiagnosticResult>;

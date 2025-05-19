@@ -33,6 +33,10 @@ export * from './zibDrugUse/zibDrugUse';
 export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter';
 export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';
 export {
+    zibGeneralMeasurement,
+    type ZibGeneralMeasurement,
+} from './zibGeneralMeasurement/zibGeneralMeasurement';
+export {
     zibLaboratoryTestResultObservation,
     type ZibLaboratoryTestResultObservation,
 } from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';

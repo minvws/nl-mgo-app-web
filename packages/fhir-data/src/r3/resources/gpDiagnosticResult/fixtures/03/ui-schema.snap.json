@@ -5,8 +5,10 @@
             "children": [
                 {
                     "label": "Anatomische locatie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Oraal onder de tong"
+                    ]
                 },
                 {
                     "label": "Auteur",
@@ -19,32 +21,27 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "polsfrequentie (1875 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
-                        "Heart rate Peripheral artery by Palpation (8893-0 in code systeem http://loinc.org)"
+                        "temperatuur patiënt (oraal gemeten) (1915 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                        "Lichaamstemperatuur [temperatuur] in ^patiënt (8310-5 in code systeem http://loinc.org)"
                     ]
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "3 mei 2023"
+                    "display": "26 oktober 2024"
                 },
                 {
                     "label": "Episode",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Boezemfibrilleren/-fladderen"
+                        "Keelpijn"
                     ]
-                },
-                {
-                    "label": "Gerelateerde meetuitslagen",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "bb4f140b-041c-11ec-6152-020000000000"
+                        "bf98085b-041c-11ec-1328-020000000000"
                     ]
                 },
                 {
@@ -71,7 +68,23 @@
                 {
                     "label": "Uitslag waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "120 /min"
+                    "display": "37.3 Cel"
+                }
+            ]
+        },
+        {
+            "label": "Gerelateerde meetuitslagen",
+            "children": [
+                {
+                    "label": "Gerelateerde meetuitslag",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Variant-1",
+                    "reference": "Observation/example-genetics-1"
+                },
+                {
+                    "label": "Type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

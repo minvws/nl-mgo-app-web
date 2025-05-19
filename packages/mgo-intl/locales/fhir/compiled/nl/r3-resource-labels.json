@@ -137,12 +137,6 @@
       "value": "Diagnose"
     }
   ],
-  "r3.gp_diagnostic_result.code.coding.nhg_table_45": [
-    {
-      "type": 0,
-      "value": "Onderzoek"
-    }
-  ],
   "r3.gp_diagnostic_result.comment": [
     {
       "type": 0,
@@ -341,6 +335,36 @@
       "value": "Document manifest"
     }
   ],
+  "r3.ihe_mhd_document_manifest.content.p_attachment": [
+    {
+      "type": 0,
+      "value": "Document"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.content.p_reference": [
+    {
+      "type": 0,
+      "value": "Gerelateerd aan"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.created": [
+    {
+      "type": 0,
+      "value": "Aangemaakt op"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.master_identifier": [
+    {
+      "type": 0,
+      "value": "Identifier"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference": [
+    {
+      "type": 0,
+      "value": "Document"
+    }
+  ],
   "r3.ihe_mhd_minimal_document_reference.author": [
     {
       "type": 0,
@@ -357,6 +381,12 @@
     {
       "type": 0,
       "value": "Inhoud"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment": [
+    {
+      "type": 0,
+      "value": "Bijlage"
     }
   ],
   "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
@@ -389,6 +419,36 @@
       "value": "Url"
     }
   ],
+  "r3.ihe_mhd_minimal_document_reference.content.format": [
+    {
+      "type": 0,
+      "value": "Formaat"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context": [
+    {
+      "type": 0,
+      "value": "Klinische context"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.facility_type": [
+    {
+      "type": 0,
+      "value": "Faciliteit"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.practice_setting": [
+    {
+      "type": 0,
+      "value": "Aanvullende details"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.source_patient_info": [
+    {
+      "type": 0,
+      "value": "Patiënt informatie"
+    }
+  ],
   "r3.ihe_mhd_minimal_document_reference.indexed": [
     {
       "type": 0,
@@ -399,6 +459,18 @@
     {
       "type": 0,
       "value": "Identifier"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to": [
+    {
+      "type": 0,
+      "value": "Gerelateerd aan"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to.target": [
+    {
+      "type": 0,
+      "value": "Document"
     }
   ],
   "r3.ihe_mhd_minimal_document_reference.security_label": [

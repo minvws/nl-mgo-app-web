@@ -1,0 +1,68 @@
+{
+    "id": "zib-generalmeasurement-01",
+    "referenceId": "Observation/zib-generalmeasurement-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-GeneralMeasurement",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1a63f585-8fdf-11ec-7434-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "performer": null,
+    "method": null,
+    "bodySite": null,
+    "comment": null,
+    "status": {
+        "resultStatusCodelist": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "final",
+                    "display": "Final",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+                }
+            ]
+        }
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "273513009",
+                "display": "Health of the Nation Outcome Scale (generic version) (assessment scale)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "related": [
+        {
+            "type": null,
+            "target": {
+                "_type": "reference",
+                "reference": "Observation/zib-generalmeasurement-result-01",
+                "display": "MeasurementResult - Health of the Nation Outcome Scale - summated (generic version)"
+            }
+        },
+        {
+            "type": null,
+            "target": {
+                "_type": "reference",
+                "reference": "Observation/zib-generalmeasurement-result-02",
+                "display": "MeasurementResult - Health of the Nation Outcome Scale item 1 - aggressive/disruptive behavior"
+            }
+        }
+    ]
+}

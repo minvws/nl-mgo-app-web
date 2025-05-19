@@ -13,17 +13,12 @@
             "type": null
         }
     ],
-    "context": {
-        "_type": "reference",
-        "reference": "Encounter/ont-ver-gpdata-encounter-contact01",
-        "display": "Consult voor Boezemfibrilleren/-fladderen met Dokter Bernard"
-    },
     "subject": {
         "_type": "reference",
         "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
         "display": "Jacqueline XXX_Cevat"
     },
-    "effective": {
+    "effectiveDateTime": {
         "_type": "dateTime",
         "value": "2023-05-03"
     },
@@ -34,9 +29,15 @@
             "display": "Dokter Bernard"
         }
     ],
-    "status": {
+    "valueString": {
         "_type": "string",
-        "value": "final"
+        "value": "linker pols"
+    },
+    "method": null,
+    "bodySite": null,
+    "comment": null,
+    "status": {
+        "resultStatusCodelist": null
     },
     "code": {
         "_type": "codeableConcept",
@@ -49,10 +50,13 @@
             }
         ]
     },
-    "valueString": {
-        "_type": "string",
-        "value": "linker pols"
-    },
-    "comment": null,
-    "method": null
+    "related": null,
+    "episodeOfCare": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-k78",
+            "display": "Boezemfibrilleren/-fladderen"
+        }
+    ]
 }

@@ -5,7 +5,7 @@
             "label": "r3.ihe_mhd_document_manifest",
             "children": [
                 {
-                    "label": "r3.ihe_mhd_document_manifest.created",
+                    "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "display": "10 maart 2020"
                 },

@@ -87,6 +87,8 @@
   ],
   "fhir.x.author": [
   ],
+  "fhir.x.body_site": [
+  ],
   "fhir.x.category": [
   ],
   "fhir.x.code": [
@@ -148,6 +150,8 @@
   "fhir.x.stop_type": [
   ],
   "fhir.x.subject": [
+  ],
+  "fhir.x.target": [
   ],
   "fhir.x.telecom": [
   ],

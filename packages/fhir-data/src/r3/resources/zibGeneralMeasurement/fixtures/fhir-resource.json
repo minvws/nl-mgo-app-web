@@ -1,0 +1,72 @@
+{
+    "resourceType": "Observation",
+    "id": "zib-generalmeasurement-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-GeneralMeasurement"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Observatie/bepaling. Subject: Irma Jongeneel-de Haas. Id: 1a63f585-8fdf-11ec-7434-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Categorie: <span title=\"survey (survey - observation-category)\">survey</span>, Status: definitief</caption><tbody><tr><th>Gerelateerd</th><td><ul><li>MeasurementResult - Health of the Nation Outcome Scale - summated (generic version)</li><li>MeasurementResult - Health of the Nation Outcome Scale item 1 - aggressive/disruptive behavior</li></ul></td></tr><tr><th>Code</th><th>Waarde</th></tr><tr><td><span title=\"Health of the Nation Outcome Scale (generic version) (assessment scale) (273513009 - SNOMED CT)\">Health of the Nation Outcome Scale (generic version) (assessment scale)</span></td><td /></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1a63f585-8fdf-11ec-7434-020000000000"
+        }
+    ],
+    "status": "final",
+    "_status": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1",
+                            "code": "final",
+                            "display": "Final"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "survey",
+                    "display": "survey"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "273513009",
+                "display": "Health of the Nation Outcome Scale (generic version) (assessment scale)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "related": [
+        {
+            "target": {
+                "reference": "Observation/zib-generalmeasurement-result-01",
+                "display": "MeasurementResult - Health of the Nation Outcome Scale - summated (generic version)"
+            }
+        },
+        {
+            "target": {
+                "reference": "Observation/zib-generalmeasurement-result-02",
+                "display": "MeasurementResult - Health of the Nation Outcome Scale item 1 - aggressive/disruptive behavior"
+            }
+        }
+    ]
+}

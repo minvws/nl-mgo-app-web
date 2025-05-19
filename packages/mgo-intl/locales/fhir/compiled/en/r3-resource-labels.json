@@ -45,8 +45,6 @@
   ],
   "r3.gp_diagnostic_result": [
   ],
-  "r3.gp_diagnostic_result.code.coding.nhg_table_45": [
-  ],
   "r3.gp_diagnostic_result.comment": [
   ],
   "r3.gp_diagnostic_result.method": [
@@ -113,11 +111,23 @@
   ],
   "r3.ihe_mhd_document_manifest": [
   ],
+  "r3.ihe_mhd_document_manifest.content.p_attachment": [
+  ],
+  "r3.ihe_mhd_document_manifest.content.p_reference": [
+  ],
+  "r3.ihe_mhd_document_manifest.created": [
+  ],
+  "r3.ihe_mhd_document_manifest.master_identifier": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference": [
+  ],
   "r3.ihe_mhd_minimal_document_reference.author": [
   ],
   "r3.ihe_mhd_minimal_document_reference.class": [
   ],
   "r3.ihe_mhd_minimal_document_reference.content": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment": [
   ],
   "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
   ],
@@ -129,9 +139,23 @@
   ],
   "r3.ihe_mhd_minimal_document_reference.content.attachment.url": [
   ],
+  "r3.ihe_mhd_minimal_document_reference.content.format": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.facility_type": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.practice_setting": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.source_patient_info": [
+  ],
   "r3.ihe_mhd_minimal_document_reference.indexed": [
   ],
   "r3.ihe_mhd_minimal_document_reference.master_identifier": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to": [
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to.target": [
   ],
   "r3.ihe_mhd_minimal_document_reference.security_label": [
   ],

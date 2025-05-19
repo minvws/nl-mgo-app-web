@@ -271,6 +271,12 @@
       "value": "Auteur"
     }
   ],
+  "fhir.x.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
   "fhir.x.category": [
     {
       "type": 0,
@@ -455,6 +461,12 @@
     {
       "type": 0,
       "value": "Onderwerp"
+    }
+  ],
+  "fhir.x.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerd object"
     }
   ],
   "fhir.x.telecom": [
