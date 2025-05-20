@@ -2,8 +2,12 @@
     "label": "Onbekend",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
+                {
+                    "label": "Aangemaakt op",
+                    "type": "SINGLE_VALUE",
+                    "display": "10 juni 2019 om 13:13:21 GMT+2"
+                },
                 {
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
@@ -11,31 +15,21 @@
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
-                    "label": "Aangemaakt op",
-                    "type": "SINGLE_VALUE",
-                    "display": "10 juni 2019 om 13:13:21 GMT+2"
-                },
-                {
-                    "label": "Identifier",
-                    "type": "SINGLE_VALUE",
-                    "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
-                },
-                {
-                    "label": "Status",
-                    "type": "SINGLE_VALUE",
-                    "display": "current"
-                },
-                {
-                    "label": "Beveiligingslabel",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "ontslagbrief (11071000146104 in code systeem http://snomed.info/sct)"
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Bijlage",
+            "children": [
+                {
+                    "type": "DOWNLOAD_LINK",
+                    "label": "Onbekend",
+                    "url": null
                 }
             ]
         },
@@ -48,16 +42,21 @@
                     "display": [
                         "De Hoed"
                     ]
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         },
         {
-            "label": "Inhoud",
+            "label": "Opties",
             "children": [
                 {
-                    "label": "Inhoud",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle documentgegevens",
+                    "reference": "DocumentReference/pdfa-documentreference-01"
                 }
             ]
         }

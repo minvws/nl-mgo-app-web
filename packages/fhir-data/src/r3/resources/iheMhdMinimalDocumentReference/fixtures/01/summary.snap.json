@@ -1,23 +1,24 @@
 {
-    "label": "Onbekend",
+    "label": "Kopie van ontslagbrief",
     "children": [
         {
             "children": [
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "10 juni 2019 om 13:13"
+                    "display": "10 juni 2019 om 13:13:21 GMT+2"
                 },
                 {
                     "label": "Onderwerp",
-                    "type": "SINGLE_VALUE",
-                    "display": "Paul XXX_Mesker"
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
                 },
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ontslagbrief"
+                        "ontslagbrief (11071000146104 in code systeem http://snomed.info/sct)"
                     ]
                 }
             ]
@@ -26,9 +27,9 @@
             "label": "Bijlage",
             "children": [
                 {
-                    "type": "DOWNLOAD_LINK",
-                    "label": "Onbekend",
-                    "url": null
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Kopie van ontslagbrief",
+                    "reference": "Binary/pdfa-binary-01"
                 }
             ]
         },

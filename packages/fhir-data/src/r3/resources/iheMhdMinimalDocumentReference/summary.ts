@@ -2,7 +2,8 @@ import { type HealthUiSchemaFunction } from '../../../ui';
 import { organization } from '../../../ui/common/organization/organization';
 import { summaryOptions } from '../../../ui/common/summaryOptions/summaryOptions';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
-import { i18n } from './uiSchema';
+
+const i18n = 'r3.ihe_mhd_minimal_document_reference';
 
 export const summary: HealthUiSchemaFunction<IheMhdMinimalDocumentReference> = (
     resource,

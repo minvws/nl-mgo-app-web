@@ -1,23 +1,24 @@
 {
-    "label": "Kopie van ontslagbrief",
+    "label": "Onbekend",
     "children": [
         {
             "children": [
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "10 juni 2019 om 13:13"
+                    "display": "23 december 2005 om 23:43:41 GMT+1"
                 },
                 {
                     "label": "Onderwerp",
-                    "type": "SINGLE_VALUE",
-                    "display": "Paul XXX_Mesker"
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": "Patient/xcda"
                 },
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ontslagbrief"
+                        "Outpatient Note (34108-1 in code systeem http://loinc.org)"
                     ]
                 }
             ]
@@ -26,9 +27,9 @@
             "label": "Bijlage",
             "children": [
                 {
-                    "type": "DOWNLOAD_BINARY",
-                    "label": "Kopie van ontslagbrief",
-                    "reference": "Binary/pdfa-binary-01"
+                    "type": "DOWNLOAD_LINK",
+                    "label": "Onbekend",
+                    "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510"
                 }
             ]
         },
@@ -37,10 +38,8 @@
             "children": [
                 {
                     "label": "Specialist",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "De Hoed"
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Zorgaanbieder",
