@@ -3,7 +3,7 @@
         "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
         "text": {
             "_type": "string",
-            "value": "Hendrik Johan Willem Schemer"
+            "value": "Hendrik J.W. Schemer"
         },
         "family": {
             "humannameOwnPrefix": null,
@@ -20,17 +20,18 @@
                 {
                     "_type": "string",
                     "value": "Hendrik"
-                },
-                {
-                    "_type": "string",
-                    "value": "Johan"
-                },
-                {
-                    "_type": "string",
-                    "value": "Willem"
                 }
             ],
-            "initials": null
+            "initials": [
+                {
+                    "_type": "string",
+                    "value": "J."
+                },
+                {
+                    "_type": "string",
+                    "value": "W."
+                }
+            ]
         },
         "prefix": null,
         "suffix": null,

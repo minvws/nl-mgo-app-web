@@ -2,57 +2,6 @@
     "label": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
     "children": [
         {
-            "label": "nl_name_information",
-            "children": [
-                {
-                    "label": "nl_name_information.text",
-                    "type": "SINGLE_VALUE",
-                    "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
-                },
-                {
-                    "label": "nl_name_information.family",
-                    "type": "SINGLE_VALUE",
-                    "display": "van Putten-van der Giessen"
-                },
-                {
-                    "label": "nl_name_information.given",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Johanna",
-                        "Petronella",
-                        "Maria"
-                    ]
-                },
-                {
-                    "label": "nl_name_information.name_usage",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "nl_name_information.prefix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "nl_name_information.suffix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
-            "label": "nl_name_information_given_name",
-            "children": [
-                {
-                    "label": "nl_name_information_given_name.given",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Jo"
-                    ]
-                }
-            ]
-        },
-        {
             "label": "r4.nl_core_patient.group_details",
             "children": [
                 {

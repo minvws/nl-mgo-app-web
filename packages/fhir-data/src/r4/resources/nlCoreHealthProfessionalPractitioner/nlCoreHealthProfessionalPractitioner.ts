@@ -7,7 +7,7 @@ import {
     nlCoreAddressInformation,
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
-    nlCoreNameInformation,
+    parseNlCoreNameInformation,
 } from '../../elements';
 import { qualification } from './elements/qualification/qualification';
 import { uiSchema } from './uiSchema';
@@ -21,7 +21,7 @@ function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         identifier: map(resource.identifier, parse.identifier), // NL-CM:17.1.2
-        name: map(resource.name, nlCoreNameInformation.parse), // NL-CM:17.1.3
+        name: map(resource.name, parseNlCoreNameInformation), // NL-CM:17.1.3
         telephoneNumbers: map(resource.telecom, nlCoreContactInformationTelephoneNumbers.parse), // NL-CM-20.6.2
         emailAddresses: map(resource.telecom, nlCoreContactInformationEmailAddresses.parse), // NL-CM-20.6.3
         address: map(resource.address, nlCoreAddressInformation.parse), // NL-CM:17.1.7

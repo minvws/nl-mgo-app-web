@@ -1,44 +1,49 @@
 [
     {
-        "nameUsage": {
-            "_ext": true,
-            "_type": "code",
-            "value": "NL3"
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+        "text": {
+            "_type": "string",
+            "value": "Johanna Petronella Maria van der Giessen-van Putten"
         },
         "family": {
-            "_type": "string",
-            "value": "van der Giessen-van Putten"
+            "humannameOwnPrefix": {
+                "_ext": true,
+                "_type": "string",
+                "value": "van"
+            },
+            "humannameOwnName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "Putten"
+            },
+            "humannamePartnerPrefix": {
+                "_ext": true,
+                "_type": "string",
+                "value": "van der"
+            },
+            "humannamePartnerName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "Giessen"
+            }
         },
-        "given": [
-            {
-                "_type": "string",
-                "value": "Johanna"
-            },
-            {
-                "_type": "string",
-                "value": "Petronella"
-            },
-            {
-                "_type": "string",
-                "value": "Maria"
-            }
-        ],
-        "givenNames": [
-            {
-                "_type": "string",
-                "value": "Johanna"
-            },
-            {
-                "_type": "string",
-                "value": "Petronella"
-            },
-            {
-                "_type": "string",
-                "value": "Maria"
-            }
-        ],
-        "givenInitials": null,
-        "period": null,
+        "given": {
+            "birthName": [
+                {
+                    "_type": "string",
+                    "value": "Johanna"
+                },
+                {
+                    "_type": "string",
+                    "value": "Petronella"
+                },
+                {
+                    "_type": "string",
+                    "value": "Maria"
+                }
+            ],
+            "initials": null
+        },
         "prefix": [
             {
                 "_type": "string",
@@ -46,27 +51,17 @@
             }
         ],
         "suffix": null,
-        "text": {
-            "_type": "string",
-            "value": "Johanna Petronella Maria van der Giessen-van Putten"
-        },
-        "use": {
-            "_type": "code",
-            "value": "official"
-        }
+        "period": null
     },
     {
-        "use": {
-            "_type": "code",
-            "value": "usual"
-        },
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given",
+        "text": null,
         "given": [
             {
                 "_type": "string",
                 "value": "Jo"
             }
         ],
-        "period": null,
-        "text": null
+        "period": null
     }
 ]

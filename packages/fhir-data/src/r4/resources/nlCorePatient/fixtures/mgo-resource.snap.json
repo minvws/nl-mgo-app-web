@@ -6,65 +6,64 @@
     "fhirVersion": "R4",
     "name": [
         {
-            "nameUsage": null,
-            "family": {
-                "_type": "string",
-                "value": "van Putten-van der Giessen"
-            },
-            "given": [
-                {
-                    "_type": "string",
-                    "value": "Johanna"
-                },
-                {
-                    "_type": "string",
-                    "value": "Petronella"
-                },
-                {
-                    "_type": "string",
-                    "value": "Maria"
-                }
-            ],
-            "givenNames": [
-                {
-                    "_type": "string",
-                    "value": "Johanna"
-                },
-                {
-                    "_type": "string",
-                    "value": "Petronella"
-                },
-                {
-                    "_type": "string",
-                    "value": "Maria"
-                }
-            ],
-            "givenInitials": null,
-            "period": null,
-            "prefix": null,
-            "suffix": null,
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
             "text": {
                 "_type": "string",
                 "value": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
             },
-            "use": {
-                "_type": "code",
-                "value": "official"
-            }
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "van"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Putten"
+                },
+                "humannamePartnerPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "van der"
+                },
+                "humannamePartnerName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Giessen"
+                }
+            },
+            "given": {
+                "birthName": [
+                    {
+                        "_type": "string",
+                        "value": "Johanna"
+                    },
+                    {
+                        "_type": "string",
+                        "value": "Petronella"
+                    },
+                    {
+                        "_type": "string",
+                        "value": "Maria"
+                    }
+                ],
+                "initials": null
+            },
+            "prefix": null,
+            "suffix": null,
+            "period": null
         },
         {
-            "use": {
-                "_type": "code",
-                "value": "usual"
-            },
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given",
+            "text": null,
             "given": [
                 {
                     "_type": "string",
                     "value": "Jo"
                 }
             ],
-            "period": null,
-            "text": null
+            "period": null
         }
     ],
     "identifier": [

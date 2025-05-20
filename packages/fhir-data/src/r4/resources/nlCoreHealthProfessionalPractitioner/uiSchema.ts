@@ -5,7 +5,6 @@ import {
     nlCoreAddressInformation,
     nlCoreContactInformationEmailAddresses,
     nlCoreContactInformationTelephoneNumbers,
-    nlCoreNameInformation,
 } from '../..//elements';
 import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualification/uiSchemaGroup';
 import { type R4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
@@ -22,7 +21,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractiti
         (x) => nlCoreAddressInformation.uiSchemaGroup(x, context),
         true
     );
-    const name = map(resource.name, (x) => nlCoreNameInformation.uiSchemaGroup(x, context), true);
     const emailAddresses = map(
         resource.emailAddresses,
         (x) => nlCoreContactInformationEmailAddresses.uiSchemaGroup(x, context),
@@ -51,7 +49,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractiti
                     ui.codeableConcept(`${i18n}.communication`, resource.communication),
                 ],
             },
-            ...name,
             ...emailAddresses,
             ...telephoneNumbers,
             ...address,

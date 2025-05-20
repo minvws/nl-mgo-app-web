@@ -3,7 +3,7 @@ import { type Patient } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddressInformation, nlCoreNameInformation } from '../../elements';
+import { nlCoreAddressInformation, parseNlCoreNameInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // NOSONAR
@@ -14,7 +14,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // 
 function parseNlCorePatient(resource: Patient) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        name: map(resource.name, nlCoreNameInformation.parse),
+        name: map(resource.name, parseNlCoreNameInformation),
         identifier: map(resource.identifier, parse.identifier), // NL-CM:0.1.7
         birthDate: parse.date(resource.birthDate), // NL-CM:0.1.10
         gender: parse.code(resource.gender), // NL-CM:0.1.9

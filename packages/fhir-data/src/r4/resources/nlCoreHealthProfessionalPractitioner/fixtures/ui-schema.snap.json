@@ -29,45 +29,6 @@
             ]
         },
         {
-            "label": "nl_name_information",
-            "children": [
-                {
-                    "label": "nl_name_information.text",
-                    "type": "SINGLE_VALUE",
-                    "display": "J.H.R. Peters"
-                },
-                {
-                    "label": "nl_name_information.family",
-                    "type": "SINGLE_VALUE",
-                    "display": "Peters"
-                },
-                {
-                    "label": "nl_name_information.given",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "J.",
-                        "H.",
-                        "R."
-                    ]
-                },
-                {
-                    "label": "nl_name_information.name_usage",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "nl_name_information.prefix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "nl_name_information.suffix",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                }
-            ]
-        },
-        {
             "label": "Contactgegevens",
             "children": [
                 {

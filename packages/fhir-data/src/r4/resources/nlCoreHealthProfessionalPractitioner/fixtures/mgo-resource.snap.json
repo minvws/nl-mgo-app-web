@@ -15,51 +15,41 @@
     ],
     "name": [
         {
-            "nameUsage": null,
-            "family": {
-                "_type": "string",
-                "value": "Peters"
-            },
-            "given": [
-                {
-                    "_type": "string",
-                    "value": "J."
-                },
-                {
-                    "_type": "string",
-                    "value": "H."
-                },
-                {
-                    "_type": "string",
-                    "value": "R."
-                }
-            ],
-            "givenNames": null,
-            "givenInitials": [
-                {
-                    "_type": "string",
-                    "value": "J."
-                },
-                {
-                    "_type": "string",
-                    "value": "H."
-                },
-                {
-                    "_type": "string",
-                    "value": "R."
-                }
-            ],
-            "period": null,
-            "prefix": null,
-            "suffix": null,
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
             "text": {
                 "_type": "string",
                 "value": "J.H.R. Peters"
             },
-            "use": {
-                "_type": "code",
-                "value": "official"
-            }
+            "family": {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Peters"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": [
+                    {
+                        "_type": "string",
+                        "value": "J."
+                    },
+                    {
+                        "_type": "string",
+                        "value": "H."
+                    },
+                    {
+                        "_type": "string",
+                        "value": "R."
+                    }
+                ]
+            },
+            "prefix": null,
+            "suffix": null,
+            "period": null
         }
     ],
     "telephoneNumbers": [
