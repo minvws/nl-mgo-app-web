@@ -1,10 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Observation } from 'fhir/r3';
 import { parse } from '../../../parse';
-import { findComponentByCode, oneOfValueX } from '../../../parse/helpers';
+import { parseObservationComponents } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
-import { map } from '../../../utils';
-import { uiSchema } from './uiSchema';
+import { generateUiSchema } from '../../../ui/generator';
+import { omitUndefined } from '../../../utils';
+import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry'; // NOSONAR
 
@@ -12,24 +13,45 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry'; // 
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2316995
  */
 function parseGpJournalEntry(resource: Observation) {
-    const ICPC_S = findComponentByCode(resource.component, 'ADMDX');
-    const ICPC_E = findComponentByCode(resource.component, 'DISDX');
+    const { identifier, subject, effectiveDateTime, effectivePeriod, performer, valueString } =
+        parseNlCoreObservationBase(resource);
 
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        identifier: map(resource.identifier, parse.identifier),
-        status: parse.string(resource.status),
+
+        identifier,
+        subject,
+        performer,
+        valueString,
+
+        ...omitUndefined({
+            effectiveDateTime,
+            effectivePeriod,
+        }),
+
         code: parse.codeableConcept(resource.code),
-        context: parse.reference(resource.context),
-        ...oneOfValueX(resource, ['dateTime', 'period'], 'effective'),
-        performer: map(resource.performer, parse.reference),
-        valueString: parse.string(resource.valueString),
-        ICPC_S: {
-            valueCodeableConcept: parse.codeableConcept(ICPC_S?.valueCodeableConcept),
-        },
-        ICPC_E: {
-            valueCodeableConcept: parse.codeableConcept(ICPC_E?.valueCodeableConcept),
-        },
+        episodeOfCare: parse.extensionMultiple(
+            resource,
+            'http://nictiz.nl/fhir/StructureDefinition/extension-context-nl-core-episodeofcare', // NOSONAR
+            'reference'
+        ),
+
+        component: parseObservationComponents(resource.component, {
+            ICPC_S: {
+                coding: {
+                    system: 'http://hl7.org/fhir/v3/ActCode', // NOSONAR
+                    code: 'ADMDX',
+                },
+                type: 'codeableConcept',
+            },
+            ICPC_E: {
+                coding: {
+                    system: 'http://hl7.org/fhir/v3/ActCode', // NOSONAR
+                    code: 'DISDX',
+                },
+                type: 'codeableConcept',
+            },
+        }),
     };
 }
 
@@ -38,5 +60,5 @@ export type GpJournalEntry = ReturnType<typeof parseGpJournalEntry>;
 export const gpJournalEntry = {
     profile,
     parse: parseGpJournalEntry,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Observation, GpJournalEntry>;
