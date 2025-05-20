@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type DocumentManifest } from 'fhir/r3';
 import { parse } from '../../../parse';
+import { oneOfValueX } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { parseContent } from './elements/content/content';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManifest'; // NOSONAR
 
@@ -14,14 +14,16 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManif
 function parseIheMhdDocumentManifest(resource: DocumentManifest) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R3),
-        description: parse.string(resource.description),
-        created: parse.dateTime(resource.created),
-        subject: parse.reference(resource.subject),
+        masterIdentifier: parse.identifier(resource.masterIdentifier),
+        identifier: map(resource.identifier, parse.identifier),
         status: parse.code(resource.status),
         type: parse.codeableConcept(resource.type),
+        subject: parse.reference(resource.subject),
+        created: parse.dateTime(resource.created),
         author: map(resource.author, parse.reference),
-        recipient: map(resource.recipient, parse.reference),
-        content: map(resource.content, parseContent),
+        content: map(resource.content, (content) => ({
+            ...oneOfValueX(content, ['reference', 'attachment'], 'p'),
+        })),
     };
 }
 
@@ -30,5 +32,5 @@ export type IheMhdDocumentManifest = ReturnType<typeof parseIheMhdDocumentManife
 export const iheMhdDocumentManifest = {
     profile,
     parse: parseIheMhdDocumentManifest,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<DocumentManifest, IheMhdDocumentManifest>;

@@ -66,14 +66,14 @@ We aim to support all HCIM profiles that can be returned from a data service. Th
 
 ## [PDF/A Documents](doc) (R3)
 
-| profile                             | summary            | detail               |
-| ----------------------------------- | ------------------ | -------------------- |
-| ~~nl-core-patient~~                 |                    |                      |
-| ~~nl-core-practitioner~~            |                    |                      |
-| ~~nl-core-practitionerrole~~        |                    |                      |
-| ~~nl-core-organization~~            |                    |                      |
-| [IHE.MHD.DocumentManifest]          |                    | :white_large_square: |
-| [IHE.MHD.Minimal.DocumentReference] | :white_check_mark: | :white_check_mark:   |
+| profile                             | summary            | detail             |
+| ----------------------------------- | ------------------ | ------------------ |
+| ~~nl-core-patient~~                 |                    |                    |
+| ~~nl-core-practitioner~~            |                    |                    |
+| ~~nl-core-practitionerrole~~        |                    |                    |
+| ~~nl-core-organization~~            |                    |                    |
+| [IHE.MHD.DocumentManifest]          |                    | :white_check_mark: |
+| [IHE.MHD.Minimal.DocumentReference] | :white_check_mark: | :white_check_mark: |
 
 ## [Vaccination](vac) (R4)
 
