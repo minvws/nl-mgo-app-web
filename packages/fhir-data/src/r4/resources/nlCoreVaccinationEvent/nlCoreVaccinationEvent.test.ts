@@ -14,7 +14,10 @@ test('01 - mgo-resource', async () => {
 
 test('01 - ui-schema', async () => {
     const mgoResource = r4NlCoreVaccinationEvent.parse(input01 as Immunization);
-    const uiSchema = r4NlCoreVaccinationEvent.uiSchema(mgoResource, testUiSchemaContext());
+    const uiSchema = r4NlCoreVaccinationEvent.uiSchema(
+        mgoResource,
+        testUiSchemaContext({ ignoreMissingTranslations: true })
+    );
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
@@ -29,7 +32,7 @@ test('01 - ui-schema - has a label even when there is no vaccine code', () => {
 
     const schema = r4NlCoreVaccinationEvent.uiSchema(
         resource,
-        testUiSchemaContext({ useMock: true })
+        testUiSchemaContext({ useMock: true, ignoreMissingTranslations: true })
     );
 
     expect(schema.label).toBe(testMessage(i18n));
@@ -55,7 +58,10 @@ test('02 - mgo-resource', async () => {
 
 test('02 - ui-schema', async () => {
     const mgoResource = r4NlCoreVaccinationEvent.parse(input02 as Immunization);
-    const uiSchema = r4NlCoreVaccinationEvent.uiSchema(mgoResource, testUiSchemaContext());
+    const uiSchema = r4NlCoreVaccinationEvent.uiSchema(
+        mgoResource,
+        testUiSchemaContext({ ignoreMissingTranslations: true })
+    );
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );

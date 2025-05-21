@@ -14,7 +14,7 @@ export const summary: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resour
             {
                 children: [
                     ui.dateTime(`${i18n}.occurrence_date_time`, resource.occurrenceDateTime),
-                    ui.annotation(`${i18n}.note`, resource.note),
+                    ui.annotation(`${i18n}.note.text`, resource.note),
                 ],
             },
             {

@@ -9,6 +9,9 @@ const mirrorLabels = {
     ['zib_laboratory_test_result_observation']: 'gp_laboratory_result',
     ['zib_pharmaceutical_product']: 'nl_core_pharmaceutical_product',
     ['zib_encounter']: 'gp_encounter',
+    ['zib_patient']: 'nl_core_patient',
+    ['zib_vaccination_event']: 'nl_core_vaccination_event',
+    ['zib_address_information']: 'nl_core_address_information',
 };
 
 /**

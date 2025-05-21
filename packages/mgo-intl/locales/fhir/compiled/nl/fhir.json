@@ -301,6 +301,12 @@
       "value": "Datum"
     }
   ],
+  "fhir.x.date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
   "fhir.x.device": [
     {
       "type": 0,
@@ -353,6 +359,12 @@
     {
       "type": 0,
       "value": "Identificatie"
+    }
+  ],
+  "fhir.x.initials": [
+    {
+      "type": 0,
+      "value": "Initialen"
     }
   ],
   "fhir.x.laboratory_test_result_code": [

@@ -97,6 +97,8 @@
   ],
   "fhir.x.date": [
   ],
+  "fhir.x.date_time": [
+  ],
   "fhir.x.device": [
   ],
   "fhir.x.effective_date_time": [
@@ -114,6 +116,8 @@
   "fhir.x.hospitalization": [
   ],
   "fhir.x.identifier": [
+  ],
+  "fhir.x.initials": [
   ],
   "fhir.x.laboratory_test_result_code": [
   ],

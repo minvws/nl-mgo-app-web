@@ -8,11 +8,6 @@ export const uiSchemaGroup: HealthUiGroupFunction<ProtocolApplied> = (resource, 
 
     return {
         label: formatMessage(i18n),
-        children: [
-            ui.reference(`${i18n}.authority`, resource.authority),
-            ui.codeableConcept(`${i18n}.target_disease`, resource.targetDisease),
-            ...ui.oneOfValueX(`${i18n}.dose_number`, resource, 'doseNumber'),
-            ...ui.oneOfValueX(`${i18n}.series_doses`, resource, 'seriesDoses'),
-        ],
+        children: [ui.codeableConcept(`${i18n}.target_disease`, resource.targetDisease)],
     };
 };

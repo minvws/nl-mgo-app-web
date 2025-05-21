@@ -4,6 +4,15 @@
     "resourceType": "Patient",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient",
     "fhirVersion": "R4",
+    "identifier": {
+        "bsn": {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333",
+            "type": null
+        }
+    },
     "name": [
         {
             "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
@@ -66,32 +75,68 @@
             "period": null
         }
     ],
-    "identifier": [
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
-            "value": "111222333",
-            "type": null
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": {
+                        "_ext": true,
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "MC",
+                                "display": "Mobile Phone",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                            }
+                        ]
+                    }
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31611234567"
+                },
+                "use": null
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "giesput@myweb.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "home"
+                }
+            }
+        ]
+    },
+    "gender": {
+        "genderCodeList": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "F",
+                    "display": "Female",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender"
+                }
+            ]
         }
-    ],
+    },
     "birthDate": {
         "_type": "date",
         "value": "1934-04-28"
     },
-    "gender": {
-        "_type": "code",
-        "value": "female"
-    },
-    "multipleBirth": {
-        "_type": "boolean",
-        "value": true
-    },
-    "deceased": {
+    "deceasedBoolean": {
         "_type": "boolean",
         "value": false
     },
-    "deceasedDateTime": null,
     "address": [
         {
             "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
@@ -149,17 +194,8 @@
             }
         }
     ],
-    "generalPractitioner": null,
-    "managingOrganization": null,
-    "maritalStatus": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
-            {
-                "code": "D",
-                "display": "Divorced",
-                "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
-            }
-        ]
+    "multipleBirthBoolean": {
+        "_type": "boolean",
+        "value": true
     }
 }

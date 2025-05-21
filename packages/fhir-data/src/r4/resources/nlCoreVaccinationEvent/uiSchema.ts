@@ -27,7 +27,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resou
         Patient: ui.reference(`${i18n}.patient`, resource.patient),
         Location: ui.reference(`${i18n}.location`, resource.location),
         Route: ui.codeableConcept(`${i18n}.route`, resource.route),
-        Site: ui.codeableConcept(`${i18n}.site`, resource.site),
         Performer: map(resource.performer, (x) => ui.reference(`${i18n}.performer`, x), true),
         VaccinationIndication: ui.codeableConcept(
             `${i18n}.reason_code.vaccination_indication`,
@@ -51,7 +50,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resou
             resource.occurrenceDateTime
         ),
         DoseQuantity: ui.quantity(`${i18n}.dose_quantity`, resource.doseQuantity),
-        Note: ui.annotation(`${i18n}.note`, resource.note),
     };
 
     return {
@@ -64,25 +62,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreVaccinationEvent> = (resou
                     zibVaccinationv4.DoseQuantity,
                     artDecorDatasetVaccinationImmunization.Patient,
                     zibVaccinationv4.OccurrenceDateTime,
-                    zibVaccinationv4.Note,
-                ],
-            },
-            {
-                label: formatMessage(`${i18n}.performed_by`),
-                children: [
-                    ...artDecorDatasetVaccinationImmunization.Performer,
-                    artDecorDatasetVaccinationImmunization.Location,
-                ],
-            },
-            {
-                label: formatMessage(`${i18n}.extra`),
-                children: [
-                    artDecorDatasetVaccinationImmunization.VaccinationMotive,
-                    ...ui.helpers.getChildren(
-                        artDecorDatasetVaccinationImmunization.ProtocolApplied
-                    ),
-                    artDecorDatasetVaccinationImmunization.Route,
-                    artDecorDatasetVaccinationImmunization.Site,
                 ],
             },
         ],

@@ -1,4 +1,22 @@
 {
+  "r4.nl_core_address_information": [
+    {
+      "type": 0,
+      "value": "Adres informatie"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_addition": [
+    {
+      "type": 0,
+      "value": "Huisnummer toevoeging"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_letter": [
+    {
+      "type": 0,
+      "value": "Huisnummer letter"
+    }
+  ],
   "r4.nl_core_contact_information_email_addresses": [
     {
       "type": 0,
@@ -131,6 +149,30 @@
       "value": "Zorgverlener organisatie type"
     }
   ],
+  "r4.nl_core_patient.deceased": [
+    {
+      "type": 0,
+      "value": "Overleden"
+    }
+  ],
+  "r4.nl_core_patient.deceased.deceased_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r4.nl_core_patient.gender.gender_code_list": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.nl_core_patient.identifier.bsn": [
+    {
+      "type": 0,
+      "value": "Bsn"
+    }
+  ],
   "r4.nl_core_pharmaceutical_product.batch.lot_number": [
     {
       "type": 0,
@@ -149,18 +191,6 @@
       "value": "Ingrediënt"
     }
   ],
-  "r4.nl_core_vaccination_event.dose_quantity": [
-    {
-      "type": 0,
-      "value": "Dosis"
-    }
-  ],
-  "r4.nl_core_vaccination_event.extra": [
-    {
-      "type": 0,
-      "value": "Extra informatie"
-    }
-  ],
   "r4.nl_core_vaccination_event.identifier": [
     {
       "type": 0,
@@ -171,24 +201,6 @@
     {
       "type": 0,
       "value": "Zorgaanbieder"
-    }
-  ],
-  "r4.nl_core_vaccination_event.note": [
-    {
-      "type": 0,
-      "value": "Toelichting"
-    }
-  ],
-  "r4.nl_core_vaccination_event.occurrence_date_time": [
-    {
-      "type": 0,
-      "value": "Gegeven op"
-    }
-  ],
-  "r4.nl_core_vaccination_event.performed_by": [
-    {
-      "type": 0,
-      "value": "Gegeven door"
     }
   ],
   "r4.nl_core_vaccination_event.performer": [
@@ -209,34 +221,10 @@
       "value": "Protocol toegepast"
     }
   ],
-  "r4.nl_core_vaccination_event.protocol_applied.authority": [
-    {
-      "type": 0,
-      "value": "Autoriteit"
-    }
-  ],
-  "r4.nl_core_vaccination_event.protocol_applied.dose_number": [
-    {
-      "type": 0,
-      "value": "Dosis nummer"
-    }
-  ],
-  "r4.nl_core_vaccination_event.protocol_applied.series_doses": [
-    {
-      "type": 0,
-      "value": "Serie dosis"
-    }
-  ],
   "r4.nl_core_vaccination_event.route": [
     {
       "type": 0,
       "value": "Toedieningsweg"
-    }
-  ],
-  "r4.nl_core_vaccination_event.site": [
-    {
-      "type": 0,
-      "value": "Lichaamsplek"
     }
   ],
   "r4.nl_core_vaccination_event.status": [
@@ -245,10 +233,70 @@
       "value": "Status"
     }
   ],
-  "r4.nl_core_vaccination_event.vaccine_code": [
+  "r4.nl_core_vaccination_event.vaccination_indication": [
     {
       "type": 0,
-      "value": "Uniek nummer"
+      "value": "Vaccinatie indicatie"
+    }
+  ],
+  "r4.nl_core_vaccination_event.vaccination_motive": [
+    {
+      "type": 0,
+      "value": "Vaccinatie aanleiding"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_own_name": [
+    {
+      "type": 0,
+      "value": "Achternaam"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_own_prefix": [
+    {
+      "type": 0,
+      "value": "Titels"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_partner_name": [
+    {
+      "type": 0,
+      "value": "Voornaam partner"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_partner_prefix": [
+    {
+      "type": 0,
+      "value": "Tussenvoegsel"
+    }
+  ],
+  "r4.zib_name_information.given.birth_name": [
+    {
+      "type": 0,
+      "value": "Geboortenamen"
+    }
+  ],
+  "r4.zib_name_information.text": [
+    {
+      "type": 0,
+      "value": "Volledige naam"
+    }
+  ],
+  "r4.zib_name_information_given": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_name_information_given.given": [
+    {
+      "type": 0,
+      "value": "Roepnaam"
+    }
+  ],
+  "r4.zib_name_information_given.text": [
+    {
+      "type": 0,
+      "value": "Volledige naam"
     }
   ],
   "r4.zib_pharmaceutical_product.batch": [

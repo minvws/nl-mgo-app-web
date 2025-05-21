@@ -53,7 +53,7 @@
       "value": "Begin datum tijd"
     }
   ],
-  "r4.gp_encounter.reason_codeviating_result.comment_contact_reason.value": [
+  "r4.gp_encounter.reason_codeviating_result.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
@@ -65,7 +65,7 @@
       "value": "Afwijkende uitslag"
     }
   ],
-  "r4.gp_encounter.reason_reference.comment_contact_reason.value": [
+  "r4.gp_encounter.reason_reference.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
@@ -146,7 +146,73 @@
   "r4.nl_core_address_information": [
     {
       "type": 0,
-      "value": "Nl-core-address information"
+      "value": "Adresgegevens"
+    }
+  ],
+  "r4.nl_core_address_information.city": [
+    {
+      "type": 0,
+      "value": "Woonplaats"
+    }
+  ],
+  "r4.nl_core_address_information.country.country_code": [
+    {
+      "type": 0,
+      "value": "Land"
+    }
+  ],
+  "r4.nl_core_address_information.district": [
+    {
+      "type": 0,
+      "value": "Gemeente"
+    }
+  ],
+  "r4.nl_core_address_information.line.additional_information": [
+    {
+      "type": 0,
+      "value": "Additionele informatie"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number": [
+    {
+      "type": 0,
+      "value": "Huisnummer"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_indication": [
+    {
+      "type": 0,
+      "value": "Aanduiding bij nummer"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_letter_house_number_addition.value": [
+    {
+      "type": 0,
+      "value": "Huisnummerletter"
+    }
+  ],
+  "r4.nl_core_address_information.line.street_name": [
+    {
+      "type": 0,
+      "value": "Straat"
+    }
+  ],
+  "r4.nl_core_address_information.postal_code": [
+    {
+      "type": 0,
+      "value": "Postcode"
+    }
+  ],
+  "r4.nl_core_address_information.type": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
+  "r4.nl_core_address_information.use": [
+    {
+      "type": 0,
+      "value": "Adres soort"
     }
   ],
   "r4.nl_core_advance_directive": [
@@ -698,7 +764,127 @@
   "r4.nl_core_patient": [
     {
       "type": 0,
-      "value": "Nl-core-patient"
+      "value": "Patient"
+    }
+  ],
+  "r4.nl_core_patient.birth_date": [
+    {
+      "type": 0,
+      "value": "Geboortedatum"
+    }
+  ],
+  "r4.nl_core_patient.communication": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
+  "r4.nl_core_patient.communication.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.nl_core_patient.communication.language": [
+    {
+      "type": 0,
+      "value": "Communicatie taal"
+    }
+  ],
+  "r4.nl_core_patient.communication.language_control": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid begrijpen"
+    }
+  ],
+  "r4.nl_core_patient.contact": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.nl_core_patient.contact.contact_person": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.nl_core_patient.contact.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r4.nl_core_patient.contact.relationship.role": [
+    {
+      "type": 0,
+      "value": "Rol"
+    }
+  ],
+  "r4.nl_core_patient.contact.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.nl_core_patient.deceased_boolean": [
+    {
+      "type": 0,
+      "value": "Overlijdens indicator"
+    }
+  ],
+  "r4.nl_core_patient.deceased_date_time": [
+    {
+      "type": 0,
+      "value": "Datum overlijden"
+    }
+  ],
+  "r4.nl_core_patient.gender": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.nl_core_patient.gender.gender_codelist": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.nl_core_patient.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatienummer"
+    }
+  ],
+  "r4.nl_core_patient.marital_status": [
+    {
+      "type": 0,
+      "value": "Burgerlijke staat"
+    }
+  ],
+  "r4.nl_core_patient.multiple_birth_boolean": [
+    {
+      "type": 0,
+      "value": "Meerling indicator"
+    }
+  ],
+  "r4.nl_core_patient.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.nl_core_patient.nationality.code": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
+    }
+  ],
+  "r4.nl_core_patient.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r4.nl_core_payer.insurance_company": [
@@ -932,13 +1118,37 @@
   "r4.nl_core_vaccination_event": [
     {
       "type": 0,
-      "value": "Nl-core-vaccination-event"
+      "value": "Vaccinatie"
+    }
+  ],
+  "r4.nl_core_vaccination_event.dose_quantity": [
+    {
+      "type": 0,
+      "value": "Dosis"
+    }
+  ],
+  "r4.nl_core_vaccination_event.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.nl_core_vaccination_event.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Vaccinatie datum"
     }
   ],
   "r4.nl_core_vaccination_event.patient": [
     {
       "type": 0,
       "value": "Patient"
+    }
+  ],
+  "r4.nl_core_vaccination_event.performer.administrator.actor": [
+    {
+      "type": 0,
+      "value": "Toediener"
     }
   ],
   "r4.nl_core_vaccination_event.protocol_applied.target_disease": [
@@ -957,6 +1167,12 @@
     {
       "type": 0,
       "value": "Vaccinatie aanleiding"
+    }
+  ],
+  "r4.nl_core_vaccination_event.vaccine_code": [
+    {
+      "type": 0,
+      "value": "Product code"
     }
   ],
   "r4.nl_core_vaccination_request": [
@@ -1175,7 +1391,7 @@
       "value": "Woonplaats"
     }
   ],
-  "r4.zib_address_information.country.country_code.value": [
+  "r4.zib_address_information.country.country_code": [
     {
       "type": 0,
       "value": "Land"
@@ -1187,19 +1403,19 @@
       "value": "Gemeente"
     }
   ],
-  "r4.zib_address_information.line.additional_information.value": [
+  "r4.zib_address_information.line.additional_information": [
     {
       "type": 0,
       "value": "Additionele informatie"
     }
   ],
-  "r4.zib_address_information.line.house_number.value": [
+  "r4.zib_address_information.line.house_number": [
     {
       "type": 0,
       "value": "Huisnummer"
     }
   ],
-  "r4.zib_address_information.line.house_number_indication.value": [
+  "r4.zib_address_information.line.house_number_indication": [
     {
       "type": 0,
       "value": "Aanduiding bij nummer"
@@ -1211,7 +1427,7 @@
       "value": "Huisnummerletter"
     }
   ],
-  "r4.zib_address_information.line.street_name.value": [
+  "r4.zib_address_information.line.street_name": [
     {
       "type": 0,
       "value": "Straat"
@@ -1241,7 +1457,7 @@
       "value": "Wilsverklaring"
     }
   ],
-  "r4.zib_advance_directive.comment.value": [
+  "r4.zib_advance_directive.comment": [
     {
       "type": 0,
       "value": "Toelichting"
@@ -1319,13 +1535,13 @@
       "value": "Alert naam"
     }
   ],
-  "r4.zib_alert.comment.value": [
+  "r4.zib_alert.comment": [
     {
       "type": 0,
       "value": "Toelichting"
     }
   ],
-  "r4.zib_alert.condition.value": [
+  "r4.zib_alert.condition": [
     {
       "type": 0,
       "value": "Conditie"
@@ -1355,7 +1571,7 @@
       "value": "Allergie categorie"
     }
   ],
-  "r4.zib_allergy_intolerance.category.allergy_category_codelist.value": [
+  "r4.zib_allergy_intolerance.category.allergy_category_codelist": [
     {
       "type": 0,
       "value": "Allergie categorie"
@@ -1379,7 +1595,7 @@
       "value": "Mate van kritiek zijn"
     }
   ],
-  "r4.zib_allergy_intolerance.criticality.critical_extent_codelist.value": [
+  "r4.zib_allergy_intolerance.criticality.critical_extent_codelist": [
     {
       "type": 0,
       "value": "Mate van kritiek zijn"
@@ -1751,7 +1967,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_blood_pressure.position.value": [
+  "r4.zib_blood_pressure.position": [
     {
       "type": 0,
       "value": "Houding"
@@ -1883,7 +2099,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_bowel_function.stoma.value": [
+  "r4.zib_bowel_function.stoma": [
     {
       "type": 0,
       "value": "Stoma"
@@ -2147,7 +2363,7 @@
       "value": "Telefoonnummers"
     }
   ],
-  "r4.zib_contact_information_telephone_numbers.comment.value": [
+  "r4.zib_contact_information_telephone_numbers.comment": [
     {
       "type": 0,
       "value": "Toelichting"
@@ -2159,7 +2375,7 @@
       "value": "Telecom type"
     }
   ],
-  "r4.zib_contact_information_telephone_numbers.system.telecom_type.value": [
+  "r4.zib_contact_information_telephone_numbers.system.telecom_type": [
     {
       "type": 0,
       "value": "Telecom type"
@@ -2525,7 +2741,7 @@
       "value": "Begin datum tijd"
     }
   ],
-  "r4.zib_encounter.reason_codeviating_result.comment_contact_reason.value": [
+  "r4.zib_encounter.reason_codeviating_result.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
@@ -2537,7 +2753,7 @@
       "value": "Afwijkende uitslag"
     }
   ],
-  "r4.zib_encounter.reason_reference.comment_contact_reason.value": [
+  "r4.zib_encounter.reason_reference.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
@@ -2561,7 +2777,7 @@
       "value": "Zorg episode"
     }
   ],
-  "r4.zib_episode_of_care.comment.value": [
+  "r4.zib_episode_of_care.comment": [
     {
       "type": 0,
       "value": "Toelichting"
@@ -3245,7 +3461,7 @@
       "value": "Referentie ondergrens"
     }
   ],
-  "r4.zib_laboratory_test_result.sequel_to.value": [
+  "r4.zib_laboratory_test_result.sequel_to": [
     {
       "type": 0,
       "value": "Gerelateerde uitslag"
@@ -3293,7 +3509,7 @@
       "value": "Verzamelvolume"
     }
   ],
-  "r4.zib_laboratory_test_result.specimen.container.specimen_number_extension.value": [
+  "r4.zib_laboratory_test_result.specimen.container.specimen_number_extension": [
     {
       "type": 0,
       "value": "Monstervolgnummer"
@@ -3587,7 +3803,7 @@
       "value": "Medicatie contra indicatie naam"
     }
   ],
-  "r4.zib_medication_contra_indication.comment.value": [
+  "r4.zib_medication_contra_indication.comment": [
     {
       "type": 0,
       "value": "Toelichting"
@@ -3695,25 +3911,25 @@
       "value": "Naamgegevens"
     }
   ],
-  "r4.zib_name_information.family.last_name.value": [
+  "r4.zib_name_information.family.last_name": [
     {
       "type": 0,
       "value": "Achternaam"
     }
   ],
-  "r4.zib_name_information.family.partner_last_name.value": [
+  "r4.zib_name_information.family.partner_last_name": [
     {
       "type": 0,
       "value": "Achternaam partner"
     }
   ],
-  "r4.zib_name_information.family.partner_prefix.value": [
+  "r4.zib_name_information.family.partner_prefix": [
     {
       "type": 0,
       "value": "Voorvoegsels partner"
     }
   ],
-  "r4.zib_name_information.family.prefix.value": [
+  "r4.zib_name_information.family.prefix": [
     {
       "type": 0,
       "value": "Voorvoegsels"
@@ -3731,7 +3947,7 @@
       "value": "Roepnaam"
     }
   ],
-  "r4.zib_name_information.name_usage.value": [
+  "r4.zib_name_information.name_usage": [
     {
       "type": 0,
       "value": "Naamgebruik"
@@ -3767,7 +3983,7 @@
       "value": "Instructie"
     }
   ],
-  "r4.zib_nursing_intervention.activity.detail.medical_device.value": [
+  "r4.zib_nursing_intervention.activity.detail.medical_device": [
     {
       "type": 0,
       "value": "Medisch hulpmiddel"
@@ -3863,7 +4079,7 @@
       "value": "Voedingsadvies"
     }
   ],
-  "r4.zib_nutrition_advice.indication.value": [
+  "r4.zib_nutrition_advice.indication": [
     {
       "type": 0,
       "value": "Indicatie"
@@ -4001,7 +4217,7 @@
       "value": "Taalvaardigheid"
     }
   ],
-  "r4.zib_patient.communication.comment.value": [
+  "r4.zib_patient.communication.comment": [
     {
       "type": 0,
       "value": "Toelichting"
@@ -4025,7 +4241,7 @@
       "value": "Contactpersoon"
     }
   ],
-  "r4.zib_patient.contact.contact_person.value": [
+  "r4.zib_patient.contact.contact_person": [
     {
       "type": 0,
       "value": "Contactpersoon"
@@ -4067,7 +4283,7 @@
       "value": "Geslacht"
     }
   ],
-  "r4.zib_patient.gender.gender_codelist.value": [
+  "r4.zib_patient.gender.gender_codelist": [
     {
       "type": 0,
       "value": "Geslacht"
@@ -4097,7 +4313,7 @@
       "value": "Naamgegevens"
     }
   ],
-  "r4.zib_patient.nationality.code.value": [
+  "r4.zib_patient.nationality.code": [
     {
       "type": 0,
       "value": "Nationaliteit"
@@ -4613,7 +4829,7 @@
       "value": "Anatomische locatie"
     }
   ],
-  "r4.zib_skin_disorder.cause.value": [
+  "r4.zib_skin_disorder.cause": [
     {
       "type": 0,
       "value": "Oorzaak"
@@ -4931,7 +5147,7 @@
       "value": "Tekst uitslag status"
     }
   ],
-  "r4.zib_text_result.status.text_result_status.value": [
+  "r4.zib_text_result.status.text_result_status": [
     {
       "type": 0,
       "value": "Tekst uitslag status"
@@ -5015,7 +5231,7 @@
       "value": "Behandel aanwijzing"
     }
   ],
-  "r4.zib_treatment_directive_2.comment.value": [
+  "r4.zib_treatment_directive_2.comment": [
     {
       "type": 0,
       "value": "Toelichting"
