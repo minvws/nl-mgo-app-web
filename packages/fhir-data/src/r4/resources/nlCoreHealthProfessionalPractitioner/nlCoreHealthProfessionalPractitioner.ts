@@ -5,8 +5,7 @@ import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import {
     nlCoreAddressInformation,
-    nlCoreContactInformationEmailAddresses,
-    nlCoreContactInformationTelephoneNumbers,
+    parseNlCoreContactInformation,
     parseNlCoreNameInformation,
 } from '../../elements';
 import { qualification } from './elements/qualification/qualification';
@@ -22,8 +21,7 @@ function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
         identifier: map(resource.identifier, parse.identifier), // NL-CM:17.1.2
         name: map(resource.name, parseNlCoreNameInformation), // NL-CM:17.1.3
-        telephoneNumbers: map(resource.telecom, nlCoreContactInformationTelephoneNumbers.parse), // NL-CM-20.6.2
-        emailAddresses: map(resource.telecom, nlCoreContactInformationEmailAddresses.parse), // NL-CM-20.6.3
+        telecom: parseNlCoreContactInformation(resource.telecom),
         address: map(resource.address, nlCoreAddressInformation.parse), // NL-CM:17.1.7
         gender: parse.code(resource.gender), // NL-CM:17.1.9
         birthDate: parse.date(resource.birthDate),

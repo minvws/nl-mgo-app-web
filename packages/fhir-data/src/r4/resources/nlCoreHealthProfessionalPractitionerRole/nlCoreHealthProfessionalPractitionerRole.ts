@@ -3,10 +3,7 @@ import { type PractitionerRole } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import {
-    nlCoreContactInformationEmailAddresses,
-    nlCoreContactInformationTelephoneNumbers,
-} from '../../elements';
+import { parseNlCoreContactInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile =
@@ -22,8 +19,7 @@ function parseNlCoreHealthProfessionalPractitionerRole(resource: PractitionerRol
         organization: parse.reference(resource.organization),
         location: map(resource.location, parse.reference),
         speciality: map(resource.specialty, parse.codeableConcept),
-        telephoneNumbers: map(resource.telecom, nlCoreContactInformationTelephoneNumbers.parse),
-        emailAddresses: map(resource.telecom, nlCoreContactInformationEmailAddresses.parse),
+        telecom: parseNlCoreContactInformation(resource.telecom),
     };
 }
 

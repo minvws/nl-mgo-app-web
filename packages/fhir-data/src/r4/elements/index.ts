@@ -6,6 +6,5 @@
  */
 
 export * from './nlCoreAddressInformation/nlCoreAddressInformation';
-export * from './nlCoreContactInformationEmailAddresses/nlCoreContactInformationEmailAddresses';
-export * from './nlCoreContactInformationTelephoneNumbers/nlCoreContactInformationTelephoneNumbers';
+export * from './nlCoreContactInformation/nlCoreContactInformation';
 export * from './nlCoreNameInformation/nlCoreNameInformation';

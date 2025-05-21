@@ -62,46 +62,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "label": "Contactgegevens",
-            "children": [
-                {
-                    "label": "Telefoonnummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "+31107040704"
-                },
-                {
-                    "label": "Telecom type / nummer soort",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
-                },
-                {
-                    "label": "Telecom toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Telecom type",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                }
-            ]
-        },
-        {
-            "label": "Contactgegevens",
-            "children": [
-                {
-                    "label": "E-mailadres",
-                    "type": "SINGLE_VALUE",
-                    "display": "info@erasmus.nl"
-                },
-                {
-                    "label": "Email soort",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
-                }
-            ]
         }
     ]
 }

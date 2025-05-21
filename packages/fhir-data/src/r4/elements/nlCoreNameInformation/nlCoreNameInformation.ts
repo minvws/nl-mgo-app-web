@@ -32,8 +32,8 @@ export type R4NlCoreNameInformationGiven = MgoElementMeta<typeof profileGiven> &
 };
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946184/
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946189/
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628547
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628552 (Roepnaam)
  */
 export function parseNlCoreNameInformation(
     value: Nullable<HumanName>

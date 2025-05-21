@@ -1,11 +1,7 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
 import { map } from '../../../utils';
-import {
-    nlCoreAddressInformation,
-    nlCoreContactInformationEmailAddresses,
-    nlCoreContactInformationTelephoneNumbers,
-} from '../..//elements';
+import { nlCoreAddressInformation } from '../..//elements';
 import { uiSchemaGroup as qualificationUiSchemaGroup } from './elements/qualification/uiSchemaGroup';
 import { type R4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
 
@@ -19,16 +15,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractiti
     const address = map(
         resource.address,
         (x) => nlCoreAddressInformation.uiSchemaGroup(x, context),
-        true
-    );
-    const emailAddresses = map(
-        resource.emailAddresses,
-        (x) => nlCoreContactInformationEmailAddresses.uiSchemaGroup(x, context),
-        true
-    );
-    const telephoneNumbers = map(
-        resource.telephoneNumbers,
-        (x) => nlCoreContactInformationTelephoneNumbers.uiSchemaGroup(x, context),
         true
     );
     const qualification = map(
@@ -49,8 +35,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthProfessionalPractiti
                     ui.codeableConcept(`${i18n}.communication`, resource.communication),
                 ],
             },
-            ...emailAddresses,
-            ...telephoneNumbers,
             ...address,
             ...qualification,
         ],

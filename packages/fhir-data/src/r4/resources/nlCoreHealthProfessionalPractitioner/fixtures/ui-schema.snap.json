@@ -29,46 +29,6 @@
             ]
         },
         {
-            "label": "Contactgegevens",
-            "children": [
-                {
-                    "label": "E-mailadres",
-                    "type": "SINGLE_VALUE",
-                    "display": "j.peters@hospital.nl"
-                },
-                {
-                    "label": "Email soort",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
-                }
-            ]
-        },
-        {
-            "label": "Contactgegevens",
-            "children": [
-                {
-                    "label": "Telefoonnummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "+3715828282"
-                },
-                {
-                    "label": "Telecom type / nummer soort",
-                    "type": "SINGLE_VALUE",
-                    "display": "work"
-                },
-                {
-                    "label": "Telecom toelichting",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Telecom type",
-                    "type": "MULTIPLE_VALUES",
-                    "display": []
-                }
-            ]
-        },
-        {
             "label": "Adresgegevens",
             "children": [
                 {

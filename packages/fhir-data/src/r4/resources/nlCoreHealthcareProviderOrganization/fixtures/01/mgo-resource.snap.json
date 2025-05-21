@@ -43,34 +43,6 @@
         "_type": "string",
         "value": "Erasmus Universitair Medisch Centrum"
     },
-    "telephoneNumbers": [
-        {
-            "system": "phone",
-            "telecomType": null,
-            "value": {
-                "_type": "string",
-                "value": "+31107040704"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
-            },
-            "comment": null
-        }
-    ],
-    "emailAddresses": [
-        {
-            "system": "email",
-            "value": {
-                "_type": "string",
-                "value": "info@erasmus.nl"
-            },
-            "use": {
-                "_type": "code",
-                "value": "work"
-            }
-        }
-    ],
     "address": [
         {
             "line": {
@@ -115,5 +87,37 @@
             },
             "period": null
         }
-    ]
+    ],
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": null
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31107040704"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "info@erasmus.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    }
 }
