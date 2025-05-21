@@ -1,18 +1,10 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
 import { type NonStrictUi } from '../../../ui/types';
-import { map } from '../../../utils';
-import { nlCoreAddressInformation } from '../../elements';
 import { type R4NlCorePatient } from './nlCorePatient';
 
 export const i18n = 'r4.nl_core_patient';
 export const uiSchema: HealthUiSchemaFunction<R4NlCorePatient> = (resource, context) => {
     const ui = context.ui as NonStrictUi;
-
-    const addresses = map(
-        resource.address,
-        (x) => nlCoreAddressInformation.uiSchemaGroup(x, context),
-        true
-    );
 
     return {
         label: resource.name?.at(0)?.text?.value ?? context.formatMessage(i18n),
@@ -31,7 +23,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCorePatient> = (resource, cont
                     ui.boolean(`${i18n}.multiple_birth`, resource.multipleBirth),
                 ],
             },
-            ...addresses,
         ],
     };
 };

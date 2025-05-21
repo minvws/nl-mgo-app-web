@@ -46,6 +46,13 @@ export function processDefinition(definition: StructureDefinition) {
 
         let key = id!.replace(type, definitionIdKey);
 
+        if (definitionIdKey === 'zib_address_information') {
+            console.log('key: ', key);
+        }
+
+        // when dealing with value[x] paths inside extensions, we move the extension: property to its parent
+        // e.g. zib_address_information.line.extension:houseNumberIndication.value[x] -> zib_address_information.line.houseNumberIndication
+        key = key.replace(/extension:(\w+)\.\w+(\[x\])$/g, '$1');
         // move extension: properties to its parent
         key = key.replace(/extension:/g, '');
         // move modifierExtension: properties to its parent

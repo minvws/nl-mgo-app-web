@@ -1,5 +1,4 @@
 import { type HealthUiSchemaFunction } from '../../../ui';
-import { nlCoreAddressInformation } from '../../elements';
 import { type R4NlCoreHealthcareProvider } from './nlCoreHealthcareProvider';
 
 export const i18n = 'r4.nl_core_healthcare_provider';
@@ -11,9 +10,6 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthcareProvider> = (res
      */
     const zibHealthcareProvider = {
         LocationName: ui.string(`${i18n}.name`, resource.name),
-        AddressInformation: ui.helpers.getChildren(
-            nlCoreAddressInformation.uiSchemaGroup(resource.address, context)
-        ),
     };
 
     return {
@@ -21,10 +17,7 @@ export const uiSchema: HealthUiSchemaFunction<R4NlCoreHealthcareProvider> = (res
         children: [
             {
                 label: formatMessage(i18n),
-                children: [
-                    zibHealthcareProvider.LocationName,
-                    ...zibHealthcareProvider.AddressInformation,
-                ],
+                children: [zibHealthcareProvider.LocationName],
             },
         ],
     };

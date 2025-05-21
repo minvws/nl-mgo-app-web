@@ -4,7 +4,7 @@ import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
 import {
-    nlCoreAddressInformation,
+    parseNlCoreAddressInformation,
     parseNlCoreContactInformation,
     parseNlCoreNameInformation,
 } from '../../elements';
@@ -22,7 +22,7 @@ function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
         identifier: map(resource.identifier, parse.identifier), // NL-CM:17.1.2
         name: map(resource.name, parseNlCoreNameInformation), // NL-CM:17.1.3
         telecom: parseNlCoreContactInformation(resource.telecom),
-        address: map(resource.address, nlCoreAddressInformation.parse), // NL-CM:17.1.7
+        address: map(resource.address, parseNlCoreAddressInformation), // NL-CM:17.1.7
         gender: parse.code(resource.gender), // NL-CM:17.1.9
         birthDate: parse.date(resource.birthDate),
         qualification: map(resource.qualification, qualification.parse),

@@ -8,58 +8,6 @@
                     "label": "Zorgverlener naam",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
-                },
-                {
-                    "label": "Straat",
-                    "type": "SINGLE_VALUE",
-                    "display": "s-Gravendijkwal"
-                },
-                {
-                    "label": "Huisnummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "230"
-                },
-                {
-                    "label": "Huisnummerletter",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Aanduiding bij nummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Additionele informatie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Woonplaats",
-                    "type": "SINGLE_VALUE",
-                    "display": "Rotterdam"
-                },
-                {
-                    "label": "Gemeente",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Postcode",
-                    "type": "SINGLE_VALUE",
-                    "display": "3015 CE"
-                },
-                {
-                    "label": "Land",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Adres soort",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Work Place (WP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
-                    ]
                 }
             ]
         }

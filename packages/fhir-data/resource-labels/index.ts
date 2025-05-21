@@ -21,7 +21,7 @@ const r4Zibs = globSync(`${dirR4Zib2020}/zib-*.json`);
 const r3Zibs = globSync(`${dirR3Zib2017}/{zib,gp,nl-core}-*.json`);
 
 async function extractLabels(files: string[], fhirVersion: FhirVersion, fileName: string) {
-    const outputFile = resolvePath(`../dist/i18n/${fileName}.json`);
+    const outputFile = resolvePath(`../../mgo-intl/locales/static/raw/nl/${fileName}.json`);
     const outputDir = dirname(outputFile);
     if (!existsSync(outputDir)) {
         mkdirSync(outputDir, { recursive: true });

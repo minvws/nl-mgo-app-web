@@ -3,7 +3,7 @@ import { type Location } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
+import { parseNlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider'; // NOSONAR
@@ -17,7 +17,7 @@ function parseNlCoreHealthcareProvider(resource: Location) {
         identifier: map(resource.identifier, parse.identifier),
         name: parse.string(resource.name),
         telecom: parseNlCoreContactInformation(resource.telecom),
-        address: nlCoreAddressInformation.parse(resource.address),
+        address: parseNlCoreAddressInformation(resource.address),
         managingOrganization: parse.reference(resource.managingOrganization),
     };
 }

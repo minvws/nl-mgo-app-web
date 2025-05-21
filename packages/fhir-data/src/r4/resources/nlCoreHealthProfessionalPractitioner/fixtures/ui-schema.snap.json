@@ -27,63 +27,6 @@
                     "display": []
                 }
             ]
-        },
-        {
-            "label": "Adresgegevens",
-            "children": [
-                {
-                    "label": "Straat",
-                    "type": "SINGLE_VALUE",
-                    "display": "Simon Smitweg"
-                },
-                {
-                    "label": "Huisnummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "1"
-                },
-                {
-                    "label": "Huisnummerletter",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Aanduiding bij nummer",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Additionele informatie",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Woonplaats",
-                    "type": "SINGLE_VALUE",
-                    "display": "Leiderdorp"
-                },
-                {
-                    "label": "Gemeente",
-                    "type": "SINGLE_VALUE",
-                    "display": null
-                },
-                {
-                    "label": "Postcode",
-                    "type": "SINGLE_VALUE",
-                    "display": "2353 GA"
-                },
-                {
-                    "label": "Land",
-                    "type": "SINGLE_VALUE",
-                    "display": "Nederland"
-                },
-                {
-                    "label": "Adres soort",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Work Place (WP in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
-                    ]
-                }
-            ]
         }
     ]
 }

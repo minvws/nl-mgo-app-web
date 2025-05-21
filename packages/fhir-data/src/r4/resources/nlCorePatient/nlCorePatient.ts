@@ -3,7 +3,7 @@ import { type Patient } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddressInformation, parseNlCoreNameInformation } from '../../elements';
+import { parseNlCoreAddressInformation, parseNlCoreNameInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // NOSONAR
@@ -21,7 +21,7 @@ function parseNlCorePatient(resource: Patient) {
         multipleBirth: parse.boolean(resource.multipleBirthBoolean), // NL-CM:0.1.31
         deceased: parse.boolean(resource.deceasedBoolean), // NL-CM:0.1.32
         deceasedDateTime: parse.dateTime(resource.deceasedDateTime), // NL-CM:0.1.33
-        address: map(resource?.address, nlCoreAddressInformation.parse),
+        address: map(resource?.address, parseNlCoreAddressInformation),
         generalPractitioner: map(resource.generalPractitioner, parse.reference),
         managingOrganization: parse.reference(resource.managingOrganization),
         maritalStatus: parse.codeableConcept(resource.maritalStatus),

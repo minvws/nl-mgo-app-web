@@ -4,7 +4,7 @@ import { parse } from '../../../parse';
 import { filterCodeableConcept } from '../../../parse/helpers';
 import { type ResourceConfig } from '../../../types';
 import { map } from '../../../utils';
-import { nlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
+import { parseNlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
 import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization'; // NOSONAR
@@ -28,7 +28,7 @@ function parseNlCoreHealthcareProviderOrganization(resource: Organization) {
             parse.codeableConcept
         ),
         name: parse.string(resource.name),
-        address: map(resource.address, nlCoreAddressInformation.parse),
+        address: map(resource.address, parseNlCoreAddressInformation),
         telecom: parseNlCoreContactInformation(resource.telecom),
     };
 }

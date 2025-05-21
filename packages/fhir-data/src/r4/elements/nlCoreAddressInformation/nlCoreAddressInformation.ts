@@ -1,97 +1,85 @@
 import { type Nullable } from '@minvws/mgo-mgo-utils';
 import { type Address } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { type ResourceElementConfig } from '../../../types';
-import { uiSchemaGroup } from './uiSchemaGroup';
+import { type MgoCode, type MgoString } from '../../../parse/type';
+import { type MgoElementMeta } from '../../../types';
+import { map } from '../../../utils';
 
-export interface R4NlCoreAddressInformation {
-    line: parse.MgoString | undefined;
-    streetName: parse.MgoString | undefined; // NL-CM:20.5.2
-    houseNumber: parse.MgoString | undefined; // NL-CM:20.5.12
-    houseNumberAddition: parse.MgoString | undefined; // NL-CM:20.5.10, NL-CM:20.5.11
-    houseNumberIndication: parse.MgoString | undefined; // NL-CM:20.5.9
-    additionalInformation: parse.MgoString | undefined; // NL-CM:20.5.7
-    city: parse.MgoString | undefined; // NL-CM:20.5.3
-    district: parse.MgoString | undefined; // NL-CM:20.5.4
-    postalCode: parse.MgoString | undefined; // NL-CM:20.5.6
-    country: parse.MgoString | undefined;
-    countryCode: parse.MgoCodeableConcept | undefined; // NL-CM:20.5.5
-    // Note that in the structure definition `NL-CM:20.5.8` is mapped to `.type` and `.use`
-    // However this is probably not correct as there is a dedicated extension for this
-    addressType: parse.MgoCodeableConcept | undefined; // NL-CM:20.5.8
-    period: parse.MgoPeriod | undefined;
-}
+const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation'; // NOSONAR
+
+export type R4NlCoreAddressInformation = MgoElementMeta<typeof profile> & {
+    use: MgoCode | undefined;
+    type: MgoCode | undefined;
+    line:
+        | {
+              streetName: MgoString | undefined;
+              houseNumber: MgoString | undefined;
+              houseNumberLetter: MgoString | undefined;
+              houseNumberAddition: MgoString | undefined;
+              houseNumberIndiciation: MgoString | undefined;
+              additionalInformation: MgoString | undefined;
+              countryCode: MgoString | undefined;
+          }[]
+        | undefined;
+    city: MgoString | undefined;
+    district: MgoString | undefined;
+    postalCode: MgoString | undefined;
+    country: {
+        countryCode: parse.MgoCodeableConcept | undefined;
+    };
+};
 
 /**
- * @name HCIM NlCoreAddress
- * @usage Patient.address
- * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317236
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628321
  */
-function parseNlCoreAddressInformation(value: Nullable<Address>): R4NlCoreAddressInformation {
-    // We assume the full address is available in the first line
-    // If it would be split into multiple lines, concatenating them might be an issue
-    const lineMeta = value?._line?.[0];
-
-    const streetName = parse.extension(
-        lineMeta,
-        'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName', // NOSONAR
-        'string'
-    );
-
-    const houseNumber = parse.extension(
-        lineMeta,
-        'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber', // NOSONAR
-        'string'
-    );
-
-    const houseNumberAddition = parse.extension(
-        lineMeta,
-        'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix', // NOSONAR
-        'string'
-    );
-
-    const houseNumberIndication = parse.extension(
-        lineMeta,
-        'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator', // NOSONAR
-        'string'
-    );
-
-    const additionalInformation = parse.extension(
-        lineMeta,
-        'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID', // NOSONAR
-        'string'
-    );
-
-    const countryCode = parse.extension(
-        value?._country,
-        'http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification', // NOSONAR
-        'codeableConcept'
-    );
-
-    const addressType = parse.extension(
-        value,
-        'http://nictiz.nl/fhir/StructureDefinition/ext-AddressInformation.AddressType', // NOSONAR
-        'codeableConcept'
-    );
-
+export function parseNlCoreAddressInformation(
+    value: Nullable<Address>
+): R4NlCoreAddressInformation {
     return {
-        line: parse.string(value?.line?.[0]),
-        streetName,
-        houseNumber,
-        houseNumberAddition,
-        houseNumberIndication,
-        additionalInformation,
+        _profile: profile,
+        use: parse.code(value?.use),
+        type: parse.code(value?.type),
+        line: map(value?._line, (line) => ({
+            streetName: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName', // NOSONAR
+                'string'
+            ),
+            houseNumber: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber', // NOSONAR
+                'string'
+            ),
+            houseNumberLetter: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix', // NOSONAR
+                'string'
+            ),
+            houseNumberAddition: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix', // NOSONAR
+                'string'
+            ),
+            houseNumberIndication: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator', // NOSONAR
+                'string'
+            ),
+            additionalInformation: parse.extension(
+                line,
+                'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID', // NOSONAR
+                'string'
+            ),
+        })),
         city: parse.string(value?.city),
         district: parse.string(value?.district),
         postalCode: parse.string(value?.postalCode),
-        country: parse.string(value?.country),
-        countryCode,
-        addressType,
-        period: parse.period(value?.period),
+        country: {
+            countryCode: parse.extension(
+                value?._country,
+                'http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification', // NOSONAR
+                'codeableConcept'
+            ),
+        },
     };
 }
-
-export const nlCoreAddressInformation = {
-    parse: parseNlCoreAddressInformation,
-    uiSchemaGroup,
-} satisfies ResourceElementConfig<Address, R4NlCoreAddressInformation>;
