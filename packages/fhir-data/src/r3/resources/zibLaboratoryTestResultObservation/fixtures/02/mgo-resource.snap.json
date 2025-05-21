@@ -1,0 +1,159 @@
+{
+    "id": "zib-laboratorytestresult-observation-01",
+    "referenceId": "Observation/zib-laboratorytestresult-observation-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b2d4dbd-8fdf-11ec-8670-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2010-06-01",
+        "end": null
+    },
+    "performer": null,
+    "basedOn": null,
+    "status": {
+        "_type": "code",
+        "value": "final",
+        "testResultStatus": null
+    },
+    "category": {
+        "laboratoryTestResultCode": null,
+        "resultType": null
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "2069-3",
+                "display": "Chloride [Moles/volume] in Blood",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "valueSampledData": {
+        "_type": "sampledData",
+        "origin": {
+            "_type": "simpleQuantity",
+            "value": 0,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+        },
+        "period": {
+            "_type": "decimal",
+            "value": 0.1
+        },
+        "factor": {
+            "_type": "decimal",
+            "value": 1
+        },
+        "lowerLimit": {
+            "_type": "decimal",
+            "value": 0
+        },
+        "upperLimit": {
+            "_type": "decimal",
+            "value": 300
+        },
+        "dimensions": {
+            "_type": "positiveInt",
+            "value": 1
+        },
+        "data": {
+            "_type": "string",
+            "value": "120 125 123 121 119 118 117 116 115 114"
+        }
+    },
+    "interpretation": {
+        "interpretatieVlaggenCodelijst": [
+            {
+                "_type": "coding",
+                "code": "281302008",
+                "display": "Above reference range",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "context": null,
+    "method": null,
+    "specimen": {
+        "_type": "reference",
+        "reference": "Specimen/zib-laboratorytestresult-specimen-01",
+        "display": "Blood (substance)"
+    },
+    "referenceRange": [
+        {
+            "low": {
+                "_type": "quantity",
+                "value": 99,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "high": {
+                "_type": "quantity",
+                "value": 108,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "type": null
+        },
+        {
+            "low": {
+                "_type": "quantity",
+                "value": 180,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "high": {
+                "_type": "quantity",
+                "value": 265,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "type": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "treatment",
+                        "display": "Treatment Range",
+                        "system": "http://hl7.org/fhir/referencerange-meaning"
+                    }
+                ]
+            }
+        }
+    ],
+    "related": [
+        {
+            "target": {
+                "_type": "reference",
+                "reference": "Observation/example-genetics-1",
+                "display": "Variant-1"
+            }
+        }
+    ]
+}

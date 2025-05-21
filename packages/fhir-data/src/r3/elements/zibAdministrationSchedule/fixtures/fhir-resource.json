@@ -1,0 +1,14 @@
+{
+    "repeat": {
+        "boundsPeriod": { "start": "2019-02-06", "end": "2019-02-09" },
+        "duration": 30,
+        "durationUnit": "d",
+        "frequency": 2,
+        "frequencyMax": 20,
+        "period": 1,
+        "periodUnit": "d",
+        "dayOfWeek": ["mon", "tue"],
+        "timeOfDay": ["08:00:00", "18:00:00"],
+        "when": ["73775008"]
+    }
+}

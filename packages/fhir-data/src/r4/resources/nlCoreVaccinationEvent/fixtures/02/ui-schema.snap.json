@@ -1,0 +1,103 @@
+{
+    "label": "Hepatitis a, geinactiveerd, intact virus",
+    "children": [
+        {
+            "label": "Algemeen",
+            "children": [
+                {
+                    "label": "Uniek nummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
+                },
+                {
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 milliliter"
+                },
+                {
+                    "label": "Patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+                    "reference": "Patient/nl-core-Patient-01"
+                },
+                {
+                    "label": "Gegeven op",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
+                {
+                    "label": "Zorgverlener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Extra informatie",
+            "children": [
+                {
+                    "label": "Vaccinatie aanleiding",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie) (159731000146104 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Autoriteit",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Vaccinatie pathogeen",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "hepatitis (128241005 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Dosis nummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "n/a"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "INTRAMUSCULAIR (2 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)"
+                    ]
+                },
+                {
+                    "label": "Lichaamsplek",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "gehele rechter bovenarm (59126009 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

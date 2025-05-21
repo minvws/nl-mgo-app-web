@@ -1,0 +1,44 @@
+{
+    "id": "zib-nutritionadvice-01",
+    "referenceId": "NutritionOrder/zib-nutritionadvice-01",
+    "resourceType": "NutritionOrder",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NutritionAdvice",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1c2bf38b-8fdf-11ec-1435-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "dateTime": {
+        "_type": "dateTime",
+        "value": "2018-01-01"
+    },
+    "orderer": null,
+    "comment": null,
+    "oralDiet": {
+        "type": [
+            {
+                "_type": "codeableConcept",
+                "text": "Energie verrijkt",
+                "coding": []
+            }
+        ],
+        "fluidConsistencyType": [
+            {
+                "_type": "codeableConcept",
+                "text": "Dikvloeibaar",
+                "coding": []
+            }
+        ],
+        "texture": null
+    }
+}

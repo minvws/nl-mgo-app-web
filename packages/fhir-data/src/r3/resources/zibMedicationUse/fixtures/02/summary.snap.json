@@ -1,0 +1,89 @@
+{
+    "label": "Doxycycline tablet 100mg",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Actief"
+                },
+                {
+                    "label": "Reden gebruik",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Instructies 1",
+            "children": [
+                {
+                    "label": "Gebruiksaanwijzing",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vanaf 16 jul 2018, gedurende 5 dagen, eerst gedurende 1 dag 1 maal per dag 2 stuks, dan gedurende 4 dagen 1 maal per dag 1 stuk, oraal"
+                },
+                {
+                    "label": "Hoeveelheid per keer",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 stuks"
+                }
+            ]
+        },
+        {
+            "label": "Instructies 2",
+            "children": [
+                {
+                    "label": "Gebruiksaanwijzing",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vanaf 16 jul 2018, gedurende 5 dagen, eerst gedurende 1 dag 1 maal per dag 2 stuks, dan gedurende 4 dagen 1 maal per dag 1 stuk, oraal"
+                },
+                {
+                    "label": "Hoeveelheid per keer",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 stuk"
+                }
+            ]
+        },
+        {
+            "label": "Periode van gebruik",
+            "children": [
+                {
+                    "label": "Ingangsdatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "16 juli 2018"
+                },
+                {
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Voorgeschreven door",
+            "children": [
+                {
+                    "label": "Specialist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle medicijngegevens",
+                    "reference": "MedicationStatement/zib-medicationuse-01"
+                }
+            ]
+        }
+    ]
+}

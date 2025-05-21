@@ -1,0 +1,59 @@
+{
+    "id": "zib-bodyweight-01",
+    "referenceId": "Observation/zib-bodyweight-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "194206c9-8fdf-11ec-1006-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2013-02-03"
+    },
+    "effectivePeriod": null,
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "valueQuantity": {
+        "_type": "quantity",
+        "value": 72,
+        "comparator": null,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+    },
+    "comment": null,
+    "component": {
+        "clothing": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "MINIMAL",
+                            "display": "Minimal dressed",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

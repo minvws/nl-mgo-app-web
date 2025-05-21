@@ -1,0 +1,40 @@
+{
+    "label": "Erasmus Universitair Medisch Centrum",
+    "children": [
+        {
+            "label": "Zorgverlener organisatie",
+            "children": [
+                {
+                    "label": "Zorgverlener organisatie identifier",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "06020806"
+                    ]
+                },
+                {
+                    "label": "Zorgverlener organisatie afdelings specialiteit",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Medisch specialisten, cardiologie (0320 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Zorgverlener organisatie type",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Universitair Medisch Centrum (V5 in code systeem http://nictiz.nl/fhir/NamingSystem/organization-type)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Zorgverlener organisatie naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Erasmus Universitair Medisch Centrum"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "id": "zib-advancedirective-03",
+    "referenceId": "Consent/zib-advancedirective-03",
+    "resourceType": "Consent",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective",
+    "fhirVersion": "R3",
+    "identifier": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+        "value": "18c1f7b3-8fdf-11ec-1027-020000000000",
+        "type": null
+    },
+    "dateTime": {
+        "_type": "dateTime",
+        "value": "2018-04-09"
+    },
+    "disorder": [],
+    "comment": {
+        "_ext": true,
+        "_type": "string",
+        "value": "Mondelinge afspraak"
+    },
+    "category": {
+        "typeOfLivingWill": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "MON",
+                        "display": "Mondelinge afspraak",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
+                    }
+                ]
+            }
+        ]
+    },
+    "consentingParty": null
+}

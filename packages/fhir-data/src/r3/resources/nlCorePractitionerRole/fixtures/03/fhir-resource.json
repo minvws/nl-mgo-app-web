@@ -1,0 +1,34 @@
+{
+    "resourceType": "PractitionerRole",
+    "id": "nl-core-practitionerrole-03",
+    "meta": { "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Zorgverlenerrol. Id: 171b988d-8fdf-11ec-1629-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6)</caption><tbody><tr><th>Zorgverlener</th><td><div>G.Z.M. de Wit</div><div>Test Medisch Centrum</div></td></tr><tr><th>Specialisme</th><td><span title=\"Medisch specialisten, dermatologie (0310 - AGB-medisch specialisme)\">Medisch specialisten, dermatologie</span></td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "171b988d-8fdf-11ec-1629-020000000000"
+        }
+    ],
+    "practitioner": {
+        "reference": "Practitioner/nl-core-practitioner-03",
+        "display": "G.Z.M. de Wit"
+    },
+    "organization": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "specialty": [
+        {
+            "coding": [
+                {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+                    "code": "0310",
+                    "display": "Medisch specialisten, dermatologie"
+                }
+            ]
+        }
+    ]
+}

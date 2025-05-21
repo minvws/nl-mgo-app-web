@@ -1,0 +1,54 @@
+{
+    "id": "zib-alcoholuse-01",
+    "referenceId": "Observation/zib-alcoholuse-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AlcoholUse",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "18cc8831-8fdf-11ec-2010-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "1980",
+        "end": null
+    },
+    "performer": null,
+    "valueCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "219006",
+                "display": "Current drinker of alcohol",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "component": {
+        "amount": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 4,
+                    "comparator": null,
+                    "unit": "glasses per week",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{glasses}/wk"
+                }
+            }
+        ]
+    }
+}

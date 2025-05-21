@@ -1,0 +1,194 @@
+{
+    "label": "Afspraak",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Afwijkende uitslag",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Clinical Review"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 januari 2018 om 09:00:00 GMT+1"
+                },
+                {
+                    "label": "Contact categorie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "General Practice (gp in code systeem http://example.org/service-category)"
+                    ]
+                },
+                {
+                    "label": "Contact duur in minuten",
+                    "type": "SINGLE_VALUE",
+                    "display": "15"
+                },
+                {
+                    "label": "Contact onderwerp",
+                    "type": "SINGLE_VALUE",
+                    "display": "Poliklinische Controle Chirurgie"
+                },
+                {
+                    "label": "Contact patiënt instructie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Please park in P2; P1 is under construction"
+                    ]
+                },
+                {
+                    "label": "Contact status",
+                    "type": "SINGLE_VALUE",
+                    "display": "fulfilled"
+                },
+                {
+                    "label": "Contact type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Followup (follow in code systeem http://example.org/appointment-type)"
+                    ]
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "10 oktober 2017"
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 januari 2018 om 09:45:00 GMT+1"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "0000000001"
+                    ]
+                },
+                {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Medisch specialisten, chirurgie (0303 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Verrichting of probleem",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Severe burn of left ear"
+                    ]
+                },
+                {
+                    "label": "Verwijzing",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Online wijzigbaar",
+            "children": [
+                {
+                    "label": "Online wijzigbaar indicator",
+                    "type": "SINGLE_VALUE",
+                    "display": "Ja"
+                },
+                {
+                    "label": "Online wijzigbaar tot",
+                    "type": "SINGLE_VALUE",
+                    "display": "31-12-2017"
+                }
+            ]
+        },
+        {
+            "label": "Contact met",
+            "children": [
+                {
+                    "label": "Contactpersoon, patiënt, zorgverlener of locatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Alex XXX_Verweij",
+                    "reference": "Patient/eafspraak-patient-01"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "accepted"
+                },
+                {
+                    "label": "Vereist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Contact met",
+            "children": [
+                {
+                    "label": "Contactpersoon, patiënt, zorgverlener of locatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "A.F. Snijder",
+                    "reference": "Practitioner/eafspraak-practitioner-01"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "accepted"
+                },
+                {
+                    "label": "Vereist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "(ATND in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Contact met",
+            "children": [
+                {
+                    "label": "Contactpersoon, patiënt, zorgverlener of locatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "West vleugel",
+                    "reference": "Location/eafspraak-location-01"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "accepted"
+                },
+                {
+                    "label": "Vereist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

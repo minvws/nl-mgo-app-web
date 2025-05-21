@@ -1,0 +1,89 @@
+{
+    "resourceType": "Composition",
+    "id": "gp-EncounterReport-gpdata-encounter-contact04",
+    "meta": {
+        "lastUpdated": "2018-11-11T11:19:35.395+01:00",
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><b>Contactverslag dd. 2020-03-15</b><table><caption>Samengestelde informatie. Subject: Jacqueline XXX_Cevat. Id: 1529b7df-8fdf-11ec-1458-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: definitief<span style=\"display: block;\">Auteur: Dr. V. Huisarts 1</span></caption><tbody><tr><th>Type</th><td><span title=\"Summarization of encounter note Narrative (67781-5 - LOINC)\">Summarization of encounter note Narrative</span></td></tr><tr><th>Gemaakt</th><td>15 maart 2020</td></tr><tr><th>Contact</th><td>Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1</td></tr></tbody></table></div>"
+    },
+    "identifier": {
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+        "value": "1529b7df-8fdf-11ec-1458-020000000000"
+    },
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "67781-5",
+                "display": "Summarization of encounter note Narrative"
+            }
+        ]
+    },
+    "subject": { "reference": "Patient/gpdata-patient-01", "display": "Jacqueline XXX_Cevat" },
+    "encounter": {
+        "reference": "Encounter/gpdata-encounter-contact04",
+        "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1"
+    },
+    "date": "2020-03-15",
+    "author": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/gpdata-practitionerrole-01",
+                        "display": "Dr. V. Huisarts 1"
+                    }
+                }
+            ],
+            "reference": "Practitioner/gpdata-practitioner-01",
+            "display": "Dr. V. Huisarts 1"
+        }
+    ],
+    "title": "Contactverslag dd. 2020-03-15",
+    "section": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/code-icpc-1-nl",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/sid/icpc-1-nl",
+                                "code": "L03",
+                                "display": "Lage-rugpijn zonder uitstraling [ex. L86]"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen",
+                        "code": "E",
+                        "display": "Evaluatie"
+                    }
+                ]
+            },
+            "text": {
+                "status": "additional",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">lage rugpijn</div>"
+            },
+            "entry": [
+                {
+                    "reference": "Observation/gpdata-observation-contact04-e",
+                    "display": "lage rugpijn"
+                },
+                {
+                    "reference": "EpisodeOfCare/gpdata-episodeofcare-icpc-l8601",
+                    "display": "Condition HNP (thoracaal/lumbaal)"
+                }
+            ]
+        }
+    ]
+}

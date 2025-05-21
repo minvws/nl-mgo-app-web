@@ -1,0 +1,38 @@
+{
+    "name": "@minvws/mgo-mgo-intl",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./test": "./src/test/index.ts",
+        "./polyfills": "./src/polyfills/polyfills.ts"
+    },
+    "scripts": {
+        "test": "vitest",
+        "check-types": "tsc --noEmit",
+        "messages:update": "./bin/lokalise.sh",
+        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl"
+    },
+    "dependencies": {
+        "@formatjs/cli": "^6.6.1",
+        "@formatjs/intl": "^3.1.4",
+        "@formatjs/intl-datetimeformat": "^6.17.3",
+        "@formatjs/intl-locale": "^4.2.10",
+        "@formatjs/intl-numberformat": "^8.15.3",
+        "@formatjs/intl-pluralrules": "^5.4.3",
+        "@formatjs/intl-relativetimeformat": "^11.4.10",
+        "intl": "^1.2.5",
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "escape-string-regexp": "^5.0.0",
+        "html-escaper": "^3.0.3",
+        "intl-messageformat": "^10.7.15",
+        "markdown-it": "^14.1.0",
+        "prettier": "^3.5.1",
+        "sanitize-html": "^2.14.0",
+        "type-fest": "^4.23.0",
+        "vitest": "^3.1.3"
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+    "sequence": {
+        "_type": "integer",
+        "value": 1
+    },
+    "text": {
+        "_type": "string",
+        "value": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+    },
+    "additionalInstruction": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "422327006",
+                    "display": "Then stop",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "timing": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+        "repeat": {
+            "duration": null,
+            "durationUnit": null,
+            "frequency": {
+                "_type": "integer",
+                "value": 1
+            },
+            "frequencyMax": null,
+            "period": {
+                "_type": "decimal",
+                "value": 1
+            },
+            "periodUnit": {
+                "_type": "code",
+                "value": "d"
+            },
+            "dayOfWeek": null,
+            "timeOfDay": null,
+            "when": null
+        }
+    },
+    "asNeededCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": "zo nodig",
+        "coding": [
+            {
+                "code": "1137",
+                "display": "zo nodig",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+            }
+        ]
+    },
+    "route": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "12",
+                "display": "rectaal",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+            }
+        ]
+    },
+    "doseQuantity": {
+        "_type": "quantity",
+        "value": 20,
+        "comparator": null,
+        "unit": "milligram",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg"
+    },
+    "maxDosePerPeriod": {
+        "_type": "ratio",
+        "numerator": {
+            "value": 1000,
+            "comparator": null,
+            "unit": "milliliter",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "233"
+        },
+        "denominator": {
+            "value": 24,
+            "comparator": null,
+            "unit": "uur",
+            "system": "http://unitsofmeasure.org",
+            "code": "h"
+        }
+    },
+    "rateRatio": {
+        "_type": "ratio",
+        "numerator": {
+            "value": 200,
+            "comparator": null,
+            "unit": "milliliter",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "233"
+        },
+        "denominator": {
+            "value": 12,
+            "comparator": null,
+            "unit": "uur",
+            "system": "http://unitsofmeasure.org",
+            "code": "h"
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "id": "zib-allergyintolerance-01",
+    "referenceId": "AllergyIntolerance/zib-allergyintolerance-01",
+    "resourceType": "AllergyIntolerance",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "18e3c749-8fdf-11ec-2022-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "onsetDateTime": {
+        "_type": "dateTime",
+        "value": "2008-11-08"
+    },
+    "recorder": null,
+    "source": null,
+    "clinicalStatus": {
+        "allergieStatusCodelijst": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "active",
+                    "display": "Active",
+                    "system": "http://hl7.org/fhir/v3/ActStatus"
+                }
+            ]
+        }
+    },
+    "verificationStatus": {
+        "_type": "code",
+        "value": "confirmed"
+    },
+    "category": [
+        {
+            "allergieCategorieCodelijst": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "419199007",
+                        "display": "Allergy to substance",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        }
+    ],
+    "criticality": {
+        "criticalExtentCodelist": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "24484000",
+                    "display": "Severe",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "288328004",
+                "display": "Bee venom",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "lastOccurrence": {
+        "_type": "dateTime",
+        "value": "2009-11-15"
+    },
+    "note": null,
+    "reaction": [
+        {
+            "substance": null,
+            "manifestation": [
+                {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "16932000",
+                            "display": "Nausea and vomiting",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            ],
+            "description": null,
+            "onset": null,
+            "severity": {
+                "severityCodelist": [
+                    {
+                        "_ext": true,
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "24484000",
+                                "display": "Severe",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "exposureRoute": null
+        }
+    ]
+}

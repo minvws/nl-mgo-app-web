@@ -1,0 +1,108 @@
+{
+    "label": "Behandel aanwijzing",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aanvullende bronnen",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Mondelinge afspraak",
+                    "reference": "Consent/zib-advancedirective-03"
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "9 april 2018"
+                },
+                {
+                    "label": "Behandeling",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Cardiopulmonary resuscitation (procedure) (89666000 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Behandeling toegestaan",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Behandeling niet toegestaan en/of wenselijk (NEE in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)"
+                    ]
+                },
+                {
+                    "label": "Beperkingen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bron bijlage",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bron identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bron referentie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Niet-reanimerenpenning",
+                    "reference": "Consent/zib-advancedirective-02"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1ecd5e13-8fdf-11ec-8335-020000000000"
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toestemmende partij",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Verificatie",
+            "children": [
+                {
+                    "label": "Geverifieerd",
+                    "type": "SINGLE_VALUE",
+                    "display": "Ja"
+                },
+                {
+                    "label": "Geverifieerd bij",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Patient (116154003 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Verificatie datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "9 april 2018"
+                }
+            ]
+        }
+    ]
+}

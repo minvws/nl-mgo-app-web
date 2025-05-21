@@ -1,0 +1,84 @@
+{
+    "private": true,
+    "license": "UNLICENSED",
+    "packageManager": "pnpm@9.13.2",
+    "scripts": {
+        "dev": "pnpm run --dir apps/mgo dev",
+        "test": "vitest",
+        "test:coverage": "vitest run --coverage --coverage.reportOnFailure",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "lint:fix": "eslint . --ext ts,tsx --fix",
+        "check-types": "tsc --version && pnpm run -r check-types",
+        "storybook": "pnpm run --dir packages/mgo-ui dev",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "messages:update": "pnpm run --dir packages/mgo-intl messages:update",
+        "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
+        "e2e": "pnpm run --dir apps/e2e-tests e2e"
+    },
+    "non-standard-dependency-comments": {
+        "eslint": [
+            "v8.57.0 - There are still too many issues related to the new flat config change in v9.*.",
+            "https://github.com/import-js/eslint-plugin-import/issues/2556",
+            "https://github.com/TanStack/query/discussions/6669",
+            "https://github.com/facebook/react/issues/28313"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.3.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "@tanstack/eslint-plugin-query": "^5.43.1",
+        "@typescript-eslint/eslint-plugin": "^7.13.0",
+        "@typescript-eslint/parser": "^7.13.0",
+        "@vitest/coverage-v8": "^3.1.3",
+        "eslint": "^8.57.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-react": "^7.34.2",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "eslint-plugin-react-refresh": "^0.4.7",
+        "eslint-plugin-sonarjs": "^0.25.1",
+        "prettier": "^3.4.2",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "simple-git-hooks": "^2.11.1",
+        "typescript": "^5.4.5",
+        "vitest": "^3.1.3"
+    },
+    "simple-git-hooks": {
+        "commit-msg": "pnpm commitlint --edit ${1}"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "pnpm": {
+        "overrides comments (non-standard-key)": {
+            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j",
+            "rollup": "app/mgo > vite-plugin-svgr@4.2.0 > '@rollup/pluginutils@5.1.0 > rollup:4.21.3 / https://github.com/advisories/GHSA-gcx4-mw62-g8wm",
+            "cookie": "packages/fhir-client > msw@2.4.5 > @bundled-es-modules/cookie@2.0.0 > cookie@0.5.0 / https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+            "cross-spawn": "eslint@8.57.0 > cross-spawn@7.0.3 / https://github.com/advisories/GHSA-3xgq-45jj-v275",
+            "path-to-regexp@<0.1.12": "packages/mgo-ui > @storybook/addon-actions@8.3.0 > storybook@8.3.0 > @storybook/core@8.3.0 > express@4.21.0 > path-to-regexp@0.1.10 / https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
+            "esbuild@<0.25.0": "packages/mgo-ui > @storybook/addon-actions@8.5.1 > storybook@8.5.1 > @storybook/core@8.5.1 > esbuild@0.24.2 / https://github.com/advisories/GHSA-67mh-4wv8-2f99"
+        },
+        "overrides": {
+            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0",
+            "rollup": "^4.22.4",
+            "cookie": "^0.7.0",
+            "cross-spawn": "^7.0.5",
+            "path-to-regexp@<0.1.12": "^0.1.12",
+            "esbuild@<0.25.0": "^0.25.0"
+        },
+        "auditConfig": {
+            "ignoreGhsas comments (non-standard-key)": {
+                "https://github.com/advisories/GHSA-968p-4wvh-cqc8": "@babel - We don't meet the vulnerability conditions",
+                "https://github.com/advisories/GHSA-f46r-rw29-r322": "react-router - We don't use SSR so we are not vulnerable",
+                "https://github.com/advisories/GHSA-cpj6-fhp6-mr6j": "react-router  - We don't use SSR so we are not vulnerable"
+            },
+            "ignoreGhsas": [
+                "GHSA-968p-4wvh-cqc8",
+                "GHSA-f46r-rw29-r322",
+                "GHSA-cpj6-fhp6-mr6j"
+            ]
+        }
+    }
+}

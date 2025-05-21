@@ -1,0 +1,56 @@
+{
+    "label": "Lichaamsgewicht",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Vaste Huisarts 1"
+                    ]
+                },
+                {
+                    "label": "Gewicht datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 februari 2013"
+                },
+                {
+                    "label": "Gewicht waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "72 kg"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "194206c9-8fdf-11ec-1006-020000000000"
+                    ]
+                },
+                {
+                    "label": "Kleding",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Minimal dressed (MINIMAL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)"
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

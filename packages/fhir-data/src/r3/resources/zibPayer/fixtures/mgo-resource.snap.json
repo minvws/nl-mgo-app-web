@@ -1,0 +1,68 @@
+{
+    "id": "zib-payer-01",
+    "referenceId": "Coverage/zib-payer-01",
+    "resourceType": "Coverage",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Payer",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1c7ad0eb-8fdf-11ec-2921-020000000000",
+            "type": null
+        }
+    ],
+    "beneficiary": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2018-01-01",
+        "end": "2019-01-31"
+    },
+    "type": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "B",
+                "display": "Basis verzekerd",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1"
+            }
+        ]
+    },
+    "subscriberId": {
+        "_type": "string",
+        "value": "12345678"
+    },
+    "payor": [
+        {
+            "_type": "reference",
+            "reference": "Organization/nl-core-organization-04",
+            "display": "Menzis Zorgverzekeraar N.V.",
+            "bankInformation": [
+                {
+                    "_ext": true,
+                    "bankName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "ING"
+                    },
+                    "accountNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "NL85INGB0001234567"
+                    },
+                    "bankcode": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "INGBNL2A"
+                    }
+                }
+            ]
+        }
+    ]
+}

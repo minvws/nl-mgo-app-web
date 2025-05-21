@@ -1,0 +1,74 @@
+{
+    "id": "zib-medicaldevicerequest-01",
+    "referenceId": "DeviceRequest/zib-medicaldevicerequest-01",
+    "resourceType": "DeviceRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bbb2101-8fdf-11ec-1269-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "occurrenceTiming": {
+        "_type": "timing",
+        "code": null,
+        "event": null,
+        "repeat": {
+            "count": null,
+            "countMax": null,
+            "duration": null,
+            "durationMax": null,
+            "durationUnit": null,
+            "frequency": {
+                "_type": "integer",
+                "value": 3
+            },
+            "frequencyMax": null,
+            "period": {
+                "_type": "decimal",
+                "value": 1
+            },
+            "periodMax": null,
+            "periodUnit": {
+                "_type": "string",
+                "value": "d"
+            },
+            "dayOfWeek": null,
+            "timeOfDay": null,
+            "when": null,
+            "offset": null
+        }
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-02",
+        "display": "Vaste Huisarts 1"
+    },
+    "codeReference": {
+        "_type": "reference",
+        "reference": "Device/zib-MedicalDeviceProduct-03",
+        "display": "Gehoorapparaat"
+    },
+    "status": {
+        "orderStatus": null
+    },
+    "performerType": {
+        "healthProfessionalRole": [
+            {
+                "_type": "coding",
+                "code": null,
+                "display": "Qualified nurse",
+                "system": null
+            }
+        ]
+    }
+}

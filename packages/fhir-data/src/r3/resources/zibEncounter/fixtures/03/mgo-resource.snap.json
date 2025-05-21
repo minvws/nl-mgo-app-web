@@ -1,0 +1,85 @@
+{
+    "id": "zib-encounter-03",
+    "referenceId": "Encounter/zib-encounter-03",
+    "resourceType": "Encounter",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19c5bd75-8fdf-11ec-1839-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "I. Jongeneel-de Haas"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2012-08-16",
+        "end": "2012-08-19"
+    },
+    "participant": [
+        {
+            "individual": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-03",
+                "display": "G.Z.M. de Wit"
+            },
+            "type": {
+                "healthProfessionalRole": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "RESP",
+                                "display": "Responsible Party",
+                                "system": "http://hl7.org/fhir/v3/ParticipationType"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "reason": null,
+    "class": {
+        "_type": "coding",
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "system": "http://hl7.org/fhir/v3/ActCode"
+    },
+    "diagnosis": [
+        {
+            "condition": {
+                "_type": "reference",
+                "reference": "Procedure/zib-procedure-02",
+                "display": "Surgical reduction of fracture (procedure)"
+            }
+        }
+    ],
+    "hospitalization": {
+        "admitSource": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "emd",
+                    "display": "From accident/emergency department",
+                    "system": "http://hl7.org/fhir/admit-source"
+                }
+            ]
+        },
+        "dischargeDisposition": null
+    },
+    "serviceProvider": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "id": "zib-alert-01",
+    "referenceId": "Flag/zib-alert-01",
+    "resourceType": "Flag",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Alert",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "18d78911-8fdf-11ec-3053-020000000000",
+            "type": null
+        }
+    ],
+    "author": null,
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "concernReference": {
+        "_ext": true,
+        "_type": "reference",
+        "reference": "Condition/zib-problem-01",
+        "display": "Fracture of wrist (disorder)"
+    },
+    "category": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "75323-6",
+                "display": "condition",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "432415000",
+                "display": "Methicillin resistant staphylococcus aureus carrier",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "period": {
+        "_type": "period",
+        "start": "2010-06-01",
+        "end": null
+    }
+}

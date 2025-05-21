@@ -1,0 +1,165 @@
+{
+    "id": "nl-core-Patient-01",
+    "referenceId": "Patient/nl-core-Patient-01",
+    "resourceType": "Patient",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient",
+    "fhirVersion": "R4",
+    "name": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+            "text": {
+                "_type": "string",
+                "value": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+            },
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "van"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Putten"
+                },
+                "humannamePartnerPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "van der"
+                },
+                "humannamePartnerName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Giessen"
+                }
+            },
+            "given": {
+                "birthName": [
+                    {
+                        "_type": "string",
+                        "value": "Johanna"
+                    },
+                    {
+                        "_type": "string",
+                        "value": "Petronella"
+                    },
+                    {
+                        "_type": "string",
+                        "value": "Maria"
+                    }
+                ],
+                "initials": null
+            },
+            "prefix": null,
+            "suffix": null,
+            "period": null
+        },
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given",
+            "text": null,
+            "given": [
+                {
+                    "_type": "string",
+                    "value": "Jo"
+                }
+            ],
+            "period": null
+        }
+    ],
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333",
+            "type": null
+        }
+    ],
+    "birthDate": {
+        "_type": "date",
+        "value": "1934-04-28"
+    },
+    "gender": {
+        "_type": "code",
+        "value": "female"
+    },
+    "multipleBirth": {
+        "_type": "boolean",
+        "value": true
+    },
+    "deceased": {
+        "_type": "boolean",
+        "value": false
+    },
+    "deceasedDateTime": null,
+    "address": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": {
+                "_type": "code",
+                "value": "both"
+            },
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "1e Jacob van Campenstr"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "15"
+                    },
+                    "houseNumberLetter": null,
+                    "houseNumberAddition": null,
+                    "houseNumberIndication": null,
+                    "additionalInformation": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Hoogmade"
+            },
+            "district": {
+                "_type": "string",
+                "value": "Kaag en Braassem"
+            },
+            "postalCode": {
+                "_type": "string",
+                "value": "1012 NX"
+            },
+            "country": {
+                "countryCode": {
+                    "_ext": true,
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "NL",
+                            "display": "Nederland",
+                            "system": "urn:iso:std:iso:3166"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "generalPractitioner": null,
+    "managingOrganization": null,
+    "maritalStatus": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "D",
+                "display": "Divorced",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
+            }
+        ]
+    }
+}

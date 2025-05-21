@@ -1,0 +1,71 @@
+{
+    "id": "ont-ver-gpdata-observation-contact01-pulsefrequency",
+    "referenceId": "Observation/ont-ver-gpdata-observation-contact01-pulsefrequency",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "bb4f140b-041c-11ec-6152-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
+        "display": "Jacqueline XXX_Cevat"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2023-05-03"
+    },
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "valueQuantity": {
+        "_type": "quantity",
+        "value": 120,
+        "comparator": null,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+    },
+    "method": null,
+    "bodySite": null,
+    "comment": null,
+    "status": {
+        "resultStatusCodelist": null
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "1875",
+                "display": "polsfrequentie",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+            },
+            {
+                "code": "8893-0",
+                "display": "Heart rate Peripheral artery by Palpation",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "related": null,
+    "episodeOfCare": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-k78",
+            "display": "Boezemfibrilleren/-fladderen"
+        }
+    ]
+}

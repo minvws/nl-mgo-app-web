@@ -1,0 +1,33 @@
+{
+    "event": ["2025-05-10T08:00:00Z", "2025-05-11T08:00:00Z"],
+    "repeat": {
+        "boundsPeriod": {
+            "start": "2025-05-10T00:00:00Z",
+            "end": "2025-05-20T00:00:00Z"
+        },
+        "count": 10,
+        "countMax": 15,
+        "duration": 1,
+        "durationMax": 2,
+        "durationUnit": "h",
+        "frequency": 3,
+        "frequencyMax": 4,
+        "period": 1,
+        "periodMax": 2,
+        "periodUnit": "d",
+        "dayOfWeek": ["mon", "wed", "fri"],
+        "timeOfDay": ["08:00:00", "12:00:00", "18:00:00"],
+        "when": ["MORN", "AFT", "EVE"],
+        "offset": 30
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/GTSAbbreviation",
+                "code": "TID",
+                "display": "three times per day"
+            }
+        ],
+        "text": "Three times per day"
+    }
+}

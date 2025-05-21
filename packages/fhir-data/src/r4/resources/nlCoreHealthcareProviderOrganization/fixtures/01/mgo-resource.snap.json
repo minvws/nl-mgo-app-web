@@ -1,0 +1,118 @@
+{
+    "id": "nl-core-HealthcareProvider-Organization-01",
+    "referenceId": "Organization/nl-core-HealthcareProvider-Organization-01",
+    "resourceType": "Organization",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization",
+    "fhirVersion": "R4",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "06020806",
+            "type": null
+        }
+    ],
+    "departmentSpecialty": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "0320",
+                    "display": "Medisch specialisten, cardiologie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
+    ],
+    "organizationType": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "V5",
+                    "display": "Universitair Medisch Centrum",
+                    "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
+                }
+            ]
+        }
+    ],
+    "name": {
+        "_type": "string",
+        "value": "Erasmus Universitair Medisch Centrum"
+    },
+    "address": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+            "use": {
+                "_type": "code",
+                "value": "work"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "s-Gravendijkwal"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "230"
+                    },
+                    "houseNumberLetter": null,
+                    "houseNumberAddition": null,
+                    "houseNumberIndication": null,
+                    "additionalInformation": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Rotterdam"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "3015 CE"
+            },
+            "country": {
+                "countryCode": null
+            }
+        }
+    ],
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": null
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31107040704"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "info@erasmus.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    }
+}

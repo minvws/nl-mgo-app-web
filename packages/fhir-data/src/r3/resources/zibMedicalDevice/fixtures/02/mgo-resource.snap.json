@@ -1,0 +1,37 @@
+{
+    "id": "zib-medicaldevice-02",
+    "referenceId": "DeviceUseStatement/zib-medicaldevice-02",
+    "resourceType": "DeviceUseStatement",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b88e083-8fdf-11ec-1325-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "I. Jongeneel-de Haas"
+    },
+    "whenUsed": null,
+    "source": null,
+    "healthCareProvider": null,
+    "healthProfessional": null,
+    "device": {
+        "_type": "reference",
+        "reference": "Device/zib-medicaldeviceproduct-02",
+        "display": "Rollator"
+    },
+    "indicationProblem": null,
+    "bodySite": {
+        "laterality": null,
+        "coding": null,
+        "text": null
+    },
+    "note": null
+}

@@ -1,0 +1,214 @@
+{
+    "id": "zib-medicationuse-01",
+    "referenceId": "MedicationStatement/zib-medicationuse-01",
+    "resourceType": "MedicationStatement",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse",
+    "fhirVersion": "R3",
+    "author": {
+        "_ext": true,
+        "_type": "reference",
+        "reference": "PractitionerRole/nl-core-practitionerrole-02",
+        "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts"
+    },
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.6.1",
+            "value": "#MB_01i1#GE_01",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bfa2275-8fdf-11ec-2032-020000000000",
+            "type": null
+        }
+    ],
+    "informationSource": null,
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "XXX_Helleman"
+    },
+    "asAgreedIndicator": {
+        "_ext": true,
+        "_type": "boolean",
+        "value": true
+    },
+    "prescriber": null,
+    "reasonForChangeOrDiscontinuationOfUse": null,
+    "status": {
+        "_type": "code",
+        "value": "active"
+    },
+    "medicationReference": {
+        "_type": "reference",
+        "reference": "Medication/zib-Product-02",
+        "display": "DOXYCYCLINE TABLET 100MG"
+    },
+    "dateAsserted": {
+        "_type": "dateTime",
+        "value": "2018-07-16"
+    },
+    "taken": {
+        "_type": "code",
+        "value": "y"
+    },
+    "reasonCode": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2018-07-16",
+        "end": null,
+        "duration": {
+            "_ext": true,
+            "_type": "duration",
+            "value": 5,
+            "comparator": null,
+            "unit": "dag",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    },
+    "note": null,
+    "dosage": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+            "sequence": {
+                "_type": "integer",
+                "value": 1
+            },
+            "text": {
+                "_type": "string",
+                "value": "Vanaf 16 jul 2018, gedurende 5 dagen, eerst gedurende 1 dag 1 maal per dag 2 stuks, dan gedurende 4 dagen 1 maal per dag 1 stuk, oraal"
+            },
+            "additionalInstruction": null,
+            "timing": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+                "repeat": {
+                    "boundsDuration": {
+                        "_type": "duration",
+                        "value": 1,
+                        "comparator": null,
+                        "unit": "dag",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    },
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": {
+                        "_type": "integer",
+                        "value": 1
+                    },
+                    "frequencyMax": null,
+                    "period": {
+                        "_type": "decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "code",
+                        "value": "d"
+                    },
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
+            },
+            "asNeededCodeableConcept": null,
+            "route": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "9",
+                        "display": "oraal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            "doseQuantity": {
+                "_type": "quantity",
+                "value": 2,
+                "comparator": null,
+                "unit": "stuk",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+                "code": "245"
+            },
+            "maxDosePerPeriod": null
+        },
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+            "sequence": {
+                "_type": "integer",
+                "value": 2
+            },
+            "text": {
+                "_type": "string",
+                "value": "Vanaf 16 jul 2018, gedurende 5 dagen, eerst gedurende 1 dag 1 maal per dag 2 stuks, dan gedurende 4 dagen 1 maal per dag 1 stuk, oraal"
+            },
+            "additionalInstruction": null,
+            "timing": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+                "repeat": {
+                    "boundsDuration": {
+                        "_type": "duration",
+                        "value": 4,
+                        "comparator": null,
+                        "unit": "dag",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                    },
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": {
+                        "_type": "integer",
+                        "value": 1
+                    },
+                    "frequencyMax": null,
+                    "period": {
+                        "_type": "decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "code",
+                        "value": "d"
+                    },
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
+            },
+            "asNeededCodeableConcept": null,
+            "route": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "9",
+                        "display": "oraal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            "doseQuantity": {
+                "_type": "quantity",
+                "value": 1,
+                "comparator": null,
+                "unit": "stuk",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+                "code": "245"
+            },
+            "maxDosePerPeriod": null
+        }
+    ],
+    "repeatPeriodCyclicalSchedule": null,
+    "medicationTreatment": {
+        "_ext": true,
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01i1",
+        "type": null
+    }
+}

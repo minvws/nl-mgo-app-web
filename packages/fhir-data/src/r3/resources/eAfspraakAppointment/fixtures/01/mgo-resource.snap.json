@@ -1,0 +1,106 @@
+{
+    "id": "eafspraak-appointment-01",
+    "referenceId": "Appointment/eafspraak-appointment-01",
+    "resourceType": "Appointment",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://example-xis.org/fhir/appointmentID",
+            "value": "0000000001",
+            "type": null
+        }
+    ],
+    "start": {
+        "_type": "dateTime",
+        "value": "2018-01-01T09:00:00+01:00"
+    },
+    "status": {
+        "_type": "code",
+        "value": "fulfilled",
+        "orderStatus": null
+    },
+    "end": {
+        "_type": "dateTime",
+        "value": "2018-01-01T09:45:00+01:00"
+    },
+    "patientInstructions": [],
+    "onlineEditable": {
+        "_ext": true,
+        "indicator": null,
+        "onlineEditableUntil": null
+    },
+    "serviceCategory": null,
+    "specialty": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "0303",
+                    "display": "Medisch specialisten, chirurgie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
+    ],
+    "appointmentType": null,
+    "reason": null,
+    "indication": null,
+    "description": {
+        "_type": "string",
+        "value": "Poliklinische Controle Chirurgie"
+    },
+    "minutesDuration": null,
+    "created": null,
+    "incomingReferral": null,
+    "participant": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Patient/eafspraak-patient-01",
+                "display": "Alex XXX_Verweij"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        },
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Practitioner/eafspraak-practitioner-01",
+                "display": "A.F. Snijder"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        },
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Location/eafspraak-location-01",
+                "display": "West vleugel"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        }
+    ]
+}

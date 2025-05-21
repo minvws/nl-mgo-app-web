@@ -1,0 +1,21 @@
+{
+    "name": "@minvws/mgo-data-services",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*"
+    },
+    "scripts": {
+        "test": "vitest",
+        "check-types": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@minvws/mgo-fhir-client": "workspace:*"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "msw": "^2.4.5",
+        "typescript": "^5.4.5"
+    }
+}

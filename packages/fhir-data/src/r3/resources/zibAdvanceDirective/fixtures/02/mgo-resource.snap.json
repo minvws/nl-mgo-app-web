@@ -1,0 +1,62 @@
+{
+    "id": "zib-advancedirective-02",
+    "referenceId": "Consent/zib-advancedirective-02",
+    "resourceType": "Consent",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective",
+    "fhirVersion": "R3",
+    "identifier": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+        "value": "18b69251-8fdf-11ec-7008-020000000000",
+        "type": null
+    },
+    "dateTime": {
+        "_type": "dateTime",
+        "value": "2011-08-15"
+    },
+    "disorder": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "Condition/zib-problem-01",
+            "display": "ALS"
+        }
+    ],
+    "comment": {
+        "_ext": true,
+        "_type": "string",
+        "value": "Niet-reanimerenpenning"
+    },
+    "category": {
+        "typeOfLivingWill": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "NR",
+                        "display": "Niet reanimeren verklaring",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
+                    }
+                ]
+            }
+        ]
+    },
+    "consentingParty": {
+        "_type": "reference",
+        "reference": "RelatedPerson/nl-core-relatedperson-01",
+        "display": "J.P.M. van Putten-van der Giessen"
+    },
+    "sourceAttachment": {
+        "_type": "attachment",
+        "contentType": "application/pdf",
+        "language": "nl",
+        "data": null,
+        "url": "Binary/pdfa-binary-02",
+        "size": null,
+        "hash": null,
+        "title": "Verwijsbrief Arts",
+        "creation": null
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "label": "J.H.R. Peters",
+    "children": [
+        {
+            "label": "r4.nl_core_health_professional_practitioner.group_details",
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "21870932"
+                    ]
+                },
+                {
+                    "label": "r4.nl_core_health_professional_practitioner.gender",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "r4.nl_core_health_professional_practitioner.birth_date",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "r4.nl_core_health_professional_practitioner.communication",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
+                }
+            ]
+        }
+    ]
+}

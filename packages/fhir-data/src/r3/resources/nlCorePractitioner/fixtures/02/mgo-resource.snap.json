@@ -1,0 +1,137 @@
+{
+    "id": "nl-core-practitioner-02",
+    "referenceId": "Practitioner/nl-core-practitioner-02",
+    "resourceType": "Practitioner",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
+    "fhirVersion": "R3",
+    "identifier": {
+        "uzi": null,
+        "agb": null,
+        "big": null,
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16e29a33-8fdf-11ec-6379-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "LL",
+                        "display": "Vast telefoonnummer",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31434073576"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "huisarts@huisarts.nl"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        }
+    ],
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": null,
+            "family": {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": null,
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": null
+            },
+            "text": null
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "WP",
+                        "display": "Werkadres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": null,
+            "use": {
+                "_type": "code",
+                "value": "work"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Valkendael"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "45"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Maastricht"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "6245HK"
+            },
+            "country": {
+                "_type": "string",
+                "value": "Nederland"
+            }
+        }
+    ]
+}

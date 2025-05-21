@@ -1,0 +1,44 @@
+{
+  "_type": "timing",
+  "code": {
+    "_type": "codeableConcept",
+    "coding": [
+      {
+        "code": "QD",
+        "display": "every day",
+        "system": "http://hl7.org/fhir/v3/GTSAbbreviation",
+      },
+    ],
+    "text": "Every morning at 8 AM",
+  },
+  "event": [
+    {
+      "_type": "dateTime",
+      "value": "2025-05-10T08:00:00Z",
+    },
+    {
+      "_type": "dateTime",
+      "value": "2025-05-11T08:00:00Z",
+    },
+    {
+      "_type": "dateTime",
+      "value": "2025-05-12T08:00:00Z",
+    },
+  ],
+  "repeat": {
+    "count": undefined,
+    "countMax": undefined,
+    "dayOfWeek": undefined,
+    "duration": undefined,
+    "durationMax": undefined,
+    "durationUnit": undefined,
+    "frequency": undefined,
+    "frequencyMax": undefined,
+    "offset": undefined,
+    "period": undefined,
+    "periodMax": undefined,
+    "periodUnit": undefined,
+    "timeOfDay": undefined,
+    "when": undefined,
+  },
+}

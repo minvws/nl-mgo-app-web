@@ -1,0 +1,91 @@
+{
+    "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+    "sequence": {
+        "_type": "integer",
+        "value": 1
+    },
+    "text": {
+        "_type": "string",
+        "value": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+    },
+    "additionalInstruction": null,
+    "timing": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+        "repeat": {
+            "duration": null,
+            "durationUnit": null,
+            "frequency": null,
+            "frequencyMax": {
+                "_type": "integer",
+                "value": 4
+            },
+            "period": {
+                "_type": "decimal",
+                "value": 1
+            },
+            "periodUnit": {
+                "_type": "code",
+                "value": "d"
+            },
+            "dayOfWeek": null,
+            "timeOfDay": null,
+            "when": null
+        }
+    },
+    "asNeededCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "1137",
+                "display": "zo nodig",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+            }
+        ]
+    },
+    "route": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "9",
+                "display": "ORAAL",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+            }
+        ]
+    },
+    "doseRange": {
+        "_type": "range",
+        "low": {
+            "value": 1,
+            "comparator": null,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        },
+        "high": {
+            "value": 2,
+            "comparator": null,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        }
+    },
+    "maxDosePerPeriod": {
+        "_type": "ratio",
+        "numerator": {
+            "value": 6,
+            "comparator": null,
+            "unit": "Stuk",
+            "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+            "code": "245"
+        },
+        "denominator": {
+            "value": 1,
+            "comparator": null,
+            "unit": "dag",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+        }
+    }
+}

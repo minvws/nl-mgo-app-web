@@ -1,0 +1,126 @@
+{
+    "label": "Laboratorium uitslag",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aanvrager",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gerelateerde uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1b2d4dbd-8fdf-11ec-8670-020000000000"
+                    ]
+                },
+                {
+                    "label": "Interpretatie vlaggen",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Above reference range (281302008 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Blood (substance)",
+                    "reference": "Specimen/zib-laboratorytestresult-specimen-01"
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Test code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
+                    ]
+                },
+                {
+                    "label": "Test datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "23 mei 2012 om 12:00:00 GMT+2"
+                },
+                {
+                    "label": "Test uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": "109 millimol per liter"
+                },
+                {
+                    "label": "Test uitslag status",
+                    "type": "SINGLE_VALUE",
+                    "display": "final"
+                },
+                {
+                    "label": "Testmethode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Verband",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgverlener",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Categorie",
+            "children": [
+                {
+                    "label": "Resultaat code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Laboratory test finding (finding) (49581000146104 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Resultaat type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Serum chemistry test (275711006 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Referentie",
+            "children": [
+                {
+                    "label": "Referentie bovengrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "108 millimol per liter"
+                },
+                {
+                    "label": "Referentie ondergrens",
+                    "type": "SINGLE_VALUE",
+                    "display": "99 millimol per liter"
+                },
+                {
+                    "label": "Referentie type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

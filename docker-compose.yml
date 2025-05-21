@@ -1,0 +1,30 @@
+services:
+    playwright:
+        container_name: playwright
+        build:
+            context: .
+            dockerfile: Dockerfile.e2e
+            args:
+                - NODE_VERSION=20.11.1
+                - PLAYWRIGHT_VERSION=1.50.1 # Needs to match the version in e2e-tests/package.json
+        environment:
+            - BASIC_AUTH_USER=${BASIC_AUTH_USER}
+            - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
+        tty: true
+        ipc: host
+        network_mode: host
+        volumes:
+            - ./apps/e2e-tests/results:/app/apps/e2e-tests/results/
+    mgo:
+        container_name: mgo
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                - NODE_VERSION=20.11.1
+                - NGINX_VERSION=1.26.3
+                - IGNORE_MISSING_TRANSLATIONS
+                - LOAD_URL
+                - DVA_URL
+        ports:
+            - 8000:8080

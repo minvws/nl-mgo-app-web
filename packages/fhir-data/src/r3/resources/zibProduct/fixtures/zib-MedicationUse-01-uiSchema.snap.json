@@ -1,0 +1,30 @@
+{
+    "label": "Geneesmiddel",
+    "children": [
+        {
+            "label": "r3.zib_product.group_general_information",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "PRIMPERAN ZETPIL 20MG"
+                    ]
+                },
+                {
+                    "label": "Farmaceutische vorm",
+                    "type": "MULTIPLE_VALUES",
+                    "display": []
+                }
+            ]
+        },
+        {
+            "label": "r3.zib_product.group_ingredients",
+            "children": []
+        },
+        {
+            "label": "r3.zib_product_package",
+            "children": []
+        }
+    ]
+}

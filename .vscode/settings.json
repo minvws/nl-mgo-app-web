@@ -1,0 +1,6 @@
+{
+    "tailwindCSS.experimental.classRegex": ["cn\\(([^)]*)", "tw`([^`]*)"],
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
+    "cSpell.words": ["Codelijst", "interpretatie", "Loinc", "Nictiz"]
+}

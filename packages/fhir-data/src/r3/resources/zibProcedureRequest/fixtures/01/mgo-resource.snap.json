@@ -1,0 +1,59 @@
+{
+    "id": "zib-procedurerequest-01",
+    "referenceId": "ProcedureRequest/zib-procedurerequest-01",
+    "resourceType": "ProcedureRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1d905889-8fdf-11ec-1904-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "requester": {
+        "agent": null
+    },
+    "performerType": {
+        "healthProfessionalRole": null
+    },
+    "occurrencePeriod": {
+        "_type": "period",
+        "start": "2012-03-13",
+        "end": null
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "240977001",
+                "display": "Biopsy of skin (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "performer": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "reasonReference": [
+        {
+            "_type": "reference",
+            "reference": "Condition/zib-problem-06",
+            "display": "Pigmented nevus, no International Classification of Diseases for Oncology subtype (morphologic abnormality)"
+        }
+    ],
+    "bodySite": null,
+    "status": {
+        "orderStatus": null
+    }
+}

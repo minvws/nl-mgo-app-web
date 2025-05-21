@@ -1,0 +1,69 @@
+{
+    "id": "zib-encounter-02",
+    "referenceId": "Encounter/zib-encounter-02",
+    "resourceType": "Encounter",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Encounter",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19b950e9-8fdf-11ec-1034-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "I. Jongeneel-de Haas"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2012-08-16",
+        "end": null
+    },
+    "participant": [
+        {
+            "individual": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        }
+    ],
+    "reason": [
+        {
+            "_type": "codeableConcept",
+            "text": "The patient had fever peaks over the last couple of days. He is worried about these peaks.",
+            "coding": []
+        }
+    ],
+    "class": {
+        "_type": "coding",
+        "code": "EMER",
+        "display": "emergency",
+        "system": "http://hl7.org/fhir/v3/ActCode"
+    },
+    "diagnosis": [
+        {
+            "condition": {
+                "_type": "reference",
+                "reference": "Condition/zib-problem-05",
+                "display": "Broken leg"
+            }
+        }
+    ],
+    "hospitalization": {
+        "admitSource": null,
+        "dischargeDisposition": null
+    },
+    "serviceProvider": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-02",
+        "display": "Universitair Medisch Centrum Groningen"
+    }
+}

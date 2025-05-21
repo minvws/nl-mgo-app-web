@@ -1,0 +1,86 @@
+{
+    "label": "Consult voor hnp (thoracaal/lumbaal) met dokter bernard",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Begin datum van de uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": "18 maart 2024"
+                },
+                {
+                    "label": "Eind datum van de uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Resultaat",
+                    "type": "SINGLE_VALUE",
+                    "display": "5,4 millimol per liter"
+                },
+                {
+                    "label": "Interpretatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Details van de test",
+            "children": [
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Definitief"
+                },
+                {
+                    "label": "Materiaal",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Normale referentiewaarden",
+            "children": [
+                {
+                    "label": "Minimale waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "3,5 millimol per liter"
+                },
+                {
+                    "label": "Maximale waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "5,6 millimol per liter"
+                }
+            ]
+        },
+        {
+            "label": "Test afgenomen door",
+            "children": [
+                {
+                    "label": "Specialist",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dokter Bernard"
+                    ]
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle uitslaggegevens",
+                    "reference": "Observation/ont-ver-gpdata-observation-contact14-fastingglucose"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "id": "zib-medicaldeviceproduct-01",
+    "referenceId": "Device/zib-medicaldeviceproduct-01",
+    "resourceType": "Device",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": null,
+            "value": "1148130801",
+            "type": {
+                "text": null,
+                "coding": [
+                    {
+                        "code": "SNO",
+                        "display": null,
+                        "system": "http://hl7.org/fhir/identifier-type"
+                    }
+                ]
+            }
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b95ac69-8fdf-11ec-1906-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "type": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "109228008",
+                "display": "Knee joint prosthesis, device (physical object)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "udi": {
+        "deviceIdentifier": {
+            "_type": "string",
+            "value": "05050474530799"
+        },
+        "carrierHRF": {
+            "_type": "string",
+            "value": "{01}05050474530799{17}160131{21}1148130801"
+        }
+    },
+    "lotNumber": null,
+    "expirationDate": {
+        "_type": "dateTime",
+        "value": "2016-01-31"
+    },
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Implantant, Gen 2 Tibia Insert 5/6-9mm",
+            "author": null
+        }
+    ]
+}

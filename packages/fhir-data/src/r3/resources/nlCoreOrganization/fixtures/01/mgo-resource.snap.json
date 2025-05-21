@@ -1,0 +1,39 @@
+{
+    "id": "nl-core-organization-01",
+    "referenceId": "Organization/nl-core-organization-01",
+    "resourceType": "Organization",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-organization",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "162abc65-8fdf-11ec-1585-020000000000",
+            "type": null
+        }
+    ],
+    "name": {
+        "_type": "string",
+        "value": "Maatschap Vaste Huisarts"
+    },
+    "alias": null,
+    "telecom": null,
+    "address": null,
+    "type": {
+        "organizationType": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "Z3",
+                        "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
+                        "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
+                    }
+                ]
+            }
+        ],
+        "departmentSpecialty": null
+    }
+}

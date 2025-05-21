@@ -1,0 +1,77 @@
+{
+    "id": "pdfa-documentmanifest-01",
+    "referenceId": "DocumentManifest/pdfa-documentmanifest-01",
+    "resourceType": "DocumentManifest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManifest",
+    "fhirVersion": "R3",
+    "masterIdentifier": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.8024.1526514975.440899",
+        "type": null
+    },
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://xis.org/fhir/NamingSystem/DocumentManifestID",
+            "value": "7899777",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "17acf409-8fdf-11ec-6275-020000000000",
+            "type": null
+        }
+    ],
+    "status": {
+        "_type": "code",
+        "value": "superseded"
+    },
+    "type": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "18842-5",
+                "display": "Discharge summary",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "created": {
+        "_type": "dateTime",
+        "value": "2020-03-10"
+    },
+    "author": [
+        {
+            "_type": "reference",
+            "reference": "#p1",
+            "display": "B. Kneder"
+        }
+    ],
+    "content": [
+        {
+            "pReference": {
+                "_type": "reference",
+                "reference": "DocumentReference/pdfa-documentreference-01",
+                "display": null
+            }
+        },
+        {
+            "pReference": {
+                "_type": "reference",
+                "reference": "DocumentReference/pdfa-documentreference-02",
+                "display": null
+            }
+        }
+    ]
+}

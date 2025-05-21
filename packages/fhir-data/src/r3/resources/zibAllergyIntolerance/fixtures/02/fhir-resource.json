@@ -1,0 +1,126 @@
+{
+    "resourceType": "AllergyIntolerance",
+    "id": "ont-ver-medmij-bgz-allergyintolerance-ts-01",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#bfc06f8eff40013d"
+            }
+        ],
+        "versionId": "1",
+        "lastUpdated": "2025-02-18T10:27:50.072+00:00",
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-AllergyIntolerance"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <caption>Allergie/intolerantie. Patiënt: Johan XXX_Helleman. Id: 2c8d2bbc-e3e4-11eb-1953-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Categorie: biologisch materiaal, Status: actief / bevestigd</caption>\n        <tbody>\n          <tr>\n            <th>Code</th>\n            <td>\n              <span title=\"Bijengif (substantie) (288328004 - SNOMED CT)\">Bijengif (substantie)</span>\n            </td>\n          </tr>\n          <tr>\n            <th>Eerste symptomen</th>\n            <td>8 november 2008</td>\n          </tr>\n          <tr>\n            <th>Meest recente voorkomen</th>\n            <td>15 november 2009</td>\n          </tr>\n          <tr>\n            <th>Reactie</th>\n            <td>\n              <ul>\n                <li>\n                  <div>ernstig</div>\n                  <div>\n                    <span title=\"misselijkheid en braken (aandoening) (16932000 - SNOMED CT)\">misselijkheid en braken (aandoening)</span>\n                  </div>\n                </li>\n              </ul>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "2c8d2bbc-e3e4-11eb-1953-020000000000"
+        }
+    ],
+    "clinicalStatus": "active",
+    "_clinicalStatus": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/ActStatus",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "verificationStatus": "confirmed",
+    "category": ["biologic"],
+    "_category": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "419199007",
+                                "display": "Allergie voor substantie (bevinding)"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "criticality": "high",
+    "_criticality": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "24484000",
+                            "display": "Ernstig (kwalificatiewaarde)"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "288328004",
+                "display": "Bijengif (substantie)"
+            }
+        ]
+    },
+    "patient": {
+        "reference": "Patient/ont-ver-medmij-bgz-patient-ts-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "onsetDateTime": "2008-11-08",
+    "lastOccurrence": "2009-11-15",
+    "reaction": [
+        {
+            "manifestation": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "16932000",
+                            "display": "misselijkheid en braken (aandoening)"
+                        }
+                    ]
+                }
+            ],
+            "severity": "severe",
+            "_severity": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "24484000",
+                                    "display": "Ernstig (kwalificatiewaarde)"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "name": "@minvws/mgo-fhir-data",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*"
+    },
+    "scripts": {
+        "test": "vitest",
+        "check-types": "tsc --noEmit",
+        "build": "pnpm run build:js && pnpm run build:schemas",
+        "build:js": "tsc && vite build --config vite.mobile.config.ts",
+        "build:schemas": "pnpm schema:all",
+        "schema:directories": "mkdir -p ./dist/schema/json ./dist/schema/typescript ./dist/schema/swift ./dist/schema/kotlin",
+        "schema:all": "pnpm run schema:directories && pnpm run schema:typescript && pnpm run schema:json && pnpm run schema:swift && pnpm run schema:kotlin",
+        "schema:typescript": "tsc && vite build --config vite.mobile.types.config.ts",
+        "schema:json": "tsx ./schema-generator/index.ts",
+        "schema:swift:clean": "rimraf ./dist/schema/swift/* --glob",
+        "schema:swift": "pnpm run schema:swift:clean && quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --access-level public --protocol hashable --sendable --density dense --multi-file-output --out ./dist/schema/swift/Types.swift",
+        "schema:kotlin": "quicktype --src ./dist/schema/json/types.json#/definitions/ --src-lang schema --framework kotlinx --out ./dist/schema/kotlin/Types.kt",
+        "download:definitions": "./bin/download-fhir-definitions.sh",
+        "extract:labels": "tsx ./resource-labels/index.ts",
+        "messages:compile": "pnpm messages:compile:nl && pnpm messages:format",
+        "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
+        "messages:format": "prettier --write ./src/i18n/locales"
+    },
+    "devDependencies comments (non-standard-key)": {
+        "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build. also see: https://github.com/qmhc/vite-plugin-dts/issues/404"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@formatjs/cli": "^6.3.11",
+        "@types/fhir": "^0.0.41",
+        "@types/lodash": "^4.17.4",
+        "@types/node": "^22.5.0",
+        "glob": "^11.0.0",
+        "quicktype": "^23.0.170",
+        "rimraf": "^6.0.1",
+        "ts-json-schema-generator": "^2.3.0",
+        "tsx": "^4.17.0",
+        "type-fest": "^4.23.0",
+        "typescript": "^5.4.5",
+        "vite": "^6.3.5",
+        "vite-plugin-dts": "4.2.4"
+    },
+    "dependencies": {
+        "@formatjs/intl": "^3.0.1",
+        "@formatjs/intl-datetimeformat": "^6.17.1",
+        "@formatjs/intl-locale": "^4.2.8",
+        "@formatjs/intl-numberformat": "^8.15.1",
+        "@formatjs/intl-pluralrules": "^5.4.1",
+        "@formatjs/intl-relativetimeformat": "^11.4.8",
+        "@minvws/mgo-fhir-types": "workspace:*",
+        "@minvws/mgo-mgo-intl": "workspace:*",
+        "@minvws/mgo-mgo-utils": "workspace:*",
+        "intl": "^1.2.5",
+        "lodash": "^4.17.21",
+        "lossless-json": "^4.0.1"
+    }
+}

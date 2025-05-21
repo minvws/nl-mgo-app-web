@@ -1,0 +1,98 @@
+{
+    "label": "Zorgverlener",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Adresgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Contactgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Zorgverlener identificatie nummer",
+            "children": [
+                {
+                    "label": "AGB",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "BIG",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Overig(e)",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "16fa74e1-8fdf-11ec-1810-020000000000"
+                    ]
+                },
+                {
+                    "label": "UZI",
+                    "type": "SINGLE_VALUE",
+                    "display": "000432123"
+                }
+            ]
+        },
+        {
+            "label": "Naam",
+            "children": [
+                {
+                    "label": "Geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vries"
+                },
+                {
+                    "label": "Geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Initialen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Roepnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voorkeursvolgorde van de naamdelen.",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Voornaam",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dirk"
+                    ]
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "de"
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

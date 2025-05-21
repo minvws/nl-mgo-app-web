@@ -1,0 +1,15 @@
+{
+    "label": "Healthcare provider (organization), Erasmus Universitair Medisch Centrum",
+    "children": [
+        {
+            "label": "Zorgverlener",
+            "children": [
+                {
+                    "label": "Zorgverlener naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

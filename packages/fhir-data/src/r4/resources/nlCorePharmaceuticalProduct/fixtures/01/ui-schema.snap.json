@@ -1,0 +1,44 @@
+{
+    "label": "Farmaceutisch product",
+    "children": [
+        {
+            "label": "Farmaceutisch product",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
+                },
+                {
+                    "label": "Farmaceutische vorm",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "SUSPENSIE VOOR INJECTIE (21 in code systeem urn:oid:2.16.840.1.113883.2.4.4.11)"
+                    ]
+                },
+                {
+                    "label": "Serienummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Batch lotnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "AW1898"
+                },
+                {
+                    "label": "Batch vervaldatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Omschrijving",
+                    "type": "SINGLE_VALUE",
+                    "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
+                }
+            ]
+        }
+    ]
+}

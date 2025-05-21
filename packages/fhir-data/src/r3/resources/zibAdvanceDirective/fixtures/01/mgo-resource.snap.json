@@ -1,0 +1,51 @@
+{
+    "id": "zib-advancedirective-01",
+    "referenceId": "Consent/zib-advancedirective-01",
+    "resourceType": "Consent",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective",
+    "fhirVersion": "R3",
+    "identifier": {
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+        "value": "18ab6c9b-8fdf-11ec-1686-020000000000",
+        "type": null
+    },
+    "dateTime": {
+        "_type": "dateTime",
+        "value": "2018-04-09"
+    },
+    "disorder": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "Condition/zib-problem-01",
+            "display": "Amyotrofe laterale sclerose"
+        }
+    ],
+    "comment": {
+        "_ext": true,
+        "_type": "string",
+        "value": "Niet-reanimerenpenning"
+    },
+    "category": {
+        "typeOfLivingWill": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "NR",
+                        "display": "Niet reanimeren verklaring",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1"
+                    }
+                ]
+            }
+        ]
+    },
+    "consentingParty": {
+        "_type": "reference",
+        "reference": "RelatedPerson/nl-core-relatedperson-01",
+        "display": "Janni van Putten-van der Giessen"
+    }
+}

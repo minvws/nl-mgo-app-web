@@ -1,0 +1,72 @@
+{
+    "id": "gp-JournalEntry-01",
+    "referenceId": "Observation/gp-JournalEntry-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15390bbd-8fdf-11ec-8940-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "J. XXX_Helleman (Johan)"
+    },
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "valueString": {
+        "_type": "string",
+        "value": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS."
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2013-02-06T03:17:00+00:00"
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "S",
+                "display": "Subjectief",
+                "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+            }
+        ]
+    },
+    "episodeOfCare": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "EpisodeOfCare/nl-core-episodeofcare-01",
+            "display": "Gebroken been"
+        }
+    ],
+    "component": {
+        "ICPC_S": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "R02",
+                            "display": "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02]",
+                            "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "resourceType": "Encounter",
+    "id": "gp-encounter-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/gp-Encounter"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Contact. Subject: J. XXX_Helleman (Johan). Id: 123456 (http://www.acme.com/identifiers/patient), 1506f28b-8fdf-11ec-1151-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: gearriveerd</caption><tbody><tr><th>Type contact</th><td><div><span title=\"inpatient encounter (IMP - v3/ActCode)\">inpatient encounter</span></div><span title=\"visite (01 - nhg-tabel-14-contactwijze)\">visite</span></td></tr><tr><th>Periode</th><td>8 februari 2013</td></tr><tr><th>Participant</th><td><div>Henk de Vries<div>Zorgverlenerrol: Huisartsen, niet nader gespecificeerd</div></div></td></tr><tr><th>Zorgaanbieder</th><td>Huisartspraktijk (zelfstandig of groepspraktijk)</td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "use": "usual",
+            "system": "http://www.acme.com/identifiers/patient",
+            "value": "123456"
+        },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1506f28b-8fdf-11ec-1151-020000000000"
+        }
+    ],
+    "status": "arrived",
+    "class": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/ActCode",
+                            "code": "IMP",
+                            "display": "inpatient encounter"
+                        }
+                    ]
+                }
+            }
+        ],
+        "system": "http://hl7.org/fhir/v3/ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+    },
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-14-contactwijze",
+                    "code": "01",
+                    "display": "visite"
+                }
+            ]
+        }
+    ],
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "J. XXX_Helleman (Johan)"
+    },
+    "episodeOfCare": [
+        {
+            "reference": "EpisodeOfCare/nl-core-episodeofcare-01",
+            "display": "Gebroken been"
+        }
+    ],
+    "participant": [
+        {
+            "individual": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-05",
+                            "display": "Huisartsen, niet nader gespecificeerd"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            }
+        }
+    ],
+    "period": { "start": "2013-02-08", "end": "2013-02-08" },
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-01",
+        "display": "Huisartspraktijk (zelfstandig of groepspraktijk)"
+    }
+}

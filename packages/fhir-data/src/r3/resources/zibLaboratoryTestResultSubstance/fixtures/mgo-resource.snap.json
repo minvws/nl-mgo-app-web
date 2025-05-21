@@ -1,0 +1,18 @@
+{
+    "id": "zib-laboratorytestresult-specimen-isolate-01",
+    "referenceId": "Substance/zib-laboratorytestresult-specimen-isolate-01",
+    "resourceType": "Substance",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Substance",
+    "fhirVersion": "R3",
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "127489000",
+                "display": "Has active ingredient",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    }
+}

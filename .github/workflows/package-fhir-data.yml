@@ -1,0 +1,39 @@
+name: Fhir data - package
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'packages/fhir-data/**'
+  pull_request:
+    paths:
+      - 'packages/fhir-data/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Build
+        working-directory: packages/fhir-data
+        run: pnpm run build
+      - name: Set current date as env variable
+        run: echo "CREATED=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Set filename
+        run: echo "FILENAME=nl-mgo-fhir-data_${RELEASE_VERSION//\//-}_${CREATED//:/-}" >> $GITHUB_ENV
+      - name: Add version.json
+        shell: bash
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\", \"created\": \"$CREATED\"}" > packages/fhir-data/dist/version.json'
+      - name: Create release tar
+        run: tar -C packages/fhir-data/dist -czf ${{ env.FILENAME }}.tar.gz .
+      - name: Upload release tar
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILENAME }}
+          path: ${{ env.FILENAME }}.tar.gz

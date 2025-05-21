@@ -1,0 +1,84 @@
+{
+    "id": "nl-core-HealthcareProvider-01",
+    "referenceId": "Location/nl-core-HealthcareProvider-01",
+    "resourceType": "Location",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider",
+    "fhirVersion": "R4",
+    "identifier": null,
+    "name": null,
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": null
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31107040704"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "info@erasmus.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    },
+    "address": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+        "use": {
+            "_type": "code",
+            "value": "work"
+        },
+        "type": null,
+        "line": [
+            {
+                "streetName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "s-Gravendijkwal"
+                },
+                "houseNumber": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "230"
+                },
+                "houseNumberLetter": null,
+                "houseNumberAddition": null,
+                "houseNumberIndication": null,
+                "additionalInformation": null
+            }
+        ],
+        "city": {
+            "_type": "string",
+            "value": "Rotterdam"
+        },
+        "district": null,
+        "postalCode": {
+            "_type": "string",
+            "value": "3015 CE"
+        },
+        "country": {
+            "countryCode": null
+        }
+    },
+    "managingOrganization": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-HealthcareProvider-Organization-01",
+        "display": "Healthcare provider (organization), Erasmus Universitair Medisch Centrum"
+    }
+}

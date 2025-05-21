@@ -1,0 +1,59 @@
+{
+    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+    "addressType": {
+        "_ext": true,
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "HP",
+                "display": "Officieel adres",
+                "system": "http://hl7.org/fhir/v3/AddressUse"
+            }
+        ]
+    },
+    "official": {
+        "_ext": true,
+        "_type": "boolean",
+        "value": true
+    },
+    "use": {
+        "_type": "code",
+        "value": "home"
+    },
+    "type": null,
+    "line": [
+        {
+            "streetName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "Binnenkant"
+            },
+            "houseNumber": {
+                "_ext": true,
+                "_type": "string",
+                "value": "10"
+            },
+            "buildingNumbersuffix": [],
+            "unitID": null,
+            "additionalLocator": {
+                "_ext": true,
+                "_type": "string",
+                "value": "to"
+            }
+        }
+    ],
+    "city": {
+        "_type": "string",
+        "value": "Amsterdam"
+    },
+    "district": null,
+    "postalCode": {
+        "_type": "string",
+        "value": "1001AA"
+    },
+    "country": {
+        "_type": "string",
+        "value": "NLD"
+    }
+}

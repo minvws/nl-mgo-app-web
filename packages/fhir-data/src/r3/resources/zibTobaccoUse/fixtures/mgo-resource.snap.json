@@ -1,0 +1,81 @@
+{
+    "id": "zib-tobaccouse-01",
+    "referenceId": "Observation/zib-tobaccouse-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-TobaccoUse",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1eb10781-8fdf-11ec-7373-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "1980",
+        "end": "1983"
+    },
+    "performer": null,
+    "valueCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "8517006",
+                "display": "Ex-smoker (finding)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "component": {
+        "typeOfTobaccoUsed": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "65568007",
+                            "display": "Cigarette smoker (finding)",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ],
+        "amount": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 2,
+                    "comparator": null,
+                    "unit": "packs per week",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{packs}/wk"
+                }
+            }
+        ],
+        "packYears": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 1,
+                    "comparator": null,
+                    "unit": "PackYears",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{PackYears}"
+                }
+            }
+        ]
+    }
+}

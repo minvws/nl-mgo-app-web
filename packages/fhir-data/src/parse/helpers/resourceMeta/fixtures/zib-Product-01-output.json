@@ -1,0 +1,7 @@
+{
+    "id": "zib-product-01",
+    "referenceId": "Medication/zib-product-01",
+    "resourceType": "Medication",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Product",
+    "fhirVersion": "R3"
+}

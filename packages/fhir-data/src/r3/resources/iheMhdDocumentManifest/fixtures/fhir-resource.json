@@ -1,0 +1,56 @@
+{
+    "resourceType": "DocumentManifest",
+    "id": "pdfa-documentmanifest-01",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManifest"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>DocumentManifest. Subject: Paul XXX_Mesker. Set‑Id: urn:oid:1.2.276.0.7230010.3.1.2.1787205428.8024.1526514975.440899 (urn:ietf:rfc:3986), Id: 7899777 (http://xis.org/fhir/NamingSystem/DocumentManifestID), 17acf409-8fdf-11ec-6275-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: vervangen<span style=\"display: block;\">Auteur: B. Kneder</span></caption><tbody><tr><th>Type</th><td><span title=\"Discharge summary (18842-5 - LOINC)\">Discharge summary</span></td></tr><tr><th>Gemaakt</th><td>10 maart 2020</td></tr><tr><th>Bron</th><td>http://xis.org/example</td></tr><tr><th>Content</th><td>DocumentReference/pdfa-documentreference-01</td></tr><tr><th>Content</th><td>DocumentReference/pdfa-documentreference-02</td></tr></tbody></table></div>"
+    },
+    "contained": [
+        {
+            "resourceType": "Practitioner",
+            "id": "p1",
+            "name": [
+                {
+                    "family": "Kneder",
+                    "given": ["B."],
+                    "_given": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                                    "valueCode": "IN"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "identifier": [
+        { "system": "http://xis.org/fhir/NamingSystem/DocumentManifestID", "value": "7899777" },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "17acf409-8fdf-11ec-6275-020000000000"
+        }
+    ],
+    "masterIdentifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.8024.1526514975.440899"
+    },
+    "status": "superseded",
+    "type": {
+        "coding": [
+            { "system": "http://loinc.org", "code": "18842-5", "display": "Discharge summary" }
+        ]
+    },
+    "subject": { "reference": "Patient/nl-core-patient-02", "display": "Paul XXX_Mesker" },
+    "created": "2020-03-10",
+    "author": [{ "reference": "#p1", "display": "B. Kneder" }],
+    "source": "http://xis.org/example",
+    "content": [
+        { "pReference": { "reference": "DocumentReference/pdfa-documentreference-01" } },
+        { "pReference": { "reference": "DocumentReference/pdfa-documentreference-02" } }
+    ]
+}

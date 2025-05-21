@@ -1,0 +1,142 @@
+{
+    "id": "nl-core-HealthProfessional-Practitioner-01",
+    "referenceId": "Practitioner/nl-core-HealthProfessional-Practitioner-01",
+    "resourceType": "Practitioner",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner",
+    "fhirVersion": "R4",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/big",
+            "value": "21870932",
+            "type": null
+        }
+    ],
+    "name": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+            "text": {
+                "_type": "string",
+                "value": "J.H.R. Peters"
+            },
+            "family": {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Peters"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": [
+                    {
+                        "_type": "string",
+                        "value": "J."
+                    },
+                    {
+                        "_type": "string",
+                        "value": "H."
+                    },
+                    {
+                        "_type": "string",
+                        "value": "R."
+                    }
+                ]
+            },
+            "prefix": null,
+            "suffix": null,
+            "period": null
+        }
+    ],
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": null
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+3715828282"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "j.peters@hospital.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    },
+    "address": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+            "use": {
+                "_type": "code",
+                "value": "work"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Simon Smitweg"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "1"
+                    },
+                    "houseNumberLetter": null,
+                    "houseNumberAddition": null,
+                    "houseNumberIndication": null,
+                    "additionalInformation": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Leiderdorp"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "2353 GA"
+            },
+            "country": {
+                "countryCode": {
+                    "_ext": true,
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "NL",
+                            "display": "Nederland",
+                            "system": "urn:iso:std:iso:3166"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "gender": null,
+    "birthDate": null,
+    "qualification": null,
+    "communication": null
+}

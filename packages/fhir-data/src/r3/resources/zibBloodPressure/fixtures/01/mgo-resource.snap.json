@@ -1,0 +1,112 @@
+{
+    "id": "zib-bloodpressure-01",
+    "referenceId": "Observation/zib-bloodpressure-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "191e51d9-8fdf-11ec-1102-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2013-02-01T08:53:00+01:00"
+    },
+    "effectivePeriod": null,
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "comment": null,
+    "bodySite": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "368208006",
+                "display": "Left upper arm structure",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "method": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "22762002",
+                "display": "Non-invasive",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "component": {
+        "systolicBP": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 108,
+                    "comparator": null,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ],
+        "diastolicBP": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 108,
+                    "comparator": null,
+                    "unit": "mmHg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm[Hg]"
+                }
+            }
+        ],
+        "cuffTypeLoinc": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "L",
+                            "display": "Groot",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+                        }
+                    ]
+                }
+            }
+        ],
+        "positionLoinc": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "33586001",
+                            "display": "Sitting position",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

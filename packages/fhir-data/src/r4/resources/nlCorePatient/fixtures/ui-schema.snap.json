@@ -1,0 +1,61 @@
+{
+    "label": "Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+    "children": [
+        {
+            "label": "r4.nl_core_patient.group_details",
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "111222333"
+                    ]
+                },
+                {
+                    "label": "r4.nl_core_patient.birth_date",
+                    "type": "SINGLE_VALUE",
+                    "display": "28 april 1934"
+                },
+                {
+                    "label": "r4.nl_core_patient.deceased",
+                    "type": "SINGLE_VALUE",
+                    "display": "Nee"
+                },
+                {
+                    "label": "r4.nl_core_patient.deceased_date_time",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "r4.nl_core_patient.gender",
+                    "type": "SINGLE_VALUE",
+                    "display": "female"
+                },
+                {
+                    "label": "r4.nl_core_patient.general_practitioner",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "r4.nl_core_patient.managing_organization",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": null
+                },
+                {
+                    "label": "r4.nl_core_patient.marital_status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Divorced (D in code systeem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)"
+                    ]
+                },
+                {
+                    "label": "r4.nl_core_patient.multiple_birth",
+                    "type": "SINGLE_VALUE",
+                    "display": "Ja"
+                }
+            ]
+        }
+    ]
+}

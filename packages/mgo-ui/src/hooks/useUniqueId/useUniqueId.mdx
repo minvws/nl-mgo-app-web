@@ -1,0 +1,24 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+
+<Meta title="useUniqueId" />
+
+# useUniqueId
+
+`useUniqueId` is a small utility hook for creating unique id's to use in your components. It ensures that id's are unique across the codebase.
+
+<Source
+    language="tsx"
+    code={`
+const InputField = () => {
+    const [inputId, messageId] = useUniqueId('input', 'message');
+
+    return (
+        <div>
+            <label htmlFor={inputId} ...> ... </label>
+            <input id={inputId} aria-describedby={messageId} ... />
+            {error && <span id={messageId}> ... </span>}
+        </div>
+    );
+
+};
+`}/>

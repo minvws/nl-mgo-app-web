@@ -1,0 +1,73 @@
+{
+    "id": "zib-product-01",
+    "referenceId": "Medication/zib-product-01",
+    "resourceType": "Medication",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Product",
+    "fhirVersion": "R3",
+    "description": null,
+    "code": {
+        "text": {
+            "_type": "string",
+            "value": "PRIMPERAN ZETPIL 20MG"
+        },
+        "coding": [
+            {
+                "_type": "coding",
+                "code": "14983265",
+                "display": "PRIMPERAN ZETPIL 20MG",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.8"
+            },
+            {
+                "_type": "coding",
+                "code": "229709",
+                "display": "PRIMPERAN ZETPIL 20MG",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.7"
+            },
+            {
+                "_type": "coding",
+                "code": "6939",
+                "display": "METOCLOPRAMIDE ZETPIL 20MG",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.10"
+            },
+            {
+                "_type": "coding",
+                "code": "63630",
+                "display": "METOCLOPRAMIDE ZETPIL 20MG",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1"
+            }
+        ]
+    },
+    "form": null,
+    "ingredient": [
+        {
+            "item_codeable_concept": {
+                "_type": "codeableConcept",
+                "text": "Carbasalate calcium",
+                "coding": [
+                    {
+                        "code": "B01AC08",
+                        "display": "Carbasalate calcium",
+                        "system": "http://www.whocc.no/atc"
+                    }
+                ]
+            },
+            "amount": {
+                "_type": "ratio",
+                "numerator": {
+                    "value": 600,
+                    "comparator": null,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                },
+                "denominator": {
+                    "value": 1,
+                    "comparator": null,
+                    "unit": "tablet",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{tablet}"
+                }
+            }
+        }
+    ]
+}

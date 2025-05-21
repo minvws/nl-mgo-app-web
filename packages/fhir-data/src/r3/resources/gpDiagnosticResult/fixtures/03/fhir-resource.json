@@ -1,0 +1,108 @@
+{
+    "resourceType": "Observation",
+    "id": "ont-ver-gpdata-observation-contact10-temperature",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#26dfcc0c752dd4cb"
+            }
+        ],
+        "versionId": "1",
+        "lastUpdated": "2025-02-18T10:30:25.115+00:00",
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <caption>Observatie/bepaling. Subject: Jacqueline XXX_Cevat. Id: bf98085b-041c-11ec-1328-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Categorie: <span title=\"Vital Signs (vital-signs - observation-category)\">Vital Signs</span>, Status: definitief<span style=\"display: block;\">Uitvoerende: Dokter Bernard</span>\n        </caption>\n        <tbody>\n          <tr>\n            <th>Context</th>\n            <td>\n              <ul>\n                <li>Keelpijn</li>\n                <li>Consult voor Keelpijn met Dokter Bernard</li>\n              </ul>\n            </td>\n          </tr>\n          <tr>\n            <th>Bepalingdatum/tijd</th>\n            <td>2024-10-26</td>\n          </tr>\n          <tr>\n            <th>Deel van lichaam</th>\n            <td>\n              <span title=\"structuur van sublinguale ruimte (122861001 - SNOMED CT)\">structuur van sublinguale ruimte</span>\n            </td>\n          </tr>\n          <tr>\n            <th>Code</th>\n            <th>Waarde</th>\n          </tr>\n          <tr>\n            <td>\n              <span title=\"temperatuur patiënt (oraal gemeten) (1915 - nhg-tabel-45-diagnostische-bepalingen)\">temperatuur patiënt (oraal gemeten)</span>\n            </td>\n            <td>37.3 Cel</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+    },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/extension-context-nl-core-episodeofcare",
+            "valueReference": {
+                "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-r2101",
+                "display": "Keelpijn"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "bf98085b-041c-11ec-1328-020000000000"
+        }
+    ],
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "vital-signs",
+                    "display": "Vital Signs"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen",
+                "code": "1915",
+                "display": "temperatuur patiënt (oraal gemeten)"
+            },
+            {
+                "system": "http://loinc.org",
+                "code": "8310-5",
+                "display": "Lichaamstemperatuur [temperatuur] in ^patiënt"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
+        "display": "Jacqueline XXX_Cevat"
+    },
+    "context": {
+        "reference": "Encounter/ont-ver-gpdata-encounter-contact10",
+        "display": "Consult voor Keelpijn met Dokter Bernard"
+    },
+    "effectiveDateTime": "2024-10-26",
+    "performer": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/ont-ver-gpdata-practitionerrole-kwalificatie1",
+                        "display": "Dokter Bernard"
+                    }
+                }
+            ],
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "valueQuantity": {
+        "value": 37.3,
+        "unit": "Cel",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "122861001",
+                "display": "structuur van sublinguale ruimte"
+            }
+        ],
+        "text": "Oraal onder de tong"
+    },
+    "related": [
+        {
+            "target": {
+                "reference": "Observation/example-genetics-1",
+                "display": "Variant-1"
+            }
+        }
+    ]
+}

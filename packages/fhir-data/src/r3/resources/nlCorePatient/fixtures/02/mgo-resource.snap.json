@@ -1,0 +1,280 @@
+{
+    "id": "nl-core-patient-02",
+    "referenceId": "Patient/nl-core-patient-02",
+    "resourceType": "Patient",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-patient",
+    "fhirVersion": "R3",
+    "lifeStance": [],
+    "maritalStatus": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "T",
+                "display": "Domestic partner",
+                "system": "http://hl7.org/fhir/v3/MaritalStatus"
+            }
+        ]
+    },
+    "identifier": {
+        "bsn": {
+            "_type": "identifier",
+            "use": "official",
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "999911284",
+            "type": null
+        }
+    },
+    "legalStatus": [],
+    "communication": [
+        {
+            "languageProficiency": {
+                "languageControlListening": null,
+                "languageControlReading": null,
+                "languageControlSpeaking": null
+            },
+            "comment": [],
+            "language": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "nl",
+                        "display": "Dutch",
+                        "system": "urn:ietf:bcp:47"
+                    }
+                ]
+            }
+        },
+        {
+            "languageProficiency": {
+                "languageControlListening": null,
+                "languageControlReading": null,
+                "languageControlSpeaking": null
+            },
+            "comment": [],
+            "language": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "en",
+                        "display": "English",
+                        "system": "urn:ietf:bcp:47"
+                    }
+                ]
+            }
+        }
+    ],
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "LL",
+                        "display": "Vast telefoonnummer",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31611234567"
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "XXX_Mesker@hotmail.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        }
+    ],
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL4"
+            },
+            "family": {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "XXX_Mesker"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": [
+                    {
+                        "_type": "string",
+                        "value": "Paul"
+                    }
+                ]
+            },
+            "text": {
+                "_type": "string",
+                "value": "Paul XXX_Mesker"
+            }
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Knolweg"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "1002"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Stitswerd"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "9999ZZ"
+            },
+            "country": {
+                "_type": "string",
+                "value": "NLD"
+            }
+        }
+    ],
+    "nationality": [
+        {
+            "_ext": true,
+            "code": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": "Brits burger",
+                "coding": [
+                    {
+                        "code": "6030",
+                        "display": "Brits burger",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.16.32"
+                    }
+                ]
+            },
+            "period": {
+                "_ext": true,
+                "_type": "period",
+                "start": "2004-06-01",
+                "end": "2015-12-31"
+            }
+        },
+        {
+            "_ext": true,
+            "code": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": "Nederlandse",
+                "coding": [
+                    {
+                        "code": "6010",
+                        "display": "Nederlandse",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.16.32"
+                    }
+                ]
+            },
+            "period": {
+                "_ext": true,
+                "_type": "period",
+                "start": "2016-01-01",
+                "end": null
+            }
+        }
+    ],
+    "generalPractitioner": null,
+    "preferredPharmacy": null,
+    "contact": null,
+    "birthDate": {
+        "_type": "date",
+        "value": "1964-08-01"
+    },
+    "deceasedBoolean": {
+        "_type": "boolean",
+        "value": false
+    },
+    "multipleBirthBoolean": {
+        "_type": "boolean",
+        "value": false
+    },
+    "gender": {
+        "_type": "string",
+        "value": "male",
+        "geslachtCodelijst": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "M",
+                    "display": "Man",
+                    "system": "http://hl7.org/fhir/v3/AdministrativeGender"
+                }
+            ]
+        }
+    }
+}

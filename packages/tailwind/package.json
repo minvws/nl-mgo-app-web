@@ -1,0 +1,11 @@
+{
+    "name": "@minvws/mgo-tailwind",
+    "private": true,
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "tailwindcss": "^3.4.17"
+    },
+    "peerDependencies": {
+        "tailwindcss": "^3.4"
+    }
+}

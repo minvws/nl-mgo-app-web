@@ -1,0 +1,107 @@
+{
+    "resourceType": "Observation",
+    "id": "ont-ver-gpdata-observation-contact14-fastingglucose",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#0017e0aa05245455"
+            }
+        ],
+        "versionId": "2",
+        "lastUpdated": "2024-06-06T12:21:38.117+00:00",
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <caption>Observatie/bepaling. Subject: Jacqueline XXX_Cevat. Id: c1975acb-041c-11ec-1725-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Categorie: <span title=\"bevinding betreffende laboratoriumonderzoek (49581000146104 - SNOMED CT)\">bevinding betreffende laboratoriumonderzoek</span>, Status: definitief<span style=\"display: block;\">Uitvoerende: Dokter Bernard</span>\n        </caption>\n        <tbody>\n          <tr>\n            <th>Context</th>\n            <td colspan=\"2\">\n              <ul>\n                <li>HNP (thoracaal/lumbaal)</li>\n                <li>Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard</li>\n              </ul>\n            </td>\n          </tr>\n          <tr>\n            <th>Bepalingdatum/tijd</th>\n            <td colspan=\"2\">2024-03-18</td>\n          </tr>\n          <tr>\n            <th>Code</th>\n            <th>Waarde</th>\n            <th>Referentiewaarden</th>\n          </tr>\n          <tr>\n            <td>\n              <span title=\"glucose nuchter, art/cap (lab) (3208 - nhg-tabel-45-diagnostische-bepalingen)\">glucose nuchter, art/cap (lab)</span>\n            </td>\n            <td>5.4 mmol/L</td>\n            <td>\n              <div>\n                <span title=\"Normal Range (normal - referencerange-meaning)\">Normal Range</span> 3.5 mmol/L - 5.6 mmol/L</div>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+    },
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/extension-context-nl-core-episodeofcare",
+            "valueReference": {
+                "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-r2101",
+                "display": "HNP (thoracaal/lumbaal)"
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "c1975acb-041c-11ec-1725-020000000000"
+        }
+    ],
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "49581000146104",
+                    "display": "bevinding betreffende laboratoriumonderzoek"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen",
+                "code": "3208",
+                "display": "glucose nuchter, art/cap (lab)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
+        "display": "Jacqueline XXX_Cevat"
+    },
+    "context": {
+        "reference": "Encounter/ont-ver-gpdata-encounter-contact14",
+        "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard"
+    },
+    "effectiveDateTime": "2024-03-18",
+    "performer": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/ont-ver-gpdata-practitionerrole-kwalificatie1",
+                        "display": "Dokter Bernard"
+                    }
+                }
+            ],
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "valueQuantity": {
+        "value": 5.4,
+        "system": "http://unitsofmeasure.org",
+        "code": "mmol/L"
+    },
+    "referenceRange": [
+        {
+            "low": {
+                "value": 3.5,
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "high": {
+                "value": 5.6,
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/referencerange-meaning",
+                        "code": "normal",
+                        "display": "Normal Range"
+                    }
+                ]
+            }
+        }
+    ]
+}

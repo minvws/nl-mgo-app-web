@@ -1,0 +1,87 @@
+{
+    "label": "Bloeddruk",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Vaste Huisarts 1"
+                    ]
+                },
+                {
+                    "label": "Bloeddruk datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 februari 2013 om 08:53:00 GMT+1"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "191e51d9-8fdf-11ec-1102-020000000000"
+                    ]
+                },
+                {
+                    "label": "Meet locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Left upper arm structure (368208006 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Meetmethode",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Non-invasive (22762002 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Diastolische bloeddruk",
+                    "type": "SINGLE_VALUE",
+                    "display": "108 mmHg"
+                },
+                {
+                    "label": "Houding",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Sitting position (33586001 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Manchet type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
+                    ]
+                },
+                {
+                    "label": "Systolische bloeddruk",
+                    "type": "SINGLE_VALUE",
+                    "display": "108 mmHg"
+                }
+            ]
+        }
+    ]
+}

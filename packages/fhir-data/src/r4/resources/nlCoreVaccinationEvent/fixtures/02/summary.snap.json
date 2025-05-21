@@ -1,0 +1,46 @@
+{
+    "label": "Hepatitis a, geinactiveerd, intact virus",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Gegeven op",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
+                {
+                    "label": "Zorgverlener",
+                    "type": "SINGLE_VALUE",
+                    "display": "Healthcare professional (role)"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle vaccinatiegegevens",
+                    "reference": "Immunization/nl-core-Vaccination-event-03"
+                }
+            ]
+        }
+    ]
+}

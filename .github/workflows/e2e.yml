@@ -1,0 +1,38 @@
+name: Run e2e tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-docker-action@v4
+
+      - name: Start Docker containers
+        env:
+          BASIC_AUTH_USER: ${{ secrets.BASIC_AUTH_USER }}
+          BASIC_AUTH_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }}
+        run: docker compose up --build -d
+
+      - name: Run e2e tests
+        run: docker exec playwright pnpm run e2e:ci
+
+      - name: Upload Test Report Chrome
+        uses: actions/upload-artifact@v4.6.1
+        if: always()
+        with:
+          name: e2e-playwright-chrome
+          path: apps/e2e-tests/results/
+
+      - name: Stop Docker containers
+        if: always()
+        run: docker compose down

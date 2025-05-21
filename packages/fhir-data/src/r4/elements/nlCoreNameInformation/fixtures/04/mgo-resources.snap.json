@@ -1,0 +1,76 @@
+[
+    {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+        "text": {
+            "_type": "string",
+            "value": "Hendrik Willem Schemer"
+        },
+        "family": {
+            "humannameOwnPrefix": null,
+            "humannameOwnName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "Schemer"
+            },
+            "humannamePartnerPrefix": null,
+            "humannamePartnerName": null
+        },
+        "given": {
+            "birthName": [
+                {
+                    "_type": "string",
+                    "value": "Hendrik"
+                },
+                {
+                    "_type": "string",
+                    "value": "Willem"
+                }
+            ],
+            "initials": null
+        },
+        "prefix": null,
+        "suffix": null,
+        "period": null
+    },
+    {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+        "text": null,
+        "family": {
+            "humannameOwnPrefix": null,
+            "humannameOwnName": null,
+            "humannamePartnerPrefix": null,
+            "humannamePartnerName": null
+        },
+        "given": {
+            "birthName": null,
+            "initials": [
+                {
+                    "_type": "string",
+                    "value": "H."
+                },
+                {
+                    "_type": "string",
+                    "value": "J."
+                },
+                {
+                    "_type": "string",
+                    "value": "W."
+                }
+            ]
+        },
+        "prefix": null,
+        "suffix": null,
+        "period": null
+    },
+    {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given",
+        "text": null,
+        "given": [
+            {
+                "_type": "string",
+                "value": "Henk"
+            }
+        ],
+        "period": null
+    }
+]

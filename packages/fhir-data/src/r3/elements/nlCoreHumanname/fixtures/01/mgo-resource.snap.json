@@ -1,0 +1,50 @@
+{
+    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+    "humannameAssemblyOrder": {
+        "_ext": true,
+        "_type": "code",
+        "value": "NL4"
+    },
+    "family": {
+        "humannameOwnPrefix": null,
+        "humannameOwnName": {
+            "_ext": true,
+            "_type": "string",
+            "value": "Jongeneel"
+        },
+        "humannamePartnerPrefix": {
+            "_ext": true,
+            "_type": "string",
+            "value": "de"
+        },
+        "humannamePartnerName": {
+            "_ext": true,
+            "_type": "string",
+            "value": "Haas"
+        }
+    },
+    "given": {
+        "birthName": [
+            {
+                "_type": "string",
+                "value": "Irma"
+            }
+        ],
+        "initials": [
+            {
+                "_type": "string",
+                "value": "I."
+            }
+        ],
+        "callName": [
+            {
+                "_type": "string",
+                "value": "Irmaatje"
+            }
+        ]
+    },
+    "text": {
+        "_type": "string",
+        "value": "Irma Jongeneel-de Haas"
+    }
+}

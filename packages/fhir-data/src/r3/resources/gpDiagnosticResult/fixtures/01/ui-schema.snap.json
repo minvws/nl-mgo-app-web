@@ -1,0 +1,78 @@
+{
+    "label": "Diagnose",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Anatomische locatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dokter Bernard"
+                    ]
+                },
+                {
+                    "label": "Code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "polsopmerkingen (2126 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)"
+                    ]
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 mei 2023"
+                },
+                {
+                    "label": "Episode",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Boezemfibrilleren/-fladderen"
+                    ]
+                },
+                {
+                    "label": "Gerelateerde meetuitslagen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "bb6ad96b-041c-11ec-1170-020000000000"
+                    ]
+                },
+                {
+                    "label": "Meetmethode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Jacqueline XXX_Cevat",
+                    "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
+                },
+                {
+                    "label": "Resultaat status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Uitslag waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "linker pols"
+                }
+            ]
+        }
+    ]
+}

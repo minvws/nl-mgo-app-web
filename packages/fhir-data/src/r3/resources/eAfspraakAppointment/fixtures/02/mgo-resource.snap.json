@@ -1,0 +1,182 @@
+{
+    "id": "eafspraak-appointment-01",
+    "referenceId": "Appointment/eafspraak-appointment-01",
+    "resourceType": "Appointment",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://example-xis.org/fhir/appointmentID",
+            "value": "0000000001",
+            "type": null
+        }
+    ],
+    "start": {
+        "_type": "dateTime",
+        "value": "2018-01-01T09:00:00+01:00"
+    },
+    "status": {
+        "_type": "code",
+        "value": "fulfilled",
+        "orderStatus": null
+    },
+    "end": {
+        "_type": "dateTime",
+        "value": "2018-01-01T09:45:00+01:00"
+    },
+    "patientInstructions": [
+        {
+            "_ext": true,
+            "_type": "string",
+            "value": "Please park in P2; P1 is under construction"
+        }
+    ],
+    "onlineEditable": {
+        "_ext": true,
+        "indicator": {
+            "_ext": true,
+            "_type": "boolean",
+            "value": true
+        },
+        "onlineEditableUntil": {
+            "_ext": true,
+            "_type": "dateTime",
+            "value": "12/31/2017 09:00:00"
+        }
+    },
+    "serviceCategory": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "gp",
+                "display": "General Practice",
+                "system": "http://example.org/service-category"
+            }
+        ]
+    },
+    "specialty": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "0303",
+                    "display": "Medisch specialisten, chirurgie",
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                }
+            ]
+        }
+    ],
+    "appointmentType": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "follow",
+                "display": "Followup",
+                "system": "http://example.org/appointment-type"
+            }
+        ]
+    },
+    "reason": [
+        {
+            "_type": "codeableConcept",
+            "text": "Clinical Review",
+            "coding": [
+                {
+                    "code": "413095006",
+                    "display": null,
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "indication": [
+        {
+            "_type": "reference",
+            "reference": "Condition/example",
+            "display": "Severe burn of left ear"
+        }
+    ],
+    "description": {
+        "_type": "string",
+        "value": "Poliklinische Controle Chirurgie"
+    },
+    "minutesDuration": {
+        "_type": "positiveInt",
+        "value": 15
+    },
+    "created": {
+        "_type": "dateTime",
+        "value": "2017-10-10"
+    },
+    "incomingReferral": [
+        {
+            "_type": "reference",
+            "reference": "ReferralRequest/example",
+            "display": null
+        }
+    ],
+    "participant": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Patient/eafspraak-patient-01",
+                "display": "Alex XXX_Verweij"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        },
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Practitioner/eafspraak-practitioner-01",
+                "display": "A.F. Snijder"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "ATND",
+                                "display": null,
+                                "system": "http://hl7.org/fhir/v3/ParticipationType"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Location/eafspraak-location-01",
+                "display": "West vleugel"
+            },
+            "required": null,
+            "status": {
+                "_type": "code",
+                "value": "accepted"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        }
+    ]
+}

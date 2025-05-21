@@ -1,0 +1,159 @@
+{
+    "id": "nl-core-organization-03",
+    "referenceId": "Organization/nl-core-organization-03",
+    "resourceType": "Organization",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-organization",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1642a7d5-8fdf-11ec-4396-020000000000",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
+            "value": "01069857",
+            "type": null
+        }
+    ],
+    "name": {
+        "_type": "string",
+        "value": "Test Medisch Centrum"
+    },
+    "alias": [
+        {
+            "_type": "string",
+            "value": "Medisch Centrum Centrum"
+        }
+    ],
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "LL",
+                        "display": "Land Line",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "..."
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31611234567"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "example@example.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Binnenkant"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "10"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "to"
+                    }
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Amsterdam"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "1001AA"
+            },
+            "country": {
+                "_type": "string",
+                "value": "NLD"
+            }
+        }
+    ],
+    "type": {
+        "organizationType": null,
+        "departmentSpecialty": null
+    }
+}

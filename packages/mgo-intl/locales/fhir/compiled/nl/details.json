@@ -1,0 +1,20 @@
+{
+  "details.options": [
+    {
+      "type": 0,
+      "value": "Opties"
+    }
+  ],
+  "details.r3.ihe_mhd_minimal_document_reference.group_attachment": [
+    {
+      "type": 0,
+      "value": "Inhoud"
+    }
+  ],
+  "details.r3.ihe_mhd_minimal_document_reference.group_author": [
+    {
+      "type": 0,
+      "value": "Opgesteld door"
+    }
+  ]
+}

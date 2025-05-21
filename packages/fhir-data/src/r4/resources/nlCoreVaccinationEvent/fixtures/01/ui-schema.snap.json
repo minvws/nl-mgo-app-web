@@ -1,0 +1,76 @@
+{
+    "label": "Hepatitis a-vaccin",
+    "children": [
+        {
+            "label": "Algemeen",
+            "children": [
+                {
+                    "label": "Uniek nummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
+                },
+                {
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+                    "reference": "Patient/nl-core-Patient-01"
+                },
+                {
+                    "label": "Gegeven op",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Gegeven door",
+            "children": [
+                {
+                    "label": "Zorgverlener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Extra informatie",
+            "children": [
+                {
+                    "label": "Vaccinatie aanleiding",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Lichaamsplek",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

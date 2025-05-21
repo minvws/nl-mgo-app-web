@@ -1,0 +1,74 @@
+{
+    "resourceType": "Encounter",
+    "id": "zib-encounter-03",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"] },
+    "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Patient with id example</caption><thead><tr><th>ContactType</th><th>StartDateTime</th><th>EndDateTime</th><th>Procedure</th><th>HealthProfessional</th><th>OrganizationType</th><th>OrganizationName</th></tr></thead><tbody><tr><td>Inpatient</td><td>16-08-2012</td><td>19-08-2012</td><td>Surgical reduction of fracture (procedure)</td><td>G.Z.M. de Wit</td><td>Hospital</td><td>St. Lucas Andreas Ziekenhuis</td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19c5bd75-8fdf-11ec-1839-020000000000"
+        }
+    ],
+    "status": "finished",
+    "class": {
+        "system": "http://hl7.org/fhir/v3/ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+    },
+    "subject": { "reference": "Patient/nl-core-patient-03", "display": "I. Jongeneel-de Haas" },
+    "participant": [
+        {
+            "type": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/ParticipationType",
+                            "code": "RESP",
+                            "display": "Responsible Party"
+                        }
+                    ]
+                }
+            ],
+            "individual": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-03",
+                            "display": "Medisch specialisten, dermatologie"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-03",
+                "display": "G.Z.M. de Wit"
+            }
+        }
+    ],
+    "period": { "start": "2012-08-16", "end": "2012-08-19" },
+    "diagnosis": [
+        {
+            "condition": {
+                "reference": "Procedure/zib-procedure-02",
+                "display": "Surgical reduction of fracture (procedure)"
+            }
+        }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "hospitalization": {
+        "admitSource": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/admit-source",
+                    "code": "emd",
+                    "display": "From accident/emergency department"
+                }
+            ]
+        }
+    }
+}

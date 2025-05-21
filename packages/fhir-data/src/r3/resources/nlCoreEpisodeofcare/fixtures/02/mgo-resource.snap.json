@@ -1,0 +1,44 @@
+{
+    "id": "nl-core-episodeofcare-02",
+    "referenceId": "EpisodeOfCare/nl-core-episodeofcare-02",
+    "resourceType": "EpisodeOfCare",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15fcdead-8fdf-11ec-5500-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2019-02-06",
+        "end": null
+    },
+    "type": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "32709003",
+                    "display": "Verslaving (bevinding)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "title": {
+        "_ext": true,
+        "_type": "string",
+        "value": "Drugs en alcohol revalidatie"
+    }
+}

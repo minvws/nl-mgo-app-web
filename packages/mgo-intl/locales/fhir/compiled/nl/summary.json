@@ -1,0 +1,192 @@
+{
+  "summary.options": [
+    {
+      "type": 0,
+      "value": "Opties"
+    }
+  ],
+  "summary.organization": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": [
+    {
+      "type": 0,
+      "value": "Bijlage"
+    }
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.group_author": [
+    {
+      "type": 0,
+      "value": "Opgesteld door"
+    }
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.show_details": [
+    {
+      "type": 0,
+      "value": "Bekijk alle documentgegevens"
+    }
+  ],
+  "summary.r3.zib_instructions_for_use": [
+    {
+      "type": 0,
+      "value": "Instructies "
+    },
+    {
+      "type": 1,
+      "value": "sequence"
+    }
+  ],
+  "summary.r3.zib_instructions_for_use.dose": [
+    {
+      "type": 0,
+      "value": "Hoeveelheid per keer"
+    }
+  ],
+  "summary.r3.zib_instructions_for_use.dose.high": [
+    {
+      "type": 0,
+      "value": "Maximaal"
+    }
+  ],
+  "summary.r3.zib_instructions_for_use.dose.low": [
+    {
+      "type": 0,
+      "value": "Minimaal"
+    }
+  ],
+  "summary.r3.zib_instructions_for_use.text": [
+    {
+      "type": 0,
+      "value": "Gebruiksaanwijzing"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective": [
+    {
+      "type": 0,
+      "value": "Datum van de uitslag"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective.end": [
+    {
+      "type": 0,
+      "value": "Eind datum van de uitslag"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective.start": [
+    {
+      "type": 0,
+      "value": "Begin datum van de uitslag"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.group_performer": [
+    {
+      "type": 0,
+      "value": "Test afgenomen door"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.group_test_details": [
+    {
+      "type": 0,
+      "value": "Details van de test"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.performer": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range": [
+    {
+      "type": 0,
+      "value": "Referentiewaarden"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range.high": [
+    {
+      "type": 0,
+      "value": "Maximale waarde"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range.low": [
+    {
+      "type": 0,
+      "value": "Minimale waarde"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.show_details": [
+    {
+      "type": 0,
+      "value": "Bekijk alle uitslaggegevens"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.specimen": [
+    {
+      "type": 0,
+      "value": "Materiaal"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.value": [
+    {
+      "type": 0,
+      "value": "Resultaat"
+    }
+  ],
+  "summary.r3.zib_medication_use.group_period": [
+    {
+      "type": 0,
+      "value": "Periode van gebruik"
+    }
+  ],
+  "summary.r3.zib_medication_use.group_prescriber": [
+    {
+      "type": 0,
+      "value": "Voorgeschreven door"
+    }
+  ],
+  "summary.r3.zib_medication_use.prescriber": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "summary.r3.zib_medication_use.show_details": [
+    {
+      "type": 0,
+      "value": "Bekijk alle medicijngegevens"
+    }
+  ],
+  "summary.r3.zib_medication_use.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "summary.r4.nl_core_vaccination_event.group_performer": [
+    {
+      "type": 0,
+      "value": "Gegeven door"
+    }
+  ],
+  "summary.r4.nl_core_vaccination_event.show_details": [
+    {
+      "type": 0,
+      "value": "Bekijk alle vaccinatiegegevens"
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+    "id": "nl-core-patient-lifeStance-01",
+    "referenceId": "Patient/nl-core-patient-lifeStance-01",
+    "resourceType": "Patient",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-patient",
+    "fhirVersion": "R3",
+    "lifeStance": [
+        {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "428821008",
+                    "display": "Zevendedagsadventist",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    ],
+    "maritalStatus": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "M",
+                "display": "Married",
+                "system": "http://hl7.org/fhir/v3/MaritalStatus"
+            }
+        ]
+    },
+    "identifier": {
+        "bsn": {
+            "_type": "identifier",
+            "use": "official",
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "999911120",
+            "type": null
+        }
+    },
+    "legalStatus": [],
+    "communication": null,
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "06-12345678"
+            },
+            "use": {
+                "_type": "code",
+                "value": "mobile"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "XXX_Helleman@hotmail.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        }
+    ],
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL4"
+            },
+            "family": {
+                "humannameOwnPrefix": null,
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "XXX_Verweij"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": [
+                    {
+                        "_type": "string",
+                        "value": "Alex"
+                    }
+                ]
+            },
+            "text": {
+                "_type": "string",
+                "value": "Alex XXX_Helleman"
+            }
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": null,
+            "official": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": {
+                "_type": "code",
+                "value": "both"
+            },
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Knolweg"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "1020"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Stitswerd"
+            },
+            "district": {
+                "_type": "string",
+                "value": "Nederland"
+            },
+            "postalCode": {
+                "_type": "string",
+                "value": "9999XB"
+            },
+            "country": {
+                "_type": "string",
+                "value": "NLD"
+            }
+        }
+    ],
+    "nationality": [],
+    "generalPractitioner": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-01",
+        "display": "Henk de Vries"
+    },
+    "preferredPharmacy": null,
+    "contact": [
+        {
+            "relationship": {
+                "role": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "1",
+                                "display": "Eerste relatie/contactpersoon",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+                            }
+                        ]
+                    }
+                ],
+                "relationship": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "HUSB",
+                                "display": "Husband",
+                                "system": "http://hl7.org/fhir/v3/RoleCode"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": {
+                "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+                "humannameAssemblyOrder": {
+                    "_ext": true,
+                    "_type": "code",
+                    "value": "NL4"
+                },
+                "family": {
+                    "humannameOwnPrefix": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "van"
+                    },
+                    "humannameOwnName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Molenaar"
+                    },
+                    "humannamePartnerPrefix": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "van der"
+                    },
+                    "humannamePartnerName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Jutte"
+                    }
+                },
+                "given": {
+                    "birthName": null,
+                    "initials": null,
+                    "callName": [
+                        {
+                            "_type": "string",
+                            "value": "Janni"
+                        }
+                    ]
+                },
+                "text": {
+                    "_type": "string",
+                    "value": "Janni van Molenaar van der Jutte"
+                }
+            },
+            "address": {
+                "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+                "addressType": null,
+                "official": null,
+                "use": {
+                    "_type": "code",
+                    "value": "home"
+                },
+                "type": null,
+                "line": [
+                    {
+                        "streetName": {
+                            "_ext": true,
+                            "_type": "string",
+                            "value": "Knolweg"
+                        },
+                        "houseNumber": {
+                            "_ext": true,
+                            "_type": "string",
+                            "value": "1020"
+                        },
+                        "buildingNumbersuffix": [],
+                        "unitID": null,
+                        "additionalLocator": null
+                    }
+                ],
+                "city": {
+                    "_type": "string",
+                    "value": "Sitswerd"
+                },
+                "district": null,
+                "postalCode": {
+                    "_type": "string",
+                    "value": "9999XB"
+                },
+                "country": {
+                    "_type": "string",
+                    "value": "Nederland"
+                }
+            },
+            "telecom": [
+                {
+                    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+                    "telecomType": null,
+                    "system": {
+                        "_type": "code",
+                        "value": "phone"
+                    },
+                    "value": {
+                        "_type": "string",
+                        "value": "06-12345645"
+                    },
+                    "use": {
+                        "_type": "code",
+                        "value": "mobile"
+                    }
+                },
+                {
+                    "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+                    "telecomType": null,
+                    "system": {
+                        "_type": "code",
+                        "value": "email"
+                    },
+                    "value": {
+                        "_type": "string",
+                        "value": "j.vanderjutte@example.com"
+                    },
+                    "use": null
+                }
+            ]
+        }
+    ],
+    "birthDate": {
+        "_type": "date",
+        "value": "1964-08-02"
+    },
+    "deceasedBoolean": {
+        "_type": "boolean",
+        "value": false
+    },
+    "multipleBirthBoolean": {
+        "_type": "boolean",
+        "value": false
+    },
+    "gender": {
+        "_type": "string",
+        "value": "male",
+        "geslachtCodelijst": null
+    }
+}

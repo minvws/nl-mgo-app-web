@@ -1,0 +1,116 @@
+{
+    "id": "zib-procedurerequest-02",
+    "referenceId": "ProcedureRequest/zib-procedurerequest-02",
+    "resourceType": "ProcedureRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1d9ec0ef-8fdf-11ec-6149-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "requester": {
+        "agent": {
+            "_type": "reference",
+            "reference": "Organization/nl-core-organization-02",
+            "display": "UMCG - Afdeling Orthopedie"
+        }
+    },
+    "performerType": {
+        "healthProfessionalRole": [
+            {
+                "_type": "coding",
+                "code": null,
+                "display": "Qualified nurse",
+                "system": null
+            }
+        ]
+    },
+    "occurrenceTiming": {
+        "_type": "timing",
+        "code": null,
+        "event": null,
+        "repeat": {
+            "count": null,
+            "countMax": null,
+            "duration": null,
+            "durationMax": null,
+            "durationUnit": null,
+            "frequency": {
+                "_type": "integer",
+                "value": 2
+            },
+            "frequencyMax": null,
+            "period": {
+                "_type": "decimal",
+                "value": 1
+            },
+            "periodMax": null,
+            "periodUnit": null,
+            "dayOfWeek": null,
+            "timeOfDay": null,
+            "when": null,
+            "offset": null
+        }
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "168537006",
+                "display": "Röntgenfoto",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "performer": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "reasonReference": [
+        {
+            "_type": "reference",
+            "reference": "Condition/zib-problem-09",
+            "display": "Open fractuur van femur (aandoening)"
+        }
+    ],
+    "bodySite": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "72696002",
+                    "display": "Knee region structure (body structure)",
+                    "system": "http://snomed.info/sct"
+                }
+            ],
+            "procedureLaterality": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "7771000",
+                        "display": "Left",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        }
+    ],
+    "status": {
+        "orderStatus": null
+    }
+}

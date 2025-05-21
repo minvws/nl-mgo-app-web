@@ -1,0 +1,115 @@
+{
+    "id": "zib-laboratorytestresult-observation-01",
+    "referenceId": "Observation/zib-laboratorytestresult-observation-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b2d4dbd-8fdf-11ec-8670-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2012-05-23T12:00:00+02:00"
+    },
+    "performer": null,
+    "basedOn": null,
+    "status": {
+        "_type": "code",
+        "value": "final",
+        "testResultStatus": null
+    },
+    "category": {
+        "laboratoryTestResultCode": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "49581000146104",
+                    "display": "Laboratory test finding (finding)",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        },
+        "resultType": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "275711006",
+                    "display": "Serum chemistry test",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "2069-3",
+                "display": "Chloride [Moles/volume] in Blood",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "valueQuantity": {
+        "_type": "quantity",
+        "value": 109,
+        "comparator": null,
+        "unit": "mmol/l",
+        "system": "http://unitsofmeasure.org",
+        "code": "mmol/L"
+    },
+    "interpretation": {
+        "interpretatieVlaggenCodelijst": [
+            {
+                "_type": "coding",
+                "code": "281302008",
+                "display": "Above reference range",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "context": null,
+    "method": null,
+    "specimen": {
+        "_type": "reference",
+        "reference": "Specimen/zib-laboratorytestresult-specimen-01",
+        "display": "Blood (substance)"
+    },
+    "referenceRange": [
+        {
+            "low": {
+                "_type": "quantity",
+                "value": 99,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "high": {
+                "_type": "quantity",
+                "value": 108,
+                "comparator": null,
+                "unit": "mmol/l",
+                "system": "http://unitsofmeasure.org",
+                "code": "mmol/L"
+            },
+            "type": null
+        }
+    ],
+    "related": null
+}

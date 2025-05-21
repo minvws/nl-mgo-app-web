@@ -1,0 +1,60 @@
+{
+    "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+    "repeat": {
+        "boundsPeriod": {
+            "_type": "period",
+            "start": "2019-02-06",
+            "end": "2019-02-09"
+        },
+        "duration": {
+            "_type": "decimal",
+            "value": 30
+        },
+        "durationUnit": {
+            "_type": "code",
+            "value": "d"
+        },
+        "frequency": {
+            "_type": "integer",
+            "value": 2
+        },
+        "frequencyMax": {
+            "_type": "integer",
+            "value": 20
+        },
+        "period": {
+            "_type": "decimal",
+            "value": 1
+        },
+        "periodUnit": {
+            "_type": "code",
+            "value": "d"
+        },
+        "dayOfWeek": [
+            {
+                "_type": "code",
+                "value": "mon"
+            },
+            {
+                "_type": "code",
+                "value": "tue"
+            }
+        ],
+        "timeOfDay": [
+            {
+                "_type": "dateTime",
+                "value": "08:00:00"
+            },
+            {
+                "_type": "dateTime",
+                "value": "18:00:00"
+            }
+        ],
+        "when": [
+            {
+                "_type": "code",
+                "value": "73775008"
+            }
+        ]
+    }
+}

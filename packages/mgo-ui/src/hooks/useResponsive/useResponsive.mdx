@@ -1,0 +1,60 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+import { SmallerThanLarge, WithResponsiveProp } from './useResponsive.stories';
+
+<Meta title="useResponsive" />
+
+# useResponsive
+
+Given a set of breakpoint values, `useResponsive` returns the value for the current breakpoint - or - the base value if no breakpoint matches.
+
+> Default breakpoints are defined using `em` unit. <br/>
+> We use the `@media(min-width)` media query to ensure your interfaces are mobile-first.
+
+<Source
+    language="javascript"
+    code={`
+const currentBreakpoint = useResponsive({
+    base: 'up to small',
+    sm: 'small up to medium',
+    md: 'medium up to large',
+    lg: 'large up to XL',
+    xl: 'XL up to XXL',
+    '2xl': 'XXL and up',
+});`}
+/>
+
+Not all breakpoints need to be defined. If a breakpoint is not defined it will not be used.
+
+<Source
+    language="javascript"
+    code={`
+const isSmallerThanLarge = useResponsive({
+    base: true,
+    lg: false,
+});`}
+/>
+
+<Canvas of={SmallerThanLarge} />
+
+`useResponsive` also accepts a single value. This can be useful if you wish to implement a `ResponsiveProp<T>`.
+
+<Source
+    language="javascript"
+    code={`
+// type ResponsiveProp<T> = T | { base: T, [key in BreakpointSize]?: T };
+ 
+const Component = (props: { value: ResponsiveProp<number> }) => {
+    const currentValue = useResponsive(props.value);
+    ...
+};
+
+...
+
+<Component value={{ base: 1, md: 3, xl: 5 }} /> // 1, 3, or 5 depending on the breakpoint
+
+<Component value={42} /> // always 42
+
+`}
+/>
+
+<Canvas of={WithResponsiveProp} />

@@ -1,0 +1,48 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'packages/mgo-ui/**'
+  pull_request:
+    paths:
+      - 'packages/mgo-ui/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - name: Publish to Chromatic
+        id: chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: 'develop'
+          exitZeroOnChanges: true
+          exitOnceUploaded: true
+          workingDir: packages/mgo-ui
+      - name: Comment Chromatic results
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: chromatic deployment
+          message: |
+            ## Chromatic deployment results
+            | ID | Value |
+            | -------- | ------- |
+            | Build url | <${{steps.chromatic.outputs.buildUrl}}> |
+            | Storybook url | <${{steps.chromatic.outputs.storybookUrl}}> |
+            | Components | ${{steps.chromatic.outputs.componentCount}} |
+            | Changes | ${{steps.chromatic.outputs.changeCount}} |
+            | Errors | ${{steps.chromatic.outputs.errorCount}} |

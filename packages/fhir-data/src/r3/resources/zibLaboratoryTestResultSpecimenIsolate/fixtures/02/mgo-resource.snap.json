@@ -1,0 +1,75 @@
+{
+    "id": "zib-laboratorytestresult-specimen-isolate-01",
+    "referenceId": "Specimen/zib-laboratorytestresult-specimen-isolate-01",
+    "resourceType": "Specimen",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen-Isolate",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b4904db-8fdf-11ec-1469-020000000000",
+            "type": null
+        }
+    ],
+    "type": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": []
+    },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "J. XXX_Helleman (Johan)"
+    },
+    "receivedTime": {
+        "_type": "dateTime",
+        "value": "2020-03-01T22:03:00+00:00"
+    },
+    "parent": [
+        {
+            "_type": "reference",
+            "reference": "Specimen/zib-laboratorytestresult-specimen-01",
+            "display": "Blood (substance)"
+        }
+    ],
+    "collection": {
+        "collectedPeriod": {
+            "_type": "period",
+            "start": "2010-06-01",
+            "end": null
+        },
+        "quantity": null,
+        "method": null,
+        "bodySite": {
+            "value": null,
+            "laterality": null,
+            "morphology": null
+        }
+    },
+    "container": [
+        {
+            "identifier": null,
+            "type": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "370133003",
+                        "display": "Specimen substance",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        }
+    ],
+    "note": [
+        {
+            "_type": "annotation",
+            "time": "2020-03-01T22:03:00+00:00",
+            "text": "het monster toont afwijkingen",
+            "author": null
+        }
+    ]
+}

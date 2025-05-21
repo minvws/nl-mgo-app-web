@@ -1,0 +1,48 @@
+{
+    "resourceType": "Encounter",
+    "id": "zib-encounter-02",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-Encounter"] },
+    "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Patient with id example</caption><thead><tr><th>ContactType</th><th>StartDateTime</th><th>ProblemName</th><th>HealthProfessional</th><th>OrganizationType</th><th>OrganizationName</th></tr></thead><tbody><tr><td>emergency</td><td>16-08-2012</td><td>Broken leg</td><td>H. de Vries</td><td>Hospital</td><td>Universitair Medisch Centrum Groningen</td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19b950e9-8fdf-11ec-1034-020000000000"
+        }
+    ],
+    "status": "finished",
+    "class": { "system": "http://hl7.org/fhir/v3/ActCode", "code": "EMER", "display": "emergency" },
+    "subject": { "reference": "Patient/nl-core-patient-03", "display": "I. Jongeneel-de Haas" },
+    "participant": [
+        {
+            "individual": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-05",
+                            "display": "Huisartsen, niet nader gespecificeerd"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            }
+        }
+    ],
+    "period": { "start": "2012-08-16" },
+    "diagnosis": [
+        { "condition": { "reference": "Condition/zib-problem-05", "display": "Broken leg" } }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/nl-core-organization-02",
+        "display": "Universitair Medisch Centrum Groningen"
+    },
+    "reason": [
+        {
+            "text": "The patient had fever peaks over the last couple of days. He is worried about these peaks."
+        }
+    ]
+}

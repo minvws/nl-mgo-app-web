@@ -1,0 +1,90 @@
+{
+    "id": "ont-ver-gpdata-observation-contact10-temperature",
+    "referenceId": "Observation/ont-ver-gpdata-observation-contact10-temperature",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "bf98085b-041c-11ec-1328-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1",
+        "display": "Jacqueline XXX_Cevat"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2024-10-26"
+    },
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/ont-ver-gpdata-practitioner-kwalificatie1",
+            "display": "Dokter Bernard"
+        }
+    ],
+    "valueQuantity": {
+        "_type": "quantity",
+        "value": 37.3,
+        "comparator": null,
+        "unit": "Cel",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+    },
+    "method": null,
+    "bodySite": {
+        "_type": "codeableConcept",
+        "text": "Oraal onder de tong",
+        "coding": [
+            {
+                "code": "122861001",
+                "display": "structuur van sublinguale ruimte",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": null,
+    "status": {
+        "resultStatusCodelist": null
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "1915",
+                "display": "temperatuur patiënt (oraal gemeten)",
+                "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+            },
+            {
+                "code": "8310-5",
+                "display": "Lichaamstemperatuur [temperatuur] in ^patiënt",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "related": [
+        {
+            "type": null,
+            "target": {
+                "_type": "reference",
+                "reference": "Observation/example-genetics-1",
+                "display": "Variant-1"
+            }
+        }
+    ],
+    "episodeOfCare": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "EpisodeOfCare/ont-ver-gpdata-episodeofcare-icpc-r2101",
+            "display": "Keelpijn"
+        }
+    ]
+}

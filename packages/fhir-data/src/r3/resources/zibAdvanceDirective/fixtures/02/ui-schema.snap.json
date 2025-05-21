@@ -1,0 +1,51 @@
+{
+    "label": "Wilsverklaring",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aandoening",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "ALS"
+                    ]
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "18b69251-8fdf-11ec-7008-020000000000"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet-reanimerenpenning"
+                },
+                {
+                    "label": "Vertegenwoordiger",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J.P.M. van Putten-van der Giessen",
+                    "reference": "RelatedPerson/nl-core-relatedperson-01"
+                },
+                {
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Verwijsbrief Arts",
+                    "reference": "Binary/pdfa-binary-02"
+                },
+                {
+                    "label": "Wilsverklaring datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "15 augustus 2011"
+                },
+                {
+                    "label": "Wilsverklaring type",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Niet reanimeren verklaring (NR in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

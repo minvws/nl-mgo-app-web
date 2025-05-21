@@ -1,0 +1,62 @@
+{
+    "id": "nl-core-practitionerrole-05",
+    "referenceId": "PractitionerRole/nl-core-practitionerrole-05",
+    "resourceType": "PractitionerRole",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "170gov17-8pdf-1aec-1664-020000000000",
+            "type": null
+        }
+    ],
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "example@example.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31611234567"
+            },
+            "use": {
+                "_type": "code",
+                "value": "mobile"
+            }
+        }
+    ],
+    "organization": null,
+    "specialty": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "0100",
+                "display": "Huisartsen, niet nader gespecificeerd",
+                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+            }
+        ]
+    }
+}

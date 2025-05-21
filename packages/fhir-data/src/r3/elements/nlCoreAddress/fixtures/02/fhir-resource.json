@@ -1,0 +1,44 @@
+{
+    "extension": [
+        {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/AddressUse",
+                        "code": "HP",
+                        "display": "Officieel adres"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+            "valueBoolean": true
+        }
+    ],
+    "use": "home",
+    "line": ["Binnenkant to 10"],
+    "_line": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Binnenkant"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "valueString": "to"
+                },
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "10"
+                }
+            ]
+        }
+    ],
+    "city": "Amsterdam",
+    "state": "NH",
+    "postalCode": "1001AA",
+    "country": "NLD"
+}

@@ -1,0 +1,65 @@
+{
+    "id": "zib-vaccination-01",
+    "referenceId": "Immunization/zib-vaccination-01",
+    "resourceType": "Immunization",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1ef6763b-8fdf-11ec-2005-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "date": {
+        "_type": "date",
+        "value": "1999-03-09"
+    },
+    "reportOrigin": null,
+    "practitioner": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            },
+            "role": {
+                "healthProfessionalRole": null
+            }
+        }
+    ],
+    "vaccineCode": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "J06BB11",
+                "display": "hepatitis A immunoglobulin",
+                "system": "http://www.whocc.no/atc"
+            }
+        ]
+    },
+    "doseQuantity": {
+        "_type": "quantity",
+        "value": 30,
+        "comparator": null,
+        "unit": "ml",
+        "system": "http://unitsofmeasure.org",
+        "code": "ml"
+    },
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Bezoek aan Guatemala",
+            "author": null
+        }
+    ]
+}

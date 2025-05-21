@@ -1,0 +1,86 @@
+{
+    "resourceType": "ProcedureRequest",
+    "id": "zib-procedurerequest-02",
+    "meta": { "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Verrichtingaanvraag. Subject: Paul XXX_Mesker. Id: 1d9ec0ef-8fdf-11ec-6149-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), Status: actief<span style=\"display: block;\">Intentie: plan</span></caption><tbody><tr><td><span title=\"Röntgenfoto (168537006 - SNOMED CT)\">Röntgenfoto</span></td><td><div>Wanneer: Vanaf 13 maart 2012</div></td></tr><tr><th>Beoogde uitvoerende</th><td><div>Test Medisch Centrum</div></td></tr><tr><th>Reden</th><td>Open fractuur van femur (aandoening)</td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1d9ec0ef-8fdf-11ec-6149-020000000000"
+        }
+    ],
+    "status": "active",
+    "intent": "plan",
+    "code": {
+        "coding": [
+            { "system": "http://snomed.info/sct", "code": "168537006", "display": "Röntgenfoto" }
+        ]
+    },
+    "subject": { "reference": "Patient/nl-core-patient-02", "display": "Paul XXX_Mesker" },
+    "occurrenceTiming": {
+        "repeat": {
+            "frequency": 2,
+            "period": 1
+        }
+    },
+    "performer": {
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "reasonReference": [
+        {
+            "reference": "Condition/zib-problem-09",
+            "display": "Open fractuur van femur (aandoening)"
+        }
+    ],
+    "performerType": {
+        "coding": [
+            {
+                "display": "Qualified nurse"
+            }
+        ]
+    },
+    "bodySite": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "7771000",
+                                "display": "Left"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "72696002",
+                    "display": "Knee region structure (body structure)"
+                }
+            ]
+        }
+    ],
+    "requester": {
+        "agent": {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/nl-core-practitionerrole-01",
+                        "display": "Medisch specialisten, orthopedie"
+                    }
+                }
+            ],
+            "reference": "Organization/nl-core-organization-02",
+            "display": "UMCG - Afdeling Orthopedie"
+        }
+    }
+}

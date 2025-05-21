@@ -1,0 +1,27 @@
+{
+    "resourceType": "Organization",
+    "id": "nl-core-organization-02",
+    "meta": { "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-organization"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Organisatie. Id: 16369fdf-8fdf-11ec-1349-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6)</caption><tbody><tr><th>Naam</th><td>Orthopedie - UMCG</td></tr><tr><th>Type</th><td><span title=\"Medisch specialisten, orthopedie (0305 - AGB-medisch specialisme)\">Medisch specialisten, orthopedie</span></td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16369fdf-8fdf-11ec-1349-020000000000"
+        }
+    ],
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+                    "code": "0305",
+                    "display": "Medisch specialisten, orthopedie"
+                }
+            ]
+        }
+    ],
+    "name": "Orthopedie - UMCG"
+}

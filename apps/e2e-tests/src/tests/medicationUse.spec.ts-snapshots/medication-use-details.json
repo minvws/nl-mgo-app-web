@@ -1,0 +1,153 @@
+[
+  {
+    "label": null,
+    "children": [
+      {
+        "label": "Auteur",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Gebruik indicator",
+        "value": "y"
+      },
+      {
+        "label": "Gebruiksproduct",
+        "value": "Zestril tablet 10mg"
+      },
+      {
+        "label": "Herhaalperiode cyclisch schema",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Identificatie",
+        "value": "123457000000"
+      },
+      {
+        "label": "Informatiebron",
+        "value": "Johan XXX_Helleman"
+      },
+      {
+        "label": "Medicamenteuze behandeling",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Medicatie gebruik stop type",
+        "value": "in gebruik"
+      },
+      {
+        "label": "Onderwerp",
+        "value": "Johan XXX_Helleman"
+      },
+      {
+        "label": "Reden gebruik",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Reden wijzigen of stoppen gebruik",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Registratiedatum",
+        "value": "16 augustus 2018"
+      },
+      {
+        "label": "Toelichting",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Volgens afspraak indicator",
+        "value": "Ja"
+      },
+      {
+        "label": "Voorschrijver",
+        "value": "Huisartspraktijk Heideroosje"
+      }
+    ]
+  },
+  {
+    "label": "Gebruiksperiode",
+    "children": [
+      {
+        "label": "Einddatum",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Ingangsdatum",
+        "value": "28 juni 2018"
+      },
+      {
+        "label": "Tijdsduur",
+        "value": "3 weken"
+      }
+    ]
+  },
+  {
+    "label": "Gebruiksinstructie",
+    "children": [
+      {
+        "label": "Aanvullende instructie",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Dagdeel",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Frequentie",
+        "value": "1"
+      },
+      {
+        "label": "Interval",
+        "value": "1"
+      },
+      {
+        "label": "Interval",
+        "value": "d"
+      },
+      {
+        "label": "Keerdosis",
+        "value": "1 stuk"
+      },
+      {
+        "label": "Maximale dosering",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Maximum waarde",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Omschrijving",
+        "value": "1 maal per dag 1 tablet, oraal"
+      },
+      {
+        "label": "Toedieningsweg",
+        "value": "Oraal (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+      },
+      {
+        "label": "Toedieninsgduur",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Toedieninsgduur",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Toedientijd",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Volgnummer",
+        "value": "1"
+      },
+      {
+        "label": "Weekdagen",
+        "value": "Niet bekend"
+      },
+      {
+        "label": "Zo nodig",
+        "value": "Niet bekend"
+      }
+    ]
+  }
+]

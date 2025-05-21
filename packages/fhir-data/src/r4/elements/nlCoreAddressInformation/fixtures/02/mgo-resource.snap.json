@@ -1,0 +1,71 @@
+{
+    "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+    "use": {
+        "_type": "code",
+        "value": "home"
+    },
+    "type": {
+        "_type": "code",
+        "value": "both"
+    },
+    "line": [
+        {
+            "streetName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "1e Jacob van Campenstr"
+            },
+            "houseNumber": {
+                "_ext": true,
+                "_type": "string",
+                "value": "15"
+            },
+            "houseNumberLetter": {
+                "_ext": true,
+                "_type": "string",
+                "value": "A 2e"
+            },
+            "houseNumberAddition": {
+                "_ext": true,
+                "_type": "string",
+                "value": "A 2e"
+            },
+            "houseNumberIndication": {
+                "_ext": true,
+                "_type": "string",
+                "value": "to"
+            },
+            "additionalInformation": {
+                "_ext": true,
+                "_type": "string",
+                "value": "test info"
+            }
+        }
+    ],
+    "city": {
+        "_type": "string",
+        "value": "Hoogmade"
+    },
+    "district": {
+        "_type": "string",
+        "value": "Kaag en Braassem"
+    },
+    "postalCode": {
+        "_type": "string",
+        "value": "1012 NX"
+    },
+    "country": {
+        "countryCode": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "NL",
+                    "display": "Nederland",
+                    "system": "urn:iso:std:iso:3166"
+                }
+            ]
+        }
+    }
+}

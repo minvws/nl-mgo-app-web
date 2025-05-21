@@ -1,0 +1,42 @@
+{
+    "label": "Methotrexaat injvlst 25mg/ml 0,6 ml",
+    "children": [
+        {
+            "label": "Farmaceutisch product",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Methotrexaat injvlst 25mg/ml 0,6 ml"
+                    ]
+                },
+                {
+                    "label": "Farmaceutische vorm",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Serienummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Batch lotnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Batch vervaldatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Omschrijving",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

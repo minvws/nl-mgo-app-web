@@ -1,0 +1,55 @@
+{
+    "id": "nl-core-Vaccination-event-02",
+    "referenceId": "Immunization/nl-core-Vaccination-event-02",
+    "resourceType": "Immunization",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event",
+    "fhirVersion": "R4",
+    "pharmaceuticalProduct": null,
+    "identifier": null,
+    "status": {
+        "_type": "string",
+        "value": "completed"
+    },
+    "vaccineCode": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "J07BC02",
+                "display": "Hepatitis A-vaccin",
+                "system": "http://www.whocc.no/atc"
+            }
+        ]
+    },
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-Patient-01",
+        "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+    },
+    "occurrenceDateTime": {
+        "_type": "dateTime",
+        "value": "2012-06-03"
+    },
+    "location": null,
+    "site": null,
+    "route": null,
+    "doseQuantity": null,
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
+            "display": "Healthcare professional (role)"
+        }
+    ],
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Bezoek aan Guatemala.",
+            "author": null
+        }
+    ],
+    "vaccinationIndication": null,
+    "vaccinationMotive": null,
+    "protocolApplied": null
+}

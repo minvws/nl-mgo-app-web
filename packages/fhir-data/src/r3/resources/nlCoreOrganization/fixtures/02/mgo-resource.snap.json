@@ -1,0 +1,39 @@
+{
+    "id": "nl-core-organization-02",
+    "referenceId": "Organization/nl-core-organization-02",
+    "resourceType": "Organization",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-organization",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16369fdf-8fdf-11ec-1349-020000000000",
+            "type": null
+        }
+    ],
+    "name": {
+        "_type": "string",
+        "value": "Orthopedie - UMCG"
+    },
+    "alias": null,
+    "telecom": null,
+    "address": null,
+    "type": {
+        "organizationType": null,
+        "departmentSpecialty": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "0305",
+                        "display": "Medisch specialisten, orthopedie",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                    }
+                ]
+            }
+        ]
+    }
+}

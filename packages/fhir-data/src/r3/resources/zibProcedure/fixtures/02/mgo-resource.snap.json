@@ -1,0 +1,60 @@
+{
+    "id": "zib-procedure-02",
+    "referenceId": "Procedure/zib-procedure-02",
+    "resourceType": "Procedure",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Procedure",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1d827f57-8fdf-11ec-1270-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "performedPeriod": null,
+    "report": null,
+    "procedureMethod": null,
+    "basedOn": null,
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "274051007",
+                "display": "Surgical reduction of fracture (procedure)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "performer": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Organization/nl-core-organization-02",
+                "display": "UMCG - Afdeling Orthopedie"
+            },
+            "healthProfessionalRole": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "PRF",
+                        "display": "Uitvoerder",
+                        "system": "http://hl7.org/fhir/v3/ParticipationType"
+                    }
+                ]
+            }
+        }
+    ],
+    "location": null,
+    "reasonReference": null,
+    "bodySite": null,
+    "focalDevice": null
+}

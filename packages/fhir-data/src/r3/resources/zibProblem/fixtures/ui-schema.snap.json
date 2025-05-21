@@ -1,0 +1,89 @@
+{
+    "label": "Concern",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Bron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1d1451f3-8fdf-11ec-5384-020000000000"
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Probleem begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "2001"
+                },
+                {
+                    "label": "Probleem eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "2002"
+                },
+                {
+                    "label": "Probleem naam",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Fracture of wrist (disorder) (31641000146105 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Probleem type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Probleemstatus",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Active (55561003 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Gevallen op de kunstijsbaan"
+                    ]
+                },
+                {
+                    "label": "Verificatie status codelijst",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Unknown (UNK in code systeem http://hl7.org/fhir/v3/NullFlavor)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Probleem anatomische locatie",
+            "children": [
+                {
+                    "label": "Probleem anatomische locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Entire wrist region (361289009 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Probleem lateraliteit",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Right (24028007 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

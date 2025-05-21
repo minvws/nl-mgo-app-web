@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    name: Lint
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Lint
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+        run: pnpm run lint
+
+  format:
+    runs-on: ubuntu-22.04
+    name: Format
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Check formatting
+        run: pnpm run format:check
+
+  check-types:
+    runs-on: ubuntu-22.04
+    name: Check types
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Check types
+        run: pnpm run check-types
+
+  test:
+    runs-on: ubuntu-22.04
+    name: Test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Test
+        id: test
+        run: pnpm run test:coverage
+      - name: Upload coverage report
+        if: ${{ !cancelled() && (steps.test.conclusion == 'success' || steps.test.conclusion == 'failure') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      # !---------------------------------------------------------------!
+      # !--- Temporarily disabled, awaiting Lokalise subscription... ---!
+      # !---------------------------------------------------------------!
+      # - name: Update i18n files and re-check the types
+      #   working-directory: apps/mgo
+      #   env:
+      #     LOKALISE_API_TOKEN: ${{ secrets.LOKALISE_API_TOKEN }}
+      #     LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
+      #   run: |
+      #     pnpm run messages:update
+      #     pnpm run check-types
+      - name: Build
+        working-directory: apps/mgo
+        run: pnpm run build
+
+  sonar:
+    runs-on: ubuntu-22.04
+    needs: test
+    name: Run SonarCloud scanner
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 'Download artifact: coverage'
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: coverage
+      - name: Run SonarCloud scanner
+        uses: minvws/nl-irealisatie-generic-pipelines/.github/actions/sonarcloud@main
+        with:
+          sonar-token: ${{ secrets.SONAR_TOKEN }}

@@ -1,0 +1,64 @@
+{
+  "summary.options": [
+  ],
+  "summary.organization": [
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": [
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.group_author": [
+  ],
+  "summary.r3.ihe_mhd_minimal_document_reference.show_details": [
+  ],
+  "summary.r3.zib_instructions_for_use": [
+  ],
+  "summary.r3.zib_instructions_for_use.dose": [
+  ],
+  "summary.r3.zib_instructions_for_use.dose.high": [
+  ],
+  "summary.r3.zib_instructions_for_use.dose.low": [
+  ],
+  "summary.r3.zib_instructions_for_use.text": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective.end": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.effective.start": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.group_performer": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.group_test_details": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.interpretation": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.performer": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range.high": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.reference_range.low": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.show_details": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.specimen": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.status": [
+  ],
+  "summary.r3.zib_laboratory_test_result_observation.value": [
+  ],
+  "summary.r3.zib_medication_use.group_period": [
+  ],
+  "summary.r3.zib_medication_use.group_prescriber": [
+  ],
+  "summary.r3.zib_medication_use.prescriber": [
+  ],
+  "summary.r3.zib_medication_use.show_details": [
+  ],
+  "summary.r3.zib_medication_use.status": [
+  ],
+  "summary.r4.nl_core_vaccination_event.group_performer": [
+  ],
+  "summary.r4.nl_core_vaccination_event.show_details": [
+  ]
+}

@@ -1,0 +1,179 @@
+{
+    "id": "nl-core-practitioner-01",
+    "referenceId": "Practitioner/nl-core-practitioner-01",
+    "resourceType": "Practitioner",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
+    "fhirVersion": "R3",
+    "identifier": {
+        "uzi": {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers",
+            "value": "129854656",
+            "type": null
+        },
+        "agb": {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/agb-z",
+            "value": "01069857",
+            "type": null
+        },
+        "big": {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/big",
+            "value": "12345678912",
+            "type": null
+        },
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16d6f97b-8fdf-11ec-2007-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "MC",
+                        "display": "Mobiel telefoonnummer",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "0612345990"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "devries@work.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        }
+    ],
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": null,
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "de"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Vries"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": null
+            },
+            "text": {
+                "_type": "string",
+                "value": "Henk de Vries"
+            }
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Straatweg"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "12"
+                    },
+                    "buildingNumbersuffix": [
+                        {
+                            "_ext": true,
+                            "_type": "string",
+                            "value": "bII"
+                        }
+                    ],
+                    "unitID": null,
+                    "additionalLocator": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Weesp"
+            },
+            "district": {
+                "_type": "string",
+                "value": "Amsterdam"
+            },
+            "postalCode": {
+                "_type": "string",
+                "value": "1012AB"
+            },
+            "country": {
+                "_type": "string",
+                "value": "NLD"
+            }
+        }
+    ]
+}

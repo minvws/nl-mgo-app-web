@@ -1,0 +1,59 @@
+{
+    "id": "zib-functionalormentalstatus-01",
+    "referenceId": "Observation/zib-functionalormentalstatus-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-FunctionalOrMentalStatus",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1a56e129-8fdf-11ec-2982-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "2001",
+        "end": null
+    },
+    "performer": null,
+    "medicalDevice": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "Device/zib-MedicalDeviceProduct-03",
+            "display": "Gehoorapparaat"
+        }
+    ],
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "d510",
+                "display": "Zich wassen",
+                "system": "http://hl7.org/fhir/sid/icf-nl"
+            }
+        ]
+    },
+    "valueCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "d510.3",
+                "display": "ERNSTIGE stoornis (aanzienlijk, hoog, sterk, ...) 50-95%",
+                "system": "http://hl7.org/fhir/sid/icf-nl"
+            }
+        ]
+    },
+    "comment": null
+}

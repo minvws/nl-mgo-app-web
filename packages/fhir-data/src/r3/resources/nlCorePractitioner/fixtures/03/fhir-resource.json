@@ -1,0 +1,49 @@
+{
+    "resourceType": "Practitioner",
+    "id": "nl-core-practitioner-03",
+    "meta": { "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"] },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Id 16efa4a3-8fdf-11ec-1655-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6), G.Z.M. de Wit</div></div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16efa4a3-8fdf-11ec-1655-020000000000"
+        }
+    ],
+    "name": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                    "valueCode": "NL1"
+                }
+            ],
+            "family": "de Wit",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Wit"
+                    }
+                ]
+            },
+            "given": ["G.Z.M."],
+            "_given": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "IN"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

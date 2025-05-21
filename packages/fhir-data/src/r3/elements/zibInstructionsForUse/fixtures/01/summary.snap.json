@@ -1,0 +1,15 @@
+{
+    "label": "Instructies 1",
+    "children": [
+        {
+            "label": "Gebruiksaanwijzing",
+            "type": "SINGLE_VALUE",
+            "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+        },
+        {
+            "label": "Hoeveelheid per keer",
+            "type": "SINGLE_VALUE",
+            "display": "20 milligram"
+        }
+    ]
+}

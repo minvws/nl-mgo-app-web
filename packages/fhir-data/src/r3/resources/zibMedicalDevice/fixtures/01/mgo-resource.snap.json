@@ -1,0 +1,67 @@
+{
+    "id": "zib-medicaldevice-01",
+    "referenceId": "DeviceUseStatement/zib-medicaldevice-01",
+    "resourceType": "DeviceUseStatement",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1b7c5449-8fdf-11ec-2143-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "whenUsed": {
+        "_type": "period",
+        "start": "2007",
+        "end": null
+    },
+    "source": null,
+    "healthCareProvider": {
+        "_ext": true,
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-03",
+        "display": "Test Medisch Centrum"
+    },
+    "healthProfessional": null,
+    "device": {
+        "_type": "reference",
+        "reference": "Device/zib-MedicalDeviceProduct-03",
+        "display": "Gehoorapparaat"
+    },
+    "indicationProblem": [
+        {
+            "_ext": true,
+            "_type": "reference",
+            "reference": "Condition/zib-problem-04",
+            "display": "Presbyacusis"
+        }
+    ],
+    "bodySite": {
+        "laterality": null,
+        "coding": [
+            {
+                "_type": "coding",
+                "code": "117590005",
+                "display": "Ear Structure",
+                "system": "http://snomed.info/sct"
+            }
+        ],
+        "text": null
+    },
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Apparaat niet zichtbaar (diep in de gehooringang)",
+            "author": null
+        }
+    ]
+}

@@ -1,0 +1,640 @@
+{
+  "add_organization.already_added": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder al toevoegd"
+    }
+  ],
+  "add_organization.city": [
+    {
+      "type": 0,
+      "value": "Plaats"
+    }
+  ],
+  "add_organization.error_missing_city": [
+    {
+      "type": 0,
+      "value": "Vul een plaats in"
+    }
+  ],
+  "add_organization.error_missing_name": [
+    {
+      "type": 0,
+      "value": "Vul een naam in"
+    }
+  ],
+  "add_organization.heading": [
+    {
+      "type": 0,
+      "value": "Voeg een zorgaanbieder toe"
+    }
+  ],
+  "add_organization.load_more": [
+    {
+      "type": 0,
+      "value": "Meer zorgaanbieders laden"
+    }
+  ],
+  "add_organization.name": [
+    {
+      "type": 0,
+      "value": "Naam"
+    }
+  ],
+  "add_organization.not_participating": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder niet aangesloten"
+    }
+  ],
+  "add_organization.voice_over_to_overview": [
+    {
+      "type": 0,
+      "value": "naar overzicht"
+    }
+  ],
+  "add_organization_list.add_organization": [
+    {
+      "type": 0,
+      "value": "Voeg een zorgaanbieder toe"
+    }
+  ],
+  "add_organization_list.heading": [
+    {
+      "type": 0,
+      "value": "Welke zorgaanbieders wil je in je overzicht tonen?"
+    }
+  ],
+  "add_organization_list.no_results_heading": [
+    {
+      "type": 0,
+      "value": "Deze lijst is nog leeg"
+    }
+  ],
+  "add_organization_list.no_results_subheading": [
+    {
+      "type": 0,
+      "value": "Je hebt nog geen zorgaanbieders toegevoegd aan deze lijst. Je kunt dit nu doen, of later via je profiel."
+    }
+  ],
+  "add_organization_list.subheading": [
+    {
+      "type": 0,
+      "value": "Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."
+    }
+  ],
+  "add_organization_list.to_overview": [
+    {
+      "type": 0,
+      "value": "Ga naar het overzicht"
+    }
+  ],
+  "dialog.remove_organization_heading": [
+    {
+      "type": 1,
+      "value": "organizationName"
+    },
+    {
+      "type": 0,
+      "value": " weglaten?"
+    }
+  ],
+  "dialog.remove_organization_no": [
+    {
+      "type": 0,
+      "value": "Nee, toch tonen"
+    }
+  ],
+  "dialog.remove_organization_subheading": [
+    {
+      "type": 0,
+      "value": "We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel."
+    }
+  ],
+  "dialog.remove_organization_yes": [
+    {
+      "type": 0,
+      "value": "Ja, weglaten"
+    }
+  ],
+  "footer.about_heading": [
+    {
+      "type": 0,
+      "value": "Over deze website"
+    }
+  ],
+  "footer.about_site": [
+    {
+      "type": 0,
+      "value": "Over mijngezondheidsoverzicht.nl"
+    }
+  ],
+  "footer.accessibility": [
+    {
+      "type": 0,
+      "value": "Toegankelijkheid"
+    }
+  ],
+  "footer.contact": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "footer.cookies": [
+    {
+      "type": 0,
+      "value": "Cookies"
+    }
+  ],
+  "footer.copyright": [
+    {
+      "type": 0,
+      "value": "Copyright"
+    }
+  ],
+  "footer.faq": [
+    {
+      "type": 0,
+      "value": "Veelgestelde vragen"
+    }
+  ],
+  "footer.privacy": [
+    {
+      "type": 0,
+      "value": "Privacy"
+    }
+  ],
+  "footer.service_heading": [
+    {
+      "type": 0,
+      "value": "Service"
+    }
+  ],
+  "health_category.empty.heading": [
+    {
+      "type": 0,
+      "value": "Geen gegevens gevonden "
+    }
+  ],
+  "health_category.empty.subheading": [
+    {
+      "type": 0,
+      "value": "Er is hier niets opgeslagen."
+    }
+  ],
+  "introduction.heading": [
+    {
+      "type": 0,
+      "value": "Je gezondheidsgegevens in één overzicht"
+    }
+  ],
+  "introduction.subheading": [
+    {
+      "type": 0,
+      "value": "Eén app met alle gegevens die je huisarts, ziekenhuis en andere zorgaanbieders over jou hebben. Veilig en overzichtelijk."
+    }
+  ],
+  "lab_results.heading": [
+    {
+      "type": 0,
+      "value": "Uitslagen"
+    }
+  ],
+  "lab_results.subheading": [
+    {
+      "type": 0,
+      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans."
+    }
+  ],
+  "login.digid": [
+    {
+      "type": 0,
+      "value": "Log in met DigiD"
+    }
+  ],
+  "login.error_heading": [
+    {
+      "type": 0,
+      "value": "Inloggen is niet gelukt"
+    }
+  ],
+  "login.error_subheading": [
+    {
+      "type": 0,
+      "value": "Probeer het nog een keer"
+    }
+  ],
+  "login.european": [
+    {
+      "type": 0,
+      "value": "Log in met eIDAS"
+    }
+  ],
+  "login.heading": [
+    {
+      "type": 0,
+      "value": "Bewijs wie je bent"
+    }
+  ],
+  "login.subheading": [
+    {
+      "type": 0,
+      "value": "Log in met DigiD. Zo kunnen we jouw gegevens veilig ophalen bij je huisarts, ziekenhuis en andere zorgaanbieders."
+    }
+  ],
+  "logout.heading": [
+    {
+      "type": 0,
+      "value": "Je bent uitgelogd"
+    }
+  ],
+  "logout.login": [
+    {
+      "type": 0,
+      "value": "Log opnieuw in"
+    }
+  ],
+  "logout.subheading": [
+    {
+      "type": 0,
+      "value": "De volgende keer dat je inlogt kun je je gegevens opnieuw ophalen."
+    }
+  ],
+  "medication_use.heading": [
+    {
+      "type": 0,
+      "value": "Medicijnen"
+    }
+  ],
+  "medication_use.subheading": [
+    {
+      "type": 0,
+      "value": "Een overzicht van de medicijnen die zijn voorgeschreven door je zorgaanbieder."
+    }
+  ],
+  "menu.about_heading": [
+    {
+      "type": 0,
+      "value": "Over de site"
+    }
+  ],
+  "menu.about_subheading": [
+    {
+      "type": 0,
+      "value": "Uitleg over hoe de site werkt en wat je er allemaal mee kan"
+    }
+  ],
+  "menu.menu": [
+    {
+      "type": 0,
+      "value": "Menu"
+    }
+  ],
+  "menu.organizations_heading": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieders"
+    }
+  ],
+  "menu.organizations_subheading": [
+    {
+      "type": 0,
+      "value": "Je medische gegevens van je zorgaanbieders op één plek"
+    }
+  ],
+  "menu.overview_heading": [
+    {
+      "type": 0,
+      "value": "Overzicht"
+    }
+  ],
+  "menu.overview_subheading": [
+    {
+      "type": 0,
+      "value": "Je medische gegevens van je zorgaanbieders op één plek"
+    }
+  ],
+  "menu.settings_heading": [
+    {
+      "type": 0,
+      "value": "Instellingen"
+    }
+  ],
+  "not_found.heading": [
+    {
+      "type": 0,
+      "value": "Pagina niet gevonden"
+    }
+  ],
+  "not_found.subheading": [
+    {
+      "type": 0,
+      "value": "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+    }
+  ],
+  "not_found.to_overview": [
+    {
+      "type": 0,
+      "value": "Ga naar het overzicht"
+    }
+  ],
+  "organisation_list_automatic.subheading": [
+    {
+      "type": 0,
+      "value": "Welke wil je tonen in je overzicht? Je kunt dit later altijd veranderen."
+    }
+  ],
+  "organization.diagnosis_heading": [
+    {
+      "type": 0,
+      "value": "Klachten en diagnoses"
+    }
+  ],
+  "organization.diagnosis_subheading": [
+    {
+      "type": 0,
+      "value": "Vastgesteld door je zorgaanbieder"
+    }
+  ],
+  "organization.heading": [
+    {
+      "type": 1,
+      "value": "organizationName"
+    }
+  ],
+  "organization.lab_results_heading": [
+    {
+      "type": 0,
+      "value": "Uitslagen"
+    }
+  ],
+  "organization.lab_results_subheading": [
+    {
+      "type": 0,
+      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans"
+    }
+  ],
+  "organization.medicine_heading": [
+    {
+      "type": 0,
+      "value": "Medicijnen"
+    }
+  ],
+  "organization.medicine_subheading": [
+    {
+      "type": 0,
+      "value": "Voorgeschreven door je zorgaanbieder"
+    }
+  ],
+  "organization.not-found_subheading": [
+    {
+      "type": 0,
+      "value": "Misschien is de zorgaanbieder die je zoekt verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+    }
+  ],
+  "organization.not_found_heading": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder niet gevonden"
+    }
+  ],
+  "organization.subheading": [
+    {
+      "type": 1,
+      "value": "organizationCategory"
+    }
+  ],
+  "organization.title": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "organization.to_overview": [
+    {
+      "type": 0,
+      "value": "Ga naar het overzicht"
+    }
+  ],
+  "organization_search.heading": [
+    {
+      "type": 0,
+      "value": "Deze zorgaanbieders hebben we gevonden"
+    }
+  ],
+  "organization_search.no_results_found_heading": [
+    {
+      "type": 0,
+      "value": "Geen zorgaanbieders gevonden"
+    }
+  ],
+  "organization_search.search_hint_1": [
+    {
+      "type": 0,
+      "value": "Controleer de spelling."
+    }
+  ],
+  "organization_search.search_hint_2": [
+    {
+      "type": 0,
+      "value": "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgaanbieder hoe je hun naam schrijft."
+    }
+  ],
+  "organization_search.search_hint_3": [
+    {
+      "type": 0,
+      "value": "Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in."
+    }
+  ],
+  "organization_search.searching": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieders aan het zoeken..."
+    }
+  ],
+  "organizations.heading": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieders"
+    }
+  ],
+  "organizations.remove_organization": [
+    {
+      "type": 0,
+      "value": "Verwijder zorgaanbieder"
+    }
+  ],
+  "overview.add_organization": [
+    {
+      "type": 0,
+      "value": "Voeg een zorgaanbieder toe"
+    }
+  ],
+  "overview.heading": [
+    {
+      "type": 0,
+      "value": "Overzicht"
+    }
+  ],
+  "overview.no_organizations_found": [
+    {
+      "type": 0,
+      "value": "Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald."
+    }
+  ],
+  "overview.no_results_action": [
+    {
+      "type": 0,
+      "value": "Voeg zorgaanbieders toe"
+    }
+  ],
+  "overview.organizations.subheading": [
+    {
+      "type": 0,
+      "value": "Je gegevens van deze zorgaanbieder"
+    }
+  ],
+  "overview.subheading": [
+    {
+      "type": 0,
+      "value": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+    }
+  ],
+  "privacy.markdown": [
+    {
+      "type": 0,
+      "value": "&lt;h1&gt;Privacyverklaring Mijn Gezondheidsoverzicht&lt;/h1&gt;\n&lt;p&gt;Deze verklaring beschrijft in het kort het volgende:&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;Wie verantwoordelijk is voor de verwerking van persoonsgegevens voor Mijn Gezondheidsoverzicht.&lt;/li&gt;\n&lt;li&gt;Waarom persoonsgegevens worden verwerkt.&lt;/li&gt;\n&lt;li&gt;Wat de grondslag is voor het verwerken van persoonsgegevens.&lt;/li&gt;\n&lt;li&gt;Welke persoonsgegevens van de gebruiker van Mijn Zorg worden verwerkt.&lt;/li&gt;\n&lt;li&gt;Hoe wordt omgegaan met cookies en statistische informatie.&lt;/li&gt;\n&lt;li&gt;Aan wie de persoonsgegevens verstrekt kunnen worden.&lt;/li&gt;\n&lt;li&gt;Welke bewaartermijnen gelden.&lt;/li&gt;\n&lt;li&gt;Wat de rechten zijn van de gebruiker.&lt;/li&gt;\n&lt;li&gt;Welke beveiligingsmaatregelen genomen zijn.&lt;/li&gt;\n&lt;li&gt;Dat de privacyverklaring gewijzigd kan worden.&lt;/li&gt;\n&lt;/ol&gt;\n&lt;p&gt;In het Besluit verwerking persoonsgegevens generieke digitale infrastructuur wordt de verwerking van persoonsgegevens uitvoerig beschreven (vindplaats: Staatsblad 2016, 195)&lt;/p&gt;\n&lt;h2&gt;1. Wie verantwoordelijk is voor de verwerking van persoonsgegevens voor Mijn Gezondheidsoverzicht.&lt;/h2&gt;\n&lt;p&gt;De Minister van Binnenlandse Zaken en Koninkrijksrelaties is verantwoordelijk voor het verwerken van persoonsgegevens voor Mijn Gezondheidsoverzicht. Het beheer van Mijn Gezondheidsoverzicht wordt uitgevoerd door iRealisatie. iRealisatie is onderdeel van het Ministerie van Volksgezondheid, Welzijn en Sport.&lt;/p&gt;\n&lt;p&gt;Voor meer informatie hierover kunt u contact opnemen met de Functionaris Gegevensbescherming van het Ministerie van Volksgezondheid, Welzijn en Sport. U kunt de Functionaris Gegevensbescherming bereiken via &lt;a href=&quot;https://www.rijksoverheid.nl/contact/informatie-rijksoverheid/e-mail-sturen&quot;&gt;het contactformulier&lt;/a&gt; op de website van het Ministerie van Volksgezondheid, Welzijn en Sport.&lt;/p&gt;\n&lt;h2&gt;2. Waarom persoonsgegevens worden verwerkt.&lt;/h2&gt;\n&lt;p&gt;Tempora repellendus ducimus minima hic fugiat illo non iste. Molestias perferendis eligendi accusantium eius sint eos deleniti fuga sed quia doloremque voluptatem officia ex. Assumenda odio tempora ducimus occaecati ullam porro doloribus reprehenderit explicabo facilis. Nisi temporibus perspiciatis consequuntur nobis asperiores molestiae consequuntur quis consequuntur odio exercitationem at minima sed. Tempora voluptatum corrupti iusto soluta cupiditate minus unde.&lt;/p&gt;\n&lt;h2&gt;3. Wat de grondslag is voor het verwerken van persoonsgegevens.&lt;/h2&gt;\n&lt;p&gt;Eum veritatis ducimus magni temporibus inventore distinctio reprehenderit possimus voluptate architecto. Consequuntur vel quae labore tempore exercitationem corrupti vero esse natus. Quae laboriosam ipsam culpa quisquam eligendi commodi veniam reiciendis harum animi provident esse. Autem veniam dolores nam cupiditate quod ut porro qui optio illum aliquam. Quidem ex inventore quia architecto harum omnis ab.&lt;/p&gt;\n&lt;h2&gt;4. Welke persoonsgegevens van de gebruiker van Mijn Zorg worden verwerkt.&lt;/h2&gt;\n&lt;p&gt;Occaecati porro commodi quasi soluta qui omnis voluptatem nam hic. Nihil maiores iste ipsam laudantium beatae voluptates ex natus voluptate autem molestiae. Excepturi doloremque rem nostrum ducimus a ipsa ab impedit atque. Odio rerum amet tenetur magni vitae aliquid pariatur harum consectetur reiciendis officia aut minus consectetur. Aperiam explicabo veniam ex quo qui ea minima blanditiis delectus quisquam numquam quos aspernatur.&lt;/p&gt;\n&lt;h2&gt;5. Hoe wordt omgegaan met cookies en statistische informatie.&lt;/h2&gt;\n&lt;p&gt;Ratione sapiente occaecati cum nobis eligendi eius sit dolor minus molestias nihil. Perspiciatis laboriosam nihil iusto soluta doloribus facilis maxime. Magnam iste dolore modi facilis ab cupiditate voluptatem placeat ab dolore similique cumque in. Totam quasi est deleniti modi animi voluptate praesentium expedita rem tempore. Eum deserunt quasi aperiam quos vero perspiciatis doloribus.&lt;/p&gt;\n&lt;h2&gt;6. Aan wie de persoonsgegevens verstrekt kunnen worden.&lt;/h2&gt;\n&lt;p&gt;Tenetur quibusdam voluptatibus dolorem fuga ullam sequi eveniet in illum assumenda qui voluptates deserunt itaque. Molestias sint porro ipsa eligendi eveniet voluptas nihil ad consectetur quod vero accusamus. In ipsam corrupti dolorum a ducimus vel minus debitis tempore maiores temporibus quo facere. Ratione placeat tenetur amet eum necessitatibus rem aliquid doloribus ea. Exercitationem possimus atque optio dolore eum corporis ex atque earum fugiat.&lt;/p&gt;\n&lt;h2&gt;7. Welke bewaartermijnen gelden.&lt;/h2&gt;\n&lt;p&gt;Eum ut eum sapiente illum vero iusto omnis soluta corporis asperiores. Modi accusamus molestiae facilis dignissimos doloremque aperiam corrupti sapiente dignissimos consequatur. Repudiandae harum nulla ex voluptatibus error nesciunt necessitatibus repellat sit veritatis laborum laudantium distinctio odit. Nihil fugiat quisquam nostrum similique reprehenderit voluptatum quo et repudiandae minus vitae. Minus impedit ratione in repellendus ipsum voluptatem iste veritatis.&lt;/p&gt;\n&lt;h2&gt;8. Wat de rechten zijn van de gebruiker.&lt;/h2&gt;\n&lt;p&gt;Natus quo necessitatibus veritatis provident corrupti occaecati dolor natus fugit qui quaerat eligendi voluptatibus omnis. Dolore iste possimus quod voluptatibus dolore similique soluta harum impedit aperiam aliquid. Dolores commodi occaecati veritatis excepturi atque facilis magnam. Quidem ut blanditiis ullam omnis ex earum eaque odio officiis. Facilis saepe perferendis quod nihil neque aspernatur sequi illo laboriosam maiores numquam dolor.&lt;/p&gt;\n&lt;h2&gt;9. Welke beveiligingsmaatregelen genomen zijn.&lt;/h2&gt;\n&lt;p&gt;Facere nemo quae labore nulla praesentium sint vel explicabo inventore laudantium illo nulla. Deleniti voluptatibus architecto tempore natus ullam itaque eos suscipit ea. Hic impedit ipsam suscipit saepe eum ab veniam sunt perspiciatis necessitatibus optio vel fuga. Culpa nesciunt sed quos neque molestiae ab sint ut ullam. Rem maxime corrupti odio culpa velit voluptatum ullam.&lt;/p&gt;\n&lt;h2&gt;10. Dat de privacyverklaring gewijzigd kan worden.&lt;/h2&gt;\n&lt;p&gt;Assumenda maxime vel adipisci a molestias delectus qui. Beatae dolore aperiam hic dignissimos mollitia neque reiciendis labore. Nulla dicta at occaecati veritatis deleniti sit porro aut odio a modi facilis. Aliquid eum omnis optio earum dolore et aut deleniti odio. Magni sunt sed quis ipsam eligendi rem placeat.&lt;/p&gt;\n"
+    }
+  ],
+  "problems.heading": [
+    {
+      "type": 0,
+      "value": "Klachten en diagnoses"
+    }
+  ],
+  "problems.subheading": [
+    {
+      "type": 0,
+      "value": "Je diagnoses en gezondheidsklachten, vastgesteld door je zorgaanbieder."
+    }
+  ],
+  "proposition.heading": [
+    {
+      "type": 0,
+      "value": "Zo gebruikt de website jouw gegevens"
+    }
+  ],
+  "proposition.statement_1": [
+    {
+      "type": 0,
+      "value": "Je gegevens worden "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "beveiligd"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " en via een "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "veilige verbinding"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " opgehaald."
+    }
+  ],
+  "proposition.statement_2": [
+    {
+      "type": 0,
+      "value": "Je gegevens komen direct van de zorgaanbieder die je kiest. "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "Alleen jij hebt toegang."
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    }
+  ],
+  "proposition.statement_3": [
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "Je kiest zelf"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " hoe je je gegevens wilt gebruiken en of je ze deelt met anderen."
+    }
+  ],
+  "proposition.statement_4": [
+    {
+      "type": 0,
+      "value": "Je kunt de gegevens in je overzicht altijd "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "verwijderen of opnieuw ophalen"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "proposition.subheading": [
+    {
+      "type": 0,
+      "value": "In de "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "privacyverklaring"
+        }
+      ],
+      "type": 8,
+      "value": "a"
+    },
+    {
+      "type": 0,
+      "value": " staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
+    }
+  ],
+  "settings.featureflag.localization": [
+    {
+      "type": 0,
+      "value": "Automatische lokalisatie"
+    }
+  ]
+}

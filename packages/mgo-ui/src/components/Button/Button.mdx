@@ -1,0 +1,32 @@
+import { Meta, Source, Canvas } from '@storybook/blocks';
+import { Overview, AsChildLink } from './Button.stories';
+
+<Meta title="Button" />
+
+# Button
+
+Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+
+Button supports the `useChild` property to render a button as its child, such as an `<a>` tag or a react-router `<Link>`. See [Composition](/docs/docs-composition--docs) for more information.
+
+<Source
+    language="tsx"
+    code={`
+<Button asChild>
+    <a href="/contact">Contact</a>
+</Button>
+
+...
+
+import { Link } from 'react-router-dom';
+
+<Button asChild>
+    <Link to="/contact">Contact</Link>
+</Button>
+`} />
+
+<Canvas of={AsChildLink} />
+
+## Overview of all the button variants
+
+<Canvas of={Overview} />

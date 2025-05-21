@@ -1,0 +1,39 @@
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Composition" />
+
+# Composition
+
+<span className="intro">
+    Use the `asChild` prop to compose functionality onto alternative element types or your own React
+    components.
+</span>
+
+For composing different styles and behaviors across components, we chose to use the [Radix-UI Slot](https://www.radix-ui.com/primitives/docs/utilities/slot) implementation. This approach drastically simplifies the type checking for components as types are not mixed together.
+
+For example: when you wish to render an `<a>` with the styles of a `Button` component, you can use the `asChild` prop to compose the `Button` component onto the `<a>` element. Using the `asChild` prop will also pass down the `Button` component's props to the `<a>` element.
+
+<span className="context">
+> If you were to use [the _as_ prop](https://www.radix-ui.com/primitives/docs/utilities/polymorphic), you would need allow `<a>` props on a `Button` component, which can get more complicated if you also wish to support the `<Link>` from `react-router-dom` for example.
+> Using the `asChild` approach each component type will only need to type check their own props.
+</span>
+
+<Source
+    language="html"
+    code={`
+<Button asChild>
+    <a href="/contact">Contact</a>
+</Button>
+
+...
+
+import { Link } from 'react-router-dom';
+
+<Button asChild>
+    <Link to="/contact">Contact</Link>
+</Button>
+`} />
+
+For implementing this pattern there is a useful hook called [_useComposition_](/docs/hooks-usecomposition--docs)
+
+It also makes it possible to compose multiple components together. For more information on using the `asChild` for composition please see the [Radix-UI documentation](https://www.radix-ui.com/primitives/docs/guides/composition).

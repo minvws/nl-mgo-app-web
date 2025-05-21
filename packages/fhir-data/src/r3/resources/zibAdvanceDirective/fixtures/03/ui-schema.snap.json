@@ -1,0 +1,43 @@
+{
+    "label": "Wilsverklaring",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aandoening",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "18c1f7b3-8fdf-11ec-1027-020000000000"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Mondelinge afspraak"
+                },
+                {
+                    "label": "Vertegenwoordiger",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Wilsverklaring datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "9 april 2018"
+                },
+                {
+                    "label": "Wilsverklaring type",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Mondelinge afspraak (MON in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

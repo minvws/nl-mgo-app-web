@@ -1,0 +1,29 @@
+{
+    "id": "nl-core-practitionerrole-04",
+    "referenceId": "PractitionerRole/nl-core-practitionerrole-04",
+    "resourceType": "PractitionerRole",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitionerrole",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "172613a3-8fdf-11ec-2630-020000000000",
+            "type": null
+        }
+    ],
+    "telecom": null,
+    "organization": null,
+    "specialty": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "0335",
+                "display": "Medisch specialisten, geriatrie",
+                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { singleColors, colorSwatches } from './colors';
+
+<Meta title="Colors" />
+
+# Colors
+
+<br />
+
+<ColorPalette style={{ wordBreak: 'break-all' }}>
+    {singleColors.map(([name, colors]) => (
+        <ColorItem key={name} title={`${name}`} subtitle={`${name} color scheme`} colors={colors} />
+    ))}
+    {colorSwatches.map(([name, colors]) => (
+        <ColorItem key={name} title={`${name}`} subtitle={`${name} color scheme`} colors={colors} />
+    ))}
+</ColorPalette>

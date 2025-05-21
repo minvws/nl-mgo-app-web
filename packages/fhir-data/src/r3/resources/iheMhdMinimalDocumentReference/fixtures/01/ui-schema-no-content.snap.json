@@ -1,0 +1,107 @@
+{
+    "label": "Document",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aangemaakt op",
+                    "type": "SINGLE_VALUE",
+                    "display": "10 juni 2019 om 13:13:21 GMT+2"
+                },
+                {
+                    "label": "Beveiligingslabel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Categorie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gerelateerd aan",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "678909902",
+                        "17ba1c1f-8fdf-11ec-1892-020000000000"
+                    ]
+                },
+                {
+                    "label": "Identifier",
+                    "type": "SINGLE_VALUE",
+                    "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
+                },
+                {
+                    "label": "Specialist",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "De Hoed"
+                    ]
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "current"
+                },
+                {
+                    "label": "Type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "ontslagbrief (11071000146104 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Inhoud",
+            "children": [
+                {
+                    "label": "Bijlage",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Formaat",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Klinische context",
+            "children": [
+                {
+                    "label": "Aanvullende details",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Faciliteit",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Patiënt informatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

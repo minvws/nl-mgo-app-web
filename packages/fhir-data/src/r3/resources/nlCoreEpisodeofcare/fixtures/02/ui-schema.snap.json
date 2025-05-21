@@ -1,0 +1,46 @@
+{
+    "label": "Episode",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 februari 2019"
+                },
+                {
+                    "label": "Concern label",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Verslaving (bevinding) (32709003 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "15fcdead-8fdf-11ec-5500-020000000000"
+                    ]
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
+                },
+                {
+                    "label": "Titel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Drugs en alcohol revalidatie"
+                }
+            ]
+        }
+    ]
+}

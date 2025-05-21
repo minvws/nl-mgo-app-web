@@ -1,0 +1,51 @@
+[
+    {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+        "text": {
+            "_type": "string",
+            "value": "Hendrik J.W. Schemer"
+        },
+        "family": {
+            "humannameOwnPrefix": null,
+            "humannameOwnName": {
+                "_ext": true,
+                "_type": "string",
+                "value": "Schemer"
+            },
+            "humannamePartnerPrefix": null,
+            "humannamePartnerName": null
+        },
+        "given": {
+            "birthName": [
+                {
+                    "_type": "string",
+                    "value": "Hendrik"
+                }
+            ],
+            "initials": [
+                {
+                    "_type": "string",
+                    "value": "J."
+                },
+                {
+                    "_type": "string",
+                    "value": "W."
+                }
+            ]
+        },
+        "prefix": null,
+        "suffix": null,
+        "period": null
+    },
+    {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given",
+        "text": null,
+        "given": [
+            {
+                "_type": "string",
+                "value": "Henk"
+            }
+        ],
+        "period": null
+    }
+]

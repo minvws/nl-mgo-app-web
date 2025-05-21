@@ -1,0 +1,61 @@
+{
+    "id": "zib-bodyheight-01",
+    "referenceId": "Observation/zib-bodyheight-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "192a097f-8fdf-11ec-1258-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2013-02-08"
+    },
+    "effectivePeriod": null,
+    "performer": [
+        {
+            "_type": "reference",
+            "reference": "Practitioner/nl-core-practitioner-02",
+            "display": "Vaste Huisarts 1"
+        }
+    ],
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "8302-2",
+                "display": "Body height",
+                "system": "http://loinc.org"
+            },
+            {
+                "code": "8308-9",
+                "display": "Body height --standing",
+                "system": "http://loinc.org"
+            }
+        ]
+    },
+    "valueQuantity": {
+        "_type": "quantity",
+        "value": 183,
+        "comparator": null,
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+    },
+    "comment": {
+        "_type": "string",
+        "value": "met schoenen aan"
+    }
+}

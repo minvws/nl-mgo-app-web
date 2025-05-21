@@ -1,0 +1,80 @@
+{
+  "system.code.http://hl7.org/fhir/referencerange-meaning|follicular": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|luteal": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|midcycle": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|normal": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|post": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|postmeopausal": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|pre": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|pre-puberty": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|recommended": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|therapeutic": [
+  ],
+  "system.code.http://hl7.org/fhir/referencerange-meaning|treatment": [
+  ],
+  "system.urn:oid:2.16.840.1.113883.2.4.4.9": [
+  ],
+  "system.value.http://unitsofmeasure.org|d": [
+    {
+      "offset": 0,
+      "options": {
+        "one": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "value"
+    }
+  ],
+  "system.value.http://unitsofmeasure.org|mmol/L": [
+    {
+      "offset": 0,
+      "options": {
+        "one": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "value"
+    }
+  ],
+  "system.value.urn:oid:2.16.840.1.113883.2.4.4.1.900.2|245": [
+    {
+      "offset": 0,
+      "options": {
+        "one": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "value"
+    }
+  ]
+}

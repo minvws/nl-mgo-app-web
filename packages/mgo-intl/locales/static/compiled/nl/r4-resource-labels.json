@@ -1,0 +1,5192 @@
+{
+  "r4.gp_encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r4.gp_encounter.class": [
+    {
+      "type": 0,
+      "value": "Contact type"
+    }
+  ],
+  "r4.gp_encounter.hospitalization.admit_source": [
+    {
+      "type": 0,
+      "value": "Herkomst"
+    }
+  ],
+  "r4.gp_encounter.hospitalization.discharge_disposition": [
+    {
+      "type": 0,
+      "value": "Bestemming"
+    }
+  ],
+  "r4.gp_encounter.location.location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r4.gp_encounter.participant.health_professional.individual": [
+    {
+      "type": 0,
+      "value": "Contact met"
+    }
+  ],
+  "r4.gp_encounter.participant.health_professional.type": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r4.gp_encounter.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r4.gp_encounter.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r4.gp_encounter.reason_codeviating_result.comment_contact_reason": [
+    {
+      "type": 0,
+      "value": "Toelichting reden contact"
+    }
+  ],
+  "r4.gp_encounter.reason_codeviating_result.text": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r4.gp_encounter.reason_reference.comment_contact_reason": [
+    {
+      "type": 0,
+      "value": "Toelichting reden contact"
+    }
+  ],
+  "r4.gp_encounter.reason_reference.problem": [
+    {
+      "type": 0,
+      "value": "Probleem"
+    }
+  ],
+  "r4.gp_encounter.reason_reference.procedure": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.nl_core_ability_to_dress_oneself": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to dress oneself"
+    }
+  ],
+  "r4.nl_core_ability_to_drink": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to drink"
+    }
+  ],
+  "r4.nl_core_ability_to_drink.drinking_limitations": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to drink.drinking limitations"
+    }
+  ],
+  "r4.nl_core_ability_to_eat": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to eat"
+    }
+  ],
+  "r4.nl_core_ability_to_eat.eating_limitations": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to eat.eating limitations"
+    }
+  ],
+  "r4.nl_core_ability_to_groom": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to groom"
+    }
+  ],
+  "r4.nl_core_ability_to_use_toilet": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to use toilet"
+    }
+  ],
+  "r4.nl_core_ability_to_use_toilet.menstrual_care": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to use toilet.menstrual care"
+    }
+  ],
+  "r4.nl_core_ability_to_use_toilet.toilet_use": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to use toilet.toilet use"
+    }
+  ],
+  "r4.nl_core_ability_to_wash_oneself": [
+    {
+      "type": 0,
+      "value": "Nl-core-ability to wash oneself"
+    }
+  ],
+  "r4.nl_core_address_information": [
+    {
+      "type": 0,
+      "value": "Nl-core-address information"
+    }
+  ],
+  "r4.nl_core_advance_directive": [
+    {
+      "type": 0,
+      "value": "Nl-core-advance directive"
+    }
+  ],
+  "r4.nl_core_alcohol_use": [
+    {
+      "type": 0,
+      "value": "Nl-core-alcohol use"
+    }
+  ],
+  "r4.nl_core_alert": [
+    {
+      "type": 0,
+      "value": "Nl-core-alert"
+    }
+  ],
+  "r4.nl_core_allergy_intolerance": [
+    {
+      "type": 0,
+      "value": "Nl-core-allergy intolerance"
+    }
+  ],
+  "r4.nl_core_anatomical_location": [
+    {
+      "type": 0,
+      "value": "Nl-core-anatomical location"
+    }
+  ],
+  "r4.nl_core_apgar_score_10_minute": [
+    {
+      "type": 0,
+      "value": "Nl-core-apgar score-10 minute"
+    }
+  ],
+  "r4.nl_core_apgar_score_1_minute": [
+    {
+      "type": 0,
+      "value": "Nl-core-apgar score-1 minute"
+    }
+  ],
+  "r4.nl_core_apgar_score_5_minute": [
+    {
+      "type": 0,
+      "value": "Nl-core-apgar score-5 minute"
+    }
+  ],
+  "r4.nl_core_barthel_adl_index": [
+    {
+      "type": 0,
+      "value": "Nl-core-barthel ADL index"
+    }
+  ],
+  "r4.nl_core_blood_pressure": [
+    {
+      "type": 0,
+      "value": "Nl-core-blood pressure"
+    }
+  ],
+  "r4.nl_core_body_height": [
+    {
+      "type": 0,
+      "value": "Nl-core-body height"
+    }
+  ],
+  "r4.nl_core_body_temperature": [
+    {
+      "type": 0,
+      "value": "Nl-core-body temperature"
+    }
+  ],
+  "r4.nl_core_body_weight": [
+    {
+      "type": 0,
+      "value": "Nl-core-body weight"
+    }
+  ],
+  "r4.nl_core_bowel_function": [
+    {
+      "type": 0,
+      "value": "Nl-core-bowel function"
+    }
+  ],
+  "r4.nl_core_bowel_function.defecation_color": [
+    {
+      "type": 0,
+      "value": "Nl-core-bowel function.defecation color"
+    }
+  ],
+  "r4.nl_core_bowel_function.defecation_consistency": [
+    {
+      "type": 0,
+      "value": "Nl-core-bowel function.defecation consistency"
+    }
+  ],
+  "r4.nl_core_bowel_function.fecal_continence": [
+    {
+      "type": 0,
+      "value": "Nl-core-bowel function.fecal continence"
+    }
+  ],
+  "r4.nl_core_bowel_function.frequency": [
+    {
+      "type": 0,
+      "value": "Nl-core-bowel function.frequency"
+    }
+  ],
+  "r4.nl_core_burnwound": [
+    {
+      "type": 0,
+      "value": "Nl-core-burnwound"
+    }
+  ],
+  "r4.nl_core_burnwound.extent": [
+    {
+      "type": 0,
+      "value": "Nl-core-burnwound.extent"
+    }
+  ],
+  "r4.nl_core_care_team": [
+    {
+      "type": 0,
+      "value": "Nl-core-care team"
+    }
+  ],
+  "r4.nl_core_checklist_pain_behavior": [
+    {
+      "type": 0,
+      "value": "Nl-core-checklist pain behavior"
+    }
+  ],
+  "r4.nl_core_comfort_scale": [
+    {
+      "type": 0,
+      "value": "Nl-core-comfort scale"
+    }
+  ],
+  "r4.nl_core_contact_information_email_addresses": [
+    {
+      "type": 0,
+      "value": "Nl-core-contact information-email addresses"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers": [
+    {
+      "type": 0,
+      "value": "Nl-core-contact information-telephone numbers"
+    }
+  ],
+  "r4.nl_core_contact_person": [
+    {
+      "type": 0,
+      "value": "Nl-core-contact person"
+    }
+  ],
+  "r4.nl_core_development_child": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child"
+    }
+  ],
+  "r4.nl_core_development_child.age_first_menstruation": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.age first menstruation"
+    }
+  ],
+  "r4.nl_core_development_child.development_cognition": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.development cognition"
+    }
+  ],
+  "r4.nl_core_development_child.development_linguistics": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.development linguistics"
+    }
+  ],
+  "r4.nl_core_development_child.development_locomotion": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.development locomotion"
+    }
+  ],
+  "r4.nl_core_development_child.development_social": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.development social"
+    }
+  ],
+  "r4.nl_core_development_child.toilet_trainedness_feces": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.toilet trainedness feces"
+    }
+  ],
+  "r4.nl_core_development_child.toilet_trainedness_urine": [
+    {
+      "type": 0,
+      "value": "Nl-core-development child.toilet trainedness urine"
+    }
+  ],
+  "r4.nl_core_dos_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-DOS score"
+    }
+  ],
+  "r4.nl_core_drug_use": [
+    {
+      "type": 0,
+      "value": "Nl-core-drug use"
+    }
+  ],
+  "r4.nl_core_education": [
+    {
+      "type": 0,
+      "value": "Nl-core-education"
+    }
+  ],
+  "r4.nl_core_encounter": [
+    {
+      "type": 0,
+      "value": "Nl-core-encounter"
+    }
+  ],
+  "r4.nl_core_episode_of_care": [
+    {
+      "type": 0,
+      "value": "Nl-core-episode of care"
+    }
+  ],
+  "r4.nl_core_feeding_pattern_infant": [
+    {
+      "type": 0,
+      "value": "Nl-core-feeding pattern infant"
+    }
+  ],
+  "r4.nl_core_flac_cpain_scale": [
+    {
+      "type": 0,
+      "value": "Nl-core-FLAC cpain scale"
+    }
+  ],
+  "r4.nl_core_fluid_balance": [
+    {
+      "type": 0,
+      "value": "Nl-core-fluid balance"
+    }
+  ],
+  "r4.nl_core_fluid_balance.fluid_total_in": [
+    {
+      "type": 0,
+      "value": "Nl-core-fluid balance.fluid total in"
+    }
+  ],
+  "r4.nl_core_fluid_balance.fluid_total_out": [
+    {
+      "type": 0,
+      "value": "Nl-core-fluid balance.fluid total out"
+    }
+  ],
+  "r4.nl_core_freedom_restricting_intervention": [
+    {
+      "type": 0,
+      "value": "Nl-core-freedom restricting intervention"
+    }
+  ],
+  "r4.nl_core_functional_or_mental_status": [
+    {
+      "type": 0,
+      "value": "Nl-core-functional or mental status"
+    }
+  ],
+  "r4.nl_core_glasgow_coma_scale": [
+    {
+      "type": 0,
+      "value": "Nl-core-glasgow coma scale"
+    }
+  ],
+  "r4.nl_core_head_circumference": [
+    {
+      "type": 0,
+      "value": "Nl-core-head circumference"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner": [
+    {
+      "type": 0,
+      "value": "Nl-core-health professional-practitioner"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner_role": [
+    {
+      "type": 0,
+      "value": "Nl-core-health professional-practitioner role"
+    }
+  ],
+  "r4.nl_core_healthcare_provider": [
+    {
+      "type": 0,
+      "value": "Nl-core-healthcare provider"
+    }
+  ],
+  "r4.nl_core_healthcare_provider_organization": [
+    {
+      "type": 0,
+      "value": "Nl-core-healthcare provider-organization"
+    }
+  ],
+  "r4.nl_core_hearing_function": [
+    {
+      "type": 0,
+      "value": "Nl-core-hearing function"
+    }
+  ],
+  "r4.nl_core_hearing_function.hearing_aid": [
+    {
+      "type": 0,
+      "value": "Nl-core-hearing function.hearing aid"
+    }
+  ],
+  "r4.nl_core_hearing_function.hearing_aid.product": [
+    {
+      "type": 0,
+      "value": "Nl-core-hearing function.hearing aid.product"
+    }
+  ],
+  "r4.nl_core_heart_rate": [
+    {
+      "type": 0,
+      "value": "Nl-core-heart rate"
+    }
+  ],
+  "r4.nl_core_heart_rate.heartbeat_regularity": [
+    {
+      "type": 0,
+      "value": "Nl-core-heart rate.heartbeat regularity"
+    }
+  ],
+  "r4.nl_core_heart_rate.interpretation_heart_rate": [
+    {
+      "type": 0,
+      "value": "Nl-core-heart rate.interpretation heart rate"
+    }
+  ],
+  "r4.nl_core_help_from_others": [
+    {
+      "type": 0,
+      "value": "Nl-core-help from others"
+    }
+  ],
+  "r4.nl_core_illness_perception": [
+    {
+      "type": 0,
+      "value": "Nl-core-illness perception"
+    }
+  ],
+  "r4.nl_core_illness_perception.coping_with_illness_by_family": [
+    {
+      "type": 0,
+      "value": "Nl-core-illness perception.coping with illness by family"
+    }
+  ],
+  "r4.nl_core_illness_perception.coping_with_illness_by_patient": [
+    {
+      "type": 0,
+      "value": "Nl-core-illness perception.coping with illness by patient"
+    }
+  ],
+  "r4.nl_core_illness_perception.patient_illness_insight": [
+    {
+      "type": 0,
+      "value": "Nl-core-illness perception.patient illness insight"
+    }
+  ],
+  "r4.nl_core_laboratory_test_result": [
+    {
+      "type": 0,
+      "value": "Nl-core-laboratory test result"
+    }
+  ],
+  "r4.nl_core_laboratory_test_result.specimen": [
+    {
+      "type": 0,
+      "value": "Nl-core-laboratory test result.specimen"
+    }
+  ],
+  "r4.nl_core_laboratory_test_result.specimen_source": [
+    {
+      "type": 0,
+      "value": "Nl-core-laboratory test result.specimen source"
+    }
+  ],
+  "r4.nl_core_laboratory_test_result.specimen_source.patient": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "r4.nl_core_legal_situation_legal_status": [
+    {
+      "type": 0,
+      "value": "Nl-core-legal situation-legal status"
+    }
+  ],
+  "r4.nl_core_legal_situation_representation": [
+    {
+      "type": 0,
+      "value": "Nl-core-legal situation-representation"
+    }
+  ],
+  "r4.nl_core_life_stance": [
+    {
+      "type": 0,
+      "value": "Nl-core-life stance"
+    }
+  ],
+  "r4.nl_core_living_situation": [
+    {
+      "type": 0,
+      "value": "Nl-core-living situation"
+    }
+  ],
+  "r4.nl_core_medical_device": [
+    {
+      "type": 0,
+      "value": "Nl-core-medical device"
+    }
+  ],
+  "r4.nl_core_medical_device.product": [
+    {
+      "type": 0,
+      "value": "Nl-core-medical device.product"
+    }
+  ],
+  "r4.nl_core_medication_contra_indication": [
+    {
+      "type": 0,
+      "value": "Nl-core-medication contra indication"
+    }
+  ],
+  "r4.nl_core_mobility": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility"
+    }
+  ],
+  "r4.nl_core_mobility.changing_position": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility.changing position"
+    }
+  ],
+  "r4.nl_core_mobility.climbing_stairs": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility.climbing stairs"
+    }
+  ],
+  "r4.nl_core_mobility.maintaining_position": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility.maintaining position"
+    }
+  ],
+  "r4.nl_core_mobility.transfer": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility.transfer"
+    }
+  ],
+  "r4.nl_core_mobility.walking": [
+    {
+      "type": 0,
+      "value": "Nl-core-mobility.walking"
+    }
+  ],
+  "r4.nl_core_must_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-MUST score"
+    }
+  ],
+  "r4.nl_core_name_information": [
+    {
+      "type": 0,
+      "value": "Nl-core-name information"
+    }
+  ],
+  "r4.nl_core_name_information.given_name": [
+    {
+      "type": 0,
+      "value": "Nl-core-name information.given name"
+    }
+  ],
+  "r4.nl_core_nursing_intervention": [
+    {
+      "type": 0,
+      "value": "Nl-core-nursing intervention"
+    }
+  ],
+  "r4.nl_core_nutrition_advice": [
+    {
+      "type": 0,
+      "value": "Nl-core-nutrition advice"
+    }
+  ],
+  "r4.nl_core_o_2_saturation": [
+    {
+      "type": 0,
+      "value": "Nl-core-o2 saturation"
+    }
+  ],
+  "r4.nl_core_pain_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-pain score"
+    }
+  ],
+  "r4.nl_core_participation_in_society": [
+    {
+      "type": 0,
+      "value": "Nl-core-participation in society"
+    }
+  ],
+  "r4.nl_core_participation_in_society.hobby": [
+    {
+      "type": 0,
+      "value": "Nl-core-participation in society.hobby"
+    }
+  ],
+  "r4.nl_core_participation_in_society.social_network": [
+    {
+      "type": 0,
+      "value": "Nl-core-participation in society.social network"
+    }
+  ],
+  "r4.nl_core_participation_in_society.work_situation": [
+    {
+      "type": 0,
+      "value": "Nl-core-participation in society.work situation"
+    }
+  ],
+  "r4.nl_core_patient": [
+    {
+      "type": 0,
+      "value": "Nl-core-patient"
+    }
+  ],
+  "r4.nl_core_payer.insurance_company": [
+    {
+      "type": 0,
+      "value": "Nl-core-payer.insurance company"
+    }
+  ],
+  "r4.nl_core_payer.payer_person": [
+    {
+      "type": 0,
+      "value": "Nl-core-payer.payer person"
+    }
+  ],
+  "r4.nl_core_payer_organization": [
+    {
+      "type": 0,
+      "value": "Nl-core-payer-organization"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product": [
+    {
+      "type": 0,
+      "value": "Nl-core-pharmaceutical product"
+    }
+  ],
+  "r4.nl_core_pregnancy": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy"
+    }
+  ],
+  "r4.nl_core_pregnancy.date_last_menstruation": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy.date last menstruation"
+    }
+  ],
+  "r4.nl_core_pregnancy.estimated_date_of_delivery": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy.estimated date of delivery"
+    }
+  ],
+  "r4.nl_core_pregnancy.gravidity": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy.gravidity"
+    }
+  ],
+  "r4.nl_core_pregnancy.parity": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy.parity"
+    }
+  ],
+  "r4.nl_core_pregnancy.pregnancy_duration": [
+    {
+      "type": 0,
+      "value": "Nl-core-pregnancy.pregnancy duration"
+    }
+  ],
+  "r4.nl_core_pressure_ulcer": [
+    {
+      "type": 0,
+      "value": "Nl-core-pressure ulcer"
+    }
+  ],
+  "r4.nl_core_problem": [
+    {
+      "type": 0,
+      "value": "Nl-core-problem"
+    }
+  ],
+  "r4.nl_core_procedure_event": [
+    {
+      "type": 0,
+      "value": "Nl-core-procedure-event"
+    }
+  ],
+  "r4.nl_core_procedure_request": [
+    {
+      "type": 0,
+      "value": "Nl-core-procedure-request"
+    }
+  ],
+  "r4.nl_core_pulse_rate": [
+    {
+      "type": 0,
+      "value": "Nl-core-pulse rate"
+    }
+  ],
+  "r4.nl_core_pulse_rate.pulse_regularity": [
+    {
+      "type": 0,
+      "value": "Nl-core-pulse rate.pulse regularity"
+    }
+  ],
+  "r4.nl_core_refraction": [
+    {
+      "type": 0,
+      "value": "Nl-core-refraction"
+    }
+  ],
+  "r4.nl_core_skin_disorder": [
+    {
+      "type": 0,
+      "value": "Nl-core-skin disorder"
+    }
+  ],
+  "r4.nl_core_sna_qrc_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-SNA qrc score"
+    }
+  ],
+  "r4.nl_core_snaq_65_plus_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-SNAQ65plus score"
+    }
+  ],
+  "r4.nl_core_snaq_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-SNAQ score"
+    }
+  ],
+  "r4.nl_core_soap_report": [
+    {
+      "type": 0,
+      "value": "Nl-core-SOAP report"
+    }
+  ],
+  "r4.nl_core_soap_report.soap_line": [
+    {
+      "type": 0,
+      "value": "Nl-core-SOAP report.SOAP line"
+    }
+  ],
+  "r4.nl_core_stoma": [
+    {
+      "type": 0,
+      "value": "Nl-core-stoma"
+    }
+  ],
+  "r4.nl_core_strong_kids_score": [
+    {
+      "type": 0,
+      "value": "Nl-core-strong kids score"
+    }
+  ],
+  "r4.nl_core_text_result": [
+    {
+      "type": 0,
+      "value": "Nl-core-text result"
+    }
+  ],
+  "r4.nl_core_text_result.visual_result": [
+    {
+      "type": 0,
+      "value": "Nl-core-text result.visual result"
+    }
+  ],
+  "r4.nl_core_time_interval": [
+    {
+      "type": 0,
+      "value": "Nl-core-time interval"
+    }
+  ],
+  "r4.nl_core_tobacco_use": [
+    {
+      "type": 0,
+      "value": "Nl-core-tobacco use"
+    }
+  ],
+  "r4.nl_core_treatment_directive_2": [
+    {
+      "type": 0,
+      "value": "Nl-core-treatment directive2"
+    }
+  ],
+  "r4.nl_core_vaccination_event": [
+    {
+      "type": 0,
+      "value": "Nl-core-vaccination-event"
+    }
+  ],
+  "r4.nl_core_vaccination_event.patient": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r4.nl_core_vaccination_event.protocol_applied.target_disease": [
+    {
+      "type": 0,
+      "value": "Vaccinatie pathogeen"
+    }
+  ],
+  "r4.nl_core_vaccination_event.reason_code.vaccination_indication": [
+    {
+      "type": 0,
+      "value": "Vaccinatie indicatie"
+    }
+  ],
+  "r4.nl_core_vaccination_event.reason_code.vaccination_motive": [
+    {
+      "type": 0,
+      "value": "Vaccinatie aanleiding"
+    }
+  ],
+  "r4.nl_core_vaccination_request": [
+    {
+      "type": 0,
+      "value": "Nl-core-vaccination-request"
+    }
+  ],
+  "r4.nl_core_visual_function": [
+    {
+      "type": 0,
+      "value": "Nl-core-visual function"
+    }
+  ],
+  "r4.nl_core_visual_function.visual_aid": [
+    {
+      "type": 0,
+      "value": "Nl-core-visual function.visual aid"
+    }
+  ],
+  "r4.nl_core_visual_function.visual_aid.product": [
+    {
+      "type": 0,
+      "value": "Nl-core-visual function.visual aid.product"
+    }
+  ],
+  "r4.nl_core_wound": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound"
+    }
+  ],
+  "r4.nl_core_wound.drain": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.drain"
+    }
+  ],
+  "r4.nl_core_wound.drain.product": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.drain.product"
+    }
+  ],
+  "r4.nl_core_wound.wound_edge": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.wound edge"
+    }
+  ],
+  "r4.nl_core_wound.wound_infection": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.wound infection"
+    }
+  ],
+  "r4.nl_core_wound.wound_moisture": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.wound moisture"
+    }
+  ],
+  "r4.nl_core_wound.wound_tissue": [
+    {
+      "type": 0,
+      "value": "Nl-core-wound.wound tissue"
+    }
+  ],
+  "r4.nl_core_wounds.date_of_last_dressing_change": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.date of last dressing change"
+    }
+  ],
+  "r4.nl_core_wounds.wound_characteristics": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.wound characteristics"
+    }
+  ],
+  "r4.nl_core_wounds.wound_depth": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.wound depth"
+    }
+  ],
+  "r4.nl_core_wounds.wound_image": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.wound image"
+    }
+  ],
+  "r4.nl_core_wounds.wound_length": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.wound length"
+    }
+  ],
+  "r4.nl_core_wounds.wound_width": [
+    {
+      "type": 0,
+      "value": "Nl-core-wounds.wound width"
+    }
+  ],
+  "r4.zib_ability_to_dress_oneself": [
+    {
+      "type": 0,
+      "value": "Vermogen tot zich kleden"
+    }
+  ],
+  "r4.zib_ability_to_dress_oneself.component.body_part_to_be_dressed.value": [
+    {
+      "type": 0,
+      "value": "Te kleden lichaamsdeel"
+    }
+  ],
+  "r4.zib_ability_to_dress_oneself.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Zich kleden"
+    }
+  ],
+  "r4.zib_ability_to_drink": [
+    {
+      "type": 0,
+      "value": "Vermogen tot drinken"
+    }
+  ],
+  "r4.zib_ability_to_drink.drinking_limitations.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Drink beperkingen"
+    }
+  ],
+  "r4.zib_ability_to_drink.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Drinken"
+    }
+  ],
+  "r4.zib_ability_to_eat": [
+    {
+      "type": 0,
+      "value": "Vermogen tot eten"
+    }
+  ],
+  "r4.zib_ability_to_eat.eating_limitations.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Eet beperkingen"
+    }
+  ],
+  "r4.zib_ability_to_eat.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Eten"
+    }
+  ],
+  "r4.zib_ability_to_groom": [
+    {
+      "type": 0,
+      "value": "Vermogen tot uiterlijke verzorging"
+    }
+  ],
+  "r4.zib_ability_to_groom.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Uiterlijke verzorging"
+    }
+  ],
+  "r4.zib_ability_to_use_toilet": [
+    {
+      "type": 0,
+      "value": "Vermogen tot toiletgang"
+    }
+  ],
+  "r4.zib_ability_to_use_toilet.menstrual_care.value": [
+    {
+      "type": 0,
+      "value": "Zorg bij menstruatie"
+    }
+  ],
+  "r4.zib_ability_to_use_toilet.toilet_use.value": [
+    {
+      "type": 0,
+      "value": "Toiletgebruik"
+    }
+  ],
+  "r4.zib_ability_to_wash_oneself": [
+    {
+      "type": 0,
+      "value": "Vermogen tot zich wassen"
+    }
+  ],
+  "r4.zib_ability_to_wash_oneself.component.body_part_to_be_bathed.value": [
+    {
+      "type": 0,
+      "value": "Te wassen lichaamsdeel"
+    }
+  ],
+  "r4.zib_ability_to_wash_oneself.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Zich wassen"
+    }
+  ],
+  "r4.zib_address_information": [
+    {
+      "type": 0,
+      "value": "Adresgegevens"
+    }
+  ],
+  "r4.zib_address_information.city": [
+    {
+      "type": 0,
+      "value": "Woonplaats"
+    }
+  ],
+  "r4.zib_address_information.country.country_code": [
+    {
+      "type": 0,
+      "value": "Land"
+    }
+  ],
+  "r4.zib_address_information.district": [
+    {
+      "type": 0,
+      "value": "Gemeente"
+    }
+  ],
+  "r4.zib_address_information.line.additional_information": [
+    {
+      "type": 0,
+      "value": "Additionele informatie"
+    }
+  ],
+  "r4.zib_address_information.line.house_number": [
+    {
+      "type": 0,
+      "value": "Huisnummer"
+    }
+  ],
+  "r4.zib_address_information.line.house_number_indication": [
+    {
+      "type": 0,
+      "value": "Aanduiding bij nummer"
+    }
+  ],
+  "r4.zib_address_information.line.house_number_letter_house_number_addition.value": [
+    {
+      "type": 0,
+      "value": "Huisnummerletter"
+    }
+  ],
+  "r4.zib_address_information.line.street_name": [
+    {
+      "type": 0,
+      "value": "Straat"
+    }
+  ],
+  "r4.zib_address_information.postal_code": [
+    {
+      "type": 0,
+      "value": "Postcode"
+    }
+  ],
+  "r4.zib_address_information.type": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
+  "r4.zib_address_information.use": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
+  "r4.zib_advance_directive": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring"
+    }
+  ],
+  "r4.zib_advance_directive.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_advance_directive.date_time": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring datum"
+    }
+  ],
+  "r4.zib_advance_directive.provision.actorepresentative.reference": [
+    {
+      "type": 0,
+      "value": "Vertegenwoordiger"
+    }
+  ],
+  "r4.zib_advance_directive.provision.code": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring type"
+    }
+  ],
+  "r4.zib_advance_directive.source_attachment.data": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring document"
+    }
+  ],
+  "r4.zib_alcohol_use": [
+    {
+      "type": 0,
+      "value": "Alcohol gebruik"
+    }
+  ],
+  "r4.zib_alcohol_use.component.amount.value": [
+    {
+      "type": 0,
+      "value": "Hoeveelheid"
+    }
+  ],
+  "r4.zib_alcohol_use.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Stop datum"
+    }
+  ],
+  "r4.zib_alcohol_use.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Start datum"
+    }
+  ],
+  "r4.zib_alcohol_use.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_alcohol_use.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Alcohol gebruik status"
+    }
+  ],
+  "r4.zib_alert.category.alert_type": [
+    {
+      "type": 0,
+      "value": "Alert type"
+    }
+  ],
+  "r4.zib_alert.code.alert_name": [
+    {
+      "type": 0,
+      "value": "Alert naam"
+    }
+  ],
+  "r4.zib_alert.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_alert.condition": [
+    {
+      "type": 0,
+      "value": "Conditie"
+    }
+  ],
+  "r4.zib_alert.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r4.zib_alert.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r4.zib_allergy_intolerance": [
+    {
+      "type": 0,
+      "value": "Allergie intolerantie"
+    }
+  ],
+  "r4.zib_allergy_intolerance.category": [
+    {
+      "type": 0,
+      "value": "Allergie categorie"
+    }
+  ],
+  "r4.zib_allergy_intolerance.category.allergy_category_codelist": [
+    {
+      "type": 0,
+      "value": "Allergie categorie"
+    }
+  ],
+  "r4.zib_allergy_intolerance.clinical_status": [
+    {
+      "type": 0,
+      "value": "Allergie status"
+    }
+  ],
+  "r4.zib_allergy_intolerance.code": [
+    {
+      "type": 0,
+      "value": "Veroorzakende stof"
+    }
+  ],
+  "r4.zib_allergy_intolerance.criticality": [
+    {
+      "type": 0,
+      "value": "Mate van kritiek zijn"
+    }
+  ],
+  "r4.zib_allergy_intolerance.criticality.critical_extent_codelist": [
+    {
+      "type": 0,
+      "value": "Mate van kritiek zijn"
+    }
+  ],
+  "r4.zib_allergy_intolerance.last_occurrence": [
+    {
+      "type": 0,
+      "value": "Laatste reactie datum tijd"
+    }
+  ],
+  "r4.zib_allergy_intolerance.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_allergy_intolerance.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction": [
+    {
+      "type": 0,
+      "value": "Reactie"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.description": [
+    {
+      "type": 0,
+      "value": "Reactie beschrijving"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.exposure_route": [
+    {
+      "type": 0,
+      "value": "Wijze van blootstelling"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.manifestation": [
+    {
+      "type": 0,
+      "value": "Symptoom"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.onset": [
+    {
+      "type": 0,
+      "value": "Reactie tijdstip"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.severity": [
+    {
+      "type": 0,
+      "value": "Ernst"
+    }
+  ],
+  "r4.zib_allergy_intolerance.reaction.substance": [
+    {
+      "type": 0,
+      "value": "Specifieke stof"
+    }
+  ],
+  "r4.zib_allergy_intolerance.verification_status": [
+    {
+      "type": 0,
+      "value": "Allergie status"
+    }
+  ],
+  "r4.zib_anatomical_location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute": [
+    {
+      "type": 0,
+      "value": "Apgar score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.component.appearance_score.value": [
+    {
+      "type": 0,
+      "value": "Huidskleur score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.component.grimace_score.value": [
+    {
+      "type": 0,
+      "value": "Reflexen score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.component.muscle_tone_score.value": [
+    {
+      "type": 0,
+      "value": "Spierspanning score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.component.pulse_score.value": [
+    {
+      "type": 0,
+      "value": "Hartslag score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.component.respiratory_score.value": [
+    {
+      "type": 0,
+      "value": "Ademhaling score"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Apgar score datum tijd"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_apgar_score_10_minute.value_integer": [
+    {
+      "type": 0,
+      "value": "Apgar score totaal"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute": [
+    {
+      "type": 0,
+      "value": "Apgar score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.component.appearance_score.value": [
+    {
+      "type": 0,
+      "value": "Huidskleur score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.component.grimace_score.value": [
+    {
+      "type": 0,
+      "value": "Reflexen score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.component.muscle_tone_score.value": [
+    {
+      "type": 0,
+      "value": "Spierspanning score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.component.pulse_score.value": [
+    {
+      "type": 0,
+      "value": "Hartslag score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.component.respiratory_score.value": [
+    {
+      "type": 0,
+      "value": "Ademhaling score"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Apgar score datum tijd"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_apgar_score_1_minute.value_integer": [
+    {
+      "type": 0,
+      "value": "Apgar score totaal"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute": [
+    {
+      "type": 0,
+      "value": "Apgar score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.component.appearance_score.value": [
+    {
+      "type": 0,
+      "value": "Huidskleur score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.component.grimace_score.value": [
+    {
+      "type": 0,
+      "value": "Reflexen score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.component.muscle_tone_score.value": [
+    {
+      "type": 0,
+      "value": "Spierspanning score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.component.pulse_score.value": [
+    {
+      "type": 0,
+      "value": "Hartslag score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.component.respiratory_score.value": [
+    {
+      "type": 0,
+      "value": "Ademhaling score"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Apgar score datum tijd"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_apgar_score_5_minute.value_integer": [
+    {
+      "type": 0,
+      "value": "Apgar score totaal"
+    }
+  ],
+  "r4.zib_barthel_adl_index": [
+    {
+      "type": 0,
+      "value": "Barthel index"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.bathing.value": [
+    {
+      "type": 0,
+      "value": "Baden douchen"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.bladder.value": [
+    {
+      "type": 0,
+      "value": "Blaas"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.bowels.value": [
+    {
+      "type": 0,
+      "value": "Darm"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.dressing.value": [
+    {
+      "type": 0,
+      "value": "Aan uitkleden"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.feeding.value": [
+    {
+      "type": 0,
+      "value": "Eten"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.grooming.value": [
+    {
+      "type": 0,
+      "value": "Uiterlijke verzorging"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.managing_stairs.value": [
+    {
+      "type": 0,
+      "value": "Trappen lopen"
+    }
+  ],
+  "r4.zib_barthel_adl_index.component.mobility.value": [
+    {
+      "type": 0,
+      "value": "Mobiliteit"
+    }
+  ],
+  "r4.zib_barthel_adl_index.componentoilet_use.value": [
+    {
+      "type": 0,
+      "value": "Toiletgebruik"
+    }
+  ],
+  "r4.zib_barthel_adl_index.componentransfers.value": [
+    {
+      "type": 0,
+      "value": "Transfers"
+    }
+  ],
+  "r4.zib_barthel_adl_index.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_blood_pressure": [
+    {
+      "type": 0,
+      "value": "Bloeddruk"
+    }
+  ],
+  "r4.zib_blood_pressure.body_site": [
+    {
+      "type": 0,
+      "value": "Meet locatie"
+    }
+  ],
+  "r4.zib_blood_pressure.component.average_blood_pressure.value": [
+    {
+      "type": 0,
+      "value": "Gemiddelde bloeddruk"
+    }
+  ],
+  "r4.zib_blood_pressure.component.cuff_type.value": [
+    {
+      "type": 0,
+      "value": "Manchet type"
+    }
+  ],
+  "r4.zib_blood_pressure.component.diastolic_bp.value": [
+    {
+      "type": 0,
+      "value": "Diastolische bloeddruk"
+    }
+  ],
+  "r4.zib_blood_pressure.component.diastolic_endpoint.value": [
+    {
+      "type": 0,
+      "value": "Diastolisch eindpunt"
+    }
+  ],
+  "r4.zib_blood_pressure.component.systolic_bp.value": [
+    {
+      "type": 0,
+      "value": "Systolische bloeddruk"
+    }
+  ],
+  "r4.zib_blood_pressure.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Bloeddruk datum tijd"
+    }
+  ],
+  "r4.zib_blood_pressure.method": [
+    {
+      "type": 0,
+      "value": "Meetmethode"
+    }
+  ],
+  "r4.zib_blood_pressure.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_blood_pressure.position": [
+    {
+      "type": 0,
+      "value": "Houding"
+    }
+  ],
+  "r4.zib_body_height": [
+    {
+      "type": 0,
+      "value": "Lichaamslengte"
+    }
+  ],
+  "r4.zib_body_height.component.position.value": [
+    {
+      "type": 0,
+      "value": "Positie"
+    }
+  ],
+  "r4.zib_body_height.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Lengte datum tijd"
+    }
+  ],
+  "r4.zib_body_height.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_body_height.value": [
+    {
+      "type": 0,
+      "value": "Lengte waarde"
+    }
+  ],
+  "r4.zib_body_temperature": [
+    {
+      "type": 0,
+      "value": "Lichaamstemperatuur"
+    }
+  ],
+  "r4.zib_body_temperature.code.temperature_type": [
+    {
+      "type": 0,
+      "value": "Temperatuur type"
+    }
+  ],
+  "r4.zib_body_temperature.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Temperatuur datum tijd"
+    }
+  ],
+  "r4.zib_body_temperature.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_body_temperature.value": [
+    {
+      "type": 0,
+      "value": "Temperatuur waarde"
+    }
+  ],
+  "r4.zib_body_weight": [
+    {
+      "type": 0,
+      "value": "Lichaamsgewicht"
+    }
+  ],
+  "r4.zib_body_weight.component.clothing.value": [
+    {
+      "type": 0,
+      "value": "Kleding"
+    }
+  ],
+  "r4.zib_body_weight.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Gewicht datum tijd"
+    }
+  ],
+  "r4.zib_body_weight.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_body_weight.value": [
+    {
+      "type": 0,
+      "value": "Gewicht waarde"
+    }
+  ],
+  "r4.zib_bowel_function": [
+    {
+      "type": 0,
+      "value": "Darmfunctie"
+    }
+  ],
+  "r4.zib_bowel_function.defecation_color.value": [
+    {
+      "type": 0,
+      "value": "Defecatie kleur"
+    }
+  ],
+  "r4.zib_bowel_function.defecation_consistency.value": [
+    {
+      "type": 0,
+      "value": "Defecatie consistentie"
+    }
+  ],
+  "r4.zib_bowel_function.fecal_continence.value": [
+    {
+      "type": 0,
+      "value": "Feces continentie"
+    }
+  ],
+  "r4.zib_bowel_function.frequency.value": [
+    {
+      "type": 0,
+      "value": "Frequentie"
+    }
+  ],
+  "r4.zib_bowel_function.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_bowel_function.stoma": [
+    {
+      "type": 0,
+      "value": "Stoma"
+    }
+  ],
+  "r4.zib_burnwound": [
+    {
+      "type": 0,
+      "value": "Brandwond"
+    }
+  ],
+  "r4.zib_burnwound.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_burnwound.code": [
+    {
+      "type": 0,
+      "value": "Brandwond soort"
+    }
+  ],
+  "r4.zib_burnwound.extent.value": [
+    {
+      "type": 0,
+      "value": "Uitgebreidheid"
+    }
+  ],
+  "r4.zib_burnwound.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_burnwound.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Ontstaans datum"
+    }
+  ],
+  "r4.zib_burnwound.stage.summary": [
+    {
+      "type": 0,
+      "value": "Dieptegraad"
+    }
+  ],
+  "r4.zib_care_team": [
+    {
+      "type": 0,
+      "value": "Zorg team"
+    }
+  ],
+  "r4.zib_care_team.name": [
+    {
+      "type": 0,
+      "value": "Zorg team naam"
+    }
+  ],
+  "r4.zib_care_team.participant.contact_person.member": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.zib_care_team.participant.healthcare_professional.member": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.zib_care_team.participant.healthcare_professional.role.health_professional_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r4.zib_care_team.participant.patient.member": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r4.zib_care_team.reason_reference": [
+    {
+      "type": 0,
+      "value": "Probleem"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior": [
+    {
+      "type": 0,
+      "value": "Checklist pijn gedrag"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.cry.value": [
+    {
+      "type": 0,
+      "value": "Huilen"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.eyes.value": [
+    {
+      "type": 0,
+      "value": "Ogen"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.face.value": [
+    {
+      "type": 0,
+      "value": "Gezicht"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.grimace.value": [
+    {
+      "type": 0,
+      "value": "Grimas"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.looking_sad.value": [
+    {
+      "type": 0,
+      "value": "Verdrietige blik"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.moaning.value": [
+    {
+      "type": 0,
+      "value": "Kreunen"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.mouth.value": [
+    {
+      "type": 0,
+      "value": "Mond"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.panic.value": [
+    {
+      "type": 0,
+      "value": "Paniek"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.component.sounds_of_restlessness.value": [
+    {
+      "type": 0,
+      "value": "Onrustgeluiden"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.componentears.value": [
+    {
+      "type": 0,
+      "value": "Tranen"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Score datum tijd"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_checklist_pain_behavior.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_comfort_scale": [
+    {
+      "type": 0,
+      "value": "Comfort score"
+    }
+  ],
+  "r4.zib_comfort_scale.component.alertness.value": [
+    {
+      "type": 0,
+      "value": "Alertheid"
+    }
+  ],
+  "r4.zib_comfort_scale.component.body_movement.value": [
+    {
+      "type": 0,
+      "value": "Lichaamsbeweging"
+    }
+  ],
+  "r4.zib_comfort_scale.component.body_muscle_tone.value": [
+    {
+      "type": 0,
+      "value": "Spierspanning"
+    }
+  ],
+  "r4.zib_comfort_scale.component.calmness_agitation.value": [
+    {
+      "type": 0,
+      "value": "Kalmte_ agitatie"
+    }
+  ],
+  "r4.zib_comfort_scale.component.crying.value": [
+    {
+      "type": 0,
+      "value": "Huilen"
+    }
+  ],
+  "r4.zib_comfort_scale.component.facial_tone.value": [
+    {
+      "type": 0,
+      "value": "Gezichtsspanning"
+    }
+  ],
+  "r4.zib_comfort_scale.component.respiratory_response.value": [
+    {
+      "type": 0,
+      "value": "Ademhalingsreactie"
+    }
+  ],
+  "r4.zib_comfort_scale.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Score datum tijd"
+    }
+  ],
+  "r4.zib_comfort_scale.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_comfort_scale.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_contact_information_email_addresses": [
+    {
+      "type": 0,
+      "value": "Email adressen"
+    }
+  ],
+  "r4.zib_contact_information_email_addresses.use": [
+    {
+      "type": 0,
+      "value": "Email soort"
+    }
+  ],
+  "r4.zib_contact_information_email_addresses.value": [
+    {
+      "type": 0,
+      "value": "Email adres"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers": [
+    {
+      "type": 0,
+      "value": "Telefoonnummers"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers.system": [
+    {
+      "type": 0,
+      "value": "Telecom type"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers.system.telecom_type": [
+    {
+      "type": 0,
+      "value": "Telecom type"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers.use": [
+    {
+      "type": 0,
+      "value": "Nummer soort"
+    }
+  ],
+  "r4.zib_contact_information_telephone_numbers.value": [
+    {
+      "type": 0,
+      "value": "Telefoonnummer"
+    }
+  ],
+  "r4.zib_contact_person": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.zib_contact_person.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_contact_person.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r4.zib_contact_person.relationship.role": [
+    {
+      "type": 0,
+      "value": "Rol"
+    }
+  ],
+  "r4.zib_contact_person.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_development_child": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind"
+    }
+  ],
+  "r4.zib_development_child.age_first_menstruation.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.age_first_menstruation.value": [
+    {
+      "type": 0,
+      "value": "Leeftijd eerste menstruatie"
+    }
+  ],
+  "r4.zib_development_child.development_cognition.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.development_cognition.value": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling verstandelijk"
+    }
+  ],
+  "r4.zib_development_child.development_linguistics.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.development_linguistics.value": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling taal"
+    }
+  ],
+  "r4.zib_development_child.development_locomotion.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.development_locomotion.value": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling motoriek"
+    }
+  ],
+  "r4.zib_development_child.development_social.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.development_social.value": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling sociaal"
+    }
+  ],
+  "r4.zib_development_child.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_development_child.toilet_trainedness_feces.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.toilet_trainedness_feces.value": [
+    {
+      "type": 0,
+      "value": "Zindelijkheid feces"
+    }
+  ],
+  "r4.zib_development_child.toilet_trainedness_urine.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Ontwikkeling kind datum tijd"
+    }
+  ],
+  "r4.zib_development_child.toilet_trainedness_urine.value": [
+    {
+      "type": 0,
+      "value": "Zindelijkheid urine"
+    }
+  ],
+  "r4.zib_dos_score": [
+    {
+      "type": 0,
+      "value": "DOS score"
+    }
+  ],
+  "r4.zib_dos_score.component.answers_no_fit.value": [
+    {
+      "type": 0,
+      "value": "Antwoorden niet passend"
+    }
+  ],
+  "r4.zib_dos_score.component.dozes_off.value": [
+    {
+      "type": 0,
+      "value": "Zakt weg"
+    }
+  ],
+  "r4.zib_dos_score.component.easily_distracted.value": [
+    {
+      "type": 0,
+      "value": "Snel afgeleid"
+    }
+  ],
+  "r4.zib_dos_score.component.easily_emotional.value": [
+    {
+      "type": 0,
+      "value": "Snel geemotioneerd"
+    }
+  ],
+  "r4.zib_dos_score.component.hallucinations.value": [
+    {
+      "type": 0,
+      "value": "Hallucinaties"
+    }
+  ],
+  "r4.zib_dos_score.component.knows_part_day.value": [
+    {
+      "type": 0,
+      "value": "Beseft dagdeel"
+    }
+  ],
+  "r4.zib_dos_score.component.maintains_attention.value": [
+    {
+      "type": 0,
+      "value": "Heeft aandacht"
+    }
+  ],
+  "r4.zib_dos_score.component.pulls_wires.value": [
+    {
+      "type": 0,
+      "value": "Trekt draden"
+    }
+  ],
+  "r4.zib_dos_score.component.reacts_slowly.value": [
+    {
+      "type": 0,
+      "value": "Reageert traag"
+    }
+  ],
+  "r4.zib_dos_score.component.remembers_recent.value": [
+    {
+      "type": 0,
+      "value": "Herinnert recent"
+    }
+  ],
+  "r4.zib_dos_score.component.restless.value": [
+    {
+      "type": 0,
+      "value": "Rusteloos"
+    }
+  ],
+  "r4.zib_dos_score.component.unfinished_question_answer.value": [
+    {
+      "type": 0,
+      "value": "Vraag antwoord niet af"
+    }
+  ],
+  "r4.zib_dos_score.componenthinks_somewhere_else.value": [
+    {
+      "type": 0,
+      "value": "Denkt ergens anders"
+    }
+  ],
+  "r4.zib_dos_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "DOS score datum tijd"
+    }
+  ],
+  "r4.zib_dos_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_dos_score.value_integer": [
+    {
+      "type": 0,
+      "value": "DOS score totaal"
+    }
+  ],
+  "r4.zib_drug_use": [
+    {
+      "type": 0,
+      "value": "Drugs gebruik"
+    }
+  ],
+  "r4.zib_drug_use.component.amount.value": [
+    {
+      "type": 0,
+      "value": "Hoeveelheid"
+    }
+  ],
+  "r4.zib_drug_use.component.drug_or_medication_type.value": [
+    {
+      "type": 0,
+      "value": "Drugs of geneesmiddel soort"
+    }
+  ],
+  "r4.zib_drug_use.component.route_of_administration.value": [
+    {
+      "type": 0,
+      "value": "Toedieningsweg"
+    }
+  ],
+  "r4.zib_drug_use.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Stop datum"
+    }
+  ],
+  "r4.zib_drug_use.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Start datum"
+    }
+  ],
+  "r4.zib_drug_use.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_drug_use.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Drugs gebruik status"
+    }
+  ],
+  "r4.zib_education.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_education.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Schooltype"
+    }
+  ],
+  "r4.zib_encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r4.zib_encounter.class": [
+    {
+      "type": 0,
+      "value": "Contact type"
+    }
+  ],
+  "r4.zib_encounter.hospitalization.admit_source": [
+    {
+      "type": 0,
+      "value": "Herkomst"
+    }
+  ],
+  "r4.zib_encounter.hospitalization.discharge_disposition": [
+    {
+      "type": 0,
+      "value": "Bestemming"
+    }
+  ],
+  "r4.zib_encounter.location.location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r4.zib_encounter.participant.health_professional.individual": [
+    {
+      "type": 0,
+      "value": "Contact met"
+    }
+  ],
+  "r4.zib_encounter.participant.health_professional.type": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r4.zib_encounter.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r4.zib_encounter.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r4.zib_encounter.reason_codeviating_result.comment_contact_reason": [
+    {
+      "type": 0,
+      "value": "Toelichting reden contact"
+    }
+  ],
+  "r4.zib_encounter.reason_codeviating_result.text": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r4.zib_encounter.reason_reference.comment_contact_reason": [
+    {
+      "type": 0,
+      "value": "Toelichting reden contact"
+    }
+  ],
+  "r4.zib_encounter.reason_reference.problem": [
+    {
+      "type": 0,
+      "value": "Probleem"
+    }
+  ],
+  "r4.zib_encounter.reason_reference.procedure": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.zib_episode_of_care": [
+    {
+      "type": 0,
+      "value": "Zorg episode"
+    }
+  ],
+  "r4.zib_episode_of_care.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_episode_of_care.diagnosis.condition": [
+    {
+      "type": 0,
+      "value": "Focus zorg episode"
+    }
+  ],
+  "r4.zib_episode_of_care.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum"
+    }
+  ],
+  "r4.zib_episode_of_care.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant": [
+    {
+      "type": 0,
+      "value": "Voedingspatroon zuigeling"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.based_on": [
+    {
+      "type": 0,
+      "value": "Voedingsadvies"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.component.feeding_frequency.value": [
+    {
+      "type": 0,
+      "value": "Voeding frequentie"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.component.feeding_supplement.value": [
+    {
+      "type": 0,
+      "value": "Voeding toevoeging"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.component.feeding_type.value": [
+    {
+      "type": 0,
+      "value": "Voeding soort"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Voedingspatroon zuigeling datum tijd"
+    }
+  ],
+  "r4.zib_feeding_pattern_infant.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_flac_cpain_scale": [
+    {
+      "type": 0,
+      "value": "FLAC cpijn score"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.component.activity.value": [
+    {
+      "type": 0,
+      "value": "Activiteit"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.component.consolability.value": [
+    {
+      "type": 0,
+      "value": "Troostbaar"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.component.cry.value": [
+    {
+      "type": 0,
+      "value": "Huilen"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.component.face.value": [
+    {
+      "type": 0,
+      "value": "Gezicht"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.component.legs.value": [
+    {
+      "type": 0,
+      "value": "Benen"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Score datum tijd"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_flac_cpain_scale.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_fluid_balance": [
+    {
+      "type": 0,
+      "value": "Vochtbalans"
+    }
+  ],
+  "r4.zib_fluid_balance.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Vochtbalans stoptijd"
+    }
+  ],
+  "r4.zib_fluid_balance.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Vochtbalans starttijd"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_in.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Vochtbalans stoptijd"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_in.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Vochtbalans starttijd"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_in.value": [
+    {
+      "type": 0,
+      "value": "Vocht totaal in"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_out.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Vochtbalans stoptijd"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_out.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Vochtbalans starttijd"
+    }
+  ],
+  "r4.zib_fluid_balance.fluid_total_out.value": [
+    {
+      "type": 0,
+      "value": "Vocht totaal uit"
+    }
+  ],
+  "r4.zib_fluid_balance.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention": [
+    {
+      "type": 0,
+      "value": "Vrijheidsbeperkende interventie"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.code": [
+    {
+      "type": 0,
+      "value": "Soort interventie"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.performed_date_time": [
+    {
+      "type": 0,
+      "value": "Begin"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.performed_period.end": [
+    {
+      "type": 0,
+      "value": "Einde"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.performed_period.start": [
+    {
+      "type": 0,
+      "value": "Begin"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.reason_code": [
+    {
+      "type": 0,
+      "value": "Reden van toepassen"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.reason_reference.legal_situation_legal_status": [
+    {
+      "type": 0,
+      "value": "Juridische situatie"
+    }
+  ],
+  "r4.zib_freedom_restricting_intervention.reason_reference.legal_situation_representation": [
+    {
+      "type": 0,
+      "value": "Juridische situatie"
+    }
+  ],
+  "r4.zib_functional_or_mental_status": [
+    {
+      "type": 0,
+      "value": "Functionele of mentale status"
+    }
+  ],
+  "r4.zib_functional_or_mental_status.code": [
+    {
+      "type": 0,
+      "value": "Status naam"
+    }
+  ],
+  "r4.zib_functional_or_mental_status.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Status datum"
+    }
+  ],
+  "r4.zib_functional_or_mental_status.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_functional_or_mental_status.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Status waarde"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale": [
+    {
+      "type": 0,
+      "value": "Glasgow coma scale"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.component.conditions_during_measurement.value": [
+    {
+      "type": 0,
+      "value": "Condities tijdens meting"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.component.gcs_eyes.value": [
+    {
+      "type": 0,
+      "value": "GCS_ eyes"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.component.gcs_motor.value": [
+    {
+      "type": 0,
+      "value": "GCS_ motor"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.component.gcs_verbal.value": [
+    {
+      "type": 0,
+      "value": "GCS_ verbal"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Glasgow coma scale datum tijd"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_glasgow_coma_scale.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_head_circumference": [
+    {
+      "type": 0,
+      "value": "Schedelomvang"
+    }
+  ],
+  "r4.zib_head_circumference.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Schedelomvang datum tijd"
+    }
+  ],
+  "r4.zib_head_circumference.method": [
+    {
+      "type": 0,
+      "value": "Schedelomvang meetmethode"
+    }
+  ],
+  "r4.zib_head_circumference.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_head_circumference.value": [
+    {
+      "type": 0,
+      "value": "Schedelomvang waarde"
+    }
+  ],
+  "r4.zib_health_professional_practitioner": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.zib_health_professional_practitioner.gender": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.zib_health_professional_practitioner.identifier": [
+    {
+      "type": 0,
+      "value": "Zorgverlener identificatienummer"
+    }
+  ],
+  "r4.zib_health_professional_practitioner.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_health_professional_practitioner.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_health_professional_practitioner_role": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.zib_health_professional_practitioner_role.organization": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.zib_health_professional_practitioner_role.specialty": [
+    {
+      "type": 0,
+      "value": "Specialisme"
+    }
+  ],
+  "r4.zib_health_professional_practitioner_role.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_healthcare_provider": [
+    {
+      "type": 0,
+      "value": "Organisatie locatie"
+    }
+  ],
+  "r4.zib_healthcare_provider.name": [
+    {
+      "type": 0,
+      "value": "Locatie naam"
+    }
+  ],
+  "r4.zib_healthcare_provider.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_healthcare_provider_organization": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.zib_healthcare_provider_organization.identifier": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder identificatienummer"
+    }
+  ],
+  "r4.zib_healthcare_provider_organization.name": [
+    {
+      "type": 0,
+      "value": "Organisatie naam"
+    }
+  ],
+  "r4.zib_healthcare_provider_organization.type.department_specialty": [
+    {
+      "type": 0,
+      "value": "Afdeling specialisme"
+    }
+  ],
+  "r4.zib_healthcare_provider_organization.type.organization_type": [
+    {
+      "type": 0,
+      "value": "Organisatie type"
+    }
+  ],
+  "r4.zib_hearing_function": [
+    {
+      "type": 0,
+      "value": "Functie horen"
+    }
+  ],
+  "r4.zib_hearing_function.hearing_aid.body_site": [
+    {
+      "type": 0,
+      "value": "Hulpmiddel anatomische locatie"
+    }
+  ],
+  "r4.zib_hearing_function.hearing_aid.reason_reference.hearing_function": [
+    {
+      "type": 0,
+      "value": "Functie horen"
+    }
+  ],
+  "r4.zib_hearing_function.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_hearing_function.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Hoor functie"
+    }
+  ],
+  "r4.zib_heart_rate": [
+    {
+      "type": 0,
+      "value": "Hartfrequentie"
+    }
+  ],
+  "r4.zib_heart_rate.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Hartfrequentie datum tijd"
+    }
+  ],
+  "r4.zib_heart_rate.heartbeat_regularity.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Hartfrequentie datum tijd"
+    }
+  ],
+  "r4.zib_heart_rate.heartbeat_regularity.method": [
+    {
+      "type": 0,
+      "value": "Hartslag meet methode"
+    }
+  ],
+  "r4.zib_heart_rate.heartbeat_regularity.value": [
+    {
+      "type": 0,
+      "value": "Hartslag regelmatigheid"
+    }
+  ],
+  "r4.zib_heart_rate.interpretation_heart_rate.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Hartfrequentie datum tijd"
+    }
+  ],
+  "r4.zib_heart_rate.interpretation_heart_rate.method": [
+    {
+      "type": 0,
+      "value": "Hartslag meet methode"
+    }
+  ],
+  "r4.zib_heart_rate.interpretation_heart_rate.value": [
+    {
+      "type": 0,
+      "value": "Interpretatie frequentie"
+    }
+  ],
+  "r4.zib_heart_rate.method": [
+    {
+      "type": 0,
+      "value": "Hartslag meet methode"
+    }
+  ],
+  "r4.zib_heart_rate.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_heart_rate.value": [
+    {
+      "type": 0,
+      "value": "Hartfrequentie waarde"
+    }
+  ],
+  "r4.zib_help_from_others": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.code": [
+    {
+      "type": 0,
+      "value": "Soort hulp"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.description": [
+    {
+      "type": 0,
+      "value": "Aard"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.performer": [
+    {
+      "type": 0,
+      "value": "Hulpverlener"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.performer.caregiver": [
+    {
+      "type": 0,
+      "value": "Mantelzorger"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.performer.health_professional": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.performer.healthcare_provider": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.zib_help_from_others.activity.detail.scheduled_string": [
+    {
+      "type": 0,
+      "value": "Frequentie"
+    }
+  ],
+  "r4.zib_help_from_others.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_illness_perception": [
+    {
+      "type": 0,
+      "value": "Ziektebeleving"
+    }
+  ],
+  "r4.zib_illness_perception.coping_with_illness_by_family.value": [
+    {
+      "type": 0,
+      "value": "Omgaan met ziekteproces door naasten"
+    }
+  ],
+  "r4.zib_illness_perception.coping_with_illness_by_patient.value": [
+    {
+      "type": 0,
+      "value": "Omgaan met ziekteproces door patiënt"
+    }
+  ],
+  "r4.zib_illness_perception.patient_illness_insight.value": [
+    {
+      "type": 0,
+      "value": "Ziekte inzicht van patiënt"
+    }
+  ],
+  "r4.zib_laboratory_test_result": [
+    {
+      "type": 0,
+      "value": "Laboratorium uitslag"
+    }
+  ],
+  "r4.zib_laboratory_test_result.category.result_type": [
+    {
+      "type": 0,
+      "value": "Resultaat type"
+    }
+  ],
+  "r4.zib_laboratory_test_result.code": [
+    {
+      "type": 0,
+      "value": "Onderzoek"
+    }
+  ],
+  "r4.zib_laboratory_test_result.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Test datum tijd"
+    }
+  ],
+  "r4.zib_laboratory_test_result.has_member.laboratory_test": [
+    {
+      "type": 0,
+      "value": "Laboratorium test"
+    }
+  ],
+  "r4.zib_laboratory_test_result.interpretation.result_flags": [
+    {
+      "type": 0,
+      "value": "Interpretatie vlaggen"
+    }
+  ],
+  "r4.zib_laboratory_test_result.interpretation.result_interpretation.text": [
+    {
+      "type": 0,
+      "value": "Uitslag interpretatie"
+    }
+  ],
+  "r4.zib_laboratory_test_result.method": [
+    {
+      "type": 0,
+      "value": "Testmethode"
+    }
+  ],
+  "r4.zib_laboratory_test_result.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_laboratory_test_result.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r4.zib_laboratory_test_result.reference_range.high": [
+    {
+      "type": 0,
+      "value": "Referentie bovengrens"
+    }
+  ],
+  "r4.zib_laboratory_test_result.reference_range.low": [
+    {
+      "type": 0,
+      "value": "Referentie ondergrens"
+    }
+  ],
+  "r4.zib_laboratory_test_result.sequel_to": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.collected_date_time": [
+    {
+      "type": 0,
+      "value": "Afname datum tijd"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.collected_period": [
+    {
+      "type": 0,
+      "value": "Verzamelperiode"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.duration": [
+    {
+      "type": 0,
+      "value": "Verzamelperiode"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.method": [
+    {
+      "type": 0,
+      "value": "Afnameprocedure"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.collection.quantity": [
+    {
+      "type": 0,
+      "value": "Verzamelvolume"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.container.specimen_number_extension": [
+    {
+      "type": 0,
+      "value": "Monstervolgnummer"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.container.type": [
+    {
+      "type": 0,
+      "value": "Containertype"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.identifier": [
+    {
+      "type": 0,
+      "value": "Monsternummer"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.received_time": [
+    {
+      "type": 0,
+      "value": "Aanname datum tijd"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.subject": [
+    {
+      "type": 0,
+      "value": "Bron monster"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen.type": [
+    {
+      "type": 0,
+      "value": "Monstermateriaal"
+    }
+  ],
+  "r4.zib_laboratory_test_result.specimen_source.device_name.name": [
+    {
+      "type": 0,
+      "value": "Bron monster"
+    }
+  ],
+  "r4.zib_laboratory_test_result.status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r4.zib_laboratory_test_result.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag"
+    }
+  ],
+  "r4.zib_legal_situation_legal_status": [
+    {
+      "type": 0,
+      "value": "Juridische situatie"
+    }
+  ],
+  "r4.zib_legal_situation_legal_status.abatement_date_time": [
+    {
+      "type": 0,
+      "value": "Datum einde"
+    }
+  ],
+  "r4.zib_legal_situation_legal_status.code": [
+    {
+      "type": 0,
+      "value": "Juridische status"
+    }
+  ],
+  "r4.zib_legal_situation_legal_status.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Datum aanvang"
+    }
+  ],
+  "r4.zib_legal_situation_representation": [
+    {
+      "type": 0,
+      "value": "Juridische situatie"
+    }
+  ],
+  "r4.zib_legal_situation_representation.abatement_date_time": [
+    {
+      "type": 0,
+      "value": "Datum einde"
+    }
+  ],
+  "r4.zib_legal_situation_representation.code": [
+    {
+      "type": 0,
+      "value": "Vertegenwoordiging"
+    }
+  ],
+  "r4.zib_legal_situation_representation.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Datum aanvang"
+    }
+  ],
+  "r4.zib_life_stance": [
+    {
+      "type": 0,
+      "value": "Levensovertuiging RC"
+    }
+  ],
+  "r4.zib_life_stance.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_life_stance.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Levensovertuiging"
+    }
+  ],
+  "r4.zib_living_situation": [
+    {
+      "type": 0,
+      "value": "Woonsituatie"
+    }
+  ],
+  "r4.zib_living_situation.component.home_adaption.value": [
+    {
+      "type": 0,
+      "value": "Woning aanpassing"
+    }
+  ],
+  "r4.zib_living_situation.component.living_condition.value": [
+    {
+      "type": 0,
+      "value": "Woon omstandigheid"
+    }
+  ],
+  "r4.zib_living_situation.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_living_situation.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Woning type"
+    }
+  ],
+  "r4.zib_medical_device": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel"
+    }
+  ],
+  "r4.zib_medical_device.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_medical_device.derived_from.procedure_event": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.zib_medical_device.derived_from.procedure_request": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.zib_medical_device.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_medical_device.product": [
+    {
+      "type": 0,
+      "value": "Product"
+    }
+  ],
+  "r4.zib_medical_device.product.identifier.gs_1_product_id": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r4.zib_medical_device.product.identifier.hibc_product_id": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r4.zib_medical_device.product.note.text": [
+    {
+      "type": 0,
+      "value": "Product omschrijving"
+    }
+  ],
+  "r4.zib_medical_device.product.type": [
+    {
+      "type": 0,
+      "value": "Product type"
+    }
+  ],
+  "r4.zib_medical_device.product.udi_carrier.gs_1_udi_carrier.carrier_hrf": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r4.zib_medical_device.product.udi_carrier.hibc_udi_carrier.carrier_hrf": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.bowel_function": [
+    {
+      "type": 0,
+      "value": "Darmfunctie"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.functional_or_mental_status": [
+    {
+      "type": 0,
+      "value": "Functionele of mentale status"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.indication": [
+    {
+      "type": 0,
+      "value": "Indicatie"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.mobility": [
+    {
+      "type": 0,
+      "value": "Mobiliteit"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.stoma": [
+    {
+      "type": 0,
+      "value": "Stoma"
+    }
+  ],
+  "r4.zib_medical_device.reason_reference.wound": [
+    {
+      "type": 0,
+      "value": "Wond"
+    }
+  ],
+  "r4.zib_medical_device.timing_period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum"
+    }
+  ],
+  "r4.zib_medical_device.timing_period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum"
+    }
+  ],
+  "r4.zib_medication_contra_indication": [
+    {
+      "type": 0,
+      "value": "Medicatie contra indicatie"
+    }
+  ],
+  "r4.zib_medication_contra_indication.author": [
+    {
+      "type": 0,
+      "value": "Melder"
+    }
+  ],
+  "r4.zib_medication_contra_indication.code": [
+    {
+      "type": 0,
+      "value": "Medicatie contra indicatie naam"
+    }
+  ],
+  "r4.zib_medication_contra_indication.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_medication_contra_indication.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum"
+    }
+  ],
+  "r4.zib_medication_contra_indication.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum"
+    }
+  ],
+  "r4.zib_mobility": [
+    {
+      "type": 0,
+      "value": "Mobiliteit"
+    }
+  ],
+  "r4.zib_mobility.changing_position.value": [
+    {
+      "type": 0,
+      "value": "Houding veranderen"
+    }
+  ],
+  "r4.zib_mobility.climbing_stairs.value": [
+    {
+      "type": 0,
+      "value": "Traplopen"
+    }
+  ],
+  "r4.zib_mobility.maintaining_position.value": [
+    {
+      "type": 0,
+      "value": "Houding handhaven"
+    }
+  ],
+  "r4.zib_mobility.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_mobility.transfer.value": [
+    {
+      "type": 0,
+      "value": "Uitvoeren transfer"
+    }
+  ],
+  "r4.zib_mobility.walking.value": [
+    {
+      "type": 0,
+      "value": "Lopen"
+    }
+  ],
+  "r4.zib_must_score": [
+    {
+      "type": 0,
+      "value": "MUST score"
+    }
+  ],
+  "r4.zib_must_score.component.bmi_score.value": [
+    {
+      "type": 0,
+      "value": "BMI score"
+    }
+  ],
+  "r4.zib_must_score.component.illness_score.value": [
+    {
+      "type": 0,
+      "value": "Ziekte score"
+    }
+  ],
+  "r4.zib_must_score.component.weight_loss_score.value": [
+    {
+      "type": 0,
+      "value": "Gewichtsverlies score"
+    }
+  ],
+  "r4.zib_must_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "MUST score datum tijd"
+    }
+  ],
+  "r4.zib_must_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_must_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_name_information": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_name_information.family.last_name": [
+    {
+      "type": 0,
+      "value": "Achternaam"
+    }
+  ],
+  "r4.zib_name_information.family.partner_last_name": [
+    {
+      "type": 0,
+      "value": "Achternaam partner"
+    }
+  ],
+  "r4.zib_name_information.family.partner_prefix": [
+    {
+      "type": 0,
+      "value": "Voorvoegsels partner"
+    }
+  ],
+  "r4.zib_name_information.family.prefix": [
+    {
+      "type": 0,
+      "value": "Voorvoegsels"
+    }
+  ],
+  "r4.zib_name_information.given": [
+    {
+      "type": 0,
+      "value": "Voornaam"
+    }
+  ],
+  "r4.zib_name_information.given_name.given": [
+    {
+      "type": 0,
+      "value": "Roepnaam"
+    }
+  ],
+  "r4.zib_name_information.name_usage": [
+    {
+      "type": 0,
+      "value": "Naamgebruik"
+    }
+  ],
+  "r4.zib_name_information.prefix": [
+    {
+      "type": 0,
+      "value": "Titels"
+    }
+  ],
+  "r4.zib_name_information.suffix": [
+    {
+      "type": 0,
+      "value": "Titels"
+    }
+  ],
+  "r4.zib_nursing_intervention": [
+    {
+      "type": 0,
+      "value": "Verpleegkundige interventie"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.code": [
+    {
+      "type": 0,
+      "value": "Interventie"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.description": [
+    {
+      "type": 0,
+      "value": "Instructie"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.medical_device": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.performer.caregiver": [
+    {
+      "type": 0,
+      "value": "Verzorger"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.performer.healthcare_provider": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.performer.patient": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.scheduled_timing.repeat.bounds_period.end": [
+    {
+      "type": 0,
+      "value": "Actie eind datum tijd"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.scheduled_timing.repeat.bounds_period.start": [
+    {
+      "type": 0,
+      "value": "Actie start datum tijd"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.scheduled_timing.repeat.frequency": [
+    {
+      "type": 0,
+      "value": "Interval"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.scheduled_timing.repeat.period": [
+    {
+      "type": 0,
+      "value": "Interval"
+    }
+  ],
+  "r4.zib_nursing_intervention.activity.detail.scheduled_timing.repeat.period_unit": [
+    {
+      "type": 0,
+      "value": "Interval"
+    }
+  ],
+  "r4.zib_nursing_intervention.addresses": [
+    {
+      "type": 0,
+      "value": "Indicatie"
+    }
+  ],
+  "r4.zib_nursing_intervention.contributorequester": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r4.zib_nursing_intervention.goal": [
+    {
+      "type": 0,
+      "value": "Behandeldoel"
+    }
+  ],
+  "r4.zib_nursing_intervention.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_nursing_intervention.period.end": [
+    {
+      "type": 0,
+      "value": "Actie eind datum tijd"
+    }
+  ],
+  "r4.zib_nursing_intervention.period.start": [
+    {
+      "type": 0,
+      "value": "Actie start datum tijd"
+    }
+  ],
+  "r4.zib_nutrition_advice": [
+    {
+      "type": 0,
+      "value": "Voedingsadvies"
+    }
+  ],
+  "r4.zib_nutrition_advice.indication": [
+    {
+      "type": 0,
+      "value": "Indicatie"
+    }
+  ],
+  "r4.zib_nutrition_advice.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_nutrition_advice.oral_diet.fluid_consistency_type.text": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r4.zib_nutrition_advice.oral_diet.texture.modifier.text": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r4.zib_nutrition_advice.oral_diet.type.text": [
+    {
+      "type": 0,
+      "value": "Dieet type"
+    }
+  ],
+  "r4.zib_o_2_saturation": [
+    {
+      "type": 0,
+      "value": "O2 saturatie"
+    }
+  ],
+  "r4.zib_o_2_saturation.component.extra_oxygen_administration.value": [
+    {
+      "type": 0,
+      "value": "Extra zuurstof toediening"
+    }
+  ],
+  "r4.zib_o_2_saturation.effective_date_time": [
+    {
+      "type": 0,
+      "value": "O2 saturatie datum tijd"
+    }
+  ],
+  "r4.zib_o_2_saturation.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_o_2_saturation.value": [
+    {
+      "type": 0,
+      "value": "Sp o2 waarde"
+    }
+  ],
+  "r4.zib_pain_score": [
+    {
+      "type": 0,
+      "value": "Pijn score"
+    }
+  ],
+  "r4.zib_pain_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Pijnscore datum tijd"
+    }
+  ],
+  "r4.zib_pain_score.method": [
+    {
+      "type": 0,
+      "value": "Pijn meetmethode"
+    }
+  ],
+  "r4.zib_pain_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_pain_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Pijnscore waarde"
+    }
+  ],
+  "r4.zib_participation_in_society": [
+    {
+      "type": 0,
+      "value": "Participatie in maatschappij"
+    }
+  ],
+  "r4.zib_participation_in_society.hobby.value": [
+    {
+      "type": 0,
+      "value": "Vrijetijdsbesteding"
+    }
+  ],
+  "r4.zib_participation_in_society.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_participation_in_society.social_network.value": [
+    {
+      "type": 0,
+      "value": "Sociaal netwerk"
+    }
+  ],
+  "r4.zib_participation_in_society.work_situation.value": [
+    {
+      "type": 0,
+      "value": "Arbeidssituatie"
+    }
+  ],
+  "r4.zib_patient": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r4.zib_patient.birth_date": [
+    {
+      "type": 0,
+      "value": "Geboortedatum"
+    }
+  ],
+  "r4.zib_patient.communication": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
+  "r4.zib_patient.communication.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_patient.communication.language": [
+    {
+      "type": 0,
+      "value": "Communicatie taal"
+    }
+  ],
+  "r4.zib_patient.communication.language_control": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid begrijpen"
+    }
+  ],
+  "r4.zib_patient.contact": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.zib_patient.contact.contact_person": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.zib_patient.contact.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r4.zib_patient.contact.relationship.role": [
+    {
+      "type": 0,
+      "value": "Rol"
+    }
+  ],
+  "r4.zib_patient.contact.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_patient.deceased_boolean": [
+    {
+      "type": 0,
+      "value": "Overlijdens indicator"
+    }
+  ],
+  "r4.zib_patient.deceased_date_time": [
+    {
+      "type": 0,
+      "value": "Datum overlijden"
+    }
+  ],
+  "r4.zib_patient.gender": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.zib_patient.gender.gender_codelist": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.zib_patient.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatienummer"
+    }
+  ],
+  "r4.zib_patient.marital_status": [
+    {
+      "type": 0,
+      "value": "Burgerlijke staat"
+    }
+  ],
+  "r4.zib_patient.multiple_birth_boolean": [
+    {
+      "type": 0,
+      "value": "Meerling indicator"
+    }
+  ],
+  "r4.zib_patient.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_patient.nationality.code": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
+    }
+  ],
+  "r4.zib_patient.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_payer.insurance_company": [
+    {
+      "type": 0,
+      "value": "Betaler"
+    }
+  ],
+  "r4.zib_payer.insurance_company.payor": [
+    {
+      "type": 0,
+      "value": "Verzekeraar"
+    }
+  ],
+  "r4.zib_payer.insurance_company.period.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r4.zib_payer.insurance_company.period.start": [
+    {
+      "type": 0,
+      "value": "Begin datum tijd"
+    }
+  ],
+  "r4.zib_payer.insurance_company.subscriber_id": [
+    {
+      "type": 0,
+      "value": "Verzekerde nummer"
+    }
+  ],
+  "r4.zib_payer.insurance_company.type": [
+    {
+      "type": 0,
+      "value": "Verzekeringssoort"
+    }
+  ],
+  "r4.zib_payer.payer_person": [
+    {
+      "type": 0,
+      "value": "Betaler"
+    }
+  ],
+  "r4.zib_payer.payer_person.payor": [
+    {
+      "type": 0,
+      "value": "Betaler persoon"
+    }
+  ],
+  "r4.zib_payer_organization": [
+    {
+      "type": 0,
+      "value": "Verzekeraar"
+    }
+  ],
+  "r4.zib_payer_organization.identifier.uzovi": [
+    {
+      "type": 0,
+      "value": "Identificatie nummer"
+    }
+  ],
+  "r4.zib_payer_organization.name": [
+    {
+      "type": 0,
+      "value": "Organisatie naam"
+    }
+  ],
+  "r4.zib_payer_organization.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.zib_pharmaceutical_product": [
+    {
+      "type": 0,
+      "value": "Farmaceutisch product"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.code": [
+    {
+      "type": 0,
+      "value": "Product code"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.code.text": [
+    {
+      "type": 0,
+      "value": "Product naam"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.form": [
+    {
+      "type": 0,
+      "value": "Farmaceutische vorm"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient": [
+    {
+      "type": 0,
+      "value": "Ingredient"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.item_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Ingredient code"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.strength": [
+    {
+      "type": 0,
+      "value": "Sterkte"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.strength.denominator": [
+    {
+      "type": 0,
+      "value": "Product hoeveelheid"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.strength.numerator": [
+    {
+      "type": 0,
+      "value": "Ingredient hoeveelheid"
+    }
+  ],
+  "r4.zib_pregnancy": [
+    {
+      "type": 0,
+      "value": "Zwangerschap"
+    }
+  ],
+  "r4.zib_pregnancy.date_last_menstruation.value_date_time": [
+    {
+      "type": 0,
+      "value": "Datum laatste menstruatie"
+    }
+  ],
+  "r4.zib_pregnancy.estimated_date_of_delivery.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Datum bepaling"
+    }
+  ],
+  "r4.zib_pregnancy.estimated_date_of_delivery.method": [
+    {
+      "type": 0,
+      "value": "Bepalings methode"
+    }
+  ],
+  "r4.zib_pregnancy.estimated_date_of_delivery.value_date_time": [
+    {
+      "type": 0,
+      "value": "A terme datum"
+    }
+  ],
+  "r4.zib_pregnancy.gravidity.value_integer": [
+    {
+      "type": 0,
+      "value": "Graviditeit"
+    }
+  ],
+  "r4.zib_pregnancy.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_pregnancy.parity.value_integer": [
+    {
+      "type": 0,
+      "value": "Pariteit"
+    }
+  ],
+  "r4.zib_pregnancy.pregnancy_duration.value_quantity": [
+    {
+      "type": 0,
+      "value": "Zwangerschapsduur"
+    }
+  ],
+  "r4.zib_pressure_ulcer": [
+    {
+      "type": 0,
+      "value": "Decubitus wond"
+    }
+  ],
+  "r4.zib_pressure_ulcer.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_pressure_ulcer.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_pressure_ulcer.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Ontstaans datum"
+    }
+  ],
+  "r4.zib_pressure_ulcer.stage.summary": [
+    {
+      "type": 0,
+      "value": "Decubitus categorie"
+    }
+  ],
+  "r4.zib_problem": [
+    {
+      "type": 0,
+      "value": "Probleem"
+    }
+  ],
+  "r4.zib_problem.abatement_date_time": [
+    {
+      "type": 0,
+      "value": "Probleem eind datum"
+    }
+  ],
+  "r4.zib_problem.body_site": [
+    {
+      "type": 0,
+      "value": "Probleem anatomische locatie"
+    }
+  ],
+  "r4.zib_problem.category.problem_type": [
+    {
+      "type": 0,
+      "value": "Probleem type"
+    }
+  ],
+  "r4.zib_problem.clinical_status": [
+    {
+      "type": 0,
+      "value": "Probleem status"
+    }
+  ],
+  "r4.zib_problem.code": [
+    {
+      "type": 0,
+      "value": "Probleem naam"
+    }
+  ],
+  "r4.zib_problem.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_problem.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Probleem begin datum"
+    }
+  ],
+  "r4.zib_problem.verification_status": [
+    {
+      "type": 0,
+      "value": "Verificatie status"
+    }
+  ],
+  "r4.zib_procedure_event": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.zib_procedure_event.body_site": [
+    {
+      "type": 0,
+      "value": "Verrichting anatomische locatie"
+    }
+  ],
+  "r4.zib_procedure_event.code": [
+    {
+      "type": 0,
+      "value": "Verrichting type"
+    }
+  ],
+  "r4.zib_procedure_event.location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r4.zib_procedure_event.performed_date_time": [
+    {
+      "type": 0,
+      "value": "Verrichting start datum"
+    }
+  ],
+  "r4.zib_procedure_event.performed_period.end": [
+    {
+      "type": 0,
+      "value": "Verrichting eind datum"
+    }
+  ],
+  "r4.zib_procedure_event.performed_period.start": [
+    {
+      "type": 0,
+      "value": "Verrichting start datum"
+    }
+  ],
+  "r4.zib_procedure_event.performer.actor": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r4.zib_procedure_event.reason_reference": [
+    {
+      "type": 0,
+      "value": "Indicatie"
+    }
+  ],
+  "r4.zib_procedure_event.reportext_result": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag"
+    }
+  ],
+  "r4.zib_procedure_request": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r4.zib_procedure_request.body_site": [
+    {
+      "type": 0,
+      "value": "Verrichting anatomische locatie"
+    }
+  ],
+  "r4.zib_procedure_request.code": [
+    {
+      "type": 0,
+      "value": "Verrichting type"
+    }
+  ],
+  "r4.zib_procedure_request.location_reference": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r4.zib_procedure_request.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Verrichting start datum"
+    }
+  ],
+  "r4.zib_procedure_request.occurrence_period.end": [
+    {
+      "type": 0,
+      "value": "Verrichting eind datum"
+    }
+  ],
+  "r4.zib_procedure_request.occurrence_period.start": [
+    {
+      "type": 0,
+      "value": "Verrichting start datum"
+    }
+  ],
+  "r4.zib_procedure_request.order_detail.procedure_method": [
+    {
+      "type": 0,
+      "value": "Verrichting methode"
+    }
+  ],
+  "r4.zib_procedure_request.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r4.zib_procedure_request.reason_reference": [
+    {
+      "type": 0,
+      "value": "Indicatie"
+    }
+  ],
+  "r4.zib_procedure_request.requester": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r4.zib_pulse_rate": [
+    {
+      "type": 0,
+      "value": "Polsfrequentie"
+    }
+  ],
+  "r4.zib_pulse_rate.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Polsfrequentie datum tijd"
+    }
+  ],
+  "r4.zib_pulse_rate.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_pulse_rate.pulse_regularity.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Polsfrequentie datum tijd"
+    }
+  ],
+  "r4.zib_pulse_rate.pulse_regularity.value": [
+    {
+      "type": 0,
+      "value": "Pols regelmatigheid"
+    }
+  ],
+  "r4.zib_pulse_rate.value": [
+    {
+      "type": 0,
+      "value": "Polsfrequentie waarde"
+    }
+  ],
+  "r4.zib_refraction": [
+    {
+      "type": 0,
+      "value": "Refractie"
+    }
+  ],
+  "r4.zib_refraction.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_refraction.component.cylindrical_refraction_axis.value": [
+    {
+      "type": 0,
+      "value": "Cilindrische refractie as"
+    }
+  ],
+  "r4.zib_refraction.component.cylindrical_refraction_value.value": [
+    {
+      "type": 0,
+      "value": "Cilindrische refractie waarde"
+    }
+  ],
+  "r4.zib_refraction.component.prism_base.value": [
+    {
+      "type": 0,
+      "value": "Prisma basis"
+    }
+  ],
+  "r4.zib_refraction.component.prism_value.value": [
+    {
+      "type": 0,
+      "value": "Prisma waarde"
+    }
+  ],
+  "r4.zib_refraction.component.read_addition.value": [
+    {
+      "type": 0,
+      "value": "Lees additie"
+    }
+  ],
+  "r4.zib_refraction.component.spherical_equivalent.value": [
+    {
+      "type": 0,
+      "value": "Sferisch equivalent"
+    }
+  ],
+  "r4.zib_refraction.component.spherical_refraction_value.value": [
+    {
+      "type": 0,
+      "value": "Sferische refractie waarde"
+    }
+  ],
+  "r4.zib_refraction.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Refractie datum tijd"
+    }
+  ],
+  "r4.zib_refraction.method": [
+    {
+      "type": 0,
+      "value": "Refractie meet methode"
+    }
+  ],
+  "r4.zib_skin_disorder": [
+    {
+      "type": 0,
+      "value": "Huidaandoening"
+    }
+  ],
+  "r4.zib_skin_disorder.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_skin_disorder.cause": [
+    {
+      "type": 0,
+      "value": "Oorzaak"
+    }
+  ],
+  "r4.zib_skin_disorder.code": [
+    {
+      "type": 0,
+      "value": "Soort aandoening"
+    }
+  ],
+  "r4.zib_skin_disorder.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_skin_disorder.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Ontstaans datum"
+    }
+  ],
+  "r4.zib_sna_qrc_score": [
+    {
+      "type": 0,
+      "value": "SNA qrc score"
+    }
+  ],
+  "r4.zib_sna_qrc_score.component.appetite_score.value": [
+    {
+      "type": 0,
+      "value": "Eetlust score"
+    }
+  ],
+  "r4.zib_sna_qrc_score.component.assisted_eating.value": [
+    {
+      "type": 0,
+      "value": "Hulp bij eten"
+    }
+  ],
+  "r4.zib_sna_qrc_score.component.bmi_score.value": [
+    {
+      "type": 0,
+      "value": "BMI score"
+    }
+  ],
+  "r4.zib_sna_qrc_score.component.weight_loss_score.value": [
+    {
+      "type": 0,
+      "value": "Gewichtsverlies score"
+    }
+  ],
+  "r4.zib_sna_qrc_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "SNA qrc score datum tijd"
+    }
+  ],
+  "r4.zib_sna_qrc_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_sna_qrc_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score": [
+    {
+      "type": 0,
+      "value": "SNAQ65+score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.component.appetite_score.value": [
+    {
+      "type": 0,
+      "value": "Eetlust score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.component.exercise_score.value": [
+    {
+      "type": 0,
+      "value": "Inspannings score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.component.upperarm_circumference.value": [
+    {
+      "type": 0,
+      "value": "Bovenarm omtrek score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.component.weight_loss_score.value": [
+    {
+      "type": 0,
+      "value": "Gewichtsverlies score"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "SNAQ65+score datum tijd"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_snaq_65_plus_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_snaq_score": [
+    {
+      "type": 0,
+      "value": "SNAQ score"
+    }
+  ],
+  "r4.zib_snaq_score.component.appetite_score.value": [
+    {
+      "type": 0,
+      "value": "Eetlust score"
+    }
+  ],
+  "r4.zib_snaq_score.component.nutrition_score.value": [
+    {
+      "type": 0,
+      "value": "Voedings score"
+    }
+  ],
+  "r4.zib_snaq_score.component.weight_loss_score.value": [
+    {
+      "type": 0,
+      "value": "Gewichtsverlies score"
+    }
+  ],
+  "r4.zib_snaq_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "SNAQ score datum tijd"
+    }
+  ],
+  "r4.zib_snaq_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_snaq_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_soap_report": [
+    {
+      "type": 0,
+      "value": "SOEP verslag"
+    }
+  ],
+  "r4.zib_soap_report.author": [
+    {
+      "type": 0,
+      "value": "Auteur"
+    }
+  ],
+  "r4.zib_soap_report.date": [
+    {
+      "type": 0,
+      "value": "SOEP verslag datum tijd"
+    }
+  ],
+  "r4.zib_soap_report.section.soap_line": [
+    {
+      "type": 0,
+      "value": "SOEP regel"
+    }
+  ],
+  "r4.zib_soap_report.section.soap_line.code": [
+    {
+      "type": 0,
+      "value": "SOEP regel naam"
+    }
+  ],
+  "r4.zib_soap_report.soap_line": [
+    {
+      "type": 0,
+      "value": "SOEP regel"
+    }
+  ],
+  "r4.zib_soap_report.soap_line.code": [
+    {
+      "type": 0,
+      "value": "SOEP regel naam"
+    }
+  ],
+  "r4.zib_soap_report.soap_line.value_string": [
+    {
+      "type": 0,
+      "value": "SOEP regel tekst"
+    }
+  ],
+  "r4.zib_stoma": [
+    {
+      "type": 0,
+      "value": "Stoma"
+    }
+  ],
+  "r4.zib_stoma.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_stoma.code": [
+    {
+      "type": 0,
+      "value": "Stoma type"
+    }
+  ],
+  "r4.zib_stoma.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_stoma.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Aanleg datum"
+    }
+  ],
+  "r4.zib_strong_kids_score": [
+    {
+      "type": 0,
+      "value": "Strong kids score"
+    }
+  ],
+  "r4.zib_strong_kids_score.component.condition_score.value": [
+    {
+      "type": 0,
+      "value": "Ziekte beeld score"
+    }
+  ],
+  "r4.zib_strong_kids_score.component.nutrition_score.value": [
+    {
+      "type": 0,
+      "value": "Voedings score"
+    }
+  ],
+  "r4.zib_strong_kids_score.component.nutrition_status_score.value": [
+    {
+      "type": 0,
+      "value": "Voedingstoestand score"
+    }
+  ],
+  "r4.zib_strong_kids_score.component.weight_loss_score.value": [
+    {
+      "type": 0,
+      "value": "Gewichtsverlies score"
+    }
+  ],
+  "r4.zib_strong_kids_score.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Score datum tijd"
+    }
+  ],
+  "r4.zib_strong_kids_score.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_strong_kids_score.value_integer": [
+    {
+      "type": 0,
+      "value": "Totaal score"
+    }
+  ],
+  "r4.zib_text_result": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag"
+    }
+  ],
+  "r4.zib_text_result.code": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag type"
+    }
+  ],
+  "r4.zib_text_result.conclusion": [
+    {
+      "type": 0,
+      "value": "Tekst resultaat"
+    }
+  ],
+  "r4.zib_text_result.effective_date_time": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag datum tijd"
+    }
+  ],
+  "r4.zib_text_result.status": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag status"
+    }
+  ],
+  "r4.zib_text_result.status.text_result_status": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag status"
+    }
+  ],
+  "r4.zib_text_result.visual_result.content": [
+    {
+      "type": 0,
+      "value": "Visueel resultaat"
+    }
+  ],
+  "r4.zib_time_interval": [
+    {
+      "type": 0,
+      "value": "Tijds interval"
+    }
+  ],
+  "r4.zib_time_interval.end": [
+    {
+      "type": 0,
+      "value": "Eind datum tijd"
+    }
+  ],
+  "r4.zib_time_interval.start": [
+    {
+      "type": 0,
+      "value": "Start datum tijd"
+    }
+  ],
+  "r4.zib_tobacco_use": [
+    {
+      "type": 0,
+      "value": "Tabak gebruik"
+    }
+  ],
+  "r4.zib_tobacco_use.component.amount.value": [
+    {
+      "type": 0,
+      "value": "Hoeveelheid"
+    }
+  ],
+  "r4.zib_tobacco_use.component.pack_years.value": [
+    {
+      "type": 0,
+      "value": "Pack years"
+    }
+  ],
+  "r4.zib_tobacco_use.componentype_of_tobacco_used.value": [
+    {
+      "type": 0,
+      "value": "Soort tabak gebruik"
+    }
+  ],
+  "r4.zib_tobacco_use.effective_period.end": [
+    {
+      "type": 0,
+      "value": "Stop datum"
+    }
+  ],
+  "r4.zib_tobacco_use.effective_period.start": [
+    {
+      "type": 0,
+      "value": "Start datum"
+    }
+  ],
+  "r4.zib_tobacco_use.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_tobacco_use.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Tabak gebruik status"
+    }
+  ],
+  "r4.zib_treatment_directive_2": [
+    {
+      "type": 0,
+      "value": "Behandel aanwijzing"
+    }
+  ],
+  "r4.zib_treatment_directive_2.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_treatment_directive_2.date_time": [
+    {
+      "type": 0,
+      "value": "Meest recente bespreekdatum"
+    }
+  ],
+  "r4.zib_treatment_directive_2.provision.actor.agreement_party": [
+    {
+      "type": 0,
+      "value": "Afspraak partij"
+    }
+  ],
+  "r4.zib_treatment_directive_2.provision.actor.agreement_party.reference": [
+    {
+      "type": 0,
+      "value": "Patient"
+    }
+  ],
+  "r4.zib_treatment_directive_2.provision.code": [
+    {
+      "type": 0,
+      "value": "Behandeling"
+    }
+  ],
+  "r4.zib_treatment_directive_2.provision.period.end": [
+    {
+      "type": 0,
+      "value": "Datum beeindigd"
+    }
+  ],
+  "r4.zib_treatment_directive_2.provision.type": [
+    {
+      "type": 0,
+      "value": "Behandel besluit"
+    }
+  ],
+  "r4.zib_treatment_directive_2.source_reference": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring"
+    }
+  ],
+  "r4.zib_vaccination_event": [
+    {
+      "type": 0,
+      "value": "Vaccinatie"
+    }
+  ],
+  "r4.zib_vaccination_event.dose_quantity": [
+    {
+      "type": 0,
+      "value": "Dosis"
+    }
+  ],
+  "r4.zib_vaccination_event.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_vaccination_event.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Vaccinatie datum"
+    }
+  ],
+  "r4.zib_vaccination_event.performer.administrator.actor": [
+    {
+      "type": 0,
+      "value": "Toediener"
+    }
+  ],
+  "r4.zib_vaccination_event.vaccine_code": [
+    {
+      "type": 0,
+      "value": "Product code"
+    }
+  ],
+  "r4.zib_vaccination_request": [
+    {
+      "type": 0,
+      "value": "Vaccinatie"
+    }
+  ],
+  "r4.zib_vaccination_request.recommendation.date_criterion.value": [
+    {
+      "type": 0,
+      "value": "Vaccinatie datum"
+    }
+  ],
+  "r4.zib_vaccination_request.recommendation.description": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_vaccination_request.recommendation.vaccine_code": [
+    {
+      "type": 0,
+      "value": "Product code"
+    }
+  ],
+  "r4.zib_visual_function": [
+    {
+      "type": 0,
+      "value": "Functie zien"
+    }
+  ],
+  "r4.zib_visual_function.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_visual_function.value_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Visuele functie"
+    }
+  ],
+  "r4.zib_visual_function.visual_aid.reason_reference.visual_function": [
+    {
+      "type": 0,
+      "value": "Functie zien"
+    }
+  ],
+  "r4.zib_wound": [
+    {
+      "type": 0,
+      "value": "Wond"
+    }
+  ],
+  "r4.zib_wound.body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r4.zib_wound.code": [
+    {
+      "type": 0,
+      "value": "Wond soort"
+    }
+  ],
+  "r4.zib_wound.drain.reason_reference.drain": [
+    {
+      "type": 0,
+      "value": "Wond"
+    }
+  ],
+  "r4.zib_wound.note.text": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r4.zib_wound.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Wond ontstaansdatum"
+    }
+  ],
+  "r4.zib_wound.wound_edge.value": [
+    {
+      "type": 0,
+      "value": "Wond rand"
+    }
+  ],
+  "r4.zib_wound.wound_infection.value": [
+    {
+      "type": 0,
+      "value": "Wond infectie"
+    }
+  ],
+  "r4.zib_wound.wound_moisture.value": [
+    {
+      "type": 0,
+      "value": "Wond vochtigheid"
+    }
+  ],
+  "r4.zib_wound.wound_tissue.value": [
+    {
+      "type": 0,
+      "value": "Wond weefsel"
+    }
+  ],
+  "r4.zib_wounds.date_of_last_dressing_change.value": [
+    {
+      "type": 0,
+      "value": "Datum laatste verbandwissel"
+    }
+  ],
+  "r4.zib_wounds.wound_depth.value": [
+    {
+      "type": 0,
+      "value": "Wonddiepte"
+    }
+  ],
+  "r4.zib_wounds.wound_image.content.attachment": [
+    {
+      "type": 0,
+      "value": "Wond foto"
+    }
+  ],
+  "r4.zib_wounds.wound_length.value": [
+    {
+      "type": 0,
+      "value": "Wondlengte"
+    }
+  ],
+  "r4.zib_wounds.wound_width.value": [
+    {
+      "type": 0,
+      "value": "Wondbreedte"
+    }
+  ]
+}

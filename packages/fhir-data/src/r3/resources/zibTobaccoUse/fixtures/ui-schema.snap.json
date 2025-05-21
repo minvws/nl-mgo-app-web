@@ -1,0 +1,76 @@
+{
+    "label": "Tabak gebruik",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1eb10781-8fdf-11ec-7373-020000000000"
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Start datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1980"
+                },
+                {
+                    "label": "Stop datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1983"
+                },
+                {
+                    "label": "Tabak gebruik status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Ex-smoker (finding) (8517006 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 packs per week"
+                },
+                {
+                    "label": "Pack years",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 PackYears"
+                },
+                {
+                    "label": "Soort tabak gebruik",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Cigarette smoker (finding) (65568007 in code systeem http://snomed.info/sct)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

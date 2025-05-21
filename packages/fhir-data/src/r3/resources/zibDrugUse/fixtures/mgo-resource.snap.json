@@ -1,0 +1,83 @@
+{
+    "id": "zib-druguse-01",
+    "referenceId": "Observation/zib-druguse-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-DrugUse",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19a199c7-8fdf-11ec-9837-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "effectiveDateTime": null,
+    "effectivePeriod": {
+        "_type": "period",
+        "start": "1981",
+        "end": "1983"
+    },
+    "performer": null,
+    "valueCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "44870007",
+                "display": "Misused drugs in past (finding)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "comment": {
+        "_type": "string",
+        "value": "Op feestjes en in uitgaanscircuit."
+    },
+    "component": {
+        "drugOrMedicationType": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "703842006",
+                            "display": "Amphetamine",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ],
+        "routeOfAdministration": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "6",
+                            "display": "NASAAL",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                        }
+                    ]
+                }
+            }
+        ],
+        "amount": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "3 times a year"
+                }
+            }
+        ]
+    }
+}

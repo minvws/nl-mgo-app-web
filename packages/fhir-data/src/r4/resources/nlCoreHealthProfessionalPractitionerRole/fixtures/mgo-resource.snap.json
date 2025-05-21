@@ -1,0 +1,59 @@
+{
+    "id": "nl-core-HealthProfessional-PractitionerRole-01",
+    "referenceId": "PractitionerRole/nl-core-HealthProfessional-PractitionerRole-01",
+    "resourceType": "PractitionerRole",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
+    "fhirVersion": "R4",
+    "practitioner": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-HealthProfessional-Practitioner-01",
+        "display": "Healthcare professional (person), J.H.R. Peters"
+    },
+    "organization": null,
+    "location": null,
+    "speciality": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "01.026",
+                    "display": "Neuroloog",
+                    "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode"
+                }
+            ]
+        }
+    ],
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": null
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+3715828282"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "j.peters@hospital.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    }
+}

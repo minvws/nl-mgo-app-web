@@ -1,0 +1,62 @@
+{
+    "id": "gp-encounter-01",
+    "referenceId": "Encounter/gp-encounter-01",
+    "resourceType": "Encounter",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/gp-Encounter",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": "usual",
+            "system": "http://www.acme.com/identifiers/patient",
+            "value": "123456",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1506f28b-8fdf-11ec-1151-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "J. XXX_Helleman (Johan)"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2013-02-08",
+        "end": "2013-02-08"
+    },
+    "participant": [
+        {
+            "individual": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-01",
+                "display": "Henk de Vries"
+            },
+            "type": {
+                "healthProfessionalRole": null
+            }
+        }
+    ],
+    "reason": null,
+    "class": {
+        "_type": "coding",
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "system": "http://hl7.org/fhir/v3/ActCode"
+    },
+    "diagnosis": null,
+    "hospitalization": {
+        "admitSource": null,
+        "dischargeDisposition": null
+    },
+    "serviceProvider": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-01",
+        "display": "Huisartspraktijk (zelfstandig of groepspraktijk)"
+    }
+}

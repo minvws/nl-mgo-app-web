@@ -1,0 +1,193 @@
+{
+    "label": "Toedieningsafspraak",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Beëindigingsreden",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 juni 2020"
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Geannuleerd indicator",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Gebruiksduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Geneesmiddel bij toedienings afspraak",
+                    "type": "REFERENCE_VALUE",
+                    "display": "PRIMPERAN ZETPIL 20MG",
+                    "reference": "Medication/zib-Product-01"
+                },
+                {
+                    "label": "Herhaalperiode cyclisch schema",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1546339-f6753t65r",
+                        "189ef867-8fdf-11ec-6427-020000000000"
+                    ]
+                },
+                {
+                    "label": "Medicamenteuze behandeling",
+                    "type": "SINGLE_VALUE",
+                    "display": "#MB_01h"
+                },
+                {
+                    "label": "Medicatieafspraak",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
+                    ]
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Reden afspraak",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieningsafspraak aanvullende informatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Niet leverbaar (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)"
+                    ]
+                },
+                {
+                    "label": "Toedieningsafspraak datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 juni 2020 om 10:54:12 GMT+2"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Tekstuele toelichting bij deze toedieningsafspraak"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Uitvoerder",
+            "children": [
+                {
+                    "label": "Op verzoek van",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Specialist",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Apotheek De Gulle Gaper",
+                    "reference": "Organization/nl-core-organization-06"
+                }
+            ]
+        },
+        {
+            "label": "Gebruiksinstructie",
+            "children": [
+                {
+                    "label": "Aanvullende instructie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Dagdeel",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "display": "d"
+                },
+                {
+                    "label": "Maximale dosering",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Maximum waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Omschrijving",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                    ]
+                },
+                {
+                    "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedieninsgduur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toedientijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Volgnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Weekdagen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zo nodig",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

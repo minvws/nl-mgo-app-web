@@ -1,0 +1,1196 @@
+{
+  "fhir.x.diagnosis": [
+    {
+      "type": 0,
+      "value": "Diagnosis"
+    }
+  ],
+  "r3.e_afspraak_appointment": [
+    {
+      "type": 0,
+      "value": "Afspraak"
+    }
+  ],
+  "r3.e_afspraak_appointment.appointment_type": [
+    {
+      "type": 0,
+      "value": "Contact type"
+    }
+  ],
+  "r3.e_afspraak_appointment.created": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.description": [
+    {
+      "type": 0,
+      "value": "Contact onderwerp"
+    }
+  ],
+  "r3.e_afspraak_appointment.end": [
+    {
+      "type": 0,
+      "value": "Eind datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.incoming_referral": [
+    {
+      "type": 0,
+      "value": "Verwijzing"
+    }
+  ],
+  "r3.e_afspraak_appointment.indication": [
+    {
+      "type": 0,
+      "value": "Verrichting of probleem"
+    }
+  ],
+  "r3.e_afspraak_appointment.minutes_duration": [
+    {
+      "type": 0,
+      "value": "Contact duur in minuten"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable.indicator": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar indicator"
+    }
+  ],
+  "r3.e_afspraak_appointment.online_editable.online_editable_until": [
+    {
+      "type": 0,
+      "value": "Online wijzigbaar tot"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant": [
+    {
+      "type": 0,
+      "value": "Contact met"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.actor": [
+    {
+      "type": 0,
+      "value": "Contactpersoon, patiënt, zorgverlener of locatie"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.required": [
+    {
+      "type": 0,
+      "value": "Vereist"
+    }
+  ],
+  "r3.e_afspraak_appointment.participant.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "r3.e_afspraak_appointment.patient_instructions": [
+    {
+      "type": 0,
+      "value": "Contact patiënt instructie"
+    }
+  ],
+  "r3.e_afspraak_appointment.reason": [
+    {
+      "type": 0,
+      "value": "Afwijkende uitslag"
+    }
+  ],
+  "r3.e_afspraak_appointment.service_category": [
+    {
+      "type": 0,
+      "value": "Contact categorie"
+    }
+  ],
+  "r3.e_afspraak_appointment.specialty": [
+    {
+      "type": 0,
+      "value": "Specialisme"
+    }
+  ],
+  "r3.e_afspraak_appointment.start": [
+    {
+      "type": 0,
+      "value": "Begin datum"
+    }
+  ],
+  "r3.e_afspraak_appointment.status": [
+    {
+      "type": 0,
+      "value": "Contact status"
+    }
+  ],
+  "r3.gp_diagnostic_result": [
+    {
+      "type": 0,
+      "value": "Diagnose"
+    }
+  ],
+  "r3.gp_diagnostic_result.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.gp_diagnostic_result.method": [
+    {
+      "type": 0,
+      "value": "Meetmethode"
+    }
+  ],
+  "r3.gp_diagnostic_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde meetuitslagen"
+    }
+  ],
+  "r3.gp_diagnostic_result.related.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerde meetuitslag"
+    }
+  ],
+  "r3.gp_diagnostic_result.status.result_status_codelist": [
+    {
+      "type": 0,
+      "value": "Resultaat status"
+    }
+  ],
+  "r3.gp_diagnostic_result.value": [
+    {
+      "type": 0,
+      "value": "Uitslag waarde"
+    }
+  ],
+  "r3.gp_encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_encounter_report.encounter": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_encounter_report.section": [
+    {
+      "type": 0,
+      "value": "Sectie"
+    }
+  ],
+  "r3.gp_encounter_report.section.entry": [
+    {
+      "type": 0,
+      "value": "Vermelding"
+    }
+  ],
+  "r3.gp_journal_entry": [
+    {
+      "type": 0,
+      "value": "Journaalregel"
+    }
+  ],
+  "r3.gp_journal_entry.component.icpc_e.value": [
+    {
+      "type": 0,
+      "value": "ICPC Code"
+    }
+  ],
+  "r3.gp_journal_entry.component.icpc_s.value": [
+    {
+      "type": 0,
+      "value": "ICPC Code"
+    }
+  ],
+  "r3.gp_laboratory_result": [
+    {
+      "type": 0,
+      "value": "Laboratorium uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.based_on": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r3.gp_laboratory_result.code": [
+    {
+      "type": 0,
+      "value": "Test code"
+    }
+  ],
+  "r3.gp_laboratory_result.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.gp_laboratory_result.context": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "r3.gp_laboratory_result.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie"
+    }
+  ],
+  "r3.gp_laboratory_result.method": [
+    {
+      "type": 0,
+      "value": "Testmethode"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range": [
+    {
+      "type": 0,
+      "value": "Referentie"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.high": [
+    {
+      "type": 0,
+      "value": "Referentie bovengrens"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.low": [
+    {
+      "type": 0,
+      "value": "Referentie ondergrens"
+    }
+  ],
+  "r3.gp_laboratory_result.reference_range.type": [
+    {
+      "type": 0,
+      "value": "Referentie type"
+    }
+  ],
+  "r3.gp_laboratory_result.related": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.related.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.gp_laboratory_result.result_type": [
+    {
+      "type": 0,
+      "value": "Restultaat type"
+    }
+  ],
+  "r3.gp_laboratory_result.specimen": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.gp_laboratory_result.status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.status.test_result_status": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.status.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag status"
+    }
+  ],
+  "r3.gp_laboratory_result.value": [
+    {
+      "type": 0,
+      "value": "Test uitslag"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest": [
+    {
+      "type": 0,
+      "value": "Document manifest"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.content.p_attachment": [
+    {
+      "type": 0,
+      "value": "Document"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.content.p_reference": [
+    {
+      "type": 0,
+      "value": "Gerelateerd aan"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.created": [
+    {
+      "type": 0,
+      "value": "Aangemaakt op"
+    }
+  ],
+  "r3.ihe_mhd_document_manifest.master_identifier": [
+    {
+      "type": 0,
+      "value": "Identifier"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference": [
+    {
+      "type": 0,
+      "value": "Document"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.author": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.class": [
+    {
+      "type": 0,
+      "value": "Categorie"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content": [
+    {
+      "type": 0,
+      "value": "Inhoud"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment": [
+    {
+      "type": 0,
+      "value": "Bijlage"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
+    {
+      "type": 0,
+      "value": "Inhoudstype"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.creation": [
+    {
+      "type": 0,
+      "value": "Gecreëerd"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.language": [
+    {
+      "type": 0,
+      "value": "Taal"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.title": [
+    {
+      "type": 0,
+      "value": "Titel"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.attachment.url": [
+    {
+      "type": 0,
+      "value": "Url"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.content.format": [
+    {
+      "type": 0,
+      "value": "Formaat"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context": [
+    {
+      "type": 0,
+      "value": "Klinische context"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.facility_type": [
+    {
+      "type": 0,
+      "value": "Faciliteit"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.practice_setting": [
+    {
+      "type": 0,
+      "value": "Aanvullende details"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.context.source_patient_info": [
+    {
+      "type": 0,
+      "value": "Patiënt informatie"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.indexed": [
+    {
+      "type": 0,
+      "value": "Aangemaakt op"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.master_identifier": [
+    {
+      "type": 0,
+      "value": "Identifier"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to": [
+    {
+      "type": 0,
+      "value": "Gerelateerd aan"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.relates_to.target": [
+    {
+      "type": 0,
+      "value": "Document"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.security_label": [
+    {
+      "type": 0,
+      "value": "Beveiligingslabel"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp"
+    }
+  ],
+  "r3.ihe_mhd_minimal_document_reference.type": [
+    {
+      "type": 0,
+      "value": "Type"
+    }
+  ],
+  "r3.nl_core_address.address_type": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
+  "r3.nl_core_address.line": [
+    {
+      "type": 0,
+      "value": "Adres informatie"
+    }
+  ],
+  "r3.nl_core_address.line.additional_locator": [
+    {
+      "type": 0,
+      "value": "Aanduiding bij huisnummer"
+    }
+  ],
+  "r3.nl_core_address.line.building_numbersuffix": [
+    {
+      "type": 0,
+      "value": "Huisnummertoevoeging"
+    }
+  ],
+  "r3.nl_core_address.line.house_number": [
+    {
+      "type": 0,
+      "value": "Huisnummer"
+    }
+  ],
+  "r3.nl_core_address.line.street_name": [
+    {
+      "type": 0,
+      "value": "Straatnaam"
+    }
+  ],
+  "r3.nl_core_address.line.unit_id": [
+    {
+      "type": 0,
+      "value": "Extra informatie"
+    }
+  ],
+  "r3.nl_core_address.official": [
+    {
+      "type": 0,
+      "value": "Markeer een adres als een 'officieel geregistreerd adres."
+    }
+  ],
+  "r3.nl_core_address.type": [
+    {
+      "type": 0,
+      "value": "Adres type"
+    }
+  ],
+  "r3.nl_core_address.use": [
+    {
+      "type": 0,
+      "value": "Adres soort"
+    }
+  ],
+  "r3.nl_core_episodeofcare": [
+    {
+      "type": 0,
+      "value": "Episode"
+    }
+  ],
+  "r3.nl_core_episodeofcare.type": [
+    {
+      "type": 0,
+      "value": "Concern label"
+    }
+  ],
+  "r3.nl_core_humanname": [
+    {
+      "type": 0,
+      "value": "Naam"
+    }
+  ],
+  "r3.nl_core_humanname.given.birth_name": [
+    {
+      "type": 0,
+      "value": "Voornaam"
+    }
+  ],
+  "r3.nl_core_humanname.given.call_name": [
+    {
+      "type": 0,
+      "value": "Roepnaam"
+    }
+  ],
+  "r3.nl_core_humanname.given.initials": [
+    {
+      "type": 0,
+      "value": "Initialen"
+    }
+  ],
+  "r3.nl_core_humanname.text": [
+    {
+      "type": 0,
+      "value": "Naam"
+    }
+  ],
+  "r3.nl_core_observation": [
+    {
+      "type": 0,
+      "value": "Observatie"
+    }
+  ],
+  "r3.nl_core_organization.type": [
+    {
+      "type": 0,
+      "value": "Organisatie type"
+    }
+  ],
+  "r3.nl_core_patient.communication.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency": [
+    {
+      "type": 0,
+      "value": "Taalvaardigheid"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.level": [
+    {
+      "type": 0,
+      "value": "Niveau"
+    }
+  ],
+  "r3.nl_core_patient.communication.language_proficiency.type": [
+    {
+      "type": 0,
+      "value": "Type"
+    }
+  ],
+  "r3.nl_core_patient.contact.relationship.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r3.nl_core_patient.legal_status": [
+    {
+      "type": 0,
+      "value": "Juridische status"
+    }
+  ],
+  "r3.nl_core_patient.life_stance": [
+    {
+      "type": 0,
+      "value": "Levensovertuiging"
+    }
+  ],
+  "r3.nl_core_patient.nationality.code": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
+    }
+  ],
+  "r3.nl_core_practitionerrole": [
+    {
+      "type": 0,
+      "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.zib_administration_agreement.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r3.zib_administration_agreement.performer.actor": [
+    {
+      "type": 0,
+      "value": "Specialist"
+    }
+  ],
+  "r3.zib_administration_agreement.performer.on_behalf_of": [
+    {
+      "type": 0,
+      "value": "Op verzoek van"
+    }
+  ],
+  "r3.zib_administration_agreement.period_of_use": [
+    {
+      "type": 0,
+      "value": "Gebruiksperiode"
+    }
+  ],
+  "r3.zib_advance_directive.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.zib_advance_directive.source.identifier": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring document"
+    }
+  ],
+  "r3.zib_advance_directive.source.reference": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring document"
+    }
+  ],
+  "r3.zib_alcohol_use.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
+  "r3.zib_alcohol_use.subject": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "r3.zib_alert": [
+    {
+      "type": 0,
+      "value": "Alert"
+    }
+  ],
+  "r3.zib_alert.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatie"
+    }
+  ],
+  "r3.zib_allergy_intolerance.reaction.severity.severity_codelist": [
+    {
+      "type": 0,
+      "value": "Ernst"
+    }
+  ],
+  "r3.zib_blood_pressure.component.diastolic_bp.value_quantity": [
+    {
+      "type": 0,
+      "value": "Diastolische bloeddruk"
+    }
+  ],
+  "r3.zib_body_height.code": [
+    {
+      "type": 0,
+      "value": "Positie"
+    }
+  ],
+  "r3.zib_body_weight.clothing": [
+    {
+      "type": 0,
+      "value": "Kleding"
+    }
+  ],
+  "r3.zib_encounter.hospitalization": [
+    {
+      "type": 0,
+      "value": "Opname"
+    }
+  ],
+  "r3.zib_encounter.participant": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.context": [
+    {
+      "type": 0,
+      "value": "Verband"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.general_test_information": [
+    {
+      "type": 0,
+      "value": "Algemene testinformatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.interpretation": [
+    {
+      "type": 0,
+      "value": "Interpretatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.lab_test": [
+    {
+      "type": 0,
+      "value": "Laboratoriumtest"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.performer": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.reference_range.type": [
+    {
+      "type": 0,
+      "value": "Referentie type"
+    }
+  ],
+  "r3.zib_laboratory_test_result_observation.related.target": [
+    {
+      "type": 0,
+      "value": "Gerelateerde uitslag"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.collection": [
+    {
+      "type": 0,
+      "value": "Afname"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen.parent": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection": [
+    {
+      "type": 0,
+      "value": "Afname"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.collection.body_site.value": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "r3.zib_laboratory_test_result_specimen_isolate.parent": [
+    {
+      "type": 0,
+      "value": "Monster"
+    }
+  ],
+  "r3.zib_laboratory_test_result_substance": [
+    {
+      "type": 0,
+      "value": "Monstermateriaal"
+    }
+  ],
+  "r3.zib_living_situation.effective": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_medical_device.body_site.coding": [
+    {
+      "type": 0,
+      "value": "Codes"
+    }
+  ],
+  "r3.zib_medical_device.body_site.laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_medical_device.body_site.text": [
+    {
+      "type": 0,
+      "value": "Tekst"
+    }
+  ],
+  "r3.zib_medical_device.indication_problem": [
+    {
+      "type": 0,
+      "value": "Indicatieprobleem"
+    }
+  ],
+  "r3.zib_medical_device_product.expiration_date": [
+    {
+      "type": 0,
+      "value": "Expiratie datum"
+    }
+  ],
+  "r3.zib_medical_device_product.lot_number": [
+    {
+      "type": 0,
+      "value": "Product ID (batch or lot number (10) part of the UDI)"
+    }
+  ],
+  "r3.zib_medical_device_product.udi": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r3.zib_medical_device_product.udi.carrier_hrf": [
+    {
+      "type": 0,
+      "value": "Product ID"
+    }
+  ],
+  "r3.zib_medical_device_product.udi.device_identifier": [
+    {
+      "type": 0,
+      "value": "Product ID (application identifier (AI) (01) part of the udi)"
+    }
+  ],
+  "r3.zib_medical_device_request": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel aanvraag"
+    }
+  ],
+  "r3.zib_medical_device_request.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_medical_device_request.requester": [
+    {
+      "type": 0,
+      "value": "Aangevraagd door"
+    }
+  ],
+  "r3.zib_medication_use.effective_period.duration": [
+    {
+      "type": 0,
+      "value": "Tijdsduur"
+    }
+  ],
+  "r3.zib_medication_use.information_source": [
+    {
+      "type": 0,
+      "value": "Informatiebron"
+    }
+  ],
+  "r3.zib_medication_use.reason_code": [
+    {
+      "type": 0,
+      "value": "Reden gebruik"
+    }
+  ],
+  "r3.zib_medication_use.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp"
+    }
+  ],
+  "r3.zib_nutrition_advice.date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet": [
+    {
+      "type": 0,
+      "value": "Dieet"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.fluid_consistency_type": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture": [
+    {
+      "type": 0,
+      "value": "Consistentie"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture.food_type": [
+    {
+      "type": 0,
+      "value": "Voedsel type"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.texture.modifier": [
+    {
+      "type": 0,
+      "value": "Aangepast"
+    }
+  ],
+  "r3.zib_nutrition_advice.oral_diet.type": [
+    {
+      "type": 0,
+      "value": "Dieet type"
+    }
+  ],
+  "r3.zib_nutrition_advice.orderer": [
+    {
+      "type": 0,
+      "value": "Auteur"
+    }
+  ],
+  "r3.zib_payer.beneficiary": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_problem.asserter": [
+    {
+      "type": 0,
+      "value": "Bron"
+    }
+  ],
+  "r3.zib_procedure.based_on": [
+    {
+      "type": 0,
+      "value": "Verrichting"
+    }
+  ],
+  "r3.zib_procedure.body_site.procedure_laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_procedure.focal_device": [
+    {
+      "type": 0,
+      "value": "Medisch hulpmiddel"
+    }
+  ],
+  "r3.zib_procedure.location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r3.zib_procedure.performed_period": [
+    {
+      "type": 0,
+      "value": "Verrichting datum"
+    }
+  ],
+  "r3.zib_procedure.performer.actor": [
+    {
+      "type": 0,
+      "value": "Uitgevoerd door"
+    }
+  ],
+  "r3.zib_procedure.procedure_method": [
+    {
+      "type": 0,
+      "value": "Verrichting methode"
+    }
+  ],
+  "r3.zib_procedure.report": [
+    {
+      "type": 0,
+      "value": "Resultaat"
+    }
+  ],
+  "r3.zib_procedure.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_procedure_request.body_site.procedure_laterality": [
+    {
+      "type": 0,
+      "value": "Zijde"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_period": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
+  "r3.zib_procedure_request.occurrence_timing.repeat": [
+    {
+      "type": 0,
+      "value": "Herhaling"
+    }
+  ],
+  "r3.zib_product.code": [
+    {
+      "type": 0,
+      "value": "Product"
+    }
+  ],
+  "r3.zib_treatment_directive.additional_sources": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
+  "r3.zib_treatment_directive.additional_sources.value": [
+    {
+      "type": 0,
+      "value": "Aanvullende bronnen"
+    }
+  ],
+  "r3.zib_treatment_directive.comment": [
+    {
+      "type": 0,
+      "value": "Toelichting"
+    }
+  ],
+  "r3.zib_treatment_directive.consenting_party": [
+    {
+      "type": 0,
+      "value": "Toestemmende partij"
+    }
+  ],
+  "r3.zib_treatment_directive.date_time": [
+    {
+      "type": 0,
+      "value": "Datum"
+    }
+  ],
+  "r3.zib_treatment_directive.except_restrictions": [
+    {
+      "type": 0,
+      "value": "Beperkingen"
+    }
+  ],
+  "r3.zib_treatment_directive.patient": [
+    {
+      "type": 0,
+      "value": "Patiënt"
+    }
+  ],
+  "r3.zib_treatment_directive.source_attachment": [
+    {
+      "type": 0,
+      "value": "Bron bijlage"
+    }
+  ],
+  "r3.zib_treatment_directive.source_identifier": [
+    {
+      "type": 0,
+      "value": "Bron identificatie"
+    }
+  ],
+  "r3.zib_treatment_directive.source_reference": [
+    {
+      "type": 0,
+      "value": "Bron referentie"
+    }
+  ],
+  "r3.zib_treatment_directive.verification": [
+    {
+      "type": 0,
+      "value": "Verificatie"
+    }
+  ],
+  "r3.zib_treatment_directive.verified": [
+    {
+      "type": 0,
+      "value": "Bevestigd"
+    }
+  ],
+  "r3.zib_vaccination.report_origin": [
+    {
+      "type": 0,
+      "value": "Informatiebron"
+    }
+  ],
+  "r3.zib_vaccination_recommendation": [
+    {
+      "type": 0,
+      "value": "Vaccinatieadvies"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.recommendation": [
+    {
+      "type": 0,
+      "value": "Vaccinatieadvies"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.recommendation.supporting_immunization": [
+    {
+      "type": 0,
+      "value": "Vaccinatie"
+    }
+  ],
+  "r3.zib_vaccination_recommendation.subject": [
+    {
+      "type": 0,
+      "value": "Onderwerp (Patiënt)"
+    }
+  ]
+}

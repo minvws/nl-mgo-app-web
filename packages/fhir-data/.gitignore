@@ -1,0 +1,4 @@
+fhir-definitions/
+
+# Dont include the generated build files
+dist/

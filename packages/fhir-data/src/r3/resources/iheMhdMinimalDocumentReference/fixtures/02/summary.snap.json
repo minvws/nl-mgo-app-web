@@ -1,0 +1,62 @@
+{
+    "label": "Onbekend",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aangemaakt op",
+                    "type": "SINGLE_VALUE",
+                    "display": "23 december 2005 om 23:43:41 GMT+1"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": "Patient/xcda"
+                },
+                {
+                    "label": "Type",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Outpatient Note (34108-1 in code systeem http://loinc.org)"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Bijlage",
+            "children": [
+                {
+                    "type": "DOWNLOAD_LINK",
+                    "label": "Onbekend",
+                    "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510"
+                }
+            ]
+        },
+        {
+            "label": "Opgesteld door",
+            "children": [
+                {
+                    "label": "Specialist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle documentgegevens",
+                    "reference": "DocumentReference/pdfa-documentreference-01"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,128 @@
+{
+    "id": "zib-MedicationAgreement-01",
+    "referenceId": "MedicationRequest/zib-MedicationAgreement-01",
+    "resourceType": "MedicationRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreement",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.16076005.1",
+            "value": "#MB_01h#MA_01",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bed45b9-8fdf-11ec-1339-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "periodOfUse": {
+        "_ext": true,
+        "_type": "period",
+        "start": "2020-06-08",
+        "end": null
+    },
+    "usageDuration": null,
+    "additionalInformation": null,
+    "stopType": null,
+    "medicationReference": {
+        "_type": "reference",
+        "reference": "Medication/zib-Product-03",
+        "display": "Metoclopramide zetpil 20mg"
+    },
+    "authoredOn": {
+        "_type": "dateTime",
+        "value": "2020-06-08T10:54:23+02:00"
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": null,
+        "display": null
+    },
+    "reasonCode": null,
+    "reasonReference": null,
+    "note": null,
+    "dossageInstruction": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+            "sequence": {
+                "_type": "integer",
+                "value": 1
+            },
+            "text": null,
+            "additionalInstruction": null,
+            "timing": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+                "repeat": {
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": {
+                        "_type": "integer",
+                        "value": 1
+                    },
+                    "frequencyMax": null,
+                    "period": {
+                        "_type": "decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "code",
+                        "value": "d"
+                    },
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
+            },
+            "asNeededCodeableConcept": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "1137",
+                        "display": "zo nodig",
+                        "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                    }
+                ]
+            },
+            "route": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "12",
+                        "display": "rectaal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            "doseQuantity": {
+                "_type": "quantity",
+                "value": 1,
+                "comparator": null,
+                "unit": "stuk",
+                "system": "urn:oid:2.16.840.1.113883.2.4.4.1.900.2",
+                "code": "245"
+            },
+            "maxDosePerPeriod": null
+        }
+    ],
+    "repeatPeriodCyclicalSchedule": null,
+    "medicationTreatment": {
+        "_ext": true,
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    }
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="nl" data-mode="%MODE%">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="/rijkshuisstijl/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/main.css" />
+        <link rel="stylesheet" href="/loading-spinner/loading-spinner.css" />
+        <title>Mijn Gezondheidsoverzicht</title>
+    </head>
+
+    <body class="bg-[#FAFAFA] dark:bg-[#050505] dark:text-white">
+        <div id="root">
+            <div class="flex min-h-screen flex-col px-4 md:px-8">
+                <img
+                    src="/rijkshuisstijl/logo.svg"
+                    alt="Logo Rijksoverheid"
+                    class="mx-auto block h-[75px] sm:h-[100px]"
+                />
+                <main class="flex-grow">
+                    <noscript>
+                        <div
+                            class="mx-auto box-content w-[calc(100%-2rem)] max-w-md px-[1rem] pt-12 md:w-[calc(100%-3rem)] md:px-[1.5rem] md:pt-24"
+                        >
+                            <picture class="mx-auto flex w-3/4 md:mb-2 md:w-3/5">
+                                <source
+                                    srcset="/images/woman-on-couch-exclamation-dark.svg"
+                                    media="(prefers-color-scheme: dark)"
+                                />
+                                <img
+                                    src="/images/woman-on-couch-exclamation.svg"
+                                    class="w-full max-w-full object-contain"
+                                    alt=""
+                                />
+                            </picture>
+                            <h1
+                                class="mt-5 font-sans text-2xl font-bold leading-tight text-black md:mt-16 md:text-3xl lg:text-4xl dark:text-white"
+                            >
+                                Mijn Gezond&shy;heids&shy;overzicht gebruikt JavaScript
+                            </h1>
+                            <p
+                                class="md:text-md mt-4 font-sans text-sm font-normal text-black md:mt-6 dark:text-white"
+                            >
+                                Het lijkt erop dat JavaScript in je browser is uitschakeld. Schakel
+                                JavaScript in via de instellingen van je browser. Probeer het daarna
+                                opnieuw.
+                            </p>
+                        </div>
+                    </noscript>
+                    <div
+                        id="js-loading-screen"
+                        class="mb-16 mt-4 hidden content-end text-center lg:mb-32"
+                    >
+                        <h1 class="text-center text-4xl font-bold">
+                            Mijn Gezond&shy;heids&shy;overzicht
+                        </h1>
+                        <svg
+                            role="img"
+                            aria-labelledby="loading-label"
+                            class="mx-auto mb-4"
+                            viewBox="0 0 8 8"
+                            width="2rem"
+                            height="2rem"
+                            fill="none"
+                            stroke-width="1"
+                        >
+                            <circle
+                                class="stroke-gray-100 dark:stroke-gray-800"
+                                cx="4"
+                                cy="4"
+                                r="3.5"
+                            />
+                            <circle
+                                class="loading-spinner-fg stroke-sky-blue-600"
+                                cx="4"
+                                cy="4"
+                                r="3.5"
+                                transform="rotate(-90 4 4)"
+                            />
+                        </svg>
+                        <p id="loading-label" class="text-xl">Aan het laden</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="/config.js"></script>
+        <script src="/loading-spinner/loading-spinner.js"></script>
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
+</html>

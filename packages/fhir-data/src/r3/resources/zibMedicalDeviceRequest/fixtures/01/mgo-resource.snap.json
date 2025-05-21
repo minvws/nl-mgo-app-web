@@ -1,0 +1,48 @@
+{
+    "id": "zib-medicaldevicerequest-01",
+    "referenceId": "DeviceRequest/zib-medicaldevicerequest-01",
+    "resourceType": "DeviceRequest",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1bbb2101-8fdf-11ec-1269-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "occurrencePeriod": {
+        "_type": "period",
+        "start": "2012-03-13",
+        "end": null
+    },
+    "requester": {
+        "_type": "reference",
+        "reference": "Practitioner/nl-core-practitioner-02",
+        "display": "Vaste Huisarts 1"
+    },
+    "codeCodeableConcept": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "405815000",
+                "display": "Procedure device",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "status": {
+        "orderStatus": null
+    },
+    "performerType": {
+        "healthProfessionalRole": null
+    }
+}

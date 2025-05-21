@@ -1,0 +1,144 @@
+{
+    "id": "zib-administrationagreement-01",
+    "referenceId": "MedicationDispense/zib-administrationagreement-01",
+    "resourceType": "MedicationDispense",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.422037009.1",
+            "value": "1546339-f6753t65r",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "189ef867-8fdf-11ec-6427-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "performer": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Organization/nl-core-organization-06",
+                "display": "Apotheek De Gulle Gaper"
+            },
+            "onBehalfOf": null
+        }
+    ],
+    "authoredOn": {
+        "_ext": true,
+        "_type": "dateTime",
+        "value": "2020-06-08T10:54:12+02:00"
+    },
+    "agreementReason": null,
+    "periodOfUse": {
+        "_ext": true,
+        "_type": "period",
+        "start": "2020-06-08",
+        "end": null
+    },
+    "usageDuration": null,
+    "additionalInformation": {
+        "_ext": true,
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "1",
+                "display": "Niet leverbaar",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
+            }
+        ]
+    },
+    "stopType": null,
+    "status": null,
+    "medicationReference": {
+        "_type": "reference",
+        "reference": "Medication/zib-Product-01",
+        "display": "PRIMPERAN ZETPIL 20MG"
+    },
+    "authorizingPrescription": [
+        {
+            "_type": "reference",
+            "reference": null,
+            "display": "relatie naar medicatieafspraak: #MB_01h#MA_01 || 2.16.840.1.113883.2.4.3.11.999.77.16076005.1"
+        }
+    ],
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Tekstuele toelichting bij deze toedieningsafspraak",
+            "author": null
+        }
+    ],
+    "dossageInstruction": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse",
+            "sequence": {
+                "_type": "integer",
+                "value": 1
+            },
+            "text": {
+                "_type": "string",
+                "value": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+            },
+            "additionalInstruction": null,
+            "timing": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule",
+                "repeat": {
+                    "duration": null,
+                    "durationUnit": null,
+                    "frequency": {
+                        "_type": "integer",
+                        "value": 1
+                    },
+                    "frequencyMax": null,
+                    "period": {
+                        "_type": "decimal",
+                        "value": 1
+                    },
+                    "periodUnit": {
+                        "_type": "code",
+                        "value": "d"
+                    },
+                    "dayOfWeek": null,
+                    "timeOfDay": null,
+                    "when": null
+                }
+            },
+            "asNeededCodeableConcept": null,
+            "route": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "12",
+                        "display": "rectaal",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            "maxDosePerPeriod": null
+        }
+    ],
+    "repeatPeriodCyclicalSchedule": null,
+    "medicationTreatment": {
+        "_ext": true,
+        "_type": "identifier",
+        "use": null,
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.77.1.1",
+        "value": "#MB_01h",
+        "type": null
+    }
+}

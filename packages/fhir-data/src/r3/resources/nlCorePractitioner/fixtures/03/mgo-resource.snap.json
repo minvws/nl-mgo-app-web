@@ -1,0 +1,58 @@
+{
+    "id": "nl-core-practitioner-03",
+    "referenceId": "Practitioner/nl-core-practitioner-03",
+    "resourceType": "Practitioner",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner",
+    "fhirVersion": "R3",
+    "identifier": {
+        "uzi": null,
+        "agb": null,
+        "big": null,
+        "other": [
+            {
+                "_type": "identifier",
+                "use": null,
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+                "value": "16efa4a3-8fdf-11ec-1655-020000000000",
+                "type": null
+            }
+        ]
+    },
+    "telecom": null,
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL1"
+            },
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "de"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Wit"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": [
+                    {
+                        "_type": "string",
+                        "value": "G.Z.M."
+                    }
+                ],
+                "callName": null
+            },
+            "text": null
+        }
+    ],
+    "address": null
+}

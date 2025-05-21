@@ -1,0 +1,126 @@
+{
+    "resourceType": "Practitioner",
+    "id": "nl-core-practitioner-01",
+    "meta": {
+        "versionId": "5",
+        "lastUpdated": "2016-12-08T14:05:42.283+00:00",
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner"]
+    },
+    "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tbody><tr><th style=\"text-align: center;\" colspan=\"2\">Practitioner (since April, 2015)</th></tr><tr><th>ID</th><th>Name</th></tr><tr><td> 01069857 (AGB) <br /> 129854656 (UZI) <br /> 12345678912 (BIG) </td><td>Huisarts H. de Vries</td></tr><tr><th>Contact</th><th>Address</th></tr><tr><td> work phone: <a href=\"tel:+31612345990\">0612345990</a><br /> work email: devries@work.com </td><td> Straatweg 12 bII <br /> 1200AA <br /> Amsterdam </td></tr></tbody></table></div>"
+    },
+    "identifier": [
+        { "system": "http://fhir.nl/fhir/NamingSystem/uzi-nr-pers", "value": "129854656" },
+        { "system": "http://fhir.nl/fhir/NamingSystem/agb-z", "value": "01069857" },
+        { "system": "http://fhir.nl/fhir/NamingSystem/big", "value": "12345678912" },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "16d6f97b-8fdf-11ec-2007-020000000000"
+        }
+    ],
+    "name": [
+        {
+            "family": "de Vries",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Vries"
+                    }
+                ]
+            },
+            "given": ["Henk"],
+            "text": "Henk de Vries"
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "0612345990",
+            "use": "work"
+        },
+        { "system": "email", "value": "devries@work.com", "use": "work" }
+    ],
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "HP",
+                                "display": "Officieel adres"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                    "valueBoolean": true
+                }
+            ],
+            "use": "home",
+            "line": ["Straatweg 12bII"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Straatweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "12"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+                            "valueString": "bII"
+                        }
+                    ]
+                }
+            ],
+            "city": "Weesp",
+            "district": "Amsterdam",
+            "postalCode": "1012AB",
+            "country": "NLD",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "period": { "start": "2015-04" }
+        }
+    ]
+}
