@@ -131,6 +131,24 @@
       "value": "Zorgverlener organisatie type"
     }
   ],
+  "r4.nl_core_pharmaceutical_product.batch.lot_number": [
+    {
+      "type": 0,
+      "value": "Batch / Lotnummer"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product.code.coding": [
+    {
+      "type": 0,
+      "value": "Product code"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product.ingredient.item_reference": [
+    {
+      "type": 0,
+      "value": "Ingrediënt"
+    }
+  ],
   "r4.nl_core_vaccination_event.dose_quantity": [
     {
       "type": 0,

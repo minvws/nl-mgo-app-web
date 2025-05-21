@@ -1,15 +1,12 @@
 {
-    "label": "Methotrexaat injvlst 25mg/ml 0,6 ml",
+    "label": "Farmaceutisch product",
     "children": [
         {
-            "label": "Farmaceutisch product",
             "children": [
                 {
-                    "label": "Product code",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Methotrexaat injvlst 25mg/ml 0,6 ml"
-                    ]
+                    "label": "Batch / Lotnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Farmaceutische vorm",
@@ -17,24 +14,31 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Serienummer",
+                    "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Batch lotnummer",
+                    "label": "Ingredient",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Product code",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Methotrexaat injvlst 25mg/ml 0,6 ml (89907 in code systeem urn:oid:2.16.840.1.113883.2.4.4.1)"
+                    ]
                 },
                 {
-                    "label": "Batch vervaldatum",
+                    "label": "Product naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Omschrijving",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "Methotrexaat injvlst 25mg/ml 0,6 ml"
                 }
             ]
         }
