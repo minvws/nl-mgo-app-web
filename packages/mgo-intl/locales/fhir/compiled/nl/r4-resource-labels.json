@@ -71,6 +71,24 @@
       "value": "Telefoonnummer"
     }
   ],
+  "r4.nl_core_contact_person": [
+    {
+      "type": 0,
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.nl_core_contact_person.relationship.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r4.nl_core_contact_person.relationship.role": [
+    {
+      "type": 0,
+      "value": "Rol"
+    }
+  ],
   "r4.nl_core_health_professional_practitioner": [
     {
       "type": 0,
@@ -243,6 +261,12 @@
     {
       "type": 0,
       "value": "Protocol toegepast"
+    }
+  ],
+  "r4.nl_core_vaccination_event.reason_code": [
+    {
+      "type": 0,
+      "value": "Vaccinatie reden"
     }
   ],
   "r4.nl_core_vaccination_event.route": [

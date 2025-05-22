@@ -21,7 +21,7 @@
             "label": "Gegeven door",
             "children": [
                 {
-                    "label": "Zorgverlener",
+                    "label": "Toediener",
                     "type": "SINGLE_VALUE",
                     "display": "Healthcare professional (role)"
                 },

@@ -6,7 +6,6 @@ const nictizIdValueXMap = {
     'BodySite-Qualifier': 'codeableConcept',
     'BodySite-Morphology': 'codeableConcept',
     'zib-NutritionAdvice-Explanation': 'string',
-    'ext-Vaccination.PharmaceuticalProduct': 'reference',
     'ext-PharmaceuticalProduct.Description': 'string',
     Comment: 'string',
 } satisfies Record<string, MgoTypeId>;

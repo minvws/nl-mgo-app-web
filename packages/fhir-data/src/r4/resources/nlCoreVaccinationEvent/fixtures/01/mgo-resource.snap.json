@@ -4,12 +4,6 @@
     "resourceType": "Immunization",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event",
     "fhirVersion": "R4",
-    "pharmaceuticalProduct": null,
-    "identifier": null,
-    "status": {
-        "_type": "string",
-        "value": "completed"
-    },
     "vaccineCode": {
         "_type": "codeableConcept",
         "text": null,
@@ -21,26 +15,11 @@
             }
         ]
     },
-    "patient": {
-        "_type": "reference",
-        "reference": "Patient/nl-core-Patient-01",
-        "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
-    },
     "occurrenceDateTime": {
         "_type": "dateTime",
         "value": "2012-06-03"
     },
-    "location": null,
-    "site": null,
-    "route": null,
     "doseQuantity": null,
-    "performer": [
-        {
-            "_type": "reference",
-            "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
-            "display": "Healthcare professional (role)"
-        }
-    ],
     "note": [
         {
             "_type": "annotation",
@@ -49,7 +28,33 @@
             "author": null
         }
     ],
-    "vaccinationIndication": null,
-    "vaccinationMotive": null,
+    "pharmaceuticalProduct": null,
+    "identifier": null,
+    "status": {
+        "_type": "string",
+        "value": "completed"
+    },
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-Patient-01",
+        "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+    },
+    "location": null,
+    "route": null,
+    "performer": [
+        {
+            "administrator": {
+                "actor": {
+                    "_type": "reference",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
+                    "display": "Healthcare professional (role)"
+                }
+            }
+        }
+    ],
+    "reasonCode": {
+        "vaccinationIndication": null,
+        "vaccinationMotive": null
+    },
     "protocolApplied": null
 }

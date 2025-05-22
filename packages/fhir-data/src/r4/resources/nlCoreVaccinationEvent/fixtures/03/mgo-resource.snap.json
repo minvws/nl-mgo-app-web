@@ -63,17 +63,7 @@
             }
         ]
     },
-    "performer": [
-        {
-            "administrator": {
-                "actor": {
-                    "_type": "reference",
-                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
-                    "display": "Healthcare professional (role)"
-                }
-            }
-        }
-    ],
+    "performer": null,
     "reasonCode": {
         "vaccinationIndication": [
             {

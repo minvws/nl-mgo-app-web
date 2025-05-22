@@ -6,7 +6,7 @@
                 {
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": "1 milliliter"
                 },
                 {
                     "label": "Identificatienummer",
@@ -15,8 +15,9 @@
                 },
                 {
                     "label": "Inenting",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "REFERENCE_VALUE",
+                    "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
+                    "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01"
                 },
                 {
                     "label": "Patient",
@@ -28,13 +29,8 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
+                        "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
                     ]
-                },
-                {
-                    "label": "Protocol toegepast",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
                 },
                 {
                     "label": "Status",
@@ -42,15 +38,11 @@
                     "display": "completed"
                 },
                 {
-                    "label": "Toediener",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Healthcare professional (role)",
-                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
-                },
-                {
                     "label": "Toedieningsweg",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "INTRAMUSCULAIR (2 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)"
+                    ]
                 },
                 {
                     "label": "Toelichting",
@@ -65,7 +57,21 @@
                     "display": "3 juni 2012"
                 },
                 {
+                    "label": "Vaccinatie pathogeen",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "hepatitis (128241005 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
+                },
+                {
                     "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
@@ -76,13 +82,21 @@
             "children": [
                 {
                     "label": "Vaccinatie aanleiding",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie) (159731000146104 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
                 },
                 {
                     "label": "Vaccinatie indicatie",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            "Kwetsbare oudere (bevinding) (404904002 in code systeem http://snomed.info/sct)"
+                        ]
+                    ]
                 }
             ]
         }
