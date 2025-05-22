@@ -259,6 +259,12 @@
       "value": "Onbekend"
     }
   ],
+  "fhir.x.address": [
+    {
+      "type": 0,
+      "value": "Adresgegevens"
+    }
+  ],
   "fhir.x.amount": [
     {
       "type": 0,
@@ -335,6 +341,12 @@
     {
       "type": 0,
       "value": "Episode"
+    }
+  ],
+  "fhir.x.gender": [
+    {
+      "type": 0,
+      "value": "Geslacht"
     }
   ],
   "fhir.x.health_care_provider": [

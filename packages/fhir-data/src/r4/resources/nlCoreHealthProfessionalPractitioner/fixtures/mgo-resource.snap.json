@@ -135,8 +135,5 @@
             }
         }
     ],
-    "gender": null,
-    "birthDate": null,
-    "qualification": null,
-    "communication": null
+    "gender": null
 }

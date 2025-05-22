@@ -71,6 +71,12 @@
       "value": "Telefoonnummer"
     }
   ],
+  "r4.nl_core_health_professional_practitioner": [
+    {
+      "type": 0,
+      "value": "Zorgprofessional"
+    }
+  ],
   "r4.nl_core_health_professional_practitioner_role": [
     {
       "type": 0,
@@ -155,6 +161,12 @@
       "value": "Zorgverlener organisatie type"
     }
   ],
+  "r4.nl_core_patient.contact.relationship.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
   "r4.nl_core_patient.deceased": [
     {
       "type": 0,
@@ -177,6 +189,12 @@
     {
       "type": 0,
       "value": "Bsn"
+    }
+  ],
+  "r4.nl_core_patient.nationality": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
     }
   ],
   "r4.nl_core_pharmaceutical_product.batch.lot_number": [
