@@ -13,12 +13,7 @@ test('01: mgo-resource', async () => {
 
 test('01: ui-schema', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
-    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema.snap.json'
     );
@@ -31,12 +26,7 @@ test('02: mgo-resource', async () => {
 
 test('02: ui-schemna', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
-    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
     );
@@ -49,12 +39,7 @@ test('03: mgo-resource', async () => {
 
 test('03: ui-schema', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input03 as Medication);
-    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(
-        output,
-        testUiSchemaContext({
-            ignoreMissingTranslations: true,
-        })
-    );
+    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/03/ui-schema.snap.json'
     );
