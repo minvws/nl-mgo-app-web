@@ -4,8 +4,6 @@
     "resourceType": "Location",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider",
     "fhirVersion": "R4",
-    "identifier": null,
-    "name": null,
     "telecom": {
         "telephoneNumbers": [
             {
@@ -37,6 +35,10 @@
                 }
             }
         ]
+    },
+    "name": {
+        "_type": "string",
+        "value": "Erasmus Ziekenhuis"
     },
     "address": {
         "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",

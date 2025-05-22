@@ -8,6 +8,7 @@
         "status": "extensions",
         "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><caption>Locatie. </caption><tbody><tr><th>Naam</th><td /></tr><tr><th>Contactgegevens</th><td><a href=\"tel:+31107040704\">+31107040704</a> (Tel Werk)<br /><a href=\"mailto:info@erasmus.nl\">info@erasmus.nl</a> (E-mail Werk)<br /></td></tr><tr><th>Adres</th><td>s-Gravendijkwal 230, 3015 CE Rotterdam (Werk)</td></tr></tbody></table></div>"
     },
+    "name": "Erasmus Ziekenhuis",
     "telecom": [
         { "system": "phone", "value": "+31107040704", "use": "work" },
         { "system": "email", "value": "info@erasmus.nl", "use": "work" }

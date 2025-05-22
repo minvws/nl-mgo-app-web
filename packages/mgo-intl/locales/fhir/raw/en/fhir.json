@@ -52,6 +52,7 @@
     "fhir.x.device": "",
     "fhir.x.effective_date_time": "",
     "fhir.x.effective_period": "",
+    "fhir.x.email_addresses": "",
     "fhir.x.episode_of_care": "",
     "fhir.x.health_care_provider": "",
     "fhir.x.health_professional": "",
@@ -79,6 +80,7 @@
     "fhir.x.subject": "",
     "fhir.x.target": "",
     "fhir.x.telecom": "",
+    "fhir.x.telephone_numbers": "",
     "fhir.x.title": "",
     "fhir.x.type": ""
 }

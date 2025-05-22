@@ -325,6 +325,12 @@
       "value": "Periode"
     }
   ],
+  "fhir.x.email_addresses": [
+    {
+      "type": 0,
+      "value": "E-mailadres"
+    }
+  ],
   "fhir.x.episode_of_care": [
     {
       "type": 0,
@@ -485,6 +491,12 @@
     {
       "type": 0,
       "value": "Contactgegevens"
+    }
+  ],
+  "fhir.x.telephone_numbers": [
+    {
+      "type": 0,
+      "value": "Telefoonnummer"
     }
   ],
   "fhir.x.title": [

@@ -52,6 +52,7 @@
     "fhir.x.device": "Apparaat",
     "fhir.x.effective_date_time": "Datum",
     "fhir.x.effective_period": "Periode",
+    "fhir.x.email_addresses": "E-mailadres",
     "fhir.x.episode_of_care": "Episode",
     "fhir.x.health_care_provider": "Zorgaanbieder",
     "fhir.x.health_professional": "Zorgverlener",
@@ -79,6 +80,7 @@
     "fhir.x.subject": "Onderwerp",
     "fhir.x.target": "Gerelateerd object",
     "fhir.x.telecom": "Contactgegevens",
+    "fhir.x.telephone_numbers": "Telefoonnummer",
     "fhir.x.title": "Titel",
     "fhir.x.type": "Type"
 }
