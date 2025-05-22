@@ -1,0 +1,18 @@
+{
+    "id": "nl-core-HealthcareProvider-Organization-01",
+    "referenceId": "Organization/nl-core-HealthcareProvider-Organization-01",
+    "resourceType": "Organization",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization",
+    "fhirVersion": "R4",
+    "identifier": null,
+    "type": {
+        "departmentSpecialty": null,
+        "organizationType": null
+    },
+    "name": null,
+    "address": null,
+    "telecom": {
+        "telephoneNumbers": [],
+        "emailAddresses": []
+    }
+}

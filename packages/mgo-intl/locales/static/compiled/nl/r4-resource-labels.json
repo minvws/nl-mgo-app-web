@@ -518,13 +518,49 @@
   "r4.nl_core_healthcare_provider": [
     {
       "type": 0,
-      "value": "Nl-core-healthcare provider"
+      "value": "Organisatie locatie"
+    }
+  ],
+  "r4.nl_core_healthcare_provider.name": [
+    {
+      "type": 0,
+      "value": "Locatie naam"
+    }
+  ],
+  "r4.nl_core_healthcare_provider.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r4.nl_core_healthcare_provider_organization": [
     {
       "type": 0,
-      "value": "Nl-core-healthcare provider-organization"
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.nl_core_healthcare_provider_organization.identifier": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder identificatienummer"
+    }
+  ],
+  "r4.nl_core_healthcare_provider_organization.name": [
+    {
+      "type": 0,
+      "value": "Organisatie naam"
+    }
+  ],
+  "r4.nl_core_healthcare_provider_organization.type.department_specialty": [
+    {
+      "type": 0,
+      "value": "Afdeling specialisme"
+    }
+  ],
+  "r4.nl_core_healthcare_provider_organization.type.organization_type": [
+    {
+      "type": 0,
+      "value": "Organisatie type"
     }
   ],
   "r4.nl_core_hearing_function": [

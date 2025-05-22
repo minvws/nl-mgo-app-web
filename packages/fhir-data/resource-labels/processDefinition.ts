@@ -12,6 +12,8 @@ const mirrorLabels = {
     ['zib_patient']: 'nl_core_patient',
     ['zib_vaccination_event']: 'nl_core_vaccination_event',
     ['zib_address_information']: 'nl_core_address_information',
+    ['zib_healthcare_provider']: 'nl_core_healthcare_provider',
+    ['zib_healthcare_provider_organization']: 'nl_core_healthcare_provider_organization',
 };
 
 /**
