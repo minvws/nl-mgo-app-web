@@ -50,8 +50,8 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                         </div>
                     </Container>
                 </main>
-                <Footer />
             </div>
+            <Footer />
             <ScrollRestoration />
         </>
     );

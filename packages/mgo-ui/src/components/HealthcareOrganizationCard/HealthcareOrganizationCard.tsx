@@ -56,10 +56,14 @@ export const HealthcareOrganizationCard = ({
                         {title}
                     </TitleComp>
                     {subTitle && (
-                        <span className="text-gray-950 dark:text-gray-100">{subTitle}</span>
+                        <span className="whitespace-pre-wrap break-all text-gray-950 dark:text-gray-100">
+                            {subTitle}
+                        </span>
                     )}
                     {meta && (
-                        <span className="italic text-gray-600 dark:text-gray-300">{meta}</span>
+                        <span className="whitespace-pre-wrap break-all text-gray-600 dark:text-gray-300">
+                            {meta}
+                        </span>
                     )}
                 </Stack>
 

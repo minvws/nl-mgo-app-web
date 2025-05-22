@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, cn, Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Button, cn, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -11,7 +11,10 @@ export function NotFound({ className, ...rest }: NotFoundProps) {
     return (
         <>
             <Helmet title={formatMessage('not_found.heading')} />
-            <Container className={cn('max-w-md pb-6 pt-12 md:pb-32 md:pt-24', className)} {...rest}>
+            <div
+                className={cn('mx-auto max-w-md pb-6 pt-12 md:pb-32 md:pt-24', className)}
+                {...rest}
+            >
                 <Illustration
                     className="mx-auto w-3/4 md:mb-2 md:w-3/5"
                     illustration="woman-with-umbrella"
@@ -40,7 +43,7 @@ export function NotFound({ className, ...rest }: NotFoundProps) {
                         />
                     </RouterLink>
                 </Button>
-            </Container>
+            </div>
         </>
     );
 }

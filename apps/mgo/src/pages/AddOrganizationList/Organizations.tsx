@@ -58,7 +58,7 @@ export function Organizations() {
                                 className="w-full"
                                 title={category}
                                 subTitle={name}
-                                meta={<span className="whitespace-pre">{address}</span>}
+                                meta={address}
                                 icon="delete"
                                 iconAriaLabel={formatMessage('common.delete')}
                             />
