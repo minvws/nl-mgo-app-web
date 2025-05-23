@@ -53,13 +53,13 @@
       "value": "Begin datum tijd"
     }
   ],
-  "r4.gp_encounter.reason_codeviating_result.comment_contact_reason": [
+  "r4.gp_encounter.reason_code.deviating_result.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
     }
   ],
-  "r4.gp_encounter.reason_codeviating_result.text": [
+  "r4.gp_encounter.reason_code.deviating_result.text": [
     {
       "type": 0,
       "value": "Afwijkende uitslag"
@@ -368,7 +368,31 @@
   "r4.nl_core_contact_person": [
     {
       "type": 0,
-      "value": "Nl-core-contact person"
+      "value": "Contactpersoon"
+    }
+  ],
+  "r4.nl_core_contact_person.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.nl_core_contact_person.relationship.relationship": [
+    {
+      "type": 0,
+      "value": "Relatie"
+    }
+  ],
+  "r4.nl_core_contact_person.relationship.role": [
+    {
+      "type": 0,
+      "value": "Rol"
+    }
+  ],
+  "r4.nl_core_contact_person.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r4.nl_core_development_child": [
@@ -512,7 +536,25 @@
   "r4.nl_core_health_professional_practitioner_role": [
     {
       "type": 0,
-      "value": "Nl-core-health professional-practitioner role"
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner_role.organization": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner_role.specialty.specialty": [
+    {
+      "type": 0,
+      "value": "Specialisme"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner_role.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r4.nl_core_healthcare_provider": [
@@ -845,7 +887,7 @@
       "value": "Contactpersoon"
     }
   ],
-  "r4.nl_core_patient.contact.relationship": [
+  "r4.nl_core_patient.contact.relationship.relationship": [
     {
       "type": 0,
       "value": "Relatie"
@@ -1187,7 +1229,7 @@
       "value": "Toediener"
     }
   ],
-  "r4.nl_core_vaccination_event.protocol_applied.target_disease": [
+  "r4.nl_core_vaccination_event.protocol_applied.target_disease.target_disease": [
     {
       "type": 0,
       "value": "Vaccinatie pathogeen"
@@ -1505,7 +1547,7 @@
       "value": "Wilsverklaring datum"
     }
   ],
-  "r4.zib_advance_directive.provision.actorepresentative.reference": [
+  "r4.zib_advance_directive.provision.actor.representative.reference": [
     {
       "type": 0,
       "value": "Vertegenwoordiger"
@@ -1925,13 +1967,13 @@
       "value": "Mobiliteit"
     }
   ],
-  "r4.zib_barthel_adl_index.componentoilet_use.value": [
+  "r4.zib_barthel_adl_index.component.toilet_use.value": [
     {
       "type": 0,
       "value": "Toiletgebruik"
     }
   ],
-  "r4.zib_barthel_adl_index.componentransfers.value": [
+  "r4.zib_barthel_adl_index.component.transfers.value": [
     {
       "type": 0,
       "value": "Transfers"
@@ -2285,7 +2327,7 @@
       "value": "Onrustgeluiden"
     }
   ],
-  "r4.zib_checklist_pain_behavior.componentears.value": [
+  "r4.zib_checklist_pain_behavior.component.tears.value": [
     {
       "type": 0,
       "value": "Tranen"
@@ -2441,7 +2483,7 @@
       "value": "Naamgegevens"
     }
   ],
-  "r4.zib_contact_person.relationship": [
+  "r4.zib_contact_person.relationship.relationship": [
     {
       "type": 0,
       "value": "Relatie"
@@ -2633,16 +2675,16 @@
       "value": "Rusteloos"
     }
   ],
+  "r4.zib_dos_score.component.thinks_somewhere_else.value": [
+    {
+      "type": 0,
+      "value": "Denkt ergens anders"
+    }
+  ],
   "r4.zib_dos_score.component.unfinished_question_answer.value": [
     {
       "type": 0,
       "value": "Vraag antwoord niet af"
-    }
-  ],
-  "r4.zib_dos_score.componenthinks_somewhere_else.value": [
-    {
-      "type": 0,
-      "value": "Denkt ergens anders"
     }
   ],
   "r4.zib_dos_score.effective_date_time": [
@@ -2777,13 +2819,13 @@
       "value": "Begin datum tijd"
     }
   ],
-  "r4.zib_encounter.reason_codeviating_result.comment_contact_reason": [
+  "r4.zib_encounter.reason_code.deviating_result.comment_contact_reason": [
     {
       "type": 0,
       "value": "Toelichting reden contact"
     }
   ],
-  "r4.zib_encounter.reason_codeviating_result.text": [
+  "r4.zib_encounter.reason_code.deviating_result.text": [
     {
       "type": 0,
       "value": "Afwijkende uitslag"
@@ -3191,7 +3233,7 @@
       "value": "Zorgaanbieder"
     }
   ],
-  "r4.zib_health_professional_practitioner_role.specialty": [
+  "r4.zib_health_professional_practitioner_role.specialty.specialty": [
     {
       "type": 0,
       "value": "Specialisme"
@@ -3479,7 +3521,7 @@
       "value": "Toelichting"
     }
   ],
-  "r4.zib_laboratory_test_result.performer": [
+  "r4.zib_laboratory_test_result.performer.performer": [
     {
       "type": 0,
       "value": "Uitvoerder"
@@ -4079,7 +4121,7 @@
       "value": "Indicatie"
     }
   ],
-  "r4.zib_nursing_intervention.contributorequester": [
+  "r4.zib_nursing_intervention.contributor.requester": [
     {
       "type": 0,
       "value": "Aanvrager"
@@ -4283,7 +4325,7 @@
       "value": "Contactpersoon"
     }
   ],
-  "r4.zib_patient.contact.relationship": [
+  "r4.zib_patient.contact.relationship.relationship": [
     {
       "type": 0,
       "value": "Relatie"
@@ -4679,7 +4721,7 @@
       "value": "Indicatie"
     }
   ],
-  "r4.zib_procedure_event.reportext_result": [
+  "r4.zib_procedure_event.report.text_result": [
     {
       "type": 0,
       "value": "Tekst uitslag"
@@ -5231,7 +5273,7 @@
       "value": "Pack years"
     }
   ],
-  "r4.zib_tobacco_use.componentype_of_tobacco_used.value": [
+  "r4.zib_tobacco_use.component.type_of_tobacco_used.value": [
     {
       "type": 0,
       "value": "Soort tabak gebruik"

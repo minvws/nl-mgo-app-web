@@ -575,7 +575,7 @@
       "value": "Naamgegevens"
     }
   ],
-  "r3.nl_core_patient.contact.relationship": [
+  "r3.nl_core_patient.contact.relationship.relationship": [
     {
       "type": 0,
       "value": "Relatie"

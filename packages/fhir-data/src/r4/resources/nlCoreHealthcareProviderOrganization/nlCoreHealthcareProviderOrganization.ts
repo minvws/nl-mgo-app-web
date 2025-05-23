@@ -10,8 +10,7 @@ import { parseNlCoreAddressInformation, parseNlCoreContactInformation } from '..
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628461 (nl core HealthcareProvider Organization)
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.zib2020/0.11.0-beta.1/files/2628199 (zib HealthcareProvider Organization)
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628461
  */
 function parseNlCoreHealthcareProviderOrganization(resource: Organization) {
     return {

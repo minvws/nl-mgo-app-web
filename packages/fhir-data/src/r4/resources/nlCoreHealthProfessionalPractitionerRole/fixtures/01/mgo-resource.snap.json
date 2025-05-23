@@ -37,8 +37,8 @@
         ]
     },
     "organization": null,
-    "speciality": [
-        {
+    "specialty": {
+        "specialty": {
             "_type": "codeableConcept",
             "text": null,
             "coding": [
@@ -49,5 +49,5 @@
                 }
             ]
         }
-    ]
+    }
 }

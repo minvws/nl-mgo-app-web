@@ -7,13 +7,13 @@ import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { vaccinationIndicationValueSet } from '../../valueSets/vaccinationIndication';
 import { vaccinationMotiveValueSet } from '../../valueSets/vaccinationMotive';
+import { ziekteWaarTegenGevaccineerdWordtWaardelijst } from '../../valueSets/ziekteWaarTegenGevaccineerdWordtWaardelijst';
 import { summary } from './summary';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628660 (nl core Vaccination event)
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.zib2020/0.11.0-beta.1/files/2628271 (zib Vaccination Event)
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628660
  */
 function parseNlCoreVaccinationEvent(resource: Immunization) {
     return {
@@ -64,7 +64,15 @@ function parseNlCoreVaccinationEvent(resource: Immunization) {
         },
 
         protocolApplied: map(resource.protocolApplied, (protocolApplied) => ({
-            targetDisease: map(protocolApplied?.targetDisease, parse.codeableConcept),
+            targetDisease: {
+                targetDisease: map(
+                    filterCodeableConcept(
+                        protocolApplied?.targetDisease,
+                        ziekteWaarTegenGevaccineerdWordtWaardelijst
+                    ),
+                    parse.codeableConcept
+                ),
+            },
         })),
     };
 }

@@ -9,5 +9,7 @@
         "emailAddresses": []
     },
     "organization": null,
-    "speciality": null
+    "specialty": {
+        "specialty": null
+    }
 }

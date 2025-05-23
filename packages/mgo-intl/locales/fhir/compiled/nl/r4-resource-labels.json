@@ -71,24 +71,6 @@
       "value": "Telefoonnummer"
     }
   ],
-  "r4.nl_core_contact_person": [
-    {
-      "type": 0,
-      "value": "Contactpersoon"
-    }
-  ],
-  "r4.nl_core_contact_person.relationship.relationship": [
-    {
-      "type": 0,
-      "value": "Relatie"
-    }
-  ],
-  "r4.nl_core_contact_person.relationship.role": [
-    {
-      "type": 0,
-      "value": "Rol"
-    }
-  ],
   "r4.nl_core_health_professional_practitioner": [
     {
       "type": 0,

@@ -4,12 +4,10 @@
         {
             "children": [
                 {
-                    "label": "Specialiteit",
-                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_VALUES",
                     "display": [
-                        [
-                            "Neuroloog (01.026 in code systeem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)"
-                        ]
+                        "Neuroloog (01.026 in code systeem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)"
                     ]
                 },
                 {

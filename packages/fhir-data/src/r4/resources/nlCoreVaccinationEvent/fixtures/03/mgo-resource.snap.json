@@ -94,19 +94,21 @@
     },
     "protocolApplied": [
         {
-            "targetDisease": [
-                {
-                    "_type": "codeableConcept",
-                    "text": null,
-                    "coding": [
-                        {
-                            "code": "128241005",
-                            "display": "hepatitis",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                }
-            ]
+            "targetDisease": {
+                "targetDisease": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "128241005",
+                                "display": "hepatitis",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     ]
 }

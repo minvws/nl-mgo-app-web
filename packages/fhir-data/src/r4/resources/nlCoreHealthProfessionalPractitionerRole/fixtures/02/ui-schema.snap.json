@@ -4,7 +4,7 @@
         {
             "children": [
                 {
-                    "label": "Specialiteit",
+                    "label": "Specialisme",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
