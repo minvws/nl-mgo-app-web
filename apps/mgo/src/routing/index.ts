@@ -14,6 +14,7 @@ export { RouterNavLink, type RouterNavLinkProps } from './RouterNavLink';
 export { useLocation } from './useLocation';
 export { useNavigate } from './useNavigate';
 export { useParams } from './useParams';
+export { useParamsData } from './useParamsData/useParamsData';
 
 export { Link, type LinkProps } from './Link';
 
