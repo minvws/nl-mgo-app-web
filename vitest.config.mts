@@ -7,7 +7,7 @@ export default defineConfig({
             extension: ['ts', 'tsx'],
             include: ['packages/**', 'apps/**'],
             exclude: [
-                'apps/e2e-tests/**',
+                'apps/mgo-e2e/**',
                 'apps/*/test/*',
                 'apps/mgo/public/**',
                 'packages/*/test/*',

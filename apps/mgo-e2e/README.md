@@ -30,7 +30,7 @@ BASIC_AUTH_PASSWORD=******      # password
 APP_ENVIRONMENT=local           # Choose the environment you wish to test: `local`, `test`, or `acc`
 ```
 
-Now you can run the following commands from this (`apps/e2e-tests`) directory:
+Now you can run the following commands from this (`apps/mgo-e2e`) directory:
 
 ```
 pnpm e2e     # Runs all the e2e tests in headless mode
@@ -51,7 +51,7 @@ To run the E2E tests using docker, ensure you have the latest [Docker (Desktop) 
 3. Connect to the `playwright` instance with `docker exec -it playwright bash`
 4. From the `playwright` shell, run the tests with `pnpm e2e` or `pnpm e2e:ci`
 
-> Test results will still be stored in the `apps/e2e-tests/results` as this folder is volume mounted.
+> Test results will still be stored in the `apps/mgo-e2e/results` as this folder is volume mounted.
 
 > `pnpm e2e:ui` will not work from the docker container as the image does not contain the dependencies needed for running the tests in [headed mode][playwright-headed].
 

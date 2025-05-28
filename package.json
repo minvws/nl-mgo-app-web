@@ -14,7 +14,7 @@
         "format:check": "prettier --check .",
         "messages:update": "pnpm run --dir packages/mgo-intl messages:update",
         "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
-        "e2e": "pnpm run --dir apps/e2e-tests e2e"
+        "e2e": "pnpm run --dir apps/mgo-e2e e2e"
     },
     "non-standard-dependency-comments": {
         "eslint": [

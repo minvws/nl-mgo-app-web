@@ -25,7 +25,7 @@ risk and that the authors assume no liability for any consequences of its use.
 
 - [About the app][mgo-about]
 - [Development setup][mgo-development]
-- [End-to-end tests](apps/e2e-tests/README.md)
+- [End-to-end tests](apps/mgo-e2e/README.md)
 - [Deployment][mgo-deployment]
 - [Internationalization / copy content][mgo-intl]
 - [Glossary][mgo-glossary]
@@ -37,7 +37,7 @@ This repository is a monorepo in that all directories under `apps/*` and `packag
 ```shell
 ├── apps
 │    └── mgo                # The main MGO application
-│    └── e2e-tests          # End-to-end tests for the mgo application
+│    └── mgo-e2e            # End-to-end tests for the mgo application
 ├── packages
 │    ├── data-services      # HTTP client for making requests to data services
 │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
@@ -63,7 +63,7 @@ docker compose up --build mgo
 docker compose down
 ```
 
-By default it will connect to the test environments, however this can be changed by adding a `.env` in the `apps/e2e-tests` directory. You can copy the `.env.example` for some default values.
+By default it will connect to the test environments, however this can be changed by adding a `.env` in the `apps/mgo-e2e` directory. You can copy the `.env.example` for some default values.
 
 > After changing `.env` values you will have to **rebuild** and **restart** the container. (Rerun the first command above)
 

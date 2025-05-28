@@ -9,4 +9,4 @@ packages/mgo-intl/locales
 *.snap.json
 *-snapshots/
 apps/mgo/dist
-apps/e2e-tests/results
+apps/mgo-e2e/results
