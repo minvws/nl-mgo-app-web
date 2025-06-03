@@ -1,6 +1,6 @@
 /* c8 ignore start */
 
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { afterEach, beforeEach } from 'vitest';
 
 const logColorGray = '\x1b[2m\x1b[37m';

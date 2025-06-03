@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { type HealthUiGroup } from '../../types';
 
 export function getChildren<T extends HealthUiGroup | HealthUiGroup[]>(

@@ -1,5 +1,5 @@
 import { type SingleValue as SingleValueData } from '@minvws/mgo-fhir-data';
-import { DescriptionCard } from '@minvws/mgo-mgo-ui';
+import { DescriptionCard } from '@minvws/mgo-ui';
 
 export interface SingleValueDisplayProps {
     readonly value: SingleValueData;

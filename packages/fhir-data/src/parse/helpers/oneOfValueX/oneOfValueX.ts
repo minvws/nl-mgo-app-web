@@ -1,4 +1,4 @@
-import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash';
 import {
     type ExtractValueTypes,

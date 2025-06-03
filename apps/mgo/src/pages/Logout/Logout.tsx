@@ -1,8 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, Heading, Illustration } from '@minvws/mgo-mgo-ui';
-import { Text } from '../../../../../packages/mgo-ui/src/components/Text/Text';
+import { Button, Heading, Illustration, Text } from '@minvws/mgo-ui';
 
 export function Logout() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();

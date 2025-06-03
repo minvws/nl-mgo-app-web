@@ -1,4 +1,4 @@
-import { Heading, Illustration, type IllustrationProps, Text } from '@minvws/mgo-mgo-ui';
+import { Heading, Illustration, type IllustrationProps, Text } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface QueryStateLayoutProps extends HTMLAttributes<HTMLElement> {

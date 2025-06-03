@@ -1,7 +1,7 @@
 import { HealthCategory } from '$/healthCategory';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessageRegexp } from '@minvws/mgo-mgo-intl/test';
+import { appMessageRegexp } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { HealthCategoryList } from './HealthCategoryList';

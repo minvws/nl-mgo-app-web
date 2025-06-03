@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type Address } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type MgoCode, type MgoString } from '../../../parse/type';

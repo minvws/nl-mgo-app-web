@@ -16,7 +16,7 @@ import { getVitalsData } from './vitals';
 import { getProcedureData } from './procedure';
 import { getDocumentsData } from './documents';
 import { getLaboratoryResultData } from './laboratoryResults';
-import { type AppMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type AppMessagesIds } from '@minvws/mgo-intl';
 
 export interface SubCategoryData {
     label: AppMessagesIds;

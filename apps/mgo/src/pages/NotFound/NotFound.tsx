@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, cn, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Button, cn, Heading, Illustration, Text } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { Helmet } from 'react-helmet-async';
 

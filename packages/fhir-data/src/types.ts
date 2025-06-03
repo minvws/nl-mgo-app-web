@@ -1,5 +1,5 @@
 import { type BackboneElement, type FhirResource } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type MgoResourceMeta } from './parse/helpers/resourceMeta/resourceMeta';
 import { type HealthUiSchemaFunction } from './ui';
 import { type HealthUiGroup, type HealthUiGroupFunction } from './ui/types';

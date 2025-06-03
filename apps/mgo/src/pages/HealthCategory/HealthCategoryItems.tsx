@@ -4,7 +4,7 @@ import { type HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
 import { useNavFocusRef } from '$/hooks/index.ts';
 import { FormattedMessage, useIntl } from '$/intl';
 import { type HealthcareOrganization } from '$/store';
-import { Alert, Button, Heading, Stack } from '@minvws/mgo-mgo-ui';
+import { Alert, Button, Heading, Stack } from '@minvws/mgo-ui';
 import { useQueryClient } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { HealthCategoryContent } from '../../components/HealthCategoryContent/HealthCategoryContent';

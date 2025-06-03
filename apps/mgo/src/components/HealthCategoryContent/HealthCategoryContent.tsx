@@ -1,6 +1,6 @@
 import { type HealthCategory } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
-import { Stack } from '@minvws/mgo-mgo-ui';
+import { Stack } from '@minvws/mgo-ui';
 import { HealthCategoryDetailList } from '../HealthCategoryDetailList/HealthCategoryDetailList';
 import { useIntl } from '$/intl';
 import { type SubCategoryData } from '$/healthCategory/useHealthCategoryData/categories';

@@ -1,5 +1,5 @@
 import { config } from '$/config';
-import { Locale, getAppIntlConfig } from '@minvws/mgo-mgo-intl';
+import { Locale, getAppIntlConfig } from '@minvws/mgo-intl';
 import { type ReactNode } from 'react';
 import { IntlProvider as ReactIntlProvider } from 'react-intl';
 

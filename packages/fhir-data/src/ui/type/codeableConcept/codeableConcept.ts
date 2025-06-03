@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type MgoCodeableConcept } from '../../../parse/type';
 import { system } from '../../format/system/system';
 import {

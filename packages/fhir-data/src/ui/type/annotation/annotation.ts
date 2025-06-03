@@ -1,4 +1,4 @@
-import { isNonNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, type Nullable } from '@minvws/mgo-utils';
 import { type MgoAnnotation } from '../../../parse/type';
 import {
     type MultipleValues,

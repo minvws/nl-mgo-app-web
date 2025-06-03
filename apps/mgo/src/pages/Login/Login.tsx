@@ -3,10 +3,9 @@ import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks/index.js';
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, Heading, Stack, Text, useOnMount } from '@minvws/mgo-mgo-ui';
+import { Button, ConfirmDialog, Heading, Stack, Text, useOnMount } from '@minvws/mgo-ui';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ConfirmDialog } from '../../../../../packages/mgo-ui/src/components/ConfirmDialog/ConfirmDialog';
 import DigiDSvg from './digid.svg?react';
 import EIDASSvg from './eidas.svg?react';
 

@@ -1,7 +1,7 @@
 import { useAuth, type AuthState } from '$/auth';
 import { getAuthUrl, type AuthUrlResponse } from '$/services/vad/vad';
 import { faker } from '$test/faker';
-import { defer, flushCallStack } from '@minvws/mgo-mgo-utils';
+import { defer, flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';

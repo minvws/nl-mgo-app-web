@@ -1,5 +1,5 @@
 import { useIntl } from '$/intl';
-import { Spinner, Text } from '@minvws/mgo-mgo-ui';
+import { Spinner, Text } from '@minvws/mgo-ui';
 import { type ReactNode } from 'react';
 
 type LoadingSpinnerProps = {

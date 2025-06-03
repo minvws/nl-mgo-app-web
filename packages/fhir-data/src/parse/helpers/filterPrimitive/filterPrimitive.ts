@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type Element as ElementR3 } from 'fhir/r3';
 import { type Element as ElementR4 } from 'fhir/r4';
 import { type StringKeyOf } from 'type-fest';

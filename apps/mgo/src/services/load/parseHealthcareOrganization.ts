@@ -1,5 +1,5 @@
 import { DataServiceId } from '@minvws/mgo-data-services';
-import { isNonNullish, log } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, log } from '@minvws/mgo-utils';
 import { type HealthcareOrganizationDTO } from './types';
 
 export const supportedDataServiceIds = [

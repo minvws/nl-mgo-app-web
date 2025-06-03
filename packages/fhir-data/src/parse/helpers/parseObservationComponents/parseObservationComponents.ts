@@ -1,5 +1,5 @@
 import { type Coding, type ObservationComponent } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash';
 import { type SetRequired, type UnionToIntersection } from 'type-fest';
 import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';

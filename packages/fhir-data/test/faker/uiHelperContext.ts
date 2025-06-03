@@ -1,5 +1,5 @@
-import { createHelpers, type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { createTestIntl } from '@minvws/mgo-mgo-intl/test';
+import { createHelpers, type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
+import { createTestIntl } from '@minvws/mgo-intl/test';
 import { type UiHelperContext } from '../../src/ui/context';
 import { createMockDataFactory } from './factory';
 

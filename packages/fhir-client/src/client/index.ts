@@ -1,5 +1,5 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
-import { losslessParse } from '@minvws/mgo-mgo-utils';
+import { losslessParse } from '@minvws/mgo-utils';
 import ky, { type Options as KyOptions } from 'ky';
 import type { SetRequired } from 'type-fest';
 import { setupResource } from './resource/resource';

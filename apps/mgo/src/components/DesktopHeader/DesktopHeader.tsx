@@ -1,5 +1,5 @@
 import { FormattedMessage } from '$/intl';
-import { Container } from '@minvws/mgo-mgo-ui';
+import { Container } from '@minvws/mgo-ui';
 import { type ComponentProps } from 'react';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
 

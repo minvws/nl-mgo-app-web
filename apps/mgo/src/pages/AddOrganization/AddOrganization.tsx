@@ -2,7 +2,7 @@ import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { getLoadService } from '$/services';
-import { Heading } from '@minvws/mgo-mgo-ui';
+import { Heading } from '@minvws/mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';

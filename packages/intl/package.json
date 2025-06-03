@@ -1,5 +1,5 @@
 {
-    "name": "@minvws/mgo-mgo-intl",
+    "name": "@minvws/mgo-intl",
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {

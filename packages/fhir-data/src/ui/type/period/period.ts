@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoPeriod } from '../../../parse/type';
 import { date } from '../../format/date/date';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';

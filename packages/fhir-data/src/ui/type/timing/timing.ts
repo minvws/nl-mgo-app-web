@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoTiming } from '../../../parse/type';
 import { type HealthUiGroup, type UiFunction, type WithUiHelperContext } from '../../types';
 import { codeableConcept } from '../codeableConcept/codeableConcept';

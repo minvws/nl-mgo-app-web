@@ -1,5 +1,5 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash';
 import { type UiHelperContext } from '../../context';
 import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup';

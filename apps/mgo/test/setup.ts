@@ -3,7 +3,7 @@ import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
-import { useConfig } from '@minvws/mgo-mgo-ui';
+import { useConfig } from '@minvws/mgo-ui';
 
 configure({
     // Remove the huge error output from `testing-library`

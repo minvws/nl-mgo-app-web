@@ -2,7 +2,7 @@ import { FormattedMessage, useIntl } from '$/intl';
 import { useNavigate } from '$/routing';
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
 import { useOrganizationsStore } from '$/store';
-import { Button, HealthcareOrganizationCard, Stack, cn } from '@minvws/mgo-mgo-ui';
+import { Button, HealthcareOrganizationCard, Stack, cn } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {

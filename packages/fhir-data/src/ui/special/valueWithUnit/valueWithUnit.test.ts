@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { format } from '../../format';
 import { valueWithUnit } from './valueWithUnit';

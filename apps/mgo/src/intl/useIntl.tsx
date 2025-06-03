@@ -1,4 +1,4 @@
-import { createHelpers, type AppIntlShape } from '@minvws/mgo-mgo-intl';
+import { createHelpers, type AppIntlShape } from '@minvws/mgo-intl';
 import { useMemo, type ReactNode } from 'react';
 import { useIntl as useIntlReact } from 'react-intl';
 

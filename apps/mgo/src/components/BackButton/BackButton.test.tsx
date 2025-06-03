@@ -1,5 +1,5 @@
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { afterAll, beforeAll, beforeEach, expect, test, vi } from 'vitest';
 import { BackButton } from './BackButton';

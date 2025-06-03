@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { type PrimitiveValueType } from '../../types';
 
 export interface MgoCode<T extends string = string> extends PrimitiveValueType<'code', T> {}

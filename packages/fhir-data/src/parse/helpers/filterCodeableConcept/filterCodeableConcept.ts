@@ -1,5 +1,5 @@
 import { type CodeableConcept, type Coding } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import {
     isSystemFilter,
     matchesCodingFilter,

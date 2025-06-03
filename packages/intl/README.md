@@ -52,7 +52,7 @@ They both accept the [all the options from the `IntlConfig`][intl-config] except
 Here is an example of how to get the app config when using react for rich text elements.
 
 ```typescript
-import { Locale, getAppIntlConfig } from '@minvws/mgo-mgo-intl';
+import { Locale, getAppIntlConfig } from '@minvws/mgo-intl';
 
 const appConfig = getAppIntlConfig<ReactNode>({
         locale: Locale.NL_NL,
@@ -68,7 +68,7 @@ const appConfig = getAppIntlConfig<ReactNode>({
 The way FormatJS relies on a [global type][global-type] for applying a type to the message id's doesn't work well when you have multiple different intl configurations. Instead of relying on this global type we export our own types for each project. This type changes the type specification for the `MessageDescriptor` so only message id's from that specific project are accepted.
 
 ```typescript
-import { Locale, getFhirIntlConfig, createIntl, type FhirIntlShape } from '@minvws/mgo-mgo-intl';
+import { Locale, getFhirIntlConfig, createIntl, type FhirIntlShape } from '@minvws/mgo-intl
 
 const intl = createIntl(getFhirIntlConfig({ locale: Locale.NL_NL }));
 
@@ -91,7 +91,7 @@ import {
     createIntl,
     createHelpers,
     type FhirIntlShape,
-} from '@minvws/mgo-mgo-intl';
+} from '@minvws/mgo-intl
 
 const intl = createIntl(getFhirIntlConfig({ locale: Locale.NL_NL })) as FhirIntlShape;
 const { formatMessage, hasMessage } = createHelpers(intl);
@@ -105,12 +105,12 @@ hasMessage('foobar'); // false
 
 ## Testing
 
-Because we don't want our tests to break if the text content from lokalise changes. We also export some helpers for matching texts during (unit) tests. And a mock implementation if you don't want to use any translations. All the test related code is exported from `@minvws/mgo-mgo-intl/test`.
+Because we don't want our tests to break if the text content from lokalise changes. We also export some helpers for matching texts during (unit) tests. And a mock implementation if you don't want to use any translations. All the test related code is exported from `@minvws/mgo-intl`.
 
 ### Mock intl
 
 ```typescript
-import { createTestIntl } from '@minvws/mgo-mgo-intl/test';
+import { createTestIntl } from '@minvws/mgo-intl';
 
 const mockIntl = createTestIntl(); // only supports `formatMessage`
 
@@ -123,7 +123,7 @@ mockIntl.formatMessage({ id: 'foobar' }, { name: 'test' }); // "intl(foobar, {"n
 There are 3 message helpers for matching translated content. One for `mgo-app`, `mgo-first` and the mock intl.
 
 ```typescript
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl';
 
 const mockedMessage = mockIntl.formatMessage({ id: 'foobar' });
 
@@ -131,7 +131,7 @@ expect(mockedMessage).toBe(testMessage('foobar')); // pass
 ```
 
 ```typescript
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl';
 
 const heading = appIntl.formatMessage({ id: 'overview.heading' });
 
@@ -139,7 +139,7 @@ expect(heading).toBe(appMessage('overview.heading')); // pass
 ```
 
 ```typescript
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { fhirMessage } from '@minvws/mgo-intl';
 
 const fhirLabel = fhirIntl.formatMessage({ id: 'r3.nl_core_patient.name' });
 

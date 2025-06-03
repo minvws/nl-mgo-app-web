@@ -1,5 +1,5 @@
 import { type HealthCategory } from '@minvws/mgo-apps-mgo';
-import { appMessage, type AppMessagesIds } from '@minvws/mgo-mgo-intl/test';
+import { appMessage, type AppMessagesIds } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
 
 type HealthCategoryList<T extends HealthCategory> =

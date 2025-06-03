@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type MgoInstant } from '../../../parse/type';
 import { date } from '../../format/date/date';
 import {

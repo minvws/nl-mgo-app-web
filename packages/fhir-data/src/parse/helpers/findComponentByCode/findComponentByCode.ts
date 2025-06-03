@@ -1,5 +1,5 @@
 import { type ObservationComponent } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 
 /**
  * Returns the first observation component that has a matching code.

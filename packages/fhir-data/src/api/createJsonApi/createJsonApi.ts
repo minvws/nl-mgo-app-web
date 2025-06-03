@@ -1,4 +1,4 @@
-import { losslessParse, losslessStringify } from '@minvws/mgo-mgo-utils';
+import { losslessParse, losslessStringify } from '@minvws/mgo-utils';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Func = (...args: any[]) => any;

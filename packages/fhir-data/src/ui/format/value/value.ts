@@ -1,4 +1,4 @@
-import { isNullish, type LosslessNumber, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type LosslessNumber, type Nullable } from '@minvws/mgo-utils';
 import { numberToString } from '../../helpers';
 
 export function valueWithUnit(value: Nullable<LosslessNumber | number>, unit: Nullable<string>) {

@@ -1,5 +1,5 @@
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, cn, InputField } from '@minvws/mgo-mgo-ui';
+import { Button, cn, InputField } from '@minvws/mgo-ui';
 import {
     useCallback,
     useEffect,

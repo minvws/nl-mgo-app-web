@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type PatientContact } from 'fhir/r4';
 import {
     parseNlCoreAddressInformation,

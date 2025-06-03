@@ -1,5 +1,5 @@
 import { HealthCategory } from '@minvws/mgo-apps-mgo';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { fhirMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';
 

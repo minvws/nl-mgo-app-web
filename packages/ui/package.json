@@ -1,5 +1,5 @@
 {
-    "name": "@minvws/mgo-mgo-ui",
+    "name": "@minvws/mgo-ui",
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -15,7 +15,7 @@
     "dependencies": {
         "@material-symbols/svg-400": "^0.19.0",
         "@material-symbols/svg-700": "^0.19.0",
-        "@minvws/mgo-mgo-utils": "workspace:*",
+        "@minvws/mgo-utils": "workspace:*",
         "@minvws/mgo-tailwind": "workspace:*",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-slot": "^1.0.2",

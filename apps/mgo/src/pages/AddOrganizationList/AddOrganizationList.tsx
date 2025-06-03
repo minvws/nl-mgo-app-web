@@ -2,7 +2,7 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useOrganizationsStore } from '$/store';
-import { Heading } from '@minvws/mgo-mgo-ui';
+import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NoOrganizations } from './NoOrganizations';
 import { Organizations } from './Organizations';

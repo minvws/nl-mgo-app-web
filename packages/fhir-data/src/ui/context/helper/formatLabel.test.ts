@@ -1,6 +1,6 @@
 import { faker } from '$test';
-import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { createTestIntl, testMessage } from '@minvws/mgo-mgo-intl/test';
+import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
+import { createTestIntl, testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoString } from '../../../parse/type';
 import { createLabelFormatter } from './formatLabel';

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { render, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Collapse } from './Collapse';

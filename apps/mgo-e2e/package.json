@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "@minvws/mgo-apps-mgo": "workspace:*",
-        "@minvws/mgo-mgo-intl": "workspace:*",
+        "@minvws/mgo-intl": "workspace:*",
         "@playwright/test": "1.50.1",
         "@types/node": "^22.5.0",
         "dotenv": "^16.4.7",

@@ -7,7 +7,7 @@ import {
     type MgoResource,
     type ResourceByType,
 } from '@minvws/mgo-fhir-data';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
 import { type ReactNode } from 'react';

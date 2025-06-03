@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { isValueType, type MgoType, type ValueType } from '../../../parse/types';
 import { hasExtensions } from '../../helpers/hasExtensions/hasExtensions';
 import { type HealthUiGroup, type UiElement } from '../../types';

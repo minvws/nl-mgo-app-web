@@ -1,6 +1,6 @@
 import { faker, testUiSchemaContext } from '$test';
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoCodeableConcept, type MgoString } from '../../../parse/type';
 import { type ExtensionValue } from '../../../parse/types';

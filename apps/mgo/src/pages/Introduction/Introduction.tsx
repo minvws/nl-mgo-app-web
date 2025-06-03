@@ -1,8 +1,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, Heading, Illustration } from '@minvws/mgo-mgo-ui';
-import { Text } from '@minvws/mgo-mgo-ui/components/Text/Text.js';
+import { Button, Heading, Illustration, Text } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 
 export function Introduction() {

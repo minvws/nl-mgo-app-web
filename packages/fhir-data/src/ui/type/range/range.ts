@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoRange } from '../../../parse/type';
 import { systemValue } from '../../format/systemValue/systemValue';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';

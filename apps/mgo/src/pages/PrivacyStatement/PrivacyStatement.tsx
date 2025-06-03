@@ -1,7 +1,7 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { useIntl } from '$/intl';
+import { MarkdownContent } from '@minvws/mgo-ui';
 import { unescape } from 'html-escaper';
-import { MarkdownContent } from '../../../../../packages/mgo-ui/src/components/MarkdownContent/MarkdownContent';
 
 export function PrivacyStatement() {
     const { formatMessage } = useIntl();

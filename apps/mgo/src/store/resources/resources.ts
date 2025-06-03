@@ -5,7 +5,7 @@ import {
     type MgoResource,
     type NictizNlProfile,
 } from '@minvws/mgo-fhir-data';
-import { createUniqueSlug, log } from '@minvws/mgo-mgo-utils';
+import { createUniqueSlug, log } from '@minvws/mgo-utils';
 import { create } from 'zustand';
 
 type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];

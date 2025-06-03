@@ -1,5 +1,5 @@
 import { FormattedMessage } from '$/intl';
-import { Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Heading, Illustration, Text } from '@minvws/mgo-ui';
 
 export function NoData() {
     return (

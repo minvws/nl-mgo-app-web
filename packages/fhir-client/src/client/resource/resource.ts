@@ -1,5 +1,5 @@
 import { type FhirVersion, type ResourceByType, type ResourceType } from '@minvws/mgo-fhir-types';
-import { type Lossless } from '@minvws/mgo-mgo-utils';
+import { type Lossless } from '@minvws/mgo-utils';
 import type { KyInstance, Options as KyOptions } from 'ky';
 import type { FhirClientOptions } from '..';
 

@@ -1,4 +1,4 @@
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { renderHook } from '@testing-library/react';
 import { beforeAll, expect, test, vi } from 'vitest';
 import { useDarkMode } from './useDarkMode';

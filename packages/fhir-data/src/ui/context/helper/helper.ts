@@ -5,7 +5,7 @@ import {
     getFhirIntlConfig,
     type FhirIntlShape,
     type Locale,
-} from '@minvws/mgo-mgo-intl';
+} from '@minvws/mgo-intl';
 import { createLabelFormatter } from './formatLabel';
 
 export type UiHelperContextOptions = {

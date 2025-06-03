@@ -3,7 +3,7 @@
 /**
  * Load Intl polyfills for Android
  */
-import '@minvws/mgo-mgo-intl/polyfills';
+import '@minvws/mgo-intl/polyfills';
 
 import { createJsonApi } from './createJsonApi/createJsonApi';
 import { getBundleResources } from './getBundleResources/getBundleResources';

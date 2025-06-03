@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { Locale } from '@minvws/mgo-mgo-intl';
+import { Locale } from '@minvws/mgo-intl';
 import { expect, test } from 'vitest';
 import { createJsonApi } from './createJsonApi';
 

@@ -52,8 +52,8 @@
         "@formatjs/intl-pluralrules": "^5.4.1",
         "@formatjs/intl-relativetimeformat": "^11.4.8",
         "@minvws/mgo-fhir-types": "workspace:*",
-        "@minvws/mgo-mgo-intl": "workspace:*",
-        "@minvws/mgo-mgo-utils": "workspace:*",
+        "@minvws/mgo-intl": "workspace:*",
+        "@minvws/mgo-utils": "workspace:*",
         "intl": "^1.2.5",
         "lodash": "^4.17.21",
         "lossless-json": "^4.0.1"

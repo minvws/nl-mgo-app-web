@@ -1,4 +1,4 @@
-import { Container } from '@minvws/mgo-mgo-ui';
+import { Container } from '@minvws/mgo-ui';
 import Logo from './logo.svg?react';
 import { type HTMLAttributes } from 'react';
 

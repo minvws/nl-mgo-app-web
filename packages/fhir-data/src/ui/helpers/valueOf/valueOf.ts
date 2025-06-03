@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { isPrimitiveValueType, type PrimitiveValueType } from '../../../parse/types';
 
 export function valueOf<T extends string, V>(

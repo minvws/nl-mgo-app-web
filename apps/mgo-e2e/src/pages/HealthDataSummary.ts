@@ -1,4 +1,4 @@
-import { fhirMessage, type FhirMessagesIds } from '@minvws/mgo-mgo-intl/test';
+import { fhirMessage, type FhirMessagesIds } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
 import { HealthDataDetailPage } from './HealthDataDetail';
 

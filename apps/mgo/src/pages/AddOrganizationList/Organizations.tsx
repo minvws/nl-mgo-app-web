@@ -7,7 +7,7 @@ import {
     HealthcareOrganizationCard,
     Stack,
     useOpenState,
-} from '@minvws/mgo-mgo-ui';
+} from '@minvws/mgo-ui';
 import { useState } from 'react';
 
 export function Organizations() {

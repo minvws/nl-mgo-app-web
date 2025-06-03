@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { Locale } from '@minvws/mgo-mgo-intl';
+import { Locale } from '@minvws/mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../types';
 import { createSchemaContext, type HealthUiSchemaFunction } from '../../ui';

@@ -43,9 +43,10 @@ This repository is a monorepo in that all directories under `apps/*` and `packag
 │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
 │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
 │    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
-│    ├── mgo-ui             # UI library for the MGO app
-│    ├── mgo-intl           # Contains all the text content and translations for the MGO app and the "health ui schema"'s
+│    ├── intl               # Contains all the text content and translations for the MGO app and the "health ui schema"'s
 │    └── tailwind           # MGO Tailwind theme
+│    ├── ui                 # UI library for the MGO app
+│    ├── utils              # Collection of commonly used utility functions
 ├── docs
 │    └── ...                # Documentation files
 ├── LICENSE

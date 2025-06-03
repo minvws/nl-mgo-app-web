@@ -1,7 +1,7 @@
 import { QueryStateLayout } from '$/components/QueryStateLayout/QueryStateLayout';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, Card, Stack } from '@minvws/mgo-mgo-ui';
+import { Button, Card, Stack } from '@minvws/mgo-ui';
 
 export function NoOrganizations() {
     const { formatMessage } = useIntl();

@@ -1,5 +1,5 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { Locale } from '@minvws/mgo-mgo-intl';
+import { Locale } from '@minvws/mgo-intl';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { createSchemaContext, type HealthUiSchema } from '../../ui';
 import { setEmptyEntries } from '../../ui/helpers';

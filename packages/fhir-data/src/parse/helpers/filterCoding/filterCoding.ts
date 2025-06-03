@@ -1,5 +1,5 @@
 import { type Coding, type CodingSystem } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 
 export type CodingCodeFilter = {
     system: CodingSystem;

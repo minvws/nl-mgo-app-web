@@ -1,5 +1,5 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { Locale } from '@minvws/mgo-mgo-intl';
+import { Locale } from '@minvws/mgo-intl';
 import { createSchemaContext } from '../src/ui';
 import {
     type HealthUiSchemaContext,

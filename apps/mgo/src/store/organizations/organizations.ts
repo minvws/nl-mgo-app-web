@@ -1,5 +1,5 @@
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
-import { createUniqueSlug } from '@minvws/mgo-mgo-utils';
+import { createUniqueSlug } from '@minvws/mgo-utils';
 import { isEmpty } from 'lodash';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';

@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type HumanName } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';

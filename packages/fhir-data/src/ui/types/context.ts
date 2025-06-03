@@ -1,5 +1,5 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { type Lossless, type Nullable } from '@minvws/mgo-mgo-utils';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { type Lossless, type Nullable } from '@minvws/mgo-utils';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
 import { type ValueType } from '../../parse/types';
 import { type UiHelperContext } from '../context';

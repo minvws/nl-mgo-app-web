@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoDateTime } from '../../../parse/type';
 import { date as formatDateTime } from '../../format/date/date';

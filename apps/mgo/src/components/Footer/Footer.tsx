@@ -1,6 +1,6 @@
 import { FormattedMessage } from '$/intl';
 import { Link as RouterLink } from '$/routing';
-import { Container, Heading, Link, List, ListItem } from '@minvws/mgo-mgo-ui';
+import { Container, Heading, Link, List, ListItem } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {}

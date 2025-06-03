@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash';
 import { type StringKeyOf } from 'type-fest';
 import * as type from '../../type';

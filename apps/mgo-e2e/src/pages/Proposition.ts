@@ -1,4 +1,4 @@
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
 import { AbstractPage } from './AbstractPage';
 

@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { type ValueType } from '../../types';
 
 type ParserFunc<Input, Output extends ValueType> = (input: Input) => Output;

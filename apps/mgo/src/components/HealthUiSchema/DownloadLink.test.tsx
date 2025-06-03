@@ -1,7 +1,7 @@
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-fhir-data';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { DownloadLink } from './DownloadLink';

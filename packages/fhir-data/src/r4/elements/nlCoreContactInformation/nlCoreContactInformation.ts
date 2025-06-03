@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type ContactPoint } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type MgoCode, type MgoCodeableConcept, type MgoString } from '../../../parse/type';

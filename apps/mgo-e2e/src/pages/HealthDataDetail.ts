@@ -1,4 +1,4 @@
-import { appMessage, fhirMessage, type FhirMessagesIds } from '@minvws/mgo-mgo-intl/test';
+import { appMessage, fhirMessage, type FhirMessagesIds } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
 
 export class HealthDataDetailPage {

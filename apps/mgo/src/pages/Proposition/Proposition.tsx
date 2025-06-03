@@ -2,7 +2,7 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Link, RouterLink } from '$/routing';
-import { Button, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
+import { Button, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 
 export function Proposition() {

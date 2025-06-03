@@ -1,4 +1,4 @@
-import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
 import { snakeCase } from 'lodash';
 import { isValueType } from '../../../parse/types';
 

@@ -1,5 +1,5 @@
 import { faker, testUiSchemaContext } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test, vi } from 'vitest';
 import { type MgoResourceMeta } from '../../../parse/helpers/resourceMeta/resourceMeta';
 import { type HealthUiGroup, type UiElement } from '../../types';

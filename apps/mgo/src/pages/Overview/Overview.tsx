@@ -3,7 +3,7 @@ import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
 import { useOrganizationsStore } from '$/store';
-import { Heading } from '@minvws/mgo-mgo-ui';
+import { Heading } from '@minvws/mgo-ui';
 
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
