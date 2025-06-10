@@ -19,7 +19,7 @@ beforeEach(() => {
 
 test('overview should show empty state', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
 
     setupApp({ initialEntries: ['/organisaties'] });
 

@@ -7,7 +7,7 @@ type HasNumeratorLabel =
     Extract<FhirMessagesIds, `${string}.numerator`> extends `${infer R}.numerator` ? R : never;
 type HasDenominatorLabel =
     Extract<FhirMessagesIds, `${string}.denominator`> extends `${infer R}.denominator` ? R : never;
-type RatioLabel = HasNumeratorLabel | HasDenominatorLabel; // eslint-disable-line @typescript-eslint/no-duplicate-type-constituents
+type RatioLabel = HasNumeratorLabel | HasDenominatorLabel;
 
 export const ratio: WithUiHelperContext<
     UiFunction<MgoRatio, SingleValue[], FhirMessagesIds | RatioLabel>

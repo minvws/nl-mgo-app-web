@@ -2,7 +2,7 @@ import { useContext, type HTMLAttributes } from 'react';
 import { AccordionContext } from './AccordionContext';
 import { Collapse } from './Collapse';
 
-export interface AccordionPanelProps extends HTMLAttributes<HTMLDivElement> {}
+export type AccordionPanelProps = HTMLAttributes<HTMLDivElement>;
 
 export const AccordionPanel = ({ ...rest }: AccordionPanelProps) => {
     const { expanded, panelId, buttonId } = useContext(AccordionContext);

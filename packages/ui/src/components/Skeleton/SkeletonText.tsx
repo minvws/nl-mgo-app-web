@@ -1,7 +1,7 @@
-import { twMerge } from 'tailwind-merge';
-import { Skeleton, type SkeletonProps } from './Skeleton';
 import { range } from 'lodash';
+import { twMerge } from 'tailwind-merge';
 import { useComposition } from '../../hooks/useComposition/useComposition';
+import { Skeleton, type SkeletonProps } from './Skeleton';
 
 export interface SkeletonTextProps extends SkeletonProps {
     readonly numberOfLines: number;
@@ -27,12 +27,12 @@ export const SkeletonText = ({
                     className={twMerge(
                         isLoading && height,
                         isLoading &&
-                            (numberOfLines > 1 && number == numbers.length ? 'w-4/5' : 'w-full')
+                            (numberOfLines > 1 && number === numbers.length ? 'w-4/5' : 'w-full')
                     )}
                     isLoading={isLoading}
                     key={numbers.length.toString() + number}
                 >
-                    {index == 0 && children}
+                    {index === 0 && children}
                 </Skeleton>
             ))}
         </Comp>

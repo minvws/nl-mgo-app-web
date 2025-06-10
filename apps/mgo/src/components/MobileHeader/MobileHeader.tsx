@@ -15,11 +15,11 @@ import { LogoutButton } from '../LogoutButton/LogoutButton';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { StickyHeader } from './StickyHeader';
 
-export interface MobileHeaderProps extends Omit<ComponentProps<'header'>, 'className'> {}
+export type MobileHeaderProps = Omit<ComponentProps<'header'>, 'className'>;
 
 const animationDuration = 300;
 
-export function MobileHeader({ ...rest }: MobileHeaderProps) {
+export function MobileHeader({ ...rest }: Readonly<MobileHeaderProps>) {
     const { formatMessage } = useIntl();
     const menuButtonRef = useRef<HTMLButtonElement>(null);
     const menuContentRef = useRef<HTMLDivElement>(null);

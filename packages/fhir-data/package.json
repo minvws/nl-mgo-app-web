@@ -23,7 +23,8 @@
         "extract:labels": "tsx ./resource-labels/index.ts",
         "messages:compile": "pnpm messages:compile:nl && pnpm messages:format",
         "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
-        "messages:format": "prettier --write ./src/i18n/locales"
+        "messages:format": "prettier --write ./src/i18n/locales",
+        "lint": "eslint ."
     },
     "devDependencies comments (non-standard-key)": {
         "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build. also see: https://github.com/qmhc/vite-plugin-dts/issues/404"

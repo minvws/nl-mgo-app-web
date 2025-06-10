@@ -13,7 +13,7 @@ export function useBinaryReference(reference: string | undefined) {
     const binaryRegexp = /^Binary\/([^/]+)/;
 
     const binaryMatch = reference ? binaryRegexp.exec(reference) : null;
-    const [_input, binaryId] = binaryMatch ?? [];
+    const [, binaryId] = binaryMatch ?? [];
 
     const organization = resource && getOrganizationById(resource.organizationId);
     const dataService = resource && getDataService(organization, resource.dataServiceId);

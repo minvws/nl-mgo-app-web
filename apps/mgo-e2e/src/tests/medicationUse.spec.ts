@@ -26,7 +26,7 @@ test('User can see their medication use details', async ({
     await pageAddOrganizationList.buttonToOverview.click();
 
     await expect(pageOverview.heading).toBeVisible();
-    await expect(pageOverview.headingNoOrganizations).not.toBeVisible();
+    await expect(pageOverview.headingNoOrganizations).toBeHidden();
     await pageOverview.buttonHealthCategory(HealthCategory.Medication).click();
 
     await expect(pageHealthCategory.heading(HealthCategory.Medication)).toBeVisible();

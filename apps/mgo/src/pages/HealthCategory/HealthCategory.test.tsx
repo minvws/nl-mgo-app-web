@@ -20,7 +20,6 @@ const mockUseHealthCategoryQuery = useHealthCategoryQuery as MockedFunction<
 >;
 
 vi.mock('$/healthCategory', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('$/healthCategory')>(); // type is inferred
     const useHealthCategoryQuery = vi.fn(() => ({
         data: {},

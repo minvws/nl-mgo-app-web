@@ -8,7 +8,8 @@
     },
     "scripts": {
         "test": "vitest",
-        "check-types": "tsc --noEmit"
+        "check-types": "tsc --noEmit",
+        "lint": "eslint ."
     },
     "dependencies": {
         "lodash": "^4.17.21",

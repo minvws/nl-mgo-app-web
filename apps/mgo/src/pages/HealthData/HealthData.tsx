@@ -8,9 +8,9 @@ import {
 } from '../../components/HealthUiSchema/HealthUiSchema';
 import { NotFound } from '../NotFound/NotFound';
 
-export interface HealthDataProps extends Pick<HealthUiSchemaProps, 'summary'> {}
+export type HealthDataProps = Pick<HealthUiSchemaProps, 'summary'>;
 
-export function HealthData({ summary }: HealthDataProps) {
+export function HealthData({ summary }: Readonly<HealthDataProps>) {
     const { formatMessage } = useIntl();
     const { healthCategory, resource } = useParamsData();
 

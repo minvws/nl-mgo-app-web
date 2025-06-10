@@ -3,9 +3,9 @@ import { Container } from '@minvws/mgo-ui';
 import { type ComponentProps } from 'react';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
 
-export interface DesktopHeaderProps extends Omit<ComponentProps<'header'>, 'className'> {}
+export type DesktopHeaderProps = Omit<ComponentProps<'header'>, 'className'>;
 
-export function DesktopHeader({ ...rest }: DesktopHeaderProps) {
+export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
     return (
         <header
             className={

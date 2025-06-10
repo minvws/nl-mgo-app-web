@@ -5,7 +5,6 @@ import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';
 import { useHealthCategoryQueries } from './useHealthCategoryQueries';
-// import { getHealthcareCategoryQuery } from './categories';
 
 vi.mock('$/services', () => ({
     getDataService: vi.fn(

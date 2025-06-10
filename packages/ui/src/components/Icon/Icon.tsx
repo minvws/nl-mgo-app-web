@@ -6,7 +6,7 @@ export interface IconProps extends HTMLAttributes<SVGElement> {
     readonly icon: IconName;
 }
 
-export const Icon = ({ icon, ['aria-label']: ariaLabel, className, ...rest }: IconProps) => {
+export const Icon = ({ icon, 'aria-label': ariaLabel, className, ...rest }: IconProps) => {
     const IconComponent = icons[icon];
     if (!IconComponent) {
         throw new Error(`Could not find icon: "${icon}"`);

@@ -21,8 +21,7 @@ export const SkeletonCircleStory: Story = {
     render: ({ ...args }) => <SkeletonCircle className="h-12 w-12" {...args} />,
 };
 
-type SkeletonTextStory = StoryObj<typeof SkeletonText>;
-export const SkeletonTextStory: SkeletonTextStory = {
+export const SkeletonTextStory: StoryObj<typeof SkeletonText> = {
     name: 'SkeletonText',
     args: {
         numberOfLines: 2,

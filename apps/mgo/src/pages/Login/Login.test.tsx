@@ -46,10 +46,10 @@ test.each<keyof Pick<AuthState, 'loadingError' | 'parsingError'>>(['loadingError
 
         await flushCallStack();
 
-        let dialog: HTMLElement | null = await screen.getByRole('alertdialog', {
+        let dialog: HTMLElement | null = screen.getByRole('alertdialog', {
             name: appMessage('login.error_heading'),
         });
-        const confirmButton = await within(dialog).getByRole('button', {
+        const confirmButton = within(dialog).getByRole('button', {
             name: appMessage('common.ok'),
         });
 

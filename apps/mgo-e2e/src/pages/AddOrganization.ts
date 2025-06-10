@@ -24,7 +24,7 @@ export class AddOrganizationPage extends AbstractPage {
         await this.inputCity.fill(city);
         await this.buttonSubmit.click();
         await this.searchProgressbar.isVisible();
-        await expect(this.searchProgressbar).not.toBeVisible();
+        await expect(this.searchProgressbar).toBeHidden();
     }
 
     organizationListItem(name: string) {

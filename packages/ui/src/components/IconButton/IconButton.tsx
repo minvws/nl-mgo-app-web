@@ -32,15 +32,7 @@ const variantStyles: Record<Variant, string> = {
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
-    {
-        icon,
-        size = 'md',
-        variant = 'solid',
-        ['aria-label']: ariaLabel,
-        asChild,
-        className,
-        ...rest
-    },
+    { icon, size = 'md', variant = 'solid', 'aria-label': ariaLabel, asChild, className, ...rest },
     ref
 ) {
     const { Comp } = useComposition({ asChild, tag: 'button' });

@@ -4,17 +4,17 @@ import { LoadingCircle, type LoadingCircleProps } from './LoadingCircle';
 
 export type SpinnerProps = HTMLAttributes<SVGElement> & Pick<LoadingCircleProps, 'variant'>;
 
-export const Spinner = ({ className, ['aria-label']: ariaLabel, ...rest }: SpinnerProps) => {
+export const Spinner = ({ className, 'aria-label': ariaLabel, ...rest }: SpinnerProps) => {
     const a11yProps = ariaLabel
         ? ({
               role: 'progressbar',
-              ['aria-label']: ariaLabel,
-              ['aria-valuetext']: ariaLabel,
-              ['aria-busy']: true,
-              ['aria-live']: 'assertive',
+              'aria-label': ariaLabel,
+              'aria-valuetext': ariaLabel,
+              'aria-busy': true,
+              'aria-live': 'assertive',
           } as const)
         : {
-              ['aria-hidden']: true,
+              'aria-hidden': true,
           };
 
     return (

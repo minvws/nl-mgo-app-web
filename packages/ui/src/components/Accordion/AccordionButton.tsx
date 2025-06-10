@@ -4,7 +4,7 @@ import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
 import { AccordionContext } from './AccordionContext';
 
-export interface AccordionButtonProps extends HTMLAttributes<HTMLButtonElement> {}
+export type AccordionButtonProps = HTMLAttributes<HTMLButtonElement>;
 
 export const AccordionButton = ({ children, className, ...rest }: AccordionButtonProps) => {
     const { expanded, toggle, panelId, buttonId } = useContext(AccordionContext);

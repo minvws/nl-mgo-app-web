@@ -10,10 +10,9 @@ interface BaseUiValueElement<T extends string, Display> extends BaseUiElement<T>
 /**
  * Note: using `undefined` as the `Display` type breaks the Kotlin types.
  */
-export interface SingleValue extends BaseUiValueElement<'SINGLE_VALUE', string> {}
-export interface MultipleValues extends BaseUiValueElement<'MULTIPLE_VALUES', string[]> {}
-export interface MultipleGroupedValues
-    extends BaseUiValueElement<'MULTIPLE_GROUPED_VALUES', string[][]> {}
+export type SingleValue = BaseUiValueElement<'SINGLE_VALUE', string>;
+export type MultipleValues = BaseUiValueElement<'MULTIPLE_VALUES', string[]>;
+export type MultipleGroupedValues = BaseUiValueElement<'MULTIPLE_GROUPED_VALUES', string[][]>;
 export interface ReferenceValue extends BaseUiValueElement<'REFERENCE_VALUE', string> {
     reference: string | undefined;
 }

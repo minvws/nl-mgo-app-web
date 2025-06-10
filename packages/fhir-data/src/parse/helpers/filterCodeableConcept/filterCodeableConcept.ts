@@ -9,8 +9,8 @@ import {
 
 const hasMatchingCoding = (
     codeableConcept: CodeableConcept,
-    filter:
-        | Readonly<CodingCodeFilter>
+    filter: // eslint-disable-next-line sonarjs/use-type-alias
+    | Readonly<CodingCodeFilter>
         | Readonly<CodingSystemFilter>
         | ReadonlyArray<CodingCodeFilter | CodingSystemFilter>
 ): boolean => {

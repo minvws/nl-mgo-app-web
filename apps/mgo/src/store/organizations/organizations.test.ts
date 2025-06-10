@@ -71,7 +71,6 @@ test('removeOrganizationBySlug removes organization', async () => {
 test('hasOrganizations returns true when there are registered organizations', async () => {
     let state = useOrganizationsStore.getState();
 
-    state = useOrganizationsStore.getState();
     expect(state.hasOrganizations()).toBe(false);
 
     state.addOrganization(faker.custom.healthcareOrganization());
@@ -85,7 +84,6 @@ test('hasOrganizationById returns true when there are registered organizations w
 
     const organization = faker.custom.healthcareOrganization();
 
-    state = useOrganizationsStore.getState();
     expect(state.hasOrganizationById(organization.id)).toBe(false);
 
     state.addOrganization(organization);

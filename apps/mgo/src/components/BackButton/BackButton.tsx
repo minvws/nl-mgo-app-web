@@ -2,7 +2,7 @@ import { FormattedMessage } from '$/intl';
 import { useNavigate } from '$/routing';
 import { Button, cn, type ButtonProps } from '@minvws/mgo-ui';
 
-export function BackButton({ className, ...rest }: ButtonProps) {
+export function BackButton({ className, ...rest }: Readonly<ButtonProps>) {
     const navigate = useNavigate();
 
     const buttonProps: ButtonProps = {

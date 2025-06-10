@@ -4,9 +4,9 @@ import { Button, cn, Heading, Illustration, Text } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export interface NotFoundProps extends HTMLAttributes<HTMLElement> {}
+export type NotFoundProps = HTMLAttributes<HTMLElement>;
 
-export function NotFound({ className, ...rest }: NotFoundProps) {
+export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
     const { formatMessage } = useIntl();
     return (
         <>

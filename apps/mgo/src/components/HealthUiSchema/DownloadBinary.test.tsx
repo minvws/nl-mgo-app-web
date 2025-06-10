@@ -15,7 +15,6 @@ const mockGetResource = getDataService(undefined, undefined)!.getResource as Moc
 >;
 
 vi.mock('$/services', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('$/services')>();
     const mockDataService = {
         getResource: vi.fn(),

@@ -1,7 +1,7 @@
 import { twMerge } from 'tailwind-merge';
 import { Skeleton, type SkeletonProps } from './Skeleton';
 
-export interface SkeletonCircleProps extends SkeletonProps {}
+export type SkeletonCircleProps = SkeletonProps;
 
 export const SkeletonCircle = ({ isLoading, className, ...rest }: SkeletonCircleProps) => {
     return (

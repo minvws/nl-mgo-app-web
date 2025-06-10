@@ -10,7 +10,7 @@ test('User goes through the onboarding flow and visits the privacy statement', a
 }) => {
     await page.goto('/');
     const pageTitle = await page.title();
-    await expect(pageTitle).toContain(appMessage('common.app_name'));
+    expect(pageTitle).toContain(appMessage('common.app_name'));
 
     await expect(pageIntroduction.heading).toBeVisible();
     await pageIntroduction.buttonContinue.click();

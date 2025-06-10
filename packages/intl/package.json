@@ -11,7 +11,8 @@
         "test": "vitest",
         "check-types": "tsc --noEmit",
         "messages:update": "./bin/lokalise.sh",
-        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl"
+        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl",
+        "lint": "eslint ."
     },
     "dependencies": {
         "@formatjs/cli": "^6.6.1",

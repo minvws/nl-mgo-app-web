@@ -11,6 +11,7 @@
         "test": "vitest",
         "build": "vite build",
         "check-types": "tsc --noEmit",
+        "lint": "eslint .",
         "preview": "vite preview --port=8000"
     },
     "dependencies": {

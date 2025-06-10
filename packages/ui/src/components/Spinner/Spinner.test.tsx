@@ -15,7 +15,7 @@ test('renders hidden by default', async () => {
 
 test('renders as progressbar when given an aria-label', async () => {
     const props = {
-        ['aria-label']: 'Bezig met laden...',
+        'aria-label': 'Bezig met laden...',
         variant: faker.helpers.arrayElement(variants),
     };
     render(<Spinner {...props} />);

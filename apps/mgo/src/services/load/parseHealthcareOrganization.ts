@@ -23,7 +23,7 @@ export function parseHealthcareOrganization(organizationDTO: HealthcareOrganizat
                 log.warn(
                     `Data service for organization: ${display_name} (${identification}) with id "${id}" does not contain a resource endpoint`
                 );
-                return;
+                return null;
             }
             return { id: id as SupportedDataServiceId, resourceEndpoint };
         })

@@ -5,7 +5,6 @@ import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { getAuthUrl } from './vad';
 
 vi.mock('ky', async (importActual) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importActual<typeof import('ky')>();
     return {
         default: {

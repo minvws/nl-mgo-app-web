@@ -25,7 +25,7 @@ test('redirect from root to welkom if onboarding not seen', () => {
 
 test('redirect from root to login from root if onboarding seen', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
     setupApp({ initialEntries: ['/'] });
 
     expect(
@@ -37,7 +37,7 @@ test('redirect from root to login from root if onboarding seen', () => {
 
 test('no redirect from root even if onboarding seen', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
     setupApp({ initialEntries: ['/welkom'] });
 
     expect(
@@ -49,7 +49,7 @@ test('no redirect from root even if onboarding seen', () => {
 
 test('redirect from login to add organization if authenticated', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
     mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
     setupApp({ initialEntries: ['/inloggen'] });
 

@@ -18,7 +18,7 @@ beforeEach(() => {
 
 test('overview should show empty state', () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
 
     setupApp({ initialEntries: ['/overzicht'] });
 

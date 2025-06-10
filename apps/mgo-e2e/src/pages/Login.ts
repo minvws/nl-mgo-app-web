@@ -18,7 +18,7 @@ export class LoginPage extends AbstractPage {
 
     async loginDigid() {
         await expect(this.page).toHavePathname(this.pathname);
-        const currentUrl = await this.page.url();
+        const currentUrl = this.page.url();
         const { origin } = new URL(currentUrl);
         await this.buttonDigid.click();
         await expect(this.page).toHaveURL(/irealisatie\.nl\/digid-mock/, { timeout: 15000 });

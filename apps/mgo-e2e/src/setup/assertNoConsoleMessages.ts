@@ -31,7 +31,7 @@ export const assertNoConsoleMessages: TestFixture<
     const consoleMessages: LoggedConsoleMessage[] = [];
 
     page.on('console', async (message) => {
-        const url = await page.url();
+        const url = page.url();
         const { origin: currentOrigin } = new URL(url);
         // Ignore messages from other origins (e.g. VAD environment during login)
         if (currentOrigin === baseURL) {

@@ -8,7 +8,6 @@ import {
 import { type HealthcareOrganizationDTO, type HealthcareServiceDTO } from './types';
 
 vi.mock('@minvws/mgo-utils', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('@minvws/mgo-utils')>();
     return {
         ...mod,

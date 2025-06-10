@@ -5,7 +5,6 @@ import { expect, test, vi } from 'vitest';
 import { PageLayout } from './PageLayout';
 
 vi.mock('react-router-dom', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('react-router-dom')>();
     return {
         ...mod,

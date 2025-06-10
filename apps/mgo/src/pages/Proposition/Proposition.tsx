@@ -67,7 +67,7 @@ export function Proposition() {
                         </List>
                     </Text>
 
-                    <Button asChild onClick={() => setOnboardingSeen(true)}>
+                    <Button asChild onClick={() => setOnboardingSeen()}>
                         <RouterLink to="/zorgaanbieder-toevoegen">
                             <FormattedMessage id="common.next" description="Volgende" />
                         </RouterLink>

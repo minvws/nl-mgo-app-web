@@ -8,7 +8,7 @@ type Story = StoryObj<typeof SlideDown>;
 type StoryMeta = Meta<typeof SlideDown>;
 export default {} satisfies StoryMeta;
 
-function Story() {
+function SlideDownStory() {
     const [isDown, setIsDown] = useState(false);
 
     const toggle = () => setIsDown(!isDown);
@@ -34,5 +34,5 @@ function Story() {
 }
 
 export const Default: Story = {
-    render: () => <Story />,
+    render: () => <SlideDownStory />,
 };

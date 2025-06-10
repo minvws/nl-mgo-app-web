@@ -13,7 +13,7 @@ async function toHavePathname(
     expected: string
 ): Promise<MatcherReturnType> {
     const assertionName = 'toHavePathname';
-    const currentUrl = await page.url();
+    const currentUrl = page.url();
     const pathname = new URL(currentUrl).pathname;
     const pass = pathname === expected;
 

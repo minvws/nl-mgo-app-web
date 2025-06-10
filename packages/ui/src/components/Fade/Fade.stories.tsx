@@ -8,7 +8,7 @@ type StoryMeta = Meta<typeof Fade>;
 
 export default {} satisfies StoryMeta;
 
-function Story() {
+function FadeStory() {
     const [isVisible, setIsVisible] = useState(false);
 
     const toggle = () => setIsVisible(!isVisible);
@@ -34,5 +34,5 @@ function Story() {
 }
 
 export const Default: Story = {
-    render: () => <Story />,
+    render: () => <FadeStory />,
 };

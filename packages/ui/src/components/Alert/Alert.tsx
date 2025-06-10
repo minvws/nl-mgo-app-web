@@ -14,7 +14,7 @@ export interface AlertProps extends HTMLAttributes<HTMLElement> {
 export const Alert = ({
     label,
     status,
-    ['aria-label']: ariaLabel,
+    'aria-label': ariaLabel,
     className,
     children,
     ...rest

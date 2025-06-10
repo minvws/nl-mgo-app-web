@@ -8,7 +8,7 @@ import { type HealthUiGroup, type UiElement } from '../../types';
 
 export const oneOfValueX =
     (context: UiHelperContext) =>
-    <T extends object>(label: FhirMessagesIds, value: Nullable<T>, prefix: string = 'value') => {
+    <T extends object>(label: FhirMessagesIds, value: Nullable<T>, prefix = 'value') => {
         if (isNullish(value)) {
             return [] as UiElement[];
         }

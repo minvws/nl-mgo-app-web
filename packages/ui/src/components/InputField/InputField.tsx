@@ -19,8 +19,8 @@ export const InputField = ({
 }: InputFieldProps) => {
     const [inputId, validationMessageId] = useUniqueId('input', 'validation-message');
     const errorProps = !!error && {
-        ['aria-invalid']: true,
-        ['aria-describedby']: validationMessageId,
+        'aria-invalid': true,
+        'aria-describedby': validationMessageId,
     };
 
     return (

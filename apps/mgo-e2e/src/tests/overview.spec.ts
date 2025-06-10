@@ -30,7 +30,7 @@ test('User can visit the overview page which shows health categories when an org
     await pageAddOrganizationList.buttonToOverview.click();
 
     await expect(pageOverview.heading).toBeVisible();
-    await expect(pageOverview.headingNoOrganizations).not.toBeVisible();
+    await expect(pageOverview.headingNoOrganizations).toBeHidden();
     await expect(
         pageOverview.buttonHealthCategory(HealthCategory.PersonalInformation)
     ).toBeVisible();
