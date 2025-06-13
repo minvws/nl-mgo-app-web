@@ -63,7 +63,7 @@
             }
         ]
     },
-    "performer": null,
+    "performer": [],
     "reasonCode": {
         "vaccinationIndication": [
             {

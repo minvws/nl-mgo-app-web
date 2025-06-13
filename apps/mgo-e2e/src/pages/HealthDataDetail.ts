@@ -1,8 +1,11 @@
 import { appMessage, fhirMessage, type FhirMessagesIds } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
+import { AbstractPage } from './AbstractPage';
 
-export class HealthDataDetailPage {
-    constructor(protected readonly page: Page) {}
+export class HealthDataDetailPage extends AbstractPage {
+    constructor(page: Page) {
+        super(page);
+    }
 
     readonly buttonBack = this.page.getByRole('button', {
         name: appMessage('common.previous'),

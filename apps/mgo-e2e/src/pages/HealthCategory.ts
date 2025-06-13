@@ -1,6 +1,7 @@
 import { type HealthCategory } from '@minvws/mgo-apps-mgo';
 import { appMessage, type AppMessagesIds } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
+import { AbstractPage } from './AbstractPage';
 
 type HealthCategoryList<T extends HealthCategory> =
     Extract<
@@ -10,8 +11,10 @@ type HealthCategoryList<T extends HealthCategory> =
         ? R
         : never;
 
-export class HealthCategoryPage {
-    constructor(private readonly page: Page) {}
+export class HealthCategoryPage extends AbstractPage {
+    constructor(page: Page) {
+        super(page);
+    }
 
     readonly buttonBack = this.page.getByRole('button', {
         name: appMessage('common.previous'),

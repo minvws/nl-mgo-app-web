@@ -1,7 +1,7 @@
 import { BackButton } from '$/components/BackButton/BackButton';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { type HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
-import { useNavFocusRef } from '$/hooks/index.ts';
+import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { type HealthcareOrganization } from '$/store';
 import { Alert, Button, Heading, Stack } from '@minvws/mgo-ui';

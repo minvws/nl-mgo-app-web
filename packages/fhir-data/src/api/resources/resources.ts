@@ -1,7 +1,7 @@
 import { type FhirR3R4, type FhirVersion } from '@minvws/mgo-fhir-types';
 import * as resourcesR3 from '../../r3/resources';
 import * as resourcesR4 from '../../r4/resources';
-import { type ResourceConfig } from '../../types';
+import { type ResourceConfig } from '../../resourceTypes';
 
 // Ensures only resource configs are listed
 resourcesR3 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any

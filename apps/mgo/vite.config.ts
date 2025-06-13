@@ -9,6 +9,9 @@ const VITE_SERVER_HOST = 'localhost';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build: {
+        outDir: 'build',
+    },
     plugins: [react({ babel: { plugins: ['macros'] } }), svgr()],
     resolve: {
         alias: {

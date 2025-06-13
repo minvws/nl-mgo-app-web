@@ -1,0 +1,38 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "dist/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "outDir": "./out-tsc/vitest",
+        "types": [
+            "vitest/globals",
+            "vitest/importMeta",
+            "vite/client",
+            "vitest",
+            "vitest-dom/extend-expect",
+            "vite-plugin-svgr/client"
+        ],
+        "jsx": "react-jsx",
+        "lib": ["dom"],
+        "allowJs": true,
+        "paths": {
+            "$/*": ["./src/*"],
+            "$test": ["./test/index.ts"],
+            "$test/*": ["./test/*"]
+        }
+    },
+    "include": [
+        "vite.config.ts",
+        "vitest.config.ts",
+        "test/**/*.ts",
+        "test/**/*.tsx",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        }
+    ]
+}

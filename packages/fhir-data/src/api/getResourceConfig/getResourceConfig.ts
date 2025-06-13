@@ -1,6 +1,6 @@
 import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir-types';
 import { type MgoResourceMeta } from '../../parse/helpers/resourceMeta/resourceMeta';
-import { type ResourceConfig } from '../../types';
+import { type ResourceConfig } from '../../resourceTypes';
 import { resourcesMapR3, resourcesMapR4 } from '../resources/resources';
 
 type Config<T extends FhirResource | MgoResourceMeta> = T extends FhirResource
@@ -27,4 +27,6 @@ export function getResourceConfig<T extends FhirResource | MgoResourceMeta>(
     if (!!matchingProfile && resourcesMap[matchingProfile]) {
         return resourcesMap[matchingProfile] as unknown as Config<T>;
     }
+
+    return undefined;
 }

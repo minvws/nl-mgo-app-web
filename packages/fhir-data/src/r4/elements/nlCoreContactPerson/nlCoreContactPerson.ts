@@ -12,7 +12,7 @@ import {
 import { parse } from '../../../parse';
 import { filterCodeableConcept } from '../../../parse/helpers';
 import { type MgoCodeableConcept } from '../../../parse/type';
-import { type MgoElementMeta } from '../../../types';
+import { type MgoElementMeta } from '../../../resourceTypes';
 import { map } from '../../../utils';
 import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst';
 import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst';

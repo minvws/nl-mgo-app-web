@@ -3,5 +3,6 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
     "cSpell.words": ["Codelijst", "interpretatie", "Loinc", "Nictiz"],
-    "eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "pattern": "./apps/*/" }]
+    "eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "pattern": "./apps/*/" }],
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }

@@ -51,7 +51,23 @@
         "system": "http://unitsofmeasure.org",
         "code": "mL"
     },
-    "performer": [],
+    "performer": [
+        {
+            "function": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+                        "code": "NOT_ADMINISTRATOR"
+                    }
+                ]
+            },
+            "actor": {
+                "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
+                "type": "PractitionerRole",
+                "display": "Healthcare professional (role)"
+            }
+        }
+    ],
     "note": [{ "text": "Bezoek aan Guatemala." }],
     "reasonCode": [
         {

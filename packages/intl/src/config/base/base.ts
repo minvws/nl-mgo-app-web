@@ -6,7 +6,9 @@ export interface IntlOptions<RichTextElement> extends FormatIntlConfig<RichTextE
     ignoreMissingTranslations?: boolean;
 }
 
-export function getIntlConfig<RichTextElement>(options: IntlOptions<RichTextElement>) {
+export function getIntlConfig<RichTextElement>(
+    options: IntlOptions<RichTextElement>
+): FormatIntlConfig<RichTextElement> {
     const { ignoreMissingTranslations, onError, ...rest } = options;
 
     const handleError: OnErrorFn = (error) => {

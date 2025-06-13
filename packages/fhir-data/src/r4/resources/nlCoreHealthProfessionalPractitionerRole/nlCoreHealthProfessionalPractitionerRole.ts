@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type PractitionerRole } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { filterCodeableConcept } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types';
+import { type ResourceConfig } from '../../../resourceTypes';
 import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreContactInformation } from '../../elements';
 

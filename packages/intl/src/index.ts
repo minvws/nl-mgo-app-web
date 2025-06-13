@@ -10,7 +10,7 @@ export {
     type FhirIntlShape,
     type FhirMessagesIds,
 } from './config/fhir/fhir';
-export { createHelpers } from './helpers/createHelpers';
+export { createHelpers, type IntlHelpers } from './helpers/createHelpers';
 
 export { Locale } from './locale';
 

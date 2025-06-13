@@ -8,7 +8,7 @@ export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.
 export default defineConfig({
     build: {
         target: 'es2021',
-        outDir: 'dist/js',
+        outDir: 'build/js',
         minify: false,
         lib: {
             entry: resolvePath('./src/api/index.ts'),

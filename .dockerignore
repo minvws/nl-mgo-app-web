@@ -2,9 +2,10 @@
 **/__mocks__/
 **/fixtures/
 
-apps/mgo/dist
+apps/mgo/build
 apps/mgo/test
 
+packages/fhir-data/build
 packages/fhir-data/dist
 packages/fhir-data/test
 packages/fhir-data/fhir-definitions

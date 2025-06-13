@@ -1,18 +1,27 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupMedicalAids<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type MedicalAidsService<V extends FhirVersion> = {
+    getMedicalAids: () => ResourcesResponsePromise<V, 'DeviceUseStatement'>;
+};
+
+export function setupMedicalAids<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): MedicalAidsService<V> {
     return {
-        getMedicalAids: partialRequest(
-            getResources,
-            {
-                resource: 'DeviceUseStatement',
-            } as const,
-            {
-                searchParams: {
-                    _include: 'DeviceUseStatement:device',
-                },
-            }
-        ),
+        getMedicalAids: () =>
+            getResources(
+                {
+                    resource: 'DeviceUseStatement',
+                } as const,
+                {
+                    searchParams: {
+                        _include: 'DeviceUseStatement:device',
+                    },
+                }
+            ),
     };
 }

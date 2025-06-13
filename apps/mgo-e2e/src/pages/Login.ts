@@ -17,7 +17,7 @@ export class LoginPage extends AbstractPage {
     });
 
     async loginDigid() {
-        await expect(this.page).toHavePathname(this.pathname);
+        await expect(this.page).toHavePathname(this.pathname!);
         const currentUrl = this.page.url();
         const { origin } = new URL(currentUrl);
         await this.buttonDigid.click();

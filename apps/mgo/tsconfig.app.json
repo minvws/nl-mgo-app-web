@@ -1,0 +1,17 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "emitDeclarationOnly": false,
+        "outDir": "dist",
+        "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
+        "jsx": "react-jsx",
+        "lib": ["es2022", "dom", "dom.iterable"],
+        "types": ["vite/client", "vite-plugin-svgr/client"],
+        "rootDir": "src",
+        "paths": {
+            "$/*": ["./src/*"]
+        }
+    },
+    "exclude": ["**/__mocks__/**", "src/**/*.test.ts", "src/**/*.test.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

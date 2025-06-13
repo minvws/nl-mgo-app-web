@@ -1,0 +1,34 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compileOnSave": false,
+    "files": [],
+    "references": [
+        {
+            "path": "./apps/mgo-e2e"
+        },
+        {
+            "path": "./apps/mgo"
+        },
+        {
+            "path": "./packages/data-services"
+        },
+        {
+            "path": "./packages/fhir-client"
+        },
+        {
+            "path": "./packages/fhir-data"
+        },
+        {
+            "path": "./packages/fhir-types"
+        },
+        {
+            "path": "./packages/intl"
+        },
+        {
+            "path": "./packages/ui"
+        },
+        {
+            "path": "./packages/utils"
+        }
+    ]
+}

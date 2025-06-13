@@ -43,7 +43,7 @@ export default defineConfig({
     timeout: 10000,
 
     use: {
-        baseURL: baseUrls[APP_ENVIRONMENT],
+        baseURL: baseUrls[APP_ENVIRONMENT as keyof typeof baseUrls],
         trace: 'on-first-retry',
         extraHTTPHeaders: {
             Authorization: `Basic ${authToken}`,

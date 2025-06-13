@@ -5,9 +5,14 @@ type AbstractIntlShape<TBase, MessageIds extends string> =
     | (IntlFormatters<TBase> & Pick<ResolvedIntlConfig, 'messages'>)
     | CustomIntlShape<TBase, MessageIds>;
 
+export type IntlHelpers<TBase, MessageIds extends string> = {
+    formatMessage: CustomMessageDescriptors<TBase, MessageIds>['formatMessage'];
+    hasMessage: (id: string) => id is MessageIds;
+};
+
 export function createHelpers<TBase, MessageIds extends string>(
     intl: AbstractIntlShape<TBase, MessageIds>
-) {
+): IntlHelpers<TBase, MessageIds> {
     type ExtractedMessagesIds = Extract<keyof (typeof intl)['messages'], string>;
 
     const formatMessage: CustomMessageDescriptors<TBase, ExtractedMessagesIds>['formatMessage'] = (

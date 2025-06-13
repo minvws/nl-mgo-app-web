@@ -9,10 +9,8 @@ export default mergeConfig(config, {
         // https://www.npmjs.com/package/vite-plugin-dts
         dts({
             rollupTypes: true,
-            tsconfigPath: resolvePath('./tsconfig.json'),
+            tsconfigPath: resolvePath('./tsconfig.lib.json'),
             clearPureImport: true,
-            include: ['src'],
-            exclude: ['test'],
             declarationOnly: true,
             copyDtsFiles: true,
             afterBuild: (results) => {
@@ -24,7 +22,7 @@ export default mergeConfig(config, {
         }),
     ],
     build: {
-        outDir: 'dist/schema/typescript',
+        outDir: 'build/schema/typescript',
         lib: {
             entry: resolvePath('./src/api/types.ts'),
             name: 'MgoFhirDataTypes',

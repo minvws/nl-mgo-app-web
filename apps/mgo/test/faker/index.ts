@@ -1,4 +1,4 @@
-import { faker as originalFaker } from '@faker-js/faker';
+import { faker as originalFaker, type Faker } from '@faker-js/faker';
 import { authState } from './authState';
 import { dataServiceId } from './dataServiceId';
 import { healthCategory, healthCategorySlug } from './healthCategory';
@@ -16,9 +16,9 @@ const custom = {
     resource,
 };
 
-const faker = {
+const faker: Faker = {
     ...originalFaker,
-};
+} as Faker;
 
 type CustomizedFaker = typeof faker & {
     custom: typeof custom;

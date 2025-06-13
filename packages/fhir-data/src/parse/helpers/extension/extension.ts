@@ -26,6 +26,8 @@ export function extension<T extends DomainResource | Element, Type extends MgoTy
             ...value,
         };
     }
+
+    return undefined;
 }
 
 export function customExtension<
@@ -44,4 +46,6 @@ export function customExtension<
             ...value,
         };
     }
+
+    return undefined;
 }

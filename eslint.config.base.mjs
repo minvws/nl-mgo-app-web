@@ -40,6 +40,8 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
             ignores: [
                 '**/docs',
                 '**/dist',
+                '**/build',
+                '**/out-tsc',
                 '**/test-output',
                 '*.config.*',
                 'vitest.workspace.mts',

@@ -1,10 +1,20 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupAlerts<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type AlertsService<V extends FhirVersion> = {
+    getAlerts: () => ResourcesResponsePromise<V, 'Flag'>;
+};
+
+export function setupAlerts<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): AlertsService<V> {
     return {
-        getAlerts: partialRequest(getResources, {
-            resource: 'Flag',
-        } as const),
+        getAlerts: () =>
+            getResources({
+                resource: 'Flag',
+            } as const),
     };
 }

@@ -60,4 +60,6 @@ export function filterCodeableConcept(
     if (hasMatchingCoding(codeableConcept, filter)) {
         return codeableConcept;
     }
+
+    return undefined;
 }

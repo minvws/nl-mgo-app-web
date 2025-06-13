@@ -46,7 +46,7 @@ ENV DVA_URL=$DVA_URL
 ENV NGINX_PORT=8080
 ENV NGINX_ENVSUBST_OUTPUT_DIR="/etc/nginx"
 
-COPY --from=builder /app/apps/mgo/dist /usr/share/nginx/html
+COPY --from=builder /app/apps/mgo/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/templates/nginx.conf.template
 
 # Write envs to the config file that is read by the app

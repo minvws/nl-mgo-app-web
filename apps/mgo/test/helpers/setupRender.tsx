@@ -3,7 +3,7 @@ import { VadAuthProvider } from '$/auth';
 import { IntlProvider } from '$/intl';
 import { routes, type To } from '$/routing/routes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, type RenderOptions } from '@testing-library/react';
+import { render, type RenderOptions, type RenderResult } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { type ReactNode } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
@@ -21,11 +21,13 @@ type TypedMemoryRouterOptions = OverrideProperties<
     }
 >;
 
-export function setup(ui: ReactNode, options?: Omit<RenderOptions, 'queries'>) {
+type TestSetupResult = RenderResult & { user: ReturnType<typeof userEvent.setup> };
+
+export function setup(ui: ReactNode, options?: Omit<RenderOptions, 'queries'>): TestSetupResult {
     return { user: userEvent.setup(), ...render(ui, options) };
 }
 
-export const setupApp = (options: TypedMemoryRouterOptions) =>
+export const setupApp = (options: TypedMemoryRouterOptions): TestSetupResult =>
     setup(<App router={createMemoryRouter(routes, options)} />);
 
 interface TestAppProvidersProps {
@@ -46,7 +48,7 @@ const TestAppProviders = ({ children, queryClient }: TestAppProvidersProps) => (
     </QueryClientProvider>
 );
 
-export const setupWithAppProviders = (element: ReactNode) => {
+export const setupWithAppProviders = (element: ReactNode): TestSetupResult => {
     const queryClient = new QueryClient({
         defaultOptions: {
             queries: {

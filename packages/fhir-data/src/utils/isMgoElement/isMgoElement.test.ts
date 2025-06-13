@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type MgoElementMeta } from '../../types';
+import { type MgoElementMeta } from '../../resourceTypes';
 import { isMgoElement } from './isMgoElement';
 
 test('returns true for MgoElementMeta', () => {

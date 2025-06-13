@@ -74,4 +74,6 @@ export function filterCoding(
     if (matchesCodingFilter(coding, filter)) {
         return coding;
     }
+
+    return undefined;
 }

@@ -1,30 +1,40 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupTreatmentDirectives<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type TreatmentDirectivesService<V extends FhirVersion> = {
+    getTreatmentDirectives: () => ResourcesResponsePromise<V, 'Consent'>;
+    getAdvanceDirectives: () => ResourcesResponsePromise<V, 'Consent'>;
+};
+
+export function setupTreatmentDirectives<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): TreatmentDirectivesService<V> {
     return {
-        getTreatmentDirectives: partialRequest(
-            getResources,
-            {
-                resource: 'Consent',
-            } as const,
-            {
-                searchParams: {
-                    category: 'http://snomed.info/sct|11291000146105', // NOSONAR
-                },
-            }
-        ),
+        getTreatmentDirectives: () =>
+            getResources(
+                {
+                    resource: 'Consent',
+                } as const,
+                {
+                    searchParams: {
+                        category: 'http://snomed.info/sct|11291000146105', // NOSONAR
+                    },
+                }
+            ),
 
-        getAdvanceDirectives: partialRequest(
-            getResources,
-            {
-                resource: 'Consent',
-            } as const,
-            {
-                searchParams: {
-                    category: 'http://snomed.info/sct|11341000146107', // NOSONAR
-                },
-            }
-        ),
+        getAdvanceDirectives: () =>
+            getResources(
+                {
+                    resource: 'Consent',
+                } as const,
+                {
+                    searchParams: {
+                        category: 'http://snomed.info/sct|11341000146107', // NOSONAR
+                    },
+                }
+            ),
     };
 }

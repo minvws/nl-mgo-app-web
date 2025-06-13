@@ -20,6 +20,6 @@ interface CompositionConfig<T extends keyof HTMLElementTagNameMap> extends Compo
 export function useComposition<T extends keyof HTMLElementTagNameMap>({
     asChild,
     tag,
-}: CompositionConfig<T>) {
+}: CompositionConfig<T>): { Comp: typeof Slot | T; Slottable: typeof Slottable } {
     return { Comp: asChild ? Slot : tag, Slottable };
 }

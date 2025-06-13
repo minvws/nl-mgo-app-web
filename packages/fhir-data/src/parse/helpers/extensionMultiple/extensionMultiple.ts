@@ -31,6 +31,8 @@ export function extensionMultiple<T extends DomainResource | Element, Type exten
                     ...value,
                 };
             }
+
+            return undefined;
         })
         .filter(isNonNullish);
 }
@@ -53,6 +55,7 @@ export function customExtensionMultiple<
                     ...value,
                 };
             }
+            return undefined;
         })
         .filter(isNonNullish);
 }

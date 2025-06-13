@@ -1,18 +1,27 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupCompositions<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type CompositionsService<V extends FhirVersion> = {
+    getCompositions: () => ResourcesResponsePromise<V, 'Composition'>;
+};
+
+export function setupCompositions<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): CompositionsService<V> {
     return {
-        getCompositions: partialRequest(
-            getResources,
-            {
-                resource: 'Composition',
-            } as const,
-            {
-                searchParams: {
-                    type: 'http://loinc.org|67781-5', // NOSONAR,
-                },
-            }
-        ),
+        getCompositions: () =>
+            getResources(
+                {
+                    resource: 'Composition',
+                } as const,
+                {
+                    searchParams: {
+                        type: 'http://loinc.org|67781-5', // NOSONAR,
+                    },
+                }
+            ),
     };
 }

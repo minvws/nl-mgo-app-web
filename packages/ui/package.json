@@ -9,7 +9,7 @@
     "scripts": {
         "test": "vitest",
         "dev": "storybook dev -p 6006",
-        "check-types": "tsc --noEmit",
+        "check-types": "tsc --build",
         "build-storybook": "storybook build",
         "lint": "eslint ."
     },
