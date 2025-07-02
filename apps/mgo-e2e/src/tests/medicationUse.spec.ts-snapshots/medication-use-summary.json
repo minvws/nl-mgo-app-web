@@ -12,7 +12,7 @@
       },
       {
         "label": "Status",
-        "value": "in gebruik"
+        "value": "Actief"
       },
       {
         "label": "Reden gebruik",
@@ -38,7 +38,7 @@
     "children": [
       {
         "label": "Specialist",
-        "value": "Huisartspraktijk Heideroosje"
+        "value": "Huisartsen, niet nader gespecificeerd"
       },
       {
         "label": "Zorgaanbieder",
