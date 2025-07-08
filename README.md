@@ -93,7 +93,7 @@ pnpm run <command>
 
 ## NX
 
-We have started using [nx] for managing processing within this monorepo such as typechecking or linting. We will also soon be updating the configuration to start publishing certain packages to npm.
+We have started using [nx] for managing processing within this monorepo such as building, typechecking or linting. We also use nx to publish certain packages. See the `nx.json` for details.
 
 You can use [nx] to run certain tasks for projects or viewing a graph of the entire monorepo. Running a command for a specific project:
 
@@ -103,14 +103,25 @@ npx nx run <project>:<command>
 
 Some commonly used [nx commands][nx-commands] and examples
 
-| Command                                  | Description                                                      |
-| ---------------------------------------- | ---------------------------------------------------------------- |
-| `npx nx graph`                           | [Graph dependencies within workspace][nx-graph]                  |
-| `npx nx run @minvws/mgo:build`           | Create a production build for the mgo app                        |
-| `npx nx run @minvws/mgo:dev`             | Start a development server for the mgo app                       |
-| `npx nx run @minvws/mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
-| `npx nx run @minvws/mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
-| `npx nx show project @minvws/mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
+| Command                          | Description                                                      |
+| -------------------------------- | ---------------------------------------------------------------- |
+| `npx nx graph`                   | [Graph dependencies within workspace][nx-graph]                  |
+| `npx nx run mgo:build`           | Create a production build for the mgo app                        |
+| `npx nx run mgo:dev`             | Start a development server for the mgo app                       |
+| `npx nx run mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `npx nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
+| `npx nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
+
+### Package releases
+
+Certain packages we will publish to the npm registry. We do so manually using `nx` to generate a CHANGELOG.md and tag the commit with the package version. Nx will decide which packages to release and how to update the CHANGELOG based on the commits since the previous release that touches the package. To start a new release:
+
+1. Create a new branch `release/npm`
+2. Run the command `nx release --dry-run`
+3. Check if the proposed changes are in order.
+4. Run the command `nx release`
+5. Create a PR for the `release/npm` branch.
+6. Get an approval and merge the `release/npm` branch back to main.
 
 [vite-dev]: https://vite.dev/guide/cli.html#dev-server
 [vitest]: https://vitest.dev/

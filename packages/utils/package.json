@@ -2,6 +2,11 @@
     "name": "@minvws/mgo-utils",
     "license": "EUPL-1.2",
     "type": "module",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/minvws/nl-mgo-app-web"
+    },
     "exports": {
         ".": {
             "development": "./src/index.ts",
