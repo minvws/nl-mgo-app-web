@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { createUniqueSlug } from './uniqueSlug';
+import { createUniqueSlug } from './uniqueSlug.js';
 
 test.each<[string, string[], string]>([
     ['test', ['test'], 'test-2'],

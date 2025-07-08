@@ -3,17 +3,21 @@
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
-        ".": "./src/index.ts",
-        "./*": "./src/*"
+        ".": {
+            "development": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        }
     },
     "scripts": {},
     "dependencies": {
-        "lodash": "^4.17.21",
+        "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
     },
     "devDependencies": {
-        "@types/lodash": "^4.17.4",
         "@faker-js/faker": "^8.4.1",
+        "@types/lodash-es": "^4.17.12",
         "type-fest": "^4.23.0",
         "typescript": "^5.4.5"
     }

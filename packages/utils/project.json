@@ -1,0 +1,16 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+
+    "targets": {
+        "build": {
+            "plugin": "@nx/js/typescript",
+            "options": {
+                "build": {
+                    "targetName": "build",
+                    "configName": "tsconfig.lib.json"
+                }
+            }
+        }
+    }
+}
