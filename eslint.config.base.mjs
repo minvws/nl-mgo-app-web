@@ -4,7 +4,6 @@ import tanstackQuery from '@tanstack/eslint-plugin-query';
 // @ts-ignore
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sonarjs from 'eslint-plugin-sonarjs';
-import tseslint from 'typescript-eslint';
 // @ts-ignore
 import importPlugin from 'eslint-plugin-import';
 
@@ -100,13 +99,6 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
             /** @type {import('eslint').Linter.Config} */
             {
                 files: ['**/*.ts', '**/*.tsx'],
-                languageOptions: {
-                    // @ts-expect-error - The parser type is compatible but TypeScript doesn't recognize it
-                    parser: tseslint.parser,
-                    parserOptions: {
-                        project: ['apps/*/tsconfig.json'],
-                    },
-                },
                 rules: {
                     'no-redeclare': 'off',
                     '@typescript-eslint/no-redeclare': 'error',

@@ -7,11 +7,8 @@
         "./*": "./src/*"
     },
     "scripts": {
-        "test": "vitest",
         "dev": "storybook dev -p 6006",
-        "check-types": "tsc --build",
-        "build-storybook": "storybook build",
-        "lint": "eslint ."
+        "build-storybook": "storybook build"
     },
     "dependencies": {
         "@material-symbols/svg-400": "^0.19.0",

@@ -4,6 +4,15 @@
     "include": [],
     "references": [
         {
+            "path": "../utils"
+        },
+        {
+            "path": "../fhir-types"
+        },
+        {
+            "path": "../fhir-data"
+        },
+        {
             "path": "./tsconfig.lib.json"
         },
         {

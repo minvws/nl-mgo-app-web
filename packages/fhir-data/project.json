@@ -1,0 +1,35 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+
+    "targets": {
+        "build-mobile": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "nx run @minvws/mgo-fhir-data:build-mobile-script",
+                    "nx run @minvws/mgo-fhir-data:build-mobile-types"
+                ]
+            },
+            "parallel": false
+        },
+        "build-mobile-script": {
+            "cache": true,
+            "executor": "@nx/vite:build",
+            "dependsOn": ["^typecheck"],
+            "options": {
+                "configFile": "packages/fhir-data/vite.mobile.config.ts",
+                "outputPath": "{projectRoot}/build/js"
+            }
+        },
+        "build-mobile-types": {
+            "cache": true,
+            "executor": "@nx/vite:build",
+            "dependsOn": ["^typecheck"],
+            "options": {
+                "configFile": "packages/fhir-data/vite.mobile.types.config.ts",
+                "outputPath": "{projectRoot}/build/schema/typescript"
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { HealthCategory } from '@minvws/mgo-apps-mgo';
+import { HealthCategory } from '@minvws/mgo';
 import { fhirMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';

@@ -4,6 +4,9 @@
     "include": [],
     "references": [
         {
+            "path": "../fhir-client"
+        },
+        {
             "path": "./tsconfig.lib.json"
         },
         {

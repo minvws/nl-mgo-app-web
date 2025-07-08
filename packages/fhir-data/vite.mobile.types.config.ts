@@ -5,6 +5,8 @@ import config, { resolvePath } from './vite.mobile.config';
 
 // https://vitejs.dev/config/
 export default mergeConfig(config, {
+    cacheDir: '../../node_modules/.vite/packages/fhir-data/mobile-types',
+
     plugins: [
         // https://www.npmjs.com/package/vite-plugin-dts
         dts({

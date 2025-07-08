@@ -6,11 +6,7 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
-    "scripts": {
-        "test": "vitest",
-        "check-types": "tsc --build",
-        "lint": "eslint ."
-    },
+    "scripts": {},
     "dependencies": {
         "@minvws/mgo-fhir-data": "workspace:*",
         "@minvws/mgo-fhir-types": "workspace:*",

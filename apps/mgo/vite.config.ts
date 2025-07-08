@@ -9,8 +9,10 @@ const VITE_SERVER_HOST = 'localhost';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    root: __dirname,
+    cacheDir: '../../node_modules/.vite/apps/mgo',
     build: {
-        outDir: 'build',
+        outDir: './build',
     },
     plugins: [react({ babel: { plugins: ['macros'] } }), svgr()],
     resolve: {

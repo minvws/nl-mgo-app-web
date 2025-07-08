@@ -6,11 +6,7 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
-    "scripts": {
-        "test": "vitest",
-        "check-types": "tsc --build",
-        "lint": "eslint ."
-    },
+    "scripts": {},
     "dependencies": {
         "lodash": "^4.17.21",
         "lossless-json": "^4.0.1"

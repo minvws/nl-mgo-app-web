@@ -83,13 +83,34 @@ pnpm run <command>
 | `test:coverage`   | Runs all unit tests using [vitest] and publishes a coverage report.                                  |
 | `lint`            | Lints all the code using [eslint].                                                                   |
 | `lint:fix`        | Fixes all fixable lint errors using [eslint].                                                        |
-| `check-types`     | Checks all the types using [TypeScript]                                                              |
+| `typecheck`       | Checks all the types using [TypeScript]                                                              |
 | `storybook`       | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
 | `format`          | Checks and fixes any formatting issues using [Prettier]                                              |
 | `format:check`    | Checks only any formatting issues using [Prettier]                                                   |
 | `messages:update` | Download latest translations from lokalise, see [mgo-intl] for details.                              |
 | `pr`              | Runs all the checks that are normally also ran for a pull request                                    |
 | `e2e`             | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
+
+## NX
+
+We have started using [nx] for managing processing within this monorepo such as typechecking or linting. We will also soon be updating the configuration to start publishing certain packages to npm.
+
+You can use [nx] to run certain tasks for projects or viewing a graph of the entire monorepo. Running a command for a specific project:
+
+```bash
+npx nx run <project>:<command>
+```
+
+Some commonly used [nx commands][nx-commands] and examples
+
+| Command                                  | Description                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------- |
+| `npx nx graph`                           | [Graph dependencies within workspace][nx-graph]                  |
+| `npx nx run @minvws/mgo:build`           | Create a production build for the mgo app                        |
+| `npx nx run @minvws/mgo:dev`             | Start a development server for the mgo app                       |
+| `npx nx run @minvws/mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `npx nx run @minvws/mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
+| `npx nx show project @minvws/mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
 ## License
 
@@ -103,6 +124,9 @@ This repository follows the [REUSE Specfication v3.0](https://reuse.software/spe
 [Prettier]: https://prettier.io/
 [Playwright]: https://playwright.dev/
 [docker]: https://www.docker.com/products/docker-desktop/
+[nx]: https://nx.dev/
+[nx-graph]: https://nx.dev/reference/nx-commands#graph
+[nx-commands]: https://nx.dev/reference/nx-commands
 
 <!-- Docs -->
 

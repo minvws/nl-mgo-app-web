@@ -27,12 +27,12 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 #
 FROM base AS builder
 
+WORKDIR /app
+
 COPY --from=installer /app /app
-COPY . ./app
+COPY . .
 
-WORKDIR /app/apps/mgo
-
-RUN pnpm run build
+RUN pnpm exec nx run @minvws/mgo:build
 
 #
 FROM nginx:${NGINX_VERSION}-alpine-slim

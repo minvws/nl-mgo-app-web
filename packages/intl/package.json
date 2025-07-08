@@ -8,11 +8,8 @@
         "./polyfills": "./src/polyfills/polyfills.ts"
     },
     "scripts": {
-        "test": "vitest",
-        "check-types": "tsc --build",
         "messages:update": "./bin/lokalise.sh",
-        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl",
-        "lint": "eslint ."
+        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl"
     },
     "dependencies": {
         "@formatjs/cli": "^6.6.1",

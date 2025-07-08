@@ -13,5 +13,22 @@
         }
     },
     "exclude": ["**/__mocks__/**", "src/**/*.test.ts", "src/**/*.test.tsx"],
-    "include": ["src/**/*.ts", "src/**/*.tsx"]
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "references": [
+        {
+            "path": "../../packages/utils/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/ui/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/intl/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/fhir-data/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/data-services/tsconfig.lib.json"
+        }
+    ]
 }

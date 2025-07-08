@@ -1,4 +1,4 @@
-import { type HealthCategory } from '@minvws/mgo-apps-mgo';
+import { type HealthCategory } from '@minvws/mgo';
 import { appMessage } from '@minvws/mgo-intl/test';
 import { type Page } from '@playwright/test';
 import { AbstractPage } from './AbstractPage';

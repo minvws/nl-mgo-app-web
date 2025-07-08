@@ -3,6 +3,21 @@
     "include": [],
     "references": [
         {
+            "path": "../../packages/utils"
+        },
+        {
+            "path": "../../packages/ui"
+        },
+        {
+            "path": "../../packages/intl"
+        },
+        {
+            "path": "../../packages/fhir-data"
+        },
+        {
+            "path": "../../packages/data-services"
+        },
+        {
             "path": "./tsconfig.app.json"
         },
         {

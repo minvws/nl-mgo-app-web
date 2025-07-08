@@ -13,5 +13,13 @@
         "src/**/*.spec.ts",
         "src/**/*.d.ts"
     ],
-    "exclude": ["out-tsc", "test-output"]
+    "exclude": ["out-tsc", "test-output"],
+    "references": [
+        {
+            "path": "../../packages/intl"
+        },
+        {
+            "path": "../mgo"
+        }
+    ]
 }

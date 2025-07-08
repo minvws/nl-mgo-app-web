@@ -1,5 +1,5 @@
 {
-    "name": "@minvws/mgo-apps-mgo",
+    "name": "@minvws/mgo",
     "private": true,
     "license": "UNLICENSED",
     "type": "module",
@@ -7,12 +7,7 @@
         ".": "./src/index.ts"
     },
     "scripts": {
-        "dev": "vite",
-        "test": "vitest",
-        "build": "vite build",
-        "check-types": "tsc --build",
-        "lint": "eslint .",
-        "preview": "vite preview --port=8000"
+        "lint": "eslint ."
     },
     "dependencies": {
         "@minvws/mgo-data-services": "workspace:*",

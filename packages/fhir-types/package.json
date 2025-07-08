@@ -2,10 +2,7 @@
     "name": "@minvws/mgo-fhir-types",
     "license": "EUPL-1.2",
     "type": "module",
-    "scripts": {
-        "lint": "eslint .",
-        "check-types": "tsc --build"
-    },
+    "scripts": {},
     "exports": {
         ".": "./src/index.ts",
         "./*": "./src/*.ts"

@@ -10,6 +10,16 @@
         "lib": ["es2022", "dom"]
     },
     "include": ["src/**/*.ts"],
-    "references": [],
+    "references": [
+        {
+            "path": "../utils/tsconfig.lib.json"
+        },
+        {
+            "path": "../intl/tsconfig.lib.json"
+        },
+        {
+            "path": "../fhir-types/tsconfig.lib.json"
+        }
+    ],
     "exclude": ["src/**/*.test.ts"]
 }
