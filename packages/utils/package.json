@@ -7,6 +7,9 @@
         "type": "git",
         "url": "https://github.com/minvws/nl-mgo-app-web"
     },
+    "files": [
+        "dist/"
+    ],
     "exports": {
         ".": {
             "development": "./src/index.ts",
