@@ -11,11 +11,6 @@
                     "configName": "tsconfig.lib.json"
                 }
             }
-        },
-        "nx-release-publish": {
-            "options": {
-                "registry": "https://npm.pkg.github.com/"
-            }
         }
     }
 }

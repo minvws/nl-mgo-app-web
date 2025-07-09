@@ -112,36 +112,7 @@ Some commonly used [nx commands][nx-commands] and examples
 | `npx nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
 | `npx nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
-### Package releases
-
-Certain packages we will publish to the npm registry. We do so manually using `nx` to generate a CHANGELOG.md and tag the commit with the package version. Nx will decide which packages to release and how to update the CHANGELOG based on the commits since the previous release that touches the package. To start a new release:
-
-1. Create a new branch `release/npm`
-2. Run the command `nx release --dry-run`
-3. Check if the proposed changes are in order.
-4. Run the command `nx release`
-5. Create a PR for the `release/npm` branch.
-6. Get an approval and merge the `release/npm` branch back to main.
-
-[vite-dev]: https://vite.dev/guide/cli.html#dev-server
-[vitest]: https://vitest.dev/
-[eslint]: https://eslint.org/
-[TypeScript]: https://www.typescriptlang.org/
-[Storybook]: https://storybook.js.org/
-[Prettier]: https://prettier.io/
-[Playwright]: https://playwright.dev/
-[docker]: https://www.docker.com/products/docker-desktop/
-[nx]: https://nx.dev/
-[nx-graph]: https://nx.dev/reference/nx-commands#graph
-[nx-commands]: https://nx.dev/reference/nx-commands
-
-<!-- Docs -->
-
-[mgo-about]: ./docs/about.md
-[mgo-development]: ./docs/development.md
-[mgo-deployment]: ./docs/deployment.md
-[mgo-glossary]: ./docs/glossary.md
-[mgo-intl]: ./packages/mgo-intl/README.md
+We also use nx to publish certain packages to [NPM]. For more information on this please [visit the NPM packages documentation][mgo-npm-packages]]
 
 ## Contributing
 
@@ -157,3 +128,27 @@ Specifically the rijkslogo and rijkshuisstijl have specific [terms of use](./LIC
 
 This repository follows the [REUSE Specfication v3.3](https://reuse.software/spec/).
 Please see [REUSE.toml](./REUSE.toml) and the individual `*.license` files for copyright and license information.
+
+<hr>
+
+[vite-dev]: https://vite.dev/guide/cli.html#dev-server
+[vitest]: https://vitest.dev/
+[eslint]: https://eslint.org/
+[TypeScript]: https://www.typescriptlang.org/
+[Storybook]: https://storybook.js.org/
+[Prettier]: https://prettier.io/
+[Playwright]: https://playwright.dev/
+[docker]: https://www.docker.com/products/docker-desktop/
+[nx]: https://nx.dev/
+[nx-graph]: https://nx.dev/reference/nx-commands#graph
+[nx-commands]: https://nx.dev/reference/nx-commands
+[NPM]: https://www.npmjs.com/
+
+<!-- Docs -->
+
+[mgo-about]: ./docs/about.md
+[mgo-development]: ./docs/development.md
+[mgo-deployment]: ./docs/deployment.md
+[mgo-glossary]: ./docs/glossary.md
+[mgo-intl]: ./packages/mgo-intl/README.md
+[mgo-npm-packages]: ./packages/npm-packages/README.md
