@@ -76,6 +76,17 @@
                         "system": "http://snomed.info/sct"
                     }
                 ]
+            },
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "19829001",
+                        "display": "Aandoening van long (aandoening)",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
             }
         ],
         "vaccinationMotive": [
