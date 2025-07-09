@@ -2,7 +2,8 @@
     "extends": "../../tsconfig.vite.json",
     "compilerOptions": {
         "allowJs": true,
-        "outDir": "out-tsc/playwright",
+        "outDir": "../../out-tsc/mgo-e2e/playwright",
+        "tsBuildInfoFile": "../../out-tsc/mgo-e2e/tsconfig.tsbuildinfo",
         "sourceMap": false
     },
     "include": [

@@ -4,7 +4,7 @@
         "baseUrl": ".",
         "rootDir": "src",
         "outDir": "dist",
-        "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+        "tsBuildInfoFile": "../../out-tsc/mgo-ui/tsconfig.lib.tsbuildinfo",
         "emitDeclarationOnly": false,
         "types": ["vite/client", "vite-plugin-svgr/client"],
         "jsx": "react-jsx",
