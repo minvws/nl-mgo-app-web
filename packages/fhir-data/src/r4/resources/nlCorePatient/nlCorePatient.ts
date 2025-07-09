@@ -63,7 +63,7 @@ function parseNlCorePatient(resource: Patient) {
         name: map(resource.name, parseNlCoreNameInformation),
         telecom: parseNlCoreContactInformation(resource.telecom),
         gender: {
-            genderCodeList: parse.extension(
+            genderCodelist: parse.extension(
                 resource._gender,
                 'http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification', // NOSONAR
                 'codeableConcept'

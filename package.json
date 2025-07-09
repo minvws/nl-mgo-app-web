@@ -13,7 +13,7 @@
         "storybook": "pnpm run --dir packages/mgo-ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "messages:update": "pnpm run --dir packages/mgo-intl messages:update",
+        "messages:update": "pnpm run --dir packages/intl messages:update",
         "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
         "e2e": "pnpm run --dir apps/mgo-e2e e2e"
     },

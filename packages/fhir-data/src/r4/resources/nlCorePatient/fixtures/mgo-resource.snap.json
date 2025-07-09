@@ -116,7 +116,7 @@
         ]
     },
     "gender": {
-        "genderCodeList": {
+        "genderCodelist": {
             "_ext": true,
             "_type": "codeableConcept",
             "text": null,

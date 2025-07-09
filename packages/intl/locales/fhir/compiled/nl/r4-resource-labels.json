@@ -77,30 +77,6 @@
       "value": "Zorgprofessional"
     }
   ],
-  "r4.nl_core_health_professional_practitioner_role": [
-    {
-      "type": 0,
-      "value": "Zorgprofessional rol"
-    }
-  ],
-  "r4.nl_core_health_professional_practitioner_role.location": [
-    {
-      "type": 0,
-      "value": "Locatie"
-    }
-  ],
-  "r4.nl_core_health_professional_practitioner_role.organization": [
-    {
-      "type": 0,
-      "value": "Zorgaanbieder"
-    }
-  ],
-  "r4.nl_core_health_professional_practitioner_role.practitioner": [
-    {
-      "type": 0,
-      "value": "Zorgverlener"
-    }
-  ],
   "r4.nl_core_health_professional_practitioner_role.speciality": [
     {
       "type": 0,
@@ -125,64 +101,10 @@
       "value": "Beherende organisatie"
     }
   ],
-  "r4.nl_core_healthcare_provider.name": [
-    {
-      "type": 0,
-      "value": "Zorgverlener naam"
-    }
-  ],
-  "r4.nl_core_healthcare_provider_organization": [
-    {
-      "type": 0,
-      "value": "Zorgverlener organisatie"
-    }
-  ],
-  "r4.nl_core_healthcare_provider_organization.department_speciality": [
-    {
-      "type": 0,
-      "value": "Zorgverlener organisatie afdelings specialiteit"
-    }
-  ],
-  "r4.nl_core_healthcare_provider_organization.identifier": [
-    {
-      "type": 0,
-      "value": "Zorgverlener organisatie identifier"
-    }
-  ],
-  "r4.nl_core_healthcare_provider_organization.name": [
-    {
-      "type": 0,
-      "value": "Zorgverlener organisatie naam"
-    }
-  ],
-  "r4.nl_core_healthcare_provider_organization.organization_type": [
-    {
-      "type": 0,
-      "value": "Zorgverlener organisatie type"
-    }
-  ],
-  "r4.nl_core_patient.contact.relationship.relationship": [
-    {
-      "type": 0,
-      "value": "Relatie"
-    }
-  ],
   "r4.nl_core_patient.deceased": [
     {
       "type": 0,
       "value": "Overleden"
-    }
-  ],
-  "r4.nl_core_patient.deceased.deceased_date_time": [
-    {
-      "type": 0,
-      "value": "Datum"
-    }
-  ],
-  "r4.nl_core_patient.gender.gender_code_list": [
-    {
-      "type": 0,
-      "value": "Geslacht"
     }
   ],
   "r4.nl_core_patient.identifier.bsn": [

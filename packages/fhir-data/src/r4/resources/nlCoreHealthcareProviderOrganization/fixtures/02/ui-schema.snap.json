@@ -1,5 +1,5 @@
 {
-    "label": "Zorgverlener organisatie",
+    "label": "Zorgaanbieder",
     "children": [
         {
             "children": [
@@ -9,12 +9,12 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Zorgverlener organisatie identifier",
+                    "label": "Organisatie naam",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Zorgverlener organisatie naam",
+                    "label": "Zorgaanbieder identificatienummer",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

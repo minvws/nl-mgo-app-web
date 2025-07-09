@@ -9,7 +9,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Zorgverlener naam",
+                    "label": "Locatie naam",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

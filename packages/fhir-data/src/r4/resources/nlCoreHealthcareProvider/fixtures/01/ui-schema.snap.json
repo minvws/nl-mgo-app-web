@@ -10,7 +10,7 @@
                     "reference": "Organization/nl-core-HealthcareProvider-Organization-01"
                 },
                 {
-                    "label": "Zorgverlener naam",
+                    "label": "Locatie naam",
                     "type": "SINGLE_VALUE",
                     "display": "Erasmus Ziekenhuis"
                 }

@@ -9,7 +9,7 @@
                     "display": null
                 },
                 {
-                    "label": "Identificatie",
+                    "label": "Zorgverlener identificatienummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "21870932"

@@ -1,19 +1,19 @@
 {
-    "label": "Zorgverlener organisatie",
+    "label": "Zorgaanbieder",
     "children": [
         {
             "children": [
                 {
-                    "label": "Zorgverlener organisatie identifier",
+                    "label": "Organisatie naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Erasmus Universitair Medisch Centrum"
+                },
+                {
+                    "label": "Zorgaanbieder identificatienummer",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "06020806"
                     ]
-                },
-                {
-                    "label": "Zorgverlener organisatie naam",
-                    "type": "SINGLE_VALUE",
-                    "display": "Erasmus Universitair Medisch Centrum"
                 }
             ]
         },

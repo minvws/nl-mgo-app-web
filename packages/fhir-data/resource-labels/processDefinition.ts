@@ -7,15 +7,16 @@ import { normalizeLabel } from './normalizeLabel';
  */
 const mirrorLabels = {
     ['zib_laboratory_test_result_observation']: 'gp_laboratory_result',
-    ['zib_pharmaceutical_product']: 'nl_core_pharmaceutical_product',
     ['zib_encounter']: 'gp_encounter',
-    ['zib_patient']: 'nl_core_patient',
-    ['zib_contact_person']: 'nl_core_contact_person',
-    ['zib_vaccination_event']: 'nl_core_vaccination_event',
     ['zib_address_information']: 'nl_core_address_information',
+    ['zib_contact_person']: 'nl_core_contact_person',
     ['zib_healthcare_provider']: 'nl_core_healthcare_provider',
     ['zib_healthcare_provider_organization']: 'nl_core_healthcare_provider_organization',
+    ['zib_health_professional_practitioner']: 'nl_core_health_professional_practitioner',
     ['zib_health_professional_practitioner_role']: 'nl_core_health_professional_practitioner_role',
+    ['zib_patient']: 'nl_core_patient',
+    ['zib_pharmaceutical_product']: 'nl_core_pharmaceutical_product',
+    ['zib_vaccination_event']: 'nl_core_vaccination_event',
 };
 
 /**

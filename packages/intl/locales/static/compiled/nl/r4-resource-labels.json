@@ -530,7 +530,31 @@
   "r4.nl_core_health_professional_practitioner": [
     {
       "type": 0,
-      "value": "Nl-core-health professional-practitioner"
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner.gender": [
+    {
+      "type": 0,
+      "value": "Geslacht"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner.identifier": [
+    {
+      "type": 0,
+      "value": "Zorgverlener identificatienummer"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner.name": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner.telecom": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
     }
   ],
   "r4.nl_core_health_professional_practitioner_role": [

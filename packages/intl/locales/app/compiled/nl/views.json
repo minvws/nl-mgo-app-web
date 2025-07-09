@@ -117,10 +117,80 @@
       "value": "Ja, weglaten"
     }
   ],
+  "export_pdf.dialog.create_document": [
+    {
+      "type": 0,
+      "value": "Maak pdf"
+    }
+  ],
+  "export_pdf.dialog.heading": [
+    {
+      "type": 0,
+      "value": "Pdf maken van deze lijst?"
+    }
+  ],
+  "export_pdf.dialog.subheading": [
+    {
+      "type": 0,
+      "value": "Je maakt een document met je medische gegevens. Die kun je daarna op je telefoon opslaan."
+    }
+  ],
+  "export_pdf.footer": [
+    {
+      "type": 0,
+      "value": "Dit document is gemaakt met Mijn Gezondheidsoverzicht. Het bevat jouw medische gegevens,\\nafkomstig van zorgaanbieders die jij hebt toegevoegd. Jij bent zelf verantwoordelijk voor wat je\\nmet deze informatie doet. De gegevens zijn niet gecontroleerd op juistheid of volledigheid."
+    }
+  ],
+  "export_pdf.no_data": [
+    {
+      "type": 0,
+      "value": "Geen gegevens beschikbaar"
+    }
+  ],
+  "export_pdf.page": [
+    {
+      "type": 0,
+      "value": "Pagina "
+    },
+    {
+      "type": 1,
+      "value": "currentPage"
+    },
+    {
+      "type": 0,
+      "value": " van "
+    },
+    {
+      "type": 1,
+      "value": "totalPages"
+    }
+  ],
+  "export_pdf.subheading": [
+    {
+      "type": 0,
+      "value": "Opgeslagen op "
+    },
+    {
+      "type": 1,
+      "value": "datum"
+    },
+    {
+      "type": 0,
+      "value": " om "
+    },
+    {
+      "type": 1,
+      "value": "tijdstip"
+    },
+    {
+      "type": 0,
+      "value": " uur"
+    }
+  ],
   "footer.about_heading": [
     {
       "type": 0,
-      "value": "Over deze website"
+      "value": "Over deze site"
     }
   ],
   "footer.about_site": [
@@ -192,7 +262,7 @@
   "introduction.subheading": [
     {
       "type": 0,
-      "value": "Eén app met alle gegevens die je huisarts, ziekenhuis en andere zorgaanbieders over jou hebben. Veilig en overzichtelijk."
+      "value": "Eén app met alle gegevens die je huisarts, ziekenhuis en andere zorgaanbieders van jou hebben. Veilig en overzichtelijk."
     }
   ],
   "lab_results.heading": [
@@ -216,7 +286,7 @@
   "login.error_heading": [
     {
       "type": 0,
-      "value": "Inloggen is niet gelukt"
+      "value": "Inloggen niet gelukt"
     }
   ],
   "login.error_subheading": [
@@ -234,13 +304,13 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Bewijs wie je bent"
+      "value": "Log in met DigiD"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Log in met DigiD. Zo kunnen we jouw gegevens veilig ophalen bij je huisarts, ziekenhuis en andere zorgaanbieders."
+      "value": "Met DigiD laat je weten wie je bent. Zo kunnen we je gegevens veilig ophalen. Bij je huisarts, het ziekenhuis en andere zorgaanbieders."
     }
   ],
   "logout.heading": [
@@ -501,10 +571,16 @@
       "value": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
     }
   ],
+  "pdf_viewer.loading": [
+    {
+      "type": 0,
+      "value": "Document maken…"
+    }
+  ],
   "privacy.markdown": [
     {
       "type": 0,
-      "value": "&lt;h1&gt;Privacyverklaring Mijn Gezondheidsoverzicht&lt;/h1&gt;\n&lt;p&gt;Deze verklaring beschrijft in het kort het volgende:&lt;/p&gt;\n&lt;ol&gt;\n&lt;li&gt;Wie verantwoordelijk is voor de verwerking van persoonsgegevens voor Mijn Gezondheidsoverzicht.&lt;/li&gt;\n&lt;li&gt;Waarom persoonsgegevens worden verwerkt.&lt;/li&gt;\n&lt;li&gt;Wat de grondslag is voor het verwerken van persoonsgegevens.&lt;/li&gt;\n&lt;li&gt;Welke persoonsgegevens van de gebruiker van Mijn Zorg worden verwerkt.&lt;/li&gt;\n&lt;li&gt;Hoe wordt omgegaan met cookies en statistische informatie.&lt;/li&gt;\n&lt;li&gt;Aan wie de persoonsgegevens verstrekt kunnen worden.&lt;/li&gt;\n&lt;li&gt;Welke bewaartermijnen gelden.&lt;/li&gt;\n&lt;li&gt;Wat de rechten zijn van de gebruiker.&lt;/li&gt;\n&lt;li&gt;Welke beveiligingsmaatregelen genomen zijn.&lt;/li&gt;\n&lt;li&gt;Dat de privacyverklaring gewijzigd kan worden.&lt;/li&gt;\n&lt;/ol&gt;\n&lt;p&gt;In het Besluit verwerking persoonsgegevens generieke digitale infrastructuur wordt de verwerking van persoonsgegevens uitvoerig beschreven (vindplaats: Staatsblad 2016, 195)&lt;/p&gt;\n&lt;h2&gt;1. Wie verantwoordelijk is voor de verwerking van persoonsgegevens voor Mijn Gezondheidsoverzicht.&lt;/h2&gt;\n&lt;p&gt;De Minister van Binnenlandse Zaken en Koninkrijksrelaties is verantwoordelijk voor het verwerken van persoonsgegevens voor Mijn Gezondheidsoverzicht. Het beheer van Mijn Gezondheidsoverzicht wordt uitgevoerd door iRealisatie. iRealisatie is onderdeel van het Ministerie van Volksgezondheid, Welzijn en Sport.&lt;/p&gt;\n&lt;p&gt;Voor meer informatie hierover kunt u contact opnemen met de Functionaris Gegevensbescherming van het Ministerie van Volksgezondheid, Welzijn en Sport. U kunt de Functionaris Gegevensbescherming bereiken via &lt;a href=&quot;https://www.rijksoverheid.nl/contact/informatie-rijksoverheid/e-mail-sturen&quot;&gt;het contactformulier&lt;/a&gt; op de website van het Ministerie van Volksgezondheid, Welzijn en Sport.&lt;/p&gt;\n&lt;h2&gt;2. Waarom persoonsgegevens worden verwerkt.&lt;/h2&gt;\n&lt;p&gt;Tempora repellendus ducimus minima hic fugiat illo non iste. Molestias perferendis eligendi accusantium eius sint eos deleniti fuga sed quia doloremque voluptatem officia ex. Assumenda odio tempora ducimus occaecati ullam porro doloribus reprehenderit explicabo facilis. Nisi temporibus perspiciatis consequuntur nobis asperiores molestiae consequuntur quis consequuntur odio exercitationem at minima sed. Tempora voluptatum corrupti iusto soluta cupiditate minus unde.&lt;/p&gt;\n&lt;h2&gt;3. Wat de grondslag is voor het verwerken van persoonsgegevens.&lt;/h2&gt;\n&lt;p&gt;Eum veritatis ducimus magni temporibus inventore distinctio reprehenderit possimus voluptate architecto. Consequuntur vel quae labore tempore exercitationem corrupti vero esse natus. Quae laboriosam ipsam culpa quisquam eligendi commodi veniam reiciendis harum animi provident esse. Autem veniam dolores nam cupiditate quod ut porro qui optio illum aliquam. Quidem ex inventore quia architecto harum omnis ab.&lt;/p&gt;\n&lt;h2&gt;4. Welke persoonsgegevens van de gebruiker van Mijn Zorg worden verwerkt.&lt;/h2&gt;\n&lt;p&gt;Occaecati porro commodi quasi soluta qui omnis voluptatem nam hic. Nihil maiores iste ipsam laudantium beatae voluptates ex natus voluptate autem molestiae. Excepturi doloremque rem nostrum ducimus a ipsa ab impedit atque. Odio rerum amet tenetur magni vitae aliquid pariatur harum consectetur reiciendis officia aut minus consectetur. Aperiam explicabo veniam ex quo qui ea minima blanditiis delectus quisquam numquam quos aspernatur.&lt;/p&gt;\n&lt;h2&gt;5. Hoe wordt omgegaan met cookies en statistische informatie.&lt;/h2&gt;\n&lt;p&gt;Ratione sapiente occaecati cum nobis eligendi eius sit dolor minus molestias nihil. Perspiciatis laboriosam nihil iusto soluta doloribus facilis maxime. Magnam iste dolore modi facilis ab cupiditate voluptatem placeat ab dolore similique cumque in. Totam quasi est deleniti modi animi voluptate praesentium expedita rem tempore. Eum deserunt quasi aperiam quos vero perspiciatis doloribus.&lt;/p&gt;\n&lt;h2&gt;6. Aan wie de persoonsgegevens verstrekt kunnen worden.&lt;/h2&gt;\n&lt;p&gt;Tenetur quibusdam voluptatibus dolorem fuga ullam sequi eveniet in illum assumenda qui voluptates deserunt itaque. Molestias sint porro ipsa eligendi eveniet voluptas nihil ad consectetur quod vero accusamus. In ipsam corrupti dolorum a ducimus vel minus debitis tempore maiores temporibus quo facere. Ratione placeat tenetur amet eum necessitatibus rem aliquid doloribus ea. Exercitationem possimus atque optio dolore eum corporis ex atque earum fugiat.&lt;/p&gt;\n&lt;h2&gt;7. Welke bewaartermijnen gelden.&lt;/h2&gt;\n&lt;p&gt;Eum ut eum sapiente illum vero iusto omnis soluta corporis asperiores. Modi accusamus molestiae facilis dignissimos doloremque aperiam corrupti sapiente dignissimos consequatur. Repudiandae harum nulla ex voluptatibus error nesciunt necessitatibus repellat sit veritatis laborum laudantium distinctio odit. Nihil fugiat quisquam nostrum similique reprehenderit voluptatum quo et repudiandae minus vitae. Minus impedit ratione in repellendus ipsum voluptatem iste veritatis.&lt;/p&gt;\n&lt;h2&gt;8. Wat de rechten zijn van de gebruiker.&lt;/h2&gt;\n&lt;p&gt;Natus quo necessitatibus veritatis provident corrupti occaecati dolor natus fugit qui quaerat eligendi voluptatibus omnis. Dolore iste possimus quod voluptatibus dolore similique soluta harum impedit aperiam aliquid. Dolores commodi occaecati veritatis excepturi atque facilis magnam. Quidem ut blanditiis ullam omnis ex earum eaque odio officiis. Facilis saepe perferendis quod nihil neque aspernatur sequi illo laboriosam maiores numquam dolor.&lt;/p&gt;\n&lt;h2&gt;9. Welke beveiligingsmaatregelen genomen zijn.&lt;/h2&gt;\n&lt;p&gt;Facere nemo quae labore nulla praesentium sint vel explicabo inventore laudantium illo nulla. Deleniti voluptatibus architecto tempore natus ullam itaque eos suscipit ea. Hic impedit ipsam suscipit saepe eum ab veniam sunt perspiciatis necessitatibus optio vel fuga. Culpa nesciunt sed quos neque molestiae ab sint ut ullam. Rem maxime corrupti odio culpa velit voluptatum ullam.&lt;/p&gt;\n&lt;h2&gt;10. Dat de privacyverklaring gewijzigd kan worden.&lt;/h2&gt;\n&lt;p&gt;Assumenda maxime vel adipisci a molestias delectus qui. Beatae dolore aperiam hic dignissimos mollitia neque reiciendis labore. Nulla dicta at occaecati veritatis deleniti sit porro aut odio a modi facilis. Aliquid eum omnis optio earum dolore et aut deleniti odio. Magni sunt sed quis ipsam eligendi rem placeat.&lt;/p&gt;\n"
+      "value": "&lt;h1&gt;Privacyverklaring Mijn Gezondheidsoverzicht&lt;/h1&gt;\n&lt;p&gt;Mijn Gezondheidsoverzicht (MGO) is een product van het ministerie van Volksgezondheid, Welzijn en Sport (VWS). Met MGO kun je op één plek je gezondheidsgegevens bekijken. Zo heb je altijd en overal inzicht in je eigen gezondheid. MGO is bedoeld voor iedereen, ook als je geen gebruikmaakt van een Persoonlijke Gezondheidsomgeving (PGO).&lt;/p&gt;\n&lt;h2&gt;Wat zijn persoonsgegevens?&lt;/h2&gt;\n&lt;p&gt;Persoonsgegevens zijn gegevens die iets over jou vertellen. Bijvoorbeeld:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;je naam of geboortedatum&lt;/li&gt;\n&lt;li&gt;je adres of e-mailadres&lt;/li&gt;\n&lt;li&gt;je gezondheidsgegevens&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Sommige gegevens zijn extra gevoelig. Denk aan informatie over je gezondheid, geloof of strafblad. Die noemen we ‘bijzondere persoonsgegevens’. De wet beschermt deze extra goed.&lt;/p&gt;\n&lt;h2&gt;Welke gegevens toont MGO?&lt;/h2&gt;\n&lt;p&gt;MGO toont alleen medische gegevens die zorgverleners over jou hebben. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;informatie van je huisarts of specialist&lt;/li&gt;\n&lt;li&gt;medicatieoverzichten&lt;/li&gt;\n&lt;li&gt;uitslagen van onderzoeken&lt;/li&gt;\n&lt;li&gt;verslagen of brieven van behandelaars&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Deze gegevens worden direct opgehaald bij je zorgaanbieders. Ze worden niet opgeslagen of verwerkt in de app zelf. Jij bepaalt of je de gegevens ophaalt en bekijkt.&lt;/p&gt;\n&lt;h2&gt;Hoe beschermen we je gegevens?&lt;/h2&gt;\n&lt;p&gt;Je gegevens zijn goed beveiligd. We nemen maatregelen om misbruik, verlies of ongewenste toegang te voorkomen. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;versleutelde verbindingen (HTTPS)&lt;/li&gt;\n&lt;li&gt;toegang alleen via jouw persoonlijke inlog&lt;/li&gt;\n&lt;li&gt;regelmatige controles en beveiligingstesten&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;MGO voldoet aan de regels van de privacywet (AVG).&lt;/p&gt;\n&lt;h2&gt;Wie is verantwoordelijk?&lt;/h2&gt;\n&lt;p&gt;Het ministerie van Volksgezondheid, Welzijn en Sport (VWS) is verantwoordelijk voor de werking van de app. MGO toont gegevens van zorgaanbieders, maar bewaart of verwerkt deze niet.&lt;/p&gt;\n&lt;h2&gt;Je rechten&lt;/h2&gt;\n&lt;p&gt;Je hebt recht op inzage in je gegevens. Je kunt ook vragen om correctie of verwijdering. Dat regel je meestal via je zorgaanbieder.&lt;/p&gt;\n"
     }
   ],
   "problems.heading": [
@@ -522,7 +598,7 @@
   "proposition.heading": [
     {
       "type": 0,
-      "value": "Zo gebruikt de website jouw gegevens"
+      "value": "Hoe de website met jouw gegevens omgaat"
     }
   ],
   "proposition.statement_1": [
@@ -628,7 +704,7 @@
     },
     {
       "type": 0,
-      "value": " staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten:"
+      "value": " staat hoe Mijn Gezondheidsoverzicht je gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
     }
   ],
   "settings.featureflag.localization": [

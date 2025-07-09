@@ -37,6 +37,20 @@
   ],
   "dialog.remove_organization_yes": [
   ],
+  "export_pdf.dialog.create_document": [
+  ],
+  "export_pdf.dialog.heading": [
+  ],
+  "export_pdf.dialog.subheading": [
+  ],
+  "export_pdf.footer": [
+  ],
+  "export_pdf.no_data": [
+  ],
+  "export_pdf.page": [
+  ],
+  "export_pdf.subheading": [
+  ],
   "footer.about_heading": [
   ],
   "footer.about_site": [
@@ -164,6 +178,8 @@
   "overview.organizations.subheading": [
   ],
   "overview.subheading": [
+  ],
+  "pdf_viewer.loading": [
   ],
   "privacy.markdown": [
   ],
