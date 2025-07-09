@@ -5,7 +5,6 @@
     "targets": {
         "build": {
             "executor": "@nx/vite:build",
-            "dependsOn": [],
             "options": {
                 "outputPath": "{projectRoot}/build"
             }
