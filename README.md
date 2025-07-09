@@ -112,10 +112,6 @@ Some commonly used [nx commands][nx-commands] and examples
 | `npx nx run @minvws/mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
 | `npx nx show project @minvws/mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
-## License
-
-This repository follows the [REUSE Specfication v3.0](https://reuse.software/spec/). Please see [.reuse/dep5](./.reuse/dep5) and the individual `*.license` files for copyright and license information.
-
 [vite-dev]: https://vite.dev/guide/cli.html#dev-server
 [vitest]: https://vitest.dev/
 [eslint]: https://eslint.org/
