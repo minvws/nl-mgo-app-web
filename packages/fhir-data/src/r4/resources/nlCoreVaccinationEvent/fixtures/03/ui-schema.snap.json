@@ -95,6 +95,9 @@
                     "display": [
                         [
                             "Kwetsbare oudere (bevinding) (404904002 in code systeem http://snomed.info/sct)"
+                        ],
+                        [
+                            "Aandoening van long (aandoening) (19829001 in code systeem http://snomed.info/sct)"
                         ]
                     ]
                 }
