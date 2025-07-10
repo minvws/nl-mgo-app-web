@@ -5,12 +5,12 @@
     "scripts": {
         "build:test": "tsc --project tsconfig.json",
         "pretest": "npm install @minvws/mgo-utils@latest",
-        "test": "npm run build:test && node dist/index.js"
+        "test": "npm run build:test && node --no-warnings dist/index.js"
     },
     "devDependencies": {
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@minvws/mgo-utils": "^0.1.1-1"
+        "@minvws/mgo-utils": "^0.1.1-2"
     }
 }
