@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.vite.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
         "outDir": "../../out-tsc/mgo-intl/vitest",
         "tsBuildInfoFile": "../../out-tsc/mgo-intl/tsconfig.spec.tsbuildinfo",

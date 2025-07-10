@@ -103,14 +103,14 @@ npx nx run <project>:<command>
 
 Some commonly used [nx commands][nx-commands] and examples
 
-| Command                          | Description                                                      |
-| -------------------------------- | ---------------------------------------------------------------- |
-| `npx nx graph`                   | [Graph dependencies within workspace][nx-graph]                  |
-| `npx nx run mgo:build`           | Create a production build for the mgo app                        |
-| `npx nx run mgo:dev`             | Start a development server for the mgo app                       |
-| `npx nx run mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
-| `npx nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
-| `npx nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
+| Command                                | Description                                                      |
+| -------------------------------------- | ---------------------------------------------------------------- |
+| `pnpm exec nx graph`                   | [Graph dependencies within workspace][nx-graph]                  |
+| `pnpm exec nx run mgo:build`           | Create a production build for the mgo app                        |
+| `pnpm exec nx run mgo:dev`             | Start a development server for the mgo app                       |
+| `pnpm exec nx run mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `pnpm exec nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
+| `pnpm exec nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
 We also use nx to publish certain packages to [NPM]. For more information on this please [visit the NPM packages documentation][mgo-npm-packages]]
 

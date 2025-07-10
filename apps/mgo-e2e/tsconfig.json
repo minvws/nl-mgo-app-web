@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.vite.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
         "allowJs": true,
         "outDir": "../../out-tsc/mgo-e2e/playwright",
