@@ -7,7 +7,7 @@
             "projectChangelogs": true
         },
         "version": {
-            "preVersionCommand": "npx nx run-many -t build"
+            "preVersionCommand": "pnpm exec nx run-many -t build"
         }
     },
     "targetDefaults": {

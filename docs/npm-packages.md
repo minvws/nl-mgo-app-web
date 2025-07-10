@@ -9,9 +9,9 @@ We publish certain packages to the npm registry. We do so manually using `nx` to
 To start a new release:
 
 1. Create a new branch `release/npm`
-2. Run the command `nx release --dry-run`
+2. Run the command `pnpm exec nx release --dry-run`
 3. Check if the proposed changes are in order.
-4. Run the command `nx release`
+4. Run the command `pnpm exec nx release`
 5. Create a PR for the `release/npm` branch.
 6. Get an approval and merge the `release/npm` branch back to main.
 
@@ -29,9 +29,9 @@ If you need more advanced or granular control over your release process you can 
 Each of these subcommands has their own CLI arguments which you can explore using the --help flag.
 
 ```shell
-nx release version --help
-nx release changelog --help
-nx release publish --help
+pnpm exec nx release version --help
+pnpm exec nx release changelog --help
+pnpm exec nx release publish --help
 ```
 
 ### Releasing to the Github registry
@@ -41,8 +41,8 @@ It can be useful to first publish a package to the Github registry for testing. 
 Follow the same steps as in the [Release process](#release-process). Except in step #4 use the following command for creating and publishing the release.
 
 ```
-nx release --skip-publish
-nx release publish --registry https://npm.pkg.github.com/
+pnpm exec nx release --skip-publish
+pnpm exec nx release publish --registry https://npm.pkg.github.com/
 ```
 
 <hr>
