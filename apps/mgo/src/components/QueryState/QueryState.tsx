@@ -1,4 +1,4 @@
-import { Card, Render, type RenderProps } from '@minvws/mgo-mgo-ui';
+import { Card, Render, type RenderProps } from '@minvws/mgo-ui';
 import { type DefaultError as DefaultQueryError, type UseQueryResult } from '@tanstack/react-query';
 import { Fragment, type ReactNode } from 'react';
 import { QueryStateError } from './QueryStateError';

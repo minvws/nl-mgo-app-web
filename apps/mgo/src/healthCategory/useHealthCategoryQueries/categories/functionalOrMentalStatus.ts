@@ -2,7 +2,7 @@ import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { getDataService } from '$/services';
 import { type HealthcareOrganization } from '$/store';
 import { DataServiceId } from '@minvws/mgo-data-services';
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type CategoryQueriesConfig } from '.';
 import { createResourceBundleQuery } from '../createResourceBundleQuery';
 

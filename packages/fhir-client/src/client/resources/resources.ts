@@ -1,6 +1,5 @@
 import { type Bundle, type FhirVersion, type ResourceType } from '@minvws/mgo-fhir-types';
-import { type Lossless } from '@minvws/mgo-mgo-utils';
-import type { KyInstance, Options as KyOptions } from 'ky';
+import type { KyInstance, Options as KyOptions, ResponsePromise } from 'ky';
 import type { FhirClientOptions } from '..';
 
 export interface BaseResourcesRequest<
@@ -28,23 +27,32 @@ export interface ObservationResourcesRequest<
 export type ResourcesResponse<
     V extends FhirVersion,
     T extends ResourceType<V>,
-    Response = Lossless<Bundle<V, T>>,
+    Response = Bundle<V, T>,
 > = Response;
+
+export type ResourcesResponsePromise<
+    V extends FhirVersion,
+    T extends ResourceType<V>,
+> = ResponsePromise<ResourcesResponse<V, T>>;
+
+export type GetResourcesFunction<V extends FhirVersion> = <
+    Request extends ResourcesRequest<V> | ObservationResourcesRequest<V>,
+    Response = ResourcesResponse<V, Request['resource']>,
+>(
+    request: Request,
+    options?: KyOptions
+) => ResponsePromise<Response>;
 
 export function setupResources<V extends FhirVersion>(
     instance: KyInstance,
     _options: FhirClientOptions<V>
-) {
+): {
+    getResources: GetResourcesFunction<V>;
+} {
     return {
-        getResources: <
-            Request extends ResourcesRequest<V> | ObservationResourcesRequest<V>,
-            Response = ResourcesResponse<V, Request['resource']>,
-        >(
-            request: Request,
-            options: KyOptions = {}
-        ) => {
+        getResources: (request, options = {}) => {
             const { resource, $lastn } = request as ObservationResourcesRequest<V>;
-            return instance.get<Response>(`${resource}${$lastn ? '/$lastn' : ''}`, options);
+            return instance.get(`${resource}${$lastn ? '/$lastn' : ''}`, options);
         },
     };
 }

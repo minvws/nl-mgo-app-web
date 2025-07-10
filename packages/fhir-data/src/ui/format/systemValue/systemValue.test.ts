@@ -2,7 +2,7 @@ import { faker } from '$test';
 import { expect, test, vi } from 'vitest';
 import { systemValue } from './systemValue';
 
-test('count returns basic format when there is no translation', () => {
+test('systemValue returns basic format when there is no translation', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
@@ -15,7 +15,7 @@ test('count returns basic format when there is no translation', () => {
     expect(result).toBe(expected);
 });
 
-test('count returns translation when available', () => {
+test('systemValue returns translation when available', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
 
@@ -29,7 +29,7 @@ test('count returns translation when available', () => {
     expect(result).toBe(expected);
 });
 
-test('count returns string without unit', () => {
+test('systemValue returns string without unit', () => {
     const context = faker.custom.uiHelperContext();
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
 
@@ -41,4 +41,15 @@ test('count returns string without unit', () => {
     const result = formatSystemValue(value);
 
     expect(result).toBe(expected);
+});
+
+test('systemValue returns undefined without value', () => {
+    const context = faker.custom.uiHelperContext();
+    vi.spyOn(context, 'hasMessage').mockReturnValueOnce(false);
+
+    const value = undefined;
+    const formatSystemValue = systemValue(context);
+    const result = formatSystemValue(value);
+
+    expect(result).toBe(undefined);
 });

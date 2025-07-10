@@ -1,7 +1,7 @@
 import { useAuth, type AuthState } from '$/auth';
 import { getAuthUrl, type AuthUrlResponse } from '$/services/vad/vad';
 import { faker } from '$test/faker';
-import { defer, flushCallStack } from '@minvws/mgo-mgo-utils';
+import { defer, flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
@@ -15,7 +15,7 @@ const mockTakeUserInfoFromUrl = takeUserInfoFromUrl as MockedFunction<typeof tak
 
 vi.mock(
     '$/services/vad/vad',
-    () => ({ getAuthUrl: vi.fn() }) as typeof import('$/services/vad/vad') // eslint-disable-line @typescript-eslint/consistent-type-imports
+    () => ({ getAuthUrl: vi.fn() }) as typeof import('$/services/vad/vad')
 );
 
 vi.mock('./takeUserInfoFromUrl', () => ({ takeUserInfoFromUrl: vi.fn(() => null) }));
@@ -88,7 +88,7 @@ test('login loads the auth url and redirects', async () => {
 
     const { rerender } = render(<TestProvider onAuth={onAuth} />);
 
-    await screen.getByRole('button', { name: 'login' }).click();
+    screen.getByRole('button', { name: 'login' }).click();
 
     rerender(<TestProvider onAuth={(authState) => (auth = authState)} />);
 
@@ -120,7 +120,7 @@ test('if loading the auth url fails it updates the state', async () => {
 
     const { rerender } = render(<TestProvider onAuth={onAuth} />);
 
-    await screen.getByRole('button', { name: 'login' }).click();
+    screen.getByRole('button', { name: 'login' }).click();
 
     rerender(<TestProvider onAuth={onAuth} />);
 
@@ -230,7 +230,9 @@ test('logout clears the session storage and navigates to the logout page', async
     });
 
     const logoutButton = screen.getByRole('button', { name: 'logout' });
-    await logoutButton.click();
+    logoutButton.click();
+
+    await flushCallStack();
 
     expect(auth!).toMatchObject<Partial<AuthState>>({
         isLoading: false,

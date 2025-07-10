@@ -30,14 +30,14 @@ jobs:
       - name: Check formatting
         run: pnpm run format:check
 
-  check-types:
+  typecheck:
     runs-on: ubuntu-22.04
     name: Check types
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Check types
-        run: pnpm run check-types
+        run: pnpm run typecheck
 
   test:
     runs-on: ubuntu-22.04
@@ -71,10 +71,9 @@ jobs:
       #     LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
       #   run: |
       #     pnpm run messages:update
-      #     pnpm run check-types
+      #     pnpm run typecheck
       - name: Build
-        working-directory: apps/mgo
-        run: pnpm run build
+        run: npm exec nx run @minvws/mgo:build
 
   sonar:
     runs-on: ubuntu-22.04

@@ -1,6 +1,5 @@
 import { FormattedMessage } from '$/intl';
-import { MobileMenuItem, cn } from '@minvws/mgo-mgo-ui';
-import { surfaceStyle } from '@minvws/mgo-mgo-ui/styles/surface.js';
+import { MobileMenuItem, cn, surfaceStyle } from '@minvws/mgo-ui';
 import { forwardRef, type ComponentProps } from 'react';
 import { NavLink } from 'react-router-dom';
 

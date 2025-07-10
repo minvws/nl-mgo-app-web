@@ -1,5 +1,5 @@
 import { faker, testUiSchemaContext } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoPositiveInt, type MgoString } from '../../../parse/type';
 import { type MgoType } from '../../../parse/types';

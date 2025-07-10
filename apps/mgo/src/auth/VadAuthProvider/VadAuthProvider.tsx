@@ -18,7 +18,6 @@ export interface VadAuthProviderProps {
 export const LOGIN_CALLBACK_FLAG = 'vad';
 
 export const VadAuthProvider = ({ children, navigate }: VadAuthProviderProps) => {
-    const callbackUrl = `${window.location.origin}${window.location.pathname}?${LOGIN_CALLBACK_FLAG}`;
     const [userInfo, setUserInfo] = useState<UserInfo | null>(getUserInfoFromSession());
     const [parsingError, setParsingError] = useState<Error | null>(null);
 
@@ -34,10 +33,12 @@ export const VadAuthProvider = ({ children, navigate }: VadAuthProviderProps) =>
         error: loadingError,
         data: authUrlResponse,
     } = useQuery({
-        queryKey: ['vad-auth', callbackUrl],
-        queryFn: () => getAuthUrl({ callbackUrl }),
+        queryKey: ['vad-auth'],
+        queryFn: async () => {
+            const callbackUrl = `${window.location.origin}${window.location.pathname}?${LOGIN_CALLBACK_FLAG}`;
+            return getAuthUrl({ callbackUrl });
+        },
         enabled: false,
-        retry: 0,
     });
 
     useEffect(() => {

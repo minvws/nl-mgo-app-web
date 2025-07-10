@@ -4,30 +4,24 @@
     "resourceType": "Medication",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct",
     "fhirVersion": "R4",
-    "description": null,
+    "identifier": null,
+    "batch": {
+        "lotNumber": null
+    },
     "code": {
-        "_type": "codeableConcept",
-        "text": "Methotrexaat injvlst 25mg/ml 0,6 ml",
+        "text": {
+            "_type": "string",
+            "value": "Methotrexaat injvlst 25mg/ml 0,6 ml"
+        },
         "coding": [
             {
+                "_type": "coding",
                 "code": "89907",
                 "display": "Methotrexaat injvlst 25mg/ml 0,6 ml",
                 "system": "urn:oid:2.16.840.1.113883.2.4.4.1"
             }
         ]
     },
-    "status": null,
-    "manufacturer": null,
     "form": null,
-    "amount": null,
-    "ingredient": null,
-    "batch": {
-        "lotNumber": null,
-        "expirationDate": null
-    },
-    "identifier": null,
-    "name": {
-        "_type": "string",
-        "value": "Methotrexaat injvlst 25mg/ml 0,6 ml"
-    }
+    "ingredient": null
 }

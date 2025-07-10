@@ -1,15 +1,17 @@
 import { faker } from '$test';
-import { Locale } from '@minvws/mgo-mgo-intl';
+import { type Nullable } from '@minvws/mgo-utils';
 import { expect, test } from 'vitest';
 import { createJsonApi } from './createJsonApi';
 
-type A = { locale: Locale; a: string; b: number };
-type B = { c: string; d: number };
+type A = { a: Nullable<string>; b: Nullable<number> };
+type B = { c: Nullable<string>; d: Nullable<number> };
 
-function foobar(a: A, b: B) {
+function foobar({ a, b }: A, { c, d }: B) {
     return {
-        ...a,
-        ...b,
+        a,
+        b,
+        c,
+        d,
     };
 }
 
@@ -17,7 +19,6 @@ test('returns the json interface for a given function', () => {
     const jsonFoobar = createJsonApi(foobar);
 
     const inputA: A = {
-        locale: Locale.NL_NL,
         a: faker.lorem.sentence(),
         b: faker.number.int(),
     };
@@ -30,7 +31,6 @@ test('returns the json interface for a given function', () => {
     const result = JSON.parse(resultJson);
 
     expect(result).toEqual({
-        locale: inputA.locale,
         a: inputA.a,
         b: inputA.b,
         c: inputB.c,
@@ -51,4 +51,26 @@ test('can handle large numbers without losing precision', () => {
     expect(resultJson).toBe(
         '{"a":"' + stringA + '","b":9123372036854000123,"c":"' + stringB + '","d":2.3e+500}'
     );
+});
+
+test('converts undefined to null so it is included in the resulting JSON', () => {
+    const func = () => ({
+        a: undefined,
+        b: null,
+        c: -1,
+        d: 0,
+        e: {},
+    });
+
+    const jsonFunc = createJsonApi(func);
+    const resultJson = jsonFunc();
+    const result = JSON.parse(resultJson);
+
+    expect(result).toEqual({
+        a: null,
+        b: null,
+        c: -1,
+        d: 0,
+        e: {},
+    });
 });

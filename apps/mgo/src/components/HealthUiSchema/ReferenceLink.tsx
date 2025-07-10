@@ -2,7 +2,7 @@ import { useResourceRoutePath } from '$/hooks';
 import { RouterLink } from '$/routing';
 import { useResourcesStore } from '$/store';
 import { type ReferenceLink as ReferenceLinkData } from '@minvws/mgo-fhir-data';
-import { DescriptionButton } from '@minvws/mgo-mgo-ui';
+import { DescriptionButton } from '@minvws/mgo-ui';
 import { useContext } from 'react';
 import { HealthUiSchemaContext } from './HealthUiSchemaContext';
 

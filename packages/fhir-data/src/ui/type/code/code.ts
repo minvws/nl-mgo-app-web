@@ -1,5 +1,5 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
 import { type MgoCode } from '../../../parse/type';
 import { type UiHelperContext } from '../../context';
 import { valueOf } from '../../helpers/valueOf/valueOf';

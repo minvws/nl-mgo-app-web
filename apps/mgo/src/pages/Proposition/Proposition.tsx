@@ -2,7 +2,7 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Link, RouterLink } from '$/routing';
-import { Button, Container, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-mgo-ui';
+import { Button, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 
 export function Proposition() {
@@ -14,12 +14,10 @@ export function Proposition() {
         <>
             <Helmet title={formatMessage('proposition.heading')} />
 
-            <Container>
+            <section className="flex-grow">
                 <BackButton />
-            </Container>
 
-            <Container className="max-w-md pb-12 md:pb-16 lg:pb-24">
-                <div className="max-w-sm">
+                <div className="mx-auto mb-12 max-w-md md:mb-16 lg:mb-24">
                     <Heading asChild size="lg" className="mb-4 md:mb-6">
                         <h1 ref={navFocusRef}>
                             <FormattedMessage
@@ -69,13 +67,13 @@ export function Proposition() {
                         </List>
                     </Text>
 
-                    <Button asChild onClick={() => setOnboardingSeen(true)}>
+                    <Button asChild onClick={() => setOnboardingSeen()}>
                         <RouterLink to="/zorgaanbieder-toevoegen">
                             <FormattedMessage id="common.next" description="Volgende" />
                         </RouterLink>
                     </Button>
                 </div>
-            </Container>
+            </section>
         </>
     );
 }

@@ -10,7 +10,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  e2e-tests:
+  mgo-e2e:
     runs-on: ubuntu-22.04
 
     steps:
@@ -31,7 +31,7 @@ jobs:
         if: always()
         with:
           name: e2e-playwright-chrome
-          path: apps/e2e-tests/results/
+          path: apps/mgo-e2e/results/
 
       - name: Stop Docker containers
         if: always()

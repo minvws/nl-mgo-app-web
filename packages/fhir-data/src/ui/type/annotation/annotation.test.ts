@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { annotation } from './annotation';
 

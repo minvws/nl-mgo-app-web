@@ -1,12 +1,22 @@
+# compiled output and coverage
+build
+dist
+tmp
+out-tsc
+
+/coverage
+/.nx/cache
+/.nx/workspace-data
+
 pnpm-lock.yaml
 pnpm-workspace.yaml
 LICENSE
 LICENSE.*
 LICENSES.*
 packages/fhir-data/fhir-definitions
-packages/fhir-data/dist
-packages/mgo-intl/locales
+packages/fhir-data/build
+packages/intl/locales
 *.snap.json
 *-snapshots/
-apps/mgo/dist
-apps/e2e-tests/results
+apps/mgo/build
+apps/mgo-e2e/results

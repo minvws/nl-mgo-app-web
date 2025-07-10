@@ -1,5 +1,5 @@
 import { type MultipleGroupedValues as MultipleGroupedValuesData } from '@minvws/mgo-fhir-data';
-import { DescriptionCard, Stack } from '@minvws/mgo-mgo-ui';
+import { DescriptionCard, Stack } from '@minvws/mgo-ui';
 import { MultipleValuesDisplay } from './MultipleValues';
 
 export interface MultipleGroupedValuesProps {

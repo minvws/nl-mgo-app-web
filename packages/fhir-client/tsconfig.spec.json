@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "./out-tsc/vitest/tsconfig.lib.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "outDir": "./out-tsc/vitest",
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"]
+    },
+    "include": [
+        "vitest.config.ts",
+        "src/**/*.test.ts",
+        "src/**/*.d.ts",
+        "test/**/*.ts",
+        "test/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}

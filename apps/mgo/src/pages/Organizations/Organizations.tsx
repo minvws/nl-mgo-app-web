@@ -3,7 +3,7 @@ import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore } from '$/store';
-import { Button, ButtonCard, Heading, Stack } from '@minvws/mgo-mgo-ui';
+import { Button, ButtonCard, Heading, Stack } from '@minvws/mgo-ui';
 
 export function Organizations() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();

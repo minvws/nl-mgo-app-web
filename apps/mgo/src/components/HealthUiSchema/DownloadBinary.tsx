@@ -1,10 +1,10 @@
-import { type DownloadBinary } from '@minvws/mgo-fhir-data';
-import { Button, DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-mgo-ui';
+import { type DownloadBinary as DownloadBinaryData } from '@minvws/mgo-fhir-data';
+import { Button, DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-ui';
 import { FormattedMessage } from 'react-intl';
 import { useBinaryReference } from './hooks/useBinaryReference';
 
 export interface DownloadBinaryProps {
-    readonly value: DownloadBinary;
+    readonly value: DownloadBinaryData;
 }
 
 export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {

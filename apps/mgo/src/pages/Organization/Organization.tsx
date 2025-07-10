@@ -2,16 +2,13 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
-import { useParams } from '$/routing';
-import { useOrganizationsStore } from '$/store';
-import { Heading } from '@minvws/mgo-mgo-ui';
+import { useParamsData } from '$/routing';
+import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
 
 export function Organization() {
-    const { organizationSlug } = useParams();
-    const getOrganizationBySlug = useOrganizationsStore((x) => x.getOrganizationBySlug);
-    const organization = getOrganizationBySlug(organizationSlug);
+    const { organization } = useParamsData();
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { formatMessage } = useIntl();
 

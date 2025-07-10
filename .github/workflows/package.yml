@@ -22,13 +22,12 @@ jobs:
           LOKALISE_PROJECT_ID_MGO_FHIR: ${{ secrets.LOKALISE_PROJECT_ID_MGO_FHIR }}
         run: pnpm run messages:update
       - name: Build
-        working-directory: apps/mgo
-        run: pnpm run build
+        run: pnpm exec nx run @minvws/mgo:build
       - name: Add version.json
         shell: bash
-        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > apps/mgo/dist/version.json'
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > apps/mgo/build/version.json'
       - name: Create release tar
-        run: tar -C apps/mgo/dist -czf nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
+        run: tar -C apps/mgo/build -czf nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
       - name: Upload release tar
         uses: actions/upload-artifact@v4
         with:

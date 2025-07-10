@@ -1,5 +1,5 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isNullish } from '@minvws/mgo-mgo-utils';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { isNullish } from '@minvws/mgo-utils';
 import { snakeCase } from 'lodash';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';

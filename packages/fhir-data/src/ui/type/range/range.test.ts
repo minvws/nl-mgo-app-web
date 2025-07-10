@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { beforeEach } from 'node:test';
 import { expect, test, vi } from 'vitest';
 import { type MgoQuantityProps } from '../../../parse/type';

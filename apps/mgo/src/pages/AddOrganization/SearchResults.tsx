@@ -2,7 +2,7 @@ import { FormattedMessage, useIntl } from '$/intl';
 import { useNavigate } from '$/routing';
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
 import { useOrganizationsStore } from '$/store';
-import { Button, HealthcareOrganizationCard, Stack, cn } from '@minvws/mgo-mgo-ui';
+import { Button, HealthcareOrganizationCard, Stack, cn } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
@@ -37,7 +37,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
 
     return (
         <div className={cn('w-full text-center', className)} {...rest}>
-            <Stack asChild className="mb-12 w-full gap-2 sm:gap-4">
+            <Stack asChild className="w-full gap-2 sm:gap-4">
                 <ul>
                     {resultsShown.map((healthcareOrganization) => {
                         const { isAdded, isNotSupported, id, name, address } =
@@ -51,7 +51,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                             navigate('/zorgaanbieder-toevoegen/zorgaanbieders')
                                         }
                                         title={name}
-                                        meta={<span className="whitespace-pre">{address}</span>}
+                                        meta={address}
                                         icon="chevron-right"
                                         iconAriaLabel={formatMessage(
                                             'add_organization.voice_over_to_overview'
@@ -69,7 +69,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                 <li key={id}>
                                     <HealthcareOrganizationCard
                                         title={name}
-                                        meta={<span className="whitespace-pre">{address}</span>}
+                                        meta={address}
                                         infoMessage={formatMessage(
                                             'add_organization.not_participating'
                                         )}
@@ -85,7 +85,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                         handleHealthcareOrganizationClick(healthcareOrganization)
                                     }
                                     title={name}
-                                    meta={<span className="whitespace-pre">{address}</span>}
+                                    meta={address}
                                     icon="add"
                                     iconAriaLabel={formatMessage('common.add')}
                                 />
@@ -99,6 +99,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                 <Button
                     variant="ghost"
                     rightIcon="autorenew"
+                    className="mt-12"
                     onClick={() => setShowResultsLength(showResultsLength + RESULTS_PER_PAGE)}
                 >
                     <FormattedMessage

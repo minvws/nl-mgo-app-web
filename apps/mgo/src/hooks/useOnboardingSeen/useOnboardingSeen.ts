@@ -5,9 +5,8 @@ const getOnboardingSeen = (): boolean => {
     return onboardingSeen !== null && /^\d{4}-\d{2}-\d{2}T/.test(onboardingSeen);
 };
 
-const setOnboardingSeen = (seen: boolean = true) => {
-    if (seen) localStorage.setItem(LOCAL_STORAGE_KEY, new Date().toISOString());
-    else localStorage.removeItem(LOCAL_STORAGE_KEY);
+const setOnboardingSeen = () => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, new Date().toISOString());
 };
 
 export const useOnboardingSeen = () => ({

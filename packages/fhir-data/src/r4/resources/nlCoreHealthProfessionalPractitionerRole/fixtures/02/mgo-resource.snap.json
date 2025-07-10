@@ -1,0 +1,15 @@
+{
+    "id": "nl-core-HealthProfessional-PractitionerRole-01",
+    "referenceId": "PractitionerRole/nl-core-HealthProfessional-PractitionerRole-01",
+    "resourceType": "PractitionerRole",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole",
+    "fhirVersion": "R4",
+    "telecom": {
+        "telephoneNumbers": [],
+        "emailAddresses": []
+    },
+    "organization": null,
+    "specialty": {
+        "specialty": null
+    }
+}

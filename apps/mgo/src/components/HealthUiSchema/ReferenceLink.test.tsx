@@ -14,7 +14,6 @@ const mockGetResourceByReferenceId = useResourcesStore(
 ) as MockedFunction<ResourcesState['getResourceByReferenceId']>;
 
 vi.mock('$/store', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('$/store')>();
     const getResourceByReferenceId = vi.fn();
     return {

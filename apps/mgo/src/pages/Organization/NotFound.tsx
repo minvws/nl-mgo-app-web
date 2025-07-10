@@ -3,7 +3,7 @@ import { useNavFocusRef } from '$/hooks';
 import { RouterLink } from '$/routing';
 
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, Card, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Button, Card, Heading, Illustration, Text } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 
 export function NotFound() {

@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { fhirMessage } from '@minvws/mgo-intl/test';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';

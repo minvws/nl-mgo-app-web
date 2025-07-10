@@ -7,7 +7,13 @@ import { mgo } from './mgo';
 import { nullish } from './nullish';
 import { uiHelperContext } from './uiHelperContext';
 
-const custom = {
+const custom: {
+    [K in keyof typeof helpers]: (typeof helpers)[K];
+} & {
+    nullish: typeof nullish;
+    fhirMessageId: typeof fhirMessageId;
+    uiHelperContext: typeof uiHelperContext;
+} = {
     ...helpers,
     nullish,
     fhirMessageId,

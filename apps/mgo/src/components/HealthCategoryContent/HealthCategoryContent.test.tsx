@@ -1,7 +1,7 @@
 import { type SubCategoryData } from '$/healthCategory/useHealthCategoryData/categories';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { HealthCategoryContent } from './HealthCategoryContent';

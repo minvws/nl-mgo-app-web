@@ -6,10 +6,7 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
-    "scripts": {
-        "test": "vitest",
-        "check-types": "tsc --noEmit"
-    },
+    "scripts": {},
     "dependencies": {
         "@minvws/mgo-fhir-client": "workspace:*"
     },

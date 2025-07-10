@@ -1,8 +1,8 @@
 import { type HealthcareOrganization } from '$/store';
 import { type DataService } from '@minvws/mgo-data-services';
 import { type UseQueryOptions } from '@tanstack/react-query';
-import { type ResourceQueryMeta } from './isResourceQueryMeta';
 import { type HealthCategory } from '../HealthCategory';
+import { type ResourceQueryMeta } from './isResourceQueryMeta';
 
 type FetchResponse = { json: () => Promise<unknown> };
 type SafeReturnType<T> = T extends (...args: any) => any ? ReturnType<T> : unknown; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -40,7 +40,6 @@ export function createResourceBundleQuery<T extends DataService>({
         queryKey: [category, organization.id, service.dataServiceId, method],
 
         queryFn: async () => {
-            // await new Promise((resolve) => setTimeout(resolve, Math.random() * 3000 + 1000));
             return (service[method] as () => FetchResponse)().json();
         },
     };

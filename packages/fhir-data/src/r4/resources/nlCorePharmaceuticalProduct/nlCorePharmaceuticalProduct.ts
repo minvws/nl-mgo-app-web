@@ -1,30 +1,36 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Medication } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types';
+import { oneOfValueX } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../resourceTypes';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
-import { batch } from './elements/batch/batch';
-import { ingredient } from './elements/ingredient/ingredient';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946208
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628579
  */
 function parseNlCorePharmaceuticalProduct(resource: Medication) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        description: parse.extensionNictiz(resource, 'ext-PharmaceuticalProduct.Description'),
-        code: parse.codeableConcept(resource.code),
-        status: parse.code(resource.status),
-        manufacturer: parse.reference(resource.manufacturer),
-        form: parse.codeableConcept(resource.form),
-        amount: parse.ratio(resource.amount),
-        ingredient: map(resource.ingredient, ingredient.parse),
-        batch: batch.parse(resource.batch),
+
+        // ART-DECOR Dataset Vaccination-Immunization
         identifier: map(resource.identifier, parse.identifier),
-        name: parse.string(resource.code?.text),
+        batch: {
+            lotNumber: parse.string(resource.batch?.lotNumber),
+        },
+
+        // zib PharmaceuticalProduct-v2.1.2(2020EN)
+        code: {
+            text: parse.string(resource.code?.text),
+            coding: map(resource.code?.coding, parse.coding),
+        },
+        form: parse.codeableConcept(resource.form),
+        ingredient: map(resource.ingredient, (ingredient) => ({
+            ...oneOfValueX(ingredient, ['codeableConcept', 'reference'], 'item'),
+            strength: parse.ratio(ingredient.strength),
+        })),
     };
 }
 
@@ -33,5 +39,5 @@ export type R4NlCorePharmaceuticalProduct = ReturnType<typeof parseNlCorePharmac
 export const nlCorePharmaceuticalProductR4 = {
     profile,
     parse: parseNlCorePharmaceuticalProduct,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Medication, R4NlCorePharmaceuticalProduct>;

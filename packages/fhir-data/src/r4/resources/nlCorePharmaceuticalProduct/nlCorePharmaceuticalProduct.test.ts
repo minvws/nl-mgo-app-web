@@ -1,19 +1,17 @@
-import { expectHealthCareUiSchemaJson, expectJson, faker, testUiSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-mgo-intl/test';
+import { expectHealthCareUiSchemaJson, expectJson, testUiSchemaContext } from '$test';
 import { type Medication } from 'fhir/r4';
-import { expect, test } from 'vitest';
-import { parse } from '../../../parse';
+import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';
 import input02 from './fixtures/02/fhir-resource.json';
+import input03 from './fixtures/03/fhir-resource.json';
 import { nlCorePharmaceuticalProductR4 } from './nlCorePharmaceuticalProduct';
-import { i18n } from './uiSchema';
 
-test('returns the expected output 01', async () => {
+test('01: mgo-resource', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 01', async () => {
+test('01: ui-schema', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
@@ -21,12 +19,12 @@ test('uiSchema returns the expected output 01', async () => {
     );
 });
 
-test('returns the expected output 02', async () => {
+test('02: mgo-resource', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
 });
 
-test('uiSchema returns the expected output 02', async () => {
+test('02: ui-schemna', async () => {
     const output = nlCorePharmaceuticalProductR4.parse(input02 as Medication);
     const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
@@ -34,19 +32,15 @@ test('uiSchema returns the expected output 02', async () => {
     );
 });
 
-test('uiSchema label returns profile when label not specified', () => {
-    const output = nlCorePharmaceuticalProductR4.parse(input01 as Medication);
-    output.name = undefined;
-    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
-    expect(uiSchema.label).toEqual(fhirMessage(i18n));
+test('03: mgo-resource', async () => {
+    const output = nlCorePharmaceuticalProductR4.parse(input03 as Medication);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });
 
-test('return batch lotnumber if specified', () => {
-    const lotNumber = faker.string.numeric(8);
-    const input = input01 as Medication;
-    input.batch = {
-        lotNumber: lotNumber,
-    };
-    const output = nlCorePharmaceuticalProductR4.parse(input);
-    expect(output.batch.lotNumber).toEqual(parse.string(lotNumber));
+test('03: ui-schema', async () => {
+    const output = nlCorePharmaceuticalProductR4.parse(input03 as Medication);
+    const uiSchema = nlCorePharmaceuticalProductR4.uiSchema(output, testUiSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/03/ui-schema.snap.json'
+    );
 });

@@ -1,8 +1,6 @@
 import { BackButton } from '$/components/BackButton/BackButton';
-import { getHealthCategoryBySlug } from '$/healthCategory';
 import { useIntl } from '$/intl';
-import { useParams } from '$/routing';
-import { useResourcesStore } from '$/store';
+import { useParamsData } from '$/routing';
 import { Helmet } from 'react-helmet-async';
 import {
     HealthUiSchema,
@@ -10,15 +8,11 @@ import {
 } from '../../components/HealthUiSchema/HealthUiSchema';
 import { NotFound } from '../NotFound/NotFound';
 
-export interface HealthDataProps extends Pick<HealthUiSchemaProps, 'summary'> {}
+export type HealthDataProps = Pick<HealthUiSchemaProps, 'summary'>;
 
-export function HealthData({ summary }: HealthDataProps) {
+export function HealthData({ summary }: Readonly<HealthDataProps>) {
     const { formatMessage } = useIntl();
-    const params = useParams();
-    const { resourceSlug, healthCategorySlug } = params;
-    const getResourceBySlug = useResourcesStore((x) => x.getResourceBySlug);
-    const healthCategory = getHealthCategoryBySlug(healthCategorySlug!);
-    const resource = getResourceBySlug(resourceSlug);
+    const { healthCategory, resource } = useParamsData();
 
     if (!healthCategory || !resource) {
         return <NotFound className="flex flex-col items-center text-center" />;

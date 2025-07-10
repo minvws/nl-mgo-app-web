@@ -17,7 +17,7 @@ import { SchemaWithDefinitions, normalizeRefs } from './normalizeRefs';
 export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 const tsConfig = resolvePath('../tsconfig.json');
-const schemaPath = resolvePath('../dist/schema');
+const schemaPath = resolvePath('../build/schema');
 const sourceFile = resolve(schemaPath, './typescript/types.ts'); // has to be a .ts file (not .d.ts)
 const outputFile = resolve(schemaPath, './json/types.json');
 

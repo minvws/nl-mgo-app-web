@@ -1,0 +1,30 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "./out-tsc/vitest/tsconfig.lib.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "outDir": "./out-tsc/vitest",
+        "types": ["vitest-dom/extend-expect", "vitest/globals", "vitest/importMeta", "vitest"],
+        "jsx": "react-jsx",
+        "lib": ["dom"],
+        "allowJs": true
+    },
+    "include": [
+        "vite.config.ts",
+        "vitest.config.ts",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/**/*.d.ts",
+        "test/**/*.ts",
+        "test/**/*.tsx",
+        "test/**/*.d.ts",
+        "docs/**/*.ts",
+        "docs/**/*.tsx",
+        "docs/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}

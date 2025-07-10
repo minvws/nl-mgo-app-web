@@ -1,5 +1,5 @@
 import { RouterNavLink, type RouterNavLinkProps } from '$/routing';
-import { NavButton, type NavButtonProps } from '@minvws/mgo-mgo-ui';
+import { NavButton, type NavButtonProps } from '@minvws/mgo-ui';
 
 export const NavItem = ({ icon, to, children, ...rest }: RouterNavLinkProps & NavButtonProps) => {
     return (

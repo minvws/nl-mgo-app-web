@@ -1,40 +1,53 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupPlannedCare<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type PlannedCareService<V extends FhirVersion> = {
+    getPlannedProcedures: () => ResourcesResponsePromise<V, 'ProcedureRequest'>;
+    getPlannedImmunizations: () => ResourcesResponsePromise<V, 'ImmunizationRecommendation'>;
+    getPlannedMedicalDevices: () => ResourcesResponsePromise<V, 'DeviceRequest'>;
+    getPlannedEncounters: () => ResourcesResponsePromise<V, 'Appointment'>;
+};
+
+export function setupPlannedCare<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): PlannedCareService<V> {
     return {
-        getPlannedProcedures: partialRequest(
-            getResources,
-            {
-                resource: 'ProcedureRequest',
-            } as const,
-            {
-                searchParams: { status: 'active' },
-            }
-        ),
+        getPlannedProcedures: () =>
+            getResources(
+                {
+                    resource: 'ProcedureRequest',
+                } as const,
+                {
+                    searchParams: { status: 'active' },
+                }
+            ),
 
-        getPlannedImmunizations: partialRequest(getResources, {
-            resource: 'ImmunizationRecommendation',
-        } as const),
+        getPlannedImmunizations: () =>
+            getResources({
+                resource: 'ImmunizationRecommendation',
+            } as const),
 
-        getPlannedMedicalDevices: partialRequest(
-            getResources,
-            {
-                resource: 'DeviceRequest',
-            } as const,
-            {
-                searchParams: { status: 'active', _include: 'DeviceRequest:device' },
-            }
-        ),
+        getPlannedMedicalDevices: () =>
+            getResources(
+                {
+                    resource: 'DeviceRequest',
+                } as const,
+                {
+                    searchParams: { status: 'active', _include: 'DeviceRequest:device' },
+                }
+            ),
 
-        getPlannedEncounters: partialRequest(
-            getResources,
-            {
-                resource: 'Appointment',
-            } as const,
-            {
-                searchParams: { status: ['booked', 'pending', 'proposed'].join(',') },
-            }
-        ),
+        getPlannedEncounters: () =>
+            getResources(
+                {
+                    resource: 'Appointment',
+                } as const,
+                {
+                    searchParams: { status: ['booked', 'pending', 'proposed'].join(',') },
+                }
+            ),
     };
 }

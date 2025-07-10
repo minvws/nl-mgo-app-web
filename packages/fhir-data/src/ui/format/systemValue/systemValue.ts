@@ -1,4 +1,4 @@
-import { isNullish } from '@minvws/mgo-mgo-utils';
+import { isNullish } from '@minvws/mgo-utils';
 import { type MgoSimpleQuantityProps } from '../../../parse/type/simpleQuantity/simpleQuantity';
 import { numberToString } from '../../helpers';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';

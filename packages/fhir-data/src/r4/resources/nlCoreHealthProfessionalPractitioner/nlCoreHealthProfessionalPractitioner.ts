@@ -1,32 +1,30 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Practitioner } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types';
+import { type ResourceConfig } from '../../../resourceTypes';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import {
     parseNlCoreAddressInformation,
     parseNlCoreContactInformation,
     parseNlCoreNameInformation,
 } from '../../elements';
-import { qualification } from './elements/qualification/qualification';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946120
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628463
  */
 function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        identifier: map(resource.identifier, parse.identifier), // NL-CM:17.1.2
-        name: map(resource.name, parseNlCoreNameInformation), // NL-CM:17.1.3
+
+        // zib HealthProfessional-v3.5(2020EN)
+        identifier: map(resource.identifier, parse.identifier),
+        name: map(resource.name, parseNlCoreNameInformation),
         telecom: parseNlCoreContactInformation(resource.telecom),
-        address: map(resource.address, parseNlCoreAddressInformation), // NL-CM:17.1.7
-        gender: parse.code(resource.gender), // NL-CM:17.1.9
-        birthDate: parse.date(resource.birthDate),
-        qualification: map(resource.qualification, qualification.parse),
-        communication: map(resource.communication, parse.codeableConcept),
+        address: map(resource.address, parseNlCoreAddressInformation),
+        gender: parse.code(resource.gender),
     };
 }
 
@@ -37,5 +35,5 @@ export type R4NlCoreHealthProfessionalPractitioner = ReturnType<
 export const r4NlCoreHealthProfessionalPractitioner = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitioner,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<Practitioner, R4NlCoreHealthProfessionalPractitioner>;

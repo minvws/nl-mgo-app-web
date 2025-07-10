@@ -1,5 +1,5 @@
 import { type FhirVersion, type Resource } from '@minvws/mgo-fhir-types';
-import { type NictizNlProfile } from '../../../types';
+import { type NictizNlProfile } from '../../../resourceTypes';
 
 export type MgoResourceMeta<
     T extends NictizNlProfile = NictizNlProfile,

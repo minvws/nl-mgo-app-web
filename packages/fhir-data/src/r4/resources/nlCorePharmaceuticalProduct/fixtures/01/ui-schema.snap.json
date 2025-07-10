@@ -2,14 +2,11 @@
     "label": "Farmaceutisch product",
     "children": [
         {
-            "label": "Farmaceutisch product",
             "children": [
                 {
-                    "label": "Product code",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
-                    ]
+                    "label": "Batch / Lotnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "AW1898"
                 },
                 {
                     "label": "Farmaceutische vorm",
@@ -19,24 +16,31 @@
                     ]
                 },
                 {
-                    "label": "Serienummer",
+                    "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Batch lotnummer",
-                    "type": "SINGLE_VALUE",
-                    "display": "AW1898"
-                },
-                {
-                    "label": "Batch vervaldatum",
+                    "label": "Ingredient",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Product code",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
                 },
                 {
-                    "label": "Omschrijving",
+                    "label": "Product naam",
                     "type": "SINGLE_VALUE",
-                    "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
+                    "display": "Niet bekend"
                 }
             ]
         }

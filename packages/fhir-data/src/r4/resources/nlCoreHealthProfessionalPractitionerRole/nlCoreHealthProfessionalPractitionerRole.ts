@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type PractitionerRole } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { type ResourceConfig } from '../../../types';
-import { map } from '../../../utils';
+import { filterCodeableConcept } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../resourceTypes';
+import { generateUiSchema } from '../../../ui/generator';
 import { parseNlCoreContactInformation } from '../../elements';
-import { uiSchema } from './uiSchema';
 
 const profile =
     'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole'; // NOSONAR
@@ -15,11 +15,20 @@ const profile =
 function parseNlCoreHealthProfessionalPractitionerRole(resource: PractitionerRole) {
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        practitioner: parse.reference(resource.practitioner),
-        organization: parse.reference(resource.organization),
-        location: map(resource.location, parse.reference),
-        speciality: map(resource.specialty, parse.codeableConcept),
+
+        // zib ContactInformation-v1.2(2020EN)
         telecom: parseNlCoreContactInformation(resource.telecom),
+
+        // zib HealthProfessional-v3.5(2020EN)
+        organization: parse.reference(resource.organization),
+        specialty: {
+            specialty: parse.codeableConcept(
+                filterCodeableConcept(resource.specialty, [
+                    { system: 'http://fhir.nl/fhir/NamingSystem/uzi-rolcode' }, // NOSONAR
+                    { system: 'urn:oid:2.16.840.1.113883.2.4.6.7' },
+                ])?.[0]
+            ),
+        },
     };
 }
 
@@ -30,5 +39,5 @@ export type R4NlCoreHealthProfessionalPractitionerRole = ReturnType<
 export const nlCoreHealthProfessionalPractitionerRole = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitionerRole,
-    uiSchema,
+    uiSchema: generateUiSchema,
 } satisfies ResourceConfig<PractitionerRole, R4NlCoreHealthProfessionalPractitionerRole>;

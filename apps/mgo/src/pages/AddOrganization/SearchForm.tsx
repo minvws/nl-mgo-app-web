@@ -1,6 +1,13 @@
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, InputField } from '@minvws/mgo-mgo-ui';
-import { useCallback, useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
+import { Button, cn, InputField } from '@minvws/mgo-ui';
+import {
+    useCallback,
+    useEffect,
+    useState,
+    type ChangeEvent,
+    type FormEvent,
+    type HTMLAttributes,
+} from 'react';
 import { useDebounceCallback } from 'usehooks-ts';
 
 export interface SearchFormData {
@@ -8,11 +15,11 @@ export interface SearchFormData {
     city: string;
 }
 
-export interface SearchFormProps {
+export interface SearchFormProps extends Omit<HTMLAttributes<HTMLElement>, 'onSubmit'> {
     onSubmit(value: SearchFormData): void;
 }
 
-export const SearchForm = ({ onSubmit }: SearchFormProps) => {
+export const SearchForm = ({ onSubmit, className, ...rest }: SearchFormProps) => {
     const { formatMessage } = useIntl();
     const [dirty, setDirty] = useState(false);
     const [formData, setFormData] = useState<SearchFormData>({
@@ -60,7 +67,12 @@ export const SearchForm = ({ onSubmit }: SearchFormProps) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:flex-row" noValidate>
+        <form
+            onSubmit={handleSubmit}
+            className={cn('flex flex-col gap-6 md:flex-row', className)}
+            noValidate
+            {...rest}
+        >
             <InputField
                 name="name"
                 label={

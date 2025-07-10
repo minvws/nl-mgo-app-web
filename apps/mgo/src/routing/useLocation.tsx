@@ -5,6 +5,7 @@ import {
 import { type OverrideProperties } from 'type-fest';
 import { type RouteConfigPaths } from './routes';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export type LocationState = {
     // add location states here
 };

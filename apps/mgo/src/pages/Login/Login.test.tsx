@@ -2,8 +2,8 @@ import { useAuth, type AuthState } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { appMessage } from '@minvws/mgo-intl/test';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { screen, within } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { Login } from './Login';
@@ -46,10 +46,10 @@ test.each<keyof Pick<AuthState, 'loadingError' | 'parsingError'>>(['loadingError
 
         await flushCallStack();
 
-        let dialog: HTMLElement | null = await screen.getByRole('alertdialog', {
+        let dialog: HTMLElement | null = screen.getByRole('alertdialog', {
             name: appMessage('login.error_heading'),
         });
-        const confirmButton = await within(dialog).getByRole('button', {
+        const confirmButton = within(dialog).getByRole('button', {
             name: appMessage('common.ok'),
         });
 

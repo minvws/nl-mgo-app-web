@@ -12,5 +12,6 @@ export default () =>
         },
         test: {
             globalSetup: ['./test/globals.ts'],
+            exclude: ['node_modules', 'dist', 'build', 'out-tsc'],
         },
     });

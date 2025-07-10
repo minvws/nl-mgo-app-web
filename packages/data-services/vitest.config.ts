@@ -6,5 +6,6 @@ export default defineProject({
         chaiConfig: {
             truncateThreshold: 10000,
         },
+        exclude: ['node_modules', 'dist', 'build', 'out-tsc'],
     },
 });

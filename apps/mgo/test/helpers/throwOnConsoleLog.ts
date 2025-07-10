@@ -1,6 +1,6 @@
 /* c8 ignore start */
 
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { uniqBy } from 'lodash';
 import { afterEach, beforeEach } from 'vitest';
 

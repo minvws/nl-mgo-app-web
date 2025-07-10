@@ -1,5 +1,5 @@
 import { faker, testUiSchemaContext } from '$test';
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl/test';
+import { type FhirMessagesIds } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { type MgoBoolean, type MgoString } from '../../../parse/type';
 import { type ExtensionValue } from '../../../parse/types';

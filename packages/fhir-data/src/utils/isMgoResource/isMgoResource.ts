@@ -1,5 +1,5 @@
 import { type FhirVersion } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type MgoResource } from '../../api/resources/resources';
 
 export function isMgoResource<V extends FhirVersion = FhirVersion>(

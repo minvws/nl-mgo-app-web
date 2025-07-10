@@ -24,7 +24,6 @@ const dataServiceMocks = {
 };
 
 vi.mock('@minvws/mgo-data-services', async (importActual) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importActual<typeof import('@minvws/mgo-data-services')>();
     return {
         ...mod,

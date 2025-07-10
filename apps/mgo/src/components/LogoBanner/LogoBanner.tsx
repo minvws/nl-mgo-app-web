@@ -1,8 +1,8 @@
-import { Container } from '@minvws/mgo-mgo-ui';
-import Logo from './logo.svg?react';
+import { Container } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
+import Logo from './logo.svg?react';
 
-export interface LogoBannerProps extends HTMLAttributes<HTMLElement> {}
+export type LogoBannerProps = HTMLAttributes<HTMLElement>;
 
 export const LogoBanner = (props: LogoBannerProps) => (
     <div {...props}>

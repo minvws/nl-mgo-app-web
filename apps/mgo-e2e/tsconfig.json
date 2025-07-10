@@ -1,0 +1,25 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "allowJs": true,
+        "outDir": "out-tsc/playwright",
+        "sourceMap": false,
+        "lib": ["dom"]
+    },
+    "include": [
+        "**/*.ts",
+        "playwright.config.ts",
+        "playwright.config.ci.ts",
+        "src/**/*.spec.ts",
+        "src/**/*.d.ts"
+    ],
+    "exclude": ["out-tsc", "test-output"],
+    "references": [
+        {
+            "path": "../../packages/intl"
+        },
+        {
+            "path": "../mgo"
+        }
+    ]
+}

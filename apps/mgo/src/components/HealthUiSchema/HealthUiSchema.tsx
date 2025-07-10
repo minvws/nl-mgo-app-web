@@ -2,8 +2,7 @@
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore, type Resource } from '$/store';
 import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
-import { Heading } from '@minvws/mgo-mgo-ui';
-import { Stack } from '@minvws/mgo-mgo-ui/components/Stack/Stack.js';
+import { Heading, Stack } from '@minvws/mgo-ui';
 import { useMemo } from 'react';
 import { HealthUiGroup } from './HealthUiGroup';
 import { HealthUiSchemaContext, type HealthUiSchemaContextState } from './HealthUiSchemaContext';

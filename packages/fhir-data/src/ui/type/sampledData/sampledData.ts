@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoSampledData } from '../../../parse/type';
 import { type HealthUiGroup, type UiFunction, type WithUiHelperContext } from '../../types';
 import { decimal } from '../decimal/decimal';

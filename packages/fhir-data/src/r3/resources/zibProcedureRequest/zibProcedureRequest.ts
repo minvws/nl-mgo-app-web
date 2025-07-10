@@ -2,7 +2,7 @@ import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type ProcedureRequest } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types';
+import { type ResourceConfig } from '../../../resourceTypes';
 import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 

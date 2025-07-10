@@ -4,6 +4,15 @@
     "resourceType": "Patient",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient",
     "fhirVersion": "R4",
+    "identifier": {
+        "bsn": {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333",
+            "type": null
+        }
+    },
     "name": [
         {
             "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
@@ -66,32 +75,68 @@
             "period": null
         }
     ],
-    "identifier": [
-        {
-            "_type": "identifier",
-            "use": null,
-            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
-            "value": "111222333",
-            "type": null
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": {
+                        "_ext": true,
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "MC",
+                                "display": "Mobile Phone",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                            }
+                        ]
+                    }
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31611234567"
+                },
+                "use": null
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "giesput@myweb.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "home"
+                }
+            }
+        ]
+    },
+    "gender": {
+        "genderCodelist": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "F",
+                    "display": "Female",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender"
+                }
+            ]
         }
-    ],
+    },
     "birthDate": {
         "_type": "date",
         "value": "1934-04-28"
     },
-    "gender": {
-        "_type": "code",
-        "value": "female"
-    },
-    "multipleBirth": {
-        "_type": "boolean",
-        "value": true
-    },
-    "deceased": {
+    "deceasedBoolean": {
         "_type": "boolean",
         "value": false
     },
-    "deceasedDateTime": null,
     "address": [
         {
             "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
@@ -149,8 +194,28 @@
             }
         }
     ],
-    "generalPractitioner": null,
-    "managingOrganization": null,
+    "multipleBirthBoolean": {
+        "_type": "boolean",
+        "value": true
+    },
+    "nationality": [
+        {
+            "_ext": true,
+            "code": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "0001",
+                        "display": "Nederlandse",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.16.32"
+                    }
+                ]
+            },
+            "period": null
+        }
+    ],
     "maritalStatus": {
         "_type": "codeableConcept",
         "text": null,
@@ -161,5 +226,203 @@
                 "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
             }
         ]
-    }
+    },
+    "communication": [
+        {
+            "languageProficiency": {
+                "languageControlListening": {
+                    "_ext": true,
+                    "_type": "coding",
+                    "code": "G",
+                    "display": "Good",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                },
+                "languageControlReading": {
+                    "_ext": true,
+                    "_type": "coding",
+                    "code": "G",
+                    "display": "Good",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                },
+                "languageControlSpeaking": {
+                    "_ext": true,
+                    "_type": "coding",
+                    "code": "F",
+                    "display": "Fair",
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                }
+            },
+            "comment": [
+                {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Bij gesprek met arts zoon uitnodigen voor vertalen"
+                }
+            ],
+            "language": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "nl",
+                        "display": "Nederlands",
+                        "system": "urn:oid:1.0.639.1"
+                    }
+                ]
+            }
+        }
+    ],
+    "contact": [
+        {
+            "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson",
+            "relationship": {
+                "role": null,
+                "relationship": null
+            },
+            "name": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+                "text": {
+                    "_type": "string",
+                    "value": "J.P.M. van Putten-van der Giessen"
+                },
+                "family": {
+                    "humannameOwnPrefix": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "van"
+                    },
+                    "humannameOwnName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Putten"
+                    },
+                    "humannamePartnerPrefix": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "van der"
+                    },
+                    "humannamePartnerName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Giessen"
+                    }
+                },
+                "given": {
+                    "birthName": null,
+                    "initials": [
+                        {
+                            "_type": "string",
+                            "value": "J."
+                        },
+                        {
+                            "_type": "string",
+                            "value": "P."
+                        },
+                        {
+                            "_type": "string",
+                            "value": "M."
+                        }
+                    ]
+                },
+                "prefix": null,
+                "suffix": null,
+                "period": null
+            },
+            "address": {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+                "use": {
+                    "_type": "code",
+                    "value": "home"
+                },
+                "type": {
+                    "_type": "code",
+                    "value": "both"
+                },
+                "line": [
+                    {
+                        "streetName": {
+                            "_ext": true,
+                            "_type": "string",
+                            "value": "1e Jacob van Campenstr"
+                        },
+                        "houseNumber": {
+                            "_ext": true,
+                            "_type": "string",
+                            "value": "15"
+                        },
+                        "houseNumberLetter": null,
+                        "houseNumberAddition": null,
+                        "houseNumberIndication": null,
+                        "additionalInformation": null
+                    }
+                ],
+                "city": {
+                    "_type": "string",
+                    "value": "Hoogmade"
+                },
+                "district": {
+                    "_type": "string",
+                    "value": "Kaag en Braassem"
+                },
+                "postalCode": {
+                    "_type": "string",
+                    "value": "1012 NX"
+                },
+                "country": {
+                    "countryCode": {
+                        "_ext": true,
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "6030",
+                                "display": "Nederland",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34"
+                            }
+                        ]
+                    }
+                }
+            },
+            "telecom": {
+                "telephoneNumbers": [
+                    {
+                        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                        "comment": null,
+                        "system": {
+                            "telecomType": {
+                                "_ext": true,
+                                "_type": "codeableConcept",
+                                "text": null,
+                                "coding": [
+                                    {
+                                        "code": "MC",
+                                        "display": "Mobile Phone",
+                                        "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                                    }
+                                ]
+                            }
+                        },
+                        "value": {
+                            "_type": "string",
+                            "value": "+31611234567"
+                        },
+                        "use": null
+                    }
+                ],
+                "emailAddresses": [
+                    {
+                        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                        "value": {
+                            "_type": "string",
+                            "value": "giesput@myweb.nl"
+                        },
+                        "use": {
+                            "_type": "code",
+                            "value": "work"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }

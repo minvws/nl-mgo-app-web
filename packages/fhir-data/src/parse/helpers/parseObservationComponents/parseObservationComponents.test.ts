@@ -6,7 +6,6 @@ import { valueX } from '../valueX/valueX';
 import { parseObservationComponents } from './parseObservationComponents';
 
 vi.mock('../valueX/valueX', async (importActual) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const module = await importActual<typeof import('../valueX/valueX')>();
     return {
         ...module,

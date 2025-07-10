@@ -1,5 +1,5 @@
 import { type MultipleValues as MultipleValuesData } from '@minvws/mgo-fhir-data';
-import { DescriptionCard } from '@minvws/mgo-mgo-ui';
+import { DescriptionCard } from '@minvws/mgo-ui';
 
 export interface MultipleValueDisplayProps {
     readonly value: MultipleValuesData;

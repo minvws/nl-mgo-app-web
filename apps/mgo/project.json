@@ -1,0 +1,14 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+
+    "targets": {
+        "build": {
+            "executor": "@nx/vite:build",
+            "dependsOn": [],
+            "options": {
+                "outputPath": "{projectRoot}/build"
+            }
+        }
+    }
+}

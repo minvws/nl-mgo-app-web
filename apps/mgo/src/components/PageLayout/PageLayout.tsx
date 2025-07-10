@@ -1,5 +1,5 @@
 import { Outlet } from '$/routing';
-import { cn, Container, useResponsive } from '@minvws/mgo-mgo-ui';
+import { cn, Container, useResponsive } from '@minvws/mgo-ui';
 import { ScrollRestoration } from 'react-router-dom';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
@@ -50,8 +50,8 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                         </div>
                     </Container>
                 </main>
-                <Footer />
             </div>
+            <Footer />
             <ScrollRestoration />
         </>
     );

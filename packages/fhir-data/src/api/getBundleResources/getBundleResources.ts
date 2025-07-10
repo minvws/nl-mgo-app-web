@@ -1,5 +1,5 @@
 import { type FhirResource } from '@minvws/mgo-fhir-types';
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type Bundle as BundleR3 } from 'fhir/r3';
 import { type Bundle as BundleR4 } from 'fhir/r4';
 import { isFhirResource } from '../../utils';

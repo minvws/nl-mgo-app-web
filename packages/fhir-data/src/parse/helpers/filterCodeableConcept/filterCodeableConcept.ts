@@ -1,5 +1,5 @@
 import { type CodeableConcept, type Coding } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import {
     isSystemFilter,
     matchesCodingFilter,
@@ -9,8 +9,8 @@ import {
 
 const hasMatchingCoding = (
     codeableConcept: CodeableConcept,
-    filter:
-        | Readonly<CodingCodeFilter>
+    filter: // eslint-disable-next-line sonarjs/use-type-alias
+    | Readonly<CodingCodeFilter>
         | Readonly<CodingSystemFilter>
         | ReadonlyArray<CodingCodeFilter | CodingSystemFilter>
 ): boolean => {
@@ -60,4 +60,6 @@ export function filterCodeableConcept(
     if (hasMatchingCoding(codeableConcept, filter)) {
         return codeableConcept;
     }
+
+    return undefined;
 }

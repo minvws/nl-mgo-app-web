@@ -1,8 +1,8 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type Timing } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers/oneOfValueX/oneOfValueX';
-import { type MgoElementMeta, type ResourceElementConfig } from '../../../types';
+import { type MgoElementMeta, type ResourceElementConfig } from '../../../resourceTypes';
 import { map } from '../../../utils';
 import { uiSchemaGroup } from './uiSchemaGroup';
 

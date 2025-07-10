@@ -1,8 +1,8 @@
 import { getLoadService, type LoadService } from '$/services/load/load';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { appMessage } from '@minvws/mgo-intl/test';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { AddOrganization } from './AddOrganization';

@@ -2,7 +2,7 @@ import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-mgo-ui';
+import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-ui';
 
 export interface HealthCategoryButtonProps<T extends HealthCategory> {
     readonly query: QueryResult<T>;

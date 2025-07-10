@@ -3,7 +3,7 @@ import {
     type DateTimeString,
     type InstantDateTimeString,
 } from '@minvws/mgo-fhir-types';
-import { isNullish } from '@minvws/mgo-mgo-utils';
+import { isNullish } from '@minvws/mgo-utils';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 
 const milliseconds = /T\d\d:\d\d:\d\d\.\d+/i;
@@ -15,10 +15,7 @@ const month = /^\d\d\d\d-\d\d/;
 const year = /^\d\d\d\d/;
 const timezone = /(([+-][\d:]+)|Z)$/i;
 
-function getDateFormatOptions(
-    dateString: string,
-    isSummary: boolean = false
-): Intl.DateTimeFormatOptions {
+function getDateFormatOptions(dateString: string, isSummary = false): Intl.DateTimeFormatOptions {
     const hasMilliseconds = milliseconds.test(dateString);
     const hasSeconds = hasMilliseconds || seconds.test(dateString);
     const hasMinutes = hasSeconds || minutes.test(dateString);
@@ -57,6 +54,7 @@ export const date: WithUiHelperContext<
 
         try {
             return dateTimeFormat.format(date);
+            // eslint-disable-next-line sonarjs/no-ignored-exceptions
         } catch (_error: unknown) {
             return `${value}`;
         }

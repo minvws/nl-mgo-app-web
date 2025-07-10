@@ -7,7 +7,7 @@ import {
     type MgoResource,
     type ResourceByType,
 } from '@minvws/mgo-fhir-data';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
 import { type ReactNode } from 'react';
@@ -18,13 +18,12 @@ import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthC
 import { useHealthCategoryQuery } from './useHealthCategoryQuery';
 
 vi.mock('@minvws/mgo-fhir-data', async (importActual) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const actual = await importActual<typeof import('@minvws/mgo-fhir-data')>();
 
     return {
         ...actual,
         getMgoResource: vi.fn(() => undefined),
-        getDetails: vi.fn(() => {}),
+        getDetails: vi.fn(),
     };
 });
 
@@ -159,7 +158,7 @@ test('can handle errors', async () => {
     await flushCallStack();
     rerender();
 
-    const { id: _, ...rest } = queryResult.current;
+    const { id, ...rest } = queryResult.current;
     expect(rest).toEqual({
         category: HealthCategory.Medication,
         isLoading: false,

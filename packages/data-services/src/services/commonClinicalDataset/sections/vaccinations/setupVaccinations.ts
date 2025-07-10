@@ -1,18 +1,27 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
 
-export function setupVaccinations<V extends FhirVersion>({ getResources }: FhirClient<V>) {
+type VaccinationsService<V extends FhirVersion> = {
+    getVaccinations: () => ResourcesResponsePromise<V, 'Immunization'>;
+};
+
+export function setupVaccinations<V extends FhirVersion>({
+    getResources,
+}: FhirClient<V>): VaccinationsService<V> {
     return {
-        getVaccinations: partialRequest(
-            getResources,
-            {
-                resource: 'Immunization',
-            } as const,
-            {
-                searchParams: {
-                    status: 'completed',
-                },
-            }
-        ),
+        getVaccinations: () =>
+            getResources(
+                {
+                    resource: 'Immunization',
+                } as const,
+                {
+                    searchParams: {
+                        status: 'completed',
+                    },
+                }
+            ),
     };
 }

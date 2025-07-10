@@ -7,7 +7,6 @@ import { type HealthUiGroup } from '../../types';
 import { oneOfValueX } from './oneOfValueX';
 
 vi.mock('../../type', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const { getTypes } = await importOriginal<typeof import('../../type')>();
     return { getTypes: vi.fn(getTypes) };
 });

@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { isValueType } from '../../../parse/types';
 import { isMgoElement } from '../../../utils';
 import { type HealthUiGroup, type UiElement } from '../../types';

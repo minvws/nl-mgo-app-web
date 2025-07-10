@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { type FhirMessagesIds, testMessage } from '@minvws/mgo-mgo-intl/test';
+import { type FhirMessagesIds, testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
 import { codeableConcept } from '../codeableConcept/codeableConcept';
 import { timing } from './timing';

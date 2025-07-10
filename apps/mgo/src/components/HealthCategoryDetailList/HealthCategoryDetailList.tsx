@@ -1,6 +1,6 @@
 import { RouterLink } from '$/routing';
 import { useOrganizationsStore, type Resource } from '$/store';
-import { DetailButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-mgo-ui';
+import { DetailButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElement> {

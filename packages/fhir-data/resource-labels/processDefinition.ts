@@ -8,6 +8,15 @@ import { normalizeLabel } from './normalizeLabel';
 const mirrorLabels = {
     ['zib_laboratory_test_result_observation']: 'gp_laboratory_result',
     ['zib_encounter']: 'gp_encounter',
+    ['zib_address_information']: 'nl_core_address_information',
+    ['zib_contact_person']: 'nl_core_contact_person',
+    ['zib_healthcare_provider']: 'nl_core_healthcare_provider',
+    ['zib_healthcare_provider_organization']: 'nl_core_healthcare_provider_organization',
+    ['zib_health_professional_practitioner']: 'nl_core_health_professional_practitioner',
+    ['zib_health_professional_practitioner_role']: 'nl_core_health_professional_practitioner_role',
+    ['zib_patient']: 'nl_core_patient',
+    ['zib_pharmaceutical_product']: 'nl_core_pharmaceutical_product',
+    ['zib_vaccination_event']: 'nl_core_vaccination_event',
 };
 
 /**
@@ -63,7 +72,7 @@ export function processDefinition(definition: StructureDefinition) {
         key = key.replace(/\.\w+(\[x\]):/g, '.');
         // similar to value[x]: but where only a single type is used
         // e.g. valueCodeableConcept:valueCodeableConcept -> valueCodeableConcept
-        key = key.replace(/(\w+):\1/g, '$1');
+        key = key.replace(/(value[A-Z]\w+):\1($|\.)/g, '$1$2');
         // replace remaining : with .
         key = key.replace(/:/g, '.');
         // remove remaining [x] from the end of the key

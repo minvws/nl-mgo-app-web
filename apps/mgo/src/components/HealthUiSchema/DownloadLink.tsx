@@ -1,9 +1,9 @@
 import { FormattedMessage } from '$/intl';
-import { type DownloadLink } from '@minvws/mgo-fhir-data';
-import { DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-mgo-ui';
+import { type DownloadLink as DownloadLinkData } from '@minvws/mgo-fhir-data';
+import { DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-ui';
 
 export interface DownloadLinkProps {
-    readonly value: DownloadLink;
+    readonly value: DownloadLinkData;
 }
 
 export function DownloadLink({ value, ...rest }: DownloadLinkProps) {

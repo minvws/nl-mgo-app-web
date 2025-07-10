@@ -1,11 +1,11 @@
 import { FormattedMessage } from '$/intl';
 import { Link as RouterLink } from '$/routing';
-import { Container, Heading, Link, List, ListItem } from '@minvws/mgo-mgo-ui';
+import { Container, Heading, Link, List, ListItem } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
-export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, 'className'> {}
+export type FooterProps = Omit<HTMLAttributes<HTMLElement>, 'className'>;
 
-export function Footer(props: FooterProps) {
+export function Footer(props: Readonly<FooterProps>) {
     return (
         <footer className="bg-lint-blue-800 dark:bg-lint-blue-300" {...props}>
             <Container className="grid grid-cols-1 gap-6 py-6 sm:flex-row md:grid-cols-4 md:py-12">

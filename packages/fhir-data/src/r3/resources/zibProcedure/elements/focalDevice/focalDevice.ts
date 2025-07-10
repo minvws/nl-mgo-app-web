@@ -1,4 +1,4 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type ProcedureFocalDevice } from 'fhir/r3';
 import { parse } from '../../../../../parse';
 

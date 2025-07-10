@@ -1,8 +1,8 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type Address } from 'fhir/r4';
 import { parse } from '../../../parse';
 import { type MgoCode, type MgoString } from '../../../parse/type';
-import { type MgoElementMeta } from '../../../types';
+import { type MgoElementMeta } from '../../../resourceTypes';
 import { map } from '../../../utils';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation'; // NOSONAR

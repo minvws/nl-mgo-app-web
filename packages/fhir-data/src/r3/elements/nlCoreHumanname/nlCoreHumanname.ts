@@ -1,8 +1,8 @@
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type HumanName } from 'fhir/r3';
 import { parse } from '../../../parse';
 import { filterPrimitiveByExtension } from '../../../parse/helpers';
-import { type MgoElementMeta } from '../../../types';
+import { type MgoElementMeta } from '../../../resourceTypes';
 import { map } from '../../../utils';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-humanname'; // NOSONAR

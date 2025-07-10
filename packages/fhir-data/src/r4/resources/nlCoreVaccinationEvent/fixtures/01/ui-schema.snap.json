@@ -1,18 +1,20 @@
 {
-    "label": "Hepatitis a-vaccin",
+    "label": "Vaccinatie",
     "children": [
         {
-            "label": "Algemeen",
             "children": [
                 {
-                    "label": "Uniek nummer",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
-                    ]
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
-                    "label": "Dosis",
+                    "label": "Identificatienummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Inenting",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
@@ -23,9 +25,32 @@
                     "reference": "Patient/nl-core-Patient-01"
                 },
                 {
-                    "label": "Gegeven op",
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Hepatitis A-vaccin (J07BC02 in code systeem http://www.whocc.no/atc)"
+                    ]
+                },
+                {
+                    "label": "Protocol toegepast",
                     "type": "SINGLE_VALUE",
-                    "display": "3 juni 2012"
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "completed"
+                },
+                {
+                    "label": "Toediener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Toelichting",
@@ -33,17 +58,11 @@
                     "display": [
                         "Bezoek aan Guatemala."
                     ]
-                }
-            ]
-        },
-        {
-            "label": "Gegeven door",
-            "children": [
+                },
                 {
-                    "label": "Zorgverlener",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Healthcare professional (role)",
-                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                    "label": "Vaccinatie datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
                 },
                 {
                     "label": "Zorgaanbieder",
@@ -53,7 +72,7 @@
             ]
         },
         {
-            "label": "Extra informatie",
+            "label": "Vaccinatie reden",
             "children": [
                 {
                     "label": "Vaccinatie aanleiding",
@@ -61,12 +80,7 @@
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Toedieningsweg",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
-                    "label": "Lichaamsplek",
+                    "label": "Vaccinatie indicatie",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoType, type MgoTypeId } from '../../../parse/types';
 import { map } from '../../../utils';
 import { type HealthUiSchemaContext } from '../../context';

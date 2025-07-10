@@ -4,7 +4,7 @@
         {
             "children": [
                 {
-                    "label": "Gegeven op",
+                    "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "display": "3 juni 2012"
                 },
@@ -21,7 +21,7 @@
             "label": "Gegeven door",
             "children": [
                 {
-                    "label": "Zorgverlener",
+                    "label": "Toediener",
                     "type": "SINGLE_VALUE",
                     "display": "Healthcare professional (role)"
                 },

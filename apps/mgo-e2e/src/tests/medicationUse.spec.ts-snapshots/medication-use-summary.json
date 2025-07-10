@@ -1,0 +1,53 @@
+[
+  {
+    "label": null,
+    "children": [
+      {
+        "label": "Gebruiksaanwijzing",
+        "value": "1 maal per dag 1 tablet, oraal"
+      },
+      {
+        "label": "Hoeveelheid per keer",
+        "value": "1 stuk"
+      },
+      {
+        "label": "Status",
+        "value": "Actief"
+      },
+      {
+        "label": "Reden gebruik",
+        "value": "Niet bekend"
+      }
+    ]
+  },
+  {
+    "label": "Periode van gebruik",
+    "children": [
+      {
+        "label": "Ingangsdatum",
+        "value": "28 juni 2018"
+      },
+      {
+        "label": "Einddatum",
+        "value": "Niet bekend"
+      }
+    ]
+  },
+  {
+    "label": "Voorgeschreven door",
+    "children": [
+      {
+        "label": "Specialist",
+        "value": "Huisartsen, niet nader gespecificeerd"
+      },
+      {
+        "label": "Zorgaanbieder",
+        "value": "Kwalificatie Medmij: BGZ"
+      }
+    ]
+  },
+  {
+    "label": "Opties",
+    "children": []
+  }
+]

@@ -3,7 +3,7 @@ import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import 'vitest-dom/extend-expect';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
-import { useConfig } from '@minvws/mgo-mgo-ui';
+import { useConfig } from '@minvws/mgo-ui';
 
 configure({
     // Remove the huge error output from `testing-library`
@@ -24,7 +24,7 @@ vi.mock(
                 load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
                 dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
             },
-        }) as typeof import('$/config') // eslint-disable-line @typescript-eslint/consistent-type-imports
+        }) as typeof import('$/config')
 );
 
 vi.mock('zustand');

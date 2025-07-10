@@ -1,5 +1,5 @@
 import { type DomainResource, type Element, type Reference } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type ExtensionValue, type MgoType, type MgoTypeId } from '../../types';
 import { valueX } from '../valueX/valueX';
 
@@ -26,6 +26,8 @@ export function extension<T extends DomainResource | Element, Type extends MgoTy
             ...value,
         };
     }
+
+    return undefined;
 }
 
 export function customExtension<
@@ -44,4 +46,6 @@ export function customExtension<
             ...value,
         };
     }
+
+    return undefined;
 }

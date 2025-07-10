@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type MgoReference } from '../../../parse/type';
 import {
     type MultipleValues,

@@ -1,18 +1,20 @@
-import { type FhirClient, type FhirVersion } from '@minvws/mgo-fhir-client';
-import { partialRequest } from '../../../../utils/partialRequest/partialRequest';
+import {
+    ResourcesResponsePromise,
+    type FhirClient,
+    type FhirVersion,
+} from '@minvws/mgo-fhir-client';
+
+type DocumentsService<V extends FhirVersion> = {
+    getDocumentReferences: () => ResourcesResponsePromise<V, 'DocumentReference'>;
+};
 
 export function setupDocuments<V extends FhirVersion>({
     getResources,
-    getResource,
-}: FhirClient<V>) {
+}: FhirClient<V>): DocumentsService<V> {
     return {
-        getDocumentReferences: partialRequest(getResources, {
-            resource: 'DocumentReference',
-        } as const),
-        getDocumentReference: (id: string) =>
-            partialRequest(getResource, {
+        getDocumentReferences: () =>
+            getResources({
                 resource: 'DocumentReference',
-                id,
-            } as const)(),
+            } as const),
     };
 }

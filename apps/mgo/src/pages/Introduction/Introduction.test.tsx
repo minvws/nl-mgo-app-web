@@ -1,5 +1,5 @@
 import { setupApp } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 

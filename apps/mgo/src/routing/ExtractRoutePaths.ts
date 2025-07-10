@@ -73,8 +73,7 @@ type RouteParam<T> = T extends `${string}:${infer Param}/${string}`
 type ReplaceParams<T extends string> =
     RouteParam<T> extends never
         ? T
-        : // eslint-disable-next-line @typescript-eslint/ban-types
-          T | ReplaceParams<StringReplace<T, `:${RouteParam<T>}`, `${string & {}}`>>; // NOSONAR
+        : T | ReplaceParams<StringReplace<T, `:${RouteParam<T>}`, `${string & {}}`>>; // NOSONAR
 
 /**
  * A utility type to extract all the paths from a route configuration.

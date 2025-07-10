@@ -1,0 +1,80 @@
+{
+    "label": "Farmaceutisch product",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Batch / Lotnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Farmaceutische vorm",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Tablet dose form (qualifier value) (385055001 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Product code",
+            "children": [
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Oral Form Oxycodone (product) (430127000 in code systeem http://snomed.info/sct)"
+                    ]
+                },
+                {
+                    "label": "Product naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Ingredient",
+            "children": [
+                {
+                    "label": "Ingrediënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": "#sub03"
+                },
+                {
+                    "label": "Ingredient hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "5"
+                },
+                {
+                    "label": "Product hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                }
+            ]
+        },
+        {
+            "label": "Ingredient",
+            "children": [
+                {
+                    "label": "Ingrediënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": null,
+                    "reference": "#sub04"
+                },
+                {
+                    "label": "Sterkte",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

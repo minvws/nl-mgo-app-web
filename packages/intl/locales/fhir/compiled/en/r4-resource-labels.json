@@ -1,0 +1,98 @@
+{
+  "r4.nl_core_address_information": [
+  ],
+  "r4.nl_core_address_information.line": [
+  ],
+  "r4.nl_core_address_information.line.house_number_addition": [
+  ],
+  "r4.nl_core_address_information.line.house_number_letter": [
+  ],
+  "r4.nl_core_contact_information_email_addresses": [
+  ],
+  "r4.nl_core_contact_information_email_addresses.use": [
+  ],
+  "r4.nl_core_contact_information_email_addresses.value": [
+  ],
+  "r4.nl_core_contact_information_telephone_numbers": [
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.comment": [
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.telecom_type": [
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.use": [
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.value": [
+  ],
+  "r4.nl_core_health_professional_practitioner": [
+  ],
+  "r4.nl_core_health_professional_practitioner_role.speciality": [
+  ],
+  "r4.nl_core_healthcare_provider": [
+  ],
+  "r4.nl_core_healthcare_provider.identifier": [
+  ],
+  "r4.nl_core_healthcare_provider.managing_organization": [
+  ],
+  "r4.nl_core_patient.deceased": [
+  ],
+  "r4.nl_core_patient.identifier.bsn": [
+  ],
+  "r4.nl_core_patient.nationality": [
+  ],
+  "r4.nl_core_pharmaceutical_product.batch.lot_number": [
+  ],
+  "r4.nl_core_pharmaceutical_product.code.coding": [
+  ],
+  "r4.nl_core_pharmaceutical_product.ingredient.item_reference": [
+  ],
+  "r4.nl_core_vaccination_event.identifier": [
+  ],
+  "r4.nl_core_vaccination_event.location": [
+  ],
+  "r4.nl_core_vaccination_event.performer": [
+  ],
+  "r4.nl_core_vaccination_event.pharmaceutical_product": [
+  ],
+  "r4.nl_core_vaccination_event.protocol_applied": [
+  ],
+  "r4.nl_core_vaccination_event.reason_code": [
+  ],
+  "r4.nl_core_vaccination_event.route": [
+  ],
+  "r4.nl_core_vaccination_event.status": [
+  ],
+  "r4.nl_core_vaccination_event.vaccination_indication": [
+  ],
+  "r4.nl_core_vaccination_event.vaccination_motive": [
+  ],
+  "r4.zib_name_information.family.humanname_own_name": [
+  ],
+  "r4.zib_name_information.family.humanname_own_prefix": [
+  ],
+  "r4.zib_name_information.family.humanname_partner_name": [
+  ],
+  "r4.zib_name_information.family.humanname_partner_prefix": [
+  ],
+  "r4.zib_name_information.given.birth_name": [
+  ],
+  "r4.zib_name_information.text": [
+  ],
+  "r4.zib_name_information_given": [
+  ],
+  "r4.zib_name_information_given.given": [
+  ],
+  "r4.zib_name_information_given.text": [
+  ],
+  "r4.zib_pharmaceutical_product.batch": [
+  ],
+  "r4.zib_pharmaceutical_product.batch.expiration_date": [
+  ],
+  "r4.zib_pharmaceutical_product.batch.lot_number": [
+  ],
+  "r4.zib_pharmaceutical_product.description": [
+  ],
+  "r4.zib_pharmaceutical_product.identifier": [
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.item": [
+  ]
+}

@@ -32,7 +32,7 @@ ARG NODE_VERSION
 COPY --from=installer /app /app
 COPY . ./app
 
-WORKDIR /app/apps/e2e-tests
+WORKDIR /app/apps/mgo-e2e
 
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 # Force the use of the same node version as the base image

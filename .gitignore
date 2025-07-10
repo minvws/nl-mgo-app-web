@@ -1,3 +1,9 @@
+# compiled output and coverage
+build
+dist
+tmp
+out-tsc
+
 # Env files
 .env
 .env.*
@@ -17,6 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -31,3 +39,16 @@ lerna-debug.log*
 *.sw?
 tmp/
 *.http
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.nx/cache
+.nx/workspace-data
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
+test-output

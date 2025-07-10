@@ -1,7 +1,7 @@
 import { HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
 import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
 import { type HealthcareOrganization } from '$/store';
-import { ListWrapper, Stack } from '@minvws/mgo-mgo-ui';
+import { ListWrapper, Stack } from '@minvws/mgo-ui';
 import { HealthCategoryButton } from './HealthCategoryButton';
 
 export interface CategoryListProps {

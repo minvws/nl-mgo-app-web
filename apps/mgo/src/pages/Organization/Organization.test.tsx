@@ -1,21 +1,23 @@
-import { useParams } from '$/routing';
-import { useOrganizationsStore } from '$/store';
+import { useParamsData } from '$/routing';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { Organization } from './Organization';
 
-const mockUseParams = useParams as MockedFunction<typeof useParams>;
+const mockUseParamsData = useParamsData as MockedFunction<typeof useParamsData>;
 
-vi.mock('$/routing/useParams');
+vi.mock('$/routing/useParamsData/useParamsData');
 
 test('healthcare organization shows details about the organization', () => {
-    const { addOrganization } = useOrganizationsStore.getState();
-    const organization = addOrganization(faker.custom.healthcareOrganization());
+    const organization = faker.custom.healthcareOrganization();
 
-    mockUseParams.mockImplementationOnce(() => ({ organizationSlug: organization.slug }));
+    mockUseParamsData.mockImplementationOnce(() => ({
+        organization,
+        healthCategory: undefined,
+        resource: undefined,
+    }));
 
     setupWithAppProviders(<Organization />);
 
@@ -25,8 +27,10 @@ test('healthcare organization shows details about the organization', () => {
 });
 
 test('healthcare organization shows a message if the organization could not be found', async () => {
-    mockUseParams.mockImplementationOnce(() => ({
-        organizationSlug: faker.word.sample(),
+    mockUseParamsData.mockImplementationOnce(() => ({
+        organization: undefined,
+        healthCategory: undefined,
+        resource: undefined,
     }));
 
     setupWithAppProviders(<Organization />);

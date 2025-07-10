@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
-import { isNonNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, type Nullable } from '@minvws/mgo-utils';
 
 /**
  * Creates an array of values by running each element in collection thru iteratee.
@@ -35,7 +33,7 @@ export function map<
     Items extends unknown[],
     Iteratee extends (arg: Items[number], key: number) => unknown,
     T = ReturnType<Iteratee> & {}, // NOSONAR
->(items: Nullable<Items>, iteratee: Iteratee, returnEmpty: boolean = false) {
+>(items: Nullable<Items>, iteratee: Iteratee, returnEmpty = false) {
     if (!items?.length) {
         return returnEmpty ? ([] as T[]) : undefined;
     }

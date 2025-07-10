@@ -1,0 +1,25 @@
+{
+    "id": "nl-core-HealthcareProvider-01",
+    "referenceId": "Location/nl-core-HealthcareProvider-01",
+    "resourceType": "Location",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider",
+    "fhirVersion": "R4",
+    "telecom": {
+        "telephoneNumbers": [],
+        "emailAddresses": []
+    },
+    "name": null,
+    "address": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+        "use": null,
+        "type": null,
+        "line": null,
+        "city": null,
+        "district": null,
+        "postalCode": null,
+        "country": {
+            "countryCode": null
+        }
+    },
+    "managingOrganization": null
+}

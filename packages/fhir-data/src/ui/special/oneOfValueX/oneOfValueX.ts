@@ -1,5 +1,5 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
-import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
+import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash';
 import { type UiHelperContext } from '../../context';
 import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup';
@@ -8,7 +8,7 @@ import { type HealthUiGroup, type UiElement } from '../../types';
 
 export const oneOfValueX =
     (context: UiHelperContext) =>
-    <T extends object>(label: FhirMessagesIds, value: Nullable<T>, prefix: string = 'value') => {
+    <T extends object>(label: FhirMessagesIds, value: Nullable<T>, prefix = 'value') => {
         if (isNullish(value)) {
             return [] as UiElement[];
         }

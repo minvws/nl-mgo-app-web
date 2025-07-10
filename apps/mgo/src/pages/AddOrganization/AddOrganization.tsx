@@ -2,7 +2,7 @@ import { QueryState } from '$/components/QueryState/QueryState';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { getLoadService } from '$/services';
-import { Container, Heading } from '@minvws/mgo-mgo-ui';
+import { Heading } from '@minvws/mgo-ui';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -25,51 +25,50 @@ export function AddOrganization() {
     });
 
     return (
-        <div className="flex flex-grow flex-col">
+        <>
             <Helmet title={formatMessage('add_organization.heading')} />
-
-            <Container>
+            <section className="flex-grow pb-12 md:pb-16 lg:pb-24">
                 <BackButton />
-            </Container>
 
-            <Container className="mb-4 max-w-md">
-                <Heading asChild size="lg" className="mb-4 md:mb-6">
-                    <h1 ref={navFocusRef}>
-                        <FormattedMessage
-                            id="add_organization.heading"
-                            description="Voeg een zorgaanbieder toe"
-                        />
-                    </h1>
-                </Heading>
-
-                <SearchForm onSubmit={setSearchQuery} />
-            </Container>
-
-            <Container className="flex max-w-md flex-grow pb-12 md:pb-16 lg:pb-24">
-                <QueryState
-                    {...query}
-                    useFetchStatus
-                    renderLoading={
-                        <QueryState.Loading>
+                <div className="mx-auto max-w-md">
+                    <Heading asChild size="lg" className="mb-4 md:mb-6">
+                        <h1 ref={navFocusRef}>
                             <FormattedMessage
-                                id="organization_search.searching"
-                                description="Zorgaanbieders aan het zoeken..."
+                                id="add_organization.heading"
+                                description="Voeg een zorgaanbieder toe"
                             />
-                        </QueryState.Loading>
-                    }
-                    renderNoResult={
-                        <QueryState.NoResult
-                            illustration="woman-on-couch-exclamation"
-                            title={formatMessage('organization_search.no_results_found_heading')}
-                        >
-                            <NoSearchResultsTips />
-                        </QueryState.NoResult>
-                    }
-                    renderResult={({ data }) => (
-                        <SearchResults searchResults={data} className="py-6" />
-                    )}
-                />
-            </Container>
-        </div>
+                        </h1>
+                    </Heading>
+
+                    <SearchForm onSubmit={setSearchQuery} className="mb-4" />
+
+                    <QueryState
+                        {...query}
+                        useFetchStatus
+                        renderLoading={
+                            <QueryState.Loading>
+                                <FormattedMessage
+                                    id="organization_search.searching"
+                                    description="Zorgaanbieders aan het zoeken..."
+                                />
+                            </QueryState.Loading>
+                        }
+                        renderNoResult={
+                            <QueryState.NoResult
+                                illustration="woman-on-couch-exclamation"
+                                title={formatMessage(
+                                    'organization_search.no_results_found_heading'
+                                )}
+                            >
+                                <NoSearchResultsTips />
+                            </QueryState.NoResult>
+                        }
+                        renderResult={({ data }) => (
+                            <SearchResults searchResults={data} className="py-6" />
+                        )}
+                    />
+                </div>
+            </section>
+        </>
     );
 }

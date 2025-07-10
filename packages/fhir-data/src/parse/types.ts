@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import * as typeParsers from './type';
 
 export type ExtensionValue<T extends object> = T & {

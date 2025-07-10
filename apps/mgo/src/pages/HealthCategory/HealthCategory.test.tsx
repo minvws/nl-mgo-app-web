@@ -1,30 +1,25 @@
-import {
-    HealthCategory as HealthCategoryEnum,
-    healthCategorySlugs,
-    useHealthCategoryQuery,
-} from '$/healthCategory';
+import { HealthCategory as HealthCategoryEnum, useHealthCategoryQuery } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
-import { Navigate, useParams } from '$/routing';
+import { Navigate, useParamsData } from '$/routing';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { screen, within } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
 
-vi.mock('$/routing/useParams');
+vi.mock('$/routing/useParamsData/useParamsData');
 vi.mock('$/routing/Navigate');
 
-const mockUseParams = useParams as MockedFunction<typeof useParams>;
+const mockUseParamsData = useParamsData as MockedFunction<typeof useParamsData>;
 const mockNavigate = Navigate as MockedFunction<typeof Navigate>;
 const mockUseHealthCategoryQuery = useHealthCategoryQuery as MockedFunction<
     typeof useHealthCategoryQuery
 >;
 
 vi.mock('$/healthCategory', async (importOriginal) => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     const mod = await importOriginal<typeof import('$/healthCategory')>(); // type is inferred
     const useHealthCategoryQuery = vi.fn(() => ({
         data: {},
@@ -38,15 +33,16 @@ vi.mock('$/healthCategory', async (importOriginal) => {
 });
 
 beforeEach(() => {
-    mockUseParams.mockImplementation(() => ({
-        organizationSlug: faker.lorem.slug(),
-        healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Medication],
-        resourceSlug: faker.lorem.slug(),
+    mockUseParamsData.mockImplementation(() => ({
+        organization: undefined,
+        healthCategory: HealthCategoryEnum.Medication,
+        resource: undefined,
     }));
 
     const store = useOrganizationsStore.getState();
     const mock = vi.spyOn(store, 'getOrganizationBySlug');
     mock.mockImplementation(() => faker.custom.healthcareOrganization());
+    mockUseHealthCategoryQuery.mockReset();
 });
 
 test('loads and shows category content', async () => {
@@ -97,27 +93,26 @@ test('loads and shows category content', async () => {
     });
 });
 
-test('does not apply an organization filter if there is no organisation slug', async () => {
-    const store = useOrganizationsStore.getState();
-    const mock = vi.spyOn(store, 'getOrganizationBySlug');
-    mock.mockImplementation(() => undefined);
-
-    mockUseParams.mockImplementation(() => ({
-        organizationSlug: undefined,
-        healthCategorySlug: healthCategorySlugs[HealthCategoryEnum.Medication],
-        resourceSlug: faker.lorem.slug(),
+test('applies an organization filter if there is one', async () => {
+    const organization = faker.custom.healthcareOrganization();
+    mockUseParamsData.mockImplementation(() => ({
+        organization,
+        healthCategory: HealthCategoryEnum.Medication,
+        resource: undefined,
     }));
-
     setupWithAppProviders(<HealthCategory />);
-
+    expect(mockUseHealthCategoryQuery).toHaveBeenCalledWith('medication', [organization.id]);
+});
+test('does not apply an organization filter if there is no organization slug', async () => {
+    setupWithAppProviders(<HealthCategory />);
     expect(mockUseHealthCategoryQuery).toHaveBeenCalledWith('medication', undefined);
 });
 
 test('shows not found page if healthcategory is not found', async () => {
-    mockUseParams.mockImplementation(() => ({
-        organizationSlug: undefined,
-        healthCategorySlug: 'foobar',
-        resourceSlug: faker.lorem.slug(),
+    mockUseParamsData.mockImplementation(() => ({
+        organization: undefined,
+        healthCategory: undefined,
+        resource: undefined,
     }));
 
     setupWithAppProviders(<HealthCategory />);
@@ -199,10 +194,13 @@ test('loads and receives no data from category query', async () => {
     });
 });
 
-test('redirects to the overview page if the organisation was not found', async () => {
-    const store = useOrganizationsStore.getState();
-    const mock = vi.spyOn(store, 'getOrganizationBySlug');
-    mock.mockImplementation(() => undefined);
+test('redirects to the overview page if the organization was not found', async () => {
+    mockUseParamsData.mockImplementation(() => ({
+        organizationSlug: faker.lorem.slug(),
+        organization: undefined,
+        healthCategory: HealthCategoryEnum.Medication,
+        resource: undefined,
+    }));
 
     setupWithAppProviders(<HealthCategory />);
 

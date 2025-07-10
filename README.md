@@ -25,7 +25,7 @@ risk and that the authors assume no liability for any consequences of its use.
 
 - [About the app][mgo-about]
 - [Development setup][mgo-development]
-- [End-to-end tests](apps/e2e-tests/README.md)
+- [End-to-end tests](apps/mgo-e2e/README.md)
 - [Deployment][mgo-deployment]
 - [Internationalization / copy content][mgo-intl]
 - [Glossary][mgo-glossary]
@@ -37,15 +37,16 @@ This repository is a monorepo in that all directories under `apps/*` and `packag
 ```shell
 ├── apps
 │    └── mgo                # The main MGO application
-│    └── e2e-tests          # End-to-end tests for the mgo application
+│    └── mgo-e2e            # End-to-end tests for the mgo application
 ├── packages
 │    ├── data-services      # HTTP client for making requests to data services
 │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
 │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
 │    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
-│    ├── mgo-ui             # UI library for the MGO app
-│    ├── mgo-intl           # Contains all the text content and translations for the MGO app and the "health ui schema"'s
+│    ├── intl               # Contains all the text content and translations for the MGO app and the "health ui schema"'s
 │    └── tailwind           # MGO Tailwind theme
+│    ├── ui                 # UI library for the MGO app
+│    ├── utils              # Collection of commonly used utility functions
 ├── docs
 │    └── ...                # Documentation files
 ├── LICENSE
@@ -63,7 +64,7 @@ docker compose up --build mgo
 docker compose down
 ```
 
-By default it will connect to the test environments, however this can be changed by adding a `.env` in the `apps/e2e-tests` directory. You can copy the `.env.example` for some default values.
+By default it will connect to the test environments, however this can be changed by adding a `.env` in the `apps/mgo-e2e` directory. You can copy the `.env.example` for some default values.
 
 > After changing `.env` values you will have to **rebuild** and **restart** the container. (Rerun the first command above)
 
@@ -82,7 +83,7 @@ pnpm run <command>
 | `test:coverage`   | Runs all unit tests using [vitest] and publishes a coverage report.                                  |
 | `lint`            | Lints all the code using [eslint].                                                                   |
 | `lint:fix`        | Fixes all fixable lint errors using [eslint].                                                        |
-| `check-types`     | Checks all the types using [TypeScript]                                                              |
+| `typecheck`       | Checks all the types using [TypeScript]                                                              |
 | `storybook`       | Starts a new server with the documentation on components from the `mgo-ui` package using [Storybook] |
 | `format`          | Checks and fixes any formatting issues using [Prettier]                                              |
 | `format:check`    | Checks only any formatting issues using [Prettier]                                                   |
@@ -90,9 +91,26 @@ pnpm run <command>
 | `pr`              | Runs all the checks that are normally also ran for a pull request                                    |
 | `e2e`             | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
 
-## License
+## NX
 
-This repository follows the [REUSE Specfication v3.0](https://reuse.software/spec/). Please see [.reuse/dep5](./.reuse/dep5) and the individual `*.license` files for copyright and license information.
+We have started using [nx] for managing processing within this monorepo such as typechecking or linting. We will also soon be updating the configuration to start publishing certain packages to npm.
+
+You can use [nx] to run certain tasks for projects or viewing a graph of the entire monorepo. Running a command for a specific project:
+
+```bash
+npx nx run <project>:<command>
+```
+
+Some commonly used [nx commands][nx-commands] and examples
+
+| Command                                  | Description                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------- |
+| `npx nx graph`                           | [Graph dependencies within workspace][nx-graph]                  |
+| `npx nx run @minvws/mgo:build`           | Create a production build for the mgo app                        |
+| `npx nx run @minvws/mgo:dev`             | Start a development server for the mgo app                       |
+| `npx nx run @minvws/mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `npx nx run @minvws/mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
+| `npx nx show project @minvws/mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
 [vite-dev]: https://vite.dev/guide/cli.html#dev-server
 [vitest]: https://vitest.dev/
@@ -102,6 +120,9 @@ This repository follows the [REUSE Specfication v3.0](https://reuse.software/spe
 [Prettier]: https://prettier.io/
 [Playwright]: https://playwright.dev/
 [docker]: https://www.docker.com/products/docker-desktop/
+[nx]: https://nx.dev/
+[nx-graph]: https://nx.dev/reference/nx-commands#graph
+[nx-commands]: https://nx.dev/reference/nx-commands
 
 <!-- Docs -->
 

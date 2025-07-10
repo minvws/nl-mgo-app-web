@@ -1,5 +1,5 @@
 import { type DomainResource, type Element } from '@minvws/mgo-fhir-types';
-import { isNonNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, type Nullable } from '@minvws/mgo-utils';
 import { type ExtensionValue, type MgoType, type MgoTypeId } from '../../types';
 import { valueX } from '../valueX/valueX';
 
@@ -31,6 +31,8 @@ export function extensionMultiple<T extends DomainResource | Element, Type exten
                     ...value,
                 };
             }
+
+            return undefined;
         })
         .filter(isNonNullish);
 }
@@ -53,6 +55,7 @@ export function customExtensionMultiple<
                     ...value,
                 };
             }
+            return undefined;
         })
         .filter(isNonNullish);
 }

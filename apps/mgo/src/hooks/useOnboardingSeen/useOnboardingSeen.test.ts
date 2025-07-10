@@ -40,29 +40,16 @@ test('setOnboardingSeen() puts datetime in localStorage', () => {
     );
 });
 
-test('setOnboardingSeen(true) puts datetime in localStorage', () => {
+test('setOnboardingSeen() puts datetime in localStorage', () => {
     vi.spyOn(Storage.prototype, 'setItem');
     const { result } = renderHook(() => useOnboardingSeen());
 
     act(() => {
-        result.current.setOnboardingSeen(true);
+        result.current.setOnboardingSeen();
     });
 
     expect(Storage.prototype.setItem).toHaveBeenCalledWith(
         LOCAL_STORAGE_KEY,
         expect.stringMatching(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/)
     );
-});
-
-test('setOnboardingSeen(false) removes value from localStorage', () => {
-    vi.spyOn(Storage.prototype, 'setItem');
-    vi.spyOn(Storage.prototype, 'removeItem');
-    const { result } = renderHook(() => useOnboardingSeen());
-
-    act(() => {
-        result.current.setOnboardingSeen(false);
-    });
-
-    expect(Storage.prototype.setItem).not.toHaveBeenCalled();
-    expect(Storage.prototype.removeItem).toHaveBeenCalledWith(LOCAL_STORAGE_KEY);
 });

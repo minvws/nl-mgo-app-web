@@ -3,8 +3,8 @@ import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
-import { flushCallStack } from '@minvws/mgo-mgo-utils';
+import { appMessage } from '@minvws/mgo-intl/test';
+import { flushCallStack } from '@minvws/mgo-utils';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { Organizations } from './Organizations';
@@ -19,7 +19,7 @@ beforeEach(() => {
 
 test('overview should show empty state', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
-    setOnboardingSeen(true);
+    setOnboardingSeen();
 
     setupApp({ initialEntries: ['/organisaties'] });
 

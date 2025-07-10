@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile.e2e
             args:
                 - NODE_VERSION=20.11.1
-                - PLAYWRIGHT_VERSION=1.50.1 # Needs to match the version in e2e-tests/package.json
+                - PLAYWRIGHT_VERSION=1.50.1 # Needs to match the version in mgo-e2e/package.json
         environment:
             - BASIC_AUTH_USER=${BASIC_AUTH_USER}
             - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
@@ -14,7 +14,7 @@ services:
         ipc: host
         network_mode: host
         volumes:
-            - ./apps/e2e-tests/results:/app/apps/e2e-tests/results/
+            - ./apps/mgo-e2e/results:/app/apps/mgo-e2e/results/
     mgo:
         container_name: mgo
         build:

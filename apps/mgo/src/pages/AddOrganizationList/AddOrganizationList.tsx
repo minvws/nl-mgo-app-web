@@ -2,7 +2,7 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useOrganizationsStore } from '$/store';
-import { Container, Heading } from '@minvws/mgo-mgo-ui';
+import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NoOrganizations } from './NoOrganizations';
 import { Organizations } from './Organizations';
@@ -13,27 +13,25 @@ export function AddOrganizationList() {
     const { hasOrganizations } = useOrganizationsStore();
 
     return (
-        <div className="flex flex-grow flex-col">
+        <>
             <Helmet title={formatMessage('add_organization_list.heading')} />
 
-            <Container>
+            <section className="flex-grow pb-12 md:pb-16 lg:pb-24">
                 <BackButton />
-            </Container>
 
-            <Container className="max-w-md">
-                <Heading asChild size="lg">
-                    <h1 ref={navFocusRef}>
-                        <FormattedMessage
-                            id="add_organization_list.heading"
-                            description="Welke zorgaanbieders wil je in je overzicht tonen?"
-                        />
-                    </h1>
-                </Heading>
-            </Container>
+                <div className="mx-auto max-w-md">
+                    <Heading asChild size="lg">
+                        <h1 ref={navFocusRef}>
+                            <FormattedMessage
+                                id="add_organization_list.heading"
+                                description="Welke zorgaanbieders wil je in je overzicht tonen?"
+                            />
+                        </h1>
+                    </Heading>
 
-            <Container className="flex max-w-md flex-grow">
-                {hasOrganizations() ? <Organizations /> : <NoOrganizations />}
-            </Container>
-        </div>
+                    {hasOrganizations() ? <Organizations /> : <NoOrganizations />}
+                </div>
+            </section>
+        </>
     );
 }

@@ -1,4 +1,4 @@
-import { losslessParse, losslessStringify } from '@minvws/mgo-mgo-utils';
+import { losslessParse, losslessStringify } from '@minvws/mgo-utils';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Func = (...args: any[]) => any;
@@ -15,6 +15,6 @@ type JsonInterfacedFunction<F> = F extends (...args: infer T) => infer R
 export function createJsonApi<T extends Func>(func: T): JsonInterfacedFunction<T> {
     return function (...args) {
         const result = func(...args.map(losslessParse));
-        return losslessStringify(result);
+        return losslessStringify(result, (_key, value) => (value === undefined ? null : value));
     } as JsonInterfacedFunction<T>;
 }

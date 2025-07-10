@@ -1,10 +1,10 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type MgoCoding } from '../../../parse/type';
 import { coding } from './coding';
 
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 import { type MgoCodingProps } from '../../../parse/type/coding/coding';
 import { type UiHelperContext } from '../../context';
 import { system } from '../../format/system/system';

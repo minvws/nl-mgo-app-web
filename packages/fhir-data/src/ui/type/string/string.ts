@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type MgoString } from '../../../parse/type';
 import { valueOf } from '../../helpers/valueOf/valueOf';
 import {

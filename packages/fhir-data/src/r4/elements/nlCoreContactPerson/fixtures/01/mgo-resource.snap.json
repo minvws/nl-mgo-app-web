@@ -1,0 +1,76 @@
+{
+    "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-ContactPerson",
+    "relationship": {
+        "role": null,
+        "relationship": null
+    },
+    "name": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation",
+        "text": null,
+        "family": {
+            "humannameOwnPrefix": null,
+            "humannameOwnName": null,
+            "humannamePartnerPrefix": null,
+            "humannamePartnerName": null
+        },
+        "given": {
+            "birthName": null,
+            "initials": null
+        },
+        "prefix": null,
+        "suffix": null,
+        "period": null
+    },
+    "address": {
+        "_profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-AddressInformation",
+        "use": null,
+        "type": null,
+        "line": null,
+        "city": null,
+        "district": null,
+        "postalCode": null,
+        "country": {
+            "countryCode": null
+        }
+    },
+    "telecom": {
+        "telephoneNumbers": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers",
+                "comment": null,
+                "system": {
+                    "telecomType": {
+                        "_ext": true,
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "MC",
+                                "display": "Mobile Phone",
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse"
+                            }
+                        ]
+                    }
+                },
+                "value": {
+                    "_type": "string",
+                    "value": "+31611234567"
+                },
+                "use": null
+            }
+        ],
+        "emailAddresses": [
+            {
+                "_profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationEmailAddresses",
+                "value": {
+                    "_type": "string",
+                    "value": "giesput@myweb.nl"
+                },
+                "use": {
+                    "_type": "code",
+                    "value": "work"
+                }
+            }
+        ]
+    }
+}

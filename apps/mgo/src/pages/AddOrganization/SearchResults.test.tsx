@@ -1,7 +1,7 @@
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { times } from 'lodash';
@@ -22,7 +22,7 @@ test('adds organization to store on click', async () => {
     let state = useOrganizationsStore.getState();
     expect(state.organizations.length).toBe(0);
 
-    const listItem = await screen.getByRole('listitem');
+    const listItem = screen.getByRole('listitem');
     const listItemButton = within(listItem).getByRole('button');
 
     await user.click(listItemButton);
@@ -44,7 +44,7 @@ test('shows unknown label for organization without a name', async () => {
         />
     );
 
-    const listItem = await screen.getByRole('listitem');
+    const listItem = screen.getByRole('listitem');
     const listItemHeading = within(listItem).getByRole('heading');
     expect(listItemHeading.textContent).toBe(appMessage('common.unknown'));
 });
@@ -60,7 +60,7 @@ test('clicking an already added organization does not change the state, but does
     let state = useOrganizationsStore.getState();
     expect(state.organizations.length).toBe(1);
 
-    const listItem = await screen.getByRole('listitem');
+    const listItem = screen.getByRole('listitem');
     const listItemButton = within(listItem).getByRole('button');
 
     within(listItem).getByText(appMessage('add_organization.already_added'));
@@ -78,7 +78,7 @@ test('unsupported organizations do not contain an action', async () => {
 
     setupWithAppProviders(<SearchResults searchResults={[organization]} />);
 
-    const listItem = await screen.getByRole('listitem');
+    const listItem = screen.getByRole('listitem');
     const listItemButton = await within(listItem).queryByRole('button');
 
     expect(listItemButton).toBe(null);
@@ -92,15 +92,15 @@ test('pagination adds extra items and dissappears when there are not items left'
     const user = userEvent.setup();
     setupWithAppProviders(<SearchResults searchResults={data} />);
 
-    expect(await screen.getAllByRole('listitem').length).toBe(RESULTS_PER_PAGE);
+    expect(screen.getAllByRole('listitem').length).toBe(RESULTS_PER_PAGE);
 
-    const button = await screen.getByRole('button', {
+    const button = screen.getByRole('button', {
         name: appMessage('add_organization.load_more'),
     });
     expect(button).toBeVisible();
     await user.click(button);
 
-    expect(await screen.getAllByRole('listitem').length).toBeGreaterThan(RESULTS_PER_PAGE);
+    expect(screen.getAllByRole('listitem').length).toBeGreaterThan(RESULTS_PER_PAGE);
     expect(
         await screen.queryByRole('button', {
             name: appMessage('add_organization.load_more'),

@@ -1,9 +1,9 @@
 import { FormattedMessage } from '$/intl';
-import { Container, Heading, Illustration, Text } from '@minvws/mgo-mgo-ui';
+import { Heading, Illustration, Text } from '@minvws/mgo-ui';
 
 export function NoData() {
     return (
-        <Container className="w-full max-w-full py-6 text-center">
+        <div className="w-full py-6 text-center">
             <Illustration className="mx-auto w-40 md:w-52" illustration="woman-with-phone" />
             <Heading asChild size="md" className="mt-8">
                 <h2>
@@ -19,6 +19,6 @@ export function NoData() {
                     description="Er is hier niets opgeslagen."
                 />
             </Text>
-        </Container>
+        </div>
     );
 }

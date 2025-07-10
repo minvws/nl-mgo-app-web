@@ -1,47 +1,81 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
 import { type Immunization } from 'fhir/r4';
 import { parse } from '../../../parse';
-import { filterCodeableConcept } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types';
+import { filterCodeableConcept, oneOfValueX } from '../../../parse/helpers';
+import { type ResourceConfig } from '../../../resourceTypes';
+import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 import { vaccinationIndicationValueSet } from '../../valueSets/vaccinationIndication';
 import { vaccinationMotiveValueSet } from '../../valueSets/vaccinationMotive';
-import { parseProtocolApplied } from './elements/protocolApplied/protocolApplied';
+import { ziekteWaarTegenGevaccineerdWordtWaardelijst } from '../../valueSets/ziekteWaarTegenGevaccineerdWordtWaardelijst';
 import { summary } from './summary';
-import { uiSchema } from './uiSchema';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
 
 /**
- * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.8.0-beta.1/files/1946266
+ * @see: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core/0.11.0-beta.1/files/2628660
  */
 function parseNlCoreVaccinationEvent(resource: Immunization) {
-    const vaccinationIndication = filterCodeableConcept(
-        resource.reasonCode,
-        vaccinationIndicationValueSet
-    );
-    const vaccinationMotive = filterCodeableConcept(resource.reasonCode, vaccinationMotiveValueSet);
-
     return {
         ...parse.resourceMeta(resource, profile, FhirVersion.R4),
-        pharmaceuticalProduct: parse.extensionNictiz(
+
+        // zib PharmaceuticalProduct-v2.1.2(2020EN)
+        vaccineCode: parse.codeableConcept(resource.vaccineCode),
+
+        // zib Vaccination-v4.0(2020EN)
+        ...oneOfValueX(resource, ['dateTime', 'string'], 'occurrence'),
+        doseQuantity: parse.quantity(resource.doseQuantity),
+        note: map(resource.note, parse.annotation),
+
+        // ART-DECOR Dataset Vaccination-Immunization
+        pharmaceuticalProduct: parse.extension(
             resource,
-            'ext-Vaccination.PharmaceuticalProduct'
-        ), // NL-CM:9.7.19926
+            'http://nictiz.nl/fhir/StructureDefinition/ext-Vaccination.PharmaceuticalProduct', // NOSONAR
+            'reference'
+        ),
         identifier: map(resource.identifier, parse.identifier),
-        status: parse.string(resource.status), // imm-dataelement-144
-        vaccineCode: parse.codeableConcept(resource.vaccineCode), // NL-CM:9.7.19927
-        patient: parse.reference(resource.patient), // NL-CM:0.1.1
-        occurrenceDateTime: parse.dateTime(resource.occurrenceDateTime), // NL-CM:11.1.3
-        location: parse.reference(resource.location), // NL-CM:17.2.1 | NL-CM:17.2.9
-        site: parse.codeableConcept(resource.site), // NL-CM:20.7.4
-        route: parse.codeableConcept(resource.route), // NL-CM:9.13.21195
-        doseQuantity: parse.quantity(resource.doseQuantity), // NL-CM:11.1.4
-        performer: map(resource.performer, (p) => parse.reference(p.actor)), // NL-CM:17.1.1
-        note: map(resource.note, parse.annotation), // NL-CM:11.1.7
-        vaccinationIndication: map(vaccinationIndication, parse.codeableConcept), // imm-dataelement-160
-        vaccinationMotive: map(vaccinationMotive, parse.codeableConcept), // imm-dataelement-158
-        protocolApplied: map(resource.protocolApplied, parseProtocolApplied),
+        status: parse.string(resource.status),
+        patient: parse.reference(resource.patient),
+        location: parse.reference(resource.location),
+        route: parse.codeableConcept(resource.route),
+        performer: map(resource.performer, (p) => {
+            const administratorFunction = filterCodeableConcept(p.function, {
+                system: 'http://terminology.hl7.org/CodeSystem/v2-0443', // NOSONAR
+                code: 'AP',
+            });
+
+            if (administratorFunction) {
+                return {
+                    administrator: {
+                        actor: parse.reference(p.actor),
+                    },
+                };
+            }
+
+            return undefined;
+        }),
+        reasonCode: {
+            vaccinationIndication: map(
+                filterCodeableConcept(resource.reasonCode, vaccinationIndicationValueSet),
+                parse.codeableConcept
+            ),
+            vaccinationMotive: map(
+                filterCodeableConcept(resource.reasonCode, vaccinationMotiveValueSet),
+                parse.codeableConcept
+            ),
+        },
+
+        protocolApplied: map(resource.protocolApplied, (protocolApplied) => ({
+            targetDisease: {
+                targetDisease: map(
+                    filterCodeableConcept(
+                        protocolApplied?.targetDisease,
+                        ziekteWaarTegenGevaccineerdWordtWaardelijst
+                    ),
+                    parse.codeableConcept
+                ),
+            },
+        })),
     };
 }
 
@@ -50,6 +84,6 @@ export type R4NlCoreVaccinationEvent = ReturnType<typeof parseNlCoreVaccinationE
 export const r4NlCoreVaccinationEvent = {
     profile,
     parse: parseNlCoreVaccinationEvent,
-    uiSchema,
+    uiSchema: generateUiSchema,
     summary,
 } satisfies ResourceConfig<Immunization, R4NlCoreVaccinationEvent>;

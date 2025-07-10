@@ -1,5 +1,5 @@
 import { type Coding, type CodingSystem } from '@minvws/mgo-fhir-types';
-import { type Nullable } from '@minvws/mgo-mgo-utils';
+import { type Nullable } from '@minvws/mgo-utils';
 
 export type CodingCodeFilter = {
     system: CodingSystem;
@@ -19,8 +19,8 @@ export function isSystemFilter(
 
 export const matchesCodingFilter = (
     coding: Coding,
-    filter:
-        | Readonly<CodingCodeFilter>
+    filter: // eslint-disable-next-line sonarjs/use-type-alias
+    | Readonly<CodingCodeFilter>
         | Readonly<CodingSystemFilter>
         | ReadonlyArray<CodingCodeFilter | CodingSystemFilter>
 ) => {
@@ -74,4 +74,6 @@ export function filterCoding(
     if (matchesCodingFilter(coding, filter)) {
         return coding;
     }
+
+    return undefined;
 }

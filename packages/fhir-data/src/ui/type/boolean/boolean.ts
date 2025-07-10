@@ -1,4 +1,4 @@
-import { isNonNullish } from '@minvws/mgo-mgo-utils';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { type MgoBoolean } from '../../../parse/type';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
 

@@ -4,7 +4,7 @@ import { QueryStateLayout } from '../QueryStateLayout/QueryStateLayout';
 
 export type QueryStateLoadingProps = HTMLAttributes<HTMLElement>;
 
-export function QueryStateLoading({ children, ...rest }: QueryStateLoadingProps) {
+export function QueryStateLoading({ children, ...rest }: Readonly<QueryStateLoadingProps>) {
     return (
         <QueryStateLayout {...rest}>
             <div className="py-8 text-center md:py-16">

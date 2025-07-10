@@ -3,7 +3,7 @@ import { type Consent } from 'fhir/r3';
 import { isEmpty } from 'lodash';
 import { parse } from '../../../parse';
 import { oneOfValueX } from '../../../parse/helpers';
-import { type ResourceConfig } from '../../../types';
+import { type ResourceConfig } from '../../../resourceTypes';
 import { generateUiSchema } from '../../../ui/generator';
 import { map } from '../../../utils';
 

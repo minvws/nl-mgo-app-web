@@ -1,4 +1,4 @@
-import { isNullish } from '@minvws/mgo-mgo-utils';
+import { isNullish } from '@minvws/mgo-utils';
 import { type MgoCodingProps } from '../../../parse/type/coding/coding';
 import { type FormatFunction, type WithUiHelperContext } from '../../types';
 

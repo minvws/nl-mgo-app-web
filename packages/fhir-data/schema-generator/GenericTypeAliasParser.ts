@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {
     Context,
     DefinitionType,
@@ -24,7 +26,7 @@ export class GenericTypeAliasParser implements SubNodeParser {
     supportsNode(node: ts.Node): boolean {
         return (
             node.kind === ts.SyntaxKind.TypeAliasDeclaration &&
-            (node as any).type?.typeArguments?.length // eslint-disable-line @typescript-eslint/no-explicit-any
+            (node as any).type?.typeArguments?.length
         );
     }
 
@@ -32,15 +34,18 @@ export class GenericTypeAliasParser implements SubNodeParser {
         const name = node.name.escapedText as string;
         const typeChecker = this.program.getTypeChecker();
         const resolvedType = typeChecker.getTypeAtLocation(node);
-        const typeNode = typeChecker.typeToTypeNode(
-            resolvedType,
-            undefined,
-            1 /* NodeBuilderFlags.NoTruncation */
-        );
+
+        const typeNode =
+            (resolvedType as any).node ??
+            typeChecker.typeToTypeNode(
+                resolvedType,
+                undefined,
+                1 /* NodeBuilderFlags.NoTruncation */
+            );
 
         const jsonType = typeNode
             ? this.chainNodeParser.createType(typeNode, new Context())
-            : new UnknownType();
+            : new UnknownType(false);
 
         return new DefinitionType(name, jsonType);
     }

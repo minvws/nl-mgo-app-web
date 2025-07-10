@@ -1,4 +1,4 @@
-import { type MgoElementMeta, type NictizNlProfile } from '../../types';
+import { type MgoElementMeta, type NictizNlProfile } from '../../resourceTypes';
 
 export function isMgoElement<T extends NictizNlProfile>(
     value: unknown

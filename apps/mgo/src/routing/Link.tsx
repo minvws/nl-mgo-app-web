@@ -1,4 +1,4 @@
-import { Link as UiLink, type LinkProps as UiLinkProps } from '@minvws/mgo-mgo-ui';
+import { Link as UiLink, type LinkProps as UiLinkProps } from '@minvws/mgo-ui';
 import { RouterLink, type RouterLinkProps } from './RouterLink';
 
 export type LinkProps = RouterLinkProps & Pick<UiLinkProps, 'variant'>;

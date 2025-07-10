@@ -1,5 +1,5 @@
 import { DataServiceId } from '@minvws/mgo-data-services';
-import { isNonNullish, log } from '@minvws/mgo-mgo-utils';
+import { isNonNullish, log } from '@minvws/mgo-utils';
 import { type HealthcareOrganizationDTO } from './types';
 
 export const supportedDataServiceIds = [
@@ -23,7 +23,7 @@ export function parseHealthcareOrganization(organizationDTO: HealthcareOrganizat
                 log.warn(
                     `Data service for organization: ${display_name} (${identification}) with id "${id}" does not contain a resource endpoint`
                 );
-                return;
+                return null;
             }
             return { id: id as SupportedDataServiceId, resourceEndpoint };
         })

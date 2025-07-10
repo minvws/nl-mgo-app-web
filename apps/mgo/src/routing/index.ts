@@ -1,9 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, type RouterProviderProps } from 'react-router-dom';
 import { routes } from './routes';
 
 export { Outlet } from 'react-router-dom';
 
-export const router = createBrowserRouter(routes);
+export const router: RouterProviderProps['router'] = createBrowserRouter(routes);
 
 /**
  * Export react-router-dom's components with literal typed paths
@@ -14,6 +14,7 @@ export { RouterNavLink, type RouterNavLinkProps } from './RouterNavLink';
 export { useLocation } from './useLocation';
 export { useNavigate } from './useNavigate';
 export { useParams } from './useParams';
+export { useParamsData } from './useParamsData/useParamsData';
 
 export { Link, type LinkProps } from './Link';
 

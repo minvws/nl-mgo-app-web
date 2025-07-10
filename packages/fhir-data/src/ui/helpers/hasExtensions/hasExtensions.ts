@@ -1,4 +1,4 @@
-import { isNullish, type Nullable } from '@minvws/mgo-mgo-utils';
+import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { isExtensionValue, type ValueType } from '../../../parse/types';
 
 function isOrHasExtensionsDeep<T extends ValueType>(value: Nullable<T>): boolean {

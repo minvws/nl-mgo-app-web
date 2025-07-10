@@ -1,9 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir-types';
-import { losslessParse } from '@minvws/mgo-mgo-utils';
+import { losslessParse } from '@minvws/mgo-utils';
 import ky, { type Options as KyOptions } from 'ky';
 import type { SetRequired } from 'type-fest';
 import { setupResource } from './resource/resource';
-import { setupResources } from './resources/resources';
+import { setupResources, type ResourcesResponsePromise } from './resources/resources';
+
+export { ResourcesResponsePromise };
 
 export interface FhirClientOptions<V extends FhirVersion = FhirVersion>
     extends SetRequired<KyOptions, 'prefixUrl'> {
@@ -19,12 +21,18 @@ const defaultHeaders: Record<FhirVersion, Record<string, string>> = {
     },
 };
 
+export type FhirClient<V extends FhirVersion = FhirVersion> = {
+    fhirVersion: V;
+    instance: ReturnType<typeof ky.create>;
+} & ReturnType<typeof setupResource<V>> &
+    ReturnType<typeof setupResources<V>>;
+
 export function createClient<V extends FhirVersion>({
     parseJson = losslessParse,
     headers = {},
     fhirVersion,
     ...rest
-}: FhirClientOptions<V>) {
+}: FhirClientOptions<V>): FhirClient<V> {
     const options: FhirClientOptions<V> = {
         fhirVersion,
         parseJson,
@@ -44,5 +52,3 @@ export function createClient<V extends FhirVersion>({
         ...setupResources(instance, options),
     };
 }
-
-export type FhirClient<V extends FhirVersion = FhirVersion> = ReturnType<typeof createClient<V>>;

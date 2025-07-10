@@ -1,0 +1,290 @@
+{
+  "r4.nl_core_address_information": [
+    {
+      "type": 0,
+      "value": "Adres informatie"
+    }
+  ],
+  "r4.nl_core_address_information.line": [
+    {
+      "type": 0,
+      "value": "Adres informatie"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_addition": [
+    {
+      "type": 0,
+      "value": "Huisnummer toevoeging"
+    }
+  ],
+  "r4.nl_core_address_information.line.house_number_letter": [
+    {
+      "type": 0,
+      "value": "Huisnummer letter"
+    }
+  ],
+  "r4.nl_core_contact_information_email_addresses": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.nl_core_contact_information_email_addresses.use": [
+    {
+      "type": 0,
+      "value": "Email soort"
+    }
+  ],
+  "r4.nl_core_contact_information_email_addresses.value": [
+    {
+      "type": 0,
+      "value": "E-mailadres"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers": [
+    {
+      "type": 0,
+      "value": "Contactgegevens"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.comment": [
+    {
+      "type": 0,
+      "value": "Telecom toelichting"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.telecom_type": [
+    {
+      "type": 0,
+      "value": "Telecom type"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.use": [
+    {
+      "type": 0,
+      "value": "Telecom type / nummer soort"
+    }
+  ],
+  "r4.nl_core_contact_information_telephone_numbers.value": [
+    {
+      "type": 0,
+      "value": "Telefoonnummer"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner": [
+    {
+      "type": 0,
+      "value": "Zorgprofessional"
+    }
+  ],
+  "r4.nl_core_health_professional_practitioner_role.speciality": [
+    {
+      "type": 0,
+      "value": "Specialiteit"
+    }
+  ],
+  "r4.nl_core_healthcare_provider": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.nl_core_healthcare_provider.identifier": [
+    {
+      "type": 0,
+      "value": "Identifier"
+    }
+  ],
+  "r4.nl_core_healthcare_provider.managing_organization": [
+    {
+      "type": 0,
+      "value": "Beherende organisatie"
+    }
+  ],
+  "r4.nl_core_patient.deceased": [
+    {
+      "type": 0,
+      "value": "Overleden"
+    }
+  ],
+  "r4.nl_core_patient.identifier.bsn": [
+    {
+      "type": 0,
+      "value": "Bsn"
+    }
+  ],
+  "r4.nl_core_patient.nationality": [
+    {
+      "type": 0,
+      "value": "Nationaliteit"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product.batch.lot_number": [
+    {
+      "type": 0,
+      "value": "Batch / Lotnummer"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product.code.coding": [
+    {
+      "type": 0,
+      "value": "Product code"
+    }
+  ],
+  "r4.nl_core_pharmaceutical_product.ingredient.item_reference": [
+    {
+      "type": 0,
+      "value": "Ingrediënt"
+    }
+  ],
+  "r4.nl_core_vaccination_event.identifier": [
+    {
+      "type": 0,
+      "value": "Identificatienummer"
+    }
+  ],
+  "r4.nl_core_vaccination_event.location": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder"
+    }
+  ],
+  "r4.nl_core_vaccination_event.performer": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "r4.nl_core_vaccination_event.pharmaceutical_product": [
+    {
+      "type": 0,
+      "value": "Inenting"
+    }
+  ],
+  "r4.nl_core_vaccination_event.protocol_applied": [
+    {
+      "type": 0,
+      "value": "Protocol toegepast"
+    }
+  ],
+  "r4.nl_core_vaccination_event.reason_code": [
+    {
+      "type": 0,
+      "value": "Vaccinatie reden"
+    }
+  ],
+  "r4.nl_core_vaccination_event.route": [
+    {
+      "type": 0,
+      "value": "Toedieningsweg"
+    }
+  ],
+  "r4.nl_core_vaccination_event.status": [
+    {
+      "type": 0,
+      "value": "Status"
+    }
+  ],
+  "r4.nl_core_vaccination_event.vaccination_indication": [
+    {
+      "type": 0,
+      "value": "Vaccinatie indicatie"
+    }
+  ],
+  "r4.nl_core_vaccination_event.vaccination_motive": [
+    {
+      "type": 0,
+      "value": "Vaccinatie aanleiding"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_own_name": [
+    {
+      "type": 0,
+      "value": "Achternaam"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_own_prefix": [
+    {
+      "type": 0,
+      "value": "Titels"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_partner_name": [
+    {
+      "type": 0,
+      "value": "Voornaam partner"
+    }
+  ],
+  "r4.zib_name_information.family.humanname_partner_prefix": [
+    {
+      "type": 0,
+      "value": "Tussenvoegsel"
+    }
+  ],
+  "r4.zib_name_information.given.birth_name": [
+    {
+      "type": 0,
+      "value": "Geboortenamen"
+    }
+  ],
+  "r4.zib_name_information.text": [
+    {
+      "type": 0,
+      "value": "Volledige naam"
+    }
+  ],
+  "r4.zib_name_information_given": [
+    {
+      "type": 0,
+      "value": "Naamgegevens"
+    }
+  ],
+  "r4.zib_name_information_given.given": [
+    {
+      "type": 0,
+      "value": "Roepnaam"
+    }
+  ],
+  "r4.zib_name_information_given.text": [
+    {
+      "type": 0,
+      "value": "Volledige naam"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.batch": [
+    {
+      "type": 0,
+      "value": "Batch"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.batch.expiration_date": [
+    {
+      "type": 0,
+      "value": "Batch vervaldatum"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.batch.lot_number": [
+    {
+      "type": 0,
+      "value": "Batch lotnummer"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.description": [
+    {
+      "type": 0,
+      "value": "Omschrijving"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.identifier": [
+    {
+      "type": 0,
+      "value": "Serienummer"
+    }
+  ],
+  "r4.zib_pharmaceutical_product.ingredient.item": [
+    {
+      "type": 0,
+      "value": "Medicatie ingredient item"
+    }
+  ]
+}

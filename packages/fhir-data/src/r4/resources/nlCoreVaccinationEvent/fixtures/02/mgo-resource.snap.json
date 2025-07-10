@@ -4,17 +4,6 @@
     "resourceType": "Immunization",
     "profile": "http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event",
     "fhirVersion": "R4",
-    "pharmaceuticalProduct": {
-        "_ext": true,
-        "_type": "reference",
-        "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01",
-        "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
-    },
-    "identifier": null,
-    "status": {
-        "_type": "string",
-        "value": "completed"
-    },
     "vaccineCode": {
         "_type": "codeableConcept",
         "text": null,
@@ -26,27 +15,43 @@
             }
         ]
     },
+    "occurrenceDateTime": {
+        "_type": "dateTime",
+        "value": "2012-06-03"
+    },
+    "doseQuantity": {
+        "_type": "quantity",
+        "value": 1,
+        "comparator": null,
+        "unit": "milliliter",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL"
+    },
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Bezoek aan Guatemala.",
+            "author": null
+        }
+    ],
+    "pharmaceuticalProduct": {
+        "_ext": true,
+        "_type": "reference",
+        "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01",
+        "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS"
+    },
+    "identifier": null,
+    "status": {
+        "_type": "string",
+        "value": "completed"
+    },
     "patient": {
         "_type": "reference",
         "reference": "Patient/nl-core-Patient-01",
         "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen"
     },
-    "occurrenceDateTime": {
-        "_type": "dateTime",
-        "value": "2012-06-03"
-    },
     "location": null,
-    "site": {
-        "_type": "codeableConcept",
-        "text": null,
-        "coding": [
-            {
-                "code": "59126009",
-                "display": "gehele rechter bovenarm",
-                "system": "http://snomed.info/sct"
-            }
-        ]
-    },
     "route": {
         "_type": "codeableConcept",
         "text": null,
@@ -58,74 +63,61 @@
             }
         ]
     },
-    "doseQuantity": {
-        "_type": "quantity",
-        "value": 1,
-        "comparator": null,
-        "unit": "milliliter",
-        "system": "http://unitsofmeasure.org",
-        "code": "mL"
-    },
     "performer": [
         {
-            "_type": "reference",
-            "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
-            "display": "Healthcare professional (role)"
-        }
-    ],
-    "note": [
-        {
-            "_type": "annotation",
-            "time": null,
-            "text": "Bezoek aan Guatemala.",
-            "author": null
-        }
-    ],
-    "vaccinationIndication": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "404904002",
-                    "display": "Kwetsbare oudere (bevinding)",
-                    "system": "http://snomed.info/sct"
+            "administrator": {
+                "actor": {
+                    "_type": "reference",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01",
+                    "display": "Healthcare professional (role)"
                 }
-            ]
+            }
         }
     ],
-    "vaccinationMotive": [
-        {
-            "_type": "codeableConcept",
-            "text": null,
-            "coding": [
-                {
-                    "code": "159731000146104",
-                    "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie)",
-                    "system": "http://snomed.info/sct"
-                }
-            ]
-        }
-    ],
+    "reasonCode": {
+        "vaccinationIndication": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "404904002",
+                        "display": "Kwetsbare oudere (bevinding)",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        ],
+        "vaccinationMotive": [
+            {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "159731000146104",
+                        "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie)",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        ]
+    },
     "protocolApplied": [
         {
-            "authority": null,
-            "targetDisease": [
-                {
-                    "_type": "codeableConcept",
-                    "text": null,
-                    "coding": [
-                        {
-                            "code": "128241005",
-                            "display": "hepatitis",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                }
-            ],
-            "doseNumberString": {
-                "_type": "string",
-                "value": "n/a"
+            "targetDisease": {
+                "targetDisease": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "128241005",
+                                "display": "hepatitis",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    }
+                ]
             }
         }
     ]

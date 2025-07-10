@@ -6,14 +6,11 @@
         ".": "./src/index.ts",
         "./*": "./src/*"
     },
-    "scripts": {
-        "test": "vitest",
-        "check-types": "tsc --noEmit"
-    },
+    "scripts": {},
     "dependencies": {
         "@minvws/mgo-fhir-data": "workspace:*",
         "@minvws/mgo-fhir-types": "workspace:*",
-        "@minvws/mgo-mgo-utils": "workspace:*",
+        "@minvws/mgo-utils": "workspace:*",
         "ky": "^1.7.4",
         "lossless-json": "^4.0.1"
     },

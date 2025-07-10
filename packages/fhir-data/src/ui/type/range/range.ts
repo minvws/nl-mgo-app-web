@@ -1,4 +1,4 @@
-import { type FhirMessagesIds } from '@minvws/mgo-mgo-intl';
+import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type MgoRange } from '../../../parse/type';
 import { systemValue } from '../../format/systemValue/systemValue';
 import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../../types';
@@ -6,7 +6,7 @@ import { type SingleValue, type UiFunction, type WithUiHelperContext } from '../
 type HasLowLabel = Extract<FhirMessagesIds, `${string}.low`> extends `${infer R}.low` ? R : never;
 type HasHighLabel =
     Extract<FhirMessagesIds, `${string}.high`> extends `${infer R}.high` ? R : never;
-type RangeLabel = HasLowLabel | HasHighLabel; // eslint-disable-line @typescript-eslint/no-duplicate-type-constituents
+type RangeLabel = HasLowLabel | HasHighLabel;
 
 export const range: WithUiHelperContext<
     UiFunction<MgoRange, SingleValue[], FhirMessagesIds | RangeLabel>

@@ -1,4 +1,4 @@
-import { cn } from '@minvws/mgo-mgo-ui';
+import { cn } from '@minvws/mgo-ui';
 import { useEffect, useRef, type HTMLAttributes } from 'react';
 
 export interface StickyHeaderProps extends HTMLAttributes<HTMLElement> {
