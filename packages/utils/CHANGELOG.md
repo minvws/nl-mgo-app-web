@@ -1,3 +1,7 @@
+## 0.1.1-2 (2025-07-10)
+
+This was a version bump only for @minvws/mgo-utils to align it with other projects, there were no code changes.
+
 ## 0.1.1-1 (2025-07-09)
 
 This was a version bump only for @minvws/mgo-utils to align it with other projects, there were no code changes.
