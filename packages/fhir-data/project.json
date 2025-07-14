@@ -16,7 +16,7 @@
         "build-mobile-script": {
             "cache": true,
             "executor": "@nx/vite:build",
-            "dependsOn": ["^typecheck"],
+            "dependsOn": ["^typecheck", "^build"],
             "options": {
                 "configFile": "packages/fhir-data/vite.mobile.config.ts",
                 "outputPath": "{projectRoot}/build/js"
@@ -25,7 +25,7 @@
         "build-mobile-types": {
             "cache": true,
             "executor": "@nx/vite:build",
-            "dependsOn": ["^typecheck"],
+            "dependsOn": ["^typecheck", "^build"],
             "options": {
                 "configFile": "packages/fhir-data/vite.mobile.types.config.ts",
                 "outputPath": "{projectRoot}/build/schema/typescript"

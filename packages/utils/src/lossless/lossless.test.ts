@@ -1,6 +1,6 @@
 import { LosslessNumber } from 'lossless-json';
 import { expect, test } from 'vitest';
-import { type Lossless, losslessParse, losslessStringify } from './lossless';
+import { type Lossless, losslessParse, losslessStringify } from './lossless.js';
 
 type TestData = {
     decimal: number;

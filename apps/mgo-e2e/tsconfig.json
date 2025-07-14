@@ -1,10 +1,10 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
         "allowJs": true,
-        "outDir": "out-tsc/playwright",
-        "sourceMap": false,
-        "lib": ["dom"]
+        "outDir": "../../out-tsc/mgo-e2e/playwright",
+        "tsBuildInfoFile": "../../out-tsc/mgo-e2e/tsconfig.tsbuildinfo",
+        "sourceMap": false
     },
     "include": [
         "**/*.ts",

@@ -1,5 +1,15 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "release": {
+        "projects": ["mgo-utils"],
+        "projectsRelationship": "independent",
+        "changelog": {
+            "projectChangelogs": true
+        },
+        "version": {
+            "preVersionCommand": "pnpm exec nx run-many -t build"
+        }
+    },
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"],

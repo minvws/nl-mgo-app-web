@@ -1,9 +1,9 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
-        "tsBuildInfoFile": "./out-tsc/vitest/tsconfig.lib.tsbuildinfo",
+        "outDir": "../../out-tsc/mgo-ui/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-ui/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "outDir": "./out-tsc/vitest",
         "types": ["vitest-dom/extend-expect", "vitest/globals", "vitest/importMeta", "vitest"],
         "jsx": "react-jsx",
         "lib": ["dom"],
