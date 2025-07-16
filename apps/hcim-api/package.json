@@ -1,0 +1,40 @@
+{
+    "name": "@minvws/mgo-hcim-api",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*"
+    },
+    "scripts": {
+        "schema:directories": "mkdir -p ./build/schema/json ./build/schema/typescript ./build/schema/swift ./build/schema/kotlin",
+        "schema:all": "pnpm run schema:directories && pnpm run schema:json && pnpm run schema:swift && pnpm run schema:kotlin",
+        "schema:json": "tsx ./schema-generator/index.ts",
+        "schema:swift:clean": "rimraf ./build/schema/swift/* --glob",
+        "schema:swift": "pnpm run schema:swift:clean && quicktype --src ./build/schema/json/types.json#/definitions/ --src-lang schema --access-level public --protocol hashable --sendable --density dense --multi-file-output --out ./build/schema/swift/Types.swift",
+        "schema:kotlin": "quicktype --src ./build/schema/json/types.json#/definitions/ --src-lang schema --framework kotlinx --out ./build/schema/kotlin/Types.kt"
+    },
+    "devDependencies comments (non-standard-key)": {
+        "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build. also see: https://github.com/qmhc/vite-plugin-dts/issues/404"
+    },
+    "dependencies": {
+        "@minvws/mgo-fhir": "workspace:*",
+        "@minvws/mgo-hcim": "workspace:*",
+        "@minvws/mgo-utils": "workspace:*",
+        "intl": "^1.2.5",
+        "lodash-es": "^4.17.21",
+        "lossless-json": "^4.0.1"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@types/fhir": "^0.0.41",
+        "@types/lodash-es": "^4.17.12",
+        "rimraf": "^6.0.1",
+        "ts-json-schema-generator": "^2.3.0",
+        "tsx": "^4.17.0",
+        "type-fest": "^4.23.0",
+        "typescript": "^5.4.5",
+        "vite": "^6.3.5",
+        "vite-plugin-dts": "4.2.4"
+    }
+}

@@ -19,7 +19,7 @@
             "path": "./packages/fhir-data"
         },
         {
-            "path": "./packages/fhir-types"
+            "path": "./packages/fhir"
         },
         {
             "path": "./packages/intl"

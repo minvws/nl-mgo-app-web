@@ -1,6 +1,6 @@
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type MultipleGroupedValues as MultipleGroupedValuesData } from '@minvws/mgo-fhir-data';
+import { type MultipleGroupedValues as MultipleGroupedValuesData } from '@minvws/mgo-hcim';
 import { screen } from '@testing-library/react';
 import { uniqueId } from 'lodash';
 import { expect, test } from 'vitest';

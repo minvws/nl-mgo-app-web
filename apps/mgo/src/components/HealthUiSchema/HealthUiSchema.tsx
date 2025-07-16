@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore, type Resource } from '$/store';
-import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
+import { getDetails, getSummary } from '@minvws/mgo-hcim';
 import { Heading, Stack } from '@minvws/mgo-ui';
 import { useMemo } from 'react';
 import { HealthUiGroup } from './HealthUiGroup';

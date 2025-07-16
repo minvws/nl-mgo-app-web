@@ -7,7 +7,7 @@
             "path": "../utils"
         },
         {
-            "path": "../fhir-types"
+            "path": "../fhir"
         },
         {
             "path": "../fhir-data"

@@ -15,10 +15,10 @@
             "path": "../utils/tsconfig.lib.json"
         },
         {
-            "path": "../fhir-types/tsconfig.lib.json"
+            "path": "../fhir/tsconfig.lib.json"
         },
         {
-            "path": "../fhir-data/tsconfig.lib.json"
+            "path": "../hcim/tsconfig.lib.json"
         }
     ],
     "exclude": ["src/**/*.test.ts"]

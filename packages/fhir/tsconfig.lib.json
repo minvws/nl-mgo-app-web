@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.base.vite.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.lib.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": [],
+        "lib": ["es2022", "dom", "dom.iterable"]
+    },
+    "include": ["src/**/*.ts"],
+    "references": [],
+    "exclude": ["src/**/*.test.ts"]
+}

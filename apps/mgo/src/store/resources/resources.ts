@@ -4,7 +4,7 @@ import {
     type FhirVersion,
     type MgoResource,
     type NictizNlProfile,
-} from '@minvws/mgo-fhir-data';
+} from '@minvws/mgo-hcim';
 import { createUniqueSlug, log } from '@minvws/mgo-utils';
 import { create } from 'zustand';
 

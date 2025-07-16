@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@minvws/mgo-data-services": "workspace:*",
-        "@minvws/mgo-fhir-data": "workspace:*",
+        "@minvws/mgo-hcim": "workspace:*",
         "@minvws/mgo-intl": "workspace:*",
         "@minvws/mgo-ui": "workspace:*",
         "@minvws/mgo-utils": "workspace:*",
