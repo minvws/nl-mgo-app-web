@@ -12,7 +12,9 @@
     "dependencies": {
         "@minvws/mgo-data-services": "workspace:*",
         "@minvws/mgo-hcim": "workspace:*",
+        "@minvws/mgo-hcim-ui": "workspace:*",
         "@minvws/mgo-intl": "workspace:*",
+        "@minvws/mgo-fhir": "workspace:*",
         "@minvws/mgo-ui": "workspace:*",
         "@minvws/mgo-utils": "workspace:*",
         "@minvws/mgo-tailwind": "workspace:*",

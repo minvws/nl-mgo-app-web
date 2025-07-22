@@ -219,9 +219,15 @@ importers:
       '@minvws/mgo-data-services':
         specifier: workspace:*
         version: link:../../packages/data-services
+      '@minvws/mgo-fhir':
+        specifier: workspace:*
+        version: link:../../packages/fhir
       '@minvws/mgo-hcim':
         specifier: workspace:*
         version: link:../../packages/hcim
+      '@minvws/mgo-hcim-ui':
+        specifier: workspace:*
+        version: link:../../packages/hcim-ui
       '@minvws/mgo-intl':
         specifier: workspace:*
         version: link:../../packages/intl

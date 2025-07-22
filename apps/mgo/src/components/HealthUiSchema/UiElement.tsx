@@ -1,4 +1,4 @@
-import { type UiElement as UiElementData } from '@minvws/mgo-hcim';
+import { type UiElement as UiElementData } from '@minvws/mgo-hcim-ui';
 import { type FunctionComponent, type HTMLAttributes } from 'react';
 import { DownloadBinary } from './DownloadBinary';
 import { DownloadLink } from './DownloadLink';

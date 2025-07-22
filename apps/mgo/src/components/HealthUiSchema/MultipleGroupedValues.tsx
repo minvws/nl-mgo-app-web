@@ -1,4 +1,4 @@
-import { type MultipleGroupedValues as MultipleGroupedValuesData } from '@minvws/mgo-hcim';
+import { type MultipleGroupedValues as MultipleGroupedValuesData } from '@minvws/mgo-hcim-ui';
 import { DescriptionCard, Stack } from '@minvws/mgo-ui';
 import { MultipleValuesDisplay } from './MultipleValues';
 

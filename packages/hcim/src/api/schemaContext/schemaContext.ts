@@ -6,11 +6,9 @@ import {
     createUiContext,
     createUiHelpers,
 } from '@minvws/mgo-hcim-ui';
-import { Locale } from '@minvws/mgo-intl';
 import { type MgoResource } from '../resources/resources';
 
 export type SchemaOptions<V extends `${FhirVersion}`> = UiContextOptions & {
-    locale?: Locale;
     resources?: MgoResource<V>[];
     organization?: {
         name?: string;

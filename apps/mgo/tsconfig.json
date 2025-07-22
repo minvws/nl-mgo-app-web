@@ -9,7 +9,13 @@
             "path": "../../packages/ui"
         },
         {
+            "path": "../../packages/fhir"
+        },
+        {
             "path": "../../packages/intl"
+        },
+        {
+            "path": "../../packages/hcim-ui"
         },
         {
             "path": "../../packages/hcim"

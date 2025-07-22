@@ -12,10 +12,10 @@
     "include": ["src/**/*.ts"],
     "references": [
         {
-            "path": "../packages/utils/tsconfig.lib.json"
+            "path": "../../packages/utils/tsconfig.lib.json"
         },
         {
-            "path": "../packages/fhir/tsconfig.lib.json"
+            "path": "../../packages/fhir/tsconfig.lib.json"
         }
     ],
     "exclude": ["src/**/*.test.ts"]

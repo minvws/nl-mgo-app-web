@@ -1,4 +1,4 @@
-import { type MultipleValues as MultipleValuesData } from '@minvws/mgo-hcim';
+import { type MultipleValues as MultipleValuesData } from '@minvws/mgo-hcim-ui';
 import { DescriptionCard } from '@minvws/mgo-ui';
 
 export interface MultipleValueDisplayProps {

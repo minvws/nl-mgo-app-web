@@ -1,11 +1,8 @@
 import { type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import {
-    getDetails,
-    getSummary,
-    type HealthUiSchema as HealthUiSchemaData,
-} from '@minvws/mgo-hcim';
+import { getDetails, getSummary } from '@minvws/mgo-hcim';
+import { type HealthUiSchema as HealthUiSchemaData } from '@minvws/mgo-hcim-ui';
 import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthUiSchema } from './HealthUiSchema';

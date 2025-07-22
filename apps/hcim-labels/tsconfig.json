@@ -4,13 +4,13 @@
     "include": [],
     "references": [
         {
-            "path": "../packages/utils"
+            "path": "../../packages/utils"
         },
         {
-            "path": "../packages/fhir"
+            "path": "../../packages/fhir"
         },
         {
-            "path": "./tsconfig.lib.json"
+            "path": "./tsconfig.app.json"
         },
         {
             "path": "./tsconfig.spec.json"
