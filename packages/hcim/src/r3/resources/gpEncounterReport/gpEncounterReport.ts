@@ -34,4 +34,4 @@ export const gpEncounterReport = {
     profile,
     parse: parseGpEncounterReport,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Composition, GpEncounterReport>;
+} satisfies ResourceConfig<FhirVersion.R3, Composition, GpEncounterReport>;

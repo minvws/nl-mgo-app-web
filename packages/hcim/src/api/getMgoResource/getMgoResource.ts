@@ -24,7 +24,7 @@ export function getMgoResource<T extends FhirResource<V>, V extends FhirVersion>
         );
     }
 
-    const config = getResourceConfig(resource.meta?.profile ?? [], fhirVersion);
+    const config = getResourceConfig<T, V>(resource.meta?.profile ?? [], fhirVersion as V);
 
     if (!config) {
         console.error(

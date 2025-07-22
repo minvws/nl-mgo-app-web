@@ -54,4 +54,4 @@ export const zibBodyWeight = {
     profile,
     parse: parseZibBodyWeight,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibBodyWeight>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibBodyWeight>;

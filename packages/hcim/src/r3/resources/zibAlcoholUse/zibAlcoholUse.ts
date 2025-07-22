@@ -53,4 +53,4 @@ export const zibAlcoholUse = {
     profile,
     parse: parseZibAlcoholUse,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibAlcoholUse>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibAlcoholUse>;

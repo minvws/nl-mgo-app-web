@@ -49,4 +49,4 @@ export const zibPayer = {
     profile,
     parse: parseZibPayer,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Coverage, ZibPayer>;
+} satisfies ResourceConfig<FhirVersion.R3, Coverage, ZibPayer>;

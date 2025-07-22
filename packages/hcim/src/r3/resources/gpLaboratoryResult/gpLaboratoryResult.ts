@@ -20,7 +20,7 @@ function parseGpLaboratoryResult(resource: Observation) {
 
 export type GpLaboratoryResult = ReturnType<typeof parseGpLaboratoryResult>;
 
-export const gpLaboratoryResult: ResourceConfig<Observation, GpLaboratoryResult> = {
+export const gpLaboratoryResult: ResourceConfig<FhirVersion.R3, Observation, GpLaboratoryResult> = {
     profile,
     parse: parseGpLaboratoryResult,
     uiSchema: generateUiSchema,

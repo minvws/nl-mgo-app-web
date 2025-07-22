@@ -1,18 +1,21 @@
 import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir';
-import { type MgoResourceMeta } from '../../../../hcim-parse/src/helpers/resourceMeta/resourceMeta';
+import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { type ResourceConfig } from '../../resourceTypes';
 import { resourcesMapR3, resourcesMapR4 } from '../resources/resources';
 
-type Config<T extends FhirResource | MgoResourceMeta> = T extends FhirResource
-    ? ResourceConfig<T, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+type Config<
+    V extends FhirVersion | `${FhirVersion}`,
+    T extends FhirResource | MgoResourceMeta,
+> = T extends FhirResource
+    ? ResourceConfig<V, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     : T extends MgoResourceMeta
-      ? ResourceConfig<any, T> // eslint-disable-line @typescript-eslint/no-explicit-any
+      ? ResourceConfig<V, any, T> // eslint-disable-line @typescript-eslint/no-explicit-any
       : never;
 
-export function getResourceConfig<T extends FhirResource | MgoResourceMeta>(
-    profile: string | string[],
-    fhirVersion: FhirVersion | `${FhirVersion}`
-): Config<T> | undefined {
+export function getResourceConfig<
+    T extends FhirResource | MgoResourceMeta,
+    V extends FhirVersion | `${FhirVersion}`,
+>(profile: string | string[], fhirVersion: V | `${V}`): Config<V, T> | undefined {
     const resourcesMap =
         FhirVersion[fhirVersion] === FhirVersion.R3 ? resourcesMapR3 : resourcesMapR4;
 
@@ -25,7 +28,7 @@ export function getResourceConfig<T extends FhirResource | MgoResourceMeta>(
     }
 
     if (!!matchingProfile && resourcesMap[matchingProfile]) {
-        return resourcesMap[matchingProfile] as unknown as Config<T>;
+        return resourcesMap[matchingProfile] as unknown as Config<V, T>;
     }
 
     return undefined;

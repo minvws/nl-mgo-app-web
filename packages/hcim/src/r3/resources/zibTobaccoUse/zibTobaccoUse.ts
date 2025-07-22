@@ -68,4 +68,4 @@ export const zibTobaccoUse = {
     profile,
     parse: parseZibTobaccoUse,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibTobaccoUse>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibTobaccoUse>;

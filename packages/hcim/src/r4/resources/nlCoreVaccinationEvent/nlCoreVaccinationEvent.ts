@@ -86,4 +86,4 @@ export const r4NlCoreVaccinationEvent = {
     parse: parseNlCoreVaccinationEvent,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<Immunization, R4NlCoreVaccinationEvent>;
+} satisfies ResourceConfig<FhirVersion.R4, Immunization, R4NlCoreVaccinationEvent>;

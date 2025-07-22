@@ -58,4 +58,4 @@ export const nlCorePractitioner = {
     profile,
     parse: parseNlCorePractitioner,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Practitioner, NlCorePractitioner>;
+} satisfies ResourceConfig<FhirVersion.R3, Practitioner, NlCorePractitioner>;

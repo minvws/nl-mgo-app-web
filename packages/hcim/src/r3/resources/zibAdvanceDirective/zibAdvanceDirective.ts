@@ -48,4 +48,4 @@ export const zibAdvanceDirective = {
     profile,
     parse: parseZibAdvanceDirective,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Consent, ZibAdvanceDirective>;
+} satisfies ResourceConfig<FhirVersion.R3, Consent, ZibAdvanceDirective>;

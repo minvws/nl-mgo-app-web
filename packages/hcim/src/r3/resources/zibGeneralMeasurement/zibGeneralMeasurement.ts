@@ -43,4 +43,4 @@ export const zibGeneralMeasurement = {
     profile,
     parse: parseZibGeneralMeasurement,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibGeneralMeasurement>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibGeneralMeasurement>;

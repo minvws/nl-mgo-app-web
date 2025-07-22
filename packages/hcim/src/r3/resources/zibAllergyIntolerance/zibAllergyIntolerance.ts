@@ -74,4 +74,4 @@ export const zibAllergyIntolerance = {
     profile,
     parse: parseZibAllergyIntolerance,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<AllergyIntolerance, ZibAllergyIntolerance>;
+} satisfies ResourceConfig<FhirVersion.R3, AllergyIntolerance, ZibAllergyIntolerance>;

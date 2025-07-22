@@ -75,4 +75,4 @@ export const zibTreatmentDirective = {
     profile,
     parse: parseZibTreatmentDirective,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Consent, ZibTreatmentDirective>;
+} satisfies ResourceConfig<FhirVersion.R3, Consent, ZibTreatmentDirective>;

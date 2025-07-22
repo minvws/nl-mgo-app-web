@@ -62,4 +62,4 @@ export const zibMedicalDevice = {
     profile,
     parse: parseZibMedicalDevice,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<DeviceUseStatement, ZibMedicalDevice>;
+} satisfies ResourceConfig<FhirVersion.R3, DeviceUseStatement, ZibMedicalDevice>;

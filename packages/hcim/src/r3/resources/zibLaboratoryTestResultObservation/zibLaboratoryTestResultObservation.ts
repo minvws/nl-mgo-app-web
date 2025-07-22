@@ -103,4 +103,4 @@ export const zibLaboratoryTestResultObservation = {
     parse: parseZibLaboratoryTestResultObservation,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<Observation, ZibLaboratoryTestResultObservation>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibLaboratoryTestResultObservation>;

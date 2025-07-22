@@ -43,4 +43,4 @@ export const zibLivingSituation = {
     profile,
     parse: parseZibLivingSituation,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibLivingSituation>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibLivingSituation>;

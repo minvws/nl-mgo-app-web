@@ -56,4 +56,4 @@ export const zibProblem = {
     profile,
     parse: parseZibProblem,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Condition, ZibProblem>;
+} satisfies ResourceConfig<FhirVersion.R3, Condition, ZibProblem>;

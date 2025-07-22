@@ -77,4 +77,4 @@ export const eAfspraakAppointment = {
     profile,
     parse: parseEAfspraakAppointment,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Appointment, EAfspraakAppointment>;
+} satisfies ResourceConfig<FhirVersion.R3, Appointment, EAfspraakAppointment>;

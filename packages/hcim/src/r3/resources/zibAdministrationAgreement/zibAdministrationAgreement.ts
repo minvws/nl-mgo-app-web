@@ -82,4 +82,4 @@ export const zibAdministrationAgreement = {
     profile,
     parse: parseZibAdministrationAgreement,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<MedicationDispense, ZibAdministrationAgreement>;
+} satisfies ResourceConfig<FhirVersion.R3, MedicationDispense, ZibAdministrationAgreement>;

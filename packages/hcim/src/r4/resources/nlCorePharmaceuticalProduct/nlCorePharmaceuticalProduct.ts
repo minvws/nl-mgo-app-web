@@ -40,4 +40,4 @@ export const nlCorePharmaceuticalProductR4 = {
     profile,
     parse: parseNlCorePharmaceuticalProduct,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Medication, R4NlCorePharmaceuticalProduct>;
+} satisfies ResourceConfig<FhirVersion.R4, Medication, R4NlCorePharmaceuticalProduct>;

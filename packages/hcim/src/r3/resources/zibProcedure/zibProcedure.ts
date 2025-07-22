@@ -53,4 +53,4 @@ export const zibProcedure = {
     profile,
     parse: parseZibProcedure,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Procedure, ZibProcedure>;
+} satisfies ResourceConfig<FhirVersion.R3, Procedure, ZibProcedure>;

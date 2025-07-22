@@ -42,4 +42,4 @@ export const zibVaccination = {
     profile,
     parse: parseZibVaccination,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Immunization, ZibVaccination>;
+} satisfies ResourceConfig<FhirVersion.R3, Immunization, ZibVaccination>;

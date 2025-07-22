@@ -150,4 +150,4 @@ export const nlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Patient, NlCorePatient>;
+} satisfies ResourceConfig<FhirVersion.R3, Patient, NlCorePatient>;

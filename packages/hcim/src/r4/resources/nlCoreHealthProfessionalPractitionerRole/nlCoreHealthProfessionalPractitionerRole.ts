@@ -40,4 +40,8 @@ export const nlCoreHealthProfessionalPractitionerRole = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitionerRole,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<PractitionerRole, R4NlCoreHealthProfessionalPractitionerRole>;
+} satisfies ResourceConfig<
+    FhirVersion.R4,
+    PractitionerRole,
+    R4NlCoreHealthProfessionalPractitionerRole
+>;

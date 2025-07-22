@@ -46,4 +46,4 @@ export const zibNutritionAdvice = {
     profile,
     parse: parseZibNutritionAdvice,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<NutritionOrder, ZibNutritionAdvice>;
+} satisfies ResourceConfig<FhirVersion.R3, NutritionOrder, ZibNutritionAdvice>;

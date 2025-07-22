@@ -1,4 +1,4 @@
-import { type BackboneElement, type FhirResource } from '@minvws/mgo-fhir';
+import { FhirVersion, type BackboneElement, type FhirResource } from '@minvws/mgo-fhir';
 import {
     HealthUiGroup,
     HealthUiGroupFunction,
@@ -27,13 +27,14 @@ type ResourceParserFunction<
 > = (resource: Resource) => ParsedResource;
 
 export interface ResourceConfig<
-    Resource extends FhirResource<ParsedResource['fhirVersion']>,
+    V extends FhirVersion | `${FhirVersion}`,
+    Resource extends FhirResource<V>,
     ParsedResource extends MgoResourceMeta,
 > {
     profile: MgoResourceMeta['profile'];
     parse: ResourceParserFunction<Resource, ParsedResource>;
     uiSchema: DetailSchemaFunction<ParsedResource>;
-    summary?: SchemaFunctionWithSchemaContext<ParsedResource>;
+    summary?: SummarySchemaFunction<ParsedResource>;
 }
 
 type ElementParserFunction<T extends BackboneElement, ParsedResource extends object> = (

@@ -4,8 +4,8 @@ import * as resourcesR4 from '../../r4/resources';
 import { type ResourceConfig } from '../../resourceTypes';
 
 // Ensures only resource configs are listed
-resourcesR3 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
-resourcesR4 satisfies Record<string, ResourceConfig<any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
+resourcesR3 satisfies Record<string, ResourceConfig<FhirVersion.R3, any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
+resourcesR4 satisfies Record<string, ResourceConfig<FhirVersion.R4, any, any>>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export const resourcesMapR3 = Object.fromEntries(
     Object.entries(resourcesR3).map(([_name, config]) => [config.profile.toLowerCase(), config])

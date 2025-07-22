@@ -23,4 +23,4 @@ export const gpEncounter = {
     profile,
     parse: parseGpEncounter,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Encounter, GpEncounter>;
+} satisfies ResourceConfig<FhirVersion.R3, Encounter, GpEncounter>;

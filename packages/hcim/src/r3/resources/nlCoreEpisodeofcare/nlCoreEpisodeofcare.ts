@@ -35,4 +35,4 @@ export const nlCoreEpisodeofcare = {
     profile,
     parse: parseNlCoreEpisodeofcare,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<EpisodeOfCare, NlCoreEpisodeofcare>;
+} satisfies ResourceConfig<FhirVersion.R3, EpisodeOfCare, NlCoreEpisodeofcare>;

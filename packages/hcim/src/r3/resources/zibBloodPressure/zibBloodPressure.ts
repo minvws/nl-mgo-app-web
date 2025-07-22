@@ -84,4 +84,4 @@ export const zibBloodPressure = {
     profile,
     parse: parseZibBloodPressure,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibBloodPressure>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibBloodPressure>;

@@ -58,4 +58,4 @@ export const nlCoreObservation = {
     profile,
     parse: parseNlCoreObservation,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, NlCoreObservation>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, NlCoreObservation>;

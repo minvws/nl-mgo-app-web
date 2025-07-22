@@ -51,4 +51,4 @@ export const nlCoreOrganization = {
     profile,
     parse: parseNlCoreOrganization,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Organization, NlCoreOrganization>;
+} satisfies ResourceConfig<FhirVersion.R3, Organization, NlCoreOrganization>;

@@ -61,4 +61,4 @@ export const gpJournalEntry = {
     profile,
     parse: parseGpJournalEntry,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, GpJournalEntry>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, GpJournalEntry>;

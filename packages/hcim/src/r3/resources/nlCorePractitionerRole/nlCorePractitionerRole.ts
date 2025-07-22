@@ -33,4 +33,4 @@ export const nlCorePractitionerRole = {
     profile,
     parse: parseNlCorePractitionerRole,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<PractitionerRole, NlCorePractitionerRole>;
+} satisfies ResourceConfig<FhirVersion.R3, PractitionerRole, NlCorePractitionerRole>;

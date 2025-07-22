@@ -37,4 +37,4 @@ export const zibAlert = {
     profile,
     parse: parseZibAlert,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Flag, ZibAlert>;
+} satisfies ResourceConfig<FhirVersion.R3, Flag, ZibAlert>;

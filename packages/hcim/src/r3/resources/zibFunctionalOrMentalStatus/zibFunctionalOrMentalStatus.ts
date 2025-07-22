@@ -49,4 +49,4 @@ export const zibFunctionalOrMentalStatus = {
     profile,
     parse: parseZibFunctionalOrMentalStatus,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibFunctionalOrMentalStatus>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibFunctionalOrMentalStatus>;

@@ -57,4 +57,4 @@ export const zibLaboratoryTestResultSpecimen = {
     profile,
     parse: parseZibLaboratoryTestResultSpecimen,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Specimen, ZibLaboratoryTestResultSpecimen>;
+} satisfies ResourceConfig<FhirVersion.R3, Specimen, ZibLaboratoryTestResultSpecimen>;

@@ -46,4 +46,4 @@ export const iheMhdMinimalDocumentReference = {
     parse: parseIheMhdMinimalDocumentReference,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<DocumentReference, IheMhdMinimalDocumentReference>;
+} satisfies ResourceConfig<FhirVersion.R3, DocumentReference, IheMhdMinimalDocumentReference>;

@@ -60,4 +60,4 @@ export const zibProcedureRequest = {
     profile,
     parse: parseZibProcedureRequest,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<ProcedureRequest, ZibProcedureRequest>;
+} satisfies ResourceConfig<FhirVersion.R3, ProcedureRequest, ZibProcedureRequest>;

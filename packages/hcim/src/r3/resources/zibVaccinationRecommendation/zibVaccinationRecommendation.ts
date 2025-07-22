@@ -44,4 +44,8 @@ export const zibVaccinationRecommendation = {
     profile,
     parse: parseZibVaccinationRecommendation,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<ImmunizationRecommendation, ZibVaccinationRecommendation>;
+} satisfies ResourceConfig<
+    FhirVersion.R3,
+    ImmunizationRecommendation,
+    ZibVaccinationRecommendation
+>;

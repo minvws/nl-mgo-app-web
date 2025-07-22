@@ -40,4 +40,4 @@ export const zibProduct = {
     profile,
     parse: parseZibProduct,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Medication, ZibProduct>;
+} satisfies ResourceConfig<FhirVersion.R3, Medication, ZibProduct>;

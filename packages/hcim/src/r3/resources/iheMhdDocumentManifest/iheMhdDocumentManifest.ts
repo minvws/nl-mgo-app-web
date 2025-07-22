@@ -33,4 +33,4 @@ export const iheMhdDocumentManifest = {
     profile,
     parse: parseIheMhdDocumentManifest,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<DocumentManifest, IheMhdDocumentManifest>;
+} satisfies ResourceConfig<FhirVersion.R3, DocumentManifest, IheMhdDocumentManifest>;

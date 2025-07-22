@@ -55,4 +55,4 @@ export const zibEncounter = {
     profile,
     parse: parseZibEncounter,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Encounter, ZibEncounter>;
+} satisfies ResourceConfig<FhirVersion.R3, Encounter, ZibEncounter>;

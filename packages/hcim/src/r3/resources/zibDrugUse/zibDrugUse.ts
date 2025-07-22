@@ -68,4 +68,4 @@ export const zibDrugUse = {
     profile,
     parse: parseZibDrugUse,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibDrugUse>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibDrugUse>;

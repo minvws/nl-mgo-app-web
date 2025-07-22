@@ -30,4 +30,4 @@ export const nlCoreHealthcareProvider = {
     profile,
     parse: parseNlCoreHealthcareProvider,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Location, R4NlCoreHealthcareProvider>;
+} satisfies ResourceConfig<FhirVersion.R4, Location, R4NlCoreHealthcareProvider>;

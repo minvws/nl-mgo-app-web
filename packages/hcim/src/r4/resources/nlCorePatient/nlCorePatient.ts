@@ -109,4 +109,4 @@ export const r4NlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Patient, R4NlCorePatient>;
+} satisfies ResourceConfig<FhirVersion.R4, Patient, R4NlCorePatient>;

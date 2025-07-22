@@ -84,4 +84,4 @@ export const zibMedicationUse = {
     parse: parseZibMedicationUse,
     summary,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<MedicationStatement, ZibMedicationUse>;
+} satisfies ResourceConfig<FhirVersion.R3, MedicationStatement, ZibMedicationUse>;

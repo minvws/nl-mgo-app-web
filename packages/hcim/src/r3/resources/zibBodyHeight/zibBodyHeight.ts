@@ -44,4 +44,4 @@ export const zibBodyHeight = {
     profile,
     parse: parseZibBodyHeight,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, ZibBodyHeight>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibBodyHeight>;

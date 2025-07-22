@@ -29,4 +29,4 @@ export const gpDiagnosticResult = {
     profile,
     parse: parseGpDiagnosticResult,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<Observation, GpDiagnosticResult>;
+} satisfies ResourceConfig<FhirVersion.R3, Observation, GpDiagnosticResult>;
