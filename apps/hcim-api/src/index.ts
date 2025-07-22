@@ -5,7 +5,7 @@
  */
 import '@minvws/mgo-intl/polyfills';
 
-import { getBundleResources, getMgoResource, getSummary } from '@minvws/mgo-hcim';
+import { getBundleResources, getDetails, getMgoResource, getSummary } from '@minvws/mgo-hcim';
 import { createJsonApi } from './createJsonApi/createJsonApi';
 
 export const getBundleResourcesJson = createJsonApi(getBundleResources);

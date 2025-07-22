@@ -6,16 +6,19 @@
             "path": "../../packages/utils"
         },
         {
-            "path": "../../packages/ui"
+            "path": "../../packages/fhir"
+        },
+        {
+            "path": "../../packages/hcim-parse"
+        },
+        {
+            "path": "../../packages/hcim-ui"
+        },
+        {
+            "path": "../../packages/hcim"
         },
         {
             "path": "../../packages/intl"
-        },
-        {
-            "path": "../../packages/fhir-data"
-        },
-        {
-            "path": "../../packages/data-services"
         },
         {
             "path": "./tsconfig.app.json"

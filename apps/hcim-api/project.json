@@ -7,27 +7,27 @@
             "executor": "nx:run-commands",
             "options": {
                 "commands": [
-                    "nx run @minvws/mgo-fhir-data:build-mobile-script",
-                    "nx run @minvws/mgo-fhir-data:build-mobile-types"
+                    "nx run @minvws/mgo-hcim-api:build-api",
+                    "nx run @minvws/mgo-hcim-api:build-api-types"
                 ]
             },
             "parallel": false
         },
-        "build-mobile-script": {
+        "build-api": {
             "cache": true,
             "executor": "@nx/vite:build",
             "dependsOn": ["^typecheck", "^build"],
             "options": {
-                "configFile": "packages/fhir-data/vite.mobile.config.ts",
+                "configFile": "apps/hcim-api/vite.api.config.ts",
                 "outputPath": "{projectRoot}/build/js"
             }
         },
-        "build-mobile-types": {
+        "build-api-types": {
             "cache": true,
             "executor": "@nx/vite:build",
             "dependsOn": ["^typecheck", "^build"],
             "options": {
-                "configFile": "packages/fhir-data/vite.mobile.types.config.ts",
+                "configFile": "apps/hcim-api/vite.api.types.config.ts",
                 "outputPath": "{projectRoot}/build/schema/typescript"
             }
         }

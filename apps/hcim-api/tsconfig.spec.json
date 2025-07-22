@@ -1,28 +1,18 @@
 {
     "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
-        "outDir": "../../out-tsc/mgo/vitest",
-        "tsBuildInfoFile": "../../out-tsc/mgo/tsconfig.spec.tsbuildinfo",
+        "outDir": "../../out-tsc/mgo-hcim-api/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-hcim-api/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "types": [
-            "vitest/globals",
-            "vitest/importMeta",
-            "vite/client",
-            "vitest",
-            "vitest-dom/extend-expect",
-            "vite-plugin-svgr/client"
-        ],
-        "jsx": "react-jsx",
-        "lib": ["dom"],
-        "allowJs": true,
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"],
+        "lib": ["es2022"],
         "paths": {
-            "$/*": ["./src/*"],
             "$test": ["./test/index.ts"],
             "$test/*": ["./test/*"]
         }
     },
     "include": [
-        "vite.config.ts",
+        "vite.api.config.ts",
         "vitest.config.ts",
         "test/**/*.ts",
         "test/**/*.tsx",

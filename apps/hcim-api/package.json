@@ -20,7 +20,10 @@
     "dependencies": {
         "@minvws/mgo-fhir": "workspace:*",
         "@minvws/mgo-hcim": "workspace:*",
+        "@minvws/mgo-hcim-ui": "workspace:*",
+        "@minvws/mgo-hcim-parse": "workspace:*",
         "@minvws/mgo-utils": "workspace:*",
+        "@minvws/mgo-intl": "workspace:*",
         "intl": "^1.2.5",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
