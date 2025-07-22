@@ -19,6 +19,7 @@
         "test/**/*.d.ts",
         "src/**/*.json"
     ],
+    "exclude": ["src/**/*.snap.json"],
     "references": [
         {
             "path": "./tsconfig.lib.json"

@@ -16,9 +16,6 @@
             "path": "./packages/fhir-client"
         },
         {
-            "path": "./packages/fhir-data"
-        },
-        {
             "path": "./packages/fhir"
         },
         {
@@ -29,6 +26,21 @@
         },
         {
             "path": "./packages/utils"
+        },
+        {
+            "path": "./packages/hcim-labels"
+        },
+        {
+            "path": "./packages/hcim-parse"
+        },
+        {
+            "path": "./packages/hcim-ui"
+        },
+        {
+            "path": "./packages/hcim"
+        },
+        {
+            "path": "./apps/hcim-api"
         }
     ]
 }

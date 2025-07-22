@@ -23,7 +23,7 @@ test('01: ui-schema', async () => {
 
 test('01: summary', async () => {
     const mgoResource = gpLaboratoryResult.parse(input01 as Observation);
-    const summary = gpLaboratoryResult.summary(
+    const summary = gpLaboratoryResult.summary!(
         mgoResource,
         testSchemaContext({
             isSummary: true,
@@ -49,7 +49,7 @@ test('02: ui-schema', async () => {
 
 test('02: summary', async () => {
     const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
-    const summary = gpLaboratoryResult.summary(
+    const summary = gpLaboratoryResult.summary!(
         mgoResource,
         testSchemaContext({
             isSummary: true,
@@ -75,7 +75,7 @@ test('03: ui-schema', async () => {
 
 test('03: summary', async () => {
     const mgoResource = gpLaboratoryResult.parse(input03 as Observation);
-    const summary = gpLaboratoryResult.summary(
+    const summary = gpLaboratoryResult.summary!(
         mgoResource,
         testSchemaContext({
             isSummary: true,
@@ -96,7 +96,7 @@ test('uiSchema returns default label if context not supplied', () => {
 test('summary returns default label if context not supplied', () => {
     const mgoResource = gpLaboratoryResult.parse(input02 as Observation);
     mgoResource.context = undefined;
-    const summary = gpLaboratoryResult.summary(
+    const summary = gpLaboratoryResult.summary!(
         mgoResource,
         testSchemaContext({
             isSummary: true,

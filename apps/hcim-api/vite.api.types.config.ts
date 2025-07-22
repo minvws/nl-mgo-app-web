@@ -11,7 +11,7 @@ export default mergeConfig(config, {
         // https://www.npmjs.com/package/vite-plugin-dts
         dts({
             rollupTypes: true,
-            tsconfigPath: resolvePath('./tsconfig.lib.json'),
+            tsconfigPath: resolvePath('./tsconfig.app.json'),
             clearPureImport: true,
             declarationOnly: true,
             copyDtsFiles: true,

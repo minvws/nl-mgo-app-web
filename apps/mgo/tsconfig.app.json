@@ -25,7 +25,7 @@
             "path": "../../packages/intl/tsconfig.lib.json"
         },
         {
-            "path": "../../packages/fhir-data/tsconfig.lib.json"
+            "path": "../../packages/hcim/tsconfig.lib.json"
         },
         {
             "path": "../../packages/data-services/tsconfig.lib.json"

@@ -8,4 +8,5 @@ export { type MgoResource } from './api/resources/resources';
 
 export { FhirVersion, type FhirResource, type ResourceByType } from '@minvws/mgo-fhir';
 
+export * from './r3/resources';
 export * from './utils';

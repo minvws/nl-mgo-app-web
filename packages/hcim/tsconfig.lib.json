@@ -17,16 +17,19 @@
     ],
     "references": [
         {
-            "path": "../utils/tsconfig.lib.json"
+            "path": "../intl/tsconfig.lib.json"
         },
         {
-            "path": "../fhir/tsconfig.lib.json"
+            "path": "../hcim-ui/tsconfig.lib.json"
         },
         {
             "path": "../hcim-parse/tsconfig.lib.json"
         },
         {
-            "path": "../hcim-ui/tsconfig.lib.json"
+            "path": "../utils/tsconfig.lib.json"
+        },
+        {
+            "path": "../fhir/tsconfig.lib.json"
         }
     ],
     "exclude": ["src/**/*.test.ts"]

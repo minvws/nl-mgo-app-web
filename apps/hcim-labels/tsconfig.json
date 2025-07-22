@@ -4,13 +4,10 @@
     "include": [],
     "references": [
         {
-            "path": "../utils"
+            "path": "../packages/utils"
         },
         {
-            "path": "../intl"
-        },
-        {
-            "path": "../fhir"
+            "path": "../packages/fhir"
         },
         {
             "path": "./tsconfig.lib.json"

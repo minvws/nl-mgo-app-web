@@ -10,7 +10,7 @@
             "path": "../fhir"
         },
         {
-            "path": "../fhir-data"
+            "path": "../hcim"
         },
         {
             "path": "./tsconfig.lib.json"

@@ -5,11 +5,7 @@
         "tsBuildInfoFile": "../../out-tsc/mgo-hcim-api/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
         "types": ["vitest/globals", "vitest/importMeta", "vitest"],
-        "lib": ["es2022"],
-        "paths": {
-            "$test": ["./test/index.ts"],
-            "$test/*": ["./test/*"]
-        }
+        "lib": ["es2022"]
     },
     "include": [
         "vite.api.config.ts",

@@ -45,7 +45,7 @@ test('returns the result of the ui schema and passed any extra resources', () =>
         () =>
             ({
                 uiSchema,
-            }) as ResourceConfig<any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+            }) as ResourceConfig<any, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     const mgoResource = {
@@ -77,7 +77,7 @@ test('empty entries in the resulting ui schema are set with defaults', () => {
         ],
     };
     const uiSchema: HealthUiSchemaFunction<any, any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
-    mockGetResourceConfig.mockImplementation(() => ({ uiSchema }) as ResourceConfig<any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
+    mockGetResourceConfig.mockImplementation(() => ({ uiSchema }) as ResourceConfig<any, any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     const mgoResource = {
         resourceType: faker.lorem.word(),

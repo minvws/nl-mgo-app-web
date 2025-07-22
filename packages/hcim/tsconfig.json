@@ -4,16 +4,19 @@
     "include": [],
     "references": [
         {
-            "path": "../utils"
+            "path": "../intl"
         },
         {
-            "path": "../fhir"
+            "path": "../hcim-ui"
         },
         {
             "path": "../hcim-parse"
         },
         {
-            "path": "../hcim-ui"
+            "path": "../utils"
+        },
+        {
+            "path": "../fhir"
         },
         {
             "path": "./tsconfig.lib.json"

@@ -42,7 +42,7 @@ test('returns mock schema if there is no summary', () => {
         () =>
             ({
                 summary: undefined,
-            }) as ResourceConfig<any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+            }) as ResourceConfig<any, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     const mgoResource = {
@@ -75,7 +75,7 @@ test('returns mock schema with profile label if there is no summary and no id', 
         () =>
             ({
                 summary: undefined,
-            }) as ResourceConfig<any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+            }) as ResourceConfig<any, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     const mgoResource = {
@@ -96,7 +96,7 @@ test('returns the result of the summary ui schema and passed any extra resources
         () =>
             ({
                 summary: summaryFunc,
-            }) as ResourceConfig<any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
+            }) as ResourceConfig<any, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     const mgoResource = {
@@ -128,7 +128,7 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
         ],
     };
     const summary: HealthUiSchemaFunction<any, any> = vi.fn(() => summaryUiSchema); // eslint-disable-line @typescript-eslint/no-explicit-any
-    mockGetResourceConfig.mockImplementation(() => ({ summary }) as ResourceConfig<any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
+    mockGetResourceConfig.mockImplementation(() => ({ summary }) as ResourceConfig<any, any, any>); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     const mgoResource = {
         resourceType: faker.lorem.word(),

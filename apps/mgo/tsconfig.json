@@ -12,7 +12,7 @@
             "path": "../../packages/intl"
         },
         {
-            "path": "../../packages/fhir-data"
+            "path": "../../packages/hcim"
         },
         {
             "path": "../../packages/data-services"
