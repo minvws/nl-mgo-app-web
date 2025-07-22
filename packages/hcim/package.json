@@ -11,6 +11,7 @@
         "@minvws/mgo-utils": "workspace:*",
         "@minvws/mgo-hcim-parse": "workspace:*",
         "@minvws/mgo-hcim-ui": "workspace:*",
+        "@minvws/mgo-intl": "workspace:*",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
     },

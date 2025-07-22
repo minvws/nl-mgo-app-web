@@ -443,6 +443,9 @@ importers:
       '@minvws/mgo-hcim-ui':
         specifier: workspace:*
         version: link:../hcim-ui
+      '@minvws/mgo-intl':
+        specifier: workspace:*
+        version: link:../intl
       '@minvws/mgo-utils':
         specifier: workspace:*
         version: link:../utils
