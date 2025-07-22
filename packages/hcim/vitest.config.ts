@@ -11,6 +11,7 @@ export default () =>
             },
         },
         test: {
+            globalSetup: ['./test/globals.ts'],
             include: ['./src/**/*.test.{ts,tsx}'],
         },
     });
