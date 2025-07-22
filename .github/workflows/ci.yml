@@ -73,7 +73,7 @@ jobs:
       #     pnpm run messages:update
       #     pnpm run typecheck
       - name: Build
-        run: npm exec nx run @minvws/mgo:build
+        run: pnpm exec nx run @minvws/mgo:build
 
   sonar:
     runs-on: ubuntu-22.04
