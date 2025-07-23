@@ -1,6 +1,7 @@
 {
     "name": "@minvws/mgo-hcim-api",
     "license": "EUPL-1.2",
+    "private": true,
     "type": "module",
     "exports": {
         ".": "./src/index.ts",

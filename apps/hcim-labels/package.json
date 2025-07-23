@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-hcim-labels",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "scripts": {
