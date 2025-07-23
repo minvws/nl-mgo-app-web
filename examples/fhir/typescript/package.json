@@ -4,13 +4,13 @@
     "type": "module",
     "scripts": {
         "build:test": "tsc --project tsconfig.json",
-        "pretest": "npm install @minvws/mgo-utils@latest",
+        "pretest": "npm install @minvws/mgo-fhir@latest",
         "test": "npm run build:test && node --no-warnings dist/index.js"
     },
     "devDependencies": {
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@minvws/mgo-utils": "^0.1.1-3"
+        "@minvws/mgo-fhir": "^0.1.1-0"
     }
 }
