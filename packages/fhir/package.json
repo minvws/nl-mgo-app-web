@@ -17,15 +17,11 @@
         },
         "./r3": {
             "development": "./src/r3.ts",
-            "types": "./dist/r3.d.ts",
-            "import": "./dist/r3.js",
-            "default": "./dist/r3.js"
+            "types": "./dist/r3.d.ts"
         },
         "./r4": {
             "development": "./src/r4.ts",
-            "types": "./dist/r4.d.ts",
-            "import": "./dist/r4.js",
-            "default": "./dist/r4.js"
+            "types": "./dist/r4.d.ts"
         },
         "./test/shared": {
             "development": "./test/shared/index.ts"
@@ -33,10 +29,10 @@
     },
     "dependencies": {
         "@minvws/mgo-utils": "workspace:*",
-        "@types/fhir": "^0.0.41",
         "type-fest": "^4.23.0"
     },
     "devDependencies": {
+        "@types/fhir": "^0.0.41",
         "@faker-js/faker": "^8.4.0",
         "vitest": "^3.1.3"
     }
