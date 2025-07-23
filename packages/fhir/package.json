@@ -26,12 +26,12 @@
         }
     },
     "dependencies": {
-        "@minvws/mgo-utils": "workspace:*"
+        "@minvws/mgo-utils": "workspace:*",
+        "@types/fhir": "^0.0.41",
+        "type-fest": "^4.23.0"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",
-        "@types/fhir": "^0.0.41",
-        "type-fest": "^4.23.0",
         "vitest": "^3.1.3"
     }
 }
