@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
     "release": {
-        "projects": ["mgo-utils"],
+        "projects": ["mgo-utils", "mgo-fhir"],
         "projectsRelationship": "independent",
         "changelog": {
             "projectChangelogs": true

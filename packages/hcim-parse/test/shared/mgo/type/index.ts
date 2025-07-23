@@ -1,8 +1,8 @@
-import { fhirFaker } from '@minvws/mgo-fhir/test/shared';
+import { fhirR3Faker } from '@minvws/mgo-fhir/test/shared';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
 import { parse } from '../../../../src';
 
-const fhir = fhirFaker;
+const fhir = fhirR3Faker;
 
 export const annotation = createMockFactory(() => parse.annotation(fhir.annotation())!);
 export const boolean = createMockFactory(() => parse.boolean(fhir.boolean())!);
