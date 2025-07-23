@@ -21,7 +21,7 @@ import type {
     Resource as ResourceR3,
     SampledData as SampledDataR3Original,
     StructureDefinition as StructureDefinitionR3,
-} from 'fhir/r3';
+} from './r3.js';
 
 import type {
     Address as AddressR4,
@@ -46,7 +46,7 @@ import type {
     Resource as ResourceR4,
     SampledData as SampledDataR4Original,
     StructureDefinition as StructureDefinitionR4,
-} from 'fhir/r4';
+} from './r4.js';
 
 import type { OverrideProperties } from 'type-fest';
 
