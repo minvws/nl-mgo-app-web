@@ -1,1 +1,1 @@
-export type * from 'fhir/r3';
+export * from 'fhir/r3';

@@ -1,6 +1,6 @@
-import type { Bundle as BundleR3, FhirResource as FhirResourceR3 } from 'fhir/r3';
-import type { Bundle as BundleR4, FhirResource as FhirResourceR4 } from 'fhir/r4';
 import { type FhirVersion } from './fhirVersion.js';
+import type { Bundle as BundleR3, FhirResource as FhirResourceR3 } from './r3.js';
+import type { Bundle as BundleR4, FhirResource as FhirResourceR4 } from './r4.js';
 
 type Version = FhirVersion | `${FhirVersion}`;
 
