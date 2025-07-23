@@ -51,6 +51,22 @@ pnpm exec nx release --skip-publish
 pnpm exec nx release publish --registry https://npm.pkg.github.com/
 ```
 
+## New packages
+
+When you are working with a brand new package there are a few extra steps that need to be taken:
+
+1. Set the initial version in the `package.json` to `0.1.0`.
+2. Add the package to the `release.projects` in the `/nx.json` config.
+3. When running the release command add `--first-release`
+
+You might also want to test the package first on github:
+
+```shell
+pnpm exec nx release -p <package> --dry-run --skip-publish --first-release
+# When happy with the results continue...
+pnpm exec nx release publish -p <package> --registry https://npm.pkg.github.com/
+```
+
 ### Other useful commands
 
 You can also publish a single package:
