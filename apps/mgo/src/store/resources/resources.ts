@@ -1,10 +1,6 @@
 import { type DataServiceId } from '@minvws/mgo-data-services';
-import {
-    getSummary,
-    type FhirVersion,
-    type MgoResource,
-    type NictizNlProfile,
-} from '@minvws/mgo-fhir-data';
+import { type FhirVersion, type NictizNlProfile } from '@minvws/mgo-fhir';
+import { getSummary, type MgoResource } from '@minvws/mgo-hcim';
 import { createUniqueSlug, log } from '@minvws/mgo-utils';
 import { create } from 'zustand';
 

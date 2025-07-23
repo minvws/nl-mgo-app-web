@@ -1,4 +1,4 @@
-import { type Bundle, type FhirResource } from '@minvws/mgo-fhir-types';
+import { type Bundle, type FhirResource } from '@minvws/mgo-fhir';
 import { HttpResponse, http, type RequestHandler } from 'msw';
 import { setupServer } from 'msw/node';
 

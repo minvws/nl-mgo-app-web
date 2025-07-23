@@ -1,4 +1,4 @@
-import { type Bundle, type FhirVersion, type ResourceType } from '@minvws/mgo-fhir-types';
+import { type Bundle, type FhirVersion, type ResourceType } from '@minvws/mgo-fhir';
 import type { KyInstance, Options as KyOptions, ResponsePromise } from 'ky';
 import type { FhirClientOptions } from '..';
 

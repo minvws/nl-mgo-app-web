@@ -1,5 +1,5 @@
 import { FormattedMessage } from '$/intl';
-import { type DownloadLink as DownloadLinkData } from '@minvws/mgo-fhir-data';
+import { type DownloadLink as DownloadLinkData } from '@minvws/mgo-hcim-ui';
 import { DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-ui';
 
 export interface DownloadLinkProps {

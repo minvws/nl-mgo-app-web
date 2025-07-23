@@ -1,4 +1,4 @@
-import { FhirVersion } from '@minvws/mgo-fhir-types';
+import { FhirVersion } from '@minvws/mgo-fhir';
 import { losslessParse } from '@minvws/mgo-utils';
 import ky, { type Options as KyOptions } from 'ky';
 import type { SetRequired } from 'type-fest';

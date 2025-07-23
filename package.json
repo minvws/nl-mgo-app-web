@@ -96,12 +96,14 @@
             "ignoreGhsas comments (non-standard-key)": {
                 "https://github.com/advisories/GHSA-968p-4wvh-cqc8": "@babel - We don't meet the vulnerability conditions",
                 "https://github.com/advisories/GHSA-f46r-rw29-r322": "react-router - We don't use SSR so we are not vulnerable",
-                "https://github.com/advisories/GHSA-cpj6-fhp6-mr6j": "react-router  - We don't use SSR so we are not vulnerable"
+                "https://github.com/advisories/GHSA-cpj6-fhp6-mr6j": "react-router  - We don't use SSR so we are not vulnerable",
+                "https://github.com/advisories/GHSA-fjxv-7rqg-78g4": "@nx  - Only used in dev"
             },
             "ignoreGhsas": [
                 "GHSA-968p-4wvh-cqc8",
                 "GHSA-f46r-rw29-r322",
-                "GHSA-cpj6-fhp6-mr6j"
+                "GHSA-cpj6-fhp6-mr6j",
+                "GHSA-fjxv-7rqg-78g4"
             ]
         }
     }

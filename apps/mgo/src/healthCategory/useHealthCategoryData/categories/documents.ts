@@ -1,6 +1,6 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
 import { type ResourcesState } from '$/store';
-import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getDocumentsData(

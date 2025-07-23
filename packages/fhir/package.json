@@ -1,0 +1,20 @@
+{
+    "name": "@minvws/mgo-fhir",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "scripts": {},
+    "exports": {
+        ".": "./src/index.ts",
+        "./*": "./src/*.ts",
+        "./test/shared": "./test/shared/index.ts"
+    },
+    "dependencies": {
+        "@minvws/mgo-utils": "workspace:*"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@types/fhir": "^0.0.41",
+        "type-fest": "^4.23.0",
+        "vitest": "^3.1.3"
+    }
+}

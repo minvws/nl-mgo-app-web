@@ -1,12 +1,12 @@
-import { type UiElement as UiElementData } from '@minvws/mgo-fhir-data';
+import { type UiElement as UiElementData } from '@minvws/mgo-hcim-ui';
 import { type FunctionComponent, type HTMLAttributes } from 'react';
+import { DownloadBinary } from './DownloadBinary';
 import { DownloadLink } from './DownloadLink';
 import { MultipleGroupedValues } from './MultipleGroupedValues';
 import { MultipleValues } from './MultipleValues';
 import { ReferenceLink } from './ReferenceLink';
 import { ReferenceValue } from './ReferenceValue';
 import { SingleValue } from './SingleValue';
-import { DownloadBinary } from './DownloadBinary';
 
 export interface UiElementProps extends HTMLAttributes<HTMLDivElement> {
     readonly element: UiElementData;

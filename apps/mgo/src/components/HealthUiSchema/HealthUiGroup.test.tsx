@@ -1,6 +1,6 @@
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-fhir-data';
+import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-hcim-ui';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { HealthUiGroup } from './HealthUiGroup';

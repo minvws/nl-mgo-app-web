@@ -1,6 +1,6 @@
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-fhir-data';
+import { type DownloadLink as UiDownloadLink } from '@minvws/mgo-hcim-ui';
 import { appMessage } from '@minvws/mgo-intl/test';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';

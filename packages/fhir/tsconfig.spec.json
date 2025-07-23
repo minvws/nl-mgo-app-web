@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.base.vite.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/mgo-fhir/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"]
+    },
+    "include": ["src/**/*.test.ts", "src/**/*.d.ts", "test/**/*.ts", "test/**/*.d.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}

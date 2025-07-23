@@ -1,12 +1,8 @@
 import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { DataServiceId } from '@minvws/mgo-data-services';
-import {
-    FhirVersion,
-    getMgoResource,
-    type MgoResource,
-    type ResourceByType,
-} from '@minvws/mgo-fhir-data';
+import { FhirVersion, type ResourceByType } from '@minvws/mgo-fhir';
+import { getMgoResource, type MgoResource } from '@minvws/mgo-hcim';
 import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
@@ -17,8 +13,8 @@ import { type ResourceQueryMeta } from '../useHealthCategoryQueries/isResourceQu
 import { useHealthCategoryQueries } from '../useHealthCategoryQueries/useHealthCategoryQueries';
 import { useHealthCategoryQuery } from './useHealthCategoryQuery';
 
-vi.mock('@minvws/mgo-fhir-data', async (importActual) => {
-    const actual = await importActual<typeof import('@minvws/mgo-fhir-data')>();
+vi.mock('@minvws/mgo-hcim', async (importActual) => {
+    const actual = await importActual<typeof import('@minvws/mgo-hcim')>();
 
     return {
         ...actual,

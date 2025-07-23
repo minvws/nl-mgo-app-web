@@ -7,6 +7,8 @@ export default defineConfig({
             extension: ['ts', 'tsx'],
             include: ['packages/**', 'apps/**'],
             exclude: [
+                'apps/hcim-api/**',
+                'apps/hcim-labels/**',
                 'apps/mgo-e2e/**',
                 'apps/*/test/*',
                 'apps/mgo/public/**',

@@ -1,4 +1,4 @@
-import { type SingleValue as SingleValueData } from '@minvws/mgo-fhir-data';
+import { type SingleValue as SingleValueData } from '@minvws/mgo-hcim-ui';
 import { DescriptionCard } from '@minvws/mgo-ui';
 
 export interface SingleValueDisplayProps {
