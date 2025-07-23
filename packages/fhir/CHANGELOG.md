@@ -1,3 +1,9 @@
+## 0.1.1-3 (2025-07-23)
+
+### 🧱 Updated Dependencies
+
+- Updated @minvws/mgo-utils to 0.1.1-6
+
 ## 0.1.1-2 (2025-07-23)
 
 ### 🧱 Updated Dependencies
