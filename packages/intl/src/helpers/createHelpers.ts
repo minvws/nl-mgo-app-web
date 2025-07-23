@@ -20,8 +20,7 @@ export function createHelpers<TBase, MessageIds extends string>(
         ...args: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
     ) => intl.formatMessage({ id }, ...args);
 
-    const hasMessage = (id: string): id is ExtractedMessagesIds =>
-        Object.prototype.hasOwnProperty.call(intl.messages, id);
+    const hasMessage = (id: string): id is ExtractedMessagesIds => Object.hasOwn(intl.messages, id);
 
     return {
         formatMessage,

@@ -16,9 +16,6 @@
         },
         {
             "path": "../fhir/tsconfig.lib.json"
-        },
-        {
-            "path": "../hcim/tsconfig.lib.json"
         }
     ],
     "exclude": ["src/**/*.test.ts"]

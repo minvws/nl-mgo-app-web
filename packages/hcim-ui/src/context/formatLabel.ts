@@ -53,8 +53,7 @@ function getFallbackLabels(label: string, value: unknown): FallbackLabels {
  * - fhir.x.bar                         // a generic "x" property label without the type extension
  */
 export function createLabelFormatter(intl: FhirIntlShape) {
-    const hasMessage = (id: string): id is FhirMessagesIds =>
-        Object.prototype.hasOwnProperty.call(intl.messages, id);
+    const hasMessage = (id: string): id is FhirMessagesIds => Object.hasOwn(intl.messages, id);
 
     return function formatLabel(
         label: FhirMessagesIds | string,

@@ -2,7 +2,6 @@ import { type Nullable } from '@minvws/mgo-utils';
 import { type Element as ElementR3 } from 'fhir/r3';
 import { type Element as ElementR4 } from 'fhir/r4';
 import { type StringKeyOf } from 'type-fest';
-type Element = ElementR3 | ElementR4;
 
 export type ExtractKeysWithMeta<T extends object> =
     Extract<StringKeyOf<NonNullable<T>>, `_${string}`> extends `_${infer K}`
@@ -27,7 +26,7 @@ export function filterPrimitive<
     if (!element) return undefined as PrimitiveType;
 
     const value = element[key];
-    const valueMeta = element[`_${key}` as keyof Resource] as Element | Element[] | undefined;
+    const valueMeta = element[`_${key}` as keyof Resource];
 
     if (Array.isArray(value)) {
         if (!Array.isArray(valueMeta)) {
@@ -40,7 +39,7 @@ export function filterPrimitive<
         }) as PrimitiveType;
     }
 
-    if (valueMeta && metaFilter(valueMeta as Element)) {
+    if (valueMeta && metaFilter(valueMeta)) {
         return value as PrimitiveType;
     }
 

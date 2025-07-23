@@ -1,12 +1,8 @@
 import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { DataServiceId } from '@minvws/mgo-data-services';
-import {
-    FhirVersion,
-    getMgoResource,
-    type MgoResource,
-    type ResourceByType,
-} from '@minvws/mgo-hcim';
+import { FhirVersion, type ResourceByType } from '@minvws/mgo-fhir';
+import { getMgoResource, type MgoResource } from '@minvws/mgo-hcim';
 import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';

@@ -36,7 +36,7 @@ export function isValueType<T extends string>(value: unknown): value is ValueTyp
 export function isPrimitiveValueType<T extends string>(
     value: unknown
 ): value is PrimitiveValueType<T, unknown> {
-    return isValueType(value) && Object.prototype.hasOwnProperty.call(value, 'value');
+    return isValueType(value) && Object.hasOwn(value, 'value');
 }
 
 type TypeParsers = typeof typeParsers;

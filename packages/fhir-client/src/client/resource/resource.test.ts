@@ -1,6 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { type ResourceType } from '@minvws/mgo-fhir';
-import { FhirVersion } from '@minvws/mgo-hcim';
+import { FhirVersion, type ResourceType } from '@minvws/mgo-fhir';
 import { expect, test } from 'vitest';
 import { createClient } from '..';
 import { FHIR_API_URL } from '../../../test/server';

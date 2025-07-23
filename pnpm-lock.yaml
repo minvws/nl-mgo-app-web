@@ -406,9 +406,6 @@ importers:
       '@minvws/mgo-fhir':
         specifier: workspace:*
         version: link:../fhir
-      '@minvws/mgo-hcim':
-        specifier: workspace:*
-        version: link:../hcim
       '@minvws/mgo-utils':
         specifier: workspace:*
         version: link:../utils
