@@ -8,7 +8,8 @@
         "skipLibCheck": true,
         "outDir": "dist",
         "forceConsistentCasingInFileNames": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "types": []
     },
     "include": ["index.ts"]
 }

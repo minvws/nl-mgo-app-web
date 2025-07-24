@@ -11,6 +11,6 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "@minvws/mgo-utils": "^0.1.1-3"
+        "@minvws/mgo-utils": "^0.1.1-8"
     }
 }
