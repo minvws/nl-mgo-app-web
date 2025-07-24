@@ -15,7 +15,10 @@
         "format:check": "prettier --check .",
         "messages:update": "pnpm run --dir packages/intl messages:update",
         "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
-        "e2e": "pnpm run --dir apps/mgo-e2e e2e"
+        "e2e": "pnpm run --dir apps/mgo-e2e e2e",
+        "prerelease:dry": "pnpm exec nx release prerelease --dry-run --skip-publish",
+        "prerelease": "pnpm exec nx release prerelease --skip-publish",
+        "publish:github": "pnpm exec nx release publish --registry https://npm.pkg.github.com/"
     },
     "non-standard-dependency-comments": {
         "eslint": [
