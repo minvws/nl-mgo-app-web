@@ -6,6 +6,7 @@
             "projectChangelogs": true
         },
         "version": {
+            "conventionalCommits": true,
             "preVersionCommand": "pnpm exec nx run-many -t build"
         }
     },
