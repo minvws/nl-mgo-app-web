@@ -9,7 +9,7 @@
     },
     "scripts": {},
     "dependencies": {
-        "@minvws/mgo-fhir-client": "workspace:*"
+        "@minvws/mgo-fhir-client": "workspace:^"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",

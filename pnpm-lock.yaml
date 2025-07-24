@@ -120,22 +120,22 @@ importers:
   apps/hcim-api:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/fhir
       '@minvws/mgo-hcim':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/hcim
       '@minvws/mgo-hcim-parse':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/hcim-parse
       '@minvws/mgo-hcim-ui':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/hcim-ui
       '@minvws/mgo-intl':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/intl
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/utils
       intl:
         specifier: ^1.2.5
@@ -181,10 +181,10 @@ importers:
   apps/hcim-labels:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/fhir
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/utils
       lodash-es:
         specifier: ^4.17.21
@@ -218,28 +218,28 @@ importers:
   apps/mgo:
     dependencies:
       '@minvws/mgo-data-services':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/data-services
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/fhir
       '@minvws/mgo-hcim':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/hcim
       '@minvws/mgo-hcim-ui':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/hcim-ui
       '@minvws/mgo-intl':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/intl
       '@minvws/mgo-tailwind':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/tailwind
       '@minvws/mgo-ui':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/ui
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/utils
       '@radix-ui/react-dialog':
         specifier: ^1.0.5
@@ -339,10 +339,10 @@ importers:
   apps/mgo-e2e:
     devDependencies:
       '@minvws/mgo':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../mgo
       '@minvws/mgo-intl':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/intl
       '@playwright/test':
         specifier: 1.50.1
@@ -369,7 +369,7 @@ importers:
   packages/data-services:
     dependencies:
       '@minvws/mgo-fhir-client':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fhir-client
     devDependencies:
       '@faker-js/faker':
@@ -385,7 +385,7 @@ importers:
   packages/fhir:
     dependencies:
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       type-fest:
         specifier: ^4.23.0
@@ -404,10 +404,10 @@ importers:
   packages/fhir-client:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fhir
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       ky:
         specifier: ^1.7.4
@@ -432,19 +432,19 @@ importers:
   packages/hcim:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fhir
       '@minvws/mgo-hcim-parse':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../hcim-parse
       '@minvws/mgo-hcim-ui':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../hcim-ui
       '@minvws/mgo-intl':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../intl
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       lodash-es:
         specifier: ^4.17.21
@@ -478,10 +478,10 @@ importers:
   packages/hcim-parse:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fhir
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       lodash-es:
         specifier: ^4.17.21
@@ -515,16 +515,16 @@ importers:
   packages/hcim-ui:
     dependencies:
       '@minvws/mgo-fhir':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../fhir
       '@minvws/mgo-hcim-parse':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../hcim-parse
       '@minvws/mgo-intl':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../intl
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       lodash-es:
         specifier: ^4.17.21
@@ -622,10 +622,10 @@ importers:
         specifier: ^0.19.0
         version: 0.19.0
       '@minvws/mgo-tailwind':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../tailwind
       '@minvws/mgo-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../utils
       '@radix-ui/react-alert-dialog':
         specifier: ^1.0.5
