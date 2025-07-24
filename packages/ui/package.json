@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-ui",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -13,8 +14,8 @@
     "dependencies": {
         "@material-symbols/svg-400": "^0.19.0",
         "@material-symbols/svg-700": "^0.19.0",
-        "@minvws/mgo-utils": "workspace:*",
-        "@minvws/mgo-tailwind": "workspace:*",
+        "@minvws/mgo-utils": "workspace:^",
+        "@minvws/mgo-tailwind": "workspace:^",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-slot": "^1.0.2",
         "@react-hook/media-query": "^1.1.1",

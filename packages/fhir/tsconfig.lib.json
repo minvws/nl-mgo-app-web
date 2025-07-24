@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.base.vite.json",
+    "extends": "../../tsconfig.base.lib.json",
     "compilerOptions": {
         "baseUrl": ".",
         "rootDir": "src",
@@ -7,7 +7,7 @@
         "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.lib.tsbuildinfo",
         "emitDeclarationOnly": false,
         "types": [],
-        "lib": ["es2022", "dom", "dom.iterable"]
+        "lib": ["es2022"]
     },
     "include": ["src/**/*.ts"],
     "references": [

@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-hcim",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -7,11 +8,11 @@
         "./*": "./src/*"
     },
     "dependencies": {
-        "@minvws/mgo-fhir": "workspace:*",
-        "@minvws/mgo-utils": "workspace:*",
-        "@minvws/mgo-hcim-parse": "workspace:*",
-        "@minvws/mgo-hcim-ui": "workspace:*",
-        "@minvws/mgo-intl": "workspace:*",
+        "@minvws/mgo-fhir": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
+        "@minvws/mgo-hcim-parse": "workspace:^",
+        "@minvws/mgo-hcim-ui": "workspace:^",
+        "@minvws/mgo-intl": "workspace:^",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
     },

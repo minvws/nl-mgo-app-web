@@ -1,2 +1,2 @@
-export * from './practitionerQualification';
-export * from './medicationIngredient';
+export * from './medicationIngredient.js';
+export * from './practitionerQualification.js';

@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-data-services",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -8,7 +9,7 @@
     },
     "scripts": {},
     "dependencies": {
-        "@minvws/mgo-fhir-client": "workspace:*"
+        "@minvws/mgo-fhir-client": "workspace:^"
     },
     "devDependencies": {
         "@faker-js/faker": "^8.4.0",

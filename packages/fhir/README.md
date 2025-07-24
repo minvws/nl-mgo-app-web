@@ -1,6 +1,16 @@
-# [MGO] - FHIR Types
+# @minvws/mgo-utils
 
-This package contains utility [TypeScript] types for dealing with FHIR models and versions.
+This package contains utility [TypeScript] types for dealing with FHIR models and R3 / R4 versions that are using within [MGO][repo].
+
+## Installation
+
+```shell
+npm i --save @minvws/mgo-fhir
+
+# or
+
+pnpm add @minvws/mgo-fhir
+```
 
 ## Usage
 
@@ -19,7 +29,10 @@ const type: ResourceType<FhirVersion.R4> = 'ProcedureRequest'; // error
 
 <hr>
 
+See the **[package source][source]** for more details
+
 _This package and its documentation are still under development._
 
-[MGO]: ../../README.md
 [TypeScript]: https://www.typescriptlang.org/
+[repo]: https://github.com/minvws/nl-mgo-app-web
+[source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/fhir

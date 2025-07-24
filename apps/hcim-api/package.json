@@ -1,6 +1,7 @@
 {
     "name": "@minvws/mgo-hcim-api",
     "license": "EUPL-1.2",
+    "private": true,
     "type": "module",
     "exports": {
         ".": "./src/index.ts",
@@ -18,12 +19,12 @@
         "vite-plugin-dts": "Currently 4.2.4 as 4.3.0 creates relative import statements in the output instead of including the types. This breaks the build. also see: https://github.com/qmhc/vite-plugin-dts/issues/404"
     },
     "dependencies": {
-        "@minvws/mgo-fhir": "workspace:*",
-        "@minvws/mgo-hcim": "workspace:*",
-        "@minvws/mgo-hcim-ui": "workspace:*",
-        "@minvws/mgo-hcim-parse": "workspace:*",
-        "@minvws/mgo-utils": "workspace:*",
-        "@minvws/mgo-intl": "workspace:*",
+        "@minvws/mgo-fhir": "workspace:^",
+        "@minvws/mgo-hcim": "workspace:^",
+        "@minvws/mgo-hcim-ui": "workspace:^",
+        "@minvws/mgo-hcim-parse": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
+        "@minvws/mgo-intl": "workspace:^",
         "intl": "^1.2.5",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"

@@ -1,9 +1,9 @@
-export type * from './types/date';
-export type * from './types/rX';
-export type * from './types/system';
-export type * from './types/utils';
+export type * from './date.js';
+export type * from './resource.js';
+export type * from './rX.js';
+export type * from './system.js';
 
-export * from './fhirVersion';
-export * from './nictizNlProfile';
+export * from './fhirVersion.js';
+export * from './nictizNlProfile.js';
 
-export * from './utils/isFhirResource/isFhirResource';
+export * from './isFhirResource/isFhirResource.js';

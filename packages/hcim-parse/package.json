@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-hcim-parse",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -8,8 +9,8 @@
         "./test/shared": "./test/shared/index.ts"
     },
     "dependencies": {
-        "@minvws/mgo-fhir": "workspace:*",
-        "@minvws/mgo-utils": "workspace:*",
+        "@minvws/mgo-fhir": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
     },
