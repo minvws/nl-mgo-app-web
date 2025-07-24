@@ -29,10 +29,10 @@
     },
     "dependencies": {
         "@minvws/mgo-utils": "workspace:*",
-        "type-fest": "^4.23.0",
-        "@types/fhir": "^0.0.41"
+        "type-fest": "^4.23.0"
     },
     "devDependencies": {
+        "@types/fhir": "^0.0.41",
         "@faker-js/faker": "^8.4.0",
         "vitest": "^3.1.3"
     }
