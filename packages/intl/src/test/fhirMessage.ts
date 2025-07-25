@@ -2,9 +2,9 @@
 
 import { createIntl } from '@formatjs/intl';
 import escapeStringRegexp from 'escape-string-regexp';
-import { getFhirIntlConfig, type FhirIntlShape, type FhirMessagesIds } from '../config/fhir/fhir';
-import { Locale } from '../locale';
-import { type FormatMessageStringValues } from '../types';
+import { getFhirIntlConfig, type FhirIntlShape, type FhirMessagesIds } from '../config/fhir/fhir.js';
+import { Locale } from '../locale.js';
+import { type FormatMessageStringValues } from '../types/index.js';
 
 const fhirIntl = createIntl(getFhirIntlConfig({ locale: Locale.NL_NL })) as FhirIntlShape;
 

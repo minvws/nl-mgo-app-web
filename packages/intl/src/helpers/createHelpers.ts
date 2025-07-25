@@ -1,5 +1,5 @@
 import { type IntlFormatters, type ResolvedIntlConfig } from '@formatjs/intl';
-import { type CustomIntlShape, type CustomMessageDescriptors } from '../types';
+import { type CustomIntlShape, type CustomMessageDescriptors } from '../types/index.js';
 
 type AbstractIntlShape<TBase, MessageIds extends string> =
     | (IntlFormatters<TBase> & Pick<ResolvedIntlConfig, 'messages'>)
