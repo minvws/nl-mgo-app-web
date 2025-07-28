@@ -2,9 +2,9 @@
 
 import { createIntl } from '@formatjs/intl';
 import escapeStringRegexp from 'escape-string-regexp';
-import { getAppIntlConfig, type AppIntlShape, type AppMessagesIds } from '../config/app/app.js';
-import { Locale } from '../locale.js';
-import { type FormatMessageStringValues } from '../types/index.js';
+import { getAppIntlConfig, type AppIntlShape, type AppMessagesIds } from '../../src/config/app/app.js';
+import { Locale } from '../../src/locale.js';
+import { type FormatMessageStringValues } from '../../src/types/index.js';
 
 const appIntl = createIntl(
     getAppIntlConfig({ locale: Locale.NL_NL, ignoreMissingTranslations: true })

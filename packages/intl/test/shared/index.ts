@@ -5,5 +5,5 @@ export { fhirMessage, fhirMessageRegexp } from './fhirMessage.js';
 export { createTestIntl } from './intl.js';
 export { testMessage } from './testMessage.js';
 
-export { type AppMessagesIds } from '../config/app/app.js';
-export { type FhirMessagesIds } from '../config/fhir/fhir.js';
+export { type AppMessagesIds } from '../../src/config/app/app.js';
+export { type FhirMessagesIds } from '../../src/config/fhir/fhir.js';
