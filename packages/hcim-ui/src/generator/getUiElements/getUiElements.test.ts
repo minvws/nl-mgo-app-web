@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type HealthUiGroup, type UiElement } from '../../types/schema';
-import { getUiElements } from './getUiElements';
+import { type HealthUiGroup, type UiElement } from '../../types/schema.js';
+import { getUiElements } from './getUiElements.js';
 
 test('extracts all ui elements from a list of elements and groups', () => {
     const elements: (UiElement | HealthUiGroup)[] = [

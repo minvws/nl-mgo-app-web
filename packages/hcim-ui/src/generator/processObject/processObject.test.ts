@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { processObject } from './processObject';
+import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { processObject } from './processObject.js';
 
 test('processes root properties to ui elements', () => {
     const rootPath = faker.lorem.word();

@@ -3,9 +3,9 @@ import { type MgoCoding, type MgoCodingProps } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { type Nullable } from '@minvws/mgo-utils';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { type UiContext } from '../../context';
-import { system } from '../../format/system/system';
-import { coding } from './coding';
+import { type UiContext } from '../../context/index.js';
+import { system } from '../../format/system/system.js';
+import { coding } from './coding.js';
 
 const mockSystem = system as unknown as MockedFunction<typeof system>;
 

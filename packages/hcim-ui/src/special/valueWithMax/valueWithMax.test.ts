@@ -1,12 +1,11 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { format } from '../../format';
-import { valueWithMax } from './valueWithMax';
+import { format } from '../../format/index.js';
+import { valueWithMax } from './valueWithMax.js';
 
 test('valueWithMax', () => {
     const label = faker.custom.fhirMessageId();
-
     const value = faker.number.int();
     const max = faker.number.int();
 

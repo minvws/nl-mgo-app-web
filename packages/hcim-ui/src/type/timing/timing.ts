@@ -1,12 +1,12 @@
 import { type MgoTiming } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { type HealthUiGroup, type UiFunction, type WithUiContext } from '../../types';
-import { codeableConcept } from '../codeableConcept/codeableConcept';
-import { dateTime } from '../dateTime/dateTime';
-import { decimal } from '../decimal/decimal';
-import { integer } from '../integer/integer';
-import { string } from '../string/string';
-import { unsignedInt } from '../unsignedInt/unsignedInt';
+import { type HealthUiGroup, type UiFunction, type WithUiContext } from '../../types/index.js';
+import { codeableConcept } from '../codeableConcept/codeableConcept.js';
+import { dateTime } from '../dateTime/dateTime.js';
+import { decimal } from '../decimal/decimal.js';
+import { integer } from '../integer/integer.js';
+import { string } from '../string/string.js';
+import { unsignedInt } from '../unsignedInt/unsignedInt.js';
 
 export const timing: WithUiContext<UiFunction<MgoTiming, HealthUiGroup>> =
     (context) => (label, value) => {

@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { valueOf } from './valueOf';
+import { valueOf } from './valueOf.js';
 
 test.each([null, undefined])('returns undefined for %j', (value) => {
     expect(valueOf(value)).toBe(undefined);

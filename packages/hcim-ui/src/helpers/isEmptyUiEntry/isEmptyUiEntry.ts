@@ -1,5 +1,5 @@
 import { isNullish } from '@minvws/mgo-utils';
-import { type UiElement } from '../../types';
+import { type UiElement } from '../../types/index.js';
 
 export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
     switch (uiField.type) {

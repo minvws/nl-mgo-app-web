@@ -1,5 +1,5 @@
-import * as value from './value/value';
-import * as date from './date/date';
+import * as date from './date/date.js';
+import * as value from './value/value.js';
 
 export const format = {
     ...value,

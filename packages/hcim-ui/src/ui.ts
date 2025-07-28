@@ -1,7 +1,7 @@
-import { type UiContext } from './context';
-import { getChildren } from './helpers';
-import { getSpecial } from './special';
-import { getTypes } from './type';
+import { type UiContext } from './context/index.js';
+import { getChildren } from './helpers/index.js';
+import { getSpecial } from './special/index.js';
+import { getTypes } from './type/index.js';
 
 export function createUiHelpers(context: UiContext) {
     return {

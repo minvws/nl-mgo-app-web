@@ -1,7 +1,7 @@
 import { type MgoRatio } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { systemValue } from '../../format/systemValue/systemValue';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { systemValue } from '../../format/systemValue/systemValue.js';
+import { type SingleValue, type UiFunction, type WithUiContext } from '../../types/index.js';
 
 type HasNumeratorLabel =
     Extract<FhirMessagesIds, `${string}.numerator`> extends `${infer R}.numerator` ? R : never;

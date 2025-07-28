@@ -1,7 +1,7 @@
 import { MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { type UiContext } from '../../context';
-import { type HealthUiGroup } from '../../types';
+import { type UiContext } from '../../context/index.js';
+import { type HealthUiGroup } from '../../types/index.js';
 
 type ShowDetailsLabel =
     Extract<

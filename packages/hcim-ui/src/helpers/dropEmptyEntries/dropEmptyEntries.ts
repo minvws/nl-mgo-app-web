@@ -1,5 +1,5 @@
-import { type HealthUiGroup, type HealthUiSchema } from '../../types';
-import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
+import { type HealthUiGroup, type HealthUiSchema } from '../../types/index.js';
+import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry.js';
 
 function processGroup(group: HealthUiGroup) {
     return {

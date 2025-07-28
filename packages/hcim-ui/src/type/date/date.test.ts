@@ -2,8 +2,8 @@ import { faker } from '$test';
 import { type MgoDate } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { date as formatDate } from '../../format/date/date';
-import { date } from './date';
+import { date as formatDate } from '../../format/date/date.js';
+import { date } from './date.js';
 
 test('date', () => {
     const label = faker.custom.fhirMessageId();

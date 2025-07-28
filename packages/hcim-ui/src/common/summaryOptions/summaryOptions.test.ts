@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { expect, test } from 'vitest';
-import { summaryOptions } from './summaryOptions';
+import { summaryOptions } from './summaryOptions.js';
 
 test('creates a options group for the summary ui schema', () => {
     const uiHelperContext = faker.ui.context();

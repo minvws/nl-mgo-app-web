@@ -1,7 +1,7 @@
 import { type MgoSimpleQuantityProps } from '@minvws/mgo-hcim-parse';
 import { isNullish } from '@minvws/mgo-utils';
-import { numberToString } from '../../helpers';
-import { type FormatFunction, type WithUiContext } from '../../types';
+import { numberToString } from '../../helpers/index.js';
+import { type FormatFunction, type WithUiContext } from '../../types/index.js';
 
 export const systemValue: WithUiContext<FormatFunction<MgoSimpleQuantityProps>> =
     ({ formatMessage, hasMessage }) =>

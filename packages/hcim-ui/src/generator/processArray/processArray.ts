@@ -1,9 +1,9 @@
 import { isValueType, type MgoType, type ValueType } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { hasExtensions } from '../../helpers/hasExtensions/hasExtensions';
-import { type HealthUiGroup, type UiElement } from '../../types';
-import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { processValue } from '../processValue/processValue';
+import { hasExtensions } from '../../helpers/hasExtensions/hasExtensions.js';
+import { type HealthUiGroup, type UiElement } from '../../types/index.js';
+import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { processValue } from '../processValue/processValue.js';
 
 function isArrayOfSameValueType(values: unknown[]): values is MgoType[] {
     if (!values.length) return false;

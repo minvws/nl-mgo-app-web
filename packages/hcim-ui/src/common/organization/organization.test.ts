@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { organization } from './organization';
+import { organization } from './organization.js';
 
 test('creates an organization element for the summary ui schema', () => {
     const name = faker.lorem.word();

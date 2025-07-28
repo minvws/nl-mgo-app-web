@@ -1,3 +1,3 @@
-import * as ui from './ui';
+import * as ui from './ui/index.js';
 
 export const uiFaker = ui;

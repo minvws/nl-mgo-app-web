@@ -1,11 +1,11 @@
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { UiContext } from '../../context/index';
-import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup';
-import { HealthUiSchemaFunction, type HealthUiGroup } from '../../types';
-import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { getProfileKey } from '../getProfileKey/getProfileKey';
-import { processValue } from '../processValue/processValue';
+import { UiContext } from '../../context/index.js';
+import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup.js';
+import { HealthUiSchemaFunction, type HealthUiGroup } from '../../types/index.js';
+import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { getProfileKey } from '../getProfileKey/getProfileKey.js';
+import { processValue } from '../processValue/processValue.js';
 
 const untranslatedLabelRegexp = /^(r3|r4|fhir)\./;
 

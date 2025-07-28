@@ -1,12 +1,12 @@
 import { isMgoElement, isValueType } from '@minvws/mgo-hcim-parse';
 import { isNullish, type Nullable } from '@minvws/mgo-utils';
-import { type HealthUiGroup, type UiElement } from '../../types';
-import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { getProfileKey } from '../getProfileKey/getProfileKey';
-import { getUiElements } from '../getUiElements/getUiElements';
-import { processArray } from '../processArray/processArray';
-import { processMgoType } from '../processMgoType/processMgoType';
-import { processObject } from '../processObject/processObject';
+import { type HealthUiGroup, type UiElement } from '../../types/index.js';
+import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { getProfileKey } from '../getProfileKey/getProfileKey.js';
+import { getUiElements } from '../getUiElements/getUiElements.js';
+import { processArray } from '../processArray/processArray.js';
+import { processMgoType } from '../processMgoType/processMgoType.js';
+import { processObject } from '../processObject/processObject.js';
 
 export function processValue(
     context: GeneratorContext,

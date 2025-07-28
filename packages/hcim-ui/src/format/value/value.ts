@@ -1,5 +1,5 @@
 import { isNullish, type LosslessNumber, type Nullable } from '@minvws/mgo-utils';
-import { numberToString } from '../../helpers';
+import { numberToString } from '../../helpers/index.js';
 
 export function valueWithUnit(value: Nullable<LosslessNumber | number>, unit: Nullable<string>) {
     if (isNullish(value)) return;

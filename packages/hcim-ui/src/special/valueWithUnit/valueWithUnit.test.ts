@@ -1,12 +1,11 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { format } from '../../format';
-import { valueWithUnit } from './valueWithUnit';
+import { format } from '../../format/index.js';
+import { valueWithUnit } from './valueWithUnit.js';
 
 test('valueWithUnit', () => {
     const label = faker.custom.fhirMessageId();
-
     const value = faker.number.int();
     const unit = faker.lorem.word();
 

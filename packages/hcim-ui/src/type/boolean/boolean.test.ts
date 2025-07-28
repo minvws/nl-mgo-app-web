@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { boolean } from './boolean';
+import { boolean } from './boolean.js';
 
 test('boolean - true', () => {
     const label = faker.custom.fhirMessageId();

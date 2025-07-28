@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { format } from '../../format';
-import { duration } from './duration';
+import { format } from '../../format/index.js';
+import { duration } from './duration.js';
 
 test('duration', () => {
     const label = faker.custom.fhirMessageId();

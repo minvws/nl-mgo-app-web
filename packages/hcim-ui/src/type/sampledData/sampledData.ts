@@ -1,10 +1,10 @@
 import { type MgoSampledData } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { type HealthUiGroup, type UiFunction, type WithUiContext } from '../../types';
-import { decimal } from '../decimal/decimal';
-import { positiveInt } from '../positiveInt/positiveInt';
-import { simpleQuantity } from '../simpleQuantity/simpleQuantity';
-import { string } from '../string/string';
+import { type HealthUiGroup, type UiFunction, type WithUiContext } from '../../types/index.js';
+import { decimal } from '../decimal/decimal.js';
+import { positiveInt } from '../positiveInt/positiveInt.js';
+import { simpleQuantity } from '../simpleQuantity/simpleQuantity.js';
+import { string } from '../string/string.js';
 
 export const sampledData: WithUiContext<UiFunction<MgoSampledData, HealthUiGroup>> =
     (context) => (label, value) => {

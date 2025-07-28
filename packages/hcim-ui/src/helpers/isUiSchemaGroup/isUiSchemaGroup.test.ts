@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type HealthUiGroup, type HealthUiSchema } from '../../types';
-import { isUiSchemaGroup } from './isUiSchemaGroup';
+import { type HealthUiGroup, type HealthUiSchema } from '../../types/index.js';
+import { isUiSchemaGroup } from './isUiSchemaGroup.js';
 
 test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
     [{ label: faker.lorem.sentence(), children: [] }, false],

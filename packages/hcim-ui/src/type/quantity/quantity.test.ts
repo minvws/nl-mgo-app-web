@@ -2,7 +2,7 @@ import { faker } from '$test';
 import { type MgoQuantityProps } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test, vi } from 'vitest';
-import { quantity } from './quantity';
+import { quantity } from './quantity.js';
 
 vi.mock('../../format/systemValue/systemValue', () => ({
     systemValue: vi.fn(

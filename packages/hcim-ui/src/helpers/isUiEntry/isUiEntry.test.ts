@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement } from '../../types';
-import { isUiEntry } from './isUiEntry';
+import { type UiElement } from '../../types/index.js';
+import { isUiEntry } from './isUiEntry.js';
 
 test.each<[boolean, UiElement['type'], UiElement]>([
     [

@@ -3,7 +3,7 @@ import { type MgoString } from '@minvws/mgo-hcim-parse';
 import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
 import { createTestIntl, testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { createLabelFormatter } from './formatLabel';
+import { createLabelFormatter } from './formatLabel.js';
 
 test('Returns label if it exists', async () => {
     const mockIntl = createTestIntl<string>() as FhirIntlShape;

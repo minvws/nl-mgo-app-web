@@ -1,5 +1,9 @@
-import { format } from '../../format';
-import { type CombinedUiFunction, type SingleValue, type WithUiContext } from '../../types';
+import { format } from '../../format/index.js';
+import {
+    type CombinedUiFunction,
+    type SingleValue,
+    type WithUiContext,
+} from '../../types/index.js';
 
 export const valueWithMax: WithUiContext<CombinedUiFunction<number, number, SingleValue>> =
     ({ formatLabel }) =>

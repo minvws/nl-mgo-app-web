@@ -7,12 +7,12 @@ import {
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import { boolean } from '../../type/boolean/boolean';
-import { codeableConcept } from '../../type/codeableConcept/codeableConcept';
-import { string } from '../../type/string/string';
-import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { processObject } from '../processObject/processObject';
-import { processArray } from './processArray';
+import { boolean } from '../../type/boolean/boolean.js';
+import { codeableConcept } from '../../type/codeableConcept/codeableConcept.js';
+import { string } from '../../type/string/string.js';
+import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { processObject } from '../processObject/processObject.js';
+import { processArray } from './processArray.js';
 
 test('values of the same type get processed together', () => {
     const rootPath = faker.lorem.word();

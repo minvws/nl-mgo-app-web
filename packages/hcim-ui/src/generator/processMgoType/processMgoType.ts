@@ -8,9 +8,9 @@ import {
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { isNullish } from '@minvws/mgo-utils';
 import { snakeCase } from 'lodash-es';
-import { type HealthUiGroup, type UiElement } from '../../types';
-import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { getUiElements } from '../getUiElements/getUiElements';
+import { type HealthUiGroup, type UiElement } from '../../types/index.js';
+import { type GeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { getUiElements } from '../getUiElements/getUiElements.js';
 
 function processNestedArray(
     context: GeneratorContext,

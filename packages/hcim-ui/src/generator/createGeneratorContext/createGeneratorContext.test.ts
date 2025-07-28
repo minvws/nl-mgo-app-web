@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { createGeneratorContext } from './createGeneratorContext';
+import { createGeneratorContext } from './createGeneratorContext.js';
 
 test('creates a snake_cased key that is used for translations', () => {
     const uiContext = faker.ui.context();

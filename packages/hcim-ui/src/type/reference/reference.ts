@@ -6,7 +6,7 @@ import {
     type SingleValue,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const reference: WithUiContext<
     UiFunction<MgoReference | MgoReference[], SingleValue | ReferenceValue | MultipleValues>

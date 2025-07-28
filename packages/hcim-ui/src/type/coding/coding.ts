@@ -1,12 +1,12 @@
 import { type MgoCoding } from '@minvws/mgo-hcim-parse';
 import { isNonNullish } from '@minvws/mgo-utils';
-import { system } from '../../format/system/system';
+import { system } from '../../format/system/system.js';
 import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const coding: WithUiContext<
     UiFunction<MgoCoding | MgoCoding[], SingleValue | MultipleValues>

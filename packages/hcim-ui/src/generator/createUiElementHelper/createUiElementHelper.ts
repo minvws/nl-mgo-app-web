@@ -3,9 +3,9 @@
 import { type MgoType, type MgoTypeId } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { map } from '@minvws/mgo-utils';
-import { UiContext } from '../../context';
-import { type HealthUiGroup, type UiElement, type UiFunction } from '../../types';
-import { createUiHelpers } from '../../ui';
+import { UiContext } from '../../context/index.js';
+import { type HealthUiGroup, type UiElement, type UiFunction } from '../../types/index.js';
+import { createUiHelpers } from '../../ui.js';
 
 type SingleTypeUiFunctionMap = {
     [T in MgoTypeId]: UiFunction<MgoType<T>, UiElement | UiElement[] | HealthUiGroup, any, any>;

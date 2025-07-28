@@ -2,7 +2,7 @@ import { faker } from '$test';
 import { type MgoCode } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test, vi } from 'vitest';
-import { code } from './code';
+import { code } from './code.js';
 
 test('code single', () => {
     const label = faker.custom.fhirMessageId();

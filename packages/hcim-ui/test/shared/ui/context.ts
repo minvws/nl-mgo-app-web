@@ -1,7 +1,7 @@
 import { createHelpers, type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
 import { createTestIntl } from '@minvws/mgo-intl/test';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type UiContext } from '../../../src/context/index';
+import { type UiContext } from '../../../src/context/index.js';
 
 const mockIntl = createTestIntl<string>() as FhirIntlShape;
 

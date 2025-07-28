@@ -1,7 +1,7 @@
 import { type MgoPeriod } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { date } from '../../format/date/date';
-import { type SingleValue, type UiFunction, type WithUiContext } from '../../types';
+import { date } from '../../format/date/date.js';
+import { type SingleValue, type UiFunction, type WithUiContext } from '../../types/index.js';
 
 type HasStartLabel =
     Extract<FhirMessagesIds, `${string}.start`> extends `${infer R}.start` ? R : never;

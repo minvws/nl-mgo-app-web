@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test';
 import { expect, test } from 'vitest';
-import * as special from './reference';
+import * as special from './reference.js';
 
 test('reference', () => {
     const label = faker.custom.fhirMessageId();
