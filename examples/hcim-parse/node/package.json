@@ -7,6 +7,6 @@
         "test": "node --no-warnings index.js"
     },
     "dependencies": {
-        "@minvws/mgo-hcim-parse": "^0.1.0"
+        "@minvws/mgo-hcim-parse": "^0.1.1-0"
     }
 }
