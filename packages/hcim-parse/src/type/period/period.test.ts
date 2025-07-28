@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { period } from './period';
+import { period } from './period.js';
 
 test('period', () => {
     const data = faker.fhir.period();

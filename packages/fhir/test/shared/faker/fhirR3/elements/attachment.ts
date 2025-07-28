@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type Attachment } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type Attachment } from 'fhir/r3';
 import { code, dateTime } from '../type/index.js';
 
 export const attachment = createMockFactory<Attachment>(() => {

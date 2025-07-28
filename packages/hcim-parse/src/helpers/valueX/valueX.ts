@@ -1,7 +1,7 @@
 import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash-es';
 import { type StringKeyOf } from 'type-fest';
-import * as type from '../../type';
+import * as type from '../../type/index.js';
 
 type Parsers = typeof type;
 export type ParserKey = keyof Parsers;

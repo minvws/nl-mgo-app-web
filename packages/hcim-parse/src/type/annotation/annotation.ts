@@ -1,7 +1,7 @@
 import { type Annotation, type DateTimeString } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
-import { type MgoReference, reference } from '../reference/reference';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
+import { type MgoReference, reference } from '../reference/reference.js';
 
 export interface MgoAnnotation extends ValueType<'annotation'> {
     time: DateTimeString | undefined;

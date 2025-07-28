@@ -1,10 +1,10 @@
 import { type Identifier } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
 import {
     codeableConceptProps,
     type MgoCodeableConceptProps,
-} from '../codeableConcept/codeableConcept';
+} from '../codeableConcept/codeableConcept.js';
 
 export interface MgoIdentifier extends ValueType<'identifier'> {
     use: string | undefined;

@@ -1,9 +1,9 @@
 import { expect, test } from 'vitest';
-import { timing } from './timing';
+import { timing } from './timing.js';
 
-import { type Timing } from 'fhir/r3';
-import fhirData01 from './fixtures/01/fhir-data.json';
-import fhirData02 from './fixtures/02/fhir-data.json';
+import { type Timing } from '@minvws/mgo-fhir/r3';
+import fhirData01 from './fixtures/01/fhir-data.json' with { type: 'json' };
+import fhirData02 from './fixtures/02/fhir-data.json' with { type: 'json' };
 
 test('timing', async () => {
     const value = fhirData01 as Timing;

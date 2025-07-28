@@ -1,6 +1,6 @@
 import { fhirR3Faker } from '@minvws/mgo-fhir/test/shared';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { parse } from '../../../../src';
+import { parse } from '../../../../src/index.js';
 
 const fhir = fhirR3Faker;
 

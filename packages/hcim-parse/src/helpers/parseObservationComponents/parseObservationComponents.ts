@@ -2,7 +2,7 @@ import { type Coding, type ObservationComponent } from '@minvws/mgo-fhir';
 import { type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash-es';
 import { type SetRequired, type UnionToIntersection } from 'type-fest';
-import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX';
+import { valueX, type ParserKey, type ReturnTypeParser } from '../valueX/valueX.js';
 
 type ObservationComponentTypeR3 =
     | 'quantity'

@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { nullish } from '@minvws/mgo-utils/test/shared';
 import { expect, test } from 'vitest';
-import { boolean, codeableConcept } from '../../type';
-import { valueX } from './valueX';
+import { boolean, codeableConcept } from '../../type/index.js';
+import { valueX } from './valueX.js';
 
 test('returns undefined if value is nullish', () => {
     const element = nullish<{

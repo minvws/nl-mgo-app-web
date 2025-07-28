@@ -1,5 +1,5 @@
+import { type Timing } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type Timing } from 'fhir/r3';
 import { codeableConcept } from './codeableConcept.js';
 import { dateTime } from './dateTime.js';
 import { timingRepeat } from './timingRepeat.js';

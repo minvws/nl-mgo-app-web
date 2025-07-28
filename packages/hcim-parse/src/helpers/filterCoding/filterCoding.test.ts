@@ -2,7 +2,7 @@ import { faker } from '$test';
 import { type CodingSystem } from '@minvws/mgo-fhir';
 import { mockArray } from '@minvws/mgo-utils/test/shared';
 import { expect, test } from 'vitest';
-import { type CodingSystemFilter, filterCoding } from './filterCoding';
+import { type CodingSystemFilter, filterCoding } from './filterCoding.js';
 
 /**
  * For our tests we need the coding to be unique, otherwise we run the risk of

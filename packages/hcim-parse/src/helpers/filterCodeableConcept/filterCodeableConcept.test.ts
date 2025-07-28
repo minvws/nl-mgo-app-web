@@ -1,9 +1,9 @@
 import { faker } from '$test';
 import { type CodingSystem } from '@minvws/mgo-fhir';
+import { type CodeableConcept, type Coding } from '@minvws/mgo-fhir/r3';
 import { mockArray } from '@minvws/mgo-utils/test/shared';
-import { type CodeableConcept, type Coding } from 'fhir/r3';
 import { expect, test } from 'vitest';
-import { filterCodeableConcept } from './filterCodeableConcept';
+import { filterCodeableConcept } from './filterCodeableConcept.js';
 
 type FakeCoding = {
     code: string;

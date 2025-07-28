@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
-import { boolean, string } from '../../type';
-import { customExtension, extension } from './extension';
+import { boolean, string } from '../../type/index.js';
+import { customExtension, extension } from './extension.js';
 
 test('extension matched by url and returns the value', () => {
     const url = faker.internet.url();

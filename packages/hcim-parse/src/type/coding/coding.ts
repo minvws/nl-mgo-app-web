@@ -1,6 +1,6 @@
 import { type Coding } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers';
-import { type ValueType } from '../../types';
+import { createTypeParser } from '../../helpers/index.js';
+import { type ValueType } from '../../types.js';
 
 export interface MgoCodingProps {
     code?: string;

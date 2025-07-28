@@ -1,6 +1,6 @@
+import { type Element as ElementR3 } from '@minvws/mgo-fhir/r3';
+import { type Element as ElementR4 } from '@minvws/mgo-fhir/r4';
 import { type Nullable } from '@minvws/mgo-utils';
-import { type Element as ElementR3 } from 'fhir/r3';
-import { type Element as ElementR4 } from 'fhir/r4';
 import { type StringKeyOf } from 'type-fest';
 
 export type ExtractKeysWithMeta<T extends object> =

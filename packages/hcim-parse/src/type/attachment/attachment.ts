@@ -1,6 +1,6 @@
 import { type Attachment, type DateTimeString } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
 
 export interface MgoAttachment extends ValueType<'attachment'> {
     contentType: string | undefined;

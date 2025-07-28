@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type TimingRepeat } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type TimingRepeat } from 'fhir/r3';
 import { code } from './code.js';
 import { dateTime } from './dateTime.js';
 import { duration } from './duration.js';

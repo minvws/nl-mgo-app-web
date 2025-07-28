@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { reference } from '../reference/reference';
-import * as general from './annotation';
+import { reference } from '../reference/reference.js';
+import * as general from './annotation.js';
 
 test('annotation', () => {
     const data = faker.fhir.annotation();

@@ -1,7 +1,7 @@
 import { faker } from '$test';
-import { type HumanName as HumanNameR3 } from 'fhir/r3';
+import { type HumanName as HumanNameR3 } from '@minvws/mgo-fhir/r3';
 import { expect, test } from 'vitest';
-import { filterPrimitive } from './filterPrimitive';
+import { filterPrimitive } from './filterPrimitive.js';
 
 test('filterPrimitive returns undefined if there is no element', () => {
     const data = undefined as HumanNameR3 | undefined;

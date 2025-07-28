@@ -1,5 +1,5 @@
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type PrimitiveValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type PrimitiveValueType } from '../../types.js';
 
 export type MgoBoolean = PrimitiveValueType<'boolean', boolean>;
 

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type HumanName } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type HumanName } from 'fhir/r3';
 import { code, period } from '../type/index.js';
 
 export const humanName = createMockFactory<HumanName>(() => ({

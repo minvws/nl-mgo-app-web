@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { attachment } from './attachment';
+import { attachment } from './attachment.js';
 
 test('string', () => {
     const value = faker.fhir.attachment();

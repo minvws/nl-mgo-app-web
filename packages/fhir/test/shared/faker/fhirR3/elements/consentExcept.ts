@@ -1,5 +1,5 @@
+import { type ConsentExcept } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type ConsentExcept } from 'fhir/r3';
 import { code, codeableConcept, coding, period } from '../type/index.js';
 import { consentActor } from './consentActor.js';
 import { consentData } from './consentData.js';

@@ -1,7 +1,7 @@
 import { faker } from '$test';
-import { type HumanName as HumanNameR3 } from 'fhir/r3';
+import { type HumanName as HumanNameR3 } from '@minvws/mgo-fhir/r3';
 import { expect, test } from 'vitest';
-import { filterPrimitiveByExtension } from './filterPrimitiveByExtension';
+import { filterPrimitiveByExtension } from './filterPrimitiveByExtension.js';
 
 test('filterPrimitiveByExtension returns undefined if the extension does not exist', () => {
     const data: HumanNameR3 = {

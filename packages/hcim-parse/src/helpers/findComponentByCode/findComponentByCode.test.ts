@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { type ObservationComponent } from '@minvws/mgo-fhir';
 import { expect, test } from 'vitest';
-import { findComponentByCode } from './findComponentByCode';
+import { findComponentByCode } from './findComponentByCode.js';
 
 function createComponent(code?: string): ObservationComponent {
     return {

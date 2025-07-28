@@ -1,5 +1,5 @@
+import { type EpisodeOfCareDiagnosis } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type EpisodeOfCareDiagnosis } from 'fhir/r3';
 import { codeableConcept, coding, positiveInt, reference } from '../type/index.js';
 
 export const episodeOfCareDiagnosis = createMockFactory<EpisodeOfCareDiagnosis>(() => {

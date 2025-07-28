@@ -1,5 +1,5 @@
+import { type Bundle } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type Bundle } from 'fhir/r3';
 import { code } from '../type/index.js';
 
 export const bundle = createMockFactory<Bundle>(() => ({

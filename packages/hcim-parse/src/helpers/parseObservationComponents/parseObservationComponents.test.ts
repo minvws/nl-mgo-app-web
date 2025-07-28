@@ -1,10 +1,10 @@
 import { faker } from '$test';
 import { type ObservationComponent } from '@minvws/mgo-fhir';
+import { Quantity } from '@minvws/mgo-fhir/r3';
 import { nullish } from '@minvws/mgo-utils/test/shared';
-import { Quantity } from 'fhir/r3';
 import { expect, test } from 'vitest';
-import { quantity } from '../../parse';
-import { parseObservationComponents } from './parseObservationComponents';
+import { quantity } from '../../parse.js';
+import { parseObservationComponents } from './parseObservationComponents.js';
 
 test('matches components by system and code and returns the parsed object', () => {
     const coding = faker.fhir.coding();

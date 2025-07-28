@@ -1,5 +1,5 @@
+import { type SampledData } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type SampledData } from 'fhir/r3';
 import { decimal } from './decimal.js';
 import { positiveInt } from './positiveInt.js';
 import { simpleQuantity } from './simpleQuantity.js';

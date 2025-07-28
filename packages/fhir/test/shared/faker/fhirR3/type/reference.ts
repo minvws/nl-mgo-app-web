@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type Reference } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type Reference } from 'fhir/r3';
 
 export const reference = createMockFactory<Reference>(() => ({
     display: faker.lorem.sentence(),

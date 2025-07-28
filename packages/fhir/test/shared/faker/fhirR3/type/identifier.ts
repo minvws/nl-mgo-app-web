@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type Identifier } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type Identifier } from 'fhir/r3';
 import { code } from './code.js';
 import { codeableConcept } from './codeableConcept.js';
 import { period } from './period.js';

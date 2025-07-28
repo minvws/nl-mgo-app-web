@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { createTypeParser } from './createTypeParser';
+import { createTypeParser } from './createTypeParser.js';
 
 test('wraps function that returns undefined if value is nullish', () => {
     const passThrough = <T>(x: T) => x;

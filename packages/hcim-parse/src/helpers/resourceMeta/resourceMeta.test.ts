@@ -1,9 +1,9 @@
-import expected01 from './fixtures/zib-Product-01-output.json';
-import input01 from './fixtures/zib-Product-01.json';
+import expected01 from './fixtures/zib-Product-01-output.json' with { type: 'json' };
+import input01 from './fixtures/zib-Product-01.json' with { type: 'json' };
 
 import { FhirVersion, type Resource } from '@minvws/mgo-fhir';
 import { expect, test } from 'vitest';
-import { resourceMeta } from './resourceMeta';
+import { resourceMeta } from './resourceMeta.js';
 
 test('returns the expected output', () => {
     const result = resourceMeta(

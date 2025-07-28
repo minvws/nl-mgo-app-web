@@ -1,0 +1,12 @@
+{
+    "name": "examples-utils-node",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "pretest": "npm install @minvws/mgo-hcim-parse@latest",
+        "test": "node --no-warnings index.js"
+    },
+    "dependencies": {
+        "@minvws/mgo-hcim-parse": "^0.1.1-0"
+    }
+}

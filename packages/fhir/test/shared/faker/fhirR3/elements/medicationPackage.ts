@@ -1,5 +1,5 @@
+import { type MedicationPackage } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type MedicationPackage } from 'fhir/r3';
 import { codeableConcept } from '../type/index.js';
 import { medicationPackageBatch } from './medicationPackageBatch.js';
 import { medicationPackageContent } from './medicationPackageContent.js';

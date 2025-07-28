@@ -21,6 +21,7 @@ import type {
     Resource as ResourceR3,
     SampledData as SampledDataR3Original,
     StructureDefinition as StructureDefinitionR3,
+    Timing as TimingR3,
 } from './r3.js';
 
 import type {
@@ -46,6 +47,7 @@ import type {
     Resource as ResourceR4,
     SampledData as SampledDataR4Original,
     StructureDefinition as StructureDefinitionR4,
+    Timing as TimingR4,
 } from './r4.js';
 
 import type { OverrideProperties } from 'type-fest';
@@ -65,6 +67,7 @@ export type ContactPoint = ContactPointR3 | ContactPointR4;
 export type BackboneElement = BackboneElementR3 | BackboneElementR4;
 export type Reference = ReferenceR3 | ReferenceR4;
 export type Attachment = AttachmentR3 | AttachmentR4;
+export type Timing = TimingR3 | TimingR4;
 
 export type ObservationComponent = ObservationComponentR3 | ObservationComponentR4;
 export type DomainResource = DomainResourceR3 | DomainResourceR4;

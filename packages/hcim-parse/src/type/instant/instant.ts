@@ -1,6 +1,6 @@
 import { type InstantDateTimeString } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type PrimitiveValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type PrimitiveValueType } from '../../types.js';
 
 export type MgoInstant = PrimitiveValueType<'instant', InstantDateTimeString>;
 

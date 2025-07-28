@@ -5,7 +5,7 @@ import {
     type ParserKey,
     type ReturnTypeParser,
     valueX,
-} from '../valueX/valueX';
+} from '../valueX/valueX.js';
 
 type KeyFromValueType<
     Prefix extends string,

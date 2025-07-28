@@ -1,10 +1,10 @@
 import { type SampledData } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
-import { decimal, type MgoDecimal } from '../decimal/decimal';
-import { type MgoPositiveInt, positiveInt } from '../positiveInt/positiveInt';
-import { type MgoSimpleQuantity, simpleQuantity } from '../simpleQuantity/simpleQuantity';
-import { type MgoString, string } from '../string/string';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
+import { decimal, type MgoDecimal } from '../decimal/decimal.js';
+import { type MgoPositiveInt, positiveInt } from '../positiveInt/positiveInt.js';
+import { type MgoSimpleQuantity, simpleQuantity } from '../simpleQuantity/simpleQuantity.js';
+import { type MgoString, string } from '../string/string.js';
 
 export interface MgoSampledData extends ValueType<'sampledData'> {
     origin: MgoSimpleQuantity | undefined;

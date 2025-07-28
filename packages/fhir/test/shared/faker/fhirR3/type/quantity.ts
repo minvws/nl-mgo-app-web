@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type Quantity } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type Quantity } from 'fhir/r3';
 import { code } from './code.js';
 
 export const quantity = createMockFactory<Quantity>(() => {
