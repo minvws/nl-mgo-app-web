@@ -1,6 +1,6 @@
 import { type DomainResource, type Element } from '@minvws/mgo-fhir';
-import { type MgoTypeId } from '../../types';
-import { extension } from '../extension/extension';
+import { type MgoTypeId } from '../../types.js';
+import { extension } from '../extension/extension.js';
 
 const nictizIdValueXMap = {
     'BodySite-Qualifier': 'codeableConcept',

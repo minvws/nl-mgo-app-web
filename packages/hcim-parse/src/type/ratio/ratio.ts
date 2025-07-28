@@ -1,7 +1,7 @@
 import { type Ratio } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
-import { type MgoQuantityProps, quantityProps } from '../quantity/quantity';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
+import { type MgoQuantityProps, quantityProps } from '../quantity/quantity.js';
 
 export interface MgoRatio extends ValueType<'ratio'> {
     numerator: MgoQuantityProps | undefined;

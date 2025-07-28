@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { string } from './string';
+import { string } from './string.js';
 
 test('string', () => {
     const value = faker.lorem.sentences();

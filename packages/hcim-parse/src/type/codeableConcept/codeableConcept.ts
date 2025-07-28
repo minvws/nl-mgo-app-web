@@ -1,8 +1,8 @@
 import { type CodeableConcept } from '@minvws/mgo-fhir';
 import { map } from '@minvws/mgo-utils';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
-import { codingProps, type MgoCodingProps } from '../coding/coding';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
+import { codingProps, type MgoCodingProps } from '../coding/coding.js';
 
 export interface MgoCodeableConceptProps {
     text: string | undefined;

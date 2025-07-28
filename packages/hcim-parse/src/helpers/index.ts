@@ -3,16 +3,16 @@
  * @see: https://build.fhir.org/extensibility.html#Extension
  */
 
-export * from './createTypeParser/createTypeParser';
-export * from './extension/extension';
-export * from './extensionMultiple/extensionMultiple';
-export * from './extensionNictiz/extensionNictiz';
-export * from './filterCodeableConcept/filterCodeableConcept';
-export * from './filterCoding/filterCoding';
-export * from './filterPrimitive/filterPrimitive';
-export * from './filterPrimitiveByExtension/filterPrimitiveByExtension';
-export * from './findComponentByCode/findComponentByCode';
-export * from './isMgoElement/isMgoElement';
-export * from './oneOfValueX/oneOfValueX';
-export * from './parseObservationComponents/parseObservationComponents';
-export * from './passThrough/passThrough';
+export * from './createTypeParser/createTypeParser.js';
+export * from './extension/extension.js';
+export * from './extensionMultiple/extensionMultiple.js';
+export * from './extensionNictiz/extensionNictiz.js';
+export * from './filterCodeableConcept/filterCodeableConcept.js';
+export * from './filterCoding/filterCoding.js';
+export * from './filterPrimitive/filterPrimitive.js';
+export * from './filterPrimitiveByExtension/filterPrimitiveByExtension.js';
+export * from './findComponentByCode/findComponentByCode.js';
+export * from './isMgoElement/isMgoElement.js';
+export * from './oneOfValueX/oneOfValueX.js';
+export * from './parseObservationComponents/parseObservationComponents.js';
+export * from './passThrough/passThrough.js';

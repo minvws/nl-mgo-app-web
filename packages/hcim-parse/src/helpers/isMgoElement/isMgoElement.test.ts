@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { MgoElementMeta } from '../../types';
-import { isMgoElement } from './isMgoElement';
+import { MgoElementMeta } from '../../types.js';
+import { isMgoElement } from './isMgoElement.js';
 
 test('returns true for MgoElementMeta', () => {
     const data: MgoElementMeta = {

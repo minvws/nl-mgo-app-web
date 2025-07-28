@@ -1,5 +1,5 @@
 import { NictizNlProfile } from '@minvws/mgo-fhir';
-import { MgoElementMeta } from '../../types';
+import { MgoElementMeta } from '../../types.js';
 
 export function isMgoElement<T extends NictizNlProfile>(
     value: unknown

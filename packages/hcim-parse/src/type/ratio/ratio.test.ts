@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { quantityProps } from '../quantity/quantity';
-import * as general from './ratio';
+import { quantityProps } from '../quantity/quantity.js';
+import * as general from './ratio.js';
 
 test('ratio', () => {
     const data = faker.fhir.ratio();

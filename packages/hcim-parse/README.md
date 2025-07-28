@@ -1,8 +1,34 @@
 # @minvws/mgo-hcim-parse
 
-This package contains functionality for parsing [FHIR] data into MGO resources.
+This package contains functionality for parsing [FHIR] data into MGO resources which are used within [MGO][repo].
 
 For more context on why / how this is used please [visit the about documentation][about-zib-ui].
+
+## Installation
+
+```shell
+npm i --save @minvws/mgo-hcim-parse
+
+# or
+
+pnpm add @minvws/mgo-hcim-parse
+```
+
+## Use
+
+```typescript
+
+import { parse } from '@minvws/mgo-hcim-parse'
+
+...
+
+const fhirPatient = { ... }
+
+const mgoPatient = {
+    birthDate: parse.date(fhirPatient.birthdate)
+}
+
+```
 
 See the **[package source][source]** for more details
 
@@ -10,10 +36,7 @@ See the **[package source][source]** for more details
 
 _This package and its documentation are still under development._
 
-[MGO]: ../../README.md
-[FHIR]: ../../docs/glossary.md#FHIR
-[ZIB]: ../../docs/glossary.md#ZIB
-[about-zib-ui]: ../../docs/about.md#from-zib-to-ui
-[fhir-bundle]: https://build.fhir.org/bundle.html
+[FHIR]: https://fhir.org/
+[about-zib-ui]: https://github.com/minvws/nl-mgo-app-web/tree/main/docs/about.md#from-zib-to-ui
 [repo]: https://github.com/minvws/nl-mgo-app-web
-[source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/hcim-ui
+[source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/hcim-parse

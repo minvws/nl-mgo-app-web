@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { boolean } from './boolean';
+import { boolean } from './boolean.js';
 
 test('boolean', () => {
     const value = faker.datatype.boolean();

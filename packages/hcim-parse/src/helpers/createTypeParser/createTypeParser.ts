@@ -1,5 +1,5 @@
 import { isNullish, type Nullable } from '@minvws/mgo-utils';
-import { type ValueType } from '../../types';
+import { type ValueType } from '../../types.js';
 
 type ParserFunc<Input, Output extends ValueType> = (input: Input) => Output;
 

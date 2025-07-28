@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { coding } from './coding';
+import { coding } from './coding.js';
 
 test('coding', () => {
     const data = faker.fhir.coding();

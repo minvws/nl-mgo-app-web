@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
-import { extensionNictiz } from './extensionNictiz';
+import { extensionNictiz } from './extensionNictiz.js';
 
 test('extensionNictiz matches by zibID and returns the value', () => {
     const valueString = faker.string.sample();

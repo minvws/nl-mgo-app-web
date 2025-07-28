@@ -5,7 +5,7 @@ import {
     matchesCodingFilter,
     type CodingCodeFilter,
     type CodingSystemFilter,
-} from '../filterCoding/filterCoding';
+} from '../filterCoding/filterCoding.js';
 
 const hasMatchingCoding = (
     codeableConcept: CodeableConcept,

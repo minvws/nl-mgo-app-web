@@ -1,7 +1,7 @@
 import { type Range } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
-import { quantityProps, type MgoQuantityProps } from '../quantity/quantity';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
+import { quantityProps, type MgoQuantityProps } from '../quantity/quantity.js';
 
 export interface MgoRange extends ValueType<'range'> {
     low: MgoQuantityProps | undefined;

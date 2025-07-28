@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, test } from 'vitest';
-import { boolean } from '../../type';
-import { customExtensionMultiple, extensionMultiple } from './extensionMultiple';
+import { boolean } from '../../type/index.js';
+import { customExtensionMultiple, extensionMultiple } from './extensionMultiple.js';
 
 test('extensionMultiple returns empty array if no extensions are found', () => {
     const url = faker.internet.url();

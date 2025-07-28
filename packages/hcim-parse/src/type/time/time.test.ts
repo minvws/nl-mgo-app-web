@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { time } from './time';
+import { time } from './time.js';
 
 test('time', () => {
     const value = faker.fhir.time();

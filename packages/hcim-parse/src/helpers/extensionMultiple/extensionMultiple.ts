@@ -1,7 +1,7 @@
 import { type DomainResource, type Element } from '@minvws/mgo-fhir';
 import { isNonNullish, type Nullable } from '@minvws/mgo-utils';
-import { type ExtensionValue, type MgoType, type MgoTypeId } from '../../types';
-import { valueX } from '../valueX/valueX';
+import { type ExtensionValue, type MgoType, type MgoTypeId } from '../../types.js';
+import { valueX } from '../valueX/valueX.js';
 
 function getAllExtensions<T extends DomainResource | Element>(resource: Nullable<T>, url: string) {
     return [

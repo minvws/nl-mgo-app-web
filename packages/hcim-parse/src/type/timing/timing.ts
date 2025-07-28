@@ -1,16 +1,16 @@
+import { type Timing } from '@minvws/mgo-fhir';
 import { map } from '@minvws/mgo-utils';
-import { type Timing } from 'fhir/r3';
-import { createTypeParser } from '../../helpers';
-import { type ValueType } from '../../types';
-import { codeableConcept, type MgoCodeableConcept } from '../codeableConcept/codeableConcept';
-import { dateTime, type MgoDateTime } from '../dateTime/dateTime';
-import { decimal, type MgoDecimal } from '../decimal/decimal';
-import { duration, type MgoDuration } from '../duration/duration';
-import { integer, type MgoInteger } from '../integer/integer';
-import { type MgoPeriod, period } from '../period/period';
-import { type MgoRange, range } from '../range/range';
-import { type MgoString, string } from '../string/string';
-import { type MgoUnsignedInt, unsignedInt } from '../unsignedInt/unsignedInt';
+import { createTypeParser } from '../../helpers/index.js';
+import { type ValueType } from '../../types.js';
+import { codeableConcept, type MgoCodeableConcept } from '../codeableConcept/codeableConcept.js';
+import { dateTime, type MgoDateTime } from '../dateTime/dateTime.js';
+import { decimal, type MgoDecimal } from '../decimal/decimal.js';
+import { duration, type MgoDuration } from '../duration/duration.js';
+import { integer, type MgoInteger } from '../integer/integer.js';
+import { type MgoPeriod, period } from '../period/period.js';
+import { type MgoRange, range } from '../range/range.js';
+import { type MgoString, string } from '../string/string.js';
+import { type MgoUnsignedInt, unsignedInt } from '../unsignedInt/unsignedInt.js';
 
 export interface MgoTiming extends ValueType<'timing'> {
     code: MgoCodeableConcept | undefined;

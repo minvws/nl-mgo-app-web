@@ -1,6 +1,6 @@
 import { type DateString } from '@minvws/mgo-fhir';
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type PrimitiveValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type PrimitiveValueType } from '../../types.js';
 
 export type MgoDate = PrimitiveValueType<'date', DateString>;
 

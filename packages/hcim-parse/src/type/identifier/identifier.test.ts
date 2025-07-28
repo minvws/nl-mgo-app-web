@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { codeableConceptProps } from '../codeableConcept/codeableConcept';
-import { identifier } from './identifier';
+import { codeableConceptProps } from '../codeableConcept/codeableConcept.js';
+import { identifier } from './identifier.js';
 
 test('identifier', () => {
     const data = faker.fhir.identifier();

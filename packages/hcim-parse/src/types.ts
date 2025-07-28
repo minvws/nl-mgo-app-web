@@ -1,6 +1,6 @@
 import { NictizNlProfile } from '@minvws/mgo-fhir';
 import { isNonNullish } from '@minvws/mgo-utils';
-import * as typeParsers from './type';
+import * as typeParsers from './type/index.js';
 
 export type ExtensionValue<T extends object> = T & {
     _ext: boolean;

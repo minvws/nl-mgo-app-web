@@ -1,5 +1,5 @@
-import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser';
-import { type ValueType } from '../../types';
+import { createTypeParser } from '../../helpers/createTypeParser/createTypeParser.js';
+import { type ValueType } from '../../types.js';
 
 export interface MgoPositiveInt extends ValueType<'positiveInt'> {
     value: number;

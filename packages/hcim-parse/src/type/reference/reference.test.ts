@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import * as special from './reference';
+import * as special from './reference.js';
 
 test('reference', () => {
     const data = faker.fhir.reference();
