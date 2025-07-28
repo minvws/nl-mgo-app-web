@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type ContactPoint } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type ContactPoint } from 'fhir/r3';
 import { code, period } from '../type/index.js';
 
 export const contactPoint = createMockFactory<ContactPoint>(() => ({

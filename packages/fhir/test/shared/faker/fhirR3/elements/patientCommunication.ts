@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type PatientCommunication } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type PatientCommunication } from 'fhir/r3';
 import { codeableConcept, coding } from '../type/index.js';
 
 export const patientCommunication = createMockFactory<PatientCommunication>(() => {

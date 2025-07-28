@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type Dosage } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type Dosage } from 'fhir/r3';
 import { codeableConcept } from './codeableConcept.js';
 import { quantity } from './quantity.js';
 import { range } from './range.js';

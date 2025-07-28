@@ -1,5 +1,5 @@
+import { type ConditionEvidence } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type ConditionEvidence } from 'fhir/r3';
 import { codeableConcept, reference } from '../type/index.js';
 
 export const conditionEvidence = createMockFactory<ConditionEvidence>(() => {

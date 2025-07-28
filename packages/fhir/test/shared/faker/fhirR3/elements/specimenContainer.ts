@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type SpecimenContainer } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type SpecimenContainer } from 'fhir/r3';
 import { codeableConcept, identifier, quantity, reference } from '../type/index.js';
 
 export const specimenContainer = createMockFactory<SpecimenContainer>(() => {

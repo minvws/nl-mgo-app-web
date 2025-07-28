@@ -1,5 +1,5 @@
+import { type ConsentData } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type ConsentData } from 'fhir/r3';
 import { code, reference } from '../type/index.js';
 
 export const consentData = createMockFactory<ConsentData>(() => {

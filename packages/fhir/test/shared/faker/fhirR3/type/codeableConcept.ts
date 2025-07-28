@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
+import { type CodeableConcept } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type CodeableConcept } from 'fhir/r3';
 import { coding } from './coding.js';
 
 export const codeableConcept = createMockFactory<CodeableConcept>(() => {

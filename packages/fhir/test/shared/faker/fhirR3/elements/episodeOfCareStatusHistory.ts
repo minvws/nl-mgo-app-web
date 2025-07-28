@@ -1,5 +1,5 @@
+import { type EpisodeOfCareStatusHistory } from '@minvws/mgo-fhir/r3';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
-import { type EpisodeOfCareStatusHistory } from 'fhir/r3';
 import { code, period } from '../type/index.js';
 
 export const episodeOfCareStatusHistory = createMockFactory<EpisodeOfCareStatusHistory>(() => {

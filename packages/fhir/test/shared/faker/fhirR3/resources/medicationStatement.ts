@@ -1,5 +1,5 @@
+import { type MedicationStatement } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type MedicationStatement } from 'fhir/r3';
 import { code, codeableConcept, date, period, reference } from '../type/index.js';
 
 export const medicationStatement = createMockFactory<MedicationStatement>(() => {

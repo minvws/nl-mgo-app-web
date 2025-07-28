@@ -1,5 +1,5 @@
+import { type PatientContact } from '@minvws/mgo-fhir/r3';
 import { createMockFactory, mockArray } from '@minvws/mgo-utils/test/shared';
-import { type PatientContact } from 'fhir/r3';
 import { codeableConcept, period, reference } from '../type/index.js';
 import { address } from './address.js';
 import { contactPoint } from './contactPoint.js';
