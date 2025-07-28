@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi } from 'vitest';
 import { type HealthUiGroup, type UiElement } from '../../types';
 import { processValue } from '../processValue/processValue';

@@ -1,4 +1,4 @@
-import { appMessage, fhirMessage, type FhirMessagesIds } from '@minvws/mgo-intl/test';
+import { appMessage, fhirMessage, type FhirMessagesIds } from '@minvws/mgo-intl/test/shared';
 import { type Page } from '@playwright/test';
 import { AbstractPage } from './AbstractPage';
 

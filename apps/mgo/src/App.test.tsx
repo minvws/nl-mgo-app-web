@@ -1,7 +1,7 @@
 import { useAuth } from '$/auth';
 import { faker } from '$test/faker';
 import { setupApp } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { useOnboardingSeen } from './hooks';

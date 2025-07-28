@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { type MgoString } from '@minvws/mgo-hcim-parse';
 import { type FhirIntlShape, type FhirMessagesIds } from '@minvws/mgo-intl';
-import { createTestIntl, testMessage } from '@minvws/mgo-intl/test';
+import { createTestIntl, testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { createLabelFormatter } from './formatLabel';
 

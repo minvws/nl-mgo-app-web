@@ -1,7 +1,7 @@
 import { useParamsData } from '$/routing';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { Organization } from './Organization';
