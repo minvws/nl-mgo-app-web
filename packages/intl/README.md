@@ -174,6 +174,5 @@ However when a production build is created the latest content will be downloaded
 [core-intl]: https://formatjs.github.io/docs/intl
 [global-type]: https://formatjs.github.io/docs/react-intl/#typing-message-ids-and-locale
 [intl-config]: https://formatjs.github.io/docs/intl#intlshape
-
 [repo]: https://github.com/minvws/nl-mgo-app-web
 [source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/intl
