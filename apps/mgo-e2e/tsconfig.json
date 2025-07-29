@@ -4,7 +4,10 @@
         "allowJs": true,
         "outDir": "../../out-tsc/mgo-e2e/playwright",
         "tsBuildInfoFile": "../../out-tsc/mgo-e2e/tsconfig.tsbuildinfo",
-        "sourceMap": false
+        "sourceMap": false,
+        "paths": {
+            "@minvws/mgo-intl/test/shared": ["../../packages/intl/test/shared"]
+        }
     },
     "include": [
         "**/*.ts",
