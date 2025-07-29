@@ -5,8 +5,8 @@
  *   - Don't forget to also export the ResourceElementType from the `~/api/types` file to make it available for the mobile apps.
  */
 
-export * from './nlCoreAddress/nlCoreAddress';
-export * from './nlCoreContactpoint/nlCoreContactpoint';
-export * from './nlCoreHumanname/nlCoreHumanname';
-export * from './zibAdministrationSchedule/zibAdministrationSchedule';
-export * from './zibInstructionsForUse/zibInstructionsForUse';
+export * from './nlCoreAddress/nlCoreAddress.js';
+export * from './nlCoreContactpoint/nlCoreContactpoint.js';
+export * from './nlCoreHumanname/nlCoreHumanname.js';
+export * from './zibAdministrationSchedule/zibAdministrationSchedule.js';
+export * from './zibInstructionsForUse/zibInstructionsForUse.js';

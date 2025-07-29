@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type DocumentReference } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type DocumentReference } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { summary } from './summary';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentReference'; // NOSONAR
 

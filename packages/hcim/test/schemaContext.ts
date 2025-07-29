@@ -6,7 +6,7 @@ import {
     type SchemaContext,
     type SchemaOptions,
     createSchemaContext,
-} from '../src/api/schemaContext/schemaContext';
+} from '../src/api/schemaContext/schemaContext.js';
 
 export interface TestSchemaOptions<T extends `${FhirVersion}`> extends SchemaOptions<T> {
     useMock: boolean;

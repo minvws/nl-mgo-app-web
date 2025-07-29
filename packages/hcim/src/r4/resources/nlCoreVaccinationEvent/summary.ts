@@ -1,8 +1,8 @@
 import { common } from '@minvws/mgo-hcim-ui';
+import { map } from '@minvws/mgo-utils';
 import { capitalize } from 'lodash-es';
-import { SummarySchemaFunction } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
+import { SummarySchemaFunction } from '../../../resourceTypes.js';
+import { type R4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent.js';
 
 export const i18n = 'r4.nl_core_vaccination_event';
 

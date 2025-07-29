@@ -1,14 +1,14 @@
 import { expectJson } from '$test';
-import { type Patient } from 'fhir/r4';
+import { type Patient } from '@minvws/mgo-fhir/r4';
 import { test } from 'vitest';
 
-import { map } from '../../../utils';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import input04 from './fixtures/04/fhir-resource.json';
-import input05 from './fixtures/05/fhir-resource.json';
-import { parseNlCoreNameInformation } from './nlCoreNameInformation';
+import { map } from '@minvws/mgo-utils';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import input04 from './fixtures/04/fhir-resource.json' with { type: 'json' };
+import input05 from './fixtures/05/fhir-resource.json' with { type: 'json' };
+import { parseNlCoreNameInformation } from './nlCoreNameInformation.js';
 
 test('returns the expected output 01', async () => {
     const names = (input01 as Patient).name;

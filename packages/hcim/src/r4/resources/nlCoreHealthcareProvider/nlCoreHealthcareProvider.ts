@@ -1,9 +1,12 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Location } from '@minvws/mgo-fhir/r4';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Location } from 'fhir/r4';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { parseNlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import {
+    parseNlCoreAddressInformation,
+    parseNlCoreContactInformation,
+} from '../../elements/index.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider'; // NOSONAR
 

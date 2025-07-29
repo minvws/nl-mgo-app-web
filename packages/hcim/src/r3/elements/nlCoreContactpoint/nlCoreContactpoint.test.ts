@@ -1,10 +1,10 @@
 import { expectJson } from '$test';
-import { type ContactPoint } from 'fhir/r3';
+import { type ContactPoint } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import inputFhirData01 from './fixtures/01/fhir-resource.json';
-import inputFhirData02 from './fixtures/02/fhir-resource.json';
-import inputFhirData03 from './fixtures/03/fhir-resource.json';
-import { parseNlCoreContactpoint } from './nlCoreContactpoint';
+import inputFhirData01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import inputFhirData02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import inputFhirData03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import { parseNlCoreContactpoint } from './nlCoreContactpoint.js';
 
 test('01: mgo-resource', async () => {
     const output = parseNlCoreContactpoint(inputFhirData01 as ContactPoint);

@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type NutritionOrder } from 'fhir/r3';
+import { type NutritionOrder } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import inputFHIRData01 from './fixtures/01/fhir-resource.json';
-import inputFHIRData02 from './fixtures/02/fhir-resource.json';
-import { zibNutritionAdvice } from './zibNutritionAdvice';
+import inputFHIRData01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import inputFHIRData02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { zibNutritionAdvice } from './zibNutritionAdvice.js';
 
 test('01: mgo-resource', async () => {
     const output = zibNutritionAdvice.parse(inputFHIRData01 as NutritionOrder);

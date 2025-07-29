@@ -6,7 +6,7 @@ import {
     createUiContext,
     createUiHelpers,
 } from '@minvws/mgo-hcim-ui';
-import { type MgoResource } from '../resources/resources';
+import { type MgoResource } from '../resources/resources.js';
 
 export type SchemaOptions<V extends `${FhirVersion}`> = UiContextOptions & {
     resources?: MgoResource<V>[];

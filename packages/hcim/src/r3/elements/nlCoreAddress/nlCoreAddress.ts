@@ -1,7 +1,6 @@
+import { type Address } from '@minvws/mgo-fhir/r3';
 import { parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
-import { type Nullable } from '@minvws/mgo-utils';
-import { type Address } from 'fhir/r3';
-import { map } from '../../../utils';
+import { map, type Nullable } from '@minvws/mgo-utils';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NOSONAR
 

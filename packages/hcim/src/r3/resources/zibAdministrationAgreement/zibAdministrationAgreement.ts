@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type MedicationDispense } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type MedicationDispense } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { zibInstructionsForUse } from '../../elements';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { zibInstructionsForUse } from '../../elements/index.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationAgreement'; // NOSONAR
 

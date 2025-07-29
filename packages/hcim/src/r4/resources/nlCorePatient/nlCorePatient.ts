@@ -1,16 +1,15 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Patient } from '@minvws/mgo-fhir/r4';
+import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Patient } from 'fhir/r4';
-import { oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 import {
     parseNlCoreAddressInformation,
     parseNlCoreContactInformation,
     parseNlCoreNameInformation,
-} from '../../elements';
-import { parseNlCoreContactPerson } from '../../elements/nlCoreContactPerson/nlCoreContactPerson';
+} from '../../elements/index.js';
+import { parseNlCoreContactPerson } from '../../elements/nlCoreContactPerson/nlCoreContactPerson.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient'; // NOSONAR
 

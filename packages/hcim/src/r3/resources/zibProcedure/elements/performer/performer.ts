@@ -1,6 +1,6 @@
+import { type ProcedurePerformer } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { type Nullable } from '@minvws/mgo-utils';
-import { type ProcedurePerformer } from 'fhir/r3';
 
 export interface Performer {
     actor: parse.MgoReference | undefined;

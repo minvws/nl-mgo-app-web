@@ -1,6 +1,6 @@
 import { common } from '@minvws/mgo-hcim-ui';
-import { SummarySchemaFunction } from '../../../resourceTypes';
-import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
+import { SummarySchemaFunction } from '../../../resourceTypes.js';
+import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference.js';
 
 const i18n = 'r3.ihe_mhd_minimal_document_reference';
 

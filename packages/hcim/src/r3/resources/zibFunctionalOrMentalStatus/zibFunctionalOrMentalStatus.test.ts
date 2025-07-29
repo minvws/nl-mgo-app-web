@@ -1,8 +1,8 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Observation } from 'fhir/r3';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input from './fixtures/fhir-resource.json';
-import { zibFunctionalOrMentalStatus } from './zibFunctionalOrMentalStatus';
+import input from './fixtures/fhir-resource.json' with { type: 'json' };
+import { zibFunctionalOrMentalStatus } from './zibFunctionalOrMentalStatus.js';
 
 test('r01: mgo-resource', async () => {
     const output = zibFunctionalOrMentalStatus.parse(input as Observation);

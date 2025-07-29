@@ -1,6 +1,6 @@
 import { FhirVersion, isFhirResource, type FhirResource } from '@minvws/mgo-fhir';
-import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type MgoResource } from '../resources/resources';
+import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
+import { type MgoResource } from '../resources/resources.js';
 
 export type Options<V extends FhirVersion> = {
     fhirVersion: V;

@@ -1,14 +1,14 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Practitioner } from '@minvws/mgo-fhir/r4';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Practitioner } from 'fhir/r4';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 import {
     parseNlCoreAddressInformation,
     parseNlCoreContactInformation,
     parseNlCoreNameInformation,
-} from '../../elements';
+} from '../../elements/index.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner'; // NOSONAR
 

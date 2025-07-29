@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-GeneralMeasurement'; // NOSONAR
 

@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type HealthUiSchemaFunction } from '@minvws/mgo-hcim-ui';
 import { capitalize } from 'lodash-es';
-import { SchemaContext } from '../../../api/schemaContext/schemaContext';
-import { zibLaboratoryTestResultObservation } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
-import { type GpLaboratoryResult } from './gpLaboratoryResult';
+import { SchemaContext } from '../../../api/schemaContext/schemaContext.js';
+import { zibLaboratoryTestResultObservation } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation.js';
+import { type GpLaboratoryResult } from './gpLaboratoryResult.js';
 
 export const i18n = 'r3.gp_laboratory_result';
 

@@ -1,11 +1,11 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Procedure } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Procedure } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { parseFocalDevice } from './elements/focalDevice/focalDevice';
-import { parsePerformer } from './elements/performer/performer';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseFocalDevice } from './elements/focalDevice/focalDevice.js';
+import { parsePerformer } from './elements/performer/performer.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure'; // NOSONAR
 

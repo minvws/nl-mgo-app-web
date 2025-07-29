@@ -1,8 +1,6 @@
-import { parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
-import { type Nullable } from '@minvws/mgo-utils';
-import { type HumanName } from 'fhir/r4';
-import { filterPrimitiveByExtension } from '../../../../../hcim-parse/src/helpers';
-import { map } from '../../../utils';
+import { type HumanName } from '@minvws/mgo-fhir/r4';
+import { filterPrimitiveByExtension, parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
+import { map, type Nullable } from '@minvws/mgo-utils';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation'; // NOSONAR
 const profileGiven = 'http://nictiz.nl/fhir/StructureDefinition/zib-NameInformation.Given'; // NOSONAR

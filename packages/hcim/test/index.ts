@@ -1,8 +1,8 @@
 import { setEmptyEntries, type HealthUiGroup, type HealthUiSchema } from '@minvws/mgo-hcim-ui';
 import { expect } from 'vitest';
-import { testSchemaContext } from './schemaContext';
+import { testSchemaContext } from './schemaContext.js';
 
-export { faker } from './faker';
+export { faker } from './faker/index.js';
 
 export function expectJson(value: unknown) {
     // replace undefined with null so it shows up in the json snapshot
@@ -21,4 +21,4 @@ export function expectHealthCareUiSchemaJson(
     return expectJson(setEmptyEntries(context)(uiSchema));
 }
 
-export { testSchemaContext } from './schemaContext';
+export { testSchemaContext } from './schemaContext.js';

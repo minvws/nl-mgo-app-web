@@ -1,10 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { parseZibLaboratoryTestResultObservationBase } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
-import { summary } from './summary';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseZibLaboratoryTestResultObservationBase } from '../zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult'; // NOSONAR
 

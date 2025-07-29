@@ -1,12 +1,12 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { fhirMessage } from '@minvws/mgo-intl/test/shared';
-import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
-import { gpLaboratoryResult } from '././gpLaboratoryResult';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import { i18n } from './summary';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import { gpLaboratoryResult } from './gpLaboratoryResult.js';
+import { i18n } from './summary.js';
 
 test('01: mgo-resource', async () => {
     const output = gpLaboratoryResult.parse(input01 as Observation);

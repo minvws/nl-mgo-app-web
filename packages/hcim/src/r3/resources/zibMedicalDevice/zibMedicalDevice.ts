@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type DeviceUseStatement } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type DeviceUseStatement } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice'; // NOSONAR
 

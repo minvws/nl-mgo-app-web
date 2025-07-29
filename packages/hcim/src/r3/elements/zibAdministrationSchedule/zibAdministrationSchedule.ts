@@ -1,9 +1,8 @@
+import { type Timing } from '@minvws/mgo-fhir/r3';
 import { MgoElementMeta, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
-import { type Nullable } from '@minvws/mgo-utils';
-import { type Timing } from 'fhir/r3';
-import { type ResourceElementConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { uiSchemaGroup } from './uiSchemaGroup';
+import { map, type Nullable } from '@minvws/mgo-utils';
+import { type ResourceElementConfig } from '../../../resourceTypes.js';
+import { uiSchemaGroup } from './uiSchemaGroup.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdministrationSchedule'; // NOSONAR
 

@@ -1,8 +1,8 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Condition } from 'fhir/r3';
+import { type Condition } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input from './fixtures/fhir-resource.json';
-import { zibProblem } from './zibProblem';
+import input from './fixtures/fhir-resource.json' with { type: 'json' };
+import { zibProblem } from './zibProblem.js';
 
 test('01: mgo-resource', async () => {
     const output = zibProblem.parse(input as Condition);

@@ -1,10 +1,10 @@
 import { expectJson, faker, testSchemaContext } from '$test';
+import { type Timing } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
-import { type Timing } from 'fhir/r3';
 import { expect, test } from 'vitest';
-import inputFhirData from './fixtures/fhir-resource.json';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { zibAdministrationSchedule } from './zibAdministrationSchedule';
+import inputFhirData from './fixtures/fhir-resource.json' with { type: 'json' };
+import { uiSchemaGroup } from './uiSchemaGroup.js';
+import { zibAdministrationSchedule } from './zibAdministrationSchedule.js';
 
 test('zibInstructionsForUse returns the expected output', async () => {
     const output = zibAdministrationSchedule.parse(inputFhirData as Timing);

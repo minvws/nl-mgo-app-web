@@ -1,10 +1,14 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Practitioner } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Practitioner } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { parseNlCoreAddress, parseNlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import {
+    parseNlCoreAddress,
+    parseNlCoreContactpoint,
+    parseNlCoreHumanname,
+} from '../../elements/index.js';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; // NOSONAR
 

@@ -1,12 +1,12 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Patient } from 'fhir/r3';
+import { type Patient } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import input04 from './fixtures/04/fhir-resource.json';
-import input05 from './fixtures/05/fhir-resource.json';
-import { nlCorePatient } from './nlCorePatient';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import input04 from './fixtures/04/fhir-resource.json' with { type: 'json' };
+import input05 from './fixtures/05/fhir-resource.json' with { type: 'json' };
+import { nlCorePatient } from './nlCorePatient.js';
 
 test('01: mgo-resource', async () => {
     const output = nlCorePatient.parse(input01 as Patient);

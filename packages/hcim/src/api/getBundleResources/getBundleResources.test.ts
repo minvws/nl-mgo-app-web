@@ -1,7 +1,7 @@
 import { faker } from '$test';
+import { type Bundle } from '@minvws/mgo-fhir/r3';
 import { expect, test } from 'vitest';
-import { getBundleResources } from './getBundleResources';
-import { type Bundle } from 'fhir/r3';
+import { getBundleResources } from './getBundleResources.js';
 
 test('returns the expected output', () => {
     const resource1 = faker.fhir.medicationStatement();

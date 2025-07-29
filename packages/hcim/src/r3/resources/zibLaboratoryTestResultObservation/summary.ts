@@ -1,10 +1,10 @@
+import { type MgoCode } from '@minvws/mgo-hcim-parse';
 import { common, systemCode } from '@minvws/mgo-hcim-ui';
+import { map } from '@minvws/mgo-utils';
 import { capitalize } from 'lodash-es';
-import { type MgoCode } from '../../../../../hcim-parse/src/type';
-import { SummarySchemaFunction } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult';
-import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation';
+import { SummarySchemaFunction } from '../../../resourceTypes.js';
+import { type GpLaboratoryResult } from '../gpLaboratoryResult/gpLaboratoryResult.js';
+import { type ZibLaboratoryTestResultObservation } from './zibLaboratoryTestResultObservation.js';
 
 export const i18n = 'r3.zib_laboratory_test_result_observation';
 

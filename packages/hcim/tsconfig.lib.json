@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.base.vite.json",
+    "extends": "../../tsconfig.base.lib.json",
     "compilerOptions": {
         "baseUrl": ".",
         "rootDir": "src",
@@ -9,12 +9,7 @@
         "types": [],
         "lib": ["es2022", "dom"]
     },
-    "include": [
-        "src/**/*.ts",
-        "../hcim-parse/src/index.ts",
-        "../hcim-parse/src/parse.ts",
-        "../hcim-parse/src/types.ts"
-    ],
+    "include": ["src/**/*.ts"],
     "references": [
         {
             "path": "../intl/tsconfig.lib.json"

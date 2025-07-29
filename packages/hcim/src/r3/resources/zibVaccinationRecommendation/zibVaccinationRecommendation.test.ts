@@ -1,8 +1,8 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type ImmunizationRecommendation } from 'fhir/r3';
+import { type ImmunizationRecommendation } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import inputFhirData01 from './fixtures/01/fhir-resource.json';
-import { zibVaccinationRecommendation } from './zibVaccinationRecommendation';
+import inputFhirData01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import { zibVaccinationRecommendation } from './zibVaccinationRecommendation.js';
 
 test('01: mgo-resource', async () => {
     const output = zibVaccinationRecommendation.parse(

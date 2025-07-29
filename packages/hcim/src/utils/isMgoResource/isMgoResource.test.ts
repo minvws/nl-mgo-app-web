@@ -1,7 +1,7 @@
 import { faker } from '$test';
+import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { expect, test } from 'vitest';
-import { type MgoResourceMeta } from '../../../../hcim-parse/src/helpers/resourceMeta/resourceMeta';
-import { isMgoResource } from './isMgoResource';
+import { isMgoResource } from './isMgoResource.js';
 
 test('returns true for MgoResourceMeta', () => {
     const data: MgoResourceMeta = {

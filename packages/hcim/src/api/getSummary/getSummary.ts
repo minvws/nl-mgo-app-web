@@ -1,9 +1,9 @@
+import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { setEmptyEntries, type HealthUiSchema } from '@minvws/mgo-hcim-ui';
 import { Locale } from '@minvws/mgo-intl';
-import { type MgoResourceMeta } from '../../../../hcim-parse/src/helpers/resourceMeta/resourceMeta';
-import { isMgoResource } from '../../utils/isMgoResource/isMgoResource';
-import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { createSchemaContext, SchemaOptions } from '../schemaContext/schemaContext';
+import { isMgoResource } from '../../utils/isMgoResource/isMgoResource.js';
+import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
+import { createSchemaContext, SchemaOptions } from '../schemaContext/schemaContext.js';
 
 export function getSummary<T extends MgoResourceMeta>(
     resource: T,
@@ -13,7 +13,7 @@ export function getSummary<T extends MgoResourceMeta>(
     // we want to ensure we're really dealing with a MGO Resource.
     if (!isMgoResource(resource)) {
         throw new Error(
-            `input does not seem to be a valid MGO Resource. Received MGO resource profile: "${resource?.profile}"`
+            `input does not seem to be a valid MGO Resource. Received MGO resource profile: "${(resource as MgoResourceMeta)?.profile}"`
         );
     }
 

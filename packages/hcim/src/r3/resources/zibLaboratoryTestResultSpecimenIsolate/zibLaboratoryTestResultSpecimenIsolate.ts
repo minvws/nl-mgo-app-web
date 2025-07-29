@@ -1,10 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Specimen } from '@minvws/mgo-fhir/r3';
+import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Specimen } from 'fhir/r3';
-import { oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 
 const profile =
     'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Specimen-Isolate'; // NOSONAR

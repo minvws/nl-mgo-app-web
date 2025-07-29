@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type PractitionerRole } from 'fhir/r4';
+import { type PractitionerRole } from '@minvws/mgo-fhir/r4';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { nlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { nlCoreHealthProfessionalPractitionerRole } from './nlCoreHealthProfessionalPractitionerRole.js';
 
 test('01: mgo-resource', async () => {
     const output = nlCoreHealthProfessionalPractitionerRole.parse(input01 as PractitionerRole);

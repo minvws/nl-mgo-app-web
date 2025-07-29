@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type ProcedureRequest } from 'fhir/r3';
+import { type ProcedureRequest } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input1 from './fixtures/01/fhir-resource.json';
-import input2 from './fixtures/02/fhir-resource.json';
-import { zibProcedureRequest } from './zibProcedureRequest';
+import input1 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input2 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { zibProcedureRequest } from './zibProcedureRequest.js';
 
 test('01: mgo-resource', async () => {
     const output = zibProcedureRequest.parse(input1 as ProcedureRequest);

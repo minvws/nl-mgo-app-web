@@ -1,13 +1,13 @@
+import { type Dosage } from '@minvws/mgo-fhir/r3';
 import { type MgoElementMeta, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { map, type Nullable } from '@minvws/mgo-utils';
-import { type Dosage } from 'fhir/r3';
-import { type ResourceElementConfig } from '../../../resourceTypes';
+import { type ResourceElementConfig } from '../../../resourceTypes.js';
 import {
     zibAdministrationSchedule,
     type ZibAdministrationSchedule,
-} from '../zibAdministrationSchedule/zibAdministrationSchedule';
-import { summary } from './summary';
-import { uiSchemaGroup } from './uiSchemaGroup';
+} from '../zibAdministrationSchedule/zibAdministrationSchedule.js';
+import { summary } from './summary.js';
+import { uiSchemaGroup } from './uiSchemaGroup.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-InstructionsForUse'; // NOSONAR
 

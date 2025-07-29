@@ -1,4 +1,5 @@
 import { FhirVersion, type BackboneElement, type FhirResource } from '@minvws/mgo-fhir';
+import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import {
     HealthUiGroup,
     HealthUiGroupFunction,
@@ -7,8 +8,7 @@ import {
     UiContext,
 } from '@minvws/mgo-hcim-ui';
 import { type Nullable } from '@minvws/mgo-utils';
-import { type MgoResourceMeta } from '../../hcim-parse/src/helpers/resourceMeta/resourceMeta';
-import { SchemaContext } from './api/schemaContext/schemaContext';
+import { SchemaContext } from './api/schemaContext/schemaContext.js';
 
 export type SchemaFunctionWithSchemaContext<T extends MgoResourceMeta> = (
     parsedResource: T,

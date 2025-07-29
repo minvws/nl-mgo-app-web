@@ -1,11 +1,12 @@
-import { parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
-import { type Nullable } from '@minvws/mgo-utils';
-import { type ContactPoint } from 'fhir/r4';
+import { type ContactPoint } from '@minvws/mgo-fhir/r4';
 import {
+    parse,
     type MgoCode,
     type MgoCodeableConcept,
+    type MgoElementMeta,
     type MgoString,
-} from '../../../../../hcim-parse/src/type';
+} from '@minvws/mgo-hcim-parse';
+import { type Nullable } from '@minvws/mgo-utils';
 
 const profileTelephone =
     'http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformationTelephoneNumbers'; // NOSONAR

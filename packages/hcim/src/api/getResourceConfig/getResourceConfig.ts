@@ -1,7 +1,7 @@
 import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir';
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
-import { type ResourceConfig } from '../../resourceTypes';
-import { resourcesMapR3, resourcesMapR4 } from '../resources/resources';
+import { type ResourceConfig } from '../../resourceTypes.js';
+import { resourcesMapR3, resourcesMapR4 } from '../resources/resources.js';
 
 type Config<
     V extends FhirVersion | `${FhirVersion}`,

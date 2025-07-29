@@ -1,10 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Medication } from '@minvws/mgo-fhir/r4';
+import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Medication } from 'fhir/r4';
-import { oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-PharmaceuticalProduct'; // NOSONAR
 

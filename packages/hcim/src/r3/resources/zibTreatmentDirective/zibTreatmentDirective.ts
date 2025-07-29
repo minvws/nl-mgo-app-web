@@ -1,11 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Consent } from '@minvws/mgo-fhir/r3';
+import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Consent } from 'fhir/r3';
+import { map } from '@minvws/mgo-utils';
 import { isEmpty } from 'lodash-es';
-import { oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective'; // NOSONAR
 
