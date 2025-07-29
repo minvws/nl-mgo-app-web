@@ -1,6 +1,6 @@
 # [MGO] - MGO internationalization
 
-This package contains all the text content used within MGO. It utilises [lokalise] for managing the content and translations. We use [FormatJS][formatjs] to integrate the text content within the application.
+This package contains all the text content used within [MGO][repo]. It utilises [lokalise] for managing the content and translations. We use [FormatJS][formatjs] to integrate the text content within the application.
 
 The content is divided into 2 parts:
 
@@ -8,6 +8,18 @@ The content is divided into 2 parts:
   This contains all the text content that is used within the application. For all the pages, buttons and forms etc. This content is also used by the mobile apps.
 - **mgo-fhir**
   This contains all the text content that is used for creating the [Health Ui Schemas][hui-schema]. It contains the labels for fields related to the [ZIB] information. And code / system translations that are used. This content is only used by `web` as the mobile apps only use the already translated [Health Ui Schemas][hui-schema].
+
+## Installation
+
+```shell
+npm i --save @minvws/mgo-intl
+
+# or
+
+pnpm add @minvws/mgo-intl
+```
+
+See the **[package source][source]** for more details
 
 ## Making text changes
 
@@ -162,3 +174,5 @@ However when a production build is created the latest content will be downloaded
 [core-intl]: https://formatjs.github.io/docs/intl
 [global-type]: https://formatjs.github.io/docs/react-intl/#typing-message-ids-and-locale
 [intl-config]: https://formatjs.github.io/docs/intl#intlshape
+[repo]: https://github.com/minvws/nl-mgo-app-web
+[source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/intl

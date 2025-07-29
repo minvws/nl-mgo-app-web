@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { type MgoTime } from '@minvws/mgo-hcim-parse';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { time } from './time';
 

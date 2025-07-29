@@ -2,7 +2,7 @@ import { useAuth, type AuthState } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { flushCallStack } from '@minvws/mgo-utils';
 import { screen, within } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';

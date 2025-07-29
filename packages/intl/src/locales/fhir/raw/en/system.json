@@ -1,0 +1,17 @@
+{
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|follicular": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|luteal": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|midcycle": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|normal": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|post": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|postmeopausal": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|pre": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|pre-puberty": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|recommended": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|therapeutic": "",
+    "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|treatment": "",
+    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "",
+    "system.value.http:\/\/unitsofmeasure.org|d": "{value, plural, one {} other {}}",
+    "system.value.http:\/\/unitsofmeasure.org|mmol\/L": "{value, plural, one {} other {}}",
+    "system.value.urn:oid:2.16.840.1.113883.2.4.4.1.900.2|245": "{value, plural, one {} other {}}"
+}

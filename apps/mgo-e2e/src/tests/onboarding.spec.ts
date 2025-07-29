@@ -1,4 +1,4 @@
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from '../setup';
 
 test('User goes through the onboarding flow and visits the privacy statement', async ({

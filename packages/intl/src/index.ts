@@ -3,16 +3,16 @@ export {
     type AppIntlOptions,
     type AppIntlShape,
     type AppMessagesIds,
-} from './config/app/app';
+} from './config/app/app.js';
 export {
     getFhirIntlConfig,
     type FhirIntlOptions,
     type FhirIntlShape,
     type FhirMessagesIds,
-} from './config/fhir/fhir';
-export { createHelpers, type IntlHelpers } from './helpers/createHelpers';
+} from './config/fhir/fhir.js';
+export { createHelpers, type IntlHelpers } from './helpers/createHelpers.js';
 
-export { Locale } from './locale';
+export { Locale } from './locale.js';
 
 export {
     createIntl,

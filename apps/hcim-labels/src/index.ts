@@ -12,7 +12,7 @@ import { processDefinitions } from './processDefinitions';
 
 export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
-const outputDir = resolvePath('../../intl/locales/static/raw/nl');
+const outputDir = resolvePath('../../intl/src/locales/static/raw/nl');
 
 const dirR4NlCore = resolvePath('../fhir-definitions/nictiz.fhir.nl.r4.nl-core');
 const dirR4Zib2020 = resolvePath('../fhir-definitions/nictiz.fhir.nl.r4.zib2020');
