@@ -1,5 +1,5 @@
 import { faker } from '$test';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { systemValue } from '../../format/systemValue/systemValue.js';
 import { sampledData } from './sampledData.js';

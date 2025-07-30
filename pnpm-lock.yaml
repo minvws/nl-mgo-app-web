@@ -547,7 +547,7 @@ importers:
     dependencies:
       '@formatjs/cli':
         specifier: ^6.6.1
-        version: 6.7.1(@vue/compiler-core@3.5.16)
+        version: 6.7.2(@vue/compiler-core@3.5.16)
       '@formatjs/intl':
         specifier: ^3.1.4
         version: 3.1.6(typescript@5.8.3)
@@ -1929,15 +1929,15 @@ packages:
     resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
 
-  '@formatjs/cli@6.7.1':
-    resolution: {integrity: sha512-ULiXbLkbuTyd8f0qaByu1Nuc+jbAOLH1qRAtHZ7waIABQGPBB93OQ2FFtQPgoYoupKOKyNr+PZXR6pOT45E4EQ==}
+  '@formatjs/cli@6.7.2':
+    resolution: {integrity: sha512-714/ifbtq7CmOtcLVGjYZp5EX0vKclQt3XZ+4Oiz0lhrHWU1ObFTtX9sLS9dADGta1pgDtS4+A3YpjWMY26Spg==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:
-      '@glimmer/env': ^0.1.7
-      '@glimmer/reference': ^0.94.0
+      '@glimmer/env': '*'
+      '@glimmer/reference': '*'
       '@glimmer/syntax': ^0.94.9
-      '@glimmer/validator': ^0.94.0
+      '@glimmer/validator': '*'
       '@vue/compiler-core': ^3.5.12
       content-tag: ^3.0.0
       ember-template-recast: ^6.1.5
@@ -9345,7 +9345,7 @@ snapshots:
 
   '@faker-js/faker@8.4.1': {}
 
-  '@formatjs/cli@6.7.1(@vue/compiler-core@3.5.16)':
+  '@formatjs/cli@6.7.2(@vue/compiler-core@3.5.16)':
     optionalDependencies:
       '@vue/compiler-core': 3.5.16
 

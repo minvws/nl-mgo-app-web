@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-intl/test';
+import { fhirMessage } from '@minvws/mgo-intl/test/shared';
 import { type Observation } from 'fhir/r3';
 import { expect, test } from 'vitest';
 import { gpLaboratoryResult } from '././gpLaboratoryResult';

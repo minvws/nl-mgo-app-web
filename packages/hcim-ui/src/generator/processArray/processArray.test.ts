@@ -5,7 +5,7 @@ import {
     type MgoString,
 } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { boolean } from '../../type/boolean/boolean.js';
 import { codeableConcept } from '../../type/codeableConcept/codeableConcept.js';

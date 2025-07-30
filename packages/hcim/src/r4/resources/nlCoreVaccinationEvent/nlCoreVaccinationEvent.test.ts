@@ -1,5 +1,5 @@
 import { expectHealthCareUiSchemaJson, expectJson, faker, testSchemaContext } from '$test';
-import { fhirMessage } from '@minvws/mgo-intl/test';
+import { fhirMessage } from '@minvws/mgo-intl/test/shared';
 import { type Immunization } from 'fhir/r4';
 import { expect, test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json';

@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { type MgoCoding, type MgoCodingProps } from '@minvws/mgo-hcim-parse';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { type Nullable } from '@minvws/mgo-utils';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type UiContext } from '../../context/index.js';

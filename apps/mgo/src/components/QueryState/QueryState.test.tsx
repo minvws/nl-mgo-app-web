@@ -1,7 +1,7 @@
 import { setup, setupWithAppProviders } from '$test/helpers';
 import { supressConsoleError } from '$test/helpers/supressConsoleError';
 import { faker } from '@faker-js/faker';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { QueryState, type QueryStateProps } from './QueryState';

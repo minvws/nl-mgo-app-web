@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { type MgoDateTime } from '@minvws/mgo-hcim-parse';
-import { testMessage } from '@minvws/mgo-intl/test';
+import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { date as formatDateTime } from '../../format/date/date.js';
 import { dateTime } from './dateTime.js';
