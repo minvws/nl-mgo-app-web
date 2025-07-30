@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../types';
-import { dropEmptyEntries } from './dropEmptyEntries';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../types/index.js';
+import { dropEmptyEntries } from './dropEmptyEntries.js';
 
 test('drops empty entries, but does not mutate the schema', () => {
     const entry1: UiElement = {

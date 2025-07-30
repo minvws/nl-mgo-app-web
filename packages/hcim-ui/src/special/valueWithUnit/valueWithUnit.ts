@@ -1,7 +1,11 @@
 import { type PrimitiveValueType } from '@minvws/mgo-hcim-parse';
-import { format } from '../../format';
-import { valueOf } from '../../helpers/valueOf/valueOf';
-import { type CombinedUiFunction, type SingleValue, type WithUiContext } from '../../types';
+import { format } from '../../format/index.js';
+import { valueOf } from '../../helpers/valueOf/valueOf.js';
+import {
+    type CombinedUiFunction,
+    type SingleValue,
+    type WithUiContext,
+} from '../../types/index.js';
 
 export const valueWithUnit: WithUiContext<
     CombinedUiFunction<

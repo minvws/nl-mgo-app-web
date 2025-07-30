@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { type DateTimeString } from '@minvws/mgo-fhir';
 import { expect, test } from 'vitest';
-import { date } from './date';
+import { date } from './date.js';
 
 test('format dateTime returns undefined for nullish', () => {
     const value = faker.custom.nullish();

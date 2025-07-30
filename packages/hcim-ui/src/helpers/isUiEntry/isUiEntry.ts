@@ -1,4 +1,4 @@
-import { type UiElement } from '../../types';
+import { type UiElement } from '../../types/index.js';
 
 export function isUiEntry<T extends UiElement['type']>(
     entry: UiElement,

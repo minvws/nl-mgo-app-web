@@ -4,7 +4,7 @@ import {
     type DownloadLink,
     type UiFunctionWithoutLabel,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const attachment: WithUiContext<
     UiFunctionWithoutLabel<MgoAttachment, DownloadLink | DownloadBinary>

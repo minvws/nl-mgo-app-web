@@ -2,10 +2,10 @@ import { faker } from '$test';
 import { type ExtensionValue, type MgoBoolean, type MgoString } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
-import { boolean } from '../../type/boolean/boolean';
-import { string } from '../../type/string/string';
-import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { processMgoType } from './processMgoType';
+import { boolean } from '../../type/boolean/boolean.js';
+import { string } from '../../type/string/string.js';
+import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { processMgoType } from './processMgoType.js';
 
 test('processes mgo types with their configured ui helper', () => {
     const rootPath = faker.lorem.word();

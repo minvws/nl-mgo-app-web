@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test, vi } from 'vitest';
-import { systemCode } from './systemCode';
+import { systemCode } from './systemCode.js';
 
 test('systemCode uses the translated code if available', () => {
     const context = faker.ui.context();

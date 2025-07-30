@@ -2,9 +2,9 @@ import { faker } from '$test';
 import { type MgoCodeableConcept } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { type UiContext } from '../../context';
-import { system } from '../../format/system/system';
-import { codeableConcept } from './codeableConcept';
+import { type UiContext } from '../../context/index.js';
+import { system } from '../../format/system/system.js';
+import { codeableConcept } from './codeableConcept.js';
 
 const mockSystem = system as unknown as MockedFunction<typeof system>;
 

@@ -2,10 +2,10 @@ import { faker } from '$test';
 import { type MgoIdentifier, type MgoString } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi } from 'vitest';
-import { type HealthUiGroup, type UiElement } from '../../types';
-import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext';
-import { getProfileKey } from '../getProfileKey/getProfileKey';
-import { processValue } from './processValue';
+import { type HealthUiGroup, type UiElement } from '../../types/index.js';
+import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
+import { getProfileKey } from '../getProfileKey/getProfileKey.js';
+import { processValue } from './processValue.js';
 
 test('null values result in no elements', () => {
     const context = createGeneratorContext(

@@ -1,13 +1,13 @@
 import { faker } from '$test';
 import { expect, test, vi } from 'vitest';
-import { getTypes } from '../../type';
-import { quantity } from '../../type/quantity/quantity';
-import { string } from '../../type/string/string';
-import { type HealthUiGroup } from '../../types';
-import { oneOfValueX } from './oneOfValueX';
+import { getTypes } from '../../type/index.js';
+import { quantity } from '../../type/quantity/quantity.js';
+import { string } from '../../type/string/string.js';
+import { type HealthUiGroup } from '../../types/index.js';
+import { oneOfValueX } from './oneOfValueX.js';
 
 vi.mock('../../type', async (importOriginal) => {
-    const { getTypes } = await importOriginal<typeof import('../../type')>();
+    const { getTypes } = await importOriginal<typeof import('../../type/index.js')>();
     return { getTypes: vi.fn(getTypes) };
 });
 

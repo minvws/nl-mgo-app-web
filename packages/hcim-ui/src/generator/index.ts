@@ -1,1 +1,1 @@
-export { generateUiSchema } from './generateUiSchema/generateUiSchema';
+export { generateUiSchema } from './generateUiSchema/generateUiSchema.js';

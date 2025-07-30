@@ -3,7 +3,7 @@ import { type MgoQuantityProps } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { beforeEach } from 'node:test';
 import { expect, test, vi } from 'vitest';
-import { range } from './range';
+import { range } from './range.js';
 
 vi.mock('../../format/systemValue/systemValue', () => ({
     systemValue: vi.fn(

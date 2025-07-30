@@ -2,8 +2,8 @@ import { faker } from '$test';
 import { type MgoPositiveInt, type MgoString, type MgoType } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
-import { numberToString } from '../../helpers/numberToString/numberToString';
-import { createUiElementHelper } from './createUiElementHelper';
+import { numberToString } from '../../helpers/numberToString/numberToString.js';
+import { createUiElementHelper } from './createUiElementHelper.js';
 
 test('creates a helper to process single value types', () => {
     const createUiElement = createUiElementHelper(faker.ui.context());

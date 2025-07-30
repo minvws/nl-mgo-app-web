@@ -1,12 +1,12 @@
 import { type MgoTime } from '@minvws/mgo-hcim-parse';
 import { isNonNullish } from '@minvws/mgo-utils';
-import { valueOf } from '../../helpers/valueOf/valueOf';
+import { valueOf } from '../../helpers/valueOf/valueOf.js';
 import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const time: WithUiContext<UiFunction<MgoTime | MgoTime[], SingleValue | MultipleValues>> =
     (context) =>

@@ -1,1 +1,1 @@
-export { faker } from './faker';
+export { faker } from './faker/index.js';

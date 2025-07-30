@@ -1,7 +1,7 @@
-import { type UiContext } from '../../context';
-import { type HealthUiGroup, type HealthUiSchema } from '../../types';
-import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry';
-import { isUiSchemaGroup } from '../isUiSchemaGroup/isUiSchemaGroup';
+import { type UiContext } from '../../context/index.js';
+import { type HealthUiGroup, type HealthUiSchema } from '../../types/index.js';
+import { isEmptyUiEntry } from '../isEmptyUiEntry/isEmptyUiEntry.js';
+import { isUiSchemaGroup } from '../isUiSchemaGroup/isUiSchemaGroup.js';
 
 function processGroup(group: HealthUiGroup, { formatMessage }: UiContext): HealthUiGroup {
     return {

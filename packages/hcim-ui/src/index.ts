@@ -1,11 +1,11 @@
-export { dropEmptyEntries } from './helpers';
+export { dropEmptyEntries } from './helpers/index.js';
 
-export type * from './types';
+export * from './types/index.js';
 
-export { common } from './common';
-export { createUiContext, type UiContext, type UiContextOptions } from './context';
-export { generateUiSchema } from './generator';
-export * from './helpers';
-export { createUiHelpers, type UiHelpers } from './ui';
+export { common } from './common/index.js';
+export { createUiContext, type UiContext, type UiContextOptions } from './context/index.js';
+export { generateUiSchema } from './generator/index.js';
+export * from './helpers/index.js';
+export { createUiHelpers, type UiHelpers } from './ui.js';
 
-export { systemCode } from './format/systemCode/systemCode';
+export { systemCode } from './format/systemCode/systemCode.js';

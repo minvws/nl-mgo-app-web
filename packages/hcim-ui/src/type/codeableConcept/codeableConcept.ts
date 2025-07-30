@@ -1,13 +1,13 @@
 import { type MgoCodeableConcept } from '@minvws/mgo-hcim-parse';
 import { isNonNullish } from '@minvws/mgo-utils';
-import { system } from '../../format/system/system';
+import { system } from '../../format/system/system.js';
 import {
     type FormatDisplayFunction,
     type MultipleGroupedValues,
     type MultipleValues,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 const codeableDisplay: WithUiContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
     (context) => (value) => {

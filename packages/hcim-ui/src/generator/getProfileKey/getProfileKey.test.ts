@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { getProfileKey } from './getProfileKey';
+import { getProfileKey } from './getProfileKey.js';
 
 test('creates a snake_cased key that is used for translations', () => {
     const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient';

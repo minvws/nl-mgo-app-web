@@ -1,9 +1,9 @@
 import { type MgoResourceMeta, type ValueType } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { type Lossless, type Nullable } from '@minvws/mgo-utils';
-import { type UiContext } from '../context';
-import { type UiHelpers } from '../ui';
-import { type HealthUiGroup, type HealthUiSchema, type UiElement } from './schema';
+import { type UiContext } from '../context/index.js';
+import { type UiHelpers } from '../ui.js';
+import { type HealthUiGroup, type HealthUiSchema, type UiElement } from './schema.js';
 
 export type WithUiContext<T> = (context: UiContext) => T;
 

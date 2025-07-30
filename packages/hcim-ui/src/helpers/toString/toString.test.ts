@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { toString } from './toString';
+import { toString } from './toString.js';
 
 test.each([null, undefined])('returns undefined for %j', (value) => {
     expect(toString(value)).toBe(undefined);

@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { hasExtensions } from './hasExtensions';
+import { hasExtensions } from './hasExtensions.js';
 
 test('returns false for nullish', () => {
     const value = null;

@@ -1,5 +1,5 @@
-import { UiContext } from '../../context/index';
-import { type UiElement } from '../../types';
+import { UiContext } from '../../context/index.js';
+import { type UiElement } from '../../types/index.js';
 
 export function organization(
     { formatMessage }: UiContext,

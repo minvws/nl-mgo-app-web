@@ -1,6 +1,6 @@
 import { type DateString, type DateTimeString, type InstantDateTimeString } from '@minvws/mgo-fhir';
 import { isNullish } from '@minvws/mgo-utils';
-import { type FormatFunction, type WithUiContext } from '../../types';
+import { type FormatFunction, type WithUiContext } from '../../types/index.js';
 
 const milliseconds = /T\d\d:\d\d:\d\d\.\d+/i;
 const seconds = /T\d\d:\d\d:\d\d/i;

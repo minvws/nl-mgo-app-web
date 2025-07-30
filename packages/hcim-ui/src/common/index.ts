@@ -1,5 +1,5 @@
-import { organization } from './organization/organization';
-import { summaryOptions } from './summaryOptions/summaryOptions';
+import { organization } from './organization/organization.js';
+import { summaryOptions } from './summaryOptions/summaryOptions.js';
 
 export const common = {
     organization,

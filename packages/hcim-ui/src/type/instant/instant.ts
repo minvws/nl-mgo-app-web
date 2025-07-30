@@ -1,12 +1,12 @@
 import { type MgoInstant } from '@minvws/mgo-hcim-parse';
 import { isNonNullish } from '@minvws/mgo-utils';
-import { date } from '../../format/date/date';
+import { date } from '../../format/date/date.js';
 import {
     type MultipleValues,
     type SingleValue,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const instant: WithUiContext<
     UiFunction<MgoInstant | MgoInstant[], SingleValue | MultipleValues>

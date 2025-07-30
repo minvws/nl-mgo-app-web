@@ -523,6 +523,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      type-fest:
+        specifier: ^4.23.0
+        version: 4.41.0
     devDependencies:
       '@faker-js/faker':
         specifier: ^8.4.0
@@ -533,9 +536,6 @@ importers:
       '@types/node':
         specifier: ^22.5.0
         version: 22.15.29
-      type-fest:
-        specifier: ^4.23.0
-        version: 4.41.0
       typescript:
         specifier: ^5.4.5
         version: 5.8.3

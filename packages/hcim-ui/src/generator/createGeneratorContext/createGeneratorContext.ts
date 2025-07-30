@@ -1,6 +1,6 @@
 import { type FhirVersion } from '@minvws/mgo-fhir';
-import { UiContext } from 'src/context';
-import { createUiElementHelper } from '../createUiElementHelper/createUiElementHelper';
+import { UiContext } from '../../context/index.js';
+import { createUiElementHelper } from '../createUiElementHelper/createUiElementHelper.js';
 
 export type GeneratorContext = {
     formatMessage: UiContext['formatMessage'];

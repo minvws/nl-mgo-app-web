@@ -5,7 +5,7 @@ import {
     type SingleValue,
     type UiFunction,
     type WithUiContext,
-} from '../../types';
+} from '../../types/index.js';
 
 export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
     return value?.text;

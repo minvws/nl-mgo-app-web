@@ -1,6 +1,6 @@
 import { type LosslessNumber } from '@minvws/mgo-utils';
 import { expect, test } from 'vitest';
-import { numberToString } from './numberToString';
+import { numberToString } from './numberToString.js';
 
 class LosslessNumberMock {
     constructor(private value: string) {}

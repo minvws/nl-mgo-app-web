@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
-import { systemValue } from '../../format/systemValue/systemValue';
-import { sampledData } from './sampledData';
+import { systemValue } from '../../format/systemValue/systemValue.js';
+import { sampledData } from './sampledData.js';
 
 test('sampled data', () => {
     const label = faker.custom.fhirMessageId();

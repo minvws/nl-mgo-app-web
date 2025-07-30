@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type UiElement } from '../../types';
-import { isEmptyUiEntry } from './isEmptyUiEntry';
+import { type UiElement } from '../../types/index.js';
+import { isEmptyUiEntry } from './isEmptyUiEntry.js';
 
 test.each<Partial<UiElement>>([
     { type: 'REFERENCE_VALUE', reference: undefined },

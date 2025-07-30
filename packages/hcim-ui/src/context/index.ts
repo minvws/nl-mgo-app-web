@@ -8,7 +8,7 @@ import {
     type FhirIntlShape,
     type Locale,
 } from '@minvws/mgo-intl';
-import { createLabelFormatter } from './formatLabel';
+import { createLabelFormatter } from './formatLabel.js';
 
 export type UiContextOptions = {
     isSummary?: boolean;

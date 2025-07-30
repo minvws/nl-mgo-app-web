@@ -1,10 +1,10 @@
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash-es';
-import { type UiContext } from '../../context';
-import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup';
-import { getTypes } from '../../type';
-import { type HealthUiGroup, type UiElement } from '../../types';
+import { type UiContext } from '../../context/index.js';
+import { isUiSchemaGroup } from '../../helpers/isUiSchemaGroup/isUiSchemaGroup.js';
+import { getTypes } from '../../type/index.js';
+import { type HealthUiGroup, type UiElement } from '../../types/index.js';
 
 export const oneOfValueX =
     (context: UiContext) =>

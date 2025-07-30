@@ -1,6 +1,6 @@
 import { faker } from '$test';
 import { expect, test, vi } from 'vitest';
-import { systemValue } from './systemValue';
+import { systemValue } from './systemValue.js';
 
 test('systemValue returns basic format when there is no translation', () => {
     const context = faker.ui.context();

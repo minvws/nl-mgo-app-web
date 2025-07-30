@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import * as format from './value';
-import { numberToString } from '../../helpers';
+import { numberToString } from '../../helpers/index.js';
+import * as format from './value.js';
 
 test('format valueWithUnit return undefined for nullish value', () => {
     const value = faker.custom.nullish();

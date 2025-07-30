@@ -1,7 +1,7 @@
 import { faker } from '$test';
 import { expect, test } from 'vitest';
-import { type HealthUiGroup } from '../../types';
-import { getChildren } from './getChildren';
+import { type HealthUiGroup } from '../../types/index.js';
+import { getChildren } from './getChildren.js';
 
 test('returns an empty array is value is nullish', () => {
     expect(getChildren(null)).toEqual([]);

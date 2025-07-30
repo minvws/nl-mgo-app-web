@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi } from 'vitest';
-import { date } from '../../format/date/date';
-import { period } from './period';
+import { date } from '../../format/date/date.js';
+import { period } from './period.js';
 
 test('period, defaults to fhir.start/end labels', () => {
     const label = faker.custom.fhirMessageId();

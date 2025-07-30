@@ -1,6 +1,6 @@
 import { type MgoCodingProps } from '@minvws/mgo-hcim-parse';
 import { isNullish } from '@minvws/mgo-utils';
-import { type FormatFunction, type WithUiContext } from '../../types';
+import { type FormatFunction, type WithUiContext } from '../../types/index.js';
 
 export const systemCode: WithUiContext<FormatFunction<MgoCodingProps>> =
     ({ formatMessage, hasMessage }) =>

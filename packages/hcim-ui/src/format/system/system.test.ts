@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { type UiContext } from '../../context';
-import { systemCode } from '../systemCode/systemCode';
-import { system } from './system';
+import { type UiContext } from '../../context/index.js';
+import { systemCode } from '../systemCode/systemCode.js';
+import { system } from './system.js';
 
 const mockSystemCode = systemCode as unknown as MockedFunction<typeof systemCode>;
 

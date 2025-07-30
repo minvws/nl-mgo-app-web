@@ -1,9 +1,13 @@
 import { type MgoCode } from '@minvws/mgo-hcim-parse';
 import { type FhirMessagesIds } from '@minvws/mgo-intl';
 import { isNonNullish, isNullish, type Nullable } from '@minvws/mgo-utils';
-import { type UiContext } from '../../context';
-import { valueOf } from '../../helpers/valueOf/valueOf';
-import { type MultipleValues, type SingleValue, type UiFunctionOptions } from '../../types';
+import { type UiContext } from '../../context/index.js';
+import { valueOf } from '../../helpers/valueOf/valueOf.js';
+import {
+    type MultipleValues,
+    type SingleValue,
+    type UiFunctionOptions,
+} from '../../types/index.js';
 
 type i18nCode<T extends string | undefined> =
     Extract<FhirMessagesIds, `codes.${string}.${T}`> extends `codes.${infer R}.${T}` ? R : never;

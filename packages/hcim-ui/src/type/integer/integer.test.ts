@@ -1,8 +1,8 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
-import { numberToString } from '../../helpers';
-import { integer } from './integer';
+import { numberToString } from '../../helpers/index.js';
+import { integer } from './integer.js';
 
 test('integer', () => {
     const label = faker.custom.fhirMessageId();
