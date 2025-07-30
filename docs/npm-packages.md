@@ -61,7 +61,14 @@ When you are working with a brand new package there are a few extra steps that n
 
 You might also want to test the package first on github:
 
+Replace `<package>` with the full package name, e.g. `@minvws/mgo-utils`
+
 ```shell
+# ensure types are in order
+pnpm exec nx run <package>:typecheck
+# ensure build runs ok
+pnpm exec nx run <package>:build
+# execute a dry run to see what will be in the changelog
 pnpm exec nx release -p <package> --dry-run --skip-publish --first-release
 # When happy with the results continue...
 pnpm exec nx release -p <package> --skip-publish --first-release

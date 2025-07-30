@@ -90,14 +90,7 @@ pnpm run <command>
 | `messages:update` | Download latest translations from lokalise, see [mgo-intl] for details.                              |
 | `pr`              | Runs all the checks that are normally also ran for a pull request                                    |
 | `e2e`             | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
-
-### Package release commands
-
-| Command          | Description                 |
-| ---------------- | --------------------------- |
-| `prerelease:dry` | Preview pre-release changes |
-| `prerelease`     | Create new pre-release      |
-| `publish:github` | Publish release to Github   |
+| `graph`           | Graph dependencies within workspace.                                                                 |
 
 ## NX
 
