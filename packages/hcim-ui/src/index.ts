@@ -1,6 +1,6 @@
 export { dropEmptyEntries } from './helpers/index.js';
 
-export type * from './types/index.js';
+export * from './types/index.js';
 
 export { common } from './common/index.js';
 export { createUiContext, type UiContext, type UiContextOptions } from './context/index.js';
