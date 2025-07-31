@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Encounter } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Encounter } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { parseZibEncounterBase } from '../zibEncounter/zibEncounter';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseZibEncounterBase } from '../zibEncounter/zibEncounter.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter'; // NOSONAR
 

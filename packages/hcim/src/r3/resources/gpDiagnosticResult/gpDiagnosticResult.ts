@@ -1,9 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Observation } from 'fhir/r3';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { parseZibGeneralMeasurementBase } from '../zibGeneralMeasurement/zibGeneralMeasurement';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseZibGeneralMeasurementBase } from '../zibGeneralMeasurement/zibGeneralMeasurement.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-DiagnosticResult'; // NOSONAR
 

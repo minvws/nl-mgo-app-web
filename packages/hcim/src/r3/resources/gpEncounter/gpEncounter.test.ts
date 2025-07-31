@@ -1,8 +1,8 @@
 import { expectJson, testSchemaContext } from '$test';
-import { type Encounter } from 'fhir/r3';
+import { type Encounter } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import { gpEncounter } from './gpEncounter';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import { gpEncounter } from './gpEncounter.js';
 
 test('returns the expected output 01', async () => {
     const output = gpEncounter.parse(input01 as Encounter);

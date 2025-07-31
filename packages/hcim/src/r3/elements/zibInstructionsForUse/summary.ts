@@ -1,8 +1,8 @@
 import { type HealthUiGroup, type HealthUiGroupFunction } from '@minvws/mgo-hcim-ui';
-import { type ZibInstructionsForUse } from './zibInstructionsForUse';
+import { type ZibInstructionsForUse } from './zibInstructionsForUse.js';
 
-import { SchemaContext } from '../../../api/schemaContext/schemaContext';
-import { i18n } from './uiSchemaGroup';
+import { SchemaContext } from '../../../api/schemaContext/schemaContext.js';
+import { i18n } from './uiSchemaGroup.js';
 
 export const summary: HealthUiGroupFunction<ZibInstructionsForUse, HealthUiGroup, SchemaContext> = (
     resource,

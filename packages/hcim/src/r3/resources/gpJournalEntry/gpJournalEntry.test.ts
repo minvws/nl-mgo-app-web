@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Observation } from 'fhir/r3';
+import { type Observation } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { gpJournalEntry } from './gpJournalEntry';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { gpJournalEntry } from './gpJournalEntry.js';
 
 test('01: mgo-resource', async () => {
     const output = gpJournalEntry.parse(input01 as Observation);

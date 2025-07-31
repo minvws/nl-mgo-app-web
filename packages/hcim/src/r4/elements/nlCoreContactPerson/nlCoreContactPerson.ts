@@ -1,20 +1,26 @@
-import { parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
-import { type Nullable } from '@minvws/mgo-utils';
-import { type PatientContact } from 'fhir/r4';
+import { type PatientContact } from '@minvws/mgo-fhir/r4';
+import {
+    filterCodeableConcept,
+    parse,
+    type MgoCodeableConcept,
+    type MgoElementMeta,
+} from '@minvws/mgo-hcim-parse';
+import { map, type Nullable } from '@minvws/mgo-utils';
+import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst.js';
+import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst.js';
 import {
     parseNlCoreAddressInformation,
-    parseNlCoreContactInformation,
-    parseNlCoreNameInformation,
     type R4NlCoreAddressInformation,
+} from '../nlCoreAddressInformation/nlCoreAddressInformation.js';
+import {
+    parseNlCoreContactInformation,
     type R4NlCoreContactInformation,
+} from '../nlCoreContactInformation/nlCoreContactInformation.js';
+import {
+    parseNlCoreNameInformation,
     type R4NlCoreNameInformation,
     type R4NlCoreNameInformationGiven,
-} from '..';
-import { filterCodeableConcept } from '../../../../../hcim-parse/src/helpers';
-import { type MgoCodeableConcept } from '../../../../../hcim-parse/src/type';
-import { map } from '../../../utils';
-import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst';
-import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst';
+} from '../nlCoreNameInformation/nlCoreNameInformation.js';
 
 export type R4NlCoreContactPerson = MgoElementMeta<typeof profile> & {
     relationship: {

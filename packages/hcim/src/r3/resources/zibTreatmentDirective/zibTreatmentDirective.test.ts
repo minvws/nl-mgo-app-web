@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Consent } from 'fhir/r3';
+import { type Consent } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import inputFhirData01 from './fixtures/01/fhir-resource.json';
-import inputFhirData02 from './fixtures/02/fhir-resource.json';
-import { zibTreatmentDirective } from './zibTreatmentDirective';
+import inputFhirData01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import inputFhirData02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { zibTreatmentDirective } from './zibTreatmentDirective.js';
 
 test('01: mgo-resource', async () => {
     const output = zibTreatmentDirective.parse(inputFhirData01 as Consent);

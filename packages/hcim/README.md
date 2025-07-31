@@ -2,20 +2,33 @@
 
 This package contains functionality for transforming HCIM [FHIR] data to MGO resources and Health Ui Schemas.
 
-For more context on why / how this is used please [visit the about documentation][about-zib-ui].
+For more context on why / how this is used please [visit the about documentation][about-hcim-ui].
 
-## Usage
+## Installation
 
+```shell
+npm i --save @minvws/mgo-hcim
+
+# or
+
+pnpm add @minvws/mgo-hcim
 ```
 
-const fhirBundle: Bundle<Patient> = await fhirClient.getResources({ resource: 'Patient' }).json()
+## Use
 
-const patients: Patient[] = getBundleResources( fhirBundle )
+```typescript
+import { type Bundle, type MedicationStatement } from '@minvws/mgo-fhir/r3';
+import { getBundleResources, getSummary, getDetails, type HealthUiSchema } from '@minvws/mgo-hcim';
 
-const mgoPatient = getMgoResource( patients[0], { fhirVersion: 'R3' })
+// The FHIR data needs to be according to the Nictiz HCIM
+// e.g.: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317279
+const hcimMedicationUseBundle: Bundle<MedicationStatement> = [ ... ]
 
-const patientSummarySchema: HealthUiSchema = getSummary( mgoPatient )
-const patientDetailsSchema: HealthUiSchema = getDetails( mgoPatient )
+const hcimMedicationUse: MedicationStatement[] = getBundleResources(fhirBundle);
+const mgoMedicationUse = getMgoResource(zibMedicationUse[0]);
+
+const medicationUseSummary: HealthUiSchema = getSummary(mgoMedicationUse);
+const medicationUseDetails: HealthUiSchema = getDetails(mgoMedicationUse);
 ```
 
 ## API
@@ -63,31 +76,14 @@ The `getDetails()` function returns the full `HealthUiSchema` containing all det
 - **@param** `{SchemaOptions} schemaOptions`
 - **@returns** `{HealthUiSchema}`
 
-## JSON API
-
-Each of the API functions describer above are also available with a `JSON` interface. This takes the argument(s) as a `JSON` string and returns the result as a `JSON` string as well. These are used by the mobile applications. It will be the same function name with `Json` appended:
-
-- getBundleResourcesJson
-- getMgoResourceJson
-- getSummaryJson
-- getDetailsJson
-
-For example:
-
-```
-getSummaryJson( resource: JsonString.<MgoResource>), options: JsonString.<SchemaOptions> ): JsonString.<HealthUiSchema>
-```
-
 <hr>
 
 See the **[package source][source]** for more details
 
 _This package and its documentation are still under development._
 
-[MGO]: ../../README.md
-[FHIR]: ../../docs/glossary.md#FHIR
-[ZIB]: ../../docs/glossary.md#ZIB
-[about-zib-ui]: ../../docs/about.md#from-zib-to-ui
+[FHIR]: https://github.com/minvws/nl-mgo-app-web/blob/main/docs/glossary.md#FHIR
+[ZIB]: https://github.com/minvws/nl-mgo-app-web/blob/main/docs/glossary.md#ZIB
+[about-hcim-ui]: https://github.com/minvws/nl-mgo-app-web/blob/main/docs/about.md#from-hcim-to-ui
 [fhir-bundle]: https://build.fhir.org/bundle.html
-[repo]: https://github.com/minvws/nl-mgo-app-web
 [source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/hcim

@@ -1,9 +1,9 @@
 import { common } from '@minvws/mgo-hcim-ui';
+import { map } from '@minvws/mgo-utils';
 import { capitalize } from 'lodash-es';
-import { SummarySchemaFunction } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { zibInstructionsForUse } from '../../elements';
-import { type ZibMedicationUse } from './zibMedicationUse';
+import { type SummarySchemaFunction } from '../../../resourceTypes.js';
+import { zibInstructionsForUse } from '../../elements/index.js';
+import { type ZibMedicationUse } from './zibMedicationUse.js';
 /**
  * @see: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317343
  */

@@ -1,12 +1,12 @@
 import { expectHealthCareUiSchemaJson, expectJson, faker, testSchemaContext } from '$test';
+import { type Immunization } from '@minvws/mgo-fhir/r4';
 import { fhirMessage } from '@minvws/mgo-intl/test/shared';
-import { type Immunization } from 'fhir/r4';
 import { expect, test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import { r4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent';
-import { i18n } from './summary';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import { r4NlCoreVaccinationEvent } from './nlCoreVaccinationEvent.js';
+import { i18n } from './summary.js';
 
 test('01 - mgo-resource', async () => {
     const mgoResource = r4NlCoreVaccinationEvent.parse(input01 as Immunization);

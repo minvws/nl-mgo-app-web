@@ -1,10 +1,9 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type PractitionerRole } from '@minvws/mgo-fhir/r4';
+import { filterCodeableConcept, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type PractitionerRole } from 'fhir/r4';
-import { filterCodeableConcept } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { parseNlCoreContactInformation } from '../../elements';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { parseNlCoreContactInformation } from '../../elements/index.js';
 
 const profile =
     'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole'; // NOSONAR

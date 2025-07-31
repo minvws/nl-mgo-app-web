@@ -1,9 +1,9 @@
 import { expectJson } from '$test';
-import { type ContactPoint } from 'fhir/r4';
+import { type ContactPoint } from '@minvws/mgo-fhir/r4';
 import { expect, test } from 'vitest';
 
-import input01 from './fixtures/01/fhir-resource.json';
-import { parseNlCoreContactInformation } from './nlCoreContactInformation';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import { parseNlCoreContactInformation } from './nlCoreContactInformation.js';
 
 test('returns the expected output 01', async () => {
     const telecom = input01 as ContactPoint[];

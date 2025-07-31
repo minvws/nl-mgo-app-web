@@ -7,11 +7,11 @@ import {
 } from '@minvws/mgo-hcim-ui';
 import { Locale } from '@minvws/mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
-import { type ResourceConfig } from '../../resourceTypes';
-import { getResourceConfig } from '../getResourceConfig/getResourceConfig';
-import { type MgoResource } from '../resources/resources';
-import { createSchemaContext, SchemaOptions } from '../schemaContext/schemaContext';
-import { getSummary } from './getSummary';
+import { type ResourceConfig } from '../../resourceTypes.js';
+import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
+import { type MgoResource } from '../resources/resources.js';
+import { createSchemaContext, SchemaOptions } from '../schemaContext/schemaContext.js';
+import { getSummary } from './getSummary.js';
 
 const mockGetResourceConfig = getResourceConfig as MockedFunction<typeof getResourceConfig>;
 

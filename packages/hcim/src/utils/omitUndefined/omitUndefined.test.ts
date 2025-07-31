@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { omitUndefined } from './omitUndefined';
+import { omitUndefined } from './omitUndefined.js';
 
 test('omitUndefined', () => {
     expect(omitUndefined({ a: 1, b: undefined })).toEqual({ a: 1 });

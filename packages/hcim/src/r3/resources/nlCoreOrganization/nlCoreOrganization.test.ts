@@ -1,10 +1,10 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Organization } from 'fhir/r3';
+import { type Organization } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import input03 from './fixtures/03/fhir-resource.json';
-import { nlCoreOrganization } from './nlCoreOrganization';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
+import { nlCoreOrganization } from './nlCoreOrganization.js';
 
 test('01: mgo-resource', async () => {
     const output = nlCoreOrganization.parse(input01 as Organization);

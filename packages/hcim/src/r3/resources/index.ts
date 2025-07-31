@@ -7,57 +7,60 @@
  *   - Don't forget to also export the ResourceType from the `~/api/types` file to make it available for the mobile apps.
  */
 
-export * from './gpDiagnosticResult/gpDiagnosticResult';
-export * from './gpEncounter/gpEncounter';
-export * from './gpEncounterReport/gpEncounterReport';
-export * from './gpJournalEntry/gpJournalEntry';
-export * from './gpLaboratoryResult/gpLaboratoryResult';
+export * from './gpDiagnosticResult/gpDiagnosticResult.js';
+export * from './gpEncounter/gpEncounter.js';
+export * from './gpEncounterReport/gpEncounterReport.js';
+export * from './gpJournalEntry/gpJournalEntry.js';
+export * from './gpLaboratoryResult/gpLaboratoryResult.js';
 
-export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare';
-export * from './nlCoreOrganization/nlCoreOrganization';
-export * from './nlCorePatient/nlCorePatient';
-export * from './nlCorePractitioner/nlCorePractitioner';
-export * from './nlCorePractitionerRole/nlCorePractitionerRole';
+export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare.js';
+export * from './nlCoreOrganization/nlCoreOrganization.js';
+export * from './nlCorePatient/nlCorePatient.js';
+export * from './nlCorePractitioner/nlCorePractitioner.js';
+export * from './nlCorePractitionerRole/nlCorePractitionerRole.js';
 
-export * from './eAfspraakAppointment/eAfspraakAppointment';
-export { nlCoreObservation, type NlCoreObservation } from './nlCoreObservation/nlCoreObservation';
-export * from './zibAdministrationAgreement/zibAdministrationAgreement';
-export * from './zibAdvanceDirective/zibAdvanceDirective';
-export * from './zibAlcoholUse/zibAlcoholUse';
-export * from './zibAlert/zibAlert';
-export * from './zibAllergyIntolerance/zibAllergyIntolerance';
-export * from './zibBloodPressure/zibBloodPressure';
-export * from './zibBodyHeight/zibBodyHeight';
-export * from './zibBodyWeight/zibBodyWeight';
-export * from './zibDrugUse/zibDrugUse';
-export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter';
-export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus';
+export * from './eAfspraakAppointment/eAfspraakAppointment.js';
+export {
+    nlCoreObservation,
+    type NlCoreObservation,
+} from './nlCoreObservation/nlCoreObservation.js';
+export * from './zibAdministrationAgreement/zibAdministrationAgreement.js';
+export * from './zibAdvanceDirective/zibAdvanceDirective.js';
+export * from './zibAlcoholUse/zibAlcoholUse.js';
+export * from './zibAlert/zibAlert.js';
+export * from './zibAllergyIntolerance/zibAllergyIntolerance.js';
+export * from './zibBloodPressure/zibBloodPressure.js';
+export * from './zibBodyHeight/zibBodyHeight.js';
+export * from './zibBodyWeight/zibBodyWeight.js';
+export * from './zibDrugUse/zibDrugUse.js';
+export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter.js';
+export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus.js';
 export {
     zibGeneralMeasurement,
     type ZibGeneralMeasurement,
-} from './zibGeneralMeasurement/zibGeneralMeasurement';
+} from './zibGeneralMeasurement/zibGeneralMeasurement.js';
 export {
     zibLaboratoryTestResultObservation,
     type ZibLaboratoryTestResultObservation,
-} from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation';
-export * from './zibLaboratoryTestResultSpecimen/zibLaboratoryTestResultSpecimen';
-export * from './zibLaboratoryTestResultSpecimenIsolate/zibLaboratoryTestResultSpecimenIsolate';
-export * from './zibLaboratoryTestResultSubstance/zibLaboratoryTestResultSubstance';
-export * from './zibLivingSituation/zibLivingSituation';
-export * from './zibMedicalDevice/zibMedicalDevice';
-export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct';
-export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest';
-export * from './zibMedicationAgreement/zibMedicationAgreement';
-export * from './zibMedicationUse/zibMedicationUse';
-export * from './zibNutritionAdvice/zibNutritionAdvice';
-export * from './zibPayer/zibPayer';
-export * from './zibProblem/zibProblem';
-export * from './zibProcedure/zibProcedure';
-export * from './zibProcedureRequest/zibProcedureRequest';
-export * from './zibProduct/zibProduct';
-export * from './zibTobaccoUse/zibTobaccoUse';
-export * from './zibTreatmentDirective/zibTreatmentDirective';
-export * from './zibVaccination/zibVaccination';
-export * from './zibVaccinationRecommendation/zibVaccinationRecommendation';
+} from './zibLaboratoryTestResultObservation/zibLaboratoryTestResultObservation.js';
+export * from './zibLaboratoryTestResultSpecimen/zibLaboratoryTestResultSpecimen.js';
+export * from './zibLaboratoryTestResultSpecimenIsolate/zibLaboratoryTestResultSpecimenIsolate.js';
+export * from './zibLaboratoryTestResultSubstance/zibLaboratoryTestResultSubstance.js';
+export * from './zibLivingSituation/zibLivingSituation.js';
+export * from './zibMedicalDevice/zibMedicalDevice.js';
+export * from './zibMedicalDeviceProduct/zibMedicalDeviceProduct.js';
+export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest.js';
+export * from './zibMedicationAgreement/zibMedicationAgreement.js';
+export * from './zibMedicationUse/zibMedicationUse.js';
+export * from './zibNutritionAdvice/zibNutritionAdvice.js';
+export * from './zibPayer/zibPayer.js';
+export * from './zibProblem/zibProblem.js';
+export * from './zibProcedure/zibProcedure.js';
+export * from './zibProcedureRequest/zibProcedureRequest.js';
+export * from './zibProduct/zibProduct.js';
+export * from './zibTobaccoUse/zibTobaccoUse.js';
+export * from './zibTreatmentDirective/zibTreatmentDirective.js';
+export * from './zibVaccination/zibVaccination.js';
+export * from './zibVaccinationRecommendation/zibVaccinationRecommendation.js';
 
-export * from './iheMhdMinimalDocumentReference/iheMhdMinimalDocumentReference';
+export * from './iheMhdMinimalDocumentReference/iheMhdMinimalDocumentReference.js';

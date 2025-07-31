@@ -1,0 +1,17 @@
+{
+    "name": "examples-utils-typescript",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build:test": "tsc --project tsconfig.json",
+        "pretest": "npm install @minvws/mgo-hcim@latest",
+        "test": "npm run build:test && node --no-warnings dist/index.js"
+    },
+    "devDependencies": {
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@minvws/mgo-fhir": "^0.1.1-8",
+        "@minvws/mgo-hcim": "^0.1.1-0"
+    }
+}

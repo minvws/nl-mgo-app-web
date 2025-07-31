@@ -1,6 +1,6 @@
+import { type ContactPoint } from '@minvws/mgo-fhir/r3';
 import { parse, type MgoElementMeta } from '@minvws/mgo-hcim-parse';
 import { type Nullable } from '@minvws/mgo-utils';
-import { type ContactPoint } from 'fhir/r3';
 
 /*
  * @see https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18/files/2317022

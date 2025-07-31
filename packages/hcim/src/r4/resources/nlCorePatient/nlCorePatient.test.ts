@@ -1,8 +1,8 @@
 import { expectJson, testSchemaContext } from '$test';
-import { type Patient } from 'fhir/r4';
+import { type Patient } from '@minvws/mgo-fhir/r4';
 import { test } from 'vitest';
-import input01 from './fixtures/fhir-resource.json';
-import { r4NlCorePatient } from './nlCorePatient';
+import input01 from './fixtures/fhir-resource.json' with { type: 'json' };
+import { r4NlCorePatient } from './nlCorePatient.js';
 
 test('parseNlCorePatient returns the expected output 01', async () => {
     const output = r4NlCorePatient.parse(input01 as Patient);

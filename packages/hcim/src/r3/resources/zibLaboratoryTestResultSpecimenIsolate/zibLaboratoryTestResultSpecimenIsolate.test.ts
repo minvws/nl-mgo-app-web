@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Specimen } from 'fhir/r3';
+import { type Specimen } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { zibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { zibLaboratoryTestResultSpecimenIsolate } from './zibLaboratoryTestResultSpecimenIsolate.js';
 
 test('01: mgo-resource', async () => {
     const output = zibLaboratoryTestResultSpecimenIsolate.parse(input01 as Specimen);

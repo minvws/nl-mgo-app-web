@@ -1,13 +1,16 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Patient } from '@minvws/mgo-fhir/r3';
+import { filterCodeableConcept, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Patient } from 'fhir/r3';
-import { filterCodeableConcept, oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { parseNlCoreAddress, parseNlCoreContactpoint, parseNlCoreHumanname } from '../../elements';
-import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst';
-import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import {
+    parseNlCoreAddress,
+    parseNlCoreContactpoint,
+    parseNlCoreHumanname,
+} from '../../elements/index.js';
+import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst.js';
+import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst.js';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NOSONAR
 

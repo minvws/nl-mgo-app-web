@@ -1,14 +1,13 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Immunization } from '@minvws/mgo-fhir/r4';
+import { filterCodeableConcept, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Immunization } from 'fhir/r4';
-import { filterCodeableConcept, oneOfValueX } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { vaccinationIndicationValueSet } from '../../valueSets/vaccinationIndication';
-import { vaccinationMotiveValueSet } from '../../valueSets/vaccinationMotive';
-import { ziekteWaarTegenGevaccineerdWordtWaardelijst } from '../../valueSets/ziekteWaarTegenGevaccineerdWordtWaardelijst';
-import { summary } from './summary';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { vaccinationIndicationValueSet } from '../../valueSets/vaccinationIndication.js';
+import { vaccinationMotiveValueSet } from '../../valueSets/vaccinationMotive.js';
+import { ziekteWaarTegenGevaccineerdWordtWaardelijst } from '../../valueSets/ziekteWaarTegenGevaccineerdWordtWaardelijst.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event'; // NOSONAR
 

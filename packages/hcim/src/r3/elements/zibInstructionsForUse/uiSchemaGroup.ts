@@ -1,7 +1,7 @@
 import { type HealthUiGroup, type HealthUiGroupFunction } from '@minvws/mgo-hcim-ui';
-import { SchemaContext } from 'src/api/schemaContext/schemaContext';
-import { zibAdministrationSchedule } from '../zibAdministrationSchedule/zibAdministrationSchedule';
-import { type ZibInstructionsForUse } from './zibInstructionsForUse';
+import { SchemaContext } from '../../../api/schemaContext/schemaContext.js';
+import { zibAdministrationSchedule } from '../zibAdministrationSchedule/zibAdministrationSchedule.js';
+import { type ZibInstructionsForUse } from './zibInstructionsForUse.js';
 
 export const i18n = 'r3.zib_instructions_for_use';
 

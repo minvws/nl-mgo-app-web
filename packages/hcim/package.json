@@ -1,11 +1,19 @@
 {
     "name": "@minvws/mgo-hcim",
-    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
+    "version": "0.1.1-0",
+    "files": [
+        "dist/"
+    ],
     "exports": {
-        ".": "./src/index.ts",
-        "./*": "./src/*"
+        "./package.json": "./package.json",
+        ".": {
+            "development": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        }
     },
     "dependencies": {
         "@minvws/mgo-fhir": "workspace:^",

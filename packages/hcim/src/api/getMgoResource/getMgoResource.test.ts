@@ -1,11 +1,11 @@
 import { faker } from '$test';
 import { FhirVersion, type FhirResource } from '@minvws/mgo-fhir';
-import { type Patient as R3Patient } from 'fhir/r3';
-import { type Patient as R4Patient } from 'fhir/r4';
+import { type Patient as R3Patient } from '@minvws/mgo-fhir/r3';
+import { type Patient as R4Patient } from '@minvws/mgo-fhir/r4';
 import { expect, test, vi } from 'vitest';
-import { nlCorePatient as r3NlCorePatient } from '../../r3/resources';
-import { r4NlCorePatient } from '../../r4/resources';
-import { getMgoResource } from './getMgoResource';
+import { nlCorePatient as r3NlCorePatient } from '../../r3/resources/index.js';
+import { r4NlCorePatient } from '../../r4/resources/index.js';
+import { getMgoResource } from './getMgoResource.js';
 
 test('returns the expected output for a R3 Fhir resource', () => {
     const fhirResource: R3Patient = {

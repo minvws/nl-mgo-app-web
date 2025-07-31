@@ -1,11 +1,10 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Observation } from '@minvws/mgo-fhir/r3';
+import { parse, parseObservationComponents } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Observation } from 'fhir/r3';
-import { parseObservationComponents } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { omitUndefined } from '../../../utils';
-import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { omitUndefined } from '../../../utils/index.js';
+import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-JournalEntry'; // NOSONAR
 

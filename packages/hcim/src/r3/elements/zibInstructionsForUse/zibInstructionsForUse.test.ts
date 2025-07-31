@@ -1,11 +1,11 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type Dosage } from 'fhir/r3';
+import { type Dosage } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import inputFhirData01 from './fixtures/01/fhir-resource.json';
-import inputFhirData02 from './fixtures/02/fhir-resource.json';
-import { summary } from './summary';
-import { uiSchemaGroup } from './uiSchemaGroup';
-import { zibInstructionsForUse } from './zibInstructionsForUse';
+import inputFhirData01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import inputFhirData02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { summary } from './summary.js';
+import { uiSchemaGroup } from './uiSchemaGroup.js';
+import { zibInstructionsForUse } from './zibInstructionsForUse.js';
 
 test('01 mgo-resource', async () => {
     const output = zibInstructionsForUse.parse(inputFhirData01 as Dosage);

@@ -1,18 +1,13 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Observation } from '@minvws/mgo-fhir/r3';
+import { filterCodeableConcept, filterCoding, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Observation } from 'fhir/r3';
-import {
-    filterCodeableConcept,
-    filterCoding,
-    oneOfValueX,
-} from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { interpretatieVlaggenCodelijstValueSet } from '../../valueSets/interpretatieVlaggenCodelijst';
-import { resultTypeCodelist } from '../../valueSets/resultTypeCodelist';
-import { Snomed, SNOMED_SYSTEM } from '../../valueSets/snomed';
-import { summary } from './summary';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import { interpretatieVlaggenCodelijstValueSet } from '../../valueSets/interpretatieVlaggenCodelijst.js';
+import { resultTypeCodelist } from '../../valueSets/resultTypeCodelist.js';
+import { Snomed, SNOMED_SYSTEM } from '../../valueSets/snomed.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation'; // NOSONAR
 

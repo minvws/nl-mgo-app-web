@@ -1,8 +1,8 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type DocumentManifest } from 'fhir/r3';
+import { type DocumentManifest } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input from './fixtures/fhir-resource.json';
-import { iheMhdDocumentManifest } from './iheMhdDocumentManifest';
+import input from './fixtures/fhir-resource.json' with { type: 'json' };
+import { iheMhdDocumentManifest } from './iheMhdDocumentManifest.js';
 
 test('01: mgo-resource', async () => {
     const output = iheMhdDocumentManifest.parse(input as DocumentManifest);

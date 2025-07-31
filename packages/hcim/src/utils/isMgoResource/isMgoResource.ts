@@ -1,6 +1,6 @@
 import { type FhirVersion } from '@minvws/mgo-fhir';
 import { type Nullable } from '@minvws/mgo-utils';
-import { type MgoResource } from '../../api/resources/resources';
+import { type MgoResource } from '../../api/resources/resources.js';
 
 export function isMgoResource<V extends FhirVersion = FhirVersion>(
     value: unknown

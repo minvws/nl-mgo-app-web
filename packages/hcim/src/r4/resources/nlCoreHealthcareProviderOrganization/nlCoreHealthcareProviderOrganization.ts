@@ -1,11 +1,13 @@
 import { FhirVersion } from '@minvws/mgo-fhir';
-import { parse } from '@minvws/mgo-hcim-parse';
+import { type Organization } from '@minvws/mgo-fhir/r4';
+import { filterCodeableConcept, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type Organization } from 'fhir/r4';
-import { filterCodeableConcept } from '../../../../../hcim-parse/src/helpers';
-import { type ResourceConfig } from '../../../resourceTypes';
-import { map } from '../../../utils';
-import { parseNlCoreAddressInformation, parseNlCoreContactInformation } from '../../elements';
+import { map } from '@minvws/mgo-utils';
+import { type ResourceConfig } from '../../../resourceTypes.js';
+import {
+    parseNlCoreAddressInformation,
+    parseNlCoreContactInformation,
+} from '../../elements/index.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization'; // NOSONAR
 

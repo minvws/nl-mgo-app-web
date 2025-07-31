@@ -1,9 +1,9 @@
 import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
-import { type DocumentReference } from 'fhir/r3';
+import { type DocumentReference } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { iheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { iheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference.js';
 
 test('01: mgo-resource', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input01 as DocumentReference);

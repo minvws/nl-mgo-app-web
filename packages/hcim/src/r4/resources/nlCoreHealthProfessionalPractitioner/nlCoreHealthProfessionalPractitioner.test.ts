@@ -1,8 +1,8 @@
 import { expectJson, testSchemaContext } from '$test';
-import { type Practitioner } from 'fhir/r4';
+import { type Practitioner } from '@minvws/mgo-fhir/r4';
 import { test } from 'vitest';
-import input from './fixtures/fhir-resource.json';
-import { r4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner';
+import input from './fixtures/fhir-resource.json' with { type: 'json' };
+import { r4NlCoreHealthProfessionalPractitioner } from './nlCoreHealthProfessionalPractitioner.js';
 
 test('returns the expected output', async () => {
     const output = r4NlCoreHealthProfessionalPractitioner.parse(input as Practitioner);

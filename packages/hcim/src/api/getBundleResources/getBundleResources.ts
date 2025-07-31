@@ -1,7 +1,7 @@
 import { type FhirResource, isFhirResource } from '@minvws/mgo-fhir';
+import { type Bundle as BundleR3 } from '@minvws/mgo-fhir/r3';
+import { type Bundle as BundleR4 } from '@minvws/mgo-fhir/r4';
 import { isNonNullish } from '@minvws/mgo-utils';
-import { type Bundle as BundleR3 } from 'fhir/r3';
-import { type Bundle as BundleR4 } from 'fhir/r4';
 
 type BundleResource<T extends BundleR3 | BundleR4> = NonNullable<
     NonNullable<T['entry']>[number]['resource']

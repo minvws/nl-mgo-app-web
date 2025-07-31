@@ -1,9 +1,9 @@
 import { expectJson } from '$test';
-import { type Address } from 'fhir/r4';
+import { type Address } from '@minvws/mgo-fhir/r4';
 import { test } from 'vitest';
-import input01 from './fixtures/01/fhir-resource.json';
-import input02 from './fixtures/02/fhir-resource.json';
-import { parseNlCoreAddressInformation } from './nlCoreAddressInformation';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import { parseNlCoreAddressInformation } from './nlCoreAddressInformation.js';
 
 test('returns the expected output 01', async () => {
     const output = parseNlCoreAddressInformation(input01 as Address);
