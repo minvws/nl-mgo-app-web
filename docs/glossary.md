@@ -20,7 +20,7 @@ A server from a healthcare organization that contains medical data. There are di
 
 ## HCIM
 
-Health and Care Information Model. A [HCIM] is an information model in which a care-based concept is described in terms of the data elements from which that concept exists, the data types of those data elements, etc.
+Health and Care Information Model. The English name for a ZIB. A [HCIM] is an information model in which a care-based concept is described in terms of the data elements from which that concept exists, the data types of those data elements, etc.
 
 ## Health UI Schema
 
@@ -45,7 +45,7 @@ User Interface; A user interface (UI) is the space where interactions between hu
 
 ## Package
 
-An reusable module/chunck of code that can be integrated into a project. This repository is a [monorepo] containing multiple independent packages in the `packages/*` directory.
+An reusable module/chunk of code that can be integrated into a project. This repository is a [monorepo] containing multiple independent packages in the `packages/*` directory.
 
 [MGO]: ../README.md
 [FHIR]: https://fhir.org/

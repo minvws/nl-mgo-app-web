@@ -4,7 +4,8 @@
     "type": "module",
     "version": "0.1.1-1",
     "files": [
-        "dist/"
+        "dist/",
+        "health-ui-schema.png"
     ],
     "exports": {
         "./package.json": "./package.json",

@@ -1,8 +1,31 @@
 # @minvws/mgo-hcim-ui
 
-This package contains functionality for transforming Mgo resources into Health Ui Schemas.
+This package contains functionality for transforming Mgo resources into Health Ui Schemas. It is uses by the [HCIM package][packages-hcim] to provide Health UI Schemas for HCIM FHIR data.
 
-For more context on why / how this is used please [visit the about documentation][about-zib-ui].
+For more context on why / how this is used please [visit the about documentation][about-hcim-ui].
+
+## Installation
+
+```shell
+npm i --save @minvws/mgo-ui
+
+# or
+
+pnpm add @minvws/mgo-ui
+```
+
+## Use
+
+```typescript
+import { type MgoCode } from '@minvws/mgo-hcim-parse';
+import { createUiContext, createUiHelpers } from '@minvws/mgo-hcim-ui';
+import { Locale } from '@minvws/mgo-intl';
+
+const context = createUiContext({ locale: Locale.NL_NL })
+const ui = createUiHelpers( context )
+
+const healthUiSchemaElement = uiHelpers.code('fhir.x.status', {...} /* MgoCode */ );
+```
 
 ## Health UI Schema
 
@@ -50,10 +73,6 @@ See the **[package source][source]** for more details
 
 _This package and its documentation are still under development._
 
-[MGO]: ../../README.md
-[FHIR]: ../../docs/glossary.md#FHIR
-[ZIB]: ../../docs/glossary.md#ZIB
-[about-zib-ui]: ../../docs/about.md#from-zib-to-ui
-[fhir-bundle]: https://build.fhir.org/bundle.html
-[repo]: https://github.com/minvws/nl-mgo-app-web
+[about-hcim-ui]: https://github.com/minvws/nl-mgo-app-web/blob/main/docs/about.md#from-hcim-to-ui
 [source]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/hcim-ui
+[packages-hcim]: https://github.com/minvws/nl-mgo-app-web/tree/main/packages/hcim
