@@ -33,9 +33,10 @@ APP_ENVIRONMENT=local           # Choose the environment you wish to test: `loca
 Now you can run the following commands from this (`apps/mgo-e2e`) directory:
 
 ```
-pnpm e2e     # Runs all the e2e tests in headless mode
-pnpm e2e:ui  # Starts Playwright in UI mode
-pnpm e2e:ci  # Runs all the e2e tests with the same settings as is used in the CI
+pnpm e2e       # Runs all the e2e tests in headless mode
+pnpm e2e:ui    # Starts Playwright in UI mode
+pnpm e2e:ci    # Runs all the e2e tests with the same settings as is used in the CI
+pnpm e2e:test  # Runs all the e2e tests against the test environment
 ```
 
 ## Docker setup for the End-to-end tests
@@ -59,5 +60,6 @@ To run the E2E tests using docker, ensure you have the latest [Docker (Desktop) 
 [docker]: https://www.docker.com/products/docker-desktop/
 [playwright]: https://playwright.dev/
 [playwright-headed]: https://playwright.dev/docs/running-tests#run-tests-in-headed-mode
-[mgo-test]: https://web.test.mgo.irealisatie.nl/
+[mgo-test]: https://web.test.mgo.irealisatie.nl
+[mgo-acc]: https://web.acc.mgo.irealisatie.nl
 [development]: ../../docs/development.md

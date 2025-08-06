@@ -1,3 +1,3 @@
 import { createConfig } from './playwright.base.config';
 
-export default createConfig('local');
+export default createConfig('test');
