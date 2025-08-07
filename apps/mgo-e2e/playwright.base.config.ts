@@ -36,13 +36,11 @@ export function createConfig(appEnv: keyof typeof baseUrls) {
 
     return defineConfig({
         testDir: './src/tests',
-        testMatch: 'medicationUse.spec.ts',
         fullyParallel: true,
         retries: 0,
         reporter: [['html', { outputFolder: outputDir, open: 'never' }]],
         outputDir,
         timeout: 20000,
-        workers: 1,
 
         use: {
             baseURL: baseUrls[appEnv],

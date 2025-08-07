@@ -1,4 +1,4 @@
-name: Morning on Test e2e Tests
+name: Morning on Test - PW e2e Tests
 
 on:
   schedule:
