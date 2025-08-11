@@ -79,7 +79,8 @@
             "path-to-regexp@<0.1.12": "packages/mgo-ui > @storybook/addon-actions@8.3.0 > storybook@8.3.0 > @storybook/core@8.3.0 > express@4.21.0 > path-to-regexp@0.1.10 / https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
             "esbuild@<0.25.0": "packages/mgo-ui > @storybook/addon-actions@8.5.1 > storybook@8.5.1 > @storybook/core@8.5.1 > esbuild@0.24.2 / https://github.com/advisories/GHSA-67mh-4wv8-2f99",
             "koa@<2.16.1": "@nx/react > https://github.com/advisories/GHSA-x2rg-q646-7m2v",
-            "@eslint/plugin-kit@<0.3.3": "https://github.com/advisories/GHSA-xffm-g5w8-qvg7 "
+            "@eslint/plugin-kit@<0.3.3": "https://github.com/advisories/GHSA-xffm-g5w8-qvg7 ",
+            "tmp@<=0.2.3": "https://github.com/advisories/GHSA-52f5-9888-hmc6"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
