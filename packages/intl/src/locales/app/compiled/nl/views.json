@@ -141,10 +141,10 @@
       "value": "Pdf maken van deze lijst?"
     }
   ],
-  "export_pdf.dialog.subheading": [
+  "export_pdf.dialog.subheading_web": [
     {
       "type": 0,
-      "value": "Je maakt een document met je medische gegevens. Die kun je daarna op je telefoon opslaan."
+      "value": "Je maakt een document met je medische gegevens. Het document opent in een nieuw tabblad. Daarna kun je het opslaan."
     }
   ],
   "export_pdf.footer": [
@@ -196,7 +196,7 @@
     },
     {
       "type": 1,
-      "value": "datum"
+      "value": "date"
     },
     {
       "type": 0,
@@ -204,7 +204,7 @@
     },
     {
       "type": 1,
-      "value": "tijdstip"
+      "value": "time"
     },
     {
       "type": 0,

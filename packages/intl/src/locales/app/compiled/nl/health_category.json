@@ -35,6 +35,12 @@
       "value": "Waarschuwing gegevens"
     }
   ],
+  "hc_alerts.subheading": [
+    {
+      "type": 0,
+      "value": "Belangrijke dingen waar zorgverleners op moeten letten"
+    }
+  ],
   "hc_allergies.heading": [
     {
       "type": 0,
@@ -53,6 +59,12 @@
       "value": "Allergiegegevens"
     }
   ],
+  "hc_allergies.subheading": [
+    {
+      "type": 0,
+      "value": "Dingen waar je niet tegen kunt, zoals medicijnen of eten"
+    }
+  ],
   "hc_appointments.heading": [
     {
       "type": 0,
@@ -69,6 +81,12 @@
     {
       "type": 0,
       "value": "Afspraakgegevens"
+    }
+  ],
+  "hc_appointments.subheading": [
+    {
+      "type": 0,
+      "value": "Die je al hebt gehad of die nog komen"
     }
   ],
   "hc_complaints.heading": [
@@ -107,6 +125,12 @@
       "value": "Medische hulpmiddel gegevens"
     }
   ],
+  "hc_devices.subheading": [
+    {
+      "type": 0,
+      "value": "Zorgspullen die je gebruikt, zoals een bril of rollator"
+    }
+  ],
   "hc_documents.error": [
     {
       "type": 0,
@@ -137,6 +161,12 @@
       "value": "Geen bijlage gevonden. Klopt dit niet? Vraag je zorgaanbieder om hulp."
     }
   ],
+  "hc_documents.subheading": [
+    {
+      "type": 0,
+      "value": "Brieven, verslagen en medische beelden zoals foto's of scans"
+    }
+  ],
   "hc_lab_results.heading": [
     {
       "type": 0,
@@ -153,6 +183,12 @@
     {
       "type": 0,
       "value": "Uitslaggegevens"
+    }
+  ],
+  "hc_lab_results.subheading": [
+    {
+      "type": 0,
+      "value": "Resultaten van onderzoeken en tests die je hebt gehad"
     }
   ],
   "hc_lifestyle.heading": [
@@ -173,6 +209,12 @@
       "value": "Leefstijlgegevens"
     }
   ],
+  "hc_lifestyle.subheading": [
+    {
+      "type": 0,
+      "value": "Bijvoorbeeld of je rookt of drinkt, wat je eet en hoeveel je beweegt"
+    }
+  ],
   "hc_measurements.heading": [
     {
       "type": 0,
@@ -189,6 +231,12 @@
     {
       "type": 0,
       "value": "Meetgegevens"
+    }
+  ],
+  "hc_measurements.subheading": [
+    {
+      "type": 0,
+      "value": "Zoals bloeddruk, hartslag, lengte en gewicht"
     }
   ],
   "hc_medication.heading": [
@@ -209,6 +257,12 @@
       "value": "Medicijngegevens"
     }
   ],
+  "hc_medication.subheading": [
+    {
+      "type": 0,
+      "value": "Die je nu of eerder hebt gebruikt"
+    }
+  ],
   "hc_mental.heading": [
     {
       "type": 0,
@@ -225,6 +279,12 @@
     {
       "type": 0,
       "value": "Mentaal welzijngegevens"
+    }
+  ],
+  "hc_mental.subheading": [
+    {
+      "type": 0,
+      "value": "Hoe het geestelijk met je gaat, zoals stress en somberheid"
     }
   ],
   "hc_patient.heading": [
@@ -245,10 +305,16 @@
       "value": "Persoonlijke gegevens"
     }
   ],
+  "hc_patient.subheading": [
+    {
+      "type": 0,
+      "value": "Je naam, adres, geboortedatum en gezinssituatie"
+    }
+  ],
   "hc_payment.heading": [
     {
       "type": 0,
-      "value": "Betaalgegevens"
+      "value": "Zorgkosten"
     }
   ],
   "hc_payment.heading_detail": [
@@ -261,6 +327,12 @@
     {
       "type": 0,
       "value": "Betaalgegevens"
+    }
+  ],
+  "hc_payment.subheading": [
+    {
+      "type": 0,
+      "value": "Je betalingen en verzekeringen"
     }
   ],
   "hc_plans.heading": [
@@ -281,6 +353,24 @@
       "value": "Behandelwens/plan gegevens"
     }
   ],
+  "hc_plans.subheading": [
+    {
+      "type": 0,
+      "value": "Wat je belangrijk vindt in je behandeling zoals wensen en doelen"
+    }
+  ],
+  "hc_problems.heading": [
+    {
+      "type": 0,
+      "value": "Gezondheidsproblemen"
+    }
+  ],
+  "hc_problems.subheading": [
+    {
+      "type": 0,
+      "value": "Dingen waar je last van hebt, zoals pijn of ziekte"
+    }
+  ],
   "hc_treatments.heading": [
     {
       "type": 0,
@@ -299,6 +389,12 @@
       "value": "Behandelgegevens"
     }
   ],
+  "hc_treatments.subheading": [
+    {
+      "type": 0,
+      "value": "Behandelingen en operaties die je hebt gehad of nog krijgt"
+    }
+  ],
   "hc_vaccinations.heading": [
     {
       "type": 0,
@@ -315,6 +411,12 @@
     {
       "type": 0,
       "value": "Vaccinatiegegevens"
+    }
+  ],
+  "hc_vaccinations.subheading": [
+    {
+      "type": 0,
+      "value": "Prikken die je hebt gehad, zoals tegen griep of corona"
     }
   ],
   "health_category.alerts.warnings": [
@@ -549,6 +651,30 @@
     {
       "type": 0,
       "value": "Documenten"
+    }
+  ],
+  "mhc_care_treatment.heading": [
+    {
+      "type": 0,
+      "value": "Zorg en behandeling"
+    }
+  ],
+  "mhc_examinations_results.heading": [
+    {
+      "type": 0,
+      "value": "Onderzoeken en uitslagen"
+    }
+  ],
+  "mhc_health.heading": [
+    {
+      "type": 0,
+      "value": "Gezondheid"
+    }
+  ],
+  "mhc_personal_administration.heading": [
+    {
+      "type": 0,
+      "value": "Persoonlijk en administratie"
     }
   ],
   "zib_administration_agreement.heading": [
