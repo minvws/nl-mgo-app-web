@@ -10,7 +10,7 @@
         "lint": "nx run-many -t lint",
         "lint:fix": "pnpm run -r lint --fix",
         "typecheck": "nx run-many -t typecheck",
-        "storybook": "pnpm run --dir packages/mgo-ui dev",
+        "storybook": "pnpm run --dir packages/ui dev",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "messages:update": "pnpm run --dir packages/intl messages:update",
