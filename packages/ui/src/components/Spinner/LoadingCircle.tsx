@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
-import { type Variant } from './variants';
 import { cn } from '../../utils';
+import { type Variant } from './variants';
 
 export interface LoadingCircleProps extends HTMLAttributes<SVGElement> {
     readonly variant?: Variant;
@@ -15,8 +15,8 @@ const variantStyles: Record<Variant, Styles> = {
         circle: 'stroke-gray-50 dark:stroke-gray-700',
         fill: 'stroke-sky-blue-600',
     },
-    'sky-blue': {
-        circle: 'stroke-sky-blue-500 dark:stroke-gray-700',
+    white: {
+        circle: 'stroke-white/50',
         fill: 'stroke-white',
     },
     gray: {
@@ -32,14 +32,15 @@ export const LoadingCircle = ({ variant = 'default', ...rest }: LoadingCirclePro
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="7"
-            d="M48 27a22 22 0 1 1-44-1 22 22 0 0 1 44 1h0Z"
+            d="M48 27c-.27 11.88-10.117 21.506-22 21.506-12.072 0-22.006-9.934-22.006-22.006 0-.167.002-.333.006-.5.27-11.88 10.117-21.506 22-21.506 12.072 0 22.006 9.934 22.006 22.006 0 .167-.002.333-.006.5Z"
         />
         <path
             className={cn('fill-none', variantStyles[variant].fill)}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="7"
-            d="M26 5a22 22 0 0 1 22 22"
+            transform="translate(.005681 -.505681)"
+            d="M26 5c12.069 0 22 9.931 22 22"
         />
     </svg>
 );
