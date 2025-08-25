@@ -12,7 +12,7 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Married (M in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
+                        "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)"
                     ]
                 },
                 {
@@ -65,7 +65,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -174,7 +174,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -268,7 +268,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Woon-/verblijfadres (PHYS in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Woon-/verblijfadres (PHYS in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -346,7 +346,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Wife (WIFE in code systeem http://hl7.org/fhir/v3/RoleCode)"
+                            "Wife (WIFE in codesysteem http://hl7.org/fhir/v3/RoleCode)"
                         ]
                     ]
                 },
@@ -362,7 +362,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Eerste relatie/contactpersoon (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
+                            "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
                         ]
                     ]
                 },
@@ -375,7 +375,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -447,7 +447,7 @@
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Man (M in code systeem http://hl7.org/fhir/v3/AdministrativeGender)"
+                        "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)"
                     ]
                 }
             ]

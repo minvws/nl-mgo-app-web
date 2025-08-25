@@ -60,7 +60,7 @@
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Surgical reduction of fracture (procedure) (274051007 in code systeem http://snomed.info/sct)"
+                        "Surgical reduction of fracture (procedure) (274051007 in codesysteem http://snomed.info/sct)"
                     ]
                 }
             ]
@@ -78,7 +78,7 @@
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Uitvoerder (PRF in code systeem http://hl7.org/fhir/v3/ParticipationType)"
+                        "Uitvoerder (PRF in codesysteem http://hl7.org/fhir/v3/ParticipationType)"
                     ]
                 }
             ]

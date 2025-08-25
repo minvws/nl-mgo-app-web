@@ -60,7 +60,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Nursing Procedure (9632001 in code systeem http://snomed.info/sct)"
+                            "Nursing Procedure (9632001 in codesysteem http://snomed.info/sct)"
                         ]
                     ]
                 },
@@ -68,7 +68,7 @@
                     "label": "Reden wijzigen of stoppen gebruik",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Drug interaction (finding) (79899007 in code systeem http://snomed.info/sct)"
+                        "Drug interaction (finding) (79899007 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -178,7 +178,7 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ORAAL (9 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                        "ORAAL (9 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)"
                     ]
                 },
                 {
@@ -210,7 +210,7 @@
                     "label": "Zo nodig",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "zo nodig (1137 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
+                        "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
                     ]
                 }
             ]

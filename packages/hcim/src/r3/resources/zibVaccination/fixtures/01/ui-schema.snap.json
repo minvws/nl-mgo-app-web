@@ -30,7 +30,7 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
+                        "hepatitis A immunoglobulin (J06BB11 in codesysteem http://www.whocc.no/atc)"
                     ]
                 },
                 {

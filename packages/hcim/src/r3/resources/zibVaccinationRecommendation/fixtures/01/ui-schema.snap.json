@@ -20,7 +20,7 @@
                     "label": "Order status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ordered (new in code systeem http://hl7.org/fhir/v3/ActStatus)"
+                        "Ordered (new in codesysteem http://hl7.org/fhir/v3/ActStatus)"
                     ]
                 }
             ]
@@ -37,7 +37,7 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "hepatitis A immunoglobulin (J06BB11 in code systeem http://www.whocc.no/atc)"
+                        "hepatitis A immunoglobulin (J06BB11 in codesysteem http://www.whocc.no/atc)"
                     ]
                 },
                 {

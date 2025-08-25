@@ -8,7 +8,7 @@ import {
 } from '$/store';
 import { type RouteParams } from '../routes';
 
-interface UrlParamData extends Partial<RouteParams> {
+export interface UrlParamData extends Partial<RouteParams> {
     organization: HealthcareOrganization | undefined;
     healthCategory: HealthCategory | undefined;
     resource: Resource | undefined;

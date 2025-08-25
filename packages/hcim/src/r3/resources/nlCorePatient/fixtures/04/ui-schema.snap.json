@@ -12,7 +12,7 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Married (M in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
+                        "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)"
                     ]
                 },
                 {
@@ -65,23 +65,23 @@
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Dutch (Netherlands) (nl-NL in code systeem urn:ietf:bcp:47)"
+                        "Dutch (Netherlands) (nl-NL in codesysteem urn:ietf:bcp:47)"
                     ]
                 },
                 {
                     "label": "Leesvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Luistervaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Spreekvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Fair (F in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Fair (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Toelichting",
@@ -97,7 +97,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -206,7 +206,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -354,7 +354,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Husband (HUSB in code systeem http://hl7.org/fhir/v3/RoleCode)"
+                            "Husband (HUSB in codesysteem http://hl7.org/fhir/v3/RoleCode)"
                         ]
                     ]
                 },
@@ -370,7 +370,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Eerste relatie/contactpersoon (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
+                            "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
                         ]
                     ]
                 },
@@ -383,7 +383,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -455,7 +455,7 @@
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Man (M in code systeem http://hl7.org/fhir/v3/AdministrativeGender)"
+                        "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)"
                     ]
                 }
             ]

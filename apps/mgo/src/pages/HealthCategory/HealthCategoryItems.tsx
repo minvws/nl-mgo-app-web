@@ -1,4 +1,3 @@
-import { BackButton } from '$/components/BackButton/BackButton';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { type HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
 import { useNavFocusRef } from '$/hooks';
@@ -9,6 +8,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { Helmet } from 'react-helmet-async';
 import { HealthCategoryContent } from '../../components/HealthCategoryContent/HealthCategoryContent';
 import { NoData } from './NoData';
+import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 
 interface HealthCategoryItemsProps {
     readonly healthCategory: HealthCategory;
@@ -28,7 +28,6 @@ export function HealthCategoryItems({ healthCategory, organization }: HealthCate
     return (
         <>
             <Helmet title={heading} />
-
             <section className="flex-grow">
                 {isError && (
                     <Alert
@@ -51,7 +50,7 @@ export function HealthCategoryItems({ healthCategory, organization }: HealthCate
                     </Alert>
                 )}
 
-                <BackButton />
+                <Breadcrumbs />
 
                 <Heading asChild size="lg">
                     <h1 ref={navFocusRef}>{heading}</h1>

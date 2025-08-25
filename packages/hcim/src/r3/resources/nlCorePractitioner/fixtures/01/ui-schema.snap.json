@@ -38,7 +38,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -145,7 +145,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {

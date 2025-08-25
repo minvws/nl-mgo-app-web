@@ -31,7 +31,7 @@
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Knee joint prosthesis, device (physical object) (109228008 in code systeem http://snomed.info/sct)"
+                        "Knee joint prosthesis, device (physical object) (109228008 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {

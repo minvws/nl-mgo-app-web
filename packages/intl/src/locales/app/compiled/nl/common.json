@@ -17,6 +17,12 @@
       "value": "Mijn Gezondheidsoverzicht"
     }
   ],
+  "common.cancel": [
+    {
+      "type": 0,
+      "value": "Annuleer"
+    }
+  ],
   "common.delete": [
     {
       "type": 0,

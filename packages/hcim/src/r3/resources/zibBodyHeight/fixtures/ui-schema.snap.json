@@ -42,8 +42,8 @@
                     "label": "Positie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Body height (8302-2 in code systeem http://loinc.org)",
-                        "Body height --standing (8308-9 in code systeem http://loinc.org)"
+                        "Body height (8302-2 in codesysteem http://loinc.org)",
+                        "Body height --standing (8308-9 in codesysteem http://loinc.org)"
                     ]
                 },
                 {

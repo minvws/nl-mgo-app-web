@@ -12,7 +12,7 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Domestic partner (T in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
+                        "Domestic partner (T in codesysteem http://hl7.org/fhir/v3/MaritalStatus)"
                     ]
                 },
                 {
@@ -64,7 +64,7 @@
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Dutch (nl in code systeem urn:ietf:bcp:47)"
+                        "Dutch (nl in codesysteem urn:ietf:bcp:47)"
                     ]
                 },
                 {
@@ -96,7 +96,7 @@
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "English (en in code systeem urn:ietf:bcp:47)"
+                        "English (en in codesysteem urn:ietf:bcp:47)"
                     ]
                 },
                 {
@@ -128,7 +128,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Vast telefoonnummer (LL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
+                        "Vast telefoonnummer (LL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
                     ]
                 },
                 {
@@ -237,7 +237,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {
@@ -353,7 +353,7 @@
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Man (M in code systeem http://hl7.org/fhir/v3/AdministrativeGender)"
+                        "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)"
                     ]
                 }
             ]

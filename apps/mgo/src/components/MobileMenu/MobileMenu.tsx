@@ -21,7 +21,7 @@ export const MobileMenu = forwardRef<HTMLUListElement, MobileMenuProps>(function
                 </li>
                 <li>
                     <MobileMenuItem icon="favorite" asChild>
-                        <NavLink to="/organisaties">
+                        <NavLink to="/zorgaanbieders">
                             <FormattedMessage id="menu.organizations_heading" />
                         </NavLink>
                     </MobileMenuItem>

@@ -26,14 +26,14 @@
                     "label": "Meet locatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Left upper arm structure (368208006 in code systeem http://snomed.info/sct)"
+                        "Left upper arm structure (368208006 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Non-invasive (22762002 in code systeem http://snomed.info/sct)"
+                        "Non-invasive (22762002 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -61,7 +61,7 @@
                     "label": "Diastolisch eindpunt",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Phase 5 (255272007 in code systeem http://snomed.info/sct)"
+                        "Phase 5 (255272007 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -78,14 +78,14 @@
                     "label": "Houding",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Sitting position (33586001 in code systeem http://snomed.info/sct)"
+                        "Sitting position (33586001 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Manchet type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Groot (L in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
+                        "Groot (L in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
                     ]
                 },
                 {

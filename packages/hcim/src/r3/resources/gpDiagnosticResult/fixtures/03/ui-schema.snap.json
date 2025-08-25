@@ -21,8 +21,8 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "temperatuur patiënt (oraal gemeten) (1915 in code systeem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
-                        "Lichaamstemperatuur [temperatuur] in ^patiënt (8310-5 in code systeem http://loinc.org)"
+                        "temperatuur patiënt (oraal gemeten) (1915 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                        "Lichaamstemperatuur [temperatuur] in ^patiënt (8310-5 in codesysteem http://loinc.org)"
                     ]
                 },
                 {

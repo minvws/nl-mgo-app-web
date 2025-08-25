@@ -38,7 +38,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Vast telefoonnummer (LL in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
+                        "Vast telefoonnummer (LL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
                     ]
                 },
                 {
@@ -145,7 +145,7 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Werkadres (WP in code systeem http://hl7.org/fhir/v3/AddressUse)"
+                        "Werkadres (WP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
                     ]
                 },
                 {

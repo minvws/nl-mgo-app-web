@@ -16,7 +16,7 @@
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": "inpatient encounter (IMP in code systeem http://hl7.org/fhir/v3/ActCode)"
+                    "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)"
                 },
                 {
                     "label": "Eind datum tijd",

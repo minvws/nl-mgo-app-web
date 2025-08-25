@@ -40,7 +40,7 @@
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Summarization of encounter note Narrative (67781-5 in code systeem http://loinc.org)"
+                        "Summarization of encounter note Narrative (67781-5 in codesysteem http://loinc.org)"
                     ]
                 }
             ]
@@ -52,7 +52,7 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Evaluatie (E in code systeem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
+                        "Evaluatie (E in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
                     ]
                 },
                 {

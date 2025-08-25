@@ -7,7 +7,7 @@
                     "label": "Alcohol gebruik status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Current drinker of alcohol (219006 in code systeem http://snomed.info/sct)"
+                        "Current drinker of alcohol (219006 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {

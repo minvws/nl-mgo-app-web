@@ -44,7 +44,7 @@
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Röntgenfoto (168537006 in code systeem http://snomed.info/sct)"
+                        "Röntgenfoto (168537006 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -143,14 +143,14 @@
                     "label": "Verrichting anatomische locatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Knee region structure (body structure) (72696002 in code systeem http://snomed.info/sct)"
+                        "Knee region structure (body structure) (72696002 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Left (7771000 in code systeem http://snomed.info/sct)"
+                        "Left (7771000 in codesysteem http://snomed.info/sct)"
                     ]
                 }
             ]

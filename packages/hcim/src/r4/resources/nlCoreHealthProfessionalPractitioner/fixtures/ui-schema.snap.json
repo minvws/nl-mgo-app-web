@@ -158,7 +158,7 @@
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Nederland (NL in code systeem urn:iso:std:iso:3166)"
+                        "Nederland (NL in codesysteem urn:iso:std:iso:3166)"
                     ]
                 },
                 {

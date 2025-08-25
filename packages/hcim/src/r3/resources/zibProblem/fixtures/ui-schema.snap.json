@@ -35,7 +35,7 @@
                     "label": "Probleem naam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Fracture of wrist (disorder) (31641000146105 in code systeem http://snomed.info/sct)"
+                        "Fracture of wrist (disorder) (31641000146105 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -47,7 +47,7 @@
                     "label": "Probleemstatus",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Active (55561003 in code systeem http://snomed.info/sct)"
+                        "Active (55561003 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -61,7 +61,7 @@
                     "label": "Verificatie status codelijst",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Unknown (UNK in code systeem http://hl7.org/fhir/v3/NullFlavor)"
+                        "Unknown (UNK in codesysteem http://hl7.org/fhir/v3/NullFlavor)"
                     ]
                 }
             ]
@@ -73,14 +73,14 @@
                     "label": "Probleem anatomische locatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Entire wrist region (361289009 in code systeem http://snomed.info/sct)"
+                        "Entire wrist region (361289009 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Probleem lateraliteit",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Right (24028007 in code systeem http://snomed.info/sct)"
+                        "Right (24028007 in codesysteem http://snomed.info/sct)"
                     ]
                 }
             ]

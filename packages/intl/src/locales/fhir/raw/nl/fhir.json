@@ -1,7 +1,7 @@
 {
     "fhir.boolean.false": "Nee",
     "fhir.boolean.true": "Ja",
-    "fhir.code_in_system": "{code} in code systeem {system}",
+    "fhir.code_in_system": "{code} in codesysteem {system}",
     "fhir.empty_value": "Niet bekend",
     "fhir.group_general_info": "Algemeen",
     "fhir.period.end": "Eind datum",

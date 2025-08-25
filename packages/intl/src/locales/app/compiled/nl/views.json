@@ -89,6 +89,12 @@
       "value": "Ga naar het overzicht"
     }
   ],
+  "detail.breadcrumb": [
+    {
+      "type": 0,
+      "value": "Alle gegevens"
+    }
+  ],
   "dialog.remove_organization_heading": [
     {
       "type": 1,
@@ -117,6 +123,12 @@
       "value": "Ja, weglaten"
     }
   ],
+  "export_pdf.close": [
+    {
+      "type": 0,
+      "value": "Gereed"
+    }
+  ],
   "export_pdf.dialog.create_document": [
     {
       "type": 0,
@@ -141,6 +153,12 @@
       "value": "Dit document is gemaakt met Mijn Gezondheidsoverzicht. Het bevat jouw medische gegevens,\\nafkomstig van zorgaanbieders die jij hebt toegevoegd. Jij bent zelf verantwoordelijk voor wat je\\nmet deze informatie doet. De gegevens zijn niet gecontroleerd op juistheid of volledigheid."
     }
   ],
+  "export_pdf.menu.save_pdf": [
+    {
+      "type": 0,
+      "value": "Opslaan als pdf"
+    }
+  ],
   "export_pdf.no_data": [
     {
       "type": 0,
@@ -163,6 +181,12 @@
     {
       "type": 1,
       "value": "totalPages"
+    }
+  ],
+  "export_pdf.share": [
+    {
+      "type": 0,
+      "value": "Deel deze pdf"
     }
   ],
   "export_pdf.subheading": [
@@ -705,6 +729,12 @@
     {
       "type": 0,
       "value": " staat hoe Mijn Gezondheidsoverzicht je gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
+    }
+  ],
+  "remove_organization.no_cancel": [
+    {
+      "type": 0,
+      "value": "Nee, annuleren"
     }
   ],
   "settings.featureflag.localization": [

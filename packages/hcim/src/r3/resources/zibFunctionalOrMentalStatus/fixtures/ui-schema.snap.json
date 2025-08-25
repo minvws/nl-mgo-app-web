@@ -47,14 +47,14 @@
                     "label": "Status naam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Zich wassen (d510 in code systeem http://hl7.org/fhir/sid/icf-nl)"
+                        "Zich wassen (d510 in codesysteem http://hl7.org/fhir/sid/icf-nl)"
                     ]
                 },
                 {
                     "label": "Status waarde",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ERNSTIGE stoornis (aanzienlijk, hoog, sterk, ...) 50-95% (d510.3 in code systeem http://hl7.org/fhir/sid/icf-nl)"
+                        "ERNSTIGE stoornis (aanzienlijk, hoog, sterk, ...) 50-95% (d510.3 in codesysteem http://hl7.org/fhir/sid/icf-nl)"
                     ]
                 },
                 {

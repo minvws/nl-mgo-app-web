@@ -21,7 +21,7 @@ test('overview should show empty state', async () => {
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen();
 
-    setupApp({ initialEntries: ['/organisaties'] });
+    setupApp({ initialEntries: ['/zorgaanbieders'] });
 
     await flushCallStack();
     expect(screen.getByText(appMessage('organizations.heading'))).toBeInTheDocument();

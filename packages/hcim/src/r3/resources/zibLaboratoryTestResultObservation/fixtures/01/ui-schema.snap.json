@@ -24,7 +24,7 @@
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Above reference range (281302008 in code systeem http://snomed.info/sct)"
+                        "Above reference range (281302008 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -43,7 +43,7 @@
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Chloride [Moles/volume] in Blood (2069-3 in code systeem http://loinc.org)"
+                        "Chloride [Moles/volume] in Blood (2069-3 in codesysteem http://loinc.org)"
                     ]
                 },
                 {
@@ -90,14 +90,14 @@
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Laboratory test finding (finding) (49581000146104 in code systeem http://snomed.info/sct)"
+                        "Laboratory test finding (finding) (49581000146104 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Resultaat type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Serum chemistry test (275711006 in code systeem http://snomed.info/sct)"
+                        "Serum chemistry test (275711006 in codesysteem http://snomed.info/sct)"
                     ]
                 }
             ]

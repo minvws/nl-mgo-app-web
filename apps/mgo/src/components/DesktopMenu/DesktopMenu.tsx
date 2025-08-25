@@ -13,7 +13,7 @@ export function DesktopMenu() {
                         </NavItem>
                     </li>
                     <li>
-                        <NavItem to="/organisaties" icon="favorite">
+                        <NavItem to="/zorgaanbieders" icon="favorite">
                             <FormattedMessage
                                 id="menu.organizations_heading"
                                 description="Zorgaanbieders"

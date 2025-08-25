@@ -11,7 +11,7 @@
                 "label": "Toedieningsweg",
                 "type": "MULTIPLE_VALUES",
                 "display": [
-                    "rectaal (12 in code systeem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                    "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)"
                 ]
             },
             {
@@ -19,7 +19,7 @@
                 "type": "MULTIPLE_GROUPED_VALUES",
                 "display": [
                     [
-                        "Then stop (422327006 in code systeem http://snomed.info/sct)"
+                        "Then stop (422327006 in codesysteem http://snomed.info/sct)"
                     ]
                 ]
             },

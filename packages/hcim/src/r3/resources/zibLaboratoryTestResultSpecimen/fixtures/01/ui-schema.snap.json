@@ -23,7 +23,7 @@
                     "label": "Monstermateriaal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Blood (substance) (87612001 in code systeem http://snomed.info/sct)"
+                        "Blood (substance) (87612001 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -77,7 +77,7 @@
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
+                        "Specimen substance (370133003 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {

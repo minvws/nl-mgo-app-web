@@ -12,7 +12,7 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Divorced (D in code systeem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)"
+                        "Divorced (D in codesysteem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)"
                     ]
                 },
                 {
@@ -24,7 +24,7 @@
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Female (F in code systeem http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender)"
+                        "Female (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender)"
                     ]
                 },
                 {
@@ -142,7 +142,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobile Phone (MC in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+                        "Mobile Phone (MC in codesysteem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
                     ]
                 },
                 {
@@ -204,7 +204,7 @@
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Nederland (NL in code systeem urn:iso:std:iso:3166)"
+                        "Nederland (NL in codesysteem urn:iso:std:iso:3166)"
                     ]
                 },
                 {
@@ -231,7 +231,7 @@
                     "label": "Nationaliteit",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Nederlandse (0001 in code systeem urn:oid:2.16.840.1.113883.2.4.4.16.32)"
+                        "Nederlandse (0001 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.16.32)"
                     ]
                 },
                 {
@@ -248,23 +248,23 @@
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Nederlands (nl in code systeem urn:oid:1.0.639.1)"
+                        "Nederlands (nl in codesysteem urn:oid:1.0.639.1)"
                     ]
                 },
                 {
                     "label": "Leesvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Luistervaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Spreekvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Fair (F in code systeem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": "Fair (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
                 },
                 {
                     "label": "Toelichting",
@@ -351,7 +351,7 @@
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Nederland (6030 in code systeem urn:oid:2.16.840.1.113883.2.4.4.16.34)"
+                        "Nederland (6030 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.16.34)"
                     ]
                 },
                 {
@@ -388,7 +388,7 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobile Phone (MC in code systeem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
+                        "Mobile Phone (MC in codesysteem http://terminology.hl7.org/CodeSystem/v3-AddressUse)"
                     ]
                 },
                 {

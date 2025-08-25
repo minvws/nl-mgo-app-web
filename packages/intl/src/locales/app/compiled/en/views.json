@@ -29,6 +29,8 @@
   ],
   "add_organization_list.to_overview": [
   ],
+  "detail.breadcrumb": [
+  ],
   "dialog.remove_organization_heading": [
   ],
   "dialog.remove_organization_no": [
@@ -36,6 +38,8 @@
   "dialog.remove_organization_subheading": [
   ],
   "dialog.remove_organization_yes": [
+  ],
+  "export_pdf.close": [
   ],
   "export_pdf.dialog.create_document": [
   ],
@@ -45,9 +49,13 @@
   ],
   "export_pdf.footer": [
   ],
+  "export_pdf.menu.save_pdf": [
+  ],
   "export_pdf.no_data": [
   ],
   "export_pdf.page": [
+  ],
+  "export_pdf.share": [
   ],
   "export_pdf.subheading": [
   ],
@@ -198,6 +206,8 @@
   "proposition.statement_4": [
   ],
   "proposition.subheading": [
+  ],
+  "remove_organization.no_cancel": [
   ],
   "settings.featureflag.localization": [
   ]

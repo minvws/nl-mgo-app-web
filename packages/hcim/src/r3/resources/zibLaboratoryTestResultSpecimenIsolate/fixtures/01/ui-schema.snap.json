@@ -18,7 +18,7 @@
                     "label": "Microorganisme",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Revision status (246513007 in code systeem http://snomed.info/sct)"
+                        "Revision status (246513007 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -86,7 +86,7 @@
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Specimen substance (370133003 in code systeem http://snomed.info/sct)"
+                        "Specimen substance (370133003 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {

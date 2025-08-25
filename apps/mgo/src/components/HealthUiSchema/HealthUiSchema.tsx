@@ -31,7 +31,6 @@ export function HealthUiSchema({ summary, resource }: HealthUiSchemaProps) {
             <Heading asChild size="lg" className="mb-4 md:mb-8">
                 <h1 ref={navFocusRef}>{label}</h1>
             </Heading>
-
             <Stack className="gap-6">
                 <HealthUiSchemaContext.Provider value={contextValue}>
                     {children.map((group, i) => (

@@ -7,14 +7,14 @@
                     "label": "Allergie categorie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Allergie voor substantie (bevinding) (419199007 in code systeem http://snomed.info/sct)"
+                        "Allergie voor substantie (bevinding) (419199007 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
                     "label": "Allergie status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Active (active in code systeem http://hl7.org/fhir/v3/ActStatus)"
+                        "Active (active in codesysteem http://hl7.org/fhir/v3/ActStatus)"
                     ]
                 },
                 {
@@ -53,7 +53,7 @@
                     "label": "Mate van kritiek zijn",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ernstig (kwalificatiewaarde) (24484000 in code systeem http://snomed.info/sct)"
+                        "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)"
                     ]
                 },
                 {
@@ -71,7 +71,7 @@
                     "label": "Veroorzakende stof",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Bijengif (substantie) (288328004 in code systeem http://snomed.info/sct)"
+                        "Bijengif (substantie) (288328004 in codesysteem http://snomed.info/sct)"
                     ]
                 }
             ]
@@ -84,7 +84,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Ernstig (kwalificatiewaarde) (24484000 in code systeem http://snomed.info/sct)"
+                            "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)"
                         ]
                     ]
                 },
@@ -108,7 +108,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "misselijkheid en braken (aandoening) (16932000 in code systeem http://snomed.info/sct)"
+                            "misselijkheid en braken (aandoening) (16932000 in codesysteem http://snomed.info/sct)"
                         ]
                     ]
                 },

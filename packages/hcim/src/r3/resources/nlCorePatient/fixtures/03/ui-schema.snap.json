@@ -12,7 +12,7 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Married (M in code systeem http://hl7.org/fhir/v3/MaritalStatus)"
+                        "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)"
                     ]
                 },
                 {
@@ -41,7 +41,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Zevendedagsadventist (428821008 in code systeem http://snomed.info/sct)"
+                            "Zevendedagsadventist (428821008 in codesysteem http://snomed.info/sct)"
                         ]
                     ]
                 },
@@ -332,7 +332,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Husband (HUSB in code systeem http://hl7.org/fhir/v3/RoleCode)"
+                            "Husband (HUSB in codesysteem http://hl7.org/fhir/v3/RoleCode)"
                         ]
                     ]
                 },
@@ -348,7 +348,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Eerste relatie/contactpersoon (1 in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
+                            "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
                         ]
                     ]
                 },

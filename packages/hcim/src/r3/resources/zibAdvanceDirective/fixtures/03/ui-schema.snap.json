@@ -33,7 +33,7 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Mondelinge afspraak (MON in code systeem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
+                            "Mondelinge afspraak (MON in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)"
                         ]
                     ]
                 }

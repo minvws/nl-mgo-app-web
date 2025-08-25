@@ -14,7 +14,7 @@
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Huisartsen, niet nader gespecificeerd (0100 in code systeem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                        "Huisartsen, niet nader gespecificeerd (0100 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)"
                     ]
                 },
                 {

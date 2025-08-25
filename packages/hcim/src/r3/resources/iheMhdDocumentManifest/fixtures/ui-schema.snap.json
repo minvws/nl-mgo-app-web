@@ -55,7 +55,7 @@
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Discharge summary (18842-5 in code systeem http://loinc.org)"
+                        "Discharge summary (18842-5 in codesysteem http://loinc.org)"
                     ]
                 }
             ]

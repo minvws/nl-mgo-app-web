@@ -20,7 +20,7 @@
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": "emergency (EMER in code systeem http://hl7.org/fhir/v3/ActCode)"
+                    "display": "emergency (EMER in codesysteem http://hl7.org/fhir/v3/ActCode)"
                 },
                 {
                     "label": "Eind datum tijd",
