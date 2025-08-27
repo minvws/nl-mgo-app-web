@@ -40,6 +40,12 @@
             "import": "./dist/index.js",
             "default": "./dist/index.js"
         },
+        "./polyfills": {
+            "development": "./src/polyfills/polyfills.ts",
+            "types": "./dist/polyfills/polyfills.d.ts",
+            "import": "./dist/polyfills/polyfills.js",
+            "default": "./dist/polyfills/polyfills.js"
+        },
         "./test/shared": {
             "development": "./test/shared/index.ts"
         }
