@@ -85,7 +85,7 @@ jobs:
         with:
           name: coverage
           path: coverage
-      - name: Run SonarCloud scanner
-        uses: minvws/nl-irealisatie-generic-pipelines/.github/actions/sonarcloud@main
+      - name: Run SonarQube scan
+        uses: minvws/action-sonarqube@v1
         with:
           sonar-token: ${{ secrets.SONAR_TOKEN }}
