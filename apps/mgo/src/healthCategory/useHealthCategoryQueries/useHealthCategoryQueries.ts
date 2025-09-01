@@ -5,13 +5,17 @@ import { type HealthCategory } from '../HealthCategory';
 import { getHealthcareCategoryQuery } from './categories';
 
 export function useHealthCategoryQueries<T extends HealthCategory>(
-    category: T,
+    category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ): UseQueryOptions[] {
     const getOrganizationsById = useOrganizationsStore((x) => x.getOrganizationsById);
     const getAllOrganizations = useOrganizationsStore((x) => x.getAllOrganizations);
 
     return useMemo(() => {
+        if (!category) {
+            return [];
+        }
+
         const organizations = organizationIdFilter
             ? getOrganizationsById(organizationIdFilter)
             : getAllOrganizations();

@@ -16,7 +16,7 @@ export function useTranslateBreadcrumb() {
                 }
                 return formatMessage(`hc_${healthCategory}.heading` as any);
             case ':resourceSlug':
-                return resource?.label || missingBreadcrumbLabel;
+                return resource?.summary.label || missingBreadcrumbLabel;
             default:
                 if (hasMessage(breadcrumb)) {
                     return formatMessage(breadcrumb);

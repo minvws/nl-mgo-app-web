@@ -30,7 +30,11 @@ describe('useTranslateBreadcrumb', () => {
             { healthCategory: HealthCategory.Medication },
             'intl(hc_medication.heading)',
         ],
-        [':resourceSlug', { resource: { label: 'Test Resource' } as Resource }, 'Test Resource'],
+        [
+            ':resourceSlug',
+            { resource: { summary: { label: 'Test Resource' } } as Resource },
+            'Test Resource',
+        ],
         [
             ':organizationSlug',
             { organization: { name: 'Test Organization' } as HealthcareOrganization },
@@ -45,7 +49,11 @@ describe('useTranslateBreadcrumb', () => {
 
     test.each<[string, Partial<UrlParamData>, string]>([
         [':healthCategorySlug', { healthCategory: undefined }, missingBreadcrumbLabel],
-        [':resourceSlug', { resource: { label: '' } as Resource }, missingBreadcrumbLabel],
+        [
+            ':resourceSlug',
+            { resource: { summary: { label: '' } } as Resource },
+            missingBreadcrumbLabel,
+        ],
         [':resourceSlug', {}, missingBreadcrumbLabel],
         [
             ':organizationSlug',

@@ -48,11 +48,13 @@ export default defineConfig({
                 `font-src 'self'`,
                 `media-src 'none'`,
                 `frame-src 'none'`,
-                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:*`,
+                // 'data:' to allow internal data fetching for creating blob urls
+                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data:`,
                 `worker-src 'none'`,
                 `form-action 'none'`,
-                // Unfortunately 'unsafe-inline' is needed as the vite development server uses inline scripts
-                `script-src 'self' 'unsafe-inline' ${VITE_SERVER_HOST}:*`,
+                // 'unsafe-inline' DEV ONLY - is needed as the vite development server uses inline scripts
+                // 'wasm-unsafe-eval' is needed as the pdf renderer uses wasm
+                `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' ${VITE_SERVER_HOST}:*`,
                 `style-src 'self' 'unsafe-inline'`,
             ].join('; '),
         },

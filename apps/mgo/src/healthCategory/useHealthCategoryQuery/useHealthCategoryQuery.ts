@@ -34,7 +34,7 @@ export type QueryResult<T extends HealthCategory> = {
 );
 
 export function useHealthCategoryQuery<T extends HealthCategory>(
-    category: T,
+    category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ) {
     const addResources = useResourcesStore((x) => x.addResources);

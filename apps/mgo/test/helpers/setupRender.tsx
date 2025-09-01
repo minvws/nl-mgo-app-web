@@ -23,30 +23,43 @@ type TypedMemoryRouterOptions = OverrideProperties<
 
 type TestSetupResult = RenderResult & { user: ReturnType<typeof userEvent.setup> };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function setup(ui: ReactNode, options?: Omit<RenderOptions, 'queries'>): TestSetupResult {
     return { user: userEvent.setup(), ...render(ui, options) };
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const setupApp = (options: TypedMemoryRouterOptions): TestSetupResult =>
     setup(<App router={createMemoryRouter(routes, options)} />);
 
 interface TestAppProvidersProps {
     readonly children: ReactNode;
-    readonly queryClient: QueryClient;
+    readonly queryClient?: QueryClient;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-const TestAppProviders = ({ children, queryClient }: TestAppProvidersProps) => (
-    <QueryClientProvider client={queryClient}>
-        <IntlProvider>
-            <HelmetProvider>
-                <VadAuthProvider navigate={vi.fn()}>
-                    <StaticRouter location="/">{children}</StaticRouter>
-                </VadAuthProvider>
-            </HelmetProvider>
-        </IntlProvider>
-    </QueryClientProvider>
-);
+export const TestAppProviders = ({ children, queryClient }: TestAppProvidersProps) => {
+    const client =
+        queryClient ??
+        new QueryClient({
+            defaultOptions: {
+                queries: {
+                    retry: false,
+                },
+            },
+        });
+
+    return (
+        <QueryClientProvider client={client}>
+            <IntlProvider>
+                <HelmetProvider>
+                    <VadAuthProvider navigate={vi.fn()}>
+                        <StaticRouter location="/">{children}</StaticRouter>
+                    </VadAuthProvider>
+                </HelmetProvider>
+            </IntlProvider>
+        </QueryClientProvider>
+    );
+};
 
 export const setupWithAppProviders = (element: ReactNode): TestSetupResult => {
     const queryClient = new QueryClient({

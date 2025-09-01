@@ -8,8 +8,8 @@ export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElemen
     readonly resources: Resource[];
 }
 
-export function HealthCategoryDetailList({ heading, resources }: HealthCategoryDetailListProps) {
-    const organisationStore = useOrganizationsStore();
+export function HealthSubCategoryList({ heading, resources }: HealthCategoryDetailListProps) {
+    const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
     const subCategoryId = useUniqueId('health-category-sub-list');
 
     return (
@@ -19,11 +19,15 @@ export function HealthCategoryDetailList({ heading, resources }: HealthCategoryD
             </Text>
 
             <ListWrapper aria-labelledby={subCategoryId}>
-                {resources.map(({ id, slug, label, organizationId }) => {
-                    const organization = organisationStore.getOrganizationById(organizationId);
+                {resources.map(({ id, slug, summary, organizationId }) => {
+                    const organization = getOrganizationById(organizationId);
                     return (
                         <li key={id}>
-                            <DetailButton title={label} description={organization?.name} asChild>
+                            <DetailButton
+                                title={summary.label}
+                                description={organization?.name}
+                                asChild
+                            >
                                 <RouterLink to={`./${slug}`} />
                             </DetailButton>
                         </li>

@@ -1,3 +1,4 @@
+import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { Helmet } from 'react-helmet-async';
@@ -6,7 +7,6 @@ import {
     type HealthUiSchemaProps,
 } from '../../components/HealthUiSchema/HealthUiSchema';
 import { NotFound } from '../NotFound/NotFound';
-import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 
 export type HealthDataProps = Pick<HealthUiSchemaProps, 'summary'>;
 

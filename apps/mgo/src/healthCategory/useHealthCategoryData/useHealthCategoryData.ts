@@ -7,10 +7,15 @@ export type HealthCategoryData<T extends HealthCategory = HealthCategory> = Retu
 >;
 
 export function useHealthCategoryData<T extends HealthCategory>(
-    category: T,
+    category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ) {
     const resources = useResourcesStore();
+
+    if (!category) {
+        return;
+    }
+
     const getHealthCategoryData = healthCategoryData[category];
     return getHealthCategoryData(resources, organizationIdFilter) as HealthCategoryData<T>;
 }
