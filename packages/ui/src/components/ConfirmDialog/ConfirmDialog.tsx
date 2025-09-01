@@ -38,7 +38,7 @@ export const ConfirmDialog = ({
             {children}
 
             <AlertDialog.Portal>
-                <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
+                <AlertDialog.Overlay className="fixed inset-0 z-40 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
 
                 <AlertDialog.Content className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-6">
                     <div className="flex min-h-full items-center justify-center">
