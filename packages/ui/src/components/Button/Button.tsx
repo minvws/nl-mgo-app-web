@@ -21,13 +21,13 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement>, Compo
     readonly rightIcon?: IconName | ReactElement;
 }
 
-type LoadingProps = {
+export interface ButtonLoadingProps {
     readonly loading: boolean;
     readonly loadingSpinnerOnly?: boolean;
     readonly loadingTextScreenReader: string;
-};
+}
 
-export type ButtonProps = ButtonBaseProps & AllOrNone<LoadingProps>;
+export type ButtonProps = ButtonBaseProps & AllOrNone<ButtonLoadingProps>;
 
 const typeColors: Record<Variant, string> = {
     solid: cn('bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
@@ -58,13 +58,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         loadingTextScreenReader,
         loadingSpinnerOnly,
         ...rest
-    } = props as ButtonBaseProps & LoadingProps;
+    } = props as ButtonBaseProps & ButtonLoadingProps;
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
     const showSpinnerOnly = loading && loadingSpinnerOnly;
 
     const ButtonSpinner = (
         <Spinner className="absolute size-6" variant={variant === 'solid' ? 'white' : 'gray'} />
     );
+
     const Label =
         // Slottable does not work when wrapped, this solves that issue.
         // For more details see: https://github.com/radix-ui/primitives/issues/1825#issuecomment-2123042290
