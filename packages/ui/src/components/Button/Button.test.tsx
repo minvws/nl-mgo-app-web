@@ -117,3 +117,16 @@ test('can render with asChild', async () => {
     render(<Button {...props} />);
     expect(screen.getByRole('link')).toHaveTextContent('Hello');
 });
+
+test('renders in full width with right icon', async () => {
+    const props = {
+        children: faker.lorem.sentence(),
+        variant: faker.helpers.arrayElement(variants),
+        rightIcon: <span data-testid="right-icon" />,
+        fullWidth: true,
+    };
+
+    render(<Button {...props} />);
+    expect(screen.getByRole('button')).toHaveTextContent(props.children);
+    expect(await screen.findByTestId('right-icon')).toBeVisible();
+});

@@ -3,10 +3,10 @@ import {
     cloneElement,
     forwardRef,
     isValidElement,
+    ReactNode,
     type ButtonHTMLAttributes,
     type ReactElement,
 } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
@@ -16,6 +16,7 @@ import { ButtonIcon } from './ButtonIcon';
 import { type Variant } from './variants';
 
 interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement>, CompositionProps {
+    readonly fullWidth?: boolean;
     readonly variant?: Variant;
     readonly leftIcon?: IconName | ReactElement;
     readonly rightIcon?: IconName | ReactElement;
@@ -50,6 +51,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         asChild,
         onClick,
         variant = 'solid',
+        fullWidth,
         children,
         className,
         leftIcon,
@@ -66,6 +68,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         <Spinner className="absolute size-6" variant={variant === 'solid' ? 'white' : 'gray'} />
     );
 
+    const LabelWrapper = ({ children }: { readonly children: ReactNode }) => (
+        <span
+            aria-hidden={showSpinnerOnly}
+            className={cn({
+                invisible: showSpinnerOnly,
+                'flex flex-grow justify-start': fullWidth && rightIcon,
+            })}
+        >
+            {children}
+        </span>
+    );
+
     const Label =
         // Slottable does not work when wrapped, this solves that issue.
         // For more details see: https://github.com/radix-ui/primitives/issues/1825#issuecomment-2123042290
@@ -74,18 +88,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                 {cloneElement(
                     children,
                     children.props,
-                    <span
-                        aria-hidden={showSpinnerOnly}
-                        className={cn({ invisible: showSpinnerOnly })}
-                    >
-                        {children.props.children}
-                    </span>
+                    <LabelWrapper>{children.props.children}</LabelWrapper>
                 )}
             </Slottable>
         ) : (
-            <span aria-hidden={showSpinnerOnly} className={cn({ invisible: showSpinnerOnly })}>
+            <LabelWrapper>
                 <Slottable>{children}</Slottable>
-            </span>
+            </LabelWrapper>
         );
 
     return (
@@ -100,13 +109,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                 ref={ref}
                 onClick={loading ? undefined : onClick}
                 aria-disabled={loading}
-                className={twMerge(
+                className={cn(
                     `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
                     focusStyle,
                     typeColors[variant],
-                    !!leftIcon && 'pl-4',
-                    !!rightIcon && 'pr-4',
-                    className
+                    className,
+                    {
+                        'w-full': fullWidth,
+                        'pl-4': leftIcon,
+                        'pr-4': rightIcon,
+                    }
                 )}
                 {...rest}
             >
@@ -115,9 +127,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                         aria-hidden
                         className="relative me-2 inline-flex min-h-[1em] min-w-[1em] shrink-0 self-center text-[1.5em]"
                     >
-                        {loading && !loadingSpinnerOnly && ButtonSpinner}
+                        {loading && !loadingSpinnerOnly && !rightIcon && ButtonSpinner}
 
-                        <ButtonIcon icon={leftIcon} className={cn({ invisible: loading })} />
+                        <ButtonIcon
+                            icon={leftIcon}
+                            className={cn({ invisible: loading && !rightIcon })}
+                        />
                     </span>
                 )}
 

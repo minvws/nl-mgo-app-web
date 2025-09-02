@@ -103,6 +103,17 @@ export const Loading: Story = {
                     >
                         Right icon
                     </Button>
+                    <Button
+                        {...args}
+                        variant={args.variant}
+                        loading={loading}
+                        loadingTextScreenReader="We are loading"
+                        leftIcon="add"
+                        rightIcon="chevron-right"
+                        fullWidth
+                    >
+                        Both icons - fullWidth
+                    </Button>
                 </Stack>
             </div>
         );
@@ -161,6 +172,9 @@ export const Overview: Story = {
                         </Button>
                         <Button {...args} variant={variant} rightIcon="chevron-right">
                             {variant}
+                        </Button>
+                        <Button {...args} fullWidth variant={variant} rightIcon="chevron-right">
+                            {variant} - fullWidth
                         </Button>
                     </Stack>
                 ))}
