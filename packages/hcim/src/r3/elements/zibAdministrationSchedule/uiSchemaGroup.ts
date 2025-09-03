@@ -1,5 +1,5 @@
 import { HealthUiGroup, HealthUiGroupFunction } from '@minvws/mgo-hcim-ui';
-import { SchemaContext } from 'src/api/schemaContext/schemaContext.js';
+import { SchemaContext } from '../../../api/schemaContext/schemaContext.js';
 import { type ZibAdministrationSchedule } from './zibAdministrationSchedule.js';
 
 export const uiSchemaGroup: HealthUiGroupFunction<
