@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
-import { dirname, resolve } from 'path';
+import { dirname } from 'path';
 import {
     DEFAULT_CONFIG,
     SchemaGenerator,
@@ -11,15 +11,15 @@ import {
     type CompletedConfig,
 } from 'ts-json-schema-generator';
 import { URL, fileURLToPath } from 'url';
-import { GenericTypeAliasParser } from './GenericTypeAliasParser';
-import { SchemaWithDefinitions, normalizeRefs } from './normalizeRefs';
+import { GenericTypeAliasParser } from './GenericTypeAliasParser.js';
+import { normalizeRefs } from './normalize/normalizeRefs.js';
+import { SchemaWithDefinitions } from './types.js';
 
 export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
-const tsConfig = resolvePath('../tsconfig.json');
-const schemaPath = resolvePath('../build/schema');
-const sourceFile = resolve(schemaPath, './typescript/types.ts'); // has to be a .ts file (not .d.ts)
-const outputFile = resolve(schemaPath, './json/types.json');
+const tsConfig = resolvePath('../tsconfig.types.json');
+const sourceFile = resolvePath('../src/types.ts'); // has to be a .ts file (not .d.ts)
+const outputFile = resolvePath('../build/mgo-hcim-api.types.json');
 
 const config: CompletedConfig = {
     ...DEFAULT_CONFIG,
@@ -37,6 +37,7 @@ const parser = createParser(program, config, (prs) => {
 
 const formatter = createFormatter(config);
 const generator = new SchemaGenerator(program, parser, formatter, config);
+console.log(`generating JSON Schema from from: ${sourceFile}`);
 const schema = generator.createSchema(config.type);
 
 if (typeof schema.definitions !== 'object') {
@@ -53,24 +54,17 @@ delete schema.definitions['*'];
  * Remove encoded characters in references and replace them with a simplified name.
  * This is necessary for the mobile apps to be able to translate the json schemas into their own types.
  */
+console.log(`normalizing JSON Schema definition names`);
 const normalizedSchema = normalizeRefs(schema as SchemaWithDefinitions);
-
-/**
- * Any definitions with special characters in the name, means it is not used in a ref.
- * For now we remove them from the schema as they are not used by themselves.
- */
-for (const name in normalizedSchema.definitions) {
-    if (name !== encodeURIComponent(name)) {
-        console.warn(`Dropping definition with special characters: ${name}`);
-        delete normalizedSchema.definitions[name];
-    }
-}
 
 const schemaString = JSON.stringify(normalizedSchema, null, 2);
 
+console.log(`writing JSON Schema to: ${outputFile}`);
 const outputDir = dirname(outputFile);
 if (!existsSync(outputDir)) {
     mkdirSync(outputDir, { recursive: true });
 }
 
 writeFileSync(outputFile, schemaString);
+
+console.log(`✨ JSON Schema generated successfully!`);
