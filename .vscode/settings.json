@@ -8,5 +8,11 @@
     "sonarlint.connectedMode.project": {
         "connectionId": "vws",
         "projectKey": "nl-mgo-app-web-private"
+    },
+    "search.exclude": {
+        "apps/*/build": true,
+        "apps/*/dist": true,
+        "packages/*/build": true,
+        "packages/*/dist": true
     }
 }

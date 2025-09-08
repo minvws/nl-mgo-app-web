@@ -21,6 +21,7 @@ import MedicalServices from '@material-symbols/svg-400/outlined/medical_services
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
 import Person from '@material-symbols/svg-400/outlined/person.svg?react';
+import PictureAsPdf from '@material-symbols/svg-400/outlined/picture_as_pdf.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
 import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
@@ -91,6 +92,7 @@ export const icons = {
     'settings-fill': SettingsFill,
     'info-fill': InfoFill,
     'attach-file': AttachFile,
+    'picture-as-pdf': PictureAsPdf,
 };
 
 export type IconName = keyof typeof icons;

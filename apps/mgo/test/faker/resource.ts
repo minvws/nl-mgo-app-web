@@ -10,7 +10,7 @@ export const resource = createMockFactory<Resource>(() => {
         organizationId: faker.string.uuid(),
         dataServiceId: dataServiceId(),
         dataServiceMethod: faker.lorem.word(),
-        label: faker.lorem.words(),
+        summary: { label: faker.lorem.words(), children: [] },
         mgoResource: {} as any, // eslint-disable-line @typescript-eslint/no-explicit-any
     };
 });

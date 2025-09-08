@@ -22,6 +22,11 @@ test('returns medication data', () => {
     });
 });
 
+test('returns undefined for no category', () => {
+    const { result } = renderHook(() => useHealthCategoryData(undefined));
+    expect(result.current).toBeUndefined();
+});
+
 test.each([
     HealthCategory.PersonalInformation,
     HealthCategory.PayerAndOrganization,

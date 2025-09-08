@@ -1,6 +1,7 @@
+import { AllOrNone } from '@minvws/mgo-utils';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { type UIEvent } from 'react';
-import { Button } from '../Button/Button';
+import { Button, ButtonLoadingProps } from '../Button/Button';
 import { Heading } from '../Heading/Heading';
 import { IconButton } from '../IconButton/IconButton';
 import { Text } from '../Text/Text';
@@ -11,7 +12,7 @@ export interface ConfirmDialogProps extends AlertDialog.AlertDialogProps {
     readonly confirmButtonText: string;
     readonly cancelButtonText?: string;
     readonly closeButtonAriaLabel: string;
-    readonly onConfirm: (event: UIEvent) => void;
+    readonly onConfirm: (event: UIEvent) => void | Promise<void>;
 }
 
 /**
@@ -27,18 +28,23 @@ export const ConfirmDialog = ({
     closeButtonAriaLabel,
     onConfirm,
     children,
+    loading,
+    loadingTextScreenReader,
+    loadingSpinnerOnly,
     ...rest
-}: ConfirmDialogProps) => {
+}: ConfirmDialogProps & AllOrNone<ButtonLoadingProps>) => {
     const handleConfirm = (event: UIEvent) => {
         onConfirm(event);
     };
+    const loadingProps =
+        loading !== undefined ? { loading, loadingTextScreenReader, loadingSpinnerOnly } : {};
 
     return (
         <AlertDialog.Root {...rest}>
             {children}
 
             <AlertDialog.Portal>
-                <AlertDialog.Overlay className="fixed inset-0 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
+                <AlertDialog.Overlay className="fixed inset-0 z-40 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
 
                 <AlertDialog.Content className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-6">
                     <div className="flex min-h-full items-center justify-center">
@@ -66,7 +72,11 @@ export const ConfirmDialog = ({
 
                             <div className="flex flex-col-reverse gap-4 sm:flex-row-reverse sm:gap-6">
                                 <AlertDialog.Action asChild>
-                                    <Button className="flex-grow" onClick={handleConfirm}>
+                                    <Button
+                                        className="flex-grow"
+                                        onClick={handleConfirm}
+                                        {...loadingProps}
+                                    >
                                         {confirmButtonText}
                                     </Button>
                                 </AlertDialog.Action>

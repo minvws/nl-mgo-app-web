@@ -54,34 +54,32 @@ export function Login() {
                                 <Button
                                     onClick={auth.isLoading ? undefined : auth.login}
                                     variant="outline"
-                                    className="w-full p-4 sm:p-6"
+                                    className="p-4 sm:p-6"
+                                    fullWidth
                                     leftIcon={
                                         <DigiDSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
                                     }
                                     rightIcon="chevron-right"
                                 >
-                                    <span className="flex flex-grow justify-start">
-                                        {auth.isLoading ? (
-                                            <FormattedMessage id="common.loading" />
-                                        ) : (
-                                            <FormattedMessage id="login.digid" />
-                                        )}
-                                    </span>
+                                    {auth.isLoading ? (
+                                        <FormattedMessage id="common.loading" />
+                                    ) : (
+                                        <FormattedMessage id="login.digid" />
+                                    )}
                                 </Button>
                             </li>
 
                             <li>
                                 <Button
                                     variant="outline"
-                                    className="w-full p-4 sm:p-6"
+                                    className="p-4 sm:p-6"
+                                    fullWidth
                                     leftIcon={
                                         <EIDASSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
                                     }
                                     rightIcon="chevron-right"
                                 >
-                                    <span className="flex flex-grow justify-start">
-                                        <FormattedMessage id="login.european" />
-                                    </span>
+                                    <FormattedMessage id="login.european" />
                                 </Button>
                             </li>
                         </ul>
