@@ -152,4 +152,4 @@ Please see [REUSE.toml](./REUSE.toml) and the individual `*.license` files for c
 [mgo-deployment]: ./docs/deployment.md
 [mgo-glossary]: ./docs/glossary.md
 [mgo-intl]: ./packages/mgo-intl/README.md
-[mgo-npm-packages]: ./packages/npm-packages/README.md
+[mgo-npm-packages]: ./docs/npm-packages.md
