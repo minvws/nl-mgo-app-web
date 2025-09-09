@@ -1,0 +1,10 @@
+{
+    "extends": "../tsconfig.app.json",
+    "compilerOptions": {
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "types": ["node"],
+        "rootDir": "."
+    },
+    "include": ["./**/*.ts"]
+}

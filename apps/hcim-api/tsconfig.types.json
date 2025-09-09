@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "isolatedModules": false,
+        "customConditions": [],
+        "lib": ["es2022", "dom"],
+        "emitDeclarationOnly": true
+    },
+    "include": ["src/types.ts"]
+}

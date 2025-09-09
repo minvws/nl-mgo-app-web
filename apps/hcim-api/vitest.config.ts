@@ -6,7 +6,7 @@ export default () =>
         viteConfig,
         defineProject({
             test: {
-                include: ['./src/**/*.test.{ts,tsx}'],
+                include: ['./src/**/*.test.{ts,tsx}', './schema-generator/**/*.test.{ts,tsx}'],
             },
         })
     );
