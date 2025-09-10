@@ -5,7 +5,7 @@ services:
             context: .
             dockerfile: Dockerfile.e2e
             args:
-                - NODE_VERSION=20.11.1
+                - NODE_VERSION=22.19.0
                 - PLAYWRIGHT_VERSION=1.50.1 # Needs to match the version in mgo-e2e/package.json
         environment:
             - BASIC_AUTH_USER=${BASIC_AUTH_USER}
@@ -21,7 +21,7 @@ services:
             context: .
             dockerfile: Dockerfile
             args:
-                - NODE_VERSION=20.11.1
+                - NODE_VERSION=22.19.0
                 - NGINX_VERSION=1.26.3
                 - IGNORE_MISSING_TRANSLATIONS
                 - LOAD_URL
