@@ -38,7 +38,11 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "MC",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {
@@ -145,7 +149,11 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "HP",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {

@@ -137,7 +137,11 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                        {
+                            "display": "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
+                            "code": "12",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                        }
                     ]
                 },
                 {
@@ -169,7 +173,11 @@
                     "label": "Zo nodig",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)"
+                        {
+                            "display": "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)",
+                            "code": "1137",
+                            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                        }
                     ]
                 }
             ]

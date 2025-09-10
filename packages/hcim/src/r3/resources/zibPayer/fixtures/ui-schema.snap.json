@@ -35,7 +35,11 @@
                     "label": "Verzekerings soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Basis verzekerd (B in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)"
+                        {
+                            "display": "Basis verzekerd (B in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)",
+                            "code": "B",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1"
+                        }
                     ]
                 }
             ]

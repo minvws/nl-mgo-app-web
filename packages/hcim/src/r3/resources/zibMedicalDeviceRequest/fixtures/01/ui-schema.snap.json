@@ -41,7 +41,11 @@
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Procedure device (405815000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Procedure device (405815000 in codesysteem http://snomed.info/sct)",
+                            "code": "405815000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {

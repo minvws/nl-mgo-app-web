@@ -7,7 +7,11 @@
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Neuroloog (01.026 in codesysteem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)"
+                        {
+                            "display": "Neuroloog (01.026 in codesysteem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)",
+                            "code": "01.026",
+                            "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode"
+                        }
                     ]
                 },
                 {

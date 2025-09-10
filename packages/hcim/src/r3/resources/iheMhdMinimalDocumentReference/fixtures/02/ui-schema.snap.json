@@ -13,7 +13,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "very restricted (V in codesysteem http://hl7.org/fhir/v3/Confidentiality)"
+                            {
+                                "display": "very restricted (V in codesysteem http://hl7.org/fhir/v3/Confidentiality)",
+                                "code": "V",
+                                "system": "http://hl7.org/fhir/v3/Confidentiality"
+                            }
                         ]
                     ]
                 },
@@ -21,7 +25,11 @@
                     "label": "Categorie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "History and Physical (History and Physical in codesysteem http://ihe.net/xds/connectathon/classCodes)"
+                        {
+                            "display": "History and Physical (History and Physical in codesysteem http://ihe.net/xds/connectathon/classCodes)",
+                            "code": "History and Physical",
+                            "system": "http://ihe.net/xds/connectathon/classCodes"
+                        }
                     ]
                 },
                 {
@@ -62,7 +70,11 @@
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Outpatient Note (34108-1 in codesysteem http://loinc.org)"
+                        {
+                            "display": "Outpatient Note (34108-1 in codesysteem http://loinc.org)",
+                            "code": "34108-1",
+                            "system": "http://loinc.org"
+                        }
                     ]
                 }
             ]
@@ -73,7 +85,11 @@
                 {
                     "label": "Formaat",
                     "type": "SINGLE_VALUE",
-                    "display": "History and Physical Specification (urn:ihe:pcc:handp:2008 in codesysteem urn:oid:1.3.6.1.4.1.19376.1.2.3)"
+                    "display": {
+                        "display": "History and Physical Specification (urn:ihe:pcc:handp:2008 in codesysteem urn:oid:1.3.6.1.4.1.19376.1.2.3)",
+                        "code": "urn:ihe:pcc:handp:2008",
+                        "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3"
+                    }
                 },
                 {
                     "type": "DOWNLOAD_LINK",
@@ -89,7 +105,11 @@
                     "label": "Aanvullende details",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "General Medicine (General Medicine in codesysteem http://www.ihe.net/xds/connectathon/practiceSettingCodes)"
+                        {
+                            "display": "General Medicine (General Medicine in codesysteem http://www.ihe.net/xds/connectathon/practiceSettingCodes)",
+                            "code": "General Medicine",
+                            "system": "http://www.ihe.net/xds/connectathon/practiceSettingCodes"
+                        }
                     ]
                 },
                 {
@@ -106,7 +126,11 @@
                     "label": "Faciliteit",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Outpatient (Outpatient in codesysteem http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes)"
+                        {
+                            "display": "Outpatient (Outpatient in codesysteem http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes)",
+                            "code": "Outpatient",
+                            "system": "http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes"
+                        }
                     ]
                 },
                 {

@@ -89,7 +89,11 @@
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Specimen substance (370133003 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Specimen substance (370133003 in codesysteem http://snomed.info/sct)",
+                            "code": "370133003",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {

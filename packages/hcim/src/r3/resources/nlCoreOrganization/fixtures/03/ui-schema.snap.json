@@ -32,7 +32,11 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Land Line (LL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)"
+                        {
+                            "display": "Land Line (LL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)",
+                            "code": "LL",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1"
+                        }
                     ]
                 },
                 {
@@ -114,7 +118,11 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "HP",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {

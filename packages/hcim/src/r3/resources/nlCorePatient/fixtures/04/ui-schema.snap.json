@@ -12,7 +12,11 @@
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)"
+                        {
+                            "display": "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)",
+                            "code": "M",
+                            "system": "http://hl7.org/fhir/v3/MaritalStatus"
+                        }
                     ]
                 },
                 {
@@ -65,23 +69,39 @@
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Dutch (Netherlands) (nl-NL in codesysteem urn:ietf:bcp:47)"
+                        {
+                            "display": "Dutch (Netherlands) (nl-NL in codesysteem urn:ietf:bcp:47)",
+                            "code": "nl-NL",
+                            "system": "urn:ietf:bcp:47"
+                        }
                     ]
                 },
                 {
                     "label": "Leesvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": {
+                        "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
+                        "code": "G",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                    }
                 },
                 {
                     "label": "Luistervaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": {
+                        "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
+                        "code": "G",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                    }
                 },
                 {
                     "label": "Spreekvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Fair (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)"
+                    "display": {
+                        "display": "Fair (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
+                        "code": "F",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
+                    }
                 },
                 {
                     "label": "Toelichting",
@@ -97,7 +117,11 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "MC",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {
@@ -206,7 +230,11 @@
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "HP",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {
@@ -354,7 +382,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Husband (HUSB in codesysteem http://hl7.org/fhir/v3/RoleCode)"
+                            {
+                                "display": "Husband (HUSB in codesysteem http://hl7.org/fhir/v3/RoleCode)",
+                                "code": "HUSB",
+                                "system": "http://hl7.org/fhir/v3/RoleCode"
+                            }
                         ]
                     ]
                 },
@@ -370,7 +402,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)"
+                            {
+                                "display": "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)",
+                                "code": "1",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+                            }
                         ]
                     ]
                 },
@@ -383,7 +419,11 @@
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)"
+                        {
+                            "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "MC",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
                     ]
                 },
                 {
@@ -455,7 +495,11 @@
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)"
+                        {
+                            "display": "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)",
+                            "code": "M",
+                            "system": "http://hl7.org/fhir/v3/AdministrativeGender"
+                        }
                     ]
                 }
             ]

@@ -21,7 +21,11 @@
                 {
                     "label": "Interpretatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "display": {
+                        "display": null,
+                        "code": null,
+                        "system": null
+                    }
                 }
             ]
         },

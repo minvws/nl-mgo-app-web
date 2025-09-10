@@ -63,14 +63,22 @@
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Implantation of Swanson prosthesis of knee (procedure) (60159002 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Implantation of Swanson prosthesis of knee (procedure) (60159002 in codesysteem http://snomed.info/sct)",
+                            "code": "60159002",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Left (7771000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Left (7771000 in codesysteem http://snomed.info/sct)",
+                            "code": "7771000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

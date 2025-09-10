@@ -14,7 +14,11 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
+                        {
+                            "display": "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)",
+                            "code": "S",
+                            "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+                        }
                     ]
                 },
                 {
@@ -56,14 +60,22 @@
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Headache"
+                        {
+                            "display": "Headache (N01 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
+                            "code": "N01",
+                            "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+                        }
                     ]
                 },
                 {
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Migraine (N17 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)"
+                        {
+                            "display": "Migraine (N17 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
+                            "code": "N17",
+                            "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+                        }
                     ]
                 }
             ]

@@ -58,7 +58,11 @@
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "ontslagbrief (11071000146104 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "ontslagbrief (11071000146104 in codesysteem http://snomed.info/sct)",
+                            "code": "11071000146104",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

@@ -25,7 +25,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Medisch specialisten, cardiologie (0320 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                            {
+                                "display": "Medisch specialisten, cardiologie (0320 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
+                                "code": "0320",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                            }
                         ]
                     ]
                 },
@@ -34,7 +38,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Universitair Medisch Centrum (V5 in codesysteem http://nictiz.nl/fhir/NamingSystem/organization-type)"
+                            {
+                                "display": "Universitair Medisch Centrum (V5 in codesysteem http://nictiz.nl/fhir/NamingSystem/organization-type)",
+                                "code": "V5",
+                                "system": "http://nictiz.nl/fhir/NamingSystem/organization-type"
+                            }
                         ]
                     ]
                 }

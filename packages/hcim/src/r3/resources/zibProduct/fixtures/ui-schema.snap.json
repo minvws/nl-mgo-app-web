@@ -22,10 +22,26 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "PRIMPERAN ZETPIL 20MG (14983265 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.8)",
-                        "PRIMPERAN ZETPIL 20MG (229709 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.7)",
-                        "METOCLOPRAMIDE ZETPIL 20MG (6939 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.10)",
-                        "METOCLOPRAMIDE ZETPIL 20MG (63630 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.1)"
+                        {
+                            "display": "PRIMPERAN ZETPIL 20MG (14983265 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.8)",
+                            "code": "14983265",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.8"
+                        },
+                        {
+                            "display": "PRIMPERAN ZETPIL 20MG (229709 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.7)",
+                            "code": "229709",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.7"
+                        },
+                        {
+                            "display": "METOCLOPRAMIDE ZETPIL 20MG (6939 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.10)",
+                            "code": "6939",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.10"
+                        },
+                        {
+                            "display": "METOCLOPRAMIDE ZETPIL 20MG (63630 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.1)",
+                            "code": "63630",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.1"
+                        }
                     ]
                 },
                 {
@@ -42,7 +58,11 @@
                     "label": "Ingredient code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Carbasalate calcium"
+                        {
+                            "display": "Carbasalate calcium (B01AC08 in codesysteem http://www.whocc.no/atc)",
+                            "code": "B01AC08",
+                            "system": "http://www.whocc.no/atc"
+                        }
                     ]
                 },
                 {

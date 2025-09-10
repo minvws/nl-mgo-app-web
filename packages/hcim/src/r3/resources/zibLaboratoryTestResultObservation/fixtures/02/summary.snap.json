@@ -52,7 +52,11 @@
                     "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Above reference range"
+                        {
+                            "display": "Above reference range",
+                            "code": "281302008",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

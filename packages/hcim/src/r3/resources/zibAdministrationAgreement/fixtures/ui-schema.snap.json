@@ -74,7 +74,11 @@
                     "label": "Toedieningsafspraak aanvullende informatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Niet leverbaar (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)"
+                        {
+                            "display": "Niet leverbaar (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053)",
+                            "code": "1",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.20.77.5.2.14.2053"
+                        }
                     ]
                 },
                 {
@@ -154,7 +158,11 @@
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)"
+                        {
+                            "display": "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
+                            "code": "12",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                        }
                     ]
                 },
                 {

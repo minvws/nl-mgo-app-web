@@ -12,7 +12,11 @@
                     "label": "Farmaceutische vorm",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Tablet dose form (qualifier value) (385055001 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Tablet dose form (qualifier value) (385055001 in codesysteem http://snomed.info/sct)",
+                            "code": "385055001",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -29,7 +33,11 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Oral Form Oxycodone (product) (430127000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Oral Form Oxycodone (product) (430127000 in codesysteem http://snomed.info/sct)",
+                            "code": "430127000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {

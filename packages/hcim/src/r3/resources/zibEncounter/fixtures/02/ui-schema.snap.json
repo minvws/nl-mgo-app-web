@@ -5,12 +5,8 @@
             "children": [
                 {
                     "label": "Afwijkende uitslag",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "The patient had fever peaks over the last couple of days. He is worried about these peaks."
-                        ]
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Begin datum tijd",
@@ -20,7 +16,11 @@
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": "emergency (EMER in codesysteem http://hl7.org/fhir/v3/ActCode)"
+                    "display": {
+                        "display": "emergency (EMER in codesysteem http://hl7.org/fhir/v3/ActCode)",
+                        "code": "EMER",
+                        "system": "http://hl7.org/fhir/v3/ActCode"
+                    }
                 },
                 {
                     "label": "Eind datum tijd",

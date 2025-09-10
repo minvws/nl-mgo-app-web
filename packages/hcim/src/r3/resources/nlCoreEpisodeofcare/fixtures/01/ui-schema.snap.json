@@ -13,7 +13,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Lichaamsstructuur (123037004 in codesysteem http://snomed.info/sct)"
+                            {
+                                "display": "Lichaamsstructuur (123037004 in codesysteem http://snomed.info/sct)",
+                                "code": "123037004",
+                                "system": "http://snomed.info/sct"
+                            }
                         ]
                     ]
                 },

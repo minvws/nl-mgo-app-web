@@ -19,8 +19,16 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "polsfrequentie (1875 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
-                        "Heart rate Peripheral artery by Palpation (8893-0 in codesysteem http://loinc.org)"
+                        {
+                            "display": "polsfrequentie (1875 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                            "code": "1875",
+                            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+                        },
+                        {
+                            "display": "Heart rate Peripheral artery by Palpation (8893-0 in codesysteem http://loinc.org)",
+                            "code": "8893-0",
+                            "system": "http://loinc.org"
+                        }
                     ]
                 },
                 {

@@ -16,7 +16,11 @@
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)"
+                    "display": {
+                        "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)",
+                        "code": "IMP",
+                        "system": "http://hl7.org/fhir/v3/ActCode"
+                    }
                 },
                 {
                     "label": "Eind datum tijd",
@@ -64,7 +68,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Responsible Party (RESP in codesysteem http://hl7.org/fhir/v3/ParticipationType)"
+                            {
+                                "display": "Responsible Party (RESP in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                                "code": "RESP",
+                                "system": "http://hl7.org/fhir/v3/ParticipationType"
+                            }
                         ]
                     ]
                 }
@@ -82,7 +90,11 @@
                     "label": "Herkomst",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "From accident/emergency department (emd in codesysteem http://hl7.org/fhir/admit-source)"
+                        {
+                            "display": "From accident/emergency department (emd in codesysteem http://hl7.org/fhir/admit-source)",
+                            "code": "emd",
+                            "system": "http://hl7.org/fhir/admit-source"
+                        }
                     ]
                 }
             ]

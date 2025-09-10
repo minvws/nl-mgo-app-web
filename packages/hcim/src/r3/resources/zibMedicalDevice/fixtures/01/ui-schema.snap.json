@@ -71,7 +71,11 @@
                     "label": "Codes",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ear Structure (117590005 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Ear Structure (117590005 in codesysteem http://snomed.info/sct)",
+                            "code": "117590005",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
