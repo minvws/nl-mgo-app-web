@@ -6,5 +6,6 @@ export interface SingleValueDisplayProps {
 }
 
 export function SingleValue({ value }: SingleValueDisplayProps) {
-    return <DescriptionCard term={value.label} details={value.display} />;
+    const details = typeof value.display === 'string' ? value.display : value.display?.display;
+    return <DescriptionCard term={value.label} details={details} />;
 }

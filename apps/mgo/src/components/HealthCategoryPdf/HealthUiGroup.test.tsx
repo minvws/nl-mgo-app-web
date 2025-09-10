@@ -8,11 +8,11 @@ import { HealthUiGroup } from './HealthUiGroup';
 vi.mock('@react-pdf/renderer');
 
 test('renders a HealthUiGroup', () => {
-    const element: SingleValue = {
+    const element = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
         display: faker.lorem.sentence(),
-    };
+    } satisfies SingleValue;
     const group: HealthUiGroupData = {
         label: faker.lorem.sentence(),
         children: [element],
