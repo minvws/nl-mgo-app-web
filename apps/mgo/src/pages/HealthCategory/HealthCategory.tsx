@@ -1,4 +1,3 @@
-import { BackButton } from '$/components/BackButton/BackButton';
 import { HealthSubCategoryList } from '$/components/HealthSubCategoryList/HealthSubCategoryList';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { useHealthCategoryQuery } from '$/healthCategory';
@@ -16,6 +15,7 @@ import { NoData } from './NoData';
 
 import { PdfDownloadLink } from './PdfDownloadLink';
 import { HealthSubCategory } from './SubCategoryData';
+import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 
 export function HealthCategory() {
     const { organization, healthCategory, organizationSlug } = useParamsData();
@@ -78,7 +78,7 @@ export function HealthCategory() {
                 )}
 
                 <div className="flex justify-between">
-                    <BackButton />
+                    <Breadcrumbs />
 
                     <PdfDownloadLink
                         categoryHeading={heading}

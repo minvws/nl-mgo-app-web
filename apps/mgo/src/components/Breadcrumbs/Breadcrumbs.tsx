@@ -24,7 +24,7 @@ export function Breadcrumbs() {
                                         to={crumb.href}
                                         className={cn(
                                             tw`text-gray-500 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800`,
-                                            'hover:underline'
+                                            'underline'
                                         )}
                                     >
                                         {crumb.label}
