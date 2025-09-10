@@ -26,14 +26,22 @@
                     "label": "Meet locatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Left upper arm structure (368208006 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Left upper arm structure (368208006 in codesysteem http://snomed.info/sct)",
+                            "code": "368208006",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Non-invasive (22762002 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Non-invasive (22762002 in codesysteem http://snomed.info/sct)",
+                            "code": "22762002",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -66,14 +74,22 @@
                     "label": "Houding",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Sitting position (33586001 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Sitting position (33586001 in codesysteem http://snomed.info/sct)",
+                            "code": "33586001",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Manchet type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Groot (L in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)"
+                        {
+                            "display": "Groot (L in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)",
+                            "code": "L",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1"
+                        }
                     ]
                 },
                 {

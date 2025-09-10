@@ -16,7 +16,11 @@
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)"
+                    "display": {
+                        "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)",
+                        "code": "IMP",
+                        "system": "http://hl7.org/fhir/v3/ActCode"
+                    }
                 },
                 {
                     "label": "Diagnosis",

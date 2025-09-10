@@ -40,32 +40,32 @@
                     "label": "Aangepast",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Modifier"
+                        {
+                            "display": "Then stop (422327006 in codesysteem http://snomed.info/sct)",
+                            "code": "422327006",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Consistentie",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Dikvloeibaar"
-                        ]
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Dieet type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Energie verrijkt"
-                        ]
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Voedsel type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Food type"
+                        {
+                            "display": "Then stop (422327006 in codesysteem http://snomed.info/sct)",
+                            "code": "422327006",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

@@ -40,7 +40,11 @@
                     "label": "Tabak gebruik status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ex-smoker (finding) (8517006 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Ex-smoker (finding) (8517006 in codesysteem http://snomed.info/sct)",
+                            "code": "8517006",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -67,7 +71,11 @@
                     "label": "Soort tabak gebruik",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Cigarette smoker (finding) (65568007 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Cigarette smoker (finding) (65568007 in codesysteem http://snomed.info/sct)",
+                            "code": "65568007",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

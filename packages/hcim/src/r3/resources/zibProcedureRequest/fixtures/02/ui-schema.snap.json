@@ -44,14 +44,22 @@
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Röntgenfoto (168537006 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Röntgenfoto (168537006 in codesysteem http://snomed.info/sct)",
+                            "code": "168537006",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Qualified nurse"
+                        {
+                            "display": "Qualified nurse",
+                            "code": null,
+                            "system": null
+                        }
                     ]
                 }
             ]
@@ -143,14 +151,22 @@
                     "label": "Verrichting anatomische locatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Knee region structure (body structure) (72696002 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Knee region structure (body structure) (72696002 in codesysteem http://snomed.info/sct)",
+                            "code": "72696002",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Left (7771000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Left (7771000 in codesysteem http://snomed.info/sct)",
+                            "code": "7771000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]

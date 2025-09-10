@@ -14,7 +14,11 @@
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)"
+                        {
+                            "display": "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)",
+                            "code": "S",
+                            "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+                        }
                     ]
                 },
                 {
@@ -33,7 +37,11 @@
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02] (R02 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)"
+                        {
+                            "display": "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02] (R02 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
+                            "code": "R02",
+                            "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+                        }
                     ]
                 },
                 {

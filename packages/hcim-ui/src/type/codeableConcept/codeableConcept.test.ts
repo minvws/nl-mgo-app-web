@@ -1,35 +1,23 @@
 import { faker } from '$test';
-import { type MgoCodeableConcept } from '@minvws/mgo-hcim-parse';
+import { MgoCodingProps, type MgoCodeableConcept } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
-import { expect, test, vi, type MockedFunction } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { type UiContext } from '../../context/index.js';
-import { system } from '../../format/system/system.js';
 import { codeableConcept } from './codeableConcept.js';
 
-const mockSystem = system as unknown as MockedFunction<typeof system>;
-
 vi.mock('../../format/system/system', () => ({
-    system: vi.fn((_context: UiContext) => vi.fn(() => 'system')),
+    system: vi.fn((_context: UiContext) =>
+        vi.fn((value: MgoCodingProps) => `system(${value.display})`)
+    ),
 }));
 
-test('codeableConcept prefers text value', () => {
+test('codeableConcept formats coding values', () => {
     const label = faker.custom.fhirMessageId();
 
     const concept: MgoCodeableConcept = {
         _type: 'codeableConcept',
-        text: faker.lorem.sentence(),
-        coding: [
-            {
-                code: faker.fhir.code(),
-                system: faker.internet.url(),
-                display: faker.lorem.sentence(),
-            },
-            {
-                code: faker.fhir.code(),
-                system: faker.internet.url(),
-                display: faker.lorem.sentence(),
-            },
-        ],
+        coding: [faker.fhir.coding(), faker.fhir.coding()],
+        text: undefined,
     };
 
     const result = codeableConcept(faker.ui.context())(label, concept);
@@ -37,41 +25,57 @@ test('codeableConcept prefers text value', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: [concept.text],
+        display: [
+            {
+                display: `system(${concept.coding[0].display})`,
+                code: concept.coding[0].code,
+                system: concept.coding[0].system,
+            },
+            {
+                display: `system(${concept.coding[1].display})`,
+                code: concept.coding[1].code,
+                system: concept.coding[1].system,
+            },
+        ],
     });
 });
 
-test('codeableConcept uses conding values as fallback', () => {
+test('codeableConcept handles array of concepts', () => {
     const label = faker.custom.fhirMessageId();
 
-    const concept: MgoCodeableConcept = {
-        _type: 'codeableConcept',
-        text: undefined,
-        coding: [
-            {
-                code: faker.fhir.code(),
-                system: faker.internet.url(),
-                display: faker.lorem.sentence(),
-            },
-            {
-                code: faker.fhir.code(),
-                system: faker.internet.url(),
-                display: faker.lorem.sentence(),
-            },
-        ],
-    };
+    const concepts: MgoCodeableConcept[] = [
+        {
+            _type: 'codeableConcept',
+            coding: [faker.fhir.coding()],
+            text: undefined,
+        },
+        {
+            _type: 'codeableConcept',
+            coding: [faker.fhir.coding()],
+            text: undefined,
+        },
+    ];
 
-    const mockFormatSystem = vi.fn(() => 'system');
-    mockSystem.mockReturnValue(mockFormatSystem);
-
-    const result = codeableConcept(faker.ui.context())(label, concept);
+    const result = codeableConcept(faker.ui.context())(label, concepts);
 
     expect(result).toEqual({
         label: testMessage(label),
-        type: 'MULTIPLE_VALUES',
-        display: ['system', 'system'],
+        type: 'MULTIPLE_GROUPED_VALUES',
+        display: [
+            [
+                {
+                    display: `system(${concepts[0].coding[0].display})`,
+                    code: concepts[0].coding[0].code,
+                    system: concepts[0].coding[0].system,
+                },
+            ],
+            [
+                {
+                    display: `system(${concepts[1].coding[0].display})`,
+                    code: concepts[1].coding[0].code,
+                    system: concepts[1].coding[0].system,
+                },
+            ],
+        ],
     });
-
-    expect(mockFormatSystem).toHaveBeenNthCalledWith(1, concept.coding[0], 0, concept.coding);
-    expect(mockFormatSystem).toHaveBeenNthCalledWith(2, concept.coding[1], 1, concept.coding);
 });

@@ -31,7 +31,11 @@
                     "label": "Kleding",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Minimal dressed (MINIMAL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)"
+                        {
+                            "display": "Minimal dressed (MINIMAL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)",
+                            "code": "MINIMAL",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1"
+                        }
                     ]
                 },
                 {

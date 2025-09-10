@@ -18,7 +18,11 @@
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Outpatient Note (34108-1 in codesysteem http://loinc.org)"
+                        {
+                            "display": "Outpatient Note (34108-1 in codesysteem http://loinc.org)",
+                            "code": "34108-1",
+                            "system": "http://loinc.org"
+                        }
                     ]
                 }
             ]

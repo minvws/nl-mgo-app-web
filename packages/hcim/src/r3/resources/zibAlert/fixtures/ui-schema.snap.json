@@ -7,14 +7,22 @@
                     "label": "Alert naam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Methicillin resistant staphylococcus aureus carrier (432415000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Methicillin resistant staphylococcus aureus carrier (432415000 in codesysteem http://snomed.info/sct)",
+                            "code": "432415000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Alert type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "condition (75323-6 in codesysteem http://loinc.org)"
+                        {
+                            "display": "condition (75323-6 in codesysteem http://loinc.org)",
+                            "code": "75323-6",
+                            "system": "http://loinc.org"
+                        }
                     ]
                 },
                 {

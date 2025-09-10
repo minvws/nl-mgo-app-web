@@ -2,6 +2,12 @@ interface BaseUiElement<T extends string> {
     type: T;
 }
 
+export interface DisplayCoding {
+    code: string | undefined;
+    display: string | undefined;
+    system: string | undefined;
+}
+
 interface BaseUiValueElement<T extends string, Display> extends BaseUiElement<T> {
     label: string;
     display: Display | undefined;
@@ -10,9 +16,12 @@ interface BaseUiValueElement<T extends string, Display> extends BaseUiElement<T>
 /**
  * Note: using `undefined` as the `Display` type breaks the Kotlin types.
  */
-export type SingleValue = BaseUiValueElement<'SINGLE_VALUE', string>;
-export type MultipleValues = BaseUiValueElement<'MULTIPLE_VALUES', string[]>;
-export type MultipleGroupedValues = BaseUiValueElement<'MULTIPLE_GROUPED_VALUES', string[][]>;
+export type SingleValue = BaseUiValueElement<'SINGLE_VALUE', string | DisplayCoding>;
+export type MultipleValues = BaseUiValueElement<'MULTIPLE_VALUES', string[] | DisplayCoding[]>;
+export type MultipleGroupedValues = BaseUiValueElement<
+    'MULTIPLE_GROUPED_VALUES',
+    (string[] | DisplayCoding[])[]
+>;
 export interface ReferenceValue extends BaseUiValueElement<'REFERENCE_VALUE', string> {
     reference: string | undefined;
 }

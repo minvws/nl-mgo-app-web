@@ -7,14 +7,22 @@
                     "label": "Allergie categorie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Allergie voor substantie (bevinding) (419199007 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Allergie voor substantie (bevinding) (419199007 in codesysteem http://snomed.info/sct)",
+                            "code": "419199007",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Allergie status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Active (active in codesysteem http://hl7.org/fhir/v3/ActStatus)"
+                        {
+                            "display": "Active (active in codesysteem http://hl7.org/fhir/v3/ActStatus)",
+                            "code": "active",
+                            "system": "http://hl7.org/fhir/v3/ActStatus"
+                        }
                     ]
                 },
                 {
@@ -53,7 +61,11 @@
                     "label": "Mate van kritiek zijn",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)",
+                            "code": "24484000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -71,7 +83,11 @@
                     "label": "Veroorzakende stof",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Bijengif (substantie) (288328004 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Bijengif (substantie) (288328004 in codesysteem http://snomed.info/sct)",
+                            "code": "288328004",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 }
             ]
@@ -84,7 +100,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)"
+                            {
+                                "display": "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)",
+                                "code": "24484000",
+                                "system": "http://snomed.info/sct"
+                            }
                         ]
                     ]
                 },
@@ -108,7 +128,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "misselijkheid en braken (aandoening) (16932000 in codesysteem http://snomed.info/sct)"
+                            {
+                                "display": "misselijkheid en braken (aandoening) (16932000 in codesysteem http://snomed.info/sct)",
+                                "code": "16932000",
+                                "system": "http://snomed.info/sct"
+                            }
                         ]
                     ]
                 },

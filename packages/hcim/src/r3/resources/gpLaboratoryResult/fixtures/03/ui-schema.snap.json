@@ -63,7 +63,11 @@
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "glucose nuchter, art/cap (lab) (3208 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)"
+                        {
+                            "display": "glucose nuchter, art/cap (lab) (3208 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                            "code": "3208",
+                            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+                        }
                     ]
                 },
                 {
@@ -95,7 +99,11 @@
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "bevinding betreffende laboratoriumonderzoek (49581000146104 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "bevinding betreffende laboratoriumonderzoek (49581000146104 in codesysteem http://snomed.info/sct)",
+                            "code": "49581000146104",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -122,7 +130,11 @@
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Normal Range (normal in codesysteem http://hl7.org/fhir/referencerange-meaning)"
+                        {
+                            "display": "Normal Range (normal in codesysteem http://hl7.org/fhir/referencerange-meaning)",
+                            "code": "normal",
+                            "system": "http://hl7.org/fhir/referencerange-meaning"
+                        }
                     ]
                 }
             ]

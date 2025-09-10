@@ -38,12 +38,8 @@
             "children": [
                 {
                     "label": "Consistentie",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Dikvloeibaar"
-                        ]
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Consistentie",
@@ -52,12 +48,8 @@
                 },
                 {
                     "label": "Dieet type",
-                    "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
-                        [
-                            "Energie verrijkt"
-                        ]
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 }
             ]
         }

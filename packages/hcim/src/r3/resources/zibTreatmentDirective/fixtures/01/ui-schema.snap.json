@@ -17,14 +17,22 @@
                     "label": "Behandeling",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Artificial respiration (procedure) (40617009 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Artificial respiration (procedure) (40617009 in codesysteem http://snomed.info/sct)",
+                            "code": "40617009",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Behandeling toegestaan",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Ja, maar met beperkingen (JA_MAAR in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)"
+                        {
+                            "display": "Ja, maar met beperkingen (JA_MAAR in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)",
+                            "code": "JA_MAAR",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4"
+                        }
                     ]
                 },
                 {
@@ -94,7 +102,11 @@
                     "label": "Geverifieerd bij",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Patient (116154003 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Patient (116154003 in codesysteem http://snomed.info/sct)",
+                            "code": "116154003",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {

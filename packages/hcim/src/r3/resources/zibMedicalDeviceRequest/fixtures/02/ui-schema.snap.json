@@ -37,7 +37,11 @@
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Qualified nurse"
+                        {
+                            "display": "Qualified nurse",
+                            "code": null,
+                            "system": null
+                        }
                     ]
                 }
             ]

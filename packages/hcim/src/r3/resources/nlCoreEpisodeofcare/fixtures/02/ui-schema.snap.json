@@ -13,7 +13,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Verslaving (bevinding) (32709003 in codesysteem http://snomed.info/sct)"
+                            {
+                                "display": "Verslaving (bevinding) (32709003 in codesysteem http://snomed.info/sct)",
+                                "code": "32709003",
+                                "system": "http://snomed.info/sct"
+                            }
                         ]
                     ]
                 },

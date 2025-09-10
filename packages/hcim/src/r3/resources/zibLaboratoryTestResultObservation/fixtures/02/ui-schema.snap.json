@@ -35,7 +35,11 @@
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Above reference range (281302008 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Above reference range (281302008 in codesysteem http://snomed.info/sct)",
+                            "code": "281302008",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
@@ -54,7 +58,11 @@
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Chloride [Moles/volume] in Blood (2069-3 in codesysteem http://loinc.org)"
+                        {
+                            "display": "Chloride [Moles/volume] in Blood (2069-3 in codesysteem http://loinc.org)",
+                            "code": "2069-3",
+                            "system": "http://loinc.org"
+                        }
                     ]
                 },
                 {
@@ -176,7 +184,11 @@
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Treatment Range (treatment in codesysteem http://hl7.org/fhir/referencerange-meaning)"
+                        {
+                            "display": "Treatment Range (treatment in codesysteem http://hl7.org/fhir/referencerange-meaning)",
+                            "code": "treatment",
+                            "system": "http://hl7.org/fhir/referencerange-meaning"
+                        }
                     ]
                 }
             ]

@@ -28,7 +28,11 @@
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Hepatitis A-vaccin (J07BC02 in codesysteem http://www.whocc.no/atc)"
+                        {
+                            "display": "Hepatitis A-vaccin (J07BC02 in codesysteem http://www.whocc.no/atc)",
+                            "code": "J07BC02",
+                            "system": "http://www.whocc.no/atc"
+                        }
                     ]
                 },
                 {

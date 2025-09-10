@@ -18,14 +18,22 @@
                     "label": "Behandeling",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Cardiopulmonary resuscitation (procedure) (89666000 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Cardiopulmonary resuscitation (procedure) (89666000 in codesysteem http://snomed.info/sct)",
+                            "code": "89666000",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
                     "label": "Behandeling toegestaan",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Behandeling niet toegestaan en/of wenselijk (NEE in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)"
+                        {
+                            "display": "Behandeling niet toegestaan en/of wenselijk (NEE in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)",
+                            "code": "NEE",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4"
+                        }
                     ]
                 },
                 {
@@ -94,7 +102,11 @@
                     "label": "Geverifieerd bij",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Patient (116154003 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Patient (116154003 in codesysteem http://snomed.info/sct)",
+                            "code": "116154003",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {

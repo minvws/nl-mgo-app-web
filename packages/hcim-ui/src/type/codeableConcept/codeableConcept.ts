@@ -1,23 +1,12 @@
 import { type MgoCodeableConcept } from '@minvws/mgo-hcim-parse';
-import { isNonNullish } from '@minvws/mgo-utils';
-import { system } from '../../format/system/system.js';
+import { isNonNullish, Nullable } from '@minvws/mgo-utils';
 import {
-    type FormatDisplayFunction,
     type MultipleGroupedValues,
     type MultipleValues,
     type UiFunction,
     type WithUiContext,
 } from '../../types/index.js';
-
-const codeableDisplay: WithUiContext<FormatDisplayFunction<MgoCodeableConcept, string[]>> =
-    (context) => (value) => {
-        if (value?.text?.length) {
-            return [value.text];
-        }
-
-        const formatSystem = system(context);
-        return value?.coding.map(formatSystem).filter(isNonNullish) ?? [];
-    };
+import { codingToDisplay } from '../coding/coding.js';
 
 export const codeableConcept: WithUiContext<
     UiFunction<MgoCodeableConcept | MgoCodeableConcept[], MultipleValues | MultipleGroupedValues>
@@ -25,19 +14,22 @@ export const codeableConcept: WithUiContext<
     (context) =>
     (label, value, options = {}) => {
         const { formatLabel } = context;
-        const display = codeableDisplay(context);
+        const formatCoding = codingToDisplay(context);
+        const formatCodeableConcept = (value: Nullable<MgoCodeableConcept>) => {
+            return value?.coding.map(formatCoding);
+        };
 
         if (Array.isArray(value)) {
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_GROUPED_VALUES',
-                display: value.map(display),
+                display: value.map(formatCodeableConcept).filter(isNonNullish),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'MULTIPLE_VALUES',
-            display: display(value),
+            display: formatCodeableConcept(value),
         };
     };

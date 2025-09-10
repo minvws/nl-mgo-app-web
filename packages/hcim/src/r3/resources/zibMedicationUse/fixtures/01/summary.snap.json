@@ -28,7 +28,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Nursing Procedure"
+                            {
+                                "display": "Nursing Procedure",
+                                "code": "9632001",
+                                "system": "http://snomed.info/sct"
+                            }
                         ]
                     ]
                 }

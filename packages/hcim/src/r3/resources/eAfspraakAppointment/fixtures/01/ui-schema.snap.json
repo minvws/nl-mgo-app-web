@@ -65,7 +65,11 @@
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "display": [
                         [
-                            "Medisch specialisten, chirurgie (0303 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)"
+                            {
+                                "display": "Medisch specialisten, chirurgie (0303 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
+                                "code": "0303",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                            }
                         ]
                     ]
                 },

@@ -8,11 +8,11 @@ import { HealthUiSchemaTable } from './HealthUiSchemaTable';
 vi.mock('@react-pdf/renderer');
 
 test('renders schema correctly', () => {
-    const element: SingleValue = {
+    const element = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
         display: faker.lorem.sentence(),
-    };
+    } satisfies SingleValue;
     const group: HealthUiGroup = {
         label: faker.lorem.sentence(),
         children: [element],

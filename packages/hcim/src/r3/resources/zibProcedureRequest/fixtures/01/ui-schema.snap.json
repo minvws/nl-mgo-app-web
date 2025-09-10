@@ -58,7 +58,11 @@
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "display": [
-                        "Biopsy of skin (procedure) (240977001 in codesysteem http://snomed.info/sct)"
+                        {
+                            "display": "Biopsy of skin (procedure) (240977001 in codesysteem http://snomed.info/sct)",
+                            "code": "240977001",
+                            "system": "http://snomed.info/sct"
+                        }
                     ]
                 },
                 {
