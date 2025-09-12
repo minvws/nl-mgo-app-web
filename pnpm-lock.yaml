@@ -21,6 +21,7 @@ overrides:
   '@eslint/plugin-kit@<0.3.4': '>=0.3.4'
   koa@>=2.0.0 <2.16.2: '>=2.16.2'
   tmp@<=0.2.3: '>=0.2.4'
+  axios@<1.12.0: '>=1.12.0'
 
 importers:
 
@@ -4073,8 +4074,8 @@ packages:
     resolution: {integrity: sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==}
     engines: {node: '>=4'}
 
-  axios@1.9.0:
-    resolution: {integrity: sha512-re4CqKTJaURpzbLHtIi6XpDv20/CnpXOtjRY5/CU32L8gU8ek9UIivcfvSWvmKEngmVbrUtPpdDwWDWL7DNHvg==}
+  axios@1.12.0:
+    resolution: {integrity: sha512-oXTDccv8PcfjZmPGlWsPSwtOJCZ/b6W5jAMCNcfwJbCzDckwG0jrYJFaWH1yvivfCXjVzV/SPDEhMB3Q+DSurg==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -9803,7 +9804,7 @@ snapshots:
       '@module-federation/third-party-dts-extractor': 0.17.0
       adm-zip: 0.5.16
       ansi-colors: 4.1.3
-      axios: 1.9.0
+      axios: 1.12.0
       chalk: 3.0.0
       fs-extra: 9.1.0
       isomorphic-ws: 5.0.0(ws@8.18.0)
@@ -11688,14 +11689,14 @@ snapshots:
       msw: 2.9.0(@types/node@22.13.14)(typescript@5.8.3)
       vite: 7.1.5(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0)
 
-  '@vitest/mocker@3.2.4(msw@2.9.0(@types/node@22.15.29)(typescript@5.8.3))(vite@7.1.5(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0))':
+  '@vitest/mocker@3.2.4(msw@2.9.0(@types/node@22.15.29)(typescript@5.8.3))(vite@7.1.5(@types/node@22.15.29)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0))':
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
       msw: 2.9.0(@types/node@22.15.29)(typescript@5.8.3)
-      vite: 7.1.5(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0)
+      vite: 7.1.5(@types/node@22.15.29)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0)
 
   '@vitest/pretty-format@2.0.5':
     dependencies:
@@ -12141,7 +12142,7 @@ snapshots:
 
   axe-core@4.10.3: {}
 
-  axios@1.9.0:
+  axios@1.12.0:
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.1)
       form-data: 4.0.4
@@ -14628,7 +14629,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.9.0
+      axios: 1.12.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -16334,7 +16335,7 @@ snapshots:
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(msw@2.9.0(@types/node@22.15.29)(typescript@5.8.3))(vite@7.1.5(@types/node@22.13.14)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0))
+      '@vitest/mocker': 3.2.4(msw@2.9.0(@types/node@22.15.29)(typescript@5.8.3))(vite@7.1.5(@types/node@22.15.29)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.43.1)(tsx@4.19.4)(yaml@2.8.0))
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4
