@@ -1,4 +1,4 @@
-import { type DownloadBinary as DownloadBinaryData } from '@minvws/mgo-fhir-data';
+import { type DownloadBinary as DownloadBinaryData } from '@minvws/mgo-hcim-ui';
 import { Button, DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-ui';
 import { FormattedMessage } from 'react-intl';
 import { useBinaryReference } from './hooks/useBinaryReference';

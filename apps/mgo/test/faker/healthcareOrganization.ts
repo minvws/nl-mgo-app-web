@@ -1,8 +1,8 @@
 import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import { faker } from '@faker-js/faker';
 import { DataServiceId } from '@minvws/mgo-data-services';
+import { createMockFactory } from '@minvws/mgo-utils/test/shared';
 import { kebabCase } from 'lodash';
-import { createMockDataFactory } from './factory';
 
 const categories = [
     'Huisartspraktijk',
@@ -15,7 +15,7 @@ const categories = [
     'Dietisten',
 ];
 
-export const healthcareOrganization = createMockDataFactory<HealthcareOrganization>(() => {
+export const healthcareOrganization = createMockFactory<HealthcareOrganization>(() => {
     const name = faker.company.name();
     const streetAddress = `${faker.location.streetAddress()} ${faker.location.buildingNumber()}`;
     const postalcode = faker.location.zipCode('#### ??');

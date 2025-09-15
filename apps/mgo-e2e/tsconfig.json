@@ -1,10 +1,13 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
         "allowJs": true,
-        "outDir": "out-tsc/playwright",
+        "outDir": "../../out-tsc/mgo-e2e/playwright",
+        "tsBuildInfoFile": "../../out-tsc/mgo-e2e/tsconfig.tsbuildinfo",
         "sourceMap": false,
-        "lib": ["dom"]
+        "paths": {
+            "@minvws/mgo-intl/test/shared": ["../../packages/intl/test/shared"]
+        }
     },
     "include": [
         "**/*.ts",

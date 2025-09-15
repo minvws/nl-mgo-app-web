@@ -1,0 +1,63 @@
+{
+    "label": "Alcohol gebruik",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Alcohol gebruik status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Current drinker of alcohol (219006 in codesysteem http://snomed.info/sct)",
+                            "code": "219006",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "4 glasses per week"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "18cc8831-8fdf-11ec-2010-020000000000"
+                    ]
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Start datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1980"
+                },
+                {
+                    "label": "Stop datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-fhir-data';
+import { type HealthUiGroup as HealthUiGroupData } from '@minvws/mgo-hcim-ui';
 import { DescriptionList, Heading, useUniqueId } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { UiElement } from './UiElement';

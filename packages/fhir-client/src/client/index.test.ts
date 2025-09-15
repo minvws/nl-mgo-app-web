@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { FhirVersion, type ResourceType } from '@minvws/mgo-fhir-types';
+import { FhirVersion, type ResourceType } from '@minvws/mgo-fhir';
 import { LosslessNumber } from 'lossless-json';
 import { expect, test } from 'vitest';
 import { createClient } from '.';

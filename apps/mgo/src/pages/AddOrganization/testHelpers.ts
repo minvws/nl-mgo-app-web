@@ -1,4 +1,4 @@
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { type UserEvent } from '@testing-library/user-event';
 import { type SearchFormData } from './SearchForm';

@@ -1,0 +1,38 @@
+{
+    "label": "Zorgverlener rol",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Contactgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "17056b5d-8fdf-11ec-1149-020000000000"
+                    ]
+                },
+                {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Medisch specialisten, Orthopedie (0305 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
+                            "code": "0305",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                        }
+                    ]
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Orthopedie - UMCG",
+                    "reference": "Organization/nl-core-organization-02"
+                }
+            ]
+        }
+    ]
+}

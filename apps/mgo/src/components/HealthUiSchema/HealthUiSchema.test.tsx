@@ -1,11 +1,8 @@
 import { type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import {
-    getDetails,
-    getSummary,
-    type HealthUiSchema as HealthUiSchemaData,
-} from '@minvws/mgo-fhir-data';
+import { getDetails, getSummary } from '@minvws/mgo-hcim';
+import { type HealthUiSchema as HealthUiSchemaData } from '@minvws/mgo-hcim-ui';
 import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthUiSchema } from './HealthUiSchema';
@@ -13,7 +10,7 @@ import { HealthUiSchema } from './HealthUiSchema';
 const mockGetDetails = getDetails as MockedFunction<typeof getDetails>;
 const mockGetSummary = getSummary as MockedFunction<typeof getSummary>;
 
-vi.mock('@minvws/mgo-fhir-data', (importActual) => ({
+vi.mock('@minvws/mgo-hcim', (importActual) => ({
     ...importActual,
     getSummary: vi.fn(),
     getDetails: vi.fn(),

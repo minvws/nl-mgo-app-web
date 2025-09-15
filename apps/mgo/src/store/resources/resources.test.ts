@@ -1,5 +1,5 @@
 import { faker } from '$test/faker';
-import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { FhirVersion } from '@minvws/mgo-fhir';
 import { defaults, uniqueId } from 'lodash';
 import { type PartialDeep } from 'type-fest';
 import { expect, test, vi } from 'vitest';

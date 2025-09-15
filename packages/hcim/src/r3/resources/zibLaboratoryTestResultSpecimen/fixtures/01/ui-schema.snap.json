@@ -1,0 +1,99 @@
+{
+    "label": "Monster",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Aanname datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Bron monster",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Monster",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Monstermateriaal",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Blood (substance) (87612001 in codesysteem http://snomed.info/sct)",
+                            "code": "87612001",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Monsternummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "1b3b213b-8fdf-11ec-5198-020000000000"
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Afname",
+            "children": [
+                {
+                    "label": "Afname datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "23 mei 2012 om 09:08:00 GMT+2"
+                },
+                {
+                    "label": "Afnameprocedure",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Morfologie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Verzamelvolume",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Zijde",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Monstercontainer",
+            "children": [
+                {
+                    "label": "Containertype",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Specimen substance (370133003 in codesysteem http://snomed.info/sct)",
+                            "code": "370133003",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Monstervolgnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

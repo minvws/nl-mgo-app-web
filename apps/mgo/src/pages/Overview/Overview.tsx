@@ -14,7 +14,7 @@ export function Overview() {
         <>
             <Heading asChild size="lg" className="mb-4 md:mb-8">
                 <h1 ref={navFocusRef}>
-                    <FormattedMessage id="overview.heading" description="Goedemorgen" />
+                    <FormattedMessage id="overview.heading" />
                 </h1>
             </Heading>
 

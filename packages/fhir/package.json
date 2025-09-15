@@ -1,0 +1,39 @@
+{
+    "name": "@minvws/mgo-fhir",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "version": "0.1.1-8",
+    "scripts": {},
+    "files": [
+        "dist/"
+    ],
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "development": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./r3": {
+            "development": "./src/r3.ts",
+            "types": "./dist/r3.d.ts"
+        },
+        "./r4": {
+            "development": "./src/r4.ts",
+            "types": "./dist/r4.d.ts"
+        },
+        "./test/shared": {
+            "development": "./test/shared/index.ts"
+        }
+    },
+    "dependencies": {
+        "@minvws/mgo-utils": "workspace:^",
+        "type-fest": "^4.23.0"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@types/fhir": "^0.0.41",
+        "vitest": "^3.2.4"
+    }
+}

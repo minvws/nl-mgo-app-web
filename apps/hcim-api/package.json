@@ -1,0 +1,21 @@
+{
+    "name": "@minvws/mgo-hcim-api",
+    "license": "EUPL-1.2",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@minvws/mgo-hcim": "workspace:^",
+        "@minvws/mgo-intl": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
+        "lodash-es": "^4.17.21"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@types/lodash-es": "^4.17.12",
+        "ts-json-schema-generator": "^2.3.0",
+        "tsx": "^4.17.0",
+        "type-fest": "^4.41.0",
+        "typescript": "^5.4.5",
+        "vite": "^6.3.6"
+    }
+}

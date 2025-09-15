@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { flushCallStack } from './flushCallStack';
+import { flushCallStack } from './flushCallStack.js';
 
 async function singleAsyncCall() {
     await new Promise((resolve) => setTimeout(resolve));

@@ -1,0 +1,24 @@
+{
+    "extends": "../../tsconfig.base.vite.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/mgo-hcim-api/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-hcim-api/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"],
+        "lib": ["es2022"]
+    },
+    "include": [
+        "vite.api.config.ts",
+        "vitest.config.ts",
+        "test/**/*.ts",
+        "test/**/*.tsx",
+        "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        }
+    ]
+}

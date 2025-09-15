@@ -1,6 +1,6 @@
 import { faker } from '$test/faker';
 import { DataServiceId, type DataService } from '@minvws/mgo-data-services';
-import { FhirVersion } from '@minvws/mgo-fhir-data';
+import { FhirVersion } from '@minvws/mgo-fhir';
 import { type QueryFunction } from '@tanstack/react-query';
 import { expect, test, vi } from 'vitest';
 import { HealthCategory } from '../HealthCategory';

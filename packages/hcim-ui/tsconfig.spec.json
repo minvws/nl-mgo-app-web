@@ -1,0 +1,25 @@
+{
+    "extends": "../../tsconfig.base.lib.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/mgo-hcim-ui/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-hcim-ui/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"],
+        "paths": {
+            "$test": ["./test/index.ts"],
+            "$test/*": ["./test/*"]
+        }
+    },
+    "include": [
+        "vitest.config.ts",
+        "src/**/*.test.ts",
+        "src/**/*.d.ts",
+        "test/**/*.ts",
+        "test/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}

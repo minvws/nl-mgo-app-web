@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.base.lib.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.lib.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": [],
+        "lib": ["es2022"]
+    },
+    "include": ["src/**/*.ts"],
+    "references": [
+        {
+            "path": "../utils/tsconfig.lib.json"
+        }
+    ],
+    "exclude": ["src/**/*.test.ts"]
+}

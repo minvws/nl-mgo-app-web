@@ -1,0 +1,68 @@
+{
+    "label": "Journaalregel",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Vaste Huisarts 1"
+                    ]
+                },
+                {
+                    "label": "Code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)",
+                            "code": "S",
+                            "system": "http://fhir.nl/fhir/NamingSystem/journaalregeltypen"
+                        }
+                    ]
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "6 februari 2013 om 04:17:00 GMT+1"
+                },
+                {
+                    "label": "Episode",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Gebroken been"
+                    ]
+                },
+                {
+                    "label": "ICPC Code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Dyspnoe/benauwdheid toegeschreven aan luchtwegen [ex. K02] (R02 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
+                            "code": "R02",
+                            "system": "http://hl7.org/fhir/sid/icpc-1-nl"
+                        }
+                    ]
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "15390bbd-8fdf-11ec-8940-020000000000"
+                    ]
+                },
+                {
+                    "label": "Journaalregel tekst",
+                    "type": "SINGLE_VALUE",
+                    "display": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS."
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J. XXX_Helleman (Johan)",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        }
+    ]
+}

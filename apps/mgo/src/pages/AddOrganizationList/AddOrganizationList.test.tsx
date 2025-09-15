@@ -3,7 +3,7 @@ import { useOnboardingSeen } from '$/hooks';
 import { useOrganizationsStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test, vi, type MockedFunction } from 'vitest';

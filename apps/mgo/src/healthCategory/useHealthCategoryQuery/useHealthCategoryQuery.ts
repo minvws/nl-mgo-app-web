@@ -1,10 +1,6 @@
 import { useResourcesStore } from '$/store';
-import {
-    getBundleResources,
-    getMgoResource,
-    isFhirResource,
-    type FhirResource,
-} from '@minvws/mgo-fhir-data';
+import { isFhirResource, type FhirResource } from '@minvws/mgo-fhir';
+import { getBundleResources, getMgoResource } from '@minvws/mgo-hcim';
 import { useUniqueId } from '@minvws/mgo-ui';
 import { isNonNullish } from '@minvws/mgo-utils';
 import { useQueries } from '@tanstack/react-query';
@@ -38,7 +34,7 @@ export type QueryResult<T extends HealthCategory> = {
 );
 
 export function useHealthCategoryQuery<T extends HealthCategory>(
-    category: T,
+    category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ) {
     const addResources = useResourcesStore((x) => x.addResources);
@@ -83,7 +79,8 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
             }
             /* c8 ignore end */
 
-            const fhirResources = getBundleResources(responseData);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const fhirResources = getBundleResources(responseData as any);
             const mgoResources = fhirResources
                 .map((x) => getMgoResource(x, { fhirVersion }))
                 .filter(isNonNullish);

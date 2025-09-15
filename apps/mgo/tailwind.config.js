@@ -1,10 +1,13 @@
 import theme from '@minvws/mgo-tailwind/theme/index.js';
+import { createGlobPatternsForDependencies } from '@nx/react/tailwind';
+import { join } from 'path';
 
 export default {
     theme,
     content: [
-        './node_modules/@minvws/mgo-ui/src/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
         'index.html',
+        join(__dirname, 'src/**/*!(*.test).{ts,tsx}'),
+        join(__dirname, 'index.html'),
+        ...createGlobPatternsForDependencies(__dirname),
     ],
 };

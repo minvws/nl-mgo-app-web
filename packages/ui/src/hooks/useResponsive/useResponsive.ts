@@ -20,11 +20,7 @@ export type ResponsiveProp<T = unknown> = ResponsiveConfig<T> | T;
 const specificityOrder = ['2xl', 'xl', 'lg', 'md', 'sm'] as BreakpointSize[];
 
 function isResponsiveConfig<T>(config: ResponsiveProp<T>): config is ResponsiveConfig<T> {
-    return (
-        typeof config === 'object' &&
-        config !== null &&
-        Object.prototype.hasOwnProperty.call(config, 'base')
-    );
+    return typeof config === 'object' && config !== null && Object.hasOwn(config, 'base');
 }
 
 export function useResponsive<T>(value: ResponsiveProp<T>): T {

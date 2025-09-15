@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import { useNavFocusRef } from '$/hooks';
 import { useOrganizationsStore, type Resource } from '$/store';
-import { getDetails, getSummary } from '@minvws/mgo-fhir-data';
+import { getDetails, getSummary } from '@minvws/mgo-hcim';
+import { Locale } from '@minvws/mgo-intl';
 import { Heading, Stack } from '@minvws/mgo-ui';
 import { useMemo } from 'react';
 import { HealthUiGroup } from './HealthUiGroup';
@@ -20,14 +21,16 @@ export function HealthUiSchema({ summary, resource }: HealthUiSchemaProps) {
     const organization = getOrganizationById(resource.organizationId);
 
     const getSchema = summary ? getSummary : getDetails;
-    const { label, children } = getSchema(resource.mgoResource, { organization });
+    const { label, children } = getSchema(resource.mgoResource, {
+        organization,
+        locale: Locale.NL_NL,
+    });
 
     return (
         <>
             <Heading asChild size="lg" className="mb-4 md:mb-8">
                 <h1 ref={navFocusRef}>{label}</h1>
             </Heading>
-
             <Stack className="gap-6">
                 <HealthUiSchemaContext.Provider value={contextValue}>
                     {children.map((group, i) => (

@@ -1,4 +1,3 @@
-import { BackButton } from '$/components/BackButton/BackButton';
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
@@ -6,6 +5,7 @@ import { useParamsData } from '$/routing';
 import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
+import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 
 export function Organization() {
     const { organization } = useParamsData();
@@ -27,7 +27,7 @@ export function Organization() {
 
             <section className="flex-grow">
                 <div>
-                    <BackButton />
+                    <Breadcrumbs />
                 </div>
 
                 <Heading asChild size="lg" className="mb-4 md:mb-8">

@@ -5,8 +5,8 @@ source "$(dirname "$0")/utils.sh"
 # paths are relative to the package.json file
 DOCKER_CONTAINER_NAME="mgo-lokalise-download"
 DOTENV_FILE="./.env"
-OUTPUT_APP_DIR="./locales/app"
-OUTPUT_FHIR_DIR="./locales/fhir"
+OUTPUT_APP_DIR="./src/locales/app"
+OUTPUT_FHIR_DIR="./src/locales/fhir"
 
 echo "Download i18n files from Lokalise 🌍"
 

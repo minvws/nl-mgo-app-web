@@ -1,0 +1,125 @@
+{
+    "label": "Vaccinatie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 milliliter"
+                },
+                {
+                    "label": "Identificatienummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Inenting",
+                    "type": "REFERENCE_VALUE",
+                    "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS",
+                    "reference": "Medication/nl-core-Vaccination-03-PharmaceuticalProduct-01"
+                },
+                {
+                    "label": "Patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+                    "reference": "Patient/nl-core-Patient-01"
+                },
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in codesysteem http://www.whocc.no/atc)",
+                            "code": "J07BC02",
+                            "system": "http://www.whocc.no/atc"
+                        }
+                    ]
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "completed"
+                },
+                {
+                    "label": "Toediener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "INTRAMUSCULAIR (2 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)",
+                            "code": "2",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2"
+                        }
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                },
+                {
+                    "label": "Vaccinatie datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Vaccinatie pathogeen",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "hepatitis (128241005 in codesysteem http://snomed.info/sct)",
+                                "code": "128241005",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Vaccinatie reden",
+            "children": [
+                {
+                    "label": "Vaccinatie aanleiding",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie) (159731000146104 in codesysteem http://snomed.info/sct)",
+                                "code": "159731000146104",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "label": "Vaccinatie indicatie",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "Kwetsbare oudere (bevinding) (404904002 in codesysteem http://snomed.info/sct)",
+                                "code": "404904002",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

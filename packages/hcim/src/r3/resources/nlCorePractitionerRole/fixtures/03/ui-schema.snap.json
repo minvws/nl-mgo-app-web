@@ -1,0 +1,38 @@
+{
+    "label": "Zorgverlener rol",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Contactgegevens",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "171b988d-8fdf-11ec-1629-020000000000"
+                    ]
+                },
+                {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Medisch specialisten, dermatologie (0310 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
+                            "code": "0310",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                        }
+                    ]
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Test Medisch Centrum",
+                    "reference": "Organization/nl-core-organization-03"
+                }
+            ]
+        }
+    ]
+}

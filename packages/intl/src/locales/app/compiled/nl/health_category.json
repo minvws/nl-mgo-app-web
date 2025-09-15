@@ -1,0 +1,842 @@
+{
+  "eAfspraak_appointment.heading": [
+    {
+      "type": 0,
+      "value": "Afspraken met zorgaanbieders"
+    }
+  ],
+  "gp_diagnostic_result.heading": [
+    {
+      "type": 0,
+      "value": "Uitslag van onderzoek"
+    }
+  ],
+  "gp_laboratory_result.heading": [
+    {
+      "type": 0,
+      "value": "Uitslag van test laboratorium"
+    }
+  ],
+  "hc_alerts.heading": [
+    {
+      "type": 0,
+      "value": "Waarschuwingen"
+    }
+  ],
+  "hc_alerts.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle waarschuwing gegevens"
+    }
+  ],
+  "hc_alerts.heading_summary": [
+    {
+      "type": 0,
+      "value": "Waarschuwing gegevens"
+    }
+  ],
+  "hc_alerts.subheading": [
+    {
+      "type": 0,
+      "value": "Belangrijke dingen waar zorgverleners op moeten letten"
+    }
+  ],
+  "hc_allergies.heading": [
+    {
+      "type": 0,
+      "value": "Allergieën"
+    }
+  ],
+  "hc_allergies.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle allergiegegevens"
+    }
+  ],
+  "hc_allergies.heading_summary": [
+    {
+      "type": 0,
+      "value": "Allergiegegevens"
+    }
+  ],
+  "hc_allergies.subheading": [
+    {
+      "type": 0,
+      "value": "Dingen waar je niet tegen kunt, zoals medicijnen of eten"
+    }
+  ],
+  "hc_appointments.heading": [
+    {
+      "type": 0,
+      "value": "Afspraken"
+    }
+  ],
+  "hc_appointments.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle afspraakgegevens"
+    }
+  ],
+  "hc_appointments.heading_summary": [
+    {
+      "type": 0,
+      "value": "Afspraakgegevens"
+    }
+  ],
+  "hc_appointments.subheading": [
+    {
+      "type": 0,
+      "value": "Die je al hebt gehad of die nog komen"
+    }
+  ],
+  "hc_complaints.heading": [
+    {
+      "type": 0,
+      "value": "Medische klachten"
+    }
+  ],
+  "hc_complaints.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle klachtgegevens"
+    }
+  ],
+  "hc_complaints.heading_summary": [
+    {
+      "type": 0,
+      "value": "Klachtgegevens"
+    }
+  ],
+  "hc_devices.heading": [
+    {
+      "type": 0,
+      "value": "Medische hulpmiddelen"
+    }
+  ],
+  "hc_devices.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle medische hulpmiddel gegevens"
+    }
+  ],
+  "hc_devices.heading_summary": [
+    {
+      "type": 0,
+      "value": "Medische hulpmiddel gegevens"
+    }
+  ],
+  "hc_devices.subheading": [
+    {
+      "type": 0,
+      "value": "Zorgspullen die je gebruikt, zoals een bril of rollator"
+    }
+  ],
+  "hc_documents.error": [
+    {
+      "type": 0,
+      "value": "Sorry, we kunnen de bijlage nu niet ophalen."
+    }
+  ],
+  "hc_documents.heading": [
+    {
+      "type": 0,
+      "value": "Documenten"
+    }
+  ],
+  "hc_documents.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle documentgegevens"
+    }
+  ],
+  "hc_documents.heading_summary": [
+    {
+      "type": 0,
+      "value": "Documentgegevens"
+    }
+  ],
+  "hc_documents.no_document": [
+    {
+      "type": 0,
+      "value": "Geen bijlage gevonden. Klopt dit niet? Vraag je zorgaanbieder om hulp."
+    }
+  ],
+  "hc_documents.subheading": [
+    {
+      "type": 0,
+      "value": "Brieven, verslagen en medische beelden zoals foto's of scans"
+    }
+  ],
+  "hc_lab_results.heading": [
+    {
+      "type": 0,
+      "value": "Uitslagen"
+    }
+  ],
+  "hc_lab_results.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle uitslaggegevens"
+    }
+  ],
+  "hc_lab_results.heading_summary": [
+    {
+      "type": 0,
+      "value": "Uitslaggegevens"
+    }
+  ],
+  "hc_lab_results.subheading": [
+    {
+      "type": 0,
+      "value": "Resultaten van onderzoeken en tests die je hebt gehad"
+    }
+  ],
+  "hc_lifestyle.heading": [
+    {
+      "type": 0,
+      "value": "Leefstijl"
+    }
+  ],
+  "hc_lifestyle.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle leefstijlgegevens"
+    }
+  ],
+  "hc_lifestyle.heading_summary": [
+    {
+      "type": 0,
+      "value": "Leefstijlgegevens"
+    }
+  ],
+  "hc_lifestyle.subheading": [
+    {
+      "type": 0,
+      "value": "Bijvoorbeeld of je rookt of drinkt, wat je eet en hoeveel je beweegt"
+    }
+  ],
+  "hc_measurements.heading": [
+    {
+      "type": 0,
+      "value": "Metingen"
+    }
+  ],
+  "hc_measurements.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle meetgegevens"
+    }
+  ],
+  "hc_measurements.heading_summary": [
+    {
+      "type": 0,
+      "value": "Meetgegevens"
+    }
+  ],
+  "hc_measurements.subheading": [
+    {
+      "type": 0,
+      "value": "Zoals bloeddruk, hartslag, lengte en gewicht"
+    }
+  ],
+  "hc_medication.heading": [
+    {
+      "type": 0,
+      "value": "Medicijnen"
+    }
+  ],
+  "hc_medication.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle medicijngegevens"
+    }
+  ],
+  "hc_medication.heading_summary": [
+    {
+      "type": 0,
+      "value": "Medicijngegevens"
+    }
+  ],
+  "hc_medication.subheading": [
+    {
+      "type": 0,
+      "value": "Die je nu of eerder hebt gebruikt"
+    }
+  ],
+  "hc_mental.heading": [
+    {
+      "type": 0,
+      "value": "Mentaal welzijn"
+    }
+  ],
+  "hc_mental.heading_detail": [
+    {
+      "type": 0,
+      "value": "All mentaal welzijngegevens"
+    }
+  ],
+  "hc_mental.heading_summary": [
+    {
+      "type": 0,
+      "value": "Mentaal welzijngegevens"
+    }
+  ],
+  "hc_mental.subheading": [
+    {
+      "type": 0,
+      "value": "Hoe het geestelijk met je gaat, zoals stress en somberheid"
+    }
+  ],
+  "hc_patient.heading": [
+    {
+      "type": 0,
+      "value": "Persoonlijke gegevens"
+    }
+  ],
+  "hc_patient.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle persoonlijke gegevens"
+    }
+  ],
+  "hc_patient.heading_summary": [
+    {
+      "type": 0,
+      "value": "Persoonlijke gegevens"
+    }
+  ],
+  "hc_patient.subheading": [
+    {
+      "type": 0,
+      "value": "Je naam, adres, geboortedatum en gezinssituatie"
+    }
+  ],
+  "hc_payment.heading": [
+    {
+      "type": 0,
+      "value": "Zorgkosten"
+    }
+  ],
+  "hc_payment.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle betaalgegevens"
+    }
+  ],
+  "hc_payment.heading_summary": [
+    {
+      "type": 0,
+      "value": "Betaalgegevens"
+    }
+  ],
+  "hc_payment.subheading": [
+    {
+      "type": 0,
+      "value": "Je betalingen en verzekeringen"
+    }
+  ],
+  "hc_plans.heading": [
+    {
+      "type": 0,
+      "value": "Behandelplan"
+    }
+  ],
+  "hc_plans.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle behandelwens/plan gegevens"
+    }
+  ],
+  "hc_plans.heading_summary": [
+    {
+      "type": 0,
+      "value": "Behandelwens/plan gegevens"
+    }
+  ],
+  "hc_plans.subheading": [
+    {
+      "type": 0,
+      "value": "Wat je belangrijk vindt in je behandeling zoals wensen en doelen"
+    }
+  ],
+  "hc_problems.heading": [
+    {
+      "type": 0,
+      "value": "Gezondheidsproblemen"
+    }
+  ],
+  "hc_problems.subheading": [
+    {
+      "type": 0,
+      "value": "Dingen waar je last van hebt, zoals pijn of ziekte"
+    }
+  ],
+  "hc_treatments.heading": [
+    {
+      "type": 0,
+      "value": "Behandelingen"
+    }
+  ],
+  "hc_treatments.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle behandelgegevens"
+    }
+  ],
+  "hc_treatments.heading_summary": [
+    {
+      "type": 0,
+      "value": "Behandelgegevens"
+    }
+  ],
+  "hc_treatments.subheading": [
+    {
+      "type": 0,
+      "value": "Behandelingen en operaties die je hebt gehad of nog krijgt"
+    }
+  ],
+  "hc_vaccinations.heading": [
+    {
+      "type": 0,
+      "value": "Vaccinaties"
+    }
+  ],
+  "hc_vaccinations.heading_detail": [
+    {
+      "type": 0,
+      "value": "Alle vaccinatiegegevens"
+    }
+  ],
+  "hc_vaccinations.heading_summary": [
+    {
+      "type": 0,
+      "value": "Vaccinatiegegevens"
+    }
+  ],
+  "hc_vaccinations.subheading": [
+    {
+      "type": 0,
+      "value": "Prikken die je hebt gehad, zoals tegen griep of corona"
+    }
+  ],
+  "health_category.alerts.warnings": [
+    {
+      "type": 0,
+      "value": "Waarschuwingen"
+    }
+  ],
+  "health_category.allergies.allergies": [
+    {
+      "type": 0,
+      "value": "Allergieën"
+    }
+  ],
+  "health_category.appointments.appointments": [
+    {
+      "type": 0,
+      "value": "Afspraken"
+    }
+  ],
+  "health_category.appointments.compositions": [
+    {
+      "type": 0,
+      "value": "Composities"
+    }
+  ],
+  "health_category.appointments.encounters": [
+    {
+      "type": 0,
+      "value": "Ontmoetingen"
+    }
+  ],
+  "health_category.appointments.hospital_admissions": [
+    {
+      "type": 0,
+      "value": "Ziekenhuisopnames"
+    }
+  ],
+  "health_category.appointments.journal_entries": [
+    {
+      "type": 0,
+      "value": "Journaalposten"
+    }
+  ],
+  "health_category.complaints.problems": [
+    {
+      "type": 0,
+      "value": "Problemen"
+    }
+  ],
+  "health_category.devices.medical_device_products": [
+    {
+      "type": 0,
+      "value": "Producten voor medische apparaten"
+    }
+  ],
+  "health_category.devices.medical_device_requests": [
+    {
+      "type": 0,
+      "value": "Aanvragen voor medische hulpmiddelen"
+    }
+  ],
+  "health_category.devices.medical_devices": [
+    {
+      "type": 0,
+      "value": "Medische apparaten"
+    }
+  ],
+  "health_category.documents.documents": [
+    {
+      "type": 0,
+      "value": "Documenten"
+    }
+  ],
+  "health_category.lab_results.gp_laboratory_results": [
+    {
+      "type": 0,
+      "value": "GP laboratoriumuitslagen"
+    }
+  ],
+  "health_category.lab_results.laboratory_results": [
+    {
+      "type": 0,
+      "value": "Laboratoriumresultaten"
+    }
+  ],
+  "health_category.lifestyle.alchoholuse": [
+    {
+      "type": 0,
+      "value": "Alcoholgebruik"
+    }
+  ],
+  "health_category.lifestyle.current_living_situation": [
+    {
+      "type": 0,
+      "value": "Huidige woonsituatie"
+    }
+  ],
+  "health_category.lifestyle.drug_use": [
+    {
+      "type": 0,
+      "value": "Drugsgebruik"
+    }
+  ],
+  "health_category.lifestyle.nutrition_advice": [
+    {
+      "type": 0,
+      "value": "Voedingsadvies"
+    }
+  ],
+  "health_category.lifestyle.tabacco_use": [
+    {
+      "type": 0,
+      "value": "Tabaksgebruik"
+    }
+  ],
+  "health_category.measurements.blood_pressure": [
+    {
+      "type": 0,
+      "value": "Bloeddruk"
+    }
+  ],
+  "health_category.measurements.body_height": [
+    {
+      "type": 0,
+      "value": "Lichaamslengte"
+    }
+  ],
+  "health_category.measurements.body_weight": [
+    {
+      "type": 0,
+      "value": "Lichaamsgewicht"
+    }
+  ],
+  "health_category.medication.administration_agreements": [
+    {
+      "type": 0,
+      "value": "Beheerovereenkomsten"
+    }
+  ],
+  "health_category.medication.medication_agreements": [
+    {
+      "type": 0,
+      "value": "Medicatie afspraken"
+    }
+  ],
+  "health_category.medication.medication_use": [
+    {
+      "type": 0,
+      "value": "Medicatie gebruik"
+    }
+  ],
+  "health_category.mental.functional_or_mental_status": [
+    {
+      "type": 0,
+      "value": "Functionele of mentale status"
+    }
+  ],
+  "health_category.patient.patient_information": [
+    {
+      "type": 0,
+      "value": "Patiëntinformatie"
+    }
+  ],
+  "health_category.patient.practitioner_information": [
+    {
+      "type": 0,
+      "value": "Praktijk informatie"
+    }
+  ],
+  "health_category.payment.get_insurance_information": [
+    {
+      "type": 0,
+      "value": "Verzekeringsinformatie"
+    }
+  ],
+  "health_category.payment.get_organization_information": [
+    {
+      "type": 0,
+      "value": "Organisatie informatie"
+    }
+  ],
+  "health_category.plans.get_advance_directives": [
+    {
+      "type": 0,
+      "value": "Voorafgaande richtlijnen"
+    }
+  ],
+  "health_category.plans.get_treatment_directives": [
+    {
+      "type": 0,
+      "value": "Behandelrichtlijnen"
+    }
+  ],
+  "health_category.treatments.episodes": [
+    {
+      "type": 0,
+      "value": "Behandelingsepisodes"
+    }
+  ],
+  "health_category.treatments.procedure_requests": [
+    {
+      "type": 0,
+      "value": "Procedure verzoeken"
+    }
+  ],
+  "health_category.treatments.procedures": [
+    {
+      "type": 0,
+      "value": "Procedures"
+    }
+  ],
+  "health_category.vaccinations.vaccination_events": [
+    {
+      "type": 0,
+      "value": "Vaccinatie evenementen"
+    }
+  ],
+  "health_category.vaccinations.vaccination_recommendations": [
+    {
+      "type": 0,
+      "value": "Aanbevelingen voor vaccinatie"
+    }
+  ],
+  "health_category.vaccinations.vaccinations": [
+    {
+      "type": 0,
+      "value": "Vaccinaties"
+    }
+  ],
+  "ihe_mhd_minimal_document_reference.heading": [
+    {
+      "type": 0,
+      "value": "Documenten"
+    }
+  ],
+  "mhc_care_treatment.heading": [
+    {
+      "type": 0,
+      "value": "Zorg en behandeling"
+    }
+  ],
+  "mhc_examinations_results.heading": [
+    {
+      "type": 0,
+      "value": "Onderzoeken en uitslagen"
+    }
+  ],
+  "mhc_health.heading": [
+    {
+      "type": 0,
+      "value": "Gezondheid"
+    }
+  ],
+  "mhc_personal_administration.heading": [
+    {
+      "type": 0,
+      "value": "Persoonlijk en administratie"
+    }
+  ],
+  "zib_administration_agreement.heading": [
+    {
+      "type": 0,
+      "value": "Hoe je je medicijnen krijgt"
+    }
+  ],
+  "zib_advance_directive.heading": [
+    {
+      "type": 0,
+      "value": "Wilsverklaring"
+    }
+  ],
+  "zib_alcohol_use.heading": [
+    {
+      "type": 0,
+      "value": "Alcoholgebruik"
+    }
+  ],
+  "zib_alert.heading": [
+    {
+      "type": 0,
+      "value": "Waarschuwingen"
+    }
+  ],
+  "zib_allergy_intolerance.heading": [
+    {
+      "type": 0,
+      "value": "Allergieën"
+    }
+  ],
+  "zib_blood_pressure.heading": [
+    {
+      "type": 0,
+      "value": "Bloeddruk"
+    }
+  ],
+  "zib_body_height.heading": [
+    {
+      "type": 0,
+      "value": "Lengte"
+    }
+  ],
+  "zib_body_weight.heading": [
+    {
+      "type": 0,
+      "value": "Gewicht"
+    }
+  ],
+  "zib_drug_use.heading": [
+    {
+      "type": 0,
+      "value": "Drugsgebruik"
+    }
+  ],
+  "zib_encounter.heading": [
+    {
+      "type": 0,
+      "value": "Contacten met zorgaanbieders"
+    }
+  ],
+  "zib_functional_or_mental_status.heading": [
+    {
+      "type": 0,
+      "value": "Mentaal welzijn"
+    }
+  ],
+  "zib_laboratory_test_result_observation.heading": [
+    {
+      "type": 0,
+      "value": "Uitslag van onderzoek laboratorium"
+    }
+  ],
+  "zib_laboratory_test_result_specimen.heading": [
+    {
+      "type": 0,
+      "value": "Onderzoeksmateriaal"
+    }
+  ],
+  "zib_living_situation.heading": [
+    {
+      "type": 0,
+      "value": "Leefomstandigheden"
+    }
+  ],
+  "zib_medical_device.heading": [
+    {
+      "type": 0,
+      "value": "Medische hulpmiddelen"
+    }
+  ],
+  "zib_medication_agreement.heading": [
+    {
+      "type": 0,
+      "value": "Afspraken over je medicijnen"
+    }
+  ],
+  "zib_medication_use.heading": [
+    {
+      "type": 0,
+      "value": "Wat je nu gebruikt"
+    }
+  ],
+  "zib_nutrition_advice.heading": [
+    {
+      "type": 0,
+      "value": "Voedingsadvies"
+    }
+  ],
+  "zib_patient.heading": [
+    {
+      "type": 0,
+      "value": "Persoonsgegevens, Burgerlijke staat & contactpersonen"
+    }
+  ],
+  "zib_payer.heading": [
+    {
+      "type": 0,
+      "value": "Betaalgegevens"
+    }
+  ],
+  "zib_problem.heading": [
+    {
+      "type": 0,
+      "value": "Medische klachten"
+    }
+  ],
+  "zib_procedure.heading": [
+    {
+      "type": 0,
+      "value": "Behandelingen en overdracht"
+    }
+  ],
+  "zib_procedure_request.heading": [
+    {
+      "type": 0,
+      "value": "Geplande zorgafspraken"
+    }
+  ],
+  "zib_tobacco_use.heading": [
+    {
+      "type": 0,
+      "value": "Rookgedrag"
+    }
+  ],
+  "zib_treatment_directive.heading": [
+    {
+      "type": 0,
+      "value": "Behandelwensen"
+    }
+  ],
+  "zib_vaccination.heading": [
+    {
+      "type": 0,
+      "value": "Vaccinaties"
+    }
+  ],
+  "zib_vaccination_recommendation.heading": [
+    {
+      "type": 0,
+      "value": "Vaccinatie adviezen"
+    }
+  ]
+}

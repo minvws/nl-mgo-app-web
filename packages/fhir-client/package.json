@@ -1,5 +1,6 @@
 {
     "name": "@minvws/mgo-fhir-client",
+    "private": true,
     "license": "EUPL-1.2",
     "type": "module",
     "exports": {
@@ -8,9 +9,8 @@
     },
     "scripts": {},
     "dependencies": {
-        "@minvws/mgo-fhir-data": "workspace:*",
-        "@minvws/mgo-fhir-types": "workspace:*",
-        "@minvws/mgo-utils": "workspace:*",
+        "@minvws/mgo-fhir": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
         "ky": "^1.7.4",
         "lossless-json": "^4.0.1"
     },

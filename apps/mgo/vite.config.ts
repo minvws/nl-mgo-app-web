@@ -28,7 +28,11 @@ export default defineConfig({
         watch: {
             usePolling: true,
         },
-        // We try to use the same headers as the production server in order to catch CSP issues early
+        /**
+         * We try to use the same headers as the production server in order to catch CSP issues early
+         * - Keep these in sync with the /nginx.conf that is used in the docker setup
+         * - DO NOT CHANGE THIS WITHOUT CHECKING WITH OPS / DEV TEAM!
+         */
         headers: {
             'Permissions-Policy': 'interest-cohort=()',
             'Referrer-Policy': 'same-origin',
@@ -48,11 +52,14 @@ export default defineConfig({
                 `font-src 'self'`,
                 `media-src 'none'`,
                 `frame-src 'none'`,
-                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:*`,
+                // 'data:' to allow internal data fetching for creating blob urls
+                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data:`,
                 `worker-src 'none'`,
                 `form-action 'none'`,
-                // Unfortunately 'unsafe-inline' is needed as the vite development server uses inline scripts
-                `script-src 'self' 'unsafe-inline' ${VITE_SERVER_HOST}:*`,
+                // 'unsafe-inline' DEV ONLY - is needed as the vite development server uses inline scripts
+                // 'wasm-unsafe-eval' is needed as the pdf renderer uses wasm
+                `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' ${VITE_SERVER_HOST}:*`,
+                // 'unsafe-inline' DEV ONLY - is needed as the vite development server uses inline styles
                 `style-src 'self' 'unsafe-inline'`,
             ].join('; '),
         },

@@ -1,0 +1,186 @@
+{
+    "label": "Zorgprofessional",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Geslacht",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Zorgverlener identificatienummer",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "21870932"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Naamgegevens",
+            "children": [
+                {
+                    "label": "Achternaam",
+                    "type": "SINGLE_VALUE",
+                    "display": "Peters"
+                },
+                {
+                    "label": "Geboortenamen",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Initialen",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "J.",
+                        "H.",
+                        "R."
+                    ]
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Titels",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Titels",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Titels",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Tussenvoegsel",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Volledige naam",
+                    "type": "SINGLE_VALUE",
+                    "display": "J.H.R. Peters"
+                },
+                {
+                    "label": "Voornaam partner",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Email adres",
+                    "type": "SINGLE_VALUE",
+                    "display": "j.peters@hospital.nl"
+                },
+                {
+                    "label": "Email soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Nummer soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Telefoonnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "+3715828282"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "Adres informatie",
+            "children": [
+                {
+                    "label": "Aanduiding bij nummer",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Additionele informatie",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "SINGLE_VALUE",
+                    "display": "work"
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Gemeente",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "1"
+                },
+                {
+                    "label": "Huisnummer letter",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Huisnummer toevoeging",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Land",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Nederland (NL in codesysteem urn:iso:std:iso:3166)",
+                            "code": "NL",
+                            "system": "urn:iso:std:iso:3166"
+                        }
+                    ]
+                },
+                {
+                    "label": "Postcode",
+                    "type": "SINGLE_VALUE",
+                    "display": "2353 GA"
+                },
+                {
+                    "label": "Straat",
+                    "type": "SINGLE_VALUE",
+                    "display": "Simon Smitweg"
+                },
+                {
+                    "label": "Woonplaats",
+                    "type": "SINGLE_VALUE",
+                    "display": "Leiderdorp"
+                }
+            ]
+        }
+    ]
+}

@@ -10,16 +10,16 @@
             "path": "./apps/mgo"
         },
         {
+            "path": "./packages/config"
+        },
+        {
             "path": "./packages/data-services"
         },
         {
             "path": "./packages/fhir-client"
         },
         {
-            "path": "./packages/fhir-data"
-        },
-        {
-            "path": "./packages/fhir-types"
+            "path": "./packages/fhir"
         },
         {
             "path": "./packages/intl"
@@ -29,6 +29,21 @@
         },
         {
             "path": "./packages/utils"
+        },
+        {
+            "path": "./packages/hcim-parse"
+        },
+        {
+            "path": "./packages/hcim-ui"
+        },
+        {
+            "path": "./packages/hcim"
+        },
+        {
+            "path": "./apps/hcim-api"
+        },
+        {
+            "path": "./apps/hcim-labels"
         }
     ]
 }

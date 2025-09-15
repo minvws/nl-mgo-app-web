@@ -1,0 +1,104 @@
+[
+    {
+        "label": "Gebruiksinstructie",
+        "children": [
+            {
+                "label": "Omschrijving",
+                "type": "SINGLE_VALUE",
+                "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+            },
+            {
+                "label": "Toedieningsweg",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    {
+                        "display": "ORAAL (9 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
+                        "code": "9",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            {
+                "label": "Aanvullende instructie",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Volgnummer",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            },
+            {
+                "label": "Ondergrens",
+                "type": "SINGLE_VALUE",
+                "display": "1 stuk"
+            },
+            {
+                "label": "Bovengrens",
+                "type": "SINGLE_VALUE",
+                "display": "2 stuks"
+            },
+            {
+                "label": "Teller",
+                "type": "SINGLE_VALUE",
+                "display": "6 stuks"
+            },
+            {
+                "label": "Noemer",
+                "type": "SINGLE_VALUE",
+                "display": "één dag"
+            },
+            {
+                "label": "Zo nodig",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    {
+                        "display": "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)",
+                        "code": "1137",
+                        "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Toedieningsschema",
+        "children": [
+            {
+                "label": "Toedieninsgduur",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Frequentie",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Maximum waarde",
+                "type": "SINGLE_VALUE",
+                "display": "4"
+            },
+            {
+                "label": "Interval",
+                "display": "1 d",
+                "type": "SINGLE_VALUE"
+            },
+            {
+                "label": "Weekdagen",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Toedientijd",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Dagdeel",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            }
+        ]
+    }
+]

@@ -1,5 +1,5 @@
 import { parse, stringify, type LosslessNumber } from 'lossless-json';
-import { type DeepReplaceType } from './DeepReplaceType';
+import { type DeepReplaceType } from './DeepReplaceType.js';
 
 export type { LosslessNumber };
 

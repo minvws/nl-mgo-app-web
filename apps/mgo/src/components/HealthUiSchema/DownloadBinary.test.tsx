@@ -1,8 +1,8 @@
 import { getDataService } from '$/services';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { type DownloadBinary as UiDownloadBinary } from '@minvws/mgo-fhir-data';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { type DownloadBinary as UiDownloadBinary } from '@minvws/mgo-hcim-ui';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { screen, within } from '@testing-library/react';

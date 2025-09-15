@@ -4,5 +4,15 @@
     "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
     "cSpell.words": ["Codelijst", "GHSA", "Ghsas", "interpretatie", "Loinc", "minvws", "Nictiz"],
     "eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "pattern": "./apps/*/" }],
-    "typescript.tsserver.experimental.enableProjectDiagnostics": true
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "sonarlint.connectedMode.project": {
+        "connectionId": "vws",
+        "projectKey": "nl-mgo-app-web-private"
+    },
+    "search.exclude": {
+        "apps/*/build": true,
+        "apps/*/dist": true,
+        "packages/*/build": true,
+        "packages/*/dist": true
+    }
 }

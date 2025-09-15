@@ -1,7 +1,7 @@
 import { App } from '$/App';
 import { Outlet } from '$/routing';
 import { setup, setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { createMemoryRouter } from 'react-router-dom';
 import { expect, test } from 'vitest';

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { afterEach, expect, test, vi } from 'vitest';
-import { log } from './log';
+import { log } from './log.js';
 
 afterEach(() => {
     vi.unstubAllEnvs();

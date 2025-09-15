@@ -31,7 +31,7 @@ test('returns organisations path if slug is present', () => {
     );
 
     expect(result.current).toBe(
-        `/organisaties/${organizationSlug}/${healthCategorySlug}/${resourceSlug}/detail`
+        `/zorgaanbieders/${organizationSlug}/${healthCategorySlug}/${resourceSlug}/detail`
     );
 });
 

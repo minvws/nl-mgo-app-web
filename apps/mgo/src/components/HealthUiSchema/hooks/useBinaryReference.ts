@@ -2,7 +2,7 @@ import { HealthUiSchemaContext } from '$/components/HealthUiSchema/HealthUiSchem
 import { getDataService } from '$/services';
 import { useOrganizationsStore } from '$/store';
 import { type DataService } from '@minvws/mgo-data-services';
-import { type FhirVersion } from '@minvws/mgo-fhir-data';
+import { type FhirVersion } from '@minvws/mgo-fhir';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useContext } from 'react';
 

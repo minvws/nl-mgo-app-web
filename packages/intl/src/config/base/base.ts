@@ -1,5 +1,5 @@
 import { type IntlConfig as FormatIntlConfig, type OnErrorFn } from '@formatjs/intl';
-import { type Locale } from '../../locale';
+import { type Locale } from '../../locale.js';
 
 export interface IntlOptions<RichTextElement> extends FormatIntlConfig<RichTextElement> {
     locale: Locale;

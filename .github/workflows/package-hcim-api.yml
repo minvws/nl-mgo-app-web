@@ -1,0 +1,39 @@
+name: HCIM API - package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'apps/mgo-hcim-api/**'
+      - 'packages/hcim/**'
+      - 'packages/hcim-ui/**'
+      - 'packages/hcim-parse/**'
+      - 'packages/intl/src/locales/fhir/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - name: Build HCIM API
+        run: pnpm exec nx run @minvws/mgo-hcim-api:build
+      - name: Set current date as env variable
+        run: echo "CREATED=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Set filename
+        run: echo "FILENAME=nl-mgo-hcim-api_${RELEASE_VERSION//\//-}_${CREATED//:/-}" >> $GITHUB_ENV
+      - name: Add version.json
+        shell: bash
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\", \"created\": \"$CREATED\"}" > apps/hcim-api/build/version.json'
+      - name: Create release tar
+        run: tar -C apps/hcim-api/build -czf ${{ env.FILENAME }}.tar.gz .
+      - name: Upload release tar
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILENAME }}
+          path: ${{ env.FILENAME }}.tar.gz

@@ -31,6 +31,16 @@ test('returns queries for specific organisations if specified', () => {
     ]);
 });
 
+test('returns empty array for undefined organisation', () => {
+    const organizations = [faker.custom.healthcareOrganization()];
+    const store = useOrganizationsStore.getState();
+    vi.spyOn(store, 'getOrganizationsById').mockImplementation(() => organizations);
+
+    const { result } = renderHook(() => useHealthCategoryQueries(undefined, [organizations[0].id]));
+
+    expect(result.current).toEqual([]);
+});
+
 test.each([
     HealthCategory.PersonalInformation,
     HealthCategory.PayerAndOrganization,

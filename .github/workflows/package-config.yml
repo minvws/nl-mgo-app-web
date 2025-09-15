@@ -1,0 +1,35 @@
+name: Create shared config package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/config/**'
+  pull_request:
+    paths:
+      - 'packages/config/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+      - name: Build
+        run: pnpm exec nx run @minvws/mgo-config:build
+      - name: Set filename
+        run: echo "FILENAME=nl-mgo-config_${RELEASE_VERSION//\//-}_${CREATED//:/-}" >> $GITHUB_ENV
+      - name: Add version.json
+        shell: bash
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/config/dist/version.json'
+      - name: Create release tar
+        run: tar -C packages/config/dist -czf ${{ env.FILENAME }}.tar.gz .
+      - name: Upload release tar
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILENAME }}
+          path: ${{ env.FILENAME }}.tar.gz

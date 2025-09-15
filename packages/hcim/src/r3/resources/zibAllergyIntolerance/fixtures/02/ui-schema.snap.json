@@ -1,0 +1,147 @@
+{
+    "label": "Allergie intolerantie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Allergie categorie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Allergie voor substantie (bevinding) (419199007 in codesysteem http://snomed.info/sct)",
+                            "code": "419199007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Allergie status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Active (active in codesysteem http://hl7.org/fhir/v3/ActStatus)",
+                            "code": "active",
+                            "system": "http://hl7.org/fhir/v3/ActStatus"
+                        }
+                    ]
+                },
+                {
+                    "label": "Allergie status",
+                    "type": "SINGLE_VALUE",
+                    "display": "confirmed"
+                },
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Begin datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 november 2008"
+                },
+                {
+                    "label": "Bron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "2c8d2bbc-e3e4-11eb-1953-020000000000"
+                    ]
+                },
+                {
+                    "label": "Laatste reactie datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "15 november 2009"
+                },
+                {
+                    "label": "Mate van kritiek zijn",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)",
+                            "code": "24484000",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/ont-ver-medmij-bgz-patient-ts-01"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Veroorzakende stof",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Bijengif (substantie) (288328004 in codesysteem http://snomed.info/sct)",
+                            "code": "288328004",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Reactie",
+            "children": [
+                {
+                    "label": "Ernst",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "Ernstig (kwalificatiewaarde) (24484000 in codesysteem http://snomed.info/sct)",
+                                "code": "24484000",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "label": "Reactie beschrijving",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Reactie tijdstip",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Specifieke stof",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Symptoom",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "misselijkheid en braken (aandoening) (16932000 in codesysteem http://snomed.info/sct)",
+                                "code": "16932000",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "label": "Wijze van blootstelling",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

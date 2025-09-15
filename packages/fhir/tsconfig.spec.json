@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.base.lib.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "../../out-tsc/mgo-fhir/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": ["vitest/globals", "vitest/importMeta", "vitest"],
+        "paths": {
+            "fhir/r3": ["node_modules/@types/fhir/r3.d.ts"],
+            "fhir/r4": ["node_modules/@types/fhir/r4.d.ts"]
+        }
+    },
+    "include": ["src/**/*.test.ts", "src/**/*.d.ts", "test/**/*.ts", "test/**/*.d.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "../intl"
+        },
+        {
+            "path": "../hcim-ui"
+        },
+        {
+            "path": "../hcim-parse"
+        },
+        {
+            "path": "../utils"
+        },
+        {
+            "path": "../fhir"
+        },
+        {
+            "path": "./tsconfig.lib.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "label": "Vaccinatie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Dosis",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatienummer",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Inenting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Patient",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
+                    "reference": "Patient/nl-core-Patient-01"
+                },
+                {
+                    "label": "Product code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Hepatitis A-vaccin (J07BC02 in codesysteem http://www.whocc.no/atc)",
+                            "code": "J07BC02",
+                            "system": "http://www.whocc.no/atc"
+                        }
+                    ]
+                },
+                {
+                    "label": "Protocol toegepast",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "completed"
+                },
+                {
+                    "label": "Toediener",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Healthcare professional (role)",
+                    "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Bezoek aan Guatemala."
+                    ]
+                },
+                {
+                    "label": "Vaccinatie datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 juni 2012"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Vaccinatie reden",
+            "children": [
+                {
+                    "label": "Vaccinatie aanleiding",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Vaccinatie indicatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

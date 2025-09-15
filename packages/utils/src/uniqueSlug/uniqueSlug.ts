@@ -1,4 +1,4 @@
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash-es';
 
 export function createUniqueSlug(value: string, existingSlugs: string[]) {
     const slug = kebabCase(value);

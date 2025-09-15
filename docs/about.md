@@ -17,16 +17,16 @@ This information can be found on the [nictiz wiki][nictiz-wiki]. However to alig
 
 > There is an HTTP client available for each data service type in the `data-services` package.
 
-### From ZIB to UI
+### From HCIM to UI
 
-All the medical data provided by the healthcare organizations are based on [ZIB][zib] profiles. This information is returned from a data service in the [FHIR format][fhir]. For each ZIB that is used there is a related FHIR profile which attempts to translate the data of the ZIB model into a FHIR structure.
+All the medical data provided by the healthcare organizations are based on [HCIM (ZIB in Dutch)][hcim] profiles. This information is returned from a data service in the [FHIR format][fhir]. For each HCIM that is used there is a related FHIR profile which attempts to translate the data of the HCIM into a FHIR structure.
 These FHIR profiles are published on [simplifier].
 
-To get from this FHIR data to a [UI] showing the relevant information we process the FHIR data in 2 steps. This process is implemented in the `fhir-data` package and is used not only by `web` but also by the `ios` and `android` applications. This prevents use from having to write similar parsing functionality more than once. And ensures the same information is shown across all clients.
+To get from this FHIR data to a [UI] showing the relevant information we process the FHIR data in 2 steps. This process is implemented in the `hcim` package and is used not only by `web` but also by the `ios` and `android` applications. This prevents use from having to write similar parsing functionality more than once. And ensures the same information is shown across all clients.
 
-1. First we parse the FHIR data and create a simplified object.
+1. First we parse the FHIR data and create a more compact object.
 
-The resulting object is still very close to the original FHIR data. But certain fields that would normally only be accesible deep inside [extensions][fhir-ext] become easily available on properties. This also creates a strong typed (TypeScript) model of this object. Which is not only used by `web` but is also exported as a [JSON Schema][json-schema]. This in turn is converted to both Kotlin (`android`) and Swift (`ios`) models, this ensures all clients have strong typed models for the health data that is used. We named this model a `MGO Resource` for now.
+The resulting object is still very close to the original FHIR data. But certain fields that would normally only be accessible deep inside [extensions][fhir-ext] become easily available on properties. This also creates a strong typed (TypeScript) model of this object. Which is not only used by `web` but is also exported as a [JSON Schema][json-schema]. (This is done in the `/apps/hcim-api`) This JSON Schema is also used by the mobile apps, this ensures all clients have strong typed models for the health data that is used. We named this model a `MGO Resource` for now.
 
 2. Convert the MGO Resource to a Health UI Schema.
 
@@ -60,6 +60,6 @@ This should give you a general idea of how the MGO application currently works. 
 [mgo-endpoints]: ./data-services.md
 [fhir]: ./glossary.md#FHIR
 [fhir-ext]: https://hl7.org/fhir/STU3/extensibility.html
-[zib]: ./glossary.md#ZIB
+[hcim]: ./glossary.md#HCIM
 [simplifier]: https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.18
 [json-schema]: https://json-schema.org/

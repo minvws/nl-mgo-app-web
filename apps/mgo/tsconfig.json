@@ -9,10 +9,16 @@
             "path": "../../packages/ui"
         },
         {
+            "path": "../../packages/fhir"
+        },
+        {
             "path": "../../packages/intl"
         },
         {
-            "path": "../../packages/fhir-data"
+            "path": "../../packages/hcim-ui"
+        },
+        {
+            "path": "../../packages/hcim"
         },
         {
             "path": "../../packages/data-services"

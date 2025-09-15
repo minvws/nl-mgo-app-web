@@ -42,7 +42,7 @@ This repository is a monorepo in that all directories under `apps/*` and `packag
 │    ├── data-services      # HTTP client for making requests to data services
 │    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
 │    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
-│    ├── fhir-types         # Collection of TypeScript types for dealing with different Fhir (version) elements
+│    ├── fhir         # Collection of TypeScript types for dealing with different Fhir (version) elements
 │    ├── intl               # Contains all the text content and translations for the MGO app and the "health ui schema"'s
 │    └── tailwind           # MGO Tailwind theme
 │    ├── ui                 # UI library for the MGO app
@@ -90,10 +90,11 @@ pnpm run <command>
 | `messages:update` | Download latest translations from lokalise, see [mgo-intl] for details.                              |
 | `pr`              | Runs all the checks that are normally also ran for a pull request                                    |
 | `e2e`             | Runs the end-to-end tests for the mgo app using [Playwright]                                         |
+| `graph`           | Graph dependencies within workspace.                                                                 |
 
 ## NX
 
-We have started using [nx] for managing processing within this monorepo such as typechecking or linting. We will also soon be updating the configuration to start publishing certain packages to npm.
+We have started using [nx] for managing processing within this monorepo such as building, typechecking or linting. We also use nx to publish certain packages. See the `nx.json` for details.
 
 You can use [nx] to run certain tasks for projects or viewing a graph of the entire monorepo. Running a command for a specific project:
 
@@ -103,34 +104,16 @@ npx nx run <project>:<command>
 
 Some commonly used [nx commands][nx-commands] and examples
 
-| Command                                  | Description                                                      |
-| ---------------------------------------- | ---------------------------------------------------------------- |
-| `npx nx graph`                           | [Graph dependencies within workspace][nx-graph]                  |
-| `npx nx run @minvws/mgo:build`           | Create a production build for the mgo app                        |
-| `npx nx run @minvws/mgo:dev`             | Start a development server for the mgo app                       |
-| `npx nx run @minvws/mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
-| `npx nx run @minvws/mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
-| `npx nx show project @minvws/mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
+| Command                                | Description                                                      |
+| -------------------------------------- | ---------------------------------------------------------------- |
+| `pnpm exec nx graph`                   | [Graph dependencies within workspace][nx-graph]                  |
+| `pnpm exec nx run mgo:build`           | Create a production build for the mgo app                        |
+| `pnpm exec nx run mgo:dev`             | Start a development server for the mgo app                       |
+| `pnpm exec nx run mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `pnpm exec nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
+| `pnpm exec nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
-[vite-dev]: https://vite.dev/guide/cli.html#dev-server
-[vitest]: https://vitest.dev/
-[eslint]: https://eslint.org/
-[TypeScript]: https://www.typescriptlang.org/
-[Storybook]: https://storybook.js.org/
-[Prettier]: https://prettier.io/
-[Playwright]: https://playwright.dev/
-[docker]: https://www.docker.com/products/docker-desktop/
-[nx]: https://nx.dev/
-[nx-graph]: https://nx.dev/reference/nx-commands#graph
-[nx-commands]: https://nx.dev/reference/nx-commands
-
-<!-- Docs -->
-
-[mgo-about]: ./docs/about.md
-[mgo-development]: ./docs/development.md
-[mgo-deployment]: ./docs/deployment.md
-[mgo-glossary]: ./docs/glossary.md
-[mgo-intl]: ./packages/mgo-intl/README.md
+We also use nx to publish certain packages to [NPM]. For more information on this please [visit the NPM packages documentation][mgo-npm-packages]]
 
 ## Contributing
 
@@ -146,3 +129,27 @@ Specifically the rijkslogo and rijkshuisstijl have specific [terms of use](./LIC
 
 This repository follows the [REUSE Specfication v3.3](https://reuse.software/spec/).
 Please see [REUSE.toml](./REUSE.toml) and the individual `*.license` files for copyright and license information.
+
+<hr>
+
+[vite-dev]: https://vite.dev/guide/cli.html#dev-server
+[vitest]: https://vitest.dev/
+[eslint]: https://eslint.org/
+[TypeScript]: https://www.typescriptlang.org/
+[Storybook]: https://storybook.js.org/
+[Prettier]: https://prettier.io/
+[Playwright]: https://playwright.dev/
+[docker]: https://www.docker.com/products/docker-desktop/
+[nx]: https://nx.dev/
+[nx-graph]: https://nx.dev/reference/nx-commands#graph
+[nx-commands]: https://nx.dev/reference/nx-commands
+[NPM]: https://www.npmjs.com/
+
+<!-- Docs -->
+
+[mgo-about]: ./docs/about.md
+[mgo-development]: ./docs/development.md
+[mgo-deployment]: ./docs/deployment.md
+[mgo-glossary]: ./docs/glossary.md
+[mgo-intl]: ./packages/mgo-intl/README.md
+[mgo-npm-packages]: ./docs/npm-packages.md

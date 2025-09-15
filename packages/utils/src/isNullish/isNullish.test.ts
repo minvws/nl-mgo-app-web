@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { isNullish } from './isNullish';
+import { isNullish } from './isNullish.js';
 
 test('returns true for undefined', () => {
     expect(isNullish(undefined)).toBe(true);

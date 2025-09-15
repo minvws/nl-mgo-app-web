@@ -1,6 +1,6 @@
 import { useOnboardingSeen } from '$/hooks';
 import { setupApp } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { fireEvent, screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 

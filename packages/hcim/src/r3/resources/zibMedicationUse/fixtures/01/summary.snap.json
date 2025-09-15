@@ -1,0 +1,82 @@
+{
+    "label": "Paracetamol tablet 500mg",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Gebruiksaanwijzing",
+                    "type": "SINGLE_VALUE",
+                    "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+                },
+                {
+                    "label": "Minimaal",
+                    "type": "SINGLE_VALUE",
+                    "display": "1 stuk"
+                },
+                {
+                    "label": "Maximaal",
+                    "type": "SINGLE_VALUE",
+                    "display": "2 stuks"
+                },
+                {
+                    "label": "Status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Voldaan"
+                },
+                {
+                    "label": "Reden gebruik",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "display": [
+                        [
+                            {
+                                "display": "Nursing Procedure",
+                                "code": "9632001",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Periode van gebruik",
+            "children": [
+                {
+                    "label": "Ingangsdatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "21 juli 2020"
+                },
+                {
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Voorgeschreven door",
+            "children": [
+                {
+                    "label": "Specialist",
+                    "type": "SINGLE_VALUE",
+                    "display": "Henk de Vries"
+                },
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle medicijngegevens",
+                    "reference": "MedicationStatement/zib-medicationuse-01"
+                }
+            ]
+        }
+    ]
+}

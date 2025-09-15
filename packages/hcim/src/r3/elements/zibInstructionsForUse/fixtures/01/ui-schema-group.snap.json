@@ -1,0 +1,117 @@
+[
+    {
+        "label": "Gebruiksinstructie",
+        "children": [
+            {
+                "label": "Omschrijving",
+                "type": "SINGLE_VALUE",
+                "display": "Vanaf 8 jun 2020, 1 maal per dag, rectaal"
+            },
+            {
+                "label": "Toedieningsweg",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    {
+                        "display": "rectaal (12 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
+                        "code": "12",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                    }
+                ]
+            },
+            {
+                "label": "Aanvullende instructie",
+                "type": "MULTIPLE_GROUPED_VALUES",
+                "display": [
+                    [
+                        {
+                            "display": "Then stop (422327006 in codesysteem http://snomed.info/sct)",
+                            "code": "422327006",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                ]
+            },
+            {
+                "label": "Teller",
+                "type": "SINGLE_VALUE",
+                "display": "200 milliliter"
+            },
+            {
+                "label": "Noemer",
+                "type": "SINGLE_VALUE",
+                "display": "12 uur"
+            },
+            {
+                "label": "Volgnummer",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            },
+            {
+                "label": "Keerdosis",
+                "type": "SINGLE_VALUE",
+                "display": "20 milligram"
+            },
+            {
+                "label": "Teller",
+                "type": "SINGLE_VALUE",
+                "display": "1000 milliliter"
+            },
+            {
+                "label": "Noemer",
+                "type": "SINGLE_VALUE",
+                "display": "24 uur"
+            },
+            {
+                "label": "Zo nodig",
+                "type": "MULTIPLE_VALUES",
+                "display": [
+                    {
+                        "display": "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)",
+                        "code": "1137",
+                        "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Toedieningsschema",
+        "children": [
+            {
+                "label": "Toedieninsgduur",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Frequentie",
+                "type": "SINGLE_VALUE",
+                "display": "1"
+            },
+            {
+                "label": "Maximum waarde",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Interval",
+                "display": "1 d",
+                "type": "SINGLE_VALUE"
+            },
+            {
+                "label": "Weekdagen",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Toedientijd",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            },
+            {
+                "label": "Dagdeel",
+                "type": "SINGLE_VALUE",
+                "display": "Niet bekend"
+            }
+        ]
+    }
+]

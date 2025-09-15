@@ -1,0 +1,90 @@
+{
+    "label": "Drugs gebruik",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Drug gebruik status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Misused drugs in past (finding) (44870007 in codesysteem http://snomed.info/sct)",
+                            "code": "44870007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "19a199c7-8fdf-11ec-9837-020000000000"
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Start datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1981"
+                },
+                {
+                    "label": "Stop datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "1983"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Op feestjes en in uitgaanscircuit."
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Drugs of geneesmiddel soort",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Amphetamine (703842006 in codesysteem http://snomed.info/sct)",
+                            "code": "703842006",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Hoeveelheid",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 times a year"
+                },
+                {
+                    "label": "Toedieningsweg",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "NASAAL (6 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
+                            "code": "6",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.4.9"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

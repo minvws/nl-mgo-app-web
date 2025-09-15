@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Lint
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - name: Lint
         env:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Format
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - name: Check formatting
         run: pnpm run format:check
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Check types
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - name: Check types
         run: pnpm run typecheck
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Test
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - name: Test
         id: test
@@ -59,21 +59,17 @@ jobs:
     runs-on: ubuntu-22.04
     name: Build
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
-      # !---------------------------------------------------------------!
-      # !--- Temporarily disabled, awaiting Lokalise subscription... ---!
-      # !---------------------------------------------------------------!
-      # - name: Update i18n files and re-check the types
-      #   working-directory: apps/mgo
-      #   env:
-      #     LOKALISE_API_TOKEN: ${{ secrets.LOKALISE_API_TOKEN }}
-      #     LOKALISE_PROJECT_ID: ${{ secrets.LOKALISE_PROJECT_ID }}
-      #   run: |
-      #     pnpm run messages:update
-      #     pnpm run typecheck
+      - name: Update i18n files
+        working-directory: packages/intl
+        env:
+          LOKALISE_API_TOKEN: ${{ secrets.LOKALISE_API_TOKEN }}
+          LOKALISE_PROJECT_ID_MGO_APP: ${{ secrets.LOKALISE_PROJECT_ID_MGO_APP }}
+          LOKALISE_PROJECT_ID_MGO_FHIR: ${{ secrets.LOKALISE_PROJECT_ID_MGO_FHIR }}
+        run: pnpm run messages:update
       - name: Build
-        run: npm exec nx run @minvws/mgo:build
+        run: pnpm exec nx run @minvws/mgo:build
 
   sonar:
     runs-on: ubuntu-22.04
@@ -81,15 +77,15 @@ jobs:
     name: Run SonarCloud scanner
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: 'Download artifact: coverage'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: coverage
           path: coverage
-      - name: Run SonarCloud scanner
-        uses: minvws/nl-irealisatie-generic-pipelines/.github/actions/sonarcloud@main
+      - name: Run SonarQube scan
+        uses: minvws/action-sonarqube@v1
         with:
           sonar-token: ${{ secrets.SONAR_TOKEN }}

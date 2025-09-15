@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
-import { flushCallStack } from '../flushCallStack/flushCallStack';
-import { defer } from './defer';
+import { flushCallStack } from '../flushCallStack/flushCallStack.js';
+import { defer } from './defer.js';
 
 test('creates a deferred instance that does not resolve', async () => {
     const deferred = defer();

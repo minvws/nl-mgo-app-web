@@ -6,7 +6,7 @@ export function useResourceRoutePath(resource: Resource | undefined): RoutePath 
     const { slug: resourceSlug } = resource ?? { slug: undefined };
 
     if (organizationSlug) {
-        return `/organisaties/${organizationSlug}/${healthCategorySlug}/${resourceSlug}/detail`;
+        return `/zorgaanbieders/${organizationSlug}/${healthCategorySlug}/${resourceSlug}/detail`;
     }
 
     return `/overzicht/${healthCategorySlug}/${resourceSlug}/detail`;

@@ -1,9 +1,9 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
         "emitDeclarationOnly": false,
         "outDir": "dist",
-        "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
+        "tsBuildInfoFile": "../../out-tsc/mgo/tsconfig.app.tsbuildinfo",
         "jsx": "react-jsx",
         "lib": ["es2022", "dom", "dom.iterable"],
         "types": ["vite/client", "vite-plugin-svgr/client"],
@@ -22,10 +22,16 @@
             "path": "../../packages/ui/tsconfig.lib.json"
         },
         {
+            "path": "../../packages/fhir/tsconfig.lib.json"
+        },
+        {
             "path": "../../packages/intl/tsconfig.lib.json"
         },
         {
-            "path": "../../packages/fhir-data/tsconfig.lib.json"
+            "path": "../../packages/hcim-ui/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/hcim/tsconfig.lib.json"
         },
         {
             "path": "../../packages/data-services/tsconfig.lib.json"

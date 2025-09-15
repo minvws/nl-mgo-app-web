@@ -1,11 +1,10 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.base.vite.json",
     "compilerOptions": {
-        "tsBuildInfoFile": "dist/tsconfig.spec.tsbuildinfo",
+        "outDir": "../../out-tsc/mgo/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "outDir": "./out-tsc/vitest",
         "types": [
-            "vitest/globals",
             "vitest/importMeta",
             "vite/client",
             "vitest",

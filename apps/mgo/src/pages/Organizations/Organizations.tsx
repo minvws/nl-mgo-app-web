@@ -15,7 +15,7 @@ export function Organizations() {
         <>
             <Heading asChild size="lg" className="mb-2 md:mb-4">
                 <h1 ref={navFocusRef}>
-                    <FormattedMessage id="organizations.heading" description="Goedemorgen" />
+                    <FormattedMessage id="organizations.heading" />
                 </h1>
             </Heading>
 
@@ -34,7 +34,7 @@ export function Organizations() {
                                         title={name ?? formatMessage('common.unknown')}
                                         description={category}
                                     >
-                                        <RouterLink to={`/organisaties/${slug}`} />
+                                        <RouterLink to={`/zorgaanbieders/${slug}`} />
                                     </ButtonCard>
                                 </li>
                             ))}

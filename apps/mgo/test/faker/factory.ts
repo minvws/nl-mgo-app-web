@@ -12,7 +12,7 @@ export type MockDataFactory<T extends MockData<T>> = (partialData?: PartialDeep<
  *
  * type Foo = {bar :string, baz: number};
  *
- * const foo = createMockDataFactory<Foo>(() => ({
+ * const foo = createMockFactory<Foo>(() => ({
  *   bar: faker.string.sample()
  *   bar: faker.number.int()
  * }));
@@ -20,9 +20,7 @@ export type MockDataFactory<T extends MockData<T>> = (partialData?: PartialDeep<
  * const testFoo = foo(); // { bar: 'Zo!.:*e>wR', baz: 2900970162509863 }
  * const testFoo2 = foo({bar: 'foobar'}); // { bar: 'foobar', baz: 95235991 }
  */
-export function createMockDataFactory<T extends MockData<T>>(
-    defaultData: () => T
-): MockDataFactory<T> {
+export function createMockFactory<T extends MockData<T>>(defaultData: () => T): MockDataFactory<T> {
     const isArray = Array.isArray(defaultData());
 
     return (partialData) => defaultsDeep(isArray ? [] : {}, partialData, defaultData());

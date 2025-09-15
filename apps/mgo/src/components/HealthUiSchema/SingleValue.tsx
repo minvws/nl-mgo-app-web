@@ -1,4 +1,4 @@
-import { type SingleValue as SingleValueData } from '@minvws/mgo-fhir-data';
+import { type SingleValue as SingleValueData } from '@minvws/mgo-hcim-ui';
 import { DescriptionCard } from '@minvws/mgo-ui';
 
 export interface SingleValueDisplayProps {
@@ -6,5 +6,6 @@ export interface SingleValueDisplayProps {
 }
 
 export function SingleValue({ value }: SingleValueDisplayProps) {
-    return <DescriptionCard term={value.label} details={value.display} />;
+    const details = typeof value.display === 'string' ? value.display : value.display?.display;
+    return <DescriptionCard term={value.label} details={details} />;
 }

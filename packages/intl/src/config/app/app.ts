@@ -1,6 +1,6 @@
-import { type CustomIntlShape } from '../../types';
-import { getIntlConfig, type IntlOptions } from '../base/base';
-import { appMessagesNL, type AppMessagesIds } from './messages';
+import { type CustomIntlShape } from '../../types/index.js';
+import { getIntlConfig, type IntlOptions } from '../base/base.js';
+import { appMessagesNL, type AppMessagesIds } from './messages.js';
 
 export type { AppMessagesIds };
 

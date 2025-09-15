@@ -1,5 +1,16 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "release": {
+        "projectsRelationship": "independent",
+        "releaseTagPattern": "{projectName}/{version}",
+        "changelog": {
+            "projectChangelogs": true
+        },
+        "version": {
+            "conventionalCommits": true,
+            "preVersionCommand": "pnpm exec nx run-many -t build"
+        }
+    },
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"],

@@ -1,12 +1,10 @@
 import { type DataServiceId } from '@minvws/mgo-data-services';
-import {
-    getSummary,
-    type FhirVersion,
-    type MgoResource,
-    type NictizNlProfile,
-} from '@minvws/mgo-fhir-data';
+import { type FhirVersion, type NictizNlProfile } from '@minvws/mgo-fhir';
+import { getSummary, HealthUiSchema, type MgoResource } from '@minvws/mgo-hcim';
+import { Locale } from '@minvws/mgo-intl';
 import { createUniqueSlug, log } from '@minvws/mgo-utils';
 import { create } from 'zustand';
+import { useOrganizationsStore } from '../organizations/organizations';
 
 type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];
 type MgoResourceByProfile<V extends FhirVersion, T extends NictizNlProfile> = Extract<
@@ -20,7 +18,7 @@ export type Resource<
 > = {
     id: string;
     slug: string;
-    label: string;
+    summary: HealthUiSchema;
     organizationId: string;
     dataServiceId: DataServiceId;
     dataServiceMethod: string;
@@ -51,14 +49,16 @@ export interface ResourcesState {
 
 function createResource(dto: ResourceDTO, slugs: string[]): Resource {
     const { organizationId, dataServiceId, mgoResource, dataServiceMethod } = dto;
-    const summary = getSummary(mgoResource);
+
+    const organization = useOrganizationsStore.getState().getOrganizationById(organizationId);
+    const summary = getSummary(mgoResource, { organization, locale: Locale.NL_NL });
 
     const id = `${organizationId}-${dataServiceId}-${mgoResource.referenceId}`;
     return {
         id,
         // NOTE: Do not use any resource information as a slug as it could potentially be sensitive information
         slug: createUniqueSlug(`${slugs.length}`, slugs),
-        label: summary.label,
+        summary,
         organizationId,
         dataServiceId,
         dataServiceMethod,

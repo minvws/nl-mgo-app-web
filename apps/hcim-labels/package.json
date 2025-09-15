@@ -1,0 +1,28 @@
+{
+    "name": "@minvws/mgo-hcim-labels",
+    "private": true,
+    "license": "EUPL-1.2",
+    "type": "module",
+    "scripts": {
+        "download:definitions": "./bin/download-fhir-definitions.sh",
+        "extract:labels": "tsx ./src/index.ts",
+        "messages:compile": "pnpm messages:compile:nl && pnpm messages:format",
+        "messages:compile:nl": "formatjs compile-folder --ast --format ./bin/formatter.js src/i18n/locales/raw/nl src/i18n/locales/compiled/nl",
+        "messages:format": "prettier --write ./src/i18n/locales"
+    },
+    "dependencies": {
+        "@minvws/mgo-fhir": "workspace:^",
+        "@minvws/mgo-utils": "workspace:^",
+        "lodash-es": "^4.17.21"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.0",
+        "@types/lodash-es": "^4.17.12",
+        "@types/node": "^22.5.0",
+        "glob": "^11.0.0",
+        "rimraf": "^6.0.1",
+        "tsx": "^4.17.0",
+        "typescript": "^5.4.5",
+        "vitest": "^3.2.4"
+    }
+}

@@ -11,11 +11,7 @@ Describe the issue or concern
 
 ### QA
 
-Steps to test the behaviour:
+Steps to test the behavior:
 
 1. Go to '...'
 2. Click on '....'
-
-### Definition of Done
-
-from the concept/idea > Refinement (Acceptance Criteria defined) > Todo > In progress > Review (AC are met) > merge to `develop` > QA (AC are met - critical issues are resolved on a new branch) > Waiting for release > Release release/vx.x.x (deployment to Test env) > merge to `main` (deployment to Acc) > Done

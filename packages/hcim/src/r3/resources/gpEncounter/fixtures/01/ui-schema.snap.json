@@ -1,0 +1,89 @@
+{
+    "label": "Contact",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Afwijkende uitslag",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Begin datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 februari 2013"
+                },
+                {
+                    "label": "Contact type",
+                    "type": "SINGLE_VALUE",
+                    "display": {
+                        "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)",
+                        "code": "IMP",
+                        "system": "http://hl7.org/fhir/v3/ActCode"
+                    }
+                },
+                {
+                    "label": "Diagnosis",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Eind datum tijd",
+                    "type": "SINGLE_VALUE",
+                    "display": "8 februari 2013"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "123456",
+                        "1506f28b-8fdf-11ec-1151-020000000000"
+                    ]
+                },
+                {
+                    "label": "Locatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
+                    "reference": "Organization/nl-core-organization-01"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "J. XXX_Helleman (Johan)",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Contact met",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Henk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-01"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        },
+        {
+            "label": "Ziekenhuisopname",
+            "children": [
+                {
+                    "label": "Bestemming",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                },
+                {
+                    "label": "Herkomst",
+                    "type": "SINGLE_VALUE",
+                    "display": null
+                }
+            ]
+        }
+    ]
+}

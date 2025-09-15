@@ -13,9 +13,10 @@ pnpm-workspace.yaml
 LICENSE
 LICENSE.*
 LICENSES.*
+CHANGELOG.md
 packages/fhir-data/fhir-definitions
 packages/fhir-data/build
-packages/intl/locales
+packages/intl/src/locales
 *.snap.json
 *-snapshots/
 apps/mgo/build

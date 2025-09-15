@@ -1,0 +1,104 @@
+{
+    "label": "Diagnose",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Anatomische locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "structuur van sublinguale ruimte (122861001 in codesysteem http://snomed.info/sct)",
+                            "code": "122861001",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dokter Bernard"
+                    ]
+                },
+                {
+                    "label": "Code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "temperatuur patiënt (oraal gemeten) (1915 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                            "code": "1915",
+                            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+                        },
+                        {
+                            "display": "Lichaamstemperatuur [temperatuur] in ^patiënt (8310-5 in codesysteem http://loinc.org)",
+                            "code": "8310-5",
+                            "system": "http://loinc.org"
+                        }
+                    ]
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "26 oktober 2024"
+                },
+                {
+                    "label": "Episode",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Keelpijn"
+                    ]
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "bf98085b-041c-11ec-1328-020000000000"
+                    ]
+                },
+                {
+                    "label": "Meetmethode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Jacqueline XXX_Cevat",
+                    "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
+                },
+                {
+                    "label": "Resultaat status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Uitslag waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "37.3 Cel"
+                }
+            ]
+        },
+        {
+            "label": "Gerelateerde meetuitslagen",
+            "children": [
+                {
+                    "label": "Gerelateerde meetuitslag",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Variant-1",
+                    "reference": "Observation/example-genetics-1"
+                },
+                {
+                    "label": "Type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        }
+    ]
+}

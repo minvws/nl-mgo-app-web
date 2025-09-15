@@ -17,6 +17,7 @@ import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
 import { Organizations } from '../pages/Organizations/Organizations';
 import { Proposition } from '../pages/Proposition/Proposition';
+import { AppMessagesIds } from '@minvws/mgo-intl';
 
 const routeConfig = [
     {
@@ -70,44 +71,70 @@ const routeConfig = [
                     },
                 ],
             },
+
             {
                 element: <PageLayout />,
                 children: [
                     {
                         path: '/overzicht',
                         element: <Overview />,
+                        handle: { breadcrumb: 'overview.heading' satisfies AppMessagesIds },
                     },
                     {
-                        path: `/overzicht/:healthCategorySlug`,
+                        path: '/overzicht/:healthCategorySlug',
                         element: <HealthCategory />,
+                        handle: {
+                            breadcrumb: ':healthCategorySlug',
+                        },
                     },
                     {
                         path: '/overzicht/:healthCategorySlug/:resourceSlug',
                         element: <HealthData summary />,
+                        handle: {
+                            breadcrumb: ':resourceSlug',
+                        },
                     },
                     {
                         path: '/overzicht/:healthCategorySlug/:resourceSlug/detail',
                         element: <HealthData />,
+                        handle: {
+                            breadcrumb: 'detail.breadcrumb',
+                        },
                     },
                     {
-                        path: '/organisaties',
+                        path: '/zorgaanbieders',
                         element: <Organizations />,
+                        handle: {
+                            breadcrumb: 'organizations.heading',
+                        },
                     },
                     {
-                        path: '/organisaties/:organizationSlug',
+                        path: '/zorgaanbieders/:organizationSlug',
                         element: <Organization />,
+                        handle: {
+                            breadcrumb: ':organizationSlug',
+                        },
                     },
                     {
-                        path: `/organisaties/:organizationSlug/:healthCategorySlug`,
+                        path: '/zorgaanbieders/:organizationSlug/:healthCategorySlug',
                         element: <HealthCategory />,
+                        handle: {
+                            breadcrumb: ':healthCategorySlug',
+                        },
                     },
                     {
-                        path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug',
+                        path: '/zorgaanbieders/:organizationSlug/:healthCategorySlug/:resourceSlug',
                         element: <HealthData summary />,
+                        handle: {
+                            breadcrumb: ':resourceSlug',
+                        },
                     },
                     {
-                        path: '/organisaties/:organizationSlug/:healthCategorySlug/:resourceSlug/detail',
+                        path: '/zorgaanbieders/:organizationSlug/:healthCategorySlug/:resourceSlug/detail',
                         element: <HealthData />,
+                        handle: {
+                            breadcrumb: 'detail.breadcrumb',
+                        },
                     },
                 ],
             },

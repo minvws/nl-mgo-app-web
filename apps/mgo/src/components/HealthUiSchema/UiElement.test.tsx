@@ -1,6 +1,6 @@
 import { faker } from '$test/faker';
 import { setup, setupWithAppProviders, supressConsoleError } from '$test/helpers';
-import { type UiElement as UiElementData } from '@minvws/mgo-fhir-data';
+import { type UiElement as UiElementData } from '@minvws/mgo-hcim-ui';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { UiElement } from './UiElement';

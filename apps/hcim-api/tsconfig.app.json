@@ -1,0 +1,26 @@
+{
+    "extends": "../../tsconfig.base.vite.json",
+    "compilerOptions": {
+        "emitDeclarationOnly": false,
+        "outDir": "dist",
+        "tsBuildInfoFile": "../../out-tsc/mgo-hcim-api/tsconfig.app.tsbuildinfo",
+        "lib": ["es2022"],
+        "rootDir": "src",
+        "paths": {
+            "$/*": ["./src/*"]
+        }
+    },
+    "exclude": ["**/__mocks__/**", "src/**/*.test.ts", "src/**/*.test.tsx", "src/_export/**"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "references": [
+        {
+            "path": "../../packages/utils/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/intl/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/hcim/tsconfig.lib.json"
+        }
+    ]
+}

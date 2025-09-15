@@ -1,0 +1,33 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "name": "@minvws/mgo-hcim-api",
+
+    "targets": {
+        "build": {
+            "executor": "nx:noop",
+            "dependsOn": ["@minvws/mgo-hcim-api:build-js", "@minvws/mgo-hcim-api:build-schema"]
+        },
+        "build-js": {
+            "cache": true,
+            "executor": "@nx/vite:build",
+            "dependsOn": ["^typecheck"],
+            "outputs": ["{projectRoot}/build/mgo-hcim-api.iife.js"],
+            "options": {
+                "configFile": "apps/hcim-api/vite.api.config.ts",
+                "outputPath": "{projectRoot}/build",
+                "generatePackageJson": false
+            }
+        },
+        "build-schema": {
+            "cache": true,
+            "executor": "nx:run-commands",
+            "dependsOn": ["^build", "build-js"],
+            "outputs": ["{projectRoot}/build/mgo-hcim-api.schema.json"],
+            "options": {
+                "cwd": "apps/hcim-api",
+                "commands": ["pnpm exec tsx ./schema-generator/index.ts"]
+            }
+        }
+    }
+}

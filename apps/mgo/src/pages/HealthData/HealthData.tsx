@@ -1,4 +1,4 @@
-import { BackButton } from '$/components/BackButton/BackButton';
+import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { Helmet } from 'react-helmet-async';
@@ -27,8 +27,7 @@ export function HealthData({ summary }: Readonly<HealthDataProps>) {
             <Helmet title={heading} />
 
             <section className="flex-grow">
-                <BackButton />
-
+                <Breadcrumbs />
                 <HealthUiSchema resource={resource} summary={summary} />
             </section>
         </>

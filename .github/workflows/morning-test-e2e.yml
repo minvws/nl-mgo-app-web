@@ -1,0 +1,13 @@
+name: Morning on Test - PW e2e Tests
+
+on:
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  call-e2e-tests:
+    uses: ./.github/workflows/e2e.yml
+    with:
+      test-command: 'pnpm run e2e:test'
+    secrets: inherit

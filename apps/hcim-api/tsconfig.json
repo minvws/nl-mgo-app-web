@@ -1,0 +1,28 @@
+{
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "../../packages/utils"
+        },
+        {
+            "path": "../../packages/intl"
+        },
+        {
+            "path": "../../packages/hcim"
+        },
+        {
+            "path": "./schema-generator"
+        },
+        {
+            "path": "./tsconfig.app.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        },
+        {
+            "path": "./tsconfig.types.json"
+        }
+    ],
+    "extends": "../../tsconfig.base.json"
+}

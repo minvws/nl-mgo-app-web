@@ -1,0 +1,87 @@
+{
+    "label": "Diagnose",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Anatomische locatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Auteur",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Dokter Bernard"
+                    ]
+                },
+                {
+                    "label": "Code",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "polsfrequentie (1875 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
+                            "code": "1875",
+                            "system": "https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen"
+                        },
+                        {
+                            "display": "Heart rate Peripheral artery by Palpation (8893-0 in codesysteem http://loinc.org)",
+                            "code": "8893-0",
+                            "system": "http://loinc.org"
+                        }
+                    ]
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "3 mei 2023"
+                },
+                {
+                    "label": "Episode",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Boezemfibrilleren/-fladderen"
+                    ]
+                },
+                {
+                    "label": "Gerelateerde meetuitslagen",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "bb4f140b-041c-11ec-6152-020000000000"
+                    ]
+                },
+                {
+                    "label": "Meetmethode",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Jacqueline XXX_Cevat",
+                    "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
+                },
+                {
+                    "label": "Resultaat status",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Uitslag waarde",
+                    "type": "SINGLE_VALUE",
+                    "display": "120 /min"
+                }
+            ]
+        }
+    ]
+}
