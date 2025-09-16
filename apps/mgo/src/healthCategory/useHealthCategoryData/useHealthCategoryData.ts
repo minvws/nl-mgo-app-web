@@ -1,4 +1,4 @@
-import { useResourcesStore } from '$/store';
+import { store } from '$/store';
 import { type HealthCategory } from '../HealthCategory';
 import { healthCategoryData } from './categories';
 
@@ -10,12 +10,15 @@ export function useHealthCategoryData<T extends HealthCategory>(
     category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ) {
-    const resources = useResourcesStore();
+    const getResourcesByProfile = store.use.getResourcesByProfile();
 
     if (!category) {
         return;
     }
 
     const getHealthCategoryData = healthCategoryData[category];
-    return getHealthCategoryData(resources, organizationIdFilter) as HealthCategoryData<T>;
+    return getHealthCategoryData(
+        getResourcesByProfile,
+        organizationIdFilter
+    ) as HealthCategoryData<T>;
 }

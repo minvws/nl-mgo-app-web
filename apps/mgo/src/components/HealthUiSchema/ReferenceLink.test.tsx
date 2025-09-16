@@ -1,6 +1,6 @@
 import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
 import { useParams } from '$/routing';
-import { useResourcesStore, type Resource, type ResourcesState } from '$/store';
+import { store, type Resource } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { type ReferenceLink as ReferenceLinkData } from '@minvws/mgo-hcim-ui';
@@ -8,20 +8,8 @@ import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { ReferenceLink } from './ReferenceLink';
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const mockGetResourceByReferenceId = useResourcesStore(
-    (x) => x.getResourceByReferenceId
-) as MockedFunction<ResourcesState['getResourceByReferenceId']>;
-
-vi.mock('$/store', async (importOriginal) => {
-    const mod = await importOriginal<typeof import('$/store')>();
-    const getResourceByReferenceId = vi.fn();
-    return {
-        ...mod,
-        useResourcesStore: (callback: (state: ResourcesState) => void) =>
-            callback({ getResourceByReferenceId } as unknown as ResourcesState),
-    };
-});
+vi.spyOn(store.use, 'getResourceByReferenceId').mockReturnValue(vi.fn());
+const mockGetResourceByReferenceId = vi.mocked(store.use.getResourceByReferenceId());
 
 afterEach(() => {
     vi.resetAllMocks();

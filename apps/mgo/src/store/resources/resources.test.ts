@@ -3,7 +3,8 @@ import { FhirVersion } from '@minvws/mgo-fhir';
 import { defaults, uniqueId } from 'lodash';
 import { type PartialDeep } from 'type-fest';
 import { expect, test, vi } from 'vitest';
-import { useResourcesStore, type ResourceDTO } from './resources';
+import { store } from '..';
+import { type ResourceDTO } from './resources';
 
 function mockResourceDto<V extends FhirVersion>(
     fhirVersion?: V,
@@ -28,27 +29,37 @@ function mockResourceDto<V extends FhirVersion>(
 }
 
 test('addResources adds a resource', async () => {
-    let state = useResourcesStore.getState();
-    expect(state.resources).toEqual([]);
+    let state = store.getState();
+    vi.spyOn(state, 'getOrganizationById').mockReturnValue(faker.custom.healthcareOrganization());
 
+    expect(state.resources).toEqual([]);
     const resourceDto = mockResourceDto();
     const [resource] = state.addResources([resourceDto]);
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
 
     expect(resource.id).toEqual(`${organizationId}-${dataServiceId}-${mgoResource.referenceId}`);
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(state.resources).toEqual([resource]);
 });
 
+test('addResources throws if a resource DTO is missing an organization', async () => {
+    const state = store.getState();
+    const resourceDto = mockResourceDto();
+    expect(() => state.addResources([resourceDto])).toThrow(
+        `Organization with id "${resourceDto.organizationId}" not found`
+    );
+});
+
 test('addResources can add multiple resources and generates unique slugs', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
+    vi.spyOn(state, 'getOrganizationById').mockReturnValue(faker.custom.healthcareOrganization());
+
     expect(state.resources).toEqual([]);
+    state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
+    state = store.getState();
 
     state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
-    state = useResourcesStore.getState();
-
-    state.addResources([mockResourceDto(), mockResourceDto(), mockResourceDto()]);
-    state = useResourcesStore.getState();
+    state = store.getState();
     const slugs = state.resources.map((resource) => resource.slug);
 
     expect(state.resources.length).toBe(6);
@@ -56,7 +67,8 @@ test('addResources can add multiple resources and generates unique slugs', async
 });
 
 test('addResources logs warning if there is already a resource with the same id', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
+    vi.spyOn(state, 'getOrganizationById').mockReturnValue(faker.custom.healthcareOrganization());
 
     const resourceDto = mockResourceDto();
     const { organizationId, dataServiceId, mgoResource } = resourceDto;
@@ -64,7 +76,7 @@ test('addResources logs warning if there is already a resource with the same id'
     const mockWarningLog = vi.spyOn(console, 'warn');
     mockWarningLog.mockImplementationOnce(() => {});
     state.addResources([resourceDto, resourceDto]);
-    state = useResourcesStore.getState();
+    state = store.getState();
 
     expect(mockWarningLog).toBeCalledWith(
         `Resource with id "${organizationId}-${dataServiceId}-${mgoResource.referenceId}" already exists`
@@ -73,7 +85,7 @@ test('addResources logs warning if there is already a resource with the same id'
 });
 
 test('getResourcesByProfile returns resource', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     expect(state.resources).toEqual([]);
 
     const resourceDto = mockResourceDto(FhirVersion.R3, {
@@ -82,7 +94,7 @@ test('getResourcesByProfile returns resource', async () => {
     const resourceDtos = [resourceDto, mockResourceDto(), mockResourceDto(), mockResourceDto()];
     state.addResources(resourceDtos);
 
-    state = useResourcesStore.getState();
+    state = store.getState();
 
     const matchedResources = state.getResourcesByProfile(
         FhirVersion.R3,
@@ -95,7 +107,7 @@ test('getResourcesByProfile returns resource', async () => {
 });
 
 test('getResourcesByProfile returns resource filtered by organization id', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     expect(state.resources).toEqual([]);
 
     const resourceDto = mockResourceDto(FhirVersion.R3);
@@ -114,7 +126,7 @@ test('getResourcesByProfile returns resource filtered by organization id', async
 
     state.addResources(resourceDtos);
 
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(state.resources.length).toBe(4);
     const matchedResources = state.getResourcesByProfile(
         FhirVersion.R3,
@@ -128,7 +140,7 @@ test('getResourcesByProfile returns resource filtered by organization id', async
 });
 
 test('getResourceBySlug returns a resource by slug', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
 
     const resourceDto = mockResourceDto();
     const [resource] = state.addResources([resourceDto]);
@@ -136,19 +148,19 @@ test('getResourceBySlug returns a resource by slug', async () => {
 
     expect(resource.id).toEqual(`${organizationId}-${dataServiceId}-${mgoResource.referenceId}`);
 
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(state.getResourceBySlug(resource.slug)).toBe(resource);
 });
 
 test('getResourceBySlug returns undefined if an empty slug is provided', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     state.addResources([mockResourceDto()]);
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(state.getResourceBySlug('')).toBeUndefined();
 });
 
 test('getResourceByReferenceId returns the resource by referenceID', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     const dataServiceId = faker.custom.dataServiceId();
     const organizationId = uniqueId(faker.string.uuid());
 
@@ -162,24 +174,24 @@ test('getResourceByReferenceId returns the resource by referenceID', async () =>
         mockResourceDto(),
         mockResourceDto(),
     ]);
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(
         state.getResourceByReferenceId(relatedResource, resourceDto.mgoResource.referenceId)
     ).toBe(resource);
 });
 
 test('getResourceByReferenceId returns undefined if no related resource is provided', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     const resourceDto = mockResourceDto();
     state.addResources([mockResourceDto(), resourceDto, mockResourceDto(), mockResourceDto()]);
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(
         state.getResourceByReferenceId(undefined, resourceDto.mgoResource.referenceId)
     ).toBeUndefined();
 });
 
 test('getResourceByReferenceId returns undefined if no referenceID is provided', async () => {
-    let state = useResourcesStore.getState();
+    let state = store.getState();
     const relatedResourceDto = mockResourceDto();
 
     const [relatedResource] = state.addResources([
@@ -189,6 +201,6 @@ test('getResourceByReferenceId returns undefined if no referenceID is provided',
         mockResourceDto(),
         mockResourceDto(),
     ]);
-    state = useResourcesStore.getState();
+    state = store.getState();
     expect(state.getResourceByReferenceId(relatedResource, undefined)).toBeUndefined();
 });

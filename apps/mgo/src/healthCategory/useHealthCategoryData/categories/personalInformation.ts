@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getPersonalInformationData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         patientInformation: {
             label: `health_category.${HealthCategory.PersonalInformation}.patient_information`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient', // NOSONAR
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getPersonalInformationData(
         },
         practitionerInformation: {
             label: `health_category.${HealthCategory.PersonalInformation}.practitioner_information`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner', // NOSONAR
                 organizationIdFilter

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { useNavFocusRef } from '$/hooks';
-import { useOrganizationsStore, type Resource } from '$/store';
+import { store, type Resource } from '$/store';
 import { getDetails, getSummary } from '@minvws/mgo-hcim';
 import { Locale } from '@minvws/mgo-intl';
 import { Heading, Stack } from '@minvws/mgo-ui';
@@ -17,7 +17,7 @@ export function HealthUiSchema({ summary, resource }: HealthUiSchemaProps) {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
 
-    const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
+    const getOrganizationById = store.use.getOrganizationById();
     const organization = getOrganizationById(resource.organizationId);
 
     const getSchema = summary ? getSummary : getDetails;

@@ -1,4 +1,4 @@
-import { useOrganizationsStore } from '$/store';
+import { store } from '$/store';
 import { type UseQueryOptions } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { type HealthCategory } from '../HealthCategory';
@@ -8,8 +8,8 @@ export function useHealthCategoryQueries<T extends HealthCategory>(
     category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ): UseQueryOptions[] {
-    const getOrganizationsById = useOrganizationsStore((x) => x.getOrganizationsById);
-    const getAllOrganizations = useOrganizationsStore((x) => x.getAllOrganizations);
+    const getOrganizationsById = store.use.getOrganizationsById();
+    const allOrganizations = store.use.organizations();
 
     return useMemo(() => {
         if (!category) {
@@ -18,7 +18,7 @@ export function useHealthCategoryQueries<T extends HealthCategory>(
 
         const organizations = organizationIdFilter
             ? getOrganizationsById(organizationIdFilter)
-            : getAllOrganizations();
+            : allOrganizations;
 
         const getOrganizationQueries = getHealthcareCategoryQuery(category);
         const categoryQueries: UseQueryOptions[] = [];
@@ -28,5 +28,5 @@ export function useHealthCategoryQueries<T extends HealthCategory>(
 
         return categoryQueries;
         // eslint-disable-next-line react-hooks/exhaustive-deps -- organizationIdFilter can change referentially
-    }, [category, JSON.stringify(organizationIdFilter), getOrganizationsById, getAllOrganizations]);
+    }, [category, JSON.stringify(organizationIdFilter), getOrganizationsById, allOrganizations]);
 }

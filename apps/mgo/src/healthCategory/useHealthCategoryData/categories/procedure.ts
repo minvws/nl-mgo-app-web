@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getProcedureData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         procedures: {
             label: `health_category.${HealthCategory.Procedures}.procedures`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-Procedure', // NOSONAR
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getProcedureData(
         },
         procedureRequests: {
             label: `health_category.${HealthCategory.Procedures}.procedure_requests`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest', // NOSONAR
                 organizationIdFilter
@@ -26,7 +26,7 @@ export function getProcedureData(
         },
         episodes: {
             label: `health_category.${HealthCategory.Procedures}.episodes`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare', // NOSONAR
                 organizationIdFilter

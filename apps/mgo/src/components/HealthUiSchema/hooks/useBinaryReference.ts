@@ -1,13 +1,13 @@
 import { HealthUiSchemaContext } from '$/components/HealthUiSchema/HealthUiSchemaContext';
 import { getDataService } from '$/services';
-import { useOrganizationsStore } from '$/store';
+import { store } from '$/store';
 import { type DataService } from '@minvws/mgo-data-services';
 import { type FhirVersion } from '@minvws/mgo-fhir';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useContext } from 'react';
 
 export function useBinaryReference(reference: string | undefined) {
-    const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
+    const getOrganizationById = store.use.getOrganizationById();
     const { resource } = useContext(HealthUiSchemaContext);
     const queryClient = useQueryClient();
     const binaryRegexp = /^Binary\/([^/]+)/;

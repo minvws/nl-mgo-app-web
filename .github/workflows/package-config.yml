@@ -25,9 +25,9 @@ jobs:
         run: echo "FILENAME=nl-mgo-config_${RELEASE_VERSION//\//-}_${CREATED//:/-}" >> $GITHUB_ENV
       - name: Add version.json
         shell: bash
-        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/config/dist/version.json'
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/config/build/version.json'
       - name: Create release tar
-        run: tar -C packages/config/dist -czf ${{ env.FILENAME }}.tar.gz .
+        run: tar -C packages/config/build -czf ${{ env.FILENAME }}.tar.gz .
       - name: Upload release tar
         uses: actions/upload-artifact@v4
         with:

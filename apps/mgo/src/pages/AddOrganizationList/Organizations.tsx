@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { useOrganizationsStore } from '$/store';
+import { store } from '$/store';
 import {
     Button,
     ConfirmDialog,
@@ -12,8 +12,9 @@ import { useState } from 'react';
 
 export function Organizations() {
     const { formatMessage } = useIntl();
-    const { organizations, getOrganizationBySlug, removeOrganizationBySlug } =
-        useOrganizationsStore();
+    const organizations = store.use.organizations();
+    const getOrganizationBySlug = store.use.getOrganizationBySlug();
+    const removeOrganizationBySlug = store.use.removeOrganizationBySlug();
     const [selectedSlug, setSelectedSlug] = useState<string>();
     const { isOpen, open, setIsOpen } = useOpenState({
         afterClose: () => {
@@ -49,7 +50,7 @@ export function Organizations() {
             <Stack asChild className="gap-2 sm:gap-4">
                 <ul>
                     {organizations.map(({ slug, name, category, address }) => (
-                        <li key={slug}>
+                        <li key={slug} data-testid={'organization-item'}>
                             <HealthcareOrganizationCard
                                 onActionClick={() => {
                                     setSelectedSlug(slug);

@@ -1,6 +1,6 @@
 import { useResourceRoutePath } from '$/hooks';
 import { type RoutePath } from '$/routing';
-import { useResourcesStore, type ResourcesState } from '$/store';
+import { store } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { type ReferenceValue as ReferenceValueData } from '@minvws/mgo-hcim-ui';
@@ -13,20 +13,8 @@ vi.mock('$/hooks', () => ({
     useResourceRoutePath: vi.fn(),
 }));
 
-vi.mock('$/store', async (importOriginal) => {
-    const mod = await importOriginal<typeof import('$/store')>();
-    const getResourceByReferenceId = vi.fn();
-    return {
-        ...mod,
-        useResourcesStore: (callback: (state: ResourcesState) => void) =>
-            callback({ getResourceByReferenceId } as unknown as ResourcesState),
-    };
-});
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const mockGetResourceByReferenceId = useResourcesStore(
-    (x) => x.getResourceByReferenceId
-) as MockedFunction<ResourcesState['getResourceByReferenceId']>;
+vi.spyOn(store.use, 'getResourceByReferenceId').mockReturnValue(vi.fn());
+const mockGetResourceByReferenceId = vi.mocked(store.use.getResourceByReferenceId());
 
 const mockUseResourceRoutePath = useResourceRoutePath as MockedFunction<
     typeof useResourceRoutePath

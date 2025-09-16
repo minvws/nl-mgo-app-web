@@ -1,11 +1,6 @@
 import { getHealthCategoryBySlug, type HealthCategory } from '$/healthCategory';
 import { useParams } from '$/routing';
-import {
-    type HealthcareOrganization,
-    type Resource,
-    useOrganizationsStore,
-    useResourcesStore,
-} from '$/store';
+import { store, type HealthcareOrganization, type Resource } from '$/store';
 import { type RouteParams } from '../routes';
 
 export interface UrlParamData extends Partial<RouteParams> {
@@ -15,8 +10,8 @@ export interface UrlParamData extends Partial<RouteParams> {
 }
 
 export function useParamsData(): UrlParamData {
-    const getOrganizationBySlug = useOrganizationsStore((x) => x.getOrganizationBySlug);
-    const getResourceBySlug = useResourcesStore((x) => x.getResourceBySlug);
+    const getOrganizationBySlug = store.use.getOrganizationBySlug();
+    const getResourceBySlug = store.use.getResourceBySlug();
     const { organizationSlug, healthCategorySlug, resourceSlug } = useParams();
 
     return {

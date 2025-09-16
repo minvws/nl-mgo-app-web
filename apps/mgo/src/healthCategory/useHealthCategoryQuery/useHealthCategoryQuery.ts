@@ -1,4 +1,4 @@
-import { useResourcesStore } from '$/store';
+import { store } from '$/store';
 import { isFhirResource, type FhirResource } from '@minvws/mgo-fhir';
 import { getBundleResources, getMgoResource } from '@minvws/mgo-hcim';
 import { useUniqueId } from '@minvws/mgo-ui';
@@ -37,7 +37,7 @@ export function useHealthCategoryQuery<T extends HealthCategory>(
     category: T | undefined,
     organizationIdFilter?: (string | undefined)[]
 ) {
-    const addResources = useResourcesStore((x) => x.addResources);
+    const addResources = store.use.addResources();
     const queries = useHealthCategoryQueries(category, organizationIdFilter);
     const categoryData = useHealthCategoryData(category, organizationIdFilter);
 

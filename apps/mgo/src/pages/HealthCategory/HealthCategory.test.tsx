@@ -1,7 +1,7 @@
 import { HealthCategory as HealthCategoryEnum, useHealthCategoryQuery } from '$/healthCategory';
 import { type HealthCategoryData } from '$/healthCategory/useHealthCategoryData/useHealthCategoryData';
 import { Navigate, useParamsData } from '$/routing';
-import { useOrganizationsStore } from '$/store';
+import { store } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
@@ -39,8 +39,8 @@ beforeEach(() => {
         resource: undefined,
     }));
 
-    const store = useOrganizationsStore.getState();
-    const mock = vi.spyOn(store, 'getOrganizationBySlug');
+    const storeState = store.getState();
+    const mock = vi.spyOn(storeState, 'getOrganizationBySlug');
     mock.mockImplementation(() => faker.custom.healthcareOrganization());
     mockUseHealthCategoryQuery.mockReset();
 });

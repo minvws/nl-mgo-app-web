@@ -1,22 +1,22 @@
-import { getPersonalInformationData } from './personalInformation';
-import { getPayerData } from './payer';
-import { getMedicationData } from './medication';
-import { getTreatmentPlanData } from './treatmentPlan';
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
-import { getFunctionalOrMentalStatusData } from './functionalOrMentalStatus';
-import { getProblemData } from './problem';
-import { getLifestyleData } from './lifestyle';
-import { getWarningdata } from './warning';
-import { getAllergyData } from './allergy';
-import { getMedicalDevicesData } from './medicalDevices';
-import { getVaccinationData } from './vaccination';
-import { getEncounterData } from './encounter';
-import { getVitalsData } from './vitals';
-import { getProcedureData } from './procedure';
-import { getDocumentsData } from './documents';
-import { getLaboratoryResultData } from './laboratoryResults';
+import { type StoreState } from '$/store';
 import { type AppMessagesIds } from '@minvws/mgo-intl';
+import { getAllergyData } from './allergy';
+import { getDocumentsData } from './documents';
+import { getEncounterData } from './encounter';
+import { getFunctionalOrMentalStatusData } from './functionalOrMentalStatus';
+import { getLaboratoryResultData } from './laboratoryResults';
+import { getLifestyleData } from './lifestyle';
+import { getMedicalDevicesData } from './medicalDevices';
+import { getMedicationData } from './medication';
+import { getPayerData } from './payer';
+import { getPersonalInformationData } from './personalInformation';
+import { getProblemData } from './problem';
+import { getProcedureData } from './procedure';
+import { getTreatmentPlanData } from './treatmentPlan';
+import { getVaccinationData } from './vaccination';
+import { getVitalsData } from './vitals';
+import { getWarningdata } from './warning';
 
 export interface SubCategoryData {
     label: AppMessagesIds;
@@ -24,7 +24,7 @@ export interface SubCategoryData {
 }
 
 type HealthCategoryResources = (
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIds?: (string | undefined)[]
 ) => Record<string, SubCategoryData>;
 
