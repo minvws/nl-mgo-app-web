@@ -1,7 +1,7 @@
 import { type HealthUiSchemaProps } from '$/components/HealthUiSchema/HealthUiSchema';
 import { HealthCategory } from '$/healthCategory';
 import { useParamsData } from '$/routing';
-import { useResourcesStore } from '$/store';
+import { store } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
@@ -80,8 +80,8 @@ test('shows not found page if resource is not found', async () => {
         resource: undefined,
     }));
 
-    const store = useResourcesStore.getState();
-    const mock = vi.spyOn(store, 'getResourceBySlug');
+    const storeState = store.getState();
+    const mock = vi.spyOn(storeState, 'getResourceBySlug');
     mock.mockImplementationOnce(() => undefined);
 
     setupWithAppProviders(<HealthData />);

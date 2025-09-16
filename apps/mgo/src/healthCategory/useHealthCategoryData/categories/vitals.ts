@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getVitalsData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         bloodPressure: {
             label: `health_category.${HealthCategory.Vitals}.blood_pressure`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-BloodPressure', // NOSONAR
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getVitalsData(
         },
         bodyWeight: {
             label: `health_category.${HealthCategory.Vitals}.body_weight`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-BodyWeight', // NOSONAR
                 organizationIdFilter
@@ -26,7 +26,7 @@ export function getVitalsData(
         },
         bodyHeight: {
             label: `health_category.${HealthCategory.Vitals}.body_height`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-BodyHeight', // NOSONAR
                 organizationIdFilter

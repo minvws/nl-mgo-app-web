@@ -1,7 +1,8 @@
-import { useResourcesStore } from '$/store';
+import { store } from '$/store';
 import { faker } from '$test/faker';
 import { DataServiceId } from '@minvws/mgo-data-services';
 import { FhirVersion, type ResourceByType } from '@minvws/mgo-fhir';
+import { MedicationStatement } from '@minvws/mgo-fhir/r3';
 import { getMgoResource, type MgoResource } from '@minvws/mgo-hcim';
 import { flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -44,13 +45,18 @@ const wrapper = ({ children }: { children: ReactNode }) => (
 );
 
 test('returns query state and related store data for medication ', async () => {
+    const storeState = store.getState();
+    const organization = faker.custom.healthcareOrganization();
+    storeState.addOrganization(organization);
+
     const queryKey = faker.lorem.word();
     const queryMeta: ResourceQueryMeta = {
-        organizationId: 'organization.id',
+        organizationId: organization.id,
         dataServiceId: DataServiceId.CommonClinicalDataset,
         method: 'method',
         fhirVersion: FhirVersion.R3,
     };
+
     const mgoResource = {
         profile: 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse',
         referenceId: faker.lorem.word(),
@@ -68,8 +74,8 @@ test('returns query state and related store data for medication ', async () => {
                     entry: [
                         {
                             resource: {
-                                resourceType: 'Patient',
-                            },
+                                resourceType: 'MedicationStatement',
+                            } as MedicationStatement,
                         },
                     ],
                     type: 'batch',
@@ -79,8 +85,7 @@ test('returns query state and related store data for medication ', async () => {
 
     mockGetMgoResource.mockImplementation(() => mgoResource);
 
-    const store = useResourcesStore.getState();
-    expect(store.resources.length).toBe(0);
+    expect(storeState.resources.length).toBe(0);
 
     const { result: queryResult, rerender } = renderHook(
         () => useHealthCategoryQuery(HealthCategory.Medication),
@@ -100,8 +105,11 @@ test('returns query state and related store data for medication ', async () => {
     await flushCallStack();
     rerender();
 
-    const storeNew = useResourcesStore.getState();
+    const storeNew = store.getState();
     expect(storeNew.resources.length).toBe(1);
+
+    // trigger recompute with current store state
+    rerender();
 
     const resource = storeNew.resources[0];
     expect(resource.organizationId).toBe(queryMeta.organizationId);
@@ -132,6 +140,9 @@ test('returns query state and related store data for medication ', async () => {
 });
 
 test('can handle errors', async () => {
+    const storeState = store.getState();
+    const organization = faker.custom.healthcareOrganization();
+    storeState.addOrganization(organization);
     const queryKey = faker.lorem.word();
     mockUseHealthCategoryQueries.mockImplementation(() => [
         {
@@ -146,6 +157,7 @@ test('can handle errors', async () => {
         },
     ]);
 
+    await flushCallStack();
     const { result: queryResult, rerender } = renderHook(
         () => useHealthCategoryQuery(HealthCategory.Medication),
         { wrapper }
@@ -153,6 +165,7 @@ test('can handle errors', async () => {
 
     await flushCallStack();
     rerender();
+    await flushCallStack();
 
     const { id, ...rest } = queryResult.current;
     expect(rest).toEqual({

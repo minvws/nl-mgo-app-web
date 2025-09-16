@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getMedicalDevicesData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         medicalDevices: {
             label: `health_category.${HealthCategory.MedicalDevices}.medical_devices`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice', // NOSONAR
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getMedicalDevicesData(
         },
         medicalDeviceProducts: {
             label: `health_category.${HealthCategory.MedicalDevices}.medical_device_products`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceProduct', // NOSONAR
                 organizationIdFilter
@@ -26,7 +26,7 @@ export function getMedicalDevicesData(
         },
         medicalDeviceRequests: {
             label: `health_category.${HealthCategory.MedicalDevices}.medical_device_requests`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDeviceRequest', // NOSONAR
                 organizationIdFilter

@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getLaboratoryResultData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         laboratoryResults: {
             label: `health_category.${HealthCategory.LaboratoryResults}.laboratory_results`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestResult-Observation', // NOSONAR,
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getLaboratoryResultData(
         },
         gpLaboratoryResults: {
             label: `health_category.${HealthCategory.LaboratoryResults}.gp_laboratory_results`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/gp-LaboratoryResult', // NOSONAR
                 organizationIdFilter

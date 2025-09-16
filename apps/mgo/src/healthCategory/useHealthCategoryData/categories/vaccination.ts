@@ -1,16 +1,16 @@
 import { HealthCategory } from '$/healthCategory/HealthCategory';
-import { type ResourcesState } from '$/store';
+import { type StoreState } from '$/store';
 import { FhirVersion } from '@minvws/mgo-fhir';
 import { type SubCategoryData } from '.';
 
 export function getVaccinationData(
-    resources: ResourcesState,
+    getResourcesByProfile: StoreState['getResourcesByProfile'],
     organizationIdFilter?: (string | undefined)[]
 ) {
     return {
         vaccinations: {
             label: `health_category.${HealthCategory.Vaccinations}.vaccinations`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-Vaccination', // NOSONAR
                 organizationIdFilter
@@ -18,7 +18,7 @@ export function getVaccinationData(
         },
         vaccinationEvents: {
             label: `health_category.${HealthCategory.Vaccinations}.vaccination_events`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R4,
                 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-event', // NOSONAR
                 organizationIdFilter
@@ -26,7 +26,7 @@ export function getVaccinationData(
         },
         vaccinationRecommendations: {
             label: `health_category.${HealthCategory.Vaccinations}.vaccination_recommendations`,
-            data: resources.getResourcesByProfile(
+            data: getResourcesByProfile(
                 FhirVersion.R3,
                 'http://nictiz.nl/fhir/StructureDefinition/zib-VaccinationRecommendation', // NOSONAR
                 organizationIdFilter
