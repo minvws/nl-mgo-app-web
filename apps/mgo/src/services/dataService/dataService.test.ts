@@ -1,89 +1,76 @@
-import { type HealthcareOrganization } from '$/store';
-import { faker } from '$test/faker';
-import {
-    DataServiceId,
-    createCommonClinicalDatasetService,
-    createGeneralPractitionerService,
-    createPdfAService,
-    createVaccinationImmunizationService,
-} from '@minvws/mgo-data-services';
-import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
-import { getDataService } from './dataService';
+import { beforeEach, expect, test, vi } from 'vitest';
 
-const dataServiceMocks = {
-    [DataServiceId.VaccinationImmunization]: createVaccinationImmunizationService as MockedFunction<
-        typeof createVaccinationImmunizationService
-    >,
-    [DataServiceId.CommonClinicalDataset]: createCommonClinicalDatasetService as MockedFunction<
-        typeof createCommonClinicalDatasetService
-    >,
-    [DataServiceId.PdfA]: createPdfAService as MockedFunction<typeof createPdfAService>,
-    [DataServiceId.GeneralPractitioner]: createGeneralPractitionerService as MockedFunction<
-        typeof createGeneralPractitionerService
-    >,
-};
+import { losslessParse } from '@minvws/mgo-utils';
+import { createDataService } from './dataService';
 
-vi.mock('@minvws/mgo-data-services', async (importActual) => {
-    const mod = await importActual<typeof import('@minvws/mgo-data-services')>();
+const hoisted = vi.hoisted(() => {
     return {
-        ...mod,
-        createCommonClinicalDatasetService: vi.fn(() => ({
-            dataServiceId: DataServiceId.CommonClinicalDataset,
-        })),
-        createPdfAService: vi.fn(() => ({
-            dataServiceId: DataServiceId.PdfA,
-        })),
-        createGeneralPractitionerService: vi.fn(() => ({
-            dataServiceId: DataServiceId.GeneralPractitioner,
-        })),
-        createVaccinationImmunizationService: vi.fn(() => ({
-            dataServiceId: DataServiceId.VaccinationImmunization,
-        })),
+        kyCreate: vi.fn(),
+        appConfig: { dva_url: 'https://dva.test' },
+        getDataServiceConfig: vi.fn(),
     };
 });
 
-afterEach(() => {
-    vi.clearAllMocks();
+vi.mock('ky', () => ({
+    default: { create: hoisted.kyCreate },
+}));
+
+vi.mock('$/config', () => ({
+    appConfig: hoisted.appConfig,
+    getDataServiceConfig: hoisted.getDataServiceConfig,
+}));
+
+beforeEach(() => {
+    hoisted.kyCreate.mockReset();
+    hoisted.getDataServiceConfig.mockReset();
 });
 
-test('returns the data service when there is a resource endpoint available', () => {
-    const dataServices: HealthcareOrganization['dataServices'] = [
-        { id: DataServiceId.VaccinationImmunization, resourceEndpoint: faker.internet.url() },
-        { id: DataServiceId.CommonClinicalDataset, resourceEndpoint: faker.internet.url() },
-        { id: DataServiceId.PdfA, resourceEndpoint: faker.internet.url() },
-        { id: DataServiceId.GeneralPractitioner, resourceEndpoint: faker.internet.url() },
-    ];
+test('returns undefined when dataService config is missing', () => {
+    hoisted.getDataServiceConfig.mockReturnValue(undefined);
 
-    const organization = faker.custom.healthcareOrganization({ dataServices });
-    const dataServiceId = faker.custom.dataServiceId();
-    const dataService = getDataService(organization, dataServiceId);
-    const createServiceMock = dataServiceMocks[dataServiceId];
+    const result = createDataService({ dataServiceId: 'unknown', resourceEndpoint: 'endpoint' });
 
-    expect(dataService?.dataServiceId).toBe(dataServiceId);
-    expect(createServiceMock).toHaveBeenCalledWith(
+    expect(result).toBeUndefined();
+    expect(hoisted.kyCreate).not.toHaveBeenCalled();
+});
+
+test('returns undefined when resourceEndpoint is missing', () => {
+    hoisted.getDataServiceConfig.mockReturnValue({
+        id: 'gp',
+        fhirVersion: '4.0.1',
+        fhirVersionEnum: 'R4',
+    });
+
+    const result = createDataService({ dataServiceId: 'gp' });
+
+    expect(result).toBeUndefined();
+    expect(hoisted.kyCreate).not.toHaveBeenCalled();
+});
+
+test('creates ky instance with correct options and sets meta', () => {
+    const dataServiceConfig = { id: 'gp', fhirVersion: '4.0.1', fhirVersionEnum: 'R4' };
+    hoisted.getDataServiceConfig.mockReturnValue(dataServiceConfig);
+
+    const instance: Record<string, unknown> = {};
+    hoisted.kyCreate.mockReturnValue(instance);
+
+    const resourceEndpoint = 'https://org.example/fhir/endpoint';
+    const result = createDataService({ dataServiceId: dataServiceConfig.id, resourceEndpoint });
+
+    expect(hoisted.kyCreate).toHaveBeenCalledWith(
         expect.objectContaining({
-            headers: {
-                'x-mgo-dva-target': dataServices.find((x) => x.id === dataServiceId)
-                    ?.resourceEndpoint,
-            },
+            prefixUrl: `${hoisted.appConfig.dva_url}/fhir`,
+            parseJson: losslessParse,
+            headers: expect.objectContaining({
+                Accept: `application/fhir+json; fhirVersion=${dataServiceConfig.fhirVersion}`,
+                'x-mgo-dva-target': resourceEndpoint,
+            }),
         })
     );
-});
 
-test('returns NULL when there is NO organization', () => {
-    const dataService = getDataService(undefined, faker.custom.dataServiceId());
-    expect(dataService).toBeNull();
-});
-
-test('returns NULL when there is NO dataServiceId', () => {
-    const dataService = getDataService(faker.custom.healthcareOrganization(), undefined);
-    expect(dataService).toBeNull();
-});
-
-test('returns NULL when there is NO resource endpoint available', () => {
-    const organization = faker.custom.healthcareOrganization();
-    organization.dataServices = [];
-
-    const dataService = getDataService(organization, faker.custom.dataServiceId());
-    expect(dataService).toBeNull();
+    expect(result).toBe(instance);
+    expect(result?.meta).toEqual({
+        dataServiceId: dataServiceConfig.id,
+        fhirVersionEnum: dataServiceConfig.fhirVersionEnum,
+    });
 });

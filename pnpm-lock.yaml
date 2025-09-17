@@ -206,6 +206,9 @@ importers:
 
   apps/mgo:
     dependencies:
+      '@minvws/mgo-config':
+        specifier: workspace:^
+        version: link:../../packages/config
       '@minvws/mgo-data-services':
         specifier: workspace:^
         version: link:../../packages/data-services
@@ -9058,7 +9061,7 @@ snapshots:
 
   '@bundled-es-modules/statuses@1.0.1':
     dependencies:
-      statuses: 2.0.1
+      statuses: 2.0.2
 
   '@chromatic-com/storybook@1.9.0(react@18.3.1)':
     dependencies:
@@ -11429,7 +11432,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.28.4
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -16164,7 +16167,7 @@ snapshots:
 
   tsx@4.20.5:
     dependencies:
-      esbuild: 0.25.5
+      esbuild: 0.25.10
       get-tsconfig: 4.7.6
     optionalDependencies:
       fsevents: 2.3.3

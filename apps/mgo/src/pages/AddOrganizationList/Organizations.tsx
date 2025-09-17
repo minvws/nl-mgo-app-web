@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { store } from '$/store';
+import { useStore } from '$/store';
 import {
     Button,
     ConfirmDialog,
@@ -12,9 +12,9 @@ import { useState } from 'react';
 
 export function Organizations() {
     const { formatMessage } = useIntl();
-    const organizations = store.use.organizations();
-    const getOrganizationBySlug = store.use.getOrganizationBySlug();
-    const removeOrganizationBySlug = store.use.removeOrganizationBySlug();
+    const organizations = useStore.use.organizations();
+    const getOrganizationBySlug = useStore.use.getOrganizationBySlug();
+    const removeOrganizationBySlug = useStore.use.removeOrganizationBySlug();
     const [selectedSlug, setSelectedSlug] = useState<string>();
     const { isOpen, open, setIsOpen } = useOpenState({
         afterClose: () => {

@@ -7,7 +7,7 @@ export function BackButton({ className, ...rest }: Readonly<ButtonProps>) {
 
     const buttonProps: ButtonProps = {
         variant: 'ghost',
-        leftIcon: 'chevron-left',
+        leftIcon: 'chevron_left',
         className: 'my-3 pl-0',
         ...rest,
     };

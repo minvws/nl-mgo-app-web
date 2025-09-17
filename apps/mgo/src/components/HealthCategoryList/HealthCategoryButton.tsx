@@ -1,47 +1,30 @@
-import { HealthCategory, healthCategorySlugs } from '$/healthCategory';
-import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
+import { HealthCategoryConfig } from '$/config';
+import { useHealthCategorySlug } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { CategoryButton, type CategoryButtonProps } from '@minvws/mgo-ui';
+import { AppMessagesIds } from '@minvws/mgo-intl';
+import { CategoryButton, type CategoryButtonIcon } from '@minvws/mgo-ui';
 
-export interface HealthCategoryButtonProps<T extends HealthCategory> {
-    readonly query: QueryResult<T>;
+export interface HealthCategoryButtonProps {
+    readonly category: HealthCategoryConfig;
+    readonly isLoading?: boolean;
+    readonly isEmpty?: boolean;
 }
 
-export function HealthCategoryButton<T extends HealthCategory>({
-    query,
-}: HealthCategoryButtonProps<T>) {
+export function HealthCategoryButton({ category, isLoading, isEmpty }: HealthCategoryButtonProps) {
     const { formatMessage } = useIntl();
-
-    const iconMap: Record<HealthCategory, CategoryButtonProps['icon']> = {
-        [HealthCategory.PersonalInformation]: 'person',
-        [HealthCategory.PayerAndOrganization]: 'stethoscope',
-        [HealthCategory.TreatmentPlan]: 'event-note',
-        [HealthCategory.FunctionalOrMentalStatus]: 'sentiment-satisfied',
-        [HealthCategory.Documents]: 'folder',
-        [HealthCategory.Problems]: 'diagnosis',
-        [HealthCategory.Lifestyle]: 'nutrition',
-        [HealthCategory.Warning]: 'emergency-home',
-        [HealthCategory.AllergiesAndIntolerances]: 'allergy',
-        [HealthCategory.Medication]: 'pill',
-        [HealthCategory.MedicalDevices]: 'health-and-safety',
-        [HealthCategory.Vaccinations]: 'syringe',
-        [HealthCategory.LaboratoryResults]: 'labs',
-        [HealthCategory.Procedures]: 'medical-services',
-        [HealthCategory.ContactsAndAppointments]: 'date-range',
-        [HealthCategory.Vitals]: 'vital-signs',
-    };
+    const slug = useHealthCategorySlug(category);
 
     return (
         <CategoryButton
             asChild
-            icon={iconMap[query.category]}
+            icon={category.icon as CategoryButtonIcon}
             loadingText={formatMessage('common.loading')}
-            isLoading={query.isLoading}
-            label={!query.isLoading && query.isEmpty ? formatMessage('common.no_data') : undefined}
+            isLoading={isLoading}
+            label={!isLoading && isEmpty ? formatMessage('common.no_data') : undefined}
         >
-            <RouterLink to={`./${healthCategorySlugs[query.category]}`}>
-                <FormattedMessage id={`hc_${query.category}.heading`} />
+            <RouterLink to={`./${slug}`}>
+                <FormattedMessage id={category.heading as AppMessagesIds} />
             </RouterLink>
         </CategoryButton>
     );

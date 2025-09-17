@@ -1,6 +1,6 @@
 import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
-import { store } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
@@ -17,11 +17,11 @@ beforeEach(() => {
     mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen();
-    store.setState({ organizations: [] });
+    useStore.setState({ organizations: [] });
 });
 
 test('shows added organizations', async () => {
-    store.getState().addOrganization(faker.custom.healthcareOrganization());
+    useStore.getState().addOrganization(faker.custom.healthcareOrganization());
     setupApp({ initialEntries: ['/zorgaanbieder-toevoegen/zorgaanbieders'] });
     const listItems = screen.getAllByTestId('organization-item');
     expect(listItems.length).toBe(1);
@@ -38,7 +38,7 @@ test('shows if there are no organizations', async () => {
 
 test('remove item from store', async () => {
     const user = userEvent.setup();
-    const { addOrganization } = store.getState();
+    const { addOrganization } = useStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddOrganizationList />);
     let listItems = screen.getAllByTestId('organization-item');
@@ -60,7 +60,7 @@ test('remove item from store', async () => {
 
 test('do not remove item from store', async () => {
     const user = userEvent.setup();
-    const { addOrganization } = store.getState();
+    const { addOrganization } = useStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddOrganizationList />);
 

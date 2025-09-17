@@ -51,7 +51,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
     return (
         <DescriptionButton
             details={label}
-            icon="attach-file"
+            icon="attach_file"
             isLoading={isLoading}
             variant="highlighted"
             asChild

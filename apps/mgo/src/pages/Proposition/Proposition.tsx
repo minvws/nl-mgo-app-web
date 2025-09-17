@@ -47,19 +47,19 @@ export function Proposition() {
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
-                                <ListIcon icon="health-and-safety" className="fill-[#34C759]" />
+                                <ListIcon icon="health_and_safety" className="fill-[#34C759]" />
                                 <span>
                                     <FormattedMessage id="proposition.statement_2" />
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
-                                <ListIcon icon="verified-user" className="fill-[#34C759]" />
+                                <ListIcon icon="verified_user" className="fill-[#34C759]" />
                                 <span>
                                     <FormattedMessage id="proposition.statement_3" />
                                 </span>
                             </ListItem>
                             <ListItem className="flex">
-                                <ListIcon icon="gpp-bad" className="fill-[#34C759]" />
+                                <ListIcon icon="gpp_bad" className="fill-[#34C759]" />
                                 <span>
                                     <FormattedMessage id="proposition.statement_4" />
                                 </span>

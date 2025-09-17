@@ -1,6 +1,6 @@
-import { HealthCategory, useHealthCategoryQuery } from '$/healthCategory';
-import { type QueryResult } from '$/healthCategory/useHealthCategoryQuery/useHealthCategoryQuery';
-import { type HealthcareOrganization } from '$/store';
+import { getHealthCategoryConfigs } from '$/config';
+import { useHealthCategoriesQuery } from '$/hooks';
+import { useStore, type HealthcareOrganization } from '$/store';
 import { ListWrapper, Stack } from '@minvws/mgo-ui';
 import { HealthCategoryButton } from './HealthCategoryButton';
 
@@ -9,38 +9,29 @@ export interface CategoryListProps {
 }
 
 export function HealthCategoryList({ organization }: CategoryListProps) {
-    const organizationFilter = organization ? [organization.id] : undefined;
+    const allOrganizations = useStore.use.organizations();
+    const organizations = organization ? [organization] : allOrganizations;
 
-    const categoryQueries: QueryResult<HealthCategory>[] = [
-        useHealthCategoryQuery(HealthCategory.PersonalInformation, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.PayerAndOrganization, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Medication, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.TreatmentPlan, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.FunctionalOrMentalStatus, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Problems, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Lifestyle, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Documents, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Warning, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.AllergiesAndIntolerances, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.MedicalDevices, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Vaccinations, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.LaboratoryResults, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Procedures, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.ContactsAndAppointments, organizationFilter),
-        useHealthCategoryQuery(HealthCategory.Vitals, organizationFilter),
-    ];
+    const categoryQueries = useHealthCategoriesQuery({
+        categories: getHealthCategoryConfigs(),
+        organizations,
+    });
 
     const completed = categoryQueries
         .filter((query) => !query.isLoading && !query.isEmpty)
-        .map((query) => <HealthCategoryButton key={query.id} query={query} />);
+        .map((query) => <HealthCategoryButton key={query.category.id} category={query.category} />);
 
     const loading = categoryQueries
         .filter((query) => query.isLoading)
-        .map((query) => <HealthCategoryButton key={query.id} query={query} />);
+        .map((query) => (
+            <HealthCategoryButton key={query.category.id} category={query.category} isLoading />
+        ));
 
     const empty = categoryQueries
         .filter((query) => !query.isLoading && query.isEmpty)
-        .map((query) => <HealthCategoryButton key={query.id} query={query} />);
+        .map((query) => (
+            <HealthCategoryButton key={query.category.id} category={query.category} isEmpty />
+        ));
 
     return (
         <Stack className="gap-6">

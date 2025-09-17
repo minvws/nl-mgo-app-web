@@ -13,7 +13,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
         return (
             <DescriptionButton
                 details={label}
-                icon="attach-file"
+                icon="attach_file"
                 asChild
                 variant="highlighted"
                 {...rest}

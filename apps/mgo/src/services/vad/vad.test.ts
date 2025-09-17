@@ -1,4 +1,4 @@
-import { config } from '$/config';
+import { appConfig } from '$/config';
 import { faker } from '$test/faker';
 import ky, { type ResponsePromise } from 'ky';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
@@ -34,7 +34,7 @@ test('getAuthUrl calls oidc/start', async () => {
 
     const result = await getAuthUrl({ callbackUrl });
     expect(ky.post).toHaveBeenCalledWith('oidc/start', {
-        prefixUrl: config.dva_url,
+        prefixUrl: appConfig.dva_url,
         json: { client_callback_url: callbackUrl },
     });
     expect(result).toBe(expectedResult);
