@@ -177,6 +177,36 @@
       "value": "Status"
     }
   ],
+  "summary.r3.zib_problem.group_about": [
+    {
+      "type": 0,
+      "value": "Over de klacht"
+    }
+  ],
+  "summary.r3.zib_problem.group_body_site": [
+    {
+      "type": 0,
+      "value": "Anatomische locatie"
+    }
+  ],
+  "summary.r3.zib_problem.group_health_professional": [
+    {
+      "type": 0,
+      "value": "Zorgverlener"
+    }
+  ],
+  "summary.r3.zib_problem.group_period_of_time": [
+    {
+      "type": 0,
+      "value": "Periode"
+    }
+  ],
+  "summary.r3.zib_problem.show_details": [
+    {
+      "type": 0,
+      "value": "Bekijk alle probleem gegevens"
+    }
+  ],
   "summary.r4.nl_core_vaccination_event.group_performer": [
     {
       "type": 0,

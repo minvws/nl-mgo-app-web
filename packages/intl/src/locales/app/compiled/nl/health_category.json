@@ -44,7 +44,7 @@
   "hc_allergies.heading": [
     {
       "type": 0,
-      "value": "Allergieën"
+      "value": "Allergieën en intoleranties"
     }
   ],
   "hc_allergies.heading_detail": [
@@ -284,7 +284,7 @@
   "hc_mental.subheading": [
     {
       "type": 0,
-      "value": "Hoe het geestelijk met je gaat, zoals stress en somberheid"
+      "value": "Hoe het geestelijk met je gaat, zoals angst, stress en somberheid"
     }
   ],
   "hc_patient.heading": [
@@ -362,7 +362,7 @@
   "hc_problems.heading": [
     {
       "type": 0,
-      "value": "Gezondheidsproblemen"
+      "value": "Medische klachten"
     }
   ],
   "hc_problems.subheading": [
@@ -428,7 +428,7 @@
   "health_category.allergies.allergies": [
     {
       "type": 0,
-      "value": "Allergieën"
+      "value": "Allergieën en intoleranties"
     }
   ],
   "health_category.appointments.appointments": [
@@ -704,7 +704,7 @@
   "zib_allergy_intolerance.heading": [
     {
       "type": 0,
-      "value": "Allergieën"
+      "value": "Allergiën en intoleranties"
     }
   ],
   "zib_blood_pressure.heading": [

@@ -51,6 +51,7 @@
     "fhir.x.date": "",
     "fhir.x.date_time": "",
     "fhir.x.device": "",
+    "fhir.x.diagnosis": "",
     "fhir.x.effective_date_time": "",
     "fhir.x.effective_period": "",
     "fhir.x.email_addresses": "",
