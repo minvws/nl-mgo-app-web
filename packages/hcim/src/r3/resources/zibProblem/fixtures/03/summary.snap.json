@@ -1,0 +1,100 @@
+{
+    "label": "Fracture of wrist (disorder)",
+    "children": [
+        {
+            "label": "Over de klacht",
+            "children": [
+                {
+                    "label": "Probleem naam",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Fracture of wrist (disorder)",
+                            "code": "31641000146105",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Probleem type",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Probleem anatomische locatie",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Probleem lateraliteit",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Verificatie status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Unknown",
+                            "code": "UNK",
+                            "system": "http://hl7.org/fhir/v3/NullFlavor"
+                        }
+                    ]
+                },
+                {
+                    "label": "Probleem status",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Active",
+                            "code": "55561003",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Gevallen op de kunstijsbaan"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Periode",
+            "children": [
+                {
+                    "label": "Probleem begin datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "2001"
+                },
+                {
+                    "label": "Probleem eind datum",
+                    "type": "SINGLE_VALUE",
+                    "display": "2002"
+                }
+            ]
+        },
+        {
+            "label": "Zorgverlener",
+            "children": [
+                {
+                    "label": "Bron",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle probleem gegevens",
+                    "reference": "Condition/zib-problem-01"
+                }
+            ]
+        }
+    ]
+}
