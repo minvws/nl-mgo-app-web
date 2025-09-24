@@ -1,5 +1,4 @@
 {
-    "fhir.x.diagnosis": "Diagnosis",
     "r3.e_afspraak_appointment": "Afspraak",
     "r3.e_afspraak_appointment.appointment_type": "Contact type",
     "r3.e_afspraak_appointment.created": "Datum",
@@ -166,6 +165,7 @@
     "r3.zib_nutrition_advice.oral_diet.type": "Dieet type",
     "r3.zib_nutrition_advice.orderer": "Auteur",
     "r3.zib_payer.beneficiary": "Onderwerp (Patiënt)",
+    "r3.zib_problem": "Medische klacht",
     "r3.zib_problem.asserter": "Bron",
     "r3.zib_procedure.based_on": "Verrichting",
     "r3.zib_procedure.body_site.procedure_laterality": "Zijde",

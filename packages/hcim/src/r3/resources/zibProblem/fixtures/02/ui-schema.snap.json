@@ -1,5 +1,5 @@
 {
-    "label": "Concern",
+    "label": "Medische klacht",
     "children": [
         {
             "children": [
@@ -20,6 +20,17 @@
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Probleem anatomische locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Hart (80891009 in codesysteem http://snomed.info/sct)",
+                            "code": "80891009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
                 },
                 {
                     "label": "Probleem begin datum",

@@ -1,5 +1,3 @@
-export { dropEmptyEntries } from './helpers/index.js';
-
 export * from './types/index.js';
 
 export { common } from './common/index.js';

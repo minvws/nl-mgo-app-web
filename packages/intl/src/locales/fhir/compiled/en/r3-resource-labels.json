@@ -1,6 +1,4 @@
 {
-  "fhir.x.diagnosis": [
-  ],
   "r3.e_afspraak_appointment": [
   ],
   "r3.e_afspraak_appointment.appointment_type": [
@@ -332,6 +330,8 @@
   "r3.zib_nutrition_advice.orderer": [
   ],
   "r3.zib_payer.beneficiary": [
+  ],
+  "r3.zib_problem": [
   ],
   "r3.zib_problem.asserter": [
   ],

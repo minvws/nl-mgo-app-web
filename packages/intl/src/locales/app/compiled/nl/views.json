@@ -192,7 +192,7 @@
   "export_pdf.subheading": [
     {
       "type": 0,
-      "value": "Opgeslagen op "
+      "value": "Gemaakt op "
     },
     {
       "type": 1,
@@ -593,6 +593,16 @@
     {
       "type": 0,
       "value": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+    }
+  ],
+  "patientfriendlyterms.synonym": [
+    {
+      "type": 0,
+      "value": "Andere naam: "
+    },
+    {
+      "type": 1,
+      "value": "synonym"
     }
   ],
   "pdf_viewer.loading": [

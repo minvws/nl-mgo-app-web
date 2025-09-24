@@ -1,10 +1,4 @@
 {
-  "fhir.x.diagnosis": [
-    {
-      "type": 0,
-      "value": "Diagnosis"
-    }
-  ],
   "r3.e_afspraak_appointment": [
     {
       "type": 0,
@@ -999,6 +993,12 @@
     {
       "type": 0,
       "value": "Onderwerp (Patiënt)"
+    }
+  ],
+  "r3.zib_problem": [
+    {
+      "type": 0,
+      "value": "Medische klacht"
     }
   ],
   "r3.zib_problem.asserter": [

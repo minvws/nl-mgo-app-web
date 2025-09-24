@@ -1,5 +1,4 @@
 {
-    "fhir.x.diagnosis": "",
     "r3.e_afspraak_appointment": "",
     "r3.e_afspraak_appointment.appointment_type": "",
     "r3.e_afspraak_appointment.created": "",
@@ -166,6 +165,7 @@
     "r3.zib_nutrition_advice.oral_diet.type": "",
     "r3.zib_nutrition_advice.orderer": "",
     "r3.zib_payer.beneficiary": "",
+    "r3.zib_problem": "",
     "r3.zib_problem.asserter": "",
     "r3.zib_procedure.based_on": "",
     "r3.zib_procedure.body_site.procedure_laterality": "",

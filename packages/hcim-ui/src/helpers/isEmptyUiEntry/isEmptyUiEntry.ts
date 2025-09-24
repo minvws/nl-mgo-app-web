@@ -4,6 +4,7 @@ import { type UiElement } from '../../types/index.js';
 export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
     switch (uiField.type) {
         case 'REFERENCE_VALUE':
+            return isNullish(uiField.reference) && isNullish(uiField.display);
         case 'REFERENCE_LINK':
         case 'DOWNLOAD_BINARY':
             return isNullish(uiField.reference);
