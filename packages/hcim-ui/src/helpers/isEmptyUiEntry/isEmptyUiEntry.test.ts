@@ -17,6 +17,7 @@ test.each<Partial<UiElement>>([
 });
 
 test.each<Partial<UiElement>>([
+    { type: 'REFERENCE_VALUE', display: faker.lorem.word() },
     { type: 'REFERENCE_VALUE', reference: faker.lorem.word() },
     { type: 'SINGLE_VALUE', display: '' },
     { type: 'SINGLE_VALUE', display: faker.lorem.word() },
