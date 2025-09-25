@@ -333,7 +333,25 @@
   ],
   "r3.zib_problem": [
   ],
+  "r3.zib_problem.abatement_date_time": [
+  ],
   "r3.zib_problem.asserter": [
+  ],
+  "r3.zib_problem.body_site": [
+  ],
+  "r3.zib_problem.body_site.laterality": [
+  ],
+  "r3.zib_problem.category": [
+  ],
+  "r3.zib_problem.clinical_status": [
+  ],
+  "r3.zib_problem.code": [
+  ],
+  "r3.zib_problem.note": [
+  ],
+  "r3.zib_problem.onset_date_time": [
+  ],
+  "r3.zib_problem.verification_status": [
   ],
   "r3.zib_procedure.based_on": [
   ],
