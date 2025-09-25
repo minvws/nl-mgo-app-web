@@ -5,7 +5,7 @@
             "label": "Over de klacht",
             "children": [
                 {
-                    "label": "Probleem naam",
+                    "label": "Medische klacht of aandoening",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -16,12 +16,12 @@
                     ]
                 },
                 {
-                    "label": "Probleem type",
+                    "label": "Soort klacht",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 },
                 {
-                    "label": "Verificatie status",
+                    "label": "Bevestigd of vermoed",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -32,7 +32,7 @@
                     ]
                 },
                 {
-                    "label": "Probleem status",
+                    "label": "Huidige status",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -43,7 +43,7 @@
                     ]
                 },
                 {
-                    "label": "Toelichting",
+                    "label": "Opmerkingen",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         "Gevallen op de kunstijsbaan"
@@ -55,7 +55,7 @@
             "label": "Anatomische locatie",
             "children": [
                 {
-                    "label": "Probleem anatomische locatie",
+                    "label": "Plaats in het lichaam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -66,7 +66,7 @@
                     ]
                 },
                 {
-                    "label": "Probleem lateraliteit",
+                    "label": "Aangedane kant",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -82,7 +82,7 @@
             "label": "Anatomische locatie",
             "children": [
                 {
-                    "label": "Probleem anatomische locatie",
+                    "label": "Plaats in het lichaam",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -93,7 +93,7 @@
                     ]
                 },
                 {
-                    "label": "Probleem lateraliteit",
+                    "label": "Aangedane kant",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }
@@ -103,12 +103,12 @@
             "label": "Periode",
             "children": [
                 {
-                    "label": "Probleem begin datum",
+                    "label": "Wanneer begonnen",
                     "type": "SINGLE_VALUE",
                     "display": "2001"
                 },
                 {
-                    "label": "Probleem eind datum",
+                    "label": "Wanneer gestopt",
                     "type": "SINGLE_VALUE",
                     "display": "2002"
                 }
@@ -118,7 +118,7 @@
             "label": "Zorgverlener",
             "children": [
                 {
-                    "label": "Bron",
+                    "label": "Vastgelegd door (zorgverlener)",
                     "type": "SINGLE_VALUE",
                     "display": "Niet bekend"
                 }

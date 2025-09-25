@@ -4,11 +4,6 @@
         {
             "children": [
                 {
-                    "label": "Bron",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
-                },
-                {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "display": [
@@ -16,34 +11,7 @@
                     ]
                 },
                 {
-                    "label": "Onderwerp",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Johan XXX_Helleman",
-                    "reference": "Patient/nl-core-patient-01"
-                },
-                {
-                    "label": "Probleem anatomische locatie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        {
-                            "display": "Hart (80891009 in codesysteem http://snomed.info/sct)",
-                            "code": "80891009",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                },
-                {
-                    "label": "Probleem begin datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "2001"
-                },
-                {
-                    "label": "Probleem eind datum",
-                    "type": "SINGLE_VALUE",
-                    "display": "2002"
-                },
-                {
-                    "label": "Probleem naam",
+                    "label": "Medische klacht of aandoening",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
@@ -54,9 +22,28 @@
                     ]
                 },
                 {
-                    "label": "Probleem type",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        "Gevallen op de kunstijsbaan"
+                    ]
+                },
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Hart (80891009 in codesysteem http://snomed.info/sct)",
+                            "code": "80891009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
                 },
                 {
                     "label": "Probleemstatus",
@@ -70,11 +57,14 @@
                     ]
                 },
                 {
-                    "label": "Toelichting",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Gevallen op de kunstijsbaan"
-                    ]
+                    "label": "Soort klacht",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
+                },
+                {
+                    "label": "Vastgelegd door (zorgverlener)",
+                    "type": "SINGLE_VALUE",
+                    "display": "Niet bekend"
                 },
                 {
                     "label": "Verificatie status codelijst",
@@ -86,30 +76,40 @@
                             "system": "http://hl7.org/fhir/v3/NullFlavor"
                         }
                     ]
+                },
+                {
+                    "label": "Wanneer begonnen",
+                    "type": "SINGLE_VALUE",
+                    "display": "2001"
+                },
+                {
+                    "label": "Wanneer gestopt",
+                    "type": "SINGLE_VALUE",
+                    "display": "2002"
                 }
             ]
         },
         {
-            "label": "Probleem anatomische locatie",
+            "label": "Plaats in het lichaam",
             "children": [
                 {
-                    "label": "Probleem anatomische locatie",
-                    "type": "MULTIPLE_VALUES",
-                    "display": [
-                        {
-                            "display": "Entire wrist region (361289009 in codesysteem http://snomed.info/sct)",
-                            "code": "361289009",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                },
-                {
-                    "label": "Probleem lateraliteit",
+                    "label": "Aangedane kant",
                     "type": "MULTIPLE_VALUES",
                     "display": [
                         {
                             "display": "Right (24028007 in codesysteem http://snomed.info/sct)",
                             "code": "24028007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "display": [
+                        {
+                            "display": "Entire wrist region (361289009 in codesysteem http://snomed.info/sct)",
+                            "code": "361289009",
                             "system": "http://snomed.info/sct"
                         }
                     ]
