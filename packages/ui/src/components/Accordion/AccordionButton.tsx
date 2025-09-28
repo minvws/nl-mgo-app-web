@@ -24,7 +24,7 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
         >
             <span className="text-left text-sm font-bold md:text-xl">{children}</span>
             <Icon
-                icon="chevron-right"
+                icon="chevron_right"
                 className={`ease-[cubic-bezier(0.4, 0, 0.2, 1)] text-grey-500 h-8 w-8 transform transition-[transform] duration-300 ${expanded ? '-rotate-90' : 'rotate-90'} relative top-[3px]`}
             />
         </button>

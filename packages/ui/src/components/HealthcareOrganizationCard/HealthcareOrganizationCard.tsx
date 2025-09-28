@@ -18,7 +18,7 @@ export type HealthcareOrganizationCardProps = Omit<ComponentProps<'div'>, 'child
     readonly checkMessage?: string;
 } & (
         | {
-              readonly icon: Extract<IconName, 'add' | 'chevron-right' | 'delete'>;
+              readonly icon: Extract<IconName, 'add' | 'chevron_right' | 'delete'>;
               readonly iconAriaLabel: string;
               readonly onActionClick: MouseEventHandler;
           }

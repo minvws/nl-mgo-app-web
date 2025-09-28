@@ -38,7 +38,7 @@ export const MultipleChildren: Story = {
             <DescriptionButton
                 term="mattis"
                 details="Et dapibus dolor pharetra sed"
-                icon="chevron-right"
+                icon="chevron_right"
             />
         </DescriptionList>
     ),

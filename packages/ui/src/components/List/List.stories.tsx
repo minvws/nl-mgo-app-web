@@ -43,7 +43,7 @@ export const WithIcon: Story = {
                 repellat.
             </ListItem>,
             <ListItem className="flex" key="2">
-                <ListIcon icon="health-and-safety" />
+                <ListIcon icon="health_and_safety" />
                 Nulla expedita ad placeat assumenda facilis officia deleniti.
             </ListItem>,
         ],
@@ -73,7 +73,7 @@ export const Overview: Story = {
                     </ListItem>
 
                     <ListItem className="flex" key="2">
-                        <ListIcon icon="health-and-safety" />
+                        <ListIcon icon="health_and_safety" />
                         Nulla expedita ad placeat assumenda facilis officia deleniti.
                     </ListItem>
                 </List>

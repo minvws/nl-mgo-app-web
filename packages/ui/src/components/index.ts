@@ -39,7 +39,11 @@ export { Spinner, type SpinnerProps } from './Spinner/Spinner';
 export { Stack, type StackProps } from './Stack/Stack';
 export { Text, type TextProps } from './Text/Text';
 
-export { CategoryButton, type CategoryButtonProps } from './CategoryButton/CategoryButton';
+export {
+    CategoryButton,
+    type CategoryButtonIcon,
+    type CategoryButtonProps,
+} from './CategoryButton/CategoryButton';
 export {
     DescriptionButton,
     type DescriptionButtonProps,
