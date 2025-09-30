@@ -3,3 +3,8 @@ import { fhirR4 } from './faker/fhirR4/index.js';
 
 export const fhirR3Faker = fhirR3;
 export const fhirR4Faker = fhirR4;
+
+export const fhirFaker = {
+    r3: fhirR3,
+    r4: fhirR4,
+};
