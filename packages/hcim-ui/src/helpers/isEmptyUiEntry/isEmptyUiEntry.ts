@@ -9,10 +9,10 @@ export function isEmptyUiEntry<T extends UiElement>(uiField: T) {
         case 'DOWNLOAD_BINARY':
             return isNullish(uiField.reference);
         case 'SINGLE_VALUE':
-            return isNullish(uiField.display);
+            return isNullish(uiField.value?.display);
         case 'MULTIPLE_VALUES':
         case 'MULTIPLE_GROUPED_VALUES':
-            return isNullish(uiField.display) || !uiField.display.flat().length;
+            return isNullish(uiField.value) || !uiField.value.flat().length;
         case 'DOWNLOAD_LINK':
             return isNullish(uiField.url);
         default:

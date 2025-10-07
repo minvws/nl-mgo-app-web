@@ -34,7 +34,7 @@ test('elements are added to a default labelless group', () => {
         {
             label: testMessage('r3.nl_core_patient.foo'),
             type: 'SINGLE_VALUE',
-            display: faker.lorem.sentence(),
+            value: { display: faker.lorem.sentence() },
         },
     ];
 
@@ -68,7 +68,7 @@ test('group labels that start with r3 or r4 are translated', () => {
             {
                 label: faker.lorem.word(),
                 type: 'SINGLE_VALUE',
-                display: faker.lorem.sentence(),
+                value: { display: faker.lorem.sentence() },
             },
         ],
     };
@@ -79,7 +79,7 @@ test('group labels that start with r3 or r4 are translated', () => {
             {
                 label: faker.lorem.word(),
                 type: 'SINGLE_VALUE',
-                display: faker.lorem.sentence(),
+                value: { display: faker.lorem.sentence() },
             },
         ],
     };
@@ -122,17 +122,17 @@ test('elements are sorted by label', () => {
         {
             label: 'a' + faker.lorem.word(),
             type: 'SINGLE_VALUE',
-            display: faker.lorem.sentence(),
+            value: { display: faker.lorem.sentence() },
         },
         {
             label: 'c' + faker.lorem.word(),
             type: 'SINGLE_VALUE',
-            display: faker.lorem.sentence(),
+            value: { display: faker.lorem.sentence() },
         },
         {
             label: 'b' + faker.lorem.word(),
             type: 'SINGLE_VALUE',
-            display: faker.lorem.sentence(),
+            value: { display: faker.lorem.sentence() },
         },
     ];
 

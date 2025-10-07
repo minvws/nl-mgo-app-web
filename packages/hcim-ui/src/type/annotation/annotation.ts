@@ -8,7 +8,9 @@ import {
 } from '../../types/index.js';
 
 export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
-    return value?.text;
+    return {
+        display: value?.text,
+    };
 };
 
 export const annotation: WithUiContext<
@@ -20,13 +22,13 @@ export const annotation: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(annotationDisplay).filter(isNonNullish),
+                value: value.map(annotationDisplay).filter(isNonNullish),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
-            display: annotationDisplay(value),
+            value: annotationDisplay(value),
             type: 'SINGLE_VALUE',
         };
     };

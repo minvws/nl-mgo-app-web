@@ -23,13 +23,13 @@ export const codeableConcept: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_GROUPED_VALUES',
-                display: value.map(formatCodeableConcept).filter(isNonNullish),
+                value: value.map(formatCodeableConcept).filter(isNonNullish),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'MULTIPLE_VALUES',
-            display: formatCodeableConcept(value),
+            value: formatCodeableConcept(value),
         };
     };

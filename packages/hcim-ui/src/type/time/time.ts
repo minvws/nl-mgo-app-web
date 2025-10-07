@@ -1,5 +1,4 @@
 import { type MgoTime } from '@minvws/mgo-hcim-parse';
-import { isNonNullish } from '@minvws/mgo-utils';
 import { valueOf } from '../../helpers/valueOf/valueOf.js';
 import {
     type MultipleValues,
@@ -17,13 +16,13 @@ export const time: WithUiContext<UiFunction<MgoTime | MgoTime[], SingleValue | M
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(valueOf).filter(isNonNullish),
+                value: value.map((x) => ({ display: valueOf(x) })),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: valueOf(value),
+            value: { display: valueOf(value) },
         };
     };

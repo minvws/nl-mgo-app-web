@@ -1,6 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
+import { HealthUiGroup, UiElement } from '../../types/schema.js';
 import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
 import { processObject } from './processObject.js';
 
@@ -20,16 +21,16 @@ test('processes root properties to ui elements', () => {
         },
     };
 
-    const expected = [
+    const expected: UiElement[] = [
         {
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
-            display: value.foo.value,
+            value: { display: value.foo.value },
         },
         {
             label: testMessage(`${path}.bak`),
             type: 'SINGLE_VALUE',
-            display: value.bak.value,
+            value: { display: value.bak.value },
         },
     ];
 
@@ -49,16 +50,16 @@ test('null values are added as single value elements', () => {
         bak: null,
     };
 
-    const expected = [
+    const expected: UiElement[] = [
         {
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
-            display: value.foo.value,
+            value: { display: value.foo.value },
         },
         {
             label: testMessage(`${path}.bak`),
             type: 'SINGLE_VALUE',
-            display: undefined,
+            value: undefined,
         },
     ];
 
@@ -81,19 +82,19 @@ test('non-root paths get their own group', () => {
         },
     };
 
-    const expected = [
+    const expected: HealthUiGroup[] = [
         {
             label: path,
             children: [
                 {
                     label: testMessage(`${path}.foo`),
                     type: 'SINGLE_VALUE',
-                    display: value.foo.value,
+                    value: { display: value.foo.value },
                 },
                 {
                     label: testMessage(`${path}.bak`),
                     type: 'SINGLE_VALUE',
-                    display: value.bak.value,
+                    value: { display: value.bak.value },
                 },
             ],
         },
@@ -114,11 +115,11 @@ test('non-root paths that only have one child DO NOT get their own group', () =>
         },
     };
 
-    const expected = [
+    const expected: UiElement[] = [
         {
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
-            display: value.foo.value,
+            value: { display: value.foo.value },
         },
     ];
 
@@ -143,19 +144,19 @@ test('deeply nested types are merged to their root parent group', () => {
         },
     };
 
-    const expected = [
+    const expected: HealthUiGroup[] = [
         {
             label: path,
             children: [
                 {
                     label: testMessage(`${path}.foo`),
                     type: 'SINGLE_VALUE',
-                    display: value.foo.value,
+                    value: { display: value.foo.value },
                 },
                 {
                     label: testMessage(`${path}.deep.bak`),
                     type: 'SINGLE_VALUE',
-                    display: value.deep.bak.value,
+                    value: { display: value.deep.bak.value },
                 },
             ],
         },
@@ -177,11 +178,11 @@ test('does not try to process meta data properties starting with an underscore',
         _bak: faker.lorem.word(),
     };
 
-    const expected = [
+    const expected: UiElement[] = [
         {
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
-            display: value.foo.value,
+            value: { display: value.foo.value },
         },
     ];
 

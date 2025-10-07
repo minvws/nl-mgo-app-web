@@ -12,9 +12,21 @@ test('returns all children for a UiGroup', () => {
     const group: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
         ],
     };
 
@@ -26,16 +38,32 @@ test('returns all children for multiple UiGroups', () => {
     const group1: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
         ],
     };
 
     const group2: HealthUiGroup = {
         label: faker.lorem.word(),
         children: [
-            { type: 'SINGLE_VALUE', label: faker.lorem.word(), display: faker.lorem.word() },
+            {
+                type: 'SINGLE_VALUE',
+                label: faker.lorem.word(),
+                value: { display: faker.lorem.word() },
+            },
         ],
     };
 

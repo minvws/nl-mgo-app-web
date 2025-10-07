@@ -8,6 +8,6 @@ export const decimal: WithUiContext<UiFunction<MgoDecimal, SingleValue>> =
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: numberToString(value?.value),
+            value: { display: numberToString(value?.value) },
         };
     };

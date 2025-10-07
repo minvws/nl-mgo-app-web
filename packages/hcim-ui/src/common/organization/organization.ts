@@ -8,6 +8,6 @@ export function organization(
     return {
         type: 'SINGLE_VALUE',
         label: formatMessage(`summary.organization`),
-        display: organization?.name,
+        value: { display: organization?.name },
     };
 }

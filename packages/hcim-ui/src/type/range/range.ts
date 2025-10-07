@@ -20,12 +20,12 @@ export const range: WithUiContext<
         {
             label: formatLabel(lowLabel, value, `fhir.range.low`),
             type: `SINGLE_VALUE`,
-            display: formatSystemValue(value?.low),
+            value: { display: formatSystemValue(value?.low) },
         },
         {
             label: formatLabel(highLabel, value, `fhir.range.high`),
             type: `SINGLE_VALUE`,
-            display: formatSystemValue(value?.high),
+            value: { display: formatSystemValue(value?.high) },
         },
     ];
 };

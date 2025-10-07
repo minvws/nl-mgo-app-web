@@ -25,7 +25,7 @@ test('codeableConcept formats coding values', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: [
+        value: [
             {
                 display: `system(${concept.coding[0].display})`,
                 code: concept.coding[0].code,
@@ -61,7 +61,7 @@ test('codeableConcept handles array of concepts', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_GROUPED_VALUES',
-        display: [
+        value: [
             [
                 {
                     display: `system(${concepts[0].coding[0].display})`,

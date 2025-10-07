@@ -3,7 +3,7 @@ import { isNonNullish, Nullable } from '@minvws/mgo-utils';
 import { UiContext } from 'src/context/index.js';
 import { system } from '../../format/system/system.js';
 import {
-    type DisplayCoding,
+    type DisplayValue,
     type MultipleValues,
     type SingleValue,
     type UiFunction,
@@ -12,7 +12,7 @@ import {
 
 export const codingToDisplay = (uiContext: UiContext) => {
     const display = system(uiContext);
-    return (value: Nullable<MgoCodingProps>): DisplayCoding => ({
+    return (value: Nullable<MgoCodingProps>): DisplayValue => ({
         display: display(value),
         code: value?.code,
         system: value?.system,
@@ -31,12 +31,12 @@ export const coding: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(formatCoding).filter((item) => isNonNullish(item.display)),
+                value: value.map(formatCoding).filter((item) => isNonNullish(item.display)),
             };
         }
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: formatCoding(value),
+            value: formatCoding(value),
         };
     };

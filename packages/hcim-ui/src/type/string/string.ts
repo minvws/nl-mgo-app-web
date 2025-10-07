@@ -1,5 +1,4 @@
 import { type MgoString } from '@minvws/mgo-hcim-parse';
-import { isNonNullish } from '@minvws/mgo-utils';
 import { valueOf } from '../../helpers/valueOf/valueOf.js';
 import {
     type MultipleValues,
@@ -17,13 +16,13 @@ export const string: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map((x) => valueOf(x)).filter(isNonNullish),
+                value: value.map((x) => ({ display: valueOf(x) })),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: valueOf(value),
+            value: { display: valueOf(value) },
         };
     };

@@ -12,6 +12,6 @@ export const boolean: WithUiContext<UiFunction<MgoBoolean, SingleValue>> =
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: isNonNullish(value?.value) ? truthyString : undefined,
+            value: isNonNullish(value?.value) ? { display: truthyString } : undefined,
         };
     };

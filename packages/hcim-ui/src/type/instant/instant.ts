@@ -1,5 +1,4 @@
 import { type MgoInstant } from '@minvws/mgo-hcim-parse';
-import { isNonNullish } from '@minvws/mgo-utils';
 import { date } from '../../format/date/date.js';
 import {
     type MultipleValues,
@@ -20,13 +19,13 @@ export const instant: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map((x) => formatDate(x.value)).filter(isNonNullish),
+                value: value.map((x) => ({ display: formatDate(x.value) })),
             };
         }
 
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: formatDate(value?.value),
+            value: { display: formatDate(value?.value) },
         };
     };
