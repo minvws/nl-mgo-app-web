@@ -7,7 +7,7 @@
                 {
                     "label": "Medische klacht of aandoening",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Fracture of wrist (disorder)",
                             "code": "31641000146105",
@@ -18,12 +18,14 @@
                 {
                     "label": "Soort klacht",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Plaats in het lichaam",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Entire wrist region",
                             "code": "361289009",
@@ -34,7 +36,7 @@
                 {
                     "label": "Aangedane kant",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Right",
                             "code": "24028007",
@@ -45,7 +47,7 @@
                 {
                     "label": "Bevestigd of vermoed",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Unknown",
                             "code": "UNK",
@@ -56,7 +58,7 @@
                 {
                     "label": "Huidige status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Active",
                             "code": "55561003",
@@ -67,8 +69,10 @@
                 {
                     "label": "Opmerkingen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Gevallen op de kunstijsbaan"
+                    "value": [
+                        {
+                            "display": "Gevallen op de kunstijsbaan"
+                        }
                     ]
                 }
             ]
@@ -79,12 +83,16 @@
                 {
                     "label": "Wanneer begonnen",
                     "type": "SINGLE_VALUE",
-                    "display": "2001"
+                    "value": {
+                        "display": "2001"
+                    }
                 },
                 {
                     "label": "Wanneer gestopt",
                     "type": "SINGLE_VALUE",
-                    "display": "2002"
+                    "value": {
+                        "display": "2002"
+                    }
                 }
             ]
         },
@@ -94,7 +102,9 @@
                 {
                     "label": "Vastgelegd door (zorgverlener)",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

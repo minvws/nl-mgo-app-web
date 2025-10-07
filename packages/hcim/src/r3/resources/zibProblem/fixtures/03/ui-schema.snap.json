@@ -6,14 +6,16 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1d1451f3-8fdf-11ec-5384-020000000000"
+                    "value": [
+                        {
+                            "display": "1d1451f3-8fdf-11ec-5384-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Medische klacht of aandoening",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Fracture of wrist (disorder) (31641000146105 in codesysteem http://snomed.info/sct)",
                             "code": "31641000146105",
@@ -30,19 +32,23 @@
                 {
                     "label": "Opmerkingen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Gevallen op de kunstijsbaan"
+                    "value": [
+                        {
+                            "display": "Gevallen op de kunstijsbaan"
+                        }
                     ]
                 },
                 {
                     "label": "Plaats in het lichaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Probleemstatus",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Active (55561003 in codesysteem http://snomed.info/sct)",
                             "code": "55561003",
@@ -53,17 +59,21 @@
                 {
                     "label": "Soort klacht",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Vastgelegd door (zorgverlener)",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verificatie status codelijst",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Unknown (UNK in codesysteem http://hl7.org/fhir/v3/NullFlavor)",
                             "code": "UNK",
@@ -74,12 +84,16 @@
                 {
                     "label": "Wanneer begonnen",
                     "type": "SINGLE_VALUE",
-                    "display": "2001"
+                    "value": {
+                        "display": "2001"
+                    }
                 },
                 {
                     "label": "Wanneer gestopt",
                     "type": "SINGLE_VALUE",
-                    "display": "2002"
+                    "value": {
+                        "display": "2002"
+                    }
                 }
             ]
         }

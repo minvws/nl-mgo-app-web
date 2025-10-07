@@ -6,8 +6,10 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1f046007-8fdf-11ec-2006-020000000000"
+                    "value": [
+                        {
+                            "display": "1f046007-8fdf-11ec-2006-020000000000"
+                        }
                     ]
                 },
                 {
@@ -19,7 +21,7 @@
                 {
                     "label": "Order status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Ordered (new in codesysteem http://hl7.org/fhir/v3/ActStatus)",
                             "code": "new",
@@ -35,12 +37,14 @@
                 {
                     "label": "Gewenste datum hervaccinatie",
                     "type": "SINGLE_VALUE",
-                    "display": "2019"
+                    "value": {
+                        "display": "2019"
+                    }
                 },
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "hepatitis A immunoglobulin (J06BB11 in codesysteem http://www.whocc.no/atc)",
                             "code": "J06BB11",
@@ -51,15 +55,19 @@
                 {
                     "label": "Start date",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "2018"
+                    "value": [
+                        {
+                            "display": "2018"
+                        }
                     ]
                 },
                 {
                     "label": "Vaccinatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "hepatitis A immunoglobulin"
+                    "value": [
+                        {
+                            "display": "hepatitis A immunoglobulin"
+                        }
                     ]
                 }
             ]

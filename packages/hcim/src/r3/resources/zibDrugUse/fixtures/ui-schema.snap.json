@@ -6,17 +6,21 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Drug gebruik status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Misused drugs in past (finding) (44870007 in codesysteem http://snomed.info/sct)",
                             "code": "44870007",
@@ -27,8 +31,10 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "19a199c7-8fdf-11ec-9837-020000000000"
+                    "value": [
+                        {
+                            "display": "19a199c7-8fdf-11ec-9837-020000000000"
+                        }
                     ]
                 },
                 {
@@ -40,17 +46,23 @@
                 {
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1981"
+                    "value": {
+                        "display": "1981"
+                    }
                 },
                 {
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1983"
+                    "value": {
+                        "display": "1983"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Op feestjes en in uitgaanscircuit."
+                    "value": {
+                        "display": "Op feestjes en in uitgaanscircuit."
+                    }
                 }
             ]
         },
@@ -60,7 +72,7 @@
                 {
                     "label": "Drugs of geneesmiddel soort",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Amphetamine (703842006 in codesysteem http://snomed.info/sct)",
                             "code": "703842006",
@@ -71,12 +83,14 @@
                 {
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
-                    "display": "3 times a year"
+                    "value": {
+                        "display": "3 times a year"
+                    }
                 },
                 {
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "NASAAL (6 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
                             "code": "6",

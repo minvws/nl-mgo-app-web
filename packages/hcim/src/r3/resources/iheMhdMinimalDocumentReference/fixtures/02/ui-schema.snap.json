@@ -6,12 +6,14 @@
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "23 december 2005 om 23:43:41 GMT+1"
+                    "value": {
+                        "display": "23 december 2005 om 23:43:41 GMT+1"
+                    }
                 },
                 {
                     "label": "Beveiligingslabel",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "very restricted (V in codesysteem http://hl7.org/fhir/v3/Confidentiality)",
@@ -24,7 +26,7 @@
                 {
                     "label": "Categorie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "History and Physical (History and Physical in codesysteem http://ihe.net/xds/connectathon/classCodes)",
                             "code": "History and Physical",
@@ -41,14 +43,18 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234"
+                    "value": [
+                        {
+                            "display": "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234"
+                        }
                     ]
                 },
                 {
                     "label": "Identifier",
                     "type": "SINGLE_VALUE",
-                    "display": "urn:oid:1.3.6.1.4.1.21367.2005.3.7"
+                    "value": {
+                        "display": "urn:oid:1.3.6.1.4.1.21367.2005.3.7"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -58,18 +64,27 @@
                 },
                 {
                     "label": "Specialist",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": null
+                        },
+                        {
+                            "display": null
+                        }
+                    ]
                 },
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "current"
+                    "value": {
+                        "display": "current"
+                    }
                 },
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Outpatient Note (34108-1 in codesysteem http://loinc.org)",
                             "code": "34108-1",
@@ -85,7 +100,7 @@
                 {
                     "label": "Formaat",
                     "type": "SINGLE_VALUE",
-                    "display": {
+                    "value": {
                         "display": "History and Physical Specification (urn:ihe:pcc:handp:2008 in codesysteem urn:oid:1.3.6.1.4.1.19376.1.2.3)",
                         "code": "urn:ihe:pcc:handp:2008",
                         "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3"
@@ -104,7 +119,7 @@
                 {
                     "label": "Aanvullende details",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "General Medicine (General Medicine in codesysteem http://www.ihe.net/xds/connectathon/practiceSettingCodes)",
                             "code": "General Medicine",
@@ -115,17 +130,21 @@
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "22 december 2004 om 22:00:00 GMT+1"
+                    "value": {
+                        "display": "22 december 2004 om 22:00:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "22 december 2004 om 22:01:00 GMT+1"
+                    "value": {
+                        "display": "22 december 2004 om 22:01:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Faciliteit",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Outpatient (Outpatient in codesysteem http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes)",
                             "code": "Outpatient",

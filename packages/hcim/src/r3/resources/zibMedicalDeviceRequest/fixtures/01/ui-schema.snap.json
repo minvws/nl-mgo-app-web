@@ -12,18 +12,24 @@
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "13 maart 2012"
+                    "value": {
+                        "display": "13 maart 2012"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1bbb2101-8fdf-11ec-1269-020000000000"
+                    "value": [
+                        {
+                            "display": "1bbb2101-8fdf-11ec-1269-020000000000"
+                        }
                     ]
                 },
                 {
@@ -35,12 +41,14 @@
                 {
                     "label": "Order status",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Procedure device (405815000 in codesysteem http://snomed.info/sct)",
                             "code": "405815000",
@@ -51,7 +59,9 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

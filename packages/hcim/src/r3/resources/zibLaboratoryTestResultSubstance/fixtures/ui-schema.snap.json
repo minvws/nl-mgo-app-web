@@ -6,7 +6,7 @@
                 {
                     "label": "Microorganisme",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Has active ingredient (127489000 in codesysteem http://snomed.info/sct)",
                             "code": "127489000",

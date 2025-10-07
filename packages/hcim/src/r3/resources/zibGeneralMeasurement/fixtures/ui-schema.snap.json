@@ -6,24 +6,32 @@
                 {
                     "label": "Anatomische locatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1a63f585-8fdf-11ec-7434-020000000000"
+                    "value": [
+                        {
+                            "display": "1a63f585-8fdf-11ec-7434-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Meetmethode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -34,7 +42,7 @@
                 {
                     "label": "Onderzoek",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Health of the Nation Outcome Scale (generic version) (assessment scale) (273513009 in codesysteem http://snomed.info/sct)",
                             "code": "273513009",
@@ -45,7 +53,7 @@
                 {
                     "label": "Resultaat status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Final (final in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)",
                             "code": "final",
@@ -56,7 +64,9 @@
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -72,7 +82,9 @@
                 {
                     "label": "Type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -88,7 +100,9 @@
                 {
                     "label": "Type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

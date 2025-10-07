@@ -6,12 +6,16 @@
                 {
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
-                    "display": "1 milliliter"
+                    "value": {
+                        "display": "1 milliliter"
+                    }
                 },
                 {
                     "label": "Identificatienummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Inenting",
@@ -28,7 +32,7 @@
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in codesysteem http://www.whocc.no/atc)",
                             "code": "J07BC02",
@@ -39,7 +43,9 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "completed"
+                    "value": {
+                        "display": "completed"
+                    }
                 },
                 {
                     "label": "Toediener",
@@ -50,7 +56,7 @@
                 {
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "INTRAMUSCULAIR (2 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.9.13.2)",
                             "code": "2",
@@ -61,19 +67,23 @@
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bezoek aan Guatemala."
+                    "value": [
+                        {
+                            "display": "Bezoek aan Guatemala."
+                        }
                     ]
                 },
                 {
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "3 juni 2012"
+                    "value": {
+                        "display": "3 juni 2012"
+                    }
                 },
                 {
                     "label": "Vaccinatie pathogeen",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "hepatitis (128241005 in codesysteem http://snomed.info/sct)",
@@ -86,7 +96,9 @@
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -96,7 +108,7 @@
                 {
                     "label": "Vaccinatie aanleiding",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Immunisatie nodig vanuit rijksvaccinatieprogramma (situatie) (159731000146104 in codesysteem http://snomed.info/sct)",
@@ -109,7 +121,7 @@
                 {
                     "label": "Vaccinatie indicatie",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Kwetsbare oudere (bevinding) (404904002 in codesysteem http://snomed.info/sct)",

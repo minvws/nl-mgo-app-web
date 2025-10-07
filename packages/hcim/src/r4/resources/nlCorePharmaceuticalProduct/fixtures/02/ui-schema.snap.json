@@ -6,22 +6,30 @@
                 {
                     "label": "Batch / Lotnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Farmaceutische vorm",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Ingredient",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -31,7 +39,7 @@
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Methotrexaat injvlst 25mg/ml 0,6 ml (89907 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.1)",
                             "code": "89907",
@@ -42,7 +50,9 @@
                 {
                     "label": "Product naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Methotrexaat injvlst 25mg/ml 0,6 ml"
+                    "value": {
+                        "display": "Methotrexaat injvlst 25mg/ml 0,6 ml"
+                    }
                 }
             ]
         }

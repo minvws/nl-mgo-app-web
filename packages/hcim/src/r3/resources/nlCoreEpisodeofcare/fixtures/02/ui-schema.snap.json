@@ -6,12 +6,14 @@
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "6 februari 2019"
+                    "value": {
+                        "display": "6 februari 2019"
+                    }
                 },
                 {
                     "label": "Concern label",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Verslaving (bevinding) (32709003 in codesysteem http://snomed.info/sct)",
@@ -24,13 +26,17 @@
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "15fcdead-8fdf-11ec-5500-020000000000"
+                    "value": [
+                        {
+                            "display": "15fcdead-8fdf-11ec-5500-020000000000"
+                        }
                     ]
                 },
                 {
@@ -42,7 +48,9 @@
                 {
                     "label": "Titel",
                     "type": "SINGLE_VALUE",
-                    "display": "Drugs en alcohol revalidatie"
+                    "value": {
+                        "display": "Drugs en alcohol revalidatie"
+                    }
                 }
             ]
         }
