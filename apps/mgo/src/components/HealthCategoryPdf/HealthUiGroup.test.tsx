@@ -11,7 +11,7 @@ test('renders a HealthUiGroup', () => {
     const element = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
-        display: faker.lorem.sentence(),
+        value: { display: faker.lorem.sentence() },
     } satisfies SingleValue;
     const group: HealthUiGroupData = {
         label: faker.lorem.sentence(),
@@ -27,7 +27,7 @@ test('renders a HealthUiGroup', () => {
     expect(elementLabel).toHaveTextContent(element.label);
 
     const elementDisplay = screen.getByTestId('element-value');
-    expect(elementDisplay).toHaveTextContent(element.display!);
+    expect(elementDisplay).toHaveTextContent(element.value.display);
 });
 
 test('skips the label if not present in a HealthUiGroup', () => {

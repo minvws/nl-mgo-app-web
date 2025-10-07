@@ -1,5 +1,5 @@
 import { faker } from '$test/faker';
-import { setup, setupWithAppProviders, supressConsoleError } from '$test/helpers';
+import { setup, setupWithAppProviders, suppressConsoleError } from '$test/helpers';
 import { type UiElement as UiElementData } from '@minvws/mgo-hcim-ui';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
@@ -9,17 +9,17 @@ test.each<UiElementData>([
     {
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
-        display: faker.lorem.word(),
+        value: { display: faker.lorem.word() },
     },
     {
         type: 'MULTIPLE_VALUES',
         label: faker.lorem.sentence(),
-        display: [faker.lorem.word()],
+        value: [{ display: faker.lorem.word() }],
     },
     {
         type: 'MULTIPLE_GROUPED_VALUES',
         label: faker.lorem.sentence(),
-        display: [[faker.lorem.word()], [faker.lorem.word()]],
+        value: [[{ display: faker.lorem.word() }], [{ display: faker.lorem.word() }]],
     },
     {
         label: faker.lorem.sentence(),
@@ -59,7 +59,7 @@ test('throws if a type is not valid', async () => {
         display: faker.lorem.word(),
     } as unknown as UiElementData;
 
-    supressConsoleError(() => {
+    suppressConsoleError(() => {
         expect(() => setup(<UiElement element={element} />)).toThrow(
             `Unknown UiElement type: ${element.type}`
         );
