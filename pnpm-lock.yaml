@@ -333,9 +333,6 @@ importers:
 
   apps/mgo-e2e:
     devDependencies:
-      '@minvws/mgo':
-        specifier: workspace:^
-        version: link:../mgo
       '@minvws/mgo-intl':
         specifier: workspace:^
         version: link:../../packages/intl
