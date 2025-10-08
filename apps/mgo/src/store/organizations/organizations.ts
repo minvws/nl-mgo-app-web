@@ -1,6 +1,7 @@
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
 import { createUniqueSlug } from '@minvws/mgo-utils';
 import { StateCreator } from 'zustand';
+import { ResourcesSlice } from '../resources/resources';
 
 export type HealthcareOrganization = HealthcareOrganizationSearchResult & {
     slug: string;
@@ -14,13 +15,16 @@ export interface OrganizationsSlice {
     hasOrganizations: () => boolean;
     hasOrganizationById: (id: string) => boolean;
     getOrganizationById: (id?: string) => HealthcareOrganization | undefined;
-    getOrganizationsById: (id?: (string | undefined)[]) => HealthcareOrganization[];
+    getOrganizationResourceEndpoint: (
+        organizationId?: string,
+        dataServiceId?: string
+    ) => string | undefined;
     getOrganizationBySlug: (slug?: string) => HealthcareOrganization | undefined;
     removeOrganizationBySlug: (slug: string) => void;
 }
 
 export const createOrganizationsSlice: StateCreator<
-    OrganizationsSlice,
+    OrganizationsSlice & ResourcesSlice,
     [],
     [],
     OrganizationsSlice
@@ -51,9 +55,9 @@ export const createOrganizationsSlice: StateCreator<
         return get().organizations.find((x) => x.id === id);
     },
 
-    getOrganizationsById: (ids) => {
-        if (!ids?.length) return [];
-        return get().organizations.filter((x) => ids.includes(x.id));
+    getOrganizationResourceEndpoint: (organizationId, dataServiceId) => {
+        const organization = get().getOrganizationById(organizationId);
+        return organization?.dataServices.find((x) => x.id === dataServiceId)?.resourceEndpoint;
     },
 
     getOrganizationBySlug: (slug) => {
@@ -62,8 +66,18 @@ export const createOrganizationsSlice: StateCreator<
     },
 
     removeOrganizationBySlug: (slug) => {
-        set(({ organizations }) => ({
-            organizations: organizations.filter((x) => x.slug !== slug),
-        }));
+        const organization = get().getOrganizationBySlug(slug);
+        if (!organization) {
+            return;
+        }
+        set(({ resources, organizations }) => {
+            const nextOrganizations = organizations.filter((x) => x.id !== organization.id);
+            const nextResources = resources.filter(
+                (resource) => resource.source.organizationId !== organization.id
+            );
+            return nextResources.length === resources.length
+                ? { organizations: nextOrganizations }
+                : { organizations: nextOrganizations, resources: nextResources };
+        });
     },
 });

@@ -52,6 +52,7 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
             plugins: { sonarjs },
             rules: {
                 ...sonarjs.configs.recommended.rules,
+                'sonarjs/no-commented-code': 'warn',
                 'sonarjs/no-clear-text-protocols': 'off',
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-unused-vars': 'off', // already covered by typescript-eslint

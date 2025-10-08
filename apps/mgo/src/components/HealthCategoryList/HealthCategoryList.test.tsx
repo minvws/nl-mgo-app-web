@@ -1,7 +1,7 @@
-import { HealthCategory } from '$/healthCategory';
+import { getHealthCategoryConfigs } from '$/config';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessageRegexp } from '@minvws/mgo-intl/test/shared';
+import { appMessageRegexp, AppMessagesIds } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { HealthCategoryList } from './HealthCategoryList';
@@ -10,8 +10,10 @@ test('HealthCategoryList with organization filter', () => {
     const organization = faker.custom.healthcareOrganization();
     setupWithAppProviders(<HealthCategoryList organization={organization} />);
 
-    Object.values(HealthCategory).forEach((category) => {
-        const name = appMessageRegexp(`hc_${category}.heading`);
+    const categoryConfigs = getHealthCategoryConfigs();
+
+    Object.values(categoryConfigs).forEach((category) => {
+        const name = appMessageRegexp(category.heading as AppMessagesIds);
         expect(
             screen.getByRole('link', {
                 name: name,
@@ -23,8 +25,10 @@ test('HealthCategoryList with organization filter', () => {
 test('HealthCategoryList without organization filter', () => {
     setupWithAppProviders(<HealthCategoryList />);
 
-    Object.values(HealthCategory).forEach((category) => {
-        const name = appMessageRegexp(`hc_${category}.heading`);
+    const categoryConfigs = getHealthCategoryConfigs();
+
+    Object.values(categoryConfigs).forEach((category) => {
+        const name = appMessageRegexp(category.heading as AppMessagesIds);
         expect(
             screen.getByRole('link', {
                 name: name,

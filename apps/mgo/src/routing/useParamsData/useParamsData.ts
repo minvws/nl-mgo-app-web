@@ -1,17 +1,18 @@
-import { getHealthCategoryBySlug, type HealthCategory } from '$/healthCategory';
+import { HealthCategoryConfig } from '$/config';
+import { useHealthCategoryBySlug } from '$/hooks';
 import { useParams } from '$/routing';
-import { store, type HealthcareOrganization, type Resource } from '$/store';
+import { useStore, type HealthcareOrganization, type Resource } from '$/store';
 import { type RouteParams } from '../routes';
 
 export interface UrlParamData extends Partial<RouteParams> {
     organization: HealthcareOrganization | undefined;
-    healthCategory: HealthCategory | undefined;
+    healthCategory: HealthCategoryConfig | undefined;
     resource: Resource | undefined;
 }
 
 export function useParamsData(): UrlParamData {
-    const getOrganizationBySlug = store.use.getOrganizationBySlug();
-    const getResourceBySlug = store.use.getResourceBySlug();
+    const getOrganizationBySlug = useStore.use.getOrganizationBySlug();
+    const getResourceBySlug = useStore.use.getResourceBySlug();
     const { organizationSlug, healthCategorySlug, resourceSlug } = useParams();
 
     return {
@@ -19,7 +20,7 @@ export function useParamsData(): UrlParamData {
         healthCategorySlug,
         resourceSlug,
         organization: getOrganizationBySlug(organizationSlug),
-        healthCategory: getHealthCategoryBySlug(healthCategorySlug),
+        healthCategory: useHealthCategoryBySlug(healthCategorySlug),
         resource: getResourceBySlug(resourceSlug),
     };
 }

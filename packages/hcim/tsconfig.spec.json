@@ -4,7 +4,7 @@
         "outDir": "../../out-tsc/mgo-hcim/vitest",
         "tsBuildInfoFile": "../../out-tsc/mgo-hcim/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "types": ["vitest/globals", "vitest/importMeta", "vitest"],
+        "types": ["vitest/importMeta", "vitest"],
         "paths": {
             "$test": ["./test/index.ts"],
             "$test/*": ["./test/*"]

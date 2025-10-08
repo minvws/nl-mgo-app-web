@@ -8,49 +8,49 @@ import { type IconName } from '../Icon/icons';
 import { Spinner } from '../Spinner/Spinner';
 import { Text } from '../Text/Text';
 
-type CategoryIcon = Extract<
+export type CategoryButtonIcon = Extract<
     IconName,
-    | 'person'
-    | 'stethoscope'
-    | 'event-note'
-    | 'diagnosis'
-    | 'nutrition'
-    | 'emergency-home'
+    | 'health_cross'
     | 'allergy'
-    | 'pill'
-    | 'folder'
+    | 'emergency_home'
     | 'syringe'
+    | 'nutrition'
+    | 'psychology'
+    | 'vital_signs'
     | 'labs'
-    | 'date-range'
-    | 'vital-signs'
-    | 'medical-services'
-    | 'health-and-safety'
-    | 'sentiment-satisfied'
+    | 'medical_services'
+    | 'pill'
+    | 'calendar_today'
+    | 'folder'
+    | 'patient_list'
+    | 'health_and_safety'
+    | 'person'
+    | 'account_balance'
 >;
 
-const iconColors: Record<CategoryIcon, string> = {
-    person: 'text-gray-400',
-    stethoscope: 'text-violet-800',
-    'event-note': 'text-mint-500',
-    diagnosis: 'text-pink-500',
-    folder: 'text-[#94710A]',
-    nutrition: 'text-[#34C759]',
-    'emergency-home': 'text-yellow-500',
-    allergy: 'text-orange-600',
-    pill: 'text-dark-blue-700',
-    syringe: 'text-light-blue-500',
-    labs: 'text-ruby-700',
-    'date-range': 'text-dark-brown-800',
-    'vital-signs': 'text-dark-green-700',
-    'medical-services': 'text-purple-800',
-    'health-and-safety': 'text-lint-blue-700',
-    'sentiment-satisfied': 'text-sky-blue-600',
+const iconColors: Record<CategoryButtonIcon, string> = {
+    health_cross: 'text-gray-400',
+    allergy: 'text-violet-800',
+    emergency_home: 'text-mint-500',
+    syringe: 'text-pink-500',
+    nutrition: 'text-[#94710A]',
+    psychology: 'text-[#34C759]',
+    vital_signs: 'text-yellow-500',
+    labs: 'text-orange-600',
+    medical_services: 'text-dark-blue-700',
+    pill: 'text-light-blue-500',
+    calendar_today: 'text-ruby-700',
+    folder: 'text-dark-brown-800',
+    patient_list: 'text-dark-green-700',
+    health_and_safety: 'text-purple-800',
+    person: 'text-lint-blue-700',
+    account_balance: 'text-sky-blue-600',
 };
 
 export interface CategoryButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement>,
         CompositionProps {
-    readonly icon?: CategoryIcon;
+    readonly icon?: CategoryButtonIcon;
     readonly iconAriaLabel?: string;
     readonly label?: string;
     readonly isLoading?: boolean;
@@ -110,7 +110,7 @@ export const CategoryButton = ({
                                 </Text>
                             )}
 
-                            <Icon icon="chevron-right" className={cn('h-8 w-8 text-gray-400')} />
+                            <Icon icon="chevron_right" className={cn('h-8 w-8 text-gray-400')} />
                         </div>
                     )}
                 </Comp>

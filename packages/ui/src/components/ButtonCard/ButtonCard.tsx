@@ -62,7 +62,7 @@ export const ButtonCard = ({
                 </Stack>
             </SkeletonText>
             {!isLoading && (
-                <Icon icon="chevron-right" className="h-8 w-8 flex-shrink-0 fill-gray-500" />
+                <Icon icon="chevron_right" className="h-8 w-8 flex-shrink-0 fill-gray-500" />
             )}
         </Comp>
     );

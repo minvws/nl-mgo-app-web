@@ -16,16 +16,14 @@ configure({
     },
 });
 
-vi.mock(
-    '$/config',
-    () =>
-        ({
-            config: {
-                load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
-                dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
-            },
-        }) as typeof import('$/config')
-);
+vi.mock('$/config/app/app', () => {
+    return {
+        appConfig: {
+            load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
+            dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
+        },
+    };
+});
 
 vi.mock('zustand');
 

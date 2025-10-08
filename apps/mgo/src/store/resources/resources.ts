@@ -1,31 +1,34 @@
-import { type FhirVersion, type NictizNlProfile } from '@minvws/mgo-fhir';
 import { type MgoResource } from '@minvws/mgo-hcim';
-import { log } from '@minvws/mgo-utils';
 import { StateCreator } from 'zustand';
-import { OrganizationsSlice } from '../organizations/organizations';
-import { createResourceFromDto, Resource, ResourceDTO } from './createResourceFromDto';
+import { HealthcareOrganization, OrganizationsSlice } from '../organizations/organizations';
+import { createResourceFromDto, Resource, ResourceSource } from './createResourceFromDto';
 
-type MgoResourceProfile<V extends FhirVersion> = MgoResource<V>['profile'];
-type MgoResourceByProfile<V extends FhirVersion, T extends NictizNlProfile> = Extract<
-    MgoResource<V>,
-    { profile: T }
->;
-
-export type { Resource, ResourceDTO };
+export type { Resource, ResourceSource };
 
 export interface ResourcesSlice {
     resources: Resource[];
-    addResources: (resourceData: ResourceDTO[]) => Resource[];
+    syncResources: (source: ResourceSource, mgoResources: MgoResource[]) => void;
+    getResourceBySlug: (slug: string | undefined) => Resource | undefined;
     getResourceByReferenceId: (
         relatedResource: Resource | undefined,
         referenceId: string | undefined
     ) => Resource | undefined;
-    getResourceBySlug: (slug: string | undefined) => Resource | undefined;
-    getResourcesByProfile: <V extends FhirVersion, T extends MgoResourceProfile<V>>(
-        fhirVersion: V,
-        profile: T,
-        organizationIdFilter?: (string | undefined)[]
-    ) => Resource<V, MgoResourceByProfile<V, T>>[];
+    getResourcesByProfiles: (
+        profile: string[],
+        organizations?: HealthcareOrganization[]
+    ) => Resource[];
+}
+
+function isSameDataService(a: ResourceSource, b: ResourceSource) {
+    return a.organizationId === b.organizationId && a.dataServiceId === b.dataServiceId;
+}
+
+function isSameEndpoint(a: ResourceSource, b: ResourceSource) {
+    return isSameDataService(a, b) && a.endpointId === b.endpointId;
+}
+
+function isSameData(a: MgoResource, b: MgoResource) {
+    return JSON.stringify(a) === JSON.stringify(b);
 }
 
 export const createResourcesSlice: StateCreator<
@@ -36,70 +39,67 @@ export const createResourcesSlice: StateCreator<
 > = (set, get) => ({
     resources: [],
 
-    addResources: (dtos) => {
-        const currentResources = get().resources;
+    syncResources: (source, mgoResourcesUpdates) => {
         const currentSlugs = get().resources.map((resource) => resource.slug);
-        const newResources: Resource[] = [];
+        const unchangedResources: Resource[] = [];
+        const changedResources: Resource[] = [];
+        const currentResources = get().resources.filter((resource) =>
+            isSameEndpoint(resource.source, source)
+        );
 
-        for (const dto of dtos) {
-            const newResourceSlugs = newResources.map((x) => x.slug);
-            const organization = get().getOrganizationById(dto.organizationId);
+        for (const mgoResourceUpdate of mgoResourcesUpdates) {
+            const existingResource = currentResources.find(
+                (resource) => resource.mgoResource.referenceId === mgoResourceUpdate.referenceId
+            );
 
-            if (!organization) {
-                throw new Error(`Organization with id "${dto.organizationId}" not found`);
-            }
-
-            const newResource = createResourceFromDto(dto, organization, [
-                ...currentSlugs,
-                ...newResourceSlugs,
-            ]);
-            if (
-                currentResources.some(({ id }) => id === newResource.id) ||
-                newResources.some(({ id }) => id === newResource.id)
-            ) {
-                log.warn(`Resource with id "${newResource.id}" already exists`);
+            if (existingResource) {
+                if (isSameData(existingResource.mgoResource, mgoResourceUpdate)) {
+                    unchangedResources.push(existingResource);
+                    continue;
+                }
+                // only update the data, but keep the same slug
+                existingResource.mgoResource = mgoResourceUpdate;
+                changedResources.push(existingResource);
             } else {
-                newResources.push(newResource);
+                const allSlugs = [...currentSlugs, ...changedResources.map((x) => x.slug)];
+                const newResource = createResourceFromDto(source, mgoResourceUpdate, allSlugs);
+                changedResources.push(newResource);
             }
         }
 
-        if (newResources.length) {
+        const nextResources = [...unchangedResources, ...changedResources];
+        const needsPruning = nextResources.length < currentResources.length;
+
+        if (needsPruning || changedResources.length) {
+            const differentSource = (resource: Resource) =>
+                !isSameEndpoint(resource.source, source);
             set(({ resources }) => ({
-                resources: [...resources, ...newResources],
+                resources: [...resources.filter(differentSource), ...nextResources],
             }));
         }
-
-        return newResources;
-    },
-
-    getResourcesByProfile: (fhirVersion, profile, organizationIdFilter) => {
-        const resources = [...get().resources];
-        return resources
-            .filter(
-                ({ organizationId }) =>
-                    !organizationIdFilter || organizationIdFilter.includes(organizationId)
-            )
-            .filter(({ mgoResource }) => {
-                return mgoResource.fhirVersion === fhirVersion && mgoResource.profile === profile;
-            }) as Resource<
-            typeof fhirVersion,
-            MgoResourceByProfile<typeof fhirVersion, typeof profile>
-        >[];
-    },
-
-    getResourceByReferenceId: (relatedResource, referenceId) => {
-        if (!relatedResource || !referenceId) return;
-        return get()
-            .resources.filter(
-                ({ organizationId, dataServiceId }) =>
-                    organizationId === relatedResource.organizationId &&
-                    dataServiceId === relatedResource.dataServiceId
-            )
-            .find((resource) => resource.mgoResource.referenceId === referenceId);
     },
 
     getResourceBySlug: (slug) => {
         if (!slug) return;
         return get().resources.find((resource) => resource.slug === slug);
+    },
+
+    getResourceByReferenceId: (relatedResource, referenceId) => {
+        if (!relatedResource || !referenceId) return;
+
+        return get()
+            .resources.filter(({ source }) => isSameDataService(source, relatedResource.source))
+            .find(({ mgoResource }) => mgoResource.referenceId === referenceId);
+    },
+
+    getResourcesByProfiles: (profiles, organizations) => {
+        const resources = [...get().resources];
+        const organizationIds = organizations?.map((organization) => organization.id);
+        return resources
+            .filter(
+                ({ source }) =>
+                    !organizationIds?.length || organizationIds.includes(source.organizationId)
+            )
+            .filter(({ mgoResource }) => profiles.includes(mgoResource.profile));
     },
 });

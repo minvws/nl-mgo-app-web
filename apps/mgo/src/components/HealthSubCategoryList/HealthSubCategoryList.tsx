@@ -1,27 +1,33 @@
+import { useHealthUiSchema } from '$/hooks';
+import { useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { store, type Resource } from '$/store';
+import { useStore, type Resource } from '$/store';
+import { AppMessagesIds } from '@minvws/mgo-intl';
 import { DetailButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElement> {
-    readonly heading: string;
+    readonly heading: AppMessagesIds;
     readonly resources: Resource[];
 }
 
 export function HealthSubCategoryList({ heading, resources }: HealthCategoryDetailListProps) {
-    const getOrganizationById = store.use.getOrganizationById();
-
+    const getOrganizationById = useStore.use.getOrganizationById();
+    const { getSummary } = useHealthUiSchema();
     const subCategoryId = useUniqueId('health-category-sub-list');
+    const { formatMessage } = useIntl();
 
     return (
         <div>
             <Text asChild id={subCategoryId}>
-                <h2 className="mb-2">{heading}</h2>
+                <h2 className="mb-2">{formatMessage(heading)}</h2>
             </Text>
 
             <ListWrapper aria-labelledby={subCategoryId}>
-                {resources.map(({ id, slug, summary, organizationId }) => {
-                    const organization = getOrganizationById(organizationId);
+                {resources.map((resource) => {
+                    const { id, slug, source } = resource;
+                    const organization = getOrganizationById(source.organizationId);
+                    const summary = getSummary(resource);
                     return (
                         <li key={id}>
                             <DetailButton

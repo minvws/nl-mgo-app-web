@@ -12,7 +12,7 @@ export default {
     args: {
         term: 'Ab maxime',
         details: 'Facere enim similique illo.',
-        icon: 'chevron-right',
+        icon: 'chevron_right',
         isLoading: false,
     },
 } satisfies StoryMeta;

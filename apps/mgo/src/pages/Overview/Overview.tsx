@@ -2,12 +2,12 @@ import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCatego
 import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
-import { store } from '$/store';
+import { useStore } from '$/store';
 import { Heading } from '@minvws/mgo-ui';
 
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-    const organizations = store.use.organizations();
+    const organizations = useStore.use.organizations();
 
     return (
         <>

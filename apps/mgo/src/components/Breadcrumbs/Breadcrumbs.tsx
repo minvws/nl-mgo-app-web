@@ -30,7 +30,7 @@ export function Breadcrumbs() {
                                         {crumb.label}
                                     </Link>
                                     <Icon
-                                        icon="chevron-right"
+                                        icon="chevron_right"
                                         className="h-8 w-8 flex-shrink-0 fill-gray-500"
                                     />
                                 </>

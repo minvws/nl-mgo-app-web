@@ -59,7 +59,7 @@ export function Login() {
                                     leftIcon={
                                         <DigiDSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
                                     }
-                                    rightIcon="chevron-right"
+                                    rightIcon="chevron_right"
                                 >
                                     {auth.isLoading ? (
                                         <FormattedMessage id="common.loading" />
@@ -77,7 +77,7 @@ export function Login() {
                                     leftIcon={
                                         <EIDASSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
                                     }
-                                    rightIcon="chevron-right"
+                                    rightIcon="chevron_right"
                                 >
                                     <FormattedMessage id="login.european" />
                                 </Button>

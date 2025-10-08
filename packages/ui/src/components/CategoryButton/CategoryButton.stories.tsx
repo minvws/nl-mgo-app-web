@@ -13,7 +13,7 @@ export default {
 export const Default: Story = {
     args: {
         children: 'Label',
-        icon: 'diagnosis',
+        icon: 'health_cross',
     },
 };
 
@@ -28,7 +28,7 @@ export const Loading: Story = {
 export const WithIcon: Story = {
     args: {
         children: 'Label',
-        icon: 'diagnosis',
+        icon: 'health_cross',
     },
 };
 
@@ -46,11 +46,11 @@ export const Overview: Story = {
     render: ({ children }) => (
         <DarkStory>
             <Stack>
-                <CategoryButton icon="diagnosis">{children}</CategoryButton>
-                <CategoryButton icon="diagnosis" label="as link" asChild>
+                <CategoryButton icon="health_cross">{children}</CategoryButton>
+                <CategoryButton icon="health_cross" label="as link" asChild>
                     <a href="#">{children}</a>
                 </CategoryButton>
-                <CategoryButton icon="diagnosis" isLoading loadingText="currently loading...">
+                <CategoryButton icon="health_cross" isLoading loadingText="currently loading...">
                     {children}
                 </CategoryButton>
             </Stack>

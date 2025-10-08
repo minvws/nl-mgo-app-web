@@ -7,7 +7,7 @@ import {
     type HealthcareOrganizationCardProps,
 } from './HealthcareOrganizationCard';
 
-test.each(['add', 'delete', 'chevron-right'] as const)(
+test.each(['add', 'delete', 'chevron_right'] as const)(
     'renders variant %s with title',
     async (icon) => {
         const props: HealthcareOrganizationCardProps = {

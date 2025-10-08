@@ -1,4 +1,4 @@
-import { config } from '$/config';
+import { appConfig } from '$/config';
 import { Locale, getAppIntlConfig } from '@minvws/mgo-intl';
 import { type ReactNode } from 'react';
 import { IntlProvider as ReactIntlProvider } from 'react-intl';
@@ -16,7 +16,7 @@ export const IntlProvider = ({ children }: I18nProviderProps) => {
             i: (chunks) => <i className="italic">{chunks}</i>, // NOSONAR
         },
         /* c8 ignore end */
-        ignoreMissingTranslations: config.ignore_missing_translations,
+        ignoreMissingTranslations: appConfig.ignore_missing_translations,
     });
 
     return <ReactIntlProvider {...intlConfig}>{children}</ReactIntlProvider>;

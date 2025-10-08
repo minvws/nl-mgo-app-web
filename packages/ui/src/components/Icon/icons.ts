@@ -1,11 +1,12 @@
+import AccountBalance from '@material-symbols/svg-400/outlined/account_balance.svg?react';
 import Allergy from '@material-symbols/svg-400/outlined/allergy.svg?react';
 import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
 import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
+import CalendarToday from '@material-symbols/svg-400/outlined/calendar_today.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
 import Cancel from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
-import DateRange from '@material-symbols/svg-400/outlined/date_range.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';
 import Diagnosis from '@material-symbols/svg-400/outlined/diagnosis.svg?react';
@@ -16,14 +17,17 @@ import EventNote from '@material-symbols/svg-400/outlined/event_note.svg?react';
 import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
+import HealthCross from '@material-symbols/svg-400/outlined/health_cross.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
 import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
+import PatientList from '@material-symbols/svg-400/outlined/patient_list.svg?react';
 import Person from '@material-symbols/svg-400/outlined/person.svg?react';
 import PictureAsPdf from '@material-symbols/svg-400/outlined/picture_as_pdf.svg?react';
 import Pill from '@material-symbols/svg-400/outlined/pill.svg?react';
 import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activity.svg?react';
+import Psychology from '@material-symbols/svg-400/outlined/psychology.svg?react';
 import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
 import Stethoscope from '@material-symbols/svg-400/outlined/stethoscope.svg?react';
 import Syringe from '@material-symbols/svg-400/outlined/syringe.svg?react';
@@ -47,14 +51,13 @@ import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
 import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
 
 export const icons = {
-    'chevron-left': ChevronLeft,
-    'chevron-right': ChevronRight,
-    'chevron-right-fat': ChevronRight,
+    chevron_left: ChevronLeft,
+    chevron_right: ChevronRight,
     encrypted: Encrypted,
-    'health-and-safety': HealthAndSafety,
-    'verified-user': VerifiedUser,
-    'gpp-bad': GppBad,
-    'progress-activity': ProgressActivity,
+    health_and_safety: HealthAndSafety,
+    verified_user: VerifiedUser,
+    gpp_bad: GppBad,
+    progress_activity: ProgressActivity,
     person: Person,
     favorite: Favorite,
     call: Call,
@@ -65,22 +68,21 @@ export const icons = {
     cancel: Cancel,
     add: Add,
     warning: Warning,
-    'arrow-right-alt': ArrowRightAlt,
+    arrow_right_alt: ArrowRightAlt,
     autorenew: Autorenew,
     check: Check,
     folder: Folder,
     download: Download,
     labs: Labs,
-    'event-note': EventNote,
+    event_note: EventNote,
     nutrition: Nutrition,
-    'emergency-home': EmergencyHome,
+    emergency_home: EmergencyHome,
     stethoscope: Stethoscope,
     syringe: Syringe,
-    'date-range': DateRange,
-    'vital-signs': VitalSigns,
+    vital_signs: VitalSigns,
     allergy: Allergy,
-    'medical-services': MedicalServices,
-    'sentiment-satisfied': SentimentSatisfied,
+    medical_services: MedicalServices,
+    sentiment_satisfied: SentimentSatisfied,
     menu: Menu,
     close: Close,
     help: Help,
@@ -91,8 +93,13 @@ export const icons = {
     'favorite-fill': FavoriteFill,
     'settings-fill': SettingsFill,
     'info-fill': InfoFill,
-    'attach-file': AttachFile,
-    'picture-as-pdf': PictureAsPdf,
+    attach_file: AttachFile,
+    picture_as_pdf: PictureAsPdf,
+    psychology: Psychology,
+    health_cross: HealthCross,
+    calendar_today: CalendarToday,
+    patient_list: PatientList,
+    account_balance: AccountBalance,
 };
 
 export type IconName = keyof typeof icons;

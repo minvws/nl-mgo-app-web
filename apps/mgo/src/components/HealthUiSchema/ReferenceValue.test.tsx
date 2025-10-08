@@ -1,6 +1,6 @@
-import { useResourceRoutePath } from '$/hooks';
+import { useResourceDetailsRoutePath } from '$/hooks';
 import { type RoutePath } from '$/routing';
-import { store } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { type ReferenceValue as ReferenceValueData } from '@minvws/mgo-hcim-ui';
@@ -13,12 +13,16 @@ vi.mock('$/hooks', () => ({
     useResourceRoutePath: vi.fn(),
 }));
 
-vi.spyOn(store.use, 'getResourceByReferenceId').mockReturnValue(vi.fn());
-const mockGetResourceByReferenceId = vi.mocked(store.use.getResourceByReferenceId());
+vi.spyOn(useStore.use, 'getResourceByReferenceId').mockReturnValue(vi.fn());
+const mockGetResourceByReferenceId = vi.mocked(useStore.use.getResourceByReferenceId());
 
-const mockUseResourceRoutePath = useResourceRoutePath as MockedFunction<
-    typeof useResourceRoutePath
+const mockUseResourceRoutePath = useResourceDetailsRoutePath as MockedFunction<
+    typeof useResourceDetailsRoutePath
 >;
+
+vi.mock('$/hooks', () => ({
+    useResourceDetailsRoutePath: vi.fn(),
+}));
 
 afterEach(() => {
     vi.resetAllMocks();
@@ -33,9 +37,8 @@ test('renders with regular href if the referenced resource has the same dataServ
     };
 
     const resource = faker.custom.resource();
-    const referencedResource = faker.custom.resource({
-        dataServiceMethod: resource.dataServiceMethod,
-    });
+    const referencedResource = faker.custom.resource();
+    referencedResource.source.endpointId = resource.source.endpointId;
 
     const resourceRoutPath = faker.lorem.slug() as RoutePath;
     mockUseResourceRoutePath.mockReturnValue(resourceRoutPath);
@@ -76,9 +79,8 @@ test('does not render as a link if the dataServiceMethod does not match', async 
         reference: `${faker.lorem.sentence()}/${faker.number.int()}`,
     };
     const resource = faker.custom.resource();
-    const referencedResource = faker.custom.resource({
-        dataServiceMethod: resource.dataServiceMethod + faker.lorem.word(),
-    });
+    const referencedResource = faker.custom.resource();
+    referencedResource.source.endpointId = resource.source.endpointId + faker.lorem.word();
 
     const resourceRoutPath = faker.lorem.slug() as RoutePath;
     mockUseResourceRoutePath.mockReturnValue(resourceRoutPath);

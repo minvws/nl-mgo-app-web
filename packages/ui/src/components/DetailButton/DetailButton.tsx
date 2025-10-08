@@ -50,7 +50,7 @@ export const DetailButton = ({
                             {date}
                         </span>
                     )}
-                    <Icon icon="chevron-right" className={cn('h-8 w-8 text-gray-400')} />
+                    <Icon icon="chevron_right" className={cn('h-8 w-8 text-gray-400')} />
                 </div>
             </Comp>
         </Card>

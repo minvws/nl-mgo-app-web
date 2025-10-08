@@ -14,7 +14,7 @@ export const coding = createMockFactory<FakerCoding>(() => {
         system: faker.helpers.arrayElement([
             'http://snomed.info/sct', // NOSONAR
             'http://loinc.org', // NOSONAR
-            `urn:oid:${faker.phone.number().replaceAll('-', '.')}`,
+            `urn:oid:${faker.phone.number().replace(/-/g, '.')}`,
             `http://fhir.nl/fhir/${faker.lorem.word()}`,
             `http://nictiz.nl/fhir/${faker.lorem.word()}`,
             `http://hl7.org/fhir/v3/${faker.lorem.word()}`,
