@@ -61,7 +61,7 @@ export const ConfirmDialog = ({
                                         icon="close"
                                         size="sm"
                                         aria-label={closeButtonAriaLabel}
-                                        className="h-7 w-7 text-xs sm:h-8 sm:w-8"
+                                        tabIndex={0}
                                     />
                                 </AlertDialog.Cancel>
                             </div>
@@ -70,7 +70,15 @@ export const ConfirmDialog = ({
                                 <Text>{description}</Text>
                             </AlertDialog.Description>
 
-                            <div className="flex flex-col-reverse gap-4 sm:flex-row-reverse sm:gap-6">
+                            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+                                {cancelButtonText && (
+                                    <AlertDialog.Cancel asChild>
+                                        <Button variant="light" className="flex-grow">
+                                            {cancelButtonText}
+                                        </Button>
+                                    </AlertDialog.Cancel>
+                                )}
+
                                 <AlertDialog.Action asChild>
                                     <Button
                                         className="flex-grow"
@@ -80,14 +88,6 @@ export const ConfirmDialog = ({
                                         {confirmButtonText}
                                     </Button>
                                 </AlertDialog.Action>
-
-                                {cancelButtonText && (
-                                    <AlertDialog.Cancel asChild>
-                                        <Button variant="light" className="flex-grow">
-                                            {cancelButtonText}
-                                        </Button>
-                                    </AlertDialog.Cancel>
-                                )}
                             </div>
                         </div>
                     </div>
