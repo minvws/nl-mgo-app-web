@@ -6,17 +6,23 @@
                 {
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatienummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Inenting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Patient",
@@ -27,7 +33,7 @@
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Hepatitis A-vaccin (J07BC02 in codesysteem http://www.whocc.no/atc)",
                             "code": "J07BC02",
@@ -38,12 +44,16 @@
                 {
                     "label": "Protocol toegepast",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "completed"
+                    "value": {
+                        "display": "completed"
+                    }
                 },
                 {
                     "label": "Toediener",
@@ -54,24 +64,32 @@
                 {
                     "label": "Toedieningsweg",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bezoek aan Guatemala."
+                    "value": [
+                        {
+                            "display": "Bezoek aan Guatemala."
+                        }
                     ]
                 },
                 {
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "3 juni 2012"
+                    "value": {
+                        "display": "3 juni 2012"
+                    }
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -81,12 +99,16 @@
                 {
                     "label": "Vaccinatie aanleiding",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Vaccinatie indicatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

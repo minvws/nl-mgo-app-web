@@ -37,7 +37,7 @@ test('primitive value types are processed', () => {
         {
             type: 'SINGLE_VALUE',
             label: testMessage(path),
-            display: value.value,
+            value: { display: value.value },
         },
     ];
 
@@ -63,7 +63,7 @@ test('value types are processed', () => {
         {
             type: 'SINGLE_VALUE',
             label: testMessage(path),
-            display: value.value,
+            value: { display: value.value },
         },
     ];
 
@@ -92,7 +92,7 @@ test('arrays are processed', () => {
         {
             type: 'MULTIPLE_VALUES',
             label: testMessage(path),
-            display: [value[0].value, value[1].value],
+            value: [{ display: value[0].value }, { display: value[1].value }],
         },
     ];
 
@@ -117,7 +117,7 @@ test('objects are processed', () => {
         {
             type: 'SINGLE_VALUE',
             label: testMessage(`${path}.foo`),
-            display: value.foo.value,
+            value: { display: value.foo.value },
         },
     ];
 
@@ -167,7 +167,7 @@ test('Mgo elements get their own group', () => {
                 {
                     type: 'SINGLE_VALUE',
                     label: testMessage(`${profileKey}.foo`),
-                    display: value.foo.value,
+                    value: { display: value.foo.value },
                 },
             ],
         },

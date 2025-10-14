@@ -6,7 +6,9 @@
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "10 juni 2019 om 13:13:21 GMT+2"
+                    "value": {
+                        "display": "10 juni 2019 om 13:13:21 GMT+2"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -17,7 +19,7 @@
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "ontslagbrief (11071000146104 in codesysteem http://snomed.info/sct)",
                             "code": "11071000146104",
@@ -43,14 +45,18 @@
                 {
                     "label": "Specialist",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "De Hoed"
+                    "value": [
+                        {
+                            "display": "De Hoed"
+                        }
                     ]
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

@@ -6,24 +6,32 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1d827f57-8fdf-11ec-1270-020000000000"
+                    "value": [
+                        {
+                            "display": "1d827f57-8fdf-11ec-1270-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Indicatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Locatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Medisch hulpmiddel",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Onderwerp (Patiënt)",
@@ -34,32 +42,42 @@
                 {
                     "label": "Resultaat",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting anatomische locatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting methode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Surgical reduction of fracture (procedure) (274051007 in codesysteem http://snomed.info/sct)",
                             "code": "274051007",
@@ -81,7 +99,7 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Uitvoerder (PRF in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
                             "code": "PRF",

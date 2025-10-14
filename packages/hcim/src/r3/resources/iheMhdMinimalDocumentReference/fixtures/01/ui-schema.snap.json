@@ -6,35 +6,49 @@
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "10 juni 2019 om 13:13:21 GMT+2"
+                    "value": {
+                        "display": "10 juni 2019 om 13:13:21 GMT+2"
+                    }
                 },
                 {
                     "label": "Beveiligingslabel",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Categorie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gerelateerd aan",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "678909902",
-                        "17ba1c1f-8fdf-11ec-1892-020000000000"
+                    "value": [
+                        {
+                            "display": "678909902"
+                        },
+                        {
+                            "display": "17ba1c1f-8fdf-11ec-1892-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Identifier",
                     "type": "SINGLE_VALUE",
-                    "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
+                    "value": {
+                        "display": "urn:oid:1.2.276.0.7230010.3.1.2.1787205428.3024.1522314975.251898"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -45,19 +59,23 @@
                 {
                     "label": "Specialist",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "De Hoed"
+                    "value": [
+                        {
+                            "display": "De Hoed"
+                        }
                     ]
                 },
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "current"
+                    "value": {
+                        "display": "current"
+                    }
                 },
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "ontslagbrief (11071000146104 in codesysteem http://snomed.info/sct)",
                             "code": "11071000146104",
@@ -73,7 +91,9 @@
                 {
                     "label": "Formaat",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "type": "DOWNLOAD_BINARY",
@@ -88,22 +108,30 @@
                 {
                     "label": "Aanvullende details",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Faciliteit",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Patiënt informatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

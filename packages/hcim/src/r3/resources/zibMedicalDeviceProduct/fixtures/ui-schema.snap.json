@@ -6,7 +6,9 @@
                 {
                     "label": "Expiratie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "31 januari 2016"
+                    "value": {
+                        "display": "31 januari 2016"
+                    }
                 },
                 {
                     "label": "Patiënt",
@@ -17,20 +19,26 @@
                 {
                     "label": "Product ID",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1148130801",
-                        "1b95ac69-8fdf-11ec-1906-020000000000"
+                    "value": [
+                        {
+                            "display": "1148130801"
+                        },
+                        {
+                            "display": "1b95ac69-8fdf-11ec-1906-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Product ID (batch or lot number (10) part of the UDI)",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Knee joint prosthesis, device (physical object) (109228008 in codesysteem http://snomed.info/sct)",
                             "code": "109228008",
@@ -41,8 +49,10 @@
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Implantant, Gen 2 Tibia Insert 5/6-9mm"
+                    "value": [
+                        {
+                            "display": "Implantant, Gen 2 Tibia Insert 5/6-9mm"
+                        }
                     ]
                 }
             ]
@@ -53,12 +63,16 @@
                 {
                     "label": "Product ID",
                     "type": "SINGLE_VALUE",
-                    "display": "{01}05050474530799{17}160131{21}1148130801"
+                    "value": {
+                        "display": "{01}05050474530799{17}160131{21}1148130801"
+                    }
                 },
                 {
                     "label": "Product ID (application identifier (AI) (01) part of the udi)",
                     "type": "SINGLE_VALUE",
-                    "display": "05050474530799"
+                    "value": {
+                        "display": "05050474530799"
+                    }
                 }
             ]
         }

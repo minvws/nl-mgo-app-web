@@ -6,18 +6,24 @@
                 {
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "1 januari 2018"
+                    "value": {
+                        "display": "1 januari 2018"
+                    }
                 },
                 {
                     "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "31 januari 2019"
+                    "value": {
+                        "display": "31 januari 2019"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1c7ad0eb-8fdf-11ec-2921-020000000000"
+                    "value": [
+                        {
+                            "display": "1c7ad0eb-8fdf-11ec-2921-020000000000"
+                        }
                     ]
                 },
                 {
@@ -29,12 +35,14 @@
                 {
                     "label": "Verzekerde nummer",
                     "type": "SINGLE_VALUE",
-                    "display": "12345678"
+                    "value": {
+                        "display": "12345678"
+                    }
                 },
                 {
                     "label": "Verzekerings soort",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Basis verzekerd (B in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.101.5.1)",
                             "code": "B",
@@ -50,17 +58,23 @@
                 {
                     "label": "Bank naam",
                     "type": "SINGLE_VALUE",
-                    "display": "ING"
+                    "value": {
+                        "display": "ING"
+                    }
                 },
                 {
                     "label": "Bankcode",
                     "type": "SINGLE_VALUE",
-                    "display": "INGBNL2A"
+                    "value": {
+                        "display": "INGBNL2A"
+                    }
                 },
                 {
                     "label": "Rekeningnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "NL85INGB0001234567"
+                    "value": {
+                        "display": "NL85INGB0001234567"
+                    }
                 },
                 {
                     "label": "Verzekeraar",

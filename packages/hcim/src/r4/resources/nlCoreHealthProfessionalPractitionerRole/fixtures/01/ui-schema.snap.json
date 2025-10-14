@@ -6,7 +6,7 @@
                 {
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Neuroloog (01.026 in codesysteem http://fhir.nl/fhir/NamingSystem/uzi-rolcode)",
                             "code": "01.026",
@@ -17,7 +17,9 @@
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -27,32 +29,44 @@
                 {
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
-                    "display": "j.peters@hospital.nl"
+                    "value": {
+                        "display": "j.peters@hospital.nl"
+                    }
                 },
                 {
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "+3715828282"
+                    "value": {
+                        "display": "+3715828282"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

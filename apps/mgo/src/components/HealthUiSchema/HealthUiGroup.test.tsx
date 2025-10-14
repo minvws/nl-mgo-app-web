@@ -24,7 +24,7 @@ test('shows the label and children', () => {
             {
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
-                display: faker.lorem.sentence(),
+                value: { display: faker.lorem.sentence() },
             },
         ],
     };
@@ -48,7 +48,7 @@ test('does not render the label if it is undefined', () => {
             {
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
-                display: faker.lorem.sentence(),
+                value: { display: faker.lorem.sentence() },
             },
         ],
     };

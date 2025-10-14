@@ -18,7 +18,7 @@ export const valueWithUnit: WithUiContext<
     (label, value, unit) => {
         return {
             label: formatLabel(label, value),
-            display: format.valueWithUnit(valueOf(value), valueOf(unit)),
+            value: { display: format.valueWithUnit(valueOf(value), valueOf(unit)) },
             type: 'SINGLE_VALUE',
         };
     };

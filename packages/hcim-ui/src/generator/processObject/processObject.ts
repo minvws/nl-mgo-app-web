@@ -21,7 +21,7 @@ export function processObject(context: GeneratorContext, path: string, value: ob
             elements.push({
                 label: context.formatLabel(valuePath as FhirMessagesIds, null),
                 type: 'SINGLE_VALUE',
-                display: undefined,
+                value: undefined,
             });
         } else {
             elements.push(...processValue(context, valuePath, value));

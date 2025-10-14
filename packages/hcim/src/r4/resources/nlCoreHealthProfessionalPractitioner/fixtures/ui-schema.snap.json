@@ -6,13 +6,15 @@
                 {
                     "label": "Geslacht",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Zorgverlener identificatienummer",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "21870932"
+                    "value": [
+                        {
+                            "display": "21870932"
+                        }
                     ]
                 }
             ]
@@ -23,56 +25,66 @@
                 {
                     "label": "Achternaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Peters"
+                    "value": {
+                        "display": "Peters"
+                    }
                 },
                 {
                     "label": "Geboortenamen",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Initialen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "J.",
-                        "H.",
-                        "R."
+                    "value": [
+                        {
+                            "display": "J."
+                        },
+                        {
+                            "display": "H."
+                        },
+                        {
+                            "display": "R."
+                        }
                     ]
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Tussenvoegsel",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
-                    "display": "J.H.R. Peters"
+                    "value": {
+                        "display": "J.H.R. Peters"
+                    }
                 },
                 {
                     "label": "Voornaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 }
             ]
         },
@@ -82,32 +94,40 @@
                 {
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
-                    "display": "j.peters@hospital.nl"
+                    "value": {
+                        "display": "j.peters@hospital.nl"
+                    }
                 },
                 {
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "+3715828282"
+                    "value": {
+                        "display": "+3715828282"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 }
             ]
         },
@@ -117,47 +137,51 @@
                 {
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Nederland (NL in codesysteem urn:iso:std:iso:3166)",
                             "code": "NL",
@@ -168,17 +192,23 @@
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "2353 GA"
+                    "value": {
+                        "display": "2353 GA"
+                    }
                 },
                 {
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
-                    "display": "Simon Smitweg"
+                    "value": {
+                        "display": "Simon Smitweg"
+                    }
                 },
                 {
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
-                    "display": "Leiderdorp"
+                    "value": {
+                        "display": "Leiderdorp"
+                    }
                 }
             ]
         }

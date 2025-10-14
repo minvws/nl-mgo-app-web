@@ -21,12 +21,12 @@ export const ratio: WithUiContext<
         {
             label: formatLabel(numeratorLabel, value, `fhir.ratio.numerator`),
             type: `SINGLE_VALUE`,
-            display: formatSystemValue(value?.numerator),
+            value: { display: formatSystemValue(value?.numerator) },
         },
         {
             label: formatLabel(denominatorLabel, value, `fhir.ratio.denominator`),
             type: `SINGLE_VALUE`,
-            display: formatSystemValue(value?.denominator),
+            value: { display: formatSystemValue(value?.denominator) },
         },
     ];
 };

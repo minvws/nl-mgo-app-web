@@ -8,10 +8,8 @@ export interface MultipleGroupedValuesProps {
 }
 
 export function MultipleGroupedValues({ value }: MultipleGroupedValuesProps) {
-    const groupedValues = value.display?.map((group) =>
-        group
-            .map((groupValue) => (typeof groupValue === 'string' ? groupValue : groupValue.display))
-            .filter(isNonNullish)
+    const groupedValues = value.value?.map((group) =>
+        group.map((groupValue) => groupValue.display).filter(isNonNullish)
     );
 
     return (

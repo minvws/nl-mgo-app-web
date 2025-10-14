@@ -2,6 +2,7 @@ import { faker } from '$test';
 import { type MgoQuantityProps } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi } from 'vitest';
+import { SingleValue } from '../../types/schema.js';
 import { ratio } from './ratio.js';
 
 vi.mock('../../format/systemValue/systemValue', () => ({
@@ -20,16 +21,16 @@ test('ratio', () => {
 
     const result = ratio(context)(label, mgoRatio);
 
-    expect(result).toEqual([
+    expect(result).toEqual<SingleValue[]>([
         {
             label: testMessage('fhir.ratio.numerator'),
             type: `SINGLE_VALUE`,
-            display: `systemValue(${JSON.stringify(mgoRatio.numerator)})`,
+            value: { display: `systemValue(${JSON.stringify(mgoRatio.numerator)})` },
         },
         {
             label: testMessage('fhir.ratio.denominator'),
             type: `SINGLE_VALUE`,
-            display: `systemValue(${JSON.stringify(mgoRatio.denominator)})`,
+            value: { display: `systemValue(${JSON.stringify(mgoRatio.denominator)})` },
         },
     ]);
 });

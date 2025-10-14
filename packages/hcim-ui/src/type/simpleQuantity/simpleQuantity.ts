@@ -10,6 +10,6 @@ export const simpleQuantity: WithUiContext<UiFunction<MgoSimpleQuantity, SingleV
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: `SINGLE_VALUE`,
-            display: systemValue(context)(value),
+            value: { display: systemValue(context)(value) },
         };
     };

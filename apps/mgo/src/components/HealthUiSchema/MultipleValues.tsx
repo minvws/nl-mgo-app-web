@@ -11,9 +11,7 @@ export function MultipleValuesDisplay({ values }: { readonly values: string[] | 
 }
 
 export function MultipleValues({ value }: MultipleValueDisplayProps) {
-    const displayValues = value.display
-        ?.map((v) => (typeof v === 'string' ? v : v.display))
-        .filter(isNonNullish);
+    const displayValues = value.value?.map((v) => v.display).filter(isNonNullish);
 
     return (
         <DescriptionCard

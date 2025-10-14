@@ -6,18 +6,24 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "30 juni 2016"
+                    "value": {
+                        "display": "30 juni 2016"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b6fe23b-8fdf-11ec-1802-020000000000"
+                    "value": [
+                        {
+                            "display": "1b6fe23b-8fdf-11ec-1802-020000000000"
+                        }
                     ]
                 },
                 {
@@ -29,17 +35,21 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Woning type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Eengezinswoning (EENGEZW in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.13.1)",
                             "code": "EENGEZW",

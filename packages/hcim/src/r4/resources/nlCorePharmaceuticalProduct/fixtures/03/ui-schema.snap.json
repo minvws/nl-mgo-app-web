@@ -6,12 +6,14 @@
                 {
                     "label": "Batch / Lotnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Farmaceutische vorm",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Tablet dose form (qualifier value) (385055001 in codesysteem http://snomed.info/sct)",
                             "code": "385055001",
@@ -22,7 +24,9 @@
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -32,7 +36,7 @@
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Oral Form Oxycodone (product) (430127000 in codesysteem http://snomed.info/sct)",
                             "code": "430127000",
@@ -43,7 +47,9 @@
                 {
                     "label": "Product naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -59,12 +65,16 @@
                 {
                     "label": "Ingredient hoeveelheid",
                     "type": "SINGLE_VALUE",
-                    "display": "5"
+                    "value": {
+                        "display": "5"
+                    }
                 },
                 {
                     "label": "Product hoeveelheid",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 }
             ]
         },
@@ -80,7 +90,9 @@
                 {
                     "label": "Sterkte",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

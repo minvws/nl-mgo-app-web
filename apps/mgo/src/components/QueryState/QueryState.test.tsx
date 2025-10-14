@@ -1,5 +1,5 @@
 import { setup, setupWithAppProviders } from '$test/helpers';
-import { supressConsoleError } from '$test/helpers/supressConsoleError';
+import { suppressConsoleError } from '$test/helpers/suppressConsoleError';
 import { faker } from '@faker-js/faker';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
@@ -198,7 +198,7 @@ test('QueryState throws if it receives an invalid status', () => {
         renderResult: <span data-testid="result" />,
     };
 
-    supressConsoleError(() => {
+    suppressConsoleError(() => {
         expect(() => setup(<QueryState {...query} />)).toThrow(`Unhandled status: ${query.status}`);
     });
 });

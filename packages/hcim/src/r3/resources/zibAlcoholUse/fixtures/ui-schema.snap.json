@@ -6,7 +6,7 @@
                 {
                     "label": "Alcohol gebruik status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Current drinker of alcohol (219006 in codesysteem http://snomed.info/sct)",
                             "code": "219006",
@@ -17,23 +17,31 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
-                    "display": "4 glasses per week"
+                    "value": {
+                        "display": "4 glasses per week"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "18cc8831-8fdf-11ec-2010-020000000000"
+                    "value": [
+                        {
+                            "display": "18cc8831-8fdf-11ec-2010-020000000000"
+                        }
                     ]
                 },
                 {
@@ -45,17 +53,23 @@
                 {
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1980"
+                    "value": {
+                        "display": "1980"
+                    }
                 },
                 {
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

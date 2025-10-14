@@ -8,6 +8,6 @@ export const integer: WithUiContext<UiFunction<MgoInteger, SingleValue>> =
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: numberToString(value?.value),
+            value: { display: numberToString(value?.value) },
         };
     };

@@ -13,7 +13,7 @@ const restoreConsoleError = () => {
     }
 };
 
-export async function supressConsoleError(testFunc: TestFunction) {
+export async function suppressConsoleError(testFunc: TestFunction) {
     mockConsoleError();
     testFunc();
     restoreConsoleError();

@@ -21,12 +21,12 @@ export const period: WithUiContext<
         {
             label: formatLabel(startLabel, value, `fhir.period.start`),
             type: `SINGLE_VALUE`,
-            display: formatDate(value?.start),
+            value: { display: formatDate(value?.start) },
         },
         {
             label: formatLabel(endLabel, value, `fhir.period.end`),
             type: `SINGLE_VALUE`,
-            display: formatDate(value?.end),
+            value: { display: formatDate(value?.end) },
         },
     ];
 };

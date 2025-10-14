@@ -6,13 +6,17 @@
                 {
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "3 juni 2012"
+                    "value": {
+                        "display": "3 juni 2012"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bezoek aan Guatemala."
+                    "value": [
+                        {
+                            "display": "Bezoek aan Guatemala."
+                        }
                     ]
                 }
             ]
@@ -23,12 +27,16 @@
                 {
                     "label": "Toediener",
                     "type": "SINGLE_VALUE",
-                    "display": "Healthcare professional (role)"
+                    "value": {
+                        "display": "Healthcare professional (role)"
+                    }
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

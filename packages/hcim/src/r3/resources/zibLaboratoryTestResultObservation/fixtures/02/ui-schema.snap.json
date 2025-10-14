@@ -6,17 +6,23 @@
                 {
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
+                    "value": {
+                        "display": "1 juni 2010"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gerelateerde uitslag",
@@ -27,14 +33,16 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b2d4dbd-8fdf-11ec-8670-020000000000"
+                    "value": [
+                        {
+                            "display": "1b2d4dbd-8fdf-11ec-8670-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Above reference range (281302008 in codesysteem http://snomed.info/sct)",
                             "code": "281302008",
@@ -57,7 +65,7 @@
                 {
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Chloride [Moles/volume] in Blood (2069-3 in codesysteem http://loinc.org)",
                             "code": "2069-3",
@@ -68,27 +76,37 @@
                 {
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "value": {
+                        "display": "final"
+                    }
                 },
                 {
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verband",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -98,12 +116,16 @@
                 {
                     "label": "Resultaat code",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Resultaat type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -113,37 +135,51 @@
                 {
                     "label": "Aantal sample punten",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "300"
+                    "value": {
+                        "display": "300"
+                    }
                 },
                 {
                     "label": "Factor",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Gesamplede gegevens",
                     "type": "SINGLE_VALUE",
-                    "display": "120 125 123 121 119 118 117 116 115 114"
+                    "value": {
+                        "display": "120 125 123 121 119 118 117 116 115 114"
+                    }
                 },
                 {
                     "label": "ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "0"
+                    "value": {
+                        "display": "0"
+                    }
                 },
                 {
                     "label": "Origin",
                     "type": "SINGLE_VALUE",
-                    "display": "0 mmHg"
+                    "value": {
+                        "display": "0 mmHg"
+                    }
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "0.1"
+                    "value": {
+                        "display": "0.1"
+                    }
                 }
             ]
         },
@@ -153,17 +189,23 @@
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "108 millimol per liter"
+                    "value": {
+                        "display": "108 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "99 millimol per liter"
+                    "value": {
+                        "display": "99 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -173,17 +215,21 @@
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "265 millimol per liter"
+                    "value": {
+                        "display": "265 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "180 millimol per liter"
+                    "value": {
+                        "display": "180 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Treatment Range (treatment in codesysteem http://hl7.org/fhir/referencerange-meaning)",
                             "code": "treatment",

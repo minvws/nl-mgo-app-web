@@ -1,6 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test, vi } from 'vitest';
+import { SingleValue } from '../../types/schema.js';
 import { identifier } from './identifier.js';
 
 test('identifier, with existing label', () => {
@@ -10,9 +11,9 @@ test('identifier, with existing label', () => {
     vi.spyOn(context, 'hasMessage').mockReturnValueOnce(true);
 
     const result = identifier(context)(label, mgoIdentifier);
-    expect(result).toEqual({
+    expect(result).toEqual<SingleValue>({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: mgoIdentifier.value,
+        value: { display: mgoIdentifier.value },
     });
 });

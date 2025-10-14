@@ -11,7 +11,7 @@ test('renders schema correctly', () => {
     const element = {
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
-        display: faker.lorem.sentence(),
+        value: { display: faker.lorem.sentence() },
     } satisfies SingleValue;
     const group: HealthUiGroup = {
         label: faker.lorem.sentence(),
@@ -33,5 +33,5 @@ test('renders schema correctly', () => {
     const elementLabel = screen.getByTestId('element-label');
     const elementValue = screen.getByTestId('element-value');
     expect(elementLabel).toHaveTextContent(element.label);
-    expect(elementValue).toHaveTextContent(element.display!);
+    expect(elementValue).toHaveTextContent(element.value.display!);
 });
