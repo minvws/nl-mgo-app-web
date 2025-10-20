@@ -21,7 +21,7 @@ export const MobileMenuButton = forwardRef<HTMLButtonElement, MobileMenuButtonPr
             <Comp
                 ref={ref}
                 className={cn(
-                    'flex border p-2 text-sm font-bold leading-none',
+                    'flex border p-2 text-sm leading-none font-bold',
                     'border-sky-blue-600 dark:border-light-blue-500 text-sky-blue-600 dark:text-light-blue-500',
                     'hover:bg-sky-blue-600 dark:hover:bg-light-blue-500 hover:text-white dark:hover:text-[#252525]',
                     focusStyle

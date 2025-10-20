@@ -27,7 +27,7 @@ export function HealthData({ summary }: Readonly<HealthDataProps>) {
         <>
             <Helmet title={heading} />
 
-            <section className="flex-grow">
+            <section className="grow">
                 <Breadcrumbs />
                 <HealthUiSchema resource={resource} schema={schema} />
             </section>

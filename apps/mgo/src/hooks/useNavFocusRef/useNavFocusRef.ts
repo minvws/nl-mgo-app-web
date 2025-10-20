@@ -42,7 +42,7 @@ function isFocusable(element: Element | null): element is HTMLElement | SVGEleme
 function focusElement(element: HTMLElement | SVGElement | MathMLElement) {
     if (element.tabIndex < 0 && !element.hasAttribute('tabindex')) {
         element.setAttribute('tabindex', '-1');
-        element.classList.add('outline-none');
+        element.classList.add('outline-hidden');
     }
     element.focus();
 }

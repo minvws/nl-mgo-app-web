@@ -39,7 +39,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
                     <Button
                         variant="ghost"
                         onClick={retryQuery}
-                        className="text-sky-blue-700 dark:text-sky-blue-300 hover:text-sky-blue-700 dark:hover:text-sky-blue-300 !p-0 hover:!text-opacity-50"
+                        className="text-sky-blue-700 dark:text-sky-blue-300 hover:text-sky-blue-700 dark:hover:text-sky-blue-300 hover:!text-sky-blue-700/50 dark:hover:!text-sky-blue-300/50 !p-0"
                     >
                         <FormattedMessage id="common.try_again" description="Probeer opnieuw" />
                     </Button>

@@ -38,7 +38,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp ref={ref} className="group flex outline-none" {...rest}>
+        <Comp ref={ref} className="group flex outline-hidden" {...rest}>
             <span
                 className={cn(
                     'flex items-center justify-center self-center rounded-full',

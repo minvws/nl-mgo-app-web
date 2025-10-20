@@ -44,7 +44,7 @@ export const DescriptionButton = ({
         <Card
             asChild
             className={cn(
-                'rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg',
+                'shadow-sm-none rounded-none border-0 p-0 first:rounded-t-lg last:rounded-b-lg',
                 'flex w-full items-center justify-between gap-1 p-4 text-left',
                 variantStyles[variant],
                 variantHoverStyles[variant],

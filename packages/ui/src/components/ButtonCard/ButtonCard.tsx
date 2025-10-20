@@ -37,7 +37,7 @@ export const ButtonCard = ({
     return (
         <Comp
             className={cn(
-                'flex w-full break-all border-b border-gray-100 bg-white p-4 text-left hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
+                'flex w-full border-b border-gray-100 bg-white p-4 text-left break-all hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
                 isLoading && 'cursor-progress',
                 focusStyle,
                 className
@@ -47,7 +47,7 @@ export const ButtonCard = ({
             <Slottable>{children}</Slottable>
 
             <SkeletonText
-                className="flex flex-grow flex-col justify-center gap-1 sm:gap-2"
+                className="flex grow flex-col justify-center gap-1 sm:gap-2"
                 height="h-6 sm:h-8"
                 numberOfLines={2}
                 isLoading={isLoading}
@@ -61,9 +61,7 @@ export const ButtonCard = ({
                     )}
                 </Stack>
             </SkeletonText>
-            {!isLoading && (
-                <Icon icon="chevron_right" className="h-8 w-8 flex-shrink-0 fill-gray-500" />
-            )}
+            {!isLoading && <Icon icon="chevron_right" className="h-8 w-8 shrink-0 fill-gray-500" />}
         </Comp>
     );
 };

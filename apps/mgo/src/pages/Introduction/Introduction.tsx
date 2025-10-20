@@ -10,7 +10,7 @@ export function Introduction() {
     return (
         <>
             <Helmet title={formatMessage('introduction.heading')} />
-            <div className="mx-auto mb-12 mt-12 flex max-w-md flex-col items-center gap-8 md:mb-16 md:mt-16 md:gap-16 lg:mb-24 lg:mt-24">
+            <div className="mx-auto mt-12 mb-12 flex max-w-md flex-col items-center gap-8 md:mt-16 md:mb-16 md:gap-16 lg:mt-24 lg:mb-24">
                 <Illustration
                     illustration="woman-with-phone"
                     className="mx-auto max-h-[160px] w-full md:max-h-[280px]"

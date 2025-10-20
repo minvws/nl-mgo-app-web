@@ -14,7 +14,7 @@ export function Proposition() {
         <>
             <Helmet title={formatMessage('proposition.heading')} />
 
-            <section className="flex-grow">
+            <section className="grow">
                 <BackButton />
 
                 <div className="mx-auto mb-12 max-w-md md:mb-16 lg:mb-24">

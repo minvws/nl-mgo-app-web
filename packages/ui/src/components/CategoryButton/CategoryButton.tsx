@@ -76,7 +76,7 @@ export const CategoryButton = ({
             <Card asChild>
                 <Comp
                     className={cn(
-                        'border-0 p-0 shadow-none',
+                        'shadow-sm-none border-0 p-0',
                         'flex w-full items-center gap-4 p-4 text-left',
                         isLoading && 'cursor-progress',
                         focusStyle,

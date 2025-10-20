@@ -26,7 +26,7 @@ export const DetailButton = ({
     return (
         <Card
             className={cn(
-                'border-0 p-0 shadow-none hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]'
+                'shadow-sm-none border-0 p-0 hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]'
             )}
             asChild
         >
@@ -40,7 +40,7 @@ export const DetailButton = ({
             >
                 <Slottable>{children}</Slottable>
 
-                <div className="md:text-md flex-grow text-sm">
+                <div className="md:text-md grow text-sm">
                     <div className="font-bold">{title}</div>
                     <div>{description}</div>
                 </div>

@@ -13,7 +13,7 @@ export const DescriptionItem = ({ term, details, className }: DescriptionItemPro
 
     return (
         <div className={cn('flex items-center', className)}>
-            <Text className="flex-grow" asChild>
+            <Text className="grow" asChild>
                 <div>
                     {term ? (
                         <>

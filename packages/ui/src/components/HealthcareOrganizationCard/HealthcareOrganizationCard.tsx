@@ -51,17 +51,17 @@ export const HealthcareOrganizationCard = ({
             {...rest}
         >
             <div className="flex flex-row gap-4">
-                <Stack className="text-md flex-grow items-start gap-0 text-left">
+                <Stack className="text-md grow items-start gap-0 text-left">
                     <TitleComp id={uniqueId} className="font-bold text-black dark:text-white">
                         {title}
                     </TitleComp>
                     {subTitle && (
-                        <span className="whitespace-pre-wrap break-all text-gray-950 dark:text-gray-100">
+                        <span className="break-all whitespace-pre-wrap text-gray-950 dark:text-gray-100">
                             {subTitle}
                         </span>
                     )}
                     {meta && (
-                        <span className="whitespace-pre-wrap break-all text-gray-600 dark:text-gray-300">
+                        <span className="break-all whitespace-pre-wrap text-gray-600 dark:text-gray-300">
                             {meta}
                         </span>
                     )}

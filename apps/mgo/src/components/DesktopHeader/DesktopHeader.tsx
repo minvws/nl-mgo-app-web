@@ -14,7 +14,7 @@ export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
             {...rest}
         >
             <Container className="flex items-center justify-between py-4">
-                <h2 className="text-xl font-normal leading-tight text-black dark:text-white">
+                <h2 className="text-xl leading-tight font-normal text-black dark:text-white">
                     <FormattedMessage
                         id="common.app_name"
                         description="Mijn Gezondheidsoverzicht"

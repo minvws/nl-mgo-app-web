@@ -33,7 +33,7 @@ export const Text = ({
     return (
         <Comp
             className={twMerge(
-                'font-sans font-normal leading-normal',
+                'font-sans leading-normal font-normal',
                 TextSizes[size],
                 VariantStyles[variant],
                 className

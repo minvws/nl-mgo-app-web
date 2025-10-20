@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
@@ -14,7 +15,7 @@ export default defineConfig({
     build: {
         outDir: './build',
     },
-    plugins: [react({ babel: { plugins: ['macros'] } }), svgr()],
+    plugins: [react({ babel: { plugins: ['macros'] } }), svgr(), tailwindcss()],
     resolve: {
         alias: {
             $: resolvePath('./src'),

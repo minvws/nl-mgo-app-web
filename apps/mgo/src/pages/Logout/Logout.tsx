@@ -7,7 +7,7 @@ export function Logout() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
-        <div className="mx-auto max-w-md pb-6 pt-12 md:pb-32 md:pt-24">
+        <div className="mx-auto max-w-md pt-12 pb-6 md:pt-24 md:pb-32">
             <Illustration className="mx-auto w-3/4 md:mb-2" illustration="woman-with-phone-check" />
             <Heading asChild size="lg" className="mt-6 md:mt-16">
                 <h1 ref={navFocusRef}>

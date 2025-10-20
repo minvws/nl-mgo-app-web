@@ -6,7 +6,7 @@ import { Button, Card, Stack } from '@minvws/mgo-ui';
 export function NoOrganizations() {
     const { formatMessage } = useIntl();
     return (
-        <Stack className="my-6 flex-grow gap-12">
+        <Stack className="my-6 grow gap-12">
             <Card className="mt-6">
                 <QueryStateLayout
                     illustration="woman-on-couch"

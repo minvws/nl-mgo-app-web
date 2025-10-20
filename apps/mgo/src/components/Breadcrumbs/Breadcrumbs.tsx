@@ -31,7 +31,7 @@ export function Breadcrumbs() {
                                     </Link>
                                     <Icon
                                         icon="chevron_right"
-                                        className="h-8 w-8 flex-shrink-0 fill-gray-500"
+                                        className="h-8 w-8 shrink-0 fill-gray-500"
                                     />
                                 </>
                             )}

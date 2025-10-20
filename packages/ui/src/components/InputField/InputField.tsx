@@ -29,7 +29,7 @@ export const InputField = ({
                 {label}
             </label>
             <input
-                className="text-md h-16 rounded-lg border border-gray-500 p-4 shadow-sm outline-none focus:border-2 focus:border-black aria-[invalid]:border-2 aria-[invalid]:border-red-600 dark:bg-gray-900 dark:text-white dark:focus:border-white dark:aria-[invalid]:border-red-400"
+                className="text-md shadow-sm-xs h-16 rounded-lg border border-gray-500 p-4 outline-hidden focus:border-2 focus:border-black aria-[invalid]:border-2 aria-[invalid]:border-red-600 dark:bg-gray-900 dark:text-white dark:focus:border-white dark:aria-[invalid]:border-red-400"
                 type={type}
                 id={inputId}
                 name={name}
@@ -38,7 +38,7 @@ export const InputField = ({
             />
             {error && (
                 <span
-                    className="text-md flex items-center gap-2 font-bold leading-normal text-red-600 dark:text-red-400"
+                    className="text-md flex items-center gap-2 leading-normal font-bold text-red-600 dark:text-red-400"
                     id={validationMessageId}
                 >
                     <Icon icon="cancel" className="h-6 w-6" />

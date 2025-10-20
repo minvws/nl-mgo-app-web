@@ -27,7 +27,7 @@ export function AddOrganization() {
     return (
         <>
             <Helmet title={formatMessage('add_organization.heading')} />
-            <section className="flex-grow pb-12 md:pb-16 lg:pb-24">
+            <section className="grow pb-12 md:pb-16 lg:pb-24">
                 <BackButton />
 
                 <div className="mx-auto max-w-md">

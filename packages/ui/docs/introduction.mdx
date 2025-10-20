@@ -10,28 +10,21 @@ Here you will find a collection of components and styles to use for your project
 
 ## Prerequisites
 
-The `@minvws/mgo-ui` uses the `@minvws/mgo-tailwind` [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
-In order to use these components you will need to:
-
-1. add the `@minvws/mgo-tailwind` theme to your project's tailwind config.
-2. add both the `font.css` and `index.css`from `@minvws/mgo-tailwind` to your project.
+The `@minvws/mgo-ui` uses the [tailwind](https://tailwindcss.com/) theme which is set up to match [the design](<https://www.figma.com/file/IGdxtARM9ssEvgRRMy5xxt/Mijn-Gezondheids-Overzicht-(realisatie)?type=design&node-id=344-3405&mode=design&t=GwMD9QoTBG2HNtWd-0>).
+In order to use these components you will need to add the `tailwind-theme` and `tailwind-source` to your project's tailwind css.
 
 <Source
-    language="javascript"
+    language="css"
     code={`
-// tailwind.config.js
-import theme from "@minvws/mgo-tailwind/theme/index.js";
-\export default {
-    theme,
-    content: [ ... ],
-};
-
+@import "tailwindcss";
+@import '@minvws/mgo-ui/tailwind-theme';
+@import '@minvws/mgo-ui/tailwind-source';
 `}
 />
 
 Tailwind offers a great [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) which can read the config and help with highlighting / linting and autocompletion. We highly recommend you install this plugin.
 There are a lot of utility helpers included which [are well documented](https://tailwindcss.com/docs/utility-first).
-You use the styles by simply applying the correcty utility class names to an element.
+You use the styles by simply applying the correct utility class names to an element.
 
 ## Components
 

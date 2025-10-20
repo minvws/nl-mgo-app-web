@@ -19,7 +19,7 @@ export const DescriptionNotice = ({
     return (
         <Card
             className={cn(
-                'rounded-none border-0 p-8 shadow-none first:rounded-t-lg last:rounded-b-lg',
+                'shadow-sm-none rounded-none border-0 p-8 first:rounded-t-lg last:rounded-b-lg',
                 className
             )}
             {...rest}

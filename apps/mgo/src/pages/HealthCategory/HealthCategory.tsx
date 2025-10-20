@@ -41,7 +41,7 @@ export function HealthCategory() {
         <>
             <Helmet title={heading} />
 
-            <section className="flex-grow">
+            <section className="grow">
                 {isError && (
                     <Alert
                         label={formatMessage('common.failed_to_load_data')}

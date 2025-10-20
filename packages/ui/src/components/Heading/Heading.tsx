@@ -21,7 +21,7 @@ export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingPro
         <Comp
             className={twMerge(
                 HeadingSizes[size],
-                'font-sans font-bold leading-tight text-black dark:text-white',
+                'font-sans leading-tight font-bold text-black dark:text-white',
                 className
             )}
             {...rest}

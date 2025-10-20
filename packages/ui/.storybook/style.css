@@ -1,8 +1,23 @@
-@import '@minvws/mgo-tailwind/fonts.css';
+/* TailwindCSS */
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+@import '../tailwind/theme.css';
+
+@source '../src';
+@source '../docs';
+
+@custom-variant dark {
+    @media (prefers-color-scheme: dark) {
+        &:not(.light *) {
+            @slot;
+        }
+    }
+    &:is(.dark *) {
+        @slot;
+    }
+}
+
+/* Storybook */
 
 @media (prefers-color-scheme: dark) {
     .docs-story,

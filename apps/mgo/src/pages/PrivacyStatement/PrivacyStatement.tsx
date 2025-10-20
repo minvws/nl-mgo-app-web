@@ -7,7 +7,7 @@ export function PrivacyStatement() {
     const { formatMessage } = useIntl();
 
     return (
-        <section className="flex-grow">
+        <section className="grow">
             <BackButton />
 
             <div className="mx-auto max-w-md pb-12 md:pb-16 lg:pb-24">

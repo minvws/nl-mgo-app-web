@@ -27,7 +27,7 @@ export function Organizations() {
     };
 
     return (
-        <Stack className="my-6 flex-grow gap-12">
+        <Stack className="my-6 grow gap-12">
             {selectedSlug && (
                 <ConfirmDialog
                     open={isOpen}

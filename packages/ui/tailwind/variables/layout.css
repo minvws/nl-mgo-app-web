@@ -1,0 +1,18 @@
+@theme {
+    /* max-width */
+    --max-width-xs: 27.06rem /* 433px */;
+    --max-width-sm: 34.13rem /* 546px */;
+    --max-width-md: 41.25rem /* 660px */;
+    --max-width-lg: 69.75rem /* 1116px */;
+    --max-width-xl: 87rem /* 1392px */;
+    --max-width-none: none;
+    --max-width-full: 100%;
+    --max-width-prose: 65ch;
+
+    /* screens */
+    --breakpoint-sm: 40em; /* 640px */
+    --breakpoint-md: 48em; /* 768px */
+    --breakpoint-lg: 64em; /* 1024px */
+    --breakpoint-xl: 80em; /* 1280px */
+    --breakpoint-2xl: 96em /* 1536px */;
+}

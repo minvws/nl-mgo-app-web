@@ -73,7 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
             aria-hidden={showSpinnerOnly}
             className={cn({
                 invisible: showSpinnerOnly,
-                'flex flex-grow justify-start': fullWidth && rightIcon,
+                'flex grow justify-start': fullWidth && rightIcon,
             })}
         >
             {children}
@@ -110,7 +110,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                 onClick={loading ? undefined : onClick}
                 aria-disabled={loading}
                 className={cn(
-                    `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
+                    `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm leading-normal font-bold outline-hidden md:py-4`,
                     focusStyle,
                     typeColors[variant],
                     className,

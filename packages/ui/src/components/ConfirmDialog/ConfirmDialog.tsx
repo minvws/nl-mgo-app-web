@@ -46,9 +46,9 @@ export const ConfirmDialog = ({
             <AlertDialog.Portal>
                 <AlertDialog.Overlay className="fixed inset-0 z-40 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
 
-                <AlertDialog.Content className="fixed left-0 top-0 z-50 h-full w-full overflow-y-auto overflow-x-hidden p-4 md:p-6">
+                <AlertDialog.Content className="fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto p-4 md:p-6">
                     <div className="flex min-h-full items-center justify-center">
-                        <div className="flex w-full max-w-[432px] flex-col rounded-lg bg-white p-4 shadow-sm sm:p-6 dark:bg-gray-900">
+                        <div className="shadow-sm-xs flex w-full max-w-[432px] flex-col rounded-lg bg-white p-4 sm:p-6 dark:bg-gray-900">
                             <div className="mb-2 flex items-start justify-between md:mb-3">
                                 <AlertDialog.Title asChild>
                                     <Heading asChild size="md">
@@ -73,7 +73,7 @@ export const ConfirmDialog = ({
                             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
                                 {cancelButtonText && (
                                     <AlertDialog.Cancel asChild>
-                                        <Button variant="light" className="flex-grow">
+                                        <Button variant="light" className="grow">
                                             {cancelButtonText}
                                         </Button>
                                     </AlertDialog.Cancel>
@@ -81,7 +81,7 @@ export const ConfirmDialog = ({
 
                                 <AlertDialog.Action asChild>
                                     <Button
-                                        className="flex-grow"
+                                        className="grow"
                                         onClick={handleConfirm}
                                         {...loadingProps}
                                     >

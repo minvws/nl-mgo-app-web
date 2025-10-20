@@ -1,9 +1,9 @@
 import { type HTMLAttributes } from 'react';
+import { useOpenState } from '../../hooks';
+import { cn } from '../../utils';
+import { IconButton } from '../IconButton/IconButton';
 import { icons } from './Icons';
 import { type Status } from './statuses';
-import { cn } from '../../utils';
-import { useOpenState } from '../../hooks';
-import { IconButton } from '../IconButton/IconButton';
 
 export interface AlertProps extends HTMLAttributes<HTMLElement> {
     readonly label: string;
@@ -28,13 +28,13 @@ export const Alert = ({
             <div
                 role="alert"
                 className={cn(
-                    `flex w-full gap-4 rounded-lg border border-gray-100 bg-white p-4 shadow-sm dark:border-gray-500 dark:bg-gray-900`,
+                    `shadow-sm-xs flex w-full gap-4 rounded-lg border border-gray-100 bg-white p-4 dark:border-gray-500 dark:bg-gray-900`,
                     className
                 )}
                 {...rest}
             >
                 <div className={`h-6 w-6`}>{icons[status]}</div>
-                <div className={`flex flex-grow flex-col gap-1`}>
+                <div className={`flex grow flex-col gap-1`}>
                     <span className={`text-base font-bold text-black dark:text-white`}>
                         {label}
                     </span>

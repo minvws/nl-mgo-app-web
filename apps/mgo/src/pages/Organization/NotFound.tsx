@@ -13,7 +13,7 @@ export function NotFound() {
     return (
         <>
             <Helmet title={formatMessage('organization.not_found_heading')} />
-            <section className="flex-grow">
+            <section className="grow">
                 <div>
                     <BackButton />
                 </div>

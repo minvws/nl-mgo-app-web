@@ -12,7 +12,7 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
         <>
             <Helmet title={formatMessage('not_found.heading')} />
             <div
-                className={cn('mx-auto max-w-md pb-6 pt-12 md:pb-32 md:pt-24', className)}
+                className={cn('mx-auto max-w-md pt-12 pb-6 md:pt-24 md:pb-32', className)}
                 {...rest}
             >
                 <Illustration
