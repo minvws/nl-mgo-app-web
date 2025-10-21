@@ -599,6 +599,24 @@
       "value": "Naam"
     }
   ],
+  "r3.nl_core_location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r3.nl_core_location.managing_organization": [
+    {
+      "type": 0,
+      "value": "Organisatie"
+    }
+  ],
+  "r3.nl_core_location.physical_type": [
+    {
+      "type": 0,
+      "value": "Contact locatie type"
+    }
+  ],
   "r3.nl_core_observation": [
     {
       "type": 0,

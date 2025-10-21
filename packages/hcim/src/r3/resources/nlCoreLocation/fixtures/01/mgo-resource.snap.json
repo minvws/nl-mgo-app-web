@@ -1,0 +1,120 @@
+{
+    "id": "nl-core-location-01",
+    "referenceId": "Location/nl-core-location-01",
+    "resourceType": "Location",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-location",
+    "fhirVersion": "R3",
+    "name": {
+        "_type": "string",
+        "value": "Orthopodie afdeling ACME in Den Haag"
+    },
+    "managingOrganization": {
+        "_type": "reference",
+        "reference": "Organization/nl-core-organization-02",
+        "display": "Orthopedie - UMCG"
+    },
+    "physicalType": null,
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "info@nictiz.nl"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "MC",
+                        "display": "Mobile Phone",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31611234567"
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        }
+    ],
+    "address": {
+        "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+        "addressType": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "HP",
+                    "display": "Officieel adres",
+                    "system": "http://hl7.org/fhir/v3/AddressUse"
+                }
+            ]
+        },
+        "official": {
+            "_ext": true,
+            "_type": "boolean",
+            "value": true
+        },
+        "use": {
+            "_type": "code",
+            "value": "home"
+        },
+        "type": {
+            "_type": "code",
+            "value": "both"
+        },
+        "line": [
+            {
+                "streetName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Knolweg"
+                },
+                "houseNumber": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "55"
+                },
+                "buildingNumbersuffix": [],
+                "unitID": null,
+                "additionalLocator": null
+            }
+        ],
+        "city": {
+            "_type": "string",
+            "value": "Den Haag"
+        },
+        "district": null,
+        "postalCode": {
+            "_type": "string",
+            "value": "9132AG"
+        },
+        "country": {
+            "_type": "string",
+            "value": "NLD"
+        }
+    }
+}
