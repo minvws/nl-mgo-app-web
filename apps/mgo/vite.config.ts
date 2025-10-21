@@ -54,7 +54,7 @@ export default defineConfig({
                 `media-src 'none'`,
                 `frame-src 'none'`,
                 // 'data:' to allow internal data fetching for creating blob urls
-                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data:`,
+                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data: https://app-api.test.mgo.irealisatie.nl`,
                 `worker-src 'none'`,
                 `form-action 'none'`,
                 // 'unsafe-inline' DEV ONLY - is needed as the vite development server uses inline scripts

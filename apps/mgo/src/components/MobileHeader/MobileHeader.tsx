@@ -58,15 +58,7 @@ export function MobileHeader({ ...rest }: Readonly<MobileHeaderProps>) {
                 <div className="absolute inset-0 bg-black opacity-50" />
             </Fade>
 
-            <StickyHeader
-                menuIsOpen={isOpen}
-                className={cn(
-                    surfaceStyle,
-                    'h-[70px]',
-                    'border-b-solid border-b border-b-gray-50 dark:border-b-gray-700'
-                )}
-                {...rest}
-            >
+            <StickyHeader menuIsOpen={isOpen} className={cn(surfaceStyle, 'h-[70px]')} {...rest}>
                 <Container
                     className="z-40 flex h-full items-center justify-between"
                     ref={menuContentRef}

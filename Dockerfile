@@ -40,9 +40,11 @@ FROM nginx:${NGINX_VERSION}-alpine-slim
 ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
 ARG DVA_URL='https://dvp-proxy.test.mgo.irealisatie.nl'
+ARG PFT_URL='https://app-api.test.mgo.irealisatie.nl'
 
 ENV LOAD_URL=$LOAD_URL
 ENV DVA_URL=$DVA_URL
+ENV PFT_URL=$PFT_URL
 ENV NGINX_PORT=8080
 ENV NGINX_ENVSUBST_OUTPUT_DIR="/etc/nginx"
 
@@ -54,7 +56,8 @@ RUN echo -en "// This config was generated from the Dockerfile\n""\
 window.config = {\n""\
   ignore_missing_translations: '$IGNORE_MISSING_TRANSLATIONS',\n""\
   load_url: '$LOAD_URL',\n""\
-  dva_url: '$DVA_URL'\n""\
+  dva_url: '$DVA_URL',\n""\
+  pft_url: '$PFT_URL'\n""\
 };" >/usr/share/nginx/html/config.js
 
 EXPOSE $NGINX_PORT

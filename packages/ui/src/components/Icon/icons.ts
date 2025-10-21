@@ -39,6 +39,7 @@ import Add from '@material-symbols/svg-400/rounded/add.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
 import ChevronRight from '@material-symbols/svg-400/rounded/chevron_right.svg?react';
 import Help from '@material-symbols/svg-400/rounded/help.svg?react';
+
 import Home from '@material-symbols/svg-400/rounded/home.svg?react';
 import Settings from '@material-symbols/svg-400/rounded/settings.svg?react';
 import Close from '@material-symbols/svg-700/rounded/close.svg?react';
@@ -47,6 +48,7 @@ import Favorite from '@material-symbols/svg-700/rounded/favorite.svg?react';
 import CheckFill from '@material-symbols/svg-400/outlined/check_circle-fill.svg?react';
 import InfoFill from '@material-symbols/svg-400/outlined/info-fill.svg?react';
 import FavoriteFill from '@material-symbols/svg-400/rounded/favorite-fill.svg?react';
+import HelpFilled from '@material-symbols/svg-400/rounded/help-fill.svg?react';
 import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
 import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
 
@@ -89,6 +91,7 @@ export const icons = {
     home: Home,
     settings: Settings,
     'check-fill': CheckFill,
+    'help-fill': HelpFilled,
     'home-fill': HomeFill,
     'favorite-fill': FavoriteFill,
     'settings-fill': SettingsFill,

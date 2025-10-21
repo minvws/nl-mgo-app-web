@@ -23,7 +23,7 @@ export function Breadcrumbs() {
                                     <Link
                                         to={crumb.href}
                                         className={cn(
-                                            tw`text-gray-500 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800`,
+                                            tw`text-gray-500 hover:no-underline dark:text-gray-300`,
                                             'underline'
                                         )}
                                     >

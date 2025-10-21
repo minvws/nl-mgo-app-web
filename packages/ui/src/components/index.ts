@@ -3,6 +3,7 @@ export { Alert, type AlertProps } from './Alert/Alert';
 export { Button, type ButtonProps } from './Button/Button';
 export { ButtonCard, type ButtonCardProps } from './ButtonCard/ButtonCard';
 export { Card, type CardProps } from './Card/Card';
+export { ClosableCard } from './ClosableCard/ClosableCard';
 export { ConfirmDialog, type ConfirmDialogProps } from './ConfirmDialog/ConfirmDialog';
 export { Container, type ContainerProps } from './Container/Container';
 export { DescriptionList, type DescriptionListProps } from './DescriptionList/DescriptionList';

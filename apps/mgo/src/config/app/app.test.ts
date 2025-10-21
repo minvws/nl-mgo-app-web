@@ -20,6 +20,7 @@ test('global config values are read', async () => {
         ignore_missing_translations: faker.datatype.boolean(),
         load_url: faker.internet.url(),
         dva_url: faker.internet.url(),
+        pft_url: faker.internet.url(),
     };
 
     vi.stubGlobal('config', globalConfig);
@@ -45,6 +46,7 @@ test('ignores missing translations config key by default true', async () => {
     const globalConfig: AppConfig = {
         load_url: faker.internet.url(),
         dva_url: faker.internet.url(),
+        pft_url: faker.internet.url(),
     };
 
     vi.stubGlobal('config', globalConfig);
@@ -59,6 +61,7 @@ test('ignores missing translations config key can be set to string', async () =>
         ignore_missing_translations: 'true',
         load_url: faker.internet.url(),
         dva_url: faker.internet.url(),
+        pft_url: faker.internet.url(),
     };
 
     vi.stubGlobal('config', globalConfig);
@@ -81,6 +84,7 @@ test.each<[boolean, unknown]>([
             ignore_missing_translations: value,
             load_url: faker.internet.url(),
             dva_url: faker.internet.url(),
+            pft_url: faker.internet.url(),
         };
 
         vi.stubGlobal('config', globalConfig);

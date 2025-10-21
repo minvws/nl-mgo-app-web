@@ -2,12 +2,16 @@ import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCatego
 import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
+import { usePft } from '$/pft/usePft';
 import { useStore } from '$/store';
 import { Heading } from '@minvws/mgo-ui';
 
 export function Overview() {
     const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const organizations = useStore.use.organizations();
+
+    // preload the patient friendly terms information
+    usePft();
 
     return (
         <>

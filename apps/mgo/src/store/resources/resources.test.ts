@@ -1,7 +1,7 @@
 import { faker } from '$test/faker';
 import { expect, test } from 'vitest';
 import { useStore } from '..';
-import { ResourceSource } from './resources';
+import { Resource, ResourceSource } from './resources';
 
 function mockSource(): ResourceSource {
     return {
@@ -32,7 +32,7 @@ test('syncResources can delete, update and add new resources', async () => {
     state = useStore.getState();
     expect(state.resources.length).toBe(2);
 
-    const resourceIds = state.resources.map((resource) => resource.mgoResource.id);
+    const resourceIds = state.resources.map((resource: Resource) => resource.mgoResource.id);
     expect(resourceIds).not.toContain(toBeDeletedResource.id);
     expect(resourceIds).toContain(updatedResource.id);
     expect(resourceIds).toContain(updatedResource.id);
@@ -81,7 +81,7 @@ test('syncResources does not touch resources from other sources', async () => {
 
     expect(state.resources.length).toBe(3);
 
-    const resourceIds = state.resources.map((resource) => resource.mgoResource.id);
+    const resourceIds = state.resources.map((resource: Resource) => resource.mgoResource.id);
     expect(resourceIds).toContain(otherResource1.id);
     expect(resourceIds).toContain(otherResource2.id);
     expect(resourceIds).not.toContain(resource1.id);
@@ -155,10 +155,14 @@ test('getResourcesByProfiles returns the resources by profiles and organizations
             organization1.id;
     resource4.source.organizationId = organization2.id;
 
-    resource1.mgoResource.profile = 'foobar' as any;
-    resource2.mgoResource.profile = 'foobar' as any;
-    resource3.mgoResource.profile = 'barbaz' as any;
-    resource4.mgoResource.profile = 'foobar' as any;
+    // @ts-expect-error - Testing with string profile
+    resource1.mgoResource.profile = 'foobar';
+    // @ts-expect-error - Testing with string profile
+    resource2.mgoResource.profile = 'foobar';
+    // @ts-expect-error - Testing with string profile
+    resource3.mgoResource.profile = 'different';
+    // @ts-expect-error - Testing with string profile
+    resource4.mgoResource.profile = 'foobar';
 
     useStore.setState({ resources: [resource1, resource2, resource3, resource4] });
     const { getResourcesByProfiles } = useStore.getState();

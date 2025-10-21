@@ -6,18 +6,18 @@ import { type CompositionProps } from '../../hooks/useComposition/useComposition
 import { useOnMount } from '../../hooks/useOnMount/useOnMount';
 import { tw } from '../../utils/tw/tw';
 
-export interface CollapseProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
-    readonly expanded: boolean;
+export interface CollapsibleProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
+    readonly isOpen: boolean;
 }
 
-export const Collapse = ({ className, children, expanded, ...rest }: CollapseProps) => {
+export const Collapsible = ({ className, children, isOpen, ...rest }: CollapsibleProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const animationDuration = useAnimationDuration(300);
     const collapsedSize = '0px';
 
     useOnMount(() => {
-        if (!expanded) {
+        if (!isOpen) {
             rootRef.current!.style.height = collapsedSize;
         }
     });
@@ -26,10 +26,10 @@ export const Collapse = ({ className, children, expanded, ...rest }: CollapsePro
     const getWrapperSize = () => `${contentRef.current ? contentRef.current.clientHeight : 0}px`;
 
     const transitionStyles: Partial<Record<TransitionStatus, string>> = {
-        entering: tw`overflow-hidden`,
-        entered: tw`overflow-visible`,
-        exiting: tw`overflow-hidden`,
-        exited: tw`hidden`,
+        entering: tw`overflow-hidden opacity-100`,
+        entered: tw`overflow-visible opacity-100`,
+        exiting: tw`overflow-hidden opacity-0`,
+        exited: tw`hidden opacity-0`,
     };
 
     const callbacks = {
@@ -64,11 +64,11 @@ export const Collapse = ({ className, children, expanded, ...rest }: CollapsePro
     };
 
     return (
-        <Transition nodeRef={rootRef} in={expanded} timeout={animationDuration} {...callbacks}>
+        <Transition nodeRef={rootRef} in={isOpen} timeout={animationDuration} {...callbacks}>
             {(state) => (
                 <div
                     style={{ transitionDuration: `${animationDuration}ms` }}
-                    className={`min-h-0 transform-gpu transition-[height] ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}`}
+                    className={`min-h-0 transform-gpu opacity-0 transition-[height,opacity] ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}`}
                     ref={rootRef}
                 >
                     <div ref={contentRef} className={twMerge('overflow-auto', className)} {...rest}>
