@@ -551,6 +551,54 @@
       "value": "Adres soort"
     }
   ],
+  "r3.nl_core_careplan": [
+    {
+      "type": 0,
+      "value": "Zorgplan"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention": [
+    {
+      "type": 0,
+      "value": "Verpleegkundige actie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.comment": [
+    {
+      "type": 0,
+      "value": "Opmerkingen"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.description": [
+    {
+      "type": 0,
+      "value": "Instructie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing": [
+    {
+      "type": 0,
+      "value": "Frequentie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Zorgresultaat"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.reference": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r3.nl_core_careplan.goal": [
+    {
+      "type": 0,
+      "value": "Behandeldoel"
+    }
+  ],
   "r3.nl_core_careteam": [
     {
       "type": 0,

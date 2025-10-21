@@ -1,0 +1,129 @@
+{
+    "resourceType": "CarePlan",
+    "id": "nl-core-careplan-01",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-careplan"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "http://myexample.com/system/careplan",
+            "value": "123456789"
+        },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15cf59bf-8fdf-11ec-5728-020000000000"
+        }
+    ],
+    "status": "active",
+    "intent": "plan",
+    "subject": {
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "context": {
+        "reference": "EpisodeOfCare/nl-core-episodeofcare-01",
+        "display": "Gebroken been"
+    },
+    "period": {
+        "start": "2019-02-06"
+    },
+    "author": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                    "valueReference": {
+                        "reference": "PractitionerRole/nl-core-practitionerrole-04",
+                        "display": "Medisch specialisten, geriatrie"
+                    }
+                }
+            ],
+            "reference": "Practitioner/nl-core-practitioner-04",
+            "display": "Dirk de Vries"
+        }
+    ],
+    "goal": [
+        {
+            "reference": "Goal/zib-treatmentobjective-01",
+            "display": "Volledig herstel met betrekking tot het kunnen lopen"
+        }
+    ],
+    "activity": [
+        {
+            "reference": {
+                "reference": "ProcedureRequest/zib-procedurerequest-02",
+                "display": "Aanvrager: Dr. J. Jansen"
+            }
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
+                    "valueString": "De interventie verliep zeer soepel."
+                }
+            ],
+            "outcomeReference": [
+                {
+                    "reference": "Observation/zib-generalmeasurement-01",
+                    "display": "Health of the Nation Outcome Scale - summated: 7 score"
+                }
+            ],
+            "detail": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/extension-medicaldevice",
+                        "valueReference": {
+                            "reference": "DeviceUseStatement/zib-wound-medicaldevice-01",
+                            "display": "Verband"
+                        }
+                    }
+                ],
+                "category": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "9632001",
+                            "display": "Nursing Procedure"
+                        }
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "228567003",
+                            "display": "ontspanningstechniek van Benson (regime/therapie)"
+                        }
+                    ]
+                },
+                "reasonReference": [
+                    {
+                        "reference": "Condition/zib-problem-09",
+                        "display": "Gebroken Been"
+                    }
+                ],
+                "goal": [
+                    {
+                        "reference": "Goal/zib-treatmentobjective-02",
+                        "display": "Pijn verminderen"
+                    }
+                ],
+                "status": "completed",
+                "scheduledTiming": {
+                    "repeat": {
+                        "boundsPeriod": {
+                            "start": "2019-02-06",
+                            "end": "2019-02-09"
+                        },
+                        "frequency": 2,
+                        "period": 1,
+                        "periodUnit": "d"
+                    }
+                }
+            }
+        }
+    ]
+}

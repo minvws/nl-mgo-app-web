@@ -183,6 +183,22 @@
   ],
   "r3.nl_core_address.use": [
   ],
+  "r3.nl_core_careplan": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.comment": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.description": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.reference": [
+  ],
+  "r3.nl_core_careplan.goal": [
+  ],
   "r3.nl_core_careteam": [
   ],
   "r3.nl_core_episodeofcare": [
