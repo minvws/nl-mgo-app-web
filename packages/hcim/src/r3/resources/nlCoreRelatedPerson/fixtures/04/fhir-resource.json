@@ -1,0 +1,177 @@
+{
+    "resourceType": "RelatedPerson",
+    "id": "nl-core-relatedperson-04",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "extension": [
+        {
+            "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1753faed-8fdf-11ec-8566-020000000000"
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "relationship": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/RoleCode",
+                "code": "NMTH",
+                "display": "Natural mother"
+            }
+        ]
+    },
+    "name": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                    "valueCode": "NL4"
+                }
+            ],
+            "text": "Hanneke de Haas - ter Boom",
+            "family": "de Haas - ter Boom",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Haas"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix",
+                        "valueString": "ter"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name",
+                        "valueString": "Boom"
+                    }
+                ]
+            },
+            "given": ["Hanneke", "H.A.K."],
+            "_given": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "CL"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "IN"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "06-22222222",
+            "use": "home"
+        },
+        {
+            "system": "email",
+            "value": "h.terboom@example.com",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "HP",
+                                "display": "Officieel adres"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                    "valueBoolean": true
+                }
+            ],
+            "use": "home",
+            "line": ["Knalweg 900"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Knalweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "900"
+                        }
+                    ]
+                }
+            ],
+            "city": "Sitswaard",
+            "postalCode": "1234XA",
+            "country": "Nederland",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

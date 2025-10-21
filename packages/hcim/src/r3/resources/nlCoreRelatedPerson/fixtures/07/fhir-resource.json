@@ -1,0 +1,173 @@
+{
+    "resourceType": "RelatedPerson",
+    "id": "nl-core-relatedperson-07",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "extension": [
+        {
+            "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "177908fb-8fdf-11ec-8019-020000000000"
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "relationship": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/RoleCode",
+                "code": "SIS",
+                "display": "Sister"
+            }
+        ]
+    },
+    "name": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                    "valueCode": "NL4"
+                }
+            ],
+            "text": "Sophie Vollebregt - de Haas",
+            "family": "Vollebregt - de Haas",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Vollebregt"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name",
+                        "valueString": "Haas"
+                    }
+                ]
+            },
+            "given": ["Sophie", "S.H."],
+            "_given": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "CL"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "IN"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "06-11223344",
+            "use": "home"
+        },
+        {
+            "system": "email",
+            "value": "s.vollebregt@example.com",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "HP",
+                                "display": "Officieel adres"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                    "valueBoolean": true
+                }
+            ],
+            "use": "home",
+            "line": ["Kraakweg 465"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Kraakweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "465"
+                        }
+                    ]
+                }
+            ],
+            "city": "Huissen",
+            "postalCode": "1111XP",
+            "country": "Nederland",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

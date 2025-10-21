@@ -1,0 +1,151 @@
+{
+    "resourceType": "RelatedPerson",
+    "id": "nl-core-relatedperson-06",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "extension": [
+        {
+            "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "176d73dd-8fdf-11ec-1810-020000000000"
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "relationship": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/RoleCode",
+                "code": "BRO",
+                "display": "Brother"
+            }
+        ]
+    },
+    "name": [
+        {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order",
+                    "valueCode": "NL4"
+                }
+            ],
+            "text": "Hans de Haas",
+            "family": "de Haas",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Haas"
+                    }
+                ]
+            },
+            "given": ["Hans", "H.A.P."],
+            "_given": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "CL"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier",
+                            "valueCode": "IN"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "06-99887766",
+            "use": "home"
+        },
+        {
+            "system": "email",
+            "value": "h.dehaas@example.com",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "use": "home",
+            "line": ["Radarweg 9663"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Radarweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "9663"
+                        }
+                    ]
+                }
+            ],
+            "city": "Amstelslot",
+            "postalCode": "2244AB",
+            "country": "Nederland",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

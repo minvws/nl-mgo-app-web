@@ -659,6 +659,12 @@
       "value": "Zorgverlener rol"
     }
   ],
+  "r3.nl_core_relatedperson": [
+    {
+      "type": 0,
+      "value": "Gerelateerd persoon"
+    }
+  ],
   "r3.zib_administration_agreement.performer": [
     {
       "type": 0,

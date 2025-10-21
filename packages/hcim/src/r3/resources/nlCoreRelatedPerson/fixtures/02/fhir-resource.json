@@ -1,0 +1,151 @@
+{
+    "resourceType": "RelatedPerson",
+    "id": "nl-core-releatedperson-02",
+    "meta": {
+        "versionId": "3",
+        "lastUpdated": "2016-12-08T14:07:59.978+00:00",
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "extension": [
+        {
+            "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "173c39d5-8fdf-11ec-1310-020000000000"
+        }
+    ],
+    "patient": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "relationship": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/v3/RoleCode",
+                "code": "HUSB",
+                "display": "husband"
+            }
+        ]
+    },
+    "name": [
+        {
+            "text": "Henk de Haas",
+            "family": "de Haas",
+            "_family": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-prefix",
+                        "valueString": "de"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                        "valueString": "Haas"
+                    }
+                ]
+            },
+            "given": ["Henk"]
+        }
+    ],
+    "telecom": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "0612345990",
+            "use": "work"
+        },
+        {
+            "system": "email",
+            "value": "dehaas@work.com",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "HP",
+                                "display": "Officieel adres"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                    "valueBoolean": true
+                }
+            ],
+            "use": "home",
+            "line": ["Straatweg 12bII"],
+            "_line": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                            "valueString": "Straatweg"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                            "valueString": "12"
+                        },
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+                            "valueString": "bII"
+                        }
+                    ]
+                }
+            ],
+            "city": "Woonplaats",
+            "postalCode": "1200AA",
+            "country": "NLD",
+            "_country": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                    "code": "6030",
+                                    "display": "Nederland"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

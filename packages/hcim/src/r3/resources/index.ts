@@ -18,6 +18,7 @@ export * from './nlCoreOrganization/nlCoreOrganization.js';
 export * from './nlCorePatient/nlCorePatient.js';
 export * from './nlCorePractitioner/nlCorePractitioner.js';
 export * from './nlCorePractitionerRole/nlCorePractitionerRole.js';
+export * from './nlCoreRelatedPerson/nlCoreRelatedPerson.js';
 
 export * from './eAfspraakAppointment/eAfspraakAppointment.js';
 export {
