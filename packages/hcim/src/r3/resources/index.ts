@@ -13,6 +13,7 @@ export * from './gpEncounterReport/gpEncounterReport.js';
 export * from './gpJournalEntry/gpJournalEntry.js';
 export * from './gpLaboratoryResult/gpLaboratoryResult.js';
 
+export * from './nlCoreCareTeam/nlCoreCareTeam.js';
 export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare.js';
 export * from './nlCoreOrganization/nlCoreOrganization.js';
 export * from './nlCorePatient/nlCorePatient.js';

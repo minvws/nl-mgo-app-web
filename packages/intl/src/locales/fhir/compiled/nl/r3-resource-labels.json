@@ -551,6 +551,12 @@
       "value": "Adres soort"
     }
   ],
+  "r3.nl_core_careteam": [
+    {
+      "type": 0,
+      "value": "Zorgteam"
+    }
+  ],
   "r3.nl_core_episodeofcare": [
     {
       "type": 0,

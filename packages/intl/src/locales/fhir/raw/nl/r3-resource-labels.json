@@ -91,6 +91,7 @@
     "r3.nl_core_address.official": "Markeer een adres als een 'officieel geregistreerd adres.",
     "r3.nl_core_address.type": "Adres type",
     "r3.nl_core_address.use": "Adres soort",
+    "r3.nl_core_careteam": "Zorgteam",
     "r3.nl_core_episodeofcare": "Episode",
     "r3.nl_core_episodeofcare.type": "Concern label",
     "r3.nl_core_humanname": "Naam",

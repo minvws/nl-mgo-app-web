@@ -1,0 +1,146 @@
+{
+    "resourceType": "CareTeam",
+    "id": "ont-ver-bglz-1-1-nl-core-careteam-01",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#36e7962c398cf0be"
+            }
+        ],
+        "versionId": "1",
+        "lastUpdated": "2025-02-18T10:35:08.947+00:00",
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-careteam"]
+    },
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table>\n        <caption>Zorgteam. Subject: Fiona XXX_Mutter. Id: 8fea361b-e3e1-11eb-2548-020000000000 (urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6)</caption>\n        <tbody>\n          <tr>\n            <th>Participant</th>\n            <td>\n              <ul>\n                <li>\n                  <span title=\"Verwijzer (REF - v3/ParticipationType)\">Verwijzer</span>Laura Lanen<div>Zorgverlenerrol: Huisarts</div>\n                </li>\n                <li>\n                  <span title=\"Hoofdbehandelaar (RESP - v3/ParticipationType)\">Hoofdbehandelaar</span>Niels Helmond<div>Zorgverlenerrol: Neuroloog</div> (uit naam van: AA-zkh - Noord)</li>\n                <li>Petra Johanna Vreeswijk<div>Zorgverlenerrol: Verpleegkundige</div> (uit naam van: AA-zkh - Noord)</li>\n                <li>Thomas Janssen<div>Zorgverlenerrol: Fysiotherapeut</div> (uit naam van: AA-zkh - Noord)</li>\n                <li>Hilda Bruinsma<div>Zorgverlenerrol: Logopedist</div> (uit naam van: AA-zkh - Noord)</li>\n                <li>AA-zkh - Noord</li>\n              </ul>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "8fea361b-e3e1-11eb-2548-020000000000"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/ont-ver-XXX-Mutter",
+        "display": "Fiona XXX_Mutter"
+    },
+    "participant": [
+        {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "REF",
+                        "display": "Verwijzer"
+                    }
+                ]
+            },
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/ont-ver-bglz-1-1-zorgverlenerrol-01",
+                            "display": "Huisarts"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-01",
+                "display": "Laura Lanen"
+            }
+        },
+        {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "RESP",
+                        "display": "Hoofdbehandelaar"
+                    }
+                ]
+            },
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/ont-ver-bglz-1-1-zorgverlenerrol-02",
+                            "display": "Neuroloog"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-02",
+                "display": "Niels Helmond"
+            },
+            "onBehalfOf": {
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            }
+        },
+        {
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/ont-ver-bglz-1-1-zorgverlenerrol-03",
+                            "display": "Verpleegkundige"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-03",
+                "display": "Petra Johanna Vreeswijk"
+            },
+            "onBehalfOf": {
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            }
+        },
+        {
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/ont-ver-bglz-1-1-zorgverlenerrol-04",
+                            "display": "Fysiotherapeut"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-04",
+                "display": "Thomas Janssen"
+            },
+            "onBehalfOf": {
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            }
+        },
+        {
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/ont-ver-bglz-1-1-zorgverlenerrol-05",
+                            "display": "Logopedist"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-05",
+                "display": "Hilda Bruinsma"
+            },
+            "onBehalfOf": {
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            }
+        },
+        {
+            "member": {
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            }
+        }
+    ]
+}
