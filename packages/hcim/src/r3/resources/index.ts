@@ -37,6 +37,7 @@ export * from './zibBodyHeight/zibBodyHeight.js';
 export * from './zibBodyWeight/zibBodyWeight.js';
 export * from './zibDrugUse/zibDrugUse.js';
 export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter.js';
+export * from './zibFamilySituation/zibFamilySituation.js';
 export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus.js';
 export {
     zibGeneralMeasurement,

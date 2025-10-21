@@ -1,0 +1,149 @@
+{
+    "resourceType": "Observation",
+    "id": "zib-familysituation-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19d1c651-8fdf-11ec-9544-020000000000"
+        }
+    ],
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "365470003",
+                "display": "Finding of family details and household composition (finding)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": "2018-08-10",
+    "comment": "Beide inwonende kinderen zijn zeer zelfstandig.",
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "224130005",
+                        "display": "Household composition (observable entity)"
+                    }
+                ]
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "160756002",
+                        "display": "Lives with relatives (finding)"
+                    }
+                ],
+                "text": "Woont samen met familie"
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "224118004",
+                        "display": "Number of offspring (observable entity)"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 3
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "55811000146107",
+                        "display": "Number of children living at home (observable entity)"
+                    }
+                ]
+            },
+            "valueQuantity": {
+                "value": 2
+            }
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "406192005",
+                        "display": "Caregiver behavior (observable entity)"
+                    }
+                ]
+            },
+            "valueString": "Heeft zorg voor vader die in huis woont."
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation-LivingAtHomeIndicator",
+                    "valueBoolean": true
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "67822003",
+                        "display": "Child"
+                    }
+                ]
+            },
+            "valueDateTime": "2009-08-02"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation-LivingAtHomeIndicator",
+                    "valueBoolean": true
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "67822003",
+                        "display": "Child"
+                    }
+                ]
+            },
+            "valueDateTime": "2011-04-02"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation-LivingAtHomeIndicator",
+                    "valueBoolean": false
+                }
+            ],
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "67822003",
+                        "display": "Child"
+                    }
+                ]
+            },
+            "valueDateTime": "2006-04-02"
+        }
+    ]
+}

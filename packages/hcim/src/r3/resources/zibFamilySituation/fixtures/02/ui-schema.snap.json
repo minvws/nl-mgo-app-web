@@ -1,0 +1,52 @@
+{
+    "label": "Gezinssituatie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "10 augustus 2018"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "19d1c651-8fdf-11ec-9544-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Kinderen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Irma XXX_Helleman-de Haas",
+                    "reference": "Patient/nl-core-patient-03"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Beide inwonende kinderen zijn zeer zelfstandig."
+                    }
+                }
+            ]
+        }
+    ]
+}

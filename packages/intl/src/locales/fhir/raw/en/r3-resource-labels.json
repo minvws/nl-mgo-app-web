@@ -139,6 +139,8 @@
     "r3.zib_body_weight.clothing": "",
     "r3.zib_encounter.hospitalization": "",
     "r3.zib_encounter.participant": "",
+    "r3.zib_family_situation.children": "",
+    "r3.zib_family_situation.children.living_at_home": "",
     "r3.zib_laboratory_test_result_observation.context": "",
     "r3.zib_laboratory_test_result_observation.general_test_information": "",
     "r3.zib_laboratory_test_result_observation.interpretation": "",

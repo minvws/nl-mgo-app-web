@@ -139,6 +139,8 @@
     "r3.zib_body_weight.clothing": "Kleding",
     "r3.zib_encounter.hospitalization": "Opname",
     "r3.zib_encounter.participant": "Zorgverlener",
+    "r3.zib_family_situation.children": "Kinderen",
+    "r3.zib_family_situation.children.living_at_home": "Thuiswonend",
     "r3.zib_laboratory_test_result_observation.context": "Verband",
     "r3.zib_laboratory_test_result_observation.general_test_information": "Algemene testinformatie",
     "r3.zib_laboratory_test_result_observation.interpretation": "Interpretatie",

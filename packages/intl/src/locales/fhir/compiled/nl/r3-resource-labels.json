@@ -839,6 +839,18 @@
       "value": "Zorgverlener"
     }
   ],
+  "r3.zib_family_situation.children": [
+    {
+      "type": 0,
+      "value": "Kinderen"
+    }
+  ],
+  "r3.zib_family_situation.children.living_at_home": [
+    {
+      "type": 0,
+      "value": "Thuiswonend"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.context": [
     {
       "type": 0,
