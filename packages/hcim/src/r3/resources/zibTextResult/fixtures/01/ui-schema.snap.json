@@ -1,0 +1,67 @@
+{
+    "label": "Tekst uitslag",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "22 augustus 2024"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "75c8f9ab-0421-11ec-9193-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Adam XXX_Bals",
+                    "reference": "Patient/ont-ver-XXX-Bals"
+                },
+                {
+                    "label": "Onderzoek",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "procedure (71388002 in codesysteem http://snomed.info/sct)",
+                            "code": "71388002",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Tekst uitslag resultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Speciele anamnese         Sinds zeker een half jaar geleidelijk ontstane inmiddels al 4 weken bestaande somberheid, wanhoop, interesseverlies en anhedonie, continu, elke dag, merendeel van de dag. Sinds maanden inslaapstoornissen (> 1uur), doorslapen gaat goed, vroeg ontwaken +, eetlust afgenomen, wschl 2 kg kwijt, wschl dagschommel, schuldgevoelens naar ouders waarvan niet duidelijk wordt of die overmatig zijn, suicidale ideatie incl plan, angstig en paniekaanvallen gehad, merkt dat hij minder energie heeft. Zijn vrouw vindt hem motorisch onrustig.         Algemene indrukken         Mager, nerveus gespannen, vriendelijk contact maar verder afwerend         Cognitieve functies         Geen psychotische kenmerken, mn geen paranoidie, geen armoedewanen         Evidente concentratieproblemen, inprenting en orientatie in TPP ongestoord         Geen formele denkstoornissen         Intelligentie geschat bovengemiddeld         Affectieve functies         Blanco VG, dus geen eerdere depressies, geen manieen of hypomanieen         Familie niet belast met depressie, bipolairen, opnames, suicide         Conatieve functies         1 alcohol, geen VG met overmaat alcohol of THC, IVDU e.d.         Persoonlijkheid         Wschl perfectionistisch, geneigd tot hoge eisen, vgls vrouw regelmatig conflictvermijdend         Conclusie en beschrijvende diagnose         Eerste depressieve episode, ernstig, met vitaal kenmerk mogelijk in vorm van dagschommel, met forse suicidaliteit en suicidale Einengung, bij blanco voorgeschiedenis. Lijkt geluxeerd door langjarige conflicten in familiesfeer en overbelasting in werk"
+                    }
+                },
+                {
+                    "label": "Tekst uitslag status",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Final (final in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1)",
+                            "code": "final",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1"
+                        }
+                    ]
+                },
+                {
+                    "label": "Uitvoerder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}

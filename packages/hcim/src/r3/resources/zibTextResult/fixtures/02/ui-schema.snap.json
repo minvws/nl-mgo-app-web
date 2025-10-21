@@ -1,0 +1,82 @@
+{
+    "label": "Tekst uitslag",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "23 december 2000 om 11:25:00 GMT+1"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1ea32625-8fdf-11ec-1302-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Onderzoek",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "röntgen (363680008 in codesysteem http://snomed.info/sct)",
+                            "code": "363680008",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Tekst uitslag resultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Helaas moet de breuk geopereerd worden."
+                    }
+                },
+                {
+                    "label": "Tekst uitslag status",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Aanvullend (appended in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1)",
+                            "code": "appended",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Uitvoerder",
+            "children": [
+                {
+                    "label": "Uitvoerder",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Vaste Huisarts 1",
+                    "reference": "Practitioner/nl-core-practitioner-02"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Responsible Party (RESP in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                            "code": "RESP",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

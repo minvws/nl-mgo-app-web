@@ -1223,6 +1223,24 @@
       "value": "Product"
     }
   ],
+  "r3.zib_text_result.conclusion": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag resultaat"
+    }
+  ],
+  "r3.zib_text_result.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r3.zib_text_result.performer.actor": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
   "r3.zib_treatment_directive.additional_sources": [
     {
       "type": 0,

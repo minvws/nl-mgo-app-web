@@ -1,0 +1,74 @@
+{
+    "id": "zib-textresult-01",
+    "referenceId": "DiagnosticReport/zib-textresult-01",
+    "resourceType": "DiagnosticReport",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-TextResult",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1ea32625-8fdf-11ec-1302-020000000000",
+            "type": null
+        }
+    ],
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2000-12-23T10:25:00+00:00"
+    },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "performer": [
+        {
+            "actor": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-02",
+                "display": "Vaste Huisarts 1"
+            },
+            "role": {
+                "healthProfessionalRole": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "RESP",
+                            "display": "Responsible Party",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "status": {
+        "_ext": true,
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "appended",
+                "display": "Aanvullend",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1"
+            }
+        ]
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "363680008",
+                "display": "röntgen",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "conclusion": {
+        "_type": "string",
+        "value": "Helaas moet de breuk geopereerd worden."
+    }
+}
