@@ -1229,6 +1229,18 @@
       "value": "Bevestigd"
     }
   ],
+  "r3.zib_treatment_objective.expressed_by": [
+    {
+      "type": 0,
+      "value": "Auteur"
+    }
+  ],
+  "r3.zib_treatment_objective.target.measure": [
+    {
+      "type": 0,
+      "value": "Streefwaarde / gewenste gezondheidstoestand"
+    }
+  ],
   "r3.zib_vaccination.report_origin": [
     {
       "type": 0,

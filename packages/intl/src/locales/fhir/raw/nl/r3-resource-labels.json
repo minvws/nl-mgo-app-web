@@ -204,6 +204,8 @@
     "r3.zib_treatment_directive.source_reference": "Bron referentie",
     "r3.zib_treatment_directive.verification": "Verificatie",
     "r3.zib_treatment_directive.verified": "Bevestigd",
+    "r3.zib_treatment_objective.expressed_by": "Auteur",
+    "r3.zib_treatment_objective.target.measure": "Streefwaarde \/ gewenste gezondheidstoestand",
     "r3.zib_vaccination.report_origin": "Informatiebron",
     "r3.zib_vaccination_recommendation": "Vaccinatieadvies",
     "r3.zib_vaccination_recommendation.recommendation": "Vaccinatieadvies",

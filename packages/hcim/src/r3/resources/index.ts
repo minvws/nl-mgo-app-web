@@ -62,6 +62,7 @@ export * from './zibProcedureRequest/zibProcedureRequest.js';
 export * from './zibProduct/zibProduct.js';
 export * from './zibTobaccoUse/zibTobaccoUse.js';
 export * from './zibTreatmentDirective/zibTreatmentDirective.js';
+export * from './zibTreatmentObjective/zibTreatmentObjective.js';
 export * from './zibVaccination/zibVaccination.js';
 export * from './zibVaccinationRecommendation/zibVaccinationRecommendation.js';
 

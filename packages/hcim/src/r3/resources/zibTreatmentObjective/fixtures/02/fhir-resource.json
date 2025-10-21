@@ -1,0 +1,24 @@
+{
+    "resourceType": "Goal",
+    "id": "zib-treatmentobjective-02",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentObjective"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1ee9159f-8fdf-11ec-1472-020000000000"
+        }
+    ],
+    "status": "accepted",
+    "description": {
+        "text": "Volledig genezing van de wond."
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "I. XXX_Helleman-de Haas"
+    }
+}

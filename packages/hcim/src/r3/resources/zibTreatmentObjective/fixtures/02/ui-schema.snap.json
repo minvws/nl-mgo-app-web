@@ -1,0 +1,52 @@
+{
+    "label": "Behandeldoel",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Gewenst zorgresultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1ee9159f-8fdf-11ec-1472-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "I. XXX_Helleman-de Haas",
+                    "reference": "Patient/nl-core-patient-03"
+                },
+                {
+                    "label": "Probleem",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Streefwaarde / gewenste gezondheidstoestand",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}
