@@ -851,6 +851,18 @@
       "value": "Thuiswonend"
     }
   ],
+  "r3.zib_help_from_others": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
+    }
+  ],
+  "r3.zib_help_from_others.activity.detail": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
+    }
+  ],
   "r3.zib_laboratory_test_result_observation.context": [
     {
       "type": 0,

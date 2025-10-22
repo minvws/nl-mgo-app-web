@@ -1,0 +1,77 @@
+{
+    "label": "Hulp van anderen",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "72e75d8c-0421-11ec-1549-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Adam XXX_Bals",
+                    "reference": "Patient/ont-ver-XXX-Bals"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Hulp van anderen",
+            "children": [
+                {
+                    "label": "Aard",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Mentale ondersteuning en dagbesteding"
+                    }
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Dagelijks"
+                    }
+                },
+                {
+                    "label": "Hulpverlener",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Wilma Lanen-XXX_Bals"
+                        }
+                    ]
+                },
+                {
+                    "label": "Soort hulp",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Mantelzorg (386229000 in codesysteem http://snomed.info/sct)",
+                            "code": "386229000",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}

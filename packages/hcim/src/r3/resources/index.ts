@@ -43,6 +43,7 @@ export {
     zibGeneralMeasurement,
     type ZibGeneralMeasurement,
 } from './zibGeneralMeasurement/zibGeneralMeasurement.js';
+export * from './zibHelpFromOthers/zibHelpFromOthers.js';
 export {
     zibLaboratoryTestResultObservation,
     type ZibLaboratoryTestResultObservation,
