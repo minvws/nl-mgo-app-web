@@ -57,6 +57,7 @@ export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest.js';
 export * from './zibMedicationAgreement/zibMedicationAgreement.js';
 export * from './zibMedicationUse/zibMedicationUse.js';
 export * from './zibNutritionAdvice/zibNutritionAdvice.js';
+export * from './zibParticipationInSociety/zibParticipationInSociety.js';
 export * from './zibPayer/zibPayer.js';
 export * from './zibProblem/zibProblem.js';
 export * from './zibProcedure/zibProcedure.js';

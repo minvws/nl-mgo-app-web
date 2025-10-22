@@ -1079,6 +1079,12 @@
       "value": "Auteur"
     }
   ],
+  "r3.zib_participation_in_society.component": [
+    {
+      "type": 0,
+      "value": "Participatie in maatschappij"
+    }
+  ],
   "r3.zib_payer.beneficiary": [
     {
       "type": 0,

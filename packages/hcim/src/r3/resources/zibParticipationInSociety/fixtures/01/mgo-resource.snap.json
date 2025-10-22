@@ -1,0 +1,56 @@
+{
+    "id": "zib-participationinsociety-01",
+    "referenceId": "Observation/zib-participationinsociety-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-ParticipationInSociety",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1c6e07c1-8fdf-11ec-1564-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2018-08-10"
+    },
+    "performer": null,
+    "comment": {
+        "_type": "string",
+        "value": "Bezoekt activiteitencentrum 2 maal per week."
+    },
+    "component": {
+        "socialNetwork": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "Heeft veel aanloop van buren"
+                }
+            }
+        ],
+        "hobby": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "Nordic walking"
+                }
+            }
+        ],
+        "workSituation": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "ICT-er"
+                }
+            }
+        ]
+    }
+}

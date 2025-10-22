@@ -1,0 +1,70 @@
+{
+    "resourceType": "Observation",
+    "id": "zib-participationinsociety-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-ParticipationInSociety"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1c6e07c1-8fdf-11ec-1564-020000000000"
+        }
+    ],
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "314845004",
+                "display": "Patient participation status"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": "2018-08-10",
+    "comment": "Bezoekt activiteitencentrum 2 maal per week.",
+    "component": [
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "365469004",
+                        "display": "Household, family and support network finding (finding)"
+                    }
+                ]
+            },
+            "valueString": "Heeft veel aanloop van buren"
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "405081003",
+                        "display": "Leisure behavior (observable entity)"
+                    }
+                ]
+            },
+            "valueString": "Nordic walking"
+        },
+        {
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "364703007",
+                        "display": "Employment detail (observable entity)"
+                    }
+                ]
+            },
+            "valueString": "ICT-er"
+        }
+    ]
+}
