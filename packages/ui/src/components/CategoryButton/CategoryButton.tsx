@@ -26,6 +26,7 @@ export type CategoryButtonIcon = Extract<
     | 'health_and_safety'
     | 'person'
     | 'account_balance'
+    | 'group'
 >;
 
 const iconColors: Record<CategoryButtonIcon, string> = {
@@ -45,6 +46,7 @@ const iconColors: Record<CategoryButtonIcon, string> = {
     health_and_safety: 'text-purple-800',
     person: 'text-lint-blue-700',
     account_balance: 'text-sky-blue-600',
+    group: 'text-sky-blue-600',
 };
 
 export interface CategoryButtonProps

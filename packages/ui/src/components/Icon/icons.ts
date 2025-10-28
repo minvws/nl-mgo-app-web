@@ -16,6 +16,7 @@ import Encrypted from '@material-symbols/svg-400/outlined/encrypted-fill.svg?rea
 import EventNote from '@material-symbols/svg-400/outlined/event_note.svg?react';
 import Folder from '@material-symbols/svg-400/outlined/folder.svg?react';
 import GppBad from '@material-symbols/svg-400/outlined/gpp_bad-fill.svg?react';
+import Group from '@material-symbols/svg-400/outlined/group.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
 import HealthCross from '@material-symbols/svg-400/outlined/health_cross.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
@@ -59,6 +60,7 @@ export const icons = {
     health_and_safety: HealthAndSafety,
     verified_user: VerifiedUser,
     gpp_bad: GppBad,
+    group: Group,
     progress_activity: ProgressActivity,
     person: Person,
     favorite: Favorite,

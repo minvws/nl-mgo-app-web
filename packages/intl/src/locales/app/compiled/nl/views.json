@@ -298,7 +298,7 @@
   "lab_results.subheading": [
     {
       "type": 0,
-      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans."
+      "value": "Resultaten van onderzoeken en testen die je hebt gehad."
     }
   ],
   "login.digid": [
@@ -466,7 +466,7 @@
   "organization.lab_results_subheading": [
     {
       "type": 0,
-      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans"
+      "value": "Resultaten van onderzoeken en testen die je hebt gehad."
     }
   ],
   "organization.medicine_heading": [

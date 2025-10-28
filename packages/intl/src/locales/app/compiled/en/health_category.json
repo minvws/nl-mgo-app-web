@@ -29,6 +29,14 @@
   ],
   "hc_appointments.subheading": [
   ],
+  "hc_care_plan.heading": [
+  ],
+  "hc_care_plan.subheading": [
+  ],
+  "hc_care_team.heading": [
+  ],
+  "hc_care_team.subheading": [
+  ],
   "hc_complaints.heading": [
   ],
   "hc_complaints.heading_detail": [
@@ -102,8 +110,6 @@
   "hc_patient.heading_summary": [
   ],
   "hc_patient.subheading": [
-  ],
-  "hc_payment.heading": [
   ],
   "hc_payment.heading_detail": [
   ],
@@ -240,6 +246,10 @@
   "zib_body_height.heading": [
   ],
   "zib_body_weight.heading": [
+  ],
+  "zib_care_plan.heading": [
+  ],
+  "zib_care_team.heading": [
   ],
   "zib_drug_use.heading": [
   ],
