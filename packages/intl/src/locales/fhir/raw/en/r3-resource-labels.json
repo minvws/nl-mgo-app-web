@@ -92,6 +92,7 @@
     "r3.nl_core_address.type": "",
     "r3.nl_core_address.use": "",
     "r3.nl_core_careplan": "",
+    "r3.nl_core_careplan.activity": "",
     "r3.nl_core_careplan.activity.nursing_intervention": "",
     "r3.nl_core_careplan.activity.nursing_intervention.comment": "",
     "r3.nl_core_careplan.activity.nursing_intervention.detail.description": "",

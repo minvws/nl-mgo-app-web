@@ -1,0 +1,31 @@
+{
+    "resourceType": "CarePlan",
+    "id": "ont-ver-bglz-1-1-nl-core-careplan-02",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+                "valueUri": "#ef2fbacaf3606e3b"
+            }
+        ],
+        "versionId": "1",
+        "lastUpdated": "2025-02-18T10:35:14.247+00:00",
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-careplan"]
+    },
+    "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table style=\"min-width: 50%; border: 1px solid black; cell-padding: 1em; cell-spacing: 1em;\">\n        <tr>\n          <th style=\"width: 30%; text-align: left;\">probleem</th>\n          <th style=\"width: 20%; text-align: left;\">behandeldoel</th>\n          <th style=\"width: 50%; text-align: left;\">interventie</th>\n        </tr>\n        <tr>\n          <td valign=\"top\">probleem met zichzelf wassen en afdrogen</td>\n          <td valign=\"top\">wassen onafhankelijk</td>\n          <td valign=\"top\">ondersteunen bij wassen en/of persoonlijke hygiëne <br/>1 x per dag</td>\n        </tr>\n        <tr>\n          <td valign=\"top\">probleem met zichzelf kleden </td>\n          <td valign=\"top\">kleden onafhankelijk</td>\n          <td valign=\"top\">ondersteunen bij aankleden <br/>2 x per dag</td>\n        </tr>\n        <tr>\n          <td valign=\"top\">probleem met lopen</td>\n          <td valign=\"top\">lopen met hulp</td>\n          <td valign=\"top\">patiënt mobiliseren</td>\n        </tr>\n        <tr>\n          <td valign=\"top\">risico op decubitus</td>\n          <td valign=\"top\">huid blijft intact</td>\n          <td valign=\"top\">wisselen van positie van patiënt </td>\n        </tr>\n        <tr>\n          <td valign=\"top\">overbelaste mantelzorg</td>\n          <td valign=\"top\">zorgtaken voor echtgenoot worden gecontinueerd</td>\n          <td valign=\"top\">ondersteuning voor verzorger</td>\n        </tr>\n      </table>\n    </div>"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "8f6fd5fb-e3e1-11eb-4723-020000000000"
+        }
+    ],
+    "status": "active",
+    "intent": "order",
+    "subject": {
+        "reference": "Patient/ont-ver-XXX-Mutter",
+        "display": "Fiona XXX_Mutter"
+    }
+}

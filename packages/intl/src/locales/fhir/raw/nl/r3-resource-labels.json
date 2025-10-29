@@ -92,6 +92,7 @@
     "r3.nl_core_address.type": "Adres type",
     "r3.nl_core_address.use": "Adres soort",
     "r3.nl_core_careplan": "Zorgplan",
+    "r3.nl_core_careplan.activity": "Verpleegkundige handeling",
     "r3.nl_core_careplan.activity.nursing_intervention": "Verpleegkundige actie",
     "r3.nl_core_careplan.activity.nursing_intervention.comment": "Opmerkingen",
     "r3.nl_core_careplan.activity.nursing_intervention.detail.description": "Instructie",
