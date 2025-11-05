@@ -26,7 +26,7 @@ export const ClosableCard = ({
         <Collapsible isOpen={isOpen}>
             <Card
                 className={cn(
-                    'bg-opacity-15 dark:bg-opacity-[0.14] mt-2 rounded-lg bg-[#01689B] p-2 dark:bg-[#66A4C3]',
+                    'mt-2 rounded-lg bg-[#01689B]/15 p-2 dark:bg-[#66A4C3]/14',
                     className
                 )}
                 {...rest}
