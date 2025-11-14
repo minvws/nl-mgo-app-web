@@ -767,10 +767,28 @@
       "value": "Contacten met zorgaanbieders"
     }
   ],
+  "zib_familiy_situation.heading": [
+    {
+      "type": 0,
+      "value": "Gezinssituatie"
+    }
+  ],
   "zib_functional_or_mental_status.heading": [
     {
       "type": 0,
       "value": "Mentaal welzijn"
+    }
+  ],
+  "zib_general_measurement.heading": [
+    {
+      "type": 0,
+      "value": "Algemene meting"
+    }
+  ],
+  "zib_help_from_others.heading": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
     }
   ],
   "zib_laboratory_test_result_observation.heading": [
@@ -815,6 +833,12 @@
       "value": "Voedingsadvies"
     }
   ],
+  "zib_participation_in_society.heading": [
+    {
+      "type": 0,
+      "value": "Participatie in de maatschappij"
+    }
+  ],
   "zib_patient.heading": [
     {
       "type": 0,
@@ -843,6 +867,12 @@
     {
       "type": 0,
       "value": "Geplande zorgafspraken"
+    }
+  ],
+  "zib_text_result.heading": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag"
     }
   ],
   "zib_tobacco_use.heading": [
