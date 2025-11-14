@@ -14,14 +14,3 @@ test('renders ButtonCard', async () => {
     const element = await screen.findByRole('button');
     expect(element).toBeVisible();
 });
-
-test('renders ButtonCard in loading state', async () => {
-    const props: ButtonCardProps = {
-        isLoading: true,
-    };
-
-    render(<ButtonCard {...props} />);
-
-    const element = await screen.findByRole('button');
-    expect(element).toBeVisible();
-});

@@ -30,13 +30,13 @@ export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 } & AnchorOrCompositionProps;
 
 const linkStyle: Record<Variant, string> = {
-    default: cn('text-dark-blue-700 visited:text-dark-blue-900 underline hover:no-underline'),
+    default: cn(
+        'text-t-action-link-default-text hover:text-t-action-link-hover-text visited:text-t-action-link-visited-text underline hover:no-underline'
+    ),
     dotted: cn(
-        'text-[#01689B] underline decoration-dotted hover:decoration-solid dark:text-[#66A4C3]'
+        'text-t-action-link-default-text underline decoration-dotted hover:decoration-solid hover:text-t-action-link-hover-text'
     ),
-    monochrome: cn(
-        'text-white no-underline visited:text-white hover:underline dark:text-black dark:visited:text-black'
-    ),
+    inverted: cn('text-t-label-invert no-underline hover:underline'),
 };
 
 export const Link = ({
@@ -57,10 +57,13 @@ export const Link = ({
             <Slottable>{children}</Slottable>
             {iconRight && (
                 <>
-                    <Icon icon={iconRight} className="ml-1.5 inline-block group-hover:hidden" />
+                    <Icon
+                        icon={iconRight}
+                        className="relative -top-[1px] ml-1.5 inline-block group-hover:hidden"
+                    />
                     <Icon
                         icon={`${iconRight}-fill`}
-                        className="ml-1.5 hidden group-hover:inline-block"
+                        className="relative -top-[1px] ml-1.5 hidden group-hover:inline-block"
                     />
                 </>
             )}

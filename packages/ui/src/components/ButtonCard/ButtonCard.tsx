@@ -7,7 +7,6 @@ import {
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
-import { SkeletonText } from '../Skeleton';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
 
@@ -18,13 +17,9 @@ type Details = {
 
 export type ButtonCardProps = HTMLAttributes<HTMLElement> &
     CompositionPropsWithoutChildren &
-    (
-        | (Details & { readonly isLoading?: false })
-        | (Partial<Details> & { readonly isLoading: true })
-    );
+    Details;
 
 export const ButtonCard = ({
-    isLoading = false,
     title,
     description,
     className,
@@ -37,8 +32,8 @@ export const ButtonCard = ({
     return (
         <Comp
             className={cn(
-                'flex w-full border-b border-gray-100 bg-white p-4 text-left break-all hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
-                isLoading && 'cursor-progress',
+                'bg-t-bg-secondary cursor-pointer',
+                'flex w-full border-b border-gray-100 p-4 text-left break-all hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
                 focusStyle,
                 className
             )}
@@ -46,22 +41,15 @@ export const ButtonCard = ({
         >
             <Slottable>{children}</Slottable>
 
-            <SkeletonText
-                className="flex grow flex-col justify-center gap-1 sm:gap-2"
-                height="h-6 sm:h-8"
-                numberOfLines={2}
-                isLoading={isLoading}
-            >
+            <div className="flex grow flex-col">
                 <Stack className="flex flex-col gap-1">
-                    <span className="text-md font-bold text-black sm:text-lg md:text-xl dark:text-white">
+                    <Text size="lg" className="font-bold">
                         {title}
-                    </span>
-                    {description && (
-                        <Text className="text-gray-600 dark:text-gray-400">{description}</Text>
-                    )}
+                    </Text>
+                    {description && <Text className="text-t-label-secondary">{description}</Text>}
                 </Stack>
-            </SkeletonText>
-            {!isLoading && <Icon icon="chevron_right" className="h-8 w-8 shrink-0 fill-gray-500" />}
+            </div>
+            <Icon icon="chevron_right" className="h-8 w-8 shrink-0 fill-gray-500" />
         </Comp>
     );
 };

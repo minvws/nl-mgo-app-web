@@ -44,11 +44,11 @@ export const ConfirmDialog = ({
             {children}
 
             <AlertDialog.Portal>
-                <AlertDialog.Overlay className="fixed inset-0 z-40 bg-black opacity-50 dark:bg-gray-950 dark:opacity-75" />
+                <AlertDialog.Overlay className="fixed inset-0 z-40 bg-black/50 dark:bg-gray-950/75" />
 
                 <AlertDialog.Content className="fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto p-4 md:p-6">
                     <div className="flex min-h-full items-center justify-center">
-                        <div className="shadow-sm-xs flex w-full max-w-[432px] flex-col rounded-lg bg-white p-4 sm:p-6 dark:bg-gray-900">
+                        <div className="bg-t-bg-secondary flex w-full max-w-[432px] flex-col rounded-lg p-4 sm:p-6">
                             <div className="mb-2 flex items-start justify-between md:mb-3">
                                 <AlertDialog.Title asChild>
                                     <Heading asChild size="md">
@@ -73,7 +73,7 @@ export const ConfirmDialog = ({
                             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
                                 {cancelButtonText && (
                                     <AlertDialog.Cancel asChild>
-                                        <Button variant="light" className="grow">
+                                        <Button variant="outline" className="grow">
                                             {cancelButtonText}
                                         </Button>
                                     </AlertDialog.Cancel>

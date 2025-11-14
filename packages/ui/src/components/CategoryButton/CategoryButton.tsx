@@ -78,8 +78,10 @@ export const CategoryButton = ({
             <Card asChild>
                 <Comp
                     className={cn(
-                        'shadow-sm-none border-0 p-0',
-                        'flex w-full items-center gap-4 p-4 text-left',
+                        'border-0 p-0',
+                        'flex w-full items-center gap-4 p-4 text-left md:gap-2',
+                        'hover:bg-gray-100 dark:hover:bg-gray-800',
+                        'cursor-pointer transition-colors duration-200',
                         isLoading && 'cursor-progress',
                         focusStyle,
                         className
@@ -107,7 +109,10 @@ export const CategoryButton = ({
                     ) : (
                         <div className="ml-auto flex items-center gap-2">
                             {label && (
-                                <Text className="self-end text-nowrap text-gray-600 dark:text-gray-200">
+                                <Text
+                                    className="self-end text-nowrap text-gray-600 dark:text-gray-200"
+                                    as="span"
+                                >
                                     {label}
                                 </Text>
                             )}

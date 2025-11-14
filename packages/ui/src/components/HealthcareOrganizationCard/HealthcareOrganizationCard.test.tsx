@@ -12,7 +12,6 @@ test.each(['add', 'delete', 'chevron_right'] as const)(
     async (icon) => {
         const props: HealthcareOrganizationCardProps = {
             title: faker.lorem.sentence(),
-            titleTag: faker.helpers.arrayElement(['h2', 'h3', 'h4']),
             subTitle: faker.lorem.sentence(),
             meta: faker.lorem.sentence(),
             icon,
@@ -28,7 +27,6 @@ test.each(['add', 'delete', 'chevron_right'] as const)(
 test('renders infoMessage', async () => {
     const props: HealthcareOrganizationCardProps = {
         title: faker.lorem.sentence(),
-        titleTag: faker.helpers.arrayElement(['h2', 'h3', 'h4']),
         subTitle: faker.lorem.sentence(),
         meta: faker.lorem.sentence(),
         infoMessage: faker.lorem.sentence(),
@@ -41,7 +39,6 @@ test('renders infoMessage', async () => {
 test('renders checkMessage', async () => {
     const props: HealthcareOrganizationCardProps = {
         title: faker.lorem.sentence(),
-        titleTag: faker.helpers.arrayElement(['h2', 'h3', 'h4']),
         subTitle: faker.lorem.sentence(),
         meta: faker.lorem.sentence(),
         checkMessage: faker.lorem.sentence(),

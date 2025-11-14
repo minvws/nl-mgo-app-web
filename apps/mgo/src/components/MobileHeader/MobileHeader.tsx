@@ -1,14 +1,6 @@
 import { useKeyDown } from '$/hooks';
 import { useIntl } from '$/intl';
-import {
-    Container,
-    Fade,
-    MobileMenuButton,
-    SlideDown,
-    cn,
-    surfaceStyle,
-    useOpenState,
-} from '@minvws/mgo-ui';
+import { Container, Fade, MobileMenuButton, SlideDown, cn, useOpenState } from '@minvws/mgo-ui';
 import { useCallback, useEffect, useRef, type ComponentProps, type FocusEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
@@ -55,10 +47,14 @@ export function MobileHeader({ ...rest }: Readonly<MobileHeaderProps>) {
                 onClick={close}
                 className="fixed inset-0 z-10"
             >
-                <div className="absolute inset-0 bg-black opacity-50" />
+                <div className="absolute inset-0 bg-black/50" />
             </Fade>
 
-            <StickyHeader menuIsOpen={isOpen} className={cn(surfaceStyle, 'h-[70px]')} {...rest}>
+            <StickyHeader
+                menuIsOpen={isOpen}
+                className={cn('bg-t-bg-secondary h-[70px]')}
+                {...rest}
+            >
                 <Container
                     className="z-40 flex h-full items-center justify-between"
                     ref={menuContentRef}

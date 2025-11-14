@@ -11,7 +11,6 @@ import { Text } from '../Text/Text';
 
 export type HealthcareOrganizationCardProps = Omit<ComponentProps<'div'>, 'children'> & {
     readonly title: ReactNode;
-    readonly titleTag?: Extract<'h2' | 'h3' | 'h4', keyof HTMLElementTagNameMap>;
     readonly subTitle?: ReactNode;
     readonly meta?: ReactNode;
     readonly infoMessage?: string;
@@ -31,7 +30,6 @@ export type HealthcareOrganizationCardProps = Omit<ComponentProps<'div'>, 'child
 
 export const HealthcareOrganizationCard = ({
     title,
-    titleTag = 'h2',
     subTitle,
     meta,
     className,
@@ -43,27 +41,29 @@ export const HealthcareOrganizationCard = ({
     ...rest
 }: HealthcareOrganizationCardProps) => {
     const uniqueId = useUniqueId('healthcare_organization_card');
-    const TitleComp = titleTag;
 
     return (
-        <Card
-            className={cn('border-gray-200 dark:border-gray-500', focusStyle, className)}
-            {...rest}
-        >
+        <Card className={cn('bg-t-bg-secondary', focusStyle, className)} {...rest}>
             <div className="flex flex-row gap-4">
-                <Stack className="text-md grow items-start gap-0 text-left">
-                    <TitleComp id={uniqueId} className="font-bold text-black dark:text-white">
+                <Stack className="grow items-start gap-0 text-left">
+                    <Text as="h2" className="text-t-label-primary font-bold">
                         {title}
-                    </TitleComp>
+                    </Text>
                     {subTitle && (
-                        <span className="break-all whitespace-pre-wrap text-gray-950 dark:text-gray-100">
+                        <Text
+                            as="span"
+                            className="text-t-label-secondary break-all whitespace-pre-wrap"
+                        >
                             {subTitle}
-                        </span>
+                        </Text>
                     )}
                     {meta && (
-                        <span className="break-all whitespace-pre-wrap text-gray-600 dark:text-gray-300">
+                        <Text
+                            as="span"
+                            className="text-t-label-secondary break-all whitespace-pre-wrap"
+                        >
                             {meta}
-                        </span>
+                        </Text>
                     )}
                 </Stack>
 
@@ -78,7 +78,7 @@ export const HealthcareOrganizationCard = ({
                             onClick={onActionClick}
                             className={
                                 icon === 'add'
-                                    ? 'text-sky-blue-600 dark:text-sky-blue-600'
+                                    ? 'text-t-cat-rijkslint'
                                     : 'text-gray-500 dark:text-gray-300'
                             }
                             icon={icon}
@@ -92,19 +92,13 @@ export const HealthcareOrganizationCard = ({
 
             <div>
                 {infoMessage && (
-                    <Text
-                        className="text-dark-blue-700 dark:text-dark-blue-300 mt-2 flex flex-row items-start gap-2 font-bold"
-                        size="sm"
-                    >
+                    <Text className="text-t-state-informative mt-2 flex flex-row items-start gap-2 font-bold">
                         <Icon icon="info-fill" className="text-xl" />
                         {infoMessage}
                     </Text>
                 )}
                 {checkMessage && (
-                    <Text
-                        className="dark:text-dark-green-400 mt-2 flex flex-row items-center gap-2 font-bold text-green-700"
-                        size="sm"
-                    >
+                    <Text className="text-t-state-positive mt-2 flex flex-row items-center gap-2 font-bold">
                         <Icon icon="check-fill" className="text-xl" />
                         {checkMessage}
                     </Text>

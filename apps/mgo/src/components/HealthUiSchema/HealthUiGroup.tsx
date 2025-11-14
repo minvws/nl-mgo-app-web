@@ -14,8 +14,8 @@ export function HealthUiGroup({ group: { label, children }, ...rest }: HealthUiG
     return (
         <div {...rest}>
             {hasLabel && (
-                <Heading id={uiGroupId} asChild size="sm" className="mb-2 sm:mb-3">
-                    <h2>{label}</h2>
+                <Heading id={uiGroupId} as="h2" size="xs" className="mb-2 sm:mb-3">
+                    {label}
                 </Heading>
             )}
 

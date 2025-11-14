@@ -9,7 +9,7 @@
         <title>Mijn Gezondheidsoverzicht</title>
     </head>
 
-    <body class="bg-[#FAFAFA] dark:bg-[#050505] dark:text-white">
+    <body class="bg-t-bg-primary text-t-label-primary">
         <div id="root">
             <div class="flex min-h-screen flex-col px-4 md:px-8">
                 <img
@@ -34,12 +34,12 @@
                                 />
                             </picture>
                             <h1
-                                class="mt-5 font-sans text-2xl leading-tight font-bold text-black md:mt-16 md:text-3xl lg:text-4xl dark:text-white"
+                                class="text-t-label-primary mt-5 font-sans text-3xl leading-none font-bold md:mt-16 md:text-4xl lg:text-5xl"
                             >
                                 Mijn Gezond&shy;heids&shy;overzicht gebruikt JavaScript
                             </h1>
                             <p
-                                class="md:text-md mt-4 font-sans text-sm font-normal text-black md:mt-6 dark:text-white"
+                                class="text-t-label-primary leading-snug-lg mt-4 font-sans text-lg font-normal md:mt-6 md:leading-normal lg:text-xl"
                             >
                                 Het lijkt erop dat JavaScript in je browser is uitschakeld. Schakel
                                 JavaScript in via de instellingen van je browser. Probeer het daarna
@@ -49,9 +49,11 @@
                     </noscript>
                     <div
                         id="js-loading-screen"
-                        class="mt-4 mb-16 hidden content-end text-center lg:mb-32"
+                        class="mt-8 mb-16 hidden content-end text-center lg:mb-32"
                     >
-                        <h1 class="text-center text-4xl font-bold">
+                        <h1
+                            class="text-t-label-primary mb-4 text-center font-sans text-3xl leading-none font-bold md:text-4xl lg:text-5xl"
+                        >
                             Mijn Gezond&shy;heids&shy;overzicht
                         </h1>
                         <svg
@@ -65,20 +67,25 @@
                             stroke-width="1"
                         >
                             <circle
-                                class="stroke-gray-100 dark:stroke-gray-800"
+                                class="stroke-gray-50 dark:stroke-gray-700"
                                 cx="4"
                                 cy="4"
                                 r="3.5"
                             />
                             <circle
-                                class="loading-spinner-fg stroke-sky-blue-600"
+                                class="loading-spinner-fg stroke-t-cat-rijkslint"
                                 cx="4"
                                 cy="4"
                                 r="3.5"
                                 transform="rotate(-90 4 4)"
                             />
                         </svg>
-                        <p id="loading-label" class="text-xl">Aan het laden</p>
+                        <p
+                            id="loading-label"
+                            class="text-t-label-primary leading-snug-lg font-sans text-lg font-normal md:leading-normal lg:text-xl"
+                        >
+                            Aan het laden
+                        </p>
                     </div>
                 </main>
             </div>

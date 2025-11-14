@@ -18,7 +18,7 @@ export function HealthUiSchema({ schema, resource }: HealthUiSchemaProps) {
 
     return (
         <>
-            <Heading asChild size="lg" className="mb-4 md:mb-8">
+            <Heading asChild size="xl" className="mb-4 md:mb-8">
                 <h1 ref={navFocusRef}>{schema.label}</h1>
             </Heading>
             <Stack className="gap-6">

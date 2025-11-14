@@ -16,7 +16,7 @@ export function Introduction() {
                     className="mx-auto max-h-[160px] w-full md:max-h-[280px]"
                 />
                 <div>
-                    <Heading asChild size="lg" className="mb-4 md:mb-6">
+                    <Heading asChild size="xl" className="mb-4 md:mb-6">
                         <h1 ref={navFocusRef}>
                             <FormattedMessage
                                 id="introduction.heading"

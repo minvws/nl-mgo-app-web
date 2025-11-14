@@ -4,6 +4,7 @@ import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Card } from '../Card/Card';
 import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 
 export type DetailButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     CompositionProps & {
@@ -25,30 +26,31 @@ export const DetailButton = ({
 
     return (
         <Card
-            className={cn(
-                'shadow-sm-none border-0 p-0 hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]'
-            )}
             asChild
+            className={cn(
+                'hover:bg-t-bg-tertiary border-0 md:gap-2',
+                'flex w-full items-center gap-1 p-4 text-left',
+                'cursor-pointer transition-colors duration-200',
+                focusStyle,
+                className
+            )}
         >
-            <Comp
-                className={cn(
-                    'flex w-full items-center gap-1 p-4 text-left',
-                    focusStyle,
-                    className
-                )}
-                {...rest}
-            >
+            <Comp {...rest}>
                 <Slottable>{children}</Slottable>
 
-                <div className="md:text-md grow text-sm">
-                    <div className="font-bold">{title}</div>
-                    <div>{description}</div>
+                <div className="grow">
+                    <Text as="div" className="font-bold">
+                        {title}
+                    </Text>
+                    <Text as="div" className="text-t-label-secondary">
+                        {description}
+                    </Text>
                 </div>
                 <div className="flex items-center text-right">
                     {date && (
-                        <span className="text-xs text-gray-600 md:text-sm dark:text-gray-200">
+                        <Text as="span" size="sm" className="text-t-label-primary">
                             {date}
-                        </span>
+                        </Text>
                     )}
                     <Icon icon="chevron_right" className={cn('h-8 w-8 text-gray-400')} />
                 </div>

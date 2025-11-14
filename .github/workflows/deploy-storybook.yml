@@ -6,10 +6,10 @@ on:
       - main
       - develop
     paths:
-      - 'packages/mgo-ui/**'
+      - 'packages/ui/**'
   pull_request:
     paths:
-      - 'packages/mgo-ui/**'
+      - 'packages/ui/**'
 
 permissions:
   contents: read
@@ -32,7 +32,7 @@ jobs:
           autoAcceptChanges: 'develop'
           exitZeroOnChanges: true
           exitOnceUploaded: true
-          workingDir: packages/mgo-ui
+          workingDir: packages/ui
       - name: Comment Chromatic results
         uses: marocchino/sticky-pull-request-comment@v2
         with:

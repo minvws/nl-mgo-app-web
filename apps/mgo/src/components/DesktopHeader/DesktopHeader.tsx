@@ -7,9 +7,9 @@ export type DesktopHeaderProps = Omit<ComponentProps<'header'>, 'className'>;
 
 export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
     return (
-        <header className={'border-b-gray-50 bg-white dark:bg-gray-900'} {...rest}>
+        <header className={'bg-t-bg-secondary'} {...rest}>
             <Container className="flex items-center justify-between py-4">
-                <h2 className="text-xl leading-tight font-normal text-black dark:text-white">
+                <h2 className="text-t-cat-rijkslint font-sans text-5xl leading-none font-bold">
                     <FormattedMessage
                         id="common.app_name"
                         description="Mijn Gezondheidsoverzicht"

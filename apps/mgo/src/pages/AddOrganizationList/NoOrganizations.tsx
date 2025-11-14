@@ -28,7 +28,7 @@ export function NoOrganizations() {
                         />
                     </RouterLink>
                 </Button>
-                <Button variant="light" asChild>
+                <Button variant="outline" asChild>
                     <RouterLink to="/overzicht">
                         <FormattedMessage
                             id="add_organization_list.to_overview"

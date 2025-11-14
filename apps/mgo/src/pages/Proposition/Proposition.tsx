@@ -2,7 +2,7 @@ import { BackButton } from '$/components/BackButton/BackButton';
 import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Link, RouterLink } from '$/routing';
-import { Button, Heading, List, ListIcon, ListItem, Text } from '@minvws/mgo-ui';
+import { Button, Heading, List, Text } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 
 export function Proposition() {
@@ -18,7 +18,7 @@ export function Proposition() {
                 <BackButton />
 
                 <div className="mx-auto mb-12 max-w-md md:mb-16 lg:mb-24">
-                    <Heading asChild size="lg" className="mb-4 md:mb-6">
+                    <Heading asChild size="xl" className="mb-4 md:mb-6">
                         <h1 ref={navFocusRef}>
                             <FormattedMessage
                                 id="proposition.heading"
@@ -32,7 +32,7 @@ export function Proposition() {
                             id="proposition.subheading"
                             description="In de <a>privacyverklaring</a> staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten"
                             values={{
-                                /* c8 ignore next, values may not be used in the actual copy */
+                                /* c8 ignore next, values may not be used in the actual copy */ // eslint-disable-next-line react/no-unstable-nested-components
                                 a: (chunks) => <Link to="/privacy">{chunks}</Link>,
                             }}
                         />
@@ -40,30 +40,36 @@ export function Proposition() {
 
                     <Text asChild>
                         <List className="mb-12">
-                            <ListItem className="flex">
-                                <ListIcon icon="encrypted" className="fill-[#34C759]" />
+                            <List.Item className="flex">
+                                <List.Icon icon="encrypted" className="text-t-state-informative" />
                                 <span>
                                     <FormattedMessage id="proposition.statement_1" />
                                 </span>
-                            </ListItem>
-                            <ListItem className="flex">
-                                <ListIcon icon="health_and_safety" className="fill-[#34C759]" />
+                            </List.Item>
+                            <List.Item className="flex">
+                                <List.Icon
+                                    icon="health_and_safety"
+                                    className="text-t-state-informative"
+                                />
                                 <span>
                                     <FormattedMessage id="proposition.statement_2" />
                                 </span>
-                            </ListItem>
-                            <ListItem className="flex">
-                                <ListIcon icon="verified_user" className="fill-[#34C759]" />
+                            </List.Item>
+                            <List.Item className="flex">
+                                <List.Icon
+                                    icon="verified_user"
+                                    className="text-t-state-informative"
+                                />
                                 <span>
                                     <FormattedMessage id="proposition.statement_3" />
                                 </span>
-                            </ListItem>
-                            <ListItem className="flex">
-                                <ListIcon icon="gpp_bad" className="fill-[#34C759]" />
+                            </List.Item>
+                            <List.Item className="flex">
+                                <List.Icon icon="gpp_bad" className="text-t-state-informative" />
                                 <span>
                                     <FormattedMessage id="proposition.statement_4" />
                                 </span>
-                            </ListItem>
+                            </List.Item>
                         </List>
                     </Text>
 

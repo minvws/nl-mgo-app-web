@@ -28,24 +28,21 @@ export const Alert = ({
             <div
                 role="alert"
                 className={cn(
-                    `shadow-sm-xs flex w-full gap-4 rounded-lg border border-gray-100 bg-white p-4 dark:border-gray-500 dark:bg-gray-900`,
+                    `flex w-full gap-4 rounded-lg border border-gray-100 bg-white p-4 shadow-xs dark:border-gray-500 dark:bg-gray-900`,
                     className
                 )}
                 {...rest}
             >
                 <div className={`h-6 w-6`}>{icons[status]}</div>
                 <div className={`flex grow flex-col gap-1`}>
-                    <span className={`text-base font-bold text-black dark:text-white`}>
-                        {label}
-                    </span>
-                    <span className={`text-base font-normal text-gray-600 dark:text-gray-300`}>
+                    <span className={`font-bold text-black dark:text-white`}>{label}</span>
+                    <span className={`font-normal text-gray-600 dark:text-gray-300`}>
                         {children}
                     </span>
                 </div>
                 <IconButton
                     className="self-start"
                     icon="close"
-                    size="sm"
                     aria-label={ariaLabel}
                     onClick={close}
                 />

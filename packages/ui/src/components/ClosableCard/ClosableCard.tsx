@@ -4,6 +4,7 @@ import { Text } from '@minvws/mgo-ui/components/Text/Text.js';
 import { cn } from '@minvws/mgo-ui/utils/index.js';
 import { HTMLAttributes, ReactNode } from 'react';
 import { Collapsible } from '../Collapsible/Collapsible';
+import { Heading } from '../Heading/Heading';
 
 export interface ClosableCardProps extends HTMLAttributes<HTMLDivElement> {
     readonly title: string;
@@ -26,26 +27,28 @@ export const ClosableCard = ({
         <Collapsible isOpen={isOpen}>
             <Card
                 className={cn(
-                    'mt-2 rounded-lg bg-[#01689B]/15 p-2 dark:bg-[#66A4C3]/14',
+                    'bg-dark-blue-500/15 dark:bg-dark-blue-300/[0.14] rounded-lg',
                     className
                 )}
                 {...rest}
             >
-                <div className="mt-2 flex justify-between">
-                    <Text className="ml-1 font-bold text-[#01689B] dark:text-[#66A4C3]">
+                <div className="flex justify-between">
+                    <Heading as="h3" size="xs" className="text-t-state-informative">
                         {title}
-                    </Text>
+                    </Heading>
                     <IconButton
                         icon="close"
                         size="sm"
                         variant="ghost"
                         aria-label={closeButtonAriaLabel}
-                        className="dark:text-[#66A4C3]"
+                        className="text-t-state-informative relative -top-1 -right-1"
                         onClick={onClose}
                     />
                 </div>
 
-                <Text className="m-1 text-[#01689B] dark:text-[#66A4C3]">{children}</Text>
+                <Text as="div" className="text-t-state-informative">
+                    {children}
+                </Text>
             </Card>
         </Collapsible>
     );

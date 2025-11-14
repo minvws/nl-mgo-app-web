@@ -289,7 +289,7 @@
                     }
                 },
                 {
-                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Ja"
@@ -440,7 +440,7 @@
                     }
                 },
                 {
-                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Niet bekend"

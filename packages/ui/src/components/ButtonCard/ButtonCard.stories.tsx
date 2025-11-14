@@ -26,18 +26,12 @@ export const Overflow: Story = {
         </div>
     ),
 };
-export const LoadingState: Story = {
-    args: {
-        isLoading: true,
-    },
-};
 
 export const Overview: Story = {
     render: ({ ...args }) => (
         <DarkStory>
             <Stack>
                 <ButtonCard {...args} />
-                <ButtonCard {...args} isLoading />
             </Stack>
         </DarkStory>
     ),

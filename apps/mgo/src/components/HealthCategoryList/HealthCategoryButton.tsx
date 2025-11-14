@@ -22,7 +22,6 @@ export function HealthCategoryButton({ category, isLoading, isEmpty }: HealthCat
             loadingText={formatMessage('common.loading')}
             isLoading={isLoading}
             label={!isLoading && isEmpty ? formatMessage('common.no_data') : undefined}
-            className="hover:bg-gray-100 md:gap-2 dark:hover:bg-[#444444]"
         >
             <RouterLink to={`./${slug}`}>
                 <FormattedMessage id={category.heading as AppMessagesIds} />

@@ -18,7 +18,7 @@ export function NotFound() {
                     <BackButton />
                 </div>
 
-                <Heading asChild size="lg" className="mb-6 md:mb-12">
+                <Heading asChild size="xl" className="mb-6 md:mb-12">
                     <h1 ref={navFocusRef}>
                         <FormattedMessage
                             id="organization.not_found_heading"
@@ -41,6 +41,7 @@ export function NotFound() {
                         </Text>
                     </div>
                 </Card>
+
                 <Button asChild className="mt-6 md:mt-12">
                     <RouterLink to={'/overzicht'}>
                         <FormattedMessage

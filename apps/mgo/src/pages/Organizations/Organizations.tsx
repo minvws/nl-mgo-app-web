@@ -12,7 +12,7 @@ export function Organizations() {
 
     return (
         <>
-            <Heading asChild size="lg" className="mb-2 md:mb-4">
+            <Heading asChild size="xl">
                 <h1 ref={navFocusRef}>
                     <FormattedMessage id="organizations.heading" />
                 </h1>
@@ -20,10 +20,6 @@ export function Organizations() {
 
             {organizations.length ? (
                 <>
-                    <p className="sm:text-md text-sm text-gray-700 md:text-lg lg:text-xl dark:text-white">
-                        <FormattedMessage id="organizations.heading" description="Zorgaanbieders" />
-                    </p>
-
                     <Stack asChild className="-mx-4 my-6 gap-1 sm:mx-0 sm:gap-2 md:my-12">
                         <ul>
                             {organizations.map(({ slug, name, category }) => (

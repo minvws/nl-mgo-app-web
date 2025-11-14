@@ -19,8 +19,8 @@ export function HealthSubCategoryList({ heading, resources }: HealthCategoryDeta
 
     return (
         <div>
-            <Text asChild id={subCategoryId}>
-                <h2 className="mb-2">{formatMessage(heading)}</h2>
+            <Text as="h2" id={subCategoryId} className="mb-2">
+                {formatMessage(heading)}
             </Text>
 
             <ListWrapper aria-labelledby={subCategoryId}>

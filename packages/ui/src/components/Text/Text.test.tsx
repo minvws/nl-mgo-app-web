@@ -1,15 +1,13 @@
-import { expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { Text } from './Text';
 import { faker } from '@faker-js/faker';
+import { render, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
 import { sizes } from './sizes';
-import { variants } from './variants';
+import { Text } from './Text';
 
-test('renders as span by default', async () => {
+test('renders content', async () => {
     const props = {
         children: faker.lorem.sentence(),
         size: faker.helpers.arrayElement(sizes),
-        variant: faker.helpers.arrayElement(variants),
     };
     render(<Text data-testid="test" {...props} />);
 

@@ -19,7 +19,7 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
                     className="mx-auto w-3/4 md:mb-2 md:w-3/5"
                     illustration="woman-with-umbrella"
                 />
-                <Heading asChild size="lg" className="mt-6 md:mt-16">
+                <Heading asChild size="xl" className="mt-6 md:mt-16">
                     <h1>
                         <FormattedMessage
                             id="not_found.heading"
@@ -27,6 +27,7 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
                         />
                     </h1>
                 </Heading>
+
                 <Text className="mt-4 md:mt-6">
                     <FormattedMessage
                         id="not_found.subheading"
@@ -35,6 +36,7 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
                         het overzicht."
                     />
                 </Text>
+
                 <Button asChild className="mt-6 md:mt-12">
                     <RouterLink to="/overzicht">
                         <FormattedMessage

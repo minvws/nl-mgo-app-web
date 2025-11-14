@@ -1,31 +1,33 @@
 import { type HTMLAttributes } from 'react';
 import { cn } from '../../utils';
 import { Card } from '../Card/Card';
-import { Icon, type IconProps } from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { Stack } from '../Stack/Stack';
+import { Variant } from './variants';
 
-export type DescriptionNoticeProps = HTMLAttributes<HTMLDivElement> &
-    IconProps & {
-        readonly iconClassName?: string;
-    };
+export type DescriptionNoticeProps = HTMLAttributes<HTMLDivElement> & {
+    readonly variant: Variant;
+};
 
 export const DescriptionNotice = ({
-    icon,
-    iconClassName,
     className,
     children,
+    variant,
     ...rest
 }: DescriptionNoticeProps) => {
     return (
         <Card
-            className={cn(
-                'shadow-sm-none rounded-none border-0 p-8 first:rounded-t-lg last:rounded-b-lg',
-                className
-            )}
+            className={cn('rounded-none rounded-t-lg rounded-b-lg border-0 p-8', className)}
             {...rest}
         >
-            <Stack className="items-center gap-2">
-                <Icon icon={icon} className={cn('h-10 w-10', iconClassName)} />
+            <Stack className="items-center gap-3">
+                <Icon
+                    icon="info-fill"
+                    className={cn('h-10 w-10', {
+                        'fill-t-state-informative': variant === 'info',
+                        'fill-t-state-critical': variant === 'error',
+                    })}
+                />
                 {children}
             </Stack>
         </Card>

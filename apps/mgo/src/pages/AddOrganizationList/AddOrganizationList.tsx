@@ -20,7 +20,7 @@ export function AddOrganizationList() {
                 <BackButton />
 
                 <div className="mx-auto max-w-md">
-                    <Heading asChild size="lg">
+                    <Heading asChild size="xl">
                         <h1 ref={navFocusRef}>
                             <FormattedMessage
                                 id="add_organization_list.heading"

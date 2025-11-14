@@ -1,16 +1,16 @@
-import { expect, test } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
-import { List, ListItem, ListIcon } from '.';
 import { faker } from '@faker-js/faker';
+import { render, screen, within } from '@testing-library/react';
+import { expect, test } from 'vitest';
+import { List } from '.';
 
 test('renders a default List', async () => {
     const props = {
         children: [
-            <ListItem key="1">
-                <ListIcon icon="encrypted" />
+            <List.Item key="1">
+                <List.Icon icon="encrypted" />
                 {faker.lorem.sentences(3)}
-            </ListItem>,
-            <ListItem key="2">{faker.lorem.sentences(3)}</ListItem>,
+            </List.Item>,
+            <List.Item key="2">{faker.lorem.sentences(3)}</List.Item>,
         ],
     };
 

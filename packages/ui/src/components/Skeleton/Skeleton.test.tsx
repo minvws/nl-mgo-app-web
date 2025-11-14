@@ -1,8 +1,8 @@
-import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { expect, test } from 'vitest';
 import { Skeleton } from './Skeleton';
-import { SkeletonText } from './SkeletonText';
 import { SkeletonCircle } from './SkeletonCircle';
+import { SkeletonText } from './SkeletonText';
 
 test('renders a default Skeleton', async () => {
     render(<Skeleton data-testid="test" />);
@@ -23,7 +23,7 @@ test('renders children if loaded', async () => {
     expect(child).toBeVisible();
 });
 
-test('renders SkeletonText with multiple lines', async () => {
+test('renders SkeletonText with multiple lines when loading', async () => {
     const props = {
         numberOfLines: 2,
     };
@@ -32,7 +32,19 @@ test('renders SkeletonText with multiple lines', async () => {
 
     const element = await screen.findByTestId('test');
     expect(element.children.length).toEqual(props.numberOfLines);
-    expect(element.children[1].classList).toContain('w-4/5');
+});
+
+test('renders children if loaded', async () => {
+    const props = {
+        isLoading: false,
+        numberOfLines: 2,
+        children: <span data-testid="child">child</span>,
+    };
+
+    render(<SkeletonText data-testid="test" {...props} />);
+
+    const child = await screen.findByTestId('child');
+    expect(child).toBeVisible();
 });
 
 test('renders SkeletonCircle children if loading', async () => {

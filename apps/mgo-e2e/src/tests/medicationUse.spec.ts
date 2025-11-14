@@ -40,7 +40,8 @@ test('User can see their medication use details', async ({
 
     await test.step('Verify medication health category and select medication', async () => {
         await expect(pageHealthCategory.heading('medication')).toBeVisible();
-        const medicationUseList = pageHealthCategory.categoryList('medication', 'medication_use');
+        const medicationUseList = pageHealthCategory.subCategoryList('zib_medication_use');
+
         await expect(medicationUseList).toBeVisible();
         await medicationUseList
             .getByRole('listitem')

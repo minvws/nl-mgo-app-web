@@ -24,7 +24,7 @@ export const Overview: Story = {
                     <div className="w-1/2 grow bg-[#F5F5F5] text-black">
                         <div className="max-w-[300px] p-6">
                             <Illustration {...args} illustration={illustration} />
-                            <div className="mt-2 text-center text-xs dark:text-white">
+                            <div className="mt-2 text-center text-base dark:text-white">
                                 {illustration}
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export const Overview: Story = {
                     <div className="w-1/2 grow bg-[#050505] text-white">
                         <div className="max-w-[300px] p-6">
                             <Illustration {...args} illustration={illustration} forceDarkMode />
-                            <div className="mt-2 text-center text-xs dark:text-white">
+                            <div className="mt-2 text-center text-base dark:text-white">
                                 {illustration}
                             </div>
                         </div>

@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "nx run mgo:dev",
         "test": "vitest",
+        "test:hcim:update": "vitest --project @minvws/mgo-hcim --update",
         "test:coverage": "vitest run --coverage --coverage.reportOnFailure",
         "lint": "nx run-many -t lint",
         "lint:fix": "pnpm run -r lint --fix",
@@ -54,6 +55,7 @@
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-react-refresh": "^0.4.20",
         "eslint-plugin-sonarjs": "^3.0.4",
+        "eslint-plugin-tailwindcss": "4.0.0-beta.0",
         "nx": "21.3.2",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.7.0",

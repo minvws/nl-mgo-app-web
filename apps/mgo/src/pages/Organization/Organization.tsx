@@ -30,7 +30,7 @@ export function Organization() {
                     <Breadcrumbs />
                 </div>
 
-                <Heading asChild size="lg" className="mb-4 md:mb-8">
+                <Heading asChild size="xl" className="mb-4 md:mb-8">
                     <h1 ref={navFocusRef}>
                         <FormattedMessage
                             id="organization.heading"

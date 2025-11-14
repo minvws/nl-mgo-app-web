@@ -19,7 +19,7 @@ export const Default: Story = {};
 
 export const Overview: Story = {
     render: ({ ...args }) => (
-        <DarkStory>
+        <DarkStory lightClassName="bg-white">
             <Stack className="gap-10 p-4">
                 {variants.map((variant) => (
                     <Stack className="flex-row" key={variant}>

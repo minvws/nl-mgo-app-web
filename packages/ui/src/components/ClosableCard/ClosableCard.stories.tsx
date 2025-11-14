@@ -3,7 +3,6 @@ import { useOpenState } from '../../hooks';
 import { Button } from '../Button/Button';
 import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
-import { Text } from '../Text/Text';
 import { ClosableCard } from './ClosableCard';
 
 type Story = StoryObj<typeof ClosableCard>;
@@ -47,7 +46,7 @@ export const LongContent: Story = {
                 </Button>
 
                 <ClosableCard title="Lorem ipsum dolor" isOpen={isOpen} onClose={close}>
-                    <Text className="mb-4">
+                    <p className="mb-4">
                         Laudantium repellendus nihil expedita magni laborum deserunt eos totam
                         aliquam ipsa porro fuga illo odio. Asperiores officiis quo blanditiis fuga
                         veritatis labore voluptatum facilis. In aperiam deserunt dignissimos modi
@@ -55,8 +54,8 @@ export const LongContent: Story = {
                         expedita in debitis minima ut repellat omnis. Fugiat modi atque ipsa
                         asperiores eligendi voluptas sint impedit quas ut veritatis esse incidunt
                         dolorum.
-                    </Text>
-                    <Text>
+                    </p>
+                    <p>
                         Eius asperiores minus quia totam aliquid aliquam impedit repellat ullam.
                         Eveniet consequuntur neque quasi sapiente explicabo necessitatibus sint rem
                         repellat soluta porro quos eos. Nesciunt minima quasi explicabo fugit
@@ -64,7 +63,7 @@ export const LongContent: Story = {
                         Repudiandae mollitia exercitationem maiores omnis laudantium ullam quas.
                         Voluptatibus animi natus nemo similique laudantium maiores dolores maiores
                         magni vero adipisci.
-                    </Text>
+                    </p>
                 </ClosableCard>
             </>
         );

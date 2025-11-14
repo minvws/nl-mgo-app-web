@@ -298,7 +298,7 @@
   "lab_results.subheading": [
     {
       "type": 0,
-      "value": "Resultaten van onderzoeken en testen die je hebt gehad."
+      "value": "Resultaten van onderzoeken en testen die u hebt gehad."
     }
   ],
   "login.digid": [
@@ -328,13 +328,13 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Log in met DigiD"
+      "value": "Bewijs wie je bent"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Met DigiD laat je weten wie je bent. Zo kunnen we je gegevens veilig ophalen. Bij je huisarts, het ziekenhuis en andere zorgaanbieders."
+      "value": "Kies de manier waarop je wilt inloggen. Zo kunnen we jouw gegevens veilig ophalen bij je huisarts, ziekenhuis en andere zorgaanbieders."
     }
   ],
   "logout.heading": [
@@ -466,7 +466,7 @@
   "organization.lab_results_subheading": [
     {
       "type": 0,
-      "value": "Resultaten van onderzoeken en testen die je hebt gehad."
+      "value": "Resultaten van onderzoeken en testen die u hebt gehad."
     }
   ],
   "organization.medicine_heading": [

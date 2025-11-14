@@ -47,6 +47,7 @@ export function HealthCategory() {
                         label={formatMessage('common.failed_to_load_data')}
                         aria-label={formatMessage('common.failed_to_load_data')}
                         status="warning"
+                        className="mb-4"
                     >
                         <Stack className="items-start gap-1">
                             <FormattedMessage id="common.error_in_system" />
@@ -66,7 +67,7 @@ export function HealthCategory() {
                     />
                 </div>
 
-                <Heading asChild size="lg">
+                <Heading asChild size="xl">
                     <h1 ref={navFocusRef}>{heading}</h1>
                 </Heading>
 
@@ -77,7 +78,7 @@ export function HealthCategory() {
                         </div>
                     )}
 
-                    {!isLoading && !isEmpty ? (
+                    {!isLoading && !isEmpty && (
                         <Stack className="gap-4 md:gap-6">
                             {category.subcategories.map(({ heading, resources }) => (
                                 <HealthSubCategoryList
@@ -87,9 +88,9 @@ export function HealthCategory() {
                                 />
                             ))}
                         </Stack>
-                    ) : (
-                        <NoData />
                     )}
+
+                    {!isLoading && isEmpty && <NoData />}
                 </div>
             </section>
         </>

@@ -29,5 +29,5 @@ test('renders nothing when value is undefined', () => {
     setupWithAppProviders(<SingleValue value={value} />);
 
     const definition = screen.getByRole('definition', { name: value.label });
-    expect(definition).toBeEmptyDOMElement();
+    expect(definition).toHaveTextContent('');
 });

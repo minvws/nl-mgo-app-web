@@ -1,6 +1,6 @@
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { type Page } from '@playwright/test';
-import { HealthCategoryIdValue } from '../constants';
+import { HealthCategoryType } from '../constants';
 import { AbstractPage } from './AbstractPage';
 
 export class OverviewPage extends AbstractPage {
@@ -20,7 +20,7 @@ export class OverviewPage extends AbstractPage {
         name: appMessage('common.add_organizations'),
     });
 
-    buttonHealthCategory(category: HealthCategoryIdValue) {
+    buttonHealthCategory(category: HealthCategoryType) {
         return this.page.getByRole('link', { name: appMessage(`hc_${category}.heading`) });
     }
 }

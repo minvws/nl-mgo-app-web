@@ -18,7 +18,7 @@ export type DescriptionButtonProps = DescriptionItemProps &
 
 const variantStyles: Record<Variant, string> = {
     default: 'md:gap-2',
-    highlighted: tw`[&_*]:text-sky-blue-700 [&_*]:dark:text-sky-blue-300`,
+    highlighted: tw`[&_*]:text-t-cat-rijkslint`,
 };
 const variantHoverStyles: Record<Variant, string> = {
     default: 'hover:bg-gray-100 dark:hover:bg-[#444444]',
@@ -44,8 +44,9 @@ export const DescriptionButton = ({
         <Card
             asChild
             className={cn(
-                'shadow-sm-none rounded-none border-0 p-0 first:rounded-t-lg last:rounded-b-lg',
+                'rounded-none rounded-t-lg rounded-b-lg border-0',
                 'flex w-full items-center justify-between gap-1 p-4 text-left',
+                'cursor-pointer transition-colors duration-200',
                 variantStyles[variant],
                 variantHoverStyles[variant],
                 isLoading && 'cursor-progress',

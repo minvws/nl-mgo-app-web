@@ -26,7 +26,9 @@ const Button = ({ asChild, ...rest }: ButtonProps) => {
 
 `}/>
 
-Use when your component has multiple childrens to pass the props to the correct element:
+When you want to add elements next to the children you can use the `Slottable` component.
+
+> **`Slottable` has to be a direct child of the `Comp` component or it will not work**. If you need to wrap the children you can use the `composeWrappedSlottable` function.
 
 <Source
     language="tsx"
@@ -42,6 +44,35 @@ const Button = ({ asChild, children, ...rest }: ButtonProps) => {
             {rightElement}
         </Comp>
     );
+}
+`}
+/>
+
+An example of using `composeWrappedSlottable` to wrap the children of the `Slottable` component:
+
+<Source
+    language="tsx"
+    code={`
+interface ButtonProps { asChild?:boolean, ... }
+ 
+const Button = ({ asChild, children, ...rest }: ButtonProps) => {
+    const { Comp, composeWrappedSlottable } = useComposition({ asChild, tag: 'button' });
+    const Label = composeWrappedSlottable(
+        { 
+            asChild, 
+            children, 
+            Wrapper: ({ children }) => <span className="min-w-0 truncate">{children}</span> 
+        }
+    );
+
+    return (
+        <Comp {...rest}>
+            {leftElement}
+            {Label}
+            {rightElement}
+        </Comp>
+    );
+
 }
 `}
 />

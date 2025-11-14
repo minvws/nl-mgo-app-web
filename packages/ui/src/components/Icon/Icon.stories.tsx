@@ -33,7 +33,7 @@ export const Overview: Story = {
                     <div className="flex min-h-16 items-center justify-center text-4xl">
                         <Icon {...args} icon={name} />
                     </div>
-                    <div className="mt-2 text-xs dark:text-white">{name}</div>
+                    <div className="mt-2 text-base dark:text-white">{name}</div>
                 </div>
             ))}
         </div>

@@ -13,10 +13,10 @@ export const DisplayValue = ({ value }: DisplayValueProps) => {
     const { formatMessage } = useIntl();
 
     const { pft } = usePft(value);
-    if (!pft) return value?.display;
+    if (!pft) return <span>{value?.display}</span>;
 
     return (
-        <>
+        <span>
             <Link variant="dotted" asChild iconRight="help">
                 <button onClick={toggle}>{value?.display}</button>
             </Link>
@@ -24,11 +24,12 @@ export const DisplayValue = ({ value }: DisplayValueProps) => {
             <ClosableCard
                 title={formatMessage('patientfriendlyterms.synonym', { synonym: pft.synonym })}
                 isOpen={isOpen}
+                className="mt-2"
                 onClose={close}
                 closeButtonAriaLabel={formatMessage('common.voice_over_close')}
             >
                 {pft.description}
             </ClosableCard>
-        </>
+        </span>
     );
 };

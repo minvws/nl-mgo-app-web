@@ -54,7 +54,7 @@ export const Overview: Story = {
                 <Stack
                     className={cn(
                         'mb-6 items-start gap-2 p-2',
-                        variant === 'monochrome' && 'bg-lint-blue-800 dark:bg-lint-blue-300'
+                        variant === 'inverted' && 'bg-t-cat-rijkslint'
                     )}
                     key={variant}
                 >

@@ -12,7 +12,9 @@ export const IntlProvider = ({ children }: I18nProviderProps) => {
         locale: Locale.NL_NL,
         /* c8 ignore start */
         defaultRichTextElements: {
+            // eslint-disable-next-line react/no-unstable-nested-components
             b: (chunks) => <b className="font-bold">{chunks}</b>, // NOSONAR
+            // eslint-disable-next-line react/no-unstable-nested-components
             i: (chunks) => <i className="italic">{chunks}</i>, // NOSONAR
         },
         /* c8 ignore end */

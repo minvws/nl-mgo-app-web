@@ -2,9 +2,9 @@ import { setupWithAppProviders } from '$test/helpers';
 import { screen } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 
+import { PatientFriendlyTerm } from '$/services/pft/pftService';
 import { faker } from '$test/faker';
 import { DisplayValue as DisplayValueData } from '@minvws/mgo-hcim-ui';
-import { PatientFriendlyTerm } from '$/services/pft/pftService';
 import { DisplayValue } from './DisplayValue';
 
 const mockDisplayCoding = (): DisplayValueData => ({
@@ -15,7 +15,7 @@ const mockDisplayCoding = (): DisplayValueData => ({
 
 const mockPft: PatientFriendlyTerm = {
     description: faker.lorem.sentence(),
-    synonym: faker.lorem.word(),
+    synonym: faker.lorem.words(),
     name: faker.lorem.word(),
 };
 
@@ -30,7 +30,7 @@ vi.mock('$/pft/usePft', () => ({
 
 test('renders nothing when value is undefined', () => {
     const { container } = setupWithAppProviders(<DisplayValue value={undefined} />);
-    expect(container).toBeEmptyDOMElement();
+    expect(container).toHaveTextContent('');
 });
 
 test('renders display text only when PFT is not available', () => {
@@ -68,7 +68,6 @@ test('renders a button with Link dotted variant when PFT is available', () => {
 
     const button = screen.getByRole('button', { name: displayCoding.display });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveClass('text-[#01689B]', 'underline', 'decoration-dotted');
 });
 
 test('opens ClosableCard when button is clicked and displays content', async () => {

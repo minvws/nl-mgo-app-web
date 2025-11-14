@@ -38,7 +38,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                 <main className="flex grow flex-col">
                     <Container
                         className={cn(
-                            'flex grow bg-[#FAFAFA] break-words dark:bg-[#050505]',
+                            'bg-t-bg-primary flex grow break-words',
                             hideMenu
                                 ? 'flex-col'
                                 : 'gap-8 pt-8 pb-8 md:gap-10 md:pt-10 md:pb-16 lg:gap-16 lg:pt-12 lg:pb-24'

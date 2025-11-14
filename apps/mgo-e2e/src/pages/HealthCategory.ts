@@ -1,15 +1,7 @@
-import { appMessage, type AppMessagesIds } from '@minvws/mgo-intl/test/shared';
+import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { type Page } from '@playwright/test';
-import { HealthCategoryIdValue } from '../constants';
+import { HealthCategoryType, SubCategoryType } from '../constants';
 import { AbstractPage } from './AbstractPage';
-
-type HealthCategoryList<T extends HealthCategoryIdValue> =
-    Extract<
-        AppMessagesIds,
-        `health_category.${T}.${string}`
-    > extends `health_category.${T}.${infer R}`
-        ? R
-        : never;
 
 export class HealthCategoryPage extends AbstractPage {
     constructor(page: Page) {
@@ -20,7 +12,7 @@ export class HealthCategoryPage extends AbstractPage {
         name: appMessage('common.previous'),
     });
 
-    heading(category: HealthCategoryIdValue) {
+    heading(category: HealthCategoryType) {
         return this.page.getByRole('heading', {
             level: 1,
             name: appMessage(`hc_${category}.heading`),
@@ -34,9 +26,9 @@ export class HealthCategoryPage extends AbstractPage {
 
     readonly loadingProgressbar = this.page.getByRole('progressbar');
 
-    categoryList<T extends HealthCategoryIdValue>(category: T, subCategory: HealthCategoryList<T>) {
+    subCategoryList(subCategory: SubCategoryType) {
         return this.page.getByRole('list', {
-            name: appMessage(`health_category.${category}.${subCategory}` as AppMessagesIds),
+            name: appMessage(`${subCategory}.heading`),
         });
     }
 }

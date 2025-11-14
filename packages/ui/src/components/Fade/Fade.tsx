@@ -34,7 +34,7 @@ export const Fade = ({ className, children, isVisible, duration = 300, ...rest }
                     ref={rootRef}
                     style={{ transitionDuration: `${animationDuration}ms` }}
                     className={
-                        `transition-opacity ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}` +
+                        `animate-ease-out transition-opacity ${transitionStyles[state]}` +
                         (className ? ` ${className}` : '')
                     }
                     {...rest}

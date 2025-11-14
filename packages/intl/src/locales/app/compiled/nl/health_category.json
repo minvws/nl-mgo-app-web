@@ -62,7 +62,7 @@
   "hc_allergies.subheading": [
     {
       "type": 0,
-      "value": "Dingen waar je niet tegen kunt. Zoals bepaald eten of medicijnen."
+      "value": "Dingen waar u niet tegen kunt. Zoals bepaald eten of medicijnen."
     }
   ],
   "hc_appointments.heading": [
@@ -86,7 +86,7 @@
   "hc_appointments.subheading": [
     {
       "type": 0,
-      "value": "Je afspraken met zorgverleners. En contacten die je hebt gehad."
+      "value": "Uw afspraken met zorgverleners. En contacten die u hebt gehad."
     }
   ],
   "hc_care_plan.heading": [
@@ -110,7 +110,7 @@
   "hc_care_team.subheading": [
     {
       "type": 0,
-      "value": "De mensen en organisaties die bij je zorg betrokken zijn."
+      "value": "De mensen en organisaties die bij uw zorg betrokken zijn."
     }
   ],
   "hc_complaints.heading": [
@@ -152,7 +152,7 @@
   "hc_devices.subheading": [
     {
       "type": 0,
-      "value": "Medische hulpmiddelen die je gebruikt. Zoals een bril of rollator."
+      "value": "Medische hulpmiddelen die u gebruikt. Zoals een bril of rollator."
     }
   ],
   "hc_documents.error": [
@@ -188,7 +188,7 @@
   "hc_documents.subheading": [
     {
       "type": 0,
-      "value": "Brieven, verslagen, foto's en scans van zorgverleners."
+      "value": "Brieven, verslagen, foto’s en scans van zorgverleners."
     }
   ],
   "hc_lab_results.heading": [
@@ -212,7 +212,7 @@
   "hc_lab_results.subheading": [
     {
       "type": 0,
-      "value": "Je waarden zoals bloeddruk en hartslag. En je lengte en gewicht."
+      "value": "Uw waarden zoals bloeddruk en hartslag. En uw lengte en gewicht."
     }
   ],
   "hc_lifestyle.heading": [
@@ -236,7 +236,7 @@
   "hc_lifestyle.subheading": [
     {
       "type": 0,
-      "value": "Informatie over hoe je leeft en woont. En wat je elke dag doet."
+      "value": "Informatie over hoe u leeft en woont. En wat u elke dag doet."
     }
   ],
   "hc_measurements.heading": [
@@ -284,7 +284,7 @@
   "hc_medication.subheading": [
     {
       "type": 0,
-      "value": "Die je nu gebruikt of vroeger gebruikte. En afspraken daarover."
+      "value": "Die u nu gebruikt of vroeger gebruikte. En afspraken daarover."
     }
   ],
   "hc_mental.heading": [
@@ -308,7 +308,7 @@
   "hc_mental.subheading": [
     {
       "type": 0,
-      "value": "Hoe het geestelijk met je gaat. Zoals angst, stress of somberheid."
+      "value": "Hoe het geestelijk met u gaat. Zoals angst, stress of somberheid."
     }
   ],
   "hc_patient.heading": [
@@ -332,7 +332,7 @@
   "hc_patient.subheading": [
     {
       "type": 0,
-      "value": "Je betaalgegevens, persoonlijke gegevens en contactpersonen."
+      "value": "Uw betaalgegevens, persoonlijke gegevens en contactpersonen."
     }
   ],
   "hc_payment.heading_detail": [
@@ -374,7 +374,7 @@
   "hc_plans.subheading": [
     {
       "type": 0,
-      "value": "Je doelen, wensen en afspraken over je behandeling."
+      "value": "Uw doelen, wensen en afspraken over uw behandeling."
     }
   ],
   "hc_problems.heading": [
@@ -386,7 +386,7 @@
   "hc_problems.subheading": [
     {
       "type": 0,
-      "value": "Klachten waar je last van hebt. Zoals pijn of ziekte."
+      "value": "Klachten waar u last van hebt. Zoals pijn of ziekte."
     }
   ],
   "hc_treatments.heading": [
@@ -410,7 +410,7 @@
   "hc_treatments.subheading": [
     {
       "type": 0,
-      "value": "Behandelingen en operaties die je hebt gehad. Of die je nog krijgt."
+      "value": "Behandelingen en operaties die u hebt gehad. Of die u nog krijgt."
     }
   ],
   "hc_vaccinations.heading": [
@@ -434,7 +434,7 @@
   "hc_vaccinations.subheading": [
     {
       "type": 0,
-      "value": "Prikken die je hebt gehad. Zoals tegen griep of corona."
+      "value": "Prikken die u hebt gehad. Zoals tegen griep of corona."
     }
   ],
   "health_category.alerts.warnings": [
