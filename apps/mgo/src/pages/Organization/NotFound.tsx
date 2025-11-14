@@ -1,5 +1,4 @@
 import { BackButton } from '$/components/BackButton/BackButton';
-import { useNavFocusRef } from '$/hooks';
 import { RouterLink } from '$/routing';
 
 import { FormattedMessage, useIntl } from '$/intl';
@@ -8,7 +7,6 @@ import { Helmet } from 'react-helmet-async';
 
 export function NotFound() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
@@ -18,13 +16,11 @@ export function NotFound() {
                     <BackButton />
                 </div>
 
-                <Heading asChild size="xl" className="mb-6 md:mb-12">
-                    <h1 ref={navFocusRef}>
-                        <FormattedMessage
-                            id="organization.not_found_heading"
-                            description="Zorgaanbieder niet gevonden"
-                        />
-                    </h1>
+                <Heading as="h1" focusOnRender size="xl" className="mb-6 md:mb-12">
+                    <FormattedMessage
+                        id="organization.not_found_heading"
+                        description="Zorgaanbieder niet gevonden"
+                    />
                 </Heading>
 
                 <Card className="p-4 md:p-12">

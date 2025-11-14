@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { useNavFocusRef } from '$/hooks';
+import { useLocation } from '$/routing';
 import { type Resource } from '$/store';
 import { type HealthUiSchema as HealthUiSchemaData } from '@minvws/mgo-hcim';
 import { Heading, Stack } from '@minvws/mgo-ui';
@@ -13,13 +13,19 @@ export interface HealthUiSchemaProps {
 }
 
 export function HealthUiSchema({ schema, resource }: HealthUiSchemaProps) {
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+    const location = useLocation();
     const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
 
     return (
         <>
-            <Heading asChild size="xl" className="mb-4 md:mb-8">
-                <h1 ref={navFocusRef}>{schema.label}</h1>
+            <Heading
+                as="h1"
+                size="xl"
+                className="mb-4 md:mb-8"
+                focusOnRender
+                focusOnRenderKey={location}
+            >
+                {schema.label}
             </Heading>
             <Stack className="gap-6">
                 <HealthUiSchemaContext.Provider value={contextValue}>

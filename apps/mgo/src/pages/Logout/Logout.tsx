@@ -1,18 +1,13 @@
-import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
 import { RouterLink } from '$/routing';
 import { Button, Heading, Illustration, Text } from '@minvws/mgo-ui';
 
 export function Logout() {
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
-
     return (
         <div className="mx-auto max-w-md pt-12 pb-6 md:pt-24 md:pb-32">
             <Illustration className="mx-auto w-3/4 md:mb-2" illustration="woman-with-phone-check" />
-            <Heading asChild size="xl" className="mt-6 md:mt-16">
-                <h1 ref={navFocusRef}>
-                    <FormattedMessage id="logout.heading" description="Je bent uitgelogd" />
-                </h1>
+            <Heading as="h1" focusOnRender size="xl" className="mt-6 md:mt-16">
+                <FormattedMessage id="logout.heading" description="Je bent uitgelogd" />
             </Heading>
             <Text className="mt-4 md:mt-6">
                 <FormattedMessage

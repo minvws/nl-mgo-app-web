@@ -1,5 +1,5 @@
 import { BackButton } from '$/components/BackButton/BackButton';
-import { useNavFocusRef, useOnboardingSeen } from '$/hooks';
+import { useOnboardingSeen } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Link, RouterLink } from '$/routing';
 import { Button, Heading, List, Text } from '@minvws/mgo-ui';
@@ -7,7 +7,6 @@ import { Helmet } from 'react-helmet-async';
 
 export function Proposition() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const { setOnboardingSeen } = useOnboardingSeen();
 
     return (
@@ -18,13 +17,11 @@ export function Proposition() {
                 <BackButton />
 
                 <div className="mx-auto mb-12 max-w-md md:mb-16 lg:mb-24">
-                    <Heading asChild size="xl" className="mb-4 md:mb-6">
-                        <h1 ref={navFocusRef}>
-                            <FormattedMessage
-                                id="proposition.heading"
-                                description="Zo gebruikt de website jouw gegevens"
-                            />
-                        </h1>
+                    <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
+                        <FormattedMessage
+                            id="proposition.heading"
+                            description="Zo gebruikt de website jouw gegevens"
+                        />
                     </Heading>
 
                     <Text className="mb-6 md:mb-12">
