@@ -9,6 +9,7 @@ import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
 import { Stack } from '../Stack/Stack';
 import { Text } from '../Text/Text';
+import { Card } from '../Card/Card';
 
 type Details = {
     readonly title: string;
@@ -30,26 +31,33 @@ export const ButtonCard = ({
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp
+        <Card
+            asChild
             className={cn(
-                'bg-t-bg-secondary cursor-pointer',
-                'flex w-full border-b border-gray-100 p-4 text-left break-all hover:bg-gray-50 aria-[current=page]:bg-gray-50 md:p-6 dark:border-gray-500 dark:bg-gray-900 hover:dark:bg-gray-700 aria-[current=page]:dark:bg-gray-700',
+                'cursor-pointer transition-colors duration-200',
+                'flex items-center p-4 text-left break-all md:p-6',
+                'hover:bg-gray-50',
+                'dark:bg-gray-900 hover:dark:bg-gray-700',
                 focusStyle,
                 className
             )}
             {...rest}
         >
-            <Slottable>{children}</Slottable>
+            <Comp>
+                <Slottable>{children}</Slottable>
 
-            <div className="flex grow flex-col">
-                <Stack className="flex flex-col gap-1">
-                    <Text size="lg" className="font-bold">
-                        {title}
-                    </Text>
-                    {description && <Text className="text-t-label-secondary">{description}</Text>}
-                </Stack>
-            </div>
-            <Icon icon="chevron_right" className="h-8 w-8 shrink-0 fill-gray-500" />
-        </Comp>
+                <div className="flex grow flex-col">
+                    <Stack className="flex flex-col gap-1">
+                        <Text size="lg" className="font-bold">
+                            {title}
+                        </Text>
+                        {description && (
+                            <Text className="text-t-label-secondary">{description}</Text>
+                        )}
+                    </Stack>
+                </div>
+                <Icon icon="chevron_right" className="h-8 w-8 shrink-0 fill-gray-500" />
+            </Comp>
+        </Card>
     );
 };
