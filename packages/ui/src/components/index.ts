@@ -51,10 +51,7 @@ export {
 } from './DescriptionButton/DescriptionButton';
 export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
-export {
-    DescriptionNotice,
-    type DescriptionNoticeProps,
-} from './DescriptionNotice/DescriptionNotice';
+export { Notice, type NoticeProps } from './Notice/Notice';
 export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';

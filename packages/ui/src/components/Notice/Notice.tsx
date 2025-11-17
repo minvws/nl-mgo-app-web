@@ -5,19 +5,17 @@ import { Icon } from '../Icon/Icon';
 import { Stack } from '../Stack/Stack';
 import { Variant } from './variants';
 
-export type DescriptionNoticeProps = HTMLAttributes<HTMLDivElement> & {
+export type NoticeProps = HTMLAttributes<HTMLDivElement> & {
     readonly variant: Variant;
 };
 
-export const DescriptionNotice = ({
-    className,
-    children,
-    variant,
-    ...rest
-}: DescriptionNoticeProps) => {
+export const Notice = ({ className, children, variant, ...rest }: NoticeProps) => {
     return (
         <Card
-            className={cn('rounded-none rounded-t-lg rounded-b-lg border-0 p-8', className)}
+            className={cn(
+                'rounded-none rounded-t-lg rounded-b-lg border-0 p-8 text-center',
+                className
+            )}
             {...rest}
         >
             <Stack className="items-center gap-3">

@@ -1,5 +1,5 @@
 import { type DownloadBinary as DownloadBinaryData } from '@minvws/mgo-hcim-ui';
-import { Button, DescriptionButton, DescriptionNotice, Text } from '@minvws/mgo-ui';
+import { Button, DescriptionButton, Notice, Text } from '@minvws/mgo-ui';
 import { FormattedMessage } from 'react-intl';
 import { useBinaryReference } from './hooks/useBinaryReference';
 
@@ -14,18 +14,18 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
 
     if (isEmpty) {
         return (
-            <DescriptionNotice variant="info" {...rest}>
-                <Text className="max-w-[300px] text-center">
+            <Notice variant="info" {...rest}>
+                <Text className="max-w-[300px]">
                     <FormattedMessage id="hc_documents.no_document" description="Geen documenten" />
                 </Text>
-            </DescriptionNotice>
+            </Notice>
         );
     }
 
     if (isError) {
         return (
-            <DescriptionNotice variant="error" {...rest}>
-                <Text className="max-w-[300px] text-center">
+            <Notice variant="error" {...rest}>
+                <Text className="max-w-[300px]">
                     <FormattedMessage
                         id="hc_documents.error"
                         description="Er is een fout opgetreden"
@@ -34,7 +34,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
                 <Button variant="ghost" onClick={retryQuery}>
                     <FormattedMessage id="common.try_again" description="Probeer opnieuw" />
                 </Button>
-            </DescriptionNotice>
+            </Notice>
         );
     }
 
