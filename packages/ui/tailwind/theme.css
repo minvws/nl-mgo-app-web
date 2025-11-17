@@ -9,3 +9,9 @@
 @import './variables/animations.css';
 @import './variables/shadows.css';
 @import './variables/tokens.css';
+
+@layer base {
+    button {
+        text-align: inherit;
+    }
+}

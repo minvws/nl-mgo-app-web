@@ -1,11 +1,14 @@
 import { type HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useNavFocusRef } from '../../hooks';
 import { useComposition } from '../../hooks/useComposition/useComposition';
 import { tw } from '../../utils/tw/tw';
 import { type Size } from './sizes';
 
 export interface HeadingBaseProps extends HTMLAttributes<HTMLElement> {
     readonly size?: Size;
+    readonly focusOnRender?: boolean;
+    readonly focusOnRenderKey?: unknown;
 }
 
 export type HeadingProps = HeadingBaseProps &
@@ -28,12 +31,22 @@ const HeadingStyle: Record<Size, string> = {
     xl: tw`lg:text-10xl text-8xl md:text-9xl`,
 };
 
-export const Heading = ({ as, asChild, size = 'md', className, ...rest }: HeadingProps) => {
+export const Heading = ({
+    as,
+    asChild,
+    size = 'md',
+    focusOnRender,
+    focusOnRenderKey,
+    className,
+    ...rest
+}: HeadingProps) => {
     const tag = as ?? 'div';
     const { Comp } = useComposition({ asChild, tag });
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>(focusOnRenderKey);
 
     return (
         <Comp
+            ref={focusOnRender ? navFocusRef : null}
             className={twMerge(
                 'text-t-label-primary font-sans leading-none font-bold',
                 HeadingStyle[size],

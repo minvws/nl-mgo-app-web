@@ -1,6 +1,5 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
-import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { Heading } from '@minvws/mgo-ui';
@@ -9,7 +8,7 @@ import { NotFound } from './NotFound';
 
 export function Organization() {
     const { organization } = useParamsData();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+
     const { formatMessage } = useIntl();
 
     const i18nValues = {
@@ -30,14 +29,12 @@ export function Organization() {
                     <Breadcrumbs />
                 </div>
 
-                <Heading asChild size="xl" className="mb-4 md:mb-8">
-                    <h1 ref={navFocusRef}>
-                        <FormattedMessage
-                            id="organization.heading"
-                            description="{organizationName}"
-                            values={i18nValues}
-                        />
-                    </h1>
+                <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-8">
+                    <FormattedMessage
+                        id="organization.heading"
+                        description="{organizationName}"
+                        values={i18nValues}
+                    />
                 </Heading>
 
                 <HealthCategoryList organization={organization} />

@@ -1,6 +1,6 @@
 import { HealthSubCategoryList } from '$/components/HealthSubCategoryList/HealthSubCategoryList';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
-import { useHealthCategoriesQuery, useNavFocusRef } from '$/hooks';
+import { useHealthCategoriesQuery } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Navigate, useParamsData } from '$/routing';
 import { useStore } from '$/store';
@@ -16,7 +16,6 @@ import { PdfDownloadLink } from './PdfDownloadLink';
 export function HealthCategory() {
     const { organization, healthCategory, organizationSlug } = useParamsData();
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const allOrganizations = useStore.use.organizations();
 
     const organizations = organization ? [organization] : allOrganizations;
@@ -67,8 +66,8 @@ export function HealthCategory() {
                     />
                 </div>
 
-                <Heading asChild size="xl">
-                    <h1 ref={navFocusRef}>{heading}</h1>
+                <Heading as="h1" focusOnRender size="xl">
+                    {heading}
                 </Heading>
 
                 <div className="py-4 md:py-8">

@@ -13,3 +13,4 @@ export { useComposition, type CompositionProps } from './useComposition/useCompo
 export { useConfig } from './useConfig/useConfig';
 export { useOnMount } from './useOnMount/useOnMount';
 export { useOpenState } from './useOpenState/useOpenState';
+export { useNavFocusRef } from './useNavFocusRef/useNavFocusRef';

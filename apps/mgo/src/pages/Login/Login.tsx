@@ -1,7 +1,6 @@
 import { useAuth } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { BackButton } from '$/components/BackButton/BackButton';
-import { useNavFocusRef } from '$/hooks/index.js';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Button, ConfirmDialog, Heading, Text, useOnMount } from '@minvws/mgo-ui';
 import { useEffect, useState } from 'react';
@@ -10,7 +9,6 @@ import DigiDSvg from './digid.svg?react';
 
 export function Login() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const auth = useAuth();
     const [showErrorDialog, setShowErrorDialog] = useState(Boolean(auth.parsingError));
 
@@ -34,10 +32,8 @@ export function Login() {
                 <BackButton />
 
                 <div className="mx-auto max-w-md pb-12 md:pb-16 lg:pb-24">
-                    <Heading asChild size="xl" className="mb-4 md:mb-6">
-                        <h1 ref={navFocusRef}>
-                            <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
-                        </h1>
+                    <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
+                        <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
                     </Heading>
 
                     <Text className="mb-6 md:mb-12">
