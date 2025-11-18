@@ -1,3 +1,4 @@
 @import 'tailwindcss';
 @import '@minvws/mgo-ui/tailwind-theme';
 @import '@minvws/mgo-ui/tailwind-source';
+@source '../index.html';

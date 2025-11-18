@@ -1,5 +1,4 @@
-import { flushCallStack } from '@minvws/mgo-utils';
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { beforeAll, expect, test, vi } from 'vitest';
 import { useDarkMode } from './useDarkMode';
 
@@ -38,8 +37,9 @@ test('updates the dark mode value when it changes', async () => {
     });
     const { result } = renderHook(() => useDarkMode());
     expect(result.current).toEqual(false);
-    listener!({ matches: true } as MediaQueryListEvent);
-    await flushCallStack();
+    act(() => {
+        listener!({ matches: true } as MediaQueryListEvent);
+    });
     expect(result.current).toEqual(true);
 });
 

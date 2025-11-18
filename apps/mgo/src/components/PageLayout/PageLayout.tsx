@@ -4,8 +4,8 @@ import { ScrollRestoration } from 'react-router-dom';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 import { Footer } from '../Footer/Footer';
-import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
+import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
 
 export interface LayoutProps {
     readonly hideMenu?: boolean;
@@ -26,7 +26,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <>
             <div className="flex min-h-screen flex-col">
-                <LogoBanner
+                <RibbonBanner
                     className={cn(
                         'z-20',
                         hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'
