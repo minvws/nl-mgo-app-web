@@ -5,6 +5,7 @@ import { cn, tw } from '../../utils';
 import { Card } from '../Card/Card';
 import { DescriptionItem, type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 import { Icon, type IconProps } from '../Icon/Icon';
+import { Spinner } from '../Spinner/Spinner';
 import { Text } from '../Text/Text';
 import { type Variant } from './variants';
 
@@ -62,11 +63,7 @@ export const DescriptionButton = ({
                 {isLoading ? (
                     <div className="ml-auto flex items-center gap-2">
                         <Text className="text-nowrap">{loadingText}</Text>
-                        <Icon
-                            data-testid="spinner"
-                            icon="progress_activity"
-                            className="size-8 animate-spin p-0"
-                        />
+                        <Spinner className="size-8" />
                     </div>
                 ) : (
                     <Icon icon={icon} className={cn('size-8 text-gray-400')} />
