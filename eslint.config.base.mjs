@@ -50,7 +50,6 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 '**/out-tsc',
                 '**/test-output',
                 '*.config.*',
-                'vitest.workspace.mts',
             ],
         },
 

@@ -31,5 +31,6 @@ export default defineConfig({
             },
             reporter: ['text', 'lcov'],
         },
+        projects: ['apps/*/vitest.config.ts', 'packages/*/vitest.config.ts'],
     },
 });
