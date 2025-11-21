@@ -7,6 +7,6 @@ test('shows privacy statement', async () => {
     setupWithAppProviders(<PrivacyStatement />);
 
     screen.getByRole('heading', {
-        name: 'Privacyverklaring Mijn Gezondheidsoverzicht',
+        name: 'Privacyverklaring',
     });
 });
