@@ -19,14 +19,6 @@
         "e2e": "pnpm run --dir apps/mgo-e2e e2e",
         "graph": "pnpm exec nx graph"
     },
-    "non-standard-dependency-comments": {
-        "eslint": [
-            "v8.57.0 - There are still too many issues related to the new flat config change in v9.*.",
-            "https://github.com/import-js/eslint-plugin-import/issues/2556",
-            "https://github.com/TanStack/query/discussions/6669",
-            "https://github.com/facebook/react/issues/28313"
-        ]
-    },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",
@@ -70,7 +62,30 @@
     "commitlint": {
         "extends": [
             "@commitlint/config-conventional"
-        ]
+        ],
+        "rules": {
+            "scope-enum": [
+                2,
+                "always",
+                [
+                    "repo",
+                    "hcim-api",
+                    "hcim-labels",
+                    "mgo",
+                    "mgo-e2e",
+                    "config",
+                    "data-services",
+                    "fhir",
+                    "fhir-client",
+                    "hcim",
+                    "hcim-parse",
+                    "hcim-ui",
+                    "intl",
+                    "ui",
+                    "utils"
+                ]
+            ]
+        }
     },
     "pnpm": {
         "overrides comments (non-standard-key)": {
