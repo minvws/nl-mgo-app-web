@@ -91,9 +91,7 @@
         "overrides comments (non-standard-key)": {
             "brace-expansion@>=1.0.0 <=1.1.11": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
             "brace-expansion@>=2.0.0 <=2.0.1": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
-            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j",
             "rollup": "app/mgo > vite-plugin-svgr@4.2.0 > '@rollup/pluginutils@5.1.0 > rollup:4.21.3 / https://github.com/advisories/GHSA-gcx4-mw62-g8wm",
-            "cookie": "packages/fhir-client > msw@2.4.5 > @bundled-es-modules/cookie@2.0.0 > cookie@0.5.0 / https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
             "cross-spawn": "eslint@8.57.0 > cross-spawn@7.0.3 / https://github.com/advisories/GHSA-3xgq-45jj-v275",
             "path-to-regexp@<0.1.12": "packages/mgo-ui > @storybook/addon-actions@8.3.0 > storybook@8.3.0 > @storybook/core@8.3.0 > express@4.21.0 > path-to-regexp@0.1.10 / https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
             "esbuild@<0.25.0": "packages/mgo-ui > @storybook/addon-actions@8.5.1 > storybook@8.5.1 > @storybook/core@8.5.1 > esbuild@0.24.2 / https://github.com/advisories/GHSA-67mh-4wv8-2f99",
@@ -107,9 +105,7 @@
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
             "brace-expansion@>=2.0.0 <=2.0.1": "2.0.2",
-            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0",
             "rollup": "^4.22.4",
-            "cookie": "^0.7.0",
             "cross-spawn": "^7.0.5",
             "path-to-regexp@<0.1.12": "^0.1.12",
             "esbuild@<0.25.0": "^0.25.0",

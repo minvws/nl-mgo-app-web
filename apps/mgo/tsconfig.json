@@ -21,9 +21,6 @@
             "path": "../../packages/fhir"
         },
         {
-            "path": "../../packages/data-services"
-        },
-        {
             "path": "../../packages/config"
         },
         {

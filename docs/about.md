@@ -13,9 +13,7 @@ A healthcare organization can contain zero or multiple data services. Each data 
 
 For example: data service with id `49` which contains medical data related to a general practitioner, or data service `51` which contains (PDF) documents.
 Each data service has a specified list of available endpoints that are to be used for retrieving the data.
-This information can be found on the [nictiz wiki][nictiz-wiki]. However to align the different clients (`web`/`ios`/`android`) for MGO (for example what to use for optional parameters) we also have a [list on all the used data service endpoints][mgo-endpoints].
-
-> There is an HTTP client available for each data service type in the `data-services` package.
+This information can be found on the [nictiz wiki][nictiz-wiki]. However to align the different clients (`web`/`ios`/`android`) for MGO (for example what to use for optional parameters) we also have setup a shared configuration for each data service in the [config package][package-config].
 
 ### From HCIM to UI
 
@@ -57,7 +55,7 @@ This should give you a general idea of how the MGO application currently works. 
 [MGO]: ../README.md
 [UI]: ./glossary.md#UI
 [nictiz-wiki]: https://informatiestandaarden.nictiz.nl/wiki/Hoofdpagina
-[mgo-endpoints]: ./data-services.md
+[package-config]: ../packages//config/README.md
 [fhir]: ./glossary.md#FHIR
 [fhir-ext]: https://hl7.org/fhir/STU3/extensibility.html
 [hcim]: ./glossary.md#HCIM

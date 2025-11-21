@@ -36,16 +36,18 @@ This repository is a monorepo in that all directories under `apps/*` and `packag
 
 ```shell
 ├── apps
+│    └── hcim-api           # A JSON interfaced export of the hcim package used by the mobile apps.
+│    └── hcim-label         # A script to extract default labels for hcim resource properties
 │    └── mgo                # The main MGO application
 │    └── mgo-e2e            # End-to-end tests for the mgo application
 ├── packages
-│    ├── data-services      # HTTP client for making requests to data services
-│    ├── fhir-client        # A basic HTTP client for making requests to a FHIR server
-│    ├── fhir-data          # Helpers for parsing FHIR data structures and generating "health ui schema"'s
-│    ├── fhir         # Collection of TypeScript types for dealing with different Fhir (version) elements
+│    ├── config             # Health categories and data service configs, also used by the mobile apps.
+│    ├── fhir               # Fhir related types and utils
+│    ├── hcim               # Functions for parsing HCIM FHIR data and retrieving the related "health ui schema"'s
+│    ├── hcim-parse         # Helper functions for parsing (HCIM) FHIR data structures
+│    ├── hcim-ui            # Helper functions for constructing "health ui schema"'s
 │    ├── intl               # Contains all the text content and translations for the MGO app and the "health ui schema"'s
-│    └── tailwind           # MGO Tailwind theme
-│    ├── ui                 # UI library for the MGO app
+│    ├── ui                 # UI component library for the MGO app
 │    ├── utils              # Collection of commonly used utility functions
 ├── docs
 │    └── ...                # Documentation files
