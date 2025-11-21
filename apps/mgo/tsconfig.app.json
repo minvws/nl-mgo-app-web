@@ -34,9 +34,6 @@
             "path": "../../packages/fhir/tsconfig.lib.json"
         },
         {
-            "path": "../../packages/data-services/tsconfig.lib.json"
-        },
-        {
             "path": "../../packages/config/tsconfig.lib.json"
         }
     ]

@@ -12,7 +12,7 @@ A Healthcare Organization that can provide medical information through data serv
 
 ## Data Service
 
-A server from a healthcare organization that contains medical data. There are different types of data services containing different types of information. Such as a Documents service or a General practitioner service. See the documentation on [data services][data-services] for further information.
+A server from a healthcare organization that contains medical data. There are different types of data services containing different types of information. Such as a Documents service or a General practitioner service. Endpoints for each data service are configured in the `packages/config`
 
 ## ZIB
 
@@ -24,7 +24,7 @@ Health and Care Information Model. The English name for a ZIB. A [HCIM] is an in
 
 ## Health UI Schema
 
-A schema that describes a set of ui elements containing health care data. This is used to ensure all client applications show the same information. It also prevents the need for multiple implementations for parsing FHIR data per platform (`web`/`ios`/`android`). See the `fhir-data` [package for more information][fhir-data]
+A schema that describes a set of ui elements containing health care data. This is used to ensure all client applications show the same information. It also prevents the need for multiple implementations for parsing FHIR data per platform (`web`/`ios`/`android`). See the `hcim` [package for more information][package-hcim]
 
 ## FHIR
 
@@ -54,4 +54,4 @@ An reusable module/chunk of code that can be integrated into a project. This rep
 [monorepo]: https://en.wikipedia.org/wiki/Monorepo
 [about-zibs]: ./about.md#hcim--zibs
 [simplifier.net]: https://simplifier.net/
-[fhir-data]: ../packages/fhir-data/README.md
+[package-hcim]: ../packages/hcim/README.md

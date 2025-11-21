@@ -8,7 +8,6 @@
     },
     "dependencies": {
         "@minvws/mgo-config": "workspace:^",
-        "@minvws/mgo-data-services": "workspace:^",
         "@minvws/mgo-fhir": "workspace:^",
         "@minvws/mgo-hcim": "workspace:^",
         "@minvws/mgo-hcim-ui": "workspace:^",
