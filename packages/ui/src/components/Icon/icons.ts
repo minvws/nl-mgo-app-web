@@ -5,7 +5,7 @@ import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
 import CalendarToday from '@material-symbols/svg-400/outlined/calendar_today.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
-import Cancel from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
+import Cancel from '@material-symbols/svg-400/outlined/cancel.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
 import Description from '@material-symbols/svg-400/outlined/description.svg?react';

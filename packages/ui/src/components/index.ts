@@ -51,10 +51,11 @@ export {
 } from './DescriptionButton/DescriptionButton';
 export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
-export { Notice, type NoticeProps } from './Notice/Notice';
 export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { ListWrapper, type ListWrapperProps } from './ListWrapper/ListWrapper';
 export { MobileMenuButton, type MobileMenuButtonProps } from './MobileMenuButton/MobileMenuButton';
 export { MobileMenuItem, type MobileMenuItemProps } from './MobileMenuItem/MobileMenuItem';
+export { Notice, type NoticeProps } from './Notice/Notice';
+export { SearchForm, type SearchFormProps } from './SearchForm/SearchForm';
 export { SlideDown, type SlideDownProps } from './SlideDown/SlideDown';
