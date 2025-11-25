@@ -48,7 +48,7 @@ export const DetailButton = ({
                 </div>
                 <div className="flex items-center text-right">
                     {date && (
-                        <Text as="span" size="sm" className="text-t-label-primary">
+                        <Text size="sm" className="text-t-label-primary">
                             {date}
                         </Text>
                     )}
