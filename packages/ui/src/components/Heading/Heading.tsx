@@ -27,7 +27,7 @@ const HeadingStyle: Record<Size, string> = {
     sm: tw`leading-tight-sm text-xl md:text-2xl md:leading-snug lg:text-3xl lg:leading-normal`,
     md: tw`text-3xl md:text-4xl lg:text-5xl`,
     lg: tw`text-6xl md:text-7xl lg:text-8xl`,
-    xl: tw`lg:text-10xl text-8xl md:text-9xl`,
+    xl: tw`lg:text-10xl text-t-cat-rijkslint text-8xl md:text-9xl`,
 };
 
 export const Heading = ({
