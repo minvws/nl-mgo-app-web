@@ -42,7 +42,7 @@ export function Organizations() {
                 />
             )}
 
-            <Text>
+            <Text as="p">
                 <FormattedMessage
                     id="add_organization_list.subheading"
                     description="Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen."

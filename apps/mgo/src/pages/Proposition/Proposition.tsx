@@ -24,7 +24,7 @@ export function Proposition() {
                         />
                     </Heading>
 
-                    <Text className="mb-6 md:mb-12">
+                    <Text className="mb-6 md:mb-12" as="p">
                         <FormattedMessage
                             id="proposition.subheading"
                             description="In de <a>privacyverklaring</a> staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten"

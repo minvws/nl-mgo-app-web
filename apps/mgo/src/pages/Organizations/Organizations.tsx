@@ -2,7 +2,7 @@ import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { useStore } from '$/store';
-import { Button, ButtonCard, Heading, Stack } from '@minvws/mgo-ui';
+import { Button, Heading, OrganizationButton, Stack } from '@minvws/mgo-ui';
 
 export function Organizations() {
     const organizations = useStore.use.organizations();
@@ -20,13 +20,13 @@ export function Organizations() {
                         <ul>
                             {organizations.map(({ slug, name, category }) => (
                                 <li key={slug}>
-                                    <ButtonCard
+                                    <OrganizationButton
                                         asChild
                                         title={name ?? formatMessage('common.unknown')}
-                                        description={category}
+                                        subTitle={category}
                                     >
                                         <RouterLink to={`/zorgaanbieders/${slug}`} />
-                                    </ButtonCard>
+                                    </OrganizationButton>
                                 </li>
                             ))}
                         </ul>

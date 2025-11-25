@@ -29,7 +29,7 @@ export function NotFound() {
                             className="mx-auto w-3/4 md:w-1/2"
                             illustration="woman-with-umbrella"
                         />
-                        <Text className="mt-6 md:mt-12">
+                        <Text className="mt-6 md:mt-12" as="p">
                             <FormattedMessage
                                 id="organization.not-found_subheading"
                                 description="Misschien is de zorgaanbieder die je zoekt verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
