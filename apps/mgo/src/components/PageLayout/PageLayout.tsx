@@ -41,7 +41,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
                             'bg-t-bg-primary flex grow break-words',
                             hideMenu
                                 ? 'flex-col'
-                                : 'gap-8 pt-8 pb-8 md:gap-10 md:pt-10 md:pb-16 lg:gap-16 lg:pt-12 lg:pb-24'
+                                : 'gap-8 pt-8 pb-8 md:gap-10 md:pt-10 md:pb-10 lg:gap-16 lg:pt-12 lg:pb-12'
                         )}
                     >
                         {!hideMenu && !isMobile && <DesktopMenu />}

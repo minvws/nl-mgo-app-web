@@ -1,10 +1,9 @@
 import { useRef, type HTMLAttributes } from 'react';
 import { Transition, type TransitionStatus } from 'react-transition-group';
-import { twMerge } from 'tailwind-merge';
 import { useAnimationDuration } from '../../hooks';
 import { type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { useOnMount } from '../../hooks/useOnMount/useOnMount';
-import { tw } from '../../utils/tw/tw';
+import { cn, tw } from '../../utils';
 
 export interface CollapsibleProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
     readonly isOpen: boolean;
@@ -71,7 +70,7 @@ export const Collapsible = ({ className, children, isOpen, ...rest }: Collapsibl
                     className={`min-h-0 transform-gpu opacity-0 transition-[height,opacity] ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}`}
                     ref={rootRef}
                 >
-                    <div ref={contentRef} className={twMerge('overflow-auto', className)} {...rest}>
+                    <div ref={contentRef} className={cn('overflow-auto', className)} {...rest}>
                         {children}
                     </div>
                 </div>

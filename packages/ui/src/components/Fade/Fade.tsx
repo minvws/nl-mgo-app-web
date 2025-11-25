@@ -2,7 +2,7 @@ import { useRef, type HTMLAttributes } from 'react';
 import { Transition, type TransitionStatus } from 'react-transition-group';
 import { useAnimationDuration } from '../../hooks';
 import { type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { tw } from '../../utils';
 
 export type FadeProps = HTMLAttributes<HTMLDivElement> &
     CompositionProps & {

@@ -11,6 +11,18 @@
       "value": "Plaats"
     }
   ],
+  "add_organization.default_content_heading": [
+    {
+      "type": 0,
+      "value": "Waar wilt u uw zorggegevens ophalen?"
+    }
+  ],
+  "add_organization.default_content_subheading": [
+    {
+      "type": 0,
+      "value": "Bijvoorbeeld uw huisarts, ziekenhuis of apotheek."
+    }
+  ],
   "add_organization.error_missing_city": [
     {
       "type": 0,
@@ -45,6 +57,18 @@
     {
       "type": 0,
       "value": "Zorgaanbieder niet aangesloten"
+    }
+  ],
+  "add_organization.search_clear": [
+    {
+      "type": 0,
+      "value": "Wis selectie"
+    }
+  ],
+  "add_organization.search_placeholder": [
+    {
+      "type": 0,
+      "value": "Bijv. Amsterdam UMC"
     }
   ],
   "add_organization.voice_over_to_overview": [

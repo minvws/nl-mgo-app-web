@@ -29,7 +29,7 @@ export function AddOrganization() {
                 <BackButton />
 
                 <div className="mx-auto max-w-md">
-                    <Heading as="h1" focusOnRender size="lg" className="mb-4 md:mb-6">
+                    <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
                         <FormattedMessage
                             id="add_organization.heading"
                             description="Voeg een zorgaanbieder toe"

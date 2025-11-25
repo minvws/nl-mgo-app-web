@@ -1,5 +1,5 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { Text } from '../Text/Text';
 import { ListIcon } from './ListIcon';
 import { ListItem } from './ListItem';
@@ -12,7 +12,7 @@ export const List = ({ className, as = 'ul', children, ...rest }: ListProps) => 
     const Comp = as;
 
     return (
-        <Text asChild className={twMerge('flex flex-col gap-6', className)}>
+        <Text asChild className={cn('flex flex-col gap-6', className)}>
             <Comp {...rest}>{children}</Comp>
         </Text>
     );

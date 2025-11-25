@@ -5,7 +5,9 @@ import { HealthData } from '$/pages/HealthData/HealthData';
 import { NotFound } from '$/pages/NotFound/NotFound';
 import { Overview } from '$/pages/Overview/Overview';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
+import { SearchOrganization } from '$/pages/SearchOrganization/SearchOrganization';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/routing/ExtractRoutePaths';
+import { AppMessagesIds } from '@minvws/mgo-intl';
 import { type RouteObject, type Path as RouterPath } from 'react-router-dom';
 import { type OverrideProperties } from 'type-fest';
 import { PageLayout } from '../components/PageLayout/PageLayout';
@@ -17,7 +19,6 @@ import { Logout } from '../pages/Logout/Logout';
 import { Organization } from '../pages/Organization/Organization';
 import { Organizations } from '../pages/Organizations/Organizations';
 import { Proposition } from '../pages/Proposition/Proposition';
-import { AppMessagesIds } from '@minvws/mgo-intl';
 
 const routeConfig = [
     {
@@ -106,6 +107,13 @@ const routeConfig = [
                         element: <Organizations />,
                         handle: {
                             breadcrumb: 'organizations.heading',
+                        },
+                    },
+                    {
+                        path: '/zorgaanbieders/toevoegen',
+                        element: <SearchOrganization />,
+                        handle: {
+                            breadcrumb: 'add_organization.heading',
                         },
                     },
                     {

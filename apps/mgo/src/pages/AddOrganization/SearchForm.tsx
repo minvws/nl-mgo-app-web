@@ -69,7 +69,7 @@ export const SearchForm = ({ onSubmit, className, ...rest }: SearchFormProps) =>
     return (
         <form
             onSubmit={handleSubmit}
-            className={cn('flex flex-col gap-6 md:flex-row', className)}
+            className={cn('flex flex-col gap-6 md:flex-row md:items-end', className)}
             noValidate
             {...rest}
         >
@@ -103,7 +103,7 @@ export const SearchForm = ({ onSubmit, className, ...rest }: SearchFormProps) =>
                 required
                 onChange={handleChange}
             />
-            <Button type="submit" className="h-16 px-12 md:mt-10">
+            <Button type="submit">
                 <FormattedMessage id="common.search" description="Zoeken" />
             </Button>
         </form>

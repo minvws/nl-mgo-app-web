@@ -1,8 +1,8 @@
 import { HTMLAttributes, InputHTMLAttributes, type ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { useUniqueId } from '../../hooks/useUniqueId/useUniqueId';
-import { cn } from '../../utils/cn/cn';
+import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
+import { Input } from '../Input/Input';
 import { Text } from '../Text/Text';
 
 export type InputProps = Pick<
@@ -44,27 +44,19 @@ export const InputField = ({
         <Text
             size="md"
             as="div"
-            className={twMerge(`text-t-label-primary flex w-full flex-col gap-3`, className)}
+            className={cn(`text-t-label-primary flex w-full flex-col gap-3`, className)}
             {...rest}
         >
             <label htmlFor={inputId}>{label}</label>
-            <input
-                className={cn(
-                    'bg-t-bg-secondary',
-                    'rounded-lg outline-hidden',
-                    'border-t-seperator-primary border-2',
-                    'h-16 p-4',
-                    'focus:border-t-cat-rijkslint',
-                    'aria-[invalid]:border-t-state-critical'
-                )}
-                {...inputProps}
-            />
+
+            <Input {...inputProps} />
+
             {error && (
                 <span
                     className="text-t-state-critical flex items-center gap-2 font-bold"
                     id={validationMessageId}
                 >
-                    <Icon icon="cancel" className="h-6 w-6" />
+                    <Icon icon="cancel-fill" className="h-6 w-6" />
                     {error}
                 </span>
             )}

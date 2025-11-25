@@ -86,7 +86,7 @@
   "common.no_data": [
     {
       "type": 0,
-      "value": "Geen gegevens"
+      "value": "Leeg"
     }
   ],
   "common.no_organizations_heading": [

@@ -1,5 +1,5 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { iconPaddings, icons, type IconName } from './icons';
 
 export interface IconProps extends HTMLAttributes<SVGElement> {
@@ -17,11 +17,7 @@ export const Icon = ({ icon, 'aria-label': ariaLabel, className, ...rest }: Icon
             role="img"
             aria-label={ariaLabel}
             aria-hidden={!ariaLabel}
-            className={twMerge(
-                'h-[1em] w-[1em] shrink-0 fill-current',
-                iconPaddings[icon],
-                className
-            )}
+            className={cn('h-[1em] w-[1em] shrink-0 fill-current', iconPaddings[icon], className)}
             {...rest}
         />
     );
