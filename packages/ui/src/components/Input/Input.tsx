@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react';
-import { cn } from '../../utils/cn/cn';
+import { cn } from '../../utils';
 import { Text } from '../Text/Text';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -12,9 +12,9 @@ export const Input = ({ type = 'text', invalid, className, size, ...rest }: Inpu
             size="md"
             asChild
             className={cn(
-                'bg-t-bg-secondary px-4 py-2',
+                'bg-t-bg-secondary px-4 py-2 leading-0',
                 'rounded-lg outline-hidden',
-                'border-t-seperator-primary border-2',
+                'border-t-seperator-primary border',
                 'focus:border-t-cat-rijkslint',
                 'aria-[invalid]:border-t-state-critical',
                 'placeholder:text-t-label-secondary',

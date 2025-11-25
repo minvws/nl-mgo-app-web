@@ -1,7 +1,6 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { useComposition } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { cn, tw } from '../../utils';
 import { type Size } from './sizes';
 
 export interface TextBaseProps extends HTMLAttributes<HTMLElement> {
@@ -44,11 +43,7 @@ export const Text = ({ as, asChild, size = 'md', className, ...rest }: TextProps
 
     return (
         <Comp
-            className={twMerge(
-                'text-t-label-primary font-sans font-normal',
-                TextStyle[size],
-                className
-            )}
+            className={cn('text-t-label-primary font-sans font-normal', TextStyle[size], className)}
             {...rest}
         />
     );

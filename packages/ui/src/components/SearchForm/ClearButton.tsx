@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import { SetRequired } from 'type-fest';
 import { groupFocusStyle } from '../../styles';
-import { cn } from '../../utils/cn/cn';
+import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
 
 export type ClearButtonProps = Omit<

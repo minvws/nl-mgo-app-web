@@ -1,5 +1,5 @@
 import { ChangeEvent, HTMLAttributes } from 'react';
-import { cn } from '../../utils/cn/cn';
+import { cn } from '../../utils';
 import { Input } from '../Input/Input';
 import { ClearButton } from './ClearButton';
 

@@ -1,6 +1,6 @@
 import { uniqueId } from 'lodash';
 import { useMemo, useState, type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { Card } from '../Card/Card';
 import { AccordionButton } from './AccordionButton';
 import { AccordionContext, type AccordionContextState } from './AccordionContext';
@@ -32,7 +32,7 @@ export const Accordion = ({
     return (
         <Card className="p-4 md:p-6">
             <AccordionContext.Provider value={contextValue}>
-                <div className={twMerge(`relative`, className)} {...rest}>
+                <div className={cn(`relative`, className)} {...rest}>
                     {children}
                 </div>
             </AccordionContext.Provider>

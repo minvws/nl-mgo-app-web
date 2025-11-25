@@ -1,8 +1,7 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { useNavFocusRef } from '../../hooks';
 import { useComposition } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { cn, tw } from '../../utils';
 import { type Size } from './sizes';
 
 export interface HeadingBaseProps extends HTMLAttributes<HTMLElement> {
@@ -47,7 +46,7 @@ export const Heading = ({
     return (
         <Comp
             ref={focusOnRender ? navFocusRef : null}
-            className={twMerge(
+            className={cn(
                 'text-t-label-primary font-sans leading-none font-bold',
                 HeadingStyle[size],
                 className

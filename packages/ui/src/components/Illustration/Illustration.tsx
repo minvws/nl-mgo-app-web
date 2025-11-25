@@ -1,5 +1,5 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { illustrations, type IllustrationName } from './illustrations';
 
 export interface IllustrationProps extends HTMLAttributes<HTMLElement> {
@@ -16,7 +16,7 @@ export const Illustration = ({
     const image = illustrations[illustration];
 
     return (
-        <picture className={twMerge('flex', className)} {...rest}>
+        <picture className={cn('flex', className)} {...rest}>
             <source srcSet={image.dark} media="(prefers-color-scheme: dark)" />
             <img
                 src={forceDarkMode ? image.dark : image.light}

@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
+import { cn } from '../../utils';
 
 export interface StackProps extends HTMLAttributes<HTMLElement>, CompositionProps {}
 
@@ -10,5 +10,5 @@ export interface StackProps extends HTMLAttributes<HTMLElement>, CompositionProp
  */
 export const Stack = ({ asChild, className, ...rest }: StackProps) => {
     const { Comp } = useComposition({ asChild, tag: 'div' });
-    return <Comp className={twMerge('flex flex-col gap-4', className)} {...rest} />;
+    return <Comp className={cn('flex flex-col gap-4', className)} {...rest} />;
 };
