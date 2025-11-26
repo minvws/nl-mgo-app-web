@@ -10,3 +10,7 @@ export type { HealthCategoryConfig, MainHealthCategoryConfig, SubHealthCategoryC
 export function getHealthCategoryConfigs(): HealthCategoryConfig[] {
     return healthCategoriesConfig.flatMap((mainCategory) => mainCategory.categories);
 }
+
+export function getMainHealthCategoryConfigs(): MainHealthCategoryConfig[] {
+    return healthCategoriesConfig;
+}

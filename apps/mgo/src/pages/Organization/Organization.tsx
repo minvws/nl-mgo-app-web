@@ -1,10 +1,10 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
-import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
+import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
 
 export function Organization() {
     const { organization } = useParamsData();
@@ -37,7 +37,7 @@ export function Organization() {
                     />
                 </Heading>
 
-                <HealthCategoryList organization={organization} />
+                <HealthCategoryGrid organizations={[organization]} />
             </section>
         </>
     );
