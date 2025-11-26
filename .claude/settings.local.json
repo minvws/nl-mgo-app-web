@@ -1,0 +1,20 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(npm test:*)",
+            "Bash(npm run typecheck:*)",
+            "Bash(npm run:*)",
+            "Bash(npx nx run @minvws/mgo-ui:typecheck)",
+            "Bash(npx nx run @minvws/mgo:typecheck)",
+            "Bash(npx nx reset:*)",
+            "Bash(npx nx run:*)",
+            "Bash(tsc:*)",
+            "Bash(npx tsc:*)",
+            "Bash(pnpm install:*)",
+            "Bash(pnpm why:*)",
+            "Bash(pnpm list:*)"
+        ],
+        "deny": [],
+        "ask": []
+    }
+}

@@ -55,6 +55,16 @@
   ],
   "dialog.remove_organization_yes": [
   ],
+  "errorstate.clientside.heading": [
+  ],
+  "errorstate.error": [
+  ],
+  "errorstate.loading": [
+  ],
+  "errorstate.partial_error": [
+  ],
+  "errorstate.serverside.heading": [
+  ],
   "export_pdf.close": [
   ],
   "export_pdf.dialog.create_document": [

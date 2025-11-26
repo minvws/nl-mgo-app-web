@@ -175,6 +175,36 @@
       "value": "Ja, weglaten"
     }
   ],
+  "errorstate.clientside.heading": [
+    {
+      "type": 0,
+      "value": "Er ging iets mis bij het ophalen. Controleer uw verbinding en probeer het opnieuw."
+    }
+  ],
+  "errorstate.error": [
+    {
+      "type": 0,
+      "value": "Geen gegevens opgehaald"
+    }
+  ],
+  "errorstate.loading": [
+    {
+      "type": 0,
+      "value": "Gegevens ophalen…"
+    }
+  ],
+  "errorstate.partial_error": [
+    {
+      "type": 0,
+      "value": "Niet alle gegevens zijn opgehaald"
+    }
+  ],
+  "errorstate.serverside.heading": [
+    {
+      "type": 0,
+      "value": "Dit komt door een storing bij ons. Probeer het later opnieuw."
+    }
+  ],
   "export_pdf.close": [
     {
       "type": 0,
@@ -196,7 +226,7 @@
   "export_pdf.dialog.subheading_web": [
     {
       "type": 0,
-      "value": "Je maakt een document met je medische gegevens. Het document opent in een nieuw tabblad. Daarna kun je het opslaan."
+      "value": "U maakt een document met uw medische gegevens. Het document opent in een nieuw tabblad. Daarna kunt u het opslaan."
     }
   ],
   "export_pdf.footer": [
@@ -338,7 +368,7 @@
   "introduction.subheading": [
     {
       "type": 0,
-      "value": "Met deze app heb je je gezondheidsgegevens van de overheid en je zorgaanbieders altijd bij de hand. Veilig en overzichtelijk, op één plek."
+      "value": "Met deze app heeft u al uw gegevens over gezondheid en zorg veilig op één plek."
     }
   ],
   "lab_results.heading": [
@@ -380,19 +410,19 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Bewijs wie je bent"
+      "value": "Bewijs wie u bent"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Kies de manier waarop je wilt inloggen. Zo kunnen we jouw gegevens veilig ophalen bij je huisarts, ziekenhuis en andere zorgaanbieders."
+      "value": "Kies de manier waarop u wilt inloggen. Zo kunnen we uw gegevens veilig ophalen bij uw huisarts, ziekenhuis en andere zorgaanbieders."
     }
   ],
   "logout.heading": [
     {
       "type": 0,
-      "value": "Je bent uitgelogd"
+      "value": "U bent uitgelogd"
     }
   ],
   "logout.login": [
@@ -404,7 +434,7 @@
   "logout.subheading": [
     {
       "type": 0,
-      "value": "De volgende keer dat je inlogt kun je je gegevens opnieuw ophalen."
+      "value": "Wanneer u opnieuw inlogt, kunt u uw gegevens weer ophalen."
     }
   ],
   "medication_use.heading": [
@@ -706,13 +736,13 @@
   "proposition.heading": [
     {
       "type": 0,
-      "value": "Hoe de website met jouw gegevens omgaat"
+      "value": "Hoe de website omgaat met uw gegevens"
     }
   ],
   "proposition.statement_1": [
     {
       "type": 0,
-      "value": "Je gegevens worden "
+      "value": "Uw gegevens worden "
     },
     {
       "children": [
@@ -746,13 +776,13 @@
   "proposition.statement_2": [
     {
       "type": 0,
-      "value": "Je gegevens komen direct van de zorgaanbieder die je kiest. "
+      "value": "Uw gegevens komen direct van de zorgaanbieder die u kiest. "
     },
     {
       "children": [
         {
           "type": 0,
-          "value": "Alleen jij hebt toegang."
+          "value": "Alleen u heeft toegang."
         }
       ],
       "type": 8,
@@ -764,7 +794,7 @@
       "children": [
         {
           "type": 0,
-          "value": "Je kiest zelf"
+          "value": "U kiest zelf"
         }
       ],
       "type": 8,
@@ -772,13 +802,13 @@
     },
     {
       "type": 0,
-      "value": " hoe je je gegevens wilt gebruiken en of je ze deelt met anderen."
+      "value": " hoe u uw gegevens wilt gebruiken en of u ze deelt met anderen."
     }
   ],
   "proposition.statement_4": [
     {
       "type": 0,
-      "value": "Je kunt de gegevens in je overzicht altijd "
+      "value": "U kunt de gegevens in uw overzicht altijd "
     },
     {
       "children": [
@@ -812,7 +842,7 @@
     },
     {
       "type": 0,
-      "value": " staat hoe Mijn Gezondheidsoverzicht je gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
+      "value": " staat hoe Mijn Gezondheidsoverzicht uw gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
     }
   ],
   "remove_organization.no_cancel": [
