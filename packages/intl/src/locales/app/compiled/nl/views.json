@@ -2,7 +2,7 @@
   "add_organization.already_added": [
     {
       "type": 0,
-      "value": "Zorgaanbieder al toevoegd"
+      "value": "Al toevoegd"
     }
   ],
   "add_organization.city": [
@@ -117,6 +117,34 @@
     {
       "type": 0,
       "value": "Alle gegevens"
+    }
+  ],
+  "dialog.add_organization_heading": [
+    {
+      "type": 1,
+      "value": "organizationName"
+    },
+    {
+      "type": 0,
+      "value": " toevoegen?"
+    }
+  ],
+  "dialog.add_organization_no": [
+    {
+      "type": 0,
+      "value": "Nee"
+    }
+  ],
+  "dialog.add_organization_subheading": [
+    {
+      "type": 0,
+      "value": "Als deze zorgaanbieder gegevens over u heeft, staan die straks in uw overzicht."
+    }
+  ],
+  "dialog.add_organization_yes": [
+    {
+      "type": 0,
+      "value": "Ja, toevoegen"
     }
   ],
   "dialog.remove_organization_heading": [
@@ -547,6 +575,22 @@
       "value": "Geen zorgaanbieders gevonden"
     }
   ],
+  "organization_search.no_results_found_subheading_2": [
+    {
+      "type": 0,
+      "value": "Controleer uw zoekopdracht en probeer het opnieuw."
+    }
+  ],
+  "organization_search.results_count": [
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": " zorgaanbieders gevonden"
+    }
+  ],
   "organization_search.search_hint_1": [
     {
       "type": 0,
@@ -616,7 +660,7 @@
   "overview.subheading": [
     {
       "type": 0,
-      "value": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+      "value": "Dit is jouw overzicht van gegevens over je gezondheid. Hier zie je informatie van je zorgaanbieders. Voeg er meer toe voor een completer beeld van je gezondheid."
     }
   ],
   "patientfriendlyterms.synonym": [
@@ -781,6 +825,12 @@
     {
       "type": 0,
       "value": "Automatische lokalisatie"
+    }
+  ],
+  "settings.version.heading": [
+    {
+      "type": 0,
+      "value": "Versie"
     }
   ]
 }

@@ -19,6 +19,10 @@
     "add_organization_list.subheading": "",
     "add_organization_list.to_overview": "",
     "detail.breadcrumb": "",
+    "dialog.add_organization_heading": "",
+    "dialog.add_organization_no": "",
+    "dialog.add_organization_subheading": "",
+    "dialog.add_organization_yes": "",
     "dialog.remove_organization_heading": "",
     "dialog.remove_organization_no": "",
     "dialog.remove_organization_subheading": "",
@@ -85,6 +89,8 @@
     "organization.to_overview": "",
     "organization_search.heading": "",
     "organization_search.no_results_found_heading": "",
+    "organization_search.no_results_found_subheading_2": "",
+    "organization_search.results_count": "",
     "organization_search.search_hint_1": "",
     "organization_search.search_hint_2": "",
     "organization_search.search_hint_3": "",
@@ -110,5 +116,6 @@
     "proposition.statement_4": "",
     "proposition.subheading": "",
     "remove_organization.no_cancel": "",
-    "settings.featureflag.localization": ""
+    "settings.featureflag.localization": "",
+    "settings.version.heading": ""
 }
