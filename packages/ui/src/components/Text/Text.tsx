@@ -38,7 +38,7 @@ const TextStyle: Record<Size, string> = {
 };
 
 export const Text = ({ as, asChild, size = 'md', className, ...rest }: TextProps) => {
-    const tag = as ?? 'p';
+    const tag = as ?? 'span';
     const { Comp } = useComposition({ asChild, tag });
 
     return (

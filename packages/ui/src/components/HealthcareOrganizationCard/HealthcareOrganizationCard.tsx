@@ -50,18 +50,12 @@ export const HealthcareOrganizationCard = ({
                         {title}
                     </Text>
                     {subTitle && (
-                        <Text
-                            as="span"
-                            className="text-t-label-secondary break-all whitespace-pre-wrap"
-                        >
+                        <Text className="text-t-label-secondary break-all whitespace-pre-wrap">
                             {subTitle}
                         </Text>
                     )}
                     {meta && (
-                        <Text
-                            as="span"
-                            className="text-t-label-secondary break-all whitespace-pre-wrap"
-                        >
+                        <Text className="text-t-label-secondary break-all whitespace-pre-wrap">
                             {meta}
                         </Text>
                     )}

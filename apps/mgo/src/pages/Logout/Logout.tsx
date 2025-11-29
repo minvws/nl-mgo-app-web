@@ -9,7 +9,7 @@ export function Logout() {
             <Heading as="h1" focusOnRender size="xl" className="mt-6 md:mt-16">
                 <FormattedMessage id="logout.heading" description="Je bent uitgelogd" />
             </Heading>
-            <Text className="mt-4 md:mt-6">
+            <Text className="mt-4 md:mt-6" as="p">
                 <FormattedMessage
                     id="logout.subheading"
                     description="Wel zo fijn, zo weet je zeker dat je gegevens veilig achter slot en grendel

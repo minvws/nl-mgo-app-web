@@ -28,7 +28,7 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
                     </h1>
                 </Heading>
 
-                <Text className="mt-4 md:mt-6">
+                <Text className="mt-4 md:mt-6" as="p">
                     <FormattedMessage
                         id="not_found.subheading"
                         description="Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze

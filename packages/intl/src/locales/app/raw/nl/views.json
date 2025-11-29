@@ -1,5 +1,5 @@
 {
-    "add_organization.already_added": "Zorgaanbieder al toevoegd",
+    "add_organization.already_added": "Al toevoegd",
     "add_organization.city": "Plaats",
     "add_organization.default_content_heading": "Waar wilt u uw zorggegevens ophalen?",
     "add_organization.default_content_subheading": "Bijvoorbeeld uw huisarts, ziekenhuis of apotheek.",
@@ -19,6 +19,10 @@
     "add_organization_list.subheading": "Je kunt zelf zorgaanbieders toevoegen of verwijderen. Dit kun je ook later in je profiel doen.",
     "add_organization_list.to_overview": "Ga naar het overzicht",
     "detail.breadcrumb": "Alle gegevens",
+    "dialog.add_organization_heading": "{organizationName} toevoegen?",
+    "dialog.add_organization_no": "Nee",
+    "dialog.add_organization_subheading": "Als deze zorgaanbieder gegevens over u heeft, staan die straks in uw overzicht.",
+    "dialog.add_organization_yes": "Ja, toevoegen",
     "dialog.remove_organization_heading": "{organizationName} weglaten?",
     "dialog.remove_organization_no": "Nee, toch tonen",
     "dialog.remove_organization_subheading": "We halen je dossier van deze zorgaanbieder niet op. Je kunt deze later alsnog toevoegen via je profiel.",
@@ -85,6 +89,8 @@
     "organization.to_overview": "Ga naar het overzicht",
     "organization_search.heading": "Deze zorgaanbieders hebben we gevonden",
     "organization_search.no_results_found_heading": "Geen zorgaanbieders gevonden",
+    "organization_search.no_results_found_subheading_2": "Controleer uw zoekopdracht en probeer het opnieuw.",
+    "organization_search.results_count": "{count} zorgaanbieders gevonden",
     "organization_search.search_hint_1": "Controleer de spelling.",
     "organization_search.search_hint_2": "Vul de juiste naam in. Je vindt deze op de rekening. Of vraag aan de zorgaanbieder hoe je hun naam schrijft.",
     "organization_search.search_hint_3": "Heeft deze zorgaanbieder meerdere vestigingen? Vul dan de plaatsnaam van de hoofdvestiging in.",
@@ -96,7 +102,7 @@
     "overview.no_organizations_found": "Je overzicht is nog leeg, omdat je nog geen gegevens hebt opgehaald.",
     "overview.no_results_action": "Voeg zorgaanbieders toe",
     "overview.organizations.subheading": "Je gegevens van deze zorgaanbieder",
-    "overview.subheading": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens.",
+    "overview.subheading": "Dit is jouw overzicht van gegevens over je gezondheid. Hier zie je informatie van je zorgaanbieders. Voeg er meer toe voor een completer beeld van je gezondheid.",
     "patientfriendlyterms.synonym": "Andere naam: {synonym}",
     "pdf_viewer.loading": "Document maken…",
     "privacy.heading": "Privacyverklaring",
@@ -110,5 +116,6 @@
     "proposition.statement_4": "Je kunt de gegevens in je overzicht altijd <b>verwijderen of opnieuw ophalen<\/b>.",
     "proposition.subheading": "In de <a href=\"{href}\">privacyverklaring<\/a> staat hoe Mijn Gezondheidsoverzicht je gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:",
     "remove_organization.no_cancel": "Nee, annuleren",
-    "settings.featureflag.localization": "Automatische lokalisatie"
+    "settings.featureflag.localization": "Automatische lokalisatie",
+    "settings.version.heading": "Versie"
 }

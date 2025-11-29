@@ -20,7 +20,7 @@ export function Introduction() {
                             description="Je gezondheidsgegevens in één overzicht"
                         />
                     </Heading>
-                    <Text className="mb-6 md:mb-12">
+                    <Text className="mb-6 md:mb-12" as="p">
                         <FormattedMessage
                             id="introduction.subheading"
                             description="Alle informatie die je huisarts, ziekenhuis en andere zorgverleners

@@ -67,7 +67,7 @@ export const ConfirmDialog = ({
                             </div>
 
                             <AlertDialog.Description asChild className="mb-4 md:mb-6">
-                                <Text>{description}</Text>
+                                <Text as="p">{description}</Text>
                             </AlertDialog.Description>
 
                             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">

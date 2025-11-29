@@ -755,6 +755,12 @@
       "value": "Behandelaren"
     }
   ],
+  "zib_contact_person.heading": [
+    {
+      "type": 0,
+      "value": "Persoonlijke gegevens"
+    }
+  ],
   "zib_drug_use.heading": [
     {
       "type": 0,

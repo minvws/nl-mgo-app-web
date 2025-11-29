@@ -21,6 +21,7 @@ import Group from '@material-symbols/svg-400/outlined/group.svg?react';
 import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safety-fill.svg?react';
 import HealthCross from '@material-symbols/svg-400/outlined/health_cross.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
+import LinkOff from '@material-symbols/svg-400/outlined/link_off.svg?react';
 import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
@@ -107,6 +108,7 @@ export const icons = {
     calendar_today: CalendarToday,
     patient_list: PatientList,
     account_balance: AccountBalance,
+    link_off: LinkOff,
 };
 
 export type IconName = keyof typeof icons;

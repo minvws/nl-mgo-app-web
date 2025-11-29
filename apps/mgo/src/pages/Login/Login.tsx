@@ -36,7 +36,7 @@ export function Login() {
                         <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
                     </Heading>
 
-                    <Text className="mb-6 md:mb-12">
+                    <Text className="mb-6 md:mb-12" as="p">
                         <FormattedMessage
                             id="login.subheading"
                             description="Kies de manier waarop je wilt inloggen."

@@ -25,7 +25,7 @@ export function DownloadLink({ value, ...rest }: DownloadLinkProps) {
 
     return (
         <Notice variant="info" {...rest}>
-            <Text className="max-w-[300px]">
+            <Text className="max-w-[300px]" as="p">
                 <FormattedMessage id="hc_documents.no_document" description="Geen documenten" />
             </Text>
         </Notice>

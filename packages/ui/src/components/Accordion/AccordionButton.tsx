@@ -24,9 +24,7 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
             aria-expanded={expanded}
             aria-controls={panelId}
         >
-            <Text as="span" className="text-left font-bold">
-                {children}
-            </Text>
+            <Text className="text-left font-bold">{children}</Text>
             <Icon
                 icon="chevron_right"
                 className={cn(

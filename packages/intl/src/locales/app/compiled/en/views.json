@@ -39,6 +39,14 @@
   ],
   "detail.breadcrumb": [
   ],
+  "dialog.add_organization_heading": [
+  ],
+  "dialog.add_organization_no": [
+  ],
+  "dialog.add_organization_subheading": [
+  ],
+  "dialog.add_organization_yes": [
+  ],
   "dialog.remove_organization_heading": [
   ],
   "dialog.remove_organization_no": [
@@ -171,6 +179,10 @@
   ],
   "organization_search.no_results_found_heading": [
   ],
+  "organization_search.no_results_found_subheading_2": [
+  ],
+  "organization_search.results_count": [
+  ],
   "organization_search.search_hint_1": [
   ],
   "organization_search.search_hint_2": [
@@ -222,5 +234,7 @@
   "remove_organization.no_cancel": [
   ],
   "settings.featureflag.localization": [
+  ],
+  "settings.version.heading": [
   ]
 }

@@ -1,7 +1,6 @@
 export { Accordion, type AccordionProps } from './Accordion/Accordion';
 export { Alert, type AlertProps } from './Alert/Alert';
 export { Button, type ButtonProps } from './Button/Button';
-export { ButtonCard, type ButtonCardProps } from './ButtonCard/ButtonCard';
 export { Card, type CardProps } from './Card/Card';
 export { ClosableCard } from './ClosableCard/ClosableCard';
 export { ConfirmDialog, type ConfirmDialogProps } from './ConfirmDialog/ConfirmDialog';
@@ -27,6 +26,10 @@ export {
 } from './List';
 export { MarkdownContent, type MarkdownContentProps } from './MarkdownContent/MarkdownContent';
 export { NavButton, type NavButtonProps } from './NavButton/NavButton';
+export {
+    OrganizationButton,
+    type OrganizationButtonProps,
+} from './OrganizationButton/OrganizationButton';
 export { Render, type RenderProps } from './Render/Render';
 export {
     Skeleton,

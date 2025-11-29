@@ -15,7 +15,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
     if (isEmpty) {
         return (
             <Notice variant="info" {...rest}>
-                <Text className="max-w-[300px]">
+                <Text className="max-w-[300px]" as="p">
                     <FormattedMessage id="hc_documents.no_document" description="Geen documenten" />
                 </Text>
             </Notice>
@@ -25,7 +25,7 @@ export function DownloadBinary({ value, ...rest }: DownloadBinaryProps) {
     if (isError) {
         return (
             <Notice variant="error" {...rest}>
-                <Text className="max-w-[300px]">
+                <Text className="max-w-[300px]" as="p">
                     <FormattedMessage
                         id="hc_documents.error"
                         description="Er is een fout opgetreden"
