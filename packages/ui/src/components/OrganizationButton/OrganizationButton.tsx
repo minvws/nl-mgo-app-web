@@ -92,7 +92,7 @@ export const OrganizationButton = ({
                         </Text>
                     )}
                     {successMessage && (
-                        <Text className="text-t-state-positive flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
+                        <Text className="text-t-state-confirmation flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
                             <Icon icon="check-fill" className="text-xl" />
                             <span>{successMessage}</span>
                         </Text>

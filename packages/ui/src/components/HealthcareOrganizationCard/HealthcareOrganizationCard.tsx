@@ -92,7 +92,7 @@ export const HealthcareOrganizationCard = ({
                     </Text>
                 )}
                 {checkMessage && (
-                    <Text className="text-t-state-positive mt-2 flex flex-row items-center gap-2 font-bold">
+                    <Text className="text-t-state-confirmation mt-2 flex flex-row items-center gap-2 font-bold">
                         <Icon icon="check-fill" className="text-xl" />
                         {checkMessage}
                     </Text>

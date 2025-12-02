@@ -21,9 +21,9 @@
     --color-t-symbol-tertiary: var(--color-gray-300);
 
     /* states */
-    --color-t-state-informative: var(--color-dark-blue-500);
-    --color-t-state-positive: var(--color-green-500);
-    --color-t-state-warning: var(--color-yellow-500);
+    --color-t-state-informative: var(--color-sky-blue-500);
+    --color-t-state-confirmation: var(--color-green-500);
+    --color-t-state-warning: var(--color-dark-yellow-500);
     --color-t-state-critical: var(--color-red-500);
 
     /* categories */
@@ -103,9 +103,9 @@
             --color-t-symbol-tertiary: var(--color-gray-500);
 
             /* states */
-            --color-t-state-informative: var(--color-dark-blue-300);
-            --color-t-state-positive: var(--color-green-300);
-            --color-t-state-warning: var(--color-yellow-300);
+            --color-t-state-informative: var(--color-sky-blue-300);
+            --color-t-state-confirmation: var(--color-green-300);
+            --color-t-state-warning: var(--color-dark-yellow-300);
             --color-t-state-critical: var(--color-red-300);
 
             /* categories */
