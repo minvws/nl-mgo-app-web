@@ -133,7 +133,8 @@
                 "https://github.com/advisories/GHSA-mvw6-62qv-vmqf": "@nx  - Only used in dev",
                 "https://github.com/advisories/GHSA-jgmv-j7ww-jx2x": "@nx/react  - Only used in dev",
                 "https://github.com/advisories/GHSA-rx8g-88g5-qh64": "min-document - Only used in storybook at dev",
-                "https://github.com/advisories/GHSA-mh29-5h37-fv8m": "js-yaml - Only used in dev tools such as nx, eslint and svgr"
+                "https://github.com/advisories/GHSA-mh29-5h37-fv8m": "js-yaml - Only used in dev tools such as nx, eslint and svgr",
+                "https://github.com/advisories/GHSA-pj86-cfqh-vqx6": "express - only used in dev (@nx/react)"
             },
             "ignoreGhsas": [
                 "GHSA-968p-4wvh-cqc8",
@@ -144,7 +145,8 @@
                 "GHSA-mvw6-62qv-vmqf",
                 "GHSA-jgmv-j7ww-jx2x",
                 "GHSA-rx8g-88g5-qh64",
-                "GHSA-mh29-5h37-fv8m"
+                "GHSA-mh29-5h37-fv8m",
+                "GHSA-pj86-cfqh-vqx6"
             ]
         }
     }
