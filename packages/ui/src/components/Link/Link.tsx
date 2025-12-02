@@ -34,7 +34,7 @@ const linkStyle: Record<Variant, string> = {
         'text-t-action-link-default-text hover:text-t-action-link-hover-text visited:text-t-action-link-visited-text underline hover:no-underline'
     ),
     dotted: cn(
-        'text-t-action-link-default-text underline decoration-dotted hover:decoration-solid hover:text-t-action-link-hover-text'
+        'text-t-action-link-default-text underline decoration-dotted hover:decoration-solid'
     ),
     inverted: cn('text-t-label-invert no-underline hover:underline'),
 };

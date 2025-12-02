@@ -16,7 +16,7 @@ export const DisplayValue = ({ value }: DisplayValueProps) => {
     if (!pft) return <span>{value?.display}</span>;
 
     return (
-        <span>
+        <div className="w-full">
             <Link variant="dotted" asChild iconRight="help">
                 <button onClick={toggle}>{value?.display}</button>
             </Link>
@@ -30,6 +30,6 @@ export const DisplayValue = ({ value }: DisplayValueProps) => {
             >
                 {pft.description}
             </ClosableCard>
-        </span>
+        </div>
     );
 };

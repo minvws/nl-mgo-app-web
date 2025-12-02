@@ -33,7 +33,7 @@ const variantStyles: Record<Variant, string | string[]> = {
         'focus-visible:bg-gray-200 dark:focus-visible:bg-gray-700',
     ],
     ghost: [
-        'hover:bg-gray-50 dark:hover:bg-gray-700',
+        'hover:bg-dark-blue-100 dark:hover:bg-dark-blue-100/[0.15]',
         'focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700',
     ],
 };

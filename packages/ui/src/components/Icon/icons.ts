@@ -41,7 +41,7 @@ import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import Add from '@material-symbols/svg-400/rounded/add.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
 import ChevronRight from '@material-symbols/svg-400/rounded/chevron_right.svg?react';
-import Help from '@material-symbols/svg-400/rounded/help.svg?react';
+import Help from '@material-symbols/svg-700/rounded/help.svg?react';
 
 import Home from '@material-symbols/svg-400/rounded/home.svg?react';
 import Settings from '@material-symbols/svg-400/rounded/settings.svg?react';
@@ -51,7 +51,7 @@ import Favorite from '@material-symbols/svg-700/rounded/favorite.svg?react';
 import CheckFill from '@material-symbols/svg-400/outlined/check_circle-fill.svg?react';
 import InfoFill from '@material-symbols/svg-400/outlined/info-fill.svg?react';
 import FavoriteFill from '@material-symbols/svg-400/rounded/favorite-fill.svg?react';
-import HelpFilled from '@material-symbols/svg-400/rounded/help-fill.svg?react';
+import HelpFilled from '@material-symbols/svg-700/rounded/help-fill.svg?react';
 import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
 import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
 
