@@ -4,6 +4,7 @@
     "license": "UNLICENSED",
     "packageManager": "pnpm@9.13.2",
     "scripts": {
+        "preview": "nx run mgo:preview",
         "dev": "nx run mgo:dev",
         "test": "vitest",
         "test:hcim:update": "vitest --project @minvws/mgo-hcim --update",

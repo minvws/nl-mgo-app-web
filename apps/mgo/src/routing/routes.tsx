@@ -6,6 +6,7 @@ import { NotFound } from '$/pages/NotFound/NotFound';
 import { Overview } from '$/pages/Overview/Overview';
 import { PrivacyStatement } from '$/pages/PrivacyStatement/PrivacyStatement';
 import { SearchOrganization } from '$/pages/SearchOrganization/SearchOrganization';
+import { SearchPoc } from '$/pages/SearchPoc/SearchPoc';
 import { type ExtractRouteParams, type ExtractRoutePaths } from '$/routing/ExtractRoutePaths';
 import { AppMessagesIds } from '@minvws/mgo-intl';
 import { type RouteObject, type Path as RouterPath } from 'react-router-dom';
@@ -28,6 +29,10 @@ const routeConfig = [
             {
                 element: <PageLayout hideMenu />,
                 children: [
+                    {
+                        path: '/poc',
+                        element: <SearchPoc />,
+                    },
                     {
                         path: '/welkom',
                         element: <Introduction />,

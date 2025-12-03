@@ -20,4 +20,5 @@ packages/intl/src/locales
 *.snap.json
 *-snapshots/
 apps/mgo/build
+apps/mgo/src/pages/SearchPoc/data
 apps/mgo-e2e/results
