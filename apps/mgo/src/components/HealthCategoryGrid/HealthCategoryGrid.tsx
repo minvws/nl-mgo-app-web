@@ -1,10 +1,10 @@
 import { useHealthCategoriesQuery } from '$/hooks';
+import { useMainHealthCategoriesWithSlugs } from '$/hooks/useMainHealthCategoriesWithSlugs/useMainHealthCategoriesWithSlugs';
+import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { HealthcareOrganization } from '$/store';
-import { CategoryButtonIcon, Heading, HealthCategoryButton } from '@minvws/mgo-ui';
-import { FormattedMessage, useIntl } from '$/intl';
 import { AppMessagesIds } from '@minvws/mgo-intl';
-import { useMainHealthCategoriesWithSlugs } from '$/hooks/useMainHealthCategoriesWithSlugs/useMainHealthCategoriesWithSlugs';
+import { Heading, HealthCategoryButton, HealthCategoryIconName } from '@minvws/mgo-ui';
 
 export interface HealthCategoryGridProps {
     readonly organizations: HealthcareOrganization[];
@@ -36,27 +36,31 @@ export function HealthCategoryGrid({ organizations }: HealthCategoryGridProps) {
                         >
                             {mainCategory.categories.map((category) => {
                                 const query = categoryQueries.find(
-                                    (cat) => cat.category.id === category.id
+                                    ({ category: { id } }) => id === category.id
                                 );
 
+                                if (!query) {
+                                    throw new Error(`Query not found for category ${category.id}`);
+                                }
+
                                 return (
-                                    <li className="h-full" key={`li-${category.id}`}>
+                                    <li className="h-full" key={category.id}>
                                         <HealthCategoryButton
                                             asChild
+                                            className="h-full"
                                             title={formatMessage(
                                                 category.heading as AppMessagesIds
                                             )}
-                                            icon={category.icon as CategoryButtonIcon}
                                             subtitle={formatMessage(
                                                 category.subheading as AppMessagesIds
                                             )}
+                                            icon={category.icon as HealthCategoryIconName}
                                             loading={query.isLoading}
                                             statusLabel={
-                                                !query.isLoading && query.isEmpty
+                                                query.isEmpty
                                                     ? formatMessage('common.no_data')
                                                     : undefined
                                             }
-                                            className="h-full"
                                         >
                                             <RouterLink to={`./${category.slug}`} />
                                         </HealthCategoryButton>

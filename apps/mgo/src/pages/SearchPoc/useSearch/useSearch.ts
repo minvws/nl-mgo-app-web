@@ -95,6 +95,8 @@ export function useSearch({ file, engine }: SearchOptions) {
             let mod: { default: OrganizationItem[] } | undefined;
 
             if (file === 'original') {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore - these json files are too large to include in the tsconfig
                 mod = await import(`../data/providers-normalized.json`);
             } else {
                 mod = await import(`../data/fake-normalized-${file}.json`);

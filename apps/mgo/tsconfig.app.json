@@ -13,7 +13,7 @@
         }
     },
     "exclude": ["**/__mocks__/**", "src/**/*.test.ts", "src/**/*.test.tsx"],
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
     "references": [
         {
             "path": "../../packages/utils/tsconfig.lib.json"
