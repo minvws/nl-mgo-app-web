@@ -18,13 +18,7 @@ export function HealthUiSchema({ schema, resource }: HealthUiSchemaProps) {
 
     return (
         <>
-            <Heading
-                as="h1"
-                size="xl"
-                className="mb-4 md:mb-8"
-                focusOnRender
-                focusOnRenderKey={location}
-            >
+            <Heading as="h1" size="xl" className="mt-4" focusOnRender focusOnRenderKey={location}>
                 {schema.label}
             </Heading>
             <Stack className="gap-6">

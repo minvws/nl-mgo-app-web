@@ -7,7 +7,7 @@ export type FooterProps = Omit<HTMLAttributes<HTMLElement>, 'className'>;
 
 export function Footer(props: Readonly<FooterProps>) {
     return (
-        <footer className="bg-t-cat-rijkslint" {...props}>
+        <footer className="bg-t-cat-rijkslint md:mt-24" {...props}>
             <Container className="grid grid-cols-1 gap-6 py-6 sm:flex-row md:grid-cols-4 md:py-12">
                 <nav
                     aria-labelledby="about_heading"
