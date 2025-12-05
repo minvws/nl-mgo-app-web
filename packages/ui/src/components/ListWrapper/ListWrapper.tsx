@@ -21,7 +21,7 @@ export const ListWrapper = ({
     const gapMap: Record<Gap, string | string[]> = {
         normal: 'gap-2 gap-md-3',
         line: [
-            'gap-none [&>*]:border-b [&>*]:border-t-seperator-primary [&>*:last-child]:border-b-0',
+            'gap-none [&>*]:border-b [&>*]:border-t-seperator-secondary [&>*:last-child]:border-b-0',
             '[&>*]:rounded-none [&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg',
         ],
     };
