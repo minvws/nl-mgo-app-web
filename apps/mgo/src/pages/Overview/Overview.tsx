@@ -1,9 +1,9 @@
-import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
+import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
 import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
 import { FormattedMessage } from '$/intl';
 import { usePft } from '$/pft/usePft';
 import { useStore } from '$/store';
-import { Heading } from '@minvws/mgo-ui';
+import { Heading, Text } from '@minvws/mgo-ui';
 
 export function Overview() {
     const organizations = useStore.use.organizations();
@@ -17,7 +17,15 @@ export function Overview() {
                 <FormattedMessage id="overview.heading" />
             </Heading>
 
-            {organizations.length ? <HealthCategoryList /> : <NoOrganizations />}
+            <Text as="p" size="lg">
+                <FormattedMessage id="overview.subheading" />
+            </Text>
+
+            {organizations.length ? (
+                <HealthCategoryGrid organizations={organizations} />
+            ) : (
+                <NoOrganizations />
+            )}
         </>
     );
 }

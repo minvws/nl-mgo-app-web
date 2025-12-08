@@ -21,6 +21,8 @@ export class OverviewPage extends AbstractPage {
     });
 
     buttonHealthCategory(category: HealthCategoryType) {
-        return this.page.getByRole('link', { name: appMessage(`hc_${category}.heading`) });
+        return this.page.getByRole('link').filter({
+            has: this.page.getByRole('heading', { name: appMessage(`hc_${category}.heading`) }),
+        });
     }
 }

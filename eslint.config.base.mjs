@@ -62,6 +62,7 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 'sonarjs/no-clear-text-protocols': 'off',
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-unused-vars': 'off', // already covered by typescript-eslint
+                'sonarjs/no-nested-conditional': 'off',
             },
         },
 

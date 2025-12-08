@@ -22,6 +22,7 @@ import HealthAndSafety from '@material-symbols/svg-400/outlined/health_and_safet
 import HealthCross from '@material-symbols/svg-400/outlined/health_cross.svg?react';
 import Labs from '@material-symbols/svg-400/outlined/labs.svg?react';
 import LinkOff from '@material-symbols/svg-400/outlined/link_off.svg?react';
+import MedicalInformation from '@material-symbols/svg-400/outlined/medical_information.svg?react';
 import MedicalServices from '@material-symbols/svg-400/outlined/medical_services.svg?react';
 import Menu from '@material-symbols/svg-400/outlined/menu.svg?react';
 import Nutrition from '@material-symbols/svg-400/outlined/nutrition.svg?react';
@@ -109,6 +110,7 @@ export const icons = {
     patient_list: PatientList,
     account_balance: AccountBalance,
     link_off: LinkOff,
+    medical_information: MedicalInformation,
 };
 
 export type IconName = keyof typeof icons;
