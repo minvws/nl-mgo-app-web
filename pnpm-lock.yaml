@@ -226,6 +226,9 @@ importers:
       '@minvws/mgo-intl':
         specifier: workspace:^
         version: link:../../packages/intl
+      '@minvws/mgo-org-search':
+        specifier: workspace:^
+        version: link:../../packages/org-search
       '@minvws/mgo-ui':
         specifier: workspace:^
         version: link:../../packages/ui
