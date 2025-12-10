@@ -39,6 +39,7 @@ import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import CancelFill from '@material-symbols/svg-400/rounded/cancel-fill.svg?react';
 import Search from '@material-symbols/svg-400/rounded/search.svg?react';
+import SyncProblem from '@material-symbols/svg-400/outlined/sync_problem.svg?react';
 
 import Add from '@material-symbols/svg-400/rounded/add.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
@@ -113,6 +114,7 @@ export const icons = {
     link_off: LinkOff,
     medical_information: MedicalInformation,
     search: Search,
+    sync_problem: SyncProblem,
 };
 
 export type IconName = keyof typeof icons;

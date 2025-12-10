@@ -18,6 +18,7 @@ export type HealthCategoryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> 
     CompositionPropsWithoutChildren & {
         readonly icon: HealthCategoryIconName;
         readonly loading?: boolean;
+        readonly error?: boolean;
         readonly statusLabel?: string;
         readonly title: string;
         readonly subtitle: string;
@@ -26,6 +27,7 @@ export type HealthCategoryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> 
 export const HealthCategoryButton = ({
     icon,
     loading,
+    error,
     statusLabel,
     title,
     subtitle,
@@ -69,6 +71,12 @@ export const HealthCategoryButton = ({
 
                     {loading ? (
                         <Spinner className="size-6" variant="gray" />
+                    ) : error ? (
+                        <Icon
+                            data-testid="error_icon"
+                            icon="sync_problem"
+                            className={cn('h-6 w-6 text-gray-400')}
+                        />
                     ) : statusLabel ? (
                         <Text className="text-t-label-secondary text-nowrap">{statusLabel}</Text>
                     ) : (

@@ -39,3 +39,17 @@ test('render with status', async () => {
     const element = screen.getByText(label);
     expect(element).toBeVisible();
 });
+
+test('render error state', async () => {
+    render(
+        <HealthCategoryButton
+            error
+            icon="allergy"
+            title={faker.lorem.word()}
+            subtitle={faker.lorem.word()}
+        />
+    );
+
+    const errorIcon = screen.getByTestId('error_icon');
+    expect(errorIcon).toBeVisible();
+});
