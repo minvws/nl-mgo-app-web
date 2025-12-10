@@ -83,7 +83,8 @@
                     "hcim-ui",
                     "intl",
                     "ui",
-                    "utils"
+                    "utils",
+                    "org-search"
                 ]
             ]
         }

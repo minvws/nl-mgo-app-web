@@ -16,6 +16,9 @@
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "references": [
         {
+            "path": "../../packages/org-search/tsconfig.lib.json"
+        },
+        {
             "path": "../../packages/utils/tsconfig.lib.json"
         },
         {

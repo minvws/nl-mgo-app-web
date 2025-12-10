@@ -1,3 +1,5 @@
+/* c8 ignore start - this is still a work in progress, will be added to coverage later */
+
 import { FormattedMessage } from '$/intl';
 import { Heading, Text } from '@minvws/mgo-ui';
 

@@ -1,12 +1,12 @@
+/* c8 ignore start - this is still a work in progress, will be added to coverage later */
+
 import { FormattedMessage, useIntl } from '$/intl';
-import { useNavigate } from '$/routing';
-import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
-import { useStore } from '$/store';
+import { SearchResults as OrgSearchResults, SearchResultDocument } from '@minvws/mgo-org-search';
 import { Button, ConfirmDialog, OrganizationButton, Stack, Text } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
-    readonly searchResults: HealthcareOrganizationSearchResult[];
+    readonly searchResults: OrgSearchResults;
 }
 
 export const RESULTS_PER_PAGE = 15;
@@ -14,18 +14,23 @@ export const RESULTS_PER_PAGE = 15;
 export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) => {
     const [showResultsLength, setShowResultsLength] = useState(RESULTS_PER_PAGE);
     const { formatMessage } = useIntl();
-    const navigate = useNavigate();
-    const hasOrganizationById = useStore.use.hasOrganizationById();
-    const addOrganization = useStore.use.addOrganization();
-    const [selectedOrganization, setSelectedOrganization] =
-        useState<HealthcareOrganizationSearchResult | null>(null);
+    // const navigate = useNavigate();
+    // const hasOrganizationById = useStore.use.hasOrganizationById();
+    // const addOrganization = useStore.use.addOrganization();
+    const [selectedOrganization, setSelectedOrganization] = useState<SearchResultDocument | null>(
+        null
+    );
 
-    const results = searchResults.map((searchResult) => {
+    const shownResults = searchResults.hits.slice(0, showResultsLength).map((searchResult) => {
+        const { displayName, addressLine, city } = searchResult.document;
         return {
-            ...searchResult,
-            name: searchResult.name ?? formatMessage('common.unknown'),
-            isAdded: hasOrganizationById(searchResult.id),
-            isNotSupported: !searchResult.dataServices.length,
+            ...searchResult.document,
+            name: displayName,
+            address: `${addressLine} ${city}`,
+            isAdded: false,
+            isNotSupported: false,
+            // isAdded: hasOrganizationById(searchResult.id),
+            // isNotSupported: !searchResult.dataServices.length,
         };
     });
 
@@ -33,8 +38,9 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
         /* c8 ignore start - this can't happen, but we need to satisfy the type checker */
         if (!selectedOrganization) return;
         /* c8 ignore end */
-        addOrganization(selectedOrganization);
-        navigate('/zorgaanbieders');
+        console.log(`add organization:`, selectedOrganization);
+        // addOrganization(selectedOrganization);
+        // navigate('/zorgaanbieders');
     };
 
     return (
@@ -43,12 +49,12 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                 <FormattedMessage
                     id="organization_search.results_count"
                     description="$count zorgaanbieders gevonden"
-                    values={{ count: searchResults.length }}
+                    values={{ count: searchResults.count }}
                 />
             </Text>
 
             <Stack as="ul" className="w-full gap-2 sm:gap-4">
-                {results.slice(0, showResultsLength).map((healthcareOrganization) => {
+                {shownResults.map((healthcareOrganization) => {
                     const { isAdded, isNotSupported, id, name, address } = healthcareOrganization;
 
                     if (isAdded) {
@@ -91,7 +97,7 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                 })}
             </Stack>
 
-            {showResultsLength < searchResults.length && (
+            {searchResults.count > shownResults.length && (
                 <div className="mt-8 text-center">
                     <Button
                         variant="outline"
@@ -109,7 +115,7 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                 open={!!selectedOrganization}
                 onOpenChange={() => setSelectedOrganization(null)}
                 title={formatMessage('dialog.add_organization_heading', {
-                    organizationName: selectedOrganization?.name,
+                    organizationName: selectedOrganization?.displayName,
                 })}
                 description={formatMessage('dialog.add_organization_subheading')}
                 confirmButtonText={formatMessage('dialog.add_organization_yes')}

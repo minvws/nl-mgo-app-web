@@ -24,6 +24,9 @@
             "path": "../../packages/config"
         },
         {
+            "path": "../../packages/org-search"
+        },
+        {
             "path": "./tsconfig.app.json"
         },
         {
