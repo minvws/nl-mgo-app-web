@@ -1,68 +1,96 @@
-import { create, insertMultiple, Orama, Results, search as searchOrama } from '@orama/orama';
+import {
+    create,
+    insertMultiple,
+    Orama,
+    OramaPlugin,
+    Results,
+    search as searchOrama,
+    SearchParamsFullText,
+} from '@orama/orama';
+
+import { pluginPT15 } from '@orama/plugin-pt15';
+import { pluginQPS } from '@orama/plugin-qps';
+import {
+    normalizeOrganizationItemDto,
+    removePunctuation,
+    type OrganizationItem,
+    type OrganizationItemDto,
+} from './normalize.js';
 
 const schema = {
     id: 'string',
-    displayName: 'string',
+    normalizedDisplayName: 'string',
     careTypeDisplay: 'string',
     aliases: 'string[]',
     addressLine: 'string',
     postalCode: 'string',
     city: 'string',
+    qpsSearchBlob: 'string',
+    normalizedTypes: 'string[]',
+    normalizedName: 'string',
+    normalizedAliases: 'string[]',
 } as const;
-
-export interface OrganizationItem {
-    id: string;
-    displayName: string;
-    legalName: string | null;
-    aliases: string[] | null;
-    careTypeDisplay: string | null;
-    city: string | null;
-    postalCode: string | null;
-    addressLine: string | null;
-    geoLat: number | null;
-    geoLng: number | null;
-}
 
 export type SearchIndex = {
     db: Orama<typeof schema>;
     search: (payload: { query: string }) => Promise<SearchResults>;
 };
+
 export type SearchResults = Results<OrganizationItem>;
 export type SearchResultDocument = OrganizationItem;
+export type { OrganizationItem, OrganizationItemDto };
 
-export async function createSearchIndex(payload: OrganizationItem[]) {
-    const db = create({
-        schema,
-    });
+export type SearchConfig = Pick<
+    SearchParamsFullText<Orama<typeof schema>, OrganizationItem>,
+    'tolerance' | 'properties' | 'threshold' | 'boost' | 'relevance'
+>;
 
-    await insertMultiple(
-        db,
-        payload.map((item) => ({
-            id: item.id,
-            displayName: item.displayName ?? undefined,
-            careTypeDisplay: item.careTypeDisplay ?? undefined,
-            aliases: item.aliases ?? undefined,
-            addressLine: item.addressLine ?? undefined,
-            postalCode: item.postalCode ?? undefined,
-            city: item.city ?? undefined,
-        }))
-    );
+export interface CreateSearchIndexOptions {
+    searchConfig?: SearchConfig;
+    searchAlgorithm?: 'bm25' | 'qps' | 'pt15';
+}
+
+const defaultSearchConfig: SearchConfig = {
+    tolerance: 1,
+    threshold: 0.2,
+    properties: ['normalizedDisplayName', 'qpsSearchBlob'],
+    boost: {
+        normalizedDisplayName: 2,
+        qpsSearchBlob: 1,
+    },
+};
+
+export async function createSearchIndex(
+    payload: OrganizationItemDto[],
+    { searchConfig, searchAlgorithm }: CreateSearchIndexOptions = {}
+) {
+    const config = searchConfig ?? { ...defaultSearchConfig };
+    const plugins: OramaPlugin[] = [];
+
+    // https://docs.orama.com/docs/orama-js/search/changing-default-search-algorithm
+    switch (searchAlgorithm) {
+        case 'pt15':
+            plugins.push(pluginPT15());
+            config.tolerance = 0; // pt15 only supports 0 tolerance
+            break;
+        case 'bm25':
+            // bm25 is the default search algorithm
+            break;
+        case 'qps':
+        default:
+            plugins.push(pluginQPS());
+            break;
+    }
+
+    const db = create({ schema, plugins });
+
+    await insertMultiple(db, payload.map(normalizeOrganizationItemDto));
 
     async function search(payload: { query: string }) {
         return await searchOrama(db, {
-            term: payload.query,
+            term: removePunctuation(payload.query),
             limit: 100,
-            tolerance: 0,
-            properties: '*',
-            threshold: 0.2,
-            boost: {
-                displayName: 3,
-                aliases: 2,
-                addressLine: 1,
-                careTypeDisplay: 1.5,
-                city: 3.5,
-                postalCode: 1,
-            },
+            ...config,
         });
     }
 

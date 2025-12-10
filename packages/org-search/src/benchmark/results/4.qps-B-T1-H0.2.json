@@ -1,0 +1,248 @@
+{
+  "name": "qps-B-T1-H0.2",
+  "searchAlgorithm": "qps",
+  "meanReciprocalRank": 0.7455751205751205,
+  "failedQueries": 1,
+  "totalQueries": 37,
+  "searchConfig": {
+    "threshold": 0.2,
+    "tolerance": 1,
+    "name": "B",
+    "properties": [
+      "normalizedName",
+      "normalizedDisplayName",
+      "city",
+      "qpsSearchBlob"
+    ],
+    "boost": {
+      "normalizedName": 3,
+      "normalizedDisplayName": 2,
+      "city": 1.2,
+      "qpsSearchBlob": 1
+    }
+  },
+  "queries": [
+    {
+      "query": "Huisarts de Kaap",
+      "targetId": "agb:01009626",
+      "meanReciprocalRank": 0.5,
+      "rank": "2/100"
+    },
+    {
+      "query": "Huisarts de Kaap Utrecht",
+      "targetId": "agb:01009626",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "J.S. Huisman Huisartsenpraktijk",
+      "targetId": "agb:01057832",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Huisman",
+      "targetId": "agb:01057832",
+      "meanReciprocalRank": 0.25,
+      "rank": "4/8"
+    },
+    {
+      "query": "JS Huisman",
+      "targetId": "agb:01057832",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "JS Husman",
+      "targetId": "agb:01057832",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "J.S. Huisman",
+      "targetId": "agb:01057832",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Huisartsenpraktijk Hellevoetsluis-West, Hellevoetsluis",
+      "targetId": "agb:01050665",
+      "meanReciprocalRank": 1,
+      "rank": "1/10"
+    },
+    {
+      "query": "Huisartsenpraktijk Hellevoetsluis-West",
+      "targetId": "agb:01050665",
+      "meanReciprocalRank": 1,
+      "rank": "1/3"
+    },
+    {
+      "query": "Huisartsenpraktijk Helleveotsluis West",
+      "targetId": "agb:01050665",
+      "meanReciprocalRank": 0,
+      "rank": "-1/100"
+    },
+    {
+      "query": "Gezondheidscentrum Lombok Utrecht",
+      "targetId": "agb:01056065",
+      "meanReciprocalRank": 1,
+      "rank": "1/97"
+    },
+    {
+      "query": "Gezondheidscentrum Lombok",
+      "targetId": "agb:01056065",
+      "meanReciprocalRank": 1,
+      "rank": "1/1"
+    },
+    {
+      "query": "Gezondheidscentrum Lombk",
+      "targetId": "agb:01056065",
+      "meanReciprocalRank": 1,
+      "rank": "1/1"
+    },
+    {
+      "query": "Lombok",
+      "targetId": "agb:01056065",
+      "meanReciprocalRank": 1,
+      "rank": "1/1"
+    },
+    {
+      "query": "Huisartsenpraktijk Wittevrouwen Utrecht",
+      "targetId": "agb:01008769",
+      "meanReciprocalRank": 1,
+      "rank": "1/99"
+    },
+    {
+      "query": "Huisartsenpraktijk Wittevrouwen",
+      "targetId": "agb:01008769",
+      "meanReciprocalRank": 1,
+      "rank": "1/3"
+    },
+    {
+      "query": "Wittervouwen Utrecht",
+      "targetId": "agb:01008769",
+      "meanReciprocalRank": 0.037037037037037035,
+      "rank": "27/97"
+    },
+    {
+      "query": "Wittevruwen Utrecht",
+      "targetId": "agb:01008769",
+      "meanReciprocalRank": 0.16666666666666666,
+      "rank": "6/97"
+    },
+    {
+      "query": "Wittevrouwen Utrecht",
+      "targetId": "agb:01008769",
+      "meanReciprocalRank": 1,
+      "rank": "1/97"
+    },
+    {
+      "query": "Van Zwol hellevoetsluis",
+      "targetId": "agb:01050665",
+      "meanReciprocalRank": 0.09090909090909091,
+      "rank": "11/100"
+    },
+    {
+      "query": "Huisarts Wolters",
+      "targetId": "agb:01010336",
+      "meanReciprocalRank": 0.2,
+      "rank": "5/100"
+    },
+    {
+      "query": "Huisarts Zoutelande",
+      "targetId": "agb:01057554",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Laurentius ziekenhuis Roermond",
+      "targetId": "ura:00013487",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Laurentus Roermond",
+      "targetId": "ura:00013487",
+      "meanReciprocalRank": 1,
+      "rank": "1/20"
+    },
+    {
+      "query": "Treant Bethesda",
+      "targetId": "ura:00064533",
+      "meanReciprocalRank": 1,
+      "rank": "1/2"
+    },
+    {
+      "query": "Oncologie Roermond",
+      "targetId": "ura:00013487",
+      "meanReciprocalRank": 1,
+      "rank": "1/17"
+    },
+    {
+      "query": "Chirurgie Roosendaal ",
+      "targetId": "agb:06011036",
+      "meanReciprocalRank": 0.125,
+      "rank": "8/31"
+    },
+    {
+      "query": "Ziekenhuis Doetichem",
+      "targetId": "agb:06010509",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Ziekenhuis Roermond",
+      "targetId": "ura:00013487",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Ziekenhuis Roosendaal",
+      "targetId": "agb:06011036",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "In de Bres Drachten",
+      "targetId": "ura:00078518",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "ADHD Centraal Utrecht",
+      "targetId": "agb:22220784",
+      "meanReciprocalRank": 0.16666666666666666,
+      "rank": "6/97"
+    },
+    {
+      "query": "Apotheek De Bilt",
+      "targetId": "ura:00050815",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Apotheek Blokker",
+      "targetId": "ura:00019796",
+      "meanReciprocalRank": 0.5,
+      "rank": "2/100"
+    },
+    {
+      "query": "Apotheek Tuitjenhorn",
+      "targetId": "ura:00021583",
+      "meanReciprocalRank": 0.5,
+      "rank": "2/100"
+    },
+    {
+      "query": "Apotheek Elkerlyc",
+      "targetId": "ura:00021583",
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
+    },
+    {
+      "query": "Apotheek Elckerlijc",
+      "targetId": "ura:00021583",
+      "meanReciprocalRank": 0.05,
+      "rank": "20/100"
+    }
+  ]
+}

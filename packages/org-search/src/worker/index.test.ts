@@ -38,8 +38,9 @@ it('creates the worker, builds the index, and returns a search function', async 
     hoisted.search.mockResolvedValue({ hits: [] } as any); // eslint-disable-line @typescript-eslint/no-explicit-any
     const { createSearchWorker } = await import('./index.js');
 
-    const organizations = mockArray({ max: 10, factory: faker.custom.organization });
-    const { search } = await createSearchWorker(organizations);
+    const organizations = mockArray({ max: 10, factory: faker.custom.organizationDto });
+    const { search, createIndex } = await createSearchWorker();
+    await createIndex(organizations);
 
     expect(hoisted.createIndex).toHaveBeenCalledTimes(1);
     expect(hoisted.createIndex).toHaveBeenCalledWith(organizations);
@@ -51,7 +52,7 @@ it('creates the worker, builds the index, and returns a search function', async 
 
 it('terminates the worker when terminate is called', async () => {
     const { createSearchWorker } = await import('./index.js');
-    const { terminate } = await createSearchWorker([]);
+    const { terminate } = await createSearchWorker();
 
     expect(MockWorker.instances.length).toBe(1);
     const instance = MockWorker.instances[0]!;

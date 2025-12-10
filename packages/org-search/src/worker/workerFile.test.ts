@@ -35,7 +35,7 @@ it('can build the index', async () => {
 
     const message = {
         type: 'create-index',
-        payload: [faker.custom.organization()],
+        payload: [faker.custom.organizationDto()],
         requestId: faker.number.int(),
     };
     await mockSelf.onmessage({ data: message });
@@ -56,7 +56,7 @@ it('can search the index', async () => {
 
     const indexMessage = {
         type: 'create-index',
-        payload: [faker.custom.organization()],
+        payload: [faker.custom.organizationDto()],
         requestId: faker.number.int(),
     };
     await mockSelf.onmessage({ data: indexMessage });

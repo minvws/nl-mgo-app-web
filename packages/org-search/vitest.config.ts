@@ -4,5 +4,6 @@ export default () =>
     defineProject({
         test: {
             include: ['./src/**/*.test.{ts,tsx}'],
+            exclude: ['./src/benchmark/**/*.test.{ts,tsx}'],
         },
     });
