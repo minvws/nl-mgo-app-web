@@ -56,6 +56,7 @@ export function HealthCategoryGrid({ organizations }: HealthCategoryGridProps) {
                                             )}
                                             icon={category.icon as HealthCategoryIconName}
                                             loading={query.isLoading}
+                                            error={query.isError}
                                             statusLabel={
                                                 query.isEmpty
                                                     ? formatMessage('common.no_data')

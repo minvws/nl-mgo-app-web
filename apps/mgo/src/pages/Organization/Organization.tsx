@@ -1,7 +1,7 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
-import { Heading } from '@minvws/mgo-ui';
+import { ErrorNotice, Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
 import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
@@ -25,6 +25,12 @@ export function Organization() {
             <Helmet title={formatMessage('organization.title')} />
 
             <section className="grow">
+                <ErrorNotice
+                    state="error"
+                    heading={formatMessage('common.data_not_retrieved_heading')}
+                    subHeading={formatMessage('common.data_not_retrieved_subheading')}
+                    buttonLabel={formatMessage('common.try_again')}
+                />
                 <div>
                     <Breadcrumbs />
                 </div>
