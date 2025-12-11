@@ -6,19 +6,25 @@
                 {
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Dokter Bernard"
+                    "value": [
+                        {
+                            "display": "Dokter Bernard"
+                        }
                     ]
                 },
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "18 maart 2024"
+                    "value": {
+                        "display": "18 maart 2024"
+                    }
                 },
                 {
                     "label": "Contact",
@@ -29,29 +35,39 @@
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gerelateerde uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "c1975acb-041c-11ec-1725-020000000000"
+                    "value": [
+                        {
+                            "display": "c1975acb-041c-11ec-1725-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Interpretatie vlaggen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Monster",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Patiënt",
@@ -62,7 +78,7 @@
                 {
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "glucose nuchter, art/cap (lab) (3208 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-45-diagnostische-bepalingen)",
                             "code": "3208",
@@ -73,22 +89,30 @@
                 {
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "5,4 millimol per liter"
+                    "value": {
+                        "display": "5,4 millimol per liter"
+                    }
                 },
                 {
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "value": {
+                        "display": "final"
+                    }
                 },
                 {
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -98,7 +122,7 @@
                 {
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "bevinding betreffende laboratoriumonderzoek (49581000146104 in codesysteem http://snomed.info/sct)",
                             "code": "49581000146104",
@@ -109,7 +133,9 @@
                 {
                     "label": "Resultaat type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -119,17 +145,21 @@
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "5,6 millimol per liter"
+                    "value": {
+                        "display": "5,6 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "3,5 millimol per liter"
+                    "value": {
+                        "display": "3,5 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Normal Range (normal in codesysteem http://hl7.org/fhir/referencerange-meaning)",
                             "code": "normal",

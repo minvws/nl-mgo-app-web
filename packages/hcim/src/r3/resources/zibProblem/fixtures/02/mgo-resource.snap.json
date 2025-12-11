@@ -1,0 +1,115 @@
+{
+    "id": "zib-problem-01",
+    "referenceId": "Condition/zib-problem-01",
+    "resourceType": "Condition",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-Problem",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1d1451f3-8fdf-11ec-5384-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "onsetDateTime": {
+        "_type": "dateTime",
+        "value": "2001"
+    },
+    "asserter": null,
+    "clinicalStatus": {
+        "problemStatusCodelist": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "55561003",
+                    "display": "Active",
+                    "system": "http://snomed.info/sct"
+                }
+            ]
+        }
+    },
+    "verificationStatus": {
+        "verificatieStatusCodelijst": {
+            "_ext": true,
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "UNK",
+                    "display": "Unknown",
+                    "system": "http://hl7.org/fhir/v3/NullFlavor"
+                }
+            ]
+        }
+    },
+    "category": null,
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "31641000146105",
+                "display": "Fracture of wrist (disorder)",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "bodySite": [
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "361289009",
+                    "display": "Entire wrist region",
+                    "system": "http://snomed.info/sct"
+                }
+            ],
+            "laterality": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "24028007",
+                        "display": "Right",
+                        "system": "http://snomed.info/sct"
+                    }
+                ]
+            }
+        },
+        {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "80891009",
+                    "display": "Hart",
+                    "system": "http://snomed.info/sct"
+                }
+            ],
+            "laterality": null
+        }
+    ],
+    "abatementDateTime": {
+        "_type": "dateTime",
+        "value": "2002"
+    },
+    "note": [
+        {
+            "_type": "annotation",
+            "time": null,
+            "text": "Gevallen op de kunstijsbaan",
+            "author": null
+        }
+    ]
+}

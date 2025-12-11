@@ -1,24 +1,31 @@
-import { HealthCategoryList } from '$/components/HealthCategoryList/HealthCategoryList';
+import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
 import { NoOrganizations } from '$/components/NoOrganizations/NoOrganizations';
-import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage } from '$/intl';
-import { useOrganizationsStore } from '$/store';
-import { Heading } from '@minvws/mgo-ui';
+import { usePft } from '$/pft/usePft';
+import { useStore } from '$/store';
+import { Heading, Text } from '@minvws/mgo-ui';
 
 export function Overview() {
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+    const organizations = useStore.use.organizations();
 
-    const { organizations } = useOrganizationsStore();
+    // preload the patient friendly terms information
+    usePft();
 
     return (
         <>
-            <Heading asChild size="lg" className="mb-4 md:mb-8">
-                <h1 ref={navFocusRef}>
-                    <FormattedMessage id="overview.heading" />
-                </h1>
+            <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-8">
+                <FormattedMessage id="overview.heading" />
             </Heading>
 
-            {organizations.length ? <HealthCategoryList /> : <NoOrganizations />}
+            <Text as="p" size="lg">
+                <FormattedMessage id="overview.subheading" />
+            </Text>
+
+            {organizations.length ? (
+                <HealthCategoryGrid organizations={organizations} />
+            ) : (
+                <NoOrganizations />
+            )}
         </>
     );
 }

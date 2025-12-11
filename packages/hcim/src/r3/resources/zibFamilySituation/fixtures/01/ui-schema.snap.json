@@ -1,0 +1,139 @@
+{
+    "label": "Gezinssituatie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "10 augustus 2018"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "19d1c651-8fdf-11ec-9544-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Irma XXX_Helleman-de Haas",
+                    "reference": "Patient/nl-core-patient-03"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Beide inwonende kinderen zijn zeer zelfstandig."
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Onderliggende metingen",
+            "children": [
+                {
+                    "label": "Aantal kinderen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "3"
+                    }
+                },
+                {
+                    "label": "Aantal kinderen inwonend",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2"
+                    }
+                },
+                {
+                    "label": "Gezinssamenstelling",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Lives with relatives (finding) (160756002 in codesysteem http://snomed.info/sct)",
+                            "code": "160756002",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Zorgtaak",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Heeft zorg voor vader die in huis woont."
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Kinderen",
+            "children": [
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2 augustus 2009"
+                    }
+                },
+                {
+                    "label": "Thuiswonend",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Ja"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Kinderen",
+            "children": [
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2 april 2011"
+                    }
+                },
+                {
+                    "label": "Thuiswonend",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Ja"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Kinderen",
+            "children": [
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2 april 2006"
+                    }
+                },
+                {
+                    "label": "Thuiswonend",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Nee"
+                    }
+                }
+            ]
+        }
+    ]
+}

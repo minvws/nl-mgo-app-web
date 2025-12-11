@@ -71,6 +71,12 @@
       "value": "Uitloggen"
     }
   ],
+  "common.mgo_header_link": [
+    {
+      "type": 0,
+      "value": "Mijn Gezondheidsoverzicht, linkt naar de homepage"
+    }
+  ],
   "common.next": [
     {
       "type": 0,
@@ -80,7 +86,7 @@
   "common.no_data": [
     {
       "type": 0,
-      "value": "Geen gegevens"
+      "value": "Leeg"
     }
   ],
   "common.no_organizations_heading": [
@@ -129,6 +135,12 @@
     {
       "type": 0,
       "value": "(verplicht)"
+    }
+  ],
+  "common.rijkslint_link": [
+    {
+      "type": 0,
+      "value": "Logo Rijksoverheid, linkt naar de homepage"
     }
   ],
   "common.search": [

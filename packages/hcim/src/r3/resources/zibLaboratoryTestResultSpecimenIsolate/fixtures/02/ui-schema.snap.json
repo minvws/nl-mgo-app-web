@@ -6,7 +6,9 @@
                 {
                     "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "1 maart 2020 om 23:03:00 GMT+1"
+                    "value": {
+                        "display": "1 maart 2020 om 23:03:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Bron monster",
@@ -17,27 +19,35 @@
                 {
                     "label": "Microorganisme",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Monster",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Blood (substance)"
+                    "value": [
+                        {
+                            "display": "Blood (substance)"
+                        }
                     ]
                 },
                 {
                     "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b4904db-8fdf-11ec-1469-020000000000"
+                    "value": [
+                        {
+                            "display": "1b4904db-8fdf-11ec-1469-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "het monster toont afwijkingen"
+                    "value": [
+                        {
+                            "display": "het monster toont afwijkingen"
+                        }
                     ]
                 }
             ]
@@ -48,37 +58,51 @@
                 {
                     "label": "Afnameprocedure",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Anatomische locatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
+                    "value": {
+                        "display": "1 juni 2010"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Morfologie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verzamelvolume",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zijde",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -88,7 +112,7 @@
                 {
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Specimen substance (370133003 in codesysteem http://snomed.info/sct)",
                             "code": "370133003",
@@ -99,7 +123,9 @@
                 {
                     "label": "Monstervolgnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

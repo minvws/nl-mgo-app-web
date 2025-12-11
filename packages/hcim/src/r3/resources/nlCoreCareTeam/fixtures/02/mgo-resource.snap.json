@@ -1,0 +1,92 @@
+{
+    "id": "ont-ver-bglz-1-1-nl-core-careteam-01",
+    "referenceId": "CareTeam/ont-ver-bglz-1-1-nl-core-careteam-01",
+    "resourceType": "CareTeam",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-careteam",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "8fea361b-e3e1-11eb-2548-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-XXX-Mutter",
+        "display": "Fiona XXX_Mutter"
+    },
+    "period": null,
+    "participant": [
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-01",
+                "display": "Laura Lanen"
+            },
+            "healthProfessionalRole": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "REF",
+                        "display": "Verwijzer",
+                        "system": "http://hl7.org/fhir/v3/ParticipationType"
+                    }
+                ]
+            }
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-02",
+                "display": "Niels Helmond"
+            },
+            "healthProfessionalRole": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "RESP",
+                        "display": "Hoofdbehandelaar",
+                        "system": "http://hl7.org/fhir/v3/ParticipationType"
+                    }
+                ]
+            }
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-03",
+                "display": "Petra Johanna Vreeswijk"
+            },
+            "healthProfessionalRole": null
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-04",
+                "display": "Thomas Janssen"
+            },
+            "healthProfessionalRole": null
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-05",
+                "display": "Hilda Bruinsma"
+            },
+            "healthProfessionalRole": null
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01",
+                "display": "AA-zkh - Noord"
+            },
+            "healthProfessionalRole": null
+        }
+    ]
+}

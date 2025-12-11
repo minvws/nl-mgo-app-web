@@ -2,6 +2,7 @@ import { useContext, type HTMLAttributes } from 'react';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 import { AccordionContext } from './AccordionContext';
 
 export type AccordionButtonProps = HTMLAttributes<HTMLButtonElement>;
@@ -13,6 +14,7 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
         <button
             className={cn(
                 `relative flex w-full flex-row justify-between gap-4`,
+                'cursor-pointer',
                 focusStyle,
                 className
             )}
@@ -22,10 +24,13 @@ export const AccordionButton = ({ children, className, ...rest }: AccordionButto
             aria-expanded={expanded}
             aria-controls={panelId}
         >
-            <span className="text-left text-sm font-bold md:text-xl">{children}</span>
+            <Text className="text-left font-bold">{children}</Text>
             <Icon
-                icon="chevron-right"
-                className={`ease-[cubic-bezier(0.4, 0, 0.2, 1)] text-grey-500 h-8 w-8 transform transition-[transform] duration-300 ${expanded ? '-rotate-90' : 'rotate-90'} relative top-[3px]`}
+                icon="chevron_right"
+                className={cn(
+                    'relative top-[3px] h-8 w-8 transform text-gray-500 transition-[rotate] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
+                    expanded ? '-rotate-90' : 'rotate-90'
+                )}
             />
         </button>
     );

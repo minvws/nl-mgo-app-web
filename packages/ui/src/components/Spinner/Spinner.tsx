@@ -1,5 +1,5 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { LoadingCircle, type LoadingCircleProps } from './LoadingCircle';
 
 export type SpinnerProps = HTMLAttributes<SVGElement> & Pick<LoadingCircleProps, 'variant'>;
@@ -20,7 +20,7 @@ export const Spinner = ({ className, 'aria-label': ariaLabel, ...rest }: Spinner
     return (
         <LoadingCircle
             data-testid="spinner"
-            className={twMerge('size-12 animate-spin', className)}
+            className={cn('size-12 animate-spin', className)}
             {...a11yProps}
             {...rest}
         />

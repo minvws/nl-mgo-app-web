@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
+import { cn } from '../../utils';
 
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement>, CompositionProps {
     readonly centeredContent?: boolean;
@@ -18,7 +18,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
     return (
         <Comp
             ref={ref}
-            className={twMerge(
+            className={cn(
                 `mx-auto box-content w-[calc(100%-2rem)] max-w-xl px-[1rem] md:w-[calc(100%-3rem)] md:px-[1.5rem]`,
                 centeredContent && 'flex flex-col items-center',
                 className

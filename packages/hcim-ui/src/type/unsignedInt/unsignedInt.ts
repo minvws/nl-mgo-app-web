@@ -9,6 +9,6 @@ export const unsignedInt: WithUiContext<UiFunction<MgoUnsignedInt, SingleValue>>
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: numberToString(valueOf(value)),
+            value: { display: numberToString(valueOf(value)) },
         };
     };

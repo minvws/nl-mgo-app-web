@@ -1,0 +1,31 @@
+@theme {
+    /* font-family */
+    --font-sans: 'RO Sans Web', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* text sizes */
+    --text-base: 1rem; /* 16px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-xl: 1.25rem; /* 20px */
+    --text-2xl: 1.375rem; /* 22px */
+    --text-3xl: 1.5rem; /* 24px */
+    --text-4xl: 1.6875rem; /* 27px */
+    --text-5xl: 1.875rem; /* 30px */
+    --text-6xl: 2rem; /* 32px */
+    --text-7xl: 2.25rem; /* 36px */
+    --text-8xl: 2.5rem; /* 40px */
+    --text-9xl: 2.8125rem; /* 45px */
+    --text-10xl: 3.125rem; /* 50px */
+
+    /* line heights */
+    --leading-none: 1;
+    --leading-tight-sm: 1.2;
+    --leading-tight: 1.25;
+    --leading-snug: 1.273;
+    --leading-snug-lg: 1.333;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.556;
+
+    /* font-weight */
+    --font-weight-normal: normal;
+    --font-weight-bold: bold;
+}

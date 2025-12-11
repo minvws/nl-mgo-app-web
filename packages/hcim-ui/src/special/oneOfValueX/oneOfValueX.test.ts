@@ -83,7 +83,7 @@ test('valueX always returns ui elements, even if a helper returns a group', () =
             {
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
-                display: faker.lorem.sentence(),
+                value: { display: faker.lorem.sentence() },
             },
         ],
     };

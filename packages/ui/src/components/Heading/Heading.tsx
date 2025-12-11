@@ -1,27 +1,54 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { useNavFocusRef } from '../../hooks';
+import { useComposition } from '../../hooks/useComposition/useComposition';
+import { cn, tw } from '../../utils';
 import { type Size } from './sizes';
 
-export interface HeadingProps extends HTMLAttributes<HTMLElement>, CompositionProps {
+export interface HeadingBaseProps extends HTMLAttributes<HTMLElement> {
     readonly size?: Size;
+    readonly focusOnRender?: boolean;
+    readonly focusOnRenderKey?: unknown;
 }
 
-const HeadingSizes: Record<Size, string> = {
-    sm: tw`md:text-md text-sm`,
-    md: tw`text-xl md:text-2xl`,
-    lg: tw`text-2xl md:text-3xl lg:text-4xl`,
+export type HeadingProps = HeadingBaseProps &
+    (
+        | {
+              asChild: boolean;
+              as?: never;
+          }
+        | {
+              asChild?: never;
+              as?: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'div';
+          }
+    );
+
+const HeadingStyle: Record<Size, string> = {
+    xs: tw`leading-snug-lg text-lg md:leading-normal lg:text-xl`,
+    sm: tw`leading-tight-sm text-xl md:text-2xl md:leading-snug lg:text-3xl lg:leading-normal`,
+    md: tw`text-3xl md:text-4xl lg:text-5xl`,
+    lg: tw`text-6xl md:text-7xl lg:text-8xl`,
+    xl: tw`lg:text-10xl text-t-cat-rijkslint text-8xl md:text-9xl`,
 };
 
-export const Heading = ({ asChild, size = 'md', className, ...rest }: HeadingProps) => {
-    const { Comp } = useComposition({ asChild, tag: 'div' });
+export const Heading = ({
+    as,
+    asChild,
+    size = 'md',
+    focusOnRender,
+    focusOnRenderKey,
+    className,
+    ...rest
+}: HeadingProps) => {
+    const tag = as ?? 'div';
+    const { Comp } = useComposition({ asChild, tag });
+    const navFocusRef = useNavFocusRef<HTMLHeadingElement>(focusOnRenderKey);
 
     return (
         <Comp
-            className={twMerge(
-                HeadingSizes[size],
-                'font-sans font-bold leading-tight text-black dark:text-white',
+            ref={focusOnRender ? navFocusRef : null}
+            className={cn(
+                'text-t-label-primary font-sans leading-none font-bold',
+                HeadingStyle[size],
                 className
             )}
             {...rest}

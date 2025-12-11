@@ -1,8 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-import { useNavFocusRef } from '$/hooks';
-import { useOrganizationsStore, type Resource } from '$/store';
-import { getDetails, getSummary } from '@minvws/mgo-hcim';
-import { Locale } from '@minvws/mgo-intl';
+import { useLocation } from '$/routing';
+import { type Resource } from '$/store';
+import { type HealthUiSchema as HealthUiSchemaData } from '@minvws/mgo-hcim';
 import { Heading, Stack } from '@minvws/mgo-ui';
 import { useMemo } from 'react';
 import { HealthUiGroup } from './HealthUiGroup';
@@ -10,30 +9,21 @@ import { HealthUiSchemaContext, type HealthUiSchemaContextState } from './Health
 
 export interface HealthUiSchemaProps {
     readonly resource: Resource;
-    readonly summary?: boolean;
+    readonly schema: HealthUiSchemaData;
 }
 
-export function HealthUiSchema({ summary, resource }: HealthUiSchemaProps) {
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
+export function HealthUiSchema({ schema, resource }: HealthUiSchemaProps) {
+    const location = useLocation();
     const contextValue = useMemo<HealthUiSchemaContextState>(() => ({ resource }), [resource]);
-
-    const getOrganizationById = useOrganizationsStore((x) => x.getOrganizationById);
-    const organization = getOrganizationById(resource.organizationId);
-
-    const getSchema = summary ? getSummary : getDetails;
-    const { label, children } = getSchema(resource.mgoResource, {
-        organization,
-        locale: Locale.NL_NL,
-    });
 
     return (
         <>
-            <Heading asChild size="lg" className="mb-4 md:mb-8">
-                <h1 ref={navFocusRef}>{label}</h1>
+            <Heading as="h1" size="xl" className="mt-4" focusOnRender focusOnRenderKey={location}>
+                {schema.label}
             </Heading>
             <Stack className="gap-6">
                 <HealthUiSchemaContext.Provider value={contextValue}>
-                    {children.map((group, i) => (
+                    {schema.children.map((group, i) => (
                         <HealthUiGroup group={group} key={`${group.label}-${i}`} />
                     ))}
                 </HealthUiSchemaContext.Provider>

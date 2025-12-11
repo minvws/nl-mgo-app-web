@@ -1,6 +1,6 @@
-import { healthCategorySlugs } from '$/healthCategory';
+import { HealthCategoryWithSlug, useHealthCategoryBySlug } from '$/hooks';
 import { useParams } from '$/routing';
-import { useOrganizationsStore, useResourcesStore } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { renderHook } from '@testing-library/react';
 import { beforeEach, expect, type MockedFunction, test, vi } from 'vitest';
@@ -15,13 +15,17 @@ mockUseParams.mockImplementation(() => ({
     resourceSlug: undefined,
 }));
 
+vi.mock('$/hooks', () => ({
+    useHealthCategoryBySlug: vi.fn(() => undefined),
+}));
+
 beforeEach(() => {
     mockUseParams.mockReset();
 });
 
 test('returns undefined if there are no params', async () => {
-    const store = useOrganizationsStore.getState();
-    const mock = vi.spyOn(store, 'getOrganizationBySlug');
+    const storeState = useStore.getState();
+    const mock = vi.spyOn(storeState, 'getOrganizationBySlug');
     mock.mockImplementation(() => undefined);
 
     const { result } = renderHook(() => useParamsData());
@@ -35,10 +39,7 @@ test('returns undefined if there are no params', async () => {
 });
 
 test('returns organization based on slug', async () => {
-    const mockGetOrganizationBySlug = vi.spyOn(
-        useOrganizationsStore.getState(),
-        'getOrganizationBySlug'
-    );
+    const mockGetOrganizationBySlug = vi.spyOn(useStore.getState(), 'getOrganizationBySlug');
     const organization = faker.custom.healthcareOrganization();
     const organizationSlug = faker.lorem.slug();
 
@@ -58,7 +59,7 @@ test('returns organization based on slug', async () => {
 });
 
 test('returns resource based on slug', async () => {
-    const mockGetResourceBySlug = vi.spyOn(useResourcesStore.getState(), 'getResourceBySlug');
+    const mockGetResourceBySlug = vi.spyOn(useStore.getState(), 'getResourceBySlug');
     const resource = faker.custom.resource();
     const resourceSlug = faker.lorem.slug();
 
@@ -78,17 +79,18 @@ test('returns resource based on slug', async () => {
 });
 
 test('returns health category based on slug', async () => {
-    const healthCategory = faker.helpers.arrayElement(Object.keys(healthCategorySlugs));
-    const healthCategorySlug =
-        healthCategorySlugs[healthCategory as keyof typeof healthCategorySlugs];
+    const healthCategorySlug = faker.lorem.slug();
+    const healthCategoryConfig = { slug: healthCategorySlug } as HealthCategoryWithSlug;
+    vi.mocked(useHealthCategoryBySlug).mockReturnValue(healthCategoryConfig);
 
     mockUseParams.mockReturnValue({ healthCategorySlug });
     const { result } = renderHook(() => useParamsData());
 
+    expect(useHealthCategoryBySlug).toHaveBeenCalledWith(healthCategorySlug);
     expect(result.current).toEqual({
         ...mockUseParams(),
         organization: undefined,
-        healthCategory,
+        healthCategory: healthCategoryConfig,
         resource: undefined,
     });
 });

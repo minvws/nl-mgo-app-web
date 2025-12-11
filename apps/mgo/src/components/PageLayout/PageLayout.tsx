@@ -4,8 +4,8 @@ import { ScrollRestoration } from 'react-router-dom';
 import { DesktopHeader } from '../DesktopHeader/DesktopHeader';
 import { DesktopMenu } from '../DesktopMenu/DesktopMenu';
 import { Footer } from '../Footer/Footer';
-import { LogoBanner } from '../LogoBanner/LogoBanner';
 import { MobileHeader } from '../MobileHeader/MobileHeader';
+import { RibbonBanner } from '../RibbonBanner/RibbonBanner';
 
 export interface LayoutProps {
     readonly hideMenu?: boolean;
@@ -26,7 +26,7 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
     return (
         <>
             <div className="flex min-h-screen flex-col">
-                <LogoBanner
+                <RibbonBanner
                     className={cn(
                         'z-20',
                         hideMenu ? 'bg-transparent' : 'bg-white dark:bg-gray-900'
@@ -35,17 +35,17 @@ export function PageLayout({ hideMenu }: LayoutProps = {}) {
 
                 {!hideMenu && header}
 
-                <main className="flex flex-grow flex-col">
+                <main className="flex grow flex-col">
                     <Container
                         className={cn(
-                            'flex flex-grow break-words bg-[#FAFAFA] dark:bg-[#050505]',
+                            'bg-t-bg-primary flex grow break-words',
                             hideMenu
                                 ? 'flex-col'
-                                : 'gap-8 pb-8 pt-8 md:gap-10 md:pb-16 md:pt-10 lg:gap-16 lg:pb-24 lg:pt-12'
+                                : 'gap-8 pt-8 pb-8 md:gap-10 md:pt-10 md:pb-10 lg:gap-16 lg:pt-12 lg:pb-12'
                         )}
                     >
                         {!hideMenu && !isMobile && <DesktopMenu />}
-                        <div className="flex min-w-0 flex-grow flex-col">
+                        <div className="flex min-w-0 grow flex-col">
                             <Outlet />
                         </div>
                     </Container>

@@ -13,11 +13,14 @@ export * from './gpEncounterReport/gpEncounterReport.js';
 export * from './gpJournalEntry/gpJournalEntry.js';
 export * from './gpLaboratoryResult/gpLaboratoryResult.js';
 
+export * from './nlCoreCarePlan/nlCoreCarePlan.js';
+export * from './nlCoreCareTeam/nlCoreCareTeam.js';
 export * from './nlCoreEpisodeofcare/nlCoreEpisodeofcare.js';
 export * from './nlCoreOrganization/nlCoreOrganization.js';
 export * from './nlCorePatient/nlCorePatient.js';
 export * from './nlCorePractitioner/nlCorePractitioner.js';
 export * from './nlCorePractitionerRole/nlCorePractitionerRole.js';
+export * from './nlCoreRelatedPerson/nlCoreRelatedPerson.js';
 
 export * from './eAfspraakAppointment/eAfspraakAppointment.js';
 export {
@@ -34,11 +37,13 @@ export * from './zibBodyHeight/zibBodyHeight.js';
 export * from './zibBodyWeight/zibBodyWeight.js';
 export * from './zibDrugUse/zibDrugUse.js';
 export { zibEncounter, type ZibEncounter } from './zibEncounter/zibEncounter.js';
+export * from './zibFamilySituation/zibFamilySituation.js';
 export * from './zibFunctionalOrMentalStatus/zibFunctionalOrMentalStatus.js';
 export {
     zibGeneralMeasurement,
     type ZibGeneralMeasurement,
 } from './zibGeneralMeasurement/zibGeneralMeasurement.js';
+export * from './zibHelpFromOthers/zibHelpFromOthers.js';
 export {
     zibLaboratoryTestResultObservation,
     type ZibLaboratoryTestResultObservation,
@@ -53,13 +58,16 @@ export * from './zibMedicalDeviceRequest/zibMedicalDeviceRequest.js';
 export * from './zibMedicationAgreement/zibMedicationAgreement.js';
 export * from './zibMedicationUse/zibMedicationUse.js';
 export * from './zibNutritionAdvice/zibNutritionAdvice.js';
+export * from './zibParticipationInSociety/zibParticipationInSociety.js';
 export * from './zibPayer/zibPayer.js';
 export * from './zibProblem/zibProblem.js';
 export * from './zibProcedure/zibProcedure.js';
 export * from './zibProcedureRequest/zibProcedureRequest.js';
 export * from './zibProduct/zibProduct.js';
+export * from './zibTextResult/zibTextResult.js';
 export * from './zibTobaccoUse/zibTobaccoUse.js';
 export * from './zibTreatmentDirective/zibTreatmentDirective.js';
+export * from './zibTreatmentObjective/zibTreatmentObjective.js';
 export * from './zibVaccination/zibVaccination.js';
 export * from './zibVaccinationRecommendation/zibVaccinationRecommendation.js';
 

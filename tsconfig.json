@@ -13,12 +13,6 @@
             "path": "./packages/config"
         },
         {
-            "path": "./packages/data-services"
-        },
-        {
-            "path": "./packages/fhir-client"
-        },
-        {
             "path": "./packages/fhir"
         },
         {
@@ -44,6 +38,9 @@
         },
         {
             "path": "./apps/hcim-labels"
+        },
+        {
+            "path": "./packages/org-search"
         }
     ]
 }

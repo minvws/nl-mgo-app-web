@@ -3,9 +3,15 @@ import nx from '@nx/eslint-plugin';
 import tanstackQuery from '@tanstack/eslint-plugin-query';
 // @ts-ignore
 import reactRefresh from 'eslint-plugin-react-refresh';
-import sonarjs from 'eslint-plugin-sonarjs';
+// @ts-ignore
+import tailwindcss from 'eslint-plugin-tailwindcss';
 // @ts-ignore
 import importPlugin from 'eslint-plugin-import';
+import sonarjs from 'eslint-plugin-sonarjs';
+import { fileURLToPath, URL } from 'url';
+
+// @ts-ignore
+export const resolvePath = (path) => fileURLToPath(new URL(path, import.meta.url));
 
 /**
  * @typedef {Object} EslintConfigOptions
@@ -40,10 +46,10 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 '**/docs',
                 '**/dist',
                 '**/build',
+                '**/results',
                 '**/out-tsc',
                 '**/test-output',
                 '*.config.*',
-                'vitest.workspace.mts',
             ],
         },
 
@@ -52,9 +58,11 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
             plugins: { sonarjs },
             rules: {
                 ...sonarjs.configs.recommended.rules,
+                'sonarjs/no-commented-code': 'warn',
                 'sonarjs/no-clear-text-protocols': 'off',
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-unused-vars': 'off', // already covered by typescript-eslint
+                'sonarjs/no-nested-conditional': 'off',
             },
         },
 
@@ -83,6 +91,7 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 'react-refresh': reactRefresh,
             },
             rules: {
+                'react/no-unstable-nested-components': 'error',
                 'react/react-in-jsx-scope': 'off',
                 'react/jsx-uses-react': 'off',
                 'react/prefer-read-only-props': 'error',
@@ -90,6 +99,22 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 'react/jsx-boolean-value': ['error', 'never'],
                 'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
                 'jsx-a11y/anchor-has-content': 'off',
+            },
+        });
+
+        config.push({
+            files: ['**/*.tsx', '**/*.ts'],
+            plugins: { tailwindcss },
+            rules: {
+                'tailwindcss/no-custom-classname': [
+                    'error',
+                    { callees: ['cn', 'twMerge'], tags: ['tw'], whitelist: ['dark'] },
+                ],
+            },
+            settings: {
+                tailwindcss: {
+                    config: resolvePath('./packages/ui/tailwind/theme.css'),
+                },
             },
         });
     }

@@ -67,3 +67,12 @@ test('redirect to login from protected route', () => {
         })
     ).toHaveTextContent(appMessage('login.heading'));
 });
+
+test('redirect to overview when logged in', () => {
+    const { setOnboardingSeen } = useOnboardingSeen();
+    setOnboardingSeen();
+    mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
+    setupApp({ initialEntries: ['/'] });
+
+    expect(screen.getByRole('heading', { name: appMessage('overview.heading') })).toBeVisible();
+});

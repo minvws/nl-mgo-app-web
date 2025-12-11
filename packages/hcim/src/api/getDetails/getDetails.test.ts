@@ -71,7 +71,7 @@ test('empty entries in the resulting ui schema are set with defaults', () => {
             {
                 label: faker.lorem.sentence(),
                 children: [
-                    { type: 'SINGLE_VALUE', label: faker.lorem.sentence(), display: undefined },
+                    { type: 'SINGLE_VALUE', label: faker.lorem.sentence(), value: undefined },
                 ],
             },
         ],
@@ -90,7 +90,7 @@ test('empty entries in the resulting ui schema are set with defaults', () => {
     });
 
     const result = getDetails(mgoResource as MgoResource<FhirVersion.R3>);
-    const singleValueDisplay = (result?.children[0].children[0] as SingleValue).display;
+    const singleValueDisplay = (result?.children[0].children[0] as SingleValue).value?.display;
 
     expect(singleValueDisplay).toBe(formatMessage('fhir.empty_value'));
 });

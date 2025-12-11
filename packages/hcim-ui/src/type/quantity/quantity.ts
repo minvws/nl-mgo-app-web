@@ -10,6 +10,6 @@ export const quantity: WithUiContext<UiFunction<MgoQuantity | MgoDuration, Singl
         return {
             label: formatLabel(label, value, options.defaultLabel),
             type: `SINGLE_VALUE`,
-            display: systemValue(context)(value),
+            value: { display: systemValue(context)(value) },
         };
     };

@@ -32,7 +32,7 @@ export const WithIcon: Story = {
     },
     render: ({ ...args }) => (
         <Stack className="flex-row">
-            <Button {...args} variant={args.variant} leftIcon="chevron-left">
+            <Button {...args} variant={args.variant} leftIcon="chevron_left">
                 With icon
             </Button>
         </Stack>
@@ -41,7 +41,7 @@ export const WithIcon: Story = {
 
 export const AsChildLink: Story = {
     render: ({ onClick: _onClick, ...args }) => (
-        <Button {...args} variant={args.variant} leftIcon="chevron-left" asChild>
+        <Button {...args} variant={args.variant} leftIcon="chevron_left" asChild>
             <a href="#foo">I&apos;m a link</a>
         </Button>
     ),
@@ -79,7 +79,7 @@ export const Loading: Story = {
                         {...args}
                         variant={args.variant}
                         loading={loading}
-                        leftIcon="chevron-left"
+                        leftIcon="chevron_left"
                         loadingTextScreenReader="We are loading"
                         loadingSpinnerOnly
                     >
@@ -90,7 +90,7 @@ export const Loading: Story = {
                         variant={args.variant}
                         loading={loading}
                         loadingTextScreenReader="We are loading"
-                        leftIcon="chevron-left"
+                        leftIcon="chevron_left"
                     >
                         Left icon
                     </Button>
@@ -99,20 +99,9 @@ export const Loading: Story = {
                         variant={args.variant}
                         loading={loading}
                         loadingTextScreenReader="We are loading"
-                        rightIcon="chevron-right"
+                        rightIcon="chevron_right"
                     >
                         Right icon
-                    </Button>
-                    <Button
-                        {...args}
-                        variant={args.variant}
-                        loading={loading}
-                        loadingTextScreenReader="We are loading"
-                        leftIcon="add"
-                        rightIcon="chevron-right"
-                        fullWidth
-                    >
-                        Both icons - fullWidth
                     </Button>
                 </Stack>
             </div>
@@ -167,13 +156,13 @@ export const Overview: Story = {
                         >
                             {variant}
                         </Button>
-                        <Button {...args} variant={variant} leftIcon="chevron-left">
+                        <Button {...args} variant={variant} leftIcon="chevron_left">
                             {variant}
                         </Button>
-                        <Button {...args} variant={variant} rightIcon="chevron-right">
+                        <Button {...args} variant={variant} rightIcon="chevron_right">
                             {variant}
                         </Button>
-                        <Button {...args} fullWidth variant={variant} rightIcon="chevron-right">
+                        <Button {...args} fullWidth variant={variant} rightIcon="chevron_right">
                             {variant} - fullWidth
                         </Button>
                     </Stack>

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DarkStory } from '../DarkStory/DarkStory';
+import { Stack } from '../Stack/Stack';
 import { DescriptionItem } from './DescriptionItem';
 
 type Story = StoryObj<typeof DescriptionItem>;
@@ -18,7 +19,10 @@ export const Default: Story = {};
 export const Overview: Story = {
     render: ({ ...args }) => (
         <DarkStory>
-            <DescriptionItem {...args} />
+            <Stack className="gap-8">
+                <DescriptionItem {...args} />
+                <DescriptionItem details={args.details} />
+            </Stack>
         </DarkStory>
     ),
 };

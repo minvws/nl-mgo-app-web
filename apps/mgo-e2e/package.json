@@ -12,9 +12,8 @@
         "check-types": "tsc --noEmit"
     },
     "devDependencies": {
-        "@minvws/mgo": "workspace:^",
         "@minvws/mgo-intl": "workspace:^",
-        "@playwright/test": "1.50.1",
+        "@playwright/test": "1.56.1",
         "@types/node": "^22.5.0",
         "dotenv": "^16.4.7",
         "esbuild": "^0.25.1",

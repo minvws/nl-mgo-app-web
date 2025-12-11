@@ -4,6 +4,7 @@ import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
 import { map } from '@minvws/mgo-utils';
 import { type ResourceConfig } from '../../../resourceTypes.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Problem'; // NOSONAR
 
@@ -38,7 +39,7 @@ function parseZibProblem(resource: Condition) {
         category: map(resource.category, parse.codeableConcept),
         code: parse.codeableConcept(resource.code),
         bodySite: map(resource.bodySite, (bodySite) => ({
-            ...parse.codeableConcept(bodySite),
+            ...parse.codeableConcept(bodySite)!,
             laterality: parse.extension(
                 bodySite,
                 'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier', // NOSONAR
@@ -56,4 +57,5 @@ export const zibProblem = {
     profile,
     parse: parseZibProblem,
     uiSchema: generateUiSchema,
+    summary,
 } satisfies ResourceConfig<FhirVersion.R3, Condition, ZibProblem>;

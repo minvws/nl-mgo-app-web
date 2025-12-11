@@ -1,0 +1,229 @@
+{
+    "label": "Zorgplan",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Behandeldoel",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "9ea67d3b-e3e1-11eb-1837-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Fiona XXX_Mutter",
+                    "reference": "Patient/ont-ver-XXX-Mutter"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Verpleegkundige actie",
+            "children": [
+                {
+                    "label": "Aantal herhalingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Aanvrager",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Behandeldoel",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Dag(en) van de week",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Duur van elke gebeurtenis",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Duureenheid",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Eenheid van herhalingsperiode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "d"
+                    }
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1"
+                    }
+                },
+                {
+                    "label": "Gebeurtenistijdstippen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Indicatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "decubitus"
+                        }
+                    ]
+                },
+                {
+                    "label": "Instructie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1"
+                    }
+                },
+                {
+                    "label": "Interventie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Aanleggen van verband op wond (182531007 in codesysteem http://snomed.info/sct)",
+                            "code": "182531007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Maximale frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Maximale herhalingsperiode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Maximum aantal herhalingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Medisch hulpmiddel",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "schuimverband - hiel, Links"
+                        },
+                        {
+                            "display": "huidvervangende wondbedekkers - hiel, Links"
+                        }
+                    ]
+                },
+                {
+                    "label": "Meetwaarde",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Momenten van de dag",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Tijdsafwijking",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Tijdschema-code",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Tijdstip(pen) van de dag",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Uitvoerder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Zorgresultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}

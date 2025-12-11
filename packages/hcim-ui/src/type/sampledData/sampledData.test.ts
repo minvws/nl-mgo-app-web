@@ -2,6 +2,7 @@ import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { systemValue } from '../../format/systemValue/systemValue.js';
+import { SingleValue } from '../../types/schema.js';
 import { sampledData } from './sampledData.js';
 
 test('sampled data', () => {
@@ -12,11 +13,11 @@ test('sampled data', () => {
 
     expect(result).toEqual({
         label: testMessage(label),
-        children: expect.arrayContaining([
+        children: expect.arrayContaining<SingleValue>([
             {
                 label: testMessage(`${label}.origin`),
                 type: `SINGLE_VALUE`,
-                display: systemValue(uiHelperContext)(value?.origin),
+                value: { display: systemValue(uiHelperContext)(value?.origin) },
             },
         ]),
     });

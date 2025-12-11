@@ -1,10 +1,4 @@
 {
-  "fhir.x.diagnosis": [
-    {
-      "type": 0,
-      "value": "Diagnosis"
-    }
-  ],
   "r3.e_afspraak_appointment": [
     {
       "type": 0,
@@ -542,7 +536,7 @@
   "r3.nl_core_address.official": [
     {
       "type": 0,
-      "value": "Markeer een adres als een 'officieel geregistreerd adres."
+      "value": "Markeer een adres als een 'officieel geregistreerd adres'."
     }
   ],
   "r3.nl_core_address.type": [
@@ -555,6 +549,66 @@
     {
       "type": 0,
       "value": "Adres soort"
+    }
+  ],
+  "r3.nl_core_careplan": [
+    {
+      "type": 0,
+      "value": "Zorgplan"
+    }
+  ],
+  "r3.nl_core_careplan.activity": [
+    {
+      "type": 0,
+      "value": "Verpleegkundige handeling"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention": [
+    {
+      "type": 0,
+      "value": "Verpleegkundige actie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.comment": [
+    {
+      "type": 0,
+      "value": "Opmerkingen"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.description": [
+    {
+      "type": 0,
+      "value": "Instructie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing": [
+    {
+      "type": 0,
+      "value": "Frequentie"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept": [
+    {
+      "type": 0,
+      "value": "Zorgresultaat"
+    }
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.reference": [
+    {
+      "type": 0,
+      "value": "Aanvrager"
+    }
+  ],
+  "r3.nl_core_careplan.goal": [
+    {
+      "type": 0,
+      "value": "Behandeldoel"
+    }
+  ],
+  "r3.nl_core_careteam": [
+    {
+      "type": 0,
+      "value": "Zorgteam"
     }
   ],
   "r3.nl_core_episodeofcare": [
@@ -597,6 +651,24 @@
     {
       "type": 0,
       "value": "Naam"
+    }
+  ],
+  "r3.nl_core_location": [
+    {
+      "type": 0,
+      "value": "Locatie"
+    }
+  ],
+  "r3.nl_core_location.managing_organization": [
+    {
+      "type": 0,
+      "value": "Organisatie"
+    }
+  ],
+  "r3.nl_core_location.physical_type": [
+    {
+      "type": 0,
+      "value": "Contact locatie type"
     }
   ],
   "r3.nl_core_observation": [
@@ -663,6 +735,12 @@
     {
       "type": 0,
       "value": "Zorgverlener rol"
+    }
+  ],
+  "r3.nl_core_relatedperson": [
+    {
+      "type": 0,
+      "value": "Gerelateerd persoon"
     }
   ],
   "r3.zib_administration_agreement.performer": [
@@ -765,6 +843,30 @@
     {
       "type": 0,
       "value": "Zorgverlener"
+    }
+  ],
+  "r3.zib_family_situation.children": [
+    {
+      "type": 0,
+      "value": "Kinderen"
+    }
+  ],
+  "r3.zib_family_situation.children.living_at_home": [
+    {
+      "type": 0,
+      "value": "Thuiswonend"
+    }
+  ],
+  "r3.zib_help_from_others": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
+    }
+  ],
+  "r3.zib_help_from_others.activity.detail": [
+    {
+      "type": 0,
+      "value": "Hulp van anderen"
     }
   ],
   "r3.zib_laboratory_test_result_observation.context": [
@@ -995,16 +1097,82 @@
       "value": "Auteur"
     }
   ],
+  "r3.zib_participation_in_society.component": [
+    {
+      "type": 0,
+      "value": "Participatie in maatschappij"
+    }
+  ],
   "r3.zib_payer.beneficiary": [
     {
       "type": 0,
       "value": "Onderwerp (Patiënt)"
     }
   ],
+  "r3.zib_problem": [
+    {
+      "type": 0,
+      "value": "Medische klacht"
+    }
+  ],
+  "r3.zib_problem.abatement_date_time": [
+    {
+      "type": 0,
+      "value": "Wanneer gestopt"
+    }
+  ],
   "r3.zib_problem.asserter": [
     {
       "type": 0,
-      "value": "Bron"
+      "value": "Vastgelegd door (zorgverlener)"
+    }
+  ],
+  "r3.zib_problem.body_site": [
+    {
+      "type": 0,
+      "value": "Plaats in het lichaam"
+    }
+  ],
+  "r3.zib_problem.body_site.laterality": [
+    {
+      "type": 0,
+      "value": "Aangedane kant"
+    }
+  ],
+  "r3.zib_problem.category": [
+    {
+      "type": 0,
+      "value": "Soort klacht"
+    }
+  ],
+  "r3.zib_problem.clinical_status": [
+    {
+      "type": 0,
+      "value": "Huidige status"
+    }
+  ],
+  "r3.zib_problem.code": [
+    {
+      "type": 0,
+      "value": "Medische klacht of aandoening"
+    }
+  ],
+  "r3.zib_problem.note": [
+    {
+      "type": 0,
+      "value": "Opmerkingen"
+    }
+  ],
+  "r3.zib_problem.onset_date_time": [
+    {
+      "type": 0,
+      "value": "Wanneer begonnen"
+    }
+  ],
+  "r3.zib_problem.verification_status": [
+    {
+      "type": 0,
+      "value": "Bevestigd of vermoed"
     }
   ],
   "r3.zib_procedure.based_on": [
@@ -1091,6 +1259,24 @@
       "value": "Product"
     }
   ],
+  "r3.zib_text_result.conclusion": [
+    {
+      "type": 0,
+      "value": "Tekst uitslag resultaat"
+    }
+  ],
+  "r3.zib_text_result.performer": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
+  "r3.zib_text_result.performer.actor": [
+    {
+      "type": 0,
+      "value": "Uitvoerder"
+    }
+  ],
   "r3.zib_treatment_directive.additional_sources": [
     {
       "type": 0,
@@ -1161,6 +1347,18 @@
     {
       "type": 0,
       "value": "Bevestigd"
+    }
+  ],
+  "r3.zib_treatment_objective.expressed_by": [
+    {
+      "type": 0,
+      "value": "Auteur"
+    }
+  ],
+  "r3.zib_treatment_objective.target.measure": [
+    {
+      "type": 0,
+      "value": "Streefwaarde / gewenste gezondheidstoestand"
     }
   ],
   "r3.zib_vaccination.report_origin": [

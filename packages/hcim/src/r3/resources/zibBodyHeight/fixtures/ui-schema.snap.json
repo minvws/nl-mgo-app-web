@@ -6,26 +6,34 @@
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Vaste Huisarts 1"
+                    "value": [
+                        {
+                            "display": "Vaste Huisarts 1"
+                        }
                     ]
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "192a097f-8fdf-11ec-1258-020000000000"
+                    "value": [
+                        {
+                            "display": "192a097f-8fdf-11ec-1258-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Lengte datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "8 februari 2013"
+                    "value": {
+                        "display": "8 februari 2013"
+                    }
                 },
                 {
                     "label": "Lengte waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "183 cm"
+                    "value": {
+                        "display": "183 cm"
+                    }
                 },
                 {
                     "label": "Patiënt",
@@ -36,12 +44,14 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Positie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Body height (8302-2 in codesysteem http://loinc.org)",
                             "code": "8302-2",
@@ -57,7 +67,9 @@
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "met schoenen aan"
+                    "value": {
+                        "display": "met schoenen aan"
+                    }
                 }
             ]
         }

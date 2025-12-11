@@ -1,6 +1,7 @@
 import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
+import { SingleValue } from '../../types/schema.js';
 import { organization } from './organization.js';
 
 test('creates an organization element for the summary ui schema', () => {
@@ -10,6 +11,6 @@ test('creates an organization element for the summary ui schema', () => {
     expect(organizationElement).toMatchObject({
         type: 'SINGLE_VALUE',
         label: testMessage('summary.organization'),
-        display: name,
-    });
+        value: { display: name },
+    } as SingleValue);
 });

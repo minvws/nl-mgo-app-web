@@ -14,6 +14,6 @@ test('valueWithUnit', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: format.valueWithUnit(value, unit),
+        value: { display: format.valueWithUnit(value, unit) },
     });
 });

@@ -1,5 +1,4 @@
-@import '@minvws/mgo-tailwind/fonts.css';
-
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+@import '@minvws/mgo-ui/tailwind-theme';
+@import '@minvws/mgo-ui/tailwind-source';
+@source '../index.html';

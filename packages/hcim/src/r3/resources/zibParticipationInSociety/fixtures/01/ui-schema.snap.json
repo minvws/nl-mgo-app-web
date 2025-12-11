@@ -1,0 +1,71 @@
+{
+    "label": "Participatie in maatschappij",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "10 augustus 2018"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1c6e07c1-8fdf-11ec-1564-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Irma XXX_Helleman-de Haas",
+                    "reference": "Patient/nl-core-patient-03"
+                },
+                {
+                    "label": "Toelichting",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Bezoekt activiteitencentrum 2 maal per week."
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Participatie in maatschappij",
+            "children": [
+                {
+                    "label": "Arbeidssituatie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "ICT-er"
+                    }
+                },
+                {
+                    "label": "Sociaal netwerk",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Heeft veel aanloop van buren"
+                    }
+                },
+                {
+                    "label": "Vrijetijdsbesteding",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Nordic walking"
+                    }
+                }
+            ]
+        }
+    ]
+}

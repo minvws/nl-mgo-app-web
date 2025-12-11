@@ -1,0 +1,72 @@
+{
+    "label": "Behandeldoel",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Auteur",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Gewenst zorgresultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "I. Jongeneel-de Haas",
+                    "reference": "Patient/nl-core-patient-03"
+                },
+                {
+                    "label": "Probleem",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Arthropathy (disorder)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Gerelateerd object",
+            "children": [
+                {
+                    "label": "Streefwaarde / gewenste gezondheidstoestand",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Zich wassen (d510 in codesysteem http://hl7.org/fhir/sid/icf-nl)",
+                            "code": "d510",
+                            "system": "http://hl7.org/fhir/sid/icf-nl"
+                        }
+                    ]
+                },
+                {
+                    "label": "Streefwaarde / gewenste gezondheidstoestand",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "MATIGE beperking/participatieprobleem (tamelijk) 25-49% (d510.3 in codesysteem http://hl7.org/fhir/sid/icf-nl)",
+                            "code": "d510.3",
+                            "system": "http://hl7.org/fhir/sid/icf-nl"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

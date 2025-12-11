@@ -33,23 +33,23 @@ export function code(context: UiContext) {
                 return;
             }
             if (i18nCode && hasMessage(i18nKey)) {
-                return formatMessage(i18nKey);
+                return { display: formatMessage(i18nKey) };
             }
-            return codeValue;
+            return { display: codeValue };
         }
 
         if (Array.isArray(value)) {
             return {
                 label: formatLabel(label, value, defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map(translateCode).filter(isNonNullish),
+                value: value.map(translateCode).filter(isNonNullish),
             };
         }
 
         return {
             label: formatLabel(label, value, defaultLabel),
             type: 'SINGLE_VALUE',
-            display: translateCode(value),
+            value: translateCode(value),
         };
     };
 }

@@ -1,20 +1,29 @@
-import { type HealthUiSchemaProps } from '$/components/HealthUiSchema/HealthUiSchema';
-import { HealthCategory } from '$/healthCategory';
+import { HealthCategoryConfig } from '$/config';
 import { useParamsData } from '$/routing';
-import { useResourcesStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
-import { appMessage } from '@minvws/mgo-intl/test/shared';
+import { HealthUiSchema } from '@minvws/mgo-hcim-ui';
+import { appMessage, testMessage } from '@minvws/mgo-intl/test/shared';
 import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthData } from './HealthData';
 
+vi.mock('$/intl');
 vi.mock('$/routing/useParamsData/useParamsData');
-vi.mock('../../components/HealthUiSchema/HealthUiSchema', () => {
+vi.mock('$/hooks/useHealthUiSchema/useHealthUiSchema', () => {
     return {
-        HealthUiSchema: ({ summary }: HealthUiSchemaProps) => (
-            <div data-testid="ui-schema">isSummary: {`${!!summary}`}</div>
-        ),
+        useHealthUiSchema: () => ({
+            getSummary: () =>
+                ({
+                    label: 'summary',
+                    children: [],
+                }) as HealthUiSchema,
+            getDetails: () =>
+                ({
+                    label: 'details',
+                    children: [],
+                }) as HealthUiSchema,
+        }),
     };
 });
 
@@ -25,35 +34,35 @@ beforeEach(() => {
 });
 
 test('can show the summary', async () => {
-    mockUseParamsData.mockImplementationOnce(() => ({
+    const healthCategory = {
+        heading: faker.lorem.word(),
+    } as HealthCategoryConfig;
+
+    mockUseParamsData.mockImplementation(() => ({
         organization: undefined,
-        healthCategory: HealthCategory.Medication,
+        healthCategory,
         resource: faker.custom.resource(),
     }));
 
     setupWithAppProviders(<HealthData summary />);
-
-    await waitFor(() =>
-        expect(document.title).toContain(appMessage('hc_medication.heading_summary'))
-    );
-    const uiSchemaComponent = screen.getByTestId('ui-schema');
-    expect(uiSchemaComponent).toHaveTextContent('isSummary: true');
+    await waitFor(() => expect(document.title).toContain(testMessage(healthCategory.heading)));
+    screen.getByRole('heading', { name: /summary/i });
 });
 
-test('can show all the details', async () => {
-    mockUseParamsData.mockImplementationOnce(() => ({
+test('can show the details', async () => {
+    const healthCategory = {
+        heading: faker.lorem.word(),
+    } as HealthCategoryConfig;
+
+    mockUseParamsData.mockImplementation(() => ({
         organization: undefined,
-        healthCategory: HealthCategory.Medication,
+        healthCategory,
         resource: faker.custom.resource(),
     }));
 
     setupWithAppProviders(<HealthData />);
-
-    await waitFor(() =>
-        expect(document.title).toContain(appMessage('hc_medication.heading_detail'))
-    );
-    const uiSchemaComponent = screen.getByTestId('ui-schema');
-    expect(uiSchemaComponent).toHaveTextContent('isSummary: false');
+    await waitFor(() => expect(document.title).toContain(testMessage(healthCategory.heading)));
+    screen.getByRole('heading', { name: /details/i });
 });
 
 test('shows not found page if healthcategory is not found', async () => {
@@ -76,13 +85,11 @@ test('shows not found page if healthcategory is not found', async () => {
 test('shows not found page if resource is not found', async () => {
     mockUseParamsData.mockImplementationOnce(() => ({
         organization: undefined,
-        healthCategory: HealthCategory.Medication,
+        healthCategory: {
+            heading: faker.lorem.word(),
+        } as HealthCategoryConfig,
         resource: undefined,
     }));
-
-    const store = useResourcesStore.getState();
-    const mock = vi.spyOn(store, 'getResourceBySlug');
-    mock.mockImplementationOnce(() => undefined);
 
     setupWithAppProviders(<HealthData />);
 

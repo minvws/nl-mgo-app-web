@@ -6,19 +6,23 @@
                 {
                     "label": "Contactgegevens",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "172613a3-8fdf-11ec-2630-020000000000"
+                    "value": [
+                        {
+                            "display": "172613a3-8fdf-11ec-2630-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Medisch specialisten, geriatrie (0335 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
                             "code": "0335",
@@ -29,7 +33,9 @@
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

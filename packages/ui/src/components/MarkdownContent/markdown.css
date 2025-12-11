@@ -1,5 +1,11 @@
 .mgo-markdown-content {
-    @apply md:text-md font-sans text-sm font-normal leading-normal text-black dark:text-white;
+    /* Needs to be inside the .mgo-markdown-content to avoid conflicts with the default tailwind config */
+    @import 'tailwindcss';
+    @reference "../../../tailwind/theme.css";
+
+    /* same as default <Text size="md" /> */
+    @apply leading-snug-lg text-lg md:leading-normal lg:text-xl;
+    @apply text-t-label-primary font-sans font-normal;
 
     h1,
     h2,
@@ -7,19 +13,19 @@
     h4,
     h5,
     h6 {
-        @apply mb-4 mt-6 font-bold leading-tight;
+        @apply text-t-label-primary font-sans leading-none font-bold;
     }
 
     h1 {
-        @apply mb-6 text-2xl md:text-3xl lg:text-4xl;
+        @apply mb-6 text-6xl md:text-7xl lg:text-8xl;
     }
 
     h2 {
-        @apply text-xl md:text-2xl;
+        @apply leading-tight-sm mb-4 text-xl md:text-2xl md:leading-snug lg:text-3xl lg:leading-normal;
     }
 
     h3 {
-        @apply text-lg md:text-xl;
+        @apply leading-snug-lg mb-2 text-lg md:leading-normal lg:text-xl;
     }
 
     ul,
@@ -54,11 +60,14 @@
     }
 
     pre {
-        @apply whitespace-pre-wrap rounded-lg bg-gray-100 p-4 dark:bg-gray-800;
+        @apply bg-t-bg-tertiary rounded-lg p-4 whitespace-pre-wrap;
     }
 
     a {
-        @apply text-dark-blue-700 visited:text-dark-blue-900 cursor-pointer underline hover:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-black focus-visible:dark:outline-white;
+        @apply cursor-pointer underline hover:no-underline focus-visible:outline-2;
+        @apply text-dark-blue-500 hover:text-dark-blue-600 active:text-dark-blue-700 visited:text-[#884488];
+        @apply dark:text-dark-blue-300 dark:hover:text-dark-blue-400 dark:active:text-dark-blue-500 dark:visited:text-[#c388c3];
+        @apply focus-visible:outline-black focus-visible:outline-dashed dark:focus-visible:outline-white;
     }
 
     blockquote {

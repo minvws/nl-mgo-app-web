@@ -9,7 +9,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         'SINGLE_VALUE',
         {
             label: faker.lorem.word(),
-            display: faker.lorem.word(),
+            value: { display: faker.lorem.word() },
             type: 'SINGLE_VALUE',
         },
     ],
@@ -18,7 +18,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         'SINGLE_VALUE',
         {
             label: faker.lorem.word(),
-            display: faker.lorem.word(),
+            value: { display: faker.lorem.word() },
             type: faker.lorem.word(),
         } as UiElement,
     ],

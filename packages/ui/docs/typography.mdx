@@ -1,5 +1,5 @@
 import { Canvas, Meta } from '@storybook/blocks';
-import { Typography } from './docs.stories';
+import { Fonts, HeadingStyles, BodyStyles } from './docs.stories';
 
 <Meta title="Typography" />
 
@@ -9,6 +9,18 @@ import { Typography } from './docs.stories';
 
 ## Fonts
 
-The following fonts are defined in the `@minvws/mgo-tailwind` theme. They are loaded via the `@minvws/mgo-tailwind/fonts.css` file.
+The following fonts are defined in the `./tailwind/theme.css` theme.
 
-<Canvas of={Typography} />
+<Canvas of={Fonts} />
+
+## Tailwind Components
+
+Typography styles are implemented in the correspoding React components, see the component documentation for more details.
+
+### Heading
+
+<Canvas of={HeadingStyles} />
+
+### Body
+
+<Canvas of={BodyStyles} />

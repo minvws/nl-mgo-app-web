@@ -12,8 +12,10 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1bbb2101-8fdf-11ec-1269-020000000000"
+                    "value": [
+                        {
+                            "display": "1bbb2101-8fdf-11ec-1269-020000000000"
+                        }
                     ]
                 },
                 {
@@ -25,7 +27,9 @@
                 {
                     "label": "Order status",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Product",
@@ -36,7 +40,7 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Qualified nurse",
                             "code": null,
@@ -52,77 +56,107 @@
                 {
                     "label": "Aantal herhalingen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Dag(en) van de week",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Duur van elke gebeurtenis",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Duureenheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Eenheid van herhalingsperiode",
                     "type": "SINGLE_VALUE",
-                    "display": "d"
+                    "value": {
+                        "display": "d"
+                    }
                 },
                 {
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
-                    "display": "3"
+                    "value": {
+                        "display": "3"
+                    }
                 },
                 {
                     "label": "Gebeurtenistijdstippen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Herhalingsperiode",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Maximale frequentie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Maximale herhalingsperiode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Maximum aantal herhalingen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Momenten van de dag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdsafwijking",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdschema-code",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdstip(pen) van de dag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

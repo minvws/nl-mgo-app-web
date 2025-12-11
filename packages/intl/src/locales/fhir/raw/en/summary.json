@@ -28,6 +28,11 @@
     "summary.r3.zib_medication_use.prescriber": "",
     "summary.r3.zib_medication_use.show_details": "",
     "summary.r3.zib_medication_use.status": "",
+    "summary.r3.zib_problem.group_about": "",
+    "summary.r3.zib_problem.group_body_site": "",
+    "summary.r3.zib_problem.group_health_professional": "",
+    "summary.r3.zib_problem.group_period_of_time": "",
+    "summary.r3.zib_problem.show_details": "",
     "summary.r4.nl_core_vaccination_event.group_performer": "",
     "summary.r4.nl_core_vaccination_event.show_details": ""
 }

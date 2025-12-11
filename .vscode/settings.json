@@ -2,7 +2,16 @@
     "tailwindCSS.experimental.classRegex": ["cn\\(([^)]*)", "tw`([^`]*)"],
     "typescript.tsdk": "./node_modules/typescript/lib",
     "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
-    "cSpell.words": ["Codelijst", "GHSA", "Ghsas", "interpretatie", "Loinc", "minvws", "Nictiz"],
+    "cSpell.words": [
+        "Codelijst",
+        "GHSA",
+        "Ghsas",
+        "interpretatie",
+        "Loinc",
+        "minvws",
+        "Nictiz",
+        "rijkslint"
+    ],
     "eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "pattern": "./apps/*/" }],
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "sonarlint.connectedMode.project": {
@@ -14,5 +23,6 @@
         "apps/*/dist": true,
         "packages/*/build": true,
         "packages/*/dist": true
-    }
+    },
+    "eslint.useFlatConfig": true
 }

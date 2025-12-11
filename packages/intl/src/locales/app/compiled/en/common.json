@@ -23,6 +23,8 @@
   ],
   "common.logout": [
   ],
+  "common.mgo_header_link": [
+  ],
   "common.next": [
   ],
   "common.no_data": [
@@ -42,6 +44,8 @@
   "common.previous": [
   ],
   "common.required": [
+  ],
+  "common.rijkslint_link": [
   ],
   "common.search": [
   ],

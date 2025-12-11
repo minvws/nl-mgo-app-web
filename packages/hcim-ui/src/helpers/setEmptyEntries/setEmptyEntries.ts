@@ -12,7 +12,7 @@ function processGroup(group: HealthUiGroup, { formatMessage }: UiContext): Healt
                 ? {
                       label: entry.label,
                       type: 'SINGLE_VALUE',
-                      display: formatMessage('fhir.empty_value'),
+                      value: { display: formatMessage('fhir.empty_value') },
                   }
                 : entry;
         }),

@@ -1,5 +1,5 @@
 import { routes } from '$/routing/routes';
-import { cn, Icon, tw } from '@minvws/mgo-ui';
+import { cn, Icon, Text, tw } from '@minvws/mgo-ui';
 import { Link } from 'react-router-dom';
 import { useBreadcrumbs } from './useBreadcrumbs';
 
@@ -9,7 +9,7 @@ export function Breadcrumbs() {
     if (crumbs.length === 0) return null;
 
     return (
-        <nav>
+        <Text as="nav">
             <ol className="flex items-center gap-2">
                 {crumbs.map((crumb, index: number) => {
                     const isLast = index === crumbs.length - 1;
@@ -23,15 +23,15 @@ export function Breadcrumbs() {
                                     <Link
                                         to={crumb.href}
                                         className={cn(
-                                            tw`text-gray-500 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800`,
+                                            tw`text-t-label-secondary hover:no-underline`,
                                             'underline'
                                         )}
                                     >
                                         {crumb.label}
                                     </Link>
                                     <Icon
-                                        icon="chevron-right"
-                                        className="h-8 w-8 flex-shrink-0 fill-gray-500"
+                                        icon="chevron_right"
+                                        className="fill-t-label-secondary h-8 w-8 shrink-0"
                                     />
                                 </>
                             )}
@@ -39,6 +39,6 @@ export function Breadcrumbs() {
                     );
                 })}
             </ol>
-        </nav>
+        </Text>
     );
 }

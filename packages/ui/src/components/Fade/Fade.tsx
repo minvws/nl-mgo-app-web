@@ -2,7 +2,7 @@ import { useRef, type HTMLAttributes } from 'react';
 import { Transition, type TransitionStatus } from 'react-transition-group';
 import { useAnimationDuration } from '../../hooks';
 import { type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { tw } from '../../utils';
 
 export type FadeProps = HTMLAttributes<HTMLDivElement> &
     CompositionProps & {
@@ -34,7 +34,7 @@ export const Fade = ({ className, children, isVisible, duration = 300, ...rest }
                     ref={rootRef}
                     style={{ transitionDuration: `${animationDuration}ms` }}
                     className={
-                        `transition-opacity ease-[cubic-bezier(0.4,0,0.2,1)] ${transitionStyles[state]}` +
+                        `animate-ease-out transition-opacity ${transitionStyles[state]}` +
                         (className ? ` ${className}` : '')
                     }
                     {...rest}

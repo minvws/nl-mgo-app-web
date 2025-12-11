@@ -40,8 +40,8 @@ export const Overview: Story = {
                 <HealthcareOrganizationCard
                     {...args}
                     checkMessage="checkMessage lorem ipsum"
-                    icon="chevron-right"
-                    iconAriaLabel="chevron-right"
+                    icon="chevron_right"
+                    iconAriaLabel="chevron_right"
                     onActionClick={action('on-action-click')}
                 />
                 <HealthcareOrganizationCard
@@ -52,8 +52,8 @@ export const Overview: Story = {
                 />
                 <HealthcareOrganizationCard
                     {...args}
-                    icon="chevron-right"
-                    iconAriaLabel="chevron-right"
+                    icon="chevron_right"
+                    iconAriaLabel="chevron_right"
                     onActionClick={action('on-action-click')}
                 />
                 <HealthcareOrganizationCard

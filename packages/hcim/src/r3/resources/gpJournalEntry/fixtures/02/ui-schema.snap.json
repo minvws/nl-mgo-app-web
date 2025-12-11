@@ -6,14 +6,16 @@
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Vaste Huisarts 1"
+                    "value": [
+                        {
+                            "display": "Vaste Huisarts 1"
+                        }
                     ]
                 },
                 {
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Subjectief (S in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)",
                             "code": "S",
@@ -24,26 +26,34 @@
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "6 februari 2013 om 04:17:00 GMT+1"
+                    "value": {
+                        "display": "6 februari 2013 om 04:17:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Episode",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Gebroken been"
+                    "value": [
+                        {
+                            "display": "Gebroken been"
+                        }
                     ]
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "15390bbd-8fdf-11ec-8940-020000000000"
+                    "value": [
+                        {
+                            "display": "15390bbd-8fdf-11ec-8940-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Journaalregel tekst",
                     "type": "SINGLE_VALUE",
-                    "display": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS."
+                    "value": {
+                        "display": "Benauwd en hoesten tijdens en na sporten. Gebruikt reeds ICS."
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -59,7 +69,7 @@
                 {
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Headache (N01 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
                             "code": "N01",
@@ -70,7 +80,7 @@
                 {
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Migraine (N17 in codesysteem http://hl7.org/fhir/sid/icpc-1-nl)",
                             "code": "N17",

@@ -6,17 +6,21 @@
                 {
                     "label": "Afwijkende uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "16 augustus 2012"
+                    "value": {
+                        "display": "16 augustus 2012"
+                    }
                 },
                 {
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
-                    "display": {
+                    "value": {
                         "display": "inpatient encounter (IMP in codesysteem http://hl7.org/fhir/v3/ActCode)",
                         "code": "IMP",
                         "system": "http://hl7.org/fhir/v3/ActCode"
@@ -25,13 +29,17 @@
                 {
                     "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "19 augustus 2012"
+                    "value": {
+                        "display": "19 augustus 2012"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "19adad57-8fdf-11ec-1860-020000000000"
+                    "value": [
+                        {
+                            "display": "19adad57-8fdf-11ec-1860-020000000000"
+                        }
                     ]
                 },
                 {
@@ -72,7 +80,9 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -82,12 +92,16 @@
                 {
                     "label": "Bestemming",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Herkomst",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

@@ -6,18 +6,24 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1 januari 2018"
+                    "value": {
+                        "display": "1 januari 2018"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1c2bf38b-8fdf-11ec-1435-020000000000"
+                    "value": [
+                        {
+                            "display": "1c2bf38b-8fdf-11ec-1435-020000000000"
+                        }
                     ]
                 },
                 {
@@ -29,7 +35,9 @@
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "toelichting voeding advies"
+                    "value": {
+                        "display": "toelichting voeding advies"
+                    }
                 }
             ]
         },
@@ -39,7 +47,7 @@
                 {
                     "label": "Aangepast",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Then stop (422327006 in codesysteem http://snomed.info/sct)",
                             "code": "422327006",
@@ -50,17 +58,21 @@
                 {
                     "label": "Consistentie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Dieet type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Voedsel type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Then stop (422327006 in codesysteem http://snomed.info/sct)",
                             "code": "422327006",

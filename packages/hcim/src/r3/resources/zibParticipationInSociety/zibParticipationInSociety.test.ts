@@ -1,0 +1,18 @@
+import { expectHealthCareUiSchemaJson, expectJson, testSchemaContext } from '$test';
+import { type Observation } from '@minvws/mgo-fhir/r3';
+import { test } from 'vitest';
+import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
+import { zibParticipationInSociety } from './zibParticipationInSociety.js';
+
+test('01: mgo-resource', async () => {
+    const output = zibParticipationInSociety.parse(input01 as Observation);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/01/mgo-resource.snap.json');
+});
+
+test('01: ui-schema', async () => {
+    const output = zibParticipationInSociety.parse(input01 as Observation);
+    const uiSchema = zibParticipationInSociety.uiSchema(output, testSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/01/ui-schema.snap.json'
+    );
+});

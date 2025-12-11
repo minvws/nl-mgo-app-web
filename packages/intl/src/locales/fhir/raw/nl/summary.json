@@ -28,6 +28,11 @@
     "summary.r3.zib_medication_use.prescriber": "Specialist",
     "summary.r3.zib_medication_use.show_details": "Bekijk alle medicijngegevens",
     "summary.r3.zib_medication_use.status": "Status",
+    "summary.r3.zib_problem.group_about": "Over de klacht",
+    "summary.r3.zib_problem.group_body_site": "Anatomische locatie",
+    "summary.r3.zib_problem.group_health_professional": "Zorgverlener",
+    "summary.r3.zib_problem.group_period_of_time": "Periode",
+    "summary.r3.zib_problem.show_details": "Bekijk alle probleem gegevens",
     "summary.r4.nl_core_vaccination_event.group_performer": "Gegeven door",
     "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens"
 }

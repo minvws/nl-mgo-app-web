@@ -5,6 +5,7 @@ import { type Nullable } from '@minvws/mgo-utils';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type UiContext } from '../../context/index.js';
 import { system } from '../../format/system/system.js';
+import { MultipleValues, SingleValue } from '../../types/schema.js';
 import { coding } from './coding.js';
 
 const mockSystem = system as unknown as MockedFunction<typeof system>;
@@ -19,10 +20,10 @@ test('coding single', () => {
     const label = faker.custom.fhirMessageId();
     const mgoCoding: MgoCoding = faker.mgo.coding();
     const result = coding(faker.ui.context())(label, mgoCoding);
-    expect(result).toEqual({
+    expect(result).toEqual<SingleValue>({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: {
+        value: {
             display: `system(${mgoCoding.display})`,
             code: mgoCoding.code,
             system: mgoCoding.system,
@@ -34,10 +35,10 @@ test('coding multiple', () => {
     const label = faker.custom.fhirMessageId();
     const mgoCoding: MgoCoding[] = [faker.mgo.coding(), faker.mgo.coding(), faker.mgo.coding()];
     const result = coding(faker.ui.context())(label, mgoCoding);
-    expect(result).toEqual({
+    expect(result).toEqual<MultipleValues>({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: [
+        value: [
             {
                 display: `system(${mgoCoding[0].display})`,
                 code: mgoCoding[0].code,
@@ -66,10 +67,10 @@ test('coding multiple does not return undefined values', () => {
 
     const mgoCoding: MgoCoding[] = [faker.mgo.coding(), { _type: 'coding' }, faker.mgo.coding()];
     const result = coding(faker.ui.context())(label, mgoCoding);
-    expect(result).toEqual({
+    expect(result).toEqual<MultipleValues>({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: [
+        value: [
             {
                 display: `system(${mgoCoding[0].display})`,
                 code: mgoCoding[0].code,

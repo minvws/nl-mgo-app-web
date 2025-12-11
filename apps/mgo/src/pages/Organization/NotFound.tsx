@@ -1,5 +1,4 @@
 import { BackButton } from '$/components/BackButton/BackButton';
-import { useNavFocusRef } from '$/hooks';
 import { RouterLink } from '$/routing';
 
 import { FormattedMessage, useIntl } from '$/intl';
@@ -8,23 +7,20 @@ import { Helmet } from 'react-helmet-async';
 
 export function NotFound() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
 
     return (
         <>
             <Helmet title={formatMessage('organization.not_found_heading')} />
-            <section className="flex-grow">
+            <section className="grow">
                 <div>
                     <BackButton />
                 </div>
 
-                <Heading asChild size="lg" className="mb-6 md:mb-12">
-                    <h1 ref={navFocusRef}>
-                        <FormattedMessage
-                            id="organization.not_found_heading"
-                            description="Zorgaanbieder niet gevonden"
-                        />
-                    </h1>
+                <Heading as="h1" focusOnRender size="xl" className="mb-6 md:mb-12">
+                    <FormattedMessage
+                        id="organization.not_found_heading"
+                        description="Zorgaanbieder niet gevonden"
+                    />
                 </Heading>
 
                 <Card className="p-4 md:p-12">
@@ -33,7 +29,7 @@ export function NotFound() {
                             className="mx-auto w-3/4 md:w-1/2"
                             illustration="woman-with-umbrella"
                         />
-                        <Text className="mt-6 md:mt-12">
+                        <Text className="mt-6 md:mt-12" as="p">
                             <FormattedMessage
                                 id="organization.not-found_subheading"
                                 description="Misschien is de zorgaanbieder die je zoekt verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
@@ -41,6 +37,7 @@ export function NotFound() {
                         </Text>
                     </div>
                 </Card>
+
                 <Button asChild className="mt-6 md:mt-12">
                     <RouterLink to={'/overzicht'}>
                         <FormattedMessage

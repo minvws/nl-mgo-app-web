@@ -6,7 +6,9 @@
                 {
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
-                    "display": "23 december 2005 om 23:43:41 GMT+1"
+                    "value": {
+                        "display": "23 december 2005 om 23:43:41 GMT+1"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -17,7 +19,7 @@
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Outpatient Note (34108-1 in codesysteem http://loinc.org)",
                             "code": "34108-1",
@@ -42,13 +44,22 @@
             "children": [
                 {
                     "label": "Specialist",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": null
+                        },
+                        {
+                            "display": null
+                        }
+                    ]
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

@@ -8,15 +8,13 @@ export const NoOrganizations = () => (
             illustration="woman-with-phone"
             className="mb-8 w-full max-w-[156px] md:max-w-[200px]"
         />
-        <Heading size="md" className="mb-2" asChild>
-            <h2>
-                <FormattedMessage
-                    id="common.no_organizations_heading"
-                    description="Je hebt nog geen zorgaanbieders toegevoegd"
-                />
-            </h2>
+        <Heading className="mb-2" as="h2">
+            <FormattedMessage
+                id="common.no_organizations_heading"
+                description="Je hebt nog geen zorgaanbieders toegevoegd"
+            />
         </Heading>
-        <Text className="mb-8" variant="light">
+        <Text className="mb-8">
             <FormattedMessage
                 id="common.no_organizations_subheading"
                 description="Voeg zorgaanbieders toe om gegevens over je gezondheid te zien."

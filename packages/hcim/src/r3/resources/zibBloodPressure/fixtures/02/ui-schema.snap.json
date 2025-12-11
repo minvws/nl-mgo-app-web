@@ -6,26 +6,32 @@
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Vaste Huisarts 1"
+                    "value": [
+                        {
+                            "display": "Vaste Huisarts 1"
+                        }
                     ]
                 },
                 {
                     "label": "Bloeddruk datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "1 februari 2013 om 08:53:00 GMT+1"
+                    "value": {
+                        "display": "1 februari 2013 om 08:53:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "191e51d9-8fdf-11ec-1102-020000000000"
+                    "value": [
+                        {
+                            "display": "191e51d9-8fdf-11ec-1102-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Meet locatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Left upper arm structure (368208006 in codesysteem http://snomed.info/sct)",
                             "code": "368208006",
@@ -36,7 +42,7 @@
                 {
                     "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Non-invasive (22762002 in codesysteem http://snomed.info/sct)",
                             "code": "22762002",
@@ -53,12 +59,16 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -68,7 +78,7 @@
                 {
                     "label": "Diastolisch eindpunt",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Phase 5 (255272007 in codesysteem http://snomed.info/sct)",
                             "code": "255272007",
@@ -79,17 +89,21 @@
                 {
                     "label": "Diastolische bloeddruk",
                     "type": "SINGLE_VALUE",
-                    "display": "108 mmHg"
+                    "value": {
+                        "display": "108 mmHg"
+                    }
                 },
                 {
                     "label": "Gemiddelde bloeddruk",
                     "type": "SINGLE_VALUE",
-                    "display": "103 mmHg"
+                    "value": {
+                        "display": "103 mmHg"
+                    }
                 },
                 {
                     "label": "Houding",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Sitting position (33586001 in codesysteem http://snomed.info/sct)",
                             "code": "33586001",
@@ -100,7 +114,7 @@
                 {
                     "label": "Manchet type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Groot (L in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.15.1)",
                             "code": "L",
@@ -111,7 +125,9 @@
                 {
                     "label": "Systolische bloeddruk",
                     "type": "SINGLE_VALUE",
-                    "display": "108 mmHg"
+                    "value": {
+                        "display": "108 mmHg"
+                    }
                 }
             ]
         }

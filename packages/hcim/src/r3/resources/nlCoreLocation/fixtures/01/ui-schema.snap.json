@@ -1,0 +1,199 @@
+{
+    "label": "Locatie",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Contact locatie type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Organisatie",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Orthopedie - UMCG",
+                    "reference": "Organization/nl-core-organization-02"
+                },
+                {
+                    "label": "Organization location",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Orthopodie afdeling ACME in Den Haag"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "email"
+                    }
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "work"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "info@nictiz.nl"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Mobile Phone (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "MC",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
+                    ]
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "phone"
+                    }
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "home"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "+31611234567"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Adres informatie",
+            "children": [
+                {
+                    "label": "Aanduiding bij huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "HP",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
+                    ]
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "home"
+                    }
+                },
+                {
+                    "label": "Adres type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "both"
+                    }
+                },
+                {
+                    "label": "Extra informatie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Gemeente",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "55"
+                    }
+                },
+                {
+                    "label": "Huisnummertoevoeging",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Land",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "NLD"
+                    }
+                },
+                {
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Ja"
+                    }
+                },
+                {
+                    "label": "Municipality",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Den Haag"
+                    }
+                },
+                {
+                    "label": "Postcode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "9132AG"
+                    }
+                },
+                {
+                    "label": "Straatnaam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Knolweg"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "label": "Medische klacht",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1d1451f3-8fdf-11ec-5384-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Medische klacht of aandoening",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Fracture of wrist (disorder) (31641000146105 in codesysteem http://snomed.info/sct)",
+                            "code": "31641000146105",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Gevallen op de kunstijsbaan"
+                        }
+                    ]
+                },
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Hart (80891009 in codesysteem http://snomed.info/sct)",
+                            "code": "80891009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Probleemstatus",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Active (55561003 in codesysteem http://snomed.info/sct)",
+                            "code": "55561003",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Soort klacht",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Vastgelegd door (zorgverlener)",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Verificatie status codelijst",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Unknown (UNK in codesysteem http://hl7.org/fhir/v3/NullFlavor)",
+                            "code": "UNK",
+                            "system": "http://hl7.org/fhir/v3/NullFlavor"
+                        }
+                    ]
+                },
+                {
+                    "label": "Wanneer begonnen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2001"
+                    }
+                },
+                {
+                    "label": "Wanneer gestopt",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2002"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Plaats in het lichaam",
+            "children": [
+                {
+                    "label": "Aangedane kant",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Right (24028007 in codesysteem http://snomed.info/sct)",
+                            "code": "24028007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Entire wrist region (361289009 in codesysteem http://snomed.info/sct)",
+                            "code": "361289009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

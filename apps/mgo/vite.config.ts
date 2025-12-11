@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
@@ -14,7 +15,7 @@ export default defineConfig({
     build: {
         outDir: './build',
     },
-    plugins: [react({ babel: { plugins: ['macros'] } }), svgr()],
+    plugins: [react({ babel: { plugins: ['macros'] } }), svgr(), tailwindcss()],
     resolve: {
         alias: {
             $: resolvePath('./src'),
@@ -53,8 +54,8 @@ export default defineConfig({
                 `media-src 'none'`,
                 `frame-src 'none'`,
                 // 'data:' to allow internal data fetching for creating blob urls
-                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data:`,
-                `worker-src 'none'`,
+                `connect-src https://lo-ad.test.mgo.irealisatie.nl https://dvp-proxy.test.mgo.irealisatie.nl ws://${VITE_SERVER_HOST}:* data: https://app-api.test.mgo.irealisatie.nl`,
+                `worker-src 'self'`,
                 `form-action 'none'`,
                 // 'unsafe-inline' DEV ONLY - is needed as the vite development server uses inline scripts
                 // 'wasm-unsafe-eval' is needed as the pdf renderer uses wasm

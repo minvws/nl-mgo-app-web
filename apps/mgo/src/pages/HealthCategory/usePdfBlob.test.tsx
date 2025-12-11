@@ -1,14 +1,12 @@
+import { HealthCategoryPdfProps } from '$/components/HealthCategoryPdf/HealthCategoryPdf';
+import { faker } from '$test/faker';
+import { TestAppProviders } from '$test/helpers';
+import { mockArray } from '@minvws/mgo-utils/test/shared';
 import { render, renderHook } from '@testing-library/react';
 import { type ReactNode } from 'react';
 import { beforeEach, expect, test, vi } from 'vitest';
-import { faker } from '$test/faker';
-import { usePdfBlob } from './usePdfBlob';
 import { type HealthSubCategory } from './SubCategoryData';
-import { mockArray } from '@minvws/mgo-utils/test/shared';
-import { HealthUiSchema } from '@minvws/mgo-hcim';
-import { HealthCategoryPdfProps } from '$/components/HealthCategoryPdf/HealthCategoryPdf';
-import { Resource } from '$/store';
-import { TestAppProviders } from '$test/helpers';
+import { usePdfBlob } from './usePdfBlob';
 
 const mockToBlob = vi.fn().mockResolvedValue(new Blob(['mock-pdf'], { type: 'application/pdf' }));
 const mockPdf = vi.fn((pdf: ReactNode) => {
@@ -20,6 +18,16 @@ const mockPdf = vi.fn((pdf: ReactNode) => {
 
 vi.mock('@react-pdf/renderer', () => ({
     pdf: mockPdf,
+}));
+
+const hoisted = vi.hoisted(() => ({
+    getSummary: vi.fn(),
+}));
+
+vi.mock('$/hooks', () => ({
+    useHealthUiSchema: vi.fn(() => ({
+        getSummary: hoisted.getSummary,
+    })),
 }));
 
 const pdfPropsSpy: HealthCategoryPdfProps[] = [];
@@ -73,20 +81,18 @@ test('createPdfBlob does not render last uiGroup in PDF', async () => {
         factory: () => ({
             id: faker.string.uuid(),
             heading: faker.lorem.sentence(),
-            resources: [
-                {
-                    summary: {
-                        label: faker.lorem.words(2),
-                        children: [
-                            { label: 'Option 1', children: [] },
-                            { label: 'Option 2', children: [] },
-                            { label: 'Detail Link', children: [] },
-                        ],
-                    } as HealthUiSchema,
-                } as Resource,
-            ],
+            resources: [faker.custom.resource()],
         }),
     });
+
+    hoisted.getSummary.mockImplementation(() => ({
+        label: faker.lorem.words(2),
+        children: [
+            { label: 'Option 1', children: [] },
+            { label: 'Option 2', children: [] },
+            { label: 'Detail Link', children: [] },
+        ],
+    }));
 
     const { result } = renderHook(() => usePdfBlob(), {
         wrapper: (props) => <TestAppProviders {...props} />,

@@ -6,18 +6,24 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1eb10781-8fdf-11ec-7373-020000000000"
+                    "value": [
+                        {
+                            "display": "1eb10781-8fdf-11ec-7373-020000000000"
+                        }
                     ]
                 },
                 {
@@ -29,17 +35,21 @@
                 {
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1980"
+                    "value": {
+                        "display": "1980"
+                    }
                 },
                 {
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1983"
+                    "value": {
+                        "display": "1983"
+                    }
                 },
                 {
                     "label": "Tabak gebruik status",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Ex-smoker (finding) (8517006 in codesysteem http://snomed.info/sct)",
                             "code": "8517006",
@@ -50,7 +60,9 @@
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -60,17 +72,21 @@
                 {
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
-                    "display": "2 packs per week"
+                    "value": {
+                        "display": "2 packs per week"
+                    }
                 },
                 {
                     "label": "Pack years",
                     "type": "SINGLE_VALUE",
-                    "display": "1 PackYears"
+                    "value": {
+                        "display": "1 PackYears"
+                    }
                 },
                 {
                     "label": "Soort tabak gebruik",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Cigarette smoker (finding) (65568007 in codesysteem http://snomed.info/sct)",
                             "code": "65568007",

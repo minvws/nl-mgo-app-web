@@ -1,0 +1,159 @@
+@theme {
+    /* backgrounds */
+    --color-t-bg-primary: var(--color-gray-50);
+    --color-t-bg-secondary: var(--color-white);
+    --color-t-bg-tertiary: var(--color-gray-100);
+
+    /* labels */
+    --color-t-label-primary: var(--color-black);
+    --color-t-label-secondary: var(--color-gray-500);
+    --color-t-label-invert: var(--color-white);
+    --color-t-label-vibrant: var(--color-gray-900);
+
+    /* seperators */
+    --color-t-seperator-primary: var(--color-gray-200);
+    --color-t-seperator-secondary: var(--color-gray-100);
+    --color-t-seperator-tertiary: var(--color-black);
+
+    /* symbols */
+    --color-t-symbol-primary: var(--color-gray-500);
+    --color-t-symbol-secondary: var(--color-gray-400);
+    --color-t-symbol-tertiary: var(--color-gray-300);
+
+    /* states */
+    --color-t-state-informative: var(--color-sky-blue-500);
+    --color-t-state-confirmation: var(--color-green-500);
+    --color-t-state-warning: var(--color-dark-yellow-500);
+    --color-t-state-critical: var(--color-red-500);
+
+    /* categories */
+    --color-t-cat-rijkslint: var(--color-logo-blue-500);
+    --color-t-cat-medication: var(--color-dark-green-500);
+    --color-t-cat-contacts: var(--color-dark-blue-500);
+    --color-t-cat-laboratory: var(--color-sky-blue-500);
+    --color-t-cat-mental: var(--color-purple-500);
+    --color-t-cat-device: var(--color-moss-500);
+    --color-t-cat-vitals: var(--color-ruby-500);
+    --color-t-cat-documents: var(--color-dark-brown-500);
+    --color-t-cat-vaccinations: var(--color-mint-500);
+    --color-t-cat-allergies: var(--color-orange-500);
+    --color-t-cat-problems: var(--color-red-500);
+    --color-t-cat-personal: var(--color-pink-500);
+    --color-t-cat-warning: var(--color-dark-yellow-500);
+    --color-t-cat-personal: var(--color-pink-700);
+    --color-t-cat-warning: var(--color-dark-yellow-800);
+    --color-t-cat-payer: var(--color-light-blue-800);
+    --color-t-cat-procedures: var(--color-violet-500);
+    --color-t-cat-lifestyle: var(--color-green-500);
+    --color-t-cat-plan: var(--color-brown-500);
+
+    /* actions */
+    --color-t-action-solid-default-bg: var(--color-logo-blue-500);
+    --color-t-action-solid-default-text: var(--color-white);
+    --color-t-action-solid-hover-bg: var(--color-logo-blue-600);
+    --color-t-action-solid-hover-text: var(--color-white);
+    --color-t-action-solid-active-bg: var(--color-logo-blue-700);
+    --color-t-action-solid-active-text: var(--color-white);
+
+    --color-t-action-outline-default-text: var(--color-logo-blue-500);
+    --color-t-action-outline-default-border: var(--color-logo-blue-500);
+    --color-t-action-outline-hover-text: var(--color-logo-blue-500);
+    --color-t-action-outline-hover-border: var(--color-logo-blue-500);
+    --color-t-action-outline-hover-bg: var(--color-logo-blue-50);
+    --color-t-action-outline-active-text: var(--color-logo-blue-500);
+    --color-t-action-outline-active-border: var(--color-logo-blue-500);
+    --color-t-action-outline-active-bg: var(--color-logo-blue-200);
+
+    --color-t-action-ghost-default-text: var(--color-logo-blue-500);
+    --color-t-action-ghost-hover-text: var(--color-logo-blue-500);
+    --color-t-action-ghost-hover-bg: var(--color-logo-blue-50);
+    --color-t-action-ghost-active-text: var(--color-logo-blue-500);
+    --color-t-action-ghost-active-bg: var(--color-logo-blue-200);
+
+    --color-t-action-link-default-text: var(--color-dark-blue-500);
+    --color-t-action-link-hover-text: var(--color-dark-blue-600);
+    --color-t-action-link-active-text: var(--color-dark-blue-700);
+    --color-t-action-link-visited-text: #884488;
+}
+
+@layer theme {
+    :root,
+    :host,
+    * {
+        @variant dark {
+            /* backgrounds */
+            --color-t-bg-primary: var(--color-gray-950);
+            --color-t-bg-secondary: var(--color-gray-900);
+            --color-t-bg-tertiary: var(--color-gray-800);
+
+            /* labels */
+            --color-t-label-primary: var(--color-white);
+            --color-t-label-secondary: var(--color-gray-300);
+            --color-t-label-invert: var(--color-gray-900);
+            --color-t-label-vibrant: var(--color-gray-100);
+
+            /* seperators */
+            --color-t-seperator-primary: var(--color-gray-700);
+            --color-t-seperator-secondary: var(--color-gray-800);
+            --color-t-seperator-tertiary: var(--color-white);
+
+            /* symbols */
+            --color-t-symbol-primary: var(--color-gray-300);
+            --color-t-symbol-secondary: var(--color-gray-400);
+            --color-t-symbol-tertiary: var(--color-gray-500);
+
+            /* states */
+            --color-t-state-informative: var(--color-sky-blue-300);
+            --color-t-state-confirmation: var(--color-green-300);
+            --color-t-state-warning: var(--color-dark-yellow-300);
+            --color-t-state-critical: var(--color-red-300);
+
+            /* categories */
+            --color-t-cat-rijkslint: var(--color-logo-blue-300);
+            --color-t-cat-medication: var(--color-dark-green-300);
+            --color-t-cat-contacts: var(--color-dark-blue-300);
+            --color-t-cat-laboratory: var(--color-sky-blue-300);
+            --color-t-cat-mental: var(--color-purple-300);
+            --color-t-cat-device: var(--color-moss-300);
+            --color-t-cat-vitals: var(--color-ruby-300);
+            --color-t-cat-documents: var(--color-dark-brown-300);
+            --color-t-cat-vaccinations: var(--color-mint-300);
+            --color-t-cat-allergies: var(--color-orange-300);
+            --color-t-cat-problems: var(--color-red-300);
+            --color-t-cat-personal: var(--color-pink-300);
+            --color-t-cat-warning: var(--color-dark-yellow-300);
+            --color-t-cat-payer: var(--color-light-blue-300);
+            --color-t-cat-procedures: var(--color-violet-300);
+            --color-t-cat-lifestyle: var(--color-green-300);
+            --color-t-cat-plan: var(--color-brown-300);
+
+            /* actions */
+            --color-t-action-solid-default-bg: var(--color-logo-blue-300);
+            --color-t-action-solid-default-text: var(--color-gray-900);
+            --color-t-action-solid-hover-bg: var(--color-logo-blue-200);
+            --color-t-action-solid-hover-text: var(--color-gray-900);
+            --color-t-action-solid-active-bg: var(--color-logo-blue-100);
+            --color-t-action-solid-active-text: var(--color-gray-900);
+
+            --color-t-action-outline-default-text: var(--color-logo-blue-300);
+            --color-t-action-outline-default-border: var(--color-logo-blue-300);
+            --color-t-action-outline-hover-text: var(--color-logo-blue-300);
+            --color-t-action-outline-hover-border: var(--color-logo-blue-300);
+            --color-t-action-outline-hover-bg: --alpha(var(--color-logo-blue-300) / 15%);
+            --color-t-action-outline-active-text: var(--color-logo-blue-300);
+            --color-t-action-outline-active-border: var(--color-logo-blue-300);
+            --color-t-action-outline-active-bg: --alpha(var(--color-logo-blue-300) / 30%);
+
+            --color-t-action-ghost-default-text: var(--color-logo-blue-300);
+            --color-t-action-ghost-hover-text: var(--color-logo-blue-300);
+            --color-t-action-ghost-hover-bg: --alpha(var(--color-logo-blue-300) / 15%);
+            --color-t-action-ghost-active-text: var(--color-logo-blue-300);
+            --color-t-action-ghost-active-bg: --alpha(var(--color-logo-blue-300) / 30%);
+
+            --color-t-action-link-default-text: var(--color-dark-blue-300);
+            --color-t-action-link-hover-text: var(--color-dark-blue-400);
+            --color-t-action-link-active-text: var(--color-dark-blue-500);
+            --color-t-action-link-visited-text: #c388c3;
+        }
+    }
+}

@@ -16,13 +16,11 @@ export function QueryStateLayout({ illustration, title, children }: QueryStateLa
                 />
             )}
             {title && (
-                <Heading size="md" className="mb-2 md:mb-3 lg:mb-4" asChild>
-                    <h2>{title}</h2>
+                <Heading className="mb-2 md:mb-3 lg:mb-4" as="h2">
+                    {title}
                 </Heading>
             )}
-            <Text asChild>
-                <div>{children}</div>
-            </Text>
+            <Text as="div">{children}</Text>
         </div>
     );
 }

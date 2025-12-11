@@ -48,7 +48,7 @@ test('renders a button loading with a right icon', async () => {
         variant: faker.helpers.arrayElement(variants),
         loading: true,
         loadingTextScreenReader: 'Loading...',
-        rightIcon: 'chevron-right',
+        rightIcon: 'chevron_right',
     };
 
     render(<Button {...props} />);

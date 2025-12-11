@@ -12,15 +12,19 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1d9ec0ef-8fdf-11ec-6149-020000000000"
+                    "value": [
+                        {
+                            "display": "1d9ec0ef-8fdf-11ec-6149-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Open fractuur van femur (aandoening)"
+                    "value": [
+                        {
+                            "display": "Open fractuur van femur (aandoening)"
+                        }
                     ]
                 },
                 {
@@ -32,7 +36,9 @@
                 {
                     "label": "Order status",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Uitgevoerd door",
@@ -43,7 +49,7 @@
                 {
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Röntgenfoto (168537006 in codesysteem http://snomed.info/sct)",
                             "code": "168537006",
@@ -54,7 +60,7 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Qualified nurse",
                             "code": null,
@@ -70,77 +76,107 @@
                 {
                     "label": "Aantal herhalingen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Dag(en) van de week",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Duur van elke gebeurtenis",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Duureenheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Eenheid van herhalingsperiode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
-                    "display": "2"
+                    "value": {
+                        "display": "2"
+                    }
                 },
                 {
                     "label": "Gebeurtenistijdstippen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Maximale frequentie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Maximale herhalingsperiode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Maximum aantal herhalingen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Momenten van de dag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdsafwijking",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdschema-code",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Tijdstip(pen) van de dag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -150,7 +186,7 @@
                 {
                     "label": "Verrichting anatomische locatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Knee region structure (body structure) (72696002 in codesysteem http://snomed.info/sct)",
                             "code": "72696002",
@@ -161,7 +197,7 @@
                 {
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Left (7771000 in codesysteem http://snomed.info/sct)",
                             "code": "7771000",

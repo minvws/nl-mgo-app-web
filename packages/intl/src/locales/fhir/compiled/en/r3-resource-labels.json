@@ -1,6 +1,4 @@
 {
-  "fhir.x.diagnosis": [
-  ],
   "r3.e_afspraak_appointment": [
   ],
   "r3.e_afspraak_appointment.appointment_type": [
@@ -185,6 +183,26 @@
   ],
   "r3.nl_core_address.use": [
   ],
+  "r3.nl_core_careplan": [
+  ],
+  "r3.nl_core_careplan.activity": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.comment": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.description": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept": [
+  ],
+  "r3.nl_core_careplan.activity.nursing_intervention.reference": [
+  ],
+  "r3.nl_core_careplan.goal": [
+  ],
+  "r3.nl_core_careteam": [
+  ],
   "r3.nl_core_episodeofcare": [
   ],
   "r3.nl_core_episodeofcare.type": [
@@ -198,6 +216,12 @@
   "r3.nl_core_humanname.given.initials": [
   ],
   "r3.nl_core_humanname.text": [
+  ],
+  "r3.nl_core_location": [
+  ],
+  "r3.nl_core_location.managing_organization": [
+  ],
+  "r3.nl_core_location.physical_type": [
   ],
   "r3.nl_core_observation": [
   ],
@@ -220,6 +244,8 @@
   "r3.nl_core_patient.nationality.code": [
   ],
   "r3.nl_core_practitionerrole": [
+  ],
+  "r3.nl_core_relatedperson": [
   ],
   "r3.zib_administration_agreement.performer": [
   ],
@@ -254,6 +280,14 @@
   "r3.zib_encounter.hospitalization": [
   ],
   "r3.zib_encounter.participant": [
+  ],
+  "r3.zib_family_situation.children": [
+  ],
+  "r3.zib_family_situation.children.living_at_home": [
+  ],
+  "r3.zib_help_from_others": [
+  ],
+  "r3.zib_help_from_others.activity.detail": [
   ],
   "r3.zib_laboratory_test_result_observation.context": [
   ],
@@ -331,9 +365,31 @@
   ],
   "r3.zib_nutrition_advice.orderer": [
   ],
+  "r3.zib_participation_in_society.component": [
+  ],
   "r3.zib_payer.beneficiary": [
   ],
+  "r3.zib_problem": [
+  ],
+  "r3.zib_problem.abatement_date_time": [
+  ],
   "r3.zib_problem.asserter": [
+  ],
+  "r3.zib_problem.body_site": [
+  ],
+  "r3.zib_problem.body_site.laterality": [
+  ],
+  "r3.zib_problem.category": [
+  ],
+  "r3.zib_problem.clinical_status": [
+  ],
+  "r3.zib_problem.code": [
+  ],
+  "r3.zib_problem.note": [
+  ],
+  "r3.zib_problem.onset_date_time": [
+  ],
+  "r3.zib_problem.verification_status": [
   ],
   "r3.zib_procedure.based_on": [
   ],
@@ -363,6 +419,12 @@
   ],
   "r3.zib_product.code": [
   ],
+  "r3.zib_text_result.conclusion": [
+  ],
+  "r3.zib_text_result.performer": [
+  ],
+  "r3.zib_text_result.performer.actor": [
+  ],
   "r3.zib_treatment_directive.additional_sources": [
   ],
   "r3.zib_treatment_directive.additional_sources.value": [
@@ -386,6 +448,10 @@
   "r3.zib_treatment_directive.verification": [
   ],
   "r3.zib_treatment_directive.verified": [
+  ],
+  "r3.zib_treatment_objective.expressed_by": [
+  ],
+  "r3.zib_treatment_objective.target.measure": [
   ],
   "r3.zib_vaccination.report_origin": [
   ],

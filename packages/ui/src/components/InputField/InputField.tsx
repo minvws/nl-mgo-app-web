@@ -1,50 +1,65 @@
-import { type InputHTMLAttributes, type ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { HTMLAttributes, InputHTMLAttributes, type ReactNode } from 'react';
 import { useUniqueId } from '../../hooks/useUniqueId/useUniqueId';
+import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
+import { Input } from '../Input/Input';
+import { Text } from '../Text/Text';
 
-export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-    readonly label: ReactNode;
-    readonly error?: string;
-}
+export type InputProps = Pick<
+    InputHTMLAttributes<HTMLInputElement>,
+    'type' | 'name' | 'required' | 'value' | 'onChange'
+>;
+
+export type InputFieldProps = HTMLAttributes<HTMLElement> &
+    InputProps & {
+        readonly label: ReactNode;
+        readonly error?: string;
+    };
 
 export const InputField = ({
     type = 'text',
     name,
-    label,
     required = false,
+    label,
     error,
     className,
+    onChange,
+    value,
     ...rest
 }: InputFieldProps) => {
     const [inputId, validationMessageId] = useUniqueId('input', 'validation-message');
-    const errorProps = !!error && {
-        'aria-invalid': true,
-        'aria-describedby': validationMessageId,
+    const inputProps = {
+        id: inputId,
+        name,
+        value,
+        type,
+        onChange,
+        required,
+        ...(!!error && {
+            'aria-invalid': true,
+            'aria-describedby': validationMessageId,
+        }),
     };
-
     return (
-        <div className={twMerge(`flex w-full flex-col gap-3`, className)} {...rest}>
-            <label htmlFor={inputId} className="text-md leading-normal text-black dark:text-white">
-                {label}
-            </label>
-            <input
-                className="text-md h-16 rounded-lg border border-gray-500 p-4 shadow-sm outline-none focus:border-2 focus:border-black aria-[invalid]:border-2 aria-[invalid]:border-red-600 dark:bg-gray-900 dark:text-white dark:focus:border-white dark:aria-[invalid]:border-red-400"
-                type={type}
-                id={inputId}
-                name={name}
-                required={required}
-                {...errorProps}
-            />
+        <Text
+            size="md"
+            as="div"
+            className={cn(`text-t-label-primary flex w-full flex-col gap-3`, className)}
+            {...rest}
+        >
+            <label htmlFor={inputId}>{label}</label>
+
+            <Input {...inputProps} />
+
             {error && (
                 <span
-                    className="text-md flex items-center gap-2 font-bold leading-normal text-red-600 dark:text-red-400"
+                    className="text-t-state-critical flex items-center gap-2 font-bold"
                     id={validationMessageId}
                 >
-                    <Icon icon="cancel" className="h-6 w-6" />
+                    <Icon icon="cancel-fill" className="h-6 w-6" />
                     {error}
                 </span>
             )}
-        </div>
+        </Text>
     );
 };

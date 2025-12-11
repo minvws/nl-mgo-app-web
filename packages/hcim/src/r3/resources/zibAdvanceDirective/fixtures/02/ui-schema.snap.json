@@ -6,19 +6,25 @@
                 {
                     "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "ALS"
+                    "value": [
+                        {
+                            "display": "ALS"
+                        }
                     ]
                 },
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "18b69251-8fdf-11ec-7008-020000000000"
+                    "value": {
+                        "display": "18b69251-8fdf-11ec-7008-020000000000"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet-reanimerenpenning"
+                    "value": {
+                        "display": "Niet-reanimerenpenning"
+                    }
                 },
                 {
                     "label": "Vertegenwoordiger",
@@ -34,12 +40,14 @@
                 {
                     "label": "Wilsverklaring datum",
                     "type": "SINGLE_VALUE",
-                    "display": "15 augustus 2011"
+                    "value": {
+                        "display": "15 augustus 2011"
+                    }
                 },
                 {
                     "label": "Wilsverklaring type",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Niet reanimeren verklaring (NR in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)",

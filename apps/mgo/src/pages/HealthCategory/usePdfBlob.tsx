@@ -1,4 +1,6 @@
+import { useHealthUiSchema } from '$/hooks';
 import { useIntl } from '$/intl';
+import { isNonNullish } from '@minvws/mgo-utils';
 import { useCallback } from 'react';
 import { HealthSubCategory } from './SubCategoryData';
 
@@ -9,6 +11,7 @@ export type CreatePdfBlobArgs = {
 
 export function usePdfBlob() {
     const { formatMessage, intl } = useIntl();
+    const { getSummary } = useHealthUiSchema();
 
     const createPdfBlob = useCallback(
         async ({ categoryHeading, subCategories }: CreatePdfBlobArgs) => {
@@ -34,11 +37,11 @@ export function usePdfBlob() {
             });
             const noDataMessage = formatMessage('export_pdf.no_data');
 
-            const categoryData = subCategories?.map(({ id, heading, resources }) => ({
-                id,
+            const categoryData = subCategories?.map(({ heading, resources }) => ({
                 heading,
                 schemas: resources
-                    .map(({ summary }) => summary)
+                    .map(getSummary)
+                    .filter(isNonNullish)
                     .map(({ children, ...rest }) => ({
                         ...rest,
                         // drop the last uiGroup as it should only contain summary options, such as the link to the detail page.
@@ -61,7 +64,7 @@ export function usePdfBlob() {
                 />
             ).toBlob();
         },
-        [formatMessage, intl]
+        [formatMessage, intl, getSummary]
     );
 
     return { createPdfBlob };

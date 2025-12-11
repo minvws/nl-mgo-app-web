@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR="$(dirname $(realpath $0))"
+SOURCE_DIR="$(dirname "$(realpath "$0")")"
 
 # Public: Prints an error message and exits the script.
 #
@@ -24,11 +24,12 @@ resetCwd() {
 # Public: Sets the CWD to the directory of the nearest
 #  ancestor package.json as seen from the source file.
 setCwdToPackageJson() {
-    packageJson=$(cd $SOURCE_DIR && findNearestAncestorFile "package.json")
-    if ! [ $packageJson ]; then
+    packageJson="$(cd "$SOURCE_DIR" && findNearestAncestorFile "package.json")"
+    if [ -z "$packageJson" ]; then
         fatal "Could not find package.json in $SOURCE_DIR"
     fi
-    cd "$(dirname $packageJson)"
+
+    cd "$(dirname "$packageJson")" || fatal "Failed to cd to package.json directory"
 }
 
 # Public: Loads the .env file into the environment.
@@ -59,7 +60,10 @@ loadDotEnv() {
 #   safeRm "./*"
 #
 safeRm() {
-    git_root=$(cd $SOURCE_DIR && git rev-parse --show-toplevel)
+    git_root=$(
+        cd "$SOURCE_DIR" || exit 1
+        git rev-parse --show-toplevel
+    )
     to_delete="$(realpath $1)"
 
     if [[ -z $git_root ]]; then
@@ -132,12 +136,19 @@ findNearestAncestorFile() {
     # 1. If X/file.ext exists and is a regular file, return it. STOP
     # 2. If X has a parent directory, change X to parent. GO TO 1
     # 3. Return NULL.
-    if [ -f "$1" ]; then
-        printf '%s\n' "${PWD%/}/$1"
-    elif [ "$PWD" = / ]; then
-        false
-    else
-        # a subshell so that we don't affect the caller's $PWD
-        (cd .. && findNearestAncestorFile "$1")
+    local target="$1"
+
+    if [ -f "$PWD/$target" ]; then
+        printf '%s\n' "$PWD/$target"
+        return 0
     fi
+
+    if [ "$PWD" = "/" ]; then
+        return 1
+    fi
+
+    (
+        cd .. || exit 1
+        findNearestAncestorFile "$target"
+    )
 }

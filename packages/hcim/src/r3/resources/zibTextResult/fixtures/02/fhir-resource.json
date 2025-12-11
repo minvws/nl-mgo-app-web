@@ -1,0 +1,78 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "zib-textresult-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-TextResult"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1ea32625-8fdf-11ec-1302-020000000000"
+        }
+    ],
+    "status": "appended",
+    "_status": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1",
+                            "code": "appended",
+                            "display": "Aanvullend"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "363680008",
+                "display": "röntgen"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Johan XXX_Helleman"
+    },
+    "context": {
+        "reference": "EpisodeOfCare/nl-core-episodeofcare-01",
+        "display": "Gebroken been"
+    },
+    "effectiveDateTime": "2000-12-23T10:25:00+00:00",
+    "performer": [
+        {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "RESP",
+                        "display": "Responsible Party"
+                    }
+                ]
+            },
+            "actor": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-02",
+                            "display": "Vaste Huisarts 1 - Maatschap Vaste Huisarts"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-02",
+                "display": "Vaste Huisarts 1"
+            }
+        }
+    ],
+    "conclusion": "Helaas moet de breuk geopereerd worden."
+}

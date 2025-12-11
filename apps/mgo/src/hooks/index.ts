@@ -1,4 +1,11 @@
+export { useHealthCategoriesQuery } from './useHealthCategoriesQuery/useHealthCategoriesQuery';
+export {
+    useHealthCategoriesWithSlug,
+    type HealthCategoryWithSlug,
+} from './useHealthCategoriesWithSlug/useHealthCategoriesWithSlug';
+export { useHealthCategoryBySlug } from './useHealthCategoryBySlug/useHealthCategoryBySlug';
+export { useHealthCategorySlug } from './useHealthCategorySlug/useHealthCategorySlug';
+export { useHealthUiSchema } from './useHealthUiSchema/useHealthUiSchema';
 export { useKeyDown, type KeyDownOptions } from './useKeyDown/useKeyDown';
-export { useNavFocusRef } from './useNavFocusRef/useNavFocusRef';
 export { useOnboardingSeen } from './useOnboardingSeen/useOnboardingSeen';
-export { useResourceRoutePath } from './useResourceRoutePath/useResourceRoutePath';
+export { useResourceDetailsRoutePath } from './useResourceDetailsRoutePath/useResourceRouteDetailsPath';

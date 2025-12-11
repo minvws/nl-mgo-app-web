@@ -1,0 +1,295 @@
+{
+    "label": "Gerelateerd persoon",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1753faed-8fdf-11ec-8566-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Patiënt",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Irma Jongeneel-de Haas",
+                    "reference": "Patient/nl-core-patient-01"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Relatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Natural mother (NMTH in codesysteem http://hl7.org/fhir/v3/RoleCode)",
+                            "code": "NMTH",
+                            "system": "http://hl7.org/fhir/v3/RoleCode"
+                        }
+                    ]
+                },
+                {
+                    "label": "Rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)",
+                            "code": "1",
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Naam",
+            "children": [
+                {
+                    "label": "Geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Haas"
+                    }
+                },
+                {
+                    "label": "Geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Boom"
+                    }
+                },
+                {
+                    "label": "Initialen",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "H.A.K."
+                        }
+                    ]
+                },
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Hanneke de Haas - ter Boom"
+                    }
+                },
+                {
+                    "label": "Roepnaam",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Hanneke"
+                        }
+                    ]
+                },
+                {
+                    "label": "Voorkeursvolgorde van de naamdelen.",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "NL4"
+                    }
+                },
+                {
+                    "label": "Voornaam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "de"
+                    }
+                },
+                {
+                    "label": "Voorvoegsel geslachtsnaam partner",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "ter"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "MC",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
+                    ]
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "phone"
+                    }
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "home"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "06-22222222"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "email"
+                    }
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "work"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "h.terboom@example.com"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Adres informatie",
+            "children": [
+                {
+                    "label": "Aanduiding bij huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
+                            "code": "HP",
+                            "system": "http://hl7.org/fhir/v3/AddressUse"
+                        }
+                    ]
+                },
+                {
+                    "label": "Adres soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "home"
+                    }
+                },
+                {
+                    "label": "Adres type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Extra informatie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Gemeente",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Huisnummer",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "900"
+                    }
+                },
+                {
+                    "label": "Huisnummertoevoeging",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Land",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Nederland"
+                    }
+                },
+                {
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Ja"
+                    }
+                },
+                {
+                    "label": "Municipality",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Sitswaard"
+                    }
+                },
+                {
+                    "label": "Postcode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1234XA"
+                    }
+                },
+                {
+                    "label": "Straatnaam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Knalweg"
+                    }
+                }
+            ]
+        }
+    ]
+}

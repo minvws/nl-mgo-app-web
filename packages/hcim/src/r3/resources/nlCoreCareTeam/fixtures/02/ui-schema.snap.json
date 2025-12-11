@@ -1,0 +1,147 @@
+{
+    "label": "Zorgteam",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "8fea361b-e3e1-11eb-2548-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Fiona XXX_Mutter",
+                    "reference": "Patient/ont-ver-XXX-Mutter"
+                },
+                {
+                    "label": "Periode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Laura Lanen",
+                    "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-01"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Verwijzer (REF in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                            "code": "REF",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Niels Helmond",
+                    "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-02"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Hoofdbehandelaar (RESP in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                            "code": "RESP",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Petra Johanna Vreeswijk",
+                    "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-03"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Thomas Janssen",
+                    "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-04"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Hilda Bruinsma",
+                    "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-05"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "AA-zkh - Noord",
+                    "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}

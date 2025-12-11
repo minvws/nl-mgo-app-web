@@ -45,7 +45,7 @@ type ObservationComponentsResult<T extends ObservationComponentParseMap> = {
 /**
  * Returns all components that have a matching coding.
  */
-function getObservationComponents(
+export function getObservationComponents(
     components: ObservationComponent[],
     coding: SetRequired<Coding, 'system' | 'code'>
 ): ObservationComponent[] | undefined {

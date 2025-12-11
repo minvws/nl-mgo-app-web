@@ -1,0 +1,32 @@
+{
+    "id": "zib-familysituation-01",
+    "referenceId": "Observation/zib-familysituation-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19d1c651-8fdf-11ec-9544-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2018-08-10"
+    },
+    "performer": null,
+    "comment": {
+        "_type": "string",
+        "value": "Beide inwonende kinderen zijn zeer zelfstandig."
+    },
+    "component": {},
+    "children": null
+}

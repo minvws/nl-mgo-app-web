@@ -6,14 +6,16 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "170gov17-8pdf-1aec-1664-020000000000"
+                    "value": [
+                        {
+                            "display": "170gov17-8pdf-1aec-1664-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Huisartsen, niet nader gespecificeerd (0100 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
                             "code": "0100",
@@ -24,7 +26,9 @@
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -34,22 +38,30 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "email"
+                    "value": {
+                        "display": "email"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "example@example.com"
+                    "value": {
+                        "display": "example@example.com"
+                    }
                 }
             ]
         },
@@ -59,22 +71,30 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "phone"
+                    "value": {
+                        "display": "phone"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "mobile"
+                    "value": {
+                        "display": "mobile"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "+31611234567"
+                    "value": {
+                        "display": "+31611234567"
+                    }
                 }
             ]
         }

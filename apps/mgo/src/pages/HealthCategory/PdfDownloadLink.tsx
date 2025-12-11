@@ -41,7 +41,7 @@ export function PdfDownloadLink({ categoryHeading, subCategories }: PdfDownloadL
 
     return (
         <>
-            <Button variant="ghost" leftIcon="picture-as-pdf" onClick={handlePdfDownloadClick}>
+            <Button variant="ghost" leftIcon="picture_as_pdf" onClick={handlePdfDownloadClick}>
                 <FormattedMessage id="export_pdf.menu.save_pdf" />
             </Button>
 

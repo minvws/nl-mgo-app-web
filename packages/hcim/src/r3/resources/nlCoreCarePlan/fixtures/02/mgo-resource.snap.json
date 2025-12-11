@@ -1,0 +1,153 @@
+{
+    "id": "nl-core-careplan-01",
+    "referenceId": "CarePlan/nl-core-careplan-01",
+    "resourceType": "CarePlan",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-careplan",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://myexample.com/system/careplan",
+            "value": "123456789",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15cf59bf-8fdf-11ec-5728-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-02",
+        "display": "Paul XXX_Mesker"
+    },
+    "period": {
+        "_type": "period",
+        "start": "2019-02-06",
+        "end": null
+    },
+    "goal": [
+        {
+            "_type": "reference",
+            "reference": "Goal/zib-treatmentobjective-01",
+            "display": "Volledig herstel met betrekking tot het kunnen lopen"
+        }
+    ],
+    "activity": [
+        {
+            "nursingIntervention": {
+                "outcomeReference": null,
+                "outcomeCodeableConcept": null,
+                "comment": null,
+                "reference": {
+                    "_type": "reference",
+                    "reference": "ProcedureRequest/zib-procedurerequest-02",
+                    "display": "Aanvrager: Dr. J. Jansen"
+                },
+                "detail": {
+                    "medicalDevice": [],
+                    "code": null,
+                    "reasonReference": null,
+                    "goal": null,
+                    "scheduledTiming": null,
+                    "performer": null,
+                    "description": null
+                }
+            }
+        },
+        {
+            "nursingIntervention": {
+                "outcomeReference": [
+                    {
+                        "_type": "reference",
+                        "reference": "Observation/zib-generalmeasurement-01",
+                        "display": "Health of the Nation Outcome Scale - summated: 7 score"
+                    }
+                ],
+                "outcomeCodeableConcept": null,
+                "comment": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "De interventie verliep zeer soepel."
+                },
+                "reference": null,
+                "detail": {
+                    "medicalDevice": [
+                        {
+                            "_ext": true,
+                            "_type": "reference",
+                            "reference": "DeviceUseStatement/zib-wound-medicaldevice-01",
+                            "display": "Verband"
+                        }
+                    ],
+                    "code": {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "228567003",
+                                "display": "ontspanningstechniek van Benson (regime/therapie)",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    },
+                    "reasonReference": [
+                        {
+                            "_type": "reference",
+                            "reference": "Condition/zib-problem-09",
+                            "display": "Gebroken Been"
+                        }
+                    ],
+                    "goal": [
+                        {
+                            "_type": "reference",
+                            "reference": "Goal/zib-treatmentobjective-02",
+                            "display": "Pijn verminderen"
+                        }
+                    ],
+                    "scheduledTiming": {
+                        "_type": "timing",
+                        "code": null,
+                        "event": null,
+                        "repeat": {
+                            "boundsPeriod": {
+                                "_type": "period",
+                                "start": "2019-02-06",
+                                "end": "2019-02-09"
+                            },
+                            "count": null,
+                            "countMax": null,
+                            "duration": null,
+                            "durationMax": null,
+                            "durationUnit": null,
+                            "frequency": {
+                                "_type": "integer",
+                                "value": 2
+                            },
+                            "frequencyMax": null,
+                            "period": {
+                                "_type": "decimal",
+                                "value": 1
+                            },
+                            "periodMax": null,
+                            "periodUnit": {
+                                "_type": "string",
+                                "value": "d"
+                            },
+                            "dayOfWeek": null,
+                            "timeOfDay": null,
+                            "when": null,
+                            "offset": null
+                        }
+                    },
+                    "performer": null,
+                    "description": null
+                }
+            }
+        }
+    ]
+}

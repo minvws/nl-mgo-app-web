@@ -1,6 +1,6 @@
 import { range } from 'lodash';
-import { twMerge } from 'tailwind-merge';
 import { useComposition } from '../../hooks/useComposition/useComposition';
+import { cn } from '../../utils';
 import { Skeleton, type SkeletonProps } from './Skeleton';
 
 export interface SkeletonTextProps extends SkeletonProps {
@@ -24,7 +24,7 @@ export const SkeletonText = ({
         <Comp className={className} {...rest}>
             {numbers.map((number, index) => (
                 <Skeleton
-                    className={twMerge(
+                    className={cn(
                         isLoading && height,
                         isLoading &&
                             (numberOfLines > 1 && number === numbers.length ? 'w-4/5' : 'w-full')

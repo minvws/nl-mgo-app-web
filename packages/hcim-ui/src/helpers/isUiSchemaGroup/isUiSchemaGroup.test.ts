@@ -27,7 +27,7 @@ test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
                         {
                             type: 'SINGLE_VALUE',
                             label: faker.lorem.sentence(),
-                            display: faker.lorem.sentence(),
+                            value: { display: faker.lorem.sentence() },
                         },
                     ],
                 },
@@ -42,7 +42,7 @@ test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
                 {
                     type: 'SINGLE_VALUE',
                     label: faker.lorem.sentence(),
-                    display: faker.lorem.sentence(),
+                    value: { display: faker.lorem.sentence() },
                 },
             ],
         },

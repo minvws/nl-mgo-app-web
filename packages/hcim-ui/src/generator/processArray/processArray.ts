@@ -45,7 +45,7 @@ export function processArray(
         {
             label: context.formatLabel(path as FhirMessagesIds, null),
             type: 'SINGLE_VALUE',
-            display: undefined,
+            value: undefined,
         },
     ];
 }

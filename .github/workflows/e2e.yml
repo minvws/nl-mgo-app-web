@@ -18,8 +18,11 @@ jobs:
   mgo-e2e:
     runs-on: ubuntu-22.04
 
+    env:
+      TEST_COMMAND: ${{ inputs.test-command || 'pnpm run e2e:ci' }}
+
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: docker/setup-docker-action@v4
 
       - name: Start Docker containers
@@ -29,14 +32,15 @@ jobs:
         run: docker compose up --build -d
 
       - name: Run e2e tests
-        run: docker exec playwright bash -c "${{ inputs.test-command }}"
+        run: docker exec playwright bash -c "$TEST_COMMAND"
 
       - name: Upload Test Report Chrome
-        uses: actions/upload-artifact@v4.6.1
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: e2e-playwright-chrome
           path: apps/mgo-e2e/results/
+          if-no-files-found: error
 
       - name: Stop Docker containers
         if: always()

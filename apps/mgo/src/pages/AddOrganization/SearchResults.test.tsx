@@ -1,4 +1,4 @@
-import { useOrganizationsStore } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
@@ -19,7 +19,7 @@ test('adds organization to store on click', async () => {
         <SearchResults searchResults={[faker.custom.healthcareOrganization()]} />
     );
 
-    let state = useOrganizationsStore.getState();
+    let state = useStore.getState();
     expect(state.organizations.length).toBe(0);
 
     const listItem = screen.getByRole('listitem');
@@ -27,7 +27,7 @@ test('adds organization to store on click', async () => {
 
     await user.click(listItemButton);
 
-    state = useOrganizationsStore.getState();
+    state = useStore.getState();
     expect(state.organizations.length).toBe(1);
     expect(mockNavigate).toBeCalled();
 });
@@ -51,13 +51,13 @@ test('shows unknown label for organization without a name', async () => {
 
 test('clicking an already added organization does not change the state, but does navigate', async () => {
     const user = userEvent.setup();
-    const { addOrganization } = useOrganizationsStore.getState();
+    const { addOrganization } = useStore.getState();
     const organization = faker.custom.healthcareOrganization();
     addOrganization(organization);
 
     setupWithAppProviders(<SearchResults searchResults={[organization]} />);
 
-    let state = useOrganizationsStore.getState();
+    let state = useStore.getState();
     expect(state.organizations.length).toBe(1);
 
     const listItem = screen.getByRole('listitem');
@@ -67,7 +67,7 @@ test('clicking an already added organization does not change the state, but does
 
     await user.click(listItemButton);
 
-    state = useOrganizationsStore.getState();
+    state = useStore.getState();
     expect(state.organizations.length).toBe(1);
     expect(mockNavigate).toBeCalled();
 });

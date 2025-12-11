@@ -35,6 +35,6 @@ export class AddOrganizationPage extends AbstractPage {
 
     async addOrganization(name: string) {
         const listItem = await this.organizationListItem(name);
-        listItem.getByRole('button', { name }).click();
+        listItem.getByRole('button', { name: appMessage('common.add') }).click();
     }
 }

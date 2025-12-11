@@ -1,0 +1,55 @@
+{
+    "id": "ont-ver-ggz-helpfromothers-Mantelzorg",
+    "referenceId": "CarePlan/ont-ver-ggz-helpfromothers-Mantelzorg",
+    "resourceType": "CarePlan",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-HelpFromOthers",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "72e75d8c-0421-11ec-1549-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-XXX-Bals",
+        "display": "Adam XXX_Bals"
+    },
+    "period": null,
+    "activity": [
+        {
+            "detail": {
+                "category": {
+                    "_type": "codeableConcept",
+                    "text": null,
+                    "coding": [
+                        {
+                            "code": "386229000",
+                            "display": "Mantelzorg",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                "code": {
+                    "_type": "string",
+                    "value": "Mentale ondersteuning en dagbesteding"
+                },
+                "scheduledString": {
+                    "_type": "string",
+                    "value": "Dagelijks"
+                },
+                "performer": [
+                    {
+                        "_type": "reference",
+                        "reference": "RelatedPerson/ont-ver-ggz-nl-core-relatedperson-Lanen-XXX-Bals",
+                        "display": "Wilma Lanen-XXX_Bals"
+                    }
+                ],
+                "description": null
+            }
+        }
+    ]
+}

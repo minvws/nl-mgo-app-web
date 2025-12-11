@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
 import { MobileMenuButton } from './MobileMenuButton';
 
@@ -20,9 +21,11 @@ export const Default: Story = {};
 
 export const Overview: Story = {
     render: ({ ...args }) => (
-        <Stack className="items-baseline">
-            <MobileMenuButton {...args} isOpen={false} />
-            <MobileMenuButton {...args} isOpen />
-        </Stack>
+        <DarkStory>
+            <Stack className="items-baseline">
+                <MobileMenuButton {...args} isOpen={false} />
+                <MobileMenuButton {...args} isOpen />
+            </Stack>
+        </DarkStory>
     ),
 };

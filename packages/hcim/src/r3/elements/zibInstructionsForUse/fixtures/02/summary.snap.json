@@ -4,17 +4,23 @@
         {
             "label": "Gebruiksaanwijzing",
             "type": "SINGLE_VALUE",
-            "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+            "value": {
+                "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+            }
         },
         {
             "label": "Minimaal",
             "type": "SINGLE_VALUE",
-            "display": "1 stuk"
+            "value": {
+                "display": "1 stuk"
+            }
         },
         {
             "label": "Maximaal",
             "type": "SINGLE_VALUE",
-            "display": "2 stuks"
+            "value": {
+                "display": "2 stuks"
+            }
         }
     ]
 }

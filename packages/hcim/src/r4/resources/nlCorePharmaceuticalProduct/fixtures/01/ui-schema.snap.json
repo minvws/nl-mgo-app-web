@@ -6,12 +6,14 @@
                 {
                     "label": "Batch / Lotnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "AW1898"
+                    "value": {
+                        "display": "AW1898"
+                    }
                 },
                 {
                     "label": "Farmaceutische vorm",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "SUSPENSIE VOOR INJECTIE (21 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.11)",
                             "code": "21",
@@ -22,12 +24,16 @@
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Ingredient",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -37,7 +43,7 @@
                 {
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "HEPATITIS A, GEINACTIVEERD, INTACT VIRUS (J07BC02 in codesysteem http://www.whocc.no/atc)",
                             "code": "J07BC02",
@@ -48,7 +54,9 @@
                 {
                     "label": "Product naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

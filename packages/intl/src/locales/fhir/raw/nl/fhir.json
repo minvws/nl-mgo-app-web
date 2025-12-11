@@ -51,6 +51,7 @@
     "fhir.x.date": "Datum",
     "fhir.x.date_time": "Datum",
     "fhir.x.device": "Apparaat",
+    "fhir.x.diagnosis": "Diagnosis",
     "fhir.x.effective_date_time": "Datum",
     "fhir.x.effective_period": "Periode",
     "fhir.x.email_addresses": "E-mailadres",

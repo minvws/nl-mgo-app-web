@@ -6,17 +6,21 @@
                 {
                     "label": "Datum van de uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "23 mei 2012 om 12:00"
+                    "value": {
+                        "display": "23 mei 2012 om 12:00"
+                    }
                 },
                 {
                     "label": "Resultaat",
                     "type": "SINGLE_VALUE",
-                    "display": "109 millimol per liter"
+                    "value": {
+                        "display": "109 millimol per liter"
+                    }
                 },
                 {
                     "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Above reference range",
                             "code": "281302008",
@@ -32,12 +36,16 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "Definitief"
+                    "value": {
+                        "display": "Definitief"
+                    }
                 },
                 {
                     "label": "Materiaal",
                     "type": "SINGLE_VALUE",
-                    "display": "Blood (substance)"
+                    "value": {
+                        "display": "Blood (substance)"
+                    }
                 }
             ]
         },
@@ -47,12 +55,16 @@
                 {
                     "label": "Minimale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "99 millimol per liter"
+                    "value": {
+                        "display": "99 millimol per liter"
+                    }
                 },
                 {
                     "label": "Maximale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "108 millimol per liter"
+                    "value": {
+                        "display": "108 millimol per liter"
+                    }
                 }
             ]
         },
@@ -62,12 +74,16 @@
                 {
                     "label": "Specialist",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Update i18n files
         working-directory: packages/intl
@@ -29,7 +29,7 @@ jobs:
       - name: Create release tar
         run: tar -C apps/mgo/build -czf nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz .
       - name: Upload release tar
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nl-mgo-app-web_${{ env.RELEASE_VERSION }}
           path: nl-mgo-app-web_${{ env.RELEASE_VERSION }}.tar.gz

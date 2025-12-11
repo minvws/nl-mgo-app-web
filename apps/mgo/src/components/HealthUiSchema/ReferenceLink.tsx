@@ -1,6 +1,6 @@
-import { useResourceRoutePath } from '$/hooks';
+import { useResourceDetailsRoutePath } from '$/hooks';
 import { RouterLink } from '$/routing';
-import { useResourcesStore } from '$/store';
+import { useStore } from '$/store';
 import { type ReferenceLink as ReferenceLinkData } from '@minvws/mgo-hcim-ui';
 import { DescriptionButton } from '@minvws/mgo-ui';
 import { useContext } from 'react';
@@ -12,13 +12,13 @@ export interface ReferenceValueDisplayProps {
 
 export function ReferenceLink({ value }: ReferenceValueDisplayProps) {
     const { resource } = useContext(HealthUiSchemaContext);
-    const getResourceByReferenceId = useResourcesStore((x) => x.getResourceByReferenceId);
+    const getResourceByReferenceId = useStore.use.getResourceByReferenceId();
     const referencedResource = getResourceByReferenceId(resource, value.reference);
-    const resourcePath = useResourceRoutePath(referencedResource);
+    const resourceDetailsPath = useResourceDetailsRoutePath(referencedResource);
 
     return (
-        <DescriptionButton details={value.label} icon="chevron-right" asChild>
-            <RouterLink relative="path" to={resourcePath} />
+        <DescriptionButton details={value.label} icon="chevron_right" asChild>
+            <RouterLink relative="path" to={resourceDetailsPath} />
         </DescriptionButton>
     );
 }

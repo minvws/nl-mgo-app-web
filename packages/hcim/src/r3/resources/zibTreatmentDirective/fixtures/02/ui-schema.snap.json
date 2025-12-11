@@ -12,12 +12,14 @@
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "9 april 2018"
+                    "value": {
+                        "display": "9 april 2018"
+                    }
                 },
                 {
                     "label": "Behandeling",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Cardiopulmonary resuscitation (procedure) (89666000 in codesysteem http://snomed.info/sct)",
                             "code": "89666000",
@@ -28,7 +30,7 @@
                 {
                     "label": "Behandeling toegestaan",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Behandeling niet toegestaan en/of wenselijk (NEE in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4)",
                             "code": "NEE",
@@ -39,17 +41,23 @@
                 {
                     "label": "Beperkingen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Bron bijlage",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Bron identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Bron referentie",
@@ -60,17 +68,23 @@
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "1ecd5e13-8fdf-11ec-8335-020000000000"
+                    "value": {
+                        "display": "1ecd5e13-8fdf-11ec-8335-020000000000"
+                    }
                 },
                 {
                     "label": "Patiënt",
@@ -81,12 +95,16 @@
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toestemmende partij",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -96,12 +114,14 @@
                 {
                     "label": "Geverifieerd",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Geverifieerd bij",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Patient (116154003 in codesysteem http://snomed.info/sct)",
                             "code": "116154003",
@@ -112,7 +132,9 @@
                 {
                     "label": "Verificatie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "9 april 2018"
+                    "value": {
+                        "display": "9 april 2018"
+                    }
                 }
             ]
         }

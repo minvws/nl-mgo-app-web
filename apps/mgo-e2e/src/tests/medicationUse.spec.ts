@@ -1,4 +1,3 @@
-import { HealthCategory } from '@minvws/mgo';
 import { fhirMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';
@@ -36,15 +35,13 @@ test('User can see their medication use details', async ({
     await test.step('Verify overview page and open Medication health category', async () => {
         await expect(pageOverview.heading).toBeVisible();
         await expect(pageOverview.headingNoOrganizations).toBeHidden();
-        await pageOverview.buttonHealthCategory(HealthCategory.Medication).click();
+        await pageOverview.buttonHealthCategory('medication').click();
     });
 
     await test.step('Verify medication health category and select medication', async () => {
-        await expect(pageHealthCategory.heading(HealthCategory.Medication)).toBeVisible();
-        const medicationUseList = pageHealthCategory.categoryList(
-            HealthCategory.Medication,
-            'medication_use'
-        );
+        await expect(pageHealthCategory.heading('medication')).toBeVisible();
+        const medicationUseList = pageHealthCategory.subCategoryList('zib_medication_use');
+
         await expect(medicationUseList).toBeVisible();
         await medicationUseList
             .getByRole('listitem')

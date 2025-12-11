@@ -3,8 +3,7 @@ import { Transition, type TransitionStatus } from 'react-transition-group';
 import { type EnterHandler, type ExitHandler } from 'react-transition-group/Transition';
 import { useAnimationDuration } from '../../hooks';
 import { type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { cn } from '../../utils';
-import { tw } from '../../utils/tw/tw';
+import { cn, tw } from '../../utils';
 
 export type SlideDownProps = HTMLAttributes<HTMLDivElement> &
     CompositionProps & {

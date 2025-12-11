@@ -1,43 +1,49 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
-import { tw } from '../../utils/tw/tw';
+import { useComposition } from '../../hooks/useComposition/useComposition';
+import { cn, tw } from '../../utils';
 import { type Size } from './sizes';
-import { type Variant } from './variants';
 
-export interface TextProps extends HTMLAttributes<HTMLElement>, CompositionProps {
+export interface TextBaseProps extends HTMLAttributes<HTMLElement> {
     readonly size?: Size;
-    readonly variant?: Variant;
 }
 
-const TextSizes: Record<Size, string> = {
-    sm: tw`text-xs md:text-sm`,
-    md: tw`md:text-md text-sm`,
-    lg: tw`text-lg md:text-xl`,
+export type TextProps = TextBaseProps &
+    (
+        | {
+              asChild: boolean;
+              as?: never;
+          }
+        | {
+              asChild?: never;
+              as?:
+                  | 'p'
+                  | 'h1'
+                  | 'h2'
+                  | 'h3'
+                  | 'h4'
+                  | 'h5'
+                  | 'h6'
+                  | 'span'
+                  | 'div'
+                  | 'dt'
+                  | 'dd'
+                  | 'nav';
+          }
+    );
+
+const TextStyle: Record<Size, string> = {
+    sm: tw`text-base leading-tight lg:text-lg lg:leading-relaxed`,
+    md: tw`leading-snug-lg text-lg md:leading-normal lg:text-xl`,
+    lg: tw`leading-tight-sm text-xl md:text-2xl md:leading-snug lg:text-3xl lg:leading-normal`,
 };
 
-const VariantStyles: Record<Variant | 'default', string> = {
-    default: tw`text-black dark:text-white`,
-    light: tw`text-gray-600 dark:text-gray-200`,
-};
-
-export const Text = ({
-    asChild,
-    size = 'md',
-    variant = 'default',
-    className,
-    ...rest
-}: TextProps) => {
-    const { Comp } = useComposition({ asChild, tag: 'p' });
+export const Text = ({ as, asChild, size = 'md', className, ...rest }: TextProps) => {
+    const tag = as ?? 'span';
+    const { Comp } = useComposition({ asChild, tag });
 
     return (
         <Comp
-            className={twMerge(
-                'font-sans font-normal leading-normal',
-                TextSizes[size],
-                VariantStyles[variant],
-                className
-            )}
+            className={cn('text-t-label-primary font-sans font-normal', TextStyle[size], className)}
             {...rest}
         />
     );

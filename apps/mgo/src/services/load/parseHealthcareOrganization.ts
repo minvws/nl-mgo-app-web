@@ -1,31 +1,20 @@
-import { DataServiceId } from '@minvws/mgo-data-services';
 import { isNonNullish, log } from '@minvws/mgo-utils';
 import { type HealthcareOrganizationDTO } from './types';
-
-export const supportedDataServiceIds = [
-    DataServiceId.CommonClinicalDataset,
-    DataServiceId.GeneralPractitioner,
-    DataServiceId.PdfA,
-    DataServiceId.VaccinationImmunization,
-];
-
-type SupportedDataServiceId = (typeof supportedDataServiceIds)[number];
 
 export function parseHealthcareOrganization(organizationDTO: HealthcareOrganizationDTO) {
     const { identification, display_name, data_services = [] } = organizationDTO;
 
     const dataServices = data_services
-        .filter((x) => supportedDataServiceIds.includes(x.id as DataServiceId))
         .map((service) => {
             const { id, roles } = service;
             const resourceEndpoint = roles?.[0]?.resource_endpoint;
-            if (!resourceEndpoint) {
+            if (!id || !resourceEndpoint) {
                 log.warn(
-                    `Data service for organization: ${display_name} (${identification}) with id "${id}" does not contain a resource endpoint`
+                    `Data service for organization: ${display_name} (${identification}) does not contain an id "${id}" or a resource endpoint "${resourceEndpoint}"`
                 );
                 return null;
             }
-            return { id: id as SupportedDataServiceId, resourceEndpoint };
+            return { id, resourceEndpoint };
         })
         .filter(isNonNullish);
 

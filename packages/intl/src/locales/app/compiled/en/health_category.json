@@ -29,6 +29,14 @@
   ],
   "hc_appointments.subheading": [
   ],
+  "hc_care_plan.heading": [
+  ],
+  "hc_care_plan.subheading": [
+  ],
+  "hc_care_team.heading": [
+  ],
+  "hc_care_team.subheading": [
+  ],
   "hc_complaints.heading": [
   ],
   "hc_complaints.heading_detail": [
@@ -102,8 +110,6 @@
   "hc_patient.heading_summary": [
   ],
   "hc_patient.subheading": [
-  ],
-  "hc_payment.heading": [
   ],
   "hc_payment.heading_detail": [
   ],
@@ -241,11 +247,23 @@
   ],
   "zib_body_weight.heading": [
   ],
+  "zib_care_plan.heading": [
+  ],
+  "zib_care_team.heading": [
+  ],
+  "zib_contact_person.heading": [
+  ],
   "zib_drug_use.heading": [
   ],
   "zib_encounter.heading": [
   ],
+  "zib_familiy_situation.heading": [
+  ],
   "zib_functional_or_mental_status.heading": [
+  ],
+  "zib_general_measurement.heading": [
+  ],
+  "zib_help_from_others.heading": [
   ],
   "zib_laboratory_test_result_observation.heading": [
   ],
@@ -261,6 +279,8 @@
   ],
   "zib_nutrition_advice.heading": [
   ],
+  "zib_participation_in_society.heading": [
+  ],
   "zib_patient.heading": [
   ],
   "zib_payer.heading": [
@@ -270,6 +290,8 @@
   "zib_procedure.heading": [
   ],
   "zib_procedure_request.heading": [
+  ],
+  "zib_text_result.heading": [
   ],
   "zib_tobacco_use.heading": [
   ],

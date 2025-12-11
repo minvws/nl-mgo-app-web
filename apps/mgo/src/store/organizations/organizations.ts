@@ -1,14 +1,13 @@
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
 import { createUniqueSlug } from '@minvws/mgo-utils';
-import { isEmpty } from 'lodash';
-import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { StateCreator } from 'zustand';
+import { ResourcesSlice } from '../resources/resources';
 
 export type HealthcareOrganization = HealthcareOrganizationSearchResult & {
     slug: string;
 };
 
-export interface OrganizationsState {
+export interface OrganizationsSlice {
     organizations: HealthcareOrganization[];
     addOrganization: (
         healthcareOrganizationDetails: HealthcareOrganizationSearchResult
@@ -16,64 +15,69 @@ export interface OrganizationsState {
     hasOrganizations: () => boolean;
     hasOrganizationById: (id: string) => boolean;
     getOrganizationById: (id?: string) => HealthcareOrganization | undefined;
-    getOrganizationsById: (id?: (string | undefined)[]) => HealthcareOrganization[];
-    getAllOrganizations: () => HealthcareOrganization[];
+    getOrganizationResourceEndpoint: (
+        organizationId?: string,
+        dataServiceId?: string
+    ) => string | undefined;
     getOrganizationBySlug: (slug?: string) => HealthcareOrganization | undefined;
     removeOrganizationBySlug: (slug: string) => void;
 }
 
-export const useOrganizationsStore = create<OrganizationsState>()(
-    persist(
-        (set, get) => ({
-            organizations: [],
+export const createOrganizationsSlice: StateCreator<
+    OrganizationsSlice & ResourcesSlice,
+    [],
+    [],
+    OrganizationsSlice
+> = (set, get) => ({
+    organizations: [],
 
-            addOrganization: (healthcareOrganizationDetails) => {
-                const slugs = get().organizations.map((x) => x.slug);
-                const healthcareOrganisation = {
-                    ...healthcareOrganizationDetails,
-                    // NOTE: Do not use any organization information as a slug as it could potentially be sensitive information
-                    slug: createUniqueSlug('aanbieder', slugs),
-                };
+    addOrganization: (healthcareOrganizationDetails) => {
+        const slugs = get().organizations.map((x) => x.slug);
+        const healthcareOrganization = {
+            ...healthcareOrganizationDetails,
+            // NOTE: Do not use any organization information as a slug as it could potentially be sensitive information
+            slug: createUniqueSlug('aanbieder', slugs),
+        };
 
-                set(({ organizations }) => ({
-                    organizations: [...organizations, healthcareOrganisation],
-                }));
+        set(({ organizations }) => ({
+            organizations: [...organizations, healthcareOrganization],
+        }));
 
-                return healthcareOrganisation;
-            },
+        return healthcareOrganization;
+    },
 
-            hasOrganizations: () => !isEmpty(get().organizations),
+    hasOrganizations: () => get().organizations.length > 0,
 
-            hasOrganizationById: (id) => get().organizations.some((x) => x.id === id),
+    hasOrganizationById: (id) => get().organizations.some((x) => x.id === id),
 
-            getOrganizationById: (id) => {
-                if (!id) return;
-                return get().organizations.find((x) => x.id === id);
-            },
+    getOrganizationById: (id) => {
+        if (!id) return;
+        return get().organizations.find((x) => x.id === id);
+    },
 
-            getOrganizationsById: (ids) => {
-                if (!ids?.length) return [];
-                return get().organizations.filter((x) => ids.includes(x.id));
-            },
+    getOrganizationResourceEndpoint: (organizationId, dataServiceId) => {
+        const organization = get().getOrganizationById(organizationId);
+        return organization?.dataServices.find((x) => x.id === dataServiceId)?.resourceEndpoint;
+    },
 
-            getAllOrganizations: () => {
-                return get().organizations;
-            },
+    getOrganizationBySlug: (slug) => {
+        if (!slug) return;
+        return get().organizations.find((x) => x.slug === slug);
+    },
 
-            getOrganizationBySlug: (slug) => {
-                if (!slug) return;
-                return get().organizations.find((x) => x.slug === slug);
-            },
-
-            removeOrganizationBySlug: (slug) => {
-                set(({ organizations }) => ({
-                    organizations: organizations.filter((x) => x.slug !== slug),
-                }));
-            },
-        }),
-        {
-            name: 'mgo-organizations',
-            storage: createJSONStorage(() => sessionStorage),
+    removeOrganizationBySlug: (slug) => {
+        const organization = get().getOrganizationBySlug(slug);
+        if (!organization) {
+            return;
         }
-    )
-);
+        set(({ resources, organizations }) => {
+            const nextOrganizations = organizations.filter((x) => x.id !== organization.id);
+            const nextResources = resources.filter(
+                (resource) => resource.source.organizationId !== organization.id
+            );
+            return nextResources.length === resources.length
+                ? { organizations: nextOrganizations }
+                : { organizations: nextOrganizations, resources: nextResources };
+        });
+    },
+});

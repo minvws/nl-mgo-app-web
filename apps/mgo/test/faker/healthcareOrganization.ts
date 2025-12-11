@@ -1,8 +1,14 @@
 import { type HealthcareOrganization } from '$/store/organizations/organizations';
 import { faker } from '@faker-js/faker';
-import { DataServiceId } from '@minvws/mgo-data-services';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
 import { kebabCase } from 'lodash';
+
+enum DataServiceId {
+    CommonClinicalDataset = '48',
+    GeneralPractitioner = '49',
+    PdfA = '51',
+    VaccinationImmunization = '63',
+}
 
 const categories = [
     'Huisartspraktijk',

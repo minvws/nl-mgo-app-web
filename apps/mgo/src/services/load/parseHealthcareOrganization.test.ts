@@ -1,10 +1,7 @@
 import { faker } from '$test/faker';
 import { log } from '@minvws/mgo-utils';
 import { expect, type MockedFunction, test, vi } from 'vitest';
-import {
-    parseHealthcareOrganization,
-    supportedDataServiceIds,
-} from './parseHealthcareOrganization';
+import { parseHealthcareOrganization } from './parseHealthcareOrganization';
 import { type HealthcareOrganizationDTO, type HealthcareServiceDTO } from './types';
 
 vi.mock('@minvws/mgo-utils', async (importOriginal) => {
@@ -78,34 +75,10 @@ test('can handle undefined values', () => {
     expect(result.address).toBe(undefined);
 });
 
-test('only returns supported data services', () => {
-    const healthcareOrganizationDto = mockHealthcareOrganizationDTO();
-    const supportedDataService = {
-        ...mockHealthcareServiceDTO(),
-        id: faker.helpers.arrayElement(supportedDataServiceIds),
-    };
-
-    healthcareOrganizationDto.data_services = [
-        mockHealthcareServiceDTO(),
-        mockHealthcareServiceDTO(),
-        supportedDataService,
-        mockHealthcareServiceDTO(),
-    ];
-    const result = parseHealthcareOrganization(healthcareOrganizationDto);
-
-    expect(result.dataServices).toEqual([
-        {
-            id: supportedDataService.id,
-            resourceEndpoint: supportedDataService.roles![0].resource_endpoint,
-        },
-    ]);
-});
-
 test('uses the first resource endpoint for a data service it finds', () => {
     const healthcareOrganizationDto = mockHealthcareOrganizationDTO();
     const supportedDataService = {
         ...mockHealthcareServiceDTO(),
-        id: faker.helpers.arrayElement(supportedDataServiceIds),
         roles: [
             {
                 resource_endpoint: faker.internet.url(),
@@ -130,23 +103,22 @@ test('uses the first resource endpoint for a data service it finds', () => {
 
 test('logs a warning if the resource endpoint does not exist', () => {
     const healthcareOrganizationDto = mockHealthcareOrganizationDTO();
-    const supportedDataService = {
+    const dataService = {
         ...mockHealthcareServiceDTO(),
-        id: faker.helpers.arrayElement(supportedDataServiceIds),
         roles: [
             {
                 resource_endpoint: undefined,
             },
         ],
     };
-    healthcareOrganizationDto.data_services = [supportedDataService];
+    healthcareOrganizationDto.data_services = [dataService];
     const { identification, display_name } = healthcareOrganizationDto;
 
     const mockLogWarn = log.warn as MockedFunction<typeof log.warn>;
     const result = parseHealthcareOrganization(healthcareOrganizationDto);
 
     expect(mockLogWarn).toHaveBeenCalledWith(
-        `Data service for organization: ${display_name} (${identification}) with id "${supportedDataService.id}" does not contain a resource endpoint`
+        `Data service for organization: ${display_name} (${identification}) does not contain an id "${dataService.id}" or a resource endpoint "${dataService.roles[0].resource_endpoint}"`
     );
     expect(result.dataServices).toEqual([]);
 });

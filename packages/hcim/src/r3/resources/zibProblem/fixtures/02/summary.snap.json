@@ -1,0 +1,150 @@
+{
+    "label": "Fracture of wrist (disorder)",
+    "children": [
+        {
+            "label": "Over de klacht",
+            "children": [
+                {
+                    "label": "Medische klacht of aandoening",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Fracture of wrist (disorder)",
+                            "code": "31641000146105",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Soort klacht",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Bevestigd of vermoed",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Unknown",
+                            "code": "UNK",
+                            "system": "http://hl7.org/fhir/v3/NullFlavor"
+                        }
+                    ]
+                },
+                {
+                    "label": "Huidige status",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Active",
+                            "code": "55561003",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Gevallen op de kunstijsbaan"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Anatomische locatie",
+            "children": [
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Entire wrist region",
+                            "code": "361289009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Aangedane kant",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Right",
+                            "code": "24028007",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Anatomische locatie",
+            "children": [
+                {
+                    "label": "Plaats in het lichaam",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Hart",
+                            "code": "80891009",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Aangedane kant",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Periode",
+            "children": [
+                {
+                    "label": "Wanneer begonnen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2001"
+                    }
+                },
+                {
+                    "label": "Wanneer gestopt",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2002"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Zorgverlener",
+            "children": [
+                {
+                    "label": "Vastgelegd door (zorgverlener)",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle probleem gegevens",
+                    "reference": "Condition/zib-problem-01"
+                }
+            ]
+        }
+    ]
+}

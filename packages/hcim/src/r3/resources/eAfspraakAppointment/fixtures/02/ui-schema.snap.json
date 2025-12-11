@@ -6,7 +6,7 @@
                 {
                     "label": "Afwijkende uitslag",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "(413095006 in codesysteem http://snomed.info/sct)",
@@ -19,12 +19,14 @@
                 {
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1 januari 2018 om 09:00:00 GMT+1"
+                    "value": {
+                        "display": "1 januari 2018 om 09:00:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Contact categorie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "General Practice (gp in codesysteem http://example.org/service-category)",
                             "code": "gp",
@@ -35,29 +37,37 @@
                 {
                     "label": "Contact duur in minuten",
                     "type": "SINGLE_VALUE",
-                    "display": "15"
+                    "value": {
+                        "display": "15"
+                    }
                 },
                 {
                     "label": "Contact onderwerp",
                     "type": "SINGLE_VALUE",
-                    "display": "Poliklinische Controle Chirurgie"
+                    "value": {
+                        "display": "Poliklinische Controle Chirurgie"
+                    }
                 },
                 {
                     "label": "Contact patiënt instructie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Please park in P2; P1 is under construction"
+                    "value": [
+                        {
+                            "display": "Please park in P2; P1 is under construction"
+                        }
                     ]
                 },
                 {
                     "label": "Contact status",
                     "type": "SINGLE_VALUE",
-                    "display": "fulfilled"
+                    "value": {
+                        "display": "fulfilled"
+                    }
                 },
                 {
                     "label": "Contact type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Followup (follow in codesysteem http://example.org/appointment-type)",
                             "code": "follow",
@@ -68,24 +78,30 @@
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "10 oktober 2017"
+                    "value": {
+                        "display": "10 oktober 2017"
+                    }
                 },
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "1 januari 2018 om 09:45:00 GMT+1"
+                    "value": {
+                        "display": "1 januari 2018 om 09:45:00 GMT+1"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "0000000001"
+                    "value": [
+                        {
+                            "display": "0000000001"
+                        }
                     ]
                 },
                 {
                     "label": "Specialisme",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Medisch specialisten, chirurgie (0303 in codesysteem urn:oid:2.16.840.1.113883.2.4.6.7)",
@@ -98,14 +114,20 @@
                 {
                     "label": "Verrichting of probleem",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Severe burn of left ear"
+                    "value": [
+                        {
+                            "display": "Severe burn of left ear"
+                        }
                     ]
                 },
                 {
                     "label": "Verwijzing",
-                    "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": null
+                        }
+                    ]
                 }
             ]
         },
@@ -115,12 +137,16 @@
                 {
                     "label": "Online wijzigbaar indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Online wijzigbaar tot",
                     "type": "SINGLE_VALUE",
-                    "display": "31-12-2017"
+                    "value": {
+                        "display": "31-12-2017"
+                    }
                 }
             ]
         },
@@ -136,17 +162,23 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "accepted"
+                    "value": {
+                        "display": "accepted"
+                    }
                 },
                 {
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -162,17 +194,21 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "accepted"
+                    "value": {
+                        "display": "accepted"
+                    }
                 },
                 {
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "(ATND in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
@@ -196,17 +232,23 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "accepted"
+                    "value": {
+                        "display": "accepted"
+                    }
                 },
                 {
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

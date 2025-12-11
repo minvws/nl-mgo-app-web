@@ -2,6 +2,7 @@ import { faker } from '$test';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { date as formatDateTime } from '../../format/date/date.js';
+import { MultipleValues, SingleValue } from '../../types/schema.js';
 import { instant } from './instant.js';
 
 test('instant single', () => {
@@ -12,10 +13,10 @@ test('instant single', () => {
     const result = instant(uiHelperContext)(label, value);
     const formatDate = formatDateTime(uiHelperContext);
 
-    expect(result).toEqual({
+    expect(result).toEqual<SingleValue>({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: formatDate(value?.value),
+        value: { display: formatDate(value?.value) },
     });
 });
 
@@ -27,9 +28,9 @@ test('instant multiple', () => {
     const result = instant(uiHelperContext)(label, value);
     const formatDate = formatDateTime(uiHelperContext);
 
-    expect(result).toEqual({
+    expect(result).toEqual<MultipleValues>({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: value.map((x) => formatDate(x?.value)),
+        value: value.map((x) => ({ display: formatDate(x?.value) })),
     });
 });

@@ -6,52 +6,70 @@
                 {
                     "label": "Begin datum van de uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
+                    "value": {
+                        "display": "1 juni 2010"
+                    }
                 },
                 {
                     "label": "Eind datum van de uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Origin",
                     "type": "SINGLE_VALUE",
-                    "display": "0 mmHg"
+                    "value": {
+                        "display": "0 mmHg"
+                    }
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "0.1"
+                    "value": {
+                        "display": "0.1"
+                    }
                 },
                 {
                     "label": "Factor",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "0"
+                    "value": {
+                        "display": "0"
+                    }
                 },
                 {
                     "label": "bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "300"
+                    "value": {
+                        "display": "300"
+                    }
                 },
                 {
                     "label": "Aantal sample punten",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Gesamplede gegevens",
                     "type": "SINGLE_VALUE",
-                    "display": "120 125 123 121 119 118 117 116 115 114"
+                    "value": {
+                        "display": "120 125 123 121 119 118 117 116 115 114"
+                    }
                 },
                 {
                     "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Above reference range",
                             "code": "281302008",
@@ -67,12 +85,16 @@
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "Definitief"
+                    "value": {
+                        "display": "Definitief"
+                    }
                 },
                 {
                     "label": "Materiaal",
                     "type": "SINGLE_VALUE",
-                    "display": "Blood (substance)"
+                    "value": {
+                        "display": "Blood (substance)"
+                    }
                 }
             ]
         },
@@ -82,12 +104,16 @@
                 {
                     "label": "Minimale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "99 millimol per liter"
+                    "value": {
+                        "display": "99 millimol per liter"
+                    }
                 },
                 {
                     "label": "Maximale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "108 millimol per liter"
+                    "value": {
+                        "display": "108 millimol per liter"
+                    }
                 }
             ]
         },
@@ -97,12 +123,16 @@
                 {
                     "label": "Minimale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "180 millimol per liter"
+                    "value": {
+                        "display": "180 millimol per liter"
+                    }
                 },
                 {
                     "label": "Maximale waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "265 millimol per liter"
+                    "value": {
+                        "display": "265 millimol per liter"
+                    }
                 }
             ]
         },
@@ -112,12 +142,16 @@
                 {
                     "label": "Specialist",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },

@@ -6,21 +6,27 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1d758289-8fdf-11ec-2146-020000000000"
+                    "value": [
+                        {
+                            "display": "1d758289-8fdf-11ec-2146-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Arthropathy (disorder)"
+                    "value": [
+                        {
+                            "display": "Arthropathy (disorder)"
+                        }
                     ]
                 },
                 {
                     "label": "Locatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Medisch hulpmiddel",
@@ -37,32 +43,42 @@
                 {
                     "label": "Resultaat",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting methode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verrichting start datum",
                     "type": "SINGLE_VALUE",
-                    "display": "5 juni 2012"
+                    "value": {
+                        "display": "5 juni 2012"
+                    }
                 },
                 {
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Implantation of Swanson prosthesis of knee (procedure) (60159002 in codesysteem http://snomed.info/sct)",
                             "code": "60159002",
@@ -73,7 +89,7 @@
                 {
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Left (7771000 in codesysteem http://snomed.info/sct)",
                             "code": "7771000",
@@ -95,7 +111,9 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

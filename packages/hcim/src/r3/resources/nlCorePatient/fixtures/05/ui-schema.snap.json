@@ -6,12 +6,14 @@
                 {
                     "label": "BSN",
                     "type": "SINGLE_VALUE",
-                    "display": "999911120"
+                    "value": {
+                        "display": "999911120"
+                    }
                 },
                 {
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Married (M in codesysteem http://hl7.org/fhir/v3/MaritalStatus)",
                             "code": "M",
@@ -22,7 +24,9 @@
                 {
                     "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
-                    "display": "2 augustus 1964"
+                    "value": {
+                        "display": "2 augustus 1964"
+                    }
                 },
                 {
                     "label": "Huisarts",
@@ -33,7 +37,7 @@
                 {
                     "label": "Juridische status",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Onder toezichtstelling (ots) (4 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.2.14.3.2)",
@@ -46,32 +50,44 @@
                 {
                     "label": "Levensovertuiging",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Meerlingindicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Nee"
+                    "value": {
+                        "display": "Nee"
+                    }
                 },
                 {
                     "label": "Nationaliteit",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Overlijdensindicator/datum overlijden",
                     "type": "SINGLE_VALUE",
-                    "display": "Nee"
+                    "value": {
+                        "display": "Nee"
+                    }
                 },
                 {
                     "label": "Taalvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verwijst naar de voorkeursapotheek van de patiënt",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -81,7 +97,7 @@
                 {
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
                             "code": "MC",
@@ -92,17 +108,23 @@
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "phone"
+                    "value": {
+                        "display": "phone"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "06-12345678"
+                    "value": {
+                        "display": "06-12345678"
+                    }
                 }
             ]
         },
@@ -112,22 +134,30 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "email"
+                    "value": {
+                        "display": "email"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "XXX_Helleman@hotmail.com"
+                    "value": {
+                        "display": "XXX_Helleman@hotmail.com"
+                    }
                 }
             ]
         },
@@ -137,49 +167,67 @@
                 {
                     "label": "Geslachtsnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "XXX_Verweij"
+                    "value": {
+                        "display": "XXX_Verweij"
+                    }
                 },
                 {
                     "label": "Geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Initialen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Alex XXX_Helleman"
+                    "value": {
+                        "display": "Alex XXX_Helleman"
+                    }
                 },
                 {
                     "label": "Roepnaam",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Alex"
+                    "value": [
+                        {
+                            "display": "Alex"
+                        }
                     ]
                 },
                 {
                     "label": "Voorkeursvolgorde van de naamdelen.",
                     "type": "SINGLE_VALUE",
-                    "display": "NL4"
+                    "value": {
+                        "display": "NL4"
+                    }
                 },
                 {
                     "label": "Voornaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Voorvoegsel geslachtsnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Voorvoegsel geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -189,12 +237,14 @@
                 {
                     "label": "Aanduiding bij huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
                             "code": "HP",
@@ -205,57 +255,79 @@
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "1020"
+                    "value": {
+                        "display": "1020"
+                    }
                 },
                 {
                     "label": "Huisnummertoevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Land",
                     "type": "SINGLE_VALUE",
-                    "display": "NLD"
+                    "value": {
+                        "display": "NLD"
+                    }
                 },
                 {
-                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
-                    "display": "Stitswerd"
+                    "value": {
+                        "display": "Stitswerd"
+                    }
                 },
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "9999XB"
+                    "value": {
+                        "display": "9999XB"
+                    }
                 },
                 {
                     "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Knolweg"
+                    "value": {
+                        "display": "Knolweg"
+                    }
                 }
             ]
         },
@@ -265,89 +337,121 @@
                 {
                     "label": "Aanduiding bij huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Geslachtsnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Molenaar"
+                    "value": {
+                        "display": "Molenaar"
+                    }
                 },
                 {
                     "label": "Geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "Jutte"
+                    "value": {
+                        "display": "Jutte"
+                    }
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "1020"
+                    "value": {
+                        "display": "1020"
+                    }
                 },
                 {
                     "label": "Huisnummertoevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Initialen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "J.P.M."
+                    "value": [
+                        {
+                            "display": "J.P.M."
+                        }
                     ]
                 },
                 {
                     "label": "Land",
                     "type": "SINGLE_VALUE",
-                    "display": "Nederland"
+                    "value": {
+                        "display": "Nederland"
+                    }
                 },
                 {
-                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
-                    "display": "Stitswerd"
+                    "value": {
+                        "display": "Stitswerd"
+                    }
                 },
                 {
                     "label": "Naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Janni van Molenaar van der Jutte"
+                    "value": {
+                        "display": "Janni van Molenaar van der Jutte"
+                    }
                 },
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "9999XB"
+                    "value": {
+                        "display": "9999XB"
+                    }
                 },
                 {
                     "label": "Relatie",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Husband (HUSB in codesysteem http://hl7.org/fhir/v3/RoleCode)",
@@ -360,14 +464,16 @@
                 {
                     "label": "Roepnaam",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Janni"
+                    "value": [
+                        {
+                            "display": "Janni"
+                        }
                     ]
                 },
                 {
                     "label": "Rol",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Eerste relatie/contactpersoon (1 in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.22.472)",
@@ -380,12 +486,14 @@
                 {
                     "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Knolweg"
+                    "value": {
+                        "display": "Knolweg"
+                    }
                 },
                 {
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Mobiel telefoonnummer (MC in codesysteem http://hl7.org/fhir/v3/AddressUse)",
                             "code": "MC",
@@ -396,57 +504,79 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "phone"
+                    "value": {
+                        "display": "phone"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "email"
+                    "value": {
+                        "display": "email"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "06-12345645"
+                    "value": {
+                        "display": "06-12345645"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "j.vanderjutte@example.com"
+                    "value": {
+                        "display": "j.vanderjutte@example.com"
+                    }
                 },
                 {
                     "label": "Voorkeursvolgorde van de naamdelen.",
                     "type": "SINGLE_VALUE",
-                    "display": "NL4"
+                    "value": {
+                        "display": "NL4"
+                    }
                 },
                 {
                     "label": "Voornaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Voorvoegsel geslachtsnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "van"
+                    "value": {
+                        "display": "van"
+                    }
                 },
                 {
                     "label": "Voorvoegsel geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "van der"
+                    "value": {
+                        "display": "van der"
+                    }
                 }
             ]
         },
@@ -456,12 +586,14 @@
                 {
                     "label": "Geslacht",
                     "type": "SINGLE_VALUE",
-                    "display": "male"
+                    "value": {
+                        "display": "male"
+                    }
                 },
                 {
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Man (M in codesysteem http://hl7.org/fhir/v3/AdministrativeGender)",
                             "code": "M",

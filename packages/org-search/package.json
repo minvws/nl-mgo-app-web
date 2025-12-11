@@ -1,0 +1,35 @@
+{
+    "name": "@minvws/mgo-org-search",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/minvws/nl-mgo-app-web"
+    },
+    "files": [
+        "dist/"
+    ],
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "development": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./test/shared": {
+            "development": "./test/shared/index.ts"
+        }
+    },
+    "scripts": {},
+    "dependencies": {
+        "@orama/orama": "^3.1.16",
+        "@minvws/mgo-utils": "workspace:^"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
+        "type-fest": "^4.23.0",
+        "typescript": "^5.4.5"
+    }
+}

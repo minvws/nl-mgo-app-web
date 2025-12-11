@@ -3,8 +3,8 @@ import {
     useComposition,
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
-import { groupFocusStyle } from '../../styles';
-import { cn } from '../../utils';
+import { focusStyle } from '../../styles';
+import { cn, tw } from '../../utils';
 import { Icon, type IconProps } from '../Icon/Icon';
 import { type Size, type Variant } from './props';
 
@@ -17,18 +17,25 @@ export type IconButtonProps = IconProps &
     };
 
 const sizeMap: Record<Size, string> = {
-    sm: 'h-8 w-8',
-    md: 'h-12 w-12',
+    sm: tw`h-8 w-8`,
+    md: tw`h-12 w-12`,
 };
 
 const iconSizeMap: Record<Size, string> = {
-    sm: 'h-5 w-5',
-    md: 'h-8 w-8',
+    sm: tw`h-5 w-5`,
+    md: tw`h-8 w-8`,
 };
 
-const variantStyles: Record<Variant, string> = {
-    solid: 'bg-gray-100 group-hover:bg-gray-200 dark:bg-gray-800 dark:group-hover:bg-gray-700',
-    ghost: 'group-hover:bg-gray-50 dark:group-hover:bg-gray-700',
+const variantStyles: Record<Variant, string | string[]> = {
+    solid: [
+        'bg-t-seperator-secondary',
+        'hover:bg-gray-200 dark:hover:bg-gray-700',
+        'focus-visible:bg-gray-200 dark:focus-visible:bg-gray-700',
+    ],
+    ghost: [
+        'hover:bg-dark-blue-100 dark:hover:bg-dark-blue-100/[0.15]',
+        'focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700',
+    ],
 };
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
@@ -38,19 +45,21 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
-        <Comp ref={ref} className="group flex outline-none" {...rest}>
-            <span
-                className={cn(
-                    'flex items-center justify-center self-center rounded-full',
-                    'text-gray-500 dark:text-gray-300',
-                    variantStyles[variant],
-                    sizeMap[size],
-                    groupFocusStyle,
-                    className
-                )}
-            >
-                <Icon icon={icon} aria-label={ariaLabel} className={iconSizeMap[size]} />
-            </span>
+        <Comp
+            ref={ref}
+            className={cn(
+                'flex items-center justify-center rounded-full',
+                'text-t-label-secondary',
+                'shrink-0 grow-0',
+                'cursor-pointer transition-colors duration-200',
+                variantStyles[variant],
+                sizeMap[size],
+                focusStyle,
+                className
+            )}
+            {...rest}
+        >
+            <Icon icon={icon} aria-label={ariaLabel} className={iconSizeMap[size]} />
         </Comp>
     );
 });

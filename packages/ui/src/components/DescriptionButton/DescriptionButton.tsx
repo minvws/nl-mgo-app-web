@@ -5,6 +5,7 @@ import { cn, tw } from '../../utils';
 import { Card } from '../Card/Card';
 import { DescriptionItem, type DescriptionItemProps } from '../DescriptionItem/DescriptionItem';
 import { Icon, type IconProps } from '../Icon/Icon';
+import { Spinner } from '../Spinner/Spinner';
 import { Text } from '../Text/Text';
 import { type Variant } from './variants';
 
@@ -18,7 +19,7 @@ export type DescriptionButtonProps = DescriptionItemProps &
 
 const variantStyles: Record<Variant, string> = {
     default: 'md:gap-2',
-    highlighted: tw`[&_*]:text-sky-blue-700 [&_*]:dark:text-sky-blue-300`,
+    highlighted: tw`[&_*]:text-t-cat-rijkslint`,
 };
 const variantHoverStyles: Record<Variant, string> = {
     default: 'hover:bg-gray-100 dark:hover:bg-[#444444]',
@@ -44,8 +45,9 @@ export const DescriptionButton = ({
         <Card
             asChild
             className={cn(
-                'rounded-none border-0 p-0 shadow-none first:rounded-t-lg last:rounded-b-lg',
+                'rounded-none rounded-t-lg rounded-b-lg border-0',
                 'flex w-full items-center justify-between gap-1 p-4 text-left',
+                'cursor-pointer transition-colors duration-200',
                 variantStyles[variant],
                 variantHoverStyles[variant],
                 isLoading && 'cursor-progress',
@@ -61,11 +63,7 @@ export const DescriptionButton = ({
                 {isLoading ? (
                     <div className="ml-auto flex items-center gap-2">
                         <Text className="text-nowrap">{loadingText}</Text>
-                        <Icon
-                            data-testid="spinner"
-                            icon="progress-activity"
-                            className="size-8 animate-spin p-0"
-                        />
+                        <Spinner className="size-8" />
                     </div>
                 ) : (
                     <Icon icon={icon} className={cn('size-8 text-gray-400')} />

@@ -3,6 +3,10 @@
   ],
   "add_organization.city": [
   ],
+  "add_organization.default_content_heading": [
+  ],
+  "add_organization.default_content_subheading": [
+  ],
   "add_organization.error_missing_city": [
   ],
   "add_organization.error_missing_name": [
@@ -14,6 +18,10 @@
   "add_organization.name": [
   ],
   "add_organization.not_participating": [
+  ],
+  "add_organization.search_clear": [
+  ],
+  "add_organization.search_placeholder": [
   ],
   "add_organization.voice_over_to_overview": [
   ],
@@ -31,6 +39,14 @@
   ],
   "detail.breadcrumb": [
   ],
+  "dialog.add_organization_heading": [
+  ],
+  "dialog.add_organization_no": [
+  ],
+  "dialog.add_organization_subheading": [
+  ],
+  "dialog.add_organization_yes": [
+  ],
   "dialog.remove_organization_heading": [
   ],
   "dialog.remove_organization_no": [
@@ -38,6 +54,16 @@
   "dialog.remove_organization_subheading": [
   ],
   "dialog.remove_organization_yes": [
+  ],
+  "errorstate.clientside.heading": [
+  ],
+  "errorstate.error": [
+  ],
+  "errorstate.loading": [
+  ],
+  "errorstate.partial_error": [
+  ],
+  "errorstate.serverside.heading": [
   ],
   "export_pdf.close": [
   ],
@@ -163,6 +189,10 @@
   ],
   "organization_search.no_results_found_heading": [
   ],
+  "organization_search.no_results_found_subheading_2": [
+  ],
+  "organization_search.results_count": [
+  ],
   "organization_search.search_hint_1": [
   ],
   "organization_search.search_hint_2": [
@@ -187,7 +217,11 @@
   ],
   "overview.subheading": [
   ],
+  "patientfriendlyterms.synonym": [
+  ],
   "pdf_viewer.loading": [
+  ],
+  "privacy.heading": [
   ],
   "privacy.markdown": [
   ],
@@ -210,5 +244,7 @@
   "remove_organization.no_cancel": [
   ],
   "settings.featureflag.localization": [
+  ],
+  "settings.version.heading": [
   ]
 }

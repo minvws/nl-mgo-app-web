@@ -319,6 +319,12 @@
       "value": "Apparaat"
     }
   ],
+  "fhir.x.diagnosis": [
+    {
+      "type": 0,
+      "value": "Diagnosis"
+    }
+  ],
   "fhir.x.effective_date_time": [
     {
       "type": 0,

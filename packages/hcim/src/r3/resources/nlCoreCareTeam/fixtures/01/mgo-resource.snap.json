@@ -1,0 +1,67 @@
+{
+    "id": "nl-core-careteam-01",
+    "referenceId": "CareTeam/nl-core-careteam-01",
+    "resourceType": "CareTeam",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-careteam",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "http://example.nl/careteamid",
+            "value": "15689532",
+            "type": null
+        },
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15e6f5b1-8fdf-11ec-2036-020000000000",
+            "type": null
+        }
+    ],
+    "subject": null,
+    "period": {
+        "_type": "period",
+        "start": "2013-02-01T08:53:00+01:00",
+        "end": null
+    },
+    "participant": [
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-02",
+                "display": "Vaste Huisarts 1"
+            },
+            "healthProfessionalRole": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "REF",
+                        "display": "Verwijzer",
+                        "system": "http://hl7.org/fhir/v3/ParticipationType"
+                    }
+                ]
+            }
+        },
+        {
+            "participant": {
+                "_type": "reference",
+                "reference": "Practitioner/nl-core-practitioner-04",
+                "display": "Dirk de Vries"
+            },
+            "healthProfessionalRole": {
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "RESP",
+                        "display": "Hoofdbehandelaar",
+                        "system": "http://hl7.org/fhir/v3/ParticipationType"
+                    }
+                ]
+            }
+        }
+    ]
+}

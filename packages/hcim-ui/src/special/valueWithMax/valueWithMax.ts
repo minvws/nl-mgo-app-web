@@ -10,7 +10,7 @@ export const valueWithMax: WithUiContext<CombinedUiFunction<number, number, Sing
     (label, value, max) => {
         return {
             label: formatLabel(label, value),
-            display: format.valueWithMaxValue(value, max),
+            value: { display: format.valueWithMaxValue(value, max) },
             type: 'SINGLE_VALUE',
         };
     };

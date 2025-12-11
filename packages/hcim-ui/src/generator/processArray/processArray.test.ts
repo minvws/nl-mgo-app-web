@@ -10,6 +10,7 @@ import { expect, test } from 'vitest';
 import { boolean } from '../../type/boolean/boolean.js';
 import { codeableConcept } from '../../type/codeableConcept/codeableConcept.js';
 import { string } from '../../type/string/string.js';
+import { SingleValue } from '../../types/schema.js';
 import { createGeneratorContext } from '../createGeneratorContext/createGeneratorContext.js';
 import { processObject } from '../processObject/processObject.js';
 import { processArray } from './processArray.js';
@@ -102,11 +103,11 @@ test('empty array returns empty result', () => {
     const context = createGeneratorContext(uiContext, rootPath, faker.fhir.fhirVersion());
 
     const value: unknown[] = [];
-    const expected = [
+    const expected: SingleValue[] = [
         {
             label: testMessage(path),
             type: 'SINGLE_VALUE',
-            display: undefined,
+            value: undefined,
         },
     ];
 

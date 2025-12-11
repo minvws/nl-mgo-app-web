@@ -1,17 +1,11 @@
 import { type AllOrNone } from '@minvws/mgo-utils';
-import {
-    cloneElement,
-    forwardRef,
-    isValidElement,
-    ReactNode,
-    type ButtonHTMLAttributes,
-    type ReactElement,
-} from 'react';
+import { forwardRef, type ButtonHTMLAttributes, type ReactElement } from 'react';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { type IconName } from '../Icon/icons';
 import { Spinner } from '../Spinner/Spinner';
+import { Text } from '../Text/Text';
 import { ButtonIcon } from './ButtonIcon';
 import { type Variant } from './variants';
 
@@ -31,18 +25,23 @@ export interface ButtonLoadingProps {
 export type ButtonProps = ButtonBaseProps & AllOrNone<ButtonLoadingProps>;
 
 const typeColors: Record<Variant, string> = {
-    solid: cn('bg-sky-blue-600 hover:bg-dark-blue-700 text-white'),
-    light: cn(
-        'text-sky-blue-700 bg-sky-blue-700/10  hover:bg-sky-blue-700/5',
-        'dark:text-sky-blue-300 dark:bg-sky-blue-300/10  dark:hover:bg-sky-blue-300/5'
+    solid: cn(
+        'border border-t-action-solid-default-bg hover:border-t-action-solid-hover-bg active:border-t-action-solid-active-bg',
+        'bg-t-action-solid-default-bg hover:bg-t-action-solid-hover-bg active:bg-t-action-solid-active-bg',
+        'text-t-action-solid-default-text hover:text-t-action-solid-hover-text active:text-t-action-solid-active-text',
+        'focus-visible:bg-t-action-solid-hover-bg'
     ),
     outline: cn(
-        'border border-gray-200 bg-white text-black hover:bg-gray-50',
-        'dark:border-gray-500 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700'
+        'border border-t-action-outline-default-border hover:border-t-action-outline-hover-border active:border-t-action-outline-active-border',
+        'bg-transparent hover:bg-t-action-outline-hover-bg active:bg-t-action-outline-active-bg',
+        'text-t-action-outline-default-text hover:text-t-action-outline-hover-text active:text-t-action-outline-active-text',
+        'focus-visible:bg-t-action-outline-hover-bg'
     ),
     ghost: cn(
-        'text-dark-blue-700 hover:text-dark-blue-400',
-        'dark:text-light-blue-300 hover:dark:text-light-blue-200'
+        'border border-transparent',
+        'bg-transparent hover:bg-t-action-ghost-hover-bg active:bg-t-action-ghost-active-bg',
+        'text-t-action-ghost-default-text hover:text-t-action-ghost-hover-text active:text-t-action-ghost-active-text',
+        'focus-visible:bg-t-action-ghost-hover-bg'
     ),
 };
 
@@ -61,41 +60,25 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         loadingSpinnerOnly,
         ...rest
     } = props as ButtonBaseProps & ButtonLoadingProps;
-    const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
+    const { Comp, composeWrappedSlottable } = useComposition({ asChild, tag: 'button' });
     const showSpinnerOnly = loading && loadingSpinnerOnly;
+    const showDefaultSpinner = loading && !leftIcon && !rightIcon && !showSpinnerOnly;
 
     const ButtonSpinner = (
         <Spinner className="absolute size-6" variant={variant === 'solid' ? 'white' : 'gray'} />
     );
 
-    const LabelWrapper = ({ children }: { readonly children: ReactNode }) => (
-        <span
-            aria-hidden={showSpinnerOnly}
-            className={cn({
+    const Label = composeWrappedSlottable({
+        asChild,
+        children,
+        wrapperProps: {
+            'aria-hidden': showSpinnerOnly,
+            className: cn({
                 invisible: showSpinnerOnly,
-                'flex flex-grow justify-start': fullWidth && rightIcon,
-            })}
-        >
-            {children}
-        </span>
-    );
-
-    const Label =
-        // Slottable does not work when wrapped, this solves that issue.
-        // For more details see: https://github.com/radix-ui/primitives/issues/1825#issuecomment-2123042290
-        asChild && isValidElement(children) ? (
-            <Slottable>
-                {cloneElement(
-                    children,
-                    children.props,
-                    <LabelWrapper>{children.props.children}</LabelWrapper>
-                )}
-            </Slottable>
-        ) : (
-            <LabelWrapper>
-                <Slottable>{children}</Slottable>
-            </LabelWrapper>
-        );
+                'flex grow justify-start text-left': fullWidth && rightIcon,
+            }),
+        },
+    });
 
     return (
         <>
@@ -105,12 +88,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                 </output>
             )}
 
-            <Comp
-                ref={ref}
-                onClick={loading ? undefined : onClick}
-                aria-disabled={loading}
+            <Text
+                size="md"
+                asChild
                 className={cn(
-                    `relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-bold leading-normal outline-none md:py-4`,
+                    'font-bold',
+                    `relative inline-flex items-center justify-center`,
+                    'px-4 py-2',
+                    'rounded-sm outline-hidden',
+                    'cursor-pointer transition-colors duration-200',
                     focusStyle,
                     typeColors[variant],
                     className,
@@ -120,37 +106,36 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                         'pr-4': rightIcon,
                     }
                 )}
-                {...rest}
             >
-                {(leftIcon || (loading && !rightIcon && !loadingSpinnerOnly)) && (
-                    <span
-                        aria-hidden
-                        className="relative me-2 inline-flex min-h-[1em] min-w-[1em] shrink-0 self-center text-[1.5em]"
-                    >
-                        {loading && !loadingSpinnerOnly && !rightIcon && ButtonSpinner}
-
+                <Comp
+                    ref={ref}
+                    onClick={loading ? undefined : onClick}
+                    aria-disabled={loading}
+                    {...rest}
+                >
+                    {leftIcon && !showSpinnerOnly && (
                         <ButtonIcon
+                            className="me-2"
                             icon={leftIcon}
-                            className={cn({ invisible: loading && !rightIcon })}
+                            loading={loading}
+                            spinner={ButtonSpinner}
                         />
-                    </span>
-                )}
+                    )}
 
-                {Label}
+                    {Label}
 
-                {showSpinnerOnly && ButtonSpinner}
+                    {showSpinnerOnly && ButtonSpinner}
 
-                {rightIcon && (
-                    <span
-                        aria-hidden
-                        className="relative ms-2 inline-flex min-h-[1em] min-w-[1em] shrink-0 self-center text-[1.5em]"
-                    >
-                        {loading && !loadingSpinnerOnly && ButtonSpinner}
-
-                        <ButtonIcon icon={rightIcon} className={cn({ invisible: loading })} />
-                    </span>
-                )}
-            </Comp>
+                    {((rightIcon && !showSpinnerOnly) || showDefaultSpinner) && (
+                        <ButtonIcon
+                            className="ms-2"
+                            icon={rightIcon}
+                            loading={loading}
+                            spinner={ButtonSpinner}
+                        />
+                    )}
+                </Comp>
+            </Text>
         </>
     );
 });

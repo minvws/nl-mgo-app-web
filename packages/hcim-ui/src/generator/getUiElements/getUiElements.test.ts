@@ -8,7 +8,7 @@ test('extracts all ui elements from a list of elements and groups', () => {
         {
             label: faker.lorem.word(),
             type: 'SINGLE_VALUE',
-            display: undefined,
+            value: undefined,
         },
     ];
     const group: HealthUiGroup = {
@@ -17,7 +17,7 @@ test('extracts all ui elements from a list of elements and groups', () => {
             {
                 label: faker.lorem.word(),
                 type: 'SINGLE_VALUE',
-                display: undefined,
+                value: undefined,
             },
         ],
     };

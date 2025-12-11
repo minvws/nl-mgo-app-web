@@ -4,8 +4,10 @@
     "license": "UNLICENSED",
     "packageManager": "pnpm@9.13.2",
     "scripts": {
+        "preview": "nx run mgo:preview",
         "dev": "nx run mgo:dev",
         "test": "vitest",
+        "test:hcim:update": "vitest --project @minvws/mgo-hcim --update",
         "test:coverage": "vitest run --coverage --coverage.reportOnFailure",
         "lint": "nx run-many -t lint",
         "lint:fix": "pnpm run -r lint --fix",
@@ -17,14 +19,6 @@
         "pr": "pnpm audit && pnpm run format && pnpm run lint:fix && pnpm run lint && pnpm run check-types && vitest run --coverage",
         "e2e": "pnpm run --dir apps/mgo-e2e e2e",
         "graph": "pnpm exec nx graph"
-    },
-    "non-standard-dependency-comments": {
-        "eslint": [
-            "v8.57.0 - There are still too many issues related to the new flat config change in v9.*.",
-            "https://github.com/import-js/eslint-plugin-import/issues/2556",
-            "https://github.com/TanStack/query/discussions/6669",
-            "https://github.com/facebook/react/issues/28313"
-        ]
     },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
@@ -44,6 +38,7 @@
         "@tanstack/eslint-plugin-query": "^5.43.1",
         "@types/node": "22.13.14",
         "@vitest/coverage-v8": "^3.2.4",
+        "cpx2": "^8.0.0",
         "eslint": "^9.31.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-import": "2.31.0",
@@ -53,9 +48,10 @@
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-react-refresh": "^0.4.20",
         "eslint-plugin-sonarjs": "^3.0.4",
+        "eslint-plugin-tailwindcss": "4.0.0-beta.0",
         "nx": "21.3.2",
         "prettier": "^3.4.2",
-        "prettier-plugin-tailwindcss": "^0.6.11",
+        "prettier-plugin-tailwindcss": "^0.7.0",
         "simple-git-hooks": "^2.11.1",
         "typescript": "^5.4.5",
         "typescript-eslint": "^8.38.0",
@@ -67,29 +63,51 @@
     "commitlint": {
         "extends": [
             "@commitlint/config-conventional"
-        ]
+        ],
+        "rules": {
+            "scope-enum": [
+                2,
+                "always",
+                [
+                    "repo",
+                    "hcim-api",
+                    "hcim-labels",
+                    "mgo",
+                    "mgo-e2e",
+                    "config",
+                    "data-services",
+                    "fhir",
+                    "fhir-client",
+                    "hcim",
+                    "hcim-parse",
+                    "hcim-ui",
+                    "intl",
+                    "ui",
+                    "utils",
+                    "org-search"
+                ]
+            ]
+        }
     },
     "pnpm": {
         "overrides comments (non-standard-key)": {
             "brace-expansion@>=1.0.0 <=1.1.11": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
             "brace-expansion@>=2.0.0 <=2.0.1": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
-            "path-to-regexp@>=6.2.0 <8.0.0": "packages/fhir-client > msw@2.4.5 > path-to-regexp@6.2.1 / https://github.com/advisories/GHSA-9wv6-86v2-598j",
             "rollup": "app/mgo > vite-plugin-svgr@4.2.0 > '@rollup/pluginutils@5.1.0 > rollup:4.21.3 / https://github.com/advisories/GHSA-gcx4-mw62-g8wm",
-            "cookie": "packages/fhir-client > msw@2.4.5 > @bundled-es-modules/cookie@2.0.0 > cookie@0.5.0 / https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
             "cross-spawn": "eslint@8.57.0 > cross-spawn@7.0.3 / https://github.com/advisories/GHSA-3xgq-45jj-v275",
             "path-to-regexp@<0.1.12": "packages/mgo-ui > @storybook/addon-actions@8.3.0 > storybook@8.3.0 > @storybook/core@8.3.0 > express@4.21.0 > path-to-regexp@0.1.10 / https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
             "esbuild@<0.25.0": "packages/mgo-ui > @storybook/addon-actions@8.5.1 > storybook@8.5.1 > @storybook/core@8.5.1 > esbuild@0.24.2 / https://github.com/advisories/GHSA-67mh-4wv8-2f99",
             "koa@<2.16.1": "@nx/react > https://github.com/advisories/GHSA-x2rg-q646-7m2v",
-            "@eslint/plugin-kit@<0.3.3": "https://github.com/advisories/GHSA-xffm-g5w8-qvg7 ",
+            "@eslint/plugin-kit@<0.3.3": "https://github.com/advisories/GHSA-xffm-g5w8-qvg7",
             "tmp@<=0.2.3": "https://github.com/advisories/GHSA-52f5-9888-hmc6",
-            "axios@<1.12.0": "@nx > axios, https://github.com/advisories/GHSA-4hjh-wcwx-xvwj "
+            "axios@<1.12.0": "@nx > axios, https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
+            "min-document>=2.0.0 <=2.19.1": "https://github.com/minvws/nl-mgo-app-web-private/security/dependabot/39",
+            "glob@>=10.3.7 <=11.0.3": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
             "brace-expansion@>=2.0.0 <=2.0.1": "2.0.2",
-            "path-to-regexp@>=6.2.0 <8.0.0": "^8.0.0",
             "rollup": "^4.22.4",
-            "cookie": "^0.7.0",
             "cross-spawn": "^7.0.5",
             "path-to-regexp@<0.1.12": "^0.1.12",
             "esbuild@<0.25.0": "^0.25.0",
@@ -101,7 +119,11 @@
             "@eslint/plugin-kit@<0.3.4": ">=0.3.4",
             "koa@>=2.0.0 <2.16.2": ">=2.16.2",
             "tmp@<=0.2.3": ">=0.2.4",
-            "axios@<1.12.0": ">=1.12.0"
+            "axios@<1.12.0": ">=1.12.0",
+            "koa@>=3.0.1 <3.0.3": ">=3.0.3",
+            "tar@=7.5.1": ">=7.5.2",
+            "min-document@>=2.0.0 <=2.19.1": "^2.19.2",
+            "glob@>=10.3.7 <=11.0.3": "^11.1.0"
         },
         "auditConfig": {
             "ignoreGhsas comments (non-standard-key)": {
@@ -111,7 +133,10 @@
                 "https://github.com/advisories/GHSA-fjxv-7rqg-78g4": "@nx  - Only used in dev",
                 "https://github.com/advisories/GHSA-xffm-g5w8-qvg7": "@nx/eslint-plugin  - Only used in dev",
                 "https://github.com/advisories/GHSA-mvw6-62qv-vmqf": "@nx  - Only used in dev",
-                "https://github.com/advisories/GHSA-jgmv-j7ww-jx2x": "@nx/react  - Only used in dev"
+                "https://github.com/advisories/GHSA-jgmv-j7ww-jx2x": "@nx/react  - Only used in dev",
+                "https://github.com/advisories/GHSA-rx8g-88g5-qh64": "min-document - Only used in storybook at dev",
+                "https://github.com/advisories/GHSA-mh29-5h37-fv8m": "js-yaml - Only used in dev tools such as nx, eslint and svgr",
+                "https://github.com/advisories/GHSA-pj86-cfqh-vqx6": "express - only used in dev (@nx/react)"
             },
             "ignoreGhsas": [
                 "GHSA-968p-4wvh-cqc8",
@@ -120,7 +145,10 @@
                 "GHSA-fjxv-7rqg-78g4",
                 "GHSA-xffm-g5w8-qvg7",
                 "GHSA-mvw6-62qv-vmqf",
-                "GHSA-jgmv-j7ww-jx2x"
+                "GHSA-jgmv-j7ww-jx2x",
+                "GHSA-rx8g-88g5-qh64",
+                "GHSA-mh29-5h37-fv8m",
+                "GHSA-pj86-cfqh-vqx6"
             ]
         }
     }

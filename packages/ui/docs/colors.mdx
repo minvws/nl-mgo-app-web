@@ -1,17 +1,215 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
-import { singleColors, colorSwatches } from './colors';
+import { Meta } from '@storybook/blocks';
+import { ColorPalette } from './ColorPalette';
 
 <Meta title="Colors" />
 
+<div className="sb-opacity-background" />
+
 # Colors
 
-<br />
+<ColorPalette title="Gray">
+    <ColorPalette.Color color="bg-gray-50" />
+    <ColorPalette.Color color="bg-gray-100" />
+    <ColorPalette.Color color="bg-gray-200" />
+    <ColorPalette.Color color="bg-gray-300" />
+    <ColorPalette.Color color="bg-gray-400" />
+    <ColorPalette.Color color="bg-gray-500" />
+    <ColorPalette.Color color="bg-gray-600" />
+    <ColorPalette.Color color="bg-gray-700" />
+    <ColorPalette.Color color="bg-gray-800" />
+    <ColorPalette.Color color="bg-gray-900" />
+    <ColorPalette.Color color="bg-gray-950" />
+</ColorPalette>
 
-<ColorPalette style={{ wordBreak: 'break-all' }}>
-    {singleColors.map(([name, colors]) => (
-        <ColorItem key={name} title={`${name}`} subtitle={`${name} color scheme`} colors={colors} />
-    ))}
-    {colorSwatches.map(([name, colors]) => (
-        <ColorItem key={name} title={`${name}`} subtitle={`${name} color scheme`} colors={colors} />
-    ))}
+<ColorPalette title="Cool Gray">
+    <ColorPalette.Color color="bg-cool-gray-50" />
+    <ColorPalette.Color color="bg-cool-gray-100" />
+    <ColorPalette.Color color="bg-cool-gray-200" />
+    <ColorPalette.Color color="bg-cool-gray-300" />
+    <ColorPalette.Color color="bg-cool-gray-400" />
+    <ColorPalette.Color color="bg-cool-gray-500" />
+    <ColorPalette.Color color="bg-cool-gray-600" />
+    <ColorPalette.Color color="bg-cool-gray-700" />
+    <ColorPalette.Color color="bg-cool-gray-800" />
+    <ColorPalette.Color color="bg-cool-gray-900" />
+</ColorPalette>
+
+<ColorPalette title="Logo Blue">
+    <ColorPalette.Color color="bg-logo-blue-50" />
+    <ColorPalette.Color color="bg-logo-blue-100" />
+    <ColorPalette.Color color="bg-logo-blue-200" />
+    <ColorPalette.Color color="bg-logo-blue-300" />
+    <ColorPalette.Color color="bg-logo-blue-400" />
+    <ColorPalette.Color color="bg-logo-blue-500" />
+    <ColorPalette.Color color="bg-logo-blue-600" />
+    <ColorPalette.Color color="bg-logo-blue-700" />
+</ColorPalette>
+
+<ColorPalette title="Sky Blue">
+    <ColorPalette.Color color="bg-sky-blue-50" />
+    <ColorPalette.Color color="bg-sky-blue-100" />
+    <ColorPalette.Color color="bg-sky-blue-200" />
+    <ColorPalette.Color color="bg-sky-blue-300" />
+    <ColorPalette.Color color="bg-sky-blue-400" />
+    <ColorPalette.Color color="bg-sky-blue-500" />
+</ColorPalette>
+
+<ColorPalette title="Dark Blue">
+    <ColorPalette.Color color="bg-dark-blue-50" />
+    <ColorPalette.Color color="bg-dark-blue-100" />
+    <ColorPalette.Color color="bg-dark-blue-200" />
+    <ColorPalette.Color color="bg-dark-blue-300" />
+    <ColorPalette.Color color="bg-dark-blue-400" />
+    <ColorPalette.Color color="bg-dark-blue-500" />
+    <ColorPalette.Color color="bg-dark-blue-600" />
+    <ColorPalette.Color color="bg-dark-blue-700" />
+</ColorPalette>
+
+<ColorPalette title="Light Blue">
+    <ColorPalette.Color color="bg-light-blue-50" />
+    <ColorPalette.Color color="bg-light-blue-100" />
+    <ColorPalette.Color color="bg-light-blue-200" />
+    <ColorPalette.Color color="bg-light-blue-300" />
+    <ColorPalette.Color color="bg-light-blue-400" />
+    <ColorPalette.Color color="bg-light-blue-500" />
+    <ColorPalette.Color color="bg-light-blue-600" />
+    <ColorPalette.Color color="bg-light-blue-700" />
+    <ColorPalette.Color color="bg-light-blue-800" />
+</ColorPalette>
+
+<ColorPalette title="Green">
+    <ColorPalette.Color color="bg-green-50" />
+    <ColorPalette.Color color="bg-green-100" />
+    <ColorPalette.Color color="bg-green-200" />
+    <ColorPalette.Color color="bg-green-300" />
+    <ColorPalette.Color color="bg-green-400" />
+    <ColorPalette.Color color="bg-green-500" />
+</ColorPalette>
+
+<ColorPalette title="Dark Green">
+    <ColorPalette.Color color="bg-dark-green-50" />
+    <ColorPalette.Color color="bg-dark-green-100" />
+    <ColorPalette.Color color="bg-dark-green-200" />
+    <ColorPalette.Color color="bg-dark-green-300" />
+    <ColorPalette.Color color="bg-dark-green-400" />
+    <ColorPalette.Color color="bg-dark-green-500" />
+</ColorPalette>
+
+<ColorPalette title="Mint">
+    <ColorPalette.Color color="bg-mint-50" />
+    <ColorPalette.Color color="bg-mint-100" />
+    <ColorPalette.Color color="bg-mint-200" />
+    <ColorPalette.Color color="bg-mint-300" />
+    <ColorPalette.Color color="bg-mint-400" />
+    <ColorPalette.Color color="bg-mint-500" />
+    <ColorPalette.Color color="bg-mint-600" />
+    <ColorPalette.Color color="bg-mint-700" />
+    <ColorPalette.Color color="bg-mint-800" />
+</ColorPalette>
+
+<ColorPalette title="Moss">
+    <ColorPalette.Color color="bg-moss-50" />
+    <ColorPalette.Color color="bg-moss-100" />
+    <ColorPalette.Color color="bg-moss-200" />
+    <ColorPalette.Color color="bg-moss-300" />
+    <ColorPalette.Color color="bg-moss-400" />
+    <ColorPalette.Color color="bg-moss-500" />
+</ColorPalette>
+
+<ColorPalette title="Yellow">
+    <ColorPalette.Color color="bg-yellow-50" />
+    <ColorPalette.Color color="bg-yellow-100" />
+    <ColorPalette.Color color="bg-yellow-200" />
+    <ColorPalette.Color color="bg-yellow-300" />
+    <ColorPalette.Color color="bg-yellow-400" />
+    <ColorPalette.Color color="bg-yellow-500" />
+    <ColorPalette.Color color="bg-yellow-600" />
+    <ColorPalette.Color color="bg-yellow-700" />
+    <ColorPalette.Color color="bg-yellow-800" />
+</ColorPalette>
+
+<ColorPalette title="Dark Yellow">
+    <ColorPalette.Color color="bg-dark-yellow-50" />
+    <ColorPalette.Color color="bg-dark-yellow-100" />
+    <ColorPalette.Color color="bg-dark-yellow-200" />
+    <ColorPalette.Color color="bg-dark-yellow-300" />
+    <ColorPalette.Color color="bg-dark-yellow-400" />
+    <ColorPalette.Color color="bg-dark-yellow-500" />
+    <ColorPalette.Color color="bg-dark-yellow-600" />
+    <ColorPalette.Color color="bg-dark-yellow-700" />
+    <ColorPalette.Color color="bg-dark-yellow-800" />
+</ColorPalette>
+
+<ColorPalette title="Orange">
+    <ColorPalette.Color color="bg-orange-50" />
+    <ColorPalette.Color color="bg-orange-100" />
+    <ColorPalette.Color color="bg-orange-200" />
+    <ColorPalette.Color color="bg-orange-300" />
+    <ColorPalette.Color color="bg-orange-400" />
+    <ColorPalette.Color color="bg-orange-500" />
+</ColorPalette>
+
+<ColorPalette title="Red">
+    <ColorPalette.Color color="bg-red-50" />
+    <ColorPalette.Color color="bg-red-100" />
+    <ColorPalette.Color color="bg-red-200" />
+    <ColorPalette.Color color="bg-red-300" />
+    <ColorPalette.Color color="bg-red-400" />
+    <ColorPalette.Color color="bg-red-500" />
+</ColorPalette>
+
+<ColorPalette title="Ruby">
+    <ColorPalette.Color color="bg-ruby-50" />
+    <ColorPalette.Color color="bg-ruby-100" />
+    <ColorPalette.Color color="bg-ruby-200" />
+    <ColorPalette.Color color="bg-ruby-300" />
+    <ColorPalette.Color color="bg-ruby-400" />
+    <ColorPalette.Color color="bg-ruby-500" />
+</ColorPalette>
+
+<ColorPalette title="Violet">
+    <ColorPalette.Color color="bg-violet-50" />
+    <ColorPalette.Color color="bg-violet-100" />
+    <ColorPalette.Color color="bg-violet-200" />
+    <ColorPalette.Color color="bg-violet-300" />
+    <ColorPalette.Color color="bg-violet-400" />
+    <ColorPalette.Color color="bg-violet-500" />
+</ColorPalette>
+
+<ColorPalette title="Pink">
+    <ColorPalette.Color color="bg-pink-50" />
+    <ColorPalette.Color color="bg-pink-100" />
+    <ColorPalette.Color color="bg-pink-200" />
+    <ColorPalette.Color color="bg-pink-300" />
+    <ColorPalette.Color color="bg-pink-400" />
+    <ColorPalette.Color color="bg-pink-500" />
+    <ColorPalette.Color color="bg-pink-600" />
+    <ColorPalette.Color color="bg-pink-700" />
+</ColorPalette>
+
+<ColorPalette title="Purple">
+    <ColorPalette.Color color="bg-purple-50" />
+    <ColorPalette.Color color="bg-purple-100" />
+    <ColorPalette.Color color="bg-purple-200" />
+    <ColorPalette.Color color="bg-purple-300" />
+    <ColorPalette.Color color="bg-purple-400" />
+    <ColorPalette.Color color="bg-purple-500" />
+</ColorPalette>
+
+<ColorPalette title="Brown">
+    <ColorPalette.Color color="bg-brown-50" />
+    <ColorPalette.Color color="bg-brown-100" />
+    <ColorPalette.Color color="bg-brown-200" />
+    <ColorPalette.Color color="bg-brown-300" />
+    <ColorPalette.Color color="bg-brown-400" />
+    <ColorPalette.Color color="bg-brown-500" />
+</ColorPalette>
+
+<ColorPalette title="Dark Brown">
+    <ColorPalette.Color color="bg-dark-brown-50" />
+    <ColorPalette.Color color="bg-dark-brown-100" />
+    <ColorPalette.Color color="bg-dark-brown-200" />
+    <ColorPalette.Color color="bg-dark-brown-300" />
+    <ColorPalette.Color color="bg-dark-brown-400" />
+    <ColorPalette.Color color="bg-dark-brown-500" />
 </ColorPalette>

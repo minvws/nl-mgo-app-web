@@ -6,9 +6,11 @@ on:
       - main
     paths:
       - 'packages/config/**'
+      - '.github/workflows/package-config.yml'
   pull_request:
     paths:
       - 'packages/config/**'
+      - '.github/workflows/package-config.yml'
 
 jobs:
   build:
@@ -17,19 +19,21 @@ jobs:
     steps:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Build
         run: pnpm exec nx run @minvws/mgo-config:build
+      - name: Set current date as env variable
+        run: echo "CREATED=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       - name: Set filename
         run: echo "FILENAME=nl-mgo-config_${RELEASE_VERSION//\//-}_${CREATED//:/-}" >> $GITHUB_ENV
       - name: Add version.json
         shell: bash
-        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\"}" > packages/config/dist/version.json'
+        run: 'echo "{ \"version\": \"${{ env.RELEASE_VERSION }}\", \"git_ref\": \"$GITHUB_SHA\", \"created\": \"$CREATED\"}" > packages/config/build/version.json'
       - name: Create release tar
-        run: tar -C packages/config/dist -czf ${{ env.FILENAME }}.tar.gz .
+        run: tar -C packages/config/build -czf ${{ env.FILENAME }}.tar.gz .
       - name: Upload release tar
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ env.FILENAME }}
           path: ${{ env.FILENAME }}.tar.gz

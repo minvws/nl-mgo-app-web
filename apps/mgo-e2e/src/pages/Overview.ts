@@ -1,6 +1,6 @@
-import { type HealthCategory } from '@minvws/mgo';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { type Page } from '@playwright/test';
+import { HealthCategoryType } from '../constants';
 import { AbstractPage } from './AbstractPage';
 
 export class OverviewPage extends AbstractPage {
@@ -20,7 +20,9 @@ export class OverviewPage extends AbstractPage {
         name: appMessage('common.add_organizations'),
     });
 
-    buttonHealthCategory(category: HealthCategory) {
-        return this.page.getByRole('link', { name: appMessage(`hc_${category}.heading`) });
+    buttonHealthCategory(category: HealthCategoryType) {
+        return this.page.getByRole('link').filter({
+            has: this.page.getByRole('heading', { name: appMessage(`hc_${category}.heading`) }),
+        });
     }
 }

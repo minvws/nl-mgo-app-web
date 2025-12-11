@@ -1,8 +1,24 @@
-@import '@minvws/mgo-tailwind/fonts.css';
+/* TailwindCSS */
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+@import '../tailwind/theme.css';
+
+@source '../src';
+@source '../docs';
+
+@custom-variant dark {
+    @media (prefers-color-scheme: dark) {
+        & {
+            @slot;
+        }
+    }
+
+    &:where(.dark, .dark *) {
+        @slot;
+    }
+}
+
+/* Storybook */
 
 @media (prefers-color-scheme: dark) {
     .docs-story,
@@ -16,6 +32,44 @@
     body {
         background: #fafafa;
     }
+}
+
+#storybook-docs {
+    overflow-x: hidden;
+}
+
+.sbdocs {
+    position: relative;
+}
+
+.sbdocs > * {
+    position: relative;
+    z-index: 1;
+}
+
+.sb-opacity-background {
+    position: absolute !important;
+    z-index: 0 !important;
+    top: -4rem;
+    left: -100%;
+    right: -100%;
+    bottom: -4rem;
+    opacity: 0.8;
+    background-color: #ffffff;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            #e0e0e0 25%,
+            transparent 25%,
+            transparent 75%,
+            #e0e0e0 75%,
+            #e0e0e0
+        ),
+        repeating-linear-gradient(45deg, #e0e0e0 25%, #fff 25%, #fff 75%, #e0e0e0 75%, #e0e0e0);
+    background-position:
+        0 0,
+        10px 10px;
+    background-size: 20px 20px;
 }
 
 html,

@@ -6,7 +6,9 @@
                 {
                     "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Bron monster",
@@ -17,12 +19,14 @@
                 {
                     "label": "Monster",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Monstermateriaal",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Blood (substance) (87612001 in codesysteem http://snomed.info/sct)",
                             "code": "87612001",
@@ -33,14 +37,18 @@
                 {
                     "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b3b213b-8fdf-11ec-5198-020000000000"
+                    "value": [
+                        {
+                            "display": "1b3b213b-8fdf-11ec-5198-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -50,27 +58,37 @@
                 {
                     "label": "Afname datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "23 mei 2012 om 09:08:00 GMT+2"
+                    "value": {
+                        "display": "23 mei 2012 om 09:08:00 GMT+2"
+                    }
                 },
                 {
                     "label": "Afnameprocedure",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Morfologie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verzamelvolume",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zijde",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -80,7 +98,7 @@
                 {
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Specimen substance (370133003 in codesysteem http://snomed.info/sct)",
                             "code": "370133003",
@@ -91,7 +109,9 @@
                 {
                     "label": "Monstervolgnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

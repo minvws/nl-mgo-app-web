@@ -1,7 +1,7 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { useNavigate } from '$/routing';
 import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
-import { useOrganizationsStore } from '$/store';
+import { useStore } from '$/store';
 import { Button, HealthcareOrganizationCard, Stack, cn } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 
@@ -15,8 +15,8 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
     const [showResultsLength, setShowResultsLength] = useState(RESULTS_PER_PAGE);
     const { formatMessage } = useIntl();
     const navigate = useNavigate();
-    const addOrganization = useOrganizationsStore((x) => x.addOrganization);
-    const hasOrganizationById = useOrganizationsStore((x) => x.hasOrganizationById);
+    const hasOrganizationById = useStore.use.hasOrganizationById();
+    const addOrganization = useStore.use.addOrganization();
 
     const results = searchResults.map((searchResult) => {
         return {
@@ -52,7 +52,7 @@ export const SearchResults = ({ searchResults, className, ...rest }: SearchResul
                                         }
                                         title={name}
                                         meta={address}
-                                        icon="chevron-right"
+                                        icon="chevron_right"
                                         iconAriaLabel={formatMessage(
                                             'add_organization.voice_over_to_overview'
                                         )}

@@ -5,6 +5,8 @@
     "type": "module",
     "exports": {
         ".": "./src/index.ts",
+        "./tailwind-theme": "./tailwind/theme.css",
+        "./tailwind-source": "./tailwind/source.css",
         "./*": "./src/*"
     },
     "scripts": {
@@ -12,9 +14,8 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@material-symbols/svg-400": "^0.19.0",
-        "@material-symbols/svg-700": "^0.19.0",
-        "@minvws/mgo-tailwind": "workspace:^",
+        "@material-symbols/svg-400": "^0.35.2",
+        "@material-symbols/svg-700": "^0.35.2",
         "@minvws/mgo-utils": "workspace:^",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-slot": "^1.0.2",
@@ -22,12 +23,10 @@
         "autoprefixer": "^10.4.19",
         "clsx": "^2.1.1",
         "lodash": "^4.17.21",
-        "postcss": "^8.4.38",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-transition-group": "^4.4.5",
-        "tailwind-merge": "^2.3.0",
-        "tailwindcss": "^3.4.17",
+        "tailwind-merge": "^3.4.0",
         "typescript": "^5.4.5",
         "vite-plugin-svgr": "^4.5.0"
     },
@@ -43,6 +42,7 @@
         "@storybook/react": "^8.6.11",
         "@storybook/react-vite": "^8.6.11",
         "@storybook/test": "^8.6.11",
+        "@tailwindcss/vite": "^4.1.14",
         "@testing-library/react": "^16.2.0",
         "@testing-library/user-event": "^14.6.1",
         "@types/lodash": "^4.17.4",
@@ -55,6 +55,8 @@
         "storybook": "^8.6.11",
         "storybook-addon-css-user-preferences": "^0.0.3",
         "storybook-addon-render-modes": "^0.0.11",
+        "tailwindcss": "^4.1.14",
+        "type-fest": "^5.2.0",
         "vite": "^6.3.6",
         "vitest": "^3.2.4",
         "vitest-dom": "^0.1.1"

@@ -1,0 +1,50 @@
+{
+    "id": "zib-treatmentobjective-01",
+    "referenceId": "Goal/zib-treatmentobjective-01",
+    "resourceType": "Goal",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentObjective",
+    "fhirVersion": "R3",
+    "identifier": null,
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "I. Jongeneel-de Haas"
+    },
+    "expressedBy": null,
+    "description": {
+        "_type": "codeableConcept",
+        "text": "Target is to be able to wash independently, with a slight impairment.",
+        "coding": []
+    },
+    "target": {
+        "measure": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "d510",
+                    "display": "Zich wassen",
+                    "system": "http://hl7.org/fhir/sid/icf-nl"
+                }
+            ]
+        },
+        "detailCodeableConcept": {
+            "_type": "codeableConcept",
+            "text": null,
+            "coding": [
+                {
+                    "code": "d510.3",
+                    "display": "MATIGE beperking/participatieprobleem (tamelijk) 25-49%",
+                    "system": "http://hl7.org/fhir/sid/icf-nl"
+                }
+            ]
+        }
+    },
+    "addresses": [
+        {
+            "_type": "reference",
+            "reference": "Condition/zib-problem-02",
+            "display": "Arthropathy (disorder)"
+        }
+    ]
+}

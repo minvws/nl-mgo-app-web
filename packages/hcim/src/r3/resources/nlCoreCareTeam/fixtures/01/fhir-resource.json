@@ -1,0 +1,108 @@
+{
+    "resourceType": "CareTeam",
+    "id": "nl-core-careteam-01",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-careteam"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "http://example.nl/careteamid",
+            "value": "15689532"
+        },
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "15e6f5b1-8fdf-11ec-2036-020000000000"
+        }
+    ],
+    "status": "active",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/care-team-category",
+                    "code": "episode",
+                    "display": "Episode"
+                }
+            ]
+        }
+    ],
+    "context": {
+        "reference": "EpisodeOfCare/nl-core-episodeofcare-02",
+        "display": "Drug and alcohol rehabilitation"
+    },
+    "period": {
+        "start": "2013-02-01T08:53:00+01:00"
+    },
+    "participant": [
+        {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "REF",
+                        "display": "Verwijzer"
+                    }
+                ]
+            },
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-02",
+                            "display": "Vaste Huisarts 1 - Maatschap Vaste Huisarts"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-02",
+                "display": "Vaste Huisarts 1"
+            },
+            "period": {
+                "start": "2013-02-01T08:53:00+01:00",
+                "end": "2015-02-01T08:53:00+01:00"
+            }
+        },
+        {
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/v3/ParticipationType",
+                        "code": "RESP",
+                        "display": "Hoofdbehandelaar"
+                    }
+                ]
+            },
+            "member": {
+                "extension": [
+                    {
+                        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+                        "valueReference": {
+                            "reference": "PractitionerRole/nl-core-practitionerrole-04",
+                            "display": "Medisch specialisten, geriatrie"
+                        }
+                    }
+                ],
+                "reference": "Practitioner/nl-core-practitioner-04",
+                "display": "Dirk de Vries"
+            },
+            "period": {
+                "start": "2013-02-01T08:53:00+01:00"
+            }
+        }
+    ],
+    "reasonReference": [
+        {
+            "reference": "Condition/zib-problem-08",
+            "display": "Syndroom van Korsakov"
+        }
+    ],
+    "managingOrganization": [
+        {
+            "reference": "Organization/nl-core-organization-01",
+            "display": "Maatschap Vaste Huisarts"
+        }
+    ]
+}

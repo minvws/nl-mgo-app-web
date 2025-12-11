@@ -12,7 +12,9 @@
                 {
                     "label": "Gebruik indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "y"
+                    "value": {
+                        "display": "y"
+                    }
                 },
                 {
                     "label": "Gebruiksproduct",
@@ -23,14 +25,20 @@
                 {
                     "label": "Herhaalperiode cyclisch schema",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "#MB_01i1#GE_01",
-                        "1bfa2275-8fdf-11ec-2032-020000000000"
+                    "value": [
+                        {
+                            "display": "#MB_01i1#GE_01"
+                        },
+                        {
+                            "display": "1bfa2275-8fdf-11ec-2032-020000000000"
+                        }
                     ]
                 },
                 {
@@ -42,12 +50,16 @@
                 {
                     "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
-                    "display": "#MB_01i1"
+                    "value": {
+                        "display": "#MB_01i1"
+                    }
                 },
                 {
                     "label": "Medicatie gebruik stop type",
                     "type": "SINGLE_VALUE",
-                    "display": "completed"
+                    "value": {
+                        "display": "completed"
+                    }
                 },
                 {
                     "label": "Onderwerp",
@@ -58,7 +70,7 @@
                 {
                     "label": "Reden gebruik",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Nursing Procedure (9632001 in codesysteem http://snomed.info/sct)",
@@ -71,7 +83,7 @@
                 {
                     "label": "Reden wijzigen of stoppen gebruik",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Drug interaction (finding) (79899007 in codesysteem http://snomed.info/sct)",
                             "code": "79899007",
@@ -82,19 +94,25 @@
                 {
                     "label": "Registratiedatum",
                     "type": "SINGLE_VALUE",
-                    "display": "21 juli 2020"
+                    "value": {
+                        "display": "21 juli 2020"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "het monster toont afwijkingen"
+                    "value": [
+                        {
+                            "display": "het monster toont afwijkingen"
+                        }
                     ]
                 },
                 {
                     "label": "Volgens afspraak indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Voorschrijver",
@@ -110,17 +128,23 @@
                 {
                     "label": "Einddatum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Ingangsdatum",
                     "type": "SINGLE_VALUE",
-                    "display": "21 juli 2020"
+                    "value": {
+                        "display": "21 juli 2020"
+                    }
                 },
                 {
                     "label": "Tijdsduur",
                     "type": "SINGLE_VALUE",
-                    "display": "30 dagen"
+                    "value": {
+                        "display": "30 dagen"
+                    }
                 }
             ]
         },
@@ -130,62 +154,84 @@
                 {
                     "label": "Aanvullende instructie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "2 stuks"
+                    "value": {
+                        "display": "2 stuks"
+                    }
                 },
                 {
                     "label": "Dagdeel",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
-                    "display": "d"
+                    "value": {
+                        "display": "d"
+                    }
                 },
                 {
                     "label": "Maximum waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "4"
+                    "value": {
+                        "display": "4"
+                    }
                 },
                 {
                     "label": "Noemer",
                     "type": "SINGLE_VALUE",
-                    "display": "één dag"
+                    "value": {
+                        "display": "één dag"
+                    }
                 },
                 {
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
-                    "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+                    "value": {
+                        "display": "Vanaf 21 jul 2020, gedurende 30 dagen, zo nodig maal per dag 1 à 2 stuks , maximaal 6 stuks per dag, ORAAL"
+                    }
                 },
                 {
                     "label": "Ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "1 stuk"
+                    "value": {
+                        "display": "1 stuk"
+                    }
                 },
                 {
                     "label": "Teller",
                     "type": "SINGLE_VALUE",
-                    "display": "6 stuks"
+                    "value": {
+                        "display": "6 stuks"
+                    }
                 },
                 {
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "ORAAL (9 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.9)",
                             "code": "9",
@@ -196,32 +242,42 @@
                 {
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toedientijd",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "1"
+                    "value": {
+                        "display": "1"
+                    }
                 },
                 {
                     "label": "Weekdagen",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zo nodig",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "zo nodig (1137 in codesysteem https://referentiemodel.nhg.org/tabellen/nhg-tabel-25-gebruiksvoorschrift#aanvullend-numeriek)",
                             "code": "1137",

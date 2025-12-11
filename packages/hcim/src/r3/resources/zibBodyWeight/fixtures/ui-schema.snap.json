@@ -6,31 +6,39 @@
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Vaste Huisarts 1"
+                    "value": [
+                        {
+                            "display": "Vaste Huisarts 1"
+                        }
                     ]
                 },
                 {
                     "label": "Gewicht datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "3 februari 2013"
+                    "value": {
+                        "display": "3 februari 2013"
+                    }
                 },
                 {
                     "label": "Gewicht waarde",
                     "type": "SINGLE_VALUE",
-                    "display": "72 kg"
+                    "value": {
+                        "display": "72 kg"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "194206c9-8fdf-11ec-1006-020000000000"
+                    "value": [
+                        {
+                            "display": "194206c9-8fdf-11ec-1006-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Kleding",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Minimal dressed (MINIMAL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.8.1)",
                             "code": "MINIMAL",
@@ -47,12 +55,16 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

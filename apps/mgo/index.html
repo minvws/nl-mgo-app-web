@@ -9,80 +9,105 @@
         <title>Mijn Gezondheidsoverzicht</title>
     </head>
 
-    <body class="bg-[#FAFAFA] dark:bg-[#050505] dark:text-white">
+    <body class="bg-t-bg-primary text-t-label-primary">
         <div id="root">
-            <div class="flex min-h-screen flex-col px-4 md:px-8">
-                <img
-                    src="/rijkshuisstijl/logo.svg"
-                    alt="Logo Rijksoverheid"
-                    class="mx-auto block h-[75px] sm:h-[100px]"
-                />
-                <main class="flex-grow">
-                    <noscript>
-                        <div
-                            class="mx-auto box-content w-[calc(100%-2rem)] max-w-md px-[1rem] pt-12 md:w-[calc(100%-3rem)] md:px-[1.5rem] md:pt-24"
-                        >
-                            <picture class="mx-auto flex w-3/4 md:mb-2 md:w-3/5">
-                                <source
-                                    srcset="/images/woman-on-couch-exclamation-dark.svg"
-                                    media="(prefers-color-scheme: dark)"
-                                />
-                                <img
-                                    src="/images/woman-on-couch-exclamation.svg"
-                                    class="w-full max-w-full object-contain"
-                                    alt=""
-                                />
-                            </picture>
-                            <h1
-                                class="mt-5 font-sans text-2xl font-bold leading-tight text-black md:mt-16 md:text-3xl lg:text-4xl dark:text-white"
-                            >
-                                Mijn Gezond&shy;heids&shy;overzicht gebruikt JavaScript
-                            </h1>
-                            <p
-                                class="md:text-md mt-4 font-sans text-sm font-normal text-black md:mt-6 dark:text-white"
-                            >
-                                Het lijkt erop dat JavaScript in je browser is uitschakeld. Schakel
-                                JavaScript in via de instellingen van je browser. Probeer het daarna
-                                opnieuw.
-                            </p>
-                        </div>
-                    </noscript>
-                    <div
-                        id="js-loading-screen"
-                        class="mb-16 mt-4 hidden content-end text-center lg:mb-32"
+            <div class="flex items-center justify-center">
+                <div
+                    class="relative left-[51px] sm:left-[97px] sm:pb-[9px] md:left-[107px] md:pb-[24px]"
+                >
+                    <figure
+                        class="text-t-cat-rijkslint inline-flex items-end font-sans font-bold antialiased"
                     >
-                        <h1 class="text-center text-4xl font-bold">
-                            Mijn Gezond&shy;heids&shy;overzicht
-                        </h1>
-                        <svg
-                            role="img"
-                            aria-labelledby="loading-label"
-                            class="mx-auto mb-4"
-                            viewBox="0 0 8 8"
-                            width="2rem"
-                            height="2rem"
-                            fill="none"
-                            stroke-width="1"
+                        <picture class="mr-[10px] md:mr-[11px]">
+                            <source
+                                srcset="/rijkshuisstijl/ribbon-dark.svg"
+                                media="(prefers-color-scheme: dark)"
+                            />
+
+                            <img
+                                src="/rijkshuisstijl/ribbon.svg"
+                                class="h-[80px] w-auto sm:h-[90px] md:h-[100px]"
+                                alt="Logo Rijksoverheid"
+                            />
+                        </picture>
+                        <figcaption
+                            class="relative top-[2px] text-[12px] leading-[1.15] sm:-top-[13px] sm:text-[13px] sm:leading-[1.16] sm:tracking-[.12px] md:text-[15px] md:-tracking-[.15px]"
                         >
-                            <circle
-                                class="stroke-gray-100 dark:stroke-gray-800"
-                                cx="4"
-                                cy="4"
-                                r="3.5"
-                            />
-                            <circle
-                                class="loading-spinner-fg stroke-sky-blue-600"
-                                cx="4"
-                                cy="4"
-                                r="3.5"
-                                transform="rotate(-90 4 4)"
-                            />
-                        </svg>
-                        <p id="loading-label" class="text-xl">Aan het laden</p>
-                    </div>
-                </main>
+                            Ministerie van <br class="block sm:hidden" />Volksgezondheid,
+                            <br />Welzijn en Sport
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
+
+            <main class="grow">
+                <noscript>
+                    <div
+                        class="mx-auto box-content w-[calc(100%-2rem)] max-w-md px-[1rem] pt-12 md:w-[calc(100%-3rem)] md:px-[1.5rem] md:pt-24"
+                    >
+                        <picture class="mx-auto flex w-3/4 md:mb-2 md:w-3/5">
+                            <source
+                                srcset="/images/woman-on-couch-exclamation-dark.svg"
+                                media="(prefers-color-scheme: dark)"
+                            />
+                            <img
+                                src="/images/woman-on-couch-exclamation.svg"
+                                class="w-full max-w-full object-contain"
+                                alt=""
+                            />
+                        </picture>
+                        <h1
+                            class="text-t-label-primary mt-5 font-sans text-3xl leading-none font-bold md:mt-16 md:text-4xl lg:text-5xl"
+                        >
+                            Mijn Gezond&shy;heids&shy;overzicht gebruikt JavaScript
+                        </h1>
+                        <p
+                            class="text-t-label-primary leading-snug-lg mt-4 font-sans text-lg font-normal md:mt-6 md:leading-normal lg:text-xl"
+                        >
+                            Het lijkt erop dat JavaScript in je browser is uitschakeld. Schakel
+                            JavaScript in via de instellingen van je browser. Probeer het daarna
+                            opnieuw.
+                        </p>
+                    </div>
+                </noscript>
+                <div
+                    id="js-loading-screen"
+                    class="mt-8 mb-16 hidden content-end text-center lg:mb-32"
+                >
+                    <h1
+                        class="text-t-label-primary mb-4 text-center font-sans text-3xl leading-none font-bold md:text-4xl lg:text-5xl"
+                    >
+                        Mijn Gezond&shy;heids&shy;overzicht
+                    </h1>
+                    <svg
+                        role="img"
+                        aria-labelledby="loading-label"
+                        class="mx-auto mb-4"
+                        viewBox="0 0 8 8"
+                        width="2rem"
+                        height="2rem"
+                        fill="none"
+                        stroke-width="1"
+                    >
+                        <circle class="stroke-gray-50 dark:stroke-gray-700" cx="4" cy="4" r="3.5" />
+                        <circle
+                            class="loading-spinner-fg stroke-t-cat-rijkslint"
+                            cx="4"
+                            cy="4"
+                            r="3.5"
+                            transform="rotate(-90 4 4)"
+                        />
+                    </svg>
+                    <p
+                        id="loading-label"
+                        class="text-t-label-primary leading-snug-lg font-sans text-lg font-normal md:leading-normal lg:text-xl"
+                    >
+                        Aan het laden
+                    </p>
+                </div>
+            </main>
         </div>
+
         <script src="/config.js"></script>
         <script src="/loading-spinner/loading-spinner.js"></script>
         <script type="module" src="/src/main.tsx"></script>

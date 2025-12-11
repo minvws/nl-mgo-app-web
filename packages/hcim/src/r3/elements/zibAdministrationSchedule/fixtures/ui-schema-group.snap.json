@@ -4,54 +4,76 @@
         {
             "label": "Begin datum",
             "type": "SINGLE_VALUE",
-            "display": "6 februari 2019"
+            "value": {
+                "display": "6 februari 2019"
+            }
         },
         {
             "label": "Eind datum",
             "type": "SINGLE_VALUE",
-            "display": "9 februari 2019"
+            "value": {
+                "display": "9 februari 2019"
+            }
         },
         {
             "label": "Toedieninsgduur",
-            "display": "30 d",
+            "value": {
+                "display": "30 d"
+            },
             "type": "SINGLE_VALUE"
         },
         {
             "label": "Frequentie",
             "type": "SINGLE_VALUE",
-            "display": "2"
+            "value": {
+                "display": "2"
+            }
         },
         {
             "label": "Maximum waarde",
             "type": "SINGLE_VALUE",
-            "display": "20"
+            "value": {
+                "display": "20"
+            }
         },
         {
             "label": "Interval",
-            "display": "1 d",
+            "value": {
+                "display": "1 d"
+            },
             "type": "SINGLE_VALUE"
         },
         {
             "label": "Weekdagen",
             "type": "MULTIPLE_VALUES",
-            "display": [
-                "mon",
-                "tue"
+            "value": [
+                {
+                    "display": "mon"
+                },
+                {
+                    "display": "tue"
+                }
             ]
         },
         {
             "label": "Toedientijd",
             "type": "MULTIPLE_VALUES",
-            "display": [
-                "08:00:00",
-                "18:00:00"
+            "value": [
+                {
+                    "display": "08:00:00"
+                },
+                {
+                    "display": "18:00:00"
+                }
             ]
         },
         {
             "label": "Dagdeel",
             "type": "MULTIPLE_VALUES",
-            "display": [
-                "73775008"
+            "value": [
+                {
+                    "display": "73775008"
+                }
             ]
         }
     ]

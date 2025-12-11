@@ -3,6 +3,7 @@ import { type MgoDateTime } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { date as formatDateTime } from '../../format/date/date.js';
+import { MultipleValues, SingleValue } from '../../types/schema.js';
 import { dateTime } from './dateTime.js';
 
 test('dateTime single', () => {
@@ -13,10 +14,10 @@ test('dateTime single', () => {
     const result = dateTime(uiHelperContext)(label, value);
     const formatDate = formatDateTime(uiHelperContext);
 
-    expect(result).toEqual({
+    expect(result).toEqual<SingleValue>({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: formatDate(value.value),
+        value: { display: formatDate(value.value) },
     });
 });
 
@@ -28,9 +29,9 @@ test('dateTime multiple', () => {
     const result = dateTime(uiHelperContext)(label, value);
     const formatDate = formatDateTime(uiHelperContext);
 
-    expect(result).toEqual({
+    expect(result).toEqual<MultipleValues>({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: value.map((x) => formatDate(x.value)),
+        value: value.map((x) => ({ display: formatDate(x.value) })),
     });
 });

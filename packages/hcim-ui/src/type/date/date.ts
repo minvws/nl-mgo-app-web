@@ -8,6 +8,6 @@ export const date: WithUiContext<UiFunction<MgoDate, SingleValue>> =
         return {
             label: i18nContext.formatLabel(label, value, options.defaultLabel),
             type: 'SINGLE_VALUE',
-            display: formatDate(i18nContext)(value?.value),
+            value: { display: formatDate(i18nContext)(value?.value) },
         };
     };

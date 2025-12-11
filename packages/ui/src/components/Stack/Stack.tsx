@@ -1,14 +1,24 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { type CompositionProps, useComposition } from '../../hooks/useComposition/useComposition';
+import { useComposition } from '../../hooks/useComposition/useComposition';
+import { cn } from '../../utils';
 
-export interface StackProps extends HTMLAttributes<HTMLElement>, CompositionProps {}
+export type StackProps = HTMLAttributes<HTMLElement> &
+    (
+        | {
+              asChild: boolean;
+              as?: never;
+          }
+        | {
+              asChild?: never;
+              as?: 'span' | 'div' | 'nav' | 'ol' | 'ul';
+          }
+    );
 
 /**
  * A small utility component to stack elements with even spacing.
  * It also provides a dynamic element option (see `DynamicElement`) .
  */
-export const Stack = ({ asChild, className, ...rest }: StackProps) => {
-    const { Comp } = useComposition({ asChild, tag: 'div' });
-    return <Comp className={twMerge('flex flex-col gap-4', className)} {...rest} />;
+export const Stack = ({ asChild, as, className, ...rest }: StackProps) => {
+    const { Comp } = useComposition({ asChild, tag: as ?? 'div' });
+    return <Comp className={cn('flex flex-col gap-4', className)} {...rest} />;
 };

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
-import { Heading } from './Heading';
+import { Heading, HeadingBaseProps } from './Heading';
 import { sizes } from './sizes';
 
-type Story = StoryObj<typeof Heading>;
-type StoryMeta = Meta<typeof Heading>;
+type Story = StoryObj<HeadingBaseProps>;
+type StoryMeta = Meta<HeadingBaseProps>;
 
 export default {
     component: Heading,
@@ -18,18 +18,28 @@ export default {
 
 export const Default: Story = {};
 
-/** use the `asChild` to change the rendered html tag, it defaults to `<div>` */
-export const AsChildHeading: Story = {
+/** use the `as` property to change the level of the heading such as `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `span` or `div`. It defaults to `div` */
+export const AsHeading: Story = {
     args: {},
     render: ({ children, ...args }) => (
         <Stack className="gap-8">
-            <Heading {...args} size="lg" asChild>
-                <h1>{children}</h1>
+            <Heading {...args} size="lg" as="h3">
+                {children}
             </Heading>
-            <Heading {...args} size="md" asChild>
-                <h2>{children}</h2>
+            <Heading {...args} size="md" as="h5">
+                {children}
             </Heading>
         </Stack>
+    ),
+};
+
+/** use the `asChild` property to change the the tag to something completely different if needed. See [Composition](/docs/docs-composition--docs) for more information. */
+export const AsChildHeading: Story = {
+    args: {},
+    render: ({ children, ...args }) => (
+        <Heading {...args} size="lg" asChild>
+            <button>{children}</button>
+        </Heading>
     ),
 };
 

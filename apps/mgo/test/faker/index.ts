@@ -1,19 +1,17 @@
 import { faker as originalFaker, type Faker } from '@faker-js/faker';
+import { fhirFaker } from '@minvws/mgo-fhir/test/shared';
 import { authState } from './authState';
-import { dataServiceId } from './dataServiceId';
-import { healthCategory, healthCategorySlug } from './healthCategory';
 import { healthcareOrganization } from './healthcareOrganization';
+import { mgoResource } from './mgoResource';
 import { resource } from './resource';
 import { userInfo } from './userInfo';
 
 const custom = {
     healthcareOrganization,
-    dataServiceId,
     userInfo,
     authState,
-    healthCategory,
-    healthCategorySlug,
     resource,
+    mgoResource,
 };
 
 const faker: Faker = {
@@ -22,9 +20,11 @@ const faker: Faker = {
 
 type CustomizedFaker = typeof faker & {
     custom: typeof custom;
+    fhir: typeof fhirFaker;
 };
 
 const customizedFaker = faker as CustomizedFaker;
 customizedFaker.custom = custom;
+customizedFaker.fhir = fhirFaker;
 
 export { customizedFaker as faker };

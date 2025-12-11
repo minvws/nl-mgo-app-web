@@ -6,12 +6,14 @@
                 {
                     "label": "Bsn",
                     "type": "SINGLE_VALUE",
-                    "display": "111222333"
+                    "value": {
+                        "display": "111222333"
+                    }
                 },
                 {
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Divorced (D in codesysteem http://terminology.hl7.org/CodeSystem/v3-MaritalStatus)",
                             "code": "D",
@@ -22,12 +24,14 @@
                 {
                     "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
-                    "display": "28 april 1934"
+                    "value": {
+                        "display": "28 april 1934"
+                    }
                 },
                 {
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Female (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender)",
                             "code": "F",
@@ -38,12 +42,16 @@
                 {
                     "label": "Meerling indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Overlijdens indicator",
                     "type": "SINGLE_VALUE",
-                    "display": "Nee"
+                    "value": {
+                        "display": "Nee"
+                    }
                 }
             ]
         },
@@ -53,56 +61,72 @@
                 {
                     "label": "Achternaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Putten"
+                    "value": {
+                        "display": "Putten"
+                    }
                 },
                 {
                     "label": "Geboortenamen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Johanna",
-                        "Petronella",
-                        "Maria"
+                    "value": [
+                        {
+                            "display": "Johanna"
+                        },
+                        {
+                            "display": "Petronella"
+                        },
+                        {
+                            "display": "Maria"
+                        }
                     ]
                 },
                 {
                     "label": "Initialen",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": "van"
+                    "value": {
+                        "display": "van"
+                    }
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Tussenvoegsel",
                     "type": "SINGLE_VALUE",
-                    "display": "van der"
+                    "value": {
+                        "display": "van der"
+                    }
                 },
                 {
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+                    "value": {
+                        "display": "Johanna Petronella Maria (Jo) van Putten-van der Giessen"
+                    }
                 },
                 {
                     "label": "Voornaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "Giessen"
+                    "value": {
+                        "display": "Giessen"
+                    }
                 }
             ]
         },
@@ -112,19 +136,21 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Roepnaam",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Jo"
+                    "value": [
+                        {
+                            "display": "Jo"
+                        }
                     ]
                 },
                 {
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 }
             ]
         },
@@ -134,22 +160,26 @@
                 {
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
-                    "display": "giesput@myweb.nl"
+                    "value": {
+                        "display": "giesput@myweb.nl"
+                    }
                 },
                 {
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Mobile Phone (MC in codesysteem http://terminology.hl7.org/CodeSystem/v3-AddressUse)",
                             "code": "MC",
@@ -160,12 +190,14 @@
                 {
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "+31611234567"
+                    "value": {
+                        "display": "+31611234567"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 }
             ]
         },
@@ -175,47 +207,55 @@
                 {
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "both"
+                    "value": {
+                        "display": "both"
+                    }
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": "Kaag en Braassem"
+                    "value": {
+                        "display": "Kaag en Braassem"
+                    }
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "15"
+                    "value": {
+                        "display": "15"
+                    }
                 },
                 {
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Nederland (NL in codesysteem urn:iso:std:iso:3166)",
                             "code": "NL",
@@ -226,17 +266,23 @@
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "1012 NX"
+                    "value": {
+                        "display": "1012 NX"
+                    }
                 },
                 {
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
-                    "display": "1e Jacob van Campenstr"
+                    "value": {
+                        "display": "1e Jacob van Campenstr"
+                    }
                 },
                 {
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
-                    "display": "Hoogmade"
+                    "value": {
+                        "display": "Hoogmade"
+                    }
                 }
             ]
         },
@@ -246,7 +292,7 @@
                 {
                     "label": "Nationaliteit",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Nederlandse (0001 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.16.32)",
                             "code": "0001",
@@ -257,7 +303,7 @@
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 }
             ]
         },
@@ -267,7 +313,7 @@
                 {
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Nederlands (nl in codesysteem urn:oid:1.0.639.1)",
                             "code": "nl",
@@ -278,7 +324,7 @@
                 {
                     "label": "Leesvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": {
+                    "value": {
                         "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
                         "code": "G",
                         "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
@@ -287,7 +333,7 @@
                 {
                     "label": "Luistervaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": {
+                    "value": {
                         "display": "Good (G in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
                         "code": "G",
                         "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
@@ -296,7 +342,7 @@
                 {
                     "label": "Spreekvaardigheid",
                     "type": "SINGLE_VALUE",
-                    "display": {
+                    "value": {
                         "display": "Fair (F in codesysteem http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency)",
                         "code": "F",
                         "system": "http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"
@@ -305,8 +351,10 @@
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bij gesprek met arts zoon uitnodigen voor vertalen"
+                    "value": [
+                        {
+                            "display": "Bij gesprek met arts zoon uitnodigen voor vertalen"
+                        }
                     ]
                 }
             ]
@@ -317,76 +365,96 @@
                 {
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Achternaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Putten"
+                    "value": {
+                        "display": "Putten"
+                    }
                 },
                 {
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "both"
+                    "value": {
+                        "display": "both"
+                    }
                 },
                 {
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
-                    "display": "giesput@myweb.nl"
+                    "value": {
+                        "display": "giesput@myweb.nl"
+                    }
                 },
                 {
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Geboortenamen",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": "Kaag en Braassem"
+                    "value": {
+                        "display": "Kaag en Braassem"
+                    }
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "15"
+                    "value": {
+                        "display": "15"
+                    }
                 },
                 {
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Initialen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "J.",
-                        "P.",
-                        "M."
+                    "value": [
+                        {
+                            "display": "J."
+                        },
+                        {
+                            "display": "P."
+                        },
+                        {
+                            "display": "M."
+                        }
                     ]
                 },
                 {
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Nederland (6030 in codesysteem urn:oid:2.16.840.1.113883.2.4.4.16.34)",
                             "code": "6030",
@@ -397,37 +465,41 @@
                 {
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "1012 NX"
+                    "value": {
+                        "display": "1012 NX"
+                    }
                 },
                 {
                     "label": "Relatie",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Rol",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
-                    "display": "1e Jacob van Campenstr"
+                    "value": {
+                        "display": "1e Jacob van Campenstr"
+                    }
                 },
                 {
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Mobile Phone (MC in codesysteem http://terminology.hl7.org/CodeSystem/v3-AddressUse)",
                             "code": "MC",
@@ -438,47 +510,59 @@
                 {
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "+31611234567"
+                    "value": {
+                        "display": "+31611234567"
+                    }
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": "van"
+                    "value": {
+                        "display": "van"
+                    }
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": null
+                    "value": null
                 },
                 {
                     "label": "Tussenvoegsel",
                     "type": "SINGLE_VALUE",
-                    "display": "van der"
+                    "value": {
+                        "display": "van der"
+                    }
                 },
                 {
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
-                    "display": "J.P.M. van Putten-van der Giessen"
+                    "value": {
+                        "display": "J.P.M. van Putten-van der Giessen"
+                    }
                 },
                 {
                     "label": "Voornaam partner",
                     "type": "SINGLE_VALUE",
-                    "display": "Giessen"
+                    "value": {
+                        "display": "Giessen"
+                    }
                 },
                 {
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
-                    "display": "Hoogmade"
+                    "value": {
+                        "display": "Hoogmade"
+                    }
                 }
             ]
         }

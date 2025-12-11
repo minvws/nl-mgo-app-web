@@ -4,27 +4,16 @@ import { type HealthUiGroup, type HealthUiSchema, type UiElement } from '../../t
 import { setEmptyEntries } from './setEmptyEntries.js';
 
 test('sets empty entries, but does not mutate the schema', () => {
-    const entry1: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-    };
+    const entry1: UiElement = faker.ui.singleValue();
     const entry2: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: undefined,
+        ...faker.ui.singleValue(),
+        value: undefined,
     };
     const entry3: UiElement = {
-        type: 'REFERENCE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
+        ...faker.ui.referenceValue(),
         reference: undefined,
     };
-    const entry4: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-    };
+    const entry4: UiElement = faker.ui.singleValue();
 
     const uiSchema: HealthUiSchema = {
         label: faker.lorem.word(),
@@ -36,7 +25,7 @@ test('sets empty entries, but does not mutate the schema', () => {
         ],
     };
 
-    const expected = {
+    const expected: HealthUiSchema = {
         label: uiSchema.label,
         children: [
             {
@@ -46,13 +35,9 @@ test('sets empty entries, but does not mutate the schema', () => {
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
+                        value: { display: 'intl(fhir.empty_value)' },
                     },
-                    {
-                        label: entry3.label,
-                        type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
-                    },
+                    entry3,
                     entry4,
                 ],
             },
@@ -66,34 +51,27 @@ test('sets empty entries, but does not mutate the schema', () => {
 
 test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
     const entry1: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: undefined,
+        ...faker.ui.singleValue(),
+        value: undefined,
     };
     const entry2: UiElement = {
-        type: 'MULTIPLE_VALUES',
-        label: faker.lorem.word(),
-        display: [],
+        ...faker.ui.multipleValues(),
+        value: [],
     };
     const entry3: UiElement = {
-        type: 'MULTIPLE_GROUPED_VALUES',
-        label: faker.lorem.word(),
-        display: [[]],
+        ...faker.ui.multipleGroupedValues(),
+        value: [[]],
     };
     const entry4: UiElement = {
-        type: 'REFERENCE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
+        ...faker.ui.referenceValue(),
         reference: undefined,
     };
     const entry5: UiElement = {
-        type: 'DOWNLOAD_LINK',
-        label: faker.lorem.word(),
+        ...faker.ui.downloadLink(),
         url: undefined as unknown as string,
     };
     const entry6: UiElement = {
-        type: 'DOWNLOAD_BINARY',
-        label: faker.lorem.word(),
+        ...faker.ui.downloadBinary(),
         reference: undefined as unknown as string,
     };
 
@@ -107,7 +85,7 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
         ],
     };
 
-    const expected = {
+    const expected: HealthUiSchema = {
         label: uiSchema.label,
         children: [
             {
@@ -116,23 +94,19 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
                     {
                         label: entry1.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
+                        value: { display: 'intl(fhir.empty_value)' },
                     },
                     {
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
+                        value: { display: 'intl(fhir.empty_value)' },
                     },
                     {
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
+                        value: { display: 'intl(fhir.empty_value)' },
                     },
-                    {
-                        label: entry4.label,
-                        type: 'SINGLE_VALUE',
-                        display: 'intl(fhir.empty_value)',
-                    },
+                    entry4,
                     entry5,
                     entry6,
                 ],
@@ -145,15 +119,10 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
 });
 
 test('also works for a group', () => {
-    const entry1: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-    };
+    const entry1: UiElement = faker.ui.singleValue();
     const entry2: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: undefined,
+        ...faker.ui.singleValue(),
+        value: undefined,
     };
 
     const uiSchemaGroup: HealthUiGroup = {
@@ -161,14 +130,14 @@ test('also works for a group', () => {
         children: [entry1, entry2],
     };
 
-    const expected = {
+    const expected: HealthUiGroup = {
         label: uiSchemaGroup.label,
         children: [
             entry1,
             {
                 label: entry2.label,
                 type: 'SINGLE_VALUE',
-                display: 'intl(fhir.empty_value)',
+                value: { display: 'intl(fhir.empty_value)' },
             },
         ],
     };
@@ -178,15 +147,10 @@ test('also works for a group', () => {
 });
 
 test('also works for a multiple groups', () => {
-    const entry1: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: faker.lorem.word(),
-    };
+    const entry1: UiElement = faker.ui.singleValue();
     const entry2: UiElement = {
-        type: 'SINGLE_VALUE',
-        label: faker.lorem.word(),
-        display: undefined,
+        ...faker.ui.singleValue(),
+        value: undefined,
     };
 
     const uiSchemaGroup: HealthUiGroup[] = [
@@ -200,15 +164,15 @@ test('also works for a multiple groups', () => {
         },
     ];
 
-    const expected = [
+    const expected: HealthUiGroup[] = [
         {
-            label: uiSchemaGroup[0].label,
+            label: uiSchemaGroup[0].label!,
             children: [
                 entry1,
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(fhir.empty_value)',
+                    value: { display: 'intl(fhir.empty_value)' },
                 },
             ],
         },
@@ -218,7 +182,7 @@ test('also works for a multiple groups', () => {
                 {
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
-                    display: 'intl(fhir.empty_value)',
+                    value: { display: 'intl(fhir.empty_value)' },
                 },
             ],
         },

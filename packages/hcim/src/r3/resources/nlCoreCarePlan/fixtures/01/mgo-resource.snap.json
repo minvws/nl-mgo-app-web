@@ -1,0 +1,106 @@
+{
+    "id": "ont-ver-bglz-1-3-nl-core-careplan-01",
+    "referenceId": "CarePlan/ont-ver-bglz-1-3-nl-core-careplan-01",
+    "resourceType": "CarePlan",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-careplan",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "9ea67d3b-e3e1-11eb-1837-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-XXX-Mutter",
+        "display": "Fiona XXX_Mutter"
+    },
+    "period": null,
+    "goal": null,
+    "activity": [
+        {
+            "nursingIntervention": {
+                "outcomeReference": null,
+                "outcomeCodeableConcept": [
+                    {
+                        "_type": "codeableConcept",
+                        "text": "Decubituswond is verbeterd van categorie 2 naar 1.",
+                        "coding": []
+                    }
+                ],
+                "comment": null,
+                "reference": null,
+                "detail": {
+                    "medicalDevice": [
+                        {
+                            "_ext": true,
+                            "_type": "reference",
+                            "reference": "DeviceUseStatement/ont-ver-bglz-1-3-medischhulpmiddel-01",
+                            "display": "schuimverband - hiel, Links"
+                        },
+                        {
+                            "_ext": true,
+                            "_type": "reference",
+                            "reference": "DeviceUseStatement/ont-ver-bglz-1-3-medischhulpmiddel-02",
+                            "display": "huidvervangende wondbedekkers - hiel, Links"
+                        }
+                    ],
+                    "code": {
+                        "_type": "codeableConcept",
+                        "text": null,
+                        "coding": [
+                            {
+                                "code": "182531007",
+                                "display": "Aanleggen van verband op wond",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    },
+                    "reasonReference": [
+                        {
+                            "_type": "reference",
+                            "reference": "Condition/ont-ver-bglz-1-3-probleem-01",
+                            "display": "decubitus"
+                        }
+                    ],
+                    "goal": null,
+                    "scheduledTiming": {
+                        "_type": "timing",
+                        "code": null,
+                        "event": null,
+                        "repeat": {
+                            "count": null,
+                            "countMax": null,
+                            "duration": null,
+                            "durationMax": null,
+                            "durationUnit": null,
+                            "frequency": {
+                                "_type": "integer",
+                                "value": 1
+                            },
+                            "frequencyMax": null,
+                            "period": {
+                                "_type": "decimal",
+                                "value": 1
+                            },
+                            "periodMax": null,
+                            "periodUnit": {
+                                "_type": "string",
+                                "value": "d"
+                            },
+                            "dayOfWeek": null,
+                            "timeOfDay": null,
+                            "when": null,
+                            "offset": null
+                        }
+                    },
+                    "performer": null,
+                    "description": null
+                }
+            }
+        }
+    ]
+}

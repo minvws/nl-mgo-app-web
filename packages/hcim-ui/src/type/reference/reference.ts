@@ -1,5 +1,4 @@
 import { type MgoReference } from '@minvws/mgo-hcim-parse';
-import { isNonNullish } from '@minvws/mgo-utils';
 import {
     type MultipleValues,
     type ReferenceValue,
@@ -17,7 +16,7 @@ export const reference: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'MULTIPLE_VALUES',
-                display: value.map((x) => x.display).filter(isNonNullish),
+                value: value.map((x) => ({ display: x.display })),
             };
         }
 
@@ -25,7 +24,7 @@ export const reference: WithUiContext<
             return {
                 label: formatLabel(label, value, options.defaultLabel),
                 type: 'SINGLE_VALUE',
-                display: value?.display,
+                value: { display: value?.display },
             };
         }
 

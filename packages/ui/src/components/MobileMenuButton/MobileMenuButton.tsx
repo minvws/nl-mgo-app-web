@@ -1,37 +1,37 @@
-import { Slottable } from '@radix-ui/react-slot';
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
-import { useComposition } from '../../hooks';
-import { type CompositionPropsWithoutChildren } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 
-export type MobileMenuButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-    CompositionPropsWithoutChildren & {
-        readonly isOpen: boolean;
-        readonly openLabel: string;
-        readonly closeLabel: string;
-    };
+export type MobileMenuButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> & {
+    readonly isOpen: boolean;
+    readonly openLabel: string;
+    readonly closeLabel: string;
+};
 
 export const MobileMenuButton = forwardRef<HTMLButtonElement, MobileMenuButtonProps>(
-    function MobileMenuButton({ asChild, isOpen, openLabel, closeLabel, children, ...rest }, ref) {
-        const { Comp } = useComposition({ asChild, tag: 'button' });
-
+    function MobileMenuButton({ isOpen, openLabel, closeLabel, ...rest }, ref) {
         return (
-            <Comp
-                ref={ref}
+            <Text
+                size="md"
+                asChild
                 className={cn(
-                    'flex border p-2 text-sm font-bold leading-none',
-                    'border-sky-blue-600 dark:border-light-blue-500 text-sky-blue-600 dark:text-light-blue-500',
-                    'hover:bg-sky-blue-600 dark:hover:bg-light-blue-500 hover:text-white dark:hover:text-[#252525]',
+                    'cursor-pointer',
+                    `relative inline-flex items-center justify-center`,
+                    'rounded-sm p-2 font-bold',
+                    'transition-colors duration-200',
+                    'text-t-action-ghost-default-text hover:text-t-action-ghost-hover-text active:text-t-action-ghost-active-text',
+                    'border-t-action-ghost-default-text hover:border-t-action-ghost-hover-text active:border-t-action-ghost-active-text border',
+                    'hover:bg-t-action-ghost-hover-bg',
                     focusStyle
                 )}
-                {...rest}
             >
-                <Slottable>{children}</Slottable>
-                <Icon icon={isOpen ? 'close' : 'menu'} className="mr-2" />
-                {isOpen ? closeLabel : openLabel}
-            </Comp>
+                <button ref={ref} {...rest}>
+                    <Icon icon={isOpen ? 'close' : 'menu'} className="me-2" />
+                    {isOpen ? closeLabel : openLabel}
+                </button>
+            </Text>
         );
     }
 );

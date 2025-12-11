@@ -1,5 +1,17 @@
 import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { extendTailwindMerge } from 'tailwind-merge';
+
+/**
+ * Fixes the accidental removal of `leading-*` classes.
+ * @see: https://github.com/dcastil/tailwind-merge/issues/573
+ */
+const twMerge = extendTailwindMerge({
+    override: {
+        conflictingClassGroups: {
+            'font-size': [],
+        },
+    },
+});
 
 /**
  * Combines the functionality of `clsx` and `twMerge`

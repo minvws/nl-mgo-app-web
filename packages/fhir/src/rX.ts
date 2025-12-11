@@ -3,6 +3,7 @@ import type {
     Annotation as AnnotationR3,
     Attachment as AttachmentR3,
     BackboneElement as BackboneElementR3,
+    Binary as BinaryR3,
     CodeableConcept as CodeableConceptR3,
     Coding as CodingR3,
     ContactPoint as ContactPointR3,
@@ -29,6 +30,7 @@ import type {
     Annotation as AnnotationR4,
     Attachment as AttachmentR4,
     BackboneElement as BackboneElementR4,
+    Binary as BinaryR4,
     CodeableConcept as CodeableConceptR4,
     Coding as CodingR4,
     ContactPoint as ContactPointR4,
@@ -68,6 +70,7 @@ export type BackboneElement = BackboneElementR3 | BackboneElementR4;
 export type Reference = ReferenceR3 | ReferenceR4;
 export type Attachment = AttachmentR3 | AttachmentR4;
 export type Timing = TimingR3 | TimingR4;
+export type Binary = BinaryR3 | BinaryR4;
 
 export type ObservationComponent = ObservationComponentR3 | ObservationComponentR4;
 export type DomainResource = DomainResourceR3 | DomainResourceR4;

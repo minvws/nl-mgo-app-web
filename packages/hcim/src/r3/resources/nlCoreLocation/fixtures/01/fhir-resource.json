@@ -1,0 +1,107 @@
+{
+    "resourceType": "Location",
+    "id": "nl-core-location-01",
+    "meta": {
+        "profile": ["http://fhir.nl/fhir/StructureDefinition/nl-core-location"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "161386e9-8fdf-11ec-1219-020000000000"
+        }
+    ],
+    "name": "Orthopodie afdeling ACME in Den Haag",
+    "telecom": [
+        {
+            "system": "email",
+            "value": "info@nictiz.nl",
+            "use": "work"
+        },
+        {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/zib-ContactInformation-TelecomType",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                "code": "MC",
+                                "display": "Mobile Phone"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "system": "phone",
+            "value": "+31611234567",
+            "use": "home"
+        }
+    ],
+    "address": {
+        "extension": [
+            {
+                "url": "http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType",
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/v3/AddressUse",
+                            "code": "HP",
+                            "display": "Officieel adres"
+                        }
+                    ]
+                }
+            },
+            {
+                "url": "http://fhir.nl/fhir/StructureDefinition/nl-core-address-official",
+                "valueBoolean": true
+            }
+        ],
+        "use": "home",
+        "type": "both",
+        "line": ["Oude middeweg 55"],
+        "_line": [
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                        "valueString": "Knolweg"
+                    },
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                        "valueString": "55"
+                    }
+                ]
+            }
+        ],
+        "city": "Den Haag",
+        "postalCode": "9132AG",
+        "country": "NLD",
+        "_country": {
+            "extension": [
+                {
+                    "url": "http://nictiz.nl/fhir/StructureDefinition/code-specification",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
+                                "code": "6030",
+                                "display": "Nederland"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "managingOrganization": {
+        "reference": "Organization/nl-core-organization-02",
+        "display": "Orthopedie - UMCG"
+    },
+    "partOf": {
+        "reference": "Location/nl-core-location-02",
+        "display": "ACME in Den Haag"
+    }
+}

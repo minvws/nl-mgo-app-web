@@ -13,23 +13,20 @@ export const DescriptionItem = ({ term, details, className }: DescriptionItemPro
 
     return (
         <div className={cn('flex items-center', className)}>
-            <Text className="flex-grow" asChild>
-                <div>
-                    {term ? (
-                        <>
-                            <dt
-                                id={termId}
-                                className="mb-1 text-xs text-gray-600 md:text-sm dark:text-gray-200"
-                            >
-                                {term}
-                            </dt>
-                            <dd aria-labelledby={termId}>{details}</dd>
-                        </>
-                    ) : (
-                        details
-                    )}
-                </div>
-            </Text>
+            <div className="w-full">
+                {term ? (
+                    <>
+                        <Text as="dt" id={termId} size="sm" className="text-t-label-secondary mb-1">
+                            {term}
+                        </Text>
+                        <Text as="dd" aria-labelledby={termId}>
+                            {details}
+                        </Text>
+                    </>
+                ) : (
+                    <Text className="grow">{details}</Text>
+                )}
+            </div>
         </div>
     );
 };

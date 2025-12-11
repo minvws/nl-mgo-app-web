@@ -6,13 +6,22 @@ import { Stack } from '../Stack/Stack';
 
 export type DarkStoryProps = HTMLAttributes<HTMLElement> & {
     readonly orientation?: 'horizontal' | 'vertical';
+    readonly lightClassName?: string;
+    readonly darkClassName?: string;
 };
 
 /**
  * A component that renders a story in both light and dark mode.
  * Only used for storybook documentation.
  */
-export const DarkStory = ({ className, orientation, children, ...rest }: DarkStoryProps) => {
+export const DarkStory = ({
+    className,
+    orientation,
+    children,
+    lightClassName,
+    darkClassName,
+    ...rest
+}: DarkStoryProps) => {
     return (
         <Stack
             className={cn(
@@ -24,16 +33,18 @@ export const DarkStory = ({ className, orientation, children, ...rest }: DarkSto
         >
             <div
                 className={cn(
-                    'flex-grow bg-white p-6 text-black',
-                    orientation === 'horizontal' && 'w-1/2'
+                    'grow bg-gray-50 p-6',
+                    orientation === 'horizontal' && 'w-1/2',
+                    lightClassName
                 )}
             >
                 {children}
             </div>
             <div
                 className={cn(
-                    'dark flex-grow bg-[#050505] p-6 text-white',
-                    orientation === 'horizontal' && 'w-1/2'
+                    'dark grow bg-gray-950 p-6',
+                    orientation === 'horizontal' && 'w-1/2',
+                    darkClassName
                 )}
             >
                 {children}

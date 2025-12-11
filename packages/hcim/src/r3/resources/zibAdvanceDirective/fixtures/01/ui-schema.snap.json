@@ -6,19 +6,25 @@
                 {
                     "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Amyotrofe laterale sclerose"
+                    "value": [
+                        {
+                            "display": "Amyotrofe laterale sclerose"
+                        }
                     ]
                 },
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "18ab6c9b-8fdf-11ec-1686-020000000000"
+                    "value": {
+                        "display": "18ab6c9b-8fdf-11ec-1686-020000000000"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet-reanimerenpenning"
+                    "value": {
+                        "display": "Niet-reanimerenpenning"
+                    }
                 },
                 {
                     "label": "Vertegenwoordiger",
@@ -29,12 +35,14 @@
                 {
                     "label": "Wilsverklaring datum",
                     "type": "SINGLE_VALUE",
-                    "display": "9 april 2018"
+                    "value": {
+                        "display": "9 april 2018"
+                    }
                 },
                 {
                     "label": "Wilsverklaring type",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Niet reanimeren verklaring (NR in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1)",

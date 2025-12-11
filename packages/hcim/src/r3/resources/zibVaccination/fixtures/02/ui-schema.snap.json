@@ -6,19 +6,25 @@
                 {
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
-                    "display": "30 ml"
+                    "value": {
+                        "display": "30 ml"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1ef6763b-8fdf-11ec-2005-020000000000"
+                    "value": [
+                        {
+                            "display": "1ef6763b-8fdf-11ec-2005-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Informatiebron",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Patiënt",
@@ -29,19 +35,25 @@
                 {
                     "label": "Product code",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Bezoek aan Guatemala"
+                    "value": [
+                        {
+                            "display": "Bezoek aan Guatemala"
+                        }
                     ]
                 },
                 {
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
-                    "display": "9 maart 1999"
+                    "value": {
+                        "display": "9 maart 1999"
+                    }
                 }
             ]
         },
@@ -57,7 +69,9 @@
                 {
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

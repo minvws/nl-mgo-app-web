@@ -6,10 +6,10 @@ on:
       - main
       - develop
     paths:
-      - 'packages/mgo-ui/**'
+      - 'packages/ui/**'
   pull_request:
     paths:
-      - 'packages/mgo-ui/**'
+      - 'packages/ui/**'
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
@@ -32,7 +32,7 @@ jobs:
           autoAcceptChanges: 'develop'
           exitZeroOnChanges: true
           exitOnceUploaded: true
-          workingDir: packages/mgo-ui
+          workingDir: packages/ui
       - name: Comment Chromatic results
         uses: marocchino/sticky-pull-request-comment@v2
         with:

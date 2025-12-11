@@ -3,6 +3,7 @@ import { useComposition, type CompositionProps } from '../../hooks';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Icon, type IconProps } from '../Icon/Icon';
+import { Text } from '../Text/Text';
 
 export type MobileMenuItemProps = ButtonHTMLAttributes<HTMLButtonElement> &
     IconProps &
@@ -13,21 +14,28 @@ export const MobileMenuItem = forwardRef<HTMLButtonElement, MobileMenuItemProps>
         const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
         return (
-            <Comp
-                ref={ref}
+            <Text
+                size="md"
+                asChild
                 className={cn(
-                    [focusStyle, '-outline-offset-[2px]'],
-                    'text-md flex items-center gap-4 border-b p-4',
-                    'border-[#F7F7F7] bg-white text-gray-600 hover:bg-gray-100',
-                    'dark:border-[#2C2C2C] dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-[#444444]',
-                    'aria-[current=page]:text-dark-blue-700 aria-[current=page]:bg-[#007BC71F] aria-[current=page]:font-bold',
-                    'dark:aria-[current=page]:text-light-blue-500 dark:aria-[current=page]:bg-[#007BC73D]'
+                    'flex cursor-pointer items-center gap-4 p-4',
+                    'text-t-label-secondary bg-t-bg-secondary hover:bg-gray-100',
+                    'border-t-seperator-secondary border-b',
+                    'dark:text-gray-200 dark:hover:bg-[#444444]',
+                    [
+                        'aria-[current=page]:font-bold',
+                        'aria-[current=page]:text-logo-blue-500',
+                        'dark:aria-[current=page]:text-logo-blue-300',
+                    ],
+                    'transition-colors duration-200',
+                    [focusStyle, '-outline-offset-[2px]']
                 )}
-                {...rest}
             >
-                <Icon icon={icon} className="h-8 w-8" />
-                <Slottable>{children}</Slottable>
-            </Comp>
+                <Comp ref={ref} {...rest}>
+                    <Icon icon={icon} className="h-8 w-8" />
+                    <Slottable>{children}</Slottable>
+                </Comp>
+            </Text>
         );
     }
 );

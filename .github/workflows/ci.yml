@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Lint
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Lint
         env:
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Format
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Check formatting
         run: pnpm run format:check
@@ -34,23 +34,25 @@ jobs:
     runs-on: ubuntu-22.04
     name: Check types
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Check types
+        env:
+          NODE_OPTIONS: '--max_old_space_size=8192'
         run: pnpm run typecheck
 
   test:
     runs-on: ubuntu-22.04
     name: Test
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Test
         id: test
         run: pnpm run test:coverage
       - name: Upload coverage report
         if: ${{ !cancelled() && (steps.test.conclusion == 'success' || steps.test.conclusion == 'failure') }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage
           path: coverage
@@ -59,7 +61,7 @@ jobs:
     runs-on: ubuntu-22.04
     name: Build
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
       - name: Update i18n files
         working-directory: packages/intl
@@ -77,11 +79,11 @@ jobs:
     name: Run SonarCloud scanner
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: 'Download artifact: coverage'
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: coverage
           path: coverage

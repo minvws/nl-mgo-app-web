@@ -1,0 +1,323 @@
+{
+    "label": "Zorgplan",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "6 februari 2019"
+                    }
+                },
+                {
+                    "label": "Behandeldoel",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Volledig herstel met betrekking tot het kunnen lopen"
+                        }
+                    ]
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "123456789"
+                        },
+                        {
+                            "display": "15cf59bf-8fdf-11ec-5728-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Paul XXX_Mesker",
+                    "reference": "Patient/nl-core-patient-02"
+                }
+            ]
+        },
+        {
+            "label": "Verpleegkundige actie",
+            "children": [
+                {
+                    "label": "Aanvrager",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Aanvrager: Dr. J. Jansen",
+                    "reference": "ProcedureRequest/zib-procedurerequest-02"
+                },
+                {
+                    "label": "Behandeldoel",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Indicatie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Instructie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Interventie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Medisch hulpmiddel",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Meetwaarde",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Uitvoerder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Zorgresultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Verpleegkundige actie",
+            "children": [
+                {
+                    "label": "Aantal herhalingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Aanvrager",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Behandeldoel",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Pijn verminderen"
+                        }
+                    ]
+                },
+                {
+                    "label": "Dag(en) van de week",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Duur van elke gebeurtenis",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Duureenheid",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Eenheid van herhalingsperiode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "d"
+                    }
+                },
+                {
+                    "label": "Frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2"
+                    }
+                },
+                {
+                    "label": "Gebeurtenistijdstippen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Indicatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Gebroken Been"
+                        }
+                    ]
+                },
+                {
+                    "label": "Instructie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Interval",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1"
+                    }
+                },
+                {
+                    "label": "Interventie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "ontspanningstechniek van Benson (regime/therapie) (228567003 in codesysteem http://snomed.info/sct)",
+                            "code": "228567003",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Maximale frequentie",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Maximale herhalingsperiode",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Maximum aantal herhalingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Medisch hulpmiddel",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Verband"
+                        }
+                    ]
+                },
+                {
+                    "label": "Meetwaarde",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Health of the Nation Outcome Scale - summated: 7 score"
+                        }
+                    ]
+                },
+                {
+                    "label": "Momenten van de dag",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Opmerkingen",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "De interventie verliep zeer soepel."
+                    }
+                },
+                {
+                    "label": "Tijdsafwijking",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Tijdschema-code",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Tijdstip(pen) van de dag",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Uitvoerder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Zorgresultaat",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        }
+    ]
+}

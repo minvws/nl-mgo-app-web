@@ -2,13 +2,25 @@
   "add_organization.already_added": [
     {
       "type": 0,
-      "value": "Zorgaanbieder al toevoegd"
+      "value": "Al toevoegd"
     }
   ],
   "add_organization.city": [
     {
       "type": 0,
       "value": "Plaats"
+    }
+  ],
+  "add_organization.default_content_heading": [
+    {
+      "type": 0,
+      "value": "Waar wilt u uw zorggegevens ophalen?"
+    }
+  ],
+  "add_organization.default_content_subheading": [
+    {
+      "type": 0,
+      "value": "Bijvoorbeeld uw huisarts, ziekenhuis of apotheek."
     }
   ],
   "add_organization.error_missing_city": [
@@ -45,6 +57,18 @@
     {
       "type": 0,
       "value": "Zorgaanbieder niet aangesloten"
+    }
+  ],
+  "add_organization.search_clear": [
+    {
+      "type": 0,
+      "value": "Wis selectie"
+    }
+  ],
+  "add_organization.search_placeholder": [
+    {
+      "type": 0,
+      "value": "Bijv. Amsterdam UMC"
     }
   ],
   "add_organization.voice_over_to_overview": [
@@ -95,6 +119,34 @@
       "value": "Alle gegevens"
     }
   ],
+  "dialog.add_organization_heading": [
+    {
+      "type": 1,
+      "value": "organizationName"
+    },
+    {
+      "type": 0,
+      "value": " toevoegen?"
+    }
+  ],
+  "dialog.add_organization_no": [
+    {
+      "type": 0,
+      "value": "Nee"
+    }
+  ],
+  "dialog.add_organization_subheading": [
+    {
+      "type": 0,
+      "value": "Als deze zorgaanbieder gegevens over u heeft, staan die straks in uw overzicht."
+    }
+  ],
+  "dialog.add_organization_yes": [
+    {
+      "type": 0,
+      "value": "Ja, toevoegen"
+    }
+  ],
   "dialog.remove_organization_heading": [
     {
       "type": 1,
@@ -123,6 +175,36 @@
       "value": "Ja, weglaten"
     }
   ],
+  "errorstate.clientside.heading": [
+    {
+      "type": 0,
+      "value": "Er ging iets mis bij het ophalen. Controleer uw verbinding en probeer het opnieuw."
+    }
+  ],
+  "errorstate.error": [
+    {
+      "type": 0,
+      "value": "Geen gegevens opgehaald"
+    }
+  ],
+  "errorstate.loading": [
+    {
+      "type": 0,
+      "value": "Gegevens ophalen…"
+    }
+  ],
+  "errorstate.partial_error": [
+    {
+      "type": 0,
+      "value": "Niet alle gegevens zijn opgehaald"
+    }
+  ],
+  "errorstate.serverside.heading": [
+    {
+      "type": 0,
+      "value": "Dit komt door een storing bij ons. Probeer het later opnieuw."
+    }
+  ],
   "export_pdf.close": [
     {
       "type": 0,
@@ -144,7 +226,7 @@
   "export_pdf.dialog.subheading_web": [
     {
       "type": 0,
-      "value": "Je maakt een document met je medische gegevens. Het document opent in een nieuw tabblad. Daarna kun je het opslaan."
+      "value": "U maakt een document met uw medische gegevens. Het document opent in een nieuw tabblad. Daarna kunt u het opslaan."
     }
   ],
   "export_pdf.footer": [
@@ -192,7 +274,7 @@
   "export_pdf.subheading": [
     {
       "type": 0,
-      "value": "Opgeslagen op "
+      "value": "Gemaakt op "
     },
     {
       "type": 1,
@@ -286,7 +368,7 @@
   "introduction.subheading": [
     {
       "type": 0,
-      "value": "Met deze app heb je je gezondheidsgegevens van de overheid en je zorgaanbieders altijd bij de hand. Veilig en overzichtelijk, op één plek."
+      "value": "Met deze app heeft u al uw gegevens over gezondheid en zorg veilig op één plek."
     }
   ],
   "lab_results.heading": [
@@ -298,7 +380,7 @@
   "lab_results.subheading": [
     {
       "type": 0,
-      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans."
+      "value": "Resultaten van onderzoeken en testen die u hebt gehad."
     }
   ],
   "login.digid": [
@@ -328,19 +410,19 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Log in met DigiD"
+      "value": "Bewijs wie u bent"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Met DigiD laat je weten wie je bent. Zo kunnen we je gegevens veilig ophalen. Bij je huisarts, het ziekenhuis en andere zorgaanbieders."
+      "value": "Kies de manier waarop u wilt inloggen. Zo kunnen we uw gegevens veilig ophalen bij uw huisarts, ziekenhuis en andere zorgaanbieders."
     }
   ],
   "logout.heading": [
     {
       "type": 0,
-      "value": "Je bent uitgelogd"
+      "value": "U bent uitgelogd"
     }
   ],
   "logout.login": [
@@ -352,7 +434,7 @@
   "logout.subheading": [
     {
       "type": 0,
-      "value": "De volgende keer dat je inlogt kun je je gegevens opnieuw ophalen."
+      "value": "Wanneer u opnieuw inlogt, kunt u uw gegevens weer ophalen."
     }
   ],
   "medication_use.heading": [
@@ -466,7 +548,7 @@
   "organization.lab_results_subheading": [
     {
       "type": 0,
-      "value": "Resultaten van jouw onderzoeken, (röntgen)foto's en scans"
+      "value": "Resultaten van onderzoeken en testen die u hebt gehad."
     }
   ],
   "organization.medicine_heading": [
@@ -521,6 +603,22 @@
     {
       "type": 0,
       "value": "Geen zorgaanbieders gevonden"
+    }
+  ],
+  "organization_search.no_results_found_subheading_2": [
+    {
+      "type": 0,
+      "value": "Controleer uw zoekopdracht en probeer het opnieuw."
+    }
+  ],
+  "organization_search.results_count": [
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": " zorgaanbieders gevonden"
     }
   ],
   "organization_search.search_hint_1": [
@@ -592,7 +690,17 @@
   "overview.subheading": [
     {
       "type": 0,
-      "value": "Dit is je persoonlijke overzicht. Je vindt hier al je medische gegevens."
+      "value": "Dit is jouw overzicht van gegevens over je gezondheid. Hier zie je informatie van je zorgaanbieders. Voeg er meer toe voor een completer beeld van je gezondheid."
+    }
+  ],
+  "patientfriendlyterms.synonym": [
+    {
+      "type": 0,
+      "value": "Andere naam: "
+    },
+    {
+      "type": 1,
+      "value": "synonym"
     }
   ],
   "pdf_viewer.loading": [
@@ -601,10 +709,16 @@
       "value": "Document maken…"
     }
   ],
+  "privacy.heading": [
+    {
+      "type": 0,
+      "value": "Privacyverklaring"
+    }
+  ],
   "privacy.markdown": [
     {
       "type": 0,
-      "value": "&lt;h1&gt;Privacyverklaring Mijn Gezondheidsoverzicht&lt;/h1&gt;\n&lt;p&gt;Mijn Gezondheidsoverzicht (MGO) is een product van het ministerie van Volksgezondheid, Welzijn en Sport (VWS). Met MGO kun je op één plek je gezondheidsgegevens bekijken. Zo heb je altijd en overal inzicht in je eigen gezondheid. MGO is bedoeld voor iedereen, ook als je geen gebruikmaakt van een Persoonlijke Gezondheidsomgeving (PGO).&lt;/p&gt;\n&lt;h2&gt;Wat zijn persoonsgegevens?&lt;/h2&gt;\n&lt;p&gt;Persoonsgegevens zijn gegevens die iets over jou vertellen. Bijvoorbeeld:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;je naam of geboortedatum&lt;/li&gt;\n&lt;li&gt;je adres of e-mailadres&lt;/li&gt;\n&lt;li&gt;je gezondheidsgegevens&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Sommige gegevens zijn extra gevoelig. Denk aan informatie over je gezondheid, geloof of strafblad. Die noemen we ‘bijzondere persoonsgegevens’. De wet beschermt deze extra goed.&lt;/p&gt;\n&lt;h2&gt;Welke gegevens toont MGO?&lt;/h2&gt;\n&lt;p&gt;MGO toont alleen medische gegevens die zorgverleners over jou hebben. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;informatie van je huisarts of specialist&lt;/li&gt;\n&lt;li&gt;medicatieoverzichten&lt;/li&gt;\n&lt;li&gt;uitslagen van onderzoeken&lt;/li&gt;\n&lt;li&gt;verslagen of brieven van behandelaars&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Deze gegevens worden direct opgehaald bij je zorgaanbieders. Ze worden niet opgeslagen of verwerkt in de app zelf. Jij bepaalt of je de gegevens ophaalt en bekijkt.&lt;/p&gt;\n&lt;h2&gt;Hoe beschermen we je gegevens?&lt;/h2&gt;\n&lt;p&gt;Je gegevens zijn goed beveiligd. We nemen maatregelen om misbruik, verlies of ongewenste toegang te voorkomen. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;versleutelde verbindingen (HTTPS)&lt;/li&gt;\n&lt;li&gt;toegang alleen via jouw persoonlijke inlog&lt;/li&gt;\n&lt;li&gt;regelmatige controles en beveiligingstesten&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;MGO voldoet aan de regels van de privacywet (AVG).&lt;/p&gt;\n&lt;h2&gt;Wie is verantwoordelijk?&lt;/h2&gt;\n&lt;p&gt;Het ministerie van Volksgezondheid, Welzijn en Sport (VWS) is verantwoordelijk voor de werking van de app. MGO toont gegevens van zorgaanbieders, maar bewaart of verwerkt deze niet.&lt;/p&gt;\n&lt;h2&gt;Je rechten&lt;/h2&gt;\n&lt;p&gt;Je hebt recht op inzage in je gegevens. Je kunt ook vragen om correctie of verwijdering. Dat regel je meestal via je zorgaanbieder.&lt;/p&gt;\n"
+      "value": "&lt;p&gt;Mijn Gezondheidsoverzicht (MGO) is een product van het ministerie van Volksgezondheid, Welzijn en Sport (VWS). Met MGO kun je op één plek je gezondheidsgegevens bekijken. Zo heb je altijd en overal inzicht in je eigen gezondheid. MGO is bedoeld voor iedereen, ook als je geen gebruikmaakt van een Persoonlijke Gezondheidsomgeving (PGO).&lt;/p&gt;\n&lt;h2&gt;Wat zijn persoonsgegevens?&lt;/h2&gt;\n&lt;p&gt;Persoonsgegevens zijn gegevens die iets over jou vertellen. Bijvoorbeeld:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;je naam of geboortedatum&lt;/li&gt;\n&lt;li&gt;je adres of e-mailadres&lt;/li&gt;\n&lt;li&gt;je gezondheidsgegevens&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Sommige gegevens zijn extra gevoelig. Denk aan informatie over je gezondheid, geloof of strafblad. Die noemen we ‘bijzondere persoonsgegevens’. De wet beschermt deze extra goed.&lt;/p&gt;\n&lt;h2&gt;Welke gegevens toont MGO?&lt;/h2&gt;\n&lt;p&gt;MGO toont alleen medische gegevens die zorgverleners over jou hebben. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;informatie van je huisarts of specialist&lt;/li&gt;\n&lt;li&gt;medicatieoverzichten&lt;/li&gt;\n&lt;li&gt;uitslagen van onderzoeken&lt;/li&gt;\n&lt;li&gt;verslagen of brieven van behandelaars&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;Deze gegevens worden direct opgehaald bij je zorgaanbieders. Ze worden niet opgeslagen of verwerkt in de app zelf. Jij bepaalt of je de gegevens ophaalt en bekijkt.&lt;/p&gt;\n&lt;h2&gt;Hoe beschermen we je gegevens?&lt;/h2&gt;\n&lt;p&gt;Je gegevens zijn goed beveiligd. We nemen maatregelen om misbruik, verlies of ongewenste toegang te voorkomen. Zoals:&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;versleutelde verbindingen (HTTPS)&lt;/li&gt;\n&lt;li&gt;toegang alleen via jouw persoonlijke inlog&lt;/li&gt;\n&lt;li&gt;regelmatige controles en beveiligingstesten&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;MGO voldoet aan de regels van de privacywet (AVG).&lt;/p&gt;\n&lt;h2&gt;Wie is verantwoordelijk?&lt;/h2&gt;\n&lt;p&gt;Het ministerie van Volksgezondheid, Welzijn en Sport (VWS) is verantwoordelijk voor de werking van de app. MGO toont gegevens van zorgaanbieders, maar bewaart of verwerkt deze niet.&lt;/p&gt;\n&lt;h2&gt;Je rechten&lt;/h2&gt;\n&lt;p&gt;Je hebt recht op inzage in je gegevens. Je kunt ook vragen om correctie of verwijdering. Dat regel je meestal via je zorgaanbieder.&lt;/p&gt;\n"
     }
   ],
   "problems.heading": [
@@ -622,13 +736,13 @@
   "proposition.heading": [
     {
       "type": 0,
-      "value": "Hoe de website met jouw gegevens omgaat"
+      "value": "Hoe de website omgaat met uw gegevens"
     }
   ],
   "proposition.statement_1": [
     {
       "type": 0,
-      "value": "Je gegevens worden "
+      "value": "Uw gegevens worden "
     },
     {
       "children": [
@@ -662,13 +776,13 @@
   "proposition.statement_2": [
     {
       "type": 0,
-      "value": "Je gegevens komen direct van de zorgaanbieder die je kiest. "
+      "value": "Uw gegevens komen direct van de zorgaanbieder die u kiest. "
     },
     {
       "children": [
         {
           "type": 0,
-          "value": "Alleen jij hebt toegang."
+          "value": "Alleen u heeft toegang."
         }
       ],
       "type": 8,
@@ -680,7 +794,7 @@
       "children": [
         {
           "type": 0,
-          "value": "Je kiest zelf"
+          "value": "U kiest zelf"
         }
       ],
       "type": 8,
@@ -688,13 +802,13 @@
     },
     {
       "type": 0,
-      "value": " hoe je je gegevens wilt gebruiken en of je ze deelt met anderen."
+      "value": " hoe u uw gegevens wilt gebruiken en of u ze deelt met anderen."
     }
   ],
   "proposition.statement_4": [
     {
       "type": 0,
-      "value": "Je kunt de gegevens in je overzicht altijd "
+      "value": "U kunt de gegevens in uw overzicht altijd "
     },
     {
       "children": [
@@ -728,7 +842,7 @@
     },
     {
       "type": 0,
-      "value": " staat hoe Mijn Gezondheidsoverzicht je gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
+      "value": " staat hoe Mijn Gezondheidsoverzicht uw gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
     }
   ],
   "remove_organization.no_cancel": [
@@ -741,6 +855,12 @@
     {
       "type": 0,
       "value": "Automatische lokalisatie"
+    }
+  ],
+  "settings.version.heading": [
+    {
+      "type": 0,
+      "value": "Versie"
     }
   ]
 }

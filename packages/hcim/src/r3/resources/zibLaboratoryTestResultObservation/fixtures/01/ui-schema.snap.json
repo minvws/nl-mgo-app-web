@@ -6,24 +6,30 @@
                 {
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gerelateerde uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1b2d4dbd-8fdf-11ec-8670-020000000000"
+                    "value": [
+                        {
+                            "display": "1b2d4dbd-8fdf-11ec-8670-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Above reference range (281302008 in codesysteem http://snomed.info/sct)",
                             "code": "281302008",
@@ -46,7 +52,7 @@
                 {
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Chloride [Moles/volume] in Blood (2069-3 in codesysteem http://loinc.org)",
                             "code": "2069-3",
@@ -57,37 +63,51 @@
                 {
                     "label": "Test datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "23 mei 2012 om 12:00:00 GMT+2"
+                    "value": {
+                        "display": "23 mei 2012 om 12:00:00 GMT+2"
+                    }
                 },
                 {
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
-                    "display": "109 millimol per liter"
+                    "value": {
+                        "display": "109 millimol per liter"
+                    }
                 },
                 {
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "value": {
+                        "display": "final"
+                    }
                 },
                 {
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Verband",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         },
@@ -97,7 +117,7 @@
                 {
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Laboratory test finding (finding) (49581000146104 in codesysteem http://snomed.info/sct)",
                             "code": "49581000146104",
@@ -108,7 +128,7 @@
                 {
                     "label": "Resultaat type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Serum chemistry test (275711006 in codesysteem http://snomed.info/sct)",
                             "code": "275711006",
@@ -124,17 +144,23 @@
                 {
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
-                    "display": "108 millimol per liter"
+                    "value": {
+                        "display": "108 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
-                    "display": "99 millimol per liter"
+                    "value": {
+                        "display": "99 millimol per liter"
+                    }
                 },
                 {
                     "label": "Referentie type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

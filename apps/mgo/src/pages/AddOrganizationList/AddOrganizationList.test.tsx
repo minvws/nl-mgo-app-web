@@ -1,41 +1,49 @@
 import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
-import { useOrganizationsStore } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { expect, test, vi, type MockedFunction } from 'vitest';
+import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { AddOrganizationList } from './AddOrganizationList';
 
 vi.mock('$/auth');
 
 const mockUseAuth = useAuth as MockedFunction<typeof useAuth>;
 
-test('render from store', async () => {
+beforeEach(() => {
     mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
     const { setOnboardingSeen } = useOnboardingSeen();
     setOnboardingSeen();
+    useStore.setState({ organizations: [] });
+});
 
-    const { addOrganization } = useOrganizationsStore.getState();
-    addOrganization(faker.custom.healthcareOrganization());
-
+test('shows added organizations', async () => {
+    useStore.getState().addOrganization(faker.custom.healthcareOrganization());
     setupApp({ initialEntries: ['/zorgaanbieder-toevoegen/zorgaanbieders'] });
+    const listItems = screen.getAllByTestId('organization-item');
+    expect(listItems.length).toBe(1);
+});
 
-    expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
+test('shows if there are no organizations', async () => {
+    setupApp({ initialEntries: ['/zorgaanbieder-toevoegen/zorgaanbieders'] });
+    expect(
+        screen.getByRole('heading', {
+            name: appMessage('add_organization_list.no_results_heading'),
+        })
+    ).toBeInTheDocument();
 });
 
 test('remove item from store', async () => {
     const user = userEvent.setup();
-    const { addOrganization } = useOrganizationsStore.getState();
+    const { addOrganization } = useStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddOrganizationList />);
-
-    expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
-
-    const listItem = screen.getByRole('listitem');
-    const listItemButton = within(listItem).getByRole('button');
+    let listItems = screen.getAllByTestId('organization-item');
+    expect(listItems.length).toBe(1);
+    const listItemButton = within(listItems[0]).getByRole('button');
 
     await user.click(listItemButton);
 
@@ -46,19 +54,18 @@ test('remove item from store', async () => {
     });
     await user.click(button);
 
-    expect(screen.queryAllByRole('listitem').length).toBe(0);
+    listItems = screen.queryAllByTestId('organization-item');
+    expect(listItems.length).toBe(0);
 });
 
 test('do not remove item from store', async () => {
     const user = userEvent.setup();
-    const { addOrganization } = useOrganizationsStore.getState();
+    const { addOrganization } = useStore.getState();
     addOrganization(faker.custom.healthcareOrganization());
     setupWithAppProviders(<AddOrganizationList />);
 
-    expect(screen.getAllByRole('listitem').length).toBeGreaterThan(0);
-
-    const listItem = screen.getByRole('listitem');
-    const listItemButton = within(listItem).getByRole('button');
+    let listItems = screen.getAllByTestId('organization-item');
+    const listItemButton = within(listItems[0]).getByRole('button');
 
     await user.click(listItemButton);
 
@@ -69,5 +76,6 @@ test('do not remove item from store', async () => {
     });
     await user.click(button);
 
-    expect(screen.queryAllByRole('listitem').length).toBeGreaterThan(0);
+    listItems = screen.queryAllByTestId('organization-item');
+    expect(listItems.length).toBe(1);
 });

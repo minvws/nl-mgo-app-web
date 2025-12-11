@@ -1,0 +1,53 @@
+{
+    "id": "ont-ver-ggz-textresult-DiagnosticReport",
+    "referenceId": "DiagnosticReport/ont-ver-ggz-textresult-DiagnosticReport",
+    "resourceType": "DiagnosticReport",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-TextResult",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "75c8f9ab-0421-11ec-9193-020000000000",
+            "type": null
+        }
+    ],
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2024-08-22"
+    },
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/ont-ver-XXX-Bals",
+        "display": "Adam XXX_Bals"
+    },
+    "performer": null,
+    "status": {
+        "_ext": true,
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "final",
+                "display": "Final",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.16.1"
+            }
+        ]
+    },
+    "code": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "71388002",
+                "display": "procedure",
+                "system": "http://snomed.info/sct"
+            }
+        ]
+    },
+    "conclusion": {
+        "_type": "string",
+        "value": "Speciele anamnese         Sinds zeker een half jaar geleidelijk ontstane inmiddels al 4 weken bestaande somberheid, wanhoop, interesseverlies en anhedonie, continu, elke dag, merendeel van de dag. Sinds maanden inslaapstoornissen (> 1uur), doorslapen gaat goed, vroeg ontwaken +, eetlust afgenomen, wschl 2 kg kwijt, wschl dagschommel, schuldgevoelens naar ouders waarvan niet duidelijk wordt of die overmatig zijn, suicidale ideatie incl plan, angstig en paniekaanvallen gehad, merkt dat hij minder energie heeft. Zijn vrouw vindt hem motorisch onrustig.         Algemene indrukken         Mager, nerveus gespannen, vriendelijk contact maar verder afwerend         Cognitieve functies         Geen psychotische kenmerken, mn geen paranoidie, geen armoedewanen         Evidente concentratieproblemen, inprenting en orientatie in TPP ongestoord         Geen formele denkstoornissen         Intelligentie geschat bovengemiddeld         Affectieve functies         Blanco VG, dus geen eerdere depressies, geen manieen of hypomanieen         Familie niet belast met depressie, bipolairen, opnames, suicide         Conatieve functies         1 alcohol, geen VG met overmaat alcohol of THC, IVDU e.d.         Persoonlijkheid         Wschl perfectionistisch, geneigd tot hoge eisen, vgls vrouw regelmatig conflictvermijdend         Conclusie en beschrijvende diagnose         Eerste depressieve episode, ernstig, met vitaal kenmerk mogelijk in vorm van dagschommel, met forse suicidaliteit en suicidale Einengung, bij blanco voorgeschiedenis. Lijkt geluxeerd door langjarige conflicten in familiesfeer en overbelasting in werk"
+    }
+}

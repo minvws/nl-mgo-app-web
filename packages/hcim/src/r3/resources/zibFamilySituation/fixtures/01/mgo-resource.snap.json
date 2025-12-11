@@ -1,0 +1,114 @@
+{
+    "id": "zib-familysituation-01",
+    "referenceId": "Observation/zib-familysituation-01",
+    "resourceType": "Observation",
+    "profile": "http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19d1c651-8fdf-11ec-9544-020000000000",
+            "type": null
+        }
+    ],
+    "subject": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": {
+        "_type": "dateTime",
+        "value": "2018-08-10"
+    },
+    "performer": null,
+    "comment": {
+        "_type": "string",
+        "value": "Beide inwonende kinderen zijn zeer zelfstandig."
+    },
+    "component": {
+        "familyComposition": [
+            {
+                "valueCodeableConcept": {
+                    "_type": "codeableConcept",
+                    "text": "Woont samen met familie",
+                    "coding": [
+                        {
+                            "code": "160756002",
+                            "display": "Lives with relatives (finding)",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ]
+                }
+            }
+        ],
+        "numberOfChildren": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 3,
+                    "comparator": null,
+                    "unit": null,
+                    "system": null,
+                    "code": null
+                }
+            }
+        ],
+        "numberOfChildrenLivingAtHome": [
+            {
+                "valueQuantity": {
+                    "_type": "quantity",
+                    "value": 2,
+                    "comparator": null,
+                    "unit": null,
+                    "system": null,
+                    "code": null
+                }
+            }
+        ],
+        "careResponsibility": [
+            {
+                "valueString": {
+                    "_type": "string",
+                    "value": "Heeft zorg voor vader die in huis woont."
+                }
+            }
+        ]
+    },
+    "children": [
+        {
+            "dateTime": {
+                "_type": "dateTime",
+                "value": "2009-08-02"
+            },
+            "livingAtHome": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            }
+        },
+        {
+            "dateTime": {
+                "_type": "dateTime",
+                "value": "2011-04-02"
+            },
+            "livingAtHome": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            }
+        },
+        {
+            "dateTime": {
+                "_type": "dateTime",
+                "value": "2006-04-02"
+            },
+            "livingAtHome": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": false
+            }
+        }
+    ]
+}

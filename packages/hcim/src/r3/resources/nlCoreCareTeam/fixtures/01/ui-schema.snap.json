@@ -1,0 +1,86 @@
+{
+    "label": "Zorgteam",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1 februari 2013 om 08:53:00 GMT+1"
+                    }
+                },
+                {
+                    "label": "Eind datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "15689532"
+                        },
+                        {
+                            "display": "15e6f5b1-8fdf-11ec-2036-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Vaste Huisarts 1",
+                    "reference": "Practitioner/nl-core-practitioner-02"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Verwijzer (REF in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                            "code": "REF",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Deelnemer",
+            "children": [
+                {
+                    "label": "Deelnemer",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Dirk de Vries",
+                    "reference": "Practitioner/nl-core-practitioner-04"
+                },
+                {
+                    "label": "Zorgverlener rol",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Hoofdbehandelaar (RESP in codesysteem http://hl7.org/fhir/v3/ParticipationType)",
+                            "code": "RESP",
+                            "system": "http://hl7.org/fhir/v3/ParticipationType"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

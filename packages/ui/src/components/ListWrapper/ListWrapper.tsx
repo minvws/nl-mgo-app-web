@@ -18,9 +18,12 @@ export const ListWrapper = ({
 }: ListWrapperProps) => {
     const { Comp } = useComposition({ asChild, tag: 'ul' });
 
-    const gapMap: Record<Gap, string> = {
+    const gapMap: Record<Gap, string | string[]> = {
         normal: 'gap-2 gap-md-3',
-        line: 'gap-none [&>*]:border-b [&>*]:border-gray-200 last:[&>*]:border-b-0 dark:[&>*]:border-[#4D4D4D] [&>*]:rounded-none first:[&>*]:rounded-t-lg last:[&>*]:rounded-b-lg',
+        line: [
+            'gap-none [&>*]:border-b [&>*]:border-t-seperator-secondary [&>*:last-child]:border-b-0',
+            '[&>*]:rounded-none [&>*:first-child]:rounded-t-lg [&>*:last-child]:rounded-b-lg',
+        ],
     };
 
     return (

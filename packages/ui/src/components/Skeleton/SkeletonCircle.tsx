@@ -1,4 +1,4 @@
-import { twMerge } from 'tailwind-merge';
+import { cn } from '../../utils';
 import { Skeleton, type SkeletonProps } from './Skeleton';
 
 export type SkeletonCircleProps = SkeletonProps;
@@ -6,7 +6,7 @@ export type SkeletonCircleProps = SkeletonProps;
 export const SkeletonCircle = ({ isLoading, className, ...rest }: SkeletonCircleProps) => {
     return (
         <Skeleton
-            className={twMerge(isLoading && 'rounded-full', className)}
+            className={cn(isLoading && 'rounded-full', className)}
             isLoading={isLoading}
             {...rest}
         />

@@ -1,4 +1,3 @@
-import { HealthCategory } from '@minvws/mgo';
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';
 
@@ -42,8 +41,6 @@ test('User can visit the overview page which shows health categories when an org
     await test.step('Verify health categories on overview page', async () => {
         await expect(pageOverview.heading).toBeVisible();
         await expect(pageOverview.headingNoOrganizations).toBeHidden();
-        await expect(
-            pageOverview.buttonHealthCategory(HealthCategory.PersonalInformation)
-        ).toBeVisible();
+        await expect(pageOverview.buttonHealthCategory('patient')).toBeVisible();
     });
 });

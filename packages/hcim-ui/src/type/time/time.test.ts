@@ -2,6 +2,7 @@ import { faker } from '$test';
 import { type MgoTime } from '@minvws/mgo-hcim-parse';
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
+import { SingleValue } from '../../types/schema.js';
 import { time } from './time.js';
 
 test('time single', () => {
@@ -11,10 +12,10 @@ test('time single', () => {
     const uiHelperContext = faker.ui.context();
     const result = time(uiHelperContext)(label, value);
 
-    expect(result).toEqual({
+    expect(result).toEqual<SingleValue>({
         label: testMessage(label),
         type: 'SINGLE_VALUE',
-        display: value.value,
+        value: { display: value.value },
     });
 });
 
@@ -28,6 +29,6 @@ test('time multiple', () => {
     expect(result).toEqual({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
-        display: value.map((x) => x.value),
+        value: value.map((x) => ({ display: x.value })),
     });
 });

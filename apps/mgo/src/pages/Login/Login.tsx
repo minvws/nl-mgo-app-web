@@ -1,17 +1,14 @@
 import { useAuth } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { BackButton } from '$/components/BackButton/BackButton';
-import { useNavFocusRef } from '$/hooks/index.js';
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, ConfirmDialog, Heading, Stack, Text, useOnMount } from '@minvws/mgo-ui';
+import { Button, ConfirmDialog, Heading, Text, useOnMount } from '@minvws/mgo-ui';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import DigiDSvg from './digid.svg?react';
-import EIDASSvg from './eidas.svg?react';
 
 export function Login() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const auth = useAuth();
     const [showErrorDialog, setShowErrorDialog] = useState(Boolean(auth.parsingError));
 
@@ -31,59 +28,35 @@ export function Login() {
     return (
         <>
             <Helmet title={formatMessage('login.heading')} />
-            <section className="flex-grow">
+            <section className="grow">
                 <BackButton />
 
                 <div className="mx-auto max-w-md pb-12 md:pb-16 lg:pb-24">
-                    <Heading asChild size="lg" className="mb-4 md:mb-6">
-                        <h1 ref={navFocusRef}>
-                            <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
-                        </h1>
+                    <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
+                        <FormattedMessage id="login.heading" description="Bewijs wie je bent" />
                     </Heading>
 
-                    <Text className="mb-6 md:mb-12">
+                    <Text className="mb-6 md:mb-12" as="p">
                         <FormattedMessage
                             id="login.subheading"
                             description="Kies de manier waarop je wilt inloggen."
                         />
                     </Text>
 
-                    <Stack asChild>
-                        <ul>
-                            <li>
-                                <Button
-                                    onClick={auth.isLoading ? undefined : auth.login}
-                                    variant="outline"
-                                    className="p-4 sm:p-6"
-                                    fullWidth
-                                    leftIcon={
-                                        <DigiDSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
-                                    }
-                                    rightIcon="chevron-right"
-                                >
-                                    {auth.isLoading ? (
-                                        <FormattedMessage id="common.loading" />
-                                    ) : (
-                                        <FormattedMessage id="login.digid" />
-                                    )}
-                                </Button>
-                            </li>
-
-                            <li>
-                                <Button
-                                    variant="outline"
-                                    className="p-4 sm:p-6"
-                                    fullWidth
-                                    leftIcon={
-                                        <EIDASSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />
-                                    }
-                                    rightIcon="chevron-right"
-                                >
-                                    <FormattedMessage id="login.european" />
-                                </Button>
-                            </li>
-                        </ul>
-                    </Stack>
+                    <Button
+                        onClick={auth.isLoading ? undefined : auth.login}
+                        variant="outline"
+                        className="p-4 sm:p-6"
+                        fullWidth
+                        leftIcon={<DigiDSvg className="mr-2 h-8 w-8 sm:mr-4 sm:h-12 sm:w-12" />}
+                        rightIcon="chevron_right"
+                    >
+                        {auth.isLoading ? (
+                            <FormattedMessage id="common.loading" />
+                        ) : (
+                            <FormattedMessage id="login.digid" />
+                        )}
+                    </Button>
                 </div>
 
                 <ConfirmDialog

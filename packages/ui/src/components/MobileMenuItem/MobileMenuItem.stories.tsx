@@ -1,7 +1,8 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
-import { MobileMenuItem } from './MobileMenuItem';
+import { DarkStory } from '../DarkStory/DarkStory';
 import { Stack } from '../Stack/Stack';
+import { MobileMenuItem } from './MobileMenuItem';
 
 type Story = StoryObj<typeof MobileMenuItem>;
 type StoryMeta = Meta<typeof MobileMenuItem>;
@@ -25,12 +26,14 @@ export const Active: Story = {
 
 export const List: Story = {
     render: () => (
-        <Stack className="gap-0">
-            <MobileMenuItem icon="home">Home</MobileMenuItem>
-            <MobileMenuItem icon="favorite" aria-current="page">
-                Favorite
-            </MobileMenuItem>
-            <MobileMenuItem icon="settings">Settings</MobileMenuItem>
-        </Stack>
+        <DarkStory>
+            <Stack className="gap-0">
+                <MobileMenuItem icon="home">Home</MobileMenuItem>
+                <MobileMenuItem icon="favorite" aria-current="page">
+                    Favorite
+                </MobileMenuItem>
+                <MobileMenuItem icon="settings">Settings</MobileMenuItem>
+            </Stack>
+        </DarkStory>
     ),
 };

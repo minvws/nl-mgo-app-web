@@ -10,11 +10,9 @@ export function LoadingSpinner({ children }: LoadingSpinnerProps) {
     const loadingText = formatMessage('common.loading');
 
     return (
-        <Text asChild className="text-center">
-            <div>
-                <Spinner className="mx-auto mb-4" aria-label={loadingText} />
-                <div aria-live="polite">{children ?? loadingText}</div>
-            </div>
+        <Text as="div" className="text-center">
+            <Spinner className="mx-auto mb-4" aria-label={loadingText} />
+            <div aria-live="polite">{children ?? loadingText}</div>
         </Text>
     );
 }

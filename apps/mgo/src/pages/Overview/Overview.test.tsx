@@ -1,6 +1,6 @@
 import { useAuth } from '$/auth';
 import { useOnboardingSeen } from '$/hooks';
-import { useOrganizationsStore } from '$/store';
+import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupApp, setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
@@ -28,7 +28,7 @@ test('overview should show empty state', () => {
 
 test('should show the health categories if there are organizations', () => {
     const organizationName = faker.company.name();
-    const { addOrganization } = useOrganizationsStore.getState();
+    const { addOrganization } = useStore.getState();
     addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
 
     setupWithAppProviders(<Overview />);

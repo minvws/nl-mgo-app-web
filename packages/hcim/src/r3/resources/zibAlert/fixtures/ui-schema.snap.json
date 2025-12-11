@@ -6,7 +6,7 @@
                 {
                     "label": "Alert naam",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Methicillin resistant staphylococcus aureus carrier (432415000 in codesysteem http://snomed.info/sct)",
                             "code": "432415000",
@@ -17,7 +17,7 @@
                 {
                     "label": "Alert type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "condition (75323-6 in codesysteem http://loinc.org)",
                             "code": "75323-6",
@@ -28,12 +28,16 @@
                 {
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
-                    "display": "1 juni 2010"
+                    "value": {
+                        "display": "1 juni 2010"
+                    }
                 },
                 {
                     "label": "Conditie",
@@ -44,13 +48,17 @@
                 {
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "18d78911-8fdf-11ec-3053-020000000000"
+                    "value": [
+                        {
+                            "display": "18d78911-8fdf-11ec-3053-020000000000"
+                        }
                     ]
                 },
                 {

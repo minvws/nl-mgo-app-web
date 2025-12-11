@@ -25,6 +25,40 @@ export class HealthDataDetailPage extends AbstractPage {
     protected getDataListContents() {
         const dataLists = this.page.locator('dl');
         return dataLists.evaluateAll((dls) => {
+            function getVisibleText(el: HTMLElement | null) {
+                if (!el) return '';
+
+                const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+                let text = '';
+
+                function isHidden(node: HTMLElement | null) {
+                    let current: HTMLElement | null = node;
+                    while (current && current.nodeType === Node.ELEMENT_NODE) {
+                        const style = window.getComputedStyle(current);
+                        if (
+                            style.display === 'none' ||
+                            style.visibility === 'hidden' ||
+                            style.opacity === '0' ||
+                            current.hasAttribute('hidden') ||
+                            current.getAttribute('aria-hidden') === 'true'
+                        ) {
+                            return true;
+                        }
+                        current = current.parentElement;
+                    }
+                    return false;
+                }
+
+                while (walker.nextNode()) {
+                    const node = walker.currentNode;
+                    if (!isHidden(node.parentElement)) {
+                        text += node.textContent;
+                    }
+                }
+
+                return text.trim();
+            }
+
             return dls.map((dl) => {
                 const groupLabelId = dl.getAttribute('aria-labelledby');
                 const groupLabel = groupLabelId
@@ -37,11 +71,11 @@ export class HealthDataDetailPage extends AbstractPage {
                     children: Array.from(dds).map((dd) => {
                         const labelId = dd.getAttribute('aria-labelledby');
                         const label = labelId
-                            ? document.getElementById(labelId)?.textContent
+                            ? getVisibleText(document.getElementById(labelId))
                             : null;
                         return {
                             label,
-                            value: dd.textContent,
+                            value: getVisibleText(dd),
                         };
                     }),
                 };

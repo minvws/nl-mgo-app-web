@@ -1,5 +1,5 @@
 import { FormattedMessage } from '$/intl';
-import { MobileMenuItem, cn, surfaceStyle } from '@minvws/mgo-ui';
+import { MobileMenuItem, cn } from '@minvws/mgo-ui';
 import { forwardRef, type ComponentProps } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export const MobileMenu = forwardRef<HTMLUListElement, MobileMenuProps>(function
     ref
 ) {
     return (
-        <nav className={cn(surfaceStyle, className)} ref={ref} {...rest}>
+        <nav className={cn('bg-t-bg-secondary', className)} ref={ref} {...rest}>
             <ul>
                 <li>
                     <MobileMenuItem icon="home" asChild>

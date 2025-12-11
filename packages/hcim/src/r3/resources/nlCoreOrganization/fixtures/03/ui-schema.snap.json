@@ -6,22 +6,30 @@
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "1642a7d5-8fdf-11ec-4396-020000000000",
-                        "01069857"
+                    "value": [
+                        {
+                            "display": "1642a7d5-8fdf-11ec-4396-020000000000"
+                        },
+                        {
+                            "display": "01069857"
+                        }
                     ]
                 },
                 {
                     "label": "Organisatie alias",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Medisch Centrum Centrum"
+                    "value": [
+                        {
+                            "display": "Medisch Centrum Centrum"
+                        }
                     ]
                 },
                 {
                     "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Test Medisch Centrum"
+                    "value": {
+                        "display": "Test Medisch Centrum"
+                    }
                 }
             ]
         },
@@ -31,7 +39,7 @@
                 {
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Land Line (LL in codesysteem urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1)",
                             "code": "LL",
@@ -42,17 +50,23 @@
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "phone"
+                    "value": {
+                        "display": "phone"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "..."
+                    "value": {
+                        "display": "..."
+                    }
                 }
             ]
         },
@@ -62,22 +76,30 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "phone"
+                    "value": {
+                        "display": "phone"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "+31611234567"
+                    "value": {
+                        "display": "+31611234567"
+                    }
                 }
             ]
         },
@@ -87,22 +109,30 @@
                 {
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "email"
+                    "value": {
+                        "display": "email"
+                    }
                 },
                 {
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
-                    "display": "work"
+                    "value": {
+                        "display": "work"
+                    }
                 },
                 {
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
-                    "display": "example@example.com"
+                    "value": {
+                        "display": "example@example.com"
+                    }
                 }
             ]
         },
@@ -112,12 +142,14 @@
                 {
                     "label": "Aanduiding bij huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "to"
+                    "value": {
+                        "display": "to"
+                    }
                 },
                 {
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Officieel adres (HP in codesysteem http://hl7.org/fhir/v3/AddressUse)",
                             "code": "HP",
@@ -128,57 +160,79 @@
                 {
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
-                    "display": "home"
+                    "value": {
+                        "display": "home"
+                    }
                 },
                 {
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
-                    "display": "10"
+                    "value": {
+                        "display": "10"
+                    }
                 },
                 {
                     "label": "Huisnummertoevoeging",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Land",
                     "type": "SINGLE_VALUE",
-                    "display": "NLD"
+                    "value": {
+                        "display": "NLD"
+                    }
                 },
                 {
-                    "label": "Markeer een adres als een 'officieel geregistreerd adres.",
+                    "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
-                    "display": "Ja"
+                    "value": {
+                        "display": "Ja"
+                    }
                 },
                 {
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
-                    "display": "Amsterdam"
+                    "value": {
+                        "display": "Amsterdam"
+                    }
                 },
                 {
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
-                    "display": "1001AA"
+                    "value": {
+                        "display": "1001AA"
+                    }
                 },
                 {
                     "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
-                    "display": "Binnenkant"
+                    "value": {
+                        "display": "Binnenkant"
+                    }
                 }
             ]
         },
@@ -188,12 +242,16 @@
                 {
                     "label": "Afdeling specialisme",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Organisatie type",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 }
             ]
         }

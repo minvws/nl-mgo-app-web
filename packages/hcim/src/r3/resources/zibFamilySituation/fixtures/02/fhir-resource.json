@@ -1,0 +1,32 @@
+{
+    "resourceType": "Observation",
+    "id": "zib-familysituation-01",
+    "meta": {
+        "profile": ["http://nictiz.nl/fhir/StructureDefinition/zib-FamilySituation"]
+    },
+    "text": {
+        "status": "extensions"
+    },
+    "identifier": [
+        {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "19d1c651-8fdf-11ec-9544-020000000000"
+        }
+    ],
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "365470003",
+                "display": "Finding of family details and household composition (finding)"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/nl-core-patient-03",
+        "display": "Irma XXX_Helleman-de Haas"
+    },
+    "effectiveDateTime": "2018-08-10",
+    "comment": "Beide inwonende kinderen zijn zeer zelfstandig."
+}

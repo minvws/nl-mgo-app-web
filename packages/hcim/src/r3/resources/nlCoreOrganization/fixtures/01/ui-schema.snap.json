@@ -6,29 +6,39 @@
                 {
                     "label": "Adresgegevens",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Contactgegevens",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "162abc65-8fdf-11ec-1585-020000000000"
+                    "value": [
+                        {
+                            "display": "162abc65-8fdf-11ec-1585-020000000000"
+                        }
                     ]
                 },
                 {
                     "label": "Organisatie alias",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
-                    "display": "Maatschap Vaste Huisarts"
+                    "value": {
+                        "display": "Maatschap Vaste Huisarts"
+                    }
                 }
             ]
         },
@@ -38,12 +48,14 @@
                 {
                     "label": "Afdeling specialisme",
                     "type": "SINGLE_VALUE",
-                    "display": "Niet bekend"
+                    "value": {
+                        "display": "Niet bekend"
+                    }
                 },
                 {
                     "label": "Organisatie type",
                     "type": "MULTIPLE_GROUPED_VALUES",
-                    "display": [
+                    "value": [
                         [
                             {
                                 "display": "Huisartspraktijk (zelfstandig of groepspraktijk) (Z3 in codesysteem http://nictiz.nl/fhir/NamingSystem/organization-type)",

@@ -1,5 +1,4 @@
 import { QueryState } from '$/components/QueryState/QueryState';
-import { useNavFocusRef } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { getLoadService } from '$/services';
 import { Heading } from '@minvws/mgo-ui';
@@ -13,7 +12,6 @@ import { SearchResults } from './SearchResults';
 
 export function AddOrganization() {
     const { formatMessage } = useIntl();
-    const navFocusRef = useNavFocusRef<HTMLHeadingElement>();
     const [searchQuery, setSearchQuery] = useState<SearchFormData>();
     const loadService = getLoadService();
 
@@ -27,17 +25,15 @@ export function AddOrganization() {
     return (
         <>
             <Helmet title={formatMessage('add_organization.heading')} />
-            <section className="flex-grow pb-12 md:pb-16 lg:pb-24">
+            <section className="grow pb-12 md:pb-16 lg:pb-24">
                 <BackButton />
 
                 <div className="mx-auto max-w-md">
-                    <Heading asChild size="lg" className="mb-4 md:mb-6">
-                        <h1 ref={navFocusRef}>
-                            <FormattedMessage
-                                id="add_organization.heading"
-                                description="Voeg een zorgaanbieder toe"
-                            />
-                        </h1>
+                    <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
+                        <FormattedMessage
+                            id="add_organization.heading"
+                            description="Voeg een zorgaanbieder toe"
+                        />
                     </Heading>
 
                     <SearchForm onSubmit={setSearchQuery} className="mb-4" />

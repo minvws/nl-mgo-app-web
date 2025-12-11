@@ -9,9 +9,6 @@
             "path": "../../packages/ui"
         },
         {
-            "path": "../../packages/fhir"
-        },
-        {
             "path": "../../packages/intl"
         },
         {
@@ -21,7 +18,13 @@
             "path": "../../packages/hcim"
         },
         {
-            "path": "../../packages/data-services"
+            "path": "../../packages/fhir"
+        },
+        {
+            "path": "../../packages/config"
+        },
+        {
+            "path": "../../packages/org-search"
         },
         {
             "path": "./tsconfig.app.json"

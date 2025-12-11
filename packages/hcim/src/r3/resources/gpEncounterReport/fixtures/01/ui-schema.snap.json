@@ -6,8 +6,10 @@
                 {
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "Dr. V. Huisarts 1"
+                    "value": [
+                        {
+                            "display": "Dr. V. Huisarts 1"
+                        }
                     ]
                 },
                 {
@@ -19,27 +21,35 @@
                 {
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
-                    "display": "15 maart 2020"
+                    "value": {
+                        "display": "15 maart 2020"
+                    }
                 },
                 {
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
-                    "display": "1529b7df-8fdf-11ec-1458-020000000000"
+                    "value": {
+                        "display": "1529b7df-8fdf-11ec-1458-020000000000"
+                    }
                 },
                 {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
-                    "display": "final"
+                    "value": {
+                        "display": "final"
+                    }
                 },
                 {
                     "label": "Titel",
                     "type": "SINGLE_VALUE",
-                    "display": "Contactverslag dd. 2020-03-15"
+                    "value": {
+                        "display": "Contactverslag dd. 2020-03-15"
+                    }
                 },
                 {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Summarization of encounter note Narrative (67781-5 in codesysteem http://loinc.org)",
                             "code": "67781-5",
@@ -55,7 +65,7 @@
                 {
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
+                    "value": [
                         {
                             "display": "Evaluatie (E in codesysteem http://fhir.nl/fhir/NamingSystem/journaalregeltypen)",
                             "code": "E",
@@ -66,9 +76,13 @@
                 {
                     "label": "Vermelding",
                     "type": "MULTIPLE_VALUES",
-                    "display": [
-                        "lage rugpijn",
-                        "Condition HNP (thoracaal/lumbaal)"
+                    "value": [
+                        {
+                            "display": "lage rugpijn"
+                        },
+                        {
+                            "display": "Condition HNP (thoracaal/lumbaal)"
+                        }
                     ]
                 }
             ]

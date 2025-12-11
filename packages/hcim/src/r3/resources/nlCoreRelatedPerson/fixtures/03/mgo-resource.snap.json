@@ -1,0 +1,185 @@
+{
+    "id": "nl-core-relatedperson-03",
+    "referenceId": "RelatedPerson/nl-core-relatedperson-03",
+    "resourceType": "RelatedPerson",
+    "profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson",
+    "fhirVersion": "R3",
+    "identifier": [
+        {
+            "_type": "identifier",
+            "use": null,
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.999.7.6",
+            "value": "1747c6fb-8fdf-11ec-2725-020000000000",
+            "type": null
+        }
+    ],
+    "patient": {
+        "_type": "reference",
+        "reference": "Patient/nl-core-patient-01",
+        "display": "Irma Jongeneel-de Haas"
+    },
+    "period": null,
+    "name": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-humanname",
+            "humannameAssemblyOrder": {
+                "_ext": true,
+                "_type": "code",
+                "value": "NL4"
+            },
+            "family": {
+                "humannameOwnPrefix": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "de"
+                },
+                "humannameOwnName": {
+                    "_ext": true,
+                    "_type": "string",
+                    "value": "Haas"
+                },
+                "humannamePartnerPrefix": null,
+                "humannamePartnerName": null
+            },
+            "given": {
+                "birthName": null,
+                "initials": null,
+                "callName": [
+                    {
+                        "_type": "string",
+                        "value": "Piet"
+                    }
+                ]
+            },
+            "text": {
+                "_type": "string",
+                "value": "Piet de Haas"
+            }
+        }
+    ],
+    "telecom": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "MC",
+                        "display": "Mobiel telefoonnummer",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "system": {
+                "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "06-11111111"
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
+                "value": "email"
+            },
+            "value": {
+                "_type": "string",
+                "value": "p.dehaas@example.com"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        }
+    ],
+    "address": [
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-address",
+            "addressType": {
+                "_ext": true,
+                "_type": "codeableConcept",
+                "text": null,
+                "coding": [
+                    {
+                        "code": "HP",
+                        "display": "Officieel adres",
+                        "system": "http://hl7.org/fhir/v3/AddressUse"
+                    }
+                ]
+            },
+            "official": {
+                "_ext": true,
+                "_type": "boolean",
+                "value": true
+            },
+            "use": {
+                "_type": "code",
+                "value": "home"
+            },
+            "type": null,
+            "line": [
+                {
+                    "streetName": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "Knalweg"
+                    },
+                    "houseNumber": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "900"
+                    },
+                    "buildingNumbersuffix": [],
+                    "unitID": null,
+                    "additionalLocator": null
+                }
+            ],
+            "city": {
+                "_type": "string",
+                "value": "Sitswaard"
+            },
+            "district": null,
+            "postalCode": {
+                "_type": "string",
+                "value": "1234XA"
+            },
+            "country": {
+                "_type": "string",
+                "value": "Nederland"
+            }
+        }
+    ],
+    "role": {
+        "_ext": true,
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "1",
+                "display": "Eerste relatie/contactpersoon",
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472"
+            }
+        ]
+    },
+    "relationship": {
+        "_type": "codeableConcept",
+        "text": null,
+        "coding": [
+            {
+                "code": "NFTH",
+                "display": "Natural father",
+                "system": "http://hl7.org/fhir/v3/RoleCode"
+            }
+        ]
+    }
+}

@@ -27,7 +27,9 @@
         "test/**/*.tsx",
         "src/**/*.test.ts",
         "src/**/*.test.tsx",
-        "src/**/*.d.ts"
+        "src/**/*.d.ts",
+        "**/__mocks__/*.ts",
+        "**/__mocks__/*.tsx"
     ],
     "references": [
         {

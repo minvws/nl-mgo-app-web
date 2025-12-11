@@ -12,7 +12,7 @@ export function PublicRoute() {
             if (!isOnboardingSeen) {
                 return <Navigate to="/welkom" replace />;
             }
-            return <Navigate to="/zorgaanbieder-toevoegen" replace />;
+            return <Navigate to="/overzicht" replace />;
 
         case '/inloggen':
             if (auth.isAuthenticated) {

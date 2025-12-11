@@ -1,23 +1,22 @@
 import { type HTMLAttributes } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useComposition } from '../../hooks/useComposition/useComposition';
+import { cn } from '../../utils';
+import { Text } from '../Text/Text';
+import { ListIcon } from './ListIcon';
+import { ListItem } from './ListItem';
 
 export interface ListProps extends HTMLAttributes<HTMLElement> {
-    readonly asChild?: boolean;
+    readonly as?: 'ul' | 'ol';
 }
 
-export const List = ({ className, asChild, children, ...rest }: ListProps) => {
-    const { Comp } = useComposition({ asChild, tag: 'ul' });
+export const List = ({ className, as = 'ul', children, ...rest }: ListProps) => {
+    const Comp = as;
 
     return (
-        <Comp
-            className={twMerge(
-                'md:text-md flex flex-col gap-6 font-sans text-sm leading-normal text-black dark:text-white',
-                className
-            )}
-            {...rest}
-        >
-            {children}
-        </Comp>
+        <Text asChild className={cn('flex flex-col gap-6', className)}>
+            <Comp {...rest}>{children}</Comp>
+        </Text>
     );
 };
+
+List.Item = ListItem;
+List.Icon = ListIcon;
