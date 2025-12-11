@@ -55,7 +55,13 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
 
             <Stack as="ul" className="w-full gap-2 sm:gap-4">
                 {shownResults.map((healthcareOrganization) => {
-                    const { isAdded, isNotSupported, id, name, address } = healthcareOrganization;
+                    const {
+                        isAdded,
+                        isNotSupported,
+                        id,
+                        name = formatMessage('common.unknown'),
+                        address,
+                    } = healthcareOrganization;
 
                     if (isAdded) {
                         return (

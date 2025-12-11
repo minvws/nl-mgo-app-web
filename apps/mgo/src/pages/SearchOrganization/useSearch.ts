@@ -2,7 +2,7 @@
 
 import {
     createSearchWorker,
-    OrganizationItem,
+    OrganizationItemDto,
     type SearchResults,
     type SearchWorker,
 } from '@minvws/mgo-org-search';
@@ -21,37 +21,27 @@ export interface UseSearchResult {
 
 export function useSearch(): UseSearchResult {
     const searchWorker = useRef<SearchWorker>();
-    const isUnmountedRef = useRef(false);
-
-    const { mutateAsync: createWorker, isSuccess: indexReady } = useMutation({
-        mutationFn: async () => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore - this is a test file, also including the json file in the tsconfig breaks typescript due to the large size of the file
-            const organizationsModule = await import(`./providers-normalized.json`);
-            const organizations = organizationsModule.default as OrganizationItem[];
-            const worker = await createSearchWorker(organizations);
-            if (!isUnmountedRef.current) {
-                searchWorker.current = worker;
-            }
-            return worker;
-        },
-    });
 
     useEffect(() => {
-        isUnmountedRef.current = false;
-        const workerCreation = createWorker();
+        searchWorker.current = createSearchWorker();
         return () => {
-            isUnmountedRef.current = true;
-            if (searchWorker.current) {
-                searchWorker.current.terminate();
-                searchWorker.current = undefined;
-            } else {
-                workerCreation.then((worker) => {
-                    worker.terminate();
-                });
-            }
+            searchWorker.current?.terminate();
         };
-    }, [createWorker]);
+    }, []);
+
+    const { mutateAsync: createIndex, isSuccess: indexReady } = useMutation({
+        mutationFn: async () => {
+            if (!searchWorker.current) {
+                console.error('No search worker found');
+                return;
+            }
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore - this is a test file, also including the json file in the tsconfig breaks typescript due to the large size of the file
+            const organizationsModule = await import(`./organizations.json`);
+            const organizations = organizationsModule.default as OrganizationItemDto[];
+            await searchWorker.current.createIndex(organizations);
+        },
+    });
 
     const {
         mutateAsync: runSearch,
@@ -60,6 +50,7 @@ export function useSearch(): UseSearchResult {
     } = useMutation({
         mutationFn: async (query: string) => {
             if (!searchWorker.current) {
+                console.error('No search worker found');
                 return;
             }
             return await searchWorker.current.search(query);
@@ -68,6 +59,10 @@ export function useSearch(): UseSearchResult {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debouncedRunSearch = useCallback(debounce(runSearch, 100), [runSearch]);
+
+    useEffect(() => {
+        createIndex();
+    }, [createIndex]);
 
     useEffect(() => {
         return () => {
