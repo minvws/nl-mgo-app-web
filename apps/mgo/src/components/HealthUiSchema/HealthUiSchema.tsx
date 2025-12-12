@@ -21,7 +21,7 @@ export function HealthUiSchema({ schema, resource }: HealthUiSchemaProps) {
             <Heading as="h1" size="xl" className="mt-4" focusOnRender focusOnRenderKey={location}>
                 {schema.label}
             </Heading>
-            <Stack className="gap-6">
+            <Stack className="mt-8">
                 <HealthUiSchemaContext.Provider value={contextValue}>
                     {schema.children.map((group, i) => (
                         <HealthUiGroup group={group} key={`${group.label}-${i}`} />
