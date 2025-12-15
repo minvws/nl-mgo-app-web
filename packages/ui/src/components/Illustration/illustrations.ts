@@ -8,8 +8,6 @@ import womanOnCouchSettingsLight from './illustrations/light/woman-on-couch-sett
 import womanOnCouchSettingsDark from './illustrations/dark/woman-on-couch-settings.svg';
 import womanOnCouchExclamationLight from './illustrations/light/woman-on-couch-exclamation.svg';
 import womanOnCouchExclamationDark from './illustrations/dark/woman-on-couch-exclamation.svg';
-import womanWithUmbrellaLight from './illustrations/light/woman-with-umbrella.svg';
-import womanWithUmbrellaDark from './illustrations/dark/woman-with-umbrella.svg';
 
 export const illustrations = {
     'woman-with-phone': {
@@ -31,10 +29,6 @@ export const illustrations = {
     'woman-on-couch-exclamation': {
         light: womanOnCouchExclamationLight,
         dark: womanOnCouchExclamationDark,
-    },
-    'woman-with-umbrella': {
-        light: womanWithUmbrellaLight,
-        dark: womanWithUmbrellaDark,
     },
 };
 
