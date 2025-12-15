@@ -1,0 +1,25 @@
+{
+    "files": [],
+    "include": [],
+    "references": [
+        {
+            "path": "../../packages/utils"
+        },
+        {
+            "path": "../../packages/org-search"
+        },
+        {
+            "path": "../../packages/ts-json-schema"
+        },
+        {
+            "path": "./tsconfig.app.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        },
+        {
+            "path": "./tsconfig.types.json"
+        }
+    ],
+    "extends": "../../tsconfig.base.json"
+}

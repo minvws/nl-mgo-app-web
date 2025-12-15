@@ -87,7 +87,8 @@
                     "intl",
                     "ui",
                     "utils",
-                    "org-search"
+                    "org-search",
+                    "org-search-api"
                 ]
             ]
         }
