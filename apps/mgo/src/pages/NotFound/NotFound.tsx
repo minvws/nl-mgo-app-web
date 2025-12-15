@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { Button, cn, Heading, Illustration, Text } from '@minvws/mgo-ui';
+import { Button, cn, Heading, Text } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -15,10 +15,6 @@ export function NotFound({ className, ...rest }: Readonly<NotFoundProps>) {
                 className={cn('mx-auto max-w-md pt-12 pb-6 md:pt-24 md:pb-32', className)}
                 {...rest}
             >
-                <Illustration
-                    className="mx-auto w-3/4 md:mb-2 md:w-3/5"
-                    illustration="woman-with-umbrella"
-                />
                 <Heading asChild size="xl" className="mt-6 md:mt-16">
                     <h1>
                         <FormattedMessage
