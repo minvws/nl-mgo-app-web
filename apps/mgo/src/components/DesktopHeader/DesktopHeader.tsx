@@ -11,7 +11,7 @@ export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
 
     return (
         <header className={'bg-t-bg-secondary'} {...rest}>
-            <Container className="flex items-center justify-between py-4">
+            <Container className="flex items-center justify-between pb-4">
                 <RouterLink
                     to="/"
                     aria-label={formatMessage('common.mgo_header_link')}
