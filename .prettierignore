@@ -17,6 +17,8 @@ CHANGELOG.md
 packages/fhir-data/fhir-definitions
 packages/fhir-data/build
 packages/intl/src/locales
+packages/org-search/src/benchmark/data
+packages/org-search/src/benchmark/results
 *.snap.json
 *-snapshots/
 apps/mgo/build

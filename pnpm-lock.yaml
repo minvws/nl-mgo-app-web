@@ -567,10 +567,19 @@ importers:
       '@orama/orama':
         specifier: ^3.1.16
         version: 3.1.16
+      '@orama/plugin-pt15':
+        specifier: ^3.1.16
+        version: 3.1.16
+      '@orama/plugin-qps':
+        specifier: ^3.1.16
+        version: 3.1.16
     devDependencies:
       '@faker-js/faker':
         specifier: ^8.4.1
         version: 8.4.1
+      tsx:
+        specifier: ^4.17.0
+        version: 4.20.5
       type-fest:
         specifier: ^4.23.0
         version: 4.41.0
@@ -2491,6 +2500,12 @@ packages:
   '@orama/orama@3.1.16':
     resolution: {integrity: sha512-scSmQBD8eANlMUOglxHrN1JdSW8tDghsPuS83otqealBiIeMukCQMOf/wc0JJjDXomqwNdEQFLXLGHrU6PGxuA==}
     engines: {node: '>= 20.0.0'}
+
+  '@orama/plugin-pt15@3.1.16':
+    resolution: {integrity: sha512-VW0waCQ+lotItWuFc/0k1/gJe9zbJhK158353Papu8B4KN6zo4thcWN0wkPm3ogZ+5AT3WjARFiLDHjXc4LT4g==}
+
+  '@orama/plugin-qps@3.1.16':
+    resolution: {integrity: sha512-/CIhC7GIx4kFEju3pjey9C4Q6feIn+xIkLKk4O+OASAKaocvygs4Q1A004utsQT+gFgD1va4309rDMV1SJ/1yA==}
 
   '@phenomnomnominal/tsquery@5.0.1':
     resolution: {integrity: sha512-3nVv+e2FQwsW8Aw6qTU6f+1rfcJ3hrcnvH/mu9i8YhxO+9sqbOfpL8m6PbET5+xKOlz/VSbp0RoYWYCtIsnmuA==}
@@ -10255,6 +10270,14 @@ snapshots:
     optional: true
 
   '@orama/orama@3.1.16': {}
+
+  '@orama/plugin-pt15@3.1.16':
+    dependencies:
+      '@orama/orama': 3.1.16
+
+  '@orama/plugin-qps@3.1.16':
+    dependencies:
+      '@orama/orama': 3.1.16
 
   '@phenomnomnominal/tsquery@5.0.1(typescript@5.9.3)':
     dependencies:

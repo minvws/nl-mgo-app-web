@@ -4,12 +4,14 @@
         "outDir": "../../out-tsc/mgo-org-search/vitest",
         "tsBuildInfoFile": "../../out-tsc/mgo-org-search/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "types": ["vitest/globals", "vitest/importMeta", "vitest"]
+        "types": ["vitest/importMeta", "vitest"]
     },
     "include": [
         "vitest.config.ts",
         "src/**/*.test.ts",
         "src/**/*.d.ts",
+        "src/benchmark/data/queries.json",
+        "src/benchmark/**/*.ts",
         "test/**/*.ts",
         "test/**/*.d.ts"
     ],

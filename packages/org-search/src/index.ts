@@ -1,6 +1,7 @@
 export {
     createSearchIndex,
     type OrganizationItem,
+    type OrganizationItemDto,
     type SearchIndex,
     type SearchResultDocument,
     type SearchResults,

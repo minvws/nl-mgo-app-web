@@ -1,16 +1,16 @@
 import { faker } from '@faker-js/faker';
-import { organization } from './organization.js';
+import { organizationDto } from './organizationDto.js';
 
 type CustomizedFaker = typeof faker & {
     custom: {
-        organization: typeof organization;
+        organizationDto: typeof organizationDto;
     };
 };
 
 const customizedFaker = faker as CustomizedFaker;
 
 customizedFaker.custom = {
-    organization,
+    organizationDto,
 };
 
 export { customizedFaker as faker };

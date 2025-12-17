@@ -21,6 +21,7 @@ function postRequestAndWaitForResponse<T extends string, F extends Func>(
 ): Promise<Awaited<ReturnType<F>>> {
     const requestId = nextId++;
     return new Promise((resolve, reject) => {
+        console.log('🚀 ~ postRequestAndWaitForResponse ~ requestType:', requestType);
         if (!worker) {
             return reject(new Error('Worker not available'));
         }

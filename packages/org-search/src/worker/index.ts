@@ -1,13 +1,13 @@
-import type { OrganizationItem } from '../search/search.js';
 import { setupAsyncWorkerFunction } from './utils.js';
 import type { CreateIndexWorkerFunction, SearchWorkerFunction } from './workerFile.js';
 
 export type SearchWorker = {
     search: SearchWorkerFunction;
+    createIndex: CreateIndexWorkerFunction;
     terminate: Worker['terminate'];
 };
 
-export async function createSearchWorker(items: OrganizationItem[]): Promise<SearchWorker> {
+export function createSearchWorker(): SearchWorker {
     const searchWorker = new Worker(new URL('./workerFile.js', import.meta.url), {
         type: 'module',
     });
@@ -18,7 +18,5 @@ export async function createSearchWorker(items: OrganizationItem[]): Promise<Sea
     );
     const search = setupAsyncWorkerFunction<'search', SearchWorkerFunction>(searchWorker, 'search');
 
-    await createIndex(items);
-
-    return { search, terminate: () => searchWorker.terminate() };
+    return { search, createIndex, terminate: () => searchWorker.terminate() };
 }

@@ -15,5 +15,5 @@
             "path": "../utils/tsconfig.lib.json"
         }
     ],
-    "exclude": ["src/**/*.test.ts"]
+    "exclude": ["src/**/*.test.ts", "src/benchmark/**/*.ts"]
 }
