@@ -33,7 +33,7 @@ jobs:
       - name: Create release tar
         run: tar -C packages/config/build -czf ${{ env.FILENAME }}.tar.gz .
       - name: Upload release tar
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ env.FILENAME }}
           path: ${{ env.FILENAME }}.tar.gz
