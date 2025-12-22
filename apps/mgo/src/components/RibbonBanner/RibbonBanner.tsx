@@ -11,7 +11,7 @@ export const RibbonBanner = (props: RibbonBannerProps) => {
     return (
         <div {...props}>
             <Container centeredContent>
-                <div className="relative left-[51px] sm:left-[97px] sm:pb-[9px] md:left-[107px] md:pb-[24px]">
+                <div className="relative left-[51px] sm:left-[97px] sm:pb-[9px] md:left-[107px] md:pb-2">
                     <RouterLink
                         to="/"
                         aria-label={formatMessage('common.rijkslint_link')}
