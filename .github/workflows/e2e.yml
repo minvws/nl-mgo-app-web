@@ -35,7 +35,7 @@ jobs:
         run: docker exec playwright bash -c "$TEST_COMMAND"
 
       - name: Upload Test Report Chrome
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: e2e-playwright-chrome
