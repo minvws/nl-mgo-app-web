@@ -30,7 +30,7 @@
             ]
         },
         {
-            "label": "Bijlage",
+            "label": "Bijlage(n)",
             "children": [
                 {
                     "type": "DOWNLOAD_LINK",
@@ -43,7 +43,7 @@
             "label": "Opgesteld door",
             "children": [
                 {
-                    "label": "Specialist",
+                    "label": "Zorgverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {

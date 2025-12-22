@@ -57,15 +57,6 @@
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
-                    "label": "Specialist",
-                    "type": "MULTIPLE_VALUES",
-                    "value": [
-                        {
-                            "display": "De Hoed"
-                        }
-                    ]
-                },
-                {
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -80,6 +71,15 @@
                             "display": "ontslagbrief (11071000146104 in codesysteem http://snomed.info/sct)",
                             "code": "11071000146104",
                             "system": "http://snomed.info/sct"
+                        }
+                    ]
+                },
+                {
+                    "label": "Zorgverlener",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "De Hoed"
                         }
                     ]
                 }

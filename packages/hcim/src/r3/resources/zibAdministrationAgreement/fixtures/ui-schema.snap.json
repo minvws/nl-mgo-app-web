@@ -132,7 +132,7 @@
                     }
                 },
                 {
-                    "label": "Specialist",
+                    "label": "Zorgverlener",
                     "type": "REFERENCE_VALUE",
                     "display": "Apotheek De Gulle Gaper",
                     "reference": "Organization/nl-core-organization-06"
