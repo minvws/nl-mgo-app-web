@@ -10,7 +10,7 @@ on:
   workflow_call:
     inputs:
       test-command:
-        description: 'Command to run the e2e tests'
+        description: 'Run the e2e tests'
         required: false
         default: 'pnpm run e2e:ci'
         type: string

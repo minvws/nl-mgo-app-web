@@ -1,7 +1,7 @@
 import { type Page } from '@playwright/test';
 
 export abstract class AbstractPage {
-    protected readonly page: Page;
+    public readonly page: Page;
     readonly pathname: string | undefined;
 
     constructor(page: Page, pathname?: string) {

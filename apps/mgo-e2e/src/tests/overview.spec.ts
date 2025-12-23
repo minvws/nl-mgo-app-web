@@ -1,5 +1,6 @@
 import { expect, test } from '../setup';
 import { setOnboardingSeen } from '../utils';
+import { runAccessibilityCheck } from '../utils/accessibilityChecker';
 
 test('User can visit the overview page which shows health categories when an organization has been added', async ({
     page,
@@ -15,6 +16,8 @@ test('User can visit the overview page which shows health categories when an org
     await test.step('Login using DigiD', async () => {
         await pageLogin.goto();
         await pageLogin.loginDigid();
+
+        await runAccessibilityCheck(pageLogin, 'Login');
     });
 
     await test.step('Navigate to overview page and verify no organizations message', async () => {
@@ -28,6 +31,8 @@ test('User can visit the overview page which shows health categories when an org
         await expect(pageAddOrganization.heading).toBeVisible();
         await pageAddOrganization.search('test', 'test');
         await pageAddOrganization.addOrganization('Kwalificatie Medmij: BGZ');
+
+        await runAccessibilityCheck(pageAddOrganization, 'Add Organization');
     });
 
     await test.step('Verify added organization and navigate back to overview', async () => {
@@ -36,11 +41,15 @@ test('User can visit the overview page which shows health categories when an org
             pageAddOrganizationList.organizationListItem('Kwalificatie Medmij: BGZ')
         ).toBeVisible();
         await pageAddOrganizationList.buttonToOverview.click();
+
+        await runAccessibilityCheck(pageAddOrganizationList, 'Add Organization List');
     });
 
     await test.step('Verify health categories on overview page', async () => {
         await expect(pageOverview.heading).toBeVisible();
         await expect(pageOverview.headingNoOrganizations).toBeHidden();
         await expect(pageOverview.buttonHealthCategory('patient')).toBeVisible();
+
+        await runAccessibilityCheck(pageOverview, 'Overview');
     });
 });

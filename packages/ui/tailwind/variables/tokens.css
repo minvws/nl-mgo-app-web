@@ -6,7 +6,7 @@
 
     /* labels */
     --color-t-label-primary: var(--color-black);
-    --color-t-label-secondary: var(--color-gray-500);
+    --color-t-label-secondary: var(--color-gray-600);
     --color-t-label-invert: var(--color-white);
     --color-t-label-vibrant: var(--color-gray-900);
 

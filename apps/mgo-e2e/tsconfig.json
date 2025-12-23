@@ -12,7 +12,9 @@
     "include": [
         "**/*.ts",
         "playwright.config.ts",
+        "playwright.base.config.ts",
         "playwright.config.ci.ts",
+        "playwright.config.test.ts",
         "src/**/*.spec.ts",
         "src/**/*.d.ts"
     ],
