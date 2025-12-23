@@ -1,64 +1,36 @@
-import { getDataServiceConfig } from '$/config';
 import { HealthcareOrganization } from '$/store';
-import { type DataServiceConfig } from '@minvws/mgo-config';
-import { FhirVersion } from '@minvws/mgo-fhir';
-import { hasIntersection } from '../../../../../packages/utils/src/hasIntersection/hasIntersection';
+import { HealthCategoryConfig } from '@minvws/mgo-config';
+import { getRelevantEndpoints } from '../../config';
 import { createHealthQuery } from './createHealthQuery';
 
 export interface HealthCategoryQueryArgs {
     organizations: HealthcareOrganization[];
-    profiles: string[];
+    categories: HealthCategoryConfig[];
 }
 
-function findRelevantEndpoints(
-    dataServiceConfig: DataServiceConfig | undefined,
-    profiles: string[]
-) {
-    return dataServiceConfig?.endpoints.filter((endpoint) =>
-        hasIntersection(endpoint.profiles, profiles)
-    );
-}
-
-export function createHealthQueries({ profiles, organizations }: HealthCategoryQueryArgs) {
-    const createHealthQueries = (
-        organization: HealthcareOrganization,
-        dataService: {
-            id: string;
-            resourceEndpoint: string;
-            fhirVersion: string;
-            fhirVersionEnum: FhirVersion;
-        },
-        endpoints: DataServiceConfig['endpoints']
-    ) => {
-        return endpoints.map((endpoint) =>
-            createHealthQuery({
-                organizationId: organization.id,
-                dataServiceId: dataService.id,
-                resourceEndpoint: dataService.resourceEndpoint,
-                endpointId: endpoint.id,
-            })
-        );
-    };
-
+export function createHealthQueries({ categories, organizations }: HealthCategoryQueryArgs) {
+    const relevantEndpoints = getRelevantEndpoints(categories);
     const queryConfigs = [];
 
     for (const organization of organizations) {
         for (const dataService of organization.dataServices) {
-            const dataServiceConfig = getDataServiceConfig(dataService.id);
-            const relevantEndpoints = findRelevantEndpoints(dataServiceConfig, profiles);
+            const endpointIds = relevantEndpoints
+                .filter((x) => x.dataServiceId === dataService.id)
+                .map((x) => x.endpointId);
 
-            if (!dataServiceConfig || !relevantEndpoints) {
+            if (!endpointIds.length) {
                 continue;
             }
 
-            const dataServiceDetails = {
-                ...dataService,
-                fhirVersion: dataServiceConfig.fhirVersion,
-                fhirVersionEnum: dataServiceConfig.fhirVersionEnum as FhirVersion,
-            };
-
             queryConfigs.push(
-                ...createHealthQueries(organization, dataServiceDetails, relevantEndpoints)
+                ...endpointIds.map((endpointId) =>
+                    createHealthQuery({
+                        organizationId: organization.id,
+                        dataServiceId: dataService.id,
+                        resourceEndpoint: dataService.resourceEndpoint,
+                        endpointId,
+                    })
+                )
             );
         }
     }

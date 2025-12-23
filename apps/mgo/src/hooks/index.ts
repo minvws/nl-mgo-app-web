@@ -1,3 +1,4 @@
+export { useFailedHealthQueries } from './useFailedHealthQueries/useFailedHealthQueries';
 export { useHealthCategoriesQuery } from './useHealthCategoriesQuery/useHealthCategoriesQuery';
 export {
     useHealthCategoriesWithSlug,
@@ -9,3 +10,4 @@ export { useHealthUiSchema } from './useHealthUiSchema/useHealthUiSchema';
 export { useKeyDown, type KeyDownOptions } from './useKeyDown/useKeyDown';
 export { useOnboardingSeen } from './useOnboardingSeen/useOnboardingSeen';
 export { useResourceDetailsRoutePath } from './useResourceDetailsRoutePath/useResourceRouteDetailsPath';
+export { useRetryQuery } from './useRetryQuery/useRetryQuery';

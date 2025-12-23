@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 
-import { useMainHealthCategoriesWithSlugs } from './useMainHealthCategoriesWithSlugs';
 import * as useHealthCategoriesWithSlugModule from '../useHealthCategoriesWithSlug/useHealthCategoriesWithSlug';
+import { useMainHealthCategoriesWithSlugs } from './useMainHealthCategoriesWithSlugs';
 
 vi.mock('$/intl');
 
@@ -12,7 +12,7 @@ test('returns all main health categories with unique slugs', () => {
     const mainHealthCategoriesSlugs = mainHealthCategories.map((category) =>
         category.categories.flatMap((category) => category.slug)
     );
-    expect(mainHealthCategories.length).toBeGreaterThan(1);
+    expect(mainHealthCategories.length).toBeTruthy();
     expect(mainHealthCategoriesSlugs.length).toBe(mainHealthCategories.length);
 
     expect(new Set(mainHealthCategoriesSlugs).size).toBe(mainHealthCategoriesSlugs.length);

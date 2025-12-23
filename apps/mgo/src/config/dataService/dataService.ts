@@ -6,7 +6,7 @@ import {
 
 export type { DataServiceConfig, DataServiceEndpointConfig };
 
-const dataServiceConfigs = Object.values(dataServicesConfig);
+export const dataServiceConfigs = Object.values(dataServicesConfig);
 
 export function getDataServiceConfig(dataServiceId?: string) {
     return dataServiceConfigs.find((x) => x.id === dataServiceId);

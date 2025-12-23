@@ -74,38 +74,10 @@ test('creates queries for all health category profiles and assigns the health ca
         })
     );
 
-    for (const category of categories) {
-        expect(hoisted.createHealthQueries).toHaveBeenCalledWith({
-            profiles: category.subcategories.flatMap((subcategory) => subcategory.profiles),
-            organizations,
-        });
-    }
-});
-
-test('deduplicates resulting queries by query key', () => {
-    const categories = [mockHealthCategoryConfig(), mockHealthCategoryConfig()];
-    const organizations = [faker.custom.healthcareOrganization()];
-
-    const queryKey = [faker.lorem.word()];
-    hoisted.createHealthQueries.mockImplementation(() => {
-        return mockArray({
-            min: 2,
-            max: 10,
-            factory: () => ({
-                ...mockHealthCategoryQuery(),
-                queryKey,
-            }),
-        });
+    expect(hoisted.createHealthQueries).toHaveBeenCalledWith({
+        categories,
+        organizations,
     });
-
-    const { result } = renderHook(() =>
-        useHealthCategoriesQueries({
-            categories,
-            organizations,
-        })
-    );
-
-    expect(result.current).toHaveLength(1);
 });
 
 test('syncs results to the store using the query config meta', () => {
@@ -120,7 +92,6 @@ test('syncs results to the store using the query config meta', () => {
         organizationId: faker.string.uuid(),
         dataServiceId: faker.string.uuid(),
         endpointId: faker.lorem.word(),
-        resourceEndpoint: faker.internet.url(),
     };
     hoisted.createHealthQueries.mockImplementation(() => [queryConfig]);
 

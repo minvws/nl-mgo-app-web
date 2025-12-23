@@ -5,7 +5,6 @@ import {
 } from '$/config';
 import { HealthcareOrganization, Resource, useStore } from '$/store';
 import { hasIntersection, isNonNullish } from '@minvws/mgo-utils';
-import { useQueryClient } from '@tanstack/react-query';
 import { useHealthCategoriesQueries } from './useHealthCategoriesQueries';
 import { useSyncedQueries } from './useSyncedQueries';
 
@@ -23,14 +22,12 @@ export interface HealthCategoryQuery {
     isLoading: boolean;
     isEmpty: boolean;
     isError: boolean;
-    retry: () => void;
 }
 
 export function useHealthCategoriesQuery({
     categories: nullableCategories,
     organizations: nullableOrganizations,
 }: HealthCategoryQueryArgs) {
-    const queryClient = useQueryClient();
     const getResourcesByProfiles = useStore.use.getResourcesByProfiles();
     const categories = nullableCategories.filter(isNonNullish);
     const organizations = nullableOrganizations.filter(isNonNullish);
@@ -65,14 +62,6 @@ export function useHealthCategoriesQuery({
             resources: getResourcesByProfiles(subcategory.profiles, organizations),
         }));
 
-        const retry = () => {
-            categoryQueries.forEach((q) => {
-                queryClient.invalidateQueries({
-                    queryKey: q.config.queryKey,
-                });
-            });
-        };
-
         return {
             category: {
                 ...category,
@@ -81,7 +70,6 @@ export function useHealthCategoriesQuery({
             isEmpty: subcategories.every((subcategory) => !subcategory.resources.length),
             isLoading: categoryQueries.some((q) => !q.query.isSynced && !q.query.isError),
             isError: categoryQueries.some((q) => q.query.isError),
-            retry,
         };
     });
 

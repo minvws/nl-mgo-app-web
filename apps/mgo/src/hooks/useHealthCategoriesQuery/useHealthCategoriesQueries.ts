@@ -1,7 +1,5 @@
 import { HealthCategoryConfig } from '$/config';
 import { HealthcareOrganization, useStore } from '$/store';
-import { hashKey } from '@tanstack/react-query';
-import { uniqBy } from 'lodash';
 import { useMemo } from 'react';
 import { createHealthQueries } from './createHealthQueries';
 import { SyncedQueryConfigFromConfig } from './useSyncedQueries';
@@ -18,12 +16,8 @@ export function useHealthCategoriesQueries({ categories, organizations }: Health
     const organisationsKey = organizations.map((organization) => organization.id).join('|');
 
     return useMemo(() => {
-        const configs = categories.flatMap((category) => {
-            const profiles = category.subcategories.flatMap(({ profiles }) => profiles);
-            return createHealthQueries({ profiles, organizations });
-        });
-        const uniqueConfigs = uniqBy(configs, (config) => hashKey(config.queryKey));
-        return uniqueConfigs.map((config) => {
+        const configs = createHealthQueries({ categories, organizations });
+        return configs.map((config) => {
             return {
                 ...config,
                 onSync: (mgoResources) => {
