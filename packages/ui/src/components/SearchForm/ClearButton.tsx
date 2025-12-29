@@ -23,10 +23,10 @@ export const ClearButton = ({ 'aria-label': ariaLabel, className, ...rest }: Cle
             {...rest}
         >
             <Icon
-                icon="cancel"
+                icon="cancel-fill"
                 className={cn(
-                    'size-5 rounded-full',
-                    'fill-t-symbol-primary group-hover:fill-t-cat-rijkslint',
+                    'size-6 rounded-full',
+                    'fill-t-symbol-secondary group-hover:fill-t-cat-rijkslint',
                     'transition-colors duration-200',
                     groupFocusStyle
                 )}

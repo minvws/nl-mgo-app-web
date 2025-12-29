@@ -47,3 +47,8 @@ test('submitting the form calls onSubmit with current value and prevents default
 
     expect(handleSubmit).toHaveBeenCalledWith(query);
 });
+
+test('renders a with a spinner when loading state is true', async () => {
+    render(<SearchForm clearAriaLabel="Clear" value="" onChange={vi.fn()} loading />);
+    expect(screen.getByTestId('spinner')).toBeVisible();
+});

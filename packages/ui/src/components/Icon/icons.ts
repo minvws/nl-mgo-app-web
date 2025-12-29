@@ -5,7 +5,6 @@ import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
 import CalendarToday from '@material-symbols/svg-400/outlined/calendar_today.svg?react';
 import Call from '@material-symbols/svg-400/outlined/call.svg?react';
-import CancelFill from '@material-symbols/svg-400/outlined/cancel-fill.svg?react';
 import Cancel from '@material-symbols/svg-400/outlined/cancel.svg?react';
 import Check from '@material-symbols/svg-400/outlined/check.svg?react';
 import Delete from '@material-symbols/svg-400/outlined/delete.svg?react';
@@ -38,6 +37,8 @@ import Syringe from '@material-symbols/svg-400/outlined/syringe.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
+import CancelFill from '@material-symbols/svg-400/rounded/cancel-fill.svg?react';
+import Search from '@material-symbols/svg-400/rounded/search.svg?react';
 
 import Add from '@material-symbols/svg-400/rounded/add.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
@@ -52,9 +53,9 @@ import Favorite from '@material-symbols/svg-700/rounded/favorite.svg?react';
 import CheckFill from '@material-symbols/svg-400/outlined/check_circle-fill.svg?react';
 import InfoFill from '@material-symbols/svg-400/outlined/info-fill.svg?react';
 import FavoriteFill from '@material-symbols/svg-400/rounded/favorite-fill.svg?react';
-import HelpFilled from '@material-symbols/svg-700/rounded/help-fill.svg?react';
 import HomeFill from '@material-symbols/svg-400/rounded/home-fill.svg?react';
 import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?react';
+import HelpFilled from '@material-symbols/svg-700/rounded/help-fill.svg?react';
 
 export const icons = {
     chevron_left: ChevronLeft,
@@ -111,6 +112,7 @@ export const icons = {
     account_balance: AccountBalance,
     link_off: LinkOff,
     medical_information: MedicalInformation,
+    search: Search,
 };
 
 export type IconName = keyof typeof icons;
