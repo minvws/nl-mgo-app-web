@@ -12,7 +12,7 @@ interface Styles {
 
 const variantStyles: Record<Variant, Styles> = {
     default: {
-        circle: 'stroke-gray-50 dark:stroke-gray-700',
+        circle: 'stroke-logo-blue-500/15 dark:stroke-logo-blue-300/30',
         fill: 'stroke-t-cat-rijkslint',
     },
     white: {

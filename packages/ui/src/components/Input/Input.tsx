@@ -12,9 +12,9 @@ export const Input = ({ type = 'text', invalid, className, size, ...rest }: Inpu
             size="md"
             asChild
             className={cn(
-                'bg-t-bg-secondary px-4 py-2 leading-0',
-                'rounded-lg outline-hidden',
-                'border-t-seperator-primary border',
+                'bg-t-bg-secondary px-4 py-3 leading-0',
+                'rounded-sm outline-hidden',
+                'border-t-seperator-secondary border',
                 'focus:border-t-cat-rijkslint',
                 'aria-[invalid]:border-t-state-critical',
                 'placeholder:text-t-label-secondary',

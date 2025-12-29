@@ -36,6 +36,7 @@ export const Overview: Story = {
         <DarkStory>
             <Stack>
                 <SearchForm {...args} />
+                <SearchForm {...args} loading />
             </Stack>
         </DarkStory>
     ),
