@@ -44,6 +44,7 @@ export function SearchOrganization() {
                     placeholder={formatMessage('add_organization.search_placeholder')}
                     value={searchQuery}
                     onChange={handleQueryChange}
+                    loading={isSearching}
                 />
 
                 {/* c8 ignore start - this code is just for testing purposes, coverage will be added later */}
