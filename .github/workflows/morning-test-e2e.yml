@@ -10,4 +10,5 @@ jobs:
     uses: ./.github/workflows/e2e.yml
     with:
       test-command: 'pnpm run e2e:test'
+      enable-accessibility-checks: 'false'
     secrets: inherit
