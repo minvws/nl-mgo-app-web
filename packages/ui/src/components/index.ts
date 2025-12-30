@@ -1,5 +1,11 @@
 export { Accordion, type AccordionProps } from './Accordion/Accordion';
 export { Alert, type AlertProps } from './Alert/Alert';
+export {
+    Breadcrumbs,
+    type BreadcrumbItem,
+    type BreadcrumbLinkProps,
+    type BreadcrumbsProps,
+} from './Breadcrumbs/Breadcrumbs';
 export { Button, type ButtonProps } from './Button/Button';
 export { Card, type CardProps } from './Card/Card';
 export { ClosableCard } from './ClosableCard/ClosableCard';
