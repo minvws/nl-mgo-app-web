@@ -1,5 +1,6 @@
 export * from './types/index.js';
 
+export * from './createJsonApi/createJsonApi.js';
 export * from './defer/defer.js';
 export * from './flushCallStack/flushCallStack.js';
 export * from './hasIntersection/hasIntersection.js';
