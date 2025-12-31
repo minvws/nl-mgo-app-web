@@ -81,6 +81,7 @@
                     "hcim",
                     "hcim-parse",
                     "hcim-ui",
+                    "logging",
                     "intl",
                     "ui",
                     "utils",
