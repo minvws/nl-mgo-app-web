@@ -42,7 +42,7 @@ const categoryIconColors: Record<HealthCategoryIconName, string> = {
     folder: 'fill-t-cat-documents',
     patient_list: 'fill-t-cat-plan',
     health_and_safety: 'fill-t-cat-device',
-    medical_information: 'fill-t-cat-personal',
+    medical_information: 'fill-t-cat-administration',
     account_balance: 'fill-t-cat-providers',
     group: 'fill-t-cat-problems',
 };
@@ -62,7 +62,7 @@ const categoryColors: Record<HealthCategoryIconName, string> = {
     folder: 'bg-t-cat-documents/15',
     patient_list: 'bg-t-cat-plan/15',
     health_and_safety: 'bg-t-cat-device/15',
-    medical_information: 'bg-t-cat-personal/15',
+    medical_information: 'bg-t-cat-administration/15',
     account_balance: 'bg-t-cat-providers/15',
     group: 'bg-t-cat-problems/15',
 };

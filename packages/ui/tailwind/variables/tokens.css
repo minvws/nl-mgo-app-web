@@ -38,11 +38,11 @@
     --color-t-cat-vaccinations: var(--color-mint-500);
     --color-t-cat-allergies: var(--color-orange-500);
     --color-t-cat-problems: var(--color-red-500);
-    --color-t-cat-personal: var(--color-pink-500);
+    --color-t-cat-administration: var(--color-pink-500);
     --color-t-cat-warning: var(--color-dark-yellow-500);
-    --color-t-cat-personal: var(--color-pink-700);
+    --color-t-cat-administration: var(--color-pink-700);
     --color-t-cat-warning: var(--color-dark-yellow-800);
-    --color-t-cat-payer: var(--color-light-blue-800);
+    --color-t-cat-providers: var(--color-light-blue-800);
     --color-t-cat-procedures: var(--color-violet-500);
     --color-t-cat-lifestyle: var(--color-green-500);
     --color-t-cat-plan: var(--color-brown-500);
@@ -120,9 +120,9 @@
             --color-t-cat-vaccinations: var(--color-mint-300);
             --color-t-cat-allergies: var(--color-orange-300);
             --color-t-cat-problems: var(--color-red-300);
-            --color-t-cat-personal: var(--color-pink-300);
+            --color-t-cat-administration: var(--color-pink-300);
             --color-t-cat-warning: var(--color-dark-yellow-300);
-            --color-t-cat-payer: var(--color-light-blue-300);
+            --color-t-cat-providers: var(--color-light-blue-300);
             --color-t-cat-procedures: var(--color-violet-300);
             --color-t-cat-lifestyle: var(--color-green-300);
             --color-t-cat-plan: var(--color-brown-300);
