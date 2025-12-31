@@ -41,6 +41,15 @@
         },
         {
             "path": "./packages/org-search"
+        },
+        {
+            "path": "./apps/org-search-api"
+        },
+        {
+            "path": "./packages/ts-json-schema"
+        },
+        {
+            "path": "./packages/logging"
         }
     ]
 }

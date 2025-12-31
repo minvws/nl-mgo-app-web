@@ -7,6 +7,8 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 // @ts-ignore
 import importPlugin from 'eslint-plugin-import';
+// @ts-ignore
+import nodePlugin from 'eslint-plugin-n';
 import sonarjs from 'eslint-plugin-sonarjs';
 import { fileURLToPath, URL } from 'url';
 
@@ -17,13 +19,18 @@ export const resolvePath = (path) => fileURLToPath(new URL(path, import.meta.url
  * @typedef {Object} EslintConfigOptions
  * @property {boolean} [useTypeScript] - Whether to use TypeScript configuration
  * @property {boolean} [useReact] - Whether to use React configuration
+ * @property {boolean} [useNode] - Whether to use Node configuration
  */
 
 /**
  * Creates an ESLint configuration based on the provided options
  * @param {EslintConfigOptions} options - Configuration options
  */
-export function createEslintConfig({ useTypeScript = true, useReact = false } = {}) {
+export function createEslintConfig({
+    useTypeScript = true,
+    useReact = false,
+    useNode = false,
+} = {}) {
     /** @type {import('eslint').Linter.Config[]} */
     const config = [];
 
@@ -39,6 +46,17 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
         config.push(...tanstackQuery.configs['flat/recommended']);
     }
 
+    if (useNode) {
+        config.push(nodePlugin.configs['flat/recommended-script']);
+        config.push({
+            files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+            rules: {
+                'n/prefer-node-protocol': 'error',
+                'n/no-missing-import': 'off', // not needed / conflicts with typescript
+            },
+        });
+    }
+
     config.push(
         {
             // prettier-ignore
@@ -50,6 +68,7 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 '**/out-tsc',
                 '**/test-output',
                 '*.config.*',
+                '*.snap.json',
             ],
         },
 
@@ -75,10 +94,10 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 '**/*.jsx',
             ],
             plugins: { import: importPlugin },
-            ignores: ['packages/fhir-data/schema-generator/*'],
             rules: {
                 'no-duplicate-imports': 'error',
                 'import/no-default-export': 'error',
+                'import/export': 'error',
                 'no-void': 'error',
             },
         }
@@ -126,7 +145,7 @@ export function createEslintConfig({ useTypeScript = true, useReact = false } = 
                 files: ['**/*.ts', '**/*.tsx'],
                 rules: {
                     'no-redeclare': 'off',
-                    '@typescript-eslint/no-redeclare': 'error',
+                    '@typescript-eslint/no-redeclare': 'off',
                     '@typescript-eslint/no-empty-function': 'off',
                     '@typescript-eslint/no-non-null-assertion': 'off',
                     '@typescript-eslint/no-unused-vars': [
