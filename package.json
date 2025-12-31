@@ -82,6 +82,7 @@
                     "hcim-parse",
                     "hcim-ui",
                     "logging",
+                    "ts-json-schema",
                     "intl",
                     "ui",
                     "utils",

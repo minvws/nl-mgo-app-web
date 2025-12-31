@@ -1,0 +1,40 @@
+{
+    "name": "@minvws/mgo-ts-json-schema",
+    "license": "EUPL-1.2",
+    "type": "module",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/minvws/nl-mgo-app-web"
+    },
+    "files": [
+        "dist/",
+        "bin/"
+    ],
+    "bin": {
+        "ts-json-schema": "bin/ts-json-schema.js"
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "development": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        }
+    },
+    "dependencies": {
+        "@minvws/mgo-logging": "workspace:^",
+        "commander": "^14.0.2",
+        "lodash-es": "^4.17.21",
+        "ts-json-schema-generator": "^2.3.0"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
+        "@minvws/mgo-utils": "workspace:^",
+        "@types/lodash-es": "^4.17.12",
+        "type-fest": "^4.23.0",
+        "typescript": "^5.4.5",
+        "vitest": "^3.2.4"
+    }
+}
