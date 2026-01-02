@@ -1,13 +1,12 @@
-name: Package - Config
+name: Package - Release MGO
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - v*
   pull_request:
     paths:
-      - '.github/workflows/package-config.yml'
-      - 'packages/config/**'
+      - '.github/workflows/package-release.yml'
 
 jobs:
   build:
@@ -18,4 +17,5 @@ jobs:
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/package
         with:
-          package-path: 'packages/config'
+          package-path: 'apps/mgo'
+          file-name: 'nl-mgo-app-web'

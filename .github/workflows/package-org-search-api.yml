@@ -1,4 +1,4 @@
-name: Package - Config
+name: Package - Org Search API
 
 on:
   push:
@@ -6,8 +6,9 @@ on:
       - main
   pull_request:
     paths:
-      - '.github/workflows/package-config.yml'
-      - 'packages/config/**'
+      - '.github/workflows/package-org-search-api.yml'
+      - 'apps/org-search-api/**'
+      - 'packages/org-search/**'
 
 jobs:
   build:
@@ -18,4 +19,4 @@ jobs:
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/package
         with:
-          package-path: 'packages/config'
+          package-path: 'apps/org-search-api'

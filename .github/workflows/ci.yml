@@ -39,7 +39,7 @@ jobs:
       - name: Check types
         env:
           NODE_OPTIONS: '--max_old_space_size=8192'
-        run: pnpm run typecheck
+        run: pnpm exec nx run-many -t typecheck --output-style=stream
 
   test:
     runs-on: ubuntu-22.04
