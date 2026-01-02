@@ -21,6 +21,9 @@
         },
         {
             "path": "../../packages/hcim/tsconfig.lib.json"
+        },
+        {
+            "path": "../../packages/ts-json-schema/tsconfig.lib.json"
         }
     ]
 }

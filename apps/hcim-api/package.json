@@ -10,6 +10,7 @@
         "lodash-es": "^4.17.21"
     },
     "devDependencies": {
+        "@minvws/mgo-ts-json-schema": "workspace:^",
         "@faker-js/faker": "^8.4.0",
         "@types/lodash-es": "^4.17.12",
         "ts-json-schema-generator": "^2.3.0",
