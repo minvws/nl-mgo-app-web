@@ -26,8 +26,8 @@ test('ClosableCard renders with title and details when isOpen is true', () => {
 
     render(<ClosableCard {...props} />);
 
-    const titleText = screen.getByText(new RegExp(props.title));
-    expect(titleText).toBeInTheDocument();
+    const title = screen.getByRole('heading', { name: props.title });
+    expect(title).toBeVisible();
 
     const detailsText = screen.getByText(props.children);
     expect(detailsText).toBeInTheDocument();
