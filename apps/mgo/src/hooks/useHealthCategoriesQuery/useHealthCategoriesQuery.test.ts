@@ -17,21 +17,9 @@ const hoisted = vi.hoisted(() => {
             (_dataServiceId: string, _endpointId: string) =>
                 ({}) as Partial<DataServiceEndpointConfig> | undefined
         ),
-        invalidateQueries: vi.fn(),
         useSyncedQueries: vi.fn(
             (x: Parameters<(typeof import('./useSyncedQueries'))['useSyncedQueries']>[0]) => x
         ),
-    };
-});
-
-vi.mock('@tanstack/react-query', async () => {
-    const actual =
-        await vi.importActual<typeof import('@tanstack/react-query')>('@tanstack/react-query');
-    return {
-        ...actual,
-        useQueryClient: () => ({
-            invalidateQueries: hoisted.invalidateQueries,
-        }),
     };
 });
 
@@ -135,15 +123,6 @@ test('returns one result per category', async () => {
 
     expect(resB.isLoading).toBe(false);
     expect(resB.isError).toBe(true);
-
-    resA.retry();
-
-    expect(hoisted.invalidateQueries).toHaveBeenCalledWith({
-        queryKey: queryConfigA.queryKey,
-    });
-    expect(hoisted.invalidateQueries).not.toHaveBeenCalledWith({
-        queryKey: queryConfigB.queryKey,
-    });
 });
 
 test('returns the resources from the store in the category format', async () => {

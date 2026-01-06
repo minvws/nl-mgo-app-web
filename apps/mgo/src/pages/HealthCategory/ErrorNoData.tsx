@@ -2,29 +2,26 @@ import { FormattedMessage } from '$/intl';
 import { RouterLink } from '$/routing';
 import { Button, Heading, Icon, Text } from '@minvws/mgo-ui';
 
-export function NoData() {
+export function ErrorNoData() {
     return (
         <div className="w-full py-6 text-center">
-            <Icon className="mx-auto h-12 w-12" icon={'pill'} />
+            <Icon className="mx-auto h-12 w-12" icon={'sync_problem'} />
             <Heading as="h2" size="sm" className="mt-8">
                 <FormattedMessage
-                    id="health_category.empty.heading"
-                    description="Geen gegevens gevonden"
+                    id="health_category.errornodata.heading"
+                    description="Geen gegevens opgehaald"
                 />
             </Heading>
             <Text className="text-t-label-secondary mt-2" as="p">
                 <FormattedMessage
-                    id="health_category.empty.subheading"
-                    description="Er is hier niets opgeslagen."
+                    id="health_category.errornodata.subheading"
+                    description="Dit komt door een storing bij ons. Probeer het later opnieuw."
                 />
             </Text>
 
             <Button className="mt-6" asChild>
                 <RouterLink to="/overzicht">
-                    <FormattedMessage
-                        id="health_category.empty.action"
-                        description="Ga naar overzicht"
-                    />
+                    <FormattedMessage id="common.try_again" description="Ga naar overzicht" />
                 </RouterLink>
             </Button>
         </div>

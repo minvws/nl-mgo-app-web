@@ -1,12 +1,13 @@
 import { HealthSubCategoryList } from '$/components/HealthSubCategoryList/HealthSubCategoryList';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
-import { useHealthCategoriesQuery } from '$/hooks';
-import { FormattedMessage, useIntl } from '$/intl';
+import { useFailedHealthQueries, useHealthCategoriesQuery, useRetryQuery } from '$/hooks';
+import { useIntl } from '$/intl';
 import { Navigate, useParamsData } from '$/routing';
 import { useStore } from '$/store';
-import { Alert, Button, Heading, Stack } from '@minvws/mgo-ui';
+import { ErrorNotice, Heading, Stack } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from '../NotFound/NotFound';
+import { ErrorNoData } from './ErrorNoData';
 import { NoData } from './NoData';
 
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
@@ -25,6 +26,13 @@ export function HealthCategory() {
         organizations,
     });
 
+    const failedQueries = useFailedHealthQueries({
+        organizations,
+        categories: healthCategory ? [healthCategory] : [],
+    });
+
+    const { retry, isRetrying } = useRetryQuery();
+
     if (!healthCategory) {
         return <NotFound className="flex flex-col items-center text-center" />;
     }
@@ -33,7 +41,7 @@ export function HealthCategory() {
         return <Navigate to={`/overzicht`} />;
     }
 
-    const { isLoading, isEmpty, isError, category, retry } = categoryQuery;
+    const { isLoading, isError, isEmpty, category } = categoryQuery;
     const heading = formatMessage(category.heading as AppMessagesIds);
 
     return (
@@ -41,21 +49,15 @@ export function HealthCategory() {
             <Helmet title={heading} />
 
             <section className="grow">
-                {isError && (
-                    <Alert
-                        label={formatMessage('common.failed_to_load_data')}
-                        aria-label={formatMessage('common.failed_to_load_data')}
-                        status="warning"
-                        className="mb-4"
-                    >
-                        <Stack className="items-start gap-1">
-                            <FormattedMessage id="common.error_in_system" />
-                            <Button variant="ghost" className="p-0 md:p-0" onClick={() => retry()}>
-                                <FormattedMessage id="common.try_again" />
-                            </Button>
-                        </Stack>
-                    </Alert>
-                )}
+                <ErrorNotice
+                    isOpen={(failedQueries.length > 0 || isRetrying) && !isEmpty}
+                    heading={formatMessage('common.data_not_retrieved_heading')}
+                    subHeading={formatMessage('common.data_not_retrieved_subheading')}
+                    buttonLabel={formatMessage('common.try_again')}
+                    onClick={() => retry(failedQueries)}
+                    loading={isRetrying}
+                    loadingTextScreenReader={formatMessage('common.loading_data')}
+                />
 
                 <div className="flex justify-between">
                     <Breadcrumbs />
@@ -71,13 +73,15 @@ export function HealthCategory() {
                 </Heading>
 
                 <div className="py-4 md:py-8">
-                    {isLoading && (
+                    {isLoading ? (
                         <div className="py-8 text-center md:py-16">
                             <LoadingSpinner />
                         </div>
-                    )}
-
-                    {!isLoading && !isEmpty && (
+                    ) : isError && isEmpty ? (
+                        <ErrorNoData />
+                    ) : isEmpty ? (
+                        <NoData />
+                    ) : (
                         <Stack className="gap-4 md:gap-6">
                             {category.subcategories.map(({ heading, resources }) => (
                                 <HealthSubCategoryList
@@ -88,8 +92,6 @@ export function HealthCategory() {
                             ))}
                         </Stack>
                     )}
-
-                    {!isLoading && isEmpty && <NoData />}
                 </div>
             </section>
         </>

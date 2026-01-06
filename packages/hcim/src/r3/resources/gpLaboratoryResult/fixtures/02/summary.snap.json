@@ -68,7 +68,7 @@
             "label": "Test afgenomen door",
             "children": [
                 {
-                    "label": "Specialist",
+                    "label": "Zorgverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {

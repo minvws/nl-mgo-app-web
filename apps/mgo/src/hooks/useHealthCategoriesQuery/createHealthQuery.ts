@@ -7,17 +7,18 @@ export interface HealthQueryOptions {
     endpointId: string;
 }
 
+export const HEALTH_QUERY_KEY = 'health';
+
 export function createHealthQuery(query: HealthQueryOptions) {
     const { organizationId, dataServiceId, resourceEndpoint, endpointId } = query;
 
     return {
         meta: {
             organizationId,
-            resourceEndpoint,
             dataServiceId,
             endpointId,
         },
-        queryKey: ['health', organizationId, resourceEndpoint, dataServiceId, endpointId],
+        queryKey: [HEALTH_QUERY_KEY, organizationId, resourceEndpoint, dataServiceId, endpointId],
         queryFn: async () => {
             const request: HealthRequest = {
                 dataServiceId,
@@ -28,6 +29,10 @@ export function createHealthQuery(query: HealthQueryOptions) {
             return await fetchHealthData(request);
         },
         staleTime: Infinity,
+        retryOnMount: false,
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: false,
     };
 }
 

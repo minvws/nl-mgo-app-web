@@ -4,7 +4,7 @@ import { Navigate, useParamsData } from '$/routing';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage, AppMessagesIds } from '@minvws/mgo-intl/test/shared';
-import { screen, within } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
 
@@ -21,6 +21,7 @@ const hoisted = vi.hoisted(() => ({
         vi.fn<
             (typeof import('$/hooks/useHealthCategoriesQuery/useHealthCategoriesQuery'))['useHealthCategoriesQuery']
         >(),
+    useRetryQuery: vi.fn(),
 }));
 
 vi.mock('$/hooks', async (importOriginal) => {
@@ -29,6 +30,7 @@ vi.mock('$/hooks', async (importOriginal) => {
     return {
         ...mod,
         useHealthCategoriesQuery: hoisted.useHealthCategoriesQuery,
+        useRetryQuery: hoisted.useRetryQuery,
     };
 });
 
@@ -48,6 +50,11 @@ beforeEach(() => {
             retry: vi.fn(),
         },
     ]);
+
+    hoisted.useRetryQuery.mockImplementation(() => ({
+        retry: vi.fn(),
+        isRetrying: false,
+    }));
 });
 
 function mockHealthCategoryWithResources(): HealthCategoryQuery['category'] {
@@ -157,12 +164,14 @@ test('shows category query error', async () => {
 
     setupWithAppProviders(<HealthCategory />);
 
-    screen.getByRole('heading', {
-        name: appMessage(healthCategoryQuery.category.heading as AppMessagesIds),
-        level: 1,
-    });
+    expect(
+        screen.getByRole('heading', {
+            name: appMessage(healthCategoryQuery.category.heading as AppMessagesIds),
+            level: 1,
+        })
+    ).toBeInTheDocument();
 
-    expect(screen.getByRole('alert')).toBeVisible();
+    expect(screen.getByText(appMessage('common.data_not_retrieved_heading'))).toBeInTheDocument();
 });
 
 test('shows category empty', async () => {
@@ -188,6 +197,36 @@ test('shows category empty', async () => {
     });
 });
 
+test('shows category error no data', async () => {
+    const healthCategoryQuery = {
+        category: mockHealthCategoryWithResources(),
+        isLoading: false,
+        isError: true,
+        isEmpty: true,
+        retry: vi.fn(),
+    };
+
+    hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
+    hoisted.useRetryQuery.mockImplementation(() => ({
+        retry: vi.fn(),
+        isRetrying: true,
+    }));
+
+    setupWithAppProviders(<HealthCategory />);
+
+    screen.getByRole('heading', {
+        name: appMessage(healthCategoryQuery.category.heading as AppMessagesIds),
+        level: 1,
+    });
+
+    expect(
+        screen.getByRole('heading', {
+            name: appMessage('health_category.errornodata.heading'),
+            level: 2,
+        })
+    ).toBeInTheDocument();
+});
+
 test('redirects to the overview page if the organization was not found', async () => {
     mockUseParamsData.mockImplementation(() => ({
         organizationSlug: faker.lorem.slug(),
@@ -203,23 +242,32 @@ test('redirects to the overview page if the organization was not found', async (
     });
 });
 
-test('invalidates queries when clicking retry button', async () => {
+test('retry queries when clicking retry button', async () => {
     const healthCategoryQuery = {
         category: mockHealthCategoryWithResources(),
-        isLoading: false,
+        isLoading: true,
         isError: true,
-        isEmpty: false,
+        isEmpty: true,
         retry: vi.fn(),
     };
     hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
 
+    const retry = vi.fn();
+
+    hoisted.useRetryQuery.mockImplementation(() => ({
+        retry,
+        isRetrying: false,
+    }));
+
     const { user } = setupWithAppProviders(<HealthCategory />);
 
-    const alert = screen.getByRole('alert');
-    expect(alert).toBeVisible();
+    const button = screen.getByRole('button', {
+        name: appMessage('common.try_again'),
+    });
 
-    const button = within(alert).getByRole('button', { name: appMessage('common.try_again') });
+    expect(button).toBeInTheDocument();
+
     await user.click(button);
 
-    expect(healthCategoryQuery.retry).toHaveBeenCalledTimes(1);
+    expect(retry).toHaveBeenCalledTimes(1);
 });

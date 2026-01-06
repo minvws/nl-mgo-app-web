@@ -37,7 +37,7 @@
     "label": "Voorgeschreven door",
     "children": [
       {
-        "label": "Specialist",
+        "label": "Zorgverlener",
         "value": "Huisartsen, niet nader gespecificeerd"
       },
       {

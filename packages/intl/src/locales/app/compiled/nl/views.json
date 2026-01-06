@@ -110,7 +110,7 @@
   "add_organization_list.to_overview": [
     {
       "type": 0,
-      "value": "Ga naar het overzicht"
+      "value": "Ga naar mijn overzicht"
     }
   ],
   "detail.breadcrumb": [
@@ -347,16 +347,22 @@
       "value": "Service"
     }
   ],
+  "health_category.empty.action": [
+    {
+      "type": 0,
+      "value": "Ga naar overzicht"
+    }
+  ],
   "health_category.empty.heading": [
     {
       "type": 0,
-      "value": "Geen gegevens gevonden "
+      "value": "Deze categorie is nog leeg"
     }
   ],
   "health_category.empty.subheading": [
     {
       "type": 0,
-      "value": "Er is hier niets opgeslagen."
+      "value": "Hier is niets opgeslagen. Zodra uw zorgaanbieders informatie toevoegen, staat die hier."
     }
   ],
   "introduction.heading": [
@@ -410,13 +416,13 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Bewijs wie u bent"
+      "value": "Inloggen"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Kies de manier waarop u wilt inloggen. Zo kunnen we uw gegevens veilig ophalen bij uw huisarts, ziekenhuis en andere zorgaanbieders."
+      "value": "Met DigiD laat u weten wie u bent. Zo kunnen we uw gegevens veilig ophalen. Bij uw huisarts, het ziekenhuis en andere zorgaanbieders."
     }
   ],
   "logout.heading": [
@@ -470,7 +476,7 @@
   "menu.organizations_heading": [
     {
       "type": 0,
-      "value": "Zorgaanbieders"
+      "value": "Uw zorgaanbieders"
     }
   ],
   "menu.organizations_subheading": [
@@ -506,13 +512,13 @@
   "not_found.subheading": [
     {
       "type": 0,
-      "value": "Sorry, we kunnen de pagina die je zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar het overzicht."
+      "value": "Sorry, we kunnen de pagina die u zocht niet vinden. Misschien is deze verplaatst of verwijderd. Klik op de knop hieronder om terug te gaan naar uw overzicht."
     }
   ],
   "not_found.to_overview": [
     {
       "type": 0,
-      "value": "Ga naar het overzicht"
+      "value": "Ga naar mijn overzicht"
     }
   ],
   "organisation_list_automatic.subheading": [
@@ -590,7 +596,7 @@
   "organization.to_overview": [
     {
       "type": 0,
-      "value": "Ga naar het overzicht"
+      "value": "Ga naar mijn overzicht"
     }
   ],
   "organization_search.heading": [
@@ -648,7 +654,7 @@
   "organizations.heading": [
     {
       "type": 0,
-      "value": "Zorgaanbieders"
+      "value": "Uw zorgaanbieders"
     }
   ],
   "organizations.remove_organization": [
@@ -678,7 +684,7 @@
   "overview.no_results_action": [
     {
       "type": 0,
-      "value": "Voeg zorgaanbieders toe"
+      "value": "Voeg een zorgaanbieder toe"
     }
   ],
   "overview.organizations.subheading": [
@@ -690,7 +696,7 @@
   "overview.subheading": [
     {
       "type": 0,
-      "value": "Dit is jouw overzicht van gegevens over je gezondheid. Hier zie je informatie van je zorgaanbieders. Voeg er meer toe voor een completer beeld van je gezondheid."
+      "value": "Dit is uw overzicht van uw zorg en gezondheid. Hier vindt u informatie van uw zorgaanbieders. Voeg er meer toe voor een completer beeld van uw gezondheid."
     }
   ],
   "patientfriendlyterms.synonym": [

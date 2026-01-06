@@ -19,6 +19,7 @@ export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/De
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
 export { DescriptionList, type DescriptionListProps } from './DescriptionList/DescriptionList';
 export { DetailButton, type DetailButtonProps } from './DetailButton/DetailButton';
+export { ErrorNotice, type ErrorNoticeProps } from './ErrorNotice/ErrorNotice';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { Heading, type HeadingProps } from './Heading/Heading';
 export {

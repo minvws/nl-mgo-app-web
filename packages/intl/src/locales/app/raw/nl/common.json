@@ -1,8 +1,10 @@
 {
     "common.add": "toevoegen",
-    "common.add_organizations": "Voeg zorgaanbieders toe",
+    "common.add_organizations": "Voeg een zorgaanbieder toe",
     "common.app_name": "Mijn Gezondheidsoverzicht",
     "common.cancel": "Annuleer",
+    "common.data_not_retrieved_heading": "Gegevens niet opgehaald",
+    "common.data_not_retrieved_subheading": "We kunnen door een probleem uw gegevens nu niet ophalen.",
     "common.delete": "verwijderen",
     "common.error_heading": "Er ging iets mis",
     "common.error_in_system": "Er ging iets mis in ons systeem.",

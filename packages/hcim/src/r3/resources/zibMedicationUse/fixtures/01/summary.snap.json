@@ -69,7 +69,7 @@
             "label": "Voorgeschreven door",
             "children": [
                 {
-                    "label": "Specialist",
+                    "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Henk de Vries"
