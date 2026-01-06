@@ -8,7 +8,7 @@
   "common.add_organizations": [
     {
       "type": 0,
-      "value": "Voeg zorgaanbieders toe"
+      "value": "Voeg een zorgaanbieder toe"
     }
   ],
   "common.app_name": [
@@ -21,6 +21,18 @@
     {
       "type": 0,
       "value": "Annuleer"
+    }
+  ],
+  "common.data_not_retrieved_heading": [
+    {
+      "type": 0,
+      "value": "Gegevens niet opgehaald"
+    }
+  ],
+  "common.data_not_retrieved_subheading": [
+    {
+      "type": 0,
+      "value": "We kunnen door een probleem uw gegevens nu niet ophalen."
     }
   ],
   "common.delete": [

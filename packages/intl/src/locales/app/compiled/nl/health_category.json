@@ -38,7 +38,7 @@
   "hc_alerts.subheading": [
     {
       "type": 0,
-      "value": "Belangrijke dingen waar zorgverleners op moeten letten."
+      "value": "Belangrijke dingen waar uw zorgverleners op moeten letten."
     }
   ],
   "hc_allergies.heading": [
@@ -158,7 +158,7 @@
   "hc_documents.error": [
     {
       "type": 0,
-      "value": "Sorry, we kunnen de bijlage nu niet ophalen."
+      "value": "Sorry, we kunnen de bijlage(n) nu niet ophalen."
     }
   ],
   "hc_documents.heading": [
@@ -182,7 +182,7 @@
   "hc_documents.no_document": [
     {
       "type": 0,
-      "value": "Geen bijlage gevonden. Klopt dit niet? Vraag je zorgaanbieder om hulp."
+      "value": "Geen bijlage(n) gevonden. Klopt dit niet? Vraag je zorgaanbieder om hulp."
     }
   ],
   "hc_documents.subheading": [
@@ -509,6 +509,18 @@
       "value": "Documenten"
     }
   ],
+  "health_category.errornodata.heading": [
+    {
+      "type": 0,
+      "value": "Geen gegevens opgehaald"
+    }
+  ],
+  "health_category.errornodata.subheading": [
+    {
+      "type": 0,
+      "value": "Dit komt door een storing bij ons. Probeer het later opnieuw."
+    }
+  ],
   "health_category.lab_results.gp_laboratory_results": [
     {
       "type": 0,
@@ -698,7 +710,7 @@
   "zib_administration_agreement.heading": [
     {
       "type": 0,
-      "value": "Hoe je je medicijnen krijgt"
+      "value": "Hoe u uw medicijnen krijgt"
     }
   ],
   "zib_advance_directive.heading": [
@@ -824,13 +836,13 @@
   "zib_medication_agreement.heading": [
     {
       "type": 0,
-      "value": "Afspraken over je medicijnen"
+      "value": "Afspraken over uw medicijnen"
     }
   ],
   "zib_medication_use.heading": [
     {
       "type": 0,
-      "value": "Wat je nu gebruikt"
+      "value": "Wat u nu gebruikt"
     }
   ],
   "zib_nutrition_advice.heading": [

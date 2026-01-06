@@ -362,7 +362,7 @@
   "r3.ihe_mhd_minimal_document_reference.author": [
     {
       "type": 0,
-      "value": "Specialist"
+      "value": "Zorgverlener"
     }
   ],
   "r3.ihe_mhd_minimal_document_reference.class": [
@@ -380,7 +380,7 @@
   "r3.ihe_mhd_minimal_document_reference.content.attachment": [
     {
       "type": 0,
-      "value": "Bijlage"
+      "value": "Bijlage(n)"
     }
   ],
   "r3.ihe_mhd_minimal_document_reference.content.attachment.content_type": [
@@ -752,7 +752,7 @@
   "r3.zib_administration_agreement.performer.actor": [
     {
       "type": 0,
-      "value": "Specialist"
+      "value": "Zorgverlener"
     }
   ],
   "r3.zib_administration_agreement.performer.on_behalf_of": [
