@@ -19,7 +19,7 @@ export function ErrorNoData() {
                 />
             </Text>
 
-            <Button className="mt-6">
+            <Button className="mt-6" asChild>
                 <RouterLink to="/overzicht">
                     <FormattedMessage id="common.try_again" description="Ga naar overzicht" />
                 </RouterLink>

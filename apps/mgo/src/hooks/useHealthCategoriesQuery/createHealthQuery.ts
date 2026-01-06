@@ -29,6 +29,10 @@ export function createHealthQuery(query: HealthQueryOptions) {
             return await fetchHealthData(request);
         },
         staleTime: Infinity,
+        retryOnMount: false,
+        refetchOnMount: false,
+        refetchOnWindowFocus: false,
+        refetchOnReconnect: false,
     };
 }
 
