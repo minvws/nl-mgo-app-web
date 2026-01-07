@@ -8,7 +8,6 @@ export default defineConfig({
             include: ['packages/**', 'apps/**'],
             exclude: [
                 'apps/hcim-api/**',
-                'apps/hcim-labels/**',
                 'apps/mgo-e2e/**',
                 'apps/*/test/*',
                 'apps/mgo/public/**',
@@ -16,6 +15,7 @@ export default defineConfig({
                 'packages/*/docs/*',
                 'packages/fhir-data/resource-labels/*',
                 'packages/fhir-data/schema-generator/*',
+                'packages/hcim-labels/**',
                 '**/?*.config.ts',
                 '**/?*.stories.tsx',
                 '**/?*.d.ts',

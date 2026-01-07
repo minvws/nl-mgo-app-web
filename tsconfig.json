@@ -37,9 +37,6 @@
             "path": "./apps/hcim-api"
         },
         {
-            "path": "./apps/hcim-labels"
-        },
-        {
             "path": "./packages/org-search"
         },
         {
@@ -50,6 +47,9 @@
         },
         {
             "path": "./packages/logging"
+        },
+        {
+            "path": "./packages/hcim-labels"
         }
     ]
 }
