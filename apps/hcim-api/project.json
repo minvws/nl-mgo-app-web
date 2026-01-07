@@ -1,7 +1,7 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
-    "name": "@minvws/mgo-hcim-api",
+    "sourceRoot": "apps/hcim-api/src",
 
     "targets": {
         "build": {
