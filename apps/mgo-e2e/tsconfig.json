@@ -21,6 +21,9 @@
     "exclude": ["out-tsc", "test-output"],
     "references": [
         {
+            "path": "../../packages/config"
+        },
+        {
             "path": "../../packages/intl"
         }
     ]
