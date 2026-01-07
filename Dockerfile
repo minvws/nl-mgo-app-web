@@ -32,7 +32,7 @@ WORKDIR /app
 COPY --from=installer /app /app
 COPY . .
 
-RUN pnpm exec nx run @minvws/mgo:build
+RUN pnpm exec nx run @minvws/mgo-mgo:build
 
 #
 FROM nginx:${NGINX_VERSION}-alpine-slim

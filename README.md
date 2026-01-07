@@ -109,9 +109,9 @@ Some commonly used [nx commands][nx-commands] and examples
 | Command                                | Description                                                      |
 | -------------------------------------- | ---------------------------------------------------------------- |
 | `pnpm exec nx graph`                   | [Graph dependencies within workspace][nx-graph]                  |
-| `pnpm exec nx run mgo:build`           | Create a production build for the mgo app                        |
-| `pnpm exec nx run mgo:dev`             | Start a development server for the mgo app                       |
-| `pnpm exec nx run mgo:typecheck`       | Check the types for the mgo app (and its dependencies)           |
+| `pnpm exec nx run mgo-mgo:build`       | Create a production build for the mgo app                        |
+| `pnpm exec nx run mgo-mgo:dev`         | Start a development server for the mgo app                       |
+| `pnpm exec nx run mgo-mgo:typecheck`   | Check the types for the mgo app (and its dependencies)           |
 | `pnpm exec nx run mgo-utils:typecheck` | Check the types for the mgo utils package (and its dependencies) |
 | `pnpm exec nx show project mgo-utils`  | Check the types for the mgo utils package (and its dependencies) |
 
