@@ -1,4 +1,4 @@
-import { forwardRef, type HTMLAttributes } from 'react';
+import { RefObject, type HTMLAttributes } from 'react';
 import {
     useComposition,
     type CompositionPropsWithoutChildren,
@@ -14,6 +14,7 @@ export type IconButtonProps = IconProps &
         readonly variant?: Variant;
         readonly size?: Size;
         readonly 'aria-label': string;
+        readonly ref?: RefObject<HTMLButtonElement | null>;
     };
 
 const sizeMap: Record<Size, string> = {
@@ -38,15 +39,19 @@ const variantStyles: Record<Variant, string | string[]> = {
     ],
 };
 
-export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(function IconButton(
-    { icon, size = 'md', variant = 'solid', 'aria-label': ariaLabel, asChild, className, ...rest },
-    ref
-) {
+export const IconButton = ({
+    icon,
+    size = 'md',
+    variant = 'solid',
+    'aria-label': ariaLabel,
+    asChild,
+    className,
+    ...rest
+}: IconButtonProps) => {
     const { Comp } = useComposition({ asChild, tag: 'button' });
 
     return (
         <Comp
-            ref={ref}
             className={cn(
                 'flex items-center justify-center rounded-full',
                 'text-t-label-secondary',
@@ -62,4 +67,4 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
             <Icon icon={icon} aria-label={ariaLabel} className={iconSizeMap[size]} />
         </Comp>
     );
-});
+};

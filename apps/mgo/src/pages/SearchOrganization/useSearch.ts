@@ -20,7 +20,7 @@ export interface UseSearchResult {
 }
 
 export function useSearch(): UseSearchResult {
-    const searchWorker = useRef<SearchWorker>();
+    const searchWorker = useRef<SearchWorker>(undefined);
 
     useEffect(() => {
         searchWorker.current = createSearchWorker();

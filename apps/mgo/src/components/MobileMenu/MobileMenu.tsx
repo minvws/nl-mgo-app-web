@@ -1,14 +1,11 @@
 import { FormattedMessage } from '$/intl';
 import { MobileMenuItem, cn } from '@minvws/mgo-ui';
-import { forwardRef, type ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export type MobileMenuProps = ComponentProps<'nav'>;
 
-export const MobileMenu = forwardRef<HTMLUListElement, MobileMenuProps>(function MobileMenu(
-    { className, ...rest },
-    ref
-) {
+export const MobileMenu = ({ className, ref, ...rest }: MobileMenuProps) => {
     return (
         <nav className={cn('bg-t-bg-secondary', className)} ref={ref} {...rest}>
             <ul>
@@ -36,4 +33,4 @@ export const MobileMenu = forwardRef<HTMLUListElement, MobileMenuProps>(function
             </ul>
         </nav>
     );
-});
+};

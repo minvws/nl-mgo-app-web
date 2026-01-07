@@ -7,6 +7,10 @@ import { createUniqueSlug } from '@minvws/mgo-utils';
 
 export type HealthCategoryWithSlug = HealthCategoryConfig & { slug: string };
 
+/**
+ * The language and translations do not change during the lifetime of the application,
+ * so we can use a global cache to store the results.
+ */
 let cache: HealthCategoryWithSlug[] = [];
 
 export function useHealthCategoriesWithSlug(): HealthCategoryWithSlug[] {
@@ -29,7 +33,7 @@ export function useHealthCategoriesWithSlug(): HealthCategoryWithSlug[] {
         };
 
         const categories = getHealthCategoryConfigs();
-        cache = categories.map(processCategory);
+        cache = categories.map(processCategory); // eslint-disable-line react-hooks/globals
     }
 
     return cache;

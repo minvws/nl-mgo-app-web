@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
 import { Text } from '../Text/Text';

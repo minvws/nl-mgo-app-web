@@ -2,15 +2,14 @@ import { useAuth } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { BackButton } from '$/components/BackButton/BackButton';
 import { FormattedMessage, useIntl } from '$/intl';
-import { Button, ConfirmDialog, Heading, Text, useOnMount } from '@minvws/mgo-ui';
-import { useEffect, useState } from 'react';
+import { Button, Heading, Text, useOnMount } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import DigiDSvg from './digid.svg?react';
+import { LoginErrorDialog } from './LoginErrorDialog';
 
 export function Login() {
     const { formatMessage } = useIntl();
     const auth = useAuth();
-    const [showErrorDialog, setShowErrorDialog] = useState(Boolean(auth.parsingError));
 
     useOnMount(() => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -19,15 +18,11 @@ export function Login() {
         }
     });
 
-    useEffect(() => {
-        if (auth.parsingError || auth.loadingError) {
-            setShowErrorDialog(true);
-        }
-    }, [auth.loadingError, auth.parsingError]);
-
     return (
         <>
             <Helmet title={formatMessage('login.heading')} />
+            <LoginErrorDialog authError={auth.parsingError ?? auth.loadingError} />
+
             <section className="grow">
                 <BackButton />
 
@@ -58,16 +53,6 @@ export function Login() {
                         )}
                     </Button>
                 </div>
-
-                <ConfirmDialog
-                    title={formatMessage('login.error_heading')}
-                    description={formatMessage('login.error_subheading')}
-                    confirmButtonText={formatMessage('common.ok')}
-                    closeButtonAriaLabel={formatMessage('common.voice_over_close')}
-                    onConfirm={() => setShowErrorDialog(false)}
-                    open={showErrorDialog}
-                    onOpenChange={setShowErrorDialog}
-                />
             </section>
         </>
     );

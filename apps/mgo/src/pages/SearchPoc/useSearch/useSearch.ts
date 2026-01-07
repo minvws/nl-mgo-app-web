@@ -23,7 +23,7 @@ export type MetaData = {
 };
 
 export function useSearch({ file, engine }: SearchOptions) {
-    const searchWorker = useRef<Worker>();
+    const searchWorker = useRef<Worker>(undefined);
     const [data, setData] = useState<Record<string, OrganizationItem>>({});
 
     const engineUsed = validEngines.includes(engine) ? engine : 'flexsearch';

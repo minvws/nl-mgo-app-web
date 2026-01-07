@@ -22,7 +22,7 @@ export function composeWrappedSlottable({
     children: ReactNode;
     wrapperProps: HTMLAttributes<HTMLElement>;
 }) {
-    if (asChild && isValidElement(children)) {
+    if (asChild && isValidElement<{ children?: ReactNode }>(children)) {
         return (
             <Slottable>
                 {cloneElement(

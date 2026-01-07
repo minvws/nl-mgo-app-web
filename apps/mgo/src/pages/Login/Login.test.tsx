@@ -1,10 +1,9 @@
-import { useAuth, type AuthState } from '$/auth';
+import { useAuth } from '$/auth';
 import { LOGIN_CALLBACK_FLAG } from '$/auth/VadAuthProvider/VadAuthProvider';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
-import { flushCallStack } from '@minvws/mgo-utils';
-import { screen, within } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { afterEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { Login } from './Login';
 
@@ -36,33 +35,6 @@ test('auth loading', () => {
 
     screen.getByRole('button', { name: appMessage('common.loading') });
 });
-
-test.each<keyof Pick<AuthState, 'loadingError' | 'parsingError'>>(['loadingError', 'parsingError'])(
-    'shows authentication error: %s',
-    async (errorKey) => {
-        mockUseAuth.mockReturnValue({ ...faker.custom.authState(), [errorKey]: new Error() });
-
-        const { user } = setupWithAppProviders(<Login />);
-
-        await flushCallStack();
-
-        let dialog: HTMLElement | null = screen.getByRole('alertdialog', {
-            name: appMessage('login.error_heading'),
-        });
-        const confirmButton = within(dialog).getByRole('button', {
-            name: appMessage('common.ok'),
-        });
-
-        expect(dialog).toBeVisible();
-        await user.click(confirmButton);
-
-        dialog = await screen.queryByRole('alertdialog', {
-            name: appMessage('login.error_heading'),
-        });
-
-        expect(dialog).not.toBeInTheDocument();
-    }
-);
 
 test('updates userinfo when LOGIN_CALLBACK_FLAG is present', async () => {
     const auth = faker.custom.authState();
