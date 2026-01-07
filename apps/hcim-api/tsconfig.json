@@ -12,7 +12,7 @@
             "path": "../../packages/hcim"
         },
         {
-            "path": "./schema-generator"
+            "path": "../../packages/ts-json-schema"
         },
         {
             "path": "./tsconfig.app.json"

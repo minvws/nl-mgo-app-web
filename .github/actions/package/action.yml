@@ -1,0 +1,64 @@
+name: Build package
+description: 'Build package using NX and creates a tar file'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup environment variables
+      shell: bash
+      run: |
+        PACKAGE_NAME=$(jq -r '.name' "${{ inputs.package-path }}/package.json")
+        PACKAGE_BASENAME="${PACKAGE_NAME#@minvws/}"
+        CREATED=$(date +'%Y-%m-%dT%H:%M:%S')
+
+        BASE_NAME="${{ inputs['file-name'] }}"
+        if [ -z "$BASE_NAME" ]; then
+          BASE_NAME="$PACKAGE_BASENAME"
+        fi
+
+        # If the ref is a tag, use the tag name as the version. 
+        # Otherwise, use the branch name and the short commit hash.
+        if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+          VERSION="$GITHUB_REF_NAME"
+        else
+          VERSION="${GITHUB_REF_NAME}-$(git rev-parse --short HEAD)"
+        fi
+
+        FILENAME="${BASE_NAME}_${VERSION//\//-}"
+
+        echo "PACKAGE_NAME=$PACKAGE_NAME" | tee -a "$GITHUB_ENV"
+        echo "PACKAGE_BASENAME=$PACKAGE_BASENAME" | tee -a "$GITHUB_ENV"
+        echo "VERSION=$VERSION" | tee -a "$GITHUB_ENV"
+        echo "CREATED=$CREATED" | tee -a "$GITHUB_ENV"
+        echo "FILENAME=$FILENAME" | tee -a "$GITHUB_ENV"
+
+    - name: Build package
+      shell: bash
+      run: pnpm exec nx run "$PACKAGE_NAME:build"
+
+    - name: Add version.json
+      shell: bash
+      run: |
+        cat <<EOF > "${{ inputs.package-path }}/build/version.json"
+        {
+          "version": "$VERSION",
+          "git_ref": "$GITHUB_SHA",
+          "created": "$CREATED"
+        }
+        EOF
+
+    - name: Create package tar
+      shell: bash
+      run: tar -C "${{ inputs.package-path }}/build" -czf "$FILENAME.tar.gz" .
+
+    - name: Upload package tar
+      uses: actions/upload-artifact@v6
+      with:
+        name: ${{ env.FILENAME }}
+        path: ${{ env.FILENAME }}.tar.gz
+
+inputs:
+  file-name:
+    description: 'Optional filename of the release tar'
+  package-path:
+    description: 'Path to the package'
+    required: true

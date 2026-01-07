@@ -1,0 +1,38 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "name": "@minvws/mgo-org-search-api",
+
+    "targets": {
+        "build": {
+            "executor": "nx:noop",
+            "dependsOn": [
+                "@minvws/mgo-org-search-api:build-js",
+                "@minvws/mgo-org-search-api:build-schema"
+            ]
+        },
+        "build-js": {
+            "cache": true,
+            "executor": "@nx/vite:build",
+            "dependsOn": ["^typecheck"],
+            "outputs": ["{projectRoot}/build/mgo-org-search-api.iife.js"],
+            "options": {
+                "configFile": "apps/org-search-api/vite.api.config.ts",
+                "outputPath": "{projectRoot}/build",
+                "generatePackageJson": false
+            }
+        },
+        "build-schema": {
+            "cache": true,
+            "executor": "nx:run-commands",
+            "dependsOn": ["^build", "build-js"],
+            "outputs": ["{projectRoot}/build/mgo-org-search-api.schema.json"],
+            "options": {
+                "cwd": "apps/org-search-api",
+                "commands": [
+                    "pnpm exec ts-json-schema -c tsconfig.types.json -o build/mgo-org-search-api.schema.json src/types.ts"
+                ]
+            }
+        }
+    }
+}

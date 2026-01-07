@@ -1,0 +1,21 @@
+name: Package - Release MGO
+
+on:
+  push:
+    tags:
+      - v*
+  pull_request:
+    paths:
+      - '.github/workflows/package-release.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - uses: ./.github/actions/package
+        with:
+          package-path: 'apps/mgo'
+          file-name: 'nl-mgo-app-web'

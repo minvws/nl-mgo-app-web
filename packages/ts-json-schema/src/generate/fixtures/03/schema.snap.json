@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ValueA": {
+            "type": "object",
+            "properties": {
+                "a": {
+                    "$ref": "#/definitions/Box_Of_string"
+                },
+                "b": {
+                    "$ref": "#/definitions/Box_Of_number"
+                }
+            },
+            "required": [
+                "a",
+                "b"
+            ],
+            "additionalProperties": false
+        },
+        "ValueB": {
+            "type": "object",
+            "properties": {
+                "a": {
+                    "$ref": "#/definitions/Box_Of_string"
+                },
+                "nested": {
+                    "$ref": "#/definitions/Box_Of_Box_Of_string"
+                }
+            },
+            "required": [
+                "a",
+                "nested"
+            ],
+            "additionalProperties": false
+        },
+        "Box_Of_string": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "Box_Of_number": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "Box_Of_Box_Of_string": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "$ref": "#/definitions/Box_Of_string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

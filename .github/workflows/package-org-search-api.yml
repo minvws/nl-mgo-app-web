@@ -1,0 +1,22 @@
+name: Package - Org Search API
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - '.github/workflows/package-org-search-api.yml'
+      - 'apps/org-search-api/**'
+      - 'packages/org-search/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    name: Build
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - uses: ./.github/actions/package
+        with:
+          package-path: 'apps/org-search-api'

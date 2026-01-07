@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/ParsedAbstractType",
+    "definitions": {
+        "ParsedAbstractType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "parsed": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "parsed"
+            ]
+        }
+    }
+}

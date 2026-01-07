@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.base.lib.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/mgo-ts-json-schema/vitest",
+        "tsBuildInfoFile": "../../out-tsc/mgo-ts-json-schema/tsconfig.spec.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "types": []
+    },
+    "include": ["vitest.config.ts", "src/**/*.test.ts", "src/**/*.d.ts"],
+    "references": [
+        {
+            "path": "./tsconfig.lib.json"
+        }
+    ]
+}
