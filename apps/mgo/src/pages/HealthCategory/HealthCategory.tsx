@@ -4,7 +4,7 @@ import { useFailedHealthQueries, useHealthCategoriesQuery, useRetryQuery } from 
 import { useIntl } from '$/intl';
 import { Navigate, useParamsData } from '$/routing';
 import { useStore } from '$/store';
-import { ErrorNotice, Heading, Stack } from '@minvws/mgo-ui';
+import { Heading, Stack } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from '../NotFound/NotFound';
 import { ErrorNoData } from './ErrorNoData';
@@ -13,6 +13,7 @@ import { NoData } from './NoData';
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { AppMessagesIds } from '@minvws/mgo-intl';
 import { PdfDownloadLink } from './PdfDownloadLink';
+import { HealthQueryErrorNotice } from '$/components/HealthQueryErrorNotice/HealthQueryErrorNotice';
 
 export function HealthCategory() {
     const { organization, healthCategory, organizationSlug } = useParamsData();
@@ -27,11 +28,10 @@ export function HealthCategory() {
     });
 
     const failedQueries = useFailedHealthQueries({
-        organizations,
-        categories: healthCategory ? [healthCategory] : [],
+        organizationsFilter: organizations,
+        categoriesFilter: healthCategory ? [healthCategory] : [],
     });
-
-    const { retry, isRetrying } = useRetryQuery();
+    const { retry } = useRetryQuery();
 
     if (!healthCategory) {
         return <NotFound className="flex flex-col items-center text-center" />;
@@ -49,14 +49,9 @@ export function HealthCategory() {
             <Helmet title={heading} />
 
             <section className="grow">
-                <ErrorNotice
-                    isOpen={(failedQueries.length > 0 || isRetrying) && !isEmpty}
-                    heading={formatMessage('common.data_not_retrieved_heading')}
-                    subHeading={formatMessage('common.data_not_retrieved_subheading')}
-                    buttonLabel={formatMessage('common.try_again')}
-                    onClick={() => retry(failedQueries)}
-                    loading={isRetrying}
-                    loadingTextScreenReader={formatMessage('common.loading_data')}
+                <HealthQueryErrorNotice
+                    organizationsFilter={organizations}
+                    healthCategoriesFilter={[healthCategory]}
                 />
 
                 <div className="mb-4 flex items-center justify-between md:mb-6">
@@ -78,7 +73,7 @@ export function HealthCategory() {
                             <LoadingSpinner />
                         </div>
                     ) : isError && isEmpty ? (
-                        <ErrorNoData />
+                        <ErrorNoData onClick={() => retry(failedQueries)} />
                     ) : isEmpty ? (
                         <NoData />
                     ) : (

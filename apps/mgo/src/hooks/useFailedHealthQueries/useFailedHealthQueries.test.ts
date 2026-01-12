@@ -127,6 +127,38 @@ test('ignores queries that are not failed', async () => {
     expect(result.current.length).toBe(0);
 });
 
+test('marks paused queries as failed', async () => {
+    const endpoint1 = {
+        dataServiceId: faker.string.uuid(),
+        endpointId: faker.string.uuid(),
+    };
+    const endpoint2 = {
+        dataServiceId: faker.string.uuid(),
+        endpointId: faker.string.uuid(),
+    };
+
+    const cachedQueries: PartialDeep<Query>[] = [
+        {
+            queryHash: faker.string.uuid(),
+            queryKey: ['health', endpoint1.dataServiceId, endpoint1.endpointId],
+            state: { fetchStatus: 'paused' },
+        },
+        {
+            queryHash: faker.string.uuid(),
+            queryKey: ['health', endpoint2.dataServiceId, endpoint2.endpointId],
+            state: { status: 'pending' },
+        },
+    ];
+
+    hoisted.getRelevantEndpoints.mockReturnValue([endpoint1, endpoint2]);
+    hoisted.setCachedQueries(cachedQueries);
+
+    const expected = [cachedQueries[0].queryHash];
+
+    const { result } = renderHook(() => useFailedHealthQueries());
+    expect(result.current.length).toBe(expected.length);
+});
+
 test('can retrieve failed queries for specific organizations and categories', async () => {
     const endpoint1 = {
         dataServiceId: faker.string.uuid(),
@@ -170,8 +202,8 @@ test('can retrieve failed queries for specific organizations and categories', as
 
     const { result } = renderHook(() =>
         useFailedHealthQueries({
-            categories: [category],
-            organizations: [organization],
+            categoriesFilter: [category],
+            organizationsFilter: [organization],
         })
     );
     const expected = [cachedQueries[0].queryHash];

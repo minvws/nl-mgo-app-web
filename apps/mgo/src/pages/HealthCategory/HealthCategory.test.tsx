@@ -4,7 +4,7 @@ import { Navigate, useParamsData } from '$/routing';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage, AppMessagesIds } from '@minvws/mgo-intl/test/shared';
-import { screen } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
 
@@ -245,7 +245,7 @@ test('redirects to the overview page if the organization was not found', async (
 test('retry queries when clicking retry button', async () => {
     const healthCategoryQuery = {
         category: mockHealthCategoryWithResources(),
-        isLoading: true,
+        isLoading: false,
         isError: true,
         isEmpty: true,
         retry: vi.fn(),
@@ -261,13 +261,21 @@ test('retry queries when clicking retry button', async () => {
 
     const { user } = setupWithAppProviders(<HealthCategory />);
 
-    const button = screen.getByRole('button', {
+    const errorNotice = screen.getByTestId('error-no-data');
+    const retryButton = within(errorNotice).getByRole('button', {
         name: appMessage('common.try_again'),
     });
 
-    expect(button).toBeInTheDocument();
+    expect(
+        screen.getByRole('heading', {
+            name: appMessage('health_category.errornodata.heading'),
+            level: 2,
+        })
+    ).toBeInTheDocument();
 
-    await user.click(button);
+    expect(retryButton).toBeInTheDocument();
+
+    await user.click(retryButton);
 
     expect(retry).toHaveBeenCalledTimes(1);
 });

@@ -7,21 +7,23 @@ import { useRef, useSyncExternalStore } from 'react';
 import { HEALTH_QUERY_KEY } from '../useHealthCategoriesQuery/createHealthQuery';
 
 export interface FailedHealthQueryOptions {
-    organizations?: HealthcareOrganization[];
-    categories?: HealthCategoryConfig[];
+    organizationsFilter?: HealthcareOrganization[];
+    categoriesFilter?: HealthCategoryConfig[];
 }
 
 const allCategories = getHealthCategoryConfigs();
 
 function getFailedHealthQueryHashes(
     queryCache: QueryCache,
-    { organizations, categories }: FailedHealthQueryOptions
+    { organizationsFilter, categoriesFilter }: FailedHealthQueryOptions
 ) {
-    const relevantEndpoints = getRelevantEndpoints(categories ?? allCategories);
+    const relevantEndpoints = getRelevantEndpoints(
+        categoriesFilter && categoriesFilter.length > 0 ? categoriesFilter : allCategories
+    );
     const queryKeySets: string[][] = [];
 
-    if (organizations) {
-        for (const organization of organizations) {
+    if (organizationsFilter && organizationsFilter.length > 0) {
+        for (const organization of organizationsFilter) {
             for (const dataService of organization.dataServices) {
                 queryKeySets.push(
                     ...relevantEndpoints
@@ -37,7 +39,9 @@ function getFailedHealthQueryHashes(
     return queryCache
         .findAll({
             predicate: (query) =>
-                query.state.status === 'error' &&
+                (query.state.status === 'error' ||
+                    /* a paused query means it could not be fetched due to being offline */
+                    query.state.fetchStatus === 'paused') &&
                 query.queryKey[0] === HEALTH_QUERY_KEY &&
                 queryKeySets.some((querySet) => includesAll(query.queryKey, querySet)),
         })
@@ -45,15 +49,18 @@ function getFailedHealthQueryHashes(
 }
 
 export function useFailedHealthQueries({
-    organizations,
-    categories,
+    organizationsFilter,
+    categoriesFilter,
 }: FailedHealthQueryOptions = {}) {
     const queryClient = useQueryClient();
     const queryCache = queryClient.getQueryCache();
     const lastSnapshotRef = useRef<string[]>([]);
 
     return useSyncExternalStore(queryCache.subscribe, () => {
-        const next = getFailedHealthQueryHashes(queryCache, { organizations, categories }).sort();
+        const next = getFailedHealthQueryHashes(queryCache, {
+            organizationsFilter,
+            categoriesFilter,
+        }).sort();
         if (
             next.length !== lastSnapshotRef.current.length ||
             next.some((hash, i) => hash !== lastSnapshotRef.current[i])
