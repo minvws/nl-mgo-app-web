@@ -57,7 +57,8 @@ export interface CustomMessageDescriptors<TBase, MessageDescriptor> {
 type CoreIntlShape<TBase> = IntlFormatters<TBase> & ResolvedIntlConfig<TBase>;
 
 export interface CustomIntlShape<TBase = string, MessageIds extends string = string>
-    extends Omit<CoreIntlShape<TBase>, 'messages' | '$t' | 'formatMessage'>,
+    extends
+        Omit<CoreIntlShape<TBase>, 'messages' | '$t' | 'formatMessage'>,
         CustomMessageDescriptors<TBase, CustomMessageDescriptor<MessageIds>> {
     messages: Record<MessageIds, IntlShape['messages'][number]>;
 }

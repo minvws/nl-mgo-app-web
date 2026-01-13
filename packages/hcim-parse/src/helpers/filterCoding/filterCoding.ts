@@ -20,7 +20,7 @@ export function isSystemFilter(
 export const matchesCodingFilter = (
     coding: Coding,
     filter: // eslint-disable-next-line sonarjs/use-type-alias
-    | Readonly<CodingCodeFilter>
+        | Readonly<CodingCodeFilter>
         | Readonly<CodingSystemFilter>
         | ReadonlyArray<CodingCodeFilter | CodingSystemFilter>
 ) => {

@@ -16605,8 +16605,7 @@ export interface MedicationKnowledgeAdministrationGuidelinesDosage extends Backb
 /**
  * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
  */
-export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics
-    extends BackboneElement {
+export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics extends BackboneElement {
     /**
      * Specific characteristic that is relevant to the administration guideline (e.g. height, weight, gender).
      */
@@ -17646,8 +17645,7 @@ export interface MedicinalProductIndication extends DomainResource {
 /**
  * Strength expressed in terms of a reference substance.
  */
-export interface MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength
-    extends BackboneElement {
+export interface MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength extends BackboneElement {
     /**
      * The country or countries for which the strength range applies.
      */
@@ -17982,8 +17980,7 @@ export interface MedicinalProductPharmaceuticalCharacteristics extends BackboneE
 /**
  * A species specific time during which consumption of animal product is not appropriate.
  */
-export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod
-    extends BackboneElement {
+export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod extends BackboneElement {
     /**
      * Extra information about the withdrawal period.
      */
@@ -18001,8 +17998,7 @@ export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecie
 /**
  * A species for which this route applies.
  */
-export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies
-    extends BackboneElement {
+export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies extends BackboneElement {
     /**
      * Coded expression for the species.
      */
