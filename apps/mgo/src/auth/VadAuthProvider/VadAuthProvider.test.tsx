@@ -3,7 +3,7 @@ import { getAuthUrl, type AuthUrlResponse } from '$/services/vad/vad';
 import { faker } from '$test/faker';
 import { defer, flushCallStack } from '@minvws/mgo-utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { VadAuthProvider, type VadAuthProviderProps } from './VadAuthProvider';
 import { USER_INFO_SESSION_STORAGE_KEY } from './getUserInfoFromSession';
@@ -187,7 +187,9 @@ test('provider loads userinfo from the urls when called and stores is in the ses
     mockTakeUserInfoFromUrl.mockReturnValue(userInfo);
 
     render(<TestProvider onAuth={onAuth} />);
-    auth!.updateUserInfoFromUrl();
+    act(() => {
+        auth!.updateUserInfoFromUrl();
+    });
     await flushCallStack();
 
     expect(mockTakeUserInfoFromUrl).toHaveBeenCalledOnce();
@@ -201,9 +203,11 @@ test('provider loads userinfo from the urls when called and stores is in the ses
         userInfo,
     });
 
-    expect(sessionStorage.setItem).toHaveBeenCalledWith(
-        USER_INFO_SESSION_STORAGE_KEY,
-        JSON.stringify(userInfo)
+    await waitFor(() =>
+        expect(sessionStorage.setItem).toHaveBeenCalledWith(
+            USER_INFO_SESSION_STORAGE_KEY,
+            JSON.stringify(userInfo)
+        )
     );
 });
 
