@@ -13,7 +13,9 @@ export async function runAccessibilityCheck(
     if (!ENABLE_ACCESSIBILITY_CHECKS) {
         return;
     }
-    const page = 'page' in target ? target.page : target;
+    // TypeError due to playwright version mismatch between axe-core and playwright
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const page = 'page' in target ? target.page : (target as any);
     // Get axeBuilder from the fixture
     const axeResults = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
