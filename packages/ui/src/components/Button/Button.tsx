@@ -1,5 +1,5 @@
 import { type AllOrNone } from '@minvws/mgo-utils';
-import { forwardRef, type ButtonHTMLAttributes, type ReactElement } from 'react';
+import { RefObject, type ButtonHTMLAttributes, type ReactElement } from 'react';
 import { useComposition, type CompositionProps } from '../../hooks/useComposition/useComposition';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
@@ -14,6 +14,7 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement>, Compo
     readonly variant?: Variant;
     readonly leftIcon?: IconName | ReactElement;
     readonly rightIcon?: IconName | ReactElement;
+    readonly ref?: RefObject<HTMLButtonElement | null>;
 }
 
 export interface ButtonLoadingProps {
@@ -45,7 +46,7 @@ const typeColors: Record<Variant, string> = {
     ),
 };
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
+export const Button = (props: ButtonProps) => {
     const {
         asChild,
         onClick,
@@ -107,12 +108,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
                     }
                 )}
             >
-                <Comp
-                    ref={ref}
-                    onClick={loading ? undefined : onClick}
-                    aria-disabled={loading}
-                    {...rest}
-                >
+                <Comp onClick={loading ? undefined : onClick} aria-disabled={loading} {...rest}>
                     {leftIcon && !showSpinnerOnly && (
                         <ButtonIcon
                             className="me-2"
@@ -138,4 +134,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
             </Text>
         </>
     );
-});
+};

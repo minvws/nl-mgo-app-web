@@ -17,9 +17,8 @@ export function usePdfBlob() {
         async ({ categoryHeading, subCategories }: CreatePdfBlobArgs) => {
             // load assets dynamically to avoid bundling them into the main bundle
             const { pdf } = await import('@react-pdf/renderer');
-            const { HealthCategoryPdf } = await import(
-                '$/components/HealthCategoryPdf/HealthCategoryPdf'
-            );
+            const { HealthCategoryPdf } =
+                await import('$/components/HealthCategoryPdf/HealthCategoryPdf');
 
             const today = Date.now();
             const date = intl.formatDate(today, {

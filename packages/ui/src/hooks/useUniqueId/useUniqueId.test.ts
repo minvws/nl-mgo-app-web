@@ -2,8 +2,9 @@ import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { useUniqueId } from './useUniqueId';
 
-vi.mock('lodash', () => ({
-    uniqueId: vi.fn(() => 1),
+vi.mock('react', (importActual) => ({
+    ...importActual(),
+    useId: vi.fn(() => 1),
 }));
 
 test.each<[string, string]>([

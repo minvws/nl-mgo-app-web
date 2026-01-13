@@ -3,8 +3,7 @@ import { type HTMLAttributes } from 'react';
 import { QueryStateLayout, type QueryStateLayoutProps } from '../QueryStateLayout/QueryStateLayout';
 
 export interface QueryStateNoResultProps
-    extends Omit<HTMLAttributes<HTMLElement>, 'title'>,
-        QueryStateLayoutProps {}
+    extends Omit<HTMLAttributes<HTMLElement>, 'title'>, QueryStateLayoutProps {}
 
 export function QueryStateNoResult({
     title,

@@ -4,8 +4,8 @@
     "license": "UNLICENSED",
     "packageManager": "pnpm@9.13.2",
     "scripts": {
-        "preview": "nx run mgo:preview",
-        "dev": "nx run mgo:dev",
+        "preview": "nx run mgo-mgo:preview",
+        "dev": "nx run mgo-mgo:dev",
         "test": "vitest",
         "test:hcim:update": "vitest --project @minvws/mgo-hcim --update",
         "test:coverage": "vitest run --coverage --coverage.reportOnFailure",
@@ -32,22 +32,22 @@
         "@nx/vite": "21.3.2",
         "@nx/web": "21.3.2",
         "@swc-node/register": "~1.9.1",
-        "@swc/cli": "~0.6.0",
-        "@swc/core": "~1.5.7",
-        "@swc/helpers": "~0.5.11",
-        "@tanstack/eslint-plugin-query": "^5.43.1",
+        "@swc/cli": "~0.7.9",
+        "@swc/core": "~1.15.8",
+        "@swc/helpers": "~0.5.18",
+        "@tanstack/eslint-plugin-query": "^5.91.2",
         "@types/node": "22.13.14",
         "@vitest/coverage-v8": "^3.2.4",
         "cpx2": "^8.0.0",
-        "eslint": "^9.31.0",
+        "eslint": "^9.39.2",
         "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-import": "2.31.0",
-        "eslint-plugin-jsx-a11y": "6.10.1",
+        "eslint-plugin-import": "2.32.0",
+        "eslint-plugin-jsx-a11y": "6.10.2",
         "eslint-plugin-n": "^17.23.1",
-        "eslint-plugin-playwright": "^1.6.2",
+        "eslint-plugin-playwright": "^2.4.0",
         "eslint-plugin-react": "^7.37.5",
-        "eslint-plugin-react-hooks": "^5.2.0",
-        "eslint-plugin-react-refresh": "^0.4.20",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-react-refresh": "^0.4.26",
         "eslint-plugin-sonarjs": "^3.0.4",
         "eslint-plugin-tailwindcss": "4.0.0-beta.0",
         "nx": "21.3.2",
@@ -55,7 +55,7 @@
         "prettier-plugin-tailwindcss": "^0.7.0",
         "simple-git-hooks": "^2.11.1",
         "typescript": "^5.4.5",
-        "typescript-eslint": "^8.38.0",
+        "typescript-eslint": "^8.52.0",
         "vitest": "^3.2.4"
     },
     "simple-git-hooks": {
@@ -71,6 +71,7 @@
                 "always",
                 [
                     "repo",
+                    "ci",
                     "hcim-api",
                     "hcim-labels",
                     "mgo",
@@ -107,7 +108,8 @@
             "axios@<1.12.0": "@nx > axios, https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
             "min-document>=2.0.0 <=2.19.1": "https://github.com/minvws/nl-mgo-app-web-private/security/dependabot/39",
             "glob@>=10.3.7 <=11.0.3": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2",
-            "qs@<6.14.1": "https://github.com/advisories/GHSA-6rw7-vpxm-498p"
+            "qs@<6.14.1": "https://github.com/advisories/GHSA-6rw7-vpxm-498p",
+            "@remix-run/router@<=1.23.1": "https://github.com/advisories/GHSA-2w69-qvjg-hvjx"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
@@ -129,7 +131,8 @@
             "tar@=7.5.1": ">=7.5.2",
             "min-document@>=2.0.0 <=2.19.1": "^2.19.2",
             "glob@>=10.3.7 <=11.0.3": "^11.1.0",
-            "qs@<6.14.1": ">=6.14.1"
+            "qs@<6.14.1": ">=6.14.1",
+            "@remix-run/router@<=1.23.1": "^1.23.2"
         },
         "auditConfig": {
             "ignoreGhsas comments (non-standard-key)": {

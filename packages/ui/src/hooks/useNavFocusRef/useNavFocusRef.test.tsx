@@ -240,7 +240,7 @@ test('does not move focus when target element is reused and `key` is not used', 
 });
 
 function makeTestPage<T extends Element>(
-    fn: (ref: RefObject<T>, label: string) => ReactNode
+    fn: (ref: RefObject<T | null>, label: string) => ReactNode
 ): TestPage {
     return function TestPageComp({ label }: { readonly label: string }) {
         const ref = useNavFocusRef<T>();

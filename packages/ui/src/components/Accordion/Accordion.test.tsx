@@ -1,6 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { flushCallStack } from '@minvws/mgo-utils';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { Accordion } from './Accordion';
 
@@ -18,16 +17,22 @@ test('Accordion can be open and closed', async () => {
         </Accordion>
     );
 
-    expect(getParentClassname()).includes(' hidden');
+    await waitFor(() => {
+        expect(getParentClassname()).includes(' hidden');
+    });
 
     fireEvent.click(screen.getByRole('button', { name: buttonLabel }));
 
-    expect(getParentClassname()).not.includes(' hidden');
+    await waitFor(() => {
+        expect(getParentClassname()).not.includes(' hidden');
+    });
     expect(screen.getByRole('region').textContent).includes(content);
 
     fireEvent.click(screen.getByRole('button', { name: buttonLabel }));
-    await flushCallStack();
-    expect(getParentClassname()).includes(' hidden');
+
+    await waitFor(() => {
+        expect(getParentClassname()).includes(' hidden');
+    });
 });
 
 test('Accordion can start in expanded state', async () => {
