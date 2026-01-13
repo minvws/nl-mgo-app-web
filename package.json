@@ -71,6 +71,7 @@
                 "always",
                 [
                     "repo",
+                    "ci",
                     "hcim-api",
                     "hcim-labels",
                     "mgo",

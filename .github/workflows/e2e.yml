@@ -22,6 +22,11 @@ jobs:
       TEST_COMMAND: ${{ inputs.test-command || 'pnpm run e2e:ci' }}
 
     steps:
+      - name: Free disk space run
+        run: |
+          sudo rm -rf /usr/share/dotnet 
+          sudo rm -rf /usr/local/lib/android 
+          sudo rm -rf /opt/ghc
       - uses: actions/checkout@v6
       - uses: docker/setup-docker-action@v4
 
@@ -44,4 +49,4 @@ jobs:
 
       - name: Stop Docker containers
         if: always()
-        run: docker compose down
+        run: docker compose down --rmi all --volumes --remove-orphans
