@@ -15,16 +15,16 @@ pnpm add @minvws/mgo-fhir
 ## Usage
 
 ```typescript
-import { type FhirVersion, type ResourceByType, type ResourceType } from '@minvws/mgo-fhir';
+import { type ResourceByType, type ResourceType } from '@minvws/mgo-fhir';
 
 type PatientR3R4 = ResourceByType<'Patient'>; // PatientR3 | PatientR4
-type PatientR3 = ResourceByType<'Patient', FhirVersion.R3>;
+type PatientR3 = ResourceByType<'Patient', 'R3'>;
 
 // FhirResourceR3.resourceType | FhirResourceR4.resourceType
 const type: ResourceType = 'ProcedureRequest';
 
 // error: "ProcedureRequest" does not exists in FhirResourceR4.resourceType
-const type: ResourceType<FhirVersion.R4> = 'ProcedureRequest'; // error
+const type: ResourceType<'R4'> = 'ProcedureRequest'; // error
 ```
 
 <hr>
