@@ -56,7 +56,7 @@
   "hc_allergies.heading_summary": [
     {
       "type": 0,
-      "value": "Allergiegegevens"
+      "value": "Allergie-gegevens"
     }
   ],
   "hc_allergies.subheading": [
@@ -86,7 +86,7 @@
   "hc_appointments.subheading": [
     {
       "type": 0,
-      "value": "Uw afspraken met zorgverleners. En contacten die u hebt gehad."
+      "value": "Uw afspraken met zorgverleners. En contacten die u heeft gehad."
     }
   ],
   "hc_care_plan.heading": [
@@ -98,7 +98,7 @@
   "hc_care_plan.subheading": [
     {
       "type": 0,
-      "value": "Je wensen, wensen en afspraken over je behandeling."
+      "value": "Uw wensen, wensen en afspraken over uw behandeling."
     }
   ],
   "hc_care_team.heading": [
@@ -146,7 +146,7 @@
   "hc_devices.heading_summary": [
     {
       "type": 0,
-      "value": "Hulpmiddel gegevens"
+      "value": "Hulpmiddelgegevens"
     }
   ],
   "hc_devices.subheading": [
@@ -182,7 +182,7 @@
   "hc_documents.no_document": [
     {
       "type": 0,
-      "value": "Geen bijlage(n) gevonden. Klopt dit niet? Vraag je zorgaanbieder om hulp."
+      "value": "Geen bijlage(n) gevonden. Klopt dit niet? Vraag uw zorgaanbieder om hulp."
     }
   ],
   "hc_documents.subheading": [
@@ -260,7 +260,7 @@
   "hc_measurements.subheading": [
     {
       "type": 0,
-      "value": "Zoals bloeddruk, hartslag, lengte en gewicht"
+      "value": "Zoals bloeddruk, hartslag, lengte en gewicht."
     }
   ],
   "hc_medication.heading": [
@@ -296,13 +296,13 @@
   "hc_mental.heading_detail": [
     {
       "type": 0,
-      "value": "All mentaal welzijngegevens"
+      "value": "Alle mentaal welzijn gegevens"
     }
   ],
   "hc_mental.heading_summary": [
     {
       "type": 0,
-      "value": "Mentaal welzijngegevens"
+      "value": "Mentaal welzijn gegevens"
     }
   ],
   "hc_mental.subheading": [
@@ -350,7 +350,7 @@
   "hc_payment.subheading": [
     {
       "type": 0,
-      "value": "Je betalingen en verzekeringen"
+      "value": "Uw betalingen en verzekeringen."
     }
   ],
   "hc_plans.heading": [
@@ -362,13 +362,13 @@
   "hc_plans.heading_detail": [
     {
       "type": 0,
-      "value": "Alle behandelwens/plan gegevens"
+      "value": "Alle behandelwens- of plan gegevens"
     }
   ],
   "hc_plans.heading_summary": [
     {
       "type": 0,
-      "value": "Behandelwens/plan gegevens"
+      "value": "Behandelwens- of plan gegevens"
     }
   ],
   "hc_plans.subheading": [
@@ -386,7 +386,7 @@
   "hc_problems.subheading": [
     {
       "type": 0,
-      "value": "Klachten waar u last van hebt. Zoals pijn of ziekte."
+      "value": "Klachten waar u last van heeft. Zoals pijn of ziekte."
     }
   ],
   "hc_treatments.heading": [
@@ -410,7 +410,7 @@
   "hc_treatments.subheading": [
     {
       "type": 0,
-      "value": "Behandelingen en operaties die u hebt gehad. Of die u nog krijgt."
+      "value": "Behandelingen en operaties die u heeft gehad. Of die u nog krijgt."
     }
   ],
   "hc_vaccinations.heading": [
@@ -434,7 +434,7 @@
   "hc_vaccinations.subheading": [
     {
       "type": 0,
-      "value": "Prikken die u hebt gehad. Zoals tegen griep of corona."
+      "value": "Prikken die u heeft gehad. Zoals tegen griep of corona."
     }
   ],
   "health_category.alerts.warnings": [
@@ -524,7 +524,7 @@
   "health_category.lab_results.gp_laboratory_results": [
     {
       "type": 0,
-      "value": "GP laboratoriumuitslagen"
+      "value": "GP-laboratoriumuitslagen"
     }
   ],
   "health_category.lab_results.laboratory_results": [
@@ -596,7 +596,7 @@
   "health_category.medication.medication_use": [
     {
       "type": 0,
-      "value": "Medicatie gebruik"
+      "value": "Medicatiegebruik"
     }
   ],
   "health_category.mental.functional_or_mental_status": [
@@ -614,7 +614,7 @@
   "health_category.patient.practitioner_information": [
     {
       "type": 0,
-      "value": "Praktijk informatie"
+      "value": "Praktijkinformatie"
     }
   ],
   "health_category.payment.get_insurance_information": [
@@ -626,7 +626,7 @@
   "health_category.payment.get_organization_information": [
     {
       "type": 0,
-      "value": "Organisatie informatie"
+      "value": "Organisatie-informatie"
     }
   ],
   "health_category.plans.get_advance_directives": [
@@ -734,7 +734,7 @@
   "zib_allergy_intolerance.heading": [
     {
       "type": 0,
-      "value": "Allergiën en intoleranties"
+      "value": "Allergieën en intoleranties"
     }
   ],
   "zib_blood_pressure.heading": [
@@ -854,13 +854,13 @@
   "zib_participation_in_society.heading": [
     {
       "type": 0,
-      "value": "Participatie in de maatschappij"
+      "value": "Meedoen in de maatschappij"
     }
   ],
   "zib_patient.heading": [
     {
       "type": 0,
-      "value": "Persoonsgegevens, Burgerlijke staat & contactpersonen"
+      "value": "Persoonsgegevens, burgerlijke staat & contactpersonen"
     }
   ],
   "zib_payer.heading": [

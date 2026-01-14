@@ -104,13 +104,13 @@
   "common.no_organizations_heading": [
     {
       "type": 0,
-      "value": "Je hebt nog geen zorgaanbieders toegevoegd"
+      "value": "U heeft nog geen zorgaanbieders toegevoegd"
     }
   ],
   "common.no_organizations_subheading": [
     {
       "type": 0,
-      "value": "Voeg zorgaanbieders toe om gegevens over je gezondheid te zien."
+      "value": "Voeg zorgaanbieders toe om gegevens over uw gezondheid te zien."
     }
   ],
   "common.no_results_heading": [
@@ -122,7 +122,7 @@
   "common.no_results_subheading": [
     {
       "type": 0,
-      "value": "We hebben geen gegevens van jou gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag het aan je zorgaanbieder voor meer informatie."
+      "value": "We hebben geen gegevens van u gevonden in dit dossier van de zorgaanbieder. Klopt dit niet? Vraag uw zorgaanbieder om hulp."
     }
   ],
   "common.not_available": [
