@@ -9,7 +9,10 @@ export type FhirIntlShape<RichTextElement = string> = CustomIntlShape<
     FhirMessagesIds
 >;
 
-export type FhirIntlOptions<RichTextElement> = Omit<IntlOptions<RichTextElement>, 'messages'>;
+export type FhirIntlOptions<RichTextElement = unknown> = Omit<
+    IntlOptions<RichTextElement>,
+    'messages'
+>;
 
 export function getFhirIntlConfig<RichTextElement>(options: FhirIntlOptions<RichTextElement>) {
     return getIntlConfig<RichTextElement>({ messages: fhirMessagesNL, ...options });

@@ -12,8 +12,6 @@ export {
 } from './config/fhir/fhir.js';
 export { createHelpers, type IntlHelpers } from './helpers/createHelpers.js';
 
-export { Locale } from './locale.js';
-
 export {
     createIntl,
     createIntlCache,

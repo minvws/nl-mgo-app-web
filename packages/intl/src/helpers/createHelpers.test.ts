@@ -2,13 +2,12 @@ import { faker } from '@faker-js/faker';
 import { createIntl } from '@formatjs/intl';
 import { expect, test } from 'vitest';
 import { getIntlConfig } from '../config/base/base';
-import { Locale } from '../locale';
 import { createHelpers } from './createHelpers';
 
 test('hasMessage return true or false depending on the message exists', () => {
     const intl = createIntl(
         getIntlConfig({
-            locale: Locale.NL_NL,
+            locale: 'nl-NL',
             messages: {
                 test: [{ type: 0, value: faker.lorem.word() }],
             },
@@ -26,7 +25,7 @@ test('formatMessage returns message by only an id', () => {
     const testMessage = faker.lorem.word();
     const intl = createIntl(
         getIntlConfig({
-            locale: Locale.NL_NL,
+            locale: 'nl-NL',
             messages: {
                 test: [{ type: 0, value: testMessage }],
             },
@@ -43,7 +42,7 @@ test('formatMessage takes variables', () => {
     const value = faker.lorem.word();
     const intl = createIntl(
         getIntlConfig({
-            locale: Locale.NL_NL,
+            locale: 'nl-NL',
             messages: {
                 test: [
                     { type: 0, value: testMessage },
