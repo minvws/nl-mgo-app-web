@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Goal } from '@minvws/mgo-fhir/r3';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentObjectiv
  */
 function parseZibTreatmentObjective(resource: Goal) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -35,4 +34,4 @@ export const zibTreatmentObjective = {
     profile,
     parse: parseZibTreatmentObjective,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Goal, ZibTreatmentObjective>;
+} satisfies ResourceConfig<'R3', Goal, ZibTreatmentObjective>;

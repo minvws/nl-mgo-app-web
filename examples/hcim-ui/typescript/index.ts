@@ -1,7 +1,6 @@
 import { type MgoCode } from '@minvws/mgo-hcim-parse';
 import { createUiContext, createUiHelpers, type SingleValue } from '@minvws/mgo-hcim-ui';
 import packageJson from '@minvws/mgo-hcim-ui/package.json' with { type: 'json' };
-import { Locale } from '@minvws/mgo-intl';
 
 const json = (value: any) => JSON.stringify(value, null, 2);
 const { name, version } = packageJson;
@@ -16,7 +15,7 @@ const expected: SingleValue = {
     display: 'foobar',
 };
 
-const uiHelpers = createUiHelpers(createUiContext({ locale: Locale.NL_NL }));
+const uiHelpers = createUiHelpers(createUiContext({ locale: 'nl-NL' }));
 const result = uiHelpers.code('fhir.x.status', input);
 
 if (json(result) !== json(expected)) {

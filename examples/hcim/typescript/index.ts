@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Patient } from '@minvws/mgo-fhir/r3';
 import { getMgoResource, type NlCorePatient } from '@minvws/mgo-hcim';
 import packageJson from '@minvws/mgo-hcim/package.json' with { type: 'json' };
@@ -9,7 +8,7 @@ const { name, version } = packageJson;
 
 const fhirPatientResource = fhirPatientResourceJson as Patient;
 const mgoPatientResource = getMgoResource(fhirPatientResource, {
-    fhirVersion: FhirVersion.R3,
+    fhirVersion: 'R3',
 }) as NlCorePatient;
 
 const expected = 'Maatschap Vaste Huisarts';

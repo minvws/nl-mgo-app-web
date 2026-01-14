@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Patient } from '@minvws/mgo-fhir/r4';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -49,7 +48,7 @@ function parseLanguageProficiency(communication: NonNullable<Patient['communicat
  */
 function parseNlCorePatient(resource: Patient) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib Patient-v3.2(2020EN)
         identifier: {
@@ -108,4 +107,4 @@ export const r4NlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R4, Patient, R4NlCorePatient>;
+} satisfies ResourceConfig<'R4', Patient, R4NlCorePatient>;

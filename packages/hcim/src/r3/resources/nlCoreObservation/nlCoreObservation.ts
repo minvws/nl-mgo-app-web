@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -40,7 +39,7 @@ function parseNlCoreObservation(resource: Observation) {
         parseNlCoreObservationBase(resource);
 
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier,
@@ -57,4 +56,4 @@ export const nlCoreObservation = {
     profile,
     parse: parseNlCoreObservation,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Observation, NlCoreObservation>;
+} satisfies ResourceConfig<'R3', Observation, NlCoreObservation>;

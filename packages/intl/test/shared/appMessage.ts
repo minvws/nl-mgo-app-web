@@ -7,11 +7,10 @@ import {
     type AppIntlShape,
     type AppMessagesIds,
 } from '../../src/config/app/app.js';
-import { Locale } from '../../src/locale.js';
 import { type FormatMessageStringValues } from '../../src/types/index.js';
 
 const appIntl = createIntl(
-    getAppIntlConfig({ locale: Locale.NL_NL, ignoreMissingTranslations: true })
+    getAppIntlConfig({ locale: 'nl-NL', ignoreMissingTranslations: true })
 ) as AppIntlShape;
 
 export function appMessage(id: AppMessagesIds, values?: FormatMessageStringValues) {

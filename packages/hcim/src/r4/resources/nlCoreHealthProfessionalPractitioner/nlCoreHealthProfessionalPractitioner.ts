@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Practitioner } from '@minvws/mgo-fhir/r4';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -17,7 +16,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfess
  */
 function parseNlCoreHealthProfessionalPractitioner(resource: Practitioner) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib HealthProfessional-v3.5(2020EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -36,4 +35,4 @@ export const r4NlCoreHealthProfessionalPractitioner = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitioner,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R4, Practitioner, R4NlCoreHealthProfessionalPractitioner>;
+} satisfies ResourceConfig<'R4', Practitioner, R4NlCoreHealthProfessionalPractitioner>;

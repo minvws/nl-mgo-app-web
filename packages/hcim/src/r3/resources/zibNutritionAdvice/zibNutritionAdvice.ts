@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type NutritionOrder } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -14,7 +13,7 @@ function parseZibNutritionAdvice(resource: NutritionOrder) {
     const { oralDiet } = resource;
 
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -46,4 +45,4 @@ export const zibNutritionAdvice = {
     profile,
     parse: parseZibNutritionAdvice,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, NutritionOrder, ZibNutritionAdvice>;
+} satisfies ResourceConfig<'R3', NutritionOrder, ZibNutritionAdvice>;

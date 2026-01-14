@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Encounter } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -44,7 +43,7 @@ export function parseZibEncounterBase(resource: Encounter) {
 
 export function parseZibEncounter(resource: Encounter) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         ...parseZibEncounterBase(resource),
     };
 }
@@ -55,4 +54,4 @@ export const zibEncounter = {
     profile,
     parse: parseZibEncounter,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Encounter, ZibEncounter>;
+} satisfies ResourceConfig<'R3', Encounter, ZibEncounter>;

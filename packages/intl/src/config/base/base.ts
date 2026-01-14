@@ -1,5 +1,7 @@
 import { type IntlConfig as FormatIntlConfig, type OnErrorFn } from '@formatjs/intl';
-import { type Locale } from '../../locale.js';
+
+// BCP 47 language tag
+export type Locale = 'nl-NL';
 
 export interface IntlOptions<RichTextElement> extends FormatIntlConfig<RichTextElement> {
     locale: Locale;

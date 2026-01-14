@@ -2,18 +2,18 @@ import {
     createHelpers,
     createIntl,
     createIntlCache,
-    FhirMessagesIds,
     getFhirIntlConfig,
-    IntlHelpers,
+    type FhirIntlOptions,
     type FhirIntlShape,
-    type Locale,
+    type FhirMessagesIds,
+    type IntlHelpers,
 } from '@minvws/mgo-intl';
 import { createLabelFormatter } from './formatLabel.js';
 
 export type UiContextOptions = {
     isSummary?: boolean;
     ignoreMissingTranslations?: boolean;
-    locale: Locale;
+    locale: FhirIntlOptions['locale'];
 };
 
 const intlCache = createIntlCache();

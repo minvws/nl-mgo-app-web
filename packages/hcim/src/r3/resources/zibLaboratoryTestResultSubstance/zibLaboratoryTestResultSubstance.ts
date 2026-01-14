@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Substance } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -11,7 +10,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-LaboratoryTestRes
  */
 function parseZibLaboratoryTestResultSubstance(resource: Substance) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM LaboratoryTestResult-v4.1(2017EN)
         code: parse.codeableConcept(resource.code),
@@ -26,4 +25,4 @@ export const zibLaboratoryTestResultSubstance = {
     profile,
     parse: parseZibLaboratoryTestResultSubstance,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Substance, ZibLaboratoryTestResultSubstance>;
+} satisfies ResourceConfig<'R3', Substance, ZibLaboratoryTestResultSubstance>;

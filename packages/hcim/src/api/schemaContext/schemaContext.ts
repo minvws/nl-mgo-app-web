@@ -8,7 +8,7 @@ import {
 } from '@minvws/mgo-hcim-ui';
 import { type MgoResource } from '../resources/resources.js';
 
-export type SchemaOptions<V extends `${FhirVersion}`> = UiContextOptions & {
+export type SchemaOptions<V extends FhirVersion> = UiContextOptions & {
     resources?: MgoResource<V>[];
     organization?: {
         name?: string;
@@ -19,7 +19,7 @@ export type SchemaPartialContext = UiContext & {
     ui: UiHelpers;
 };
 
-export type SchemaContext<V extends `${FhirVersion}` = FhirVersion> = SchemaPartialContext & {
+export type SchemaContext<V extends FhirVersion = FhirVersion> = SchemaPartialContext & {
     ui: UiHelpers;
     resources: MgoResource<V>[];
     organization?: {
@@ -27,7 +27,7 @@ export type SchemaContext<V extends `${FhirVersion}` = FhirVersion> = SchemaPart
     };
 };
 
-export function createSchemaContext<V extends `${FhirVersion}`>(
+export function createSchemaContext<V extends FhirVersion>(
     options: SchemaOptions<V>
 ): SchemaContext<V> {
     const {

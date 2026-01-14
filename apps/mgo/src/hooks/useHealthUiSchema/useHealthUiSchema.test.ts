@@ -1,7 +1,6 @@
 import { Resource, useStore } from '$/store';
 import { faker } from '$test/faker';
 import { getDetails, getSummary, HealthUiSchema } from '@minvws/mgo-hcim';
-import { Locale } from '@minvws/mgo-intl';
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { useHealthUiSchema } from './useHealthUiSchema';
@@ -27,7 +26,7 @@ test('returns the summary of the resource', () => {
 
     expect(getSummary).toHaveBeenCalledWith(resource.mgoResource, {
         organization,
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
     });
     expect(schema).toBe(summary);
 });
@@ -48,7 +47,7 @@ test('returns the details of the resource', () => {
 
     expect(getDetails).toHaveBeenCalledWith(resource.mgoResource, {
         organization,
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
     });
     expect(schema).toBe(details);
 });

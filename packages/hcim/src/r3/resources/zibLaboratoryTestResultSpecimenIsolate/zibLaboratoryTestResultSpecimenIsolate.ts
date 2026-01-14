@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Specimen } from '@minvws/mgo-fhir/r3';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -15,7 +14,7 @@ function parseZibLaboratoryTestResultSpecimenIsolate(resource: Specimen) {
     const collection = resource.collection;
 
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM LaboratoryTestResult-v4.1(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -57,4 +56,4 @@ export const zibLaboratoryTestResultSpecimenIsolate = {
     profile,
     parse: parseZibLaboratoryTestResultSpecimenIsolate,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Specimen, ZibLaboratoryTestResultSpecimenIsolate>;
+} satisfies ResourceConfig<'R3', Specimen, ZibLaboratoryTestResultSpecimenIsolate>;

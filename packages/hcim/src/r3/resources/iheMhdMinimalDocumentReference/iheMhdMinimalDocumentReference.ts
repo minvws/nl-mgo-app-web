@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type DocumentReference } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.Minimal.Docum
  */
 function parseIheMhdMinimalDocumentReference(resource: DocumentReference) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         masterIdentifier: parse.identifier(resource.masterIdentifier),
         identifier: map(resource.identifier, parse.identifier),
         status: parse.code(resource.status),
@@ -46,4 +45,4 @@ export const iheMhdMinimalDocumentReference = {
     parse: parseIheMhdMinimalDocumentReference,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<FhirVersion.R3, DocumentReference, IheMhdMinimalDocumentReference>;
+} satisfies ResourceConfig<'R3', DocumentReference, IheMhdMinimalDocumentReference>;

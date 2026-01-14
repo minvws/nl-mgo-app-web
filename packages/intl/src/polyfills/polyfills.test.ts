@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 import { createIntl as createFormatJsIntl } from '@formatjs/intl';
 import { beforeAll, expect, test } from 'vitest';
 import { getIntlConfig, type IntlOptions } from '../config/base/base';
-import { Locale } from '../locale';
 
 function createIntl(options: IntlOptions<string>) {
     return createFormatJsIntl(getIntlConfig(options));
@@ -16,7 +15,7 @@ beforeAll(async () => {
 
 test('date work as expected', () => {
     const intl = createIntl({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         messages: {},
         ignoreMissingTranslations: true,
     });
@@ -32,7 +31,7 @@ test('date work as expected', () => {
 
 test('variables work as expected', () => {
     const intl = createIntl({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         messages: {},
         ignoreMissingTranslations: true,
     });
@@ -50,7 +49,7 @@ test('variables work as expected', () => {
 
 test('puralization works as expected', () => {
     const intl = createIntl({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         messages: {},
         ignoreMissingTranslations: true,
     });
@@ -64,7 +63,7 @@ test('puralization works as expected', () => {
 
 test('formatRelativeTime works as expected', () => {
     const intl = createIntl({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         messages: {},
         ignoreMissingTranslations: true,
     });
@@ -75,7 +74,7 @@ test('formatRelativeTime works as expected', () => {
 
 test('formatNumber works as expected', () => {
     const intl = createIntl({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         messages: {},
         ignoreMissingTranslations: true,
     });

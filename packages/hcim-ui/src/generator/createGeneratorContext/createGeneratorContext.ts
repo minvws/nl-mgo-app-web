@@ -6,14 +6,14 @@ export type GeneratorContext = {
     formatMessage: UiContext['formatMessage'];
     formatLabel: UiContext['formatLabel'];
     createUiElement: ReturnType<typeof createUiElementHelper>;
-    fhirVersion: `${FhirVersion}`;
+    fhirVersion: FhirVersion;
     rootPath: string;
 };
 
 export function createGeneratorContext(
     uiContext: UiContext,
     rootPath: string,
-    fhirVersion: `${FhirVersion}`
+    fhirVersion: FhirVersion
 ): GeneratorContext {
     const { formatMessage, formatLabel } = uiContext;
     const createUiElement = createUiElementHelper(uiContext);

@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Medication } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -14,7 +13,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-Product'; // NOSO
  */
 function parseZibProduct(resource: Medication) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM PharmaceuticalProduct-v2.0(2017EN)
         description: parse.extension(
@@ -40,4 +39,4 @@ export const zibProduct = {
     profile,
     parse: parseZibProduct,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Medication, ZibProduct>;
+} satisfies ResourceConfig<'R3', Medication, ZibProduct>;

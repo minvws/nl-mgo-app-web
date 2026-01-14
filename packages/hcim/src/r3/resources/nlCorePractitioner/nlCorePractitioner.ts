@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Practitioner } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -17,7 +16,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-practitioner'; 
  */
 function parseNlCorePractitioner(resource: Practitioner) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: {
@@ -62,4 +61,4 @@ export const nlCorePractitioner = {
     profile,
     parse: parseNlCorePractitioner,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Practitioner, NlCorePractitioner>;
+} satisfies ResourceConfig<'R3', Practitioner, NlCorePractitioner>;

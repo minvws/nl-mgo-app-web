@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Patient } from '@minvws/mgo-fhir/r3';
 import { filterCodeableConcept, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -50,7 +49,7 @@ function parseLanguageProficiency(communication: NonNullable<Patient['communicat
  */
 function parseNlCorePatient(resource: Patient) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM LifeStance-v3.1(2017EN)
         lifeStance: parse.extensionMultiple(
@@ -153,4 +152,4 @@ export const nlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Patient, NlCorePatient>;
+} satisfies ResourceConfig<'R3', Patient, NlCorePatient>;

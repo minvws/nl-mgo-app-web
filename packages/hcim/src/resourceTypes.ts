@@ -27,7 +27,7 @@ type ResourceParserFunction<
 > = (resource: Resource) => ParsedResource;
 
 export interface ResourceConfig<
-    V extends FhirVersion | `${FhirVersion}`,
+    V extends FhirVersion,
     Resource extends FhirResource<V>,
     ParsedResource extends MgoResourceMeta,
 > {

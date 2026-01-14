@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Encounter } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-Encounter'; // NOS
  */
 function parseGpEncounter(resource: Encounter) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         ...parseZibEncounterBase(resource),
     };
 }
@@ -23,4 +22,4 @@ export const gpEncounter = {
     profile,
     parse: parseGpEncounter,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Encounter, GpEncounter>;
+} satisfies ResourceConfig<'R3', Encounter, GpEncounter>;

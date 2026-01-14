@@ -1,11 +1,9 @@
 import { faker } from '$test';
-import { type FhirVersion } from '@minvws/mgo-fhir';
 import {
     type HealthUiSchema,
     type HealthUiSchemaFunction,
     type SingleValue,
 } from '@minvws/mgo-hcim-ui';
-import { Locale } from '@minvws/mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../resourceTypes.js';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
@@ -20,7 +18,7 @@ vi.mock('../getResourceConfig/getResourceConfig', () => ({
 }));
 
 test('throws if the input is a MGO resource', () => {
-    expect(() => getSummary({} as MgoResource<FhirVersion.R3>)).toThrowError(
+    expect(() => getSummary({} as MgoResource<'R3'>)).toThrowError(
         `input does not seem to be a valid MGO Resource. Received MGO resource profile: "undefined"`
     );
 });
@@ -33,7 +31,7 @@ test('throws if no config could be found', () => {
     };
 
     expect(() => {
-        getSummary(mgoResource as MgoResource<FhirVersion.R3>);
+        getSummary(mgoResource as MgoResource<'R3'>);
     }).toThrowError(`No config found for MGO Resource with profile: "${mgoResource.profile}"`);
 });
 
@@ -52,7 +50,7 @@ test('returns mock schema if there is no summary', () => {
         profile: faker.lorem.word(),
     };
 
-    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<'R3'>);
     expect(result).toEqual({
         label: mgoResource.id,
         children: [
@@ -84,7 +82,7 @@ test('returns mock schema with profile label if there is no summary and no id', 
         profile: faker.lorem.word(),
     };
 
-    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<'R3'>);
     expect(result.label).toEqual(mgoResource.profile);
 });
 
@@ -107,8 +105,8 @@ test('returns the result of the summary ui schema and passed any extra resources
     const resources = [{ profile: faker.lorem.word() }];
 
     const result = getSummary(
-        mgoResource as MgoResource<FhirVersion.R3>,
-        { resources } as SchemaOptions<FhirVersion.R3>
+        mgoResource as MgoResource<'R3'>,
+        { resources } as SchemaOptions<'R3'>
     );
 
     expect(result).toEqual(summaryUiSchema);
@@ -137,10 +135,10 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
 
     const { formatMessage } = createSchemaContext({
         ignoreMissingTranslations: true,
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
     });
 
-    const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getSummary(mgoResource as MgoResource<'R3'>);
     const singleValueDisplay = (result?.children[0].children[0] as SingleValue).value?.display;
 
     expect(singleValueDisplay).toBe(formatMessage('fhir.empty_value'));

@@ -8,9 +8,7 @@ export type MgoResourceMeta<
     referenceId: `${string | undefined}/${string | undefined}`;
     resourceType: string | undefined;
     profile: T;
-    // We use `${V}` to get the string value of the enum.
-    // We do this because the enum reference itself does not translate well into the JSON schema types.
-    fhirVersion: `${V}`;
+    fhirVersion: V;
 };
 
 export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
@@ -32,6 +30,6 @@ export function resourceMeta<T extends NictizNlProfile, V extends FhirVersion>(
         referenceId: `${resourceType}/${id}`,
         resourceType,
         profile,
-        fhirVersion: `${fhirVersion}`,
+        fhirVersion,
     } as const satisfies MgoResourceMeta<T, V>;
 }

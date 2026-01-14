@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { MgoResource } from '@minvws/mgo-hcim';
 import { createMockFactory } from '@minvws/mgo-utils/test/shared';
 
@@ -11,6 +10,6 @@ export const mgoResource = createMockFactory<MgoResource>(() => {
         resourceType,
         referenceId: `${resourceType}/${id}`,
         profile: faker.internet.url(),
-        fhirVersion: faker.helpers.arrayElement([FhirVersion.R3, FhirVersion.R4]),
+        fhirVersion: faker.helpers.arrayElement(['R3', 'R4'] as const),
     } as MgoResource;
 });

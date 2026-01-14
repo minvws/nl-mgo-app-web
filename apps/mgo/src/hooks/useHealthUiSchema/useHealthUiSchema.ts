@@ -4,7 +4,6 @@ import {
     getSummary as getSummarySchema,
     HealthUiSchema,
 } from '@minvws/mgo-hcim';
-import { Locale } from '@minvws/mgo-intl';
 
 export function useHealthUiSchema() {
     const getOrganizationById = useStore.use.getOrganizationById();
@@ -20,7 +19,7 @@ export function useHealthUiSchema() {
 
             return schemaFunction(resource.mgoResource, {
                 organization,
-                locale: Locale.NL_NL,
+                locale: 'nl-NL',
             });
         }
 

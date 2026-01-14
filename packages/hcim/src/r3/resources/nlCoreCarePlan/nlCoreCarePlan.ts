@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type CarePlan } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-careplan'; // N
  */
 function parseNlCoreCarePlan(resource: CarePlan) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)	nl-core-careplan
         identifier: map(resource.identifier, parse.identifier),
@@ -59,4 +58,4 @@ export const nlCoreCarePlan = {
     profile,
     parse: parseNlCoreCarePlan,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, CarePlan, NlCoreCarePlan>;
+} satisfies ResourceConfig<'R3', CarePlan, NlCoreCarePlan>;

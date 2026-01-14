@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Location } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-location'; // N
  */
 function parseNlCoreLocation(resource: Location) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM HealthcareProvider-v3.1.1(2017EN)
         // HCIM MedicationDispense-v2.0(2017EN)
@@ -37,4 +36,4 @@ export const nlCoreLocation = {
     profile,
     parse: parseNlCoreLocation,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Location, NlCoreLocation>;
+} satisfies ResourceConfig<'R3', Location, NlCoreLocation>;
