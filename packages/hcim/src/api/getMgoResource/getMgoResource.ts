@@ -6,8 +6,8 @@ export type Options<V extends FhirVersion> = {
     fhirVersion: V;
 };
 
-const defaultOptions: Options<FhirVersion.R3> = {
-    fhirVersion: FhirVersion.R3,
+const defaultOptions: Options<'R3'> = {
+    fhirVersion: 'R3',
 };
 
 export function getMgoResource<T extends FhirResource<V>, V extends FhirVersion>(

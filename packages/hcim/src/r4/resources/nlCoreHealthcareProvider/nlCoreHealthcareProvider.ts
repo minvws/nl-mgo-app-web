@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Location } from '@minvws/mgo-fhir/r4';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -15,7 +14,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcarePro
  */
 function parseNlCoreHealthcareProvider(resource: Location) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib ContactInformation-v1.2(2020EN)
         telecom: parseNlCoreContactInformation(resource.telecom),
@@ -33,4 +32,4 @@ export const nlCoreHealthcareProvider = {
     profile,
     parse: parseNlCoreHealthcareProvider,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R4, Location, R4NlCoreHealthcareProvider>;
+} satisfies ResourceConfig<'R4', Location, R4NlCoreHealthcareProvider>;

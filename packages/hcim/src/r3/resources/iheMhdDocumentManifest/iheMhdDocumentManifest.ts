@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type DocumentManifest } from '@minvws/mgo-fhir/r3';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/IHE.MHD.DocumentManif
  */
 function parseIheMhdDocumentManifest(resource: DocumentManifest) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         masterIdentifier: parse.identifier(resource.masterIdentifier),
         identifier: map(resource.identifier, parse.identifier),
         status: parse.code(resource.status),
@@ -32,4 +31,4 @@ export const iheMhdDocumentManifest = {
     profile,
     parse: parseIheMhdDocumentManifest,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, DocumentManifest, IheMhdDocumentManifest>;
+} satisfies ResourceConfig<'R3', DocumentManifest, IheMhdDocumentManifest>;

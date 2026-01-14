@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { getMgoResource } from '@minvws/mgo-hcim';
 import packageJson from '@minvws/mgo-hcim/package.json' with { type: 'json' };
 import fhirPatientResourceJson from './fhir-patient-resource.json' with { type: 'json' };
@@ -8,7 +7,7 @@ const { name, version } = packageJson;
 
 const fhirPatientResource = fhirPatientResourceJson;
 const mgoPatientResource = getMgoResource(fhirPatientResource, {
-    fhirVersion: FhirVersion.R3,
+    fhirVersion: 'R3',
 });
 
 const expected = 'Maatschap Vaste Huisarts';

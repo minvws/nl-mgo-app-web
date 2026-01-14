@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Composition } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/gp-EncounterReport'; 
  */
 function parseGpEncounterReport(resource: Composition) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         identifier: parse.identifier(resource.identifier),
         status: parse.string(resource.status),
         type: map(resource.type.coding, parse.coding),
@@ -34,4 +33,4 @@ export const gpEncounterReport = {
     profile,
     parse: parseGpEncounterReport,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Composition, GpEncounterReport>;
+} satisfies ResourceConfig<'R3', Composition, GpEncounterReport>;

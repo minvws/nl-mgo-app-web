@@ -33,5 +33,5 @@ async function extractLabels(files: string[], fhirVersion: FhirVersion, fileName
     writeFileSync(outputFile, JSON.stringify(labels, null, 2));
 }
 
-await extractLabels([...r4Zibs, ...r4NlCore], FhirVersion.R4, 'r4-resource-labels');
-await extractLabels(r3Zibs, FhirVersion.R3, 'r3-resource-labels');
+await extractLabels([...r4Zibs, ...r4NlCore], 'R4', 'r4-resource-labels');
+await extractLabels(r3Zibs, 'R3', 'r3-resource-labels');

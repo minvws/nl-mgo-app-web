@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Consent } from '@minvws/mgo-fhir/r3';
 import { filterCodeableConcept, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-AdvanceDirective'
  */
 function parseZibAdvanceDirective(resource: Consent) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: parse.identifier(resource.identifier),
@@ -47,4 +46,4 @@ export const zibAdvanceDirective = {
     profile,
     parse: parseZibAdvanceDirective,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Consent, ZibAdvanceDirective>;
+} satisfies ResourceConfig<'R3', Consent, ZibAdvanceDirective>;

@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type MedicationRequest } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationAgreeme
  */
 function parseZibMedicationAgreement(resource: MedicationRequest) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -70,4 +69,4 @@ export const zibMedicationAgreement = {
     profile,
     parse: parseZibMedicationAgreement,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, MedicationRequest, ZibMedicationAgreement>;
+} satisfies ResourceConfig<'R3', MedicationRequest, ZibMedicationAgreement>;

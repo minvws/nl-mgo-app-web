@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Immunization } from '@minvws/mgo-fhir/r4';
 import { filterCodeableConcept, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -16,7 +15,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Vaccination-e
  */
 function parseNlCoreVaccinationEvent(resource: Immunization) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib PharmaceuticalProduct-v2.1.2(2020EN)
         vaccineCode: parse.codeableConcept(resource.vaccineCode),
@@ -85,4 +84,4 @@ export const r4NlCoreVaccinationEvent = {
     parse: parseNlCoreVaccinationEvent,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<FhirVersion.R4, Immunization, R4NlCoreVaccinationEvent>;
+} satisfies ResourceConfig<'R4', Immunization, R4NlCoreVaccinationEvent>;

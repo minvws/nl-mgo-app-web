@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Medication } from '@minvws/mgo-fhir/r4';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-Pharmaceutica
  */
 function parseNlCorePharmaceuticalProduct(resource: Medication) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // ART-DECOR Dataset Vaccination-Immunization
         identifier: map(resource.identifier, parse.identifier),
@@ -39,4 +38,4 @@ export const nlCorePharmaceuticalProductR4 = {
     profile,
     parse: parseNlCorePharmaceuticalProduct,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R4, Medication, R4NlCorePharmaceuticalProduct>;
+} satisfies ResourceConfig<'R4', Medication, R4NlCorePharmaceuticalProduct>;

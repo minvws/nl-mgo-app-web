@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { filterCodeableConcept, filterCoding, oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -84,7 +83,7 @@ export function parseZibLaboratoryTestResultObservationBase(resource: Observatio
 
 export function parseZibLaboratoryTestResultObservation(resource: Observation) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         ...parseZibLaboratoryTestResultObservationBase(resource),
     };
 }
@@ -98,4 +97,4 @@ export const zibLaboratoryTestResultObservation = {
     parse: parseZibLaboratoryTestResultObservation,
     uiSchema: generateUiSchema,
     summary,
-} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibLaboratoryTestResultObservation>;
+} satisfies ResourceConfig<'R3', Observation, ZibLaboratoryTestResultObservation>;

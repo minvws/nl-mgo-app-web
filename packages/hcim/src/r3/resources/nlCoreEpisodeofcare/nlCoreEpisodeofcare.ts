@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type EpisodeOfCare } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-episodeofcare';
  */
 function parseNlCoreEpisodeofcare(resource: EpisodeOfCare) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -35,4 +34,4 @@ export const nlCoreEpisodeofcare = {
     profile,
     parse: parseNlCoreEpisodeofcare,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, EpisodeOfCare, NlCoreEpisodeofcare>;
+} satisfies ResourceConfig<'R3', EpisodeOfCare, NlCoreEpisodeofcare>;

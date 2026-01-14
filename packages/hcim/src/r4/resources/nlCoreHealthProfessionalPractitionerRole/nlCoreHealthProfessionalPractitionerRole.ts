@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type PractitionerRole } from '@minvws/mgo-fhir/r4';
 import { filterCodeableConcept, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -13,7 +12,7 @@ const profile =
  */
 function parseNlCoreHealthProfessionalPractitionerRole(resource: PractitionerRole) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib ContactInformation-v1.2(2020EN)
         telecom: parseNlCoreContactInformation(resource.telecom),
@@ -39,8 +38,4 @@ export const nlCoreHealthProfessionalPractitionerRole = {
     profile,
     parse: parseNlCoreHealthProfessionalPractitionerRole,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<
-    FhirVersion.R4,
-    PractitionerRole,
-    R4NlCoreHealthProfessionalPractitionerRole
->;
+} satisfies ResourceConfig<'R4', PractitionerRole, R4NlCoreHealthProfessionalPractitionerRole>;

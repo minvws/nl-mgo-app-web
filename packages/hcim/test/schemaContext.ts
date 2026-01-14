@@ -7,11 +7,11 @@ import {
     createSchemaContext,
 } from '../src/api/schemaContext/schemaContext.js';
 
-export interface TestSchemaOptions<T extends `${FhirVersion}`> extends SchemaOptions<T> {
+export interface TestSchemaOptions<T extends FhirVersion> extends SchemaOptions<T> {
     useMock: boolean;
 }
 
-export function testSchemaContext<T extends `${FhirVersion}` = `${FhirVersion.R3}`>(
+export function testSchemaContext<T extends FhirVersion = 'R3'>(
     options: Partial<TestSchemaOptions<T>> = {}
 ): SchemaContext<T> {
     if (options.useMock) {

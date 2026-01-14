@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type RelatedPerson } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -17,7 +16,7 @@ const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson';
  */
 function parseNlCoreRelatedPerson(resource: RelatedPerson) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -45,4 +44,4 @@ export const nlCoreRelatedPerson = {
     profile,
     parse: parseNlCoreRelatedPerson,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, RelatedPerson, NlCoreRelatedPerson>;
+} satisfies ResourceConfig<'R3', RelatedPerson, NlCoreRelatedPerson>;

@@ -1,5 +1,4 @@
 import { faker } from '$test';
-import { type FhirVersion } from '@minvws/mgo-fhir';
 import {
     type HealthUiSchema,
     type HealthUiSchemaFunction,
@@ -19,7 +18,7 @@ vi.mock('../getResourceConfig/getResourceConfig', () => ({
 }));
 
 test('throws if the input is a MGO resource', () => {
-    expect(() => getDetails({} as MgoResource<FhirVersion.R3>)).toThrowError(
+    expect(() => getDetails({} as MgoResource<'R3'>)).toThrowError(
         `input does not seem to be a valid MGO Resource. Received MGO resource profile: "undefined"`
     );
 });
@@ -32,7 +31,7 @@ test('throws if no config could be found', () => {
     };
 
     expect(() => {
-        getDetails(mgoResource as MgoResource<FhirVersion.R3>);
+        getDetails(mgoResource as MgoResource<'R3'>);
     }).toThrowError(`No config found for MGO Resource with profile: "${mgoResource.profile}"`);
 });
 
@@ -55,8 +54,8 @@ test('returns the result of the ui schema and passed any extra resources', () =>
     const resources = [{ profile: faker.lorem.word() }];
 
     const result = getDetails(
-        mgoResource as MgoResource<FhirVersion.R3>,
-        { resources } as SchemaOptions<FhirVersion.R3>
+        mgoResource as MgoResource<'R3'>,
+        { resources } as SchemaOptions<'R3'>
     );
 
     expect(result).toEqual(summaryUiSchema);
@@ -88,7 +87,7 @@ test('empty entries in the resulting ui schema are set with defaults', () => {
         locale: 'nl-NL',
     });
 
-    const result = getDetails(mgoResource as MgoResource<FhirVersion.R3>);
+    const result = getDetails(mgoResource as MgoResource<'R3'>);
     const singleValueDisplay = (result?.children[0].children[0] as SingleValue).value?.display;
 
     expect(singleValueDisplay).toBe(formatMessage('fhir.empty_value'));

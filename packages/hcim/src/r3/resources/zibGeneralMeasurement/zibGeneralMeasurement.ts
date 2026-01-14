@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -32,7 +31,7 @@ export function parseZibGeneralMeasurementBase(resource: Observation) {
 
 function parseZibGeneralMeasurement(resource: Observation) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         ...parseZibGeneralMeasurementBase(resource),
     };
 }
@@ -43,4 +42,4 @@ export const zibGeneralMeasurement = {
     profile,
     parse: parseZibGeneralMeasurement,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Observation, ZibGeneralMeasurement>;
+} satisfies ResourceConfig<'R3', Observation, ZibGeneralMeasurement>;

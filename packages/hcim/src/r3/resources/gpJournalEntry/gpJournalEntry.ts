@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse, parseObservationComponents } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -16,7 +15,7 @@ function parseGpJournalEntry(resource: Observation) {
         parseNlCoreObservationBase(resource);
 
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         identifier,
         subject,
@@ -60,4 +59,4 @@ export const gpJournalEntry = {
     profile,
     parse: parseGpJournalEntry,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Observation, GpJournalEntry>;
+} satisfies ResourceConfig<'R3', Observation, GpJournalEntry>;

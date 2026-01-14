@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type ProcedureRequest } from '@minvws/mgo-fhir/r3';
 import { oneOfValueX, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -12,7 +11,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-ProcedureRequest'
  */
 function parseZibProcedureRequest(resource: ProcedureRequest) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
 
         // HCIM BasicElements-v1.0(2017EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -59,4 +58,4 @@ export const zibProcedureRequest = {
     profile,
     parse: parseZibProcedureRequest,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, ProcedureRequest, ZibProcedureRequest>;
+} satisfies ResourceConfig<'R3', ProcedureRequest, ZibProcedureRequest>;

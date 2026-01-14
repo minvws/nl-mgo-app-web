@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -14,7 +13,7 @@ export type GpDiagnosticResult = ReturnType<typeof parseGpDiagnosticResult>;
  */
 function parseGpDiagnosticResult(resource: Observation) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R3),
+        ...parse.resourceMeta(resource, profile, 'R3'),
         ...parseZibGeneralMeasurementBase(resource),
 
         episodeOfCare: parse.extensionMultiple(
@@ -29,4 +28,4 @@ export const gpDiagnosticResult = {
     profile,
     parse: parseGpDiagnosticResult,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R3, Observation, GpDiagnosticResult>;
+} satisfies ResourceConfig<'R3', Observation, GpDiagnosticResult>;

@@ -1,4 +1,3 @@
-import { FhirVersion } from '@minvws/mgo-fhir';
 import { type Organization } from '@minvws/mgo-fhir/r4';
 import { filterCodeableConcept, parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
@@ -16,7 +15,7 @@ const profile = 'http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcarePro
  */
 function parseNlCoreHealthcareProviderOrganization(resource: Organization) {
     return {
-        ...parse.resourceMeta(resource, profile, FhirVersion.R4),
+        ...parse.resourceMeta(resource, profile, 'R4'),
 
         // zib HealthcareProvider-v3.4(2020EN)
         identifier: map(resource.identifier, parse.identifier),
@@ -49,4 +48,4 @@ export const nlCoreHealthcareProviderOrganization = {
     profile,
     parse: parseNlCoreHealthcareProviderOrganization,
     uiSchema: generateUiSchema,
-} satisfies ResourceConfig<FhirVersion.R4, Organization, R4NlCoreHealthcareProviderOrganization>;
+} satisfies ResourceConfig<'R4', Organization, R4NlCoreHealthcareProviderOrganization>;
