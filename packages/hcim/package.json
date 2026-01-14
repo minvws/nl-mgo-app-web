@@ -19,12 +19,12 @@
         "@minvws/mgo-fhir": "workspace:^",
         "@minvws/mgo-hcim-parse": "workspace:^",
         "@minvws/mgo-hcim-ui": "workspace:^",
-        "@minvws/mgo-intl": "workspace:^",
         "@minvws/mgo-utils": "workspace:^",
         "lodash-es": "^4.17.21",
         "lossless-json": "^4.0.1"
     },
     "devDependencies": {
+        "@minvws/mgo-intl": "workspace:^",
         "@faker-js/faker": "^8.4.0",
         "@types/fhir": "^0.0.41",
         "@types/lodash-es": "^4.17.12",

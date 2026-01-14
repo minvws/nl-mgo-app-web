@@ -5,7 +5,6 @@ import {
     type HealthUiSchemaFunction,
     type SingleValue,
 } from '@minvws/mgo-hcim-ui';
-import { Locale } from '@minvws/mgo-intl';
 import { expect, test, vi, type MockedFunction } from 'vitest';
 import { type ResourceConfig } from '../../resourceTypes.js';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
@@ -137,7 +136,7 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
 
     const { formatMessage } = createSchemaContext({
         ignoreMissingTranslations: true,
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
     });
 
     const result = getSummary(mgoResource as MgoResource<FhirVersion.R3>);

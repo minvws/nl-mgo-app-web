@@ -1,7 +1,6 @@
 import { type FhirVersion } from '@minvws/mgo-fhir';
 import { createUiHelpers } from '@minvws/mgo-hcim-ui';
 import { uiFaker } from '@minvws/mgo-hcim-ui/test/shared';
-import { Locale } from '@minvws/mgo-intl';
 import {
     type SchemaContext,
     type SchemaOptions,
@@ -27,7 +26,7 @@ export function testSchemaContext<T extends `${FhirVersion}` = `${FhirVersion.R3
     }
 
     return createSchemaContext<T>({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         ignoreMissingTranslations: false,
         ...options,
     });

@@ -409,9 +409,6 @@ importers:
       '@minvws/mgo-hcim-ui':
         specifier: workspace:^
         version: link:../hcim-ui
-      '@minvws/mgo-intl':
-        specifier: workspace:^
-        version: link:../intl
       '@minvws/mgo-utils':
         specifier: workspace:^
         version: link:../utils
@@ -425,6 +422,9 @@ importers:
       '@faker-js/faker':
         specifier: ^8.4.0
         version: 8.4.1
+      '@minvws/mgo-intl':
+        specifier: workspace:^
+        version: link:../intl
       '@types/fhir':
         specifier: ^0.0.41
         version: 0.0.41

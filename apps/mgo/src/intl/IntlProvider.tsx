@@ -1,5 +1,5 @@
 import { appConfig } from '$/config';
-import { Locale, getAppIntlConfig } from '@minvws/mgo-intl';
+import { getAppIntlConfig } from '@minvws/mgo-intl';
 import { type ReactNode } from 'react';
 import { IntlProvider as ReactIntlProvider } from 'react-intl';
 
@@ -9,7 +9,7 @@ interface I18nProviderProps {
 
 export const IntlProvider = ({ children }: I18nProviderProps) => {
     const intlConfig = getAppIntlConfig<ReactNode>({
-        locale: Locale.NL_NL,
+        locale: 'nl-NL',
         /* c8 ignore start */
         defaultRichTextElements: {
             // eslint-disable-next-line react/no-unstable-nested-components

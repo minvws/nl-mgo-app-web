@@ -19,9 +19,8 @@ pnpm add @minvws/mgo-ui
 ```typescript
 import { type MgoCode } from '@minvws/mgo-hcim-parse';
 import { createUiContext, createUiHelpers } from '@minvws/mgo-hcim-ui';
-import { Locale } from '@minvws/mgo-intl';
 
-const context = createUiContext({ locale: Locale.NL_NL })
+const context = createUiContext({ locale: 'nl-NL' })
 const ui = createUiHelpers( context )
 
 const healthUiSchemaElement = uiHelpers.code('fhir.x.status', {...} /* MgoCode */ );

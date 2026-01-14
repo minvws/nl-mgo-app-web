@@ -1,6 +1,5 @@
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import { setEmptyEntries, type HealthUiSchema } from '@minvws/mgo-hcim-ui';
-import { Locale } from '@minvws/mgo-intl';
 import { isMgoResource } from '../../utils/isMgoResource/isMgoResource.js';
 import { getResourceConfig } from '../getResourceConfig/getResourceConfig.js';
 import { createSchemaContext, SchemaOptions } from '../schemaContext/schemaContext.js';
@@ -44,7 +43,7 @@ export function getSummary<T extends MgoResourceMeta>(
     }
 
     const context = createSchemaContext({
-        locale: options?.locale ?? Locale.NL_NL,
+        locale: options?.locale ?? 'nl-NL',
         ignoreMissingTranslations: true,
         isSummary: true,
         ...options,
