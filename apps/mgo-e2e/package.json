@@ -15,6 +15,7 @@
     "devDependencies": {
         "@axe-core/playwright": "^4.11.0",
         "@minvws/mgo-intl": "workspace:^",
+        "@minvws/mgo-config": "workspace:^",
         "@playwright/test": "1.56.1",
         "@types/node": "^22.5.0",
         "dotenv": "^16.4.7",

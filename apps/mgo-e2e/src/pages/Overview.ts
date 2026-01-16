@@ -19,6 +19,13 @@ export class OverviewPage extends AbstractPage {
     readonly buttonAddOrganization = this.page.getByRole('link', {
         name: appMessage('common.add_organizations'),
     });
+    readonly failedRequestHeading = this.page.getByText(
+        appMessage('common.data_not_retrieved_heading')
+    );
+
+    readonly buttonRetryFailedRequests = this.page.getByRole('button', {
+        name: appMessage('common.try_again'),
+    });
 
     buttonHealthCategory(category: HealthCategoryType) {
         return this.page.getByRole('link').filter({
