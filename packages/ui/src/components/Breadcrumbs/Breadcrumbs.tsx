@@ -1,4 +1,4 @@
-import type { JSX } from 'react';
+import type { ComponentProps, JSX } from 'react';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
 import { Text } from '../Text/Text';
@@ -16,14 +16,14 @@ export type BreadcrumbLinkProps = {
 
 type BreadcrumbLinkComponent = (props: BreadcrumbLinkProps) => JSX.Element;
 
-export type BreadcrumbsProps = {
+export interface BreadcrumbsProps extends Omit<ComponentProps<'nav'>, 'children'> {
     readonly items: BreadcrumbItem[];
     readonly linkComponent?: BreadcrumbLinkComponent;
-};
+}
 
-export function Breadcrumbs({ items, linkComponent = Link }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, linkComponent = Link, ...rest }: BreadcrumbsProps) {
     return (
-        <Text as="nav">
+        <Text as="nav" {...rest}>
             <ol className="flex flex-wrap items-center gap-2">
                 {items.map(({ label, href }) => (
                     <li key={`${label}-${href}`} className="flex items-center gap-1">
