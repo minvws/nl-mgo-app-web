@@ -59,7 +59,7 @@ export function HealthCategory() {
                     loadingTextScreenReader={formatMessage('common.loading_data')}
                 />
 
-                <div className="flex justify-between">
+                <div className="mb-4 flex items-center justify-between md:mb-6">
                     <Breadcrumbs />
 
                     <PdfDownloadLink
@@ -68,11 +68,11 @@ export function HealthCategory() {
                     />
                 </div>
 
-                <Heading as="h1" focusOnRender size="xl">
+                <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-8">
                     {heading}
                 </Heading>
 
-                <div className="py-4 md:py-8">
+                <div className="pb-4 md:pb-8">
                     {isLoading ? (
                         <div className="py-8 text-center md:py-16">
                             <LoadingSpinner />

@@ -30,9 +30,9 @@ export function SearchOrganization() {
             <Helmet title={heading} />
 
             <section className="flex grow flex-col">
-                <Breadcrumbs />
+                <Breadcrumbs className="mb-4 md:mb-6" />
 
-                <Heading as="h1" focusOnRender size="xl" className="mt-3 mb-4 md:mt-4 md:mb-6">
+                <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
                     <FormattedMessage
                         id="add_organization.heading"
                         description="Voeg een zorgaanbieder toe"
