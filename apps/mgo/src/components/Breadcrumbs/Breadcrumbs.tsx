@@ -1,5 +1,9 @@
 import { routes } from '$/routing/routes';
-import { BreadcrumbLinkProps, Breadcrumbs as BreadcrumbsComponent } from '@minvws/mgo-ui';
+import {
+    BreadcrumbLinkProps,
+    Breadcrumbs as BreadcrumbsComponent,
+    type BreadcrumbsProps as BreadcrumbsPropsUi,
+} from '@minvws/mgo-ui';
 import { Link } from 'react-router-dom';
 import { useBreadcrumbs } from './useBreadcrumbs';
 
@@ -9,7 +13,9 @@ const LinkComponent = ({ children, href, className }: BreadcrumbLinkProps) => (
     </Link>
 );
 
-export function Breadcrumbs() {
+export type BreadcrumbsProps = Omit<BreadcrumbsPropsUi, 'items' | 'linkComponent'>;
+
+export function Breadcrumbs(rest: BreadcrumbsProps) {
     const allCrumbs = useBreadcrumbs(routes);
 
     if (allCrumbs.length === 0) {
@@ -24,5 +30,5 @@ export function Breadcrumbs() {
         };
     });
 
-    return <BreadcrumbsComponent items={crumbs} linkComponent={LinkComponent} />;
+    return <BreadcrumbsComponent items={crumbs} linkComponent={LinkComponent} {...rest} />;
 }

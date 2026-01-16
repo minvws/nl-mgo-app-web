@@ -1,11 +1,11 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
+import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
+import { useFailedHealthQueries, useRetryQuery } from '$/hooks';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { ErrorNotice, Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
-import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
-import { useFailedHealthQueries, useRetryQuery } from '$/hooks';
 
 export function Organization() {
     const { organization } = useParamsData();
@@ -41,9 +41,8 @@ export function Organization() {
                     loading={isRetrying}
                     loadingTextScreenReader={formatMessage('common.loading_data')}
                 />
-                <div>
-                    <Breadcrumbs />
-                </div>
+
+                <Breadcrumbs className="mb-4 md:mb-6" />
 
                 <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-8">
                     <FormattedMessage

@@ -28,7 +28,8 @@ export function HealthData({ summary }: Readonly<HealthDataProps>) {
             <Helmet title={heading} />
 
             <section className="grow">
-                <Breadcrumbs />
+                <Breadcrumbs className="mb-4 md:mb-6" />
+
                 <HealthUiSchema resource={resource} schema={schema} />
             </section>
         </>
