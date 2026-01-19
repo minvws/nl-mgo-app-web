@@ -22,6 +22,7 @@ const hoisted = vi.hoisted(() => ({
             (typeof import('$/hooks/useHealthCategoriesQuery/useHealthCategoriesQuery'))['useHealthCategoriesQuery']
         >(),
     useRetryQuery: vi.fn(),
+    useFailedHealthQueries: vi.fn(),
 }));
 
 vi.mock('$/hooks', async (importOriginal) => {
@@ -31,6 +32,7 @@ vi.mock('$/hooks', async (importOriginal) => {
         ...mod,
         useHealthCategoriesQuery: hoisted.useHealthCategoriesQuery,
         useRetryQuery: hoisted.useRetryQuery,
+        useFailedHealthQueries: hoisted.useFailedHealthQueries,
     };
 });
 
@@ -52,6 +54,13 @@ beforeEach(() => {
     ]);
 
     hoisted.useRetryQuery.mockImplementation(() => ({
+        retry: vi.fn(),
+        isRetrying: false,
+    }));
+
+    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+        failedQueryHashes: [faker.lorem.word()],
+        hasFailedQueries: true,
         retry: vi.fn(),
         isRetrying: false,
     }));
@@ -254,15 +263,22 @@ test('retry queries when clicking retry button', async () => {
 
     const retry = vi.fn();
 
-    hoisted.useRetryQuery.mockImplementation(() => ({
+    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+        failedQueryHashes: [faker.lorem.word()],
+        hasFailedQueries: true,
         retry,
         isRetrying: false,
     }));
 
     const { user } = setupWithAppProviders(<HealthCategory />);
 
-    const errorNotice = screen.getByTestId('error-no-data');
-    const retryButton = within(errorNotice).getByRole('button', {
+    const heading = screen.getByRole('heading', {
+        name: appMessage('health_category.errornodata.heading'),
+    });
+
+    const errorNoData = heading.closest('div');
+
+    const retryButton = within(errorNoData as HTMLElement).getByRole('button', {
         name: appMessage('common.try_again'),
     });
 

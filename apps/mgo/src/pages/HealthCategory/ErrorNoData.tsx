@@ -1,13 +1,11 @@
 import { FormattedMessage } from '$/intl';
 import { Button, Heading, Icon, Text } from '@minvws/mgo-ui';
-import { ButtonLoadingProps } from '@minvws/mgo-ui/components/Button/Button.js';
-import { AllOrNone } from '@minvws/mgo-utils';
 import { onlineManager } from '@tanstack/react-query';
 import { type UIEvent } from 'react';
 
 export type ErrorNoDataProps = {
     readonly onClick: (event: UIEvent) => void | Promise<void>;
-} & AllOrNone<ButtonLoadingProps>;
+};
 
 export function ErrorNoData({ onClick }: ErrorNoDataProps) {
     return (

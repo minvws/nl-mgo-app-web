@@ -86,10 +86,11 @@ test('retrieves failed queries by status and partial query key, defaults to all 
     const { result } = renderHook(() => useFailedHealthQueries());
     const expected = [cachedQueries[0].queryHash, cachedQueries[2].queryHash].sort();
     const allCategories = getHealthCategoryConfigs();
+    const failedQueryHashes = result.current.failedQueryHashes;
 
     expect(hoisted.getRelevantEndpoints).toHaveBeenCalledWith(allCategories);
-    expect(result.current.length).toBe(expected.length);
-    expect(result.current).toEqual(expected);
+    expect(failedQueryHashes.length).toBe(expected.length);
+    expect(failedQueryHashes).toEqual(expected);
 });
 
 test('ignores queries that are not failed', async () => {
@@ -124,7 +125,7 @@ test('ignores queries that are not failed', async () => {
     hoisted.setCachedQueries(cachedQueries);
 
     const { result } = renderHook(() => useFailedHealthQueries());
-    expect(result.current.length).toBe(0);
+    expect(result.current.failedQueryHashes.length).toBe(0);
 });
 
 test('marks paused queries as failed', async () => {
@@ -156,7 +157,7 @@ test('marks paused queries as failed', async () => {
     const expected = [cachedQueries[0].queryHash];
 
     const { result } = renderHook(() => useFailedHealthQueries());
-    expect(result.current.length).toBe(expected.length);
+    expect(result.current.failedQueryHashes.length).toBe(expected.length);
 });
 
 test('can retrieve failed queries for specific organizations and categories', async () => {
@@ -207,7 +208,8 @@ test('can retrieve failed queries for specific organizations and categories', as
         })
     );
     const expected = [cachedQueries[0].queryHash];
+    const failedQueryHashes = result.current.failedQueryHashes;
 
-    expect(result.current.length).toBe(expected.length);
-    expect(result.current).toEqual(expected);
+    expect(failedQueryHashes.length).toBe(expected.length);
+    expect(failedQueryHashes).toEqual(expected);
 });

@@ -1,6 +1,6 @@
 import { HealthSubCategoryList } from '$/components/HealthSubCategoryList/HealthSubCategoryList';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
-import { useFailedHealthQueries, useHealthCategoriesQuery, useRetryQuery } from '$/hooks';
+import { useFailedHealthQueries, useHealthCategoriesQuery } from '$/hooks';
 import { useIntl } from '$/intl';
 import { Navigate, useParamsData } from '$/routing';
 import { useStore } from '$/store';
@@ -28,10 +28,9 @@ export function HealthCategory() {
     });
 
     const failedQueries = useFailedHealthQueries({
-        organizationsFilter: organizations,
+        organizationsFilter: organization ? [organization] : [],
         categoriesFilter: healthCategory ? [healthCategory] : [],
     });
-    const { retry } = useRetryQuery();
 
     if (!healthCategory) {
         return <NotFound className="flex flex-col items-center text-center" />;
@@ -51,7 +50,7 @@ export function HealthCategory() {
             <section className="grow">
                 <HealthQueryErrorNotice
                     organizationsFilter={organizations}
-                    healthCategoriesFilter={[healthCategory]}
+                    categoriesFilter={[healthCategory]}
                 />
 
                 <div className="mb-4 flex items-center justify-between md:mb-6">
@@ -73,7 +72,7 @@ export function HealthCategory() {
                             <LoadingSpinner />
                         </div>
                     ) : isError && isEmpty ? (
-                        <ErrorNoData onClick={() => retry(failedQueries)} />
+                        <ErrorNoData onClick={() => failedQueries.retry()} />
                     ) : isEmpty ? (
                         <NoData />
                     ) : (

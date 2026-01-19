@@ -3,8 +3,9 @@ import { HealthcareOrganization } from '$/store';
 import { HealthCategoryConfig } from '@minvws/mgo-config';
 import { includesAll } from '@minvws/mgo-utils';
 import { QueryCache, useQueryClient } from '@tanstack/react-query';
-import { useRef, useSyncExternalStore } from 'react';
+import { useCallback, useRef, useSyncExternalStore } from 'react';
 import { HEALTH_QUERY_KEY } from '../useHealthCategoriesQuery/createHealthQuery';
+import { useRetryQuery } from '../useRetryQuery/useRetryQuery';
 
 export interface FailedHealthQueryOptions {
     organizationsFilter?: HealthcareOrganization[];
@@ -54,19 +55,36 @@ export function useFailedHealthQueries({
 }: FailedHealthQueryOptions = {}) {
     const queryClient = useQueryClient();
     const queryCache = queryClient.getQueryCache();
+    const { retry: retryQueries, isRetrying } = useRetryQuery();
+
     const lastSnapshotRef = useRef<string[]>([]);
 
-    return useSyncExternalStore(queryCache.subscribe, () => {
+    const getSnapshot = () => {
         const next = getFailedHealthQueryHashes(queryCache, {
             organizationsFilter,
             categoriesFilter,
         }).sort();
+
         if (
             next.length !== lastSnapshotRef.current.length ||
             next.some((hash, i) => hash !== lastSnapshotRef.current[i])
         ) {
             lastSnapshotRef.current = next;
         }
+
         return lastSnapshotRef.current;
-    });
+    };
+
+    const failedQueryHashes = useSyncExternalStore(queryCache.subscribe, getSnapshot, getSnapshot);
+
+    const retry = useCallback(() => {
+        retryQueries(failedQueryHashes);
+    }, [retryQueries, failedQueryHashes]);
+
+    return {
+        failedQueryHashes,
+        hasFailedQueries: failedQueryHashes.length > 0,
+        retry,
+        isRetrying,
+    };
 }
