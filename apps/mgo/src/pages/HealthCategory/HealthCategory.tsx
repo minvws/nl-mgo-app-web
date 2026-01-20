@@ -27,9 +27,12 @@ export function HealthCategory() {
         organizations,
     });
 
+    const organizationsFilter = organization ? [organization] : [];
+    const categoriesFilter = healthCategory ? [healthCategory] : [];
+
     const failedQueries = useFailedHealthQueries({
-        organizationsFilter: organization ? [organization] : [],
-        categoriesFilter: healthCategory ? [healthCategory] : [],
+        organizationsFilter,
+        categoriesFilter,
     });
 
     if (!healthCategory) {
@@ -48,10 +51,12 @@ export function HealthCategory() {
             <Helmet title={heading} />
 
             <section className="grow">
-                <HealthQueryErrorNotice
-                    organizationsFilter={organizations}
-                    categoriesFilter={[healthCategory]}
-                />
+                {!isEmpty && (
+                    <HealthQueryErrorNotice
+                        organizationsFilter={organizationsFilter}
+                        categoriesFilter={categoriesFilter}
+                    />
+                )}
 
                 <div className="mb-4 flex items-center justify-between md:mb-6">
                     <Breadcrumbs />

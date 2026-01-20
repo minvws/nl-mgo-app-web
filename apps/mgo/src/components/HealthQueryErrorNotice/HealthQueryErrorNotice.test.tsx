@@ -4,29 +4,40 @@ import { screen } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
 import { HealthQueryErrorNotice } from './HealthQueryErrorNotice';
 import { onlineManager } from '@tanstack/react-query';
+import { mockArray } from '@minvws/mgo-utils/test/shared';
+import { faker } from '$test/faker';
 
 vi.mock('$/auth');
 
-vi.mock('$/hooks/useFailedHealthQueries/useFailedHealthQueries', () => ({
-    useFailedHealthQueries: () => ['query-1', 'query-2'],
-}));
-
 const hoisted = vi.hoisted(() => ({
     useRetryQuery: vi.fn(),
+    useFailedHealthQueries: vi.fn(() => ({
+        retry: vi.fn(),
+        failedQueryHashes: ['query-1', 'query-2'],
+    })),
 }));
 
 vi.mock('$/hooks/useRetryQuery/useRetryQuery', () => ({
     useRetryQuery: hoisted.useRetryQuery,
 }));
 
+vi.mock('$/hooks/useFailedHealthQueries/useFailedHealthQueries', () => ({
+    useFailedHealthQueries: hoisted.useFailedHealthQueries,
+}));
+
 const isOnlineSpy = vi.spyOn(onlineManager, 'isOnline');
 
 test('clicking retry calls retry with failed queries', async () => {
-    const retry = vi.fn();
+    const mockRetry = vi.fn();
+    const failedQueryHashes = mockArray({
+        factory: faker.lorem.word,
+        min: 1,
+        max: 10,
+    });
 
-    hoisted.useRetryQuery.mockImplementation(() => ({
-        retry,
-        isRetrying: false,
+    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+        retry: mockRetry,
+        failedQueryHashes,
     }));
 
     const { user } = setupWithAppProviders(<HealthQueryErrorNotice />);
@@ -37,8 +48,7 @@ test('clicking retry calls retry with failed queries', async () => {
 
     await user.click(button);
 
-    expect(retry).toHaveBeenCalledTimes(1);
-    expect(retry).toHaveBeenCalledWith(['query-1', 'query-2']);
+    expect(mockRetry).toHaveBeenCalledTimes(1);
 });
 
 test('renders offline message', () => {

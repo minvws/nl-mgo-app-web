@@ -9,7 +9,7 @@ export type ErrorNoDataProps = {
 
 export function ErrorNoData({ onClick }: ErrorNoDataProps) {
     return (
-        <div className="w-full py-6 text-center" data-testid={'error-no-data'}>
+        <div className="w-full py-6 text-center">
             <Icon className="mx-auto h-12 w-12" icon={'sync_problem'} />
             <Heading as="h2" size="sm" className="mt-8">
                 <FormattedMessage

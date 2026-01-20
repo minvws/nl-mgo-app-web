@@ -21,9 +21,7 @@ vi.mock('$/intl', () => ({
     })),
 }));
 
-vi.mock('$/routing', () => ({
-    useParamsData: vi.fn(),
-}));
+vi.mock('$/routing/useParamsData/useParamsData');
 
 vi.mock('$/hooks', () => ({
     useHealthUiSchema: vi.fn(() => ({
@@ -32,7 +30,7 @@ vi.mock('$/hooks', () => ({
 }));
 
 beforeEach(() => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
 });
 
 describe('useTranslateBreadcrumb', () => {

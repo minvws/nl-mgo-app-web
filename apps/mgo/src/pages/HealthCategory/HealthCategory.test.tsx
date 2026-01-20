@@ -183,6 +183,23 @@ test('shows category query error', async () => {
     expect(screen.getByText(appMessage('common.data_not_retrieved_heading'))).toBeInTheDocument();
 });
 
+test('do not show category query error popup when category is empty', async () => {
+    const healthCategoryQuery = {
+        category: mockHealthCategoryWithResources(),
+        isLoading: false,
+        isError: true,
+        isEmpty: true,
+        retry: vi.fn(),
+    };
+    hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
+
+    setupWithAppProviders(<HealthCategory />);
+
+    expect(
+        screen.queryByText(appMessage('common.data_not_retrieved_subheading'))
+    ).not.toBeInTheDocument();
+});
+
 test('shows category empty', async () => {
     const healthCategoryQuery = {
         category: mockHealthCategoryWithResources(),
