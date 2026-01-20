@@ -51,6 +51,13 @@
                     }
                 },
                 {
+                    "label": "Inhoud",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
@@ -82,25 +89,6 @@
                             "display": "De Hoed"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "label": "Inhoud",
-            "children": [
-                {
-                    "label": "Bijlage(n)",
-                    "type": "SINGLE_VALUE",
-                    "value": {
-                        "display": "Niet bekend"
-                    }
-                },
-                {
-                    "label": "Formaat",
-                    "type": "SINGLE_VALUE",
-                    "value": {
-                        "display": "Niet bekend"
-                    }
                 }
             ]
         },

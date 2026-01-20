@@ -3,6 +3,7 @@ import { type DocumentReference } from '@minvws/mgo-fhir/r3';
 import { test } from 'vitest';
 import input01 from './fixtures/01/fhir-resource.json' with { type: 'json' };
 import input02 from './fixtures/02/fhir-resource.json' with { type: 'json' };
+import input03 from './fixtures/03/fhir-resource.json' with { type: 'json' };
 import { iheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference.js';
 
 test('01: mgo-resource', async () => {
@@ -13,6 +14,11 @@ test('01: mgo-resource', async () => {
 test('02: mgo-resource', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input02 as DocumentReference);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');
+});
+
+test('03: mgo-resource', async () => {
+    const output = iheMhdMinimalDocumentReference.parse(input03 as DocumentReference);
+    await expectJson(output).toMatchFileSnapshot('./fixtures/03/mgo-resource.snap.json');
 });
 
 test('01: ui-schema', async () => {
@@ -28,6 +34,14 @@ test('02: ui-schema', async () => {
     const uiSchema = iheMhdMinimalDocumentReference.uiSchema(output, testSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/02/ui-schema.snap.json'
+    );
+});
+
+test('03: ui-schema', async () => {
+    const output = iheMhdMinimalDocumentReference.parse(input03 as DocumentReference);
+    const uiSchema = iheMhdMinimalDocumentReference.uiSchema(output, testSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/03/ui-schema.snap.json'
     );
 });
 
@@ -47,9 +61,17 @@ test('02: summary', async () => {
     );
 });
 
-test('01: ui-chema returns the expected output when there is no content', async () => {
+test('03: summary', async () => {
+    const output = iheMhdMinimalDocumentReference.parse(input03 as DocumentReference);
+    const uiSchema = iheMhdMinimalDocumentReference.summary(output, testSchemaContext());
+    await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
+        './fixtures/03/summary.snap.json'
+    );
+});
+
+test('01: ui-schema returns the expected output when there is no content', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input01 as DocumentReference);
-    output.content.attachment = undefined;
+    output.content = [];
     const uiSchema = iheMhdMinimalDocumentReference.uiSchema(output, testSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/ui-schema-no-content.snap.json'
@@ -58,7 +80,7 @@ test('01: ui-chema returns the expected output when there is no content', async 
 
 test('01: summary returns the expected output when there is no content', async () => {
     const output = iheMhdMinimalDocumentReference.parse(input01 as DocumentReference);
-    output.content.attachment = undefined;
+    output.content = [];
     const uiSchema = iheMhdMinimalDocumentReference.summary(output, testSchemaContext());
     await expectHealthCareUiSchemaJson(uiSchema).toMatchFileSnapshot(
         './fixtures/01/summary-no-content.snap.json'
