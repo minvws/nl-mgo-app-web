@@ -61,20 +61,22 @@
     ],
     "relatesTo": null,
     "securityLabel": null,
-    "content": {
-        "attachment": {
-            "_type": "attachment",
-            "contentType": "application/pdf",
-            "language": "nl",
-            "data": null,
-            "url": "Binary/pdfa-binary-01",
-            "size": null,
-            "hash": null,
-            "title": "Kopie van ontslagbrief",
-            "creation": null
-        },
-        "format": null
-    },
+    "content": [
+        {
+            "attachment": {
+                "_type": "attachment",
+                "contentType": "application/pdf",
+                "language": "nl",
+                "data": null,
+                "url": "Binary/pdfa-binary-01",
+                "size": null,
+                "hash": null,
+                "title": "Kopie van ontslagbrief",
+                "creation": null
+            },
+            "format": null
+        }
+    ],
     "context": {
         "period": null,
         "facilityType": null,

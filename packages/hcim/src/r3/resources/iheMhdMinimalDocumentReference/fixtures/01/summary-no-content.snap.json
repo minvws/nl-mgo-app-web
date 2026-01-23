@@ -11,12 +11,6 @@
                     }
                 },
                 {
-                    "label": "Onderwerp",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Paul XXX_Mesker",
-                    "reference": "Patient/nl-core-patient-02"
-                },
-                {
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -31,13 +25,7 @@
         },
         {
             "label": "Bijlage(n)",
-            "children": [
-                {
-                    "type": "DOWNLOAD_LINK",
-                    "label": "Onbekend",
-                    "url": null
-                }
-            ]
+            "children": []
         },
         {
             "label": "Opgesteld door",

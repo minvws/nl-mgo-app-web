@@ -1,4 +1,5 @@
 import { common } from '@minvws/mgo-hcim-ui';
+import { map } from '@minvws/mgo-utils';
 import { SummarySchemaFunction } from '../../../resourceTypes.js';
 import { type IheMhdMinimalDocumentReference } from './iheMhdMinimalDocumentReference.js';
 
@@ -11,19 +12,20 @@ export const summary: SummarySchemaFunction<IheMhdMinimalDocumentReference> = (
     const { ui, formatMessage } = context;
 
     return {
-        label: resource.content.attachment?.title ?? formatMessage('fhir.unknown'),
+        label: resource.content?.[0]?.attachment?.title ?? formatMessage('fhir.unknown'),
         children: [
             {
                 children: [
                     ui.instant(`${i18n}.indexed`, resource.indexed),
-                    ui.reference(`${i18n}.subject`, resource.subject),
                     ui.codeableConcept(`${i18n}.type`, resource.type),
                 ],
             },
 
             {
                 label: formatMessage(`summary.${i18n}.group_attachment`),
-                children: [ui.attachment(resource.content.attachment)],
+                children: [
+                    ...map(resource.content, (content) => ui.attachment(content.attachment), true),
+                ],
             },
 
             {

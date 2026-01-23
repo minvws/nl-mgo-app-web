@@ -25,10 +25,10 @@ function parseIheMhdMinimalDocumentReference(resource: DocumentReference) {
             target: parse.reference(relatesTo.target),
         })),
         securityLabel: map(resource.securityLabel, parse.codeableConcept),
-        content: {
-            attachment: parse.attachment(resource.content?.[0].attachment),
-            format: parse.coding(resource.content?.[0].format),
-        },
+        content: map(resource.content, (item) => ({
+            attachment: parse.attachment(item.attachment),
+            format: parse.coding(item.format),
+        })),
         context: {
             period: parse.period(resource.context?.period),
             facilityType: parse.codeableConcept(resource.context?.facilityType),

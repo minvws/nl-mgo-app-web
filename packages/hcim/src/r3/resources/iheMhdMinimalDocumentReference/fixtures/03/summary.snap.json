@@ -1,5 +1,5 @@
 {
-    "label": "Onbekend",
+    "label": "Kopie van ontslagbrief #1",
     "children": [
         {
             "children": [
@@ -27,9 +27,14 @@
             "label": "Bijlage(n)",
             "children": [
                 {
-                    "type": "DOWNLOAD_LINK",
-                    "label": "Onbekend",
-                    "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510"
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Kopie van ontslagbrief #1",
+                    "reference": "Binary/pdfa-binary-01"
+                },
+                {
+                    "type": "DOWNLOAD_BINARY",
+                    "label": "Kopie van ontslagbrief #2",
+                    "reference": "Binary/pdfa-binary-02"
                 }
             ]
         },
@@ -44,7 +49,7 @@
                             "display": "Author #1"
                         },
                         {
-                            "display": "Author #1"
+                            "display": "Author #2"
                         }
                     ]
                 },
