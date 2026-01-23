@@ -1,0 +1,99 @@
+{
+    "label": "Afspraak",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Contact type",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Followup",
+                            "code": "follow",
+                            "system": "http://example.org/appointment-type"
+                        }
+                    ]
+                },
+                {
+                    "label": "Begin datum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1 januari 2018 om 09:00"
+                    }
+                },
+                {
+                    "label": "Verrichting of probleem",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Severe burn of left ear"
+                        }
+                    ]
+                },
+                {
+                    "label": "Afwijkende uitslag",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "value": [
+                        [
+                            {
+                                "display": "413095006",
+                                "code": "413095006",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Met wie u de afspraak had",
+            "children": [
+                {
+                    "label": "Contactpersoon, patiënt, zorgverlener of locatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Alex XXX_Verweij"
+                        },
+                        {
+                            "display": "A.F. Snijder"
+                        },
+                        {
+                            "display": "West vleugel"
+                        }
+                    ]
+                },
+                {
+                    "label": "Specialisme",
+                    "type": "MULTIPLE_GROUPED_VALUES",
+                    "value": [
+                        [
+                            {
+                                "display": "Medisch specialisten, chirurgie",
+                                "code": "0303",
+                                "system": "urn:oid:2.16.840.1.113883.2.4.6.7"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Zorgaanbieder",
+                    "value": {
+                        "display": "test-organization"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle afspraakgegevens",
+                    "reference": "Appointment/eafspraak-appointment-01"
+                }
+            ]
+        }
+    ]
+}
