@@ -1118,7 +1118,7 @@
   "r3.zib_problem.abatement_date_time": [
     {
       "type": 0,
-      "value": "Wanneer gestopt"
+      "value": "Einddatum"
     }
   ],
   "r3.zib_problem.asserter": [
@@ -1130,7 +1130,7 @@
   "r3.zib_problem.body_site": [
     {
       "type": 0,
-      "value": "Plaats in het lichaam"
+      "value": "Locatie in het lichaam"
     }
   ],
   "r3.zib_problem.body_site.laterality": [
@@ -1148,25 +1148,25 @@
   "r3.zib_problem.clinical_status": [
     {
       "type": 0,
-      "value": "Huidige status"
+      "value": "Status"
     }
   ],
   "r3.zib_problem.code": [
     {
       "type": 0,
-      "value": "Medische klacht of aandoening"
+      "value": "Aandoening"
     }
   ],
   "r3.zib_problem.note": [
     {
       "type": 0,
-      "value": "Opmerkingen"
+      "value": "Extra uitleg"
     }
   ],
   "r3.zib_problem.onset_date_time": [
     {
       "type": 0,
-      "value": "Wanneer begonnen"
+      "value": "Startdatum"
     }
   ],
   "r3.zib_problem.verification_status": [

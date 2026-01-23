@@ -4,16 +4,7 @@
         {
             "children": [
                 {
-                    "label": "Identificatie",
-                    "type": "MULTIPLE_VALUES",
-                    "value": [
-                        {
-                            "display": "1d1451f3-8fdf-11ec-5384-020000000000"
-                        }
-                    ]
-                },
-                {
-                    "label": "Medische klacht of aandoening",
+                    "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {
@@ -24,13 +15,14 @@
                     ]
                 },
                 {
-                    "label": "Onderwerp",
-                    "type": "REFERENCE_VALUE",
-                    "display": "Johan XXX_Helleman",
-                    "reference": "Patient/nl-core-patient-01"
+                    "label": "Einddatum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2002"
+                    }
                 },
                 {
-                    "label": "Opmerkingen",
+                    "label": "Extra uitleg",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {
@@ -39,11 +31,26 @@
                     ]
                 },
                 {
-                    "label": "Plaats in het lichaam",
+                    "label": "Identificatie",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "1d1451f3-8fdf-11ec-5384-020000000000"
+                        }
+                    ]
+                },
+                {
+                    "label": "Locatie in het lichaam",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Niet bekend"
                     }
+                },
+                {
+                    "label": "Onderwerp",
+                    "type": "REFERENCE_VALUE",
+                    "display": "Johan XXX_Helleman",
+                    "reference": "Patient/nl-core-patient-01"
                 },
                 {
                     "label": "Probleemstatus",
@@ -64,6 +71,13 @@
                     }
                 },
                 {
+                    "label": "Startdatum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "2001"
+                    }
+                },
+                {
                     "label": "Vastgelegd door (zorgverlener)",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -80,20 +94,6 @@
                             "system": "http://hl7.org/fhir/v3/NullFlavor"
                         }
                     ]
-                },
-                {
-                    "label": "Wanneer begonnen",
-                    "type": "SINGLE_VALUE",
-                    "value": {
-                        "display": "2001"
-                    }
-                },
-                {
-                    "label": "Wanneer gestopt",
-                    "type": "SINGLE_VALUE",
-                    "value": {
-                        "display": "2002"
-                    }
                 }
             ]
         }

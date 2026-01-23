@@ -2,10 +2,9 @@
     "label": "Fracture of wrist (disorder)",
     "children": [
         {
-            "label": "Over de klacht",
             "children": [
                 {
-                    "label": "Medische klacht of aandoening",
+                    "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {
@@ -16,47 +15,20 @@
                     ]
                 },
                 {
-                    "label": "Soort klacht",
-                    "type": "SINGLE_VALUE",
-                    "value": {
-                        "display": "Niet bekend"
-                    }
-                },
-                {
-                    "label": "Plaats in het lichaam",
-                    "type": "MULTIPLE_VALUES",
+                    "label": "Locatie in het lichaam",
+                    "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
-                        {
-                            "display": "Entire wrist region",
-                            "code": "361289009",
-                            "system": "http://snomed.info/sct"
-                        }
+                        [
+                            {
+                                "display": "Entire wrist region",
+                                "code": "361289009",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
                     ]
                 },
                 {
-                    "label": "Aangedane kant",
-                    "type": "MULTIPLE_VALUES",
-                    "value": [
-                        {
-                            "display": "Right",
-                            "code": "24028007",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                },
-                {
-                    "label": "Bevestigd of vermoed",
-                    "type": "MULTIPLE_VALUES",
-                    "value": [
-                        {
-                            "display": "Unknown",
-                            "code": "UNK",
-                            "system": "http://hl7.org/fhir/v3/NullFlavor"
-                        }
-                    ]
-                },
-                {
-                    "label": "Huidige status",
+                    "label": "Status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {
@@ -67,7 +39,7 @@
                     ]
                 },
                 {
-                    "label": "Opmerkingen",
+                    "label": "Extra uitleg",
                     "type": "MULTIPLE_VALUES",
                     "value": [
                         {
@@ -81,14 +53,14 @@
             "label": "Periode",
             "children": [
                 {
-                    "label": "Wanneer begonnen",
+                    "label": "Startdatum",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "2001"
                     }
                 },
                 {
-                    "label": "Wanneer gestopt",
+                    "label": "Einddatum",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "2002"
@@ -97,10 +69,10 @@
             ]
         },
         {
-            "label": "Zorgverlener",
+            "label": "Vastgesteld door",
             "children": [
                 {
-                    "label": "Vastgelegd door (zorgverlener)",
+                    "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Niet bekend"
