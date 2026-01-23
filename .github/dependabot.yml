@@ -18,7 +18,7 @@ updates:
     open-pull-requests-limit: 0
     directory: '/'
     exclude-paths:
-      - '/examples/**'
+      - 'examples/**'
     schedule:
       interval: 'daily'
     groups:
