@@ -7,11 +7,11 @@
         "@minvws/mgo-hcim": "workspace:^",
         "@minvws/mgo-intl": "workspace:^",
         "@minvws/mgo-utils": "workspace:^",
-        "lodash-es": "^4.17.21"
+        "lodash-es": "^4.17.23"
     },
     "devDependencies": {
-        "@minvws/mgo-ts-json-schema": "workspace:^",
         "@faker-js/faker": "^8.4.0",
+        "@minvws/mgo-ts-json-schema": "workspace:^",
         "@types/lodash-es": "^4.17.12",
         "ts-json-schema-generator": "^2.3.0",
         "tsx": "^4.17.0",

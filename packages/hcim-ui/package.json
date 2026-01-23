@@ -24,7 +24,7 @@
         "@minvws/mgo-hcim-parse": "workspace:^",
         "@minvws/mgo-intl": "workspace:^",
         "@minvws/mgo-utils": "workspace:^",
-        "lodash-es": "^4.17.21",
+        "lodash-es": "^4.17.23",
         "type-fest": "^4.23.0"
     },
     "devDependencies": {
