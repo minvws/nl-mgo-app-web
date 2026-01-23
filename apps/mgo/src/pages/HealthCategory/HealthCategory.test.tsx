@@ -4,7 +4,7 @@ import { Navigate, useParamsData } from '$/routing';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage, AppMessagesIds } from '@minvws/mgo-intl/test/shared';
-import { screen } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { HealthCategory } from './HealthCategory';
 
@@ -22,6 +22,7 @@ const hoisted = vi.hoisted(() => ({
             (typeof import('$/hooks/useHealthCategoriesQuery/useHealthCategoriesQuery'))['useHealthCategoriesQuery']
         >(),
     useRetryQuery: vi.fn(),
+    useFailedHealthQueries: vi.fn(),
 }));
 
 vi.mock('$/hooks', async (importOriginal) => {
@@ -31,6 +32,7 @@ vi.mock('$/hooks', async (importOriginal) => {
         ...mod,
         useHealthCategoriesQuery: hoisted.useHealthCategoriesQuery,
         useRetryQuery: hoisted.useRetryQuery,
+        useFailedHealthQueries: hoisted.useFailedHealthQueries,
     };
 });
 
@@ -52,6 +54,13 @@ beforeEach(() => {
     ]);
 
     hoisted.useRetryQuery.mockImplementation(() => ({
+        retry: vi.fn(),
+        isRetrying: false,
+    }));
+
+    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+        failedQueryHashes: [faker.lorem.word()],
+        hasFailedQueries: true,
         retry: vi.fn(),
         isRetrying: false,
     }));
@@ -174,6 +183,23 @@ test('shows category query error', async () => {
     expect(screen.getByText(appMessage('common.data_not_retrieved_heading'))).toBeInTheDocument();
 });
 
+test('do not show category query error popup when category is empty', async () => {
+    const healthCategoryQuery = {
+        category: mockHealthCategoryWithResources(),
+        isLoading: false,
+        isError: true,
+        isEmpty: true,
+        retry: vi.fn(),
+    };
+    hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
+
+    setupWithAppProviders(<HealthCategory />);
+
+    expect(
+        screen.queryByText(appMessage('common.data_not_retrieved_subheading'))
+    ).not.toBeInTheDocument();
+});
+
 test('shows category empty', async () => {
     const healthCategoryQuery = {
         category: mockHealthCategoryWithResources(),
@@ -245,7 +271,7 @@ test('redirects to the overview page if the organization was not found', async (
 test('retry queries when clicking retry button', async () => {
     const healthCategoryQuery = {
         category: mockHealthCategoryWithResources(),
-        isLoading: true,
+        isLoading: false,
         isError: true,
         isEmpty: true,
         retry: vi.fn(),
@@ -254,20 +280,35 @@ test('retry queries when clicking retry button', async () => {
 
     const retry = vi.fn();
 
-    hoisted.useRetryQuery.mockImplementation(() => ({
+    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+        failedQueryHashes: [faker.lorem.word()],
+        hasFailedQueries: true,
         retry,
         isRetrying: false,
     }));
 
     const { user } = setupWithAppProviders(<HealthCategory />);
 
-    const button = screen.getByRole('button', {
+    const heading = screen.getByRole('heading', {
+        name: appMessage('health_category.errornodata.heading'),
+    });
+
+    const errorNoData = heading.closest('div');
+
+    const retryButton = within(errorNoData as HTMLElement).getByRole('button', {
         name: appMessage('common.try_again'),
     });
 
-    expect(button).toBeInTheDocument();
+    expect(
+        screen.getByRole('heading', {
+            name: appMessage('health_category.errornodata.heading'),
+            level: 2,
+        })
+    ).toBeInTheDocument();
 
-    await user.click(button);
+    expect(retryButton).toBeInTheDocument();
+
+    await user.click(retryButton);
 
     expect(retry).toHaveBeenCalledTimes(1);
 });

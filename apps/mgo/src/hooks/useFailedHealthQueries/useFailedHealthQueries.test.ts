@@ -1,39 +1,24 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 
-import { getHealthCategoryConfigs, getRelevantEndpoints } from '$/config';
 import { faker } from '$test/faker';
-import { Query, QueryCache, QueryFilters } from '@tanstack/react-query';
 import { renderHook } from '@testing-library/react';
-import { PartialDeep } from 'type-fest';
 import { useFailedHealthQueries } from './useFailedHealthQueries';
+import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
+import { mockArray } from '@minvws/mgo-utils/test/shared';
 
 const hoisted = vi.hoisted(() => {
-    let cachedQueries = [] as Query[];
-    const queryCache = {
-        findAll: (filter: QueryFilters) => cachedQueries.filter(filter.predicate!),
-        subscribe: (onStoreChange: () => void) => {
-            onStoreChange();
-            return () => {};
-        },
-    } as QueryCache;
-
     return {
-        getRelevantEndpoints: vi.fn<typeof getRelevantEndpoints>(() => []),
-        getQueryCache: () => queryCache,
-        setCachedQueries: (queries: PartialDeep<Query>[]) => {
-            cachedQueries = queries as Query[];
-        },
+        getFailedHealthQueryHashes: vi.fn<typeof getFailedHealthQueryHashes>(() => []),
+        useRetryQuery: vi.fn(() => ({
+            retry: vi.fn(),
+            isRetrying: false,
+        })),
     };
 });
 
-vi.mock('../../config/getRelevantEndpoints/getRelevantEndpoints', async (importOriginal) => {
-    const mod =
-        await importOriginal<
-            typeof import('../../config/getRelevantEndpoints/getRelevantEndpoints')
-        >();
+vi.mock('./getFailedHealthQueryHashes', () => {
     return {
-        ...mod,
-        getRelevantEndpoints: hoisted.getRelevantEndpoints,
+        getFailedHealthQueryHashes: hoisted.getFailedHealthQueryHashes,
     };
 });
 
@@ -43,8 +28,22 @@ vi.mock('@tanstack/react-query', async () => {
     return {
         ...actual,
         useQueryClient: () => ({
-            getQueryCache: () => hoisted.getQueryCache(),
+            getQueryCache: () => ({
+                subscribe: vi.fn(),
+            }),
         }),
+    };
+});
+
+vi.mock('../useRetryQuery/useRetryQuery', () => ({
+    useRetryQuery: hoisted.useRetryQuery,
+}));
+
+vi.mock('react', async (importActual) => {
+    const actual = await importActual<typeof import('react')>();
+    return {
+        ...actual,
+        useSyncExternalStore: vi.fn((_sub, snapshot) => snapshot()),
     };
 });
 
@@ -53,129 +52,51 @@ beforeEach(() => {
 });
 
 test('retrieves failed queries by status and partial query key, defaults to all categories', async () => {
-    const endpoint1 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-    const endpoint2 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-
-    const cachedQueries: PartialDeep<Query>[] = [
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', endpoint1.dataServiceId, endpoint1.endpointId],
-            state: { status: 'error' },
-        },
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', faker.string.uuid(), faker.string.uuid()],
-            state: { status: 'error' },
-        },
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', endpoint2.dataServiceId, endpoint2.endpointId],
-            state: { status: 'error' },
-        },
-    ];
-
-    hoisted.getRelevantEndpoints.mockReturnValue([endpoint1, endpoint2]);
-    hoisted.setCachedQueries(cachedQueries);
+    const failedQueryHashes: string[] = [];
+    hoisted.getFailedHealthQueryHashes.mockReturnValueOnce(failedQueryHashes);
 
     const { result } = renderHook(() => useFailedHealthQueries());
-    const expected = [cachedQueries[0].queryHash, cachedQueries[2].queryHash].sort();
-    const allCategories = getHealthCategoryConfigs();
 
-    expect(hoisted.getRelevantEndpoints).toHaveBeenCalledWith(allCategories);
-    expect(result.current.length).toBe(expected.length);
-    expect(result.current).toEqual(expected);
+    expect(result.current.failedQueryHashes).toEqual(failedQueryHashes);
+    expect(result.current.hasFailedQueries).toEqual(false);
+    expect(result.current.isRetrying).toEqual(false);
 });
 
-test('ignores queries that are not failed', async () => {
-    const endpoint1 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-    const endpoint2 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-
-    const cachedQueries: PartialDeep<Query>[] = [
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', endpoint1.dataServiceId, endpoint1.endpointId],
-            state: { status: 'success' },
-        },
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', faker.string.uuid(), faker.string.uuid()],
-            state: { status: 'error' },
-        },
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', endpoint2.dataServiceId, endpoint2.endpointId],
-            state: { status: 'pending' },
-        },
-    ];
-
-    hoisted.getRelevantEndpoints.mockReturnValue([endpoint1, endpoint2]);
-    hoisted.setCachedQueries(cachedQueries);
+test('retrieves failed queries by status and partial query key', async () => {
+    const failedQueryHashes = mockArray({
+        factory: faker.lorem.word,
+        min: 1,
+        max: 10,
+    });
+    hoisted.getFailedHealthQueryHashes.mockReturnValueOnce(failedQueryHashes);
 
     const { result } = renderHook(() => useFailedHealthQueries());
-    expect(result.current.length).toBe(0);
+
+    expect(result.current.failedQueryHashes).toEqual(failedQueryHashes);
+    expect(result.current.hasFailedQueries).toEqual(true);
+    expect(result.current.isRetrying).toEqual(false);
 });
 
-test('can retrieve failed queries for specific organizations and categories', async () => {
-    const endpoint1 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-    const endpoint2 = {
-        dataServiceId: faker.string.uuid(),
-        endpointId: faker.string.uuid(),
-    };
-
-    const category = getHealthCategoryConfigs()[0];
-    const organization = faker.custom.healthcareOrganization({
-        dataServices: [
-            {
-                id: endpoint1.dataServiceId,
-                resourceEndpoint: faker.internet.url(),
-            },
-        ],
+test('retry with failed query hases', async () => {
+    const failedQueryHashes = mockArray({
+        factory: faker.lorem.word,
+        min: 1,
+        max: 10,
     });
 
-    const cachedQueries: PartialDeep<Query>[] = [
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: ['health', endpoint1.dataServiceId, endpoint1.endpointId, organization.id],
-            state: { status: 'error' },
-        },
-        {
-            queryHash: faker.string.uuid(),
-            queryKey: [
-                'health',
-                endpoint2.dataServiceId,
-                endpoint2.endpointId,
-                faker.string.uuid(),
-            ],
-            state: { status: 'error' },
-        },
-    ];
+    const mockRetry = vi.fn();
+    hoisted.getFailedHealthQueryHashes.mockReturnValueOnce(failedQueryHashes);
+    hoisted.useRetryQuery.mockImplementationOnce(() => ({
+        retry: mockRetry,
+        isRetrying: true,
+    }));
 
-    hoisted.getRelevantEndpoints.mockReturnValue([endpoint1, endpoint2]);
-    hoisted.setCachedQueries(cachedQueries);
+    const { result } = renderHook(() => useFailedHealthQueries());
 
-    const { result } = renderHook(() =>
-        useFailedHealthQueries({
-            categories: [category],
-            organizations: [organization],
-        })
-    );
-    const expected = [cachedQueries[0].queryHash];
+    result.current.retry();
 
-    expect(result.current.length).toBe(expected.length);
-    expect(result.current).toEqual(expected);
+    expect(result.current.failedQueryHashes).toEqual(failedQueryHashes);
+    expect(result.current.hasFailedQueries).toEqual(true);
+    expect(result.current.isRetrying).toEqual(true);
+    expect(mockRetry).toHaveBeenCalledWith(failedQueryHashes);
 });

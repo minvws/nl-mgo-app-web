@@ -1,8 +1,13 @@
 import { FormattedMessage } from '$/intl';
-import { RouterLink } from '$/routing';
 import { Button, Heading, Icon, Text } from '@minvws/mgo-ui';
+import { onlineManager } from '@tanstack/react-query';
+import { type UIEvent } from 'react';
 
-export function ErrorNoData() {
+export type ErrorNoDataProps = {
+    readonly onClick: (event: UIEvent) => void | Promise<void>;
+};
+
+export function ErrorNoData({ onClick }: ErrorNoDataProps) {
     return (
         <div className="w-full py-6 text-center">
             <Icon className="mx-auto h-12 w-12" icon={'sync_problem'} />
@@ -14,15 +19,17 @@ export function ErrorNoData() {
             </Heading>
             <Text className="text-t-label-secondary mt-2" as="p">
                 <FormattedMessage
-                    id="health_category.errornodata.subheading"
+                    id={
+                        onlineManager.isOnline()
+                            ? 'health_category.errornodata.subheading'
+                            : 'errorstate.clientside.heading'
+                    }
                     description="Dit komt door een storing bij ons. Probeer het later opnieuw."
                 />
             </Text>
 
-            <Button className="mt-6" asChild>
-                <RouterLink to="/overzicht">
-                    <FormattedMessage id="common.try_again" description="Ga naar overzicht" />
-                </RouterLink>
+            <Button className="mt-6" onClick={onClick}>
+                <FormattedMessage id="common.try_again" description="Probeer opnieuw" />
             </Button>
         </div>
     );
