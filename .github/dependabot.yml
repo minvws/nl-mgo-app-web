@@ -2,10 +2,14 @@ version: 2
 
 updates:
   - package-ecosystem: 'github-actions'
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 1
     directory: '/'
     schedule:
       interval: 'weekly'
+    groups:
+      all-actions:
+        patterns:
+          - '*'
 
   - package-ecosystem: 'npm'
     # disable package updates to only allow security updates
@@ -13,30 +17,12 @@ updates:
     # see: https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates#overriding-the-default-behavior-with-a-configuration-file
     open-pull-requests-limit: 0
     directory: '/'
+    exclude-paths:
+      - '/examples/**'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     groups:
-      commitlint:
+      all-security-updates:
+        applies-to: security-updates
         patterns:
-          - '@commitlint/*'
-      eslint:
-        patterns:
-          - '@tanstack/eslint-*'
-          - '@typescript-eslint/*'
-          - 'eslint-plugin-*'
-          - 'eslint'
-      react:
-        patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
-      react-router:
-        patterns:
-          - 'react-router'
-          - 'react-router-dom'
-      storybook:
-        patterns:
-          - '@storybook/*'
-          - 'storybook-*'
-          - 'storybook'
+          - '*'
