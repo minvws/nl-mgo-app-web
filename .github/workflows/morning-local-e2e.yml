@@ -1,0 +1,17 @@
+name: Night PW e2e Tests (local Docker build)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  nightly-e2e:
+    uses: ./.github/workflows/e2e.yml
+
+    with:
+      test-command: pnpm run e2e:ci
+      enable-accessibility-checks: 'true'
+
+    secrets: inherit
