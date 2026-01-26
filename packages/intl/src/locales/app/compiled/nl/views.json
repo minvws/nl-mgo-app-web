@@ -184,7 +184,7 @@
   "errorstate.error": [
     {
       "type": 0,
-      "value": "Geen gegevens opgehaald"
+      "value": "Gegevens niet opgehaald"
     }
   ],
   "errorstate.loading": [
@@ -202,13 +202,13 @@
   "errorstate.serverside.heading": [
     {
       "type": 0,
-      "value": "Dit komt door een storing bij ons. Probeer het later opnieuw."
+      "value": "Helaas konden we door een probleem aan onze kant uw gegevens niet ophalen."
     }
   ],
   "export_pdf.close": [
     {
       "type": 0,
-      "value": "Klaar"
+      "value": "Gereed"
     }
   ],
   "export_pdf.dialog.create_document": [
@@ -672,7 +672,7 @@
   "overview.heading": [
     {
       "type": 0,
-      "value": "Overzicht"
+      "value": "Welkom"
     }
   ],
   "overview.no_organizations_found": [
