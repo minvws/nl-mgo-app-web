@@ -1,11 +1,11 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 
 import { faker } from '$test/faker';
-import { mockArray } from '@minvws/mgo-utils/test/shared';
 import { renderHook } from '@testing-library/react';
-import { useSyncExternalStore } from 'react';
+import { useFailedAndPausedHealthQueries } from './useFailedAndPausedHealthQueries';
 import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
-import { useFailedHealthQueries } from './useFailedHealthQueries';
+import { mockArray } from '@minvws/mgo-utils/test/shared';
+import { useSyncExternalStore } from 'react';
 
 const hoisted = vi.hoisted(() => {
     return {
@@ -56,7 +56,7 @@ test('retrieves failed queries by status and partial query key, defaults to all 
     const failedQueryHashes: string[] = [];
     hoisted.getFailedHealthQueryHashes.mockReturnValueOnce(failedQueryHashes);
 
-    const { result } = renderHook(() => useFailedHealthQueries());
+    const { result } = renderHook(() => useFailedAndPausedHealthQueries());
 
     expect(result.current.failedQueryHashes).toEqual(failedQueryHashes);
     expect(result.current.hasFailedQueries).toEqual(false);
@@ -71,7 +71,7 @@ test('retrieves failed queries by status and partial query key', async () => {
     });
     hoisted.getFailedHealthQueryHashes.mockReturnValueOnce(failedQueryHashes);
 
-    const { result } = renderHook(() => useFailedHealthQueries());
+    const { result } = renderHook(() => useFailedAndPausedHealthQueries());
 
     expect(result.current.failedQueryHashes).toEqual(failedQueryHashes);
     expect(result.current.hasFailedQueries).toEqual(true);
@@ -92,7 +92,7 @@ test('retry with failed query hases', async () => {
         isRetrying: true,
     }));
 
-    const { result } = renderHook(() => useFailedHealthQueries());
+    const { result } = renderHook(() => useFailedAndPausedHealthQueries());
 
     result.current.retry();
 
@@ -112,7 +112,7 @@ test('updates snapshot when hashes change but length stays the same', async () =
         .mockReturnValueOnce(['a', 'b'])
         .mockReturnValueOnce(['a', 'c']);
 
-    const { result } = renderHook(() => useFailedHealthQueries());
+    const { result } = renderHook(() => useFailedAndPausedHealthQueries());
 
     expect(result.current.failedQueryHashes).toEqual(['a', 'c']);
 });

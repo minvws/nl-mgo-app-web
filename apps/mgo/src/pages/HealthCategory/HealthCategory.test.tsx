@@ -22,7 +22,7 @@ const hoisted = vi.hoisted(() => ({
             (typeof import('$/hooks/useHealthCategoriesQuery/useHealthCategoriesQuery'))['useHealthCategoriesQuery']
         >(),
     useRetryQuery: vi.fn(),
-    useFailedHealthQueries: vi.fn(),
+    useFailedAndPausedHealthQueries: vi.fn(),
 }));
 
 vi.mock('$/hooks', async (importOriginal) => {
@@ -32,7 +32,7 @@ vi.mock('$/hooks', async (importOriginal) => {
         ...mod,
         useHealthCategoriesQuery: hoisted.useHealthCategoriesQuery,
         useRetryQuery: hoisted.useRetryQuery,
-        useFailedHealthQueries: hoisted.useFailedHealthQueries,
+        useFailedAndPausedHealthQueries: hoisted.useFailedAndPausedHealthQueries,
     };
 });
 
@@ -49,6 +49,7 @@ beforeEach(() => {
             isLoading: false,
             isError: false,
             isEmpty: false,
+            isPaused: false,
             retry: vi.fn(),
         },
     ]);
@@ -58,11 +59,12 @@ beforeEach(() => {
         isRetrying: false,
     }));
 
-    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+    hoisted.useFailedAndPausedHealthQueries.mockImplementation(() => ({
         failedQueryHashes: [faker.lorem.word()],
-        hasFailedQueries: true,
+        hasFailedQueries: false,
         retry: vi.fn(),
         isRetrying: false,
+        isPaused: false,
     }));
 });
 
@@ -82,6 +84,7 @@ test('show loading state', async () => {
         isLoading: true,
         isError: false,
         isEmpty: false,
+        isPaused: false,
         retry: vi.fn(),
     };
 
@@ -103,6 +106,7 @@ test('shows category content', async () => {
         isLoading: false,
         isError: false,
         isEmpty: false,
+        isPaused: false,
         retry: vi.fn(),
     };
 
@@ -167,6 +171,7 @@ test('shows category query error', async () => {
         isLoading: false,
         isError: true,
         isEmpty: false,
+        isPaused: false,
         retry: vi.fn(),
     };
     hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
@@ -189,6 +194,7 @@ test('do not show category query error popup when category is empty', async () =
         isLoading: false,
         isError: true,
         isEmpty: true,
+        isPaused: false,
         retry: vi.fn(),
     };
     hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
@@ -206,6 +212,7 @@ test('shows category empty', async () => {
         isLoading: false,
         isError: false,
         isEmpty: true,
+        isPaused: false,
         retry: vi.fn(),
     };
     hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
@@ -229,6 +236,7 @@ test('shows category error no data', async () => {
         isLoading: false,
         isError: true,
         isEmpty: true,
+        isPaused: false,
         retry: vi.fn(),
     };
 
@@ -274,13 +282,14 @@ test('retry queries when clicking retry button', async () => {
         isLoading: false,
         isError: true,
         isEmpty: true,
+        isPaused: false,
         retry: vi.fn(),
     };
     hoisted.useHealthCategoriesQuery.mockImplementation(() => [healthCategoryQuery]);
 
     const retry = vi.fn();
 
-    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+    hoisted.useFailedAndPausedHealthQueries.mockImplementation(() => ({
         failedQueryHashes: [faker.lorem.word()],
         hasFailedQueries: true,
         retry,

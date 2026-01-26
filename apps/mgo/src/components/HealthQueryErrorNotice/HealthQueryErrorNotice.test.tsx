@@ -11,7 +11,7 @@ vi.mock('$/auth');
 
 const hoisted = vi.hoisted(() => ({
     useRetryQuery: vi.fn(),
-    useFailedHealthQueries: vi.fn(() => ({
+    useFailedAndPausedHealthQueries: vi.fn(() => ({
         retry: vi.fn(),
         failedQueryHashes: ['query-1', 'query-2'],
     })),
@@ -21,8 +21,8 @@ vi.mock('$/hooks/useRetryQuery/useRetryQuery', () => ({
     useRetryQuery: hoisted.useRetryQuery,
 }));
 
-vi.mock('$/hooks/useFailedHealthQueries/useFailedHealthQueries', () => ({
-    useFailedHealthQueries: hoisted.useFailedHealthQueries,
+vi.mock('$/hooks/useFailedHealthQueries/useFailedAndPausedHealthQueries', () => ({
+    useFailedAndPausedHealthQueries: hoisted.useFailedAndPausedHealthQueries,
 }));
 
 const isOnlineSpy = vi.spyOn(onlineManager, 'isOnline');
@@ -35,7 +35,7 @@ test('clicking retry calls retry with failed queries', async () => {
         max: 10,
     });
 
-    hoisted.useFailedHealthQueries.mockImplementation(() => ({
+    hoisted.useFailedAndPausedHealthQueries.mockImplementation(() => ({
         retry: mockRetry,
         failedQueryHashes,
     }));

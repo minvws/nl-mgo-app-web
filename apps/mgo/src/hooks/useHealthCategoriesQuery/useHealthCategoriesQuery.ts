@@ -22,6 +22,7 @@ export interface HealthCategoryQuery {
     isLoading: boolean;
     isEmpty: boolean;
     isError: boolean;
+    isPaused: boolean;
 }
 
 export function useHealthCategoriesQuery({
@@ -68,8 +69,13 @@ export function useHealthCategoriesQuery({
                 subcategories,
             },
             isEmpty: subcategories.every((subcategory) => !subcategory.resources.length),
-            isLoading: categoryQueries.some((q) => !q.query.isSynced && !q.query.isError),
+            isLoading: categoryQueries.some(({ query }) => {
+                const hasFinished =
+                    (query.status === 'success' && query.isSynced) || query.status === 'error';
+                return !hasFinished && query.fetchStatus !== 'paused';
+            }),
             isError: categoryQueries.some((q) => q.query.isError),
+            isPaused: categoryQueries.some((q) => q.query.fetchStatus === 'paused'),
         };
     });
 

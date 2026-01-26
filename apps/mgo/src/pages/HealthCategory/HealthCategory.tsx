@@ -1,6 +1,6 @@
 import { HealthSubCategoryList } from '$/components/HealthSubCategoryList/HealthSubCategoryList';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
-import { useFailedHealthQueries, useHealthCategoriesQuery } from '$/hooks';
+import { useFailedAndPausedHealthQueries, useHealthCategoriesQuery } from '$/hooks';
 import { useIntl } from '$/intl';
 import { Navigate, useParamsData } from '$/routing';
 import { useStore } from '$/store';
@@ -30,7 +30,7 @@ export function HealthCategory() {
     const organizationsFilter = organization ? [organization] : [];
     const categoriesFilter = healthCategory ? [healthCategory] : [];
 
-    const failedQueries = useFailedHealthQueries({
+    const failedAndPausedQueries = useFailedAndPausedHealthQueries({
         organizationsFilter,
         categoriesFilter,
     });
@@ -43,7 +43,7 @@ export function HealthCategory() {
         return <Navigate to={`/overzicht`} />;
     }
 
-    const { isLoading, isError, isEmpty, category } = categoryQuery;
+    const { isLoading, isError, isEmpty, isPaused, category } = categoryQuery;
     const heading = formatMessage(category.heading as AppMessagesIds);
 
     return (
@@ -76,8 +76,8 @@ export function HealthCategory() {
                         <div className="py-8 text-center md:py-16">
                             <LoadingSpinner />
                         </div>
-                    ) : isError && isEmpty ? (
-                        <ErrorNoData onClick={() => failedQueries.retry()} />
+                    ) : isEmpty && (isError || isPaused) ? (
+                        <ErrorNoData onClick={() => failedAndPausedQueries.retry()} />
                     ) : isEmpty ? (
                         <NoData />
                     ) : (

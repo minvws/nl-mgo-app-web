@@ -11,7 +11,7 @@ export type SyncedQueryConfig<TData = unknown> = QueryOptions & {
     onSync?: (data: TData) => void;
 };
 
-type SyncedQueryResult<T> = QueryObserverResult<T> & {
+export type SyncedQueryResult<T> = QueryObserverResult<T> & {
     isSynced: boolean;
 };
 

@@ -1,4 +1,4 @@
-export { useFailedHealthQueries } from './useFailedHealthQueries/useFailedHealthQueries';
+export { useFailedAndPausedHealthQueries } from './useFailedHealthQueries/useFailedAndPausedHealthQueries';
 export { useHealthCategoriesQuery } from './useHealthCategoriesQuery/useHealthCategoriesQuery';
 export {
     useHealthCategoriesWithSlug,
