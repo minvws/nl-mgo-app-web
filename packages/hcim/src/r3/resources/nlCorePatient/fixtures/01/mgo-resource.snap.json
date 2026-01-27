@@ -143,7 +143,7 @@
                         "_type": "string",
                         "value": "1000"
                     },
-                    "buildingNumbersuffix": [],
+                    "buildingNumbersuffix": null,
                     "unitID": null,
                     "additionalLocator": null
                 }
@@ -297,7 +297,7 @@
                             "_type": "string",
                             "value": "1000"
                         },
-                        "buildingNumbersuffix": [],
+                        "buildingNumbersuffix": null,
                         "unitID": null,
                         "additionalLocator": null
                     }

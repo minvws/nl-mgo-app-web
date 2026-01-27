@@ -129,7 +129,7 @@
                         "_type": "string",
                         "value": "9663"
                     },
-                    "buildingNumbersuffix": [],
+                    "buildingNumbersuffix": null,
                     "unitID": null,
                     "additionalLocator": null
                 }

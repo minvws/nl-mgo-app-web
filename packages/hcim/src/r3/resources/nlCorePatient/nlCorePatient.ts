@@ -10,6 +10,7 @@ import {
 } from '../../elements/index.js';
 import { relatieCodelijstValueSet } from '../../valueSets/relatieCodelijst.js';
 import { rolCodelijstValueSet } from '../../valueSets/rolCodelijst.js';
+import { summary } from './summary.js';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-patient'; // NOSONAR
 
@@ -152,4 +153,5 @@ export const nlCorePatient = {
     profile,
     parse: parseNlCorePatient,
     uiSchema: generateUiSchema,
+    summary,
 } satisfies ResourceConfig<'R3', Patient, NlCorePatient>;

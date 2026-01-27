@@ -147,13 +147,11 @@
                         "_type": "string",
                         "value": "12"
                     },
-                    "buildingNumbersuffix": [
-                        {
-                            "_ext": true,
-                            "_type": "string",
-                            "value": "bII"
-                        }
-                    ],
+                    "buildingNumbersuffix": {
+                        "_ext": true,
+                        "_type": "string",
+                        "value": "bII"
+                    },
                     "unitID": null,
                     "additionalLocator": null
                 }

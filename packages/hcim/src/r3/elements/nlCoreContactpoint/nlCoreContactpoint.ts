@@ -31,6 +31,6 @@ export function parseNlCoreContactpoint(value: Nullable<ContactPoint>): NlCoreCo
         ),
         system: parse.code(value?.system),
         value: parse.string(value?.value),
-        use: parse.code(value?.use),
+        use: parse.code(value?.use), // should only contain "work" | "home"
     };
 }

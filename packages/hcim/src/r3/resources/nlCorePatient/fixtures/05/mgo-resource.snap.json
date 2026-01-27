@@ -156,7 +156,7 @@
                         "_type": "string",
                         "value": "1020"
                     },
-                    "buildingNumbersuffix": [],
+                    "buildingNumbersuffix": null,
                     "unitID": null,
                     "additionalLocator": null
                 }
@@ -283,7 +283,7 @@
                             "_type": "string",
                             "value": "1020"
                         },
-                        "buildingNumbersuffix": [],
+                        "buildingNumbersuffix": null,
                         "unitID": null,
                         "additionalLocator": null
                     }

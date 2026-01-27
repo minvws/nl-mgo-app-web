@@ -122,6 +122,11 @@
             "value": "+31611234567",
             "use": "home"
         },
+        {
+            "system": "phone",
+            "value": "+31640915613",
+            "use": "work"
+        },
         { "system": "email", "value": "XXX_Mesker@hotmail.com", "use": "home" }
     ],
     "gender": "male",

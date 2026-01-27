@@ -31,6 +31,10 @@
                     "valueString": "A"
                 },
                 {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix",
+                    "valueString": "B"
+                },
+                {
                     "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-unitID",
                     "valueString": "Hoog"
                 }

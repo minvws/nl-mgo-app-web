@@ -1,0 +1,9 @@
+[
+    {
+        "type": "SINGLE_VALUE",
+        "label": "Adres",
+        "value": {
+            "display": "Binnenkant 12 A Hoog 1000AA Amsterdam"
+        }
+    }
+]

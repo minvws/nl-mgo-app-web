@@ -1,0 +1,11 @@
+[
+    {
+        "label": "E-mailadres",
+        "type": "MULTIPLE_VALUES",
+        "value": [
+            {
+                "display": "test@example.com"
+            }
+        ]
+    }
+]

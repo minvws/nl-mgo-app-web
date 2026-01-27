@@ -188,7 +188,7 @@
             ]
         },
         {
-            "label": "Adres informatie",
+            "label": "Adres",
             "children": [
                 {
                     "label": "Aanduiding bij huisnummer",
@@ -245,12 +245,10 @@
                 },
                 {
                     "label": "Huisnummertoevoeging",
-                    "type": "MULTIPLE_VALUES",
-                    "value": [
-                        {
-                            "display": "bII"
-                        }
-                    ]
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "bII"
+                    }
                 },
                 {
                     "label": "Land",
