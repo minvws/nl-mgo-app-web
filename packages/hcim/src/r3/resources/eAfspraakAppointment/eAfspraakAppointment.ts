@@ -3,6 +3,7 @@ import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
 import { map } from '@minvws/mgo-utils';
 import { type ResourceConfig } from '../../../resourceTypes.js';
+import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/eAfspraak-Appointment'; // NOSONAR
 
@@ -76,4 +77,5 @@ export const eAfspraakAppointment = {
     profile,
     parse: parseEAfspraakAppointment,
     uiSchema: generateUiSchema,
+    summary,
 } satisfies ResourceConfig<'R3', Appointment, EAfspraakAppointment>;

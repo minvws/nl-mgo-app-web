@@ -660,7 +660,7 @@
   "organizations.remove_organization": [
     {
       "type": 0,
-      "value": "Verwijder zorgaanbieder"
+      "value": "Verwijderen"
     }
   ],
   "overview.add_organization": [

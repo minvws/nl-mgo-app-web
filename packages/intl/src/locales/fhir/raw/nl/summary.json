@@ -2,7 +2,6 @@
     "summary.options": "Opties",
     "summary.organization": "Zorgaanbieder",
     "summary.r3.e_afspraak_appointment.group_actor_title": "Met wie u de afspraak had",
-    "summary.r3.e_afspraak_appointment.location": "Locatie",
     "summary.r3.e_afspraak_appointment.show_details": "Bekijk alle afspraakgegevens",
     "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": "Bijlage(n)",
     "summary.r3.ihe_mhd_minimal_document_reference.group_author": "Opgesteld door",
@@ -41,6 +40,5 @@
     "summary.r3.zib_problem.group_period_of_time": "Periode",
     "summary.r3.zib_problem.show_details": "Bekijk alle probleem gegevens",
     "summary.r4.nl_core_vaccination_event.group_performer": "Gegeven door",
-    "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens",
-    "summary_r3.e_afspraak_appointment.appointment_reason": "Reden van de afspraak"
+    "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens"
 }

@@ -5,8 +5,6 @@
   ],
   "summary.r3.e_afspraak_appointment.group_actor_title": [
   ],
-  "summary.r3.e_afspraak_appointment.location": [
-  ],
   "summary.r3.e_afspraak_appointment.show_details": [
   ],
   "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": [
@@ -84,7 +82,5 @@
   "summary.r4.nl_core_vaccination_event.group_performer": [
   ],
   "summary.r4.nl_core_vaccination_event.show_details": [
-  ],
-  "summary_r3.e_afspraak_appointment.appointment_reason": [
   ]
 }

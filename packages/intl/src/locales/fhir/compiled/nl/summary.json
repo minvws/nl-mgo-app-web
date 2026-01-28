@@ -17,12 +17,6 @@
       "value": "Met wie u de afspraak had"
     }
   ],
-  "summary.r3.e_afspraak_appointment.location": [
-    {
-      "type": 0,
-      "value": "Locatie"
-    }
-  ],
   "summary.r3.e_afspraak_appointment.show_details": [
     {
       "type": 0,
@@ -259,12 +253,6 @@
     {
       "type": 0,
       "value": "Bekijk alle vaccinatiegegevens"
-    }
-  ],
-  "summary_r3.e_afspraak_appointment.appointment_reason": [
-    {
-      "type": 0,
-      "value": "Reden van de afspraak"
     }
   ]
 }
