@@ -34,7 +34,7 @@
                 "_type": "string",
                 "value": "10"
             },
-            "buildingNumbersuffix": [],
+            "buildingNumbersuffix": null,
             "unitID": null,
             "additionalLocator": {
                 "_ext": true,

@@ -30,13 +30,11 @@
                 "_type": "string",
                 "value": "12"
             },
-            "buildingNumbersuffix": [
-                {
-                    "_ext": true,
-                    "_type": "string",
-                    "value": "A"
-                }
-            ],
+            "buildingNumbersuffix": {
+                "_ext": true,
+                "_type": "string",
+                "value": "A"
+            },
             "unitID": {
                 "_ext": true,
                 "_type": "string",

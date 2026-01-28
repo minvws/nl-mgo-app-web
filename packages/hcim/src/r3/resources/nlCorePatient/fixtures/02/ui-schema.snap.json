@@ -218,6 +218,39 @@
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
+                        "display": "phone"
+                    }
+                },
+                {
+                    "label": "Telecom type / nummer soort / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "work"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer / e-mailadres",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "+31640915613"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "label": "Telecom type",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                },
+                {
+                    "label": "Telecom type / email soort",
+                    "type": "SINGLE_VALUE",
+                    "value": {
                         "display": "email"
                     }
                 },
@@ -308,7 +341,7 @@
             ]
         },
         {
-            "label": "Adres informatie",
+            "label": "Adres",
             "children": [
                 {
                     "label": "Aanduiding bij huisnummer",

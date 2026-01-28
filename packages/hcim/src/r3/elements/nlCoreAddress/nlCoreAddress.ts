@@ -4,20 +4,20 @@ import { map, type Nullable } from '@minvws/mgo-utils';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-address'; // NOSONAR
 
+export type NlCoreAddressStreetNameHouseNumber = {
+    streetName: parse.MgoString | undefined;
+    houseNumber: parse.MgoString | undefined;
+    buildingNumbersuffix: parse.MgoString | undefined;
+    unitID: parse.MgoString | undefined;
+    additionalLocator: parse.MgoString | undefined;
+};
+
 export type NlCoreAddress = MgoElementMeta<typeof profile> & {
     addressType: parse.MgoCodeableConcept | undefined;
     official: parse.MgoBoolean | undefined;
     use: parse.MgoCode | undefined;
     type: parse.MgoCode | undefined;
-    line:
-        | {
-              streetName: parse.MgoString | undefined;
-              houseNumber: parse.MgoString | undefined;
-              buildingNumberSuffix: parse.MgoString | undefined;
-              unitId: parse.MgoString | undefined;
-              additionalLocator: parse.MgoString | undefined;
-          }[]
-        | undefined;
+    line: NlCoreAddressStreetNameHouseNumber[] | undefined;
     city: parse.MgoString | undefined;
     district: parse.MgoString | undefined;
     postalCode: parse.MgoString | undefined;
@@ -57,7 +57,7 @@ export function parseNlCoreAddress(value: Nullable<Address>): NlCoreAddress {
                 'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber', // NOSONAR,
                 'string'
             ),
-            buildingNumbersuffix: parse.extensionMultiple(
+            buildingNumbersuffix: parse.extension(
                 line,
                 'http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-buildingNumberSuffix', // NOSONAR,
                 'string'

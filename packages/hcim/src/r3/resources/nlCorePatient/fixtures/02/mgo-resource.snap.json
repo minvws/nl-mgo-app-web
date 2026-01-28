@@ -99,6 +99,22 @@
             "telecomType": null,
             "system": {
                 "_type": "code",
+                "value": "phone"
+            },
+            "value": {
+                "_type": "string",
+                "value": "+31640915613"
+            },
+            "use": {
+                "_type": "code",
+                "value": "work"
+            }
+        },
+        {
+            "_profile": "http://fhir.nl/fhir/StructureDefinition/nl-core-contactpoint",
+            "telecomType": null,
+            "system": {
+                "_type": "code",
                 "value": "email"
             },
             "value": {
@@ -182,7 +198,7 @@
                         "_type": "string",
                         "value": "1002"
                     },
-                    "buildingNumbersuffix": [],
+                    "buildingNumbersuffix": null,
                     "unitID": null,
                     "additionalLocator": null
                 }

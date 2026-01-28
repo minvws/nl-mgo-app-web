@@ -1,0 +1,96 @@
+{
+    "label": "Paul XXX_Mesker",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Paul XXX_Mesker"
+                    }
+                },
+                {
+                    "label": "Geboortedatum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "1 augustus 1964"
+                    }
+                },
+                {
+                    "label": "Geslacht",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Man",
+                            "code": "M",
+                            "system": "http://hl7.org/fhir/v3/AdministrativeGender"
+                        }
+                    ]
+                },
+                {
+                    "label": "Huisarts",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Adres",
+                    "value": {
+                        "display": "Knolweg 1002 9999ZZ Stitswerd"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "+31611234567"
+                        },
+                        {
+                            "display": "+31640915613"
+                        }
+                    ]
+                },
+                {
+                    "label": "E-mailadres",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "XXX_Mesker@hotmail.com"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Vastgelegd door",
+            "children": [
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle persoonsgegevens",
+                    "reference": "Patient/nl-core-patient-02"
+                }
+            ]
+        }
+    ]
+}

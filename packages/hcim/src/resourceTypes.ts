@@ -1,11 +1,12 @@
 import { FhirVersion, type BackboneElement, type FhirResource } from '@minvws/mgo-fhir';
-import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
+import { MgoElementMeta, type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import {
     HealthUiGroup,
     HealthUiGroupFunction,
     HealthUiSchema,
     HealthUiSchemaFunction,
     UiContext,
+    UiElement,
 } from '@minvws/mgo-hcim-ui';
 import { type Nullable } from '@minvws/mgo-utils';
 import { SchemaContext } from './api/schemaContext/schemaContext.js';
@@ -19,6 +20,12 @@ export type SummarySchemaFunction<T extends MgoResourceMeta> = HealthUiSchemaFun
     T,
     SchemaContext<T['fhirVersion']>
 >;
+
+export type SummaryElementFunction<
+    T extends MgoElementMeta | MgoElementMeta[],
+    Context extends SchemaContext,
+> = (parsedResource: Nullable<T>, context: Context) => UiElement[];
+
 export type DetailSchemaFunction<T extends MgoResourceMeta> = HealthUiSchemaFunction<T, UiContext>;
 
 type ResourceParserFunction<

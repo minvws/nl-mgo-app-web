@@ -1,0 +1,114 @@
+{
+    "label": "Johan XXX_Helleman",
+    "children": [
+        {
+            "children": [
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Johan XXX_Helleman"
+                    }
+                },
+                {
+                    "label": "Geboortedatum",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "25 juli 1964"
+                    }
+                },
+                {
+                    "label": "Geslacht",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "Man",
+                            "code": "M",
+                            "system": "http://hl7.org/fhir/v3/AdministrativeGender"
+                        }
+                    ]
+                },
+                {
+                    "label": "Huisarts",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Maatschap Vaste Huisarts"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Contactgegevens",
+            "children": [
+                {
+                    "type": "SINGLE_VALUE",
+                    "label": "Adres",
+                    "value": {
+                        "display": "Knolweg 1000 9999XA Stitswerd"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "06-12345645"
+                        }
+                    ]
+                },
+                {
+                    "label": "E-mailadres",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "XXX_Helleman@hotmail.com"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Contactpersoon",
+            "children": [
+                {
+                    "label": "Naam",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Jannie van Putten XXX_Helleman"
+                    }
+                },
+                {
+                    "label": "Telefoonnummer",
+                    "type": "MULTIPLE_VALUES",
+                    "value": [
+                        {
+                            "display": "+31611234567"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Vastgelegd door",
+            "children": [
+                {
+                    "label": "Zorgaanbieder",
+                    "type": "SINGLE_VALUE",
+                    "value": {
+                        "display": "Niet bekend"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Opties",
+            "children": [
+                {
+                    "type": "REFERENCE_LINK",
+                    "label": "Bekijk alle persoonsgegevens",
+                    "reference": "Patient/nl-core-patient-01"
+                }
+            ]
+        }
+    ]
+}

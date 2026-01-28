@@ -1,9 +1,16 @@
 {
     "summary.options": "Opties",
     "summary.organization": "Zorgaanbieder",
+    "summary.r3.e_afspraak_appointment.group_actor_title": "Met wie u de afspraak had",
+    "summary.r3.e_afspraak_appointment.location": "Locatie",
+    "summary.r3.e_afspraak_appointment.show_details": "Bekijk alle afspraakgegevens",
     "summary.r3.ihe_mhd_minimal_document_reference.group_attachment": "Bijlage(n)",
     "summary.r3.ihe_mhd_minimal_document_reference.group_author": "Opgesteld door",
     "summary.r3.ihe_mhd_minimal_document_reference.show_details": "Bekijk alle documentgegevens",
+    "summary.r3.nl_core_patient.group_author": "Vastgelegd door",
+    "summary.r3.nl_core_patient.group_contact_details": "Contactgegevens",
+    "summary.r3.nl_core_patient.group_contacts": "Contactpersoon",
+    "summary.r3.nl_core_patient.show_details": "Bekijk alle persoonsgegevens",
     "summary.r3.zib_instructions_for_use": "Instructies {sequence}",
     "summary.r3.zib_instructions_for_use.dose": "Hoeveelheid per keer",
     "summary.r3.zib_instructions_for_use.dose.high": "Maximaal",
@@ -30,9 +37,10 @@
     "summary.r3.zib_medication_use.status": "Status",
     "summary.r3.zib_problem.group_about": "Over de klacht",
     "summary.r3.zib_problem.group_body_site": "Anatomische locatie",
-    "summary.r3.zib_problem.group_health_professional": "Zorgverlener",
+    "summary.r3.zib_problem.group_health_professional": "Vastgelegd door",
     "summary.r3.zib_problem.group_period_of_time": "Periode",
     "summary.r3.zib_problem.show_details": "Bekijk alle probleem gegevens",
     "summary.r4.nl_core_vaccination_event.group_performer": "Gegeven door",
-    "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens"
+    "summary.r4.nl_core_vaccination_event.show_details": "Bekijk alle vaccinatiegegevens",
+    "summary_r3.e_afspraak_appointment.appointment_reason": "Reden van de afspraak"
 }

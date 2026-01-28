@@ -47,6 +47,12 @@
       "value": "Contact duur in minuten"
     }
   ],
+  "r3.e_afspraak_appointment.note": [
+    {
+      "type": 0,
+      "value": "Extra uitleg"
+    }
+  ],
   "r3.e_afspraak_appointment.online_editable": [
     {
       "type": 0,
@@ -489,6 +495,12 @@
     {
       "type": 0,
       "value": "Type"
+    }
+  ],
+  "r3.nl_core_address": [
+    {
+      "type": 0,
+      "value": "Adres"
     }
   ],
   "r3.nl_core_address.address_type": [

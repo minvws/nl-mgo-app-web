@@ -6,7 +6,10 @@
  */
 
 export * from './nlCoreAddress/nlCoreAddress.js';
+export * from './nlCoreAddress/summary.js';
 export * from './nlCoreContactpoint/nlCoreContactpoint.js';
+export * from './nlCoreContactpoint/summary.js';
 export * from './nlCoreHumanname/nlCoreHumanname.js';
+export * from './nlCoreHumanname/summary.js';
 export * from './zibAdministrationSchedule/zibAdministrationSchedule.js';
 export * from './zibInstructionsForUse/zibInstructionsForUse.js';

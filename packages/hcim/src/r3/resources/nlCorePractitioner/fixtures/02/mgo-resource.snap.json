@@ -114,7 +114,7 @@
                         "_type": "string",
                         "value": "45"
                     },
-                    "buildingNumbersuffix": [],
+                    "buildingNumbersuffix": null,
                     "unitID": null,
                     "additionalLocator": null
                 }

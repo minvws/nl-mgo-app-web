@@ -1,0 +1,11 @@
+[
+    {
+        "label": "Telefoonnummer",
+        "type": "MULTIPLE_VALUES",
+        "value": [
+            {
+                "display": "+31611234567"
+            }
+        ]
+    }
+]
