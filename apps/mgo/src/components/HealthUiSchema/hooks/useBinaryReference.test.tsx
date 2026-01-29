@@ -49,6 +49,7 @@ const createWrapper = ({
 };
 
 beforeEach(() => {
+    vi.resetAllMocks();
     vi.restoreAllMocks();
     vi.stubGlobal('URL', { createObjectURL: vi.fn(() => 'blob:http://localhost') });
 });

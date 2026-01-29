@@ -1,8 +1,12 @@
 import { faker } from '$test/faker';
 import { setup } from '$test/helpers';
 import { screen } from '@testing-library/react';
-import { expect, test, vi } from 'vitest';
+import { beforeEach, expect, test, vi } from 'vitest';
 import { StickyHeader } from './StickyHeader';
+
+beforeEach(() => {
+    vi.resetAllMocks();
+});
 
 test('scrolls the header to the top when the menu opens', async () => {
     const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(vi.fn());

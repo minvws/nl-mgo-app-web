@@ -54,7 +54,7 @@ const TestProvider = ({ onAuth, navigate }: TestProviderProps) => {
 };
 
 beforeEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
     vi.stubGlobal('sessionStorage', {
         getItem: vi.fn(),
         setItem: vi.fn(),
