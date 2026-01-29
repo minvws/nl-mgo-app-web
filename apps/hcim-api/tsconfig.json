@@ -3,18 +3,6 @@
     "include": [],
     "references": [
         {
-            "path": "../../packages/utils"
-        },
-        {
-            "path": "../../packages/intl"
-        },
-        {
-            "path": "../../packages/hcim"
-        },
-        {
-            "path": "../../packages/ts-json-schema"
-        },
-        {
             "path": "./tsconfig.app.json"
         },
         {

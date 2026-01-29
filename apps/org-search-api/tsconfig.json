@@ -3,15 +3,6 @@
     "include": [],
     "references": [
         {
-            "path": "../../packages/utils"
-        },
-        {
-            "path": "../../packages/org-search"
-        },
-        {
-            "path": "../../packages/ts-json-schema"
-        },
-        {
             "path": "./tsconfig.app.json"
         },
         {

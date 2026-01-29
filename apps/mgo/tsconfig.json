@@ -3,30 +3,6 @@
     "include": [],
     "references": [
         {
-            "path": "../../packages/utils"
-        },
-        {
-            "path": "../../packages/ui"
-        },
-        {
-            "path": "../../packages/intl"
-        },
-        {
-            "path": "../../packages/hcim-ui"
-        },
-        {
-            "path": "../../packages/hcim"
-        },
-        {
-            "path": "../../packages/fhir"
-        },
-        {
-            "path": "../../packages/config"
-        },
-        {
-            "path": "../../packages/org-search"
-        },
-        {
             "path": "./tsconfig.app.json"
         },
         {

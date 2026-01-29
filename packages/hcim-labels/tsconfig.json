@@ -4,12 +4,6 @@
     "include": [],
     "references": [
         {
-            "path": "../utils"
-        },
-        {
-            "path": "../fhir"
-        },
-        {
             "path": "./tsconfig.app.json"
         },
         {
