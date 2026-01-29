@@ -6,8 +6,8 @@
         "emitDeclarationOnly": false,
         "types": ["vitest/globals", "vitest/importMeta", "vitest"],
         "paths": {
-            "fhir/r3": ["node_modules/@types/fhir/r3.d.ts"],
-            "fhir/r4": ["node_modules/@types/fhir/r4.d.ts"]
+            "fhir/r3": ["./node_modules/@types/fhir/r3.d.ts"],
+            "fhir/r4": ["./node_modules/@types/fhir/r4.d.ts"]
         }
     },
     "include": ["src/**/*.test.ts", "src/**/*.d.ts", "test/**/*.ts", "test/**/*.d.ts"],

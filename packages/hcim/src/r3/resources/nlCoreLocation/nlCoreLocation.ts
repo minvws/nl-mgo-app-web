@@ -2,8 +2,8 @@ import { type Location } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
 import { map } from '@minvws/mgo-utils';
-import { parseNlCoreAddress, parseNlCoreContactpoint } from 'src/r3/elements/index.js';
-import { ResourceConfig } from 'src/resourceTypes.js';
+import { ResourceConfig } from '../../../resourceTypes.js';
+import { parseNlCoreAddress, parseNlCoreContactpoint } from '../../elements/index.js';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-location'; // NOSONAR
 
