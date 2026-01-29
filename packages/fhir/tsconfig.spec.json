@@ -1,7 +1,6 @@
 {
     "extends": "../../tsconfig.base.lib.json",
     "compilerOptions": {
-        "baseUrl": ".",
         "outDir": "../../out-tsc/mgo-fhir/vitest",
         "tsBuildInfoFile": "../../out-tsc/mgo-fhir/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
