@@ -20,8 +20,8 @@
         }
     },
     "devDependencies": {
-        "@faker-js/faker": "^8.4.0",
+        "@faker-js/faker": "^10.2.0",
         "typescript": "^5.4.5",
-        "vitest": "^3.2.4"
+        "vitest": "^4.0.18"
     }
 }

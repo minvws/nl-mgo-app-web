@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
 import { afterEach, beforeAll, vi } from 'vitest';
-import 'vitest-dom/extend-expect';
 import { useConfig } from '../src/hooks/useConfig/useConfig';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 

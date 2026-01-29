@@ -4,7 +4,7 @@
         "outDir": "../../out-tsc/mgo-ui/vitest",
         "tsBuildInfoFile": "../../out-tsc/mgo-ui/tsconfig.spec.tsbuildinfo",
         "emitDeclarationOnly": false,
-        "types": ["vitest-dom/extend-expect", "vitest/globals", "vitest/importMeta", "vitest"],
+        "types": ["vitest/globals", "vitest/importMeta", "vitest", "@testing-library/jest-dom"],
         "jsx": "react-jsx",
         "lib": ["dom"],
         "allowJs": true
