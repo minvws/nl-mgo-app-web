@@ -4,8 +4,7 @@ export default defineConfig({
     test: {
         coverage: {
             provider: 'v8',
-            extension: ['ts', 'tsx'],
-            include: ['packages/**', 'apps/**'],
+            include: ['packages/*/src/**/*.test.{ts,tsx}', 'apps/*/src/**/*.test.{ts,tsx}'],
             exclude: [
                 'apps/hcim-api/**',
                 'apps/mgo-e2e/**',
