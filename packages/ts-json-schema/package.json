@@ -30,11 +30,11 @@
         "ts-json-schema-generator": "^2.3.0"
     },
     "devDependencies": {
-        "@faker-js/faker": "^8.4.1",
+        "@faker-js/faker": "^10.2.0",
         "@minvws/mgo-utils": "workspace:^",
         "@types/lodash-es": "^4.17.12",
-        "type-fest": "^4.23.0",
+        "type-fest": "^5.4.2",
         "typescript": "^5.4.5",
-        "vitest": "^3.2.4"
+        "vitest": "^4.0.18"
     }
 }

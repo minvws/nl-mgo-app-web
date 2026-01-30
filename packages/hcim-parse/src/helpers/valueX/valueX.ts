@@ -1,6 +1,6 @@
 import { isNullish, type Nullable } from '@minvws/mgo-utils';
 import { upperFirst } from 'lodash-es';
-import { type StringKeyOf } from 'type-fest';
+import { KeyAsString } from 'type-fest';
 import * as type from '../../type/index.js';
 
 type Parsers = typeof type;
@@ -26,7 +26,7 @@ export type ReturnTypeParser<Type, F = Type extends ParserKey ? Parsers[Type] : 
  */
 export type ExtractValueTypes<T extends object, Prefix extends string> =
     Extract<
-        StringKeyOf<NonNullable<T>>,
+        KeyAsString<NonNullable<T>>,
         `${Prefix}${Capitalize<ParserKey>}`
     > extends `${Prefix}${infer ValueType}`
         ? Uncapitalize<ValueType> extends ParserKey

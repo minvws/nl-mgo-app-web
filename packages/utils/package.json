@@ -28,9 +28,9 @@
         "lossless-json": "^4.0.1"
     },
     "devDependencies": {
-        "@faker-js/faker": "^8.4.1",
+        "@faker-js/faker": "^10.2.0",
         "@types/lodash-es": "^4.17.12",
-        "type-fest": "^4.23.0",
+        "type-fest": "^5.4.2",
         "typescript": "^5.4.5"
     }
 }

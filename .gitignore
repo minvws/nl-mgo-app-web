@@ -8,6 +8,7 @@ out-tsc
 .env
 .env.*
 !.env.example
+.npmrc
 
 # Local files
 node_modules/

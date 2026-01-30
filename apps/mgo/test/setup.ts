@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom/vitest';
 import { cleanup, configure } from '@testing-library/react';
 import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
-import 'vitest-dom/extend-expect';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
 import { useConfig } from '@minvws/mgo-ui';

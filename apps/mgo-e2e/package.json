@@ -14,14 +14,14 @@
     },
     "devDependencies": {
         "@axe-core/playwright": "^4.11.0",
-        "@minvws/mgo-intl": "workspace:^",
         "@minvws/mgo-config": "workspace:^",
+        "@minvws/mgo-intl": "workspace:^",
         "@playwright/test": "1.56.1",
         "@types/node": "^22.5.0",
         "dotenv": "^16.4.7",
         "esbuild": "^0.25.1",
         "esbuild-register": "^3.6.0",
-        "type-fest": "^4.37.0",
+        "type-fest": "^5.4.2",
         "typescript": "^5.4.5"
     }
 }

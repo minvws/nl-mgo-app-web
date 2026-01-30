@@ -1,6 +1,6 @@
 import { MgoCodingProps, type MgoCoding } from '@minvws/mgo-hcim-parse';
 import { isNonNullish, Nullable } from '@minvws/mgo-utils';
-import { UiContext } from 'src/context/index.js';
+import { UiContext } from '../../context/index.js';
 import { system } from '../../format/system/system.js';
 import {
     type DisplayValue,

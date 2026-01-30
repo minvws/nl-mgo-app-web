@@ -2,7 +2,7 @@ import { type CarePlan } from '@minvws/mgo-fhir/r3';
 import { parse } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
 import { map } from '@minvws/mgo-utils';
-import { ResourceConfig } from 'src/resourceTypes.js';
+import { ResourceConfig } from '../../../resourceTypes.js';
 
 const profile = 'http://fhir.nl/fhir/StructureDefinition/nl-core-careplan'; // NOSONAR
 

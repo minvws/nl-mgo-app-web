@@ -1,7 +1,7 @@
 import { type Observation } from '@minvws/mgo-fhir/r3';
 import { parse, parseObservationComponents } from '@minvws/mgo-hcim-parse';
 import { generateUiSchema } from '@minvws/mgo-hcim-ui';
-import { type ResourceConfig } from 'src/resourceTypes.js';
+import { type ResourceConfig } from '../../../resourceTypes.js';
 import { omitUndefined } from '../../../utils/index.js';
 import { parseNlCoreObservationBase } from '../nlCoreObservation/nlCoreObservation.js';
 
