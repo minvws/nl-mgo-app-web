@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { FormattedMessage, useIntl } from '$/intl';
 import { Heading, SearchForm } from '@minvws/mgo-ui';

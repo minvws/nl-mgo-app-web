@@ -1,4 +1,4 @@
-/* c8 ignore start - This code is for testing purposes only */
+/* v8 ignore start - This code is for testing purposes only */
 
 export { appMessage, appMessageRegexp } from './appMessage.js';
 export { fhirMessage, fhirMessageRegexp } from './fhirMessage.js';

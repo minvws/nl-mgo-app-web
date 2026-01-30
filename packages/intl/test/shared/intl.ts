@@ -1,4 +1,4 @@
-/* c8 ignore start - This code is for testing purposes only */
+/* v8 ignore start - This code is for testing purposes only */
 
 import { type IntlShape, type MessageDescriptor } from '@formatjs/intl';
 import { type FormatMessageStringValues } from '../../src/types/index.js';

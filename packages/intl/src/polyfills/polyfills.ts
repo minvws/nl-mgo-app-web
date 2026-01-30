@@ -1,4 +1,4 @@
-/* c8 ignore start - This is tested but not registered correctly probably because it's loaded asynchronously */
+/* v8 ignore start - This is tested but not registered correctly probably because it's loaded asynchronously */
 
 // NOTE: import order matters!
 import 'intl';

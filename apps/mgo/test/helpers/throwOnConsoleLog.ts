@@ -1,4 +1,4 @@
-/* c8 ignore start */
+/* v8 ignore start */
 
 import { flushCallStack } from '@minvws/mgo-utils';
 import { uniqBy } from 'lodash';

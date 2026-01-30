@@ -1,4 +1,4 @@
-/* c8 ignore start - this will be moved to another package soon */
+/* v8 ignore start - this will be moved to another package soon */
 import { appConfig } from '$/config';
 import ky from 'ky';
 import { parseHealthcareOrganization } from './parseHealthcareOrganization';

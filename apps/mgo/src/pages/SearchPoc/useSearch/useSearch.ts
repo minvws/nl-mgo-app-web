@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 import { useMutation } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
 import type { OrganizationItem } from './types';

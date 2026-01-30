@@ -1,4 +1,4 @@
-/* c8 ignore start - This code is for testing purposes only */
+/* v8 ignore start - This code is for testing purposes only */
 
 import { createIntl } from '@formatjs/intl';
 import escapeStringRegexp from 'escape-string-regexp';

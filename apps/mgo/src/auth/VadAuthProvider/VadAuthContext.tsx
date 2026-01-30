@@ -12,11 +12,11 @@ export interface VadAuthContextState {
 }
 
 export const VadAuthContext = createContext<VadAuthContextState>({
-    /* c8 ignore start - this is a default value for when there is no provider which doesn't happen */
+    /* v8 ignore start - this is a default value for when there is no provider which doesn't happen */
     login: () => {},
     logout: () => {},
     updateUserInfoFromUrl: () => {},
-    /* c8 ignore end */
+    /* v8 ignore end */
     loadingError: null,
     parsingError: null,
     isLoading: false,

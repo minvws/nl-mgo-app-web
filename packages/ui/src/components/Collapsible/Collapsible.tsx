@@ -21,8 +21,10 @@ export const Collapsible = ({ className, children, isOpen, ...rest }: Collapsibl
         }
     });
 
-    /* c8 ignore next, in practice `contentRef.current` is always available and can't be unset in a test */
+    /* v8 ignore next, in practice `contentRef.current` is always available and can't be unset in a test */
+    /* v8 ignore start */
     const getWrapperSize = () => `${contentRef.current ? contentRef.current.clientHeight : 0}px`;
+    /* v8 ignore stop */
 
     const transitionStyles: Partial<Record<TransitionStatus, string>> = {
         entering: tw`overflow-hidden opacity-100`,
@@ -31,36 +33,33 @@ export const Collapsible = ({ className, children, isOpen, ...rest }: Collapsibl
         exited: tw`hidden opacity-0`,
     };
 
+    /* v8 ignore start */
     const callbacks = {
         onEnter: () => {
-            /* c8 ignore next */
             if (!rootRef.current) return;
             rootRef.current.style.height = collapsedSize;
         },
         onEntering: () => {
-            /* c8 ignore next */
             if (!rootRef.current) return;
             rootRef.current.style.height = getWrapperSize();
         },
         onEntered: () => {
-            /* c8 ignore next */
             if (!rootRef.current) return;
             rootRef.current.style.height = `auto`;
         },
         onExit: () => {
-            /* c8 ignore next */
             if (!rootRef.current) return;
             rootRef.current.style.height = getWrapperSize();
         },
         onExiting: () => {
             // Wait for the height to be set first
             setTimeout(() => {
-                /* c8 ignore next */
                 if (!rootRef.current) return;
                 rootRef.current.style.height = collapsedSize;
             });
         },
     };
+    /* v8 ignore end */
 
     return (
         <Transition nodeRef={rootRef} in={isOpen} timeout={animationDuration} {...callbacks}>

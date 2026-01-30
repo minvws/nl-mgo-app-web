@@ -1,4 +1,4 @@
-/* c8 ignore start - this is still a work in progress, will be added to coverage later */
+/* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
@@ -47,7 +47,7 @@ export function SearchOrganization() {
                     loading={isSearching}
                 />
 
-                {/* c8 ignore start - this code is just for testing purposes, coverage will be added later */}
+                {/* v8 ignore start - this code is just for testing purposes, coverage will be added later */}
                 {!searchQuery ? (
                     <DefaultContent />
                 ) : isInitializing || isSearching ? (
@@ -60,7 +60,7 @@ export function SearchOrganization() {
                     <NoResults />
                 )}
 
-                {/* c8 ignore end */}
+                {/* v8 ignore end */}
             </section>
         </>
     );

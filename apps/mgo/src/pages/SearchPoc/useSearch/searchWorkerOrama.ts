@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 /* eslint-disable no-restricted-globals */
 
 import { create, insertMultiple, Orama, search as searchOrama } from '@orama/orama';

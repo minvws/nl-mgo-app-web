@@ -1,4 +1,4 @@
-/* c8 ignore start - this is still a work in progress, will be added to coverage later */
+/* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
 import { FormattedMessage, useIntl } from '$/intl';
 import { SearchResults as OrgSearchResults, SearchResultDocument } from '@minvws/mgo-org-search';
@@ -35,9 +35,9 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
     });
 
     const addSelectedOrganization = () => {
-        /* c8 ignore start - this can't happen, but we need to satisfy the type checker */
+        /* v8 ignore start - this can't happen, but we need to satisfy the type checker */
         if (!selectedOrganization) return;
-        /* c8 ignore end */
+        /* v8 ignore end */
         console.log(`add organization:`, selectedOrganization);
         // addOrganization(selectedOrganization);
         // navigate('/zorgaanbieders');

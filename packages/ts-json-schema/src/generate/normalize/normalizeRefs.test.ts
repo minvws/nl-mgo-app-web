@@ -161,3 +161,24 @@ test('handles invalid URI encoding in $ref values', () => {
         },
     });
 });
+
+test('does not modify safe $ref values', () => {
+    const schema: SchemaWithDefinitions = {
+        definitions: {
+            foo: {
+                type: 'object',
+                properties: {
+                    bar: { $ref: '#/definitions/safeRef' },
+                },
+            },
+            safeRef: { type: 'string' },
+        },
+    };
+
+    expect(normalizeRefs(schema).definitions.foo).toEqual({
+        type: 'object',
+        properties: {
+            bar: { $ref: '#/definitions/safeRef' },
+        },
+    });
+});

@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 
 import { createSearchIndex, SearchIndex } from '../search/search.js';
 import type { ResponseType } from './utils.js';

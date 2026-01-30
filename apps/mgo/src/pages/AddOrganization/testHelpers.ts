@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { type UserEvent } from '@testing-library/user-event';

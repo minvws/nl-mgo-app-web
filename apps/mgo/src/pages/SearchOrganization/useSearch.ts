@@ -1,4 +1,4 @@
-/* c8 ignore start - this is still a work in progress, will be added to coverage later */
+/* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
 import {
     createSearchWorker,
