@@ -10,14 +10,14 @@ interface I18nProviderProps {
 export const IntlProvider = ({ children }: I18nProviderProps) => {
     const intlConfig = getAppIntlConfig<ReactNode>({
         locale: 'nl-NL',
-        /* c8 ignore start */
+        /* v8 ignore start */
         defaultRichTextElements: {
             // eslint-disable-next-line react/no-unstable-nested-components
             b: (chunks) => <b className="font-bold">{chunks}</b>, // NOSONAR
             // eslint-disable-next-line react/no-unstable-nested-components
             i: (chunks) => <i className="italic">{chunks}</i>, // NOSONAR
         },
-        /* c8 ignore end */
+        /* v8 ignore end */
         ignoreMissingTranslations: appConfig.ignore_missing_translations,
     });
 

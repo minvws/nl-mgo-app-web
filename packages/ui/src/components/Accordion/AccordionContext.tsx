@@ -11,6 +11,6 @@ export const AccordionContext = createContext<AccordionContextState>({
     expanded: false,
     buttonId: '',
     panelId: '',
-    /* c8 ignore next, default value is never used */
+    /* v8 ignore next, default value is never used */
     toggle: () => {},
 });

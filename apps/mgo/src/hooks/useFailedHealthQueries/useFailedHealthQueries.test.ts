@@ -1,10 +1,11 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 
 import { faker } from '$test/faker';
-import { renderHook } from '@testing-library/react';
-import { useFailedHealthQueries } from './useFailedHealthQueries';
-import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
 import { mockArray } from '@minvws/mgo-utils/test/shared';
+import { renderHook } from '@testing-library/react';
+import { useSyncExternalStore } from 'react';
+import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
+import { useFailedHealthQueries } from './useFailedHealthQueries';
 
 const hoisted = vi.hoisted(() => {
     return {
@@ -99,4 +100,19 @@ test('retry with failed query hases', async () => {
     expect(result.current.hasFailedQueries).toEqual(true);
     expect(result.current.isRetrying).toEqual(true);
     expect(mockRetry).toHaveBeenCalledWith(failedQueryHashes);
+});
+
+test('updates snapshot when hashes change but length stays the same', async () => {
+    vi.mocked(useSyncExternalStore).mockImplementationOnce((_sub, snapshot) => {
+        snapshot();
+        return snapshot();
+    });
+
+    hoisted.getFailedHealthQueryHashes
+        .mockReturnValueOnce(['a', 'b'])
+        .mockReturnValueOnce(['a', 'c']);
+
+    const { result } = renderHook(() => useFailedHealthQueries());
+
+    expect(result.current.failedQueryHashes).toEqual(['a', 'c']);
 });

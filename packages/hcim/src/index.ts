@@ -1,4 +1,4 @@
-/* c8 ignore start */
+/* v8 ignore start */
 
 export { getBundleResources } from './api/getBundleResources/getBundleResources.js';
 export { getDetails } from './api/getDetails/getDetails.js';

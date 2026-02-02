@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only used for testing, not used in production */
+/* v8 ignore start - this is only used for testing, not used in production */
 
 import { readdir, unlink, writeFile } from 'node:fs/promises';
 import {

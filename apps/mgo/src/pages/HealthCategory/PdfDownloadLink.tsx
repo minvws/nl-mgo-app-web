@@ -29,6 +29,8 @@ export function PdfDownloadLink({ categoryHeading, subCategories }: PdfDownloadL
 
     const handlePdfDownloadConfirmClick = async (event: UIEvent) => {
         event.preventDefault(); // prevent dialog from being closed
+
+        /* v8 ignore else -- @preserve */
         if (subCategories) {
             const { data: pdfBlob } = await refetchPdf();
             if (pdfBlob) {

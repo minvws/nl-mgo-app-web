@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 export type EventType = 'add' | 'search';
 
 export interface OrganizationItem {

@@ -1,4 +1,4 @@
-/* c8 ignore start */
+/* v8 ignore start */
 
 /**
  * Load Intl polyfills for Android

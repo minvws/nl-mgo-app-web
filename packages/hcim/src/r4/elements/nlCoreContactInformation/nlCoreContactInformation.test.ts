@@ -1,4 +1,4 @@
-import { expectJson } from '$test';
+import { expectJson, faker } from '$test';
 import { type ContactPoint } from '@minvws/mgo-fhir/r4';
 import { expect, test } from 'vitest';
 
@@ -19,4 +19,13 @@ test('returns the expected output 02', async () => {
         emailAddresses: [],
     };
     await expect(output).toEqual(expected);
+});
+
+test('returns empty for unsupported system', () => {
+    const telecom = [{ system: faker.lorem.word(), value: faker.lorem.word() }] as ContactPoint[];
+    const output = parseNlCoreContactInformation(telecom);
+    expect(output).toEqual({
+        telephoneNumbers: [],
+        emailAddresses: [],
+    });
 });

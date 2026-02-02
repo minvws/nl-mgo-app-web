@@ -113,3 +113,17 @@ test('getOrganizationResourceEndpoint returns undefined when there is no match',
     const { getOrganizationResourceEndpoint } = useStore.getState();
     expect(getOrganizationResourceEndpoint('unknown-org', 'unknown-service')).toBeUndefined();
 });
+
+test('addOrganization creates unique slugs when a new organization is added', async () => {
+    const existing = faker.custom.healthcareOrganization();
+    existing.slug = 'aanbieder';
+
+    useStore.setState({ organizations: [existing], resources: [] });
+
+    const { addOrganization } = useStore.getState();
+    const created = addOrganization(faker.custom.healthcareOrganization());
+
+    const state = useStore.getState();
+    expect(state.organizations.length).toBe(2);
+    expect(created.slug).not.toBe(existing.slug);
+});

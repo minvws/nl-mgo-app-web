@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 import { FormattedMessage } from '$/intl';
 import { Heading, Text } from '@minvws/mgo-ui';
 

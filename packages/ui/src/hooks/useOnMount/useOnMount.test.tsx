@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { type HTMLAttributes } from 'react';
+import { type HTMLAttributes, StrictMode } from 'react';
 import { afterEach, expect, test, vi } from 'vitest';
 import { useOnMount } from './useOnMount';
 
@@ -14,8 +14,12 @@ afterEach(() => {
     onMountFunc.mockReset();
 });
 
-test('useOnMount calls function when component is rendered the first time', async () => {
-    render(<TestComponent />);
+test('useOnMount calls function only when component is rendered the first time', async () => {
+    render(
+        <StrictMode>
+            <TestComponent />
+        </StrictMode>
+    );
     expect(onMountFunc).toHaveBeenCalledTimes(1);
 });
 

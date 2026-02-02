@@ -1,4 +1,4 @@
-/* c8 ignore start - this is only a POC */
+/* v8 ignore start - this is only a POC */
 import { FormattedMessage, useIntl } from '$/intl';
 import { Button, ConfirmDialog, OrganizationButton, Stack, Text } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';

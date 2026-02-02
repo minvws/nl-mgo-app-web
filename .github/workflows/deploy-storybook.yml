@@ -26,7 +26,7 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Publish to Chromatic
         id: chromatic
-        uses: chromaui/action@latest
+        uses: chromaui/action@v13.3.5
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           autoAcceptChanges: 'develop'

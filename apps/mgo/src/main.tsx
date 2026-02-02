@@ -1,4 +1,4 @@
-/* c8 ignore start - no need to test the root.render */
+/* v8 ignore start - no need to test the root.render */
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';

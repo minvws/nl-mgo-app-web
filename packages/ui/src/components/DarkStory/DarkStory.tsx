@@ -1,4 +1,4 @@
-/* c8 ignore start - This component is only used for documentation purposes */
+/* v8 ignore start - This component is only used for documentation purposes */
 
 import { type HTMLAttributes } from 'react';
 import { cn } from '../../utils';
