@@ -9,6 +9,7 @@ import {
 import { Resource, useStore } from '$/store';
 import { faker } from '$test/faker';
 import { useHealthCategoriesQuery } from './useHealthCategoriesQuery';
+import { SyncedQueryResult } from './useSyncedQueries';
 
 const hoisted = vi.hoisted(() => {
     return {
@@ -106,6 +107,7 @@ test('returns one result per category', async () => {
                 ...query,
                 isSynced: query.queryKey === queryConfigA.queryKey,
                 isError: query.queryKey === queryConfigB.queryKey,
+                isLoading: false,
             };
         });
     });
@@ -117,12 +119,6 @@ test('returns one result per category', async () => {
     const [resA, resB] = result.current;
     expect(resA.category.id).toBe(categoryA.id);
     expect(resB.category.id).toBe(categoryB.id);
-
-    expect(resA.isLoading).toBe(false);
-    expect(resA.isError).toBe(false);
-
-    expect(resB.isLoading).toBe(false);
-    expect(resB.isError).toBe(true);
 });
 
 test('returns the resources from the store in the category format', async () => {
@@ -199,4 +195,31 @@ test('throws if the data service endpoint config can not be found (should never 
     ).toThrowError(
         `Endpoint config not found for data service ${queryConfig.meta.dataServiceId} and endpoint ${queryConfig.meta.endpointId}`
     );
+});
+
+test.each<Partial<SyncedQueryResult<unknown>>>([
+    { isSynced: true, status: 'success' },
+    { status: 'error' },
+    { fetchStatus: 'paused' },
+])('isLoading is false if a query is completed or paused', (queryStatus) => {
+    const category = mockHealthCategoryConfig();
+    hoisted.useHealthCategoriesQueries.mockReturnValue([mockQueryConfig()]);
+    hoisted.getDataServiceEndpointConfig.mockImplementation(() => {
+        return {
+            profiles: category.subcategories.flatMap((subcategory) => subcategory.profiles),
+        };
+    });
+    hoisted.useSyncedQueries.mockImplementation(() => [
+        {
+            queryKey: [],
+            queryFn: vi.fn(async () => []),
+            ...queryStatus,
+        },
+    ]);
+    const {
+        result: {
+            current: [queryResult],
+        },
+    } = renderHook(() => useHealthCategoriesQuery({ categories: [category], organizations: [] }));
+    expect(queryResult.isLoading).toBe(false);
 });

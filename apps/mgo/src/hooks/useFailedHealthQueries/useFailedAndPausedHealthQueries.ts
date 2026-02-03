@@ -5,15 +5,15 @@ import { useCallback, useRef, useSyncExternalStore } from 'react';
 import { useRetryQuery } from '../useRetryQuery/useRetryQuery';
 import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
 
-export interface FailedHealthQueryOptions {
+export interface FailedAndPausedHealthQueryOptions {
     organizationsFilter?: HealthcareOrganization[];
     categoriesFilter?: HealthCategoryConfig[];
 }
 
-export function useFailedHealthQueries({
+export function useFailedAndPausedHealthQueries({
     organizationsFilter,
     categoriesFilter,
-}: FailedHealthQueryOptions = {}) {
+}: FailedAndPausedHealthQueryOptions = {}) {
     const queryClient = useQueryClient();
     const queryCache = queryClient.getQueryCache();
     const { retry: retryQueries, isRetrying } = useRetryQuery();

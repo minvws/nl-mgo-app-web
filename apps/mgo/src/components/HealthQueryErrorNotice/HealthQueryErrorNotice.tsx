@@ -1,4 +1,4 @@
-import { useFailedHealthQueries } from '$/hooks';
+import { useFailedAndPausedHealthQueries } from '$/hooks';
 import { useIntl } from '$/intl';
 import { HealthcareOrganization } from '$/store';
 import { HealthCategoryConfig } from '@minvws/mgo-config';
@@ -14,7 +14,7 @@ export function HealthQueryErrorNotice({
     organizationsFilter,
     categoriesFilter,
 }: HealthQueryErrorNoticeProps) {
-    const failedQueries = useFailedHealthQueries({
+    const failedAndPausedQueries = useFailedAndPausedHealthQueries({
         organizationsFilter,
         categoriesFilter,
     });
@@ -23,7 +23,7 @@ export function HealthQueryErrorNotice({
 
     return (
         <ErrorNotice
-            isOpen={failedQueries.hasFailedQueries || failedQueries.isRetrying}
+            isOpen={failedAndPausedQueries.hasFailedQueries || failedAndPausedQueries.isRetrying}
             heading={formatMessage('common.data_not_retrieved_heading')}
             subHeading={
                 onlineManager.isOnline()
@@ -31,8 +31,8 @@ export function HealthQueryErrorNotice({
                     : formatMessage('errorstate.clientside.heading')
             }
             buttonLabel={formatMessage('common.try_again')}
-            onClick={() => failedQueries.retry()}
-            loading={failedQueries.isRetrying}
+            onClick={() => failedAndPausedQueries.retry()}
+            loading={failedAndPausedQueries.isRetrying}
             loadingTextScreenReader={formatMessage('common.loading_data')}
         />
     );
