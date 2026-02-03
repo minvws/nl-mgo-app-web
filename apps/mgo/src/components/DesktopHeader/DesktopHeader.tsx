@@ -17,7 +17,7 @@ export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
                     aria-label={formatMessage('common.mgo_header_link')}
                     className={cn(focusStyle, 'block leading-none outline-offset-4')}
                 >
-                    <h2 className="text-t-cat-rijkslint font-sans text-2xl leading-none font-bold md:text-5xl">
+                    <h2 className="text-t-cat-rijkslint font-sans text-2xl leading-none font-bold md:text-3xl">
                         <FormattedMessage
                             id="common.app_name"
                             description="Mijn Gezondheidsoverzicht"
