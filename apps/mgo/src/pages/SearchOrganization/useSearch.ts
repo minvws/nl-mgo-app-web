@@ -2,7 +2,7 @@
 
 import {
     createSearchWorker,
-    OrganizationItemDto,
+    OrganizationDto,
     type SearchResults,
     type SearchWorker,
 } from '@minvws/mgo-org-search';
@@ -38,7 +38,7 @@ export function useSearch(): UseSearchResult {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore - this is a test file, also including the json file in the tsconfig breaks typescript due to the large size of the file
             const organizationsModule = await import(`./organizations.json`);
-            const organizations = organizationsModule.default as OrganizationItemDto[];
+            const organizations = organizationsModule.default as OrganizationDto[];
             await searchWorker.current.createIndex(organizations);
         },
     });

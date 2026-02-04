@@ -2,26 +2,26 @@ import { useStore } from '$/store';
 import { faker } from '$test/faker';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
-import { SearchResults as OrgSearchResults, SearchResultDocument } from '@minvws/mgo-org-search';
+import { SearchResults as OrgSearchResults, Organization } from '@minvws/mgo-org-search';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { times } from 'lodash';
 import { expect, test, vi } from 'vitest';
 import { RESULTS_PER_PAGE, SearchResults } from './SearchResults';
 
-function mockSearchResultDocument(): SearchResultDocument {
+function mockSearchResultDocument(): Organization {
     return {
         id: faker.string.uuid(),
         displayName: faker.company.name(),
         addressLine: faker.location.streetAddress(),
         city: faker.location.city(),
-    } as SearchResultDocument;
+    } as Organization;
 }
 
-function mockSearchResults(documents: SearchResultDocument[] = [mockSearchResultDocument()]) {
+function mockSearchResults(items: Organization[] = [mockSearchResultDocument()]) {
     return {
         count: 1,
-        hits: documents.map((document) => ({
+        hits: items.map((document) => ({
             id: document.id,
             document,
             score: 1,

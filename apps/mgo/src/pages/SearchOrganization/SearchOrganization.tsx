@@ -48,12 +48,12 @@ export function SearchOrganization() {
                 />
 
                 {/* v8 ignore start - this code is just for testing purposes, coverage will be added later */}
-                {!searchQuery ? (
-                    <DefaultContent />
-                ) : isInitializing || isSearching ? (
+                {isInitializing || isSearching ? (
                     <div className="flex grow flex-col items-center justify-center py-8">
                         <LoadingSpinner />
                     </div>
+                ) : !searchQuery ? (
+                    <DefaultContent />
                 ) : searchResults?.count ? (
                     <SearchResults searchResults={searchResults} className="py-8" />
                 ) : (

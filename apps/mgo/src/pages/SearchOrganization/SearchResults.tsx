@@ -1,7 +1,7 @@
 /* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
 import { FormattedMessage, useIntl } from '$/intl';
-import { SearchResults as OrgSearchResults, SearchResultDocument } from '@minvws/mgo-org-search';
+import { SearchResults as OrgSearchResults, Organization } from '@minvws/mgo-org-search';
 import { Button, ConfirmDialog, OrganizationButton, Stack, Text } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
 
@@ -17,9 +17,7 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
     // const navigate = useNavigate();
     // const hasOrganizationById = useStore.use.hasOrganizationById();
     // const addOrganization = useStore.use.addOrganization();
-    const [selectedOrganization, setSelectedOrganization] = useState<SearchResultDocument | null>(
-        null
-    );
+    const [selectedOrganization, setSelectedOrganization] = useState<Organization | null>(null);
 
     const shownResults = searchResults.hits.slice(0, showResultsLength).map((searchResult) => {
         const { displayName, addressLine, city } = searchResult.document;
