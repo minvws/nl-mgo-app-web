@@ -1,20 +1,19 @@
 {
-  "name": "qps-C-T0-H0.2",
-  "searchAlgorithm": "qps",
-  "meanReciprocalRank": 0.6694199933330368,
+  "name": "qps-A-T0-H0.2",
+  "meanReciprocalRank": 0.6732825232825232,
   "failedQueries": 2,
   "totalQueries": 37,
   "searchConfig": {
     "threshold": 0.2,
     "tolerance": 0,
-    "name": "C",
+    "name": "A",
     "properties": [
-      "normalizedName",
-      "qpsSearchBlob"
+      "normalizedDisplayName",
+      "searchBlob"
     ],
     "boost": {
-      "normalizedName": 2,
-      "qpsSearchBlob": 1
+      "normalizedDisplayName": 2,
+      "searchBlob": 1
     }
   },
   "queries": [
@@ -87,8 +86,8 @@
     {
       "query": "Gezondheidscentrum Lombok",
       "targetId": "agb:01056065",
-      "meanReciprocalRank": 1,
-      "rank": "1/100"
+      "meanReciprocalRank": 0.022727272727272728,
+      "rank": "44/100"
     },
     {
       "query": "Gezondheidscentrum Lombk",
@@ -141,8 +140,8 @@
     {
       "query": "Huisarts Wolters",
       "targetId": "agb:01010336",
-      "meanReciprocalRank": 0.14285714285714285,
-      "rank": "7/100"
+      "meanReciprocalRank": 0.25,
+      "rank": "4/100"
     },
     {
       "query": "Huisarts Zoutelande",
@@ -219,26 +218,26 @@
     {
       "query": "Apotheek Blokker",
       "targetId": "ura:00019796",
-      "meanReciprocalRank": 0.5,
-      "rank": "2/100"
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
     },
     {
       "query": "Apotheek Tuitjenhorn",
       "targetId": "ura:00021583",
-      "meanReciprocalRank": 0.5,
-      "rank": "2/100"
+      "meanReciprocalRank": 1,
+      "rank": "1/100"
     },
     {
       "query": "Apotheek Elkerlyc",
       "targetId": "ura:00021583",
-      "meanReciprocalRank": 0.043478260869565216,
-      "rank": "23/100"
+      "meanReciprocalRank": 0.05,
+      "rank": "20/100"
     },
     {
       "query": "Apotheek Elckerlijc",
       "targetId": "ura:00021583",
-      "meanReciprocalRank": 0.043478260869565216,
-      "rank": "23/100"
+      "meanReciprocalRank": 0.05,
+      "rank": "20/100"
     }
   ]
 }

@@ -1,9 +1,9 @@
 export {
     createSearchIndex,
-    type OrganizationItem,
-    type OrganizationItemDto,
+    type Organization,
+    type OrganizationDto,
     type SearchIndex,
-    type SearchResultDocument,
+    type SearchResult,
     type SearchResults,
 } from './search/search.js';
 export { createSearchWorker, type SearchWorker } from './worker/index.js';

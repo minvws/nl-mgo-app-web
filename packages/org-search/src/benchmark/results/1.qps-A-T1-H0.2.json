@@ -1,20 +1,19 @@
 {
-  "name": "qps-D-T1-H0.2",
-  "searchAlgorithm": "qps",
+  "name": "qps-A-T1-H0.2",
   "meanReciprocalRank": 0.813038038038038,
   "failedQueries": 1,
   "totalQueries": 37,
   "searchConfig": {
     "threshold": 0.2,
     "tolerance": 1,
-    "name": "D",
+    "name": "A",
     "properties": [
       "normalizedDisplayName",
-      "qpsSearchBlob"
+      "searchBlob"
     ],
     "boost": {
       "normalizedDisplayName": 2,
-      "qpsSearchBlob": 1
+      "searchBlob": 1
     }
   },
   "queries": [

@@ -15,7 +15,7 @@
         "build-js": {
             "cache": true,
             "executor": "@nx/vite:build",
-            "dependsOn": ["^typecheck"],
+            "dependsOn": ["^build"],
             "outputs": ["{projectRoot}/build/mgo-org-search-api.iife.js"],
             "options": {
                 "configFile": "apps/org-search-api/vite.api.config.ts",

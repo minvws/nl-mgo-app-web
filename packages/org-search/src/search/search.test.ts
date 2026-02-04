@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 import { faker } from '../../test/index.js';
 import { createBenchmarkResults } from '../benchmark/utils.js';
-import { createSearchIndex, CreateSearchIndexOptions } from './search.js';
+import { createSearchIndex } from './search.js';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore - this dataset is too large to include in the tsconfig
 import organizations from '../benchmark/data/organizations.json' with { type: 'json' };
@@ -14,17 +14,6 @@ test('creates a search index', async () => {
     expect(results.hits.length).toBe(1);
     expect(results.hits[0].id).toBe(organization.id);
 });
-
-test.each<CreateSearchIndexOptions['searchAlgorithm']>(['pt15', 'bm25', 'qps'])(
-    'creates a search index with the %s search algorithm',
-    async (searchAlgorithm) => {
-        const organization = faker.custom.organizationDto();
-        const index = await createSearchIndex([organization], { searchAlgorithm });
-        const results = await index.search({ query: organization.display_name! });
-        expect(results.hits.length).toBe(1);
-        expect(results.hits[0].id).toBe(organization.id);
-    }
-);
 
 const minimumMeanReciprocalRank = 0.8;
 test(`default configuration scores a minimum of ${minimumMeanReciprocalRank} on the benchmark data set`, async () => {

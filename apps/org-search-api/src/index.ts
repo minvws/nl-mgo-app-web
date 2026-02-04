@@ -2,14 +2,14 @@
 
 import {
     createSearchIndex as createSearchIndexFn,
-    type OrganizationItemDto,
+    type OrganizationDto,
     type SearchIndex,
 } from '@minvws/mgo-org-search';
 import { createJsonApi } from '@minvws/mgo-utils';
 
 let index: SearchIndex;
 
-export async function createSearchIndex(payload: OrganizationItemDto[]) {
+export async function createSearchIndex(payload: OrganizationDto[]) {
     index = await createSearchIndexFn(payload);
 }
 

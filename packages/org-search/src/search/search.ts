@@ -1,92 +1,41 @@
-import {
-    create,
-    insertMultiple,
-    Orama,
-    OramaPlugin,
-    Results,
-    search as searchOrama,
-    SearchParamsFullText,
-} from '@orama/orama';
+import { create, insertMultiple, Orama, OramaPlugin, search as searchOrama } from '@orama/orama';
 
-import { pluginPT15 } from '@orama/plugin-pt15';
 import { pluginQPS } from '@orama/plugin-qps';
+import { defaultSearchConfig, SearchConfig } from './config.js';
+import { normalizeOrganizationItemDto, removePunctuation } from './normalize.js';
 import {
-    normalizeOrganizationItemDto,
-    removePunctuation,
-    type OrganizationItem,
-    type OrganizationItemDto,
-} from './normalize.js';
+    Organization,
+    OrganizationDto,
+    organizationOramaSchema,
+    SearchResult,
+    SearchResults,
+} from './schema.js';
 
-const schema = {
-    id: 'string',
-    normalizedDisplayName: 'string',
-    careTypeDisplay: 'string',
-    aliases: 'string[]',
-    addressLine: 'string',
-    postalCode: 'string',
-    city: 'string',
-    qpsSearchBlob: 'string',
-    normalizedTypes: 'string[]',
-    normalizedName: 'string',
-    normalizedAliases: 'string[]',
-} as const;
+export type { Organization, OrganizationDto, SearchResult, SearchResults };
 
 export type SearchIndex = {
-    db: Orama<typeof schema>;
+    db: Orama<typeof organizationOramaSchema>;
     search: (payload: { query: string }) => Promise<SearchResults>;
 };
 
-export type SearchResults = Results<OrganizationItem>;
-export type SearchResultDocument = OrganizationItem;
-export type { OrganizationItem, OrganizationItemDto };
-
-export type SearchConfig = Pick<
-    SearchParamsFullText<Orama<typeof schema>, OrganizationItem>,
-    'tolerance' | 'properties' | 'threshold' | 'boost' | 'relevance'
->;
-
-export interface CreateSearchIndexOptions {
+export interface SearchIndexOptions {
     searchConfig?: SearchConfig;
-    searchAlgorithm?: 'bm25' | 'qps' | 'pt15';
 }
 
-const defaultSearchConfig: SearchConfig = {
-    tolerance: 1,
-    threshold: 0.2,
-    properties: ['normalizedDisplayName', 'qpsSearchBlob'],
-    boost: {
-        normalizedDisplayName: 2,
-        qpsSearchBlob: 1,
-    },
-};
-
 export async function createSearchIndex(
-    payload: OrganizationItemDto[],
-    { searchConfig, searchAlgorithm }: CreateSearchIndexOptions = {}
-) {
+    payload: OrganizationDto[],
+    { searchConfig }: SearchIndexOptions = {}
+): Promise<SearchIndex> {
     const config = searchConfig ?? { ...defaultSearchConfig };
-    const plugins: OramaPlugin[] = [];
+    const plugins: OramaPlugin[] = [
+        // https://docs.orama.com/docs/orama-js/search/changing-default-search-algorithm
+        pluginQPS(),
+    ];
 
-    // https://docs.orama.com/docs/orama-js/search/changing-default-search-algorithm
-    switch (searchAlgorithm) {
-        case 'pt15':
-            plugins.push(pluginPT15());
-            config.tolerance = 0; // pt15 only supports 0 tolerance
-            break;
-        case 'bm25':
-            // bm25 is the default search algorithm
-            break;
-        case 'qps':
-        default:
-            plugins.push(pluginQPS());
-            break;
-    }
-
-    const db = create({ schema, plugins });
-
+    const db = create({ schema: organizationOramaSchema, plugins });
     await insertMultiple(db, payload.map(normalizeOrganizationItemDto));
 
-    async function search(payload: { query: string }) {
+    async function search(payload: { query: string }): Promise<SearchResults> {
         return await searchOrama(db, {
             term: removePunctuation(payload.query),
             limit: 100,
@@ -94,5 +43,5 @@ export async function createSearchIndex(
         });
     }
 
-    return { db, search } as SearchIndex;
+    return { db, search };
 }

@@ -10,11 +10,7 @@ import {
 async function runBenchmarks() {
     await clearPreviousBenchmarkResults();
     const allBenchmarkResults: BenchmarkResult[] = [];
-    const benchmarkConfigs = [
-        // ...benchmarkConfigsBm25,
-        // ...benchmarkConfigsPt15,
-        ...benchmarkConfigsQps,
-    ];
+    const benchmarkConfigs = [...benchmarkConfigsQps];
 
     for (const benchmark of benchmarkConfigs) {
         const result = await createBenchmarkResults(benchmark);

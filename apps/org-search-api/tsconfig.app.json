@@ -4,11 +4,7 @@
         "emitDeclarationOnly": false,
         "outDir": "dist",
         "tsBuildInfoFile": "../../out-tsc/mgo-hcim-api/tsconfig.app.tsbuildinfo",
-        "lib": ["es2022"],
-        "rootDir": "src",
-        "paths": {
-            "$/*": ["./src/*"]
-        }
+        "lib": ["es2022"]
     },
     "exclude": ["**/__mocks__/**", "src/**/*.test.ts", "src/**/*.test.tsx", "src/_export/**"],
     "include": ["src/**/*.ts", "src/**/*.tsx"],

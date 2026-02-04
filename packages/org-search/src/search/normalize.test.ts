@@ -13,18 +13,14 @@ test('converts a organization dto to a organization item', async () => {
 
 test('can handle objects with undefined values', async () => {
     const organization = faker.custom.organizationDto();
-    organization.display_name = null;
-    organization.aliases = null;
-    organization.care_type_display = null;
-    organization.city = null;
-    organization.postal_code = null;
-    organization.address_line = null;
-    organization.geo_lat = null;
-    organization.geo_lng = null;
-    organization.qps_search_blob = null;
-    organization.normalized_aliases = null;
-    organization.normalized_types = null;
-    organization.normalized_name = null;
+    organization.display_name = undefined;
+    organization.care_type_display = undefined;
+    organization.city = undefined;
+    organization.postal_code = undefined;
+    organization.address_line = undefined;
+    organization.geo_lat = undefined;
+    organization.geo_lng = undefined;
+    (organization as any).search_blob = undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
     const item = await normalizeOrganizationItemDto(organization);
     expect(item.id).toBe(organization.id);
 });

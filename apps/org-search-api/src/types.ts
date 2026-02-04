@@ -1,60 +1,10 @@
-/* v8 ignore start */
+/* v8 ignore file -- @preserve */
 
-export interface OrganizationItemDto {
-    id: string;
-    display_name: string | null;
-    normalized_name: string | null;
-    aliases: string[] | null;
-    normalized_aliases: string[] | null;
-    normalized_types: string[] | null;
-    care_type_display: string | null;
-    city: string | null;
-    postal_code: string | null;
-    address_line: string | null;
-    geo_lat: number | null;
-    geo_lng: number | null;
-    qps_search_blob: string | null;
-}
+import type { Organization, SearchResult, SearchResults } from '@minvws/mgo-org-search';
 
-export interface OrganizationItem {
-    id: string;
-    displayName: string | undefined;
-    normalizedName: string | undefined;
-    normalizedDisplayName: string | undefined;
-    normalizedAliases: string[] | undefined;
-    normalizedTypes: string[] | undefined;
-    aliases: string[] | undefined;
-    careTypeDisplay: string | undefined;
-    city: string | undefined;
-    postalCode: string | undefined;
-    addressLine: string | undefined;
-    geoLat: number | undefined;
-    geoLng: number | undefined;
-    qpsSearchBlob: string | undefined;
-}
-
-export type SearchResults = {
-    /**
-     * The number of all the matched documents.
-     */
-    count: number;
-    /**
-     * An array of matched documents taking `limit` and `offset` into account.
-     */
-    hits: Result<OrganizationItem>[];
-};
-
-export type Result<Document> = {
-    /**
-     * The id of the document.
-     */
-    id: string;
-    /**
-     * The score of the document in the search.
-     */
-    score: number;
-    /**
-     * The document
-     */
-    document: Document;
-};
+/**
+ * This union type forces ts-json-schema-generator to include type-only imports
+ * in the generated schema. Without this, TypeScript erases those types and
+ * they will not appear in the output.
+ */
+export type SchemaTypes = Organization | SearchResult | SearchResults;

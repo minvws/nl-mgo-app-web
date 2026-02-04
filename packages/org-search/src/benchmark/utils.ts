@@ -1,12 +1,12 @@
 /* v8 ignore start - this is only used for testing, not used in production */
 
 import { readdir, unlink, writeFile } from 'node:fs/promises';
+import { SearchConfig } from '../search/config.js';
 import {
     createSearchIndex,
-    CreateSearchIndexOptions,
-    OrganizationItemDto,
-    SearchConfig,
+    OrganizationDto,
     SearchIndex,
+    SearchIndexOptions,
 } from '../search/search.js';
 
 interface QuerySet {
@@ -19,16 +19,15 @@ interface QueryBenchmarkResult extends QuerySet {
     rank: string;
 }
 
-export interface BenchmarkOptions extends CreateSearchIndexOptions {
+export interface BenchmarkOptions extends SearchIndexOptions {
     name: string;
     querySet: QuerySet[];
-    organizations: OrganizationItemDto[];
+    organizations: OrganizationDto[];
 }
 
 export interface BenchmarkResult {
     name: BenchmarkOptions['name'];
     searchConfig: SearchConfig | null;
-    searchAlgorithm: BenchmarkOptions['searchAlgorithm'];
     meanReciprocalRank: number;
     failedQueries: number;
     totalQueries: number;
@@ -57,7 +56,6 @@ export async function createBenchmarkResults(options: BenchmarkOptions) {
 
     const benchmarkResult: BenchmarkResult = {
         name: options.name,
-        searchAlgorithm: options.searchAlgorithm,
         meanReciprocalRank: -1,
         failedQueries: -1,
         totalQueries: options.querySet.length,
@@ -67,7 +65,6 @@ export async function createBenchmarkResults(options: BenchmarkOptions) {
 
     const searchIndex = await createSearchIndex(options.organizations, {
         searchConfig: options.searchConfig,
-        searchAlgorithm: options.searchAlgorithm,
     });
 
     for (const querySet of options.querySet) {
