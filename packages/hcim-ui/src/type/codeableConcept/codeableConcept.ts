@@ -13,7 +13,7 @@ export const codeableConcept: WithUiContext<
 > =
     (context) =>
     (label, value, options = {}) => {
-        const { formatLabel } = context;
+        const { baseProps } = context;
         const formatCoding = codingToDisplay(context);
         const formatCodeableConcept = (value: Nullable<MgoCodeableConcept>) => {
             return value?.coding.map(formatCoding);
@@ -21,14 +21,14 @@ export const codeableConcept: WithUiContext<
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_GROUPED_VALUES',
                 value: value.map(formatCodeableConcept).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'MULTIPLE_VALUES',
             value: formatCodeableConcept(value),
         };

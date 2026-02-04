@@ -14,6 +14,7 @@ test('instant single', () => {
     const formatDate = formatDateTime(uiHelperContext);
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: formatDate(value?.value) },
@@ -29,6 +30,7 @@ test('instant multiple', () => {
     const formatDate = formatDateTime(uiHelperContext);
 
     expect(result).toEqual<MultipleValues>({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: value.map((x) => ({ display: formatDate(x?.value) })),

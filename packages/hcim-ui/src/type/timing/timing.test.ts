@@ -11,6 +11,7 @@ test('timing', () => {
     const result = timing(uiHelperContext)(label, value);
 
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         children: expect.arrayContaining([
             codeableConcept(uiHelperContext)(`${label}.code` as FhirMessagesIds, value?.code),

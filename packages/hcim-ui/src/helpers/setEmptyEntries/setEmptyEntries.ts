@@ -10,6 +10,7 @@ function processGroup(group: HealthUiGroup, { formatMessage }: UiContext): Healt
             return isEmptyUiEntry(entry) &&
                 !['DOWNLOAD_LINK', 'DOWNLOAD_BINARY'].includes(entry.type)
                 ? {
+                      id: entry.id,
                       label: entry.label,
                       type: 'SINGLE_VALUE',
                       value: { display: formatMessage('fhir.empty_value') },

@@ -17,9 +17,11 @@ export function summaryOptions(
     resource: MgoResourceMeta
 ): HealthUiGroup {
     return {
+        id: formatMessage(`summary.options`),
         label: formatMessage(`summary.options`),
         children: [
             {
+                id: `summary.${i18n}.show_details`,
                 type: 'REFERENCE_LINK',
                 label: formatMessage(`summary.${i18n}.show_details`),
                 reference: resource.referenceId,

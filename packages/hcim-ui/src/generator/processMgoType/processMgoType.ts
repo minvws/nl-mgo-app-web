@@ -72,6 +72,7 @@ export function processMgoType(
     if (extraUiElements.length) {
         return [
             {
+                id: path,
                 label: path,
                 children: getUiElements(elements),
             } satisfies HealthUiGroup,

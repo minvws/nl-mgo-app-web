@@ -24,18 +24,18 @@ export const coding: WithUiContext<
 > =
     (context) =>
     (label, value, options = {}) => {
-        const { formatLabel } = context;
+        const { baseProps } = context;
         const formatCoding = codingToDisplay(context);
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map(formatCoding).filter((item) => isNonNullish(item.display)),
             };
         }
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: formatCoding(value),
         };

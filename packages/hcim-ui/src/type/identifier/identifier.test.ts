@@ -12,6 +12,7 @@ test('identifier, with existing label', () => {
 
     const result = identifier(context)(label, mgoIdentifier);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: mgoIdentifier.value },

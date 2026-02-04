@@ -5,10 +5,10 @@ import { type SingleValue, type UiFunction, type WithUiContext } from '../../typ
 export const quantity: WithUiContext<UiFunction<MgoQuantity | MgoDuration, SingleValue>> =
     (context) =>
     (label, value, options = {}) => {
-        const { formatLabel } = context;
+        const { baseProps } = context;
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: `SINGLE_VALUE`,
             value: { display: systemValue(context)(value) },
         };

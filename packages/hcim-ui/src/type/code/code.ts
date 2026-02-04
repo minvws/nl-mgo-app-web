@@ -17,14 +17,14 @@ type CodeOptions<T extends string | undefined> = {
 };
 
 export function code(context: UiContext) {
-    const { hasMessage, formatMessage, formatLabel } = context;
+    const { hasMessage, formatMessage, baseProps } = context;
 
     return function <T extends string>(
         label: FhirMessagesIds,
         value: Nullable<MgoCode<T> | MgoCode<T>[]>,
         options?: CodeOptions<T> & UiFunctionOptions
     ): SingleValue | MultipleValues {
-        const { i18nCode, defaultLabel } = options ?? {};
+        const { i18nCode } = options ?? {};
 
         function translateCode(code: Nullable<MgoCode<T>>) {
             const codeValue = valueOf(code);
@@ -40,14 +40,14 @@ export function code(context: UiContext) {
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map(translateCode).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value, defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: translateCode(value),
         };

@@ -15,11 +15,14 @@ test('sets empty entries, but does not mutate the schema', () => {
     };
     const entry4: UiElement = faker.ui.singleValue();
 
+    const schemaLabel = faker.lorem.word();
+    const childLabel = faker.lorem.word();
     const uiSchema: HealthUiSchema = {
-        label: faker.lorem.word(),
+        label: schemaLabel,
         children: [
             {
-                label: faker.lorem.word(),
+                id: childLabel,
+                label: childLabel,
                 children: [entry1, entry2, entry3, entry4],
             },
         ],
@@ -29,10 +32,12 @@ test('sets empty entries, but does not mutate the schema', () => {
         label: uiSchema.label,
         children: [
             {
+                id: uiSchema.children[0].id,
                 label: uiSchema.children[0].label,
                 children: [
                     entry1,
                     {
+                        id: entry2.id,
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
                         value: { display: 'intl(fhir.empty_value)' },
@@ -75,11 +80,14 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
         reference: undefined as unknown as string,
     };
 
+    const schemaLabel = faker.lorem.word();
+    const childLabel = faker.lorem.word();
     const uiSchema: HealthUiSchema = {
-        label: faker.lorem.word(),
+        label: schemaLabel,
         children: [
             {
-                label: faker.lorem.word(),
+                id: childLabel,
+                label: childLabel,
                 children: [entry1, entry2, entry3, entry4, entry5, entry6],
             },
         ],
@@ -89,19 +97,23 @@ test('works for all types - except DOWNLOAD_LINK & DOWNLOAD_BINARY', () => {
         label: uiSchema.label,
         children: [
             {
+                id: uiSchema.children[0].id,
                 label: uiSchema.children[0].label,
                 children: [
                     {
+                        id: entry1.id,
                         label: entry1.label,
                         type: 'SINGLE_VALUE',
                         value: { display: 'intl(fhir.empty_value)' },
                     },
                     {
+                        id: entry2.id,
                         label: entry2.label,
                         type: 'SINGLE_VALUE',
                         value: { display: 'intl(fhir.empty_value)' },
                     },
                     {
+                        id: entry3.id,
                         label: entry3.label,
                         type: 'SINGLE_VALUE',
                         value: { display: 'intl(fhir.empty_value)' },
@@ -125,16 +137,20 @@ test('also works for a group', () => {
         value: undefined,
     };
 
+    const groupLabel = faker.lorem.word();
     const uiSchemaGroup: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: groupLabel,
+        label: groupLabel,
         children: [entry1, entry2],
     };
 
     const expected: HealthUiGroup = {
+        id: uiSchemaGroup.id,
         label: uiSchemaGroup.label,
         children: [
             entry1,
             {
+                id: entry2.id,
                 label: entry2.label,
                 type: 'SINGLE_VALUE',
                 value: { display: 'intl(fhir.empty_value)' },
@@ -153,23 +169,29 @@ test('also works for a multiple groups', () => {
         value: undefined,
     };
 
+    const group1Label = faker.lorem.word();
+    const group2Label = faker.lorem.word();
     const uiSchemaGroup: HealthUiGroup[] = [
         {
-            label: faker.lorem.word(),
+            id: group1Label,
+            label: group1Label,
             children: [entry1, entry2],
         },
         {
-            label: faker.lorem.word(),
+            id: group2Label,
+            label: group2Label,
             children: [entry2],
         },
     ];
 
     const expected: HealthUiGroup[] = [
         {
+            id: uiSchemaGroup[0].id,
             label: uiSchemaGroup[0].label!,
             children: [
                 entry1,
                 {
+                    id: entry2.id,
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
                     value: { display: 'intl(fhir.empty_value)' },
@@ -177,9 +199,11 @@ test('also works for a multiple groups', () => {
             ],
         },
         {
+            id: uiSchemaGroup[1].id,
             label: uiSchemaGroup[1].label,
             children: [
                 {
+                    id: entry2.id,
                     label: entry2.label,
                     type: 'SINGLE_VALUE',
                     value: { display: 'intl(fhir.empty_value)' },

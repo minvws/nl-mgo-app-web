@@ -13,18 +13,18 @@ export const instant: WithUiContext<
     (context) =>
     (label, value, options = {}) => {
         const formatDate = date(context);
-        const { formatLabel } = context;
+        const { baseProps } = context;
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map((x) => ({ display: formatDate(x.value) })),
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: { display: formatDate(value?.value) },
         };

@@ -7,11 +7,16 @@ const mockIntl = createTestIntl<string>() as FhirIntlShape;
 
 export const context: ReturnType<typeof createMockFactory<UiContext>> =
     createMockFactory<UiContext>(() => {
+        const formatLabel = (label: string, _value: unknown, _fallbackLabel?: FhirMessagesIds) =>
+            mockIntl.formatMessage({ id: label as FhirMessagesIds });
         return {
             intl: mockIntl,
             isSummary: false,
             ...createHelpers(mockIntl),
-            formatLabel: (label: string, _value: unknown) =>
-                mockIntl.formatMessage({ id: label as FhirMessagesIds }),
+            formatLabel,
+            baseProps: (label, value, options = {}) => ({
+                id: label,
+                label: formatLabel(label, value, options.defaultLabel),
+            }),
         };
     });

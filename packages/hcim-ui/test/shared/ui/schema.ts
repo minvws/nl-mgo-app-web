@@ -4,8 +4,10 @@ import { HealthUiGroup, HealthUiSchema } from '../../../src/types/schema.js';
 import { uiElement } from './uiElements.js';
 
 export const healthUiGroup = createMockFactory<HealthUiGroup>(() => {
+    const label = faker.lorem.sentence();
     return {
-        label: faker.lorem.sentence(),
+        id: label,
+        label,
         children: mockArray({
             max: 4,
             factory: uiElement,
@@ -14,8 +16,10 @@ export const healthUiGroup = createMockFactory<HealthUiGroup>(() => {
 });
 
 export const healthUiSchema = createMockFactory<HealthUiSchema>(() => {
+    const label = faker.lorem.sentence();
     return {
-        label: faker.lorem.sentence(),
+        id: label,
+        label,
         children: mockArray({
             max: 4,
             factory: healthUiGroup,

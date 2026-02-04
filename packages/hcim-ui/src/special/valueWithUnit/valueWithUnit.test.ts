@@ -12,6 +12,7 @@ test('valueWithUnit', () => {
     const uiValueWithUnit = valueWithUnit(faker.ui.context());
     const result = uiValueWithUnit(label, value, unit);
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: format.valueWithUnit(value, unit) },

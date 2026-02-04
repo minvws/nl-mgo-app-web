@@ -15,6 +15,7 @@ export const sampledData: WithUiContext<UiFunction<MgoSampledData, HealthUiGroup
         const formatString = string(context);
 
         return {
+            id: label,
             label: formatLabel(label, null, 'fhir.sample_data'),
             children: [
                 formatSimpleQuantity(`${label}.origin` as FhirMessagesIds, value?.origin, {

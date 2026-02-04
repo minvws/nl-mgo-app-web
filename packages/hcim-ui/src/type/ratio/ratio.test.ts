@@ -15,19 +15,22 @@ test('ratio', () => {
     const label = faker.custom.fhirMessageId();
     const mgoRatio = faker.mgo.ratio();
     const context = faker.ui.context();
-    vi.spyOn(context, 'formatLabel').mockImplementation(
-        (_label, _value, fallbackLabel) => testMessage(fallbackLabel) ?? ''
-    );
+    vi.spyOn(context, 'baseProps').mockImplementation((label, _value, options) => ({
+        id: label,
+        label: testMessage(options?.defaultLabel) ?? '',
+    }));
 
     const result = ratio(context)(label, mgoRatio);
 
-    expect(result).toEqual<SingleValue[]>([
+    expect(result).toMatchObject<Partial<SingleValue>[]>([
         {
+            id: label,
             label: testMessage('fhir.ratio.numerator'),
             type: `SINGLE_VALUE`,
             value: { display: `systemValue(${JSON.stringify(mgoRatio.numerator)})` },
         },
         {
+            id: label,
             label: testMessage('fhir.ratio.denominator'),
             type: `SINGLE_VALUE`,
             value: { display: `systemValue(${JSON.stringify(mgoRatio.denominator)})` },

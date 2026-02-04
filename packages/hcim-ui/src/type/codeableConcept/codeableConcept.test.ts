@@ -23,6 +23,7 @@ test('codeableConcept formats coding values', () => {
     const result = codeableConcept(faker.ui.context())(label, concept);
 
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: [
@@ -59,6 +60,7 @@ test('codeableConcept handles array of concepts', () => {
     const result = codeableConcept(faker.ui.context())(label, concepts);
 
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_GROUPED_VALUES',
         value: [

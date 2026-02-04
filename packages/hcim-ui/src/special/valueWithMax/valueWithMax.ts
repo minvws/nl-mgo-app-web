@@ -6,10 +6,10 @@ import {
 } from '../../types/index.js';
 
 export const valueWithMax: WithUiContext<CombinedUiFunction<number, number, SingleValue>> =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, max) => {
         return {
-            label: formatLabel(label, value),
+            ...baseProps(label, value),
             value: { display: format.valueWithMaxValue(value, max) },
             type: 'SINGLE_VALUE',
         };

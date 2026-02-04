@@ -14,6 +14,7 @@ test('date', () => {
     const result = date(uiHelperContext)(label, value);
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: formatDate(uiHelperContext)(value.value) },

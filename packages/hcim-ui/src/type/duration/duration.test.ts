@@ -10,6 +10,7 @@ test('duration', () => {
     const mgoDuration = faker.mgo.duration();
     const result = duration(faker.ui.context())(label, mgoDuration);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: `SINGLE_VALUE`,
         value: { display: format.valueWithUnit(mgoDuration.value, mgoDuration.unit) },

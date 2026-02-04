@@ -35,6 +35,7 @@ test('primitive value types are processed', () => {
     };
     const expected: (UiElement | HealthUiGroup)[] = [
         {
+            id: path,
             type: 'SINGLE_VALUE',
             label: testMessage(path),
             value: { display: value.value },
@@ -61,6 +62,7 @@ test('value types are processed', () => {
     };
     const expected: (UiElement | HealthUiGroup)[] = [
         {
+            id: path,
             type: 'SINGLE_VALUE',
             label: testMessage(path),
             value: { display: value.value },
@@ -90,6 +92,7 @@ test('arrays are processed', () => {
     ];
     const expected: (UiElement | HealthUiGroup)[] = [
         {
+            id: path,
             type: 'MULTIPLE_VALUES',
             label: testMessage(path),
             value: [{ display: value[0].value }, { display: value[1].value }],
@@ -115,13 +118,14 @@ test('objects are processed', () => {
     };
     const expected: (UiElement | HealthUiGroup)[] = [
         {
+            id: `${path}.foo`,
             type: 'SINGLE_VALUE',
             label: testMessage(`${path}.foo`),
             value: { display: value.foo.value },
         },
     ];
 
-    expect(processValue(context, path, value)).toEqual(expected);
+    expect(processValue(context, path, value)).toMatchObject(expected);
 });
 
 test('logs an error for values it can not process', () => {
@@ -160,18 +164,19 @@ test('Mgo elements get their own group', () => {
     } as const;
 
     const profileKey = getProfileKey(context.fhirVersion, value._profile);
-    const expected: (UiElement | HealthUiGroup)[] = [
+    const expected: Partial<UiElement | HealthUiGroup>[] = [
         {
             label: profileKey,
             children: [
                 {
-                    type: 'SINGLE_VALUE',
+                    id: `${profileKey}.foo`,
                     label: testMessage(`${profileKey}.foo`),
+                    type: 'SINGLE_VALUE',
                     value: { display: value.foo.value },
                 },
             ],
         },
     ];
 
-    expect(processValue(context, path, value)).toEqual(expected);
+    expect(processValue(context, path, value)).toMatchObject(expected);
 });

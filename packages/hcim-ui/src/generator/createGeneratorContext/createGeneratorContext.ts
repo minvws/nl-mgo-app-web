@@ -8,6 +8,7 @@ export type GeneratorContext = {
     createUiElement: ReturnType<typeof createUiElementHelper>;
     fhirVersion: FhirVersion;
     rootPath: string;
+    baseProps: UiContext['baseProps'];
 };
 
 export function createGeneratorContext(
@@ -15,7 +16,7 @@ export function createGeneratorContext(
     rootPath: string,
     fhirVersion: FhirVersion
 ): GeneratorContext {
-    const { formatMessage, formatLabel } = uiContext;
+    const { formatMessage, formatLabel, baseProps } = uiContext;
     const createUiElement = createUiElementHelper(uiContext);
 
     return {
@@ -24,5 +25,6 @@ export function createGeneratorContext(
         createUiElement,
         fhirVersion,
         rootPath,
+        baseProps,
     };
 }

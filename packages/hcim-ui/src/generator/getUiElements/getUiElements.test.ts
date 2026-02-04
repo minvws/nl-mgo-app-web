@@ -4,18 +4,24 @@ import { type HealthUiGroup, type UiElement } from '../../types/schema.js';
 import { getUiElements } from './getUiElements.js';
 
 test('extracts all ui elements from a list of elements and groups', () => {
+    const elementLabel = faker.lorem.word();
     const elements: (UiElement | HealthUiGroup)[] = [
         {
-            label: faker.lorem.word(),
+            id: elementLabel,
+            label: elementLabel,
             type: 'SINGLE_VALUE',
             value: undefined,
         },
     ];
+    const groupLabel = faker.lorem.word();
+    const groupChildLabel = faker.lorem.word();
     const group: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: groupLabel,
+        label: groupLabel,
         children: [
             {
-                label: faker.lorem.word(),
+                id: groupChildLabel,
+                label: groupChildLabel,
                 type: 'SINGLE_VALUE',
                 value: undefined,
             },

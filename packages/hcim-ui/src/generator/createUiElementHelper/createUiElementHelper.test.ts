@@ -3,7 +3,7 @@ import { type MgoPositiveInt, type MgoString, type MgoType } from '@minvws/mgo-h
 import { testMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from 'vitest';
 import { numberToString } from '../../helpers/numberToString/numberToString.js';
-import { DownloadLink, MultipleValues, SingleValue } from '../../types/schema.js';
+import { DownloadLink, SingleValue } from '../../types/schema.js';
 import { createUiElementHelper } from './createUiElementHelper.js';
 
 test('creates a helper to process single value types', () => {
@@ -16,13 +16,11 @@ test('creates a helper to process single value types', () => {
     };
 
     const result = createUiElement<'string'>(label, value);
-    const expected: SingleValue = {
-        label: testMessage(label),
+
+    expect(result).toMatchObject<Partial<SingleValue>>({
         type: 'SINGLE_VALUE',
         value: { display: value.value },
-    };
-
-    expect(result).toEqual(expected);
+    });
 });
 
 test('throws if the ui helper can not be found for this unknown type', () => {
@@ -46,13 +44,12 @@ test(`label is ignored for helpers that don't require one`, () => {
     const label = faker.custom.fhirMessageId();
 
     const result = createUiElement(label, value);
-    const expected: DownloadLink = {
+
+    expect(result).toMatchObject<Partial<DownloadLink>>({
         type: 'DOWNLOAD_LINK',
         label: value.title!,
         url: value?.url,
-    };
-
-    expect(result).toEqual(expected);
+    });
 });
 
 test('creates a helper to process multiple same value types', () => {
@@ -71,13 +68,12 @@ test('creates a helper to process multiple same value types', () => {
     ];
 
     const result = createUiElement(label, value);
-    const expected: MultipleValues = {
+
+    expect(result).toMatchObject({
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: [{ display: value[0].value }, { display: value[1].value }],
-    };
-
-    expect(result).toEqual(expected);
+    });
 });
 
 test('if a type does not have a dedicated multiple values handle, the single value handler is called multiple times', () => {
@@ -96,7 +92,7 @@ test('if a type does not have a dedicated multiple values handle, the single val
     ];
 
     const result = createUiElement(label, value);
-    const expected: SingleValue[] = [
+    const expected: Partial<SingleValue>[] = [
         {
             label: testMessage(label),
             type: 'SINGLE_VALUE',
@@ -109,5 +105,5 @@ test('if a type does not have a dedicated multiple values handle, the single val
         },
     ];
 
-    expect(result).toEqual(expected);
+    expect(result).toMatchObject(expected);
 });

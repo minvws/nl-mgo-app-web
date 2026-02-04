@@ -19,7 +19,7 @@ export function processObject(context: GeneratorContext, path: string, value: ob
         const valuePath = `${path}.${snakeCase(key)}`;
         if (isNullish(value)) {
             elements.push({
-                label: context.formatLabel(valuePath as FhirMessagesIds, null),
+                ...context.baseProps(valuePath as FhirMessagesIds, null),
                 type: 'SINGLE_VALUE',
                 value: undefined,
             });
@@ -31,6 +31,7 @@ export function processObject(context: GeneratorContext, path: string, value: ob
     if (path !== context.rootPath && elements.length > 1) {
         return [
             {
+                id: path,
                 label: path,
                 children: getUiElements(elements),
             } satisfies HealthUiGroup,

@@ -1,6 +1,7 @@
 interface BaseUiElement<T extends string> {
     type: T;
     label: string;
+    id: string;
 }
 
 export interface DisplayValue {
@@ -46,6 +47,7 @@ export type UiElement =
     | ReferenceLink;
 
 export interface HealthUiGroup {
+    id?: string;
     label?: string;
     children: UiElement[];
 }

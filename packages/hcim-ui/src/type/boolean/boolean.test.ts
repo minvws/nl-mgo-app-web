@@ -13,6 +13,7 @@ test('boolean - true', () => {
         value: true,
     });
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: testMessage('fhir.boolean.true') },
@@ -28,6 +29,7 @@ test('boolean - false', () => {
         value: false,
     });
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: testMessage('fhir.boolean.false') },
@@ -40,6 +42,7 @@ test('boolean - undefined', () => {
     const context = faker.ui.context();
     const result = boolean(context)(label, undefined);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: undefined,

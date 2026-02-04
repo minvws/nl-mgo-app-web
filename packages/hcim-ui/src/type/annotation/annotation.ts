@@ -16,18 +16,18 @@ export const annotationDisplay = (value: Nullable<MgoAnnotation>) => {
 export const annotation: WithUiContext<
     UiFunction<MgoAnnotation | MgoAnnotation[], SingleValue | MultipleValues>
 > =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map(annotationDisplay).filter(isNonNullish),
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             value: annotationDisplay(value),
             type: 'SINGLE_VALUE',
         };

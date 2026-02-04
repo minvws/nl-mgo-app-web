@@ -32,6 +32,7 @@ test('elements are added to a default labelless group', () => {
 
     const elements: (UiElement | HealthUiGroup)[] = [
         {
+            id: 'r3.nl_core_patient.foo',
             label: testMessage('r3.nl_core_patient.foo'),
             type: 'SINGLE_VALUE',
             value: { display: faker.lorem.sentence() },
@@ -62,22 +63,30 @@ test('group labels that start with r3 or r4 are translated', () => {
         },
     };
 
+    const groupLabel = faker.helpers.arrayElement(['r3.', 'r4.']) + faker.lorem.word();
+    const groupChildLabel = faker.lorem.word();
     const group: HealthUiGroup = {
-        label: faker.helpers.arrayElement(['r3.', 'r4.']) + faker.lorem.word(),
+        id: groupLabel,
+        label: groupLabel,
         children: [
             {
-                label: faker.lorem.word(),
+                id: groupChildLabel,
+                label: groupChildLabel,
                 type: 'SINGLE_VALUE',
                 value: { display: faker.lorem.sentence() },
             },
         ],
     };
 
+    const group2Label = faker.lorem.word();
+    const group2ChildLabel = faker.lorem.word();
     const group2: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: group2Label,
+        label: group2Label,
         children: [
             {
-                label: faker.lorem.word(),
+                id: group2ChildLabel,
+                label: group2ChildLabel,
                 type: 'SINGLE_VALUE',
                 value: { display: faker.lorem.sentence() },
             },
@@ -93,10 +102,12 @@ test('group labels that start with r3 or r4 are translated', () => {
                 children: [],
             },
             {
-                label: testMessage(group.label),
+                id: group.id,
+                label: testMessage(group.label!),
                 children: group.children,
             },
             {
+                id: group2.id,
                 label: group2.label,
                 children: group2.children,
             },
@@ -118,19 +129,25 @@ test('elements are sorted by label', () => {
         },
     };
 
+    const labelA = 'a' + faker.lorem.word();
+    const labelB = 'b' + faker.lorem.word();
+    const labelC = 'c' + faker.lorem.word();
     const elements: (UiElement | HealthUiGroup)[] = [
         {
-            label: 'a' + faker.lorem.word(),
+            id: labelA,
+            label: labelA,
             type: 'SINGLE_VALUE',
             value: { display: faker.lorem.sentence() },
         },
         {
-            label: 'c' + faker.lorem.word(),
+            id: labelC,
+            label: labelC,
             type: 'SINGLE_VALUE',
             value: { display: faker.lorem.sentence() },
         },
         {
-            label: 'b' + faker.lorem.word(),
+            id: labelB,
+            label: labelB,
             type: 'SINGLE_VALUE',
             value: { display: faker.lorem.sentence() },
         },

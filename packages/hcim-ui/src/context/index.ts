@@ -9,6 +9,7 @@ import {
     type IntlHelpers,
 } from '@minvws/mgo-intl';
 import { createLabelFormatter } from './formatLabel.js';
+import { createBaseProps } from './baseProps/baseProps.js';
 
 export type UiContextOptions = {
     isSummary?: boolean;
@@ -22,6 +23,7 @@ export type UiContext = {
     isSummary: boolean | undefined;
     intl: FhirIntlShape;
     formatLabel: ReturnType<typeof createLabelFormatter>;
+    baseProps: ReturnType<typeof createBaseProps>;
 } & IntlHelpers<string, FhirMessagesIds>;
 
 export function createUiContext(options: UiContextOptions): UiContext {
@@ -40,5 +42,6 @@ export function createUiContext(options: UiContextOptions): UiContext {
         intl,
         ...createHelpers(intl),
         formatLabel: createLabelFormatter(intl),
+        baseProps: createBaseProps(intl),
     };
 }

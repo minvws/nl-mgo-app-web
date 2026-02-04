@@ -10,6 +10,7 @@ test('string', () => {
     const value = faker.mgo.string();
     const result = string(faker.ui.context())(label, value);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: toString(value?.value) },

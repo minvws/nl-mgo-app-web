@@ -10,17 +10,17 @@ import {
 export const identifier: WithUiContext<
     UiFunction<MgoIdentifier | MgoIdentifier[], SingleValue | MultipleValues, FhirMessagesIds>
 > =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map((x) => ({ display: x?.value })),
             };
         }
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: { display: value?.value },
         };

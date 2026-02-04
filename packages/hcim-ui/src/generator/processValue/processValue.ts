@@ -19,6 +19,7 @@ export function processValue(
     if (isMgoElement(value)) {
         path = getProfileKey(context.fhirVersion, value._profile);
         group = {
+            id: path,
             label: getProfileKey(context.fhirVersion, value._profile),
             children: [],
         };

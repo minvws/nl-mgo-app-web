@@ -13,6 +13,7 @@ test('valueWithMax', () => {
     const uiValueWithMax = valueWithMax(faker.ui.context());
     const result = uiValueWithMax(label, value, max);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: format.valueWithMaxValue(value, max) },

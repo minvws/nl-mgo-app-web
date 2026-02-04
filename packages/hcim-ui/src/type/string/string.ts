@@ -10,18 +10,18 @@ import {
 export const string: WithUiContext<
     UiFunction<MgoString | MgoString[], SingleValue | MultipleValues>
 > =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map((x) => ({ display: valueOf(x) })),
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: { display: valueOf(value) },
         };
