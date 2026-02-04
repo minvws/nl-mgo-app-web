@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careteam.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careteam.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -30,6 +33,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careteam.subject",
                     "label": "Onderwerp",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -39,15 +43,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Vaste Huisarts 1",
                     "reference": "Practitioner/nl-core-practitioner-02"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -61,15 +68,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Dirk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-04"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "value": [

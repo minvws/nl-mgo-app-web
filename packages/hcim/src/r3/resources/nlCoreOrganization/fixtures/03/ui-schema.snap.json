@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_organization.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -16,6 +17,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_organization.alias",
                     "label": "Organisatie alias",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -25,6 +27,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_organization.name",
                     "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -34,9 +37,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -48,6 +53,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -55,6 +61,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -62,6 +69,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -71,9 +79,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -81,6 +91,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,6 +99,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -95,6 +107,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -104,9 +117,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -114,6 +129,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -121,6 +137,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -128,6 +145,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -137,9 +155,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_address",
             "label": "Adres",
             "children": [
                 {
+                    "id": "r3.nl_core_address.line.additional_locator",
                     "label": "Aanduiding bij huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -147,6 +167,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.address_type",
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -158,6 +179,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_address.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -165,6 +187,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.type",
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -172,6 +195,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.unit_id",
                     "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -179,6 +203,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -186,6 +211,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.house_number",
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -193,6 +219,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.building_numbersuffix",
                     "label": "Huisnummertoevoeging",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -200,6 +227,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.country",
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -207,6 +235,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.official",
                     "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -214,6 +243,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.city",
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -221,6 +251,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -228,6 +259,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.street_name",
                     "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -237,9 +269,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_organization.type",
             "label": "Organisatie type",
             "children": [
                 {
+                    "id": "r3.nl_core_organization.type.department_specialty",
                     "label": "Afdeling specialisme",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -247,6 +281,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_organization.type.organization_type",
                     "label": "Organisatie type",
                     "type": "SINGLE_VALUE",
                     "value": {

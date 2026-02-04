@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.address",
                     "label": "Adresgegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.name",
                     "label": "Organisatie naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.identifier",
                     "label": "Zorgaanbieder identificatienummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,9 +30,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_healthcare_provider_organization.type",
             "label": "Type",
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.type.department_specialty",
                     "label": "Afdeling specialisme",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -37,6 +42,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.type.organization_type",
                     "label": "Organisatie type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -46,9 +52,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_healthcare_provider_organization.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.telecom.email_addresses",
                     "label": "E-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,6 +64,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider_organization.telecom.telephone_numbers",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {

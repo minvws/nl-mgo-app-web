@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_drug_use.performer",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_drug_use.effective_date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_drug_use.value_codeable_concept",
                     "label": "Drug gebruik status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +32,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_drug_use.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -38,12 +42,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_drug_use.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_drug_use.effective_period",
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -51,6 +57,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_drug_use.effective_period",
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -58,6 +65,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_drug_use.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -67,9 +75,11 @@
             ]
         },
         {
+            "id": "r3.zib_drug_use.component",
             "label": "Onderliggende metingen",
             "children": [
                 {
+                    "id": "r3.zib_drug_use.component.drug_or_medication_type.value_codeable_concept",
                     "label": "Drugs of geneesmiddel soort",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -81,6 +91,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_drug_use.component.amount.value_string",
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,6 +99,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_drug_use.component.route_of_administration.value_codeable_concept",
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "value": [

@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_medical_device_request.requester",
                     "label": "Aangevraagd door",
                     "type": "REFERENCE_VALUE",
                     "display": "Vaste Huisarts 1",
                     "reference": "Practitioner/nl-core-practitioner-02"
                 },
                 {
+                    "id": "r3.zib_medical_device_request.occurrence_period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -17,6 +19,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_request.occurrence_period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -24,6 +27,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_request.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -33,12 +37,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device_request.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_medical_device_request.status.order_status",
                     "label": "Order status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -46,6 +52,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_request.code_codeable_concept",
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -57,6 +64,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device_request.performer_type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {

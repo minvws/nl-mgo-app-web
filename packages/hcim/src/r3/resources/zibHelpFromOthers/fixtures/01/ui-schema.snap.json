@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_help_from_others.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,12 +14,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_help_from_others.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Irma XXX_Helleman-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
+                    "id": "r3.zib_help_from_others.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -28,9 +31,11 @@
             ]
         },
         {
+            "id": "r3.zib_help_from_others.activity.detail",
             "label": "Hulp van anderen",
             "children": [
                 {
+                    "id": "r3.zib_help_from_others.activity.detail.code",
                     "label": "Aard",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -38,6 +43,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_help_from_others.activity.detail.scheduled_string",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -45,6 +51,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_help_from_others.activity.detail.performer",
                     "label": "Hulpverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -54,6 +61,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_help_from_others.activity.detail.category",
                     "label": "Soort hulp",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -65,6 +73,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_help_from_others.activity.detail.description",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {

@@ -1,9 +1,12 @@
 {
+    "id": "r3.ihe_mhd_minimal_document_reference",
     "label": "Onbekend",
     "children": [
         {
+            "id": "summary.r3.ihe_mhd_minimal_document_reference.default",
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.indexed",
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +14,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.type",
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -24,13 +28,16 @@
             ]
         },
         {
+            "id": "summary.r3.ihe_mhd_minimal_document_reference.group_attachment",
             "label": "Bijlage(n)",
             "children": []
         },
         {
+            "id": "summary.r3.ihe_mhd_minimal_document_reference.group_author",
             "label": "Opgesteld door",
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.author",
                     "label": "Zorgverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +47,7 @@
                     ]
                 },
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -49,9 +57,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.ihe_mhd_minimal_document_reference.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle documentgegevens",
                     "reference": "DocumentReference/pdfa-documentreference-01"

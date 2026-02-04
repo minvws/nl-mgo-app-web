@@ -12,9 +12,11 @@ export const summary: SummarySchemaFunction<IheMhdMinimalDocumentReference> = (
     const { ui, formatMessage } = context;
 
     return {
+        id: i18n,
         label: resource.content?.[0]?.attachment?.title ?? formatMessage('fhir.unknown'),
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ui.instant(`${i18n}.indexed`, resource.indexed),
                     ui.codeableConcept(`${i18n}.type`, resource.type),
@@ -22,6 +24,7 @@ export const summary: SummarySchemaFunction<IheMhdMinimalDocumentReference> = (
             },
 
             {
+                id: `summary.${i18n}.group_attachment`,
                 label: formatMessage(`summary.${i18n}.group_attachment`),
                 children: [
                     ...map(resource.content, (content) => ui.attachment(content.attachment), true),
@@ -29,6 +32,7 @@ export const summary: SummarySchemaFunction<IheMhdMinimalDocumentReference> = (
             },
 
             {
+                id: `summary.${i18n}.group_author`,
                 label: formatMessage(`summary.${i18n}.group_author`),
                 children: [
                     ui.reference(`${i18n}.author`, resource.author),

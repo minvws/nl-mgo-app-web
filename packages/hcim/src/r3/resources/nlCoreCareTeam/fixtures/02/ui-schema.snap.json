@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,12 +14,14 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careteam.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Fiona XXX_Mutter",
                     "reference": "Patient/ont-ver-XXX-Mutter"
                 },
                 {
+                    "id": "r3.nl_core_careteam.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -28,15 +31,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Laura Lanen",
                     "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-01"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -50,15 +56,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Niels Helmond",
                     "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-02"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -72,15 +81,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Petra Johanna Vreeswijk",
                     "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-03"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,15 +102,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Thomas Janssen",
                     "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-04"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -108,15 +123,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "Hilda Bruinsma",
                     "reference": "Practitioner/ont-ver-bglz-1-1-zorgverlener-05"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -126,15 +144,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careteam.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.nl_core_careteam.participant.participant",
                     "label": "Deelnemer",
                     "type": "REFERENCE_VALUE",
                     "display": "AA-zkh - Noord",
                     "reference": "Organization/ont-ver-bglz-1-1-zorgaanbieder-01"
                 },
                 {
+                    "id": "r3.nl_core_careteam.participant.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {

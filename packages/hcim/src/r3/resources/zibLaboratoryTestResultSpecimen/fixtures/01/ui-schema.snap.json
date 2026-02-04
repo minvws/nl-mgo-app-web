@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.received_time",
                     "label": "Aanname datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,12 +12,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.subject",
                     "label": "Bron monster",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.parent",
                     "label": "Monster",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -24,6 +27,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.type",
                     "label": "Monstermateriaal",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -35,6 +39,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.identifier",
                     "label": "Monsternummer",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -44,6 +49,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.note",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -53,9 +59,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_specimen.collection",
             "label": "Afname",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.collection.collected_date_time",
                     "label": "Afname datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,6 +71,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.collection.method",
                     "label": "Afnameprocedure",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +79,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.collection.body_site.morphology",
                     "label": "Morfologie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -77,6 +87,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.collection.quantity",
                     "label": "Verzamelvolume",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -84,6 +95,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.collection.body_site.laterality",
                     "label": "Zijde",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -93,9 +105,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_specimen.container",
             "label": "Monstercontainer",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.container.type",
                     "label": "Containertype",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -107,6 +121,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_specimen.container.identifier",
                     "label": "Monstervolgnummer",
                     "type": "SINGLE_VALUE",
                     "value": {

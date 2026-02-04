@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.based_on",
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.effective_period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.effective_period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -25,12 +28,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.related.target",
                     "label": "Gerelateerde uitslag",
                     "type": "REFERENCE_VALUE",
                     "display": "Variant-1",
                     "reference": "Observation/example-genetics-1"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +45,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.interpretation.interpretatie_vlaggen_codelijst",
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -51,18 +57,21 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.specimen",
                     "label": "Monster",
                     "type": "REFERENCE_VALUE",
                     "display": "Blood (substance)",
                     "reference": "Specimen/zib-laboratorytestresult-specimen-01"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.subject",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.code",
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -74,6 +83,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.status",
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -81,6 +91,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.method",
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,6 +99,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -95,6 +107,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.context",
                     "label": "Verband",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -102,6 +115,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.performer",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -111,9 +125,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.category",
             "label": "Categorie",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.category.laboratory_test_result_code",
                     "label": "Resultaat code",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -121,6 +137,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.category.result_type",
                     "label": "Resultaat type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -130,9 +147,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.value_sampled_data",
             "label": "Data",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.dimensions",
                     "label": "Aantal sample punten",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -140,6 +159,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.upper_limit",
                     "label": "bovengrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -147,6 +167,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.factor",
                     "label": "Factor",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -154,6 +175,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.data",
                     "label": "Gesamplede gegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -161,6 +183,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.lower_limit",
                     "label": "ondergrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -168,6 +191,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.origin",
                     "label": "Origin",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -175,6 +199,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_sampled_data.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -184,9 +209,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.reference_range",
             "label": "Referentie",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.high",
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -194,6 +221,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.low",
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -201,6 +229,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.type",
                     "label": "Referentie type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -210,9 +239,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.reference_range",
             "label": "Referentie",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.high",
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -220,6 +251,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.low",
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -227,6 +259,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.type",
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
                     "value": [

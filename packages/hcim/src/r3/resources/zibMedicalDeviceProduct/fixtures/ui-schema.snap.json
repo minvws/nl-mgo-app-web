@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_medical_device_product.expiration_date",
                     "label": "Expiratie datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,12 +12,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_product.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_medical_device_product.identifier",
                     "label": "Product ID",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +32,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device_product.lot_number",
                     "label": "Product ID (batch or lot number (10) part of the UDI)",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -36,6 +40,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_product.type",
                     "label": "Product type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -47,6 +52,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device_product.note",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -58,9 +64,11 @@
             ]
         },
         {
+            "id": "r3.zib_medical_device_product.udi",
             "label": "Product ID",
             "children": [
                 {
+                    "id": "r3.zib_medical_device_product.udi.carrier_hrf",
                     "label": "Product ID",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -68,6 +76,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device_product.udi.device_identifier",
                     "label": "Product ID (application identifier (AI) (01) part of the udi)",
                     "type": "SINGLE_VALUE",
                     "value": {

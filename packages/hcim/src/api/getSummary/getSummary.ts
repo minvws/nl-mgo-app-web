@@ -29,9 +29,11 @@ export function getSummary<T extends MgoResourceMeta>(
             label: resource.id ?? resource.profile,
             children: [
                 {
+                    id: 'options',
                     label: 'Opties',
                     children: [
                         {
+                            id: 'reference_link',
                             type: 'REFERENCE_LINK',
                             label: 'Bekijk alle gegevens',
                             reference: resource.referenceId,

@@ -17,9 +17,11 @@ export const summary: SummarySchemaFunction<NlCorePatient> = (resource, context)
     const officialAddress = resource.address?.find((x) => x.official?.value);
 
     return {
+        id: i18n,
         label: patientName?.text?.value || formatMessage('fhir.unknown'),
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ...nlCoreHumannameSummary(patientName, context),
                     ui.date(`${i18n}.birth_date`, resource.birthDate),
@@ -29,6 +31,7 @@ export const summary: SummarySchemaFunction<NlCorePatient> = (resource, context)
             },
 
             {
+                id: `summary.${i18n}.group_contact_details`,
                 label: formatMessage(`summary.${i18n}.group_contact_details`),
                 children: [
                     ...nlCoreAddressSummary(officialAddress, context),
@@ -38,6 +41,7 @@ export const summary: SummarySchemaFunction<NlCorePatient> = (resource, context)
             },
 
             ...(resource.contact?.map((contact, idx) => ({
+                id: `summary.${i18n}.group_contacts.${idx}`,
                 label: formatMessage(`summary.${i18n}.group_contacts`, { idx: idx + 1 }),
                 children: [
                     ...nlCoreHumannameSummary(contact.name, context),
@@ -46,6 +50,7 @@ export const summary: SummarySchemaFunction<NlCorePatient> = (resource, context)
             })) ?? []),
 
             {
+                id: `summary.${i18n}.group_author`,
                 label: formatMessage(`summary.${i18n}.group_author`),
                 children: [common.organization(context, context.organization)],
             },

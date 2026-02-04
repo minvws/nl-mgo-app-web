@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_episodeofcare.period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_episodeofcare.type",
                     "label": "Concern label",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -24,6 +26,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_episodeofcare.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -31,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_episodeofcare.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,12 +44,14 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_episodeofcare.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
+                    "id": "r3.nl_core_episodeofcare.title",
                     "label": "Titel",
                     "type": "SINGLE_VALUE",
                     "value": {

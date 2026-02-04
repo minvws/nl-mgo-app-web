@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_procedure.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,6 +14,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure.reason_reference",
                     "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -22,6 +24,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure.location",
                     "label": "Locatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,18 +32,21 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.focal_device.manipulated",
                     "label": "Medisch hulpmiddel",
                     "type": "REFERENCE_VALUE",
                     "display": "Knee joint prosthesis, device (physical object)",
                     "reference": "Device/zib-medicaldeviceproduct-01"
                 },
                 {
+                    "id": "r3.zib_procedure.subject",
                     "label": "Onderwerp (Patiënt)",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_procedure.report",
                     "label": "Resultaat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -48,6 +54,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.based_on",
                     "label": "Verrichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -55,6 +62,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.performed_period",
                     "label": "Verrichting eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -62,6 +70,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.procedure_method",
                     "label": "Verrichting methode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -69,6 +78,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.performed_period",
                     "label": "Verrichting start datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +86,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure.code",
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -87,6 +98,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure.body_site.procedure_laterality",
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -100,15 +112,18 @@
             ]
         },
         {
+            "id": "r3.zib_procedure.performer",
             "label": "Uitgevoerd door",
             "children": [
                 {
+                    "id": "r3.zib_procedure.performer.actor",
                     "label": "Uitgevoerd door",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
                     "reference": "Organization/nl-core-organization-02"
                 },
                 {
+                    "id": "r3.zib_procedure.performer.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {

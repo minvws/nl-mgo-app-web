@@ -4,11 +4,13 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_practitionerrole.telecom",
                     "label": "Contactgegevens",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r3.nl_core_practitionerrole.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -18,6 +20,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_practitionerrole.specialty",
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +32,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_practitionerrole.organization",
                     "label": "Zorgaanbieder",
                     "type": "REFERENCE_VALUE",
                     "display": "Orthopedie - UMCG",

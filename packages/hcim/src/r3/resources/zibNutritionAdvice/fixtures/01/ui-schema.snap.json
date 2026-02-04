@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_nutrition_advice.orderer",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -27,12 +30,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -42,9 +47,11 @@
             ]
         },
         {
+            "id": "r3.zib_nutrition_advice.oral_diet",
             "label": "Dieet",
             "children": [
                 {
+                    "id": "r3.zib_nutrition_advice.oral_diet.fluid_consistency_type",
                     "label": "Consistentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -52,6 +59,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.oral_diet.texture",
                     "label": "Consistentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -59,6 +67,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_nutrition_advice.oral_diet.type",
                     "label": "Dieet type",
                     "type": "SINGLE_VALUE",
                     "value": {

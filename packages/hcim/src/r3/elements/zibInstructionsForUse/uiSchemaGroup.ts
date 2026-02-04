@@ -39,6 +39,7 @@ export const uiSchemaGroup: HealthUiGroupFunction<
 
     return [
         {
+            id: i18n,
             label: formatMessage(i18n),
             children: [
                 hcimInstructionsForUse.Description,

@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.gp_diagnostic_result.body_site",
                     "label": "Anatomische locatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.performer",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,6 +22,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.code",
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -31,6 +34,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.effective_date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -38,6 +42,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.episode_of_care",
                     "label": "Episode",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -47,6 +52,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.related",
                     "label": "Gerelateerde meetuitslagen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -54,6 +60,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -63,6 +70,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.method",
                     "label": "Meetmethode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,12 +78,14 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Jacqueline XXX_Cevat",
                     "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.status.result_status_codelist",
                     "label": "Resultaat status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +93,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +101,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_diagnostic_result.value_string",
                     "label": "Uitslag waarde",
                     "type": "SINGLE_VALUE",
                     "value": {

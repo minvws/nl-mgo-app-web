@@ -67,9 +67,15 @@ test('empty entries in the resulting ui schema are set with defaults', () => {
         label: 'Summary',
         children: [
             {
+                id: 'group',
                 label: faker.lorem.sentence(),
                 children: [
-                    { type: 'SINGLE_VALUE', label: faker.lorem.sentence(), value: undefined },
+                    {
+                        id: 'single',
+                        type: 'SINGLE_VALUE',
+                        label: faker.lorem.sentence(),
+                        value: undefined,
+                    },
                 ],
             },
         ],

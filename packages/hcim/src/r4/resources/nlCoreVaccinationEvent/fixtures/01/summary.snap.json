@@ -1,9 +1,12 @@
 {
+    "id": "r4.nl_core_vaccination_event",
     "label": "Hepatitis a-vaccin",
     "children": [
         {
+            "id": "summary.r4.nl_core_vaccination_event.default",
             "children": [
                 {
+                    "id": "r4.nl_core_vaccination_event.occurrence_date_time",
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +14,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.note.text",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -22,9 +26,11 @@
             ]
         },
         {
+            "id": "summary.r4.nl_core_vaccination_event.group_performer",
             "label": "Gegeven door",
             "children": [
                 {
+                    "id": "r4.nl_core_vaccination_event.performer.administrator.actor",
                     "label": "Toediener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -32,6 +38,7 @@
                     }
                 },
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -41,9 +48,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r4.nl_core_vaccination_event.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle vaccinatiegegevens",
                     "reference": "Immunization/nl-core-Vaccination-event-02"

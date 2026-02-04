@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_vaccination_event.dose_quantity",
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.identifier",
                     "label": "Identificatienummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.pharmaceutical_product",
                     "label": "Inenting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -25,12 +28,14 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.patient",
                     "label": "Patient",
                     "type": "REFERENCE_VALUE",
                     "display": "Patient, Johanna Petronella Maria (Jo) van Putten-van der Giessen",
                     "reference": "Patient/nl-core-Patient-01"
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.vaccine_code",
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -42,6 +47,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.protocol_applied",
                     "label": "Protocol toegepast",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -49,6 +55,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,12 +63,14 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.performer.administrator.actor",
                     "label": "Toediener",
                     "type": "REFERENCE_VALUE",
                     "display": "Healthcare professional (role)",
                     "reference": "PractitionerRole/nl-core-Vaccination-02-PractitionerRole-01"
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.route",
                     "label": "Toedieningsweg",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -69,6 +78,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.note",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -78,6 +88,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.occurrence_date_time",
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -85,6 +96,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.location",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -94,9 +106,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_vaccination_event.reason_code",
             "label": "Vaccinatie reden",
             "children": [
                 {
+                    "id": "r4.nl_core_vaccination_event.reason_code.vaccination_motive",
                     "label": "Vaccinatie aanleiding",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -104,6 +118,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_vaccination_event.reason_code.vaccination_indication",
                     "label": "Vaccinatie indicatie",
                     "type": "SINGLE_VALUE",
                     "value": {

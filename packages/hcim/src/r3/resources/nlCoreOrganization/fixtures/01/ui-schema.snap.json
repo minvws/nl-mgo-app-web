@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_organization.address",
                     "label": "Adresgegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_organization.telecom",
                     "label": "Contactgegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_organization.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -27,6 +30,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_organization.alias",
                     "label": "Organisatie alias",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -34,6 +38,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_organization.name",
                     "label": "Organisatie naam of afdeling naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -43,9 +48,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_organization.type",
             "label": "Organisatie type",
             "children": [
                 {
+                    "id": "r3.nl_core_organization.type.department_specialty",
                     "label": "Afdeling specialisme",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -53,6 +60,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_organization.type.organization_type",
                     "label": "Organisatie type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [

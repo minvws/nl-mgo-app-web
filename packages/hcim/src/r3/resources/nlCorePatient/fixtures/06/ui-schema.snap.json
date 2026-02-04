@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_patient.identifier.bsn",
                     "label": "BSN",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.marital_status",
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -22,6 +24,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_patient.contact",
                     "label": "Contactpersoon",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,6 +32,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.birth_date",
                     "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -36,12 +40,14 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.general_practitioner",
                     "label": "Huisarts",
                     "type": "REFERENCE_VALUE",
                     "display": "Vaste Huisarts 1",
                     "reference": "Practitioner/nl-core-practitioner-02"
                 },
                 {
+                    "id": "r3.nl_core_patient.legal_status",
                     "label": "Juridische status",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -55,6 +61,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_patient.life_stance",
                     "label": "Levensovertuiging",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -62,6 +69,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.multiple_birth_boolean",
                     "label": "Meerlingindicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -69,6 +77,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.nationality",
                     "label": "Nationaliteit",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +85,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.deceased_boolean",
                     "label": "Overlijdensindicator/datum overlijden",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +93,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.communication",
                     "label": "Taalvaardigheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +101,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.preferred_pharmacy",
                     "label": "Verwijst naar de voorkeursapotheek van de patiënt",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -99,9 +111,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -113,6 +127,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -120,6 +135,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -127,6 +143,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -136,9 +153,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -146,6 +165,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -153,6 +173,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -160,6 +181,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -169,9 +191,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_humanname",
             "label": "Naam",
             "children": [
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_own_name",
                     "label": "Geslachtsnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -179,6 +203,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_partner_name",
                     "label": "Geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -186,6 +211,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.initials",
                     "label": "Initialen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -193,6 +219,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.text",
                     "label": "Naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -200,6 +227,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.call_name",
                     "label": "Roepnaam",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -209,6 +237,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_humanname.humanname_assembly_order",
                     "label": "Voorkeursvolgorde van de naamdelen.",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -216,6 +245,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.birth_name",
                     "label": "Voornaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -223,6 +253,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_own_prefix",
                     "label": "Voorvoegsel geslachtsnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -230,6 +261,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_partner_prefix",
                     "label": "Voorvoegsel geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -239,9 +271,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_address",
             "label": "Adres",
             "children": [
                 {
+                    "id": "r3.nl_core_address.line.additional_locator",
                     "label": "Aanduiding bij huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -249,6 +283,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.address_type",
                     "label": "Adres soort",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -260,6 +295,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_address.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -267,6 +303,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.type",
                     "label": "Adres type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -274,6 +311,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.unit_id",
                     "label": "Extra informatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -281,6 +319,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -288,6 +327,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.house_number",
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -295,6 +335,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.building_numbersuffix",
                     "label": "Huisnummertoevoeging",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -302,6 +343,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.country",
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -309,6 +351,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.official",
                     "label": "Markeer een adres als een 'officieel geregistreerd adres'.",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -316,6 +359,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.city",
                     "label": "Municipality",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -323,6 +367,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -330,6 +375,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_address.line.street_name",
                     "label": "Straatnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -339,9 +385,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_patient.gender",
             "label": "Geslacht",
             "children": [
                 {
+                    "id": "r3.nl_core_patient.gender",
                     "label": "Geslacht",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -349,6 +397,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.gender.geslacht_codelijst",
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "value": [

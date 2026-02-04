@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_patient.identifier.bsn",
                     "label": "Bsn",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.marital_status",
                     "label": "Burgerlijke staat",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -22,6 +24,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_patient.birth_date",
                     "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,6 +32,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.gender.gender_codelist",
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +44,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_patient.multiple_birth_boolean",
                     "label": "Meerling indicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -47,6 +52,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.deceased_boolean",
                     "label": "Overlijdens indicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,9 +62,11 @@
             ]
         },
         {
+            "id": "r4.zib_name_information",
             "label": "Naamgegevens",
             "children": [
                 {
+                    "id": "r4.zib_name_information.family.humanname_own_name",
                     "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -66,6 +74,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.given.birth_name",
                     "label": "Geboortenamen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -81,16 +90,19 @@
                     ]
                 },
                 {
+                    "id": "r4.zib_name_information.given.initials",
                     "label": "Initialen",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_own_prefix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -98,16 +110,19 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.prefix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.suffix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_partner_prefix",
                     "label": "Tussenvoegsel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -115,6 +130,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.text",
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -122,6 +138,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_partner_name",
                     "label": "Voornaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -131,14 +148,17 @@
             ]
         },
         {
+            "id": "r4.zib_name_information_given",
             "label": "Naamgegevens",
             "children": [
                 {
+                    "id": "r4.zib_name_information_given.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information_given.given",
                     "label": "Roepnaam",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -148,6 +168,7 @@
                     ]
                 },
                 {
+                    "id": "r4.zib_name_information_given.text",
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
                     "value": null
@@ -155,9 +176,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_patient.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.zib_contact_information_email_addresses.value",
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -165,6 +188,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_email_addresses.use",
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -172,11 +196,13 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.use",
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.system.telecom_type",
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -188,6 +214,7 @@
                     ]
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.value",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -195,6 +222,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": null
@@ -202,19 +230,23 @@
             ]
         },
         {
+            "id": "r4.nl_core_address_information",
             "label": "Adres informatie",
             "children": [
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_indication",
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.additional_information",
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -222,6 +254,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.type",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -229,6 +262,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -236,6 +270,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number",
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -243,16 +278,19 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_letter",
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_addition",
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.country.country_code",
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -264,6 +302,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_address_information.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -271,6 +310,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.street_name",
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -278,6 +318,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.city",
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -287,9 +328,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_patient.nationality",
             "label": "Nationaliteit",
             "children": [
                 {
+                    "id": "r4.nl_core_patient.nationality.code",
                     "label": "Nationaliteit",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -301,6 +344,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_patient.nationality.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": null
@@ -308,9 +352,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_patient.communication",
             "label": "Taalvaardigheid",
             "children": [
                 {
+                    "id": "r4.nl_core_patient.communication.language",
                     "label": "Communicatie taal",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -322,6 +368,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_patient.communication.language_proficiency.language_control_reading",
                     "label": "Leesvaardigheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -331,6 +378,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.communication.language_proficiency.language_control_listening",
                     "label": "Luistervaardigheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -340,6 +388,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.communication.language_proficiency.language_control_speaking",
                     "label": "Spreekvaardigheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -349,6 +398,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_patient.communication.comment",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -360,14 +410,17 @@
             ]
         },
         {
+            "id": "r4.nl_core_contact_person",
             "label": "Contactpersoon",
             "children": [
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_indication",
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_own_name",
                     "label": "Achternaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -375,11 +428,13 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.additional_information",
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -387,6 +442,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.type",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -394,6 +450,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_email_addresses.value",
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -401,6 +458,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_email_addresses.use",
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -408,11 +466,13 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.given.birth_name",
                     "label": "Geboortenamen",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -420,6 +480,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number",
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -427,16 +488,19 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_letter",
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_addition",
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.given.initials",
                     "label": "Initialen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -452,6 +516,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_address_information.country.country_code",
                     "label": "Land",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -463,16 +528,19 @@
                     ]
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.use",
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -480,16 +548,19 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_contact_person.relationship.relationship",
                     "label": "Relatie",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_contact_person.relationship.role",
                     "label": "Rol",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.street_name",
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -497,6 +568,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.system.telecom_type",
                     "label": "Telecom type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -508,6 +580,7 @@
                     ]
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.value",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -515,6 +588,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_own_prefix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -522,21 +596,25 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.prefix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.suffix",
                     "label": "Titels",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_partner_prefix",
                     "label": "Tussenvoegsel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -544,6 +622,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.text",
                     "label": "Volledige naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -551,6 +630,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_name_information.family.humanname_partner_name",
                     "label": "Voornaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -558,6 +638,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.city",
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
                     "value": {

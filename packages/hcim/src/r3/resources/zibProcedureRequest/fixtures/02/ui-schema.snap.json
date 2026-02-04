@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_procedure_request.requester.agent",
                     "label": "Aangevraagd door",
                     "type": "REFERENCE_VALUE",
                     "display": "UMCG - Afdeling Orthopedie",
                     "reference": "Organization/nl-core-organization-02"
                 },
                 {
+                    "id": "r3.zib_procedure_request.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -19,6 +21,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure_request.reason_reference",
                     "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -28,12 +31,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure_request.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
+                    "id": "r3.zib_procedure_request.status.order_status",
                     "label": "Order status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -41,12 +46,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.performer",
                     "label": "Uitgevoerd door",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
+                    "id": "r3.zib_procedure_request.code",
                     "label": "Verrichting type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -58,6 +65,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure_request.performer_type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -71,9 +79,11 @@
             ]
         },
         {
+            "id": "r3.zib_procedure_request.occurrence_timing",
             "label": "Tijdschema",
             "children": [
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.count",
                     "label": "Aantal herhalingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -81,6 +91,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.day_of_week",
                     "label": "Dag(en) van de week",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,6 +99,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.duration",
                     "label": "Duur van elke gebeurtenis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -95,6 +107,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.duration_unit",
                     "label": "Duureenheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -102,6 +115,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.period_unit",
                     "label": "Eenheid van herhalingsperiode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -109,6 +123,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.frequency",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -116,6 +131,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.event",
                     "label": "Gebeurtenistijdstippen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -123,6 +139,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.period",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -130,6 +147,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.frequency_max",
                     "label": "Maximale frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -137,6 +155,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.period_max",
                     "label": "Maximale herhalingsperiode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -144,6 +163,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.countMax",
                     "label": "Maximum aantal herhalingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -151,6 +171,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.when",
                     "label": "Momenten van de dag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -158,6 +179,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.offset",
                     "label": "Tijdsafwijking",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -165,6 +187,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.code",
                     "label": "Tijdschema-code",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -172,6 +195,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_procedure_request.occurrence_timing.repeat.time_of_day",
                     "label": "Tijdstip(pen) van de dag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -181,9 +205,11 @@
             ]
         },
         {
+            "id": "r3.zib_procedure_request.body_site",
             "label": "Verrichting anatomische locatie",
             "children": [
                 {
+                    "id": "r3.zib_procedure_request.body_site",
                     "label": "Verrichting anatomische locatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -195,6 +221,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_procedure_request.body_site.procedure_laterality",
                     "label": "Zijde",
                     "type": "MULTIPLE_VALUES",
                     "value": [

@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_practitionerrole.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,6 +14,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_practitionerrole.specialty",
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -24,6 +26,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_practitionerrole.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,9 +36,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -43,6 +48,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -50,6 +56,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -57,6 +64,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -66,9 +74,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_contactpoint",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r3.nl_core_contactpoint.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +86,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.system",
                     "label": "Telecom type / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +94,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.use",
                     "label": "Telecom type / nummer soort / email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +102,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_contactpoint.value",
                     "label": "Telefoonnummer / e-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {

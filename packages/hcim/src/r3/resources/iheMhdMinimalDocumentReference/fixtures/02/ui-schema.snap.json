@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.indexed",
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.security_label",
                     "label": "Beveiligingslabel",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -24,6 +26,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.class",
                     "label": "Categorie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -35,12 +38,14 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.relates_to.target",
                     "label": "Document",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "DocumentReference/example"
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -50,6 +55,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.master_identifier",
                     "label": "Identifier",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -57,12 +63,14 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "Patient/xcda"
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +78,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.type",
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -81,6 +90,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.author",
                     "label": "Zorgverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -95,9 +105,11 @@
             ]
         },
         {
+            "id": "r3.ihe_mhd_minimal_document_reference.content",
             "label": "Inhoud",
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.content.format",
                     "label": "Formaat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -107,6 +119,7 @@
                     }
                 },
                 {
+                    "id": "Onbekend",
                     "type": "DOWNLOAD_LINK",
                     "label": "Onbekend",
                     "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510"
@@ -114,9 +127,11 @@
             ]
         },
         {
+            "id": "r3.ihe_mhd_minimal_document_reference.context",
             "label": "Klinische context",
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.practice_setting",
                     "label": "Aanvullende details",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -128,6 +143,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -135,6 +151,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -142,6 +159,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.facility_type",
                     "label": "Faciliteit",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -153,6 +171,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.source_patient_info",
                     "label": "Patiënt informatie",
                     "type": "REFERENCE_VALUE",
                     "display": null,

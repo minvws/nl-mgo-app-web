@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_alcohol_use.value_codeable_concept",
                     "label": "Alcohol gebruik status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +16,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_alcohol_use.performer",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -22,6 +24,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alcohol_use.effective_date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,6 +32,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alcohol_use.component.amount.value_quantity",
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -36,6 +40,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alcohol_use.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -45,12 +50,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_alcohol_use.subject",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_alcohol_use.effective_period",
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -58,6 +65,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alcohol_use.effective_period",
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -65,6 +73,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alcohol_use.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {

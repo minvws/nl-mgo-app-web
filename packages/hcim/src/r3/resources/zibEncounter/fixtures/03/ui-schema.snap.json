@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_encounter.reason",
                     "label": "Afwijkende uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_encounter.period",
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_encounter.class",
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,6 +30,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_encounter.period",
                     "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -34,6 +38,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_encounter.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -43,18 +48,21 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_encounter.service_provider",
                     "label": "Locatie",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
+                    "id": "r3.zib_encounter.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "I. Jongeneel-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
+                    "id": "r3.zib_encounter.diagnosis.condition",
                     "label": "Probleem",
                     "type": "REFERENCE_VALUE",
                     "display": "Surgical reduction of fracture (procedure)",
@@ -63,15 +71,18 @@
             ]
         },
         {
+            "id": "r3.zib_encounter.participant",
             "label": "Zorgverlener",
             "children": [
                 {
+                    "id": "r3.zib_encounter.participant.individual",
                     "label": "Contact met",
                     "type": "REFERENCE_VALUE",
                     "display": "G.Z.M. de Wit",
                     "reference": "Practitioner/nl-core-practitioner-03"
                 },
                 {
+                    "id": "r3.zib_encounter.participant.type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -87,9 +98,11 @@
             ]
         },
         {
+            "id": "r3.zib_encounter.hospitalization",
             "label": "Opname",
             "children": [
                 {
+                    "id": "r3.zib_encounter.hospitalization.discharge_disposition",
                     "label": "Bestemming",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -97,6 +110,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_encounter.hospitalization.admit_source",
                     "label": "Herkomst",
                     "type": "MULTIPLE_VALUES",
                     "value": [

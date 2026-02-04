@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_treatment_objective.expressed_by",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_objective.description",
                     "label": "Gewenst zorgresultaat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_objective.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -27,12 +30,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_treatment_objective.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "I. XXX_Helleman-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
+                    "id": "r3.zib_treatment_objective.addresses",
                     "label": "Probleem",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_objective.target.measure",
                     "label": "Streefwaarde / gewenste gezondheidstoestand",
                     "type": "SINGLE_VALUE",
                     "value": {

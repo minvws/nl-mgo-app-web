@@ -1,5 +1,6 @@
 [
     {
+        "id": "r3.nl_core_humanname.text",
         "label": "Naam",
         "type": "SINGLE_VALUE",
         "value": {

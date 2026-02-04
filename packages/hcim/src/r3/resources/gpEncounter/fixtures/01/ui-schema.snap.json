@@ -4,11 +4,13 @@
         {
             "children": [
                 {
+                    "id": "r3.gp_encounter.reason",
                     "label": "Afwijkende uitslag",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r3.gp_encounter.period",
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -16,6 +18,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter.class",
                     "label": "Contact type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -25,11 +28,13 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter.diagnosis",
                     "label": "Diagnosis",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r3.gp_encounter.period",
                     "label": "Eind datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -37,6 +42,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,12 +55,14 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_encounter.service_provider",
                     "label": "Locatie",
                     "type": "REFERENCE_VALUE",
                     "display": "Huisartspraktijk (zelfstandig of groepspraktijk)",
                     "reference": "Organization/nl-core-organization-01"
                 },
                 {
+                    "id": "r3.gp_encounter.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "J. XXX_Helleman (Johan)",
@@ -63,15 +71,18 @@
             ]
         },
         {
+            "id": "r3.gp_encounter.participant",
             "label": "Deelnemer",
             "children": [
                 {
+                    "id": "r3.gp_encounter.participant.individual",
                     "label": "Contact met",
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
                 },
                 {
+                    "id": "r3.gp_encounter.participant.type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": null
@@ -79,14 +90,17 @@
             ]
         },
         {
+            "id": "r3.gp_encounter.hospitalization",
             "label": "Ziekenhuisopname",
             "children": [
                 {
+                    "id": "r3.gp_encounter.hospitalization.discharge_disposition",
                     "label": "Bestemming",
                     "type": "SINGLE_VALUE",
                     "value": null
                 },
                 {
+                    "id": "r3.gp_encounter.hospitalization.admit_source",
                     "label": "Herkomst",
                     "type": "SINGLE_VALUE",
                     "value": null

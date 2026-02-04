@@ -20,9 +20,11 @@ export const summary: SummarySchemaFunction<ZibMedicationUse> = (resource, conte
     const i18n = `r3.zib_medication_use`;
 
     return {
+        id: i18n,
         label: capitalize(resource.medicationReference?.display) || formatMessage(i18n),
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ...(hasSingleInstruction ? instructions[0].children : []),
                     ui.code(`summary.${i18n}.status`, resource.status, {
@@ -33,10 +35,12 @@ export const summary: SummarySchemaFunction<ZibMedicationUse> = (resource, conte
             },
             ...(hasSingleInstruction ? [] : instructions),
             {
+                id: `summary.${i18n}.group_period`,
                 label: formatMessage(`summary.${i18n}.group_period`),
                 children: [...ui.period(`${i18n}.effective_period`, resource.effectivePeriod)],
             },
             {
+                id: `summary.${i18n}.group_prescriber`,
                 label: formatMessage(`summary.${i18n}.group_prescriber`),
                 children: [
                     ui.reference(`summary.${i18n}.prescriber`, resource.prescriber),

@@ -1,7 +1,9 @@
 {
+    "id": "summary.r3.zib_instructions_for_use",
     "label": "Instructies 1",
     "children": [
         {
+            "id": "summary.r3.zib_instructions_for_use.text",
             "label": "Gebruiksaanwijzing",
             "type": "SINGLE_VALUE",
             "value": {
@@ -9,6 +11,7 @@
             }
         },
         {
+            "id": "summary.r3.zib_instructions_for_use.dose",
             "label": "Hoeveelheid per keer",
             "type": "SINGLE_VALUE",
             "value": {

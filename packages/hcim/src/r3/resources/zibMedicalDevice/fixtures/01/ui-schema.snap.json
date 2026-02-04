@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_medical_device.device",
                     "label": "Apparaat",
                     "type": "REFERENCE_VALUE",
                     "display": "Gehoorapparaat",
                     "reference": "Device/zib-MedicalDeviceProduct-03"
                 },
                 {
+                    "id": "r3.zib_medical_device.when_used",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -17,6 +19,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.source",
                     "label": "Bron",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -24,6 +27,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.when_used",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -31,6 +35,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +45,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device.indication_problem",
                     "label": "Indicatieprobleem",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,12 +55,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_medical_device.note",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -64,12 +72,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device.health_care_provider",
                     "label": "Zorgaanbieder",
                     "type": "REFERENCE_VALUE",
                     "display": "Test Medisch Centrum",
                     "reference": "Organization/nl-core-organization-03"
                 },
                 {
+                    "id": "r3.zib_medical_device.health_professional",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -79,9 +89,11 @@
             ]
         },
         {
+            "id": "r3.zib_medical_device.body_site",
             "label": "Anatomische locatie",
             "children": [
                 {
+                    "id": "r3.zib_medical_device.body_site.coding",
                     "label": "Codes",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -93,6 +105,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device.body_site.text",
                     "label": "Tekst",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -100,6 +113,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.body_site.laterality",
                     "label": "Zijde",
                     "type": "SINGLE_VALUE",
                     "value": {

@@ -31,8 +31,9 @@ test('02: mgo-resource summary', async () => {
 
 test('summary is empty if there is not address', async () => {
     const summary = nlCoreAddressSummary(undefined, testSchemaContext({ isSummary: true }));
-    await expect(summary).toEqual([
+    expect(summary).toEqual([
         {
+            id: 'r3.nl_core_address',
             type: 'SINGLE_VALUE',
             label: fhirMessage('r3.nl_core_address'),
             value: { display: undefined },

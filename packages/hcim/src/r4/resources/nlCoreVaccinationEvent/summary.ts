@@ -10,16 +10,19 @@ export const summary: SummarySchemaFunction<R4NlCoreVaccinationEvent> = (resourc
     const { ui, formatMessage } = context;
 
     return {
+        id: i18n,
         label:
             capitalize(resource.vaccineCode?.coding?.at(0)?.display) || context.formatMessage(i18n),
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ui.dateTime(`${i18n}.occurrence_date_time`, resource.occurrenceDateTime),
                     ui.annotation(`${i18n}.note.text`, resource.note),
                 ],
             },
             {
+                id: `summary.${i18n}.group_performer`,
                 label: formatMessage(`summary.${i18n}.group_performer`),
                 children: [
                     ...map(

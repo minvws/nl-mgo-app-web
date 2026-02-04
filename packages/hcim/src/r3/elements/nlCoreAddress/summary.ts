@@ -30,12 +30,12 @@ export const nlCoreAddressSummary: SummaryElementFunction<NlCoreAddress, SchemaC
     resource,
     context
 ) => {
-    const { formatMessage } = context;
+    const { baseProps } = context;
 
     return [
         {
+            ...baseProps(i18n, resource),
             type: 'SINGLE_VALUE',
-            label: formatMessage(`${i18n}`),
             value: { display: formatAddress(resource) },
         },
     ];

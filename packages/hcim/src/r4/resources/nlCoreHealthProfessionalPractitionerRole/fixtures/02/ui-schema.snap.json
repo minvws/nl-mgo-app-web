@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.specialty.specialty",
                     "label": "Specialisme",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,9 +22,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_health_professional_practitioner_role.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.telecom.email_addresses",
                     "label": "E-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -30,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.telecom.telephone_numbers",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {

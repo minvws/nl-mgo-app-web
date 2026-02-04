@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.gp_encounter_report.author",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,12 +14,14 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_encounter_report.encounter",
                     "label": "Contact",
                     "type": "REFERENCE_VALUE",
                     "display": "Consult voor HNP (thoracaal/lumbaal) met Dr. V. Huisarts 1",
                     "reference": "Encounter/gpdata-encounter-contact04"
                 },
                 {
+                    "id": "r3.gp_encounter_report.date",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -26,6 +29,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter_report.identifier",
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,6 +37,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter_report.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter_report.title",
                     "label": "Titel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -47,6 +53,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_encounter_report.type",
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -60,9 +67,11 @@
             ]
         },
         {
+            "id": "r3.gp_encounter_report.section",
             "label": "Sectie",
             "children": [
                 {
+                    "id": "r3.gp_encounter_report.section.code",
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -74,6 +83,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_encounter_report.section.entry",
                     "label": "Vermelding",
                     "type": "MULTIPLE_VALUES",
                     "value": [

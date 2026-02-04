@@ -55,9 +55,11 @@ test('returns mock schema if there is no summary', () => {
         label: mgoResource.id,
         children: [
             {
+                id: 'options',
                 label: 'Opties',
                 children: [
                     {
+                        id: 'reference_link',
                         type: 'REFERENCE_LINK',
                         label: 'Bekijk alle gegevens',
                         reference: mgoResource.referenceId,
@@ -118,9 +120,15 @@ test('empty entries in the resulting summary ui schema are set with defaults', (
         label: 'Summary',
         children: [
             {
+                id: 'group',
                 label: faker.lorem.sentence(),
                 children: [
-                    { type: 'SINGLE_VALUE', label: faker.lorem.sentence(), value: undefined },
+                    {
+                        id: 'single',
+                        type: 'SINGLE_VALUE',
+                        label: faker.lorem.sentence(),
+                        value: undefined,
+                    },
                 ],
             },
         ],

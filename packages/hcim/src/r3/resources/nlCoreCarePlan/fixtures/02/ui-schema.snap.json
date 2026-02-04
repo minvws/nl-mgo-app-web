@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_careplan.period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.goal",
                     "label": "Behandeldoel",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,6 +22,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,6 +30,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -39,6 +43,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
@@ -47,15 +52,18 @@
             ]
         },
         {
+            "id": "r3.nl_core_careplan.activity.nursing_intervention",
             "label": "Verpleegkundige actie",
             "children": [
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.reference",
                     "label": "Aanvrager",
                     "type": "REFERENCE_VALUE",
                     "display": "Aanvrager: Dr. J. Jansen",
                     "reference": "ProcedureRequest/zib-procedurerequest-02"
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.goal",
                     "label": "Behandeldoel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,6 +71,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +79,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.reason_reference",
                     "label": "Indicatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -77,6 +87,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.description",
                     "label": "Instructie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -84,6 +95,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.code",
                     "label": "Interventie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -91,6 +103,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.medical_device",
                     "label": "Medisch hulpmiddel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -98,6 +111,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.outcome_reference",
                     "label": "Meetwaarde",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -105,6 +119,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.comment",
                     "label": "Opmerkingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -112,6 +127,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.performer",
                     "label": "Uitvoerder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -119,6 +135,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept",
                     "label": "Zorgresultaat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -128,9 +145,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_careplan.activity.nursing_intervention",
             "label": "Verpleegkundige actie",
             "children": [
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.count",
                     "label": "Aantal herhalingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -138,6 +157,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.reference",
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -145,6 +165,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.goal",
                     "label": "Behandeldoel",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -154,6 +175,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.day_of_week",
                     "label": "Dag(en) van de week",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -161,6 +183,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.duration",
                     "label": "Duur van elke gebeurtenis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -168,6 +191,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.duration_unit",
                     "label": "Duureenheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -175,6 +199,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.period_unit",
                     "label": "Eenheid van herhalingsperiode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -182,6 +207,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.frequency",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -189,6 +215,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.event",
                     "label": "Gebeurtenistijdstippen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -196,6 +223,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.reason_reference",
                     "label": "Indicatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -205,6 +233,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.description",
                     "label": "Instructie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -212,6 +241,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.period",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -219,6 +249,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.code",
                     "label": "Interventie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -230,6 +261,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.frequency_max",
                     "label": "Maximale frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -237,6 +269,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.period_max",
                     "label": "Maximale herhalingsperiode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -244,6 +277,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.countMax",
                     "label": "Maximum aantal herhalingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -251,6 +285,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.medical_device",
                     "label": "Medisch hulpmiddel",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -260,6 +295,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.outcome_reference",
                     "label": "Meetwaarde",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -269,6 +305,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.when",
                     "label": "Momenten van de dag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -276,6 +313,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.comment",
                     "label": "Opmerkingen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -283,6 +321,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.offset",
                     "label": "Tijdsafwijking",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -290,6 +329,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.code",
                     "label": "Tijdschema-code",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -297,6 +337,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.scheduled_timing.repeat.time_of_day",
                     "label": "Tijdstip(pen) van de dag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -304,6 +345,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.detail.performer",
                     "label": "Uitvoerder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -311,6 +353,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity.nursing_intervention.outcome_codeable_concept",
                     "label": "Zorgresultaat",
                     "type": "SINGLE_VALUE",
                     "value": {

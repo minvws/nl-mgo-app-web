@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_advance_directive.disorder",
                     "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,6 +14,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_advance_directive.identifier",
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,6 +22,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_advance_directive.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,12 +30,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_advance_directive.consenting_party",
                     "label": "Vertegenwoordiger",
                     "type": "REFERENCE_VALUE",
                     "display": "Janni van Putten-van der Giessen",
                     "reference": "RelatedPerson/nl-core-relatedperson-01"
                 },
                 {
+                    "id": "r3.zib_advance_directive.date_time",
                     "label": "Wilsverklaring datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_advance_directive.category.type_of_living_will",
                     "label": "Wilsverklaring type",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [

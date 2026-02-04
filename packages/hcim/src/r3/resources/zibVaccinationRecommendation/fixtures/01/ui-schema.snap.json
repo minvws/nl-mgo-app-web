@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_vaccination_recommendation.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,12 +14,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_vaccination_recommendation.subject",
                     "label": "Onderwerp (Patiënt)",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_vaccination_recommendation.order_status",
                     "label": "Order status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -32,9 +35,11 @@
             ]
         },
         {
+            "id": "r3.zib_vaccination_recommendation.recommendation",
             "label": "Vaccinatieadvies",
             "children": [
                 {
+                    "id": "r3.zib_vaccination_recommendation.recommendation.date",
                     "label": "Gewenste datum hervaccinatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -42,6 +47,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_vaccination_recommendation.recommendation.vaccine_code",
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -53,6 +59,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_vaccination_recommendation.recommendation.date_criterion",
                     "label": "Start date",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -62,6 +69,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_vaccination_recommendation.recommendation.supporting_immunization",
                     "label": "Vaccinatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [

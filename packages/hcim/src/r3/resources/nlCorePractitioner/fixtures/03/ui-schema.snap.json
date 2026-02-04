@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_practitioner.address",
                     "label": "Adresgegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_practitioner.telecom",
                     "label": "Contactgegevens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,9 +22,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_practitioner.identifier",
             "label": "Zorgverlener identificatie nummer",
             "children": [
                 {
+                    "id": "r3.nl_core_practitioner.identifier.agb",
                     "label": "AGB",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -30,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_practitioner.identifier.big",
                     "label": "BIG",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -37,6 +42,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_practitioner.identifier.other",
                     "label": "Overig(e)",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -46,6 +52,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_practitioner.identifier.uzi",
                     "label": "UZI",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -55,9 +62,11 @@
             ]
         },
         {
+            "id": "r3.nl_core_humanname",
             "label": "Naam",
             "children": [
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_own_name",
                     "label": "Geslachtsnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -65,6 +74,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_partner_name",
                     "label": "Geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -72,6 +82,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.initials",
                     "label": "Initialen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -81,6 +92,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_humanname.text",
                     "label": "Naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,6 +100,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.call_name",
                     "label": "Roepnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -95,6 +108,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.humanname_assembly_order",
                     "label": "Voorkeursvolgorde van de naamdelen.",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -102,6 +116,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.given.birth_name",
                     "label": "Voornaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -109,6 +124,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_own_prefix",
                     "label": "Voorvoegsel geslachtsnaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -116,6 +132,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_humanname.family.humanname_partner_prefix",
                     "label": "Voorvoegsel geslachtsnaam partner",
                     "type": "SINGLE_VALUE",
                     "value": {

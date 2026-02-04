@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_medical_device.device",
                     "label": "Apparaat",
                     "type": "REFERENCE_VALUE",
                     "display": "Rollator",
                     "reference": "Device/zib-medicaldeviceproduct-02"
                 },
                 {
+                    "id": "r3.zib_medical_device.source",
                     "label": "Bron",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -17,6 +19,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -26,6 +29,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medical_device.indication_problem",
                     "label": "Indicatieprobleem",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,12 +37,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "I. Jongeneel-de Haas",
                     "reference": "Patient/nl-core-patient-03"
                 },
                 {
+                    "id": "r3.zib_medical_device.when_used",
                     "label": "Tijdsduur gedefinieerd door start- en einddatum/tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -46,6 +52,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.note",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -53,6 +60,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.health_care_provider",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -60,6 +68,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.health_professional",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -69,9 +78,11 @@
             ]
         },
         {
+            "id": "r3.zib_medical_device.body_site",
             "label": "Anatomische locatie",
             "children": [
                 {
+                    "id": "r3.zib_medical_device.body_site.coding",
                     "label": "Codes",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -79,6 +90,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.body_site.text",
                     "label": "Tekst",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -86,6 +98,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medical_device.body_site.laterality",
                     "label": "Zijde",
                     "type": "SINGLE_VALUE",
                     "value": {
