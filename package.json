@@ -110,7 +110,8 @@
             "glob@>=10.3.7 <=11.0.3": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2",
             "qs@<6.14.1": "https://github.com/advisories/GHSA-6rw7-vpxm-498p",
             "@remix-run/router@<=1.23.1": "https://github.com/advisories/GHSA-2w69-qvjg-hvjx",
-            "react-router@>=6.0.0 <6.30.2": "https://github.com/advisories/GHSA-9jcx-v3wj-wh4m"
+            "react-router@>=6.0.0 <6.30.2": "https://github.com/advisories/GHSA-9jcx-v3wj-wh4m",
+            "isaacs/brace-expansion@<=5.0.0": "https://github.com/advisories/GHSA-7h2j-956f-4vf2"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
@@ -134,7 +135,8 @@
             "glob@>=10.3.7 <=11.0.3": "^11.1.0",
             "qs@<6.14.1": ">=6.14.1",
             "@remix-run/router@<=1.23.1": ">=1.23.2",
-            "react-router@>=6.0.0 <6.30.2": ">=6.30.2"
+            "react-router@>=6.0.0 <6.30.2": ">=6.30.2",
+            "@isaacs/brace-expansion@<=5.0.0": ">=5.0.1"
         },
         "auditConfig": {
             "ignoreGhsas comments (non-standard-key)": {
