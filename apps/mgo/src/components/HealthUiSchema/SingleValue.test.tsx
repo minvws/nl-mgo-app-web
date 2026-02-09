@@ -8,6 +8,7 @@ import { SingleValue } from './SingleValue';
 
 test('shows the value', () => {
     const value = {
+        id: faker.string.uuid(),
         label: uniqueId(faker.lorem.word()),
         value: { display: faker.lorem.word() },
         type: 'SINGLE_VALUE',
@@ -21,6 +22,7 @@ test('shows the value', () => {
 
 test('renders nothing when value is undefined', () => {
     const value = {
+        id: faker.string.uuid(),
         label: uniqueId(faker.lorem.word()),
         value: undefined,
         type: 'SINGLE_VALUE',

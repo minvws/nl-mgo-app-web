@@ -8,6 +8,7 @@ import { DownloadLink } from './DownloadLink';
 
 test('DownloadLink renders with regular href', async () => {
     const value: UiDownloadLink = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         url: faker.internet.url(),
         type: 'DOWNLOAD_LINK',
@@ -19,6 +20,7 @@ test('DownloadLink renders with regular href', async () => {
 
 test('DownloadLink renders not found when url is empty', async () => {
     const value: UiDownloadLink = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         url: undefined,
         type: 'DOWNLOAD_LINK',

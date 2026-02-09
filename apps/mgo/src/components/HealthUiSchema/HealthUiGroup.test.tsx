@@ -7,6 +7,7 @@ import { HealthUiGroup } from './HealthUiGroup';
 
 test('can handle empty group', () => {
     const group: HealthUiGroupData = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         children: [],
     };
@@ -19,9 +20,11 @@ test('can handle empty group', () => {
 
 test('shows the label and children', () => {
     const group: HealthUiGroupData = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         children: [
             {
+                id: faker.string.uuid(),
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
                 value: { display: faker.lorem.sentence() },
@@ -43,9 +46,11 @@ test('shows the label and children', () => {
 
 test('does not render the label if it is undefined', () => {
     const group: HealthUiGroupData = {
+        id: faker.string.uuid(),
         label: undefined,
         children: [
             {
+                id: faker.string.uuid(),
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
                 value: { display: faker.lorem.sentence() },

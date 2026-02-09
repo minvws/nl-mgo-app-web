@@ -9,11 +9,13 @@ vi.mock('@react-pdf/renderer');
 
 test('renders a HealthUiGroup', () => {
     const element = {
+        id: 'id',
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
         value: { display: faker.lorem.sentence() },
     } satisfies SingleValue;
     const group: HealthUiGroupData = {
+        id: 'id',
         label: faker.lorem.sentence(),
         children: [element],
     };
@@ -32,6 +34,7 @@ test('renders a HealthUiGroup', () => {
 
 test('skips the label if not present in a HealthUiGroup', () => {
     const group: HealthUiGroupData = {
+        id: 'id',
         label: undefined,
         children: [],
     };

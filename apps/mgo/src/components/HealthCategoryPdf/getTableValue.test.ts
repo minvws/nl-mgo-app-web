@@ -4,7 +4,7 @@ import { getTableValue, TableValue } from './getTableValue';
 
 const cases: [UiElement, TableValue][] = [
     [
-        { type: 'SINGLE_VALUE', label: 'label', value: { display: 'display' } },
+        { id: 'label', type: 'SINGLE_VALUE', label: 'label', value: { display: 'display' } },
         {
             label: 'label',
             value: 'display',
@@ -12,6 +12,7 @@ const cases: [UiElement, TableValue][] = [
     ],
     [
         {
+            id: 'label',
             type: 'MULTIPLE_VALUES',
             label: 'label',
             value: [{ display: 'display' }, { display: 'display2' }],
@@ -23,6 +24,7 @@ const cases: [UiElement, TableValue][] = [
     ],
     [
         {
+            id: 'label',
             type: 'MULTIPLE_GROUPED_VALUES',
             label: 'label',
             value: [[{ display: 'display' }, { display: 'display2' }]],
@@ -33,28 +35,34 @@ const cases: [UiElement, TableValue][] = [
         },
     ],
     [
-        { type: 'REFERENCE_VALUE', label: 'label', display: 'display', reference: 'reference' },
+        {
+            id: 'label',
+            type: 'REFERENCE_VALUE',
+            label: 'label',
+            display: 'display',
+            reference: 'reference',
+        },
         {
             label: 'label',
             value: 'display',
         },
     ],
     [
-        { type: 'DOWNLOAD_LINK', label: 'label', url: 'url' },
+        { id: 'label', type: 'DOWNLOAD_LINK', label: 'label', url: 'url' },
         {
             label: 'label',
             value: 'url',
         },
     ],
     [
-        { type: 'DOWNLOAD_BINARY', label: 'label' },
+        { id: 'label', type: 'DOWNLOAD_BINARY', label: 'label' },
         {
             label: 'label',
             value: '-',
         },
     ],
     [
-        { type: 'REFERENCE_LINK', label: 'label', reference: 'reference' },
+        { id: 'label', type: 'REFERENCE_LINK', label: 'label', reference: 'reference' },
         {
             label: 'label',
             value: 'reference',

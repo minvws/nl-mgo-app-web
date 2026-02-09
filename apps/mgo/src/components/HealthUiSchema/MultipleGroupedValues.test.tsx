@@ -8,6 +8,7 @@ import { MultipleGroupedValues } from './MultipleGroupedValues';
 
 test('shows all values', () => {
     const value = {
+        id: faker.string.uuid(),
         label: uniqueId(faker.lorem.word()),
         value: [[{ display: faker.lorem.word() }, { display: faker.lorem.word() }]],
         type: 'MULTIPLE_GROUPED_VALUES',

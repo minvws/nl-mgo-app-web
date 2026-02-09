@@ -21,6 +21,7 @@ afterEach(() => {
 
 test('renders with regular href', async () => {
     const value: ReferenceLinkData = {
+        id: faker.string.uuid(),
         type: 'REFERENCE_LINK',
         label: faker.lorem.sentence(),
         reference: `${faker.lorem.sentence()}/${faker.number.int()}`,

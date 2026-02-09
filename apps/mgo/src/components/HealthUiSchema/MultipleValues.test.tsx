@@ -8,6 +8,7 @@ import { MultipleValues } from './MultipleValues';
 
 test('shows multiple values', () => {
     const value = {
+        id: faker.string.uuid(),
         label: uniqueId(faker.lorem.word()),
         value: [{ display: faker.lorem.word() }, { display: faker.lorem.word() }],
         type: 'MULTIPLE_VALUES',
@@ -22,6 +23,7 @@ test('shows multiple values', () => {
 
 test('renders nothing when values is undefined', () => {
     const value = {
+        id: faker.string.uuid(),
         label: uniqueId(faker.lorem.word()),
         value: undefined,
         type: 'MULTIPLE_VALUES',
