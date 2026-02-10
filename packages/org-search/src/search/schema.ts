@@ -11,13 +11,13 @@ export const organizationOramaSchema = {
     searchBlob: 'string',
 } as const satisfies AnySchema;
 
-export interface DataServiceDto {
+export interface DataServiceEndpointsDto {
     auth_endpoint: string;
     token_endpoint: string;
     resource_endpoint: string;
 }
 
-export interface DataService {
+export interface DataServiceEndpoints {
     authEndpoint: string;
     tokenEndpoint: string;
     resourceEndpoint: string;
@@ -33,7 +33,7 @@ export interface OrganizationDto {
     geo_lat?: number | null;
     geo_lng?: number | null;
     search_blob: string | null;
-    data_services?: Record<string, DataServiceDto> | null;
+    data_services?: Record<string, DataServiceEndpointsDto> | null;
 }
 
 export type Organization = {
@@ -46,7 +46,7 @@ export type Organization = {
     geoLat?: number;
     geoLng?: number;
     searchBlob?: string;
-    dataServices?: Record<string, DataService>;
+    dataServices?: Record<string, DataServiceEndpoints>;
     normalizedDisplayName?: string;
 };
 

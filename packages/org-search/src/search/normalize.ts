@@ -1,12 +1,12 @@
 import { Nullable } from '@minvws/mgo-utils';
-import { DataService, Organization, OrganizationDto } from './schema.js';
+import { DataServiceEndpoints, Organization, OrganizationDto } from './schema.js';
 
 export const removePunctuation = (text: Nullable<string>) => {
     return text?.replace(/[.]/g, '').replace(/\s+/g, ' ').trim();
 };
 
 export function normalizeOrganizationItemDto(item: OrganizationDto): Organization {
-    let dataServices: Record<string, DataService> | undefined = undefined;
+    let dataServices: Record<string, DataServiceEndpoints> | undefined = undefined;
 
     if (item.data_services) {
         dataServices = {};
