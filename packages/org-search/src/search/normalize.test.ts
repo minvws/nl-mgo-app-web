@@ -20,7 +20,26 @@ test('can handle objects with undefined values', async () => {
     organization.address_line = undefined;
     organization.geo_lat = undefined;
     organization.geo_lng = undefined;
+    organization.data_services = undefined;
     (organization as any).search_blob = undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
     const item = await normalizeOrganizationItemDto(organization);
     expect(item.id).toBe(organization.id);
+});
+
+test('can handle data services', async () => {
+    const organization = faker.custom.organizationDto();
+    organization.data_services = {
+        '1': {
+            auth_endpoint: faker.internet.url(),
+            token_endpoint: faker.internet.url(),
+            resource_endpoint: faker.internet.url(),
+        },
+    };
+    const item = await normalizeOrganizationItemDto(organization);
+    const dataServiceDto = organization.data_services['1'];
+    const dataService = item.dataServices!['1'];
+    expect(dataService).toBeDefined();
+    expect(dataService.authEndpoint).toBe(dataServiceDto.auth_endpoint);
+    expect(dataService.tokenEndpoint).toBe(dataServiceDto.token_endpoint);
+    expect(dataService.resourceEndpoint).toBe(dataServiceDto.resource_endpoint);
 });
