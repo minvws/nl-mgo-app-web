@@ -16,7 +16,7 @@ export function PublicRoute() {
 
         case '/inloggen':
             if (auth.isAuthenticated) {
-                return <Navigate to="/zorgaanbieder-toevoegen" replace />;
+                return <Navigate to="/zorgaanbieders/toevoegen" replace />;
             }
             break;
         default:

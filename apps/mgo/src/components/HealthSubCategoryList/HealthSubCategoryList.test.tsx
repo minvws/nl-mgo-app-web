@@ -16,9 +16,8 @@ vi.mock('$/hooks', () => ({
 }));
 
 test('shows HealthCategoryDetailList with organization', () => {
-    const { addOrganization } = useStore.getState();
-    const organization = addOrganization(faker.custom.healthcareOrganization());
-
+    const organization = faker.custom.healthcareOrganization();
+    useStore.setState({ organizations: [organization] });
     const label = faker.lorem.words();
     hoisted.getSummary.mockReturnValue({ label, children: [] });
 

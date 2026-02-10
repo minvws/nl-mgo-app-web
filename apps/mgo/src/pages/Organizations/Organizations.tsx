@@ -18,12 +18,12 @@ export function Organizations() {
                 <>
                     <Stack asChild className="-mx-4 my-6 gap-1 sm:mx-0 sm:gap-2 md:my-12">
                         <ul>
-                            {organizations.map(({ slug, name, category }) => (
+                            {organizations.map(({ slug, name, careType }) => (
                                 <li key={slug}>
                                     <OrganizationButton
                                         asChild
                                         title={name ?? formatMessage('common.unknown')}
-                                        subTitle={category}
+                                        subTitle={careType}
                                     >
                                         <RouterLink to={`/zorgaanbieders/${slug}`} />
                                     </OrganizationButton>
@@ -33,7 +33,7 @@ export function Organizations() {
                     </Stack>
 
                     <Button asChild className="self-start">
-                        <RouterLink to="/zorgaanbieder-toevoegen">
+                        <RouterLink to="/zorgaanbieders/toevoegen">
                             <FormattedMessage
                                 id="common.add_organizations"
                                 description="Voeg zorgaanbieders toe"

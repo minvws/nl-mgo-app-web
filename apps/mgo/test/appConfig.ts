@@ -1,10 +1,6 @@
-/**
- * Note:
- *   These values will be overwritten when serving the application from the docker container.
- *   See the root README.md "Quick run" for more information.
- */
-window.config = {
-    ignore_missing_translations: false,
+import { type AppConfig } from '$/config';
+
+export const appConfig: AppConfig = {
     load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
     dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
     pft_url: 'https://app-api.test.mgo.irealisatie.nl',

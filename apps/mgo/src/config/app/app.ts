@@ -3,9 +3,10 @@ export interface AppConfig {
     load_url: string;
     dva_url: string;
     pft_url: string;
+    organizations_url: string;
 }
 
-const readConfig = () => {
+const readConfig = (): Readonly<AppConfig> => {
     const config = (window as any).config as AppConfig | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
 
     if (!config) {
@@ -17,6 +18,7 @@ const readConfig = () => {
         load_url: getConfigSetting(config, 'load_url'),
         dva_url: getConfigSetting(config, 'dva_url'),
         pft_url: getConfigSetting(config, 'pft_url'),
+        organizations_url: getConfigSetting(config, 'organizations_url'),
     });
 };
 

@@ -30,8 +30,8 @@ test('overview should show empty state', async () => {
 
 test('should show the healthcare organizations', () => {
     const organizationName = faker.company.name();
-    const { addOrganization } = useStore.getState();
-    addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
+    const organization = faker.custom.healthcareOrganization({ name: organizationName });
+    useStore.setState({ organizations: [organization] });
 
     setupWithAppProviders(<Organizations />);
 
@@ -41,10 +41,13 @@ test('should show the healthcare organizations', () => {
 });
 
 test('should show the healthcare organization with an unknown label if the name is not defined', () => {
-    const { addOrganization } = useStore.getState();
-    addOrganization({
-        ...faker.custom.healthcareOrganization(),
-        name: undefined,
+    useStore.setState({
+        organizations: [
+            {
+                ...faker.custom.healthcareOrganization(),
+                name: undefined,
+            },
+        ],
     });
 
     setupWithAppProviders(<Organizations />);

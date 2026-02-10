@@ -1,17 +1,16 @@
-import { type HealthcareOrganizationSearchResult } from '$/services/load/load';
+import { Organization as OrganizationSearchResult } from '@minvws/mgo-org-search';
 import { createUniqueSlug } from '@minvws/mgo-utils';
 import { StateCreator } from 'zustand';
 import { ResourcesSlice } from '../resources/resources';
+import { NormalizedHealthcareOrganization, normalizeOrganization } from './normalize';
 
-export type HealthcareOrganization = HealthcareOrganizationSearchResult & {
+export interface HealthcareOrganization extends NormalizedHealthcareOrganization {
     slug: string;
-};
+}
 
 export interface OrganizationsSlice {
     organizations: HealthcareOrganization[];
-    addOrganization: (
-        healthcareOrganizationDetails: HealthcareOrganizationSearchResult
-    ) => HealthcareOrganization;
+    addOrganization: (organizationSearchResult: OrganizationSearchResult) => HealthcareOrganization;
     hasOrganizations: () => boolean;
     hasOrganizationById: (id: string) => boolean;
     getOrganizationById: (id?: string) => HealthcareOrganization | undefined;
@@ -31,10 +30,11 @@ export const createOrganizationsSlice: StateCreator<
 > = (set, get) => ({
     organizations: [],
 
-    addOrganization: (healthcareOrganizationDetails) => {
+    addOrganization: (organizationSearchResult) => {
         const slugs = get().organizations.map((x) => x.slug);
+
         const healthcareOrganization = {
-            ...healthcareOrganizationDetails,
+            ...normalizeOrganization(organizationSearchResult),
             // NOTE: Do not use any organization information as a slug as it could potentially be sensitive information
             slug: createUniqueSlug('aanbieder', slugs),
         };

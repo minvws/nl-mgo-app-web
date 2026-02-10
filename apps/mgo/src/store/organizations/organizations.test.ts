@@ -6,17 +6,17 @@ test('addOrganization adds an organization', async () => {
     let state = useStore.getState();
     expect(state.organizations).toEqual([]);
 
-    const organization = faker.custom.healthcareOrganization();
-    const { slug } = state.addOrganization(organization);
-    organization.slug = slug;
+    const organizationSearchResult = faker.custom.organizationSearchResult();
+    state.addOrganization(organizationSearchResult);
 
     state = useStore.getState();
-    expect(state.organizations).toEqual([organization]);
+    expect(state.organizations.length).toBe(1);
+    expect(state.organizations[0].id).toBe(organizationSearchResult.id);
 });
 
 test('getOrganizationBySlug returns organization', async () => {
     const { addOrganization, getOrganizationBySlug } = useStore.getState();
-    const organization = addOrganization(faker.custom.healthcareOrganization());
+    const organization = addOrganization(faker.custom.organizationSearchResult());
     expect(getOrganizationBySlug(organization.slug)).toBe(organization);
 });
 
@@ -27,7 +27,7 @@ test('getOrganizationBySlug returns undefined if there is no match', async () =>
 
 test('getOrganizationById returns organization', async () => {
     const { addOrganization, getOrganizationById } = useStore.getState();
-    const organization = addOrganization(faker.custom.healthcareOrganization());
+    const organization = addOrganization(faker.custom.organizationSearchResult());
     expect(getOrganizationById(organization.id)).toBe(organization);
 });
 
@@ -59,6 +59,25 @@ test('removeOrganizationBySlug removes organization and its resources', async ()
     expect(state.resources).not.toContain(organizationResource);
 });
 
+test(`removeOrganizationBySlug removes organization but doesn't change the resources if there is nothing to remove`, async () => {
+    const organization = faker.custom.healthcareOrganization();
+    const otherResource = faker.custom.resource();
+    useStore.setState({
+        organizations: [organization],
+        resources: [otherResource],
+    });
+
+    let state = useStore.getState();
+    expect(state.organizations.length).toBe(1);
+    expect(state.resources.length).toBe(1);
+
+    state.removeOrganizationBySlug(organization.slug);
+
+    state = useStore.getState();
+    expect(state.organizations.length).toBe(0);
+    expect(state.resources.length).toBe(1);
+});
+
 test('removeOrganizationBySlug does not do anything if there is no organization', async () => {
     useStore.setState({
         organizations: [faker.custom.healthcareOrganization()],
@@ -77,7 +96,7 @@ test('hasOrganizations returns true when there are registered organizations', as
 
     expect(state.hasOrganizations()).toBe(false);
 
-    state.addOrganization(faker.custom.healthcareOrganization());
+    state.addOrganization(faker.custom.organizationSearchResult());
 
     state = useStore.getState();
     expect(state.hasOrganizations()).toBe(true);
@@ -86,7 +105,7 @@ test('hasOrganizations returns true when there are registered organizations', as
 test('hasOrganizationById returns true when there are registered organizations with the same id', async () => {
     let state = useStore.getState();
 
-    const organization = faker.custom.healthcareOrganization();
+    const organization = faker.custom.organizationSearchResult();
 
     expect(state.hasOrganizationById(organization.id)).toBe(false);
 
@@ -121,7 +140,7 @@ test('addOrganization creates unique slugs when a new organization is added', as
     useStore.setState({ organizations: [existing], resources: [] });
 
     const { addOrganization } = useStore.getState();
-    const created = addOrganization(faker.custom.healthcareOrganization());
+    const created = addOrganization(faker.custom.organizationSearchResult());
 
     const state = useStore.getState();
     expect(state.organizations.length).toBe(2);

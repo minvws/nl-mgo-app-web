@@ -1,13 +1,15 @@
 /* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
+import { appConfig } from '$/config';
 import {
     createSearchWorker,
     OrganizationDto,
     type SearchResults,
     type SearchWorker,
 } from '@minvws/mgo-org-search';
-import { useMutation } from '@tanstack/react-query';
-import { debounce } from 'lodash';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import ky from 'ky';
+import { debounce, uniqBy } from 'lodash';
 import { useCallback, useEffect, useRef } from 'react';
 
 type SearchFunction = (query: string) => Promise<SearchResults>;
@@ -29,17 +31,25 @@ export function useSearch(): UseSearchResult {
         };
     }, []);
 
+    const { data: organizations, isSuccess: organizationsLoaded } = useQuery<OrganizationDto[]>({
+        queryKey: ['organizations-data'],
+        queryFn: () => ky.get(appConfig.organizations_url).json(),
+    });
+
     const { mutateAsync: createIndex, isSuccess: indexReady } = useMutation({
-        mutationFn: async () => {
+        mutationFn: async (organizations: OrganizationDto[]) => {
             if (!searchWorker.current) {
                 console.error('No search worker found');
                 return;
             }
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore - this is a test file, also including the json file in the tsconfig breaks typescript due to the large size of the file
-            const organizationsModule = await import(`./organizations.json`);
-            const organizations = organizationsModule.default as OrganizationDto[];
-            await searchWorker.current.createIndex(organizations);
+            /**
+             * Currently this list is not final and contains duplicates.
+             * This will be fixed in the future.
+             * For now we need to remove duplicates by id.
+             * This is a temporary solution to ensure the search index is created correctly.
+             */
+            const uniqueOrganizations = uniqBy(organizations, 'id');
+            await searchWorker.current.createIndex(uniqueOrganizations);
         },
     });
 
@@ -61,8 +71,10 @@ export function useSearch(): UseSearchResult {
     const debouncedRunSearch = useCallback(debounce(runSearch, 100), [runSearch]);
 
     useEffect(() => {
-        createIndex();
-    }, [createIndex]);
+        if (organizationsLoaded && organizations) {
+            createIndex(organizations);
+        }
+    }, [organizationsLoaded, organizations, createIndex]);
 
     useEffect(() => {
         return () => {
