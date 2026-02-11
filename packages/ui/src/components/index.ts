@@ -23,10 +23,6 @@ export { ErrorNotice, type ErrorNoticeProps } from './ErrorNotice/ErrorNotice';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { Heading, type HeadingProps } from './Heading/Heading';
 export {
-    HealthcareOrganizationCard,
-    type HealthcareOrganizationCardProps,
-} from './HealthcareOrganizationCard/HealthcareOrganizationCard';
-export {
     HealthCategoryButton,
     type HealthCategoryButtonProps,
     type HealthCategoryIconName,
