@@ -6,7 +6,14 @@ import { SearchForm } from './SearchForm';
 
 test('pressing Escape clears the input (calls onChange with empty string)', async () => {
     const handleChange = vi.fn();
-    render(<SearchForm clearAriaLabel="Clear" value="initial value" onChange={handleChange} />);
+    render(
+        <SearchForm
+            ariaLabel="Search something"
+            clearAriaLabel="Clear"
+            value="initial value"
+            onChange={handleChange}
+        />
+    );
 
     const input = screen.getByRole('textbox');
     input.focus();
@@ -18,7 +25,14 @@ test('pressing Escape clears the input (calls onChange with empty string)', asyn
 
 test('typing in the input calls onChange with the new value', async () => {
     const handleChange = vi.fn();
-    render(<SearchForm clearAriaLabel="Clear" value="" onChange={handleChange} />);
+    render(
+        <SearchForm
+            ariaLabel="Search something"
+            clearAriaLabel="Clear"
+            value=""
+            onChange={handleChange}
+        />
+    );
 
     const input = screen.getByRole('textbox');
     const value = faker.string.alphanumeric(1);
@@ -32,6 +46,7 @@ test('submitting the form calls onSubmit with current value and prevents default
     const query = faker.lorem.word();
     render(
         <SearchForm
+            ariaLabel="Search something"
             clearAriaLabel="Clear"
             value={query}
             onChange={vi.fn()}
@@ -49,6 +64,14 @@ test('submitting the form calls onSubmit with current value and prevents default
 });
 
 test('renders a with a spinner when loading state is true', async () => {
-    render(<SearchForm clearAriaLabel="Clear" value="" onChange={vi.fn()} loading />);
+    render(
+        <SearchForm
+            ariaLabel="Search something"
+            clearAriaLabel="Clear"
+            value=""
+            onChange={vi.fn()}
+            loading
+        />
+    );
     expect(screen.getByTestId('spinner')).toBeVisible();
 });

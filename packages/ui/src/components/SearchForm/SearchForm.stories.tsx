@@ -10,6 +10,8 @@ type StoryMeta = Meta<typeof SearchForm>;
 export default {
     component: SearchForm,
     args: {
+        ariaLabel: 'Zoeken',
+        clearAriaLabel: 'Wis zoekopdracht',
         placeholder: 'Zoeken',
     },
     argTypes: {
