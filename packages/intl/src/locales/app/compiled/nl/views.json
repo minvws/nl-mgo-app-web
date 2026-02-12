@@ -59,6 +59,12 @@
       "value": "Zorgaanbieder niet aangesloten"
     }
   ],
+  "add_organization.search_aria_label": [
+    {
+      "type": 0,
+      "value": "Zoek een zorgaanbieder"
+    }
+  ],
   "add_organization.search_clear": [
     {
       "type": 0,
