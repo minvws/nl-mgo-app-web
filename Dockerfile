@@ -41,6 +41,7 @@ ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
 ARG DVA_URL='https://dvp-proxy.test.mgo.irealisatie.nl'
 ARG PFT_URL='https://app-api.test.mgo.irealisatie.nl'
+ARG ORGANIZATIONS_URL='https://lo-ad.test.mgo.irealisatie.nl/normalized-providers.json'
 
 ENV LOAD_URL=$LOAD_URL
 ENV DVA_URL=$DVA_URL
@@ -57,7 +58,8 @@ window.config = {\n""\
   ignore_missing_translations: '$IGNORE_MISSING_TRANSLATIONS',\n""\
   load_url: '$LOAD_URL',\n""\
   dva_url: '$DVA_URL',\n""\
-  pft_url: '$PFT_URL'\n""\
+  pft_url: '$PFT_URL',\n""\
+  organizations_url: '$ORGANIZATIONS_URL'\n""\
 };" >/usr/share/nginx/html/config.js
 
 EXPOSE $NGINX_PORT

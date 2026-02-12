@@ -16,7 +16,8 @@
         "playwright.config.ci.ts",
         "playwright.config.test.ts",
         "src/**/*.spec.ts",
-        "src/**/*.d.ts"
+        "src/**/*.d.ts",
+        "src/**/*.json"
     ],
     "exclude": ["out-tsc", "test-output"],
     "references": [
