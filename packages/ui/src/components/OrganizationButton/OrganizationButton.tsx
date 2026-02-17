@@ -4,6 +4,7 @@ import {
     useComposition,
     type CompositionPropsWithoutChildren,
 } from '../../hooks/useComposition/useComposition';
+import { useUniqueId } from '../../hooks/useUniqueId/useUniqueId';
 import { focusStyle } from '../../styles';
 import { cn } from '../../utils';
 import { Card } from '../Card/Card';
@@ -39,6 +40,7 @@ export const OrganizationButton = ({
     ...rest
 }: OrganizationButtonProps) => {
     const { Comp } = useComposition({ asChild, tag: 'button' });
+    const [titleId, descriptionId] = useUniqueId('org-title', 'org-description');
 
     return (
         <Card
@@ -53,6 +55,8 @@ export const OrganizationButton = ({
             )}
             aria-disabled={disabled}
             onClick={disabled ? undefined : onClick}
+            aria-labelledby={titleId}
+            aria-describedby={subTitle && descriptionId}
             {...rest}
         >
             <Comp>
@@ -62,11 +66,16 @@ export const OrganizationButton = ({
                     <Stack className="grow gap-0">
                         <Text
                             size="lg"
+                            id={titleId}
                             className="group-aria-disabled:text-t-label-secondary font-bold"
                         >
                             {title}
                         </Text>
-                        {subTitle && <Text className="text-t-label-secondary">{subTitle}</Text>}
+                        {subTitle && (
+                            <Text className="text-t-label-secondary" id={descriptionId}>
+                                {subTitle}
+                            </Text>
+                        )}
                     </Stack>
 
                     {!disabled && (
@@ -86,13 +95,13 @@ export const OrganizationButton = ({
                     )}
 
                     {infoMessage && (
-                        <Text className="text-t-state-informative flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
+                        <Text className="text-t-state-informative ml-2 flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
                             <Icon icon="link_off" className="text-xl" />
                             <span>{infoMessage}</span>
                         </Text>
                     )}
                     {successMessage && (
-                        <Text className="text-t-state-confirmation flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
+                        <Text className="text-t-state-confirmation ml-2 flex flex-row items-center gap-2 font-bold md:flex-row-reverse">
                             <Icon icon="check-fill" className="text-xl" />
                             <span>{successMessage}</span>
                         </Text>

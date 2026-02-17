@@ -2,12 +2,14 @@
 
 import { flushCallStack } from '@minvws/mgo-utils';
 import { uniqBy } from 'lodash';
+import util from 'node:util';
 import { afterEach, beforeEach } from 'vitest';
 
 type ConsoleLogMethod = 'log' | 'debug' | 'info' | 'warn' | 'error';
 type ConsoleLogMessage = {
     method: ConsoleLogMethod;
     message: string;
+    args: unknown[];
 };
 type ThrowLogConfig = {
     logMethods: ConsoleLogMethod[];
@@ -27,17 +29,19 @@ afterEach(async () => {
 
     if (logMessages.length) {
         const errorMessages = uniqBy(logMessages, ({ message }) => message).map(
-            ({ message, method }) => `${method}:  ${message}`
+            ({ message, method, args }) => {
+                return `[${method}] ${util.format(message, ...args)}`;
+            }
         );
         throw new Error(
-            `The following messages were logged to the console during the test:\n\n` +
+            `${logMessages.length} console messages were logged to the console during the test. ${errorMessages.length} unique messages:\n\n` +
                 errorMessages.join('\n\n')
         );
     }
 });
 
 function patchConsoleMethod(method: ConsoleLogMethod) {
-    window.console[method] = (message?: unknown) => {
+    global.console[method] = (message?: unknown, ...args: unknown[]) => {
         const logMessage =
             typeof message === 'string'
                 ? message
@@ -55,7 +59,7 @@ function patchConsoleMethod(method: ConsoleLogMethod) {
             return;
         }
 
-        logMessages.push({ method, message: logMessage });
+        logMessages.push({ method, message: logMessage, args });
     };
 }
 

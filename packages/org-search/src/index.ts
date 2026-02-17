@@ -1,5 +1,7 @@
 export {
     createSearchIndex,
+    type DataServiceEndpoints,
+    type DataServiceEndpointsDto,
     type Organization,
     type OrganizationDto,
     type SearchIndex,

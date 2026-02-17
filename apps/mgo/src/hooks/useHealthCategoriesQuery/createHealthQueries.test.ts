@@ -1,5 +1,6 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 
+import { DataService } from '$/store/organizations/normalize';
 import { faker } from '$test/faker';
 import {
     HealthCategoryConfig,
@@ -64,7 +65,7 @@ test('creates relevant queries for each data service of an organization based on
                     id: dataService3.id,
                     resourceEndpoint: faker.internet.url(),
                 },
-            ],
+            ] as DataService[],
         }),
     ];
 

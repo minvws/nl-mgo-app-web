@@ -28,8 +28,9 @@ test('overview should show empty state', () => {
 
 test('should show the health categories if there are organizations', () => {
     const organizationName = faker.company.name();
-    const { addOrganization } = useStore.getState();
-    addOrganization(faker.custom.healthcareOrganization({ name: organizationName }));
+    useStore.setState({
+        organizations: [faker.custom.healthcareOrganization({ name: organizationName })],
+    });
 
     setupWithAppProviders(<Overview />);
 

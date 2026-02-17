@@ -3,11 +3,13 @@ import { fhirFaker } from '@minvws/mgo-fhir/test/shared';
 import { authState } from './authState';
 import { healthcareOrganization } from './healthcareOrganization';
 import { mgoResource } from './mgoResource';
+import { organizationSearchResult } from './organizationSearchResult';
 import { resource } from './resource';
 import { userInfo } from './userInfo';
 
 const custom = {
     healthcareOrganization,
+    organizationSearchResult,
     userInfo,
     authState,
     resource,

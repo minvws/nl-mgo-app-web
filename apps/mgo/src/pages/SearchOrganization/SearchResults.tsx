@@ -1,9 +1,15 @@
 /* v8 ignore start - this is still a work in progress, will be added to coverage later */
 
+import { dataServiceConfigs } from '$/config';
 import { FormattedMessage, useIntl } from '$/intl';
+import { useNavigate } from '$/routing';
+import { useStore } from '$/store';
 import { SearchResults as OrgSearchResults, Organization } from '@minvws/mgo-org-search';
 import { Button, ConfirmDialog, OrganizationButton, Stack, Text } from '@minvws/mgo-ui';
 import { useState, type HTMLAttributes } from 'react';
+import { hasIntersection } from '../../../../../packages/utils/src/hasIntersection/hasIntersection';
+
+const supportedDataServiceIds = dataServiceConfigs.map((x) => x.id);
 
 interface SearchResultsProps extends HTMLAttributes<HTMLElement> {
     readonly searchResults: OrgSearchResults;
@@ -14,31 +20,27 @@ export const RESULTS_PER_PAGE = 15;
 export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) => {
     const [showResultsLength, setShowResultsLength] = useState(RESULTS_PER_PAGE);
     const { formatMessage } = useIntl();
-    // const navigate = useNavigate();
-    // const hasOrganizationById = useStore.use.hasOrganizationById();
-    // const addOrganization = useStore.use.addOrganization();
+    const navigate = useNavigate();
+    const hasOrganizationById = useStore.use.hasOrganizationById();
+    const addOrganization = useStore.use.addOrganization();
     const [selectedOrganization, setSelectedOrganization] = useState<Organization | null>(null);
 
     const shownResults = searchResults.hits.slice(0, showResultsLength).map((searchResult) => {
-        const { displayName, addressLine, city } = searchResult.document;
+        const { displayName, addressLine, city, dataServices } = searchResult.document;
         return {
             ...searchResult.document,
             name: displayName,
             address: `${addressLine} ${city}`,
-            isAdded: false,
-            isNotSupported: false,
-            // isAdded: hasOrganizationById(searchResult.id),
-            // isNotSupported: !searchResult.dataServices.length,
+            isAdded: hasOrganizationById(searchResult.id),
+            isSupported: hasIntersection(supportedDataServiceIds, Object.keys(dataServices || {})),
         };
     });
 
     const addSelectedOrganization = () => {
-        /* v8 ignore start - this can't happen, but we need to satisfy the type checker */
+        /* v8 ignore next line - this can't happen, but we need to satisfy the type checker */
         if (!selectedOrganization) return;
-        /* v8 ignore end */
-        console.log(`add organization:`, selectedOrganization);
-        // addOrganization(selectedOrganization);
-        // navigate('/zorgaanbieders');
+        addOrganization(selectedOrganization);
+        navigate('/zorgaanbieders');
     };
 
     return (
@@ -55,7 +57,7 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                 {shownResults.map((healthcareOrganization) => {
                     const {
                         isAdded,
-                        isNotSupported,
+                        isSupported,
                         id,
                         name = formatMessage('common.unknown'),
                         address,
@@ -74,16 +76,13 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                         );
                     }
 
-                    if (isNotSupported) {
+                    if (isSupported) {
                         return (
                             <li key={id}>
                                 <OrganizationButton
-                                    disabled
+                                    onClick={() => setSelectedOrganization(healthcareOrganization)}
                                     title={name}
                                     subTitle={address}
-                                    infoMessage={formatMessage(
-                                        'add_organization.not_participating'
-                                    )}
                                 />
                             </li>
                         );
@@ -92,16 +91,17 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                     return (
                         <li key={id}>
                             <OrganizationButton
-                                onClick={() => setSelectedOrganization(healthcareOrganization)}
+                                disabled
                                 title={name}
                                 subTitle={address}
+                                infoMessage={formatMessage('add_organization.not_participating')}
                             />
                         </li>
                     );
                 })}
             </Stack>
 
-            {searchResults.count > shownResults.length && (
+            {searchResults.hits.length > shownResults.length && (
                 <div className="mt-8 text-center">
                     <Button
                         variant="outline"

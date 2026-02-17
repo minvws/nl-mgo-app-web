@@ -4,6 +4,8 @@ import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
 import { useConfig } from '@minvws/mgo-ui';
+import { MockWorker } from './MockWorker';
+import { appConfig } from './appConfig';
 
 configure({
     // Remove the huge error output from `testing-library`
@@ -16,24 +18,16 @@ configure({
     },
 });
 
-vi.mock('$/config/app/app', () => {
-    return {
-        appConfig: {
-            load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
-            dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
-            pft_url: 'https://app-api.test.mgo.irealisatie.nl',
-        },
-    };
-});
-
 vi.mock('zustand');
+vi.mock('$/config/app/app', () => ({ appConfig }));
+
+window.scrollTo = vi.fn;
+window.Worker = MockWorker;
 
 throwOnConsoleLog({
     logMethods: ['warn', 'error'],
     ignoreMessages: [/React Router Future Flag Warning:/],
 });
-
-window.scrollTo = vi.fn;
 
 beforeAll(() => {
     useConfig().animations = false;

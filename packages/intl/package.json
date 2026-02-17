@@ -8,7 +8,8 @@
     ],
     "scripts": {
         "messages:update": "./bin/lokalise.sh",
-        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./locales/static/raw/nl ./locales/static/compiled/nl"
+        "compile:app": "formatjs compile-folder --ast --format ./bin/formatter.js ./src/locales/app/raw/nl ./src/locales/app/compiled/nl",
+        "compile:static": "formatjs compile-folder --ast --format ./bin/formatter.js ./src/locales/static/raw/nl ./src/locales/static/compiled/nl"
     },
     "dependencies": {
         "@formatjs/cli": "^6.6.1",

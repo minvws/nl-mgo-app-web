@@ -1,19 +1,19 @@
-import { expect, test } from '../setup';
-import { setOnboardingSeen } from '../utils';
 import { dataServicesConfig } from '@minvws/mgo-config';
+import { expect, test } from '../setup';
+import { setOnboardingSeen, useMockOrganizations } from '../utils';
 
 test.use({ checkConsoleMessages: undefined }); // disable console logging assertion
 test('Retry a failed query on overview', async ({
     page,
     pageLogin,
     pageOverview,
-    pageAddOrganization,
-    pageAddOrganizationList,
+    pageSearchOrganization,
 }) => {
     let blockCcdHealthRequest = true;
 
-    await test.step('Set onboarding seen flag', async () => {
+    await test.step('Set onboarding seen flag and use mock organizations', async () => {
         await setOnboardingSeen(page);
+        await useMockOrganizations(page);
     });
 
     await test.step('Login with Digid', async () => {
@@ -22,14 +22,10 @@ test('Retry a failed query on overview', async ({
     });
 
     await test.step('Add organization "Kwalificatie Medmij: BGZ"', async () => {
-        await pageAddOrganization.goto();
-        await pageAddOrganization.search('test', 'test');
-        await pageAddOrganization.addOrganization('Kwalificatie Medmij: BGZ');
-    });
+        await pageSearchOrganization.goto();
+        await pageSearchOrganization.search('testtest');
 
-    await test.step('Verify organization added and return to overview but with failed request', async () => {
         const firstEndpoint = dataServicesConfig.commonClinicalDataset.endpoints[0];
-
         await page.route(`**${firstEndpoint.path}`, (route) => {
             if (blockCcdHealthRequest) {
                 return route.abort();
@@ -37,8 +33,8 @@ test('Retry a failed query on overview', async ({
             return route.continue();
         });
 
-        await expect(pageAddOrganizationList.heading).toBeVisible();
-        await pageAddOrganizationList.buttonToOverview.click();
+        await pageSearchOrganization.addOrganization('Kwalificatie Medmij: BGZ');
+        await pageOverview.goto();
     });
 
     await test.step('Verify overview page and retry failed query', async () => {

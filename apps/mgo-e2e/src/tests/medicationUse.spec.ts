@@ -1,19 +1,20 @@
 import { fhirMessage } from '@minvws/mgo-intl/test/shared';
 import { expect, test } from '../setup';
-import { setOnboardingSeen } from '../utils';
+import { setOnboardingSeen, useMockOrganizations } from '../utils';
 
 test('User can see their medication use details', async ({
     page,
     pageLogin,
     pageOverview,
-    pageAddOrganization,
-    pageAddOrganizationList,
+    pageSearchOrganization,
     pageHealthCategory,
     pageHealthDataSummary,
     pageHealthDataDetail,
+    pageOrganizations,
 }) => {
-    await test.step('Set onboarding seen flag', async () => {
+    await test.step('Set onboarding seen flag and use mock organizations', async () => {
         await setOnboardingSeen(page);
+        await useMockOrganizations(page);
     });
 
     await test.step('Login with Digid', async () => {
@@ -22,14 +23,17 @@ test('User can see their medication use details', async ({
     });
 
     await test.step('Add organization "Kwalificatie Medmij: BGZ"', async () => {
-        await pageAddOrganization.goto();
-        await pageAddOrganization.search('test', 'test');
-        await pageAddOrganization.addOrganization('Kwalificatie Medmij: BGZ');
+        await pageSearchOrganization.goto();
+        await pageSearchOrganization.search('testtest');
+        await pageSearchOrganization.addOrganization('Kwalificatie Medmij: BGZ');
     });
 
     await test.step('Verify organization added and return to overview', async () => {
-        await expect(pageAddOrganizationList.heading).toBeVisible();
-        await pageAddOrganizationList.buttonToOverview.click();
+        await expect(pageOrganizations.heading).toBeVisible();
+        await expect(
+            pageOrganizations.buttonOrganization('Kwalificatie Medmij: BGZ')
+        ).toBeVisible();
+        await pageOverview.goto();
     });
 
     await test.step('Verify overview page and open Medication health category', async () => {

@@ -2,9 +2,9 @@
 
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
-import { FormattedMessage, useIntl } from '$/intl';
+import { useIntl } from '$/intl';
 import { Heading, SearchForm } from '@minvws/mgo-ui';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { DefaultContent } from './DefaultContent';
 import { NoResults } from './NoResults';
@@ -16,6 +16,7 @@ export function SearchOrganization() {
     const heading = formatMessage('add_organization.heading');
     const [searchQuery, setSearchQuery] = useState('');
     const { search, isInitializing, isSearching, searchResults } = useSearch();
+    const prevIsInitializing = useRef(isInitializing);
 
     const handleQueryChange = (query: string) => {
         setSearchQuery(query);
@@ -25,6 +26,16 @@ export function SearchOrganization() {
         }
     };
 
+    useEffect(() => {
+        const justFinishedInitializing = prevIsInitializing.current && !isInitializing;
+
+        if (justFinishedInitializing && searchQuery) {
+            search(searchQuery);
+        }
+
+        prevIsInitializing.current = isInitializing;
+    }, [isInitializing, searchQuery, search]);
+
     return (
         <>
             <Helmet title={heading} />
@@ -33,13 +44,11 @@ export function SearchOrganization() {
                 <Breadcrumbs className="mb-4 md:mb-6" />
 
                 <Heading as="h1" focusOnRender size="xl" className="mb-4 md:mb-6">
-                    <FormattedMessage
-                        id="add_organization.heading"
-                        description="Voeg een zorgaanbieder toe"
-                    />
+                    {heading}
                 </Heading>
 
                 <SearchForm
+                    ariaLabel={formatMessage('add_organization.search_aria_label')}
                     clearAriaLabel={formatMessage('add_organization.search_clear')}
                     placeholder={formatMessage('add_organization.search_placeholder')}
                     value={searchQuery}

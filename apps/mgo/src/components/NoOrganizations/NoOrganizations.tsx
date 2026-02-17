@@ -21,7 +21,7 @@ export const NoOrganizations = () => (
             />
         </Text>
         <Button asChild className="mb-6 md:mb-12">
-            <RouterLink to="/zorgaanbieder-toevoegen">
+            <RouterLink to="/zorgaanbieders/toevoegen">
                 <FormattedMessage
                     id="common.add_organizations"
                     description="Voeg zorgaanbieders toe"

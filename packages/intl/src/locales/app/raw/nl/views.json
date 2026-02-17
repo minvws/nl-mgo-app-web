@@ -9,6 +9,7 @@
     "add_organization.load_more": "Meer zorgaanbieders laden",
     "add_organization.name": "Naam",
     "add_organization.not_participating": "Zorgaanbieder niet aangesloten",
+    "add_organization.search_aria_label": "Zoek een zorgaanbieder",
     "add_organization.search_clear": "Wis selectie",
     "add_organization.search_placeholder": "Bijvoorbeeld Amsterdam UMC",
     "add_organization.voice_over_to_overview": "naar overzicht",

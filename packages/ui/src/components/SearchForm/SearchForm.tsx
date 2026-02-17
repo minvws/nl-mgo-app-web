@@ -5,6 +5,7 @@ import { ClearButton } from './ClearButton';
 import { SearchIcon } from './SearchIcon';
 
 export type SearchFormProps = Omit<HTMLAttributes<HTMLElement>, 'onChange'> & {
+    readonly ariaLabel: string;
     readonly clearAriaLabel: string;
     readonly value: string;
     readonly onChange: (value: string) => void;
@@ -14,6 +15,7 @@ export type SearchFormProps = Omit<HTMLAttributes<HTMLElement>, 'onChange'> & {
 };
 
 export const SearchForm = ({
+    ariaLabel,
     clearAriaLabel,
     className,
     onChange,
@@ -46,6 +48,7 @@ export const SearchForm = ({
         <form className={cn('relative block', className)} onSubmit={handleSubmit} {...rest}>
             <SearchIcon loading={loading} className="absolute top-1/2 left-4 -translate-y-1/2" />
             <Input
+                aria-label={ariaLabel}
                 className={'peer w-full pr-12 pl-12'}
                 required
                 value={value}

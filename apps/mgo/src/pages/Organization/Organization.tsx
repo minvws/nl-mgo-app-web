@@ -1,11 +1,11 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { HealthCategoryGrid } from '$/components/HealthCategoryGrid/HealthCategoryGrid';
+import { HealthQueryErrorNotice } from '$/components/HealthQueryErrorNotice/HealthQueryErrorNotice';
 import { FormattedMessage, useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { Heading } from '@minvws/mgo-ui';
 import { Helmet } from 'react-helmet-async';
 import { NotFound } from './NotFound';
-import { HealthQueryErrorNotice } from '$/components/HealthQueryErrorNotice/HealthQueryErrorNotice';
 
 export function Organization() {
     const { organization } = useParamsData();
@@ -14,7 +14,7 @@ export function Organization() {
 
     const i18nValues = {
         organizationName: organization?.name,
-        organizationCategory: organization?.category,
+        organizationCategory: organization?.careType,
     };
 
     if (!organization) {

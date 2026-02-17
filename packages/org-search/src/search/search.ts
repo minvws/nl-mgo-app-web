@@ -4,6 +4,8 @@ import { pluginQPS } from '@orama/plugin-qps';
 import { defaultSearchConfig, SearchConfig } from './config.js';
 import { normalizeOrganizationItemDto, removePunctuation } from './normalize.js';
 import {
+    DataServiceEndpoints,
+    DataServiceEndpointsDto,
     Organization,
     OrganizationDto,
     organizationOramaSchema,
@@ -11,7 +13,14 @@ import {
     SearchResults,
 } from './schema.js';
 
-export type { Organization, OrganizationDto, SearchResult, SearchResults };
+export type {
+    DataServiceEndpoints,
+    DataServiceEndpointsDto,
+    Organization,
+    OrganizationDto,
+    SearchResult,
+    SearchResults,
+};
 
 export type SearchIndex = {
     db: Orama<typeof organizationOramaSchema>;

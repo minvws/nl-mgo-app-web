@@ -9,18 +9,9 @@ import { times } from 'lodash';
 import { expect, test, vi } from 'vitest';
 import { RESULTS_PER_PAGE, SearchResults } from './SearchResults';
 
-function mockSearchResultDocument(): Organization {
+function mockSearchResults(items: Organization[] = [faker.custom.organizationSearchResult()]) {
     return {
-        id: faker.string.uuid(),
-        displayName: faker.company.name(),
-        addressLine: faker.location.streetAddress(),
-        city: faker.location.city(),
-    } as Organization;
-}
-
-function mockSearchResults(items: Organization[] = [mockSearchResultDocument()]) {
-    return {
-        count: 1,
+        count: items.length,
         hits: items.map((document) => ({
             id: document.id,
             document,
@@ -34,7 +25,7 @@ vi.mock('$/routing', () => ({
     useNavigate: () => mockNavigate,
 }));
 
-test.skip('adds organization to store when confirming the dialog', async () => {
+test('adds organization to store when confirming the dialog', async () => {
     const user = userEvent.setup();
     const results = mockSearchResults();
     setupWithAppProviders(<SearchResults searchResults={results} />);
@@ -59,12 +50,17 @@ test.skip('adds organization to store when confirming the dialog', async () => {
     expect(mockNavigate).toBeCalled();
 });
 
-test.skip('show if an organization was already added and disabled the button', async () => {
-    const { addOrganization } = useStore.getState();
+test('show if an organization was already added and disables the button', async () => {
     const organization = faker.custom.healthcareOrganization();
-    addOrganization(organization);
+    useStore.setState({
+        organizations: [organization],
+    });
 
-    const results = mockSearchResults();
+    const organizationSearchResult = faker.custom.organizationSearchResult({
+        id: organization.id,
+    });
+
+    const results = mockSearchResults([organizationSearchResult]);
     const { user } = setupWithAppProviders(<SearchResults searchResults={results} />);
 
     const state = useStore.getState();
@@ -81,11 +77,11 @@ test.skip('show if an organization was already added and disabled the button', a
     expect(dialog).not.toBeInTheDocument();
 });
 
-test.skip('shows if a organization can not be added and disables the button', async () => {
-    const organization = faker.custom.healthcareOrganization();
-    organization.dataServices = [];
+test('shows if a organization can not be added and disables the button', async () => {
+    const organization = faker.custom.organizationSearchResult();
+    organization.dataServices = undefined;
 
-    const results = mockSearchResults();
+    const results = mockSearchResults([organization]);
     const { user } = setupWithAppProviders(<SearchResults searchResults={results} />);
 
     const listItem = screen.getByRole('listitem');
@@ -99,8 +95,8 @@ test.skip('shows if a organization can not be added and disables the button', as
     expect(dialog).not.toBeInTheDocument();
 });
 
-test.skip('pagination adds extra items and dissappears when there are not items left', async () => {
-    const documents = times(RESULTS_PER_PAGE + 1, () => mockSearchResultDocument());
+test('pagination adds extra items and dissappears when there are not items left', async () => {
+    const documents = times(RESULTS_PER_PAGE + 1, () => faker.custom.organizationSearchResult());
     const results = mockSearchResults(documents);
     const user = userEvent.setup();
     setupWithAppProviders(<SearchResults searchResults={results} />);

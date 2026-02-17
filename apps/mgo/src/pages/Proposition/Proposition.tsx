@@ -71,7 +71,7 @@ export function Proposition() {
                     </Text>
 
                     <Button asChild onClick={() => setOnboardingSeen()}>
-                        <RouterLink to="/zorgaanbieder-toevoegen">
+                        <RouterLink to="/zorgaanbieders/toevoegen">
                             <FormattedMessage id="common.next" description="Volgende" />
                         </RouterLink>
                     </Button>

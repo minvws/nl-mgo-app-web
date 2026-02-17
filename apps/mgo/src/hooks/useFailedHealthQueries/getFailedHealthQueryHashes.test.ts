@@ -1,10 +1,11 @@
-import { beforeEach, expect, test, vi } from 'vitest';
 import { getHealthCategoryConfigs, getRelevantEndpoints, HealthCategoryConfig } from '$/config';
+import { HealthcareOrganization } from '$/store';
+import { DataService } from '$/store/organizations/normalize';
 import { faker } from '$test/faker';
 import { Query, QueryCache, QueryFilters } from '@tanstack/react-query';
 import { PartialDeep } from 'type-fest';
+import { beforeEach, expect, test, vi } from 'vitest';
 import { getFailedHealthQueryHashes } from './getFailedHealthQueryHashes';
-import { HealthcareOrganization } from '$/store';
 
 const hoisted = vi.hoisted(() => {
     return {
@@ -95,7 +96,7 @@ test('retrieves failed queries by status and partial query key, defaults to all 
                 id: endpoint1.dataServiceId,
                 resourceEndpoint: faker.internet.url(),
             },
-        ],
+        ] as DataService[],
     });
 
     const cachedQueries: PartialDeep<Query>[] = [
