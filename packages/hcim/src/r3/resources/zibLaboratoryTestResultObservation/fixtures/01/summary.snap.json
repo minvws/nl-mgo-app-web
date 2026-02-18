@@ -1,9 +1,12 @@
 {
+    "id": "r3.zib_laboratory_test_result_observation",
     "label": "Chloride [moles/volume] in blood",
     "children": [
         {
+            "id": "summary.r3.zib_laboratory_test_result_observation.default",
             "children": [
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.effective",
                     "label": "Datum van de uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +14,7 @@
                     }
                 },
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.value",
                     "label": "Resultaat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +22,7 @@
                     }
                 },
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.interpretation",
                     "label": "Interpretatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -31,9 +36,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_laboratory_test_result_observation.group_test_details",
             "label": "Details van de test",
             "children": [
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -41,6 +48,7 @@
                     }
                 },
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.specimen",
                     "label": "Materiaal",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -50,17 +58,20 @@
             ]
         },
         {
+            "id": "summary.r3.zib_laboratory_test_result_observation.reference_range",
             "label": "Referentiewaarden",
             "children": [
                 {
-                    "label": "Minimale waarde",
+                    "id": "summary.r3.zib_laboratory_test_result_observation.reference_range",
+                    "label": "Referentiewaarden",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "99 millimol per liter"
                     }
                 },
                 {
-                    "label": "Maximale waarde",
+                    "id": "summary.r3.zib_laboratory_test_result_observation.reference_range",
+                    "label": "Referentiewaarden",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "108 millimol per liter"
@@ -69,9 +80,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_laboratory_test_result_observation.group_performer",
             "label": "Test afgenomen door",
             "children": [
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.performer",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -79,6 +92,7 @@
                     }
                 },
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -88,9 +102,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.zib_laboratory_test_result_observation.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle uitslaggegevens",
                     "reference": "Observation/zib-laboratorytestresult-observation-01"

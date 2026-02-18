@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider.managing_organization",
                     "label": "Beherende organisatie",
                     "type": "REFERENCE_VALUE",
                     "display": "Healthcare provider (organization), Erasmus Universitair Medisch Centrum",
                     "reference": "Organization/nl-core-HealthcareProvider-Organization-01"
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider.name",
                     "label": "Locatie naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -19,9 +21,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_healthcare_provider.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.zib_contact_information_email_addresses.value",
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,6 +33,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_email_addresses.use",
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -36,6 +41,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.use",
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -43,6 +49,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.system.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -50,6 +57,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.value",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -57,6 +65,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -66,9 +75,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_address_information",
             "label": "Adres informatie",
             "children": [
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_indication",
                     "label": "Aanduiding bij nummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +87,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.additional_information",
                     "label": "Additionele informatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +95,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +103,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.type",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -97,6 +111,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -104,6 +119,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number",
                     "label": "Huisnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -111,6 +127,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_letter",
                     "label": "Huisnummer letter",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -118,6 +135,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.house_number_addition",
                     "label": "Huisnummer toevoeging",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -125,6 +143,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.country.country_code",
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -132,6 +151,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -139,6 +159,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.line.street_name",
                     "label": "Straat",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -146,6 +167,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.city",
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
                     "value": {

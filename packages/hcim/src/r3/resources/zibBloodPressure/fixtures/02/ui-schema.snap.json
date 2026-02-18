@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_blood_pressure.performer",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,6 +14,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.effective_date_time",
                     "label": "Bloeddruk datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,6 +22,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_blood_pressure.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +32,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.body_site",
                     "label": "Meet locatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +44,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.method",
                     "label": "Meetmethode",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -51,12 +56,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_blood_pressure.effective_period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -64,6 +71,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_blood_pressure.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -73,9 +81,11 @@
             ]
         },
         {
+            "id": "r3.zib_blood_pressure.component",
             "label": "Onderliggende metingen",
             "children": [
                 {
+                    "id": "r3.zib_blood_pressure.component.diastolic_endpoint.value_codeable_concept",
                     "label": "Diastolisch eindpunt",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -87,6 +97,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.component.diastolic_bp.value_quantity",
                     "label": "Diastolische bloeddruk",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -94,6 +105,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_blood_pressure.component.average_blood_pressure_snomed.value_quantity",
                     "label": "Gemiddelde bloeddruk",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -101,6 +113,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_blood_pressure.component.position_loinc.value_codeable_concept",
                     "label": "Houding",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -112,6 +125,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.component.cuff_type_loinc.value_codeable_concept",
                     "label": "Manchet type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -123,6 +137,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_blood_pressure.component.systolic_bp.value_quantity",
                     "label": "Systolische bloeddruk",
                     "type": "SINGLE_VALUE",
                     "value": {

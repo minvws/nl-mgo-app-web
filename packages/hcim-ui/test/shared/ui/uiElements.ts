@@ -22,6 +22,7 @@ export const displayValue = createMockFactory<DisplayValue>(() => {
 
 export const singleValue = createMockFactory<SingleValue>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'SINGLE_VALUE',
         value: displayValue(),
@@ -30,6 +31,7 @@ export const singleValue = createMockFactory<SingleValue>(() => {
 
 export const multipleValues = createMockFactory<MultipleValues>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'MULTIPLE_VALUES',
         value: mockArray({
@@ -41,6 +43,7 @@ export const multipleValues = createMockFactory<MultipleValues>(() => {
 
 export const multipleGroupedValues = createMockFactory<MultipleGroupedValues>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'MULTIPLE_GROUPED_VALUES',
         value: mockArray({
@@ -56,6 +59,7 @@ export const multipleGroupedValues = createMockFactory<MultipleGroupedValues>(()
 
 export const referenceValue = createMockFactory<ReferenceValue>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'REFERENCE_VALUE',
         display: faker.lorem.sentence(),
@@ -65,6 +69,7 @@ export const referenceValue = createMockFactory<ReferenceValue>(() => {
 
 export const referenceLink = createMockFactory<ReferenceLink>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'REFERENCE_LINK',
         display: faker.lorem.sentence(),
@@ -74,6 +79,7 @@ export const referenceLink = createMockFactory<ReferenceLink>(() => {
 
 export const downloadLink = createMockFactory<DownloadLink>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'DOWNLOAD_LINK',
         url: faker.internet.url(),
@@ -82,6 +88,7 @@ export const downloadLink = createMockFactory<DownloadLink>(() => {
 
 export const downloadBinary = createMockFactory<DownloadBinary>(() => {
     return {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'DOWNLOAD_BINARY',
         reference: faker.lorem.sentence(),

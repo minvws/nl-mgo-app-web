@@ -10,18 +10,18 @@ import {
 export const time: WithUiContext<UiFunction<MgoTime | MgoTime[], SingleValue | MultipleValues>> =
     (context) =>
     (label, value, options = {}) => {
-        const { formatLabel } = context;
+        const { baseProps } = context;
 
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map((x) => ({ display: valueOf(x) })),
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: { display: valueOf(value) },
         };

@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.gp_laboratory_result.based_on",
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.performer",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,6 +22,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_laboratory_result.effective_period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,12 +30,14 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.context",
                     "label": "Contact",
                     "type": "REFERENCE_VALUE",
                     "display": "Consult voor HNP (thoracaal/lumbaal) met Dokter Bernard",
                     "reference": "Encounter/ont-ver-gpdata-encounter-contact14"
                 },
                 {
+                    "id": "r3.gp_laboratory_result.effective_period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.related",
                     "label": "Gerelateerde uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -47,6 +53,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -56,6 +63,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_laboratory_result.interpretation.interpretatie_vlaggen_codelijst",
                     "label": "Interpretatie vlaggen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,6 +71,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.specimen",
                     "label": "Monster",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,12 +79,14 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.subject",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Jacqueline XXX_Cevat",
                     "reference": "Patient/ont-ver-gpdata-patient-kwalificatie1"
                 },
                 {
+                    "id": "r3.gp_laboratory_result.code",
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -87,6 +98,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_laboratory_result.value_quantity",
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -94,6 +106,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.status",
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -101,6 +114,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.method",
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -108,6 +122,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -117,9 +132,11 @@
             ]
         },
         {
+            "id": "r3.gp_laboratory_result.category",
             "label": "Categorie",
             "children": [
                 {
+                    "id": "r3.gp_laboratory_result.category.laboratory_test_result_code",
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -131,6 +148,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_laboratory_result.category.result_type",
                     "label": "Resultaat type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -140,9 +158,11 @@
             ]
         },
         {
+            "id": "r3.gp_laboratory_result.reference_range",
             "label": "Referentie",
             "children": [
                 {
+                    "id": "r3.gp_laboratory_result.reference_range.high",
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -150,6 +170,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.reference_range.low",
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -157,6 +178,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_laboratory_result.reference_range.type",
                     "label": "Referentie type",
                     "type": "MULTIPLE_VALUES",
                     "value": [

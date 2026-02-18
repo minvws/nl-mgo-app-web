@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_vaccination.dose_quantity",
                     "label": "Dosis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_vaccination.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,6 +22,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_vaccination.report_origin",
                     "label": "Informatiebron",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -27,12 +30,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_vaccination.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_vaccination.vaccine_code",
                     "label": "Product code",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_vaccination.note",
                     "label": "Toelichting",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,6 +55,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_vaccination.date",
                     "label": "Vaccinatie datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -58,15 +65,18 @@
             ]
         },
         {
+            "id": "r3.zib_vaccination.practitioner",
             "label": "Zorgverlener",
             "children": [
                 {
+                    "id": "r3.zib_vaccination.practitioner.actor",
                     "label": "Toediener",
                     "type": "REFERENCE_VALUE",
                     "display": "Henk de Vries",
                     "reference": "Practitioner/nl-core-practitioner-01"
                 },
                 {
+                    "id": "r3.zib_vaccination.practitioner.role.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {

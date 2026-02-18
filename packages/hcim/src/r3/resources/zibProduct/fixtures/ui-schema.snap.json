@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_product.form",
                     "label": "Farmaceutische vorm",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_product.description",
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,9 +22,11 @@
             ]
         },
         {
+            "id": "r3.zib_product.code",
             "label": "Product",
             "children": [
                 {
+                    "id": "r3.zib_product.code.coding",
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,6 +53,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_product.code.text",
                     "label": "Product naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -58,9 +63,11 @@
             ]
         },
         {
+            "id": "r3.zib_product.ingredient",
             "label": "Ingredient",
             "children": [
                 {
+                    "id": "r3.zib_product.ingredient.item_codeable_concept",
                     "label": "Ingredient code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -72,14 +79,16 @@
                     ]
                 },
                 {
-                    "label": "Ingredient hoeveelheid",
+                    "id": "r3.zib_product.ingredient.amount",
+                    "label": "Sterkte",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "600 mg"
                     }
                 },
                 {
-                    "label": "Product hoeveelheid",
+                    "id": "r3.zib_product.ingredient.amount",
+                    "label": "Sterkte",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "1 tablet"

@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.batch.lot_number",
                     "label": "Batch / Lotnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.form",
                     "label": "Farmaceutische vorm",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -22,6 +24,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.identifier",
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -29,6 +32,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.ingredient",
                     "label": "Ingredient",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -38,9 +42,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_pharmaceutical_product.code",
             "label": "Product code",
             "children": [
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.code.coding",
                     "label": "Product code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -52,6 +58,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_pharmaceutical_product.code.text",
                     "label": "Product naam",
                     "type": "SINGLE_VALUE",
                     "value": {

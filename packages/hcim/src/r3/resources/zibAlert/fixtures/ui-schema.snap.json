@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_alert.code",
                     "label": "Alert naam",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +16,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_alert.category",
                     "label": "Alert type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -26,6 +28,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_alert.author",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,6 +36,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alert.period",
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,12 +44,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alert.concern_reference",
                     "label": "Conditie",
                     "type": "REFERENCE_VALUE",
                     "display": "Fracture of wrist (disorder)",
                     "reference": "Condition/zib-problem-01"
                 },
                 {
+                    "id": "r3.zib_alert.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -53,6 +59,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_alert.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -62,6 +69,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_alert.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",

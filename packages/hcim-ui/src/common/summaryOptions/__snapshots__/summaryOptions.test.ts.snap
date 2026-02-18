@@ -4,11 +4,13 @@ exports[`creates a options group for the summary ui schema 1`] = `
 {
   "children": [
     {
+      "id": "summary.r3.zib_medication_use.show_details",
       "label": "intl(summary.r3.zib_medication_use.show_details)",
       "reference": "MedicationStatement/zib-medicationuse-01",
       "type": "REFERENCE_LINK",
     },
   ],
+  "id": "intl(summary.options)",
   "label": "intl(summary.options)",
 }
 `;

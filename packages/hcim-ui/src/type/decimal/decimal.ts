@@ -3,10 +3,10 @@ import { numberToString } from '../../helpers/index.js';
 import { type SingleValue, type UiFunction, type WithUiContext } from '../../types/index.js';
 
 export const decimal: WithUiContext<UiFunction<MgoDecimal, SingleValue>> =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, options = {}) => {
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: { display: numberToString(value?.value) },
         };

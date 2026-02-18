@@ -13,6 +13,7 @@ export const summary: HealthUiSchemaFunction<GpLaboratoryResult, SchemaContext<'
     const { formatMessage } = context;
     return {
         ...zibLaboratoryTestResultObservation.summary(resource, context),
+        id: i18n,
         label: capitalize(resource.context?.display) || formatMessage(i18n),
     };
 };

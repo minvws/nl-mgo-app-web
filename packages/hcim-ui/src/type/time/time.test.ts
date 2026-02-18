@@ -13,6 +13,7 @@ test('time single', () => {
     const result = time(uiHelperContext)(label, value);
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: value.value },
@@ -27,6 +28,7 @@ test('time multiple', () => {
     const result = time(uiHelperContext)(label, value);
 
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: value.map((x) => ({ display: x.value })),

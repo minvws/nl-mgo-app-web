@@ -14,10 +14,10 @@ export const valueWithUnit: WithUiContext<
         SingleValue
     >
 > =
-    ({ formatLabel }) =>
+    ({ baseProps }) =>
     (label, value, unit) => {
         return {
-            label: formatLabel(label, value),
+            ...baseProps(label, value),
             value: { display: format.valueWithUnit(valueOf(value), valueOf(unit)) },
             type: 'SINGLE_VALUE',
         };

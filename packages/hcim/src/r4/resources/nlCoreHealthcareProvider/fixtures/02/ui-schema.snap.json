@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider.managing_organization",
                     "label": "Beherende organisatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider.name",
                     "label": "Locatie naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -20,9 +22,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_healthcare_provider.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.nl_core_healthcare_provider.telecom.email_addresses",
                     "label": "E-mailadres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -30,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_healthcare_provider.telecom.telephone_numbers",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -39,9 +44,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_address_information",
             "label": "Adres informatie",
             "children": [
                 {
+                    "id": "r4.nl_core_address_information.line",
                     "label": "Adres informatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -49,6 +56,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.use",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,6 +64,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.type",
                     "label": "Adres soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,6 +72,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.district",
                     "label": "Gemeente",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +80,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.country.country_code",
                     "label": "Land",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -77,6 +88,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.postal_code",
                     "label": "Postcode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -84,6 +96,7 @@
                     }
                 },
                 {
+                    "id": "r4.nl_core_address_information.city",
                     "label": "Woonplaats",
                     "type": "SINGLE_VALUE",
                     "value": {

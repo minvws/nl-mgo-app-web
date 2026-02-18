@@ -32,6 +32,7 @@ test('shows schema', () => {
         label: faker.lorem.sentence(),
         children: [
             {
+                id: faker.string.uuid(),
                 label: faker.lorem.sentence(),
                 children: [],
             },

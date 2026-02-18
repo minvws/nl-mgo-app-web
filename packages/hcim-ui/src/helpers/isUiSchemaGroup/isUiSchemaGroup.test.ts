@@ -4,12 +4,14 @@ import { type HealthUiGroup, type HealthUiSchema } from '../../types/index.js';
 import { isUiSchemaGroup } from './isUiSchemaGroup.js';
 
 test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
-    [{ label: faker.lorem.sentence(), children: [] }, false],
+    [{ id: faker.string.uuid(), label: faker.lorem.sentence(), children: [] }, false],
     [
         {
+            id: faker.string.uuid(),
             label: faker.lorem.sentence(),
             children: [
                 {
+                    id: faker.string.uuid(),
                     label: faker.lorem.sentence(),
                     children: [],
                 },
@@ -19,12 +21,15 @@ test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
     ],
     [
         {
+            id: faker.string.uuid(),
             label: faker.lorem.sentence(),
             children: [
                 {
+                    id: faker.string.uuid(),
                     label: faker.lorem.sentence(),
                     children: [
                         {
+                            id: faker.string.uuid(),
                             type: 'SINGLE_VALUE',
                             label: faker.lorem.sentence(),
                             value: { display: faker.lorem.sentence() },
@@ -37,9 +42,11 @@ test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
     ],
     [
         {
+            id: faker.string.uuid(),
             label: faker.lorem.sentence(),
             children: [
                 {
+                    id: faker.string.uuid(),
                     type: 'SINGLE_VALUE',
                     label: faker.lorem.sentence(),
                     value: { display: faker.lorem.sentence() },
@@ -50,6 +57,7 @@ test.each<[HealthUiSchema | HealthUiGroup, boolean]>([
     ],
     [
         {
+            id: faker.string.uuid(),
             label: faker.lorem.sentence(),
             children: [],
         },

@@ -30,6 +30,7 @@ afterEach(() => {
 
 test('renders with regular href if the referenced resource has the same dataServiceMethod', async () => {
     const value: ReferenceValueData = {
+        id: faker.string.uuid(),
         type: 'REFERENCE_VALUE',
         label: faker.lorem.sentence(),
         display: faker.lorem.sentence(),
@@ -56,6 +57,7 @@ test('renders with regular href if the referenced resource has the same dataServ
 
 test('does not render as a link without a resource', async () => {
     const value: ReferenceValueData = {
+        id: faker.string.uuid(),
         type: 'REFERENCE_VALUE',
         label: faker.lorem.sentence(),
         display: faker.lorem.sentence(),
@@ -73,6 +75,7 @@ test('does not render as a link without a resource', async () => {
 
 test('does not render as a link if the dataServiceMethod does not match', async () => {
     const value: ReferenceValueData = {
+        id: faker.string.uuid(),
         type: 'REFERENCE_VALUE',
         label: faker.lorem.sentence(),
         display: faker.lorem.sentence(),

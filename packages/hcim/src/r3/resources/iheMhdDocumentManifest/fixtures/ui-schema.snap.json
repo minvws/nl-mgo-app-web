@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.ihe_mhd_document_manifest.created",
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.author",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,18 +22,21 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.content.p_reference",
                     "label": "Gerelateerd aan",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "DocumentReference/pdfa-documentreference-01"
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.content.p_reference",
                     "label": "Gerelateerd aan",
                     "type": "REFERENCE_VALUE",
                     "display": null,
                     "reference": "DocumentReference/pdfa-documentreference-02"
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -44,6 +49,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.master_identifier",
                     "label": "Identifier",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -51,12 +57,14 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -64,6 +72,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_document_manifest.type",
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [

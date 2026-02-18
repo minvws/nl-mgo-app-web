@@ -1,5 +1,6 @@
 [
     {
+        "id": "fhir.x.email_addresses",
         "label": "E-mailadres",
         "type": "MULTIPLE_VALUES",
         "value": []

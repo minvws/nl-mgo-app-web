@@ -43,7 +43,7 @@ export function processArray(
 
     return [
         {
-            label: context.formatLabel(path as FhirMessagesIds, null),
+            ...context.baseProps(path as FhirMessagesIds, null),
             type: 'SINGLE_VALUE',
             value: undefined,
         },

@@ -18,6 +18,7 @@ export const summary: SummarySchemaFunction<
         resource.referenceRange,
         (referenceRange) => {
             return {
+                id: `summary.${i18n}.reference_range`,
                 label:
                     formatSystemCode(referenceRange.type?.coding[0]) ??
                     formatMessage(
@@ -38,9 +39,11 @@ export const summary: SummarySchemaFunction<
     );
 
     return {
+        id: i18n,
         label: capitalize(resource.code?.coding.at(0)?.display) || formatMessage(i18n),
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ...ui.oneOfValueX(`summary.${i18n}.effective`, resource, 'effective'),
                     ...ui.oneOfValueX(`summary.${i18n}.value`, resource),
@@ -51,6 +54,7 @@ export const summary: SummarySchemaFunction<
                 ],
             },
             {
+                id: `summary.${i18n}.group_test_details`,
                 label: formatMessage(`summary.${i18n}.group_test_details`),
                 children: [
                     ui.code(
@@ -65,6 +69,7 @@ export const summary: SummarySchemaFunction<
             },
             ...referenceRangeSummary,
             {
+                id: `summary.${i18n}.group_performer`,
                 label: formatMessage(`summary.${i18n}.group_performer`),
                 children: [
                     ui.reference(`summary.${i18n}.performer`, resource.performer),

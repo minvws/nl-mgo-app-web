@@ -15,11 +15,13 @@ vi.mock('$/hooks/useHealthUiSchema/useHealthUiSchema', () => {
         useHealthUiSchema: () => ({
             getSummary: () =>
                 ({
+                    id: 'summary',
                     label: 'summary',
                     children: [],
                 }) as HealthUiSchema,
             getDetails: () =>
                 ({
+                    id: 'details',
                     label: 'details',
                     children: [],
                 }) as HealthUiSchema,

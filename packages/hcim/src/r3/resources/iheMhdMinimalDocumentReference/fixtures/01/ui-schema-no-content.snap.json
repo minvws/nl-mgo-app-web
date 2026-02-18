@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.indexed",
                     "label": "Aangemaakt op",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.security_label",
                     "label": "Beveiligingslabel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.class",
                     "label": "Categorie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -25,6 +28,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.relates_to",
                     "label": "Gerelateerd aan",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -32,6 +36,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -44,6 +49,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.master_identifier",
                     "label": "Identifier",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -51,6 +57,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.content",
                     "label": "Inhoud",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -58,12 +65,14 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Paul XXX_Mesker",
                     "reference": "Patient/nl-core-patient-02"
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -71,6 +80,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.type",
                     "label": "Type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -82,6 +92,7 @@
                     ]
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.author",
                     "label": "Zorgverlener",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -93,9 +104,11 @@
             ]
         },
         {
+            "id": "r3.ihe_mhd_minimal_document_reference.context",
             "label": "Klinische context",
             "children": [
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.practice_setting",
                     "label": "Aanvullende details",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -103,6 +116,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.facility_type",
                     "label": "Faciliteit",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -110,6 +124,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.source_patient_info",
                     "label": "Patiënt informatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -117,6 +132,7 @@
                     }
                 },
                 {
+                    "id": "r3.ihe_mhd_minimal_document_reference.context.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {

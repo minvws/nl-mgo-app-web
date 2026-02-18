@@ -14,6 +14,7 @@ export const attachment: WithUiContext<
         const label = value?.title ?? formatMessage('fhir.unknown');
         if (isBinaryReference(value?.url as string)) {
             return {
+                id: label,
                 type: 'DOWNLOAD_BINARY',
                 label,
                 reference: value?.url,
@@ -21,6 +22,7 @@ export const attachment: WithUiContext<
         }
 
         return {
+            id: label,
             type: 'DOWNLOAD_LINK',
             label,
             url: value?.url,

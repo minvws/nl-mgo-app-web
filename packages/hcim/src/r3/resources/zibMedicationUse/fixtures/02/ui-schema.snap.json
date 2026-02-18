@@ -4,12 +4,14 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_medication_use.author",
                     "label": "Auteur",
                     "type": "REFERENCE_VALUE",
                     "display": "Vaste Huisarts 1 || Huisartsen || Maatschap Vaste Huisarts",
                     "reference": "PractitionerRole/nl-core-practitionerrole-02"
                 },
                 {
+                    "id": "r3.zib_medication_use.taken",
                     "label": "Gebruik indicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -17,12 +19,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.medication_reference",
                     "label": "Gebruiksproduct",
                     "type": "REFERENCE_VALUE",
                     "display": "DOXYCYCLINE TABLET 100MG",
                     "reference": "Medication/zib-Product-02"
                 },
                 {
+                    "id": "r3.zib_medication_use.repeat_period_cyclical_schedule",
                     "label": "Herhaalperiode cyclisch schema",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -30,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -42,6 +47,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_medication_use.information_source",
                     "label": "Informatiebron",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -49,6 +55,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.medication_treatment",
                     "label": "Medicamenteuze behandeling",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,6 +63,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.status",
                     "label": "Medicatie gebruik stop type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,12 +71,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_medication_use.reason_code",
                     "label": "Reden gebruik",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +86,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.reason_for_change_or_discontinuation_of_use",
                     "label": "Reden wijzigen of stoppen gebruik",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +94,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.date_asserted",
                     "label": "Registratiedatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +102,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.note",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -97,6 +110,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.as_agreed_indicator",
                     "label": "Volgens afspraak indicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -104,6 +118,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.prescriber",
                     "label": "Voorschrijver",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -113,9 +128,11 @@
             ]
         },
         {
+            "id": "r3.zib_medication_use.effective_period",
             "label": "Gebruiksperiode",
             "children": [
                 {
+                    "id": "r3.zib_medication_use.effective_period",
                     "label": "Einddatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -123,6 +140,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.effective_period",
                     "label": "Ingangsdatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -130,6 +148,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.effective_period.duration",
                     "label": "Tijdsduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -139,9 +158,11 @@
             ]
         },
         {
+            "id": "r3.zib_instructions_for_use",
             "label": "Gebruiksinstructie",
             "children": [
                 {
+                    "id": "r3.zib_instructions_for_use.additional_instruction",
                     "label": "Aanvullende instructie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -149,6 +170,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.when",
                     "label": "Dagdeel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -156,6 +178,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.bounds_duration",
                     "label": "Doseerduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -163,6 +186,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.frequency",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -170,6 +194,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.period",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -177,6 +202,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.period_unit",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -184,6 +210,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.dose_quantity",
                     "label": "Keerdosis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -191,6 +218,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.max_dose_per_period",
                     "label": "Maximale dosering",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -198,6 +226,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.frequency_max",
                     "label": "Maximum waarde",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -205,6 +234,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.text",
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -212,6 +242,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.route",
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -223,6 +254,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.duration",
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -230,6 +262,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.duration_unit",
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -237,6 +270,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.time_of_day",
                     "label": "Toedientijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -244,6 +278,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.sequence",
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -251,6 +286,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.day_of_week",
                     "label": "Weekdagen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -258,6 +294,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.as_needed_codeable_concept",
                     "label": "Zo nodig",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -267,9 +304,11 @@
             ]
         },
         {
+            "id": "r3.zib_instructions_for_use",
             "label": "Gebruiksinstructie",
             "children": [
                 {
+                    "id": "r3.zib_instructions_for_use.additional_instruction",
                     "label": "Aanvullende instructie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -277,6 +316,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.when",
                     "label": "Dagdeel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -284,6 +324,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.bounds_duration",
                     "label": "Doseerduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -291,6 +332,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.frequency",
                     "label": "Frequentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -298,6 +340,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.period",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -305,6 +348,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.period_unit",
                     "label": "Interval",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -312,6 +356,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.dose_quantity",
                     "label": "Keerdosis",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -319,6 +364,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.max_dose_per_period",
                     "label": "Maximale dosering",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -326,6 +372,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.frequency_max",
                     "label": "Maximum waarde",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -333,6 +380,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.text",
                     "label": "Omschrijving",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -340,6 +388,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.route",
                     "label": "Toedieningsweg",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -351,6 +400,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.duration",
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -358,6 +408,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.duration_unit",
                     "label": "Toedieninsgduur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -365,6 +416,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.time_of_day",
                     "label": "Toedientijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -372,6 +424,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.sequence",
                     "label": "Volgnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -379,6 +432,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_administration_schedule.repeat.day_of_week",
                     "label": "Weekdagen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -386,6 +440,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_instructions_for_use.as_needed_codeable_concept",
                     "label": "Zo nodig",
                     "type": "SINGLE_VALUE",
                     "value": {

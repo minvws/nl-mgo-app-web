@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.specialty.specialty",
                     "label": "Specialisme",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +16,7 @@
                     ]
                 },
                 {
+                    "id": "r4.nl_core_health_professional_practitioner_role.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -24,9 +26,11 @@
             ]
         },
         {
+            "id": "r4.nl_core_health_professional_practitioner_role.telecom",
             "label": "Contactgegevens",
             "children": [
                 {
+                    "id": "r4.zib_contact_information_email_addresses.value",
                     "label": "Email adres",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -34,6 +38,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_email_addresses.use",
                     "label": "Email soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -41,6 +46,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.use",
                     "label": "Nummer soort",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -48,6 +54,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.system.telecom_type",
                     "label": "Telecom type",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -55,6 +62,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.value",
                     "label": "Telefoonnummer",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -62,6 +70,7 @@
                     }
                 },
                 {
+                    "id": "r4.zib_contact_information_telephone_numbers.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {

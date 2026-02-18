@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_tobacco_use.performer",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.effective_date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -27,12 +30,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_tobacco_use.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_tobacco_use.effective_period",
                     "label": "Start datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +45,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.effective_period",
                     "label": "Stop datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -47,6 +53,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.value_codeable_concept",
                     "label": "Tabak gebruik status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -58,6 +65,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_tobacco_use.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -67,9 +75,11 @@
             ]
         },
         {
+            "id": "r3.zib_tobacco_use.component",
             "label": "Onderliggende metingen",
             "children": [
                 {
+                    "id": "r3.zib_tobacco_use.component.amount.value_quantity",
                     "label": "Hoeveelheid",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -77,6 +87,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.component.pack_years.value_quantity",
                     "label": "Pack years",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -84,6 +95,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_tobacco_use.component.type_of_tobacco_used.value_codeable_concept",
                     "label": "Soort tabak gebruik",
                     "type": "MULTIPLE_VALUES",
                     "value": [

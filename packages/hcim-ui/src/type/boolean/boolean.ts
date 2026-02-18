@@ -3,14 +3,14 @@ import { isNonNullish } from '@minvws/mgo-utils';
 import { type SingleValue, type UiFunction, type WithUiContext } from '../../types/index.js';
 
 export const boolean: WithUiContext<UiFunction<MgoBoolean, SingleValue>> =
-    ({ formatLabel, formatMessage }) =>
+    ({ baseProps, formatMessage }) =>
     (label, value, options = {}) => {
         const truthyString = value?.value
             ? formatMessage('fhir.boolean.true')
             : formatMessage('fhir.boolean.false');
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'SINGLE_VALUE',
             value: isNonNullish(value?.value) ? { display: truthyString } : undefined,
         };

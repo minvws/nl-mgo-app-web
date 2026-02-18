@@ -21,6 +21,7 @@ test('coding single', () => {
     const mgoCoding: MgoCoding = faker.mgo.coding();
     const result = coding(faker.ui.context())(label, mgoCoding);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: {
@@ -36,6 +37,7 @@ test('coding multiple', () => {
     const mgoCoding: MgoCoding[] = [faker.mgo.coding(), faker.mgo.coding(), faker.mgo.coding()];
     const result = coding(faker.ui.context())(label, mgoCoding);
     expect(result).toEqual<MultipleValues>({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: [
@@ -68,6 +70,7 @@ test('coding multiple does not return undefined values', () => {
     const mgoCoding: MgoCoding[] = [faker.mgo.coding(), { _type: 'coding' }, faker.mgo.coding()];
     const result = coding(faker.ui.context())(label, mgoCoding);
     expect(result).toEqual<MultipleValues>({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: [

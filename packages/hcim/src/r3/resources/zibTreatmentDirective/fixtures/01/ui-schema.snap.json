@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_treatment_directive.additional_sources",
                     "label": "Aanvullende bronnen",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.period",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.treatment",
                     "label": "Behandeling",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +32,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_treatment_directive.treatment_permitted",
                     "label": "Behandeling toegestaan",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +44,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_treatment_directive.except_restrictions",
                     "label": "Beperkingen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,6 +54,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_treatment_directive.source_attachment",
                     "label": "Bron bijlage",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,6 +62,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.source_identifier",
                     "label": "Bron identificatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,6 +70,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.source_reference",
                     "label": "Bron referentie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +78,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -77,6 +86,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.period",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -84,6 +94,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.identifier",
                     "label": "Identificatie",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -91,12 +102,14 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_treatment_directive.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -104,6 +117,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.consenting_party",
                     "label": "Toestemmende partij",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -113,9 +127,11 @@
             ]
         },
         {
+            "id": "r3.zib_treatment_directive.verification",
             "label": "Verificatie",
             "children": [
                 {
+                    "id": "r3.zib_treatment_directive.verification.verified",
                     "label": "Geverifieerd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -123,6 +139,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_treatment_directive.verification.verified_with",
                     "label": "Geverifieerd bij",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -134,6 +151,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_treatment_directive.verification.verification_date",
                     "label": "Verificatie datum",
                     "type": "SINGLE_VALUE",
                     "value": {

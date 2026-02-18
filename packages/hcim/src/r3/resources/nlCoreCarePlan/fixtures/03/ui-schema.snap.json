@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.nl_core_careplan.goal",
                     "label": "Behandeldoel",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -20,12 +22,14 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_careplan.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "Fiona XXX_Mutter",
                     "reference": "Patient/ont-ver-XXX-Mutter"
                 },
                 {
+                    "id": "r3.nl_core_careplan.period",
                     "label": "Periode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,6 +37,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_careplan.activity",
                     "label": "Verpleegkundige handeling",
                     "type": "SINGLE_VALUE",
                     "value": {

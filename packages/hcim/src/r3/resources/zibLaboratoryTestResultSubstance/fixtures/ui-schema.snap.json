@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_substance.code",
                     "label": "Microorganisme",
                     "type": "MULTIPLE_VALUES",
                     "value": [

@@ -1,9 +1,12 @@
 {
+    "id": "Fracture of wrist (disorder)",
     "label": "Fracture of wrist (disorder)",
     "children": [
         {
+            "id": "summary.r3.zib_problem.default",
             "children": [
                 {
+                    "id": "r3.zib_problem.code",
                     "label": "Aandoening",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +18,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_problem.body_site",
                     "label": "Locatie in het lichaam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -22,6 +26,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_problem.clinical_status",
                     "label": "Status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -33,6 +38,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_problem.note",
                     "label": "Extra uitleg",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -44,9 +50,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_problem.group_period_of_time",
             "label": "Periode",
             "children": [
                 {
+                    "id": "r3.zib_problem.onset_date_time",
                     "label": "Startdatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -54,6 +62,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_problem.abatement_date_time",
                     "label": "Einddatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -63,9 +72,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_problem.group_health_professional",
             "label": "Vastgelegd door",
             "children": [
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -75,9 +86,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.zib_problem.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle probleem gegevens",
                     "reference": "Condition/zib-problem-01"

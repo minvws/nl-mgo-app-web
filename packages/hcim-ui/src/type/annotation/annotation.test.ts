@@ -9,6 +9,7 @@ test('annotation', () => {
     const data = faker.mgo.annotation();
     const result = annotation(faker.ui.context())(label, data);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: data.text },

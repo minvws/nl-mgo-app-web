@@ -12,6 +12,7 @@ test('renders all schemas correctly', () => {
         min: 1,
         max: 10,
         factory: () => ({
+            id: faker.string.uuid(),
             label: faker.lorem.sentence(),
             children: [],
         }),

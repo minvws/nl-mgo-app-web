@@ -37,6 +37,7 @@ Here is an example of a Health UI Schema:
     "label": "Quibusdam tempora nobis",
     "children": [
         {
+            "id": "maiores",
             "label": "Maiores",
             "children": [
                 { "type": "SINGLE_VALUE", "label": "Magni quasi", "display": "Natus nobis" },
@@ -49,10 +50,12 @@ Here is an example of a Health UI Schema:
             ]
         },
         {
+            "id": "Accusantium",
             "label": "Accusantium",
             "children": [
                 {
                     "type": "SINGLE_VALUE",
+                    "id": "consectetur",
                     "label": "Consectetur aliquid voluptatibus",
                     "display": "Blanditiis"
                 }

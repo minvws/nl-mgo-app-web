@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.reason",
                     "label": "Afwijkende uitslag",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -17,6 +18,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.start",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -24,6 +26,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.service_category",
                     "label": "Contact categorie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -35,6 +38,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.minutes_duration",
                     "label": "Contact duur in minuten",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -42,6 +46,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.description",
                     "label": "Contact onderwerp",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -49,6 +54,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.patient_instructions",
                     "label": "Contact patiënt instructie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -58,6 +64,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.status",
                     "label": "Contact status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -65,6 +72,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.appointment_type",
                     "label": "Contact type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -76,6 +84,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.created",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -83,6 +92,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.end",
                     "label": "Eind datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -90,6 +100,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -99,6 +110,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.specialty",
                     "label": "Specialisme",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -112,6 +124,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.indication",
                     "label": "Verrichting of probleem",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -121,6 +134,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.incoming_referral",
                     "label": "Verwijzing",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -132,9 +146,11 @@
             ]
         },
         {
+            "id": "r3.e_afspraak_appointment.online_editable",
             "label": "Online wijzigbaar",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.online_editable.indicator",
                     "label": "Online wijzigbaar indicator",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -142,6 +158,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.online_editable.online_editable_until",
                     "label": "Online wijzigbaar tot",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -151,15 +168,18 @@
             ]
         },
         {
+            "id": "r3.e_afspraak_appointment.participant",
             "label": "Contact met",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.participant.actor",
                     "label": "Contactpersoon, patiënt, zorgverlener of locatie",
                     "type": "REFERENCE_VALUE",
                     "display": "Alex XXX_Verweij",
                     "reference": "Patient/eafspraak-patient-01"
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -167,6 +187,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.required",
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -174,6 +195,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -183,15 +205,18 @@
             ]
         },
         {
+            "id": "r3.e_afspraak_appointment.participant",
             "label": "Contact met",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.participant.actor",
                     "label": "Contactpersoon, patiënt, zorgverlener of locatie",
                     "type": "REFERENCE_VALUE",
                     "display": "A.F. Snijder",
                     "reference": "Practitioner/eafspraak-practitioner-01"
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -199,6 +224,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.required",
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -206,6 +232,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -221,15 +248,18 @@
             ]
         },
         {
+            "id": "r3.e_afspraak_appointment.participant",
             "label": "Contact met",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.participant.actor",
                     "label": "Contactpersoon, patiënt, zorgverlener of locatie",
                     "type": "REFERENCE_VALUE",
                     "display": "West vleugel",
                     "reference": "Location/eafspraak-location-01"
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -237,6 +267,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.required",
                     "label": "Vereist",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -244,6 +275,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.participant.type.health_professional_role",
                     "label": "Zorgverlener rol",
                     "type": "SINGLE_VALUE",
                     "value": {

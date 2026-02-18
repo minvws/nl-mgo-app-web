@@ -20,11 +20,13 @@ test('period, defaults to fhir.start/end labels', () => {
 
     expect(result).toEqual<SingleValue[]>([
         {
+            id: label,
             label: testMessage('fhir.period.start'),
             type: `SINGLE_VALUE`,
             value: { display: formatDateTime(mgoPeriod.start) },
         },
         {
+            id: label,
             label: testMessage('fhir.period.end'),
             type: `SINGLE_VALUE`,
             value: { display: formatDateTime(mgoPeriod.end) },
@@ -43,11 +45,13 @@ test('period, uses custom labels if available', () => {
 
     expect(result).toEqual<SingleValue[]>([
         {
+            id: label,
             label: `intl(${label}.start)`,
             type: `SINGLE_VALUE`,
             value: { display: formatDateTime(mgoPeriod.start) },
         },
         {
+            id: label,
             label: `intl(${label}.end)`,
             type: `SINGLE_VALUE`,
             value: { display: formatDateTime(mgoPeriod.end) },

@@ -1,9 +1,12 @@
 {
+    "id": "r3.e_afspraak_appointment",
     "label": "Afspraak",
     "children": [
         {
+            "id": "summary.r3.e_afspraak_appointment.default",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.appointment_type",
                     "label": "Contact type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +18,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.start",
                     "label": "Begin datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -22,6 +26,7 @@
                     }
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.indication",
                     "label": "Verrichting of probleem",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -31,6 +36,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.reason",
                     "label": "Afwijkende uitslag",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -46,9 +52,11 @@
             ]
         },
         {
+            "id": "summary.r3.e_afspraak_appointment.group_actor_title",
             "label": "Met wie u de afspraak had",
             "children": [
                 {
+                    "id": "r3.e_afspraak_appointment.participant.actor",
                     "label": "Contactpersoon, patiënt, zorgverlener of locatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -64,6 +72,7 @@
                     ]
                 },
                 {
+                    "id": "r3.e_afspraak_appointment.specialty",
                     "label": "Specialisme",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -77,6 +86,7 @@
                     ]
                 },
                 {
+                    "id": "summary.organization",
                     "type": "SINGLE_VALUE",
                     "label": "Zorgaanbieder",
                     "value": {
@@ -86,9 +96,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.e_afspraak_appointment.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle afspraakgegevens",
                     "reference": "Appointment/eafspraak-appointment-01"

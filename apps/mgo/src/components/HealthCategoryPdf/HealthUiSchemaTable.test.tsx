@@ -9,11 +9,13 @@ vi.mock('@react-pdf/renderer');
 
 test('renders schema correctly', () => {
     const element = {
+        id: faker.string.uuid(),
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
         value: { display: faker.lorem.sentence() },
     } satisfies SingleValue;
     const group: HealthUiGroup = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         children: [element],
     };

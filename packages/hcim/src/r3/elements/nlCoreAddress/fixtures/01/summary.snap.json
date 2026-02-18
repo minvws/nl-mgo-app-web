@@ -1,7 +1,8 @@
 [
     {
-        "type": "SINGLE_VALUE",
+        "id": "r3.nl_core_address",
         "label": "Adres",
+        "type": "SINGLE_VALUE",
         "value": {
             "display": "Binnenkant 12 A Hoog 1000AA Amsterdam"
         }

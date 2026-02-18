@@ -1,5 +1,6 @@
 [
     {
+        "id": "fhir.x.telephone_numbers",
         "label": "Telefoonnummer",
         "type": "MULTIPLE_VALUES",
         "value": []

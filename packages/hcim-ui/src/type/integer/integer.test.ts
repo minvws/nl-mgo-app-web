@@ -11,6 +11,7 @@ test('integer', () => {
     const value = faker.mgo.integer();
     const result = integer(faker.ui.context())(label, value);
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: numberToString(value?.value) },

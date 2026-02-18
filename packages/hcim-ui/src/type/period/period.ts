@@ -19,11 +19,13 @@ export const period: WithUiContext<
 
     return [
         {
+            id: label,
             label: formatLabel(startLabel, value, `fhir.period.start`),
             type: `SINGLE_VALUE`,
             value: { display: formatDate(value?.start) },
         },
         {
+            id: label,
             label: formatLabel(endLabel, value, `fhir.period.end`),
             type: `SINGLE_VALUE`,
             value: { display: formatDate(value?.end) },

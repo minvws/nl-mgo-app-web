@@ -9,22 +9,30 @@ test('returns an empty array is value is nullish', () => {
 });
 
 test('returns all children for a UiGroup', () => {
+    const groupLabel = faker.lorem.word();
+    const child1Label = faker.lorem.word();
+    const child2Label = faker.lorem.word();
+    const child3Label = faker.lorem.word();
     const group: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: groupLabel,
+        label: groupLabel,
         children: [
             {
+                id: child1Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: child1Label,
                 value: { display: faker.lorem.word() },
             },
             {
+                id: child2Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: child2Label,
                 value: { display: faker.lorem.word() },
             },
             {
+                id: child3Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: child3Label,
                 value: { display: faker.lorem.word() },
             },
         ],
@@ -35,33 +43,45 @@ test('returns all children for a UiGroup', () => {
 });
 
 test('returns all children for multiple UiGroups', () => {
+    const group1Label = faker.lorem.word();
+    const group1Child1Label = faker.lorem.word();
+    const group1Child2Label = faker.lorem.word();
+    const group1Child3Label = faker.lorem.word();
     const group1: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: group1Label,
+        label: group1Label,
         children: [
             {
+                id: group1Child1Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: group1Child1Label,
                 value: { display: faker.lorem.word() },
             },
             {
+                id: group1Child2Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: group1Child2Label,
                 value: { display: faker.lorem.word() },
             },
             {
+                id: group1Child3Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: group1Child3Label,
                 value: { display: faker.lorem.word() },
             },
         ],
     };
 
+    const group2Label = faker.lorem.word();
+    const group2Child1Label = faker.lorem.word();
     const group2: HealthUiGroup = {
-        label: faker.lorem.word(),
+        id: group2Label,
+        label: group2Label,
         children: [
             {
+                id: group2Child1Label,
                 type: 'SINGLE_VALUE',
-                label: faker.lorem.word(),
+                label: group2Child1Label,
                 value: { display: faker.lorem.word() },
             },
         ],

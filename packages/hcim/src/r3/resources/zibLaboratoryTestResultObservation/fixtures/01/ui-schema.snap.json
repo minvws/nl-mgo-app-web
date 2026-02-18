@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.based_on",
                     "label": "Aanvrager",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +12,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.related",
                     "label": "Gerelateerde uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +20,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -27,6 +30,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.interpretation.interpretatie_vlaggen_codelijst",
                     "label": "Interpretatie vlaggen",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -38,18 +42,21 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.specimen",
                     "label": "Monster",
                     "type": "REFERENCE_VALUE",
                     "display": "Blood (substance)",
                     "reference": "Specimen/zib-laboratorytestresult-specimen-01"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.subject",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.code",
                     "label": "Test code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -61,6 +68,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.effective_date_time",
                     "label": "Test datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -68,6 +76,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.value_quantity",
                     "label": "Test uitslag",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -75,6 +84,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.status",
                     "label": "Test uitslag status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -82,6 +92,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.method",
                     "label": "Testmethode",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -89,6 +100,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.comment",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -96,6 +108,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.context",
                     "label": "Verband",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -103,6 +116,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.performer",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -112,9 +126,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.category",
             "label": "Categorie",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.category.laboratory_test_result_code",
                     "label": "Resultaat code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -126,6 +142,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.category.result_type",
                     "label": "Resultaat type",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -139,9 +156,11 @@
             ]
         },
         {
+            "id": "r3.zib_laboratory_test_result_observation.reference_range",
             "label": "Referentie",
             "children": [
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.high",
                     "label": "Referentie bovengrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -149,6 +168,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.low",
                     "label": "Referentie ondergrens",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -156,6 +176,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_laboratory_test_result_observation.reference_range.type",
                     "label": "Referentie type",
                     "type": "SINGLE_VALUE",
                     "value": {

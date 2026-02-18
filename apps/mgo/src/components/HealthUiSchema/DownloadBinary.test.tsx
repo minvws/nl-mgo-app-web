@@ -46,6 +46,7 @@ test('DownloadBinary uses blob url for the link', async () => {
     });
 
     const value: UiDownloadBinary = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         reference: `Binary/${faker.string.uuid()}`,
         type: 'DOWNLOAD_BINARY',
@@ -68,6 +69,7 @@ test('DownloadBinary shows if there is no content', async () => {
     });
 
     const value: UiDownloadBinary = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         reference: `Binary/${faker.string.uuid()}`,
         type: 'DOWNLOAD_BINARY',
@@ -91,6 +93,7 @@ test('DownloadBinary shows an error if there is one', async () => {
     });
 
     const value: UiDownloadBinary = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         reference: `Binary/${faker.string.uuid()}`,
         type: 'DOWNLOAD_BINARY',

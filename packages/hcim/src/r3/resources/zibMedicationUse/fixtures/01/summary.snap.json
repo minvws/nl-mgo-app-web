@@ -1,9 +1,12 @@
 {
+    "id": "r3.zib_medication_use",
     "label": "Paracetamol tablet 500mg",
     "children": [
         {
+            "id": "summary.r3.zib_medication_use.default",
             "children": [
                 {
+                    "id": "summary.r3.zib_instructions_for_use.text",
                     "label": "Gebruiksaanwijzing",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,20 +14,23 @@
                     }
                 },
                 {
-                    "label": "Minimaal",
+                    "id": "summary.r3.zib_instructions_for_use.dose",
+                    "label": "Hoeveelheid per keer",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "1 stuk"
                     }
                 },
                 {
-                    "label": "Maximaal",
+                    "id": "summary.r3.zib_instructions_for_use.dose",
+                    "label": "Hoeveelheid per keer",
                     "type": "SINGLE_VALUE",
                     "value": {
                         "display": "2 stuks"
                     }
                 },
                 {
+                    "id": "summary.r3.zib_medication_use.status",
                     "label": "Status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -32,6 +38,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.reason_code.text",
                     "label": "Reden gebruik",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -47,9 +54,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_medication_use.group_period",
             "label": "Periode van gebruik",
             "children": [
                 {
+                    "id": "r3.zib_medication_use.effective_period",
                     "label": "Ingangsdatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -57,6 +66,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_medication_use.effective_period",
                     "label": "Einddatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -66,9 +76,11 @@
             ]
         },
         {
+            "id": "summary.r3.zib_medication_use.group_prescriber",
             "label": "Voorgeschreven door",
             "children": [
                 {
+                    "id": "summary.r3.zib_medication_use.prescriber",
                     "label": "Zorgverlener",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -76,6 +88,7 @@
                     }
                 },
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -85,9 +98,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.zib_medication_use.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle medicijngegevens",
                     "reference": "MedicationStatement/zib-medicationuse-01"

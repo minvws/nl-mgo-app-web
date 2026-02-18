@@ -10,11 +10,11 @@ import {
 export const reference: WithUiContext<
     UiFunction<MgoReference | MgoReference[], SingleValue | ReferenceValue | MultipleValues>
 > =
-    ({ formatLabel, isSummary }) =>
+    ({ baseProps, isSummary }) =>
     (label, value, options = {}) => {
         if (Array.isArray(value)) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'MULTIPLE_VALUES',
                 value: value.map((x) => ({ display: x.display })),
             };
@@ -22,14 +22,14 @@ export const reference: WithUiContext<
 
         if (isSummary) {
             return {
-                label: formatLabel(label, value, options.defaultLabel),
+                ...baseProps(label, value, options),
                 type: 'SINGLE_VALUE',
                 value: { display: value?.display },
             };
         }
 
         return {
-            label: formatLabel(label, value, options.defaultLabel),
+            ...baseProps(label, value, options),
             type: 'REFERENCE_VALUE',
             display: value?.display,
             reference: value?.reference,

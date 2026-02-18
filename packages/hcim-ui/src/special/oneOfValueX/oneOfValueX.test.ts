@@ -78,9 +78,11 @@ test('valueX where prefixed value not found', () => {
 
 test('valueX always returns ui elements, even if a helper returns a group', () => {
     const group: HealthUiGroup = {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         children: [
             {
+                id: faker.string.uuid(),
                 type: 'SINGLE_VALUE',
                 label: faker.lorem.sentence(),
                 value: { display: faker.lorem.sentence() },

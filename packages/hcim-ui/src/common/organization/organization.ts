@@ -6,6 +6,7 @@ export function organization(
     organization: { name?: string } | undefined
 ): UiElement {
     return {
+        id: 'summary.organization',
         type: 'SINGLE_VALUE',
         label: formatMessage(`summary.organization`),
         value: { display: organization?.name },

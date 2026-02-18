@@ -15,6 +15,7 @@ test('code single', () => {
     const result = code(context)(label, value);
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: value.value },
@@ -41,6 +42,7 @@ test('code multiple', () => {
     const result = code(context)(label, value);
 
     expect(result).toEqual<MultipleValues>({
+        id: label,
         label: testMessage(label),
         type: 'MULTIPLE_VALUES',
         value: value.map((x) => ({ display: x.value })),
@@ -59,6 +61,7 @@ test('code translates the code when options are used', () => {
     const result = code(context)(label, value, { i18nCode: i18nCode as any }); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: `intl(codes.${i18nCode}.${value.value})` },
@@ -77,6 +80,7 @@ test('code defaults to value if no translation is found and options are used', (
     const result = code(context)(label, value, { i18nCode: i18nCode as any }); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: { display: value.value },
@@ -91,6 +95,7 @@ test('code returns undefined if undefined even when options are used', () => {
     const result = code(context)(label, undefined, { i18nCode: i18nCode as any }); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     expect(result).toEqual<SingleValue>({
+        id: label,
         label: testMessage(label),
         type: 'SINGLE_VALUE',
         value: undefined,

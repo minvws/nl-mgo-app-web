@@ -12,19 +12,17 @@ type RatioLabel = HasNumeratorLabel | HasDenominatorLabel;
 export const ratio: WithUiContext<
     UiFunction<MgoRatio, SingleValue[], FhirMessagesIds | RatioLabel>
 > = (context) => (label, value) => {
-    const { formatLabel } = context;
-    const numeratorLabel = `${label}.numerator`;
-    const denominatorLabel = `${label}.denominator`;
+    const { baseProps } = context;
     const formatSystemValue = systemValue(context);
 
     return [
         {
-            label: formatLabel(numeratorLabel, value, `fhir.ratio.numerator`),
+            ...baseProps(label, value, { defaultLabel: `fhir.ratio.numerator` }),
             type: `SINGLE_VALUE`,
             value: { display: formatSystemValue(value?.numerator) },
         },
         {
-            label: formatLabel(denominatorLabel, value, `fhir.ratio.denominator`),
+            ...baseProps(label, value, { defaultLabel: `fhir.ratio.denominator` }),
             type: `SINGLE_VALUE`,
             value: { display: formatSystemValue(value?.denominator) },
         },

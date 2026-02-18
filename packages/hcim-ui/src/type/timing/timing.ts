@@ -20,6 +20,7 @@ export const timing: WithUiContext<UiFunction<MgoTiming, HealthUiGroup>> =
         const uiUnsignedInt = unsignedInt(context);
 
         return {
+            id: label,
             label: formatLabel(label, null, 'fhir.timing'),
             children: [
                 uiCodeableConcept(`${label}.code` as FhirMessagesIds, value?.code, {

@@ -7,32 +7,38 @@ import { UiElement } from './UiElement';
 
 test.each<UiElementData>([
     {
+        id: faker.string.uuid(),
         type: 'SINGLE_VALUE',
         label: faker.lorem.sentence(),
         value: { display: faker.lorem.word() },
     },
     {
+        id: faker.string.uuid(),
         type: 'MULTIPLE_VALUES',
         label: faker.lorem.sentence(),
         value: [{ display: faker.lorem.word() }],
     },
     {
+        id: faker.string.uuid(),
         type: 'MULTIPLE_GROUPED_VALUES',
         label: faker.lorem.sentence(),
         value: [[{ display: faker.lorem.word() }], [{ display: faker.lorem.word() }]],
     },
     {
+        id: faker.string.uuid(),
         label: faker.lorem.sentence(),
         type: 'REFERENCE_VALUE',
         display: faker.lorem.word(),
         reference: undefined,
     },
     {
+        id: faker.string.uuid(),
         type: 'DOWNLOAD_LINK',
         label: faker.lorem.sentence(),
         url: faker.internet.url(),
     },
     {
+        id: faker.string.uuid(),
         type: 'REFERENCE_LINK',
         label: faker.lorem.sentence(),
         reference: faker.lorem.word(),

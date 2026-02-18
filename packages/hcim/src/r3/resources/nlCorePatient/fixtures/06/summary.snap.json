@@ -1,9 +1,12 @@
 {
+    "id": "r3.nl_core_patient",
     "label": "Onbekend",
     "children": [
         {
+            "id": "summary.r3.nl_core_patient.default",
             "children": [
                 {
+                    "id": "r3.nl_core_humanname.text",
                     "label": "Naam",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -11,6 +14,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.birth_date",
                     "label": "Geboortedatum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -18,6 +22,7 @@
                     }
                 },
                 {
+                    "id": "r3.nl_core_patient.gender",
                     "label": "Geslacht",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -29,6 +34,7 @@
                     ]
                 },
                 {
+                    "id": "r3.nl_core_patient.general_practitioner",
                     "label": "Huisarts",
                     "type": "REFERENCE_VALUE",
                     "display": "Vaste Huisarts 1",
@@ -37,16 +43,19 @@
             ]
         },
         {
+            "id": "summary.r3.nl_core_patient.group_contact_details",
             "label": "Contactgegevens",
             "children": [
                 {
-                    "type": "SINGLE_VALUE",
+                    "id": "r3.nl_core_address",
                     "label": "Adres",
+                    "type": "SINGLE_VALUE",
                     "value": {
                         "display": "Knolweg 1020 A Hoog to 9999XB Stitswerd"
                     }
                 },
                 {
+                    "id": "fhir.x.telephone_numbers",
                     "label": "Telefoonnummer",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -56,6 +65,7 @@
                     ]
                 },
                 {
+                    "id": "fhir.x.email_addresses",
                     "label": "E-mailadres",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -67,9 +77,11 @@
             ]
         },
         {
+            "id": "summary.r3.nl_core_patient.group_author",
             "label": "Vastgelegd door",
             "children": [
                 {
+                    "id": "summary.organization",
                     "label": "Zorgaanbieder",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -79,9 +91,11 @@
             ]
         },
         {
+            "id": "Opties",
             "label": "Opties",
             "children": [
                 {
+                    "id": "summary.r3.nl_core_patient.show_details",
                     "type": "REFERENCE_LINK",
                     "label": "Bekijk alle persoonsgegevens",
                     "reference": "Patient/zib-legalstatus-01"

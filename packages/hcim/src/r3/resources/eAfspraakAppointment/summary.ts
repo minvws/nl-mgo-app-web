@@ -9,9 +9,11 @@ export const summary: SummarySchemaFunction<EAfspraakAppointment> = (resource, c
     const label = resource.appointmentType?.text ?? formatMessage(i18n);
 
     return {
+        id: i18n,
         label,
         children: [
             {
+                id: `summary.${i18n}.default`,
                 children: [
                     ui.codeableConcept(`${i18n}.appointment_type`, resource.appointmentType),
                     ui.dateTime(`${i18n}.start`, resource.start),
@@ -20,6 +22,7 @@ export const summary: SummarySchemaFunction<EAfspraakAppointment> = (resource, c
                 ],
             },
             {
+                id: `summary.${i18n}.group_actor_title`,
                 label: formatMessage(`summary.${i18n}.group_actor_title`),
                 children: [
                     ui.reference(

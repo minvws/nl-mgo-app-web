@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.gp_journal_entry.performer",
                     "label": "Auteur",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -13,6 +14,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_journal_entry.code",
                     "label": "Code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -24,6 +26,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_journal_entry.effective_date_time",
                     "label": "Datum",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -31,6 +34,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_journal_entry.episode_of_care",
                     "label": "Episode",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -40,6 +44,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_journal_entry.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -49,6 +54,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_journal_entry.value_string",
                     "label": "Journaalregel tekst",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -56,6 +62,7 @@
                     }
                 },
                 {
+                    "id": "r3.gp_journal_entry.subject",
                     "label": "Onderwerp",
                     "type": "REFERENCE_VALUE",
                     "display": "J. XXX_Helleman (Johan)",
@@ -64,9 +71,11 @@
             ]
         },
         {
+            "id": "r3.gp_journal_entry.component",
             "label": "Onderliggende metingen",
             "children": [
                 {
+                    "id": "r3.gp_journal_entry.component.icpc_s.value_codeable_concept",
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -78,6 +87,7 @@
                     ]
                 },
                 {
+                    "id": "r3.gp_journal_entry.component.icpc_e.value_codeable_concept",
                     "label": "ICPC Code",
                     "type": "MULTIPLE_VALUES",
                     "value": [

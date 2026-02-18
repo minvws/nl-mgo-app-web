@@ -23,11 +23,13 @@ test('processes root properties to ui elements', () => {
 
     const expected: UiElement[] = [
         {
+            id: `${path}.foo`,
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
             value: { display: value.foo.value },
         },
         {
+            id: `${path}.bak`,
             label: testMessage(`${path}.bak`),
             type: 'SINGLE_VALUE',
             value: { display: value.bak.value },
@@ -52,11 +54,13 @@ test('null values are added as single value elements', () => {
 
     const expected: UiElement[] = [
         {
+            id: `${path}.foo`,
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
             value: { display: value.foo.value },
         },
         {
+            id: `${path}.bak`,
             label: testMessage(`${path}.bak`),
             type: 'SINGLE_VALUE',
             value: undefined,
@@ -84,14 +88,17 @@ test('non-root paths get their own group', () => {
 
     const expected: HealthUiGroup[] = [
         {
+            id: path,
             label: path,
             children: [
                 {
+                    id: `${path}.foo`,
                     label: testMessage(`${path}.foo`),
                     type: 'SINGLE_VALUE',
                     value: { display: value.foo.value },
                 },
                 {
+                    id: `${path}.bak`,
                     label: testMessage(`${path}.bak`),
                     type: 'SINGLE_VALUE',
                     value: { display: value.bak.value },
@@ -117,6 +124,7 @@ test('non-root paths that only have one child DO NOT get their own group', () =>
 
     const expected: UiElement[] = [
         {
+            id: `${path}.foo`,
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
             value: { display: value.foo.value },
@@ -146,14 +154,17 @@ test('deeply nested types are merged to their root parent group', () => {
 
     const expected: HealthUiGroup[] = [
         {
+            id: path,
             label: path,
             children: [
                 {
+                    id: `${path}.foo`,
                     label: testMessage(`${path}.foo`),
                     type: 'SINGLE_VALUE',
                     value: { display: value.foo.value },
                 },
                 {
+                    id: `${path}.deep.bak`,
                     label: testMessage(`${path}.deep.bak`),
                     type: 'SINGLE_VALUE',
                     value: { display: value.deep.bak.value },
@@ -180,6 +191,7 @@ test('does not try to process meta data properties starting with an underscore',
 
     const expected: UiElement[] = [
         {
+            id: `${path}.foo`,
             label: testMessage(`${path}.foo`),
             type: 'SINGLE_VALUE',
             value: { display: value.foo.value },

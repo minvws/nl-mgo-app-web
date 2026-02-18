@@ -1,8 +1,10 @@
 [
     {
+        "id": "r3.zib_instructions_for_use",
         "label": "Gebruiksinstructie",
         "children": [
             {
+                "id": "r3.zib_instructions_for_use.text",
                 "label": "Omschrijving",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -10,6 +12,7 @@
                 }
             },
             {
+                "id": "r3.zib_instructions_for_use.route",
                 "label": "Toedieningsweg",
                 "type": "MULTIPLE_VALUES",
                 "value": [
@@ -21,6 +24,7 @@
                 ]
             },
             {
+                "id": "r3.zib_instructions_for_use.additional_instruction",
                 "label": "Aanvullende instructie",
                 "type": "MULTIPLE_GROUPED_VALUES",
                 "value": [
@@ -34,20 +38,23 @@
                 ]
             },
             {
-                "label": "Teller",
+                "id": "r3.zib_instructions_for_use.rate",
+                "label": "Toedieningssnelheid",
                 "type": "SINGLE_VALUE",
                 "value": {
                     "display": "200 milliliter"
                 }
             },
             {
-                "label": "Noemer",
+                "id": "r3.zib_instructions_for_use.rate",
+                "label": "Toedieningssnelheid",
                 "type": "SINGLE_VALUE",
                 "value": {
                     "display": "12 uur"
                 }
             },
             {
+                "id": "r3.zib_instructions_for_use.sequence",
                 "label": "Volgnummer",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -55,6 +62,7 @@
                 }
             },
             {
+                "id": "r3.zib_instructions_for_use.dose",
                 "label": "Keerdosis",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -62,20 +70,23 @@
                 }
             },
             {
-                "label": "Teller",
+                "id": "r3.zib_instructions_for_use.max_dose_per_period",
+                "label": "Maximale dosering",
                 "type": "SINGLE_VALUE",
                 "value": {
                     "display": "1000 milliliter"
                 }
             },
             {
-                "label": "Noemer",
+                "id": "r3.zib_instructions_for_use.max_dose_per_period",
+                "label": "Maximale dosering",
                 "type": "SINGLE_VALUE",
                 "value": {
                     "display": "24 uur"
                 }
             },
             {
+                "id": "r3.zib_instructions_for_use.as_needed_codeable_concept",
                 "label": "Zo nodig",
                 "type": "MULTIPLE_VALUES",
                 "value": [
@@ -89,9 +100,11 @@
         ]
     },
     {
+        "id": "r3.zib_administration_schedule",
         "label": "Toedieningsschema",
         "children": [
             {
+                "id": "r3.zib_administration_schedule.repeat.duration",
                 "label": "Toedieninsgduur",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -99,6 +112,7 @@
                 }
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.frequency",
                 "label": "Frequentie",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -106,6 +120,7 @@
                 }
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.frequency_max",
                 "label": "Maximum waarde",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -113,6 +128,7 @@
                 }
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.period",
                 "label": "Interval",
                 "value": {
                     "display": "1 d"
@@ -120,6 +136,7 @@
                 "type": "SINGLE_VALUE"
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.day_of_week",
                 "label": "Weekdagen",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -127,6 +144,7 @@
                 }
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.time_of_day",
                 "label": "Toedientijd",
                 "type": "SINGLE_VALUE",
                 "value": {
@@ -134,6 +152,7 @@
                 }
             },
             {
+                "id": "r3.zib_administration_schedule.repeat.when",
                 "label": "Dagdeel",
                 "type": "SINGLE_VALUE",
                 "value": {

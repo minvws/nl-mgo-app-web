@@ -61,6 +61,7 @@ test('it does process extension properties that are nested inside the mgo type a
 
     const expected = [
         {
+            id: path,
             label: path,
             children: [
                 string(uiContext)(path as FhirMessagesIds, value),
@@ -96,6 +97,7 @@ test('also processes deeply nested properties that are mgo types', () => {
 
     const expected = [
         {
+            id: path,
             label: path,
             children: [
                 string(uiContext)(path as FhirMessagesIds, value),
@@ -136,6 +138,7 @@ test('also processes deeply nested array properties that are mgo types', () => {
 
     const expected = [
         {
+            id: path,
             label: path,
             children: [
                 string(uiContext)(path as FhirMessagesIds, value),

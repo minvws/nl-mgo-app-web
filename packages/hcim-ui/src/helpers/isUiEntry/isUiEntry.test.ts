@@ -8,6 +8,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         true,
         'SINGLE_VALUE',
         {
+            id: faker.string.uuid(),
             label: faker.lorem.word(),
             value: { display: faker.lorem.word() },
             type: 'SINGLE_VALUE',
@@ -17,6 +18,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         false,
         'SINGLE_VALUE',
         {
+            id: faker.string.uuid(),
             label: faker.lorem.word(),
             value: { display: faker.lorem.word() },
             type: faker.lorem.word(),
@@ -26,6 +28,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         true,
         'DOWNLOAD_LINK',
         {
+            id: faker.string.uuid(),
             label: faker.lorem.word(),
             url: faker.lorem.word(),
             type: 'DOWNLOAD_LINK',
@@ -35,6 +38,7 @@ test.each<[boolean, UiElement['type'], UiElement]>([
         false,
         'DOWNLOAD_LINK',
         {
+            id: faker.string.uuid(),
             label: faker.lorem.word(),
             url: faker.lorem.word(),
             type: faker.lorem.word(),

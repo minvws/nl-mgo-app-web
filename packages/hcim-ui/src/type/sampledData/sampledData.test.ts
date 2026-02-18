@@ -12,9 +12,11 @@ test('sampled data', () => {
     const result = sampledData(uiHelperContext)(label, value);
 
     expect(result).toEqual({
+        id: label,
         label: testMessage(label),
         children: expect.arrayContaining<SingleValue>([
             {
+                id: `${label}.origin`,
                 label: testMessage(`${label}.origin`),
                 type: `SINGLE_VALUE`,
                 value: { display: systemValue(uiHelperContext)(value?.origin) },

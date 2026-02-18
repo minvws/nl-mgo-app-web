@@ -105,6 +105,7 @@ test('empty array returns empty result', () => {
     const value: unknown[] = [];
     const expected: SingleValue[] = [
         {
+            id: path,
             label: testMessage(path),
             type: 'SINGLE_VALUE',
             value: undefined,

@@ -4,6 +4,7 @@
         {
             "children": [
                 {
+                    "id": "r3.zib_allergy_intolerance.category.allergie_categorie_codelijst",
                     "label": "Allergie categorie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -15,6 +16,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.clinical_status.allergie_status_codelijst",
                     "label": "Allergie status",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -26,6 +28,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.verification_status",
                     "label": "Allergie status",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -33,6 +36,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.recorder",
                     "label": "Auteur",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -40,6 +44,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.onset_date_time",
                     "label": "Begin datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -47,6 +52,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.source",
                     "label": "Bron",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -54,6 +60,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.identifier",
                     "label": "Identificatie",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -63,6 +70,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.last_occurrence",
                     "label": "Laatste reactie datum tijd",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -70,6 +78,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.criticality.critical_extent_codelist",
                     "label": "Mate van kritiek zijn",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -81,12 +90,14 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.patient",
                     "label": "Patiënt",
                     "type": "REFERENCE_VALUE",
                     "display": "Johan XXX_Helleman",
                     "reference": "Patient/nl-core-patient-01"
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.note",
                     "label": "Toelichting",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -94,6 +105,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.code",
                     "label": "Veroorzakende stof",
                     "type": "MULTIPLE_VALUES",
                     "value": [
@@ -107,9 +119,11 @@
             ]
         },
         {
+            "id": "r3.zib_allergy_intolerance.reaction",
             "label": "Reactie",
             "children": [
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.severity.severity_codelist",
                     "label": "Ernst",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -123,6 +137,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.description",
                     "label": "Reactie beschrijving",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -130,6 +145,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.onset",
                     "label": "Reactie tijdstip",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -137,6 +153,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.substance",
                     "label": "Specifieke stof",
                     "type": "SINGLE_VALUE",
                     "value": {
@@ -144,6 +161,7 @@
                     }
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.manifestation",
                     "label": "Symptoom",
                     "type": "MULTIPLE_GROUPED_VALUES",
                     "value": [
@@ -157,6 +175,7 @@
                     ]
                 },
                 {
+                    "id": "r3.zib_allergy_intolerance.reaction.exposure_route",
                     "label": "Wijze van blootstelling",
                     "type": "SINGLE_VALUE",
                     "value": {
