@@ -106,7 +106,6 @@
             "@eslint/plugin-kit@<0.3.3": "https://github.com/advisories/GHSA-xffm-g5w8-qvg7",
             "tmp@<=0.2.3": "https://github.com/advisories/GHSA-52f5-9888-hmc6",
             "axios@<1.12.0": "@nx > axios, https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
-            "axios@<=1.13.4": "@nx > axios, https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
             "min-document>=2.0.0 <=2.19.1": "https://github.com/minvws/nl-mgo-app-web-private/security/dependabot/39",
             "glob@>=10.3.7 <=11.0.3": "https://github.com/advisories/GHSA-5j98-mcp5-4vw2",
             "qs@<6.14.1": "https://github.com/advisories/GHSA-6rw7-vpxm-498p",
@@ -114,7 +113,9 @@
             "react-router@>=6.0.0 <6.30.2": "https://github.com/advisories/GHSA-9jcx-v3wj-wh4m",
             "isaacs/brace-expansion@<=5.0.0": "https://github.com/advisories/GHSA-7h2j-956f-4vf2",
             "axios@<=1.13.4": "https://github.com/advisories/GHSA-43fc-jf86-j433",
-            "qs@<=6.14.1": "https://github.com/advisories/GHSA-w7fw-mjwx-w883"
+            "qs@>=6.7.0 <=6.14.1": "https://github.com/advisories/GHSA-w7fw-mjwx-w883",
+            "ajv@<8.18.0": "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6",
+            "minimatch@>=10.0.0 <10.2.1": "https://github.com/advisories/GHSA-3ppc-4f35-3m26"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <=1.1.11": "1.1.12",
@@ -141,7 +142,10 @@
             "react-router@>=6.0.0 <6.30.2": ">=6.30.2",
             "@isaacs/brace-expansion@<=5.0.0": ">=5.0.1",
             "axios@<=1.13.4": ">=1.13.5",
-            "qs@<=6.14.1": ">=6.14.2 "
+            "qs@>=6.7.0 <=6.14.1": ">=6.14.2",
+            "ajv@<6.14.0": "6.14.0",
+            "ajv@>=8.0.0 <8.18.0": ">=8.18.0",
+            "minimatch@>=10.0.0 <10.2.1": ">=10.2.1"
         },
         "auditConfig": {
             "ignoreGhsas comments (non-standard-key)": {
@@ -154,7 +158,9 @@
                 "https://github.com/advisories/GHSA-jgmv-j7ww-jx2x": "@nx/react  - Only used in dev",
                 "https://github.com/advisories/GHSA-rx8g-88g5-qh64": "min-document - Only used in storybook at dev",
                 "https://github.com/advisories/GHSA-mh29-5h37-fv8m": "js-yaml - Only used in dev tools such as nx, eslint and svgr",
-                "https://github.com/advisories/GHSA-pj86-cfqh-vqx6": "express - only used in dev (@nx/react)"
+                "https://github.com/advisories/GHSA-pj86-cfqh-vqx6": "express - only used in dev (@nx/react)",
+                "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6": "ajv - Only used in dev (eslint), can't upgrade v6 to v8 without breaking API",
+                "https://github.com/advisories/GHSA-3ppc-4f35-3m26": "minimatch - Only used in dev (eslint/nx), can't upgrade v3/v5 to v10 without breaking API"
             },
             "ignoreGhsas": [
                 "GHSA-968p-4wvh-cqc8",
@@ -166,7 +172,9 @@
                 "GHSA-jgmv-j7ww-jx2x",
                 "GHSA-rx8g-88g5-qh64",
                 "GHSA-mh29-5h37-fv8m",
-                "GHSA-pj86-cfqh-vqx6"
+                "GHSA-pj86-cfqh-vqx6",
+                "GHSA-2g4f-4pwh-qvx6",
+                "GHSA-3ppc-4f35-3m26"
             ]
         }
     }
