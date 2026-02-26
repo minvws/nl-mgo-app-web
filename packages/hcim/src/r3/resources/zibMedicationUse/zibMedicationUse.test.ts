@@ -34,6 +34,34 @@ test('01: summary', async () => {
     );
 });
 
+test('01: card', async () => {
+    const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
+    const card = zibMedicationUse.card(mgoResource, testSchemaContext({ isSummary: true }));
+    await expectJson(card).toMatchFileSnapshot('./fixtures/01/card.snap.json');
+});
+
+test('01: card falls back to resource.id for title when medicationReference display is not set', () => {
+    const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
+    mgoResource.medicationReference = { ...mgoResource.medicationReference!, display: undefined };
+    const card = zibMedicationUse.card(mgoResource, testSchemaContext({ isSummary: true }));
+    expect(card.title).toEqual(mgoResource.id);
+});
+
+test('01: card falls back to i18n label for title when medicationReference and id are not set', () => {
+    const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
+    mgoResource.medicationReference = undefined;
+    mgoResource.id = undefined;
+    const card = zibMedicationUse.card(mgoResource, testSchemaContext({ isSummary: true }));
+    expect(card.title).toEqual(fhirMessage('r3.zib_medication_use'));
+});
+
+test('01: card uses null for detail when effectivePeriod start is not set', () => {
+    const mgoResource = zibMedicationUse.parse(inputFhirData01 as MedicationStatement);
+    mgoResource.effectivePeriod = { ...mgoResource.effectivePeriod, start: undefined };
+    const card = zibMedicationUse.card(mgoResource, testSchemaContext({ isSummary: true }));
+    expect(card.detail).toEqual(undefined);
+});
+
 test('02: mgo-resource', async () => {
     const output = zibMedicationUse.parse(inputFhirData02 as MedicationStatement);
     await expectJson(output).toMatchFileSnapshot('./fixtures/02/mgo-resource.snap.json');

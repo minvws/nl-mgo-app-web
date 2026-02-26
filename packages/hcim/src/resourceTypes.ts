@@ -26,7 +26,21 @@ export type SummaryElementFunction<
     Context extends SchemaContext,
 > = (parsedResource: Nullable<T>, context: Context) => UiElement[];
 
+export type CardIconNames = 'calendar_today' | 'favorite-fill'; // Even ter illustratie, maar het zal een subset zijn van de file names uit de `@material-symbols` (google material icons)
+
 export type DetailSchemaFunction<T extends MgoResourceMeta> = HealthUiSchemaFunction<T, UiContext>;
+
+export interface HcimCardDetails {
+    title: string;
+    description?: string;
+    descriptionIcon?: CardIconNames;
+    detail?: string;
+}
+
+export type CardDetailsFunction<T extends MgoResourceMeta, Context> = (
+    parsedResource: T,
+    context: Context
+) => HcimCardDetails;
 
 type ResourceParserFunction<
     Resource extends FhirResource,
@@ -42,6 +56,7 @@ export interface ResourceConfig<
     parse: ResourceParserFunction<Resource, ParsedResource>;
     uiSchema: DetailSchemaFunction<ParsedResource>;
     summary?: SummarySchemaFunction<ParsedResource>;
+    card?: CardDetailsFunction<ParsedResource, SchemaContext<V>>;
 }
 
 type ElementParserFunction<T extends BackboneElement, ParsedResource extends object> = (

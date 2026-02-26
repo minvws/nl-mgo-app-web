@@ -1,4 +1,5 @@
 import { type FhirVersion } from '@minvws/mgo-fhir';
+import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import {
     type UiContext,
     type UiContextOptions,
@@ -6,10 +7,9 @@ import {
     createUiContext,
     createUiHelpers,
 } from '@minvws/mgo-hcim-ui';
-import { type MgoResource } from '../resources/resources.js';
 
-export type SchemaOptions<V extends FhirVersion> = UiContextOptions & {
-    resources?: MgoResource<V>[];
+export type SchemaOptions<_V extends FhirVersion> = UiContextOptions & {
+    resources?: MgoResourceMeta[];
     organization?: {
         name?: string;
     };
@@ -19,9 +19,9 @@ export type SchemaPartialContext = UiContext & {
     ui: UiHelpers;
 };
 
-export type SchemaContext<V extends FhirVersion = FhirVersion> = SchemaPartialContext & {
+export type SchemaContext<_V extends FhirVersion = FhirVersion> = SchemaPartialContext & {
     ui: UiHelpers;
-    resources: MgoResource<V>[];
+    resources: MgoResourceMeta[];
     organization?: {
         name?: string;
     };
