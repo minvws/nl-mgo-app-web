@@ -1,0 +1,5 @@
+dependency-submission:
+  allow:
+    paths:
+      exclude:
+        - 'examples/**'
