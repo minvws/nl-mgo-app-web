@@ -4,6 +4,7 @@ import { generateUiSchema } from '@minvws/mgo-hcim-ui';
 import { map } from '@minvws/mgo-utils';
 import { type ResourceConfig } from '../../../resourceTypes.js';
 import { parseZibInstructionsForUse } from '../../elements/index.js';
+import { card } from './card.js';
 import { summary } from './summary.js';
 
 const profile = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicationUse'; // NOSONAR
@@ -82,5 +83,6 @@ export const zibMedicationUse = {
     profile,
     parse: parseZibMedicationUse,
     summary,
+    card,
     uiSchema: generateUiSchema,
 } satisfies ResourceConfig<'R3', MedicationStatement, ZibMedicationUse>;
