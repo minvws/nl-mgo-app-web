@@ -35,7 +35,7 @@ jobs:
           sudo rm -rf /usr/local/lib/android
           sudo rm -rf /opt/ghc
       - uses: actions/checkout@v6
-      - uses: docker/setup-docker-action@v4
+      - uses: docker/setup-docker-action@v5
 
       - name: Start Docker containers
         env:
@@ -47,7 +47,7 @@ jobs:
         run: docker exec playwright bash -c "$TEST_COMMAND"
 
       - name: Upload Test Report Chrome
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: e2e-playwright-chrome

@@ -52,7 +52,7 @@ jobs:
         run: pnpm run test:coverage
       - name: Upload coverage report
         if: ${{ !cancelled() && (steps.test.conclusion == 'success' || steps.test.conclusion == 'failure') }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: coverage
           path: coverage
@@ -67,7 +67,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: 'Download artifact: coverage'
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: coverage
           path: coverage
