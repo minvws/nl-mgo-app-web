@@ -6,20 +6,20 @@ import { test, vi } from 'vitest';
 import { HealthSubCategoryList, type HealthCategoryDetailListProps } from './HealthSubCategoryList';
 
 const hoisted = vi.hoisted(() => ({
-    getSummary: vi.fn(),
+    getCard: vi.fn(),
 }));
 
 vi.mock('$/hooks', () => ({
-    useHealthUiSchema: vi.fn(() => ({
-        getSummary: hoisted.getSummary,
+    useHcim: vi.fn(() => ({
+        getCard: hoisted.getCard,
     })),
 }));
 
 test('shows HealthCategoryDetailList with organization', () => {
     const organization = faker.custom.healthcareOrganization();
     useStore.setState({ organizations: [organization] });
-    const label = faker.lorem.words();
-    hoisted.getSummary.mockReturnValue({ label, children: [] });
+    const title = faker.lorem.words();
+    hoisted.getCard.mockReturnValue({ title, description: organization.name });
 
     const props: HealthCategoryDetailListProps = {
         heading: 'hc_problems.heading',
@@ -32,13 +32,13 @@ test('shows HealthCategoryDetailList with organization', () => {
 
     setupWithAppProviders(<HealthSubCategoryList {...props} />);
     screen.getByRole('link', {
-        name: `${label} ${organization.name}`,
+        name: `${title} ${organization.name}`,
     });
 });
 
 test('shows HealthCategoryDetailList without organization', () => {
-    const label = faker.lorem.words();
-    hoisted.getSummary.mockReturnValue({ label, children: [] });
+    const title = faker.lorem.words();
+    hoisted.getCard.mockReturnValue({ title });
 
     const props: HealthCategoryDetailListProps = {
         heading: 'hc_problems.heading',
@@ -47,6 +47,6 @@ test('shows HealthCategoryDetailList without organization', () => {
 
     setupWithAppProviders(<HealthSubCategoryList {...props} />);
     screen.getByRole('link', {
-        name: `${label}`,
+        name: `${title}`,
     });
 });

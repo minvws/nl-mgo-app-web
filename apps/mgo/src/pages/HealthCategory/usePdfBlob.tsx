@@ -1,4 +1,4 @@
-import { useHealthUiSchema } from '$/hooks';
+import { useHcim } from '$/hooks';
 import { useIntl } from '$/intl';
 import { isNonNullish } from '@minvws/mgo-utils';
 import { useCallback } from 'react';
@@ -11,7 +11,7 @@ export type CreatePdfBlobArgs = {
 
 export function usePdfBlob() {
     const { formatMessage, intl } = useIntl();
-    const { getSummary } = useHealthUiSchema();
+    const { getSummary } = useHcim();
 
     const createPdfBlob = useCallback(
         async ({ categoryHeading, subCategories }: CreatePdfBlobArgs) => {

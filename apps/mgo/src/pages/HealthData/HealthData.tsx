@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
-import { useHealthUiSchema } from '$/hooks';
+import { useHcim } from '$/hooks';
 import { useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { AppMessagesIds } from '@minvws/mgo-intl';
@@ -14,7 +14,7 @@ export type HealthDataProps = {
 export function HealthData({ summary }: Readonly<HealthDataProps>) {
     const { formatMessage } = useIntl();
     const { healthCategory, resource } = useParamsData();
-    const { getSummary, getDetails } = useHealthUiSchema();
+    const { getSummary, getDetails } = useHcim();
 
     if (!healthCategory || !resource) {
         return <NotFound className="flex flex-col items-center text-center" />;

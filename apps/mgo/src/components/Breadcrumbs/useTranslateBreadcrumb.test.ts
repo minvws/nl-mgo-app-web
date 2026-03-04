@@ -24,7 +24,7 @@ vi.mock('$/intl', () => ({
 vi.mock('$/routing/useParamsData/useParamsData');
 
 vi.mock('$/hooks', () => ({
-    useHealthUiSchema: vi.fn(() => ({
+    useHcim: vi.fn(() => ({
         getSummary: hoisted.getSummary,
     })),
 }));
