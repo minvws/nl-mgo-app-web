@@ -18,7 +18,14 @@ export const Default: Story = {};
 
 export const WithDate: Story = {
     args: {
-        date: 'Vandaag',
+        detail: '14 mrt 2022',
+    },
+};
+
+export const WithDateAndIcon: Story = {
+    args: {
+        detail: '14 mrt 2022',
+        descriptionIcon: 'medical_information',
     },
 };
 
@@ -27,7 +34,8 @@ export const Overview: Story = {
         <DarkStory>
             <Stack>
                 <DetailButton {...args} />
-                <DetailButton {...args} date="Vandaag" />
+                <DetailButton {...args} detail="14 mrt 2022" />
+                <DetailButton {...args} descriptionIcon="calendar_today" detail="14 mrt 2022" />
             </Stack>
         </DarkStory>
     ),

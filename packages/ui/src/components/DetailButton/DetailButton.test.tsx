@@ -15,14 +15,28 @@ test('renders a button with a label', async () => {
     expect(screen.getByRole('button')).toHaveTextContent(props.description as string);
 });
 
-test('renders with a date description if specified', async () => {
+test('renders with a detail field if specified', async () => {
     const props: DetailButtonProps = {
         title: faker.lorem.sentence(),
         description: faker.lorem.sentence(),
-        date: faker.lorem.sentence(),
+        detail: faker.lorem.sentence(),
     };
 
     render(<DetailButton {...props} />);
 
-    expect(screen.getByRole('button')).toHaveTextContent(props.date as string);
+    expect(screen.getByRole('button')).toHaveTextContent(props.detail as string);
+});
+
+test('renders with a detail icon', async () => {
+    const props: DetailButtonProps = {
+        title: faker.lorem.sentence(),
+        description: faker.lorem.sentence(),
+        descriptionIcon: 'medical_information',
+        detail: faker.lorem.sentence(),
+    };
+
+    render(<DetailButton {...props} />);
+
+    // renders chevron and descriptionIcon
+    expect(screen.getAllByRole('img', { hidden: true })).toHaveLength(2);
 });
