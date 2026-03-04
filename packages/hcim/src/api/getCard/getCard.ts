@@ -27,7 +27,7 @@ export function getCard<T extends MgoResourceMeta>(
     if (!config.card) {
         return {
             title: resource.id ?? '',
-            description: resource.profile,
+            description: options?.organization?.name,
         };
     }
 

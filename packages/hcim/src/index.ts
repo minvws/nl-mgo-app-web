@@ -4,7 +4,9 @@ export { getBundleResources } from './api/getBundleResources/getBundleResources.
 export { getDetails } from './api/getDetails/getDetails.js';
 export { getMgoResource } from './api/getMgoResource/getMgoResource.js';
 export { getSummary } from './api/getSummary/getSummary.js';
+export { getCard } from './api/getCard/getCard.js';
 export { type MgoResource } from './api/resources/resources.js';
+export { type HcimCardDetails } from './resourceTypes.js';
 
 export * from './r3/elements/index.js';
 export * from './r3/resources/index.js';
