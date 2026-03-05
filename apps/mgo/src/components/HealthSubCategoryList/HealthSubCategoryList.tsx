@@ -3,7 +3,7 @@ import { useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { type Resource } from '$/store';
 import { AppMessagesIds } from '@minvws/mgo-intl';
-import { DetailButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
+import { CardButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElement> {
@@ -28,7 +28,7 @@ export function HealthSubCategoryList({ heading, resources }: HealthCategoryDeta
                     const cardDetails = getCard(resource);
                     return (
                         <li key={id}>
-                            <DetailButton
+                            <CardButton
                                 title={cardDetails.title}
                                 description={cardDetails.description}
                                 descriptionIcon={cardDetails.descriptionIcon}
@@ -36,7 +36,7 @@ export function HealthSubCategoryList({ heading, resources }: HealthCategoryDeta
                                 asChild
                             >
                                 <RouterLink to={`./${slug}`} />
-                            </DetailButton>
+                            </CardButton>
                         </li>
                     );
                 })}
