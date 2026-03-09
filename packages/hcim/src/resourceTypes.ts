@@ -37,9 +37,9 @@ export interface HcimCardDetails {
     detail?: string;
 }
 
-export type CardDetailsFunction<T extends MgoResourceMeta, Context> = (
+export type CardDetailsFunction<T extends MgoResourceMeta> = (
     parsedResource: T,
-    context: Context
+    context: SchemaContext<T['fhirVersion']>
 ) => HcimCardDetails;
 
 type ResourceParserFunction<
@@ -56,7 +56,7 @@ export interface ResourceConfig<
     parse: ResourceParserFunction<Resource, ParsedResource>;
     uiSchema: DetailSchemaFunction<ParsedResource>;
     summary?: SummarySchemaFunction<ParsedResource>;
-    card?: CardDetailsFunction<ParsedResource, SchemaContext<V>>;
+    card?: CardDetailsFunction<ParsedResource>;
 }
 
 type ElementParserFunction<T extends BackboneElement, ParsedResource extends object> = (

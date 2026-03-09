@@ -8,6 +8,9 @@ import { getCard } from './getCard.js';
 
 const mockGetResourceConfig = getResourceConfig as MockedFunction<typeof getResourceConfig>;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyResourceConfig = ResourceConfig<any, any, any>;
+
 vi.mock('../getResourceConfig/getResourceConfig', () => ({
     getResourceConfig: vi.fn(),
 }));
@@ -31,9 +34,7 @@ test('throws if no config could be found', () => {
 });
 
 test('return defaults if card is not set', () => {
-    mockGetResourceConfig.mockImplementation(
-        () => ({}) as ResourceConfig<'R3', any, MgoResource<'R3'>> // eslint-disable-line @typescript-eslint/no-explicit-any
-    );
+    mockGetResourceConfig.mockImplementation(() => ({}) as AnyResourceConfig);
     const mgoResource = {
         id: faker.lorem.word(),
         resourceType: faker.lorem.word(),
@@ -47,9 +48,7 @@ test('return defaults if card is not set', () => {
 });
 
 test('uses empty string as title when resource id is not set', () => {
-    mockGetResourceConfig.mockImplementation(
-        () => ({}) as ResourceConfig<'R3', any, MgoResource<'R3'>> // eslint-disable-line @typescript-eslint/no-explicit-any
-    );
+    mockGetResourceConfig.mockImplementation(() => ({}) as AnyResourceConfig);
     const mgoResource = {
         resourceType: faker.lorem.word(),
         profile: faker.lorem.word(),
@@ -68,7 +67,7 @@ test('returns the result of the card function and passes a schema context', () =
     };
     const cardFunc = vi.fn(() => cardDetails);
     mockGetResourceConfig.mockImplementation(
-        () => ({ card: cardFunc }) as unknown as ResourceConfig<'R3', any, MgoResource<'R3'>> // eslint-disable-line @typescript-eslint/no-explicit-any
+        () => ({ card: cardFunc }) as unknown as AnyResourceConfig
     );
 
     const mgoResource = {
@@ -91,7 +90,7 @@ test('defaults to nl-NL locale when no options are passed', () => {
     const cardDetails: HcimCardDetails = { title: faker.lorem.word() };
     const cardFunc = vi.fn(() => cardDetails);
     mockGetResourceConfig.mockImplementation(
-        () => ({ card: cardFunc }) as unknown as ResourceConfig<'R3', any, MgoResource<'R3'>> // eslint-disable-line @typescript-eslint/no-explicit-any
+        () => ({ card: cardFunc }) as unknown as ResourceConfig<any, any, any> // eslint-disable-line @typescript-eslint/no-explicit-any
     );
 
     const mgoResource = {

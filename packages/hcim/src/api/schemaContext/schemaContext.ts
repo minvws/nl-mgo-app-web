@@ -1,15 +1,15 @@
-import { type FhirVersion } from '@minvws/mgo-fhir';
+import { NictizNlProfile, type FhirVersion } from '@minvws/mgo-fhir';
 import { type MgoResourceMeta } from '@minvws/mgo-hcim-parse';
 import {
+    createUiContext,
+    createUiHelpers,
     type UiContext,
     type UiContextOptions,
     type UiHelpers,
-    createUiContext,
-    createUiHelpers,
 } from '@minvws/mgo-hcim-ui';
 
-export type SchemaOptions<_V extends FhirVersion> = UiContextOptions & {
-    resources?: MgoResourceMeta[];
+export type SchemaOptions<V extends FhirVersion> = UiContextOptions & {
+    resources?: MgoResourceMeta<NictizNlProfile, V>[];
     organization?: {
         name?: string;
     };
@@ -19,9 +19,9 @@ export type SchemaPartialContext = UiContext & {
     ui: UiHelpers;
 };
 
-export type SchemaContext<_V extends FhirVersion = FhirVersion> = SchemaPartialContext & {
+export type SchemaContext<V extends FhirVersion = FhirVersion> = SchemaPartialContext & {
     ui: UiHelpers;
-    resources: MgoResourceMeta[];
+    resources: MgoResourceMeta<NictizNlProfile, V>[];
     organization?: {
         name?: string;
     };
