@@ -37,6 +37,5 @@ test('renders with a detail icon', async () => {
 
     render(<DetailButton {...props} />);
 
-    // renders chevron and descriptionIcon
-    expect(screen.getAllByRole('img', { hidden: true })).toHaveLength(2);
+    expect(screen.getByTestId('icon:medical_information')).toBeVisible();
 });

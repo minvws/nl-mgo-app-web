@@ -50,6 +50,6 @@ test('render error state', async () => {
         />
     );
 
-    const errorIcon = screen.getByTestId('error_icon');
+    const errorIcon = screen.getByTestId('icon:sync_problem');
     expect(errorIcon).toBeVisible();
 });
