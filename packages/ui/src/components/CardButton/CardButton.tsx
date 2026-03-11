@@ -7,7 +7,7 @@ import { Icon } from '../Icon/Icon';
 import { Text } from '../Text/Text';
 import { IconName } from '../Icon/icons';
 
-export type DetailButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+export type CardButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     CompositionProps & {
         readonly title: ReactNode;
         readonly description: ReactNode;
@@ -15,7 +15,7 @@ export type DetailButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
         readonly detail?: ReactNode;
     };
 
-export const DetailButton = ({
+export const CardButton = ({
     title,
     description,
     descriptionIcon,
@@ -24,7 +24,7 @@ export const DetailButton = ({
     asChild,
     children,
     ...rest
-}: DetailButtonProps) => {
+}: CardButtonProps) => {
     const { Comp, Slottable } = useComposition({ asChild, tag: 'button' });
 
     return (
