@@ -9,7 +9,12 @@ export {
 export { Button, type ButtonProps } from './Button/Button';
 export { Card, type CardProps } from './Card/Card';
 export { ClosableCard } from './ClosableCard/ClosableCard';
-export { ConfirmDialog, type ConfirmDialogProps } from './ConfirmDialog/ConfirmDialog';
+export {
+    ConfirmDialog,
+    type ConfirmDialogContentProps,
+    type ConfirmDialogRootProps,
+    type ConfirmDialogTriggerProps,
+} from './ConfirmDialog/ConfirmDialog';
 export { Container, type ContainerProps } from './Container/Container';
 export {
     DescriptionButton,

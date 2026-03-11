@@ -7,7 +7,7 @@ import { usePdfBlob } from './usePdfBlob';
 
 export type PdfDownloadLinkProps = {
     readonly categoryHeading: string;
-    readonly subCategories?: HealthSubCategory[];
+    readonly subCategories: HealthSubCategory[];
 };
 
 export function PdfDownloadLink({ categoryHeading, subCategories }: PdfDownloadLinkProps) {
@@ -21,45 +21,37 @@ export function PdfDownloadLink({ categoryHeading, subCategories }: PdfDownloadL
         enabled: false,
     });
 
-    const handlePdfDownloadClick = () => {
-        if (subCategories) {
-            setOpen(true);
-        }
-    };
-
     const handlePdfDownloadConfirmClick = async (event: UIEvent) => {
         event.preventDefault(); // prevent dialog from being closed
 
         /* v8 ignore else -- @preserve */
-        if (subCategories) {
-            const { data: pdfBlob } = await refetchPdf();
-            if (pdfBlob) {
-                const url = URL.createObjectURL(pdfBlob);
-                window.open(url, '_blank');
-            }
+        const { data: pdfBlob } = await refetchPdf();
+        if (pdfBlob) {
+            const url = URL.createObjectURL(pdfBlob);
+            window.open(url, '_blank');
         }
         setOpen(false);
     };
 
     return (
-        <>
-            <Button variant="ghost" leftIcon="picture_as_pdf" onClick={handlePdfDownloadClick}>
-                <FormattedMessage id="export_pdf.menu.save_pdf" />
-            </Button>
+        <ConfirmDialog.Root open={open} onOpenChange={setOpen}>
+            <ConfirmDialog.Trigger asChild>
+                <Button variant="ghost" leftIcon="picture_as_pdf">
+                    <FormattedMessage id="export_pdf.menu.save_pdf" />
+                </Button>
+            </ConfirmDialog.Trigger>
 
-            <ConfirmDialog
+            <ConfirmDialog.Content
                 closeButtonAriaLabel={formatMessage('common.voice_over_close')}
                 title={formatMessage('export_pdf.dialog.heading')}
                 description={formatMessage('export_pdf.dialog.subheading_web')}
                 confirmButtonText={formatMessage('export_pdf.dialog.create_document')}
                 cancelButtonText={formatMessage('common.cancel')}
                 onConfirm={handlePdfDownloadConfirmClick}
-                open={open}
-                onOpenChange={setOpen}
                 loadingSpinnerOnly
                 loading={isLoading}
                 loadingTextScreenReader={formatMessage('pdf_viewer.loading')}
             />
-        </>
+        </ConfirmDialog.Root>
     );
 }

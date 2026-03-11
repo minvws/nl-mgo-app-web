@@ -5,8 +5,15 @@ import { FormattedMessage, useIntl } from '$/intl';
 import { useNavigate } from '$/routing';
 import { useStore } from '$/store';
 import { SearchResults as OrgSearchResults, Organization } from '@minvws/mgo-org-search';
-import { Button, ConfirmDialog, OrganizationButton, Stack, Text } from '@minvws/mgo-ui';
-import { useState, type HTMLAttributes } from 'react';
+import {
+    Button,
+    ConfirmDialog,
+    OrganizationButton,
+    Stack,
+    Text,
+    useOpenState,
+} from '@minvws/mgo-ui';
+import { useRef, useState, type HTMLAttributes } from 'react';
 import { hasIntersection } from '../../../../../packages/utils/src/hasIntersection/hasIntersection';
 
 const supportedDataServiceIds = dataServiceConfigs.map((x) => x.id);
@@ -24,6 +31,12 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
     const hasOrganizationById = useStore.use.hasOrganizationById();
     const addOrganization = useStore.use.addOrganization();
     const [selectedOrganization, setSelectedOrganization] = useState<Organization | null>(null);
+    const {
+        isOpen: isConfirmDialogOpen,
+        open: openConfirmDialog,
+        setIsOpen: setIsConfirmDialogOpen,
+    } = useOpenState();
+    const confirmDialogTriggerRef = useRef<HTMLButtonElement>(null);
 
     const shownResults = searchResults.hits.slice(0, showResultsLength).map((searchResult) => {
         const { displayName, addressLine, city, dataServices } = searchResult.document;
@@ -80,9 +93,17 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                         return (
                             <li key={id}>
                                 <OrganizationButton
-                                    onClick={() => setSelectedOrganization(healthcareOrganization)}
+                                    onClick={() => {
+                                        setSelectedOrganization(healthcareOrganization);
+                                        openConfirmDialog();
+                                    }}
                                     title={name}
                                     subTitle={address}
+                                    ref={
+                                        selectedOrganization?.id === id
+                                            ? confirmDialogTriggerRef
+                                            : undefined
+                                    }
                                 />
                             </li>
                         );
@@ -115,18 +136,19 @@ export const SearchResults = ({ searchResults, ...rest }: SearchResultsProps) =>
                 </div>
             )}
 
-            <ConfirmDialog
-                open={!!selectedOrganization}
-                onOpenChange={() => setSelectedOrganization(null)}
-                title={formatMessage('dialog.add_organization_heading', {
-                    organizationName: selectedOrganization?.displayName,
-                })}
-                description={formatMessage('dialog.add_organization_subheading')}
-                confirmButtonText={formatMessage('dialog.add_organization_yes')}
-                cancelButtonText={formatMessage('dialog.add_organization_no')}
-                closeButtonAriaLabel={formatMessage('common.voice_over_close')}
-                onConfirm={addSelectedOrganization}
-            />
+            <ConfirmDialog.Root open={isConfirmDialogOpen} onOpenChange={setIsConfirmDialogOpen}>
+                <ConfirmDialog.Content
+                    title={formatMessage('dialog.add_organization_heading', {
+                        organizationName: selectedOrganization?.displayName,
+                    })}
+                    description={formatMessage('dialog.add_organization_subheading')}
+                    confirmButtonText={formatMessage('dialog.add_organization_yes')}
+                    cancelButtonText={formatMessage('dialog.add_organization_no')}
+                    closeButtonAriaLabel={formatMessage('common.voice_over_close')}
+                    onConfirm={addSelectedOrganization}
+                    onCloseAutoFocus={() => confirmDialogTriggerRef.current?.focus()}
+                />
+            </ConfirmDialog.Root>
         </div>
     );
 };
