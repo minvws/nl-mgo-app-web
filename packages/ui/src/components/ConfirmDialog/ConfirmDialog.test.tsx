@@ -6,15 +6,16 @@ import { ConfirmDialog } from './ConfirmDialog';
 
 test('renders confirm dialog', async () => {
     render(
-        <ConfirmDialog
-            open
-            title={faker.word.sample()}
-            description={faker.lorem.sentence()}
-            confirmButtonText={faker.word.sample()}
-            cancelButtonText={faker.word.sample()}
-            closeButtonAriaLabel={faker.word.sample()}
-            onConfirm={() => {}}
-        />
+        <ConfirmDialog.Root open>
+            <ConfirmDialog.Content
+                title={faker.word.sample()}
+                description={faker.lorem.sentence()}
+                confirmButtonText={faker.word.sample()}
+                cancelButtonText={faker.word.sample()}
+                closeButtonAriaLabel={faker.word.sample()}
+                onConfirm={() => {}}
+            />
+        </ConfirmDialog.Root>
     );
 
     const element = await screen.findByRole('alertdialog');
@@ -27,15 +28,16 @@ test('onConfirm is triggered', async () => {
     const confirmButtonText = faker.word.sample();
 
     render(
-        <ConfirmDialog
-            open
-            title={faker.word.sample()}
-            description={faker.lorem.sentence()}
-            confirmButtonText={confirmButtonText}
-            cancelButtonText={faker.word.sample()}
-            closeButtonAriaLabel={faker.word.sample()}
-            onConfirm={onConfirm}
-        />
+        <ConfirmDialog.Root open>
+            <ConfirmDialog.Content
+                title={faker.word.sample()}
+                description={faker.lorem.sentence()}
+                confirmButtonText={confirmButtonText}
+                cancelButtonText={faker.word.sample()}
+                closeButtonAriaLabel={faker.word.sample()}
+                onConfirm={onConfirm}
+            />
+        </ConfirmDialog.Root>
     );
 
     const element = await screen.findByRole('alertdialog');
@@ -54,17 +56,18 @@ test('loading state can be shown on confirm button', async () => {
     const confirmButtonText = faker.word.sample();
 
     render(
-        <ConfirmDialog
-            open
-            title={faker.word.sample()}
-            description={faker.lorem.sentence()}
-            confirmButtonText={confirmButtonText}
-            cancelButtonText={faker.word.sample()}
-            closeButtonAriaLabel={faker.word.sample()}
-            onConfirm={onConfirm}
-            loading
-            loadingTextScreenReader={faker.word.sample()}
-        />
+        <ConfirmDialog.Root open>
+            <ConfirmDialog.Content
+                title={faker.word.sample()}
+                description={faker.lorem.sentence()}
+                confirmButtonText={confirmButtonText}
+                cancelButtonText={faker.word.sample()}
+                closeButtonAriaLabel={faker.word.sample()}
+                onConfirm={onConfirm}
+                loading
+                loadingTextScreenReader={faker.word.sample()}
+            />
+        </ConfirmDialog.Root>
     );
 
     const element = await screen.findByRole('alertdialog');

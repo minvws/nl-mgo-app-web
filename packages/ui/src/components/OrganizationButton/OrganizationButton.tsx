@@ -1,5 +1,5 @@
 import { Slottable } from '@radix-ui/react-slot';
-import { type HTMLAttributes } from 'react';
+import { RefObject, type HTMLAttributes } from 'react';
 import {
     useComposition,
     type CompositionPropsWithoutChildren,
@@ -25,7 +25,9 @@ export type OrganizationButtonProps = Omit<
     'disabled' | 'aria-disabled'
 > &
     CompositionPropsWithoutChildren &
-    Details;
+    Details & {
+        readonly ref?: RefObject<HTMLButtonElement | null>;
+    };
 
 export const OrganizationButton = ({
     title,

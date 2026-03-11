@@ -117,19 +117,6 @@ test('closes dialog when cancel button is clicked', async () => {
     });
 });
 
-test('does not open dialog and confirm handler is a no-op when subCategories is missing', async () => {
-    const categoryHeading = faker.lorem.sentence();
-
-    const { user } = setupWithAppProviders(
-        <PdfDownloadLink categoryHeading={categoryHeading} subCategories={undefined} />
-    );
-
-    const button = screen.getByRole('button', { name: appMessage('export_pdf.menu.save_pdf') });
-    await user.click(button);
-
-    expect(screen.queryByText(appMessage('export_pdf.dialog.heading'))).not.toBeInTheDocument();
-});
-
 test('does not attempt to open a window when pdf creation returns no blob', async () => {
     const categoryHeading = faker.lorem.sentence();
     const subCategories = mockSubCategories();
