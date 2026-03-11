@@ -1,4 +1,4 @@
-import { useHealthUiSchema } from '$/hooks';
+import { useHcim } from '$/hooks';
 import { useIntl } from '$/intl';
 import { useParamsData } from '$/routing';
 import { AppMessagesIds } from '@minvws/mgo-intl';
@@ -8,7 +8,7 @@ export const missingBreadcrumbLabel = '-';
 export function useTranslateBreadcrumb() {
     const { formatMessage, hasMessage } = useIntl();
     const { resource, healthCategory, organization } = useParamsData();
-    const { getSummary } = useHealthUiSchema();
+    const { getSummary } = useHcim();
 
     const translateBreadcrumb = (breadcrumb: string): string => {
         switch (breadcrumb) {

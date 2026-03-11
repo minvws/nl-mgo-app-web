@@ -6,14 +6,14 @@ import { type IconName, iconNames } from './icons';
 
 test('renders icon `%s` with attributes', async () => {
     const icon = faker.helpers.arrayElement(iconNames);
-    render(<Icon data-testid="test-icon" icon={icon} />);
-    expect(await screen.findByTestId('test-icon')).toBeVisible();
+    render(<Icon icon={icon} />);
+    expect(await screen.findByTestId(`icon:${icon}`)).toBeVisible();
 });
 
 test('unknown icon will throw', async () => {
     vi.spyOn(console, 'error').mockImplementation(vi.fn());
     const icon = faker.lorem.word();
-    expect(async () =>
-        render(<Icon data-testid="test-icon" icon={icon as IconName} />)
-    ).rejects.toThrow(`Could not find icon: "${icon}"`);
+    expect(async () => render(<Icon icon={icon as IconName} />)).rejects.toThrow(
+        `Could not find icon: "${icon}"`
+    );
 });

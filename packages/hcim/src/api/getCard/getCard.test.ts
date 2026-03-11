@@ -40,10 +40,11 @@ test('return defaults if card is not set', () => {
         resourceType: faker.lorem.word(),
         profile: faker.lorem.word(),
     };
+    const options = { organization: { name: faker.lorem.word() } } as SchemaOptions<'R3'>;
 
-    expect(getCard(mgoResource as MgoResource<'R3'>)).toEqual({
+    expect(getCard(mgoResource as MgoResource<'R3'>, options)).toEqual({
         title: mgoResource.id,
-        description: mgoResource.profile,
+        description: options.organization?.name,
     });
 });
 
@@ -53,10 +54,11 @@ test('uses empty string as title when resource id is not set', () => {
         resourceType: faker.lorem.word(),
         profile: faker.lorem.word(),
     };
+    const options = { organization: { name: faker.lorem.word() } } as SchemaOptions<'R3'>;
 
-    expect(getCard(mgoResource as MgoResource<'R3'>)).toEqual({
+    expect(getCard(mgoResource as MgoResource<'R3'>, options)).toEqual({
         title: '',
-        description: mgoResource.profile,
+        description: options.organization?.name,
     });
 });
 

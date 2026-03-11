@@ -10,9 +10,9 @@ import { HealthData } from './HealthData';
 
 vi.mock('$/intl');
 vi.mock('$/routing/useParamsData/useParamsData');
-vi.mock('$/hooks/useHealthUiSchema/useHealthUiSchema', () => {
+vi.mock('$/hooks/useHcim/useHcim', () => {
     return {
-        useHealthUiSchema: () => ({
+        useHcim: () => ({
             getSummary: () =>
                 ({
                     id: 'summary',

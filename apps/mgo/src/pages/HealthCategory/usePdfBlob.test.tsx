@@ -25,7 +25,7 @@ const hoisted = vi.hoisted(() => ({
 }));
 
 vi.mock('$/hooks', () => ({
-    useHealthUiSchema: vi.fn(() => ({
+    useHcim: vi.fn(() => ({
         getSummary: hoisted.getSummary,
     })),
 }));

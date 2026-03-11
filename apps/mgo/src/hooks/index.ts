@@ -6,7 +6,7 @@ export {
 } from './useHealthCategoriesWithSlug/useHealthCategoriesWithSlug';
 export { useHealthCategoryBySlug } from './useHealthCategoryBySlug/useHealthCategoryBySlug';
 export { useHealthCategorySlug } from './useHealthCategorySlug/useHealthCategorySlug';
-export { useHealthUiSchema } from './useHealthUiSchema/useHealthUiSchema';
+export { useHcim } from './useHcim/useHcim';
 export { useKeyDown, type KeyDownOptions } from './useKeyDown/useKeyDown';
 export { useOnboardingSeen } from './useOnboardingSeen/useOnboardingSeen';
 export { useResourceDetailsRoutePath } from './useResourceDetailsRoutePath/useResourceRouteDetailsPath';

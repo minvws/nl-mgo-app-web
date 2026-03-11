@@ -4,6 +4,7 @@ import { iconPaddings, icons, type IconName } from './icons';
 
 export interface IconProps extends HTMLAttributes<SVGElement> {
     readonly icon: IconName;
+    readonly ['data-testid']?: never;
 }
 
 export const Icon = ({ icon, 'aria-label': ariaLabel, className, ...rest }: IconProps) => {
@@ -19,6 +20,7 @@ export const Icon = ({ icon, 'aria-label': ariaLabel, className, ...rest }: Icon
             aria-hidden={!ariaLabel}
             className={cn('h-[1em] w-[1em] shrink-0 fill-current', iconPaddings[icon], className)}
             {...rest}
+            data-testid={`icon:${icon}`}
         />
     );
 };

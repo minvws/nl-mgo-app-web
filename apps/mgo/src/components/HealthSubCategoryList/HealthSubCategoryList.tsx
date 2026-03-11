@@ -1,9 +1,9 @@
-import { useHealthUiSchema } from '$/hooks';
+import { useHcim } from '$/hooks';
 import { useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
-import { useStore, type Resource } from '$/store';
+import { type Resource } from '$/store';
 import { AppMessagesIds } from '@minvws/mgo-intl';
-import { DetailButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
+import { CardButton, ListWrapper, Text, useUniqueId } from '@minvws/mgo-ui';
 import { type HTMLAttributes } from 'react';
 
 export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElement> {
@@ -12,8 +12,7 @@ export interface HealthCategoryDetailListProps extends HTMLAttributes<HTMLElemen
 }
 
 export function HealthSubCategoryList({ heading, resources }: HealthCategoryDetailListProps) {
-    const getOrganizationById = useStore.use.getOrganizationById();
-    const { getSummary } = useHealthUiSchema();
+    const { getCard } = useHcim();
     const subCategoryId = useUniqueId('health-category-sub-list');
     const { formatMessage } = useIntl();
 
@@ -25,18 +24,19 @@ export function HealthSubCategoryList({ heading, resources }: HealthCategoryDeta
 
             <ListWrapper aria-labelledby={subCategoryId}>
                 {resources.map((resource) => {
-                    const { id, slug, source } = resource;
-                    const organization = getOrganizationById(source.organizationId);
-                    const summary = getSummary(resource);
+                    const { id, slug } = resource;
+                    const cardDetails = getCard(resource);
                     return (
                         <li key={id}>
-                            <DetailButton
-                                title={summary.label}
-                                description={organization?.name}
+                            <CardButton
+                                title={cardDetails.title}
+                                description={cardDetails.description}
+                                descriptionIcon={cardDetails.descriptionIcon}
+                                detail={cardDetails.detail}
                                 asChild
                             >
                                 <RouterLink to={`./${slug}`} />
-                            </DetailButton>
+                            </CardButton>
                         </li>
                     );
                 })}

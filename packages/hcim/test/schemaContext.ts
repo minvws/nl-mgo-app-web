@@ -1,5 +1,5 @@
 import { type FhirVersion } from '@minvws/mgo-fhir';
-import { createUiHelpers } from '@minvws/mgo-hcim-ui';
+import { createFormatHelpers, createUiHelpers } from '@minvws/mgo-hcim-ui';
 import { uiFaker } from '@minvws/mgo-hcim-ui/test/shared';
 import {
     type SchemaContext,
@@ -19,6 +19,7 @@ export function testSchemaContext<T extends FhirVersion = 'R3'>(
 
         return {
             ui: createUiHelpers(mockUiContext),
+            format: createFormatHelpers(mockUiContext),
             resources: options.resources ?? [],
             organization: options.organization,
             ...mockUiContext,

@@ -3,11 +3,12 @@ import { faker } from '$test/faker';
 import { getDetails, getSummary, HealthUiSchema } from '@minvws/mgo-hcim';
 import { renderHook } from '@testing-library/react';
 import { expect, test, vi } from 'vitest';
-import { useHealthUiSchema } from './useHealthUiSchema';
+import { useHcim } from './useHcim';
 
 vi.mock('@minvws/mgo-hcim', () => ({
     getSummary: vi.fn(),
     getDetails: vi.fn(),
+    getCard: vi.fn(),
 }));
 
 test('returns the summary of the resource', () => {
@@ -21,7 +22,7 @@ test('returns the summary of the resource', () => {
     const state = useStore.getState();
     vi.spyOn(state, 'getOrganizationById').mockReturnValue(organization);
 
-    const { result } = renderHook(() => useHealthUiSchema());
+    const { result } = renderHook(() => useHcim());
     const schema = result.current.getSummary(resource);
 
     expect(getSummary).toHaveBeenCalledWith(resource.mgoResource, {
@@ -42,7 +43,7 @@ test('returns the details of the resource', () => {
     const state = useStore.getState();
     vi.spyOn(state, 'getOrganizationById').mockReturnValue(organization);
 
-    const { result } = renderHook(() => useHealthUiSchema());
+    const { result } = renderHook(() => useHcim());
     const schema = result.current.getDetails(resource);
 
     expect(getDetails).toHaveBeenCalledWith(resource.mgoResource, {
@@ -53,7 +54,7 @@ test('returns the details of the resource', () => {
 });
 
 test('returns undefined when there is no resource', () => {
-    const { result } = renderHook(() => useHealthUiSchema());
+    const { result } = renderHook(() => useHcim());
     const schema = result.current.getDetails(undefined);
 
     expect(schema).toBe(undefined);
