@@ -33,7 +33,11 @@ export const ClosableCard = ({
                 {...rest}
             >
                 <div className="flex justify-between">
-                    <Heading as="h3" size="xs" className="text-t-state-informative">
+                    <Heading
+                        as="h3"
+                        size="xs"
+                        className="text-dark-blue-500 dark:text-dark-blue-300"
+                    >
                         {title}
                     </Heading>
                     <IconButton
@@ -41,12 +45,12 @@ export const ClosableCard = ({
                         size="sm"
                         variant="ghost"
                         aria-label={closeButtonAriaLabel}
-                        className="text-t-state-informative relative -top-1 -right-1"
+                        className="text-dark-blue-500 dark:text-dark-blue-300 relative -top-1 -right-1"
                         onClick={onClose}
                     />
                 </div>
 
-                <Text as="div" className="text-t-state-informative">
+                <Text as="div" className="text-dark-blue-500 dark:text-dark-blue-300">
                     {children}
                 </Text>
             </Card>
