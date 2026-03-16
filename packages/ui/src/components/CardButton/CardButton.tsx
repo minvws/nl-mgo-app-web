@@ -56,7 +56,7 @@ export const CardButton = ({
                 </div>
                 <div className="flex items-center text-right">
                     {detail && (
-                        <Text size="sm" className="text-t-label-secondary">
+                        <Text size="sm" className="text-t-label-secondary whitespace-nowrap">
                             {detail}
                         </Text>
                     )}
