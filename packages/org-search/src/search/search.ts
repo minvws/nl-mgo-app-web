@@ -4,8 +4,8 @@ import { pluginQPS } from '@orama/plugin-qps';
 import { defaultSearchConfig, SearchConfig } from './config.js';
 import { normalizeOrganizationItemDto, removePunctuation } from './normalize.js';
 import {
-    DataServiceEndpoints,
-    DataServiceEndpointsDto,
+    DataService,
+    DataServiceDto,
     Organization,
     OrganizationDto,
     organizationOramaSchema,
@@ -14,8 +14,8 @@ import {
 } from './schema.js';
 
 export type {
-    DataServiceEndpoints,
-    DataServiceEndpointsDto,
+    DataService,
+    DataServiceDto,
     Organization,
     OrganizationDto,
     SearchResult,

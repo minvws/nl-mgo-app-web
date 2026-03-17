@@ -10,9 +10,9 @@ export type SearchConfig = Pick<
 export const defaultSearchConfig: SearchConfig = {
     tolerance: 1,
     threshold: 0.2,
-    properties: ['normalizedDisplayName', 'searchBlob'],
+    properties: ['normalizedName', 'searchBlob'],
     boost: {
-        normalizedDisplayName: 2,
+        normalizedName: 2,
         searchBlob: 1,
     },
 };

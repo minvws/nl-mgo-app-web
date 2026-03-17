@@ -4,11 +4,12 @@ import { OrganizationDto } from '../src/search/schema.js';
 
 export const organizationDto = createMockFactory<OrganizationDto>(() => ({
     id: faker.string.uuid(),
-    display_name: faker.lorem.word(),
-    care_type_display: faker.lorem.word(),
+    medmij_id: faker.string.uuid(),
+    name: faker.lorem.word(),
+    care_type: faker.lorem.word(),
     city: faker.lorem.word(),
     postal_code: faker.lorem.word(),
-    address_line: faker.lorem.word(),
+    address: faker.lorem.word(),
     geo_lat: faker.number.float({ min: 50.75, max: 53.7 }),
     geo_lng: faker.number.float({ min: 3.2, max: 7.23 }),
     search_blob: faker.lorem.word(),

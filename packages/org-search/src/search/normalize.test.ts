@@ -4,20 +4,20 @@ import { normalizeOrganizationItemDto } from './normalize.js';
 
 test('converts a organization dto to a organization item', async () => {
     const organization = faker.custom.organizationDto();
-    organization.display_name = `${faker.string.alpha()}.${faker.string.alpha()} ${faker.lorem.word()}`;
+    organization.name = `${faker.string.alpha()}.${faker.string.alpha()} ${faker.lorem.word()}`;
     const item = normalizeOrganizationItemDto(organization);
     expect(item.id).toBe(organization.id);
-    expect(item.displayName).toBe(organization.display_name);
-    expect(item.normalizedDisplayName).toBe(organization.display_name.replace('.', ''));
+    expect(item.name).toBe(organization.name);
+    expect(item.normalizedName).toBe(organization.name.replace('.', ''));
 });
 
 test('can handle objects with undefined values', async () => {
     const organization = faker.custom.organizationDto();
-    organization.display_name = undefined;
-    organization.care_type_display = undefined;
+    organization.name = undefined;
+    organization.care_type = undefined;
     organization.city = undefined;
     organization.postal_code = undefined;
-    organization.address_line = undefined;
+    organization.address = undefined;
     organization.geo_lat = undefined;
     organization.geo_lng = undefined;
     organization.data_services = undefined;
@@ -28,17 +28,18 @@ test('can handle objects with undefined values', async () => {
 
 test('can handle data services', async () => {
     const organization = faker.custom.organizationDto();
-    organization.data_services = {
-        '1': {
-            auth_endpoint: faker.internet.url(),
-            token_endpoint: faker.internet.url(),
-            resource_endpoint: faker.internet.url(),
-        },
+    const dataServiceDto = {
+        id: faker.string.uuid(),
+        auth_endpoint: faker.internet.url(),
+        token_endpoint: faker.internet.url(),
+        resource_endpoint: faker.internet.url(),
     };
+    organization.data_services = [dataServiceDto];
+
     const item = await normalizeOrganizationItemDto(organization);
-    const dataServiceDto = organization.data_services['1'];
-    const dataService = item.dataServices!['1'];
+    const dataService = item.dataServices![0];
     expect(dataService).toBeDefined();
+    expect(dataService.id).toBe(dataServiceDto.id);
     expect(dataService.authEndpoint).toBe(dataServiceDto.auth_endpoint);
     expect(dataService.tokenEndpoint).toBe(dataServiceDto.token_endpoint);
     expect(dataService.resourceEndpoint).toBe(dataServiceDto.resource_endpoint);

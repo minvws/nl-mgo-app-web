@@ -15,9 +15,9 @@ interface FieldSet {
 
 const fieldSetA: FieldSet = {
     name: 'A',
-    properties: ['normalizedDisplayName', 'searchBlob'],
+    properties: ['normalizedName', 'searchBlob'],
     boost: {
-        normalizedDisplayName: 2,
+        normalizedName: 2,
         searchBlob: 1,
     },
 };

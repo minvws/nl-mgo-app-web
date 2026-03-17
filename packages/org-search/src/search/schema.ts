@@ -2,22 +2,19 @@ import { AnySchema } from '@orama/orama';
 
 export const organizationOramaSchema = {
     id: 'string',
-    displayName: 'string',
-    normalizedDisplayName: 'string',
-    careTypeDisplay: 'string',
-    addressLine: 'string',
-    postalCode: 'string',
-    city: 'string',
+    normalizedName: 'string',
     searchBlob: 'string',
 } as const satisfies AnySchema;
 
-export interface DataServiceEndpointsDto {
+export interface DataServiceDto {
+    id: string;
     auth_endpoint: string;
     token_endpoint: string;
     resource_endpoint: string;
 }
 
-export interface DataServiceEndpoints {
+export interface DataService {
+    id: string;
     authEndpoint: string;
     tokenEndpoint: string;
     resourceEndpoint: string;
@@ -25,29 +22,31 @@ export interface DataServiceEndpoints {
 
 export interface OrganizationDto {
     id: string;
-    display_name?: string | null;
-    care_type_display?: string | null;
+    medmij_id?: string | null;
+    name?: string | null;
+    care_type?: string | null;
     city?: string | null;
     postal_code?: string | null;
-    address_line?: string | null;
+    address?: string | null;
     geo_lat?: number | null;
     geo_lng?: number | null;
     search_blob: string | null;
-    data_services?: Record<string, DataServiceEndpointsDto> | null;
+    data_services?: DataServiceDto[];
 }
 
 export type Organization = {
     id: string;
-    displayName?: string;
-    careTypeDisplay?: string;
+    medmijId?: string;
+    name?: string;
+    careType?: string;
     city?: string;
     postalCode?: string;
-    addressLine?: string;
+    address?: string;
     geoLat?: number;
     geoLng?: number;
     searchBlob?: string;
-    dataServices?: Record<string, DataServiceEndpoints>;
-    normalizedDisplayName?: string;
+    dataServices?: DataService[];
+    normalizedName?: string;
 };
 
 /**
