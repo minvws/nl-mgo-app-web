@@ -34,7 +34,7 @@ jobs:
           exitOnceUploaded: true
           workingDir: packages/ui
       - name: Comment Chromatic results
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: chromatic deployment
           message: |
