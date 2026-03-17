@@ -4,9 +4,13 @@
  *   See the root README.md "Quick run" for more information.
  */
 window.config = {
-    ignore_missing_translations: false,
+    enable_debug_logging: true,
+    enable_missing_translation_errors: true,
     load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
     dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
     pft_url: 'https://app-api.test.mgo.irealisatie.nl',
-    organizations_url: 'https://lo-ad.test.mgo.irealisatie.nl/normalized-providers.json',
+    organizations_url:
+        'https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-organizations.json',
+    data_service_endpoints_url:
+        'https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-endpoints.json',
 };

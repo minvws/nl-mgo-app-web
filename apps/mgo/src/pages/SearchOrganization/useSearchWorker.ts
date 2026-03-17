@@ -1,6 +1,5 @@
-/* v8 ignore start - this is still a work in progress, will be added to coverage later */
-
 import { appConfig } from '$/config';
+import { useLogger } from '$/hooks';
 import {
     createSearchWorker,
     OrganizationDto,
@@ -9,20 +8,21 @@ import {
 } from '@minvws/mgo-org-search';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import ky from 'ky';
-import { debounce, uniqBy } from 'lodash';
+import { debounce } from 'lodash';
 import { useCallback, useEffect, useRef } from 'react';
 
 type SearchFunction = (query: string) => Promise<SearchResults>;
 
-export interface UseSearchResult {
+export interface UseSearchWorkerResult {
     search: SearchFunction;
-    isInitializing: boolean;
+    isInitialized: boolean;
     isSearching: boolean;
     searchResults?: SearchResults;
 }
 
-export function useSearch(): UseSearchResult {
+export function useSearchWorker(): UseSearchWorkerResult {
     const searchWorker = useRef<SearchWorker>(undefined);
+    const { log } = useLogger();
 
     useEffect(() => {
         searchWorker.current = createSearchWorker();
@@ -36,20 +36,13 @@ export function useSearch(): UseSearchResult {
         queryFn: () => ky.get(appConfig.organizations_url).json(),
     });
 
-    const { mutateAsync: createIndex, isSuccess: indexReady } = useMutation({
+    const { mutateAsync: createIndex, isSuccess: isInitialized } = useMutation({
         mutationFn: async (organizations: OrganizationDto[]) => {
             if (!searchWorker.current) {
-                console.error('No search worker found');
+                log.error('No search worker found');
                 return;
             }
-            /**
-             * Currently this list is not final and contains duplicates.
-             * This will be fixed in the future.
-             * For now we need to remove duplicates by id.
-             * This is a temporary solution to ensure the search index is created correctly.
-             */
-            const uniqueOrganizations = uniqBy(organizations, 'id');
-            await searchWorker.current.createIndex(uniqueOrganizations);
+            await searchWorker.current.createIndex(organizations);
         },
     });
 
@@ -60,7 +53,7 @@ export function useSearch(): UseSearchResult {
     } = useMutation({
         mutationFn: async (query: string) => {
             if (!searchWorker.current) {
-                console.error('No search worker found');
+                log.error('No search worker found');
                 return;
             }
             return await searchWorker.current.search(query);
@@ -85,7 +78,7 @@ export function useSearch(): UseSearchResult {
     return {
         search: debouncedRunSearch as SearchFunction,
         searchResults,
-        isInitializing: !indexReady,
+        isInitialized,
         isSearching,
     };
 }

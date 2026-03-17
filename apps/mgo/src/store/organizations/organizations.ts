@@ -1,16 +1,26 @@
 import { Organization as OrganizationSearchResult } from '@minvws/mgo-org-search';
 import { createUniqueSlug } from '@minvws/mgo-utils';
+import { SetRequired } from 'type-fest';
 import { StateCreator } from 'zustand';
 import { ResourcesSlice } from '../resources/resources';
-import { NormalizedHealthcareOrganization, normalizeOrganization } from './normalize';
 
-export interface HealthcareOrganization extends NormalizedHealthcareOrganization {
+export type OrganizationSearchResultWithDataServices = SetRequired<
+    OrganizationSearchResult,
+    'dataServices'
+>;
+
+export interface HealthcareOrganization extends Omit<
+    OrganizationSearchResultWithDataServices,
+    'normalizedName'
+> {
     slug: string;
 }
 
 export interface OrganizationsSlice {
     organizations: HealthcareOrganization[];
-    addOrganization: (organizationSearchResult: OrganizationSearchResult) => HealthcareOrganization;
+    addOrganization: (
+        organizationSearchResult: OrganizationSearchResultWithDataServices
+    ) => HealthcareOrganization;
     hasOrganizations: () => boolean;
     hasOrganizationById: (id: string) => boolean;
     getOrganizationById: (id?: string) => HealthcareOrganization | undefined;
@@ -32,9 +42,10 @@ export const createOrganizationsSlice: StateCreator<
 
     addOrganization: (organizationSearchResult) => {
         const slugs = get().organizations.map((x) => x.slug);
+        const { normalizedName, ...rest } = organizationSearchResult;
 
         const healthcareOrganization = {
-            ...normalizeOrganization(organizationSearchResult),
+            ...rest,
             // NOTE: Do not use any organization information as a slug as it could potentially be sensitive information
             slug: createUniqueSlug('aanbieder', slugs),
         };
@@ -57,7 +68,7 @@ export const createOrganizationsSlice: StateCreator<
 
     getOrganizationResourceEndpoint: (organizationId, dataServiceId) => {
         const organization = get().getOrganizationById(organizationId);
-        return organization?.dataServices.find((x) => x.id === dataServiceId)?.resourceEndpoint;
+        return organization?.dataServices?.find((x) => x.id === dataServiceId)?.resourceEndpoint;
     },
 
     getOrganizationBySlug: (slug) => {

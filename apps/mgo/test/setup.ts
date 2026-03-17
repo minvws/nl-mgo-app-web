@@ -3,9 +3,9 @@ import { cleanup, configure } from '@testing-library/react';
 import { afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import { throwOnConsoleLog } from './helpers/throwOnConsoleLog';
 
+import { faker } from '@faker-js/faker';
 import { useConfig } from '@minvws/mgo-ui';
 import { MockWorker } from './MockWorker';
-import { appConfig } from './appConfig';
 
 configure({
     // Remove the huge error output from `testing-library`
@@ -18,11 +18,21 @@ configure({
     },
 });
 
-vi.mock('zustand');
-vi.mock('$/config/app/app', () => ({ appConfig }));
-
 window.scrollTo = vi.fn;
 window.Worker = MockWorker;
+
+vi.mock('zustand');
+vi.mock('$/config/app/app', () => ({
+    appConfig: {
+        enable_debug_logging: true,
+        enable_missing_translation_errors: true,
+        load_url: faker.internet.url(),
+        dva_url: faker.internet.url(),
+        pft_url: faker.internet.url(),
+        organizations_url: faker.internet.url(),
+        data_service_endpoints_url: faker.internet.url(),
+    },
+}));
 
 throwOnConsoleLog({
     logMethods: ['warn', 'error'],

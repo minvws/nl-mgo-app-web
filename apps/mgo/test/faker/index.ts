@@ -1,6 +1,7 @@
 import { faker as originalFaker, type Faker } from '@faker-js/faker';
 import { fhirFaker } from '@minvws/mgo-fhir/test/shared';
 import { authState } from './authState';
+import { dataService } from './dataService';
 import { healthcareOrganization } from './healthcareOrganization';
 import { mgoResource } from './mgoResource';
 import { organizationSearchResult } from './organizationSearchResult';
@@ -10,6 +11,7 @@ import { userInfo } from './userInfo';
 const custom = {
     healthcareOrganization,
     organizationSearchResult,
+    dataService,
     userInfo,
     authState,
     resource,

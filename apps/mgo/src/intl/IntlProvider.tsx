@@ -18,7 +18,8 @@ export const IntlProvider = ({ children }: I18nProviderProps) => {
             i: (chunks) => <i className="italic">{chunks}</i>, // NOSONAR
         },
         /* v8 ignore end */
-        ignoreMissingTranslations: appConfig.ignore_missing_translations,
+        // ignore missing translations unless explicitly enabled
+        ignoreMissingTranslations: !appConfig.enable_missing_translation_errors,
     });
 
     return <ReactIntlProvider {...intlConfig}>{children}</ReactIntlProvider>;

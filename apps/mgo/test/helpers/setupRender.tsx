@@ -61,6 +61,7 @@ export const TestAppProviders = ({ children, queryClient }: TestAppProvidersProp
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const setupWithAppProviders = (element: ReactNode): TestSetupResult => {
     const queryClient = new QueryClient({
         defaultOptions: {

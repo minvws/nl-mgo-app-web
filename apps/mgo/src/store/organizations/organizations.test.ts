@@ -1,12 +1,25 @@
 import { faker } from '$test/faker';
+import { mockArray } from '@minvws/mgo-utils/test/shared';
 import { expect, test } from 'vitest';
 import { useStore } from '..';
+import { OrganizationSearchResultWithDataServices } from './organizations';
+
+function mockOrganizationSearchResult(): OrganizationSearchResultWithDataServices {
+    return {
+        ...faker.custom.organizationSearchResult(),
+        dataServices: mockArray({
+            factory: faker.custom.dataService,
+            min: 1,
+            max: 5,
+        }),
+    };
+}
 
 test('addOrganization adds an organization', async () => {
     let state = useStore.getState();
     expect(state.organizations).toEqual([]);
 
-    const organizationSearchResult = faker.custom.organizationSearchResult();
+    const organizationSearchResult = mockOrganizationSearchResult();
     state.addOrganization(organizationSearchResult);
 
     state = useStore.getState();
@@ -16,7 +29,7 @@ test('addOrganization adds an organization', async () => {
 
 test('getOrganizationBySlug returns organization', async () => {
     const { addOrganization, getOrganizationBySlug } = useStore.getState();
-    const organization = addOrganization(faker.custom.organizationSearchResult());
+    const organization = addOrganization(mockOrganizationSearchResult());
     expect(getOrganizationBySlug(organization.slug)).toBe(organization);
 });
 
@@ -27,7 +40,7 @@ test('getOrganizationBySlug returns undefined if there is no match', async () =>
 
 test('getOrganizationById returns organization', async () => {
     const { addOrganization, getOrganizationById } = useStore.getState();
-    const organization = addOrganization(faker.custom.organizationSearchResult());
+    const organization = addOrganization(mockOrganizationSearchResult());
     expect(getOrganizationById(organization.id)).toBe(organization);
 });
 
@@ -96,7 +109,7 @@ test('hasOrganizations returns true when there are registered organizations', as
 
     expect(state.hasOrganizations()).toBe(false);
 
-    state.addOrganization(faker.custom.organizationSearchResult());
+    state.addOrganization(mockOrganizationSearchResult());
 
     state = useStore.getState();
     expect(state.hasOrganizations()).toBe(true);
@@ -105,7 +118,7 @@ test('hasOrganizations returns true when there are registered organizations', as
 test('hasOrganizationById returns true when there are registered organizations with the same id', async () => {
     let state = useStore.getState();
 
-    const organization = faker.custom.organizationSearchResult();
+    const organization = mockOrganizationSearchResult();
 
     expect(state.hasOrganizationById(organization.id)).toBe(false);
 
@@ -118,7 +131,7 @@ test('hasOrganizationById returns true when there are registered organizations w
 test('getOrganizationResourceEndpoint returns the resource endpoint for organization and data service', async () => {
     const organization = faker.custom.healthcareOrganization();
     const { id: organizationId, dataServices } = organization;
-    const { id: dataServiceId, resourceEndpoint } = dataServices[0];
+    const { id: dataServiceId, resourceEndpoint } = dataServices![0];
 
     useStore.setState({ organizations: [organization], resources: [] });
 
@@ -140,7 +153,7 @@ test('addOrganization creates unique slugs when a new organization is added', as
     useStore.setState({ organizations: [existing], resources: [] });
 
     const { addOrganization } = useStore.getState();
-    const created = addOrganization(faker.custom.organizationSearchResult());
+    const created = addOrganization(mockOrganizationSearchResult());
 
     const state = useStore.getState();
     expect(state.organizations.length).toBe(2);

@@ -1,12 +1,12 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 
-import { DataService } from '$/store/organizations/normalize';
 import { faker } from '$test/faker';
 import {
     HealthCategoryConfig,
     type DataServiceConfig,
     type DataServiceEndpointConfig,
 } from '@minvws/mgo-config';
+import { DataService } from '@minvws/mgo-org-search';
 import { getRelevantEndpoints } from '../../config';
 import { createHealthQueries } from './createHealthQueries';
 
