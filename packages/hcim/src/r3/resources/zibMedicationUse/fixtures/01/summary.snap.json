@@ -100,6 +100,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r3.zib_medication_use.show_details",

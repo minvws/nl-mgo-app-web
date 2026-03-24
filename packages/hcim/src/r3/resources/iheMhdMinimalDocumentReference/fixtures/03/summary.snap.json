@@ -75,6 +75,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r3.ihe_mhd_minimal_document_reference.show_details",

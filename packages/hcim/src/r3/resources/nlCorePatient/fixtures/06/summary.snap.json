@@ -93,6 +93,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r3.nl_core_patient.show_details",

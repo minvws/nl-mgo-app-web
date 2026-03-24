@@ -182,6 +182,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r3.zib_laboratory_test_result_observation.show_details",
