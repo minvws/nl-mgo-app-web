@@ -3,18 +3,24 @@ import { RouterLink } from '$/routing';
 import { cn, Container, focusStyle } from '@minvws/mgo-ui';
 import { type ComponentProps } from 'react';
 import { LogoutButton } from '../LogoutButton/LogoutButton';
+import { useAuth } from '$/auth';
 
 export type DesktopHeaderProps = Omit<ComponentProps<'header'>, 'className'>;
 
 export function DesktopHeader({ ...rest }: Readonly<DesktopHeaderProps>) {
     const { formatMessage } = useIntl();
+    const auth = useAuth();
 
     return (
         <header className={'bg-t-bg-secondary'} {...rest}>
             <Container className="flex items-center justify-between pb-4">
                 <RouterLink
                     to="/"
-                    aria-label={formatMessage('common.mgo_header_link')}
+                    aria-label={
+                        auth.isAuthenticated
+                            ? formatMessage('common.mgo_header_link')
+                            : formatMessage('common.mgo_header_login_link')
+                    }
                     className={cn(focusStyle, 'block leading-none outline-offset-4')}
                 >
                     <h2 className="text-t-cat-rijkslint font-sans text-2xl leading-none font-bold md:text-3xl">
