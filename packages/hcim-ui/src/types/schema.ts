@@ -49,6 +49,7 @@ export type UiElement =
 export interface HealthUiGroup {
     id?: string;
     label?: string;
+    excludeFromPrint?: boolean;
     children: UiElement[];
 }
 
