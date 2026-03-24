@@ -10,7 +10,7 @@
     "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|recommended": "Aanbevolen referentiewaarden",
     "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|therapeutic": "Therapeutische referentiewaarden",
     "system.code.http:\/\/hl7.org\/fhir\/referencerange-meaning|treatment": "Behandelings referentiewaarden",
-    "system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)",
+    "system.system.urn:oid:2.16.840.1.113883.2.4.4.9": "G-Standaard Toedieningswegen (tabel 7)",
     "system.value.http:\/\/unitsofmeasure.org|d": "{value, plural, one {één dag} other {{value, number} dagen}}",
     "system.value.http:\/\/unitsofmeasure.org|mmol\/L": "{value, plural, one {{value, number} millimol per liter} other {{value, number} millimol per liter}}",
     "system.value.urn:oid:2.16.840.1.113883.2.4.4.1.900.2|245": "{value, plural, one {{value, number} stuk} other {{value, number} stuks}}"

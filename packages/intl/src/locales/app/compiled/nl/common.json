@@ -8,7 +8,7 @@
   "common.add_organizations": [
     {
       "type": 0,
-      "value": "Voeg een zorgaanbieder toe"
+      "value": "Zorgaanbieder toevoegen"
     }
   ],
   "common.app_name": [
@@ -86,7 +86,13 @@
   "common.mgo_header_link": [
     {
       "type": 0,
-      "value": "Mijn Gezondheidsoverzicht, linkt naar de homepage"
+      "value": "Mijn Gezondheidsoverzicht; ga naar de startpagina"
+    }
+  ],
+  "common.mgo_header_login_link": [
+    {
+      "type": 0,
+      "value": "Mijn Gezondheidsoverzicht; ga naar de login pagina"
     }
   ],
   "common.next": [
@@ -152,7 +158,13 @@
   "common.rijkslint_link": [
     {
       "type": 0,
-      "value": "Logo Rijksoverheid, linkt naar de homepage"
+      "value": "Ministerie van Volksgezondheid, Welzijn en Sport; ga naar startpagina Mijn Gezondheidsoverzicht"
+    }
+  ],
+  "common.rijkslint_login_link": [
+    {
+      "type": 0,
+      "value": "Ministerie van Volksgezondheid, Welzijn en Sport; ga naar de login pagina van Mijn Gezondheidsoverzicht"
     }
   ],
   "common.search": [
