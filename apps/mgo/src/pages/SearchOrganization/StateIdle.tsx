@@ -1,21 +1,19 @@
-/* v8 ignore start - this is still a work in progress, will be added to coverage later */
-
 import { FormattedMessage } from '$/intl';
 import { Heading, Text } from '@minvws/mgo-ui';
 
-export function NoResults() {
+export function StateIdle() {
     return (
         <div className="flex grow flex-col items-center justify-center py-8">
             <Heading as="h2" size="sm" className="mb-2">
                 <FormattedMessage
-                    id="organization_search.no_results_found_heading"
-                    description="Geen zorgaanbieders gevonden"
+                    id="add_organization.default_content_heading"
+                    description="Waar wilt u uw zorggegevens ophalen?"
                 />
             </Heading>
             <Text as="p">
                 <FormattedMessage
-                    id="organization_search.no_results_found_subheading_2"
-                    description="Controleer uw zoekopdracht en probeer het opnieuw."
+                    id="add_organization.default_content_subheading"
+                    description="Bijvoorbeeld uw huisarts, ziekenhuis of apotheek."
                 />
             </Text>
         </div>

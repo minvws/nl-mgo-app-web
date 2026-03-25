@@ -1,7 +1,7 @@
 import { getHealthCategoryConfigs, getRelevantEndpoints, HealthCategoryConfig } from '$/config';
 import { HealthcareOrganization } from '$/store';
-import { DataService } from '$/store/organizations/normalize';
 import { faker } from '$test/faker';
+import { DataService } from '@minvws/mgo-org-search';
 import { Query, QueryCache, QueryFilters } from '@tanstack/react-query';
 import { PartialDeep } from 'type-fest';
 import { beforeEach, expect, test, vi } from 'vitest';

@@ -41,11 +41,14 @@ ARG IGNORE_MISSING_TRANSLATIONS=true
 ARG LOAD_URL='https://lo-ad.test.mgo.irealisatie.nl'
 ARG DVA_URL='https://dvp-proxy.test.mgo.irealisatie.nl'
 ARG PFT_URL='https://app-api.test.mgo.irealisatie.nl'
-ARG ORGANIZATIONS_URL='https://lo-ad.test.mgo.irealisatie.nl/normalized-providers.json'
+ARG ORGANIZATIONS_URL='https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-organizations.json'
+ARG DATA_SERVICE_ENDPOINTS_URL='https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-endpoints.json'
 
 ENV LOAD_URL=$LOAD_URL
 ENV DVA_URL=$DVA_URL
 ENV PFT_URL=$PFT_URL
+ENV ORGANIZATIONS_URL=$ORGANIZATIONS_URL
+ENV DATA_SERVICE_ENDPOINTS_URL=$DATA_SERVICE_ENDPOINTS_URL
 ENV NGINX_PORT=8080
 ENV NGINX_ENVSUBST_OUTPUT_DIR="/etc/nginx"
 
@@ -59,7 +62,8 @@ window.config = {\n""\
   load_url: '$LOAD_URL',\n""\
   dva_url: '$DVA_URL',\n""\
   pft_url: '$PFT_URL',\n""\
-  organizations_url: '$ORGANIZATIONS_URL'\n""\
+  organizations_url: '$ORGANIZATIONS_URL',\n""\
+  data_service_endpoints_url: '$DATA_SERVICE_ENDPOINTS_URL'\n""\
 };" >/usr/share/nginx/html/config.js
 
 EXPOSE $NGINX_PORT

@@ -7,6 +7,7 @@ import svgr from 'vite-plugin-svgr';
 export const resolvePath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 const VITE_SERVER_HOST = 'localhost';
+const VITE_SERVER_PORT = 8000;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +25,7 @@ export default defineConfig({
     },
     server: {
         host: VITE_SERVER_HOST,
-        port: 8000,
+        port: VITE_SERVER_PORT,
         strictPort: true,
         watch: {
             usePolling: true,

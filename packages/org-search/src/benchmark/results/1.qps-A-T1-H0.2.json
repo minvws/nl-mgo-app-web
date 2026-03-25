@@ -8,11 +8,11 @@
     "tolerance": 1,
     "name": "A",
     "properties": [
-      "normalizedDisplayName",
+      "normalizedName",
       "searchBlob"
     ],
     "boost": {
-      "normalizedDisplayName": 2,
+      "normalizedName": 2,
       "searchBlob": 1
     }
   },

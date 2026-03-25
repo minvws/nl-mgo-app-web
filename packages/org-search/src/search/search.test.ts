@@ -10,7 +10,7 @@ import querySet from '../benchmark/data/queries.json' with { type: 'json' };
 test('creates a search index', async () => {
     const organization = faker.custom.organizationDto();
     const index = await createSearchIndex([organization]);
-    const results = await index.search({ query: organization.display_name! });
+    const results = await index.search({ query: organization.name! });
     expect(results.hits.length).toBe(1);
     expect(results.hits[0].id).toBe(organization.id);
 });

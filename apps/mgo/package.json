@@ -15,6 +15,7 @@
         "@minvws/mgo-org-search": "workspace:^",
         "@minvws/mgo-ui": "workspace:^",
         "@minvws/mgo-utils": "workspace:^",
+        "@minvws/mgo-logging": "workspace:^",
         "@orama/orama": "^3.1.16",
         "@radix-ui/react-dialog": "^1.1.15",
         "@react-pdf/renderer": "^4.3.0",

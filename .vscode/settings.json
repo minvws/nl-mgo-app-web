@@ -3,14 +3,22 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/@faker-js/**"],
     "cSpell.words": [
+        "aanbieder",
+        "Apothekers",
         "Codelijst",
+        "Fysiotherapeuten",
         "GHSA",
         "Ghsas",
+        "Huisartspraktijk",
         "interpretatie",
         "Loinc",
+        "medmij",
         "minvws",
         "Nictiz",
-        "rijkslint"
+        "rijkslint",
+        "Verloskundigen",
+        "Ziekenhuizen",
+        "zorgaanbieder"
     ],
     "eslint.workingDirectories": [{ "pattern": "./packages/*/" }, { "pattern": "./apps/*/" }],
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,

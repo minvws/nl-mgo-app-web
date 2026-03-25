@@ -1,40 +1,18 @@
-/* v8 ignore start - this is still a work in progress, will be added to coverage later */
-
 import { Breadcrumbs } from '$/components/Breadcrumbs/Breadcrumbs';
 import { LoadingSpinner } from '$/components/LoadingSpinner/LoadingSpinner';
 import { useIntl } from '$/intl';
 import { Heading, SearchForm } from '@minvws/mgo-ui';
-import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { DefaultContent } from './DefaultContent';
-import { NoResults } from './NoResults';
-import { SearchResults } from './SearchResults';
-import { useSearch } from './useSearch';
+import { ResultsList } from './ResultsList';
+import { StateEmpty } from './StateEmpty';
+import { StateIdle } from './StateIdle';
+import { useSearchState } from './useSearchState';
 
 export function SearchOrganization() {
     const { formatMessage } = useIntl();
     const heading = formatMessage('add_organization.heading');
-    const [searchQuery, setSearchQuery] = useState('');
-    const { search, isInitializing, isSearching, searchResults } = useSearch();
-    const prevIsInitializing = useRef(isInitializing);
-
-    const handleQueryChange = (query: string) => {
-        setSearchQuery(query);
-
-        if (!isInitializing) {
-            search(query);
-        }
-    };
-
-    useEffect(() => {
-        const justFinishedInitializing = prevIsInitializing.current && !isInitializing;
-
-        if (justFinishedInitializing && searchQuery) {
-            search(searchQuery);
-        }
-
-        prevIsInitializing.current = isInitializing;
-    }, [isInitializing, searchQuery, search]);
+    const { searchQuery, handleQueryChange, uiState, searchResults, dataServiceEndpoints } =
+        useSearchState();
 
     return (
         <>
@@ -53,23 +31,23 @@ export function SearchOrganization() {
                     placeholder={formatMessage('add_organization.search_placeholder')}
                     value={searchQuery}
                     onChange={handleQueryChange}
-                    loading={isSearching}
+                    loading={uiState === 'searching'}
                 />
 
-                {/* v8 ignore start - this code is just for testing purposes, coverage will be added later */}
-                {isInitializing || isSearching ? (
+                {(uiState === 'loading' || uiState === 'searching') && (
                     <div className="flex grow flex-col items-center justify-center py-8">
                         <LoadingSpinner />
                     </div>
-                ) : !searchQuery ? (
-                    <DefaultContent />
-                ) : searchResults?.count ? (
-                    <SearchResults searchResults={searchResults} className="py-8" />
-                ) : (
-                    <NoResults />
                 )}
-
-                {/* v8 ignore end */}
+                {uiState === 'idle' && <StateIdle />}
+                {uiState === 'results' && searchResults && (
+                    <ResultsList
+                        searchResults={searchResults}
+                        dataServiceEndpoints={dataServiceEndpoints}
+                        className="py-8"
+                    />
+                )}
+                {uiState === 'empty' && <StateEmpty />}
             </section>
         </>
     );

@@ -21,7 +21,9 @@ export type MockFactory<T extends MockData<T>> = (partialData?: PartialDeep<T>) 
  * const testFoo2 = foo({bar: 'foobar'}); // { bar: 'foobar', baz: 95235991 }
  */
 export function createMockFactory<T extends MockData<T>>(defaultData: () => T): MockFactory<T> {
-    const isArray = Array.isArray(defaultData());
-
-    return (partialData) => defaultsDeep(isArray ? [] : {}, partialData, defaultData());
+    return (partialData) => {
+        const base = defaultData();
+        const isArray = Array.isArray(base);
+        return defaultsDeep(isArray ? [] : {}, partialData, base);
+    };
 }
