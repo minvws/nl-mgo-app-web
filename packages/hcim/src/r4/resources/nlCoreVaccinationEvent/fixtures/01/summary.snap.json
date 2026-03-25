@@ -50,6 +50,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r4.nl_core_vaccination_event.show_details",

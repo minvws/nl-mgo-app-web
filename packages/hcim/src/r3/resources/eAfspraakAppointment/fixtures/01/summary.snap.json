@@ -86,6 +86,7 @@
         {
             "id": "Opties",
             "label": "Opties",
+            "excludeFromPrint": true,
             "children": [
                 {
                     "id": "summary.r3.e_afspraak_appointment.show_details",

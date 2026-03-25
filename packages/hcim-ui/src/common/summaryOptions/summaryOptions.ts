@@ -19,6 +19,7 @@ export function summaryOptions(
     return {
         id: formatMessage(`summary.options`),
         label: formatMessage(`summary.options`),
+        excludeFromPrint: true,
         children: [
             {
                 id: `summary.${i18n}.show_details`,

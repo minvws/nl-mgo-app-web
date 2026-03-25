@@ -10,6 +10,7 @@ exports[`creates a options group for the summary ui schema 1`] = `
       "type": "REFERENCE_LINK",
     },
   ],
+  "excludeFromPrint": true,
   "id": "intl(summary.options)",
   "label": "intl(summary.options)",
 }
