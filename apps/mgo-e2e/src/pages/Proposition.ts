@@ -23,6 +23,6 @@ export class PropositionPage extends AbstractPage {
          * There is no translation key for this content as it comes from markdown content inside another translation.
          * This means it is sensitive to copy changes and therefor we use a basic regexp to match the content.
          */
-        name: /privacyverklaring/i,
+        name: /privacy/i,
     });
 }
