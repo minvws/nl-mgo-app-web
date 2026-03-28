@@ -10,12 +10,12 @@
         "lodash-es": "^4.17.23"
     },
     "devDependencies": {
-        "@faker-js/faker": "^10.2.0",
+        "@faker-js/faker": "^10.4.0",
         "@minvws/mgo-ts-json-schema": "workspace:^",
         "@types/lodash-es": "^4.17.12",
         "ts-json-schema-generator": "^2.3.0",
         "tsx": "^4.17.0",
-        "type-fest": "^5.4.2",
+        "type-fest": "^5.5.0",
         "typescript": "^5.4.5",
         "vite": "^7.3.1"
     }
