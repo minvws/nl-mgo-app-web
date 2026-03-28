@@ -1,6 +1,6 @@
 import { type AnchorHTMLAttributes } from 'react';
 import { useComposition } from '../../hooks/useComposition/useComposition';
-import { focusStyle } from '../../styles';
+import { focusStyle, focusStyleInverted } from '../../styles';
 import { cn } from '../../utils';
 import { Icon } from '../Icon/Icon';
 import { IconName } from '../Icon/icons';
@@ -51,7 +51,12 @@ export const Link = ({
 
     return (
         <Comp
-            className={cn('group cursor-pointer', linkStyle[variant], focusStyle, className)}
+            className={cn(
+                'group cursor-pointer',
+                linkStyle[variant],
+                variant === 'inverted' ? focusStyleInverted : focusStyle,
+                className
+            )}
             {...rest}
         >
             <Slottable>{children}</Slottable>

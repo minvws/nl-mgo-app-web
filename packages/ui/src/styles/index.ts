@@ -1,1 +1,1 @@
-export { focusStyle, groupFocusStyle } from './focus';
+export { focusStyle, focusStyleInverted, groupFocusStyle } from './focus';
