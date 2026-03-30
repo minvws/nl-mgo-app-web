@@ -16,7 +16,7 @@ export function PdfDownloadLink({ categoryHeading, subCategories }: PdfDownloadL
     const { createPdfBlob } = usePdfBlob();
 
     const { refetch: refetchPdf, isLoading } = useQuery({
-        queryKey: ['pdf', subCategories, categoryHeading],
+        queryKey: ['pdf', subCategories, categoryHeading, createPdfBlob],
         queryFn: () => createPdfBlob({ subCategories, categoryHeading }),
         enabled: false,
     });
