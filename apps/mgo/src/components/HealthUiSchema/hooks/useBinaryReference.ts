@@ -39,9 +39,10 @@ export function useBinaryReference(reference: string | undefined) {
         isLoading,
         data: binaryBlobUrl,
         isError,
+        //we don't need the full data service object as a query key
+        // eslint-disable-next-line @tanstack/query/exhaustive-deps
     } = useQuery({
         // We use the data service id instead of the data service 'get' function reference as this is stable
-        // eslint-disable-next-line @tanstack/query/exhaustive-deps
         queryKey: [dataService?.meta.dataServiceId, resourceEndpoint, 'binary', reference],
         queryFn: async () => {
             const binary = (await dataService!.get(reference!).json()) as Binary;
