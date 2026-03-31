@@ -1,4 +1,4 @@
-import { useAuth } from '$/auth';
+import { useRootRedirect } from '$/hooks';
 import { useIntl } from '$/intl';
 import { RouterLink } from '$/routing';
 import { cn, Container, focusStyle } from '@minvws/mgo-ui';
@@ -8,19 +8,15 @@ export type RibbonBannerProps = HTMLAttributes<HTMLElement>;
 
 export const RibbonBanner = (props: RibbonBannerProps) => {
     const { formatMessage } = useIntl();
-    const auth = useAuth();
+    const rootRedirect = useRootRedirect();
 
     return (
         <div {...props}>
             <Container centeredContent>
                 <div className="relative left-[51px] sm:left-[97px] sm:pb-[9px] md:left-[107px] md:pb-2">
                     <RouterLink
-                        to="/"
-                        aria-label={
-                            auth.isAuthenticated
-                                ? formatMessage('common.rijkslint_link')
-                                : formatMessage('common.rijkslint_login_link')
-                        }
+                        to={rootRedirect.to}
+                        aria-label={formatMessage(rootRedirect.ribbonLabel)}
                         className={cn(focusStyle, 'block leading-none outline-offset-4')}
                     >
                         {/* Keep in sync with the ribbon in index.html file */}

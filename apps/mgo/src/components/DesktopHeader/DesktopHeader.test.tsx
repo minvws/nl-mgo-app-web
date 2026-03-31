@@ -1,16 +1,19 @@
-import { useAuth } from '$/auth';
-import { faker } from '$test/faker';
+import { useRootRedirect } from '$/hooks';
 import { setupWithAppProviders } from '$test/helpers';
 import { appMessage } from '@minvws/mgo-intl/test/shared';
 import { screen } from '@testing-library/react';
 import { beforeEach, expect, test, vi, type MockedFunction } from 'vitest';
 import { DesktopHeader } from './DesktopHeader';
 
-vi.mock('$/auth');
-const mockUseAuth = useAuth as MockedFunction<typeof useAuth>;
+vi.mock('$/hooks');
+const mockUseRootRedirect = useRootRedirect as MockedFunction<typeof useRootRedirect>;
 
 beforeEach(() => {
-    mockUseAuth.mockRestore();
+    mockUseRootRedirect.mockReturnValue({
+        to: '/inloggen',
+        label: 'common.mgo_header_login_link',
+        ribbonLabel: 'common.rijkslint_login_link',
+    });
 });
 
 test('renders the app name in the header', () => {
@@ -24,14 +27,22 @@ test('renders the app name in the header', () => {
 });
 
 test('logo link has authenticated aria-label when user is logged in', () => {
-    mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: true }));
+    mockUseRootRedirect.mockReturnValue({
+        to: '/overzicht',
+        label: 'common.mgo_header_link',
+        ribbonLabel: 'common.rijkslint_link',
+    });
     setupWithAppProviders(<DesktopHeader />);
 
     expect(screen.getByRole('link', { name: appMessage('common.mgo_header_link') })).toBeVisible();
 });
 
 test('logo link has login aria-label when user is not authenticated', () => {
-    mockUseAuth.mockImplementation(() => faker.custom.authState({ isAuthenticated: false }));
+    mockUseRootRedirect.mockReturnValue({
+        to: '/inloggen',
+        label: 'common.mgo_header_login_link',
+        ribbonLabel: 'common.rijkslint_login_link',
+    });
     setupWithAppProviders(<DesktopHeader />);
 
     expect(
