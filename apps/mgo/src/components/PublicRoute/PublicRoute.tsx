@@ -1,18 +1,15 @@
 import { useAuth } from '$/auth';
-import { useOnboardingSeen } from '$/hooks';
+import { useRootRedirect } from '$/hooks';
 import { Navigate, Outlet, useLocation } from '$/routing';
 
 export function PublicRoute() {
     const auth = useAuth();
     const { pathname } = useLocation();
-    const { isOnboardingSeen } = useOnboardingSeen();
+    const rootRedirect = useRootRedirect();
 
     switch (pathname) {
         case '/':
-            if (!isOnboardingSeen) {
-                return <Navigate to="/welkom" replace />;
-            }
-            return <Navigate to="/overzicht" replace />;
+            return <Navigate to={rootRedirect.to} replace />;
 
         case '/inloggen':
             if (auth.isAuthenticated) {

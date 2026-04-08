@@ -29,6 +29,8 @@
   ],
   "common.mgo_header_link": [
   ],
+  "common.mgo_header_login_link": [
+  ],
   "common.next": [
   ],
   "common.no_data": [
@@ -50,6 +52,8 @@
   "common.required": [
   ],
   "common.rijkslint_link": [
+  ],
+  "common.rijkslint_login_link": [
   ],
   "common.search": [
   ],

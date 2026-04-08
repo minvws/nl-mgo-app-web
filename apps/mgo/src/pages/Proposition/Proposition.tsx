@@ -29,8 +29,9 @@ export function Proposition() {
                             id="proposition.subheading"
                             description="In de <a>privacyverklaring</a> staat hoe Mijn Gezondheidsoverzicht jouw gegevens gebruikt. Dit zijn de belangrijkste punten"
                             values={{
-                                /* v8 ignore next, values may not be used in the actual copy */ // eslint-disable-next-line react/no-unstable-nested-components
+                                /* v8 ignore start, values may not be used in the actual copy */ // eslint-disable-next-line react/no-unstable-nested-components
                                 a: (chunks) => <Link to="/privacy">{chunks}</Link>,
+                                /* v8 ignore end */
                             }}
                         />
                     </Text>

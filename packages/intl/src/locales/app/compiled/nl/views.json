@@ -2,7 +2,7 @@
   "add_organization.already_added": [
     {
       "type": 0,
-      "value": "Al toevoegd"
+      "value": "Al toegevoegd"
     }
   ],
   "add_organization.city": [
@@ -62,7 +62,7 @@
   "add_organization.search_aria_label": [
     {
       "type": 0,
-      "value": "Zoek een zorgaanbieder"
+      "value": "Zoek een organisatie"
     }
   ],
   "add_organization.search_clear": [
@@ -374,13 +374,13 @@
   "introduction.heading": [
     {
       "type": 0,
-      "value": "Welkom bij Mijn Gezondheidsoverzicht"
+      "value": "Alles over uw gezondheid en zorg op één plek"
     }
   ],
   "introduction.subheading": [
     {
       "type": 0,
-      "value": "Met deze app heeft u al uw gegevens over gezondheid en zorg veilig op één plek."
+      "value": "Bijvoorbeeld gegevens van de huisarts, het ziekenhuis en uw vaccinaties."
     }
   ],
   "lab_results.heading": [
@@ -422,13 +422,13 @@
   "login.heading": [
     {
       "type": 0,
-      "value": "Inloggen"
+      "value": "Log in met DigiD"
     }
   ],
   "login.subheading": [
     {
       "type": 0,
-      "value": "Met DigiD laat u weten wie u bent. Zo kunnen we uw gegevens veilig ophalen. Bij uw huisarts, het ziekenhuis en andere zorgaanbieders."
+      "value": "Zo bewijst u wie u bent. Daarna kan de app uw gegevens veilig ophalen bij uw zorgaanbieders."
     }
   ],
   "logout.heading": [
@@ -678,7 +678,7 @@
   "overview.heading": [
     {
       "type": 0,
-      "value": "Welkom"
+      "value": "Overzicht"
     }
   ],
   "overview.no_organizations_found": [
@@ -840,27 +840,99 @@
   "proposition.subheading": [
     {
       "type": 0,
-      "value": "In de "
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "privacyverklaring"
-        }
-      ],
-      "type": 8,
-      "value": "a"
-    },
-    {
-      "type": 0,
-      "value": " staat hoe Mijn Gezondheidsoverzicht uw gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
+      "value": "In de privacyverklaring leest u hoe Mijn Gezondheidsoverzicht uw gegevens gebruikt en beschermt. Dit zijn de belangrijkste punten:"
     }
   ],
   "remove_organization.no_cancel": [
     {
       "type": 0,
       "value": "Nee, annuleren"
+    }
+  ],
+  "search_organization.already_added": [
+    {
+      "type": 0,
+      "value": "Al toegevoegd"
+    }
+  ],
+  "search_organization.dialog.heading": [
+    {
+      "type": 1,
+      "value": "organizationName"
+    },
+    {
+      "type": 0,
+      "value": " toevoegen?"
+    }
+  ],
+  "search_organization.dialog.no": [
+    {
+      "type": 0,
+      "value": "Nee"
+    }
+  ],
+  "search_organization.dialog.subheading": [
+    {
+      "type": 0,
+      "value": "Als deze zorgaanbieder gegevens over u heeft, staan die straks in uw overzicht."
+    }
+  ],
+  "search_organization.dialog.yes": [
+    {
+      "type": 0,
+      "value": "Ja, toevoegen"
+    }
+  ],
+  "search_organization.heading": [
+    {
+      "type": 0,
+      "value": "Zorgaanbieder toevoegen"
+    }
+  ],
+  "search_organization.no_results.heading": [
+    {
+      "type": 0,
+      "value": "Geen zorgaanbieders gevonden"
+    }
+  ],
+  "search_organization.no_results.subheading": [
+    {
+      "type": 0,
+      "value": "Controleer uw zoekopdracht en probeer het opnieuw."
+    }
+  ],
+  "search_organization.not_participating": [
+    {
+      "type": 0,
+      "value": "Deelt geen gegevens"
+    }
+  ],
+  "search_organization.onboarding.heading": [
+    {
+      "type": 0,
+      "value": "Bijna klaar! Voeg een zorgaanbieder toe"
+    }
+  ],
+  "search_organization.result_count": [
+    {
+      "type": 1,
+      "value": "count"
+    },
+    {
+      "type": 0,
+      "value": " zorgaanbieders gevonden"
+    }
+  ],
+  "search_organization.search_placeholder": [
+    {
+      "type": 0,
+      "value": "Bijv. Amsterdam UMC"
+    }
+  ],
+  "search_organization.subheading": [
+    {
+      "type": 0,
+      "value": "Zoek op naam, type zorg of plaats"
     }
   ],
   "settings.featureflag.localization": [

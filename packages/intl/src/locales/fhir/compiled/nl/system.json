@@ -65,7 +65,7 @@
       "value": "Behandelings referentiewaarden"
     }
   ],
-  "system.urn:oid:2.16.840.1.113883.2.4.4.9": [
+  "system.system.urn:oid:2.16.840.1.113883.2.4.4.9": [
     {
       "type": 0,
       "value": "G-Standaard Toedieningswegen (tabel 7)"
