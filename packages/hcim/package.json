@@ -20,7 +20,7 @@
         "@minvws/mgo-hcim-parse": "workspace:^",
         "@minvws/mgo-hcim-ui": "workspace:^",
         "@minvws/mgo-utils": "workspace:^",
-        "lodash-es": "^4.17.23",
+        "lodash-es": "^4.18.1",
         "lossless-json": "^4.0.1"
     },
     "devDependencies": {

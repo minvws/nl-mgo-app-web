@@ -8,6 +8,7 @@ export {
 } from './Breadcrumbs/Breadcrumbs';
 export { Button, type ButtonProps } from './Button/Button';
 export { Card, type CardProps } from './Card/Card';
+export { CardButton, type CardButtonProps } from './CardButton/CardButton';
 export { ClosableCard } from './ClosableCard/ClosableCard';
 export {
     ConfirmDialog,
@@ -23,7 +24,14 @@ export {
 export { DescriptionCard, type DescriptionCardProps } from './DescriptionCard/DescriptionCard';
 export { DescriptionItem, type DescriptionItemProps } from './DescriptionItem/DescriptionItem';
 export { DescriptionList, type DescriptionListProps } from './DescriptionList/DescriptionList';
-export { CardButton, type CardButtonProps } from './CardButton/CardButton';
+export {
+    Drawer,
+    type DrawerContentProps,
+    type DrawerPortalProps,
+    type DrawerRootProps,
+    type DrawerSide,
+    type DrawerTriggerProps,
+} from './Drawer/Drawer';
 export { ErrorNotice, type ErrorNoticeProps } from './ErrorNotice/ErrorNotice';
 export { Fade, type FadeProps } from './Fade/Fade';
 export { Heading, type HeadingProps } from './Heading/Heading';

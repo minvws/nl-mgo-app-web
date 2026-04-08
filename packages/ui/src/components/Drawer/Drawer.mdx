@@ -1,0 +1,44 @@
+import { Canvas, Meta, Source } from '@storybook/blocks';
+import { BottomSide, Controlled, Default, LeftSide } from './Drawer.stories';
+
+<Meta title="Drawer" />
+
+# Drawer
+
+Drawer is an accessible side panel for showing contextual details related to content on the current page.
+
+It is built on top of Radix Dialog, so keyboard focus is trapped while open, the escape key closes the panel, and focus is restored to the trigger when closed.
+
+<Source
+    language="tsx"
+    code={`
+<Drawer.Root>
+    <Drawer.Trigger asChild>
+        <Button>Open details</Button>
+    </Drawer.Trigger>
+
+    <Drawer.Content
+        title="Medication details"
+        closeButtonAriaLabel="Close details drawer"
+    >
+        <MedicationDetails />
+    </Drawer.Content>
+
+</Drawer.Root>
+`} />
+
+## Default
+
+<Canvas of={Default} />
+
+## Left side
+
+<Canvas of={LeftSide} />
+
+## Bottom side
+
+<Canvas of={BottomSide} />
+
+## Controlled mode
+
+<Canvas of={Controlled} />

@@ -1,5 +1,6 @@
 import AccountBalance from '@material-symbols/svg-400/outlined/account_balance.svg?react';
 import Allergy from '@material-symbols/svg-400/outlined/allergy.svg?react';
+import ArrowBack from '@material-symbols/svg-400/outlined/arrow_back.svg?react';
 import ArrowRightAlt from '@material-symbols/svg-400/outlined/arrow_right_alt.svg?react';
 import AttachFile from '@material-symbols/svg-400/outlined/attach_file.svg?react';
 import Autorenew from '@material-symbols/svg-400/outlined/autorenew.svg?react';
@@ -33,13 +34,13 @@ import ProgressActivity from '@material-symbols/svg-400/outlined/progress_activi
 import Psychology from '@material-symbols/svg-400/outlined/psychology.svg?react';
 import SentimentSatisfied from '@material-symbols/svg-400/outlined/sentiment_satisfied.svg?react';
 import Stethoscope from '@material-symbols/svg-400/outlined/stethoscope.svg?react';
+import SyncProblem from '@material-symbols/svg-400/outlined/sync_problem.svg?react';
 import Syringe from '@material-symbols/svg-400/outlined/syringe.svg?react';
 import VerifiedUser from '@material-symbols/svg-400/outlined/verified_user-fill.svg?react';
 import VitalSigns from '@material-symbols/svg-400/outlined/vital_signs.svg?react';
 import Warning from '@material-symbols/svg-400/outlined/warning-fill.svg?react';
 import CancelFill from '@material-symbols/svg-400/rounded/cancel-fill.svg?react';
 import Search from '@material-symbols/svg-400/rounded/search.svg?react';
-import SyncProblem from '@material-symbols/svg-400/outlined/sync_problem.svg?react';
 
 import Add from '@material-symbols/svg-400/rounded/add.svg?react';
 import ChevronLeft from '@material-symbols/svg-400/rounded/chevron_left.svg?react';
@@ -59,6 +60,7 @@ import SettingsFill from '@material-symbols/svg-400/rounded/settings-fill.svg?re
 import HelpFilled from '@material-symbols/svg-700/rounded/help-fill.svg?react';
 
 export const icons = {
+    arrow_back: ArrowBack,
     chevron_left: ChevronLeft,
     chevron_right: ChevronRight,
     encrypted: Encrypted,
