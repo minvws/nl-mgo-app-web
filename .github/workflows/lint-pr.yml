@@ -18,3 +18,9 @@ jobs:
       - uses: amannn/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          subjectPattern: "^.* - (#\\d+(,\\s*#\\d+)*|no-issue)$"
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}"
+            must end with one or more issue numbers like "- #123" or "- #001, #002"
+            or "- no-issue" if there is no linked issue.
