@@ -9,8 +9,7 @@ window.config = {
     load_url: 'https://lo-ad.test.mgo.irealisatie.nl',
     dva_url: 'https://dvp-proxy.test.mgo.irealisatie.nl',
     pft_url: 'https://app-api.test.mgo.irealisatie.nl',
-    organizations_url:
-        'https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-organizations.json',
+    organizations_url: 'https://lo-ad.test.mgo.irealisatie.nl/static/search/organizations.json',
     data_service_endpoints_url:
-        'https://lo-ad.test.mgo.irealisatie.nl/static/search/temp-endpoints.json',
+        'https://lo-ad.test.mgo.irealisatie.nl/static/search/endpoints.json',
 };
