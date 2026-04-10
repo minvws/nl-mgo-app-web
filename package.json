@@ -125,7 +125,8 @@
             "file-type@>=20.0.0 <=21.3.1": "https://github.com/advisories/GHSA-j47w-4g3g-c36v",
             "flatted@<=3.4.1": "https://github.com/advisories/GHSA-25h7-pfq9-p65f / https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
             "picomatch@>=4.0.0 <4.0.4 ": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
-            "path-to-regexp@>=8.0.0 <8.4.0": "https://github.com/advisories/GHSA-27v5-c462-wpq7"
+            "path-to-regexp@>=8.0.0 <8.4.0": "https://github.com/advisories/GHSA-27v5-c462-wpq7",
+            "axios@<1.15.0": "https://github.com/advisories/GHSA-3p68-rc4w-qgx5"
         },
         "overrides": {
             "brace-expansion@>=1.0.0 <1.1.13": ">=1.1.13",
@@ -167,7 +168,8 @@
             "yauzl@<3.2.1": ">=3.2.1",
             "flatted@<=3.4.1": ">=3.4.2",
             "picomatch@>=4.0.0 <4.0.4": ">=4.0.4",
-            "path-to-regexp@>=8.0.0 <8.4.0": ">=8.4.0"
+            "path-to-regexp@>=8.0.0 <8.4.0": ">=8.4.0",
+            "axios@<1.15.0": ">=1.15.0"
         },
         "auditConfig": {
             "ignoreGhsas comments (non-standard-key)": {
