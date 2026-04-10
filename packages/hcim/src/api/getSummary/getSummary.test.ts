@@ -57,6 +57,7 @@ test('returns mock schema if there is no summary', () => {
             {
                 id: 'options',
                 label: 'Opties',
+                excludeFromPrint: true,
                 children: [
                     {
                         id: 'reference_link',

@@ -31,6 +31,7 @@ export function getSummary<T extends MgoResourceMeta>(
                 {
                     id: 'options',
                     label: 'Opties',
+                    excludeFromPrint: true,
                     children: [
                         {
                             id: 'reference_link',
